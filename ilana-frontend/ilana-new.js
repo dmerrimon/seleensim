@@ -77,9 +77,20 @@ async function analyzeDocument(text) {
     const backendUrl = 'https://ilanalabs-add-in.onrender.com';
     
     try {
-        // Prepare comprehensive payload
+        // Prepare comprehensive payload with larger document support
+        let textToAnalyze = text;
+        
+        // Handle very large documents (>100KB) by taking key sections
+        if (text.length > 100000) {
+            console.log("Large document detected, using intelligent sampling");
+            // Take first 50KB and last 25KB to capture intro and conclusion
+            const firstPart = text.substring(0, 50000);
+            const lastPart = text.substring(text.length - 25000);
+            textToAnalyze = firstPart + "\n\n[...document continues...]\n\n" + lastPart;
+        }
+        
         const payload = {
-            text: text.substring(0, 25000), // Send up to 25KB for comprehensive analysis
+            text: textToAnalyze, // Now handles larger documents intelligently
             options: {
                 analyze_compliance: true,
                 analyze_clarity: true,
@@ -88,11 +99,20 @@ async function analyzeDocument(text) {
                 analyze_safety: true,
                 analyze_regulatory: true,
                 comprehensive_mode: true,
-                min_issues: 5
+                min_issues: 5,
+                large_document: text.length > 50000
             }
         };
         
         console.log("Sending payload to backend:", payload);
+        
+        // Use longer timeout for large documents
+        const timeoutMs = text.length > 50000 ? 60000 : 30000; // 60s for large docs, 30s for normal
+        
+        console.log(`Using ${timeoutMs/1000}s timeout for document of ${text.length} characters`);
+        
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
         
         const response = await fetch(`${backendUrl}/analyze-comprehensive`, {
             method: 'POST',
@@ -100,8 +120,11 @@ async function analyzeDocument(text) {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify(payload)
+            body: JSON.stringify(payload),
+            signal: controller.signal
         });
+        
+        clearTimeout(timeoutId);
         
         console.log("Backend response status:", response.status);
         
