@@ -80,7 +80,7 @@ async function analyzeDocument(text) {
         
         console.log("Sending payload to backend:", payload);
         
-        const response = await fetch(`${backendUrl}/analyze-protocol`, {
+        const response = await fetch(`${backendUrl}/analyze-comprehensive`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
