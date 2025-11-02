@@ -3,7 +3,7 @@ services:
     name: ilana-backend
     env: python
     plan: starter
-    buildCommand: pip install --no-cache-dir -r requirements.txt && pip uninstall -y numpy && pip install "numpy==1.24.3"
+    buildCommand: pip uninstall -y openai && pip install --no-cache-dir --force-reinstall -r requirements.txt && pip uninstall -y numpy && pip install "numpy==1.24.3"
     startCommand: mkdir -p environments && cp -r config/environments/* environments/ && cp -r config/* . && cp -r ml-models/* . && python main.py
     envVars:
       - key: ENVIRONMENT

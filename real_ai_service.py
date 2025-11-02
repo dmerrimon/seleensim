@@ -80,14 +80,28 @@ class RealAIService:
         try:
             if hasattr(self.config, 'enable_azure_openai') and self.config.enable_azure_openai:
                 if hasattr(self.config, 'azure_openai_api_key') and self.config.azure_openai_api_key and self.config.azure_openai_api_key != "placeholder":
+                    # Try multiple initialization methods
                     if AzureOpenAI is not None:
-                        # Use new OpenAI client (v1.0+)
-                        self.azure_client = AzureOpenAI(
-                            api_key=self.config.azure_openai_api_key,
-                            api_version="2024-02-01",
-                            azure_endpoint=self.config.azure_openai_endpoint
-                        )
-                        logger.info("✅ Azure OpenAI client initialized (v1.0+)")
+                        try:
+                            # Use new OpenAI client (v1.0+) - clean initialization
+                            self.azure_client = AzureOpenAI(
+                                api_key=self.config.azure_openai_api_key,
+                                api_version="2024-02-01",
+                                azure_endpoint=self.config.azure_openai_endpoint
+                            )
+                            logger.info("✅ Azure OpenAI client initialized (v1.0+)")
+                        except TypeError as te:
+                            if "proxies" in str(te):
+                                # Handle proxies parameter issue
+                                logger.warning("⚠️ Proxies parameter issue, trying alternative initialization")
+                                self.azure_client = openai
+                                openai.api_type = "azure"
+                                openai.api_base = self.config.azure_openai_endpoint
+                                openai.api_key = self.config.azure_openai_api_key
+                                openai.api_version = "2024-02-01"
+                                logger.info("✅ Azure OpenAI client initialized (legacy fallback)")
+                            else:
+                                raise te
                     else:
                         # Use legacy OpenAI client
                         openai.api_type = "azure"
