@@ -41,9 +41,9 @@ body {
     overflow: hidden;
 }
 
-/* Header Section */
+/* Header Section - Hidden */
 .ilana-header {
-    display: none;
+    display: none !important;
     background: #ffffff;
     border-bottom: 1px solid #e5e7eb;
     padding: 20px 24px;
@@ -230,6 +230,9 @@ body {
     border-top: 1px solid #2d2d2d;
     padding: 16px 24px;
     flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navigation {
@@ -262,6 +265,10 @@ body {
     background: linear-gradient(135deg, #151515, #000000);
     color: white;
     border: 1px solid #333333;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .scan-button:hover {
