@@ -30,7 +30,18 @@ async function scanDocument() {
     if (isAnalyzing) return;
     
     console.log("Starting document scan...");
-    setLoadingState(true);
+    
+    // Set analyzing flag immediately
+    isAnalyzing = true;
+    
+    // Wait for DOM to be ready and set loading state
+    setTimeout(() => {
+        try {
+            setLoadingState(true);
+        } catch (error) {
+            console.log("Loading state error, continuing anyway:", error);
+        }
+    }, 100);
     
     try {
         await Word.run(async (context) => {
@@ -52,7 +63,10 @@ async function scanDocument() {
         console.error("Scan error:", error);
         showError("Analysis failed: " + error.message + ". Please try again or check your connection.");
     } finally {
-        setLoadingState(false);
+        // Ensure loading state is cleared with a slight delay
+        setTimeout(() => {
+            setLoadingState(false);
+        }, 100);
     }
 }
 
@@ -280,24 +294,53 @@ function resetProgressBars() {
     });
 }
 
-// Set loading state
+// Set loading state with DOM ready check
 function setLoadingState(loading) {
     isAnalyzing = loading;
-    const container = document.querySelector('.ilana-container');
-    const scanButton = document.querySelector('.scan-button');
     
-    if (loading) {
-        if (container) container.classList.add('loading');
-        if (scanButton) {
-            scanButton.classList.add('loading');
-            scanButton.disabled = true;
+    // Wait for DOM to be fully ready
+    function updateUI() {
+        try {
+            // Use more specific selectors and ensure DOM is ready
+            const container = document.querySelector('.ilana-container');
+            const scanButton = document.querySelector('.control-button.scan-button');
+            
+            console.log('Setting loading state:', loading, 'Container:', !!container, 'Button:', !!scanButton);
+            
+            if (loading) {
+                if (container && container.classList) {
+                    container.classList.add('loading');
+                }
+                if (scanButton) {
+                    if (scanButton.classList) scanButton.classList.add('loading');
+                    scanButton.disabled = true;
+                    // Also update button text
+                    const buttonText = scanButton.querySelector('.button-text');
+                    if (buttonText) buttonText.textContent = 'Analyzing...';
+                }
+            } else {
+                if (container && container.classList) {
+                    container.classList.remove('loading');
+                }
+                if (scanButton) {
+                    if (scanButton.classList) scanButton.classList.remove('loading');
+                    scanButton.disabled = false;
+                    // Reset button text
+                    const buttonText = scanButton.querySelector('.button-text');
+                    if (buttonText) buttonText.textContent = 'Scan Document';
+                }
+            }
+        } catch (error) {
+            console.log('Loading state error (non-critical):', error);
+            // Continue anyway - this is just visual feedback
         }
+    }
+    
+    // If DOM is ready, update immediately, otherwise wait
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateUI);
     } else {
-        if (container) container.classList.remove('loading');
-        if (scanButton) {
-            scanButton.classList.remove('loading');
-            scanButton.disabled = false;
-        }
+        updateUI();
     }
 }
 
