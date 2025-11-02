@@ -13,10 +13,22 @@ from typing import Dict, Any, List, Optional, Tuple
 from datetime import datetime
 from dataclasses import dataclass
 
-# AI Service imports
-import openai
-import pinecone
-from pinecone import Pinecone
+# AI Service imports with version compatibility
+try:
+    import openai
+    from openai import AzureOpenAI
+except ImportError:
+    # Fallback for older versions
+    import openai
+    AzureOpenAI = None
+
+try:
+    import pinecone
+    from pinecone import Pinecone
+except ImportError:
+    # Fallback for Pinecone issues
+    Pinecone = None
+    
 import numpy as np
 
 # Configuration
@@ -64,22 +76,33 @@ class RealAIService:
     def _initialize_services(self):
         """Initialize Azure OpenAI and Pinecone services with fallback"""
         
-        # Initialize Azure OpenAI
+        # Initialize Azure OpenAI with version compatibility
         try:
             if hasattr(self.config, 'enable_azure_openai') and self.config.enable_azure_openai:
                 if hasattr(self.config, 'azure_openai_api_key') and self.config.azure_openai_api_key and self.config.azure_openai_api_key != "placeholder":
-                    self.azure_client = openai.AzureOpenAI(
-                        api_key=self.config.azure_openai_api_key,
-                        api_version="2024-02-01",
-                        azure_endpoint=self.config.azure_openai_endpoint
-                    )
-                    logger.info("✅ Azure OpenAI client initialized")
+                    if AzureOpenAI is not None:
+                        # Use new OpenAI client (v1.0+)
+                        self.azure_client = AzureOpenAI(
+                            api_key=self.config.azure_openai_api_key,
+                            api_version="2024-02-01",
+                            azure_endpoint=self.config.azure_openai_endpoint
+                        )
+                        logger.info("✅ Azure OpenAI client initialized (v1.0+)")
+                    else:
+                        # Use legacy OpenAI client
+                        openai.api_type = "azure"
+                        openai.api_base = self.config.azure_openai_endpoint
+                        openai.api_key = self.config.azure_openai_api_key
+                        openai.api_version = "2024-02-01"
+                        self.azure_client = openai
+                        logger.info("✅ Azure OpenAI client initialized (legacy)")
                 else:
                     logger.warning("⚠️ Azure OpenAI API key not configured")
             else:
                 logger.info("ℹ️ Azure OpenAI disabled in configuration")
         except Exception as e:
             logger.error(f"❌ Azure OpenAI initialization failed: {str(e)}")
+            logger.info("🔄 Falling back to basic analysis mode")
             
         # Initialize Pinecone
         try:
