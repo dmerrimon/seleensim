@@ -62,31 +62,50 @@ class RealAIService:
         self._initialize_services()
         
     def _initialize_services(self):
-        """Initialize Azure OpenAI and Pinecone services"""
+        """Initialize Azure OpenAI and Pinecone services with fallback"""
         
+        # Initialize Azure OpenAI
         try:
-            # Initialize Azure OpenAI
-            if self.config.enable_azure_openai:
-                self.azure_client = openai.AzureOpenAI(
-                    api_key=self.config.azure_openai_api_key,
-                    api_version="2024-02-01",
-                    azure_endpoint=self.config.azure_openai_endpoint
-                )
-                logger.info("✅ Azure OpenAI client initialized")
-            
-            # Initialize Pinecone
-            if self.config.enable_pinecone_integration:
-                self.pinecone_client = Pinecone(api_key=self.config.pinecone_api_key)
-                
-                # Connect to existing index
-                if self.config.pinecone_index_name in [idx.name for idx in self.pinecone_client.list_indexes()]:
-                    self.index = self.pinecone_client.Index(self.config.pinecone_index_name)
-                    logger.info(f"✅ Connected to Pinecone index: {self.config.pinecone_index_name}")
+            if hasattr(self.config, 'enable_azure_openai') and self.config.enable_azure_openai:
+                if hasattr(self.config, 'azure_openai_api_key') and self.config.azure_openai_api_key and self.config.azure_openai_api_key != "placeholder":
+                    self.azure_client = openai.AzureOpenAI(
+                        api_key=self.config.azure_openai_api_key,
+                        api_version="2024-02-01",
+                        azure_endpoint=self.config.azure_openai_endpoint
+                    )
+                    logger.info("✅ Azure OpenAI client initialized")
                 else:
-                    logger.warning(f"⚠️ Pinecone index not found: {self.config.pinecone_index_name}")
-                    
+                    logger.warning("⚠️ Azure OpenAI API key not configured")
+            else:
+                logger.info("ℹ️ Azure OpenAI disabled in configuration")
         except Exception as e:
-            logger.error(f"❌ AI services initialization failed: {str(e)}")
+            logger.error(f"❌ Azure OpenAI initialization failed: {str(e)}")
+            
+        # Initialize Pinecone
+        try:
+            if hasattr(self.config, 'enable_pinecone_integration') and self.config.enable_pinecone_integration:
+                if hasattr(self.config, 'pinecone_api_key') and self.config.pinecone_api_key and self.config.pinecone_api_key != "placeholder":
+                    self.pinecone_client = Pinecone(api_key=self.config.pinecone_api_key)
+                    
+                    # Connect to existing index
+                    if hasattr(self.config, 'pinecone_index_name') and self.config.pinecone_index_name:
+                        try:
+                            indexes = [idx.name for idx in self.pinecone_client.list_indexes()]
+                            if self.config.pinecone_index_name in indexes:
+                                self.index = self.pinecone_client.Index(self.config.pinecone_index_name)
+                                logger.info(f"✅ Connected to Pinecone index: {self.config.pinecone_index_name}")
+                            else:
+                                logger.warning(f"⚠️ Pinecone index not found: {self.config.pinecone_index_name}")
+                        except Exception as idx_error:
+                            logger.warning(f"⚠️ Pinecone index connection failed: {str(idx_error)}")
+                else:
+                    logger.warning("⚠️ Pinecone API key not configured")
+            else:
+                logger.info("ℹ️ Pinecone integration disabled in configuration")
+        except Exception as e:
+            logger.error(f"❌ Pinecone initialization failed: {str(e)}")
+            
+        logger.info("🔧 AI services initialization completed")
             
     async def analyze_comprehensive(
         self, 
