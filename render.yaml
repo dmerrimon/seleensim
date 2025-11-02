@@ -4,7 +4,7 @@ services:
     env: python
     plan: starter
     buildCommand: pip install -r requirements.txt && pip uninstall -y numpy && pip install "numpy==1.24.3"
-    startCommand: cp -r config/* api/ && cp -r ml-models/* api/ && cd api && python main.py
+    startCommand: cp -r config/* . && cp -r ml-models/* . && python main.py
     envVars:
       - key: ENVIRONMENT
         value: production
