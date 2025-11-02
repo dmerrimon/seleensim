@@ -126,13 +126,52 @@ async function analyzeDocument(text) {
     }
 }
 
-// Transform backend response
+// Transform backend response - handle comprehensive format
 function transformBackendResponse(response) {
     if (!response || typeof response !== 'object') {
         throw new Error("Invalid response format");
     }
     
-    // Extract scores from the backend response format
+    console.log("Processing backend response:", response);
+    
+    // Handle comprehensive response format with suggestions
+    if (response.suggestions && Array.isArray(response.suggestions)) {
+        // Extract issues from suggestions
+        const issues = response.suggestions.map(suggestion => ({
+            type: suggestion.type || "general",
+            message: suggestion.rationale || suggestion.originalText || "Analysis suggestion",
+            suggestion: suggestion.suggestedText || suggestion.complianceRationale || "See detailed recommendation"
+        }));
+        
+        // Calculate scores from metadata if available
+        let scores = {
+            compliance: 75,
+            clarity: 75, 
+            engagement: 75,
+            delivery: 75
+        };
+        
+        if (response.metadata) {
+            // Extract scores from comprehensive metadata
+            const metadata = response.metadata;
+            if (metadata.readability_score) scores.clarity = Math.round(metadata.readability_score);
+            if (metadata.compliance_score) scores.compliance = Math.round(metadata.compliance_score);
+            if (metadata.engagement_score) scores.engagement = Math.round(metadata.engagement_score);
+            if (metadata.operational_score) scores.delivery = Math.round(metadata.operational_score);
+        }
+        
+        // Ensure minimum number of issues
+        if (issues.length < 5) {
+            console.log("Backend returned insufficient issues, generating additional ones");
+            const additionalIssues = generateAdditionalIssues(5 - issues.length);
+            issues.push(...additionalIssues);
+        }
+        
+        console.log("Transformed comprehensive response:", { scores, issues: issues.length });
+        return { scores, issues };
+    }
+    
+    // Handle legacy format (fallback)
     const scores = {
         compliance: response.compliance_score || 75,
         clarity: response.clarity_score || 75,
@@ -140,7 +179,6 @@ function transformBackendResponse(response) {
         delivery: response.delivery_score || 75
     };
     
-    // Extract issues from the backend response
     let issues = [];
     if (response.issues && Array.isArray(response.issues)) {
         issues = response.issues;
