@@ -12,7 +12,6 @@ const IlanaState = {
     currentSuggestions: [],
     activeFilters: ['all'],
     intelligenceLevel: 'Advanced AI',
-    amendmentRisk: 'Low',
     analysisMode: 'comprehensive'
 };
 
@@ -213,7 +212,7 @@ function transformAnalysisResult(backendResult) {
             const issue = {
                 id: `issue_${index}`,
                 type: suggestion.type || 'clarity',
-                severity: suggestion.amendmentRisk || 'medium',
+                severity: 'medium',
                 text: suggestion.originalText || 'Text requiring attention',
                 suggestion: suggestion.suggestedText || 'See recommendation',
                 rationale: suggestion.rationale || 'AI analysis suggests improvement',
@@ -246,18 +245,13 @@ function transformAnalysisResult(backendResult) {
         feasibility: Math.round(metadata.operational_score || 75)
     };
     
-    // Calculate amendment risk
-    const amendmentRisk = calculateAmendmentRisk(issues, scores);
-    
     IlanaState.currentIssues = issues;
     IlanaState.currentSuggestions = suggestions;
-    IlanaState.amendmentRisk = amendmentRisk;
     
     return {
         scores,
         issues,
         suggestions,
-        amendmentRisk,
         metadata: {
             processingTime: metadata.processing_time || 0,
             aiConfidence: metadata.ai_confidence || 'medium',
@@ -267,15 +261,6 @@ function transformAnalysisResult(backendResult) {
     };
 }
 
-// Calculate amendment risk based on issues
-function calculateAmendmentRisk(issues, scores) {
-    const highSeverityCount = issues.filter(i => i.severity === 'high').length;
-    const avgScore = (scores.clarity + scores.regulatory + scores.feasibility) / 3;
-    
-    if (highSeverityCount > 5 || avgScore < 60) return 'High';
-    if (highSeverityCount > 2 || avgScore < 75) return 'Medium';
-    return 'Low';
-}
 
 // Intelligent text sampling for large documents
 function intelligentTextSampling(text) {
@@ -341,7 +326,6 @@ function generateEnhancedFallbackAnalysis(text) {
         scores,
         issues,
         suggestions: [],
-        amendmentRisk: calculateAmendmentRisk(issues, scores),
         metadata: {
             processingTime: 0.5,
             aiConfidence: 'medium',
@@ -356,9 +340,6 @@ async function updateDashboard(analysisResult) {
     updateScoreCard('clarity', analysisResult.scores.clarity);
     updateScoreCard('regulatory', analysisResult.scores.regulatory);
     updateScoreCard('feasibility', analysisResult.scores.feasibility);
-    
-    // Update amendment risk
-    updateAmendmentRisk(analysisResult.amendmentRisk);
     
     // Update issues list
     displayIssues(analysisResult.issues);
@@ -432,25 +413,6 @@ function animateCounter(element, start, end, duration) {
     requestAnimationFrame(updateCounter);
 }
 
-// Update amendment risk display
-function updateAmendmentRisk(risk) {
-    const riskValue = document.getElementById('amendment-risk');
-    const riskExplanation = document.getElementById('risk-explanation');
-    
-    if (riskValue) {
-        riskValue.textContent = risk;
-        riskValue.className = `risk-value ${risk.toLowerCase()}`;
-    }
-    
-    if (riskExplanation) {
-        const explanations = {
-            'Low': 'Minimal risk of amendments based on current analysis',
-            'Medium': 'Moderate amendment risk - consider addressing identified issues',
-            'High': 'High amendment risk - significant issues require attention'
-        };
-        riskExplanation.textContent = explanations[risk] || 'Amendment risk assessment';
-    }
-}
 
 // Display issues in the panel
 function displayIssues(issues) {
@@ -693,7 +655,6 @@ async function performLightweightAnalysis(text) {
         scores,
         issues,
         suggestions: [],
-        amendmentRisk: calculateAmendmentRisk(issues, scores),
         metadata: { processingTime: 0.1, mode: 'lightweight' }
     };
 }
@@ -820,7 +781,6 @@ function generateAnalysisReport() {
             regulatory: document.getElementById('regulatory-score')?.textContent || '--',
             feasibility: document.getElementById('feasibility-score')?.textContent || '--'
         },
-        amendmentRisk: IlanaState.amendmentRisk,
         issues: IlanaState.currentIssues.map(issue => ({
             type: issue.type,
             severity: issue.severity,
@@ -951,7 +911,7 @@ function showLearnMoreModal(suggestion) {
             
             <div class="modal-section">
                 <h4>Regulatory Context:</h4>
-                <p class="modal-text">This suggestion aligns with ICH-GCP guidelines for protocol clarity and helps ensure regulatory compliance. Clear, unambiguous language reduces the risk of amendments during regulatory review.</p>
+                <p class="modal-text">This suggestion aligns with ICH-GCP guidelines for protocol clarity and helps ensure regulatory compliance. Clear, unambiguous language improves protocol quality and regulatory review.</p>
             </div>
             
             <div class="modal-section">
@@ -1047,9 +1007,6 @@ function resetDashboard() {
         if (fillElement) fillElement.style.width = '0%';
     });
     
-    // Reset amendment risk
-    const riskValue = document.getElementById('amendment-risk');
-    if (riskValue) riskValue.textContent = '--';
     
     // Reset issues list
     const issuesList = document.getElementById('issues-list');
@@ -1112,7 +1069,6 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         IlanaState,
         transformAnalysisResult,
-        calculateAmendmentRisk,
         generateEnhancedFallbackAnalysis
     };
 }

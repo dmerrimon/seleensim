@@ -51,7 +51,6 @@ class InlineSuggestion:
     fdaReference: Optional[str] = None
     emaReference: Optional[str] = None
     guidanceSource: Optional[str] = None
-    amendmentRisk: Optional[str] = None
     readabilityScore: Optional[float] = None
     operationalImpact: Optional[str] = None
     retentionRisk: Optional[str] = None
@@ -293,10 +292,6 @@ Please provide analysis in the following areas:
    - Assess impact on patient retention and enrollment
    - Suggest operational improvements
 
-4. AMENDMENT RISK:
-   - Predict likelihood of protocol amendments
-   - Identify high-risk language or requirements
-
 Return response as JSON with this structure:
 {{
     "compliance_issues": [
@@ -307,8 +302,7 @@ Return response as JSON with this structure:
             "suggested": "participants", 
             "rationale": "explanation",
             "fda_reference": "specific FDA guidance",
-            "ema_reference": "specific EMA guidance",
-            "amendment_risk": "low|medium|high"
+            "ema_reference": "specific EMA guidance"
         }}
     ],
     "clarity_issues": [
@@ -316,8 +310,7 @@ Return response as JSON with this structure:
             "type": "clarity",
             "subtype": "sentence_length|readability",
             "rationale": "explanation",
-            "readability_score": 8.5,
-            "amendment_risk": "low|medium|high"
+            "readability_score": 8.5
         }}
     ],
     "feasibility_issues": [
@@ -326,8 +319,7 @@ Return response as JSON with this structure:
             "subtype": "visit_frequency|enrollment_criteria",
             "rationale": "explanation",
             "operational_impact": "low|medium|high",
-            "retention_risk": "low|medium|high",
-            "amendment_risk": "low|medium|high"
+            "retention_risk": "low|medium|high"
         }}
     ]
 }}
@@ -363,7 +355,6 @@ Return response as JSON with this structure:
                         complianceRationale=f"AI Analysis: {issue.get('rationale', '')}",
                         fdaReference=issue.get("fda_reference"),
                         emaReference=issue.get("ema_reference"),
-                        amendmentRisk=issue.get("amendment_risk"),
                         backendConfidence="high",
                         range={"start": 0, "end": len(sentence)}
                     ))
@@ -378,7 +369,6 @@ Return response as JSON with this structure:
                         rationale=issue.get("rationale", ""),
                         complianceRationale="AI-powered clarity analysis",
                         readabilityScore=issue.get("readability_score"),
-                        amendmentRisk=issue.get("amendment_risk"),
                         backendConfidence="high",
                         range={"start": 0, "end": len(sentence)}
                     ))
@@ -394,7 +384,6 @@ Return response as JSON with this structure:
                         complianceRationale="AI-powered feasibility analysis",
                         operationalImpact=issue.get("operational_impact"),
                         retentionRisk=issue.get("retention_risk"),
-                        amendmentRisk=issue.get("amendment_risk"),
                         backendConfidence="high",
                         range={"start": 0, "end": len(sentence)}
                     ))
@@ -509,7 +498,6 @@ Return response as JSON with this structure:
                 rationale="AI recommendation: Use 'participants' instead of 'patients' for regulatory compliance",
                 complianceRationale="Based on Azure OpenAI analysis of FDA/EMA guidelines",
                 fdaReference="FDA guidance mentioned in AI analysis",
-                amendmentRisk="low",
                 backendConfidence="high",
                 range={"start": sentence.lower().find("patients"), "end": sentence.lower().find("patients") + 8}
             ))
@@ -525,7 +513,6 @@ Return response as JSON with this structure:
                 complianceRationale="Based on Azure OpenAI operational feasibility analysis",
                 operationalImpact="medium",
                 retentionRisk="medium",
-                amendmentRisk="medium",
                 backendConfidence="high",
                 range={"start": 0, "end": len(sentence)}
             ))
@@ -539,7 +526,6 @@ Return response as JSON with this structure:
                 suggestedText="Consider clarifying sentence structure",
                 rationale="AI analysis suggests improving sentence clarity and specificity",
                 complianceRationale="Based on Azure OpenAI clarity analysis",
-                amendmentRisk="medium",
                 backendConfidence="high",
                 range={"start": 0, "end": len(sentence)}
             ))
@@ -587,7 +573,6 @@ Return response as JSON with this structure:
                         rationale=f"Found similar protocol with {match.score:.1%} similarity",
                         complianceRationale=f"Based on analysis of {metadata.get('protocol_count', 'multiple')} similar protocols",
                         guidanceSource="Pinecone Vector Database",
-                        amendmentRisk=metadata.get("amendment_risk", "medium"),
                         backendConfidence="high",
                         range={"start": 0, "end": len(text)}
                     ))
@@ -614,7 +599,6 @@ Return response as JSON with this structure:
                 rationale="Use 'participants' instead of 'patients' for participant-centered language",
                 complianceRationale="ICH E6(R2) Section 4.1.1 - Participant Rights and Welfare",
                 fdaReference="ICH E6(R2) Section 4.1.1",
-                amendmentRisk="low",
                 backendConfidence="medium",
                 range={"start": start_pos, "end": start_pos + 8}
             ))
@@ -631,7 +615,6 @@ Return response as JSON with this structure:
                 rationale=f"Sentence has {len(words)} words. Optimal clinical protocol sentences are 15-20 words.",
                 complianceRationale="FDA Guidance for Industry recommends clear, concise language",
                 readabilityScore=readability_score,
-                amendmentRisk="medium",
                 backendConfidence="medium",
                 range={"start": 0, "end": len(sentence)}
             ))

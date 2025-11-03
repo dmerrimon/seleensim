@@ -80,7 +80,6 @@ class InlineSuggestion(BaseModel):
     fdaReference: Optional[str] = None
     emaReference: Optional[str] = None
     guidanceSource: Optional[str] = None
-    amendmentRisk: Optional[str] = None
     readabilityScore: Optional[float] = None
     operationalImpact: Optional[str] = None
     retentionRisk: Optional[str] = None
@@ -477,7 +476,6 @@ async def analyze_comprehensive(
     - Pinecone vector database insights
     - Real-time readability scoring
     - FDA/EMA compliance checking
-    - Amendment risk prediction
     - Operational feasibility assessment
     """
     
@@ -503,7 +501,6 @@ async def analyze_comprehensive(
                 fdaReference=suggestion_data.fdaReference,
                 emaReference=suggestion_data.emaReference,
                 guidanceSource=suggestion_data.guidanceSource,
-                amendmentRisk=suggestion_data.amendmentRisk,
                 readabilityScore=suggestion_data.readabilityScore,
                 operationalImpact=suggestion_data.operationalImpact,
                 retentionRisk=suggestion_data.retentionRisk,
