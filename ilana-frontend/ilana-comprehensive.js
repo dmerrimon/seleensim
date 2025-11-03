@@ -75,8 +75,29 @@ function setupEventListeners() {
 function bindDocumentEvents() {
     if (typeof Word !== 'undefined') {
         try {
-            // Document change detection for real-time analysis (simplified)
-            console.log("✅ Document event bindings configured (simplified)");
+            // Set up real document change monitoring
+            Word.run(async (context) => {
+                context.document.onParagraphAdded.add(() => {
+                    console.log("📝 Document changed - triggering real-time analysis");
+                    debounceRealTimeAnalysis();
+                });
+                
+                context.document.onParagraphChanged.add(() => {
+                    console.log("📝 Document changed - triggering real-time analysis");
+                    debounceRealTimeAnalysis();
+                });
+                
+                await context.sync();
+                console.log("✅ Real-time document event bindings active");
+            }).catch(error => {
+                console.warn("Advanced event binding failed, using simplified monitoring:", error);
+                // Fallback: periodic checking when real-time is enabled
+                setInterval(() => {
+                    if (IlanaState.realTimeEnabled && !IlanaState.isAnalyzing) {
+                        debounceRealTimeAnalysis();
+                    }
+                }, 5000); // Check every 5 seconds when real-time is on
+            });
         } catch (error) {
             console.warn("Document event binding failed:", error);
         }
@@ -146,20 +167,7 @@ async function extractDocumentText() {
 // Perform comprehensive analysis with backend
 async function performComprehensiveAnalysis(text) {
     const payload = {
-        text: text.length > 145000 ? intelligentTextSampling(text) : text,
-        mode: 'comprehensive',
-        options: {
-            analyze_compliance: true,
-            analyze_clarity: true,
-            analyze_feasibility: true,
-            analyze_safety: true,
-            analyze_regulatory: true,
-            comprehensive_mode: true,
-            intelligence_level: IlanaState.intelligenceLevel,
-            real_time: IlanaState.realTimeEnabled,
-            return_highlights: true,
-            min_issues: 8
-        }
+        text: text.length > 145000 ? intelligentTextSampling(text) : text
     };
     
     console.log("🔍 Sending comprehensive analysis request:", payload);
