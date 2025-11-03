@@ -99,121 +99,6 @@ body {
     font-weight: 500;
 }
 
-/* Quality Dashboard */
-.quality-dashboard {
-    padding: 20px 16px;
-    background: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-    flex-shrink: 0;
-}
-
-.dashboard-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.dashboard-title::before {
-    content: "📊";
-    font-size: 18px;
-}
-
-/* Quality Scores */
-.quality-scores {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 20px;
-}
-
-/* Responsive for smaller screens */
-@media (max-width: 480px) {
-    .quality-scores {
-        grid-template-columns: 1fr;
-    }
-}
-
-.score-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 16px;
-    transition: all 0.2s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.score-card:hover {
-    border-color: #cbd5e1;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.score-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--accent-color);
-}
-
-.score-card.clarity {
-    --accent-color: #3b82f6;
-}
-
-.score-card.regulatory {
-    --accent-color: #10b981;
-}
-
-.score-card.feasibility {
-    --accent-color: #f59e0b;
-}
-
-.score-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-.score-label {
-    font-size: 14px;
-    font-weight: 600;
-    color: #374151;
-}
-
-.score-value {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--accent-color);
-}
-
-.score-bar {
-    height: 6px;
-    background: #e5e7eb;
-    border-radius: 3px;
-    overflow: hidden;
-    margin-bottom: 8px;
-}
-
-.score-fill {
-    height: 100%;
-    background: var(--accent-color);
-    border-radius: 3px;
-    width: 0%;
-    transition: width 0.8s ease;
-}
-
-.score-details {
-    font-size: 12px;
-    color: #6b7280;
-    font-style: italic;
-}
 
 
 /* Issues Panel */
@@ -758,10 +643,6 @@ body {
 @media (max-width: 320px) {
     .analysis-controls {
         flex-direction: column;
-    }
-    
-    .quality-scores {
-        grid-template-columns: 1fr;
     }
     
     .suggestions-preview {

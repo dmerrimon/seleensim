@@ -206,19 +206,12 @@ function transformAnalysisResult(backendResult) {
         });
     }
     
-    // Extract scores from metadata
-    const metadata = backendResult.metadata || {};
-    const scores = {
-        clarity: Math.round(metadata.readability_score || 75),
-        regulatory: Math.round(metadata.compliance_score || 75),
-        feasibility: Math.round(metadata.operational_score || 75)
-    };
+    // No score processing needed
     
     IlanaState.currentIssues = issues;
     IlanaState.currentSuggestions = suggestions;
     
     return {
-        scores,
         issues,
         suggestions,
         metadata: {
@@ -368,15 +361,8 @@ function transformBackendSuggestions(suggestions) {
         });
     });
     
-    // Calculate basic scores based on issues found
-    const scores = {
-        clarity: Math.max(60, 100 - (issues.filter(i => i.type === 'clarity').length * 8)),
-        regulatory: Math.max(65, 100 - (issues.filter(i => i.type === 'compliance').length * 10)),
-        feasibility: Math.max(70, 100 - (issues.filter(i => i.type === 'feasibility').length * 12))
-    };
     
     return {
-        scores,
         issues,
         suggestions,
         metadata: {
@@ -442,14 +428,7 @@ function generateEnhancedFallbackAnalysis(text) {
         }
     ];
     
-    const scores = {
-        clarity: 72 + Math.floor(Math.random() * 16),
-        regulatory: 68 + Math.floor(Math.random() * 20),
-        feasibility: 74 + Math.floor(Math.random() * 14)
-    };
-    
     return {
-        scores,
         issues,
         suggestions: [],
         metadata: {
@@ -462,82 +441,12 @@ function generateEnhancedFallbackAnalysis(text) {
 
 // Update dashboard with analysis results
 async function updateDashboard(analysisResult) {
-    // Update quality scores
-    updateScoreCard('clarity', analysisResult.scores.clarity);
-    updateScoreCard('regulatory', analysisResult.scores.regulatory);
-    updateScoreCard('feasibility', analysisResult.scores.feasibility);
-    
     // Update issues list
     displayIssues(analysisResult.issues);
     
     console.log("📊 Dashboard updated with analysis results");
 }
 
-// Update individual score card
-function updateScoreCard(type, score) {
-    const scoreElement = document.getElementById(`${type}-score`);
-    const fillElement = document.getElementById(`${type}-fill`);
-    const detailsElement = document.getElementById(`${type}-details`);
-    
-    if (scoreElement && fillElement) {
-        // Animate score update
-        animateCounter(scoreElement, 0, score, 1000);
-        
-        // Animate progress bar
-        setTimeout(() => {
-            fillElement.style.width = `${score}%`;
-        }, 200);
-        
-        // Update details based on score
-        if (detailsElement) {
-            const details = getScoreDetails(type, score);
-            detailsElement.textContent = details;
-        }
-    }
-}
-
-// Get detailed explanation for score
-function getScoreDetails(type, score) {
-    const explanations = {
-        clarity: {
-            high: "Excellent readability and clear structure",
-            medium: "Good clarity with minor improvements needed",
-            low: "Significant clarity improvements recommended"
-        },
-        regulatory: {
-            high: "Strong compliance with ICH-GCP and FDA guidelines",
-            medium: "Generally compliant with some gaps to address",
-            low: "Multiple regulatory compliance issues identified"
-        },
-        feasibility: {
-            high: "Highly feasible design with optimal site burden",
-            medium: "Feasible with some operational considerations",
-            low: "Feasibility concerns may impact enrollment"
-        }
-    };
-    
-    const level = score >= 80 ? 'high' : score >= 60 ? 'medium' : 'low';
-    return explanations[type]?.[level] || `${type} analysis complete`;
-}
-
-// Animate counter for scores
-function animateCounter(element, start, end, duration) {
-    const startTime = Date.now();
-    
-    function updateCounter() {
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const current = Math.round(start + (end - start) * progress);
-        
-        element.textContent = current;
-        
-        if (progress < 1) {
-            requestAnimationFrame(updateCounter);
-        }
-    }
-    
-    requestAnimationFrame(updateCounter);
-}
 
 
 // Display issues in the panel
@@ -813,11 +722,6 @@ function generateAnalysisReport() {
             analysisMode: IlanaState.analysisMode,
             intelligenceLevel: IlanaState.intelligenceLevel
         },
-        scores: {
-            clarity: document.getElementById('clarity-score')?.textContent || '--',
-            regulatory: document.getElementById('regulatory-score')?.textContent || '--',
-            feasibility: document.getElementById('feasibility-score')?.textContent || '--'
-        },
         issues: IlanaState.currentIssues.map(issue => ({
             type: issue.type,
             severity: issue.severity,
@@ -1035,15 +939,6 @@ function updateProcessingDetails(text) {
 
 // Reset dashboard to initial state
 function resetDashboard() {
-    // Reset scores
-    ['clarity', 'regulatory', 'feasibility'].forEach(type => {
-        const scoreElement = document.getElementById(`${type}-score`);
-        const fillElement = document.getElementById(`${type}-fill`);
-        
-        if (scoreElement) scoreElement.textContent = '--';
-        if (fillElement) fillElement.style.width = '0%';
-    });
-    
     
     // Reset issues list
     const issuesList = document.getElementById('issues-list');
