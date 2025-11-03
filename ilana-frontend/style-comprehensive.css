@@ -34,7 +34,8 @@ body {
     flex-direction: column;
     height: 100vh;
     max-height: 100vh;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     background: #ffffff;
 }
 
@@ -536,14 +537,15 @@ body {
 }
 
 .control-btn.primary {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    background: #000000;
     color: #ffffff;
+    border: none;
 }
 
 .control-btn.primary:hover {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    background: #333333;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .control-btn.secondary {

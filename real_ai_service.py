@@ -168,15 +168,24 @@ class RealAIService:
             sentences = self._split_into_sentences(text)
             suggestions = []
             
-            # Analyze each sentence with AI services
+            # Analyze sentences in parallel for faster processing
+            import asyncio
+            sentence_tasks = []
             for i, sentence in enumerate(sentences):
                 if len(sentence.strip()) < 10:
                     continue
                     
-                sentence_suggestions = await self._analyze_sentence_with_ai(
-                    sentence, i, options
-                )
-                suggestions.extend(sentence_suggestions)
+                task = self._analyze_sentence_with_ai(sentence, i, options)
+                sentence_tasks.append(task)
+            
+            # Process all sentences in parallel
+            if sentence_tasks:
+                parallel_results = await asyncio.gather(*sentence_tasks, return_exceptions=True)
+                for result in parallel_results:
+                    if isinstance(result, list):
+                        suggestions.extend(result)
+                    elif isinstance(result, Exception):
+                        logger.warning(f"Sentence analysis failed: {result}")
             
             # Get vector search insights if enabled
             if self.index and options.get("pinecone_vector_search", True):
