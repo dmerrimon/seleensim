@@ -6,7 +6,6 @@
 // Global state management
 const IlanaState = {
     isAnalyzing: false,
-    realTimeEnabled: false,
     currentDocument: null,
     currentIssues: [],
     currentSuggestions: [],
@@ -28,7 +27,6 @@ Office.onReady((info) => {
         console.log("🚀 Ilana Comprehensive AI loaded successfully");
         initializeUI();
         setupEventListeners();
-        bindDocumentEvents();
         updateStatus('Ready', 'ready');
     }
 });
@@ -71,49 +69,6 @@ function setupEventListeners() {
     console.log("✅ Event listeners configured");
 }
 
-// Bind to Word document events for real-time analysis
-function bindDocumentEvents() {
-    if (typeof Word !== 'undefined') {
-        try {
-            // Set up real document change monitoring
-            Word.run(async (context) => {
-                context.document.onParagraphAdded.add(() => {
-                    console.log("📝 Document changed - triggering real-time analysis");
-                    debounceRealTimeAnalysis();
-                });
-                
-                context.document.onParagraphChanged.add(() => {
-                    console.log("📝 Document changed - triggering real-time analysis");
-                    debounceRealTimeAnalysis();
-                });
-                
-                await context.sync();
-                console.log("✅ Real-time document event bindings active");
-            }).catch(error => {
-                console.warn("Advanced event binding failed, using simplified monitoring:", error);
-                // Fallback: periodic checking when real-time is enabled
-                setInterval(() => {
-                    if (IlanaState.realTimeEnabled && !IlanaState.isAnalyzing) {
-                        debounceRealTimeAnalysis();
-                    }
-                }, 5000); // Check every 5 seconds when real-time is on
-            });
-        } catch (error) {
-            console.warn("Document event binding failed:", error);
-        }
-    }
-}
-
-// Debounced real-time analysis
-let realTimeTimeout;
-function debounceRealTimeAnalysis() {
-    clearTimeout(realTimeTimeout);
-    realTimeTimeout = setTimeout(() => {
-        if (IlanaState.realTimeEnabled && !IlanaState.isAnalyzing) {
-            performQuickAnalysis();
-        }
-    }, 2000); // 2 second delay after user stops typing
-}
 
 // Main analysis function
 async function startAnalysis() {
@@ -166,6 +121,12 @@ async function extractDocumentText() {
 
 // Perform comprehensive analysis with backend
 async function performComprehensiveAnalysis(text) {
+    // For large documents, use chunked analysis for speed
+    if (text.length > 20000) {
+        console.log("📊 Large document detected, using chunked analysis for speed");
+        return await performChunkedAnalysis(text);
+    }
+    
     const payload = {
         text: text.length > 145000 ? intelligentTextSampling(text) : text
     };
@@ -269,6 +230,157 @@ function transformAnalysisResult(backendResult) {
     };
 }
 
+// Chunked analysis for speed - process multiple sections in parallel
+async function performChunkedAnalysis(text) {
+    const startTime = Date.now();
+    updateStatus('Fast chunked analysis...', 'analyzing');
+    
+    // Split into smaller, manageable chunks
+    const chunks = smartTextChunking(text, 8000); // 8KB chunks for speed
+    console.log(`📊 Split document into ${chunks.length} chunks for parallel processing`);
+    
+    // Show progress
+    updateProcessingDetails(`Processing ${chunks.length} chunks in parallel...`);
+    
+    // Process first 3 chunks immediately for quick results
+    const quickChunks = chunks.slice(0, 3);
+    const quickPromises = quickChunks.map(chunk => analyzeSingleChunk(chunk));
+    
+    try {
+        // Get quick results first
+        const quickResults = await Promise.allSettled(quickPromises);
+        const quickSuggestions = [];
+        
+        quickResults.forEach(result => {
+            if (result.status === 'fulfilled' && result.value.suggestions) {
+                quickSuggestions.push(...result.value.suggestions);
+            }
+        });
+        
+        // Show quick results immediately
+        if (quickSuggestions.length > 0) {
+            const quickAnalysis = transformBackendSuggestions(quickSuggestions);
+            await updateDashboard(quickAnalysis);
+            updateStatus('Getting more results...', 'analyzing');
+        }
+        
+        // Process remaining chunks if any
+        if (chunks.length > 3) {
+            updateProcessingDetails(`Processing remaining ${chunks.length - 3} chunks...`);
+            const remainingChunks = chunks.slice(3, Math.min(chunks.length, 8)); // Limit to 8 total chunks
+            const remainingPromises = remainingChunks.map(chunk => analyzeSingleChunk(chunk));
+            
+            const remainingResults = await Promise.allSettled(remainingPromises);
+            remainingResults.forEach(result => {
+                if (result.status === 'fulfilled' && result.value.suggestions) {
+                    quickSuggestions.push(...result.value.suggestions);
+                }
+            });
+        }
+        
+        // Combine all results
+        const finalAnalysis = transformBackendSuggestions(quickSuggestions);
+        const processingTime = (Date.now() - startTime) / 1000;
+        
+        console.log(`⚡ Chunked analysis completed in ${processingTime}s with ${quickSuggestions.length} suggestions`);
+        
+        return finalAnalysis;
+        
+    } catch (error) {
+        console.warn("⚡ Chunked analysis failed, using fallback:", error);
+        return generateEnhancedFallbackAnalysis(text.substring(0, 10000)); // Quick fallback
+    }
+}
+
+// Analyze a single chunk quickly
+async function analyzeSingleChunk(chunkText) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout per chunk
+    
+    try {
+        const response = await fetch(`${API_CONFIG.baseUrl}/analyze-comprehensive`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({ text: chunkText }),
+            signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
+        
+        if (!response.ok) {
+            throw new Error(`Chunk analysis failed: ${response.status}`);
+        }
+        
+        return await response.json();
+        
+    } catch (error) {
+        clearTimeout(timeoutId);
+        console.warn("Chunk analysis failed:", error.message);
+        return { suggestions: [] };
+    }
+}
+
+// Smart text chunking that preserves sentence boundaries
+function smartTextChunking(text, maxChunkSize = 8000) {
+    const chunks = [];
+    const sentences = text.split(/(?<=[.!?])\s+/);
+    
+    let currentChunk = '';
+    
+    for (const sentence of sentences) {
+        if (currentChunk.length + sentence.length > maxChunkSize && currentChunk.length > 0) {
+            chunks.push(currentChunk.trim());
+            currentChunk = sentence;
+        } else {
+            currentChunk += (currentChunk ? ' ' : '') + sentence;
+        }
+    }
+    
+    if (currentChunk.trim()) {
+        chunks.push(currentChunk.trim());
+    }
+    
+    return chunks;
+}
+
+// Transform backend suggestions to UI format
+function transformBackendSuggestions(suggestions) {
+    const issues = [];
+    
+    suggestions.forEach((suggestion, index) => {
+        issues.push({
+            id: `issue_${index}`,
+            type: suggestion.type || 'clarity',
+            severity: 'medium',
+            text: suggestion.originalText || 'Text requiring attention',
+            suggestion: suggestion.suggestedText || 'See recommendation',
+            rationale: suggestion.rationale || 'AI analysis suggests improvement',
+            complianceRationale: suggestion.complianceRationale
+        });
+    });
+    
+    // Calculate basic scores based on issues found
+    const scores = {
+        clarity: Math.max(60, 100 - (issues.filter(i => i.type === 'clarity').length * 8)),
+        regulatory: Math.max(65, 100 - (issues.filter(i => i.type === 'compliance').length * 10)),
+        feasibility: Math.max(70, 100 - (issues.filter(i => i.type === 'feasibility').length * 12))
+    };
+    
+    return {
+        scores,
+        issues,
+        suggestions,
+        metadata: {
+            processingTime: 0,
+            aiConfidence: 'high',
+            vectorsSearched: 0,
+            azureEnabled: true
+        }
+    };
+}
 
 // Intelligent text sampling for large documents
 function intelligentTextSampling(text) {
@@ -605,116 +717,6 @@ function setupFilterButtons() {
     });
 }
 
-// Toggle real-time analysis
-function toggleRealTime() {
-    IlanaState.realTimeEnabled = !IlanaState.realTimeEnabled;
-    
-    const toggleBtn = document.getElementById('real-time-toggle');
-    if (toggleBtn) {
-        const btnText = toggleBtn.querySelector('.btn-text');
-        if (btnText) {
-            btnText.textContent = `Real-time: ${IlanaState.realTimeEnabled ? 'ON' : 'OFF'}`;
-        }
-        
-        if (IlanaState.realTimeEnabled) {
-            toggleBtn.classList.add('active');
-        } else {
-            toggleBtn.classList.remove('active');
-        }
-    }
-    
-    updateStatus(
-        IlanaState.realTimeEnabled ? 'Real-time monitoring active' : 'Real-time monitoring disabled',
-        'ready'
-    );
-    
-    console.log(`⚡ Real-time analysis: ${IlanaState.realTimeEnabled ? 'ENABLED' : 'DISABLED'}`);
-}
-
-// Quick analysis for real-time mode
-async function performQuickAnalysis() {
-    if (IlanaState.isAnalyzing) return;
-    
-    try {
-        updateStatus('Quick analysis...', 'analyzing');
-        
-        const documentText = await extractDocumentText();
-        if (!documentText || documentText.length < 100) return;
-        
-        // Simplified analysis for real-time
-        const quickResult = await performLightweightAnalysis(documentText);
-        await updateDashboard(quickResult);
-        
-        updateStatus('Real-time monitoring', 'ready');
-        
-    } catch (error) {
-        console.warn("Quick analysis failed:", error);
-        updateStatus('Real-time monitoring', 'ready');
-    }
-}
-
-// Lightweight analysis for real-time mode
-async function performLightweightAnalysis(text) {
-    // Use faster, simpler analysis for real-time updates
-    const issues = detectBasicIssues(text);
-    const scores = calculateBasicScores(text);
-    
-    return {
-        scores,
-        issues,
-        suggestions: [],
-        metadata: { processingTime: 0.1, mode: 'lightweight' }
-    };
-}
-
-// Basic issue detection for lightweight analysis
-function detectBasicIssues(text) {
-    const issues = [];
-    
-    // Simple heuristics for common issues
-    if (text.includes('TBD') || text.includes('To be determined')) {
-        issues.push({
-            id: 'tbd_' + Date.now(),
-            type: 'clarity',
-            severity: 'medium',
-            text: 'TBD placeholder found',
-            suggestion: 'Replace TBD with specific information',
-            rationale: 'Placeholders should be resolved before finalization'
-        });
-    }
-    
-    // Check for very long sentences (>200 characters)
-    const sentences = text.split(/[.!?]+/);
-    sentences.forEach((sentence, index) => {
-        if (sentence.trim().length > 200) {
-            issues.push({
-                id: `long_sentence_${index}`,
-                type: 'clarity',
-                severity: 'low',
-                text: sentence.substring(0, 100) + '...',
-                suggestion: 'Consider breaking into shorter sentences',
-                rationale: 'Shorter sentences improve readability'
-            });
-        }
-    });
-    
-    return issues.slice(0, 5); // Limit for performance
-}
-
-// Basic score calculation
-function calculateBasicScores(text) {
-    const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 10);
-    const avgSentenceLength = sentences.reduce((sum, s) => sum + s.length, 0) / sentences.length;
-    
-    // Simple readability heuristic
-    const clarityScore = Math.max(20, Math.min(95, 100 - (avgSentenceLength - 20) * 2));
-    
-    return {
-        clarity: Math.round(clarityScore),
-        regulatory: Math.round(70 + Math.random() * 20),
-        feasibility: Math.round(75 + Math.random() * 15)
-    };
-}
 
 // Jump to next issue
 function jumpToNextIssue() {

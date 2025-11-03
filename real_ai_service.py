@@ -242,18 +242,18 @@ class RealAIService:
             # Create prompt for Azure OpenAI analysis
             prompt = self._create_analysis_prompt(sentence, options)
             
-            # Call Azure OpenAI with optimized settings for parallel processing
+            # Call Azure OpenAI with speed-optimized settings
             response = self.azure_client.chat.completions.create(
                 model=self.config.azure_openai_deployment,
                 messages=[
                     {
                         "role": "system", 
-                        "content": "You are an expert clinical protocol analyst. Provide concise, actionable feedback."
+                        "content": "Expert clinical protocol analyst. Provide concise feedback."
                     },
                     {"role": "user", "content": prompt}
                 ],
-                max_tokens=400,  # Reduced for faster response
-                temperature=0.2  # Lower for consistency
+                max_tokens=200,  # Reduced for speed
+                temperature=0.1  # Lower for consistency and speed
             )
             
             # Parse AI response into suggestions
@@ -268,62 +268,25 @@ class RealAIService:
         return suggestions
     
     def _create_analysis_prompt(self, sentence: str, options: Dict[str, Any]) -> str:
-        """Create analysis prompt for Azure OpenAI"""
+        """Create simplified, fast analysis prompt for Azure OpenAI"""
         
-        prompt = f"""
-Analyze this clinical protocol sentence for regulatory compliance and clarity:
+        prompt = f"""Analyze this clinical protocol sentence quickly:
 
-SENTENCE: "{sentence}"
+"{sentence}"
 
-Please provide analysis in the following areas:
+Find issues in these areas:
+1. Compliance: Use "participants" not "patients", check FDA/EMA language
+2. Clarity: Check sentence length and readability 
+3. Feasibility: Check visit frequency and operational burden
 
-1. REGULATORY COMPLIANCE:
-   - Check against FDA/EMA guidelines
-   - Identify any terminology that should be updated
-   - Suggest specific regulatory references
-
-2. CLARITY & READABILITY:
-   - Assess sentence length and complexity
-   - Calculate readability level
-   - Suggest improvements for clarity
-
-3. OPERATIONAL FEASIBILITY:
-   - Identify potential operational challenges
-   - Assess impact on patient retention and enrollment
-   - Suggest operational improvements
-
-Return response as JSON with this structure:
+Return JSON:
 {{
-    "compliance_issues": [
-        {{
-            "type": "compliance",
-            "subtype": "participant_language",
-            "original": "patients",
-            "suggested": "participants", 
-            "rationale": "explanation",
-            "fda_reference": "specific FDA guidance",
-            "ema_reference": "specific EMA guidance"
-        }}
-    ],
-    "clarity_issues": [
-        {{
-            "type": "clarity",
-            "subtype": "sentence_length|readability",
-            "rationale": "explanation",
-            "readability_score": 8.5
-        }}
-    ],
-    "feasibility_issues": [
-        {{
-            "type": "feasibility", 
-            "subtype": "visit_frequency|enrollment_criteria",
-            "rationale": "explanation",
-            "operational_impact": "low|medium|high",
-            "retention_risk": "low|medium|high"
-        }}
+    "issues": [
+        {{"type": "compliance", "original": "patients", "suggested": "participants", "rationale": "regulatory requirement"}},
+        {{"type": "feasibility", "rationale": "weekly visits create participant burden"}},
+        {{"type": "clarity", "rationale": "sentence too long/complex"}}
     ]
-}}
-"""
+}}"""
         
         return prompt
     
@@ -344,49 +307,46 @@ Return response as JSON with this structure:
             if json_str:
                 analysis = json.loads(json_str)
                 
-                # Process compliance issues
-                for issue in analysis.get("compliance_issues", []):
-                    suggestions.append(InlineSuggestion(
-                        type=issue.get("type", "compliance"),
-                        subtype=issue.get("subtype"),
-                        originalText=issue.get("original", ""),
-                        suggestedText=issue.get("suggested", ""),
-                        rationale=issue.get("rationale", ""),
-                        complianceRationale=f"AI Analysis: {issue.get('rationale', '')}",
-                        fdaReference=issue.get("fda_reference"),
-                        emaReference=issue.get("ema_reference"),
-                        backendConfidence="high",
-                        range={"start": 0, "end": len(sentence)}
-                    ))
-                
-                # Process clarity issues
-                for issue in analysis.get("clarity_issues", []):
-                    suggestions.append(InlineSuggestion(
-                        type=issue.get("type", "clarity"),
-                        subtype=issue.get("subtype"),
-                        originalText=sentence,
-                        suggestedText="Consider revision for improved clarity",
-                        rationale=issue.get("rationale", ""),
-                        complianceRationale="AI-powered clarity analysis",
-                        readabilityScore=issue.get("readability_score"),
-                        backendConfidence="high",
-                        range={"start": 0, "end": len(sentence)}
-                    ))
-                
-                # Process feasibility issues
-                for issue in analysis.get("feasibility_issues", []):
-                    suggestions.append(InlineSuggestion(
-                        type=issue.get("type", "feasibility"),
-                        subtype=issue.get("subtype"),
-                        originalText=sentence,
-                        suggestedText="Review operational feasibility",
-                        rationale=issue.get("rationale", ""),
-                        complianceRationale="AI-powered feasibility analysis",
-                        operationalImpact=issue.get("operational_impact"),
-                        retentionRisk=issue.get("retention_risk"),
-                        backendConfidence="high",
-                        range={"start": 0, "end": len(sentence)}
-                    ))
+                # Process simplified issues format
+                for issue in analysis.get("issues", []):
+                    issue_type = issue.get("type", "clarity")
+                    
+                    if issue_type == "compliance":
+                        suggestions.append(InlineSuggestion(
+                            type="compliance",
+                            subtype="participant_language",
+                            originalText=issue.get("original", ""),
+                            suggestedText=issue.get("suggested", ""),
+                            rationale=issue.get("rationale", ""),
+                            complianceRationale="AI regulatory analysis",
+                            fdaReference="FDA guidelines",
+                            backendConfidence="high",
+                            range={"start": 0, "end": len(sentence)}
+                        ))
+                    elif issue_type == "feasibility":
+                        suggestions.append(InlineSuggestion(
+                            type="feasibility",
+                            subtype="operational_burden",
+                            originalText=sentence,
+                            suggestedText="Review operational feasibility",
+                            rationale=issue.get("rationale", ""),
+                            complianceRationale="AI feasibility analysis",
+                            operationalImpact="medium",
+                            retentionRisk="medium",
+                            backendConfidence="high",
+                            range={"start": 0, "end": len(sentence)}
+                        ))
+                    elif issue_type == "clarity":
+                        suggestions.append(InlineSuggestion(
+                            type="clarity",
+                            subtype="sentence_clarity",
+                            originalText=sentence,
+                            suggestedText="Consider revision for improved clarity",
+                            rationale=issue.get("rationale", ""),
+                            complianceRationale="AI clarity analysis",
+                            backendConfidence="high",
+                            range={"start": 0, "end": len(sentence)}
+                        ))
             else:
                 # If no valid JSON found, extract insights from text
                 suggestions = self._extract_insights_from_text(sentence, ai_response)
