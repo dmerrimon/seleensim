@@ -149,7 +149,7 @@ async function startAnalysis() {
         
         // Update UI with results
         await updateDashboard(analysisResult);
-        await highlightIssuesInDocument(analysisResult.issues);
+        // Removed highlighting function - was causing confusion
         
         updateStatus(`Analysis complete - ${analysisResult.issues.length} issues found`, 'ready');
         
@@ -280,78 +280,62 @@ function transformAnalysisResult(backendResult) {
     };
 }
 
-// Chunked analysis for speed - process multiple sections in parallel
+// Optimized chunked analysis - faster and more reliable
 async function performChunkedAnalysis(text) {
     const startTime = Date.now();
-    updateStatus('Fast chunked analysis...', 'analyzing');
+    updateStatus('Fast analysis...', 'analyzing');
     
-    // Split into smaller, manageable chunks
-    const chunks = smartTextChunking(text, 8000); // 8KB chunks for speed
-    console.log(`📊 Split document into ${chunks.length} chunks for parallel processing`);
+    // Use larger chunks for speed and limit total chunks
+    const chunks = smartTextChunking(text, 15000); // Larger 15KB chunks for speed
+    const maxChunks = Math.min(chunks.length, 3); // Maximum 3 chunks for speed
+    const selectedChunks = chunks.slice(0, maxChunks);
     
-    // Show progress
-    updateProcessingDetails(`Processing ${chunks.length} chunks in parallel...`);
-    
-    // Process first 2 chunks immediately for quick results (reduced for stability)
-    const quickChunks = chunks.slice(0, 2);
-    const quickPromises = quickChunks.map((chunk, index) => {
-        console.log(`🚀 Starting chunk ${index + 1} analysis (${chunk.length} chars)`);
-        return analyzeSingleChunk(chunk);
-    });
+    console.log(`📊 Processing ${maxChunks} optimized chunks (reduced for speed)`);
+    updateProcessingDetails(`Analyzing ${maxChunks} sections...`);
     
     try {
-        // Get quick results first
-        const quickResults = await Promise.allSettled(quickPromises);
-        const quickSuggestions = [];
+        // Process chunks sequentially to avoid timeout issues
+        const allSuggestions = [];
         
-        quickResults.forEach(result => {
-            if (result.status === 'fulfilled' && result.value.suggestions) {
-                quickSuggestions.push(...result.value.suggestions);
-            }
-        });
-        
-        // Show quick results immediately
-        if (quickSuggestions.length > 0) {
-            const quickAnalysis = transformBackendSuggestions(quickSuggestions);
-            await updateDashboard(quickAnalysis);
-            updateStatus('Getting more results...', 'analyzing');
-        }
-        
-        // Process remaining chunks if any
-        if (chunks.length > 2) {
-            updateProcessingDetails(`Processing remaining ${chunks.length - 2} chunks...`);
-            const remainingChunks = chunks.slice(2, Math.min(chunks.length, 6)); // Limit to 6 total chunks for stability
-            const remainingPromises = remainingChunks.map((chunk, index) => {
-                console.log(`🚀 Starting remaining chunk ${index + 3} analysis (${chunk.length} chars)`);
-                return analyzeSingleChunk(chunk);
-            });
+        for (let i = 0; i < selectedChunks.length; i++) {
+            const chunk = selectedChunks[i];
+            console.log(`🚀 Processing chunk ${i + 1} of ${maxChunks} (${chunk.length} chars)`);
             
-            const remainingResults = await Promise.allSettled(remainingPromises);
-            remainingResults.forEach(result => {
-                if (result.status === 'fulfilled' && result.value.suggestions) {
-                    quickSuggestions.push(...result.value.suggestions);
+            try {
+                const result = await analyzeSingleChunk(chunk);
+                if (result && result.suggestions) {
+                    allSuggestions.push(...result.suggestions);
+                    
+                    // Show progress after each chunk
+                    if (allSuggestions.length > 0) {
+                        const progressAnalysis = transformBackendSuggestions(allSuggestions);
+                        await updateDashboard(progressAnalysis);
+                    }
                 }
-            });
+            } catch (chunkError) {
+                console.warn(`Chunk ${i + 1} failed, continuing:`, chunkError.message);
+                continue;
+            }
         }
         
-        // Combine all results
-        const finalAnalysis = transformBackendSuggestions(quickSuggestions);
+        // Final results
+        const finalAnalysis = transformBackendSuggestions(allSuggestions);
         const processingTime = (Date.now() - startTime) / 1000;
         
-        console.log(`⚡ Chunked analysis completed in ${processingTime}s with ${quickSuggestions.length} suggestions`);
+        console.log(`⚡ Fast analysis completed in ${processingTime}s with ${allSuggestions.length} suggestions`);
         
         return finalAnalysis;
         
     } catch (error) {
-        console.warn("⚡ Chunked analysis failed, using fallback:", error);
-        return generateEnhancedFallbackAnalysis(text.substring(0, 10000)); // Quick fallback
+        console.warn("⚡ Analysis failed, using fallback:", error);
+        return generateEnhancedFallbackAnalysis(text.substring(0, 10000));
     }
 }
 
-// Analyze a single chunk quickly
+// Analyze a single chunk with faster timeout
 async function analyzeSingleChunk(chunkText) {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 60000); // 60 second timeout per chunk
+    const timeoutId = setTimeout(() => controller.abort(), 30000); // Reduced to 30 second timeout
     
     try {
         const response = await fetch(`${API_CONFIG.baseUrl}/analyze-comprehensive`, {
@@ -586,32 +570,47 @@ async function selectIssue(issueId) {
     const issue = IlanaState.currentIssues.find(i => i.id === issueId);
     if (!issue) {
         console.log("⚠️ Issue not found:", issueId);
+        console.log("Available issues:", IlanaState.currentIssues.map(i => i.id));
         return;
     }
     
     console.log("🔍 Selected issue:", issue);
     
     try {
+        // First, mark the issue as selected visually
+        document.querySelectorAll('.issue-card.selected').forEach(card => {
+            card.classList.remove('selected');
+        });
+        
+        const selectedCard = document.querySelector(`[data-issue-id="${issueId}"]`);
+        if (selectedCard) {
+            selectedCard.classList.add('selected');
+        }
+        
         // Show issue details in suggestion panel
         const suggestionPreview = document.getElementById('suggestions-preview');
         if (suggestionPreview) {
-            document.getElementById('suggestion-type').textContent = issue.type.toUpperCase();
-            document.getElementById('suggestion-original').textContent = issue.text;
-            document.getElementById('suggestion-rewrite').textContent = issue.suggestion;
-            document.getElementById('suggestion-rationale').textContent = issue.rationale || 'AI analysis suggests this improvement';
+            const typeElement = document.getElementById('suggestion-type');
+            const originalElement = document.getElementById('suggestion-original');
+            const rewriteElement = document.getElementById('suggestion-rewrite');
+            const rationaleElement = document.getElementById('suggestion-rationale');
+            
+            if (typeElement) typeElement.textContent = issue.type.toUpperCase();
+            if (originalElement) originalElement.textContent = issue.text;
+            if (rewriteElement) rewriteElement.textContent = issue.suggestion;
+            if (rationaleElement) rationaleElement.textContent = issue.rationale || 'AI analysis suggests this improvement';
             
             suggestionPreview.style.display = 'block';
             suggestionPreview.dataset.suggestionId = issue.id;
             
             console.log("💡 Showing issue details:", issue.id);
+        } else {
+            console.warn("Suggestion preview element not found");
         }
-        
-        // Navigate to issue in document
-        await navigateToIssue(issue);
         
     } catch (error) {
         console.error("Failed to handle issue selection:", error);
-        showError("Could not navigate to issue in document");
+        showError("Could not show issue details");
     }
 }
 
@@ -632,42 +631,7 @@ async function navigateToIssue(issue) {
     });
 }
 
-// Highlight issues in Word document with orange highlights
-async function highlightIssuesInDocument(issues) {
-    if (!issues || issues.length === 0) return;
-    
-    try {
-        await Word.run(async (context) => {
-            // Simple highlighting without clearing existing highlights (which causes errors)
-            for (const issue of issues.slice(0, 5)) { // Limit to 5 for stability
-                try {
-                    // Use a simpler search text
-                    const searchText = issue.text ? issue.text.split(' ').slice(0, 3).join(' ').trim() : '';
-                    
-                    if (searchText.length > 3) {
-                        const searchResults = context.document.body.search(searchText, { matchCase: false });
-                        context.load(searchResults, 'items');
-                        await context.sync();
-                        
-                        if (searchResults.items.length > 0) {
-                            // Apply highlight to first match only
-                            searchResults.items[0].font.highlightColor = "#ff9500";
-                        }
-                    }
-                } catch (issueError) {
-                    console.warn(`Could not highlight issue: ${issueError.message}`);
-                    continue; // Skip this issue and try the next one
-                }
-            }
-            
-            await context.sync();
-            console.log("🟠 Applied orange highlights to document issues");
-        });
-    } catch (error) {
-        console.warn("Could not apply document highlights:", error);
-        // Don't throw - highlighting is nice-to-have, not essential
-    }
-}
+// Removed highlighting function - was causing confusion by highlighting wrong text
 
 // Show inline suggestion popup
 function showInlineSuggestion(suggestion) {

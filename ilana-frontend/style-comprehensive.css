@@ -98,23 +98,25 @@ body {
 .analyze-btn {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 12px 20px;
-    background: var(--color-primary);
+    justify-content: center;
+    padding: 12px;
+    background: #003dff;
     color: white;
     border: none;
-    border-radius: var(--border-radius-md);
+    border-radius: 4px;
     font-weight: 500;
     font-family: Inter, sans-serif;
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 120px;
+    height: 40px;
 }
 
 .analyze-btn:hover {
-    background: #3d5afe;
+    background: #0033cc;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(74, 110, 224, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 61, 255, 0.3);
 }
 
 .analyze-btn:active {
@@ -204,15 +206,19 @@ body {
 }
 
 .counter-badge {
-    background: var(--color-primary);
+    background: #003dff;
     color: white;
-    border-radius: var(--border-radius-lg);
-    padding: 6px 12px;
+    border-radius: 4px;
+    padding: 8px 12px;
     min-width: 40px;
     text-align: center;
     font-family: Inter, sans-serif;
     font-weight: 600;
-    box-shadow: 0 1px 3px rgba(74, 110, 224, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 61, 255, 0.2);
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .counter-number {
