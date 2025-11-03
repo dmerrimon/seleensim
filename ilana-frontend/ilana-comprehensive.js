@@ -40,7 +40,50 @@ function initializeUI() {
     // Initialize tooltips and interactions
     addTooltips();
     
+    // Verify all functions are available
+    verifyFunctionality();
+    
     console.log("✅ Comprehensive UI initialized");
+}
+
+// Verify all functionality is working
+function verifyFunctionality() {
+    const requiredFunctions = [
+        'startAnalysis', 'selectIssue', 'jumpToNextIssue', 
+        'acceptAllLow', 'exportReport', 'closeSuggestion',
+        'acceptSuggestion', 'ignoreSuggestion', 'learnMore'
+    ];
+    
+    const missingFunctions = requiredFunctions.filter(func => typeof window[func] !== 'function');
+    
+    if (missingFunctions.length > 0) {
+        console.error('❌ Missing functions:', missingFunctions);
+    } else {
+        console.log('✅ All functions are properly connected');
+    }
+    
+    // Verify HTML elements
+    const requiredElements = [
+        'score-value', 'score-progress', 'counter-number', 
+        'clarity-progress', 'compliance-progress', 'feasibility-progress',
+        'issues-list', 'suggestions-preview'
+    ];
+    
+    const missingElements = requiredElements.filter(id => !document.getElementById(id));
+    
+    if (missingElements.length > 0) {
+        console.error('❌ Missing HTML elements:', missingElements);
+    } else {
+        console.log('✅ All required HTML elements found');
+    }
+    
+    // Test category buttons
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    console.log(`📋 Found ${categoryButtons.length} category filter buttons`);
+    
+    // Test API configuration
+    console.log(`🌐 Backend URL: ${API_CONFIG.baseUrl}`);
+    console.log(`⏱️ API Timeout: ${API_CONFIG.timeout}ms`);
 }
 
 // Setup event listeners
@@ -72,24 +115,37 @@ function setupEventListeners() {
 
 // Main analysis function
 async function startAnalysis() {
-    if (IlanaState.isAnalyzing) return;
+    if (IlanaState.isAnalyzing) {
+        console.log('🚦 Analysis already in progress');
+        return;
+    }
+    
+    console.log('🚀 Starting protocol analysis...');
     
     try {
         IlanaState.isAnalyzing = true;
-        updateStatus('Analyzing with PubMedBERT...', 'analyzing');
+        updateStatus('Analyzing with AI...', 'analyzing');
         showProcessingOverlay(true);
         
         // Extract document content
+        console.log('📄 Extracting document text...');
         const documentText = await extractDocumentText();
         
         if (!documentText || documentText.trim().length < 100) {
             throw new Error("Document too short for comprehensive analysis (minimum 100 characters)");
         }
         
+        console.log(`📊 Processing ${documentText.length} characters`);
         updateProcessingDetails(`Processing ${documentText.length} characters...`);
         
         // Perform comprehensive analysis
         const analysisResult = await performComprehensiveAnalysis(documentText);
+        
+        if (!analysisResult || !analysisResult.issues) {
+            throw new Error('Invalid analysis result received');
+        }
+        
+        console.log(`✅ Analysis complete: ${analysisResult.issues.length} issues found`);
         
         // Update UI with results
         await updateDashboard(analysisResult);
@@ -98,12 +154,13 @@ async function startAnalysis() {
         updateStatus(`Analysis complete - ${analysisResult.issues.length} issues found`, 'ready');
         
     } catch (error) {
-        console.error("Analysis failed:", error);
+        console.error('❌ Analysis failed:', error);
         showError(`Analysis failed: ${error.message}`);
         updateStatus('Analysis failed', 'error');
     } finally {
         IlanaState.isAnalyzing = false;
         showProcessingOverlay(false);
+        console.log('🏁 Analysis process completed');
     }
 }
 
@@ -449,6 +506,17 @@ async function updateDashboard(analysisResult) {
 
 
 
+// Get action text based on issue type
+function getActionText(type) {
+    const actionMap = {
+        'clarity': 'Improve readability',
+        'compliance': 'Fix regulatory issue', 
+        'feasibility': 'Check operational burden',
+        'regulatory': 'Review compliance'
+    };
+    return actionMap[type] || 'Review suggestion';
+}
+
 // Display issues in the panel
 function displayIssues(issues) {
     const issuesList = document.getElementById('issues-list');
@@ -467,16 +535,26 @@ function displayIssues(issues) {
     // Filter issues based on active filters
     const filteredIssues = filterIssues(issues);
     
-    const issuesHTML = filteredIssues.map(issue => `
-        <div class="issue-item ${issue.type} ${issue.severity}" data-issue-id="${issue.id}" onclick="selectIssue('${issue.id}')">
-            <div class="issue-header">
-                <span class="issue-type">${issue.type}</span>
-                <span class="issue-severity">${issue.severity}</span>
+    const issuesHTML = filteredIssues.map(issue => {
+        const snippet = issue.text.length > 50 ? issue.text.substring(0, 47) + '...' : issue.text;
+        const actionText = getActionText(issue.type);
+        
+        return `
+            <div class="issue-card" data-issue-id="${issue.id}" onclick="selectIssue('${issue.id}')">
+                <div class="issue-dot ${issue.type}"></div>
+                <div class="issue-content">
+                    <div class="issue-snippet">${snippet}</div>
+                    <div class="issue-divider">·</div>
+                    <div class="issue-action">${actionText}</div>
+                </div>
+                <div class="issue-expand">
+                    <svg width="10" viewBox="0 0 10 10">
+                        <path d="M5 4.3L.85.14c-.2-.2-.5-.2-.7 0-.2.2-.2.5 0 .7L5 5.7 9.85.87c.2-.2.2-.5 0-.7-.2-.2-.5-.2-.7 0L5 4.28z" stroke="none"></path>
+                    </svg>
+                </div>
             </div>
-            <div class="issue-text">${issue.text}</div>
-            <div class="issue-suggestion">${issue.suggestion}</div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
     
     issuesList.innerHTML = issuesHTML;
     
@@ -642,19 +720,22 @@ function setupFilterButtons() {
 
 // Jump to next issue
 function jumpToNextIssue() {
-    const issueItems = document.querySelectorAll('.issue-item');
-    if (issueItems.length === 0) return;
+    const issueItems = document.querySelectorAll('.issue-card');
+    if (issueItems.length === 0) {
+        console.log('No issues available to navigate');
+        return;
+    }
     
     // Find currently selected issue or start with first
     let nextIndex = 0;
-    const selected = document.querySelector('.issue-item.selected');
+    const selected = document.querySelector('.issue-card.selected');
     if (selected) {
         const currentIndex = Array.from(issueItems).indexOf(selected);
         nextIndex = (currentIndex + 1) % issueItems.length;
     }
     
     // Remove previous selection
-    document.querySelectorAll('.issue-item.selected').forEach(item => {
+    document.querySelectorAll('.issue-card.selected').forEach(item => {
         item.classList.remove('selected');
     });
     
@@ -668,6 +749,8 @@ function jumpToNextIssue() {
     if (issueId) {
         selectIssue(issueId);
     }
+    
+    console.log(`Navigated to issue ${nextIndex + 1} of ${issueItems.length}`);
 }
 
 // Accept all low severity issues
