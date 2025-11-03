@@ -55,7 +55,7 @@ function setupEventListeners() {
     
     // Make functions globally available
     window.startAnalysis = startAnalysis;
-    window.toggleRealTime = toggleRealTime;
+    window.selectIssue = selectIssue;
     window.jumpToNextIssue = jumpToNextIssue;
     window.acceptAllLow = acceptAllLow;
     window.exportReport = exportReport;
@@ -295,7 +295,7 @@ async function performChunkedAnalysis(text) {
 // Analyze a single chunk quickly
 async function analyzeSingleChunk(chunkText) {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout per chunk
+    const timeoutId = setTimeout(() => controller.abort(), 45000); // 45 second timeout per chunk
     
     try {
         const response = await fetch(`${API_CONFIG.baseUrl}/analyze-comprehensive`, {
@@ -570,33 +570,54 @@ function displayIssues(issues) {
 
 // Filter issues based on active filters
 function filterIssues(issues) {
+    if (!issues || issues.length === 0) return [];
+    
+    console.log(`🔍 Filtering ${issues.length} issues with filters:`, IlanaState.activeFilters);
+    
     if (IlanaState.activeFilters.includes('all')) {
+        console.log(`✅ Showing all ${issues.length} issues`);
         return issues;
     }
     
-    return issues.filter(issue => 
+    const filtered = issues.filter(issue => 
         IlanaState.activeFilters.includes(issue.type) ||
         IlanaState.activeFilters.includes(issue.severity)
     );
+    
+    console.log(`✅ Filtered to ${filtered.length} issues`);
+    return filtered;
 }
 
 // Handle issue selection
 async function selectIssue(issueId) {
     const issue = IlanaState.currentIssues.find(i => i.id === issueId);
-    if (!issue) return;
+    if (!issue) {
+        console.log("⚠️ Issue not found:", issueId);
+        return;
+    }
+    
+    console.log("🔍 Selected issue:", issue);
     
     try {
+        // Show issue details in suggestion panel
+        const suggestionPreview = document.getElementById('suggestions-preview');
+        if (suggestionPreview) {
+            document.getElementById('suggestion-type').textContent = issue.type.toUpperCase();
+            document.getElementById('suggestion-original').textContent = issue.text;
+            document.getElementById('suggestion-rewrite').textContent = issue.suggestion;
+            document.getElementById('suggestion-rationale').textContent = issue.rationale || 'AI analysis suggests this improvement';
+            
+            suggestionPreview.style.display = 'block';
+            suggestionPreview.dataset.suggestionId = issue.id;
+            
+            console.log("💡 Showing issue details:", issue.id);
+        }
+        
         // Navigate to issue in document
         await navigateToIssue(issue);
         
-        // Show inline suggestion if available
-        const suggestion = IlanaState.currentSuggestions.find(s => s.id === issueId.replace('issue_', 'suggestion_'));
-        if (suggestion) {
-            showInlineSuggestion(suggestion);
-        }
-        
     } catch (error) {
-        console.error("Failed to navigate to issue:", error);
+        console.error("Failed to handle issue selection:", error);
         showError("Could not navigate to issue in document");
     }
 }
