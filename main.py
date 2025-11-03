@@ -65,7 +65,7 @@ class ProtocolAnalysisRequest(BaseModel):
 
 class ComprehensiveAnalysisRequest(BaseModel):
     """Request model for comprehensive sentence-level analysis"""
-    text: str = Field(..., min_length=10, max_length=50000, description="Text to analyze")
+    text: str = Field(..., min_length=10, max_length=100000, description="Text to analyze")
     mode: Optional[str] = Field("sentence_level", description="Analysis mode")
     options: Optional[Dict[str, Any]] = Field(default_factory=dict, description="Analysis options")
 

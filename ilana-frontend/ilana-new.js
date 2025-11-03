@@ -80,12 +80,12 @@ async function analyzeDocument(text) {
         // Prepare comprehensive payload with larger document support
         let textToAnalyze = text;
         
-        // Handle very large documents (>100KB) by taking key sections
-        if (text.length > 100000) {
+        // Handle very large documents (>95KB) by taking key sections
+        if (text.length > 95000) {
             console.log("Large document detected, using intelligent sampling");
-            // Take first 50KB and last 25KB to capture intro and conclusion
-            const firstPart = text.substring(0, 50000);
-            const lastPart = text.substring(text.length - 25000);
+            // Take first 65KB and last 30KB to capture intro and conclusion
+            const firstPart = text.substring(0, 65000);
+            const lastPart = text.substring(text.length - 30000);
             textToAnalyze = firstPart + "\n\n[...document continues...]\n\n" + lastPart;
         }
         
