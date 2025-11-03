@@ -18,32 +18,61 @@
 
 <body>
     <div class="ilana-container">
-        <!-- Status Bar -->
-        <div class="status-bar">
-            <div class="status-indicator">
-                <div class="status-dot" id="status-dot"></div>
-                <span class="status-text" id="status-text">Ready</span>
+        <!-- Top Navigation Bar -->
+        <div class="top-navigation">
+            <div class="overall-score-container">
+                <div class="circular-score" id="overall-score">
+                    <svg viewBox="0 0 72 72" class="score-circle">
+                        <circle cx="36" cy="36" r="32" fill="none" stroke="#E7E9F5" stroke-width="5"></circle>
+                        <circle id="score-progress" cx="36" cy="36" r="32" fill="none" stroke="#3b82f6" stroke-width="5" 
+                                stroke-dasharray="201" stroke-dashoffset="201" transform="rotate(-90 36 36)" stroke-linecap="round"></circle>
+                        <text x="36" y="36" text-anchor="middle" dy=".3em" class="score-text" id="score-value">--</text>
+                    </svg>
+                </div>
+                <button class="analyze-btn" onclick="startAnalysis()">
+                    <span class="btn-icon">🔍</span>
+                    <span>Analyze Protocol</span>
+                </button>
             </div>
-            <div class="intelligence-level" id="intelligence-level">Advanced AI</div>
+            
+            <!-- Category Progress Bars -->
+            <div class="category-navigation">
+                <button class="category-btn" data-filter="clarity">
+                    <div class="category-progress">
+                        <div class="progress-bar clarity-bar" id="clarity-progress"></div>
+                    </div>
+                    <span class="category-name">Clarity</span>
+                </button>
+                <button class="category-btn" data-filter="compliance">
+                    <div class="category-progress">
+                        <div class="progress-bar compliance-bar" id="compliance-progress"></div>
+                    </div>
+                    <span class="category-name">Compliance</span>
+                </button>
+                <button class="category-btn" data-filter="feasibility">
+                    <div class="category-progress">
+                        <div class="progress-bar feasibility-bar" id="feasibility-progress"></div>
+                    </div>
+                    <span class="category-name">Feasibility</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Issues Counter -->
+        <div class="issues-counter">
+            <div class="counter-badge" id="issues-counter">
+                <span class="counter-number" id="counter-number">0</span>
+            </div>
+            <div class="counter-text">Issues Found</div>
         </div>
 
         <!-- Issue Detection Panel -->
         <div class="issues-panel">
-            <div class="panel-header">
-                <h3>Real-Time Issues</h3>
-                <div class="issue-filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="clarity">Clarity</button>
-                    <button class="filter-btn" data-filter="compliance">Compliance</button>
-                    <button class="filter-btn" data-filter="feasibility">Feasibility</button>
-                </div>
-            </div>
-            
             <div class="issues-list" id="issues-list">
                 <div class="no-issues">
-                    <div class="no-issues-icon">✓</div>
-                    <div class="no-issues-text">Document analysis ready</div>
-                    <div class="no-issues-subtitle">Click "Start Analysis" to begin</div>
+                    <div class="no-issues-icon">🔍</div>
+                    <div class="no-issues-text">Protocol analysis ready</div>
+                    <div class="no-issues-subtitle">Click "Analyze Protocol" to begin</div>
                 </div>
             </div>
         </div>
@@ -66,25 +95,17 @@
             </div>
         </div>
 
-        <!-- Advanced Controls -->
-        <div class="controls-panel">
-            <div class="analysis-controls">
-                <button class="control-btn primary start-analysis" id="start-analysis" onclick="startAnalysis()">
-                    <span class="btn-icon">🔍</span>
-                    <span class="btn-text">Analyze Protocol</span>
-                </button>
-                
-            </div>
-
+        <!-- Bottom Controls -->
+        <div class="bottom-controls">
             <div class="quick-actions">
-                <button class="quick-btn" onclick="jumpToNextIssue()" title="Next Issue">
-                    <span class="quick-icon">⬇</span>
+                <button class="control-btn" onclick="jumpToNextIssue()" title="Next Issue">
+                    <span class="control-icon">⬇</span>
                 </button>
-                <button class="quick-btn" onclick="acceptAllLow()" title="Accept All Low Severity">
-                    <span class="quick-icon">✓</span>
+                <button class="control-btn" onclick="acceptAllLow()" title="Accept All Low">
+                    <span class="control-icon">✓</span>
                 </button>
-                <button class="quick-btn" onclick="exportReport()" title="Export Report">
-                    <span class="quick-icon">📊</span>
+                <button class="control-btn" onclick="exportReport()" title="Export Report">
+                    <span class="control-icon">📊</span>
                 </button>
             </div>
         </div>

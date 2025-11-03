@@ -45,11 +45,11 @@ function initializeUI() {
 
 // Setup event listeners
 function setupEventListeners() {
-    // Filter buttons
-    document.querySelectorAll('.filter-btn').forEach(btn => {
+    // Category filter buttons
+    document.querySelectorAll('.category-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            const filter = e.target.dataset.filter;
-            toggleFilter(filter);
+            const filter = e.currentTarget.dataset.filter;
+            toggleCategoryFilter(filter);
         });
     });
     
@@ -608,49 +608,35 @@ function showInlineSuggestion(suggestion) {
     }
 }
 
-// Toggle filter
-function toggleFilter(filter) {
-    const filterBtn = document.querySelector(`[data-filter="${filter}"]`);
+// Toggle category filter
+function toggleCategoryFilter(filter) {
+    // Clear all active states
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
     
-    if (filter === 'all') {
+    // If clicking the same filter, show all
+    if (IlanaState.activeFilters.includes(filter) && IlanaState.activeFilters.length === 1) {
         IlanaState.activeFilters = ['all'];
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        filterBtn.classList.add('active');
     } else {
-        if (IlanaState.activeFilters.includes('all')) {
-            IlanaState.activeFilters = [filter];
-        } else {
-            const index = IlanaState.activeFilters.indexOf(filter);
-            if (index > -1) {
-                IlanaState.activeFilters.splice(index, 1);
-                filterBtn.classList.remove('active');
-            } else {
-                IlanaState.activeFilters.push(filter);
-                filterBtn.classList.add('active');
-            }
-        }
-        
-        document.querySelector('[data-filter="all"]').classList.remove('active');
-        
-        if (IlanaState.activeFilters.length === 0) {
-            IlanaState.activeFilters = ['all'];
-            document.querySelector('[data-filter="all"]').classList.add('active');
+        // Set single filter
+        IlanaState.activeFilters = [filter];
+        const filterBtn = document.querySelector(`[data-filter="${filter}"]`);
+        if (filterBtn) {
+            filterBtn.classList.add('active');
         }
     }
     
     // Refresh issues display
     displayIssues(IlanaState.currentIssues);
+    
+    console.log(`🔍 Filter changed to: ${IlanaState.activeFilters.join(', ')}`);
 }
 
 // Setup filter buttons
 function setupFilterButtons() {
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        if (btn.dataset.filter === 'all') {
-            btn.classList.add('active');
-        }
-    });
+    // No default active state for category buttons
+    console.log('✅ Category filters initialized');
 }
 
 
@@ -939,6 +925,20 @@ function updateProcessingDetails(text) {
 
 // Reset dashboard to initial state
 function resetDashboard() {
+    // Reset overall score
+    updateCircularScore(0);
+    
+    // Reset category progress bars
+    const categories = ['clarity', 'compliance', 'feasibility'];
+    categories.forEach(category => {
+        const progressElement = document.getElementById(`${category}-progress`);
+        if (progressElement) {
+            progressElement.style.width = '0%';
+        }
+    });
+    
+    // Reset issue counter
+    updateIssueCounter(0);
     
     // Reset issues list
     const issuesList = document.getElementById('issues-list');
@@ -946,8 +946,8 @@ function resetDashboard() {
         issuesList.innerHTML = `
             <div class="no-issues">
                 <div class="no-issues-icon">🔍</div>
-                <div class="no-issues-text">Document analysis ready</div>
-                <div class="no-issues-subtitle">Click "Start Analysis" to begin</div>
+                <div class="no-issues-text">Protocol analysis ready</div>
+                <div class="no-issues-subtitle">Click "Analyze Protocol" to begin</div>
             </div>
         `;
     }
