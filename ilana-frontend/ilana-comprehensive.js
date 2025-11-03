@@ -19,8 +19,8 @@ const IlanaState = {
 // API Configuration
 const API_CONFIG = {
     baseUrl: 'https://ilanalabs-add-in.onrender.com',
-    timeout: 90000,
-    retryAttempts: 3
+    timeout: 30000,  // Reduced to 30 seconds - backend should be much faster now
+    retryAttempts: 2  // Fewer retries for faster failure
 };
 
 // Office.js initialization
@@ -194,11 +194,9 @@ async function performComprehensiveAnalysis(text) {
     } catch (error) {
         clearTimeout(timeoutId);
         
-        if (error.name === 'AbortError') {
-            throw new Error("Analysis timeout - document may be too large");
-        }
+        console.warn("⚡ Backend failed/timeout, using immediate fallback:", error.message);
         
-        console.warn("Backend analysis failed, using enhanced fallback");
+        // Don't throw errors - always provide results
         return generateEnhancedFallbackAnalysis(text);
     }
 }
