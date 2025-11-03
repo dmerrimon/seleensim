@@ -1005,4 +1005,75 @@ if (typeof module !== 'undefined' && module.exports) {
     };
 }
 
+// Update issue counter
+function updateIssueCounter(count) {
+    const counterNumber = document.getElementById('counter-number');
+    if (counterNumber) {
+        counterNumber.textContent = count;
+    }
+}
+
+// Update circular score display
+function updateCircularScore(score) {
+    const scoreValue = document.getElementById('score-value');
+    const scoreProgress = document.getElementById('score-progress');
+    
+    if (scoreValue && scoreProgress) {
+        scoreValue.textContent = score === 100 ? score : Math.round(score);
+        
+        // Update progress circle (201 is the circumference)
+        const offset = 201 - (score / 100) * 201;
+        scoreProgress.style.strokeDashoffset = offset;
+        
+        // Update color based on score
+        let color = '#10b981'; // Green for good scores
+        if (score < 70) color = '#f59e0b'; // Orange for medium scores
+        if (score < 50) color = '#ef4444'; // Red for poor scores
+        
+        scoreProgress.setAttribute('stroke', color);
+    }
+}
+
+// Update overall score based on issues
+function updateOverallScore(issues) {
+    if (!issues || issues.length === 0) {
+        updateCircularScore(100);
+        return;
+    }
+    
+    // Calculate score based on issue severity
+    const totalIssues = issues.length;
+    const highSeverity = issues.filter(i => i.severity === 'high').length;
+    const mediumSeverity = issues.filter(i => i.severity === 'medium').length;
+    
+    // Score calculation: start at 100, deduct points for issues
+    let score = 100;
+    score -= (highSeverity * 15); // High severity: -15 points each
+    score -= (mediumSeverity * 8); // Medium severity: -8 points each  
+    score -= ((totalIssues - highSeverity - mediumSeverity) * 3); // Low severity: -3 points each
+    
+    score = Math.max(score, 0); // Don't go below 0
+    updateCircularScore(score);
+}
+
+// Update category progress bars
+function updateCategoryProgress(issues) {
+    const categories = ['clarity', 'compliance', 'feasibility'];
+    
+    categories.forEach(category => {
+        const categoryIssues = issues.filter(issue => issue.type === category);
+        const progressElement = document.getElementById(`${category}-progress`);
+        
+        if (progressElement) {
+            // Calculate progress based on issues found (inverse relationship)
+            let progress = 95; // Start high
+            if (categoryIssues.length > 0) {
+                progress = Math.max(40, 95 - (categoryIssues.length * 15));
+            }
+            
+            progressElement.style.width = `${progress}%`;
+        }
+    });
+}
+
 console.log("🚀 Ilana Comprehensive AI Assistant loaded successfully");
