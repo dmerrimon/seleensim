@@ -242,9 +242,12 @@ async function performChunkedAnalysis(text) {
     // Show progress
     updateProcessingDetails(`Processing ${chunks.length} chunks in parallel...`);
     
-    // Process first 3 chunks immediately for quick results
-    const quickChunks = chunks.slice(0, 3);
-    const quickPromises = quickChunks.map(chunk => analyzeSingleChunk(chunk));
+    // Process first 2 chunks immediately for quick results (reduced for stability)
+    const quickChunks = chunks.slice(0, 2);
+    const quickPromises = quickChunks.map((chunk, index) => {
+        console.log(`🚀 Starting chunk ${index + 1} analysis (${chunk.length} chars)`);
+        return analyzeSingleChunk(chunk);
+    });
     
     try {
         // Get quick results first
@@ -265,10 +268,13 @@ async function performChunkedAnalysis(text) {
         }
         
         // Process remaining chunks if any
-        if (chunks.length > 3) {
-            updateProcessingDetails(`Processing remaining ${chunks.length - 3} chunks...`);
-            const remainingChunks = chunks.slice(3, Math.min(chunks.length, 8)); // Limit to 8 total chunks
-            const remainingPromises = remainingChunks.map(chunk => analyzeSingleChunk(chunk));
+        if (chunks.length > 2) {
+            updateProcessingDetails(`Processing remaining ${chunks.length - 2} chunks...`);
+            const remainingChunks = chunks.slice(2, Math.min(chunks.length, 6)); // Limit to 6 total chunks for stability
+            const remainingPromises = remainingChunks.map((chunk, index) => {
+                console.log(`🚀 Starting remaining chunk ${index + 3} analysis (${chunk.length} chars)`);
+                return analyzeSingleChunk(chunk);
+            });
             
             const remainingResults = await Promise.allSettled(remainingPromises);
             remainingResults.forEach(result => {
@@ -295,7 +301,7 @@ async function performChunkedAnalysis(text) {
 // Analyze a single chunk quickly
 async function analyzeSingleChunk(chunkText) {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 45000); // 45 second timeout per chunk
+    const timeoutId = setTimeout(() => controller.abort(), 60000); // 60 second timeout per chunk
     
     try {
         const response = await fetch(`${API_CONFIG.baseUrl}/analyze-comprehensive`, {
