@@ -125,9 +125,16 @@ body {
 /* Quality Scores */
 .quality-scores {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
     margin-bottom: 20px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 480px) {
+    .quality-scores {
+        grid-template-columns: 1fr;
+    }
 }
 
 .score-card {
