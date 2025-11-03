@@ -19,8 +19,8 @@ const IlanaState = {
 // API Configuration
 const API_CONFIG = {
     baseUrl: 'https://ilanalabs-add-in.onrender.com',
-    timeout: 30000,  // Reduced to 30 seconds - backend should be much faster now
-    retryAttempts: 2  // Fewer retries for faster failure
+    timeout: 120000,  // Increase to 2 minutes for comprehensive analysis
+    retryAttempts: 1  // Single attempt to avoid multiple timeouts
 };
 
 // Office.js initialization
@@ -542,26 +542,25 @@ async function highlightIssuesInDocument(issues) {
     
     try {
         await Word.run(async (context) => {
-            // Clear existing highlights first
-            const existingHighlights = context.document.body.search("", { highlightColor: "#ff9500" });
-            context.load(existingHighlights, 'items');
-            await context.sync();
-            
-            existingHighlights.items.forEach(item => {
-                item.font.highlightColor = null;
-            });
-            
-            // Apply new highlights
-            for (const issue of issues.slice(0, 10)) { // Limit to first 10 for performance
-                const searchText = issue.text.substring(0, 50).trim();
-                if (searchText.length > 5) {
-                    const searchResults = context.document.body.search(searchText);
-                    context.load(searchResults, 'items');
-                    await context.sync();
+            // Simple highlighting without clearing existing highlights (which causes errors)
+            for (const issue of issues.slice(0, 5)) { // Limit to 5 for stability
+                try {
+                    // Use a simpler search text
+                    const searchText = issue.text ? issue.text.split(' ').slice(0, 3).join(' ').trim() : '';
                     
-                    if (searchResults.items.length > 0) {
-                        searchResults.items[0].font.highlightColor = "#ff9500"; // Orange highlight
+                    if (searchText.length > 3) {
+                        const searchResults = context.document.body.search(searchText, { matchCase: false });
+                        context.load(searchResults, 'items');
+                        await context.sync();
+                        
+                        if (searchResults.items.length > 0) {
+                            // Apply highlight to first match only
+                            searchResults.items[0].font.highlightColor = "#ff9500";
+                        }
                     }
+                } catch (issueError) {
+                    console.warn(`Could not highlight issue: ${issueError.message}`);
+                    continue; // Skip this issue and try the next one
                 }
             }
             
@@ -570,6 +569,7 @@ async function highlightIssuesInDocument(issues) {
         });
     } catch (error) {
         console.warn("Could not apply document highlights:", error);
+        // Don't throw - highlighting is nice-to-have, not essential
     }
 }
 
