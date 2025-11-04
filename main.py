@@ -40,7 +40,8 @@ except ImportError:
 from multi_modal_analyzer import MultiModalProtocolAnalyzer
 from continuous_learning import ContinuousLearningPipeline
 from reinforcement_learning import ProtocolReinforcementLearner
-from real_ai_service import create_real_ai_service, RealAIService
+from optimized_real_ai_service import create_optimized_real_ai_service, OptimizedRealAIService
+# from real_ai_service import create_real_ai_service, RealAIService  # Backup
 
 # Configure logging
 import os
@@ -158,7 +159,7 @@ class HealthResponse(BaseModel):
 app_config: Optional[IlanaConfig] = None
 ml_analyzer: Optional[MultiModalProtocolAnalyzer] = None
 learning_pipeline: Optional[ContinuousLearningPipeline] = None
-real_ai_service: Optional[RealAIService] = None
+real_ai_service: Optional[OptimizedRealAIService] = None
 
 # FastAPI app
 app = FastAPI(
@@ -206,7 +207,7 @@ async def startup_event():
         # Initialize Real AI Service (Azure OpenAI + Pinecone) - optional in production
         try:
             if hasattr(app_config, 'enable_azure_openai') and app_config.enable_azure_openai:
-                real_ai_service = create_real_ai_service(app_config)
+                real_ai_service = create_optimized_real_ai_service(app_config)
                 logger.info("✅ Real AI service initialized")
             else:
                 logger.info("⚠️ Real AI service disabled - using fallback analysis")
@@ -264,7 +265,7 @@ def get_learning_pipeline_dependency() -> ContinuousLearningPipeline:
         raise HTTPException(status_code=500, detail="Learning pipeline not initialized")
     return learning_pipeline
 
-def get_real_ai_service_dependency() -> RealAIService:
+def get_real_ai_service_dependency() -> OptimizedRealAIService:
     """Dependency to get real AI service"""
     if real_ai_service is None:
         raise HTTPException(status_code=500, detail="Real AI service not initialized")
@@ -465,7 +466,7 @@ async def submit_feedback(
 @app.post("/analyze-comprehensive", response_model=ComprehensiveAnalysisResponse)
 async def analyze_comprehensive(
     request: ComprehensiveAnalysisRequest,
-    ai_service: RealAIService = Depends(get_real_ai_service_dependency),
+    ai_service: OptimizedRealAIService = Depends(get_real_ai_service_dependency),
     config: IlanaConfig = Depends(get_config_dependency)
 ):
     """
