@@ -1166,27 +1166,6 @@ function updateCircularScore(score) {
     }
 }
 
-// Update overall score based on issues
-function updateOverallScore(issues) {
-    if (!issues || issues.length === 0) {
-        updateCircularScore(100);
-        return;
-    }
-    
-    // Calculate score based on issue severity
-    const totalIssues = issues.length;
-    const highSeverity = issues.filter(i => i.severity === 'high').length;
-    const mediumSeverity = issues.filter(i => i.severity === 'medium').length;
-    
-    // Score calculation: start at 100, deduct points for issues
-    let score = 100;
-    score -= (highSeverity * 15); // High severity: -15 points each
-    score -= (mediumSeverity * 8); // Medium severity: -8 points each  
-    score -= ((totalIssues - highSeverity - mediumSeverity) * 3); // Low severity: -3 points each
-    
-    score = Math.max(score, 0); // Don't go below 0
-    updateCircularScore(score);
-}
 
 // Update category progress bars
 function updateCategoryProgress(issues) {
