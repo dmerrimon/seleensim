@@ -1286,24 +1286,14 @@ function showGrammarlyStyleSuggestion(issue) {
             </div>
         </div>
         
-        <div class="suggestion-actions">
-            <button class="suggestion-btn accept" onclick="acceptSuggestion('${issue.id}')">
-                <svg width="16" height="16" viewBox="0 0 16 16">
-                    <path d="M13.5 3.5L6 11 2.5 7.5" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
+        <div class="suggestion-actions" style="display: flex; gap: 5px; margin-top: 8px;">
+            <button class="suggestion-btn accept" onclick="acceptSuggestion('${issue.id}')" style="font-size: 11px; padding: 4px 8px;">
                 Accept
             </button>
-            <button class="suggestion-btn ignore" onclick="ignoreSuggestion('${issue.id}')">
-                <svg width="16" height="16" viewBox="0 0 16 16">
-                    <path d="M4 4l8 8M4 12l8-8" stroke="currentColor" stroke-width="2"/>
-                </svg>
+            <button class="suggestion-btn ignore" onclick="ignoreSuggestion('${issue.id}')" style="font-size: 11px; padding: 4px 8px;">
                 Ignore
             </button>
-            <button class="suggestion-btn learn" onclick="toggleLearnMore('${issue.id}')">
-                <svg width="16" height="16" viewBox="0 0 16 16">
-                    <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
-                    <path d="M8 6v4M8 4h0" stroke="currentColor" stroke-width="2"/>
-                </svg>
+            <button class="suggestion-btn learn" onclick="toggleLearnMore('${issue.id}')" style="font-size: 11px; padding: 4px 8px;">
                 Learn More
             </button>
         </div>
