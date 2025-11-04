@@ -18,8 +18,61 @@
 
 <body>
     <div class="ilana-container">
-        <!-- Therapeutic Area Selector -->
-        <div id="ta-selector-container"></div>
+        <!-- TA Selector with Auto-Detection -->
+        <div id="ta-selector-container" class="ta-selector-panel">
+            <div class="ta-detection-status">
+                <span class="ta-label">Therapeutic Area:</span>
+                <span id="ta-detected" class="ta-detected">Auto-detecting...</span>
+                <span id="ta-confidence" class="ta-confidence"></span>
+            </div>
+            <div class="ta-manual-override" style="display: none;">
+                <select id="ta-manual-select" class="ta-selector">
+                    <option value="auto">Auto-Detect</option>
+                    <option value="oncology">Oncology</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="endocrinology">Endocrinology</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="respiratory">Respiratory</option>
+                    <option value="infectious_disease">Infectious Disease</option>
+                    <option value="gastroenterology">Gastroenterology</option>
+                    <option value="rheumatology">Rheumatology</option>
+                    <option value="dermatology">Dermatology</option>
+                    <option value="ophthalmology">Ophthalmology</option>
+                </select>
+                <button id="ta-override-btn" class="ta-btn">Override</button>
+            </div>
+            <button id="ta-toggle-manual" class="ta-toggle">Manual Select</button>
+        </div>
+
+        <!-- Protocol Optimization Tools -->
+        <div class="protocol-optimization-panel">
+            <div class="optimization-layer">
+                <div class="layer-header">
+                    <span class="layer-icon">🎯</span>
+                    <span class="layer-title">Disease-Specific Module</span>
+                    <span id="disease-module-status" class="layer-status">Ready</span>
+                </div>
+                <div id="disease-recommendations" class="layer-content"></div>
+            </div>
+            
+            <div class="optimization-layer">
+                <div class="layer-header">
+                    <span class="layer-icon">📋</span>
+                    <span class="layer-title">Protocol Optimization</span>
+                    <span id="protocol-opt-status" class="layer-status">Ready</span>
+                </div>
+                <div id="protocol-suggestions" class="layer-content"></div>
+            </div>
+            
+            <div class="optimization-layer">
+                <div class="layer-header">
+                    <span class="layer-icon">⚖️</span>
+                    <span class="layer-title">Compliance Engine</span>
+                    <span id="compliance-status" class="layer-status">Ready</span>
+                </div>
+                <div id="compliance-citations" class="layer-content"></div>
+            </div>
+        </div>
         
         <!-- Top Navigation Bar -->
         <div class="top-navigation">

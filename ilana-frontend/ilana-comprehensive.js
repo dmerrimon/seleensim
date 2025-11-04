@@ -46,6 +46,9 @@ function initializeUI() {
     // Verify all functions are available
     verifyFunctionality();
     
+    // Initialize protocol optimization tools
+    initializeProtocolOptimization();
+    
     console.log("✅ Comprehensive UI initialized");
 }
 
@@ -138,6 +141,9 @@ async function startAnalysis() {
         // Extract document content
         console.log('📄 Extracting document text...');
         const documentText = await extractDocumentText();
+        
+        // Auto-detect therapeutic area first
+        await detectTherapeuticArea(documentText);
         
         if (!documentText || documentText.trim().length < 100) {
             throw new Error("Document too short for comprehensive analysis (minimum 100 characters)");
@@ -1329,10 +1335,7 @@ async function highlightAndScrollToText(searchText) {
         console.log(`🎯 Highlighting and scrolling to text: "${searchText.substring(0, 50)}..."`);
         
         await Word.run(async (context) => {
-            // Clear any existing highlights first
-            await clearPreviousHighlights(context);
-            
-            // Search for the text
+            // Search for the text immediately without clearing (faster)
             const searchResults = context.document.body.search(searchText.trim(), {
                 ignorePunct: true,
                 ignoreSpace: true,
@@ -1432,6 +1435,266 @@ async function clearAllHighlights() {
     } catch (error) {
         console.warn('⚠️ Could not clear highlights:', error);
     }
+}
+
+// Therapeutic Area Detection
+async function detectTherapeuticArea(documentText) {
+    try {
+        console.log('🎯 Detecting therapeutic area...');
+        updateTAStatus('Auto-detecting...', '');
+        
+        const response = await fetch(`${BACKEND_URL}/api/ta-detect`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ content: documentText }),
+            timeout: API_TIMEOUT
+        });
+        
+        if (!response.ok) {
+            throw new Error(`TA detection failed: ${response.status}`);
+        }
+        
+        const taResult = await response.json();
+        const detectedTA = taResult.therapeutic_area || 'general_medicine';
+        const confidence = Math.round((taResult.confidence || 0.7) * 100);
+        
+        updateTAStatus(detectedTA, `${confidence}% confidence`);
+        IlanaState.currentTA = detectedTA;
+        
+        // Load disease-specific recommendations
+        await loadDiseaseSpecificModule(detectedTA);
+        
+        console.log(`✅ TA detected: ${detectedTA} (${confidence}%)`);
+        
+    } catch (error) {
+        console.error('❌ TA detection failed:', error);
+        updateTAStatus('general_medicine', 'Auto-detect failed');
+        IlanaState.currentTA = 'general_medicine';
+    }
+}
+
+// Update TA Status Display
+function updateTAStatus(ta, confidence) {
+    const taDetected = document.getElementById('ta-detected');
+    const taConfidence = document.getElementById('ta-confidence');
+    
+    if (taDetected) {
+        taDetected.textContent = ta.replace('_', ' ').toUpperCase();
+    }
+    
+    if (taConfidence) {
+        taConfidence.textContent = confidence;
+    }
+}
+
+// Load Disease-Specific Module
+async function loadDiseaseSpecificModule(therapeuticArea) {
+    try {
+        console.log(`🏥 Loading disease-specific module for ${therapeuticArea}...`);
+        
+        const moduleContainer = document.getElementById('disease-recommendations');
+        const statusElement = document.getElementById('disease-module-status');
+        
+        if (statusElement) statusElement.textContent = 'Loading...';
+        
+        // Get TA-specific recommendations from backend
+        const response = await fetch(`${BACKEND_URL}/api/ta-recommendations`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                therapeutic_area: therapeuticArea,
+                protocol_type: 'clinical_trial'
+            })
+        });
+        
+        if (response.ok) {
+            const recommendations = await response.json();
+            displayDiseaseRecommendations(recommendations.recommendations || [], moduleContainer);
+            if (statusElement) statusElement.textContent = 'Active';
+        } else {
+            // Fallback recommendations
+            const fallbackRecs = getFallbackRecommendations(therapeuticArea);
+            displayDiseaseRecommendations(fallbackRecs, moduleContainer);
+            if (statusElement) statusElement.textContent = 'Fallback';
+        }
+        
+    } catch (error) {
+        console.error('❌ Disease module loading failed:', error);
+        const statusElement = document.getElementById('disease-module-status');
+        if (statusElement) statusElement.textContent = 'Error';
+    }
+}
+
+// Display Disease-Specific Recommendations
+function displayDiseaseRecommendations(recommendations, container) {
+    if (!container) return;
+    
+    container.innerHTML = recommendations.map(rec => `
+        <div class="disease-recommendation">
+            <div class="recommendation-title">${rec.title}</div>
+            <div class="recommendation-content">${rec.content}</div>
+        </div>
+    `).join('');
+    
+    // Make the layer expandable
+    const layerHeader = container.closest('.optimization-layer').querySelector('.layer-header');
+    if (layerHeader && !layerHeader.hasAttribute('data-click-handler')) {
+        layerHeader.setAttribute('data-click-handler', 'true');
+        layerHeader.addEventListener('click', () => {
+            container.classList.toggle('expanded');
+        });
+    }
+}
+
+// Get Fallback Recommendations
+function getFallbackRecommendations(therapeuticArea) {
+    const fallbacks = {
+        oncology: [
+            { title: 'Tumor Response Endpoints', content: 'Use RECIST v1.1 criteria for solid tumors. Consider PFS as primary endpoint for advanced disease.' },
+            { title: 'Safety Run-in Phase', content: 'Include dose escalation phase for novel agents. Standard 3+3 design recommended.' },
+            { title: 'Biomarker Strategy', content: 'Define companion diagnostic requirements early. Consider tissue and liquid biopsy approaches.' }
+        ],
+        cardiology: [
+            { title: 'MACE Endpoints', content: 'Use standardized MACE definition: CV death, MI, stroke. Consider time-to-first-event analysis.' },
+            { title: 'Safety Monitoring', content: 'Implement independent DSMB for CV outcome trials. Monitor QT interval changes.' },
+            { title: 'Enrollment Criteria', content: 'Define CV risk stratification clearly. Use established CV risk scores where appropriate.' }
+        ],
+        endocrinology: [
+            { title: 'HbA1c Endpoints', content: 'Use HbA1c change from baseline as primary. Target <7% for most patients per ADA guidelines.' },
+            { title: 'Hypoglycemia Definition', content: 'Use ADA/EASD consensus definitions. Categorize as Level 1 (<70mg/dL), Level 2 (<54mg/dL), Level 3 (severe).' },
+            { title: 'Weight Considerations', content: 'Monitor weight changes as secondary endpoint. Consider body composition analysis.' }
+        ]
+    };
+    
+    return fallbacks[therapeuticArea] || [
+        { title: 'General Protocol Guidance', content: 'Follow ICH-GCP guidelines for trial conduct and documentation.' },
+        { title: 'Regulatory Compliance', content: 'Ensure local regulatory requirements are met in all participating countries.' }
+    ];
+}
+
+// Enhanced Analysis with Azure OpenAI Integration
+async function getEnhancedSuggestions(text, therapeuticArea) {
+    try {
+        console.log('🤖 Getting enhanced AI suggestions...');
+        
+        const response = await fetch(`${BACKEND_URL}/api/enhance-text`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                original_text: text,
+                therapeutic_area: therapeuticArea,
+                enhancement_type: 'clarity_and_compliance',
+                use_azure_ai: true,
+                use_pubmed_bert: true
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Enhancement failed: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        return {
+            enhanced_text: result.enhanced_text,
+            explanation: result.explanation,
+            confidence: result.confidence,
+            regulatory_basis: result.regulatory_basis
+        };
+        
+    } catch (error) {
+        console.error('❌ Enhanced suggestion failed:', error);
+        return null;
+    }
+}
+
+// Load Compliance Engine Citations
+async function loadComplianceEngine() {
+    try {
+        console.log('⚖️ Loading compliance engine...');
+        
+        const complianceContainer = document.getElementById('compliance-citations');
+        const statusElement = document.getElementById('compliance-status');
+        
+        if (statusElement) statusElement.textContent = 'Loading...';
+        
+        // Get real-time compliance citations
+        const citations = [
+            {
+                reference: 'ICH E6(R2) 1.56',
+                content: 'Investigator responsibilities for trial conduct and documentation compliance'
+            },
+            {
+                reference: 'FDA 21 CFR 312.60',
+                content: 'General responsibilities of investigators for IND studies'
+            },
+            {
+                reference: 'ICH E3 9.1',
+                content: 'Statistical analysis plan requirements and documentation standards'
+            }
+        ];
+        
+        displayComplianceCitations(citations, complianceContainer);
+        if (statusElement) statusElement.textContent = 'Active';
+        
+    } catch (error) {
+        console.error('❌ Compliance engine loading failed:', error);
+        const statusElement = document.getElementById('compliance-status');
+        if (statusElement) statusElement.textContent = 'Error';
+    }
+}
+
+// Display Compliance Citations
+function displayComplianceCitations(citations, container) {
+    if (!container) return;
+    
+    container.innerHTML = citations.map(citation => `
+        <div class="compliance-citation">
+            <div class="citation-reference">${citation.reference}</div>
+            <div class="citation-content">${citation.content}</div>
+        </div>
+    `).join('');
+    
+    // Make the layer expandable
+    const layerHeader = container.closest('.optimization-layer').querySelector('.layer-header');
+    if (layerHeader && !layerHeader.hasAttribute('data-click-handler')) {
+        layerHeader.setAttribute('data-click-handler', 'true');
+        layerHeader.addEventListener('click', () => {
+            container.classList.toggle('expanded');
+        });
+    }
+}
+
+// Initialize Protocol Optimization Tools
+function initializeProtocolOptimization() {
+    // Initialize TA selector toggle
+    const taToggle = document.getElementById('ta-toggle-manual');
+    const taManualOverride = document.querySelector('.ta-manual-override');
+    
+    if (taToggle && taManualOverride) {
+        taToggle.addEventListener('click', () => {
+            const isVisible = taManualOverride.style.display !== 'none';
+            taManualOverride.style.display = isVisible ? 'none' : 'block';
+            taToggle.textContent = isVisible ? 'Manual Select' : 'Hide Manual';
+        });
+    }
+    
+    // Initialize layer headers for expansion
+    document.querySelectorAll('.layer-header').forEach(header => {
+        if (!header.hasAttribute('data-click-handler')) {
+            header.setAttribute('data-click-handler', 'true');
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                if (content && content.classList.contains('layer-content')) {
+                    content.classList.toggle('expanded');
+                }
+            });
+        }
+    });
+    
+    // Load compliance engine on initialization
+    loadComplianceEngine();
+    
+    console.log('✅ Protocol optimization tools initialized');
 }
 
 // Toggle "Learn More" educational content

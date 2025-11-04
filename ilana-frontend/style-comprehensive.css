@@ -894,3 +894,183 @@ body {
     background-color: transparent !important;
     transition: background-color 0.5s ease;
 }
+
+/* TA Selector Panel Styles */
+.ta-selector-panel {
+    background: var(--color-background-subtle);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.ta-detection-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.ta-label {
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.ta-detected {
+    background: var(--color-success-bg);
+    color: var(--color-success);
+    padding: 4px 8px;
+    border-radius: var(--border-radius-sm);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.ta-confidence {
+    color: var(--color-text-secondary);
+    font-size: 12px;
+}
+
+.ta-manual-override {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.ta-selector {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    font-size: 12px;
+}
+
+.ta-btn, .ta-toggle {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: var(--border-radius-sm);
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.ta-btn:hover, .ta-toggle:hover {
+    background: #3854d8;
+}
+
+/* Protocol Optimization Panel Styles */
+.protocol-optimization-panel {
+    margin-bottom: 16px;
+}
+
+.optimization-layer {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.layer-header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: var(--color-background-subtle);
+    border-bottom: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.layer-header:hover {
+    background: #f1f5f9;
+}
+
+.layer-icon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.layer-title {
+    flex: 1;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.layer-status {
+    font-size: 12px;
+    color: var(--color-success);
+    background: var(--color-success-bg);
+    padding: 2px 8px;
+    border-radius: var(--border-radius-sm);
+}
+
+.layer-content {
+    padding: 12px;
+    display: none;
+}
+
+.layer-content.expanded {
+    display: block;
+}
+
+/* Disease-Specific Recommendations */
+.disease-recommendation {
+    background: #fef7e7;
+    border: 1px solid #fbbf24;
+    border-radius: var(--border-radius-sm);
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.recommendation-title {
+    font-weight: 500;
+    color: #92400e;
+    margin-bottom: 4px;
+}
+
+.recommendation-content {
+    font-size: 12px;
+    color: #451a03;
+}
+
+/* Protocol Optimization Suggestions */
+.protocol-suggestion {
+    background: #eff6ff;
+    border: 1px solid #3b82f6;
+    border-radius: var(--border-radius-sm);
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.suggestion-title {
+    font-weight: 500;
+    color: #1e40af;
+    margin-bottom: 4px;
+}
+
+.suggestion-content {
+    font-size: 12px;
+    color: #1e3a8a;
+}
+
+/* Compliance Citations */
+.compliance-citation {
+    background: #f0fdf4;
+    border: 1px solid #16a34a;
+    border-radius: var(--border-radius-sm);
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.citation-reference {
+    font-weight: 500;
+    color: #15803d;
+    margin-bottom: 4px;
+}
+
+.citation-content {
+    font-size: 12px;
+    color: #14532d;
+}
