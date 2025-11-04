@@ -56,6 +56,15 @@ class OptimizedRealAIService:
     def __init__(self, config: IlanaConfig):
         self.config = config
         self.azure_client = None
+        
+        # PERFORMANCE FEATURE FLAGS (all disabled for speed)
+        self.enable_pinecone = False  # DISABLED: Causes timeouts
+        self.enable_deep_feasibility = False  # DISABLED: Heavy computation
+        self.enable_timeline_estimation = False  # DISABLED: Complex calculations
+        self.enable_amendment_risk = False  # DISABLED: Ensemble model overhead
+        self.enable_parallel_processing = False  # DISABLED: API rate limit issues
+        self.enable_real_time_analysis = False  # DISABLED: Multiple concurrent requests
+        
         self._initialize_azure_only()  # Skip Pinecone for speed
         
     def _initialize_azure_only(self):
@@ -112,13 +121,19 @@ class OptimizedRealAIService:
             for i, chunk in enumerate(chunks):
                 logger.info(f"Processing chunk {i+1}/{len(chunks)} ({len(chunk)} chars)")
                 
-                # Analyze chunk with optimized prompt
+                # Analyze chunk with optimized prompt (NO HEAVY FEATURES)
                 chunk_suggestions = await self._analyze_chunk_fast(chunk, i)
                 all_suggestions.extend(chunk_suggestions)
                 
                 # Small delay to prevent rate limiting
                 if i < len(chunks) - 1:
-                    await asyncio.sleep(0.5)
+                    await asyncio.sleep(0.3)  # Reduced delay for speed
+            
+            # DISABLED HEAVY FEATURES:
+            # - No Pinecone vector search (causes timeouts)
+            # - No deep feasibility simulations 
+            # - No timeline/cost estimators
+            # - No amendment risk regression analysis
             
             # Calculate processing metadata
             processing_time = (datetime.utcnow() - start_time).total_seconds()
@@ -204,16 +219,21 @@ class OptimizedRealAIService:
             if not self.azure_client:
                 return self._fast_mock_suggestions(chunk, chunk_index)
             
-            # OPTIMIZATION: Streamlined prompt for faster processing
-            system_prompt = """You are Ilana, a clinical protocol expert. Analyze the text and identify 3-5 key improvement opportunities.
+            # OPTIMIZATION: Ultra-streamlined prompt (NO HEAVY ANALYSIS)
+            system_prompt = """You are Ilana, a clinical protocol expert. Provide 2-3 quick improvements ONLY.
 
-Focus on:
-- Regulatory compliance issues
-- Clarity improvements  
-- Operational feasibility concerns
+FOCUS ON SIMPLE FIXES:
+- Basic clarity issues
+- Simple compliance gaps
+- Quick feasibility notes
 
-Return JSON array format:
-[{"type": "clarity|compliance|feasibility", "originalText": "exact text", "suggestedText": "improvement", "rationale": "brief reason"}]"""
+AVOID:
+- Deep feasibility simulations
+- Timeline/cost calculations  
+- Amendment risk analysis
+- Complex regulatory assessments
+
+Return JSON: [{"type": "clarity|compliance|feasibility", "originalText": "text", "suggestedText": "fix", "rationale": "brief"}]"""
 
             user_prompt = f"Analyze this protocol section:\n\n{chunk}\n\nProvide 3-5 specific improvements as JSON array."
 
@@ -225,9 +245,9 @@ Return JSON array format:
                         {"role": "system", "content": system_prompt},
                         {"role": "user", "content": user_prompt}
                     ],
-                    max_tokens=800,  # Further reduced for speed
-                    temperature=0.1,  # Low for consistency
-                    timeout=15  # Aggressive 15-second timeout
+                    max_tokens=500,  # Minimal tokens for fastest response
+                    temperature=0.0,  # Zero for maximum speed/consistency
+                    timeout=10  # Ultra-aggressive 10-second timeout
                 )
                 ai_response = response.choices[0].message.content
             else:

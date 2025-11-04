@@ -118,8 +118,10 @@ function setupEventListeners() {
 
 // Main analysis function
 async function startAnalysis() {
+    // STRICT: Prevent multiple simultaneous analyses (causes backend overload)
     if (IlanaState.isAnalyzing) {
-        console.log('🚦 Analysis already in progress');
+        console.warn('🚦 Analysis already in progress - blocking concurrent request');
+        showError("Analysis in progress. Please wait for current analysis to complete.");
         return;
     }
     
