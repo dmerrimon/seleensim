@@ -495,7 +495,82 @@ async function updateDashboard(analysisResult) {
     // Update issues list
     displayIssues(analysisResult.issues);
     
-    console.log("📊 Dashboard updated with analysis results");
+    // Count issues by type
+    const issueCounts = {
+        clarity: 0,
+        compliance: 0,
+        total: analysisResult.issues.length
+    };
+    
+    analysisResult.issues.forEach(issue => {
+        if (issue.type === 'clarity') {
+            issueCounts.clarity++;
+        } else if (issue.type === 'compliance') {
+            issueCounts.compliance++;
+        }
+    });
+    
+    // Update category counts
+    document.getElementById('clarity-count').textContent = issueCounts.clarity;
+    document.getElementById('compliance-count').textContent = issueCounts.compliance;
+    
+    // Update total counter
+    document.getElementById('counter-number').textContent = issueCounts.total;
+    
+    // Update progress bars based on relative percentages
+    if (issueCounts.total > 0) {
+        const clarityPercent = (issueCounts.clarity / issueCounts.total) * 100;
+        const compliancePercent = (issueCounts.compliance / issueCounts.total) * 100;
+        
+        document.getElementById('clarity-progress').style.width = `${clarityPercent}%`;
+        document.getElementById('compliance-progress').style.width = `${compliancePercent}%`;
+    } else {
+        document.getElementById('clarity-progress').style.width = '0%';
+        document.getElementById('compliance-progress').style.width = '0%';
+    }
+    
+    // Update overall score based on issue density
+    updateOverallScore(analysisResult);
+    
+    console.log(`📊 Dashboard updated: ${issueCounts.clarity} clarity, ${issueCounts.compliance} compliance issues`);
+}
+
+// Update overall protocol health score
+function updateOverallScore(analysisResult) {
+    const totalIssues = analysisResult.issues.length;
+    const documentLength = IlanaState.currentDocument?.length || 1000;
+    
+    // Calculate score based on issue density (issues per 1000 characters)
+    const issueDensity = (totalIssues / documentLength) * 1000;
+    
+    // Score calculation: lower density = higher score
+    let score = 100;
+    if (issueDensity > 0.5) score = 90 - (issueDensity * 10); // Heavily penalize high density
+    else if (issueDensity > 0.2) score = 95 - (issueDensity * 20);
+    else if (issueDensity > 0.1) score = 98 - (issueDensity * 30);
+    
+    score = Math.max(50, Math.min(100, Math.round(score))); // Clamp between 50-100
+    
+    // Update score display
+    const scoreElement = document.getElementById('score-value');
+    const progressElement = document.getElementById('score-progress');
+    
+    if (scoreElement && progressElement) {
+        scoreElement.textContent = score;
+        
+        // Update progress circle (circumference = 2 * π * 32 = 201)
+        const progressOffset = 201 - (score / 100) * 201;
+        progressElement.style.strokeDashoffset = progressOffset;
+        
+        // Color based on score
+        if (score >= 90) {
+            progressElement.style.stroke = '#10b981'; // Green
+        } else if (score >= 75) {
+            progressElement.style.stroke = '#f59e0b'; // Orange
+        } else {
+            progressElement.style.stroke = '#ef4444'; // Red
+        }
+    }
 }
 
 

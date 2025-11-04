@@ -219,23 +219,22 @@ class OptimizedRealAIService:
             if not self.azure_client:
                 return self._fast_mock_suggestions(chunk, chunk_index)
             
-            # OPTIMIZATION: Ultra-streamlined prompt (NO HEAVY ANALYSIS)
-            system_prompt = """You are Ilana, a clinical protocol expert. Provide 2-3 quick improvements ONLY.
+            # ENHANCED: More comprehensive analysis while staying fast
+            system_prompt = """You are Ilana, a clinical protocol expert. Identify ALL clear issues in this text section.
 
-FOCUS ON SIMPLE FIXES:
-- Basic clarity issues
-- Simple compliance gaps
-- Quick feasibility notes
+FIND ISSUES FOR:
+- Clarity: unclear language, complex terms, ambiguous statements
+- Compliance: regulatory gaps, missing requirements, protocol violations
 
-AVOID:
-- Deep feasibility simulations
-- Timeline/cost calculations  
-- Amendment risk analysis
-- Complex regulatory assessments
+REQUIREMENTS:
+- Find 5-15 specific issues per section (don't limit yourself)
+- Include both minor and major issues
+- Provide actionable suggestions
+- Keep rationales brief but clear
 
-Return JSON: [{"type": "clarity|compliance", "originalText": "text", "suggestedText": "fix", "rationale": "brief"}]"""
+Return JSON: [{"type": "clarity|compliance", "originalText": "exact text from document", "suggestedText": "specific improvement", "rationale": "why this helps"}]"""
 
-            user_prompt = f"Analyze this protocol section:\n\n{chunk}\n\nProvide 3-5 specific improvements as JSON array."
+            user_prompt = f"Analyze this protocol section thoroughly:\n\n{chunk}\n\nIdentify ALL clarity and compliance issues. Return 5-15 specific suggestions as JSON array."
 
             # OPTIMIZATION: Faster API call with aggressive timeout
             if hasattr(self.azure_client, 'chat'):
@@ -245,9 +244,9 @@ Return JSON: [{"type": "clarity|compliance", "originalText": "text", "suggestedT
                         {"role": "system", "content": system_prompt},
                         {"role": "user", "content": user_prompt}
                     ],
-                    max_tokens=500,  # Minimal tokens for fastest response
+                    max_tokens=1500,  # Increased for more comprehensive analysis
                     temperature=0.0,  # Zero for maximum speed/consistency
-                    timeout=10  # Ultra-aggressive 10-second timeout
+                    timeout=15  # Increased for more comprehensive analysis
                 )
                 ai_response = response.choices[0].message.content
             else:
@@ -287,7 +286,7 @@ Return JSON: [{"type": "clarity|compliance", "originalText": "text", "suggestedT
                 json_str = response[json_start:json_end]
                 ai_suggestions = json.loads(json_str)
                 
-                for i, item in enumerate(ai_suggestions[:5]):  # Limit to 5 for speed
+                for i, item in enumerate(ai_suggestions[:15]):  # Increased limit for more issues
                     suggestions.append(InlineSuggestion(
                         type=item.get("type", "clarity"),
                         subtype="ai_generated",
@@ -310,42 +309,64 @@ Return JSON: [{"type": "clarity|compliance", "originalText": "text", "suggestedT
         # Generate multiple suggestions based on common protocol issues
         suggestions = []
         
-        # Clarity suggestion
-        clarity_text = chunk[:80] + "..." if len(chunk) > 80 else chunk
-        suggestions.append(InlineSuggestion(
-            type="clarity",
-            subtype="readability",
-            originalText=clarity_text,
-            suggestedText="Consider simplifying technical language for broader understanding",
-            rationale="Complex terminology may reduce protocol comprehension",
-            complianceRationale="Clear communication improves regulatory compliance",
-            guidanceSource="FDA Guidance for Industry",
-            readabilityScore=75.0,
-            operationalImpact="Medium",
-            backendConfidence="medium",
-            range={"start": chunk_index * 8000, "end": chunk_index * 8000 + min(80, len(chunk))}
-        ))
+        # Multiple clarity suggestions
+        clarity_issues = [
+            ("Consider simplifying technical language for broader understanding", "Complex terminology may reduce protocol comprehension"),
+            ("Define abbreviations and acronyms on first use", "Undefined terms create confusion for reviewers"),
+            ("Break down long sentences for better readability", "Shorter sentences improve protocol comprehension"),
+            ("Add specific timeframes where schedules are mentioned", "Vague timing creates operational challenges"),
+            ("Clarify procedure descriptions with step-by-step details", "Detailed procedures reduce implementation errors")
+        ]
         
-        # Compliance suggestion
-        if "participant" in chunk.lower() or "subject" in chunk.lower():
-            suggestions.append(InlineSuggestion(
-                type="compliance",
-                subtype="participant_safety",
-                originalText="participant safety procedures",
-                suggestedText="enhanced participant safety monitoring procedures",
-                rationale="Additional safety monitoring strengthens participant protection",
-                complianceRationale="Enhanced safety protocols meet regulatory expectations",
-                fdaReference="21 CFR 312.53",
-                operationalImpact="Low",
-                retentionRisk="Low",
-                backendConfidence="high",
-                range={"start": chunk_index * 8000 + 50, "end": chunk_index * 8000 + 120}
-            ))
+        for i, (suggestion, rationale) in enumerate(clarity_issues):
+            start_pos = chunk_index * 8000 + (i * 100)
+            text_snippet = chunk[i*50:(i*50)+60] + "..." if len(chunk) > i*50+60 else chunk[i*50:]
+            if len(text_snippet.strip()) > 10:  # Only add if we have meaningful text
+                suggestions.append(InlineSuggestion(
+                    type="clarity",
+                    subtype="readability",
+                    originalText=text_snippet,
+                    suggestedText=suggestion,
+                    rationale=rationale,
+                    complianceRationale="Clear communication improves regulatory compliance",
+                    guidanceSource="FDA Guidance for Industry",
+                    readabilityScore=75.0 - (i * 5),
+                    operationalImpact="Medium",
+                    backendConfidence="medium",
+                    range={"start": start_pos, "end": start_pos + len(text_snippet)}
+                ))
         
-        # Feasibility suggestions DISABLED for performance
-        # Note: Feasibility analysis was removed to prevent timeouts
+        # Multiple compliance suggestions
+        compliance_keywords = [
+            ("participant", "Enhanced participant safety monitoring procedures", "21 CFR 312.53"),
+            ("consent", "Strengthen informed consent documentation", "21 CFR 50.25"),
+            ("adverse", "Improve adverse event reporting procedures", "21 CFR 312.32"),
+            ("data", "Enhance data integrity and monitoring procedures", "21 CFR 312.56"),
+            ("inclusion", "Clarify inclusion/exclusion criteria", "ICH E6 4.4.1")
+        ]
         
-        return suggestions[:3]  # Return up to 3 suggestions
+        for keyword, suggestion, reference in compliance_keywords:
+            if keyword in chunk.lower():
+                keyword_pos = chunk.lower().find(keyword)
+                context_start = max(0, keyword_pos - 30)
+                context_end = min(len(chunk), keyword_pos + 50)
+                context_text = chunk[context_start:context_end]
+                
+                suggestions.append(InlineSuggestion(
+                    type="compliance",
+                    subtype="regulatory",
+                    originalText=context_text,
+                    suggestedText=suggestion,
+                    rationale=f"Regulatory requirements for {keyword} procedures need enhancement",
+                    complianceRationale=f"Enhanced {keyword} protocols meet regulatory expectations",
+                    fdaReference=reference,
+                    operationalImpact="Low",
+                    retentionRisk="Low",
+                    backendConfidence="high",
+                    range={"start": chunk_index * 8000 + context_start, "end": chunk_index * 8000 + context_end}
+                ))
+        
+        return suggestions[:8]  # Return up to 8 suggestions for better coverage
 
     async def _ultra_fast_fallback(self, text: str) -> Tuple[List[InlineSuggestion], Dict[str, Any]]:
         """OPTIMIZATION: Ultra-fast fallback analysis"""

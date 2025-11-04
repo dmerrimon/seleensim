@@ -141,9 +141,18 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     border-radius: var(--border-radius-sm);
-    min-height: 60px;
+    min-height: 70px;
     justify-content: center;
     font-family: Inter, sans-serif;
+    position: relative;
+}
+
+.category-count {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+    line-height: 1;
 }
 
 .category-btn:hover {
