@@ -18,6 +18,9 @@
 
 <body>
     <div class="ilana-container">
+        <!-- Therapeutic Area Selector -->
+        <div id="ta-selector-container"></div>
+        
         <!-- Top Navigation Bar -->
         <div class="top-navigation">
             <div class="overall-score-container">
@@ -92,17 +95,6 @@
 
         <!-- Bottom Controls -->
         <div class="bottom-controls">
-            <div class="quick-actions">
-                <button class="control-btn" onclick="jumpToNextIssue()" title="Next Issue">
-                    <span class="control-icon">⬇</span>
-                </button>
-                <button class="control-btn" onclick="acceptAllLow()" title="Accept All Low">
-                    <span class="control-icon">✓</span>
-                </button>
-                <button class="control-btn" onclick="exportReport()" title="Export Report">
-                    <span class="control-icon">📊</span>
-                </button>
-            </div>
         </div>
 
         <!-- Processing Indicator -->
@@ -137,7 +129,54 @@
         <button class="error-close" onclick="hideError()">×</button>
     </div>
 
+    <!-- Explainability Modal -->
+    <div id="explainModal" class="ilana-modal hidden" role="dialog" aria-modal="true" aria-labelledby="explainTitle">
+        <div class="ilana-modal-card">
+            <header class="ilana-modal-header">
+                <h2 id="explainTitle">Why this suggestion?</h2>
+                <button id="explainCloseBtn" aria-label="Close explainability modal">✕</button>
+            </header>
+
+            <section class="ilana-modal-body">
+                <div class="explain-summary">
+                    <div class="explain-row"><strong>Suggestion:</strong> <span id="explainSuggestionText"></span></div>
+                    <div class="explain-row"><strong>Type:</strong> <span id="explainSuggestionType"></span></div>
+                    <div class="explain-row">
+                        <strong>Confidence:</strong> <span id="explainConfidence"></span>
+                        <strong class="muted"> • Model:</strong> <span id="explainModelVer"></span>
+                    </div>
+                    <div class="explain-row"><strong>Therapeutic Area:</strong> <span id="explainTherapeuticArea"></span></div>
+                    <div class="explain-row"><strong>Rationale:</strong><div id="explainRationale" class="rationale"></div></div>
+                </div>
+
+                <hr />
+
+                <div class="explain-sources">
+                    <h3>Sources & Exemplars</h3>
+                    <div class="source-filter-tabs">
+                        <button class="source-tab active" data-filter="all">All Sources</button>
+                        <button class="source-tab" data-filter="regulatory">Regulatory</button>
+                        <button class="source-tab" data-filter="exemplar">Exemplars</button>
+                        <button class="source-tab" data-filter="ta_specific">TA-Specific</button>
+                    </div>
+                    <ul id="sourceList" class="source-list"></ul>
+                </div>
+
+                <hr />
+
+                <div class="explain-actions">
+                    <button id="insertSuggestionBtn" class="btn primary">Apply Suggestion</button>
+                    <button id="copySourcesBtn" class="btn">Copy Sources</button>
+                    <button id="viewFullAnalysisBtn" class="btn">View Full Analysis</button>
+                    <button id="reportIssueBtn" class="btn danger">Report Issue</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
     <!-- JavaScript -->
-    <script src="ilana-comprehensive.js"></script>
+    <script src="ta_selector_ui.js"></script>
+    <script src="explainability_modal.js"></script>
+    <script src="ilana-comprehensive.js?v=1.0.1"></script>
 </body>
 </html>
