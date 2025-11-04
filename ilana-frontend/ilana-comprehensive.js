@@ -65,10 +65,10 @@ function verifyFunctionality() {
         console.log('✅ All functions are properly connected');
     }
     
-    // Verify HTML elements
+    // Verify HTML elements (feasibility removed)
     const requiredElements = [
         'score-value', 'score-progress', 'counter-number', 
-        'clarity-progress', 'compliance-progress', 'feasibility-progress',
+        'clarity-progress', 'compliance-progress',
         'issues-list', 'suggestions-preview'
     ];
     
@@ -980,8 +980,8 @@ function resetDashboard() {
     // Reset overall score
     updateCircularScore(0);
     
-    // Reset category progress bars
-    const categories = ['clarity', 'compliance', 'feasibility'];
+    // Reset category progress bars (feasibility removed)
+    const categories = ['clarity', 'compliance'];
     categories.forEach(category => {
         const progressElement = document.getElementById(`${category}-progress`);
         if (progressElement) {
@@ -1110,7 +1110,8 @@ function updateOverallScore(issues) {
 
 // Update category progress bars
 function updateCategoryProgress(issues) {
-    const categories = ['clarity', 'compliance', 'feasibility'];
+    // Only track clarity and compliance (feasibility disabled)
+    const categories = ['clarity', 'compliance'];
     
     categories.forEach(category => {
         const categoryIssues = issues.filter(issue => issue.type === category);

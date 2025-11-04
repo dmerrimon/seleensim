@@ -233,7 +233,7 @@ AVOID:
 - Amendment risk analysis
 - Complex regulatory assessments
 
-Return JSON: [{"type": "clarity|compliance|feasibility", "originalText": "text", "suggestedText": "fix", "rationale": "brief"}]"""
+Return JSON: [{"type": "clarity|compliance", "originalText": "text", "suggestedText": "fix", "rationale": "brief"}]"""
 
             user_prompt = f"Analyze this protocol section:\n\n{chunk}\n\nProvide 3-5 specific improvements as JSON array."
 
@@ -342,20 +342,8 @@ Return JSON: [{"type": "clarity|compliance|feasibility", "originalText": "text",
                 range={"start": chunk_index * 8000 + 50, "end": chunk_index * 8000 + 120}
             ))
         
-        # Feasibility suggestion  
-        if "timeline" in chunk.lower() or "schedule" in chunk.lower():
-            suggestions.append(InlineSuggestion(
-                type="feasibility",
-                subtype="timeline",
-                originalText="study timeline",
-                suggestedText="revised study timeline with buffer periods",
-                rationale="Buffer periods help accommodate recruitment variability",
-                complianceRationale="Realistic timelines support protocol adherence",
-                operationalImpact="Medium",
-                enrollmentImpact="Positive",
-                backendConfidence="medium",
-                range={"start": chunk_index * 8000 + 100, "end": chunk_index * 8000 + 150}
-            ))
+        # Feasibility suggestions DISABLED for performance
+        # Note: Feasibility analysis was removed to prevent timeouts
         
         return suggestions[:3]  # Return up to 3 suggestions
 
