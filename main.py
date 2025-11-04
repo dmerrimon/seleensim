@@ -41,6 +41,7 @@ from multi_modal_analyzer import MultiModalProtocolAnalyzer
 from continuous_learning import ContinuousLearningPipeline
 from reinforcement_learning import ProtocolReinforcementLearner
 from optimized_real_ai_service import create_optimized_real_ai_service, OptimizedRealAIService
+from real_reinforcement_learning import get_rl_instance, RealReinforcementLearning
 # from real_ai_service import create_real_ai_service, RealAIService  # Backup
 
 # Configure logging
@@ -98,6 +99,15 @@ class UserFeedbackRequest(BaseModel):
     sessionId: str
     overallRating: Optional[str] = None
     comments: Optional[str] = None
+    timestamp: str
+
+class RLFeedbackRequest(BaseModel):
+    """Request model for reinforcement learning feedback"""
+    sessionId: str
+    issueId: str
+    action: str  # 'accepted', 'ignored', 'modified'
+    feedbackData: Dict[str, Any]
+    userContext: Optional[Dict[str, Any]] = Field(default_factory=dict)
     timestamp: str
 
 class AnalysisScores(BaseModel):
@@ -160,6 +170,7 @@ app_config: Optional[IlanaConfig] = None
 ml_analyzer: Optional[MultiModalProtocolAnalyzer] = None
 learning_pipeline: Optional[ContinuousLearningPipeline] = None
 real_ai_service: Optional[OptimizedRealAIService] = None
+rl_system: Optional[RealReinforcementLearning] = None
 
 # FastAPI app
 app = FastAPI(
@@ -182,7 +193,7 @@ app.add_middleware(
 @app.on_event("startup")
 async def startup_event():
     """Initialize services on startup"""
-    global app_config, ml_analyzer, learning_pipeline, real_ai_service
+    global app_config, ml_analyzer, learning_pipeline, real_ai_service, rl_system
     
     logger.info("🚀 Starting Ilana Protocol Intelligence API")
     
@@ -229,6 +240,14 @@ async def startup_event():
         if app_config.enable_continuous_learning:
             await learning_pipeline.start_continuous_learning()
             logger.info("✅ Continuous learning pipeline started")
+        
+        # Initialize Real Reinforcement Learning system
+        try:
+            rl_system = get_rl_instance()
+            logger.info("✅ Real Reinforcement Learning system initialized")
+        except Exception as rl_error:
+            logger.warning(f"RL system failed to initialize: {rl_error}, continuing without RL")
+            rl_system = None
         
         logger.info("🎉 Ilana API startup completed successfully")
         
@@ -596,6 +615,112 @@ async def process_user_feedback_for_learning(feedback_data: Dict[str, Any]):
         
     except Exception as e:
         logger.error(f"❌ Feedback learning processing failed: {str(e)}")
+
+@app.post("/rl-feedback")
+async def process_rl_feedback(
+    request: RLFeedbackRequest,
+    background_tasks: BackgroundTasks
+):
+    """
+    Process reinforcement learning feedback from user interactions
+    
+    This endpoint processes user actions on suggestions to improve the AI:
+    - Accepts/rejects/modifies suggestions
+    - Updates Q-learning model with reward signals
+    - Improves future suggestion quality
+    """
+    
+    try:
+        logger.info(f"🧠 Processing RL feedback: {request.action} for issue {request.issueId}")
+        
+        global rl_system
+        if not rl_system:
+            logger.warning("RL system not available, skipping feedback processing")
+            return {
+                "status": "skipped",
+                "message": "Reinforcement learning system not available",
+                "timestamp": datetime.utcnow().isoformat()
+            }
+        
+        # Convert request to feedback data
+        feedback_data = {
+            "sessionId": request.sessionId,
+            "issueId": request.issueId,
+            "action": request.action,
+            "timestamp": request.timestamp,
+            "feedbackData": request.feedbackData,
+            "userContext": request.userContext
+        }
+        
+        # Process feedback through RL system
+        rl_result = await rl_system.process_feedback(feedback_data)
+        
+        logger.info(f"✅ RL feedback processed: {rl_result.get('status', 'unknown')}")
+        
+        return {
+            "status": "processed",
+            "message": "Reinforcement learning feedback processed successfully",
+            "rl_insights": rl_result.get("learning_insights", {}),
+            "model_updated": rl_result.get("model_updated", False),
+            "timestamp": datetime.utcnow().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"❌ RL feedback processing failed: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"RL feedback processing failed: {str(e)}"
+        )
+
+@app.get("/rl-dashboard")
+async def get_rl_dashboard():
+    """
+    Get reinforcement learning dashboard data for team monitoring
+    
+    This endpoint provides comprehensive RL system analytics:
+    - Model performance by issue type
+    - Learning trends and insights
+    - Top performing states
+    - Feedback statistics
+    """
+    
+    try:
+        logger.info("📊 Generating RL dashboard data")
+        
+        global rl_system
+        if not rl_system:
+            return {
+                "status": "unavailable",
+                "message": "Reinforcement learning system not available",
+                "timestamp": datetime.utcnow().isoformat()
+            }
+        
+        # Get comprehensive performance summary
+        performance_summary = rl_system.get_performance_summary()
+        
+        # Add additional dashboard metadata
+        dashboard_data = {
+            "dashboard_generated": datetime.utcnow().isoformat(),
+            "system_status": "active",
+            "rl_performance": performance_summary,
+            "quick_stats": {
+                "total_feedback_events": performance_summary["model_status"]["total_feedback_events"],
+                "active_states": performance_summary["model_status"]["total_states"],
+                "learning_rate": performance_summary["model_status"]["learning_rate"],
+                "model_version": performance_summary["model_status"]["version"]
+            }
+        }
+        
+        logger.info(f"✅ RL dashboard data generated with {performance_summary['model_status']['total_feedback_events']} total events")
+        
+        return dashboard_data
+        
+    except Exception as e:
+        logger.error(f"❌ RL dashboard generation failed: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"RL dashboard generation failed: {str(e)}"
+        )
 
 @app.get("/analytics/performance")
 async def get_performance_analytics(

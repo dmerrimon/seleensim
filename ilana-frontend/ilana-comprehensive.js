@@ -391,7 +391,7 @@ function smartTextChunking(text, maxChunkSize = 8000) {
     return chunks;
 }
 
-// Transform backend suggestions to UI format
+// Transform backend suggestions to UI format AND store for interaction
 function transformBackendSuggestions(suggestions) {
     const issues = [];
     
@@ -407,6 +407,11 @@ function transformBackendSuggestions(suggestions) {
         });
     });
     
+    // CRITICAL FIX: Store issues in global state for selectIssue() function
+    IlanaState.currentIssues = issues;
+    IlanaState.currentSuggestions = suggestions;
+    
+    console.log(`📋 Stored ${issues.length} issues in global state:`, issues.map(i => i.id));
     
     return {
         issues,
@@ -1127,6 +1132,277 @@ function updateCategoryProgress(issues) {
             progressElement.style.width = `${progress}%`;
         }
     });
+}
+
+// CRITICAL: Fix selectIssue function for Grammarly-style interaction
+function selectIssue(issueId) {
+    console.log(`🔍 Selecting issue: ${issueId}`);
+    
+    // Find issue in global state
+    const issue = IlanaState.currentIssues.find(i => i.id === issueId);
+    
+    if (!issue) {
+        console.warn(`⚠️ Issue not found: ${issueId}`);
+        console.log('Available issues:', IlanaState.currentIssues.map(i => i.id));
+        return;
+    }
+    
+    console.log(`✅ Found issue:`, issue);
+    
+    // Show Grammarly-style expanded view
+    showGrammarlyStyleSuggestion(issue);
+}
+
+// Grammarly-style expanded suggestion view
+function showGrammarlyStyleSuggestion(issue) {
+    const suggestionPreview = document.getElementById('suggestions-preview');
+    
+    if (!suggestionPreview) return;
+    
+    // Build Grammarly-style content
+    suggestionPreview.innerHTML = `
+        <div class="suggestion-header">
+            <span class="suggestion-type ${issue.type}">${issue.type.toUpperCase()}</span>
+            <button class="suggestion-close" onclick="closeSuggestion()">×</button>
+        </div>
+        
+        <div class="suggestion-content">
+            <div class="suggestion-original">
+                <label>Original:</label>
+                <span class="text-highlight">${issue.text || issue.originalText || 'Selected text'}</span>
+            </div>
+            
+            <div class="suggestion-replacement">
+                <label>Suggested:</label>
+                <span class="text-improved">${issue.suggestion}</span>
+            </div>
+            
+            <div class="suggestion-rationale">
+                <label>Why:</label>
+                <p>${issue.rationale}</p>
+                ${issue.complianceRationale ? `<p><strong>Compliance:</strong> ${issue.complianceRationale}</p>` : ''}
+            </div>
+            
+            <div class="suggestion-learn-more" id="learn-more-${issue.id}" style="display: none;">
+                <div class="examples-table">
+                    <h4>Examples:</h4>
+                    <table>
+                        <tr class="example-bad">
+                            <td class="label">Unclear:</td>
+                            <td>${issue.text || 'Original text'}</td>
+                        </tr>
+                        <tr class="example-good">
+                            <td class="label">Improved:</td>
+                            <td>${issue.suggestion}</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="educational-content">
+                    <p>Clear, concise writing improves protocol comprehension and regulatory compliance. ${issue.complianceRationale || 'This change enhances overall protocol quality.'}</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="suggestion-actions">
+            <button class="suggestion-btn accept" onclick="acceptSuggestion('${issue.id}')">
+                <svg width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M13.5 3.5L6 11 2.5 7.5" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                Accept
+            </button>
+            <button class="suggestion-btn ignore" onclick="ignoreSuggestion('${issue.id}')">
+                <svg width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M4 4l8 8M4 12l8-8" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Ignore
+            </button>
+            <button class="suggestion-btn learn" onclick="toggleLearnMore('${issue.id}')">
+                <svg width="16" height="16" viewBox="0 0 16 16">
+                    <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <path d="M8 6v4M8 4h0" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Learn More
+            </button>
+        </div>
+    `;
+    
+    // Show the suggestion panel
+    suggestionPreview.style.display = 'block';
+    
+    // Add visual feedback to the clicked issue card
+    document.querySelectorAll('.issue-card').forEach(card => card.classList.remove('selected'));
+    const clickedCard = document.querySelector(`[data-issue-id="${issue.id}"]`);
+    if (clickedCard) {
+        clickedCard.classList.add('selected');
+    }
+    
+    console.log(`✅ Displayed Grammarly-style suggestion for ${issue.id}`);
+}
+
+// Toggle "Learn More" educational content
+function toggleLearnMore(issueId) {
+    const learnMoreSection = document.getElementById(`learn-more-${issueId}`);
+    if (learnMoreSection) {
+        const isVisible = learnMoreSection.style.display !== 'none';
+        learnMoreSection.style.display = isVisible ? 'none' : 'block';
+        
+        // Update button text
+        const button = event.target.closest('.learn');
+        if (button) {
+            button.textContent = isVisible ? 'Learn More' : 'Show Less';
+        }
+    }
+}
+
+// Accept suggestion and apply to document
+async function acceptSuggestion(issueId) {
+    console.log(`✅ Accepting suggestion: ${issueId}`);
+    
+    const issue = IlanaState.currentIssues.find(i => i.id === issueId);
+    if (!issue) return;
+    
+    // Send feedback to backend for reinforcement learning
+    await sendFeedback(issueId, 'accepted', {
+        originalText: issue.text,
+        suggestedText: issue.suggestion,
+        issueType: issue.type,
+        userAction: 'accepted'
+    });
+    
+    // Remove from UI
+    const issueCard = document.querySelector(`[data-issue-id="${issueId}"]`);
+    if (issueCard) {
+        issueCard.style.opacity = '0.5';
+        issueCard.style.pointerEvents = 'none';
+    }
+    
+    closeSuggestion();
+    console.log(`✅ Suggestion ${issueId} accepted and feedback sent`);
+}
+
+// Ignore suggestion
+async function ignoreSuggestion(issueId) {
+    console.log(`❌ Ignoring suggestion: ${issueId}`);
+    
+    const issue = IlanaState.currentIssues.find(i => i.id === issueId);
+    if (!issue) return;
+    
+    // Send feedback to backend for reinforcement learning
+    await sendFeedback(issueId, 'ignored', {
+        originalText: issue.text,
+        suggestedText: issue.suggestion,
+        issueType: issue.type,
+        userAction: 'ignored'
+    });
+    
+    // Remove from UI
+    const issueCard = document.querySelector(`[data-issue-id="${issueId}"]`);
+    if (issueCard) {
+        issueCard.remove();
+    }
+    
+    closeSuggestion();
+    console.log(`❌ Suggestion ${issueId} ignored and feedback sent`);
+}
+
+// REINFORCEMENT LEARNING: Send feedback to backend
+async function sendFeedback(issueId, action, feedbackData) {
+    try {
+        const sessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        
+        const feedback = {
+            sessionId: sessionId,
+            issueId: issueId,
+            action: action, // 'accepted' or 'ignored'
+            timestamp: new Date().toISOString(),
+            feedbackData: feedbackData,
+            userContext: {
+                documentLength: IlanaState.currentDocument?.length || 0,
+                totalIssues: IlanaState.currentIssues?.length || 0,
+                issueType: feedbackData.issueType
+            }
+        };
+        
+        console.log(`📤 Sending RL feedback:`, feedback);
+        
+        const response = await fetch(`${API_CONFIG.baseUrl}/rl-feedback`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(feedback)
+        });
+        
+        if (response.ok) {
+            const result = await response.json();
+            console.log(`✅ Feedback sent successfully:`, result);
+            
+            // Show feedback confirmation to user
+            showFeedbackConfirmation(action);
+            
+            return result;
+        } else {
+            console.warn(`⚠️ Feedback failed:`, response.status);
+        }
+        
+    } catch (error) {
+        console.error(`❌ Failed to send feedback:`, error);
+    }
+}
+
+// Show feedback confirmation to user
+function showFeedbackConfirmation(action) {
+    const message = action === 'accepted' ? '👍 Thanks! AI is learning from your acceptance.' :
+                   action === 'ignored' ? '👎 Thanks! AI will improve this suggestion type.' :
+                   '✏️ Thanks! AI is learning from your modification.';
+    
+    // Create toast notification
+    const toast = document.createElement('div');
+    toast.style.cssText = `
+        position: fixed; top: 20px; right: 20px; z-index: 9999;
+        background: #10b981; color: white; padding: 12px 16px;
+        border-radius: 8px; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        font-family: Inter, sans-serif; max-width: 300px;
+        animation: slideInRight 0.3s ease;
+    `;
+    toast.textContent = message;
+    
+    // Add CSS animation
+    if (!document.getElementById('feedback-animations')) {
+        const style = document.createElement('style');
+        style.id = 'feedback-animations';
+        style.textContent = `
+            @keyframes slideInRight {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOutRight {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    document.body.appendChild(toast);
+    
+    // Auto-remove after 3 seconds
+    setTimeout(() => {
+        toast.style.animation = 'slideOutRight 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
+// Close suggestion panel
+function closeSuggestion() {
+    const suggestionPreview = document.getElementById('suggestions-preview');
+    if (suggestionPreview) {
+        suggestionPreview.style.display = 'none';
+    }
+    
+    // Remove selection from all cards
+    document.querySelectorAll('.issue-card').forEach(card => card.classList.remove('selected'));
 }
 
 console.log("🚀 Ilana Comprehensive AI Assistant loaded successfully");
