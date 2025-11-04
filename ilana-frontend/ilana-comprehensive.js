@@ -288,9 +288,9 @@ async function performChunkedAnalysis(text) {
     const startTime = Date.now();
     updateStatus('Fast analysis...', 'analyzing');
     
-    // Use larger chunks for speed and limit total chunks
-    const chunks = smartTextChunking(text, 15000); // Larger 15KB chunks for speed
-    const maxChunks = Math.min(chunks.length, 3); // Maximum 3 chunks for speed
+    // Use optimized chunks to prevent backend timeouts
+    const chunks = smartTextChunking(text, 8000); // Optimized 8KB chunks for reliability
+    const maxChunks = Math.min(chunks.length, 4); // Maximum 4 chunks for balanced speed
     const selectedChunks = chunks.slice(0, maxChunks);
     
     console.log(`📊 Processing ${maxChunks} optimized chunks (reduced for speed)`);
@@ -338,7 +338,7 @@ async function performChunkedAnalysis(text) {
 // Analyze a single chunk with faster timeout
 async function analyzeSingleChunk(chunkText) {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 30000); // Reduced to 30 second timeout
+    const timeoutId = setTimeout(() => controller.abort(), 20000); // Aggressive 20 second timeout
     
     try {
         const response = await fetch(`${API_CONFIG.baseUrl}/analyze-comprehensive`, {
