@@ -19,7 +19,7 @@ const IlanaState = {
 
 // API Configuration
 const API_CONFIG = {
-    baseUrl: 'https://ilanalabs-add-in.onrender.com',
+    baseUrl: 'http://localhost:8000',  // Use local backend for development
     timeout: 120000,  // Increase to 2 minutes for comprehensive analysis
     retryAttempts: 1  // Single attempt to avoid multiple timeouts
 };
@@ -1443,11 +1443,11 @@ async function detectTherapeuticArea(documentText) {
         console.log('🎯 Detecting therapeutic area...');
         updateTAStatus('Auto-detecting...', '');
         
-        const response = await fetch(`${BACKEND_URL}/api/ta-detect`, {
+        const response = await fetch(`${API_CONFIG.baseUrl}/api/ta-detect`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ content: documentText }),
-            timeout: API_TIMEOUT
+            timeout: API_CONFIG.timeout
         });
         
         if (!response.ok) {
@@ -1498,7 +1498,7 @@ async function loadDiseaseSpecificModule(therapeuticArea) {
         if (statusElement) statusElement.textContent = 'Loading...';
         
         // Get TA-specific recommendations from backend
-        const response = await fetch(`${BACKEND_URL}/api/ta-recommendations`, {
+        const response = await fetch(`${API_CONFIG.baseUrl}/api/ta-recommendations`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
@@ -1577,7 +1577,7 @@ async function getEnhancedSuggestions(text, therapeuticArea) {
     try {
         console.log('🤖 Getting enhanced AI suggestions...');
         
-        const response = await fetch(`${BACKEND_URL}/api/enhance-text`, {
+        const response = await fetch(`${API_CONFIG.baseUrl}/api/enhance-text`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

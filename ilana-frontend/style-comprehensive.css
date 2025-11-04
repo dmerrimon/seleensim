@@ -54,6 +54,55 @@ body {
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+/* Tab Navigation */
+.tab-navigation {
+    display: flex;
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid transparent;
+    font-family: Inter, sans-serif;
+}
+
+.tab-btn.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+    background: var(--color-background-subtle);
+}
+
+.tab-btn:hover {
+    color: var(--color-text-primary);
+    background: var(--color-background-subtle);
+}
+
+/* Tab Content */
+.tab-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.tab-content.active {
+    display: flex;
+}
+
+.tab-content:not(.active) {
+    display: none;
+}
+
 /* Office Add-in Title Panel */
 #AppForOfficePanel2TaskPaneTitle,
 .title-687 {

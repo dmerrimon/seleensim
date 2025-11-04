@@ -18,72 +18,33 @@
 
 <body>
     <div class="ilana-container">
-        <!-- TA Selector with Auto-Detection -->
-        <div id="ta-selector-container" class="ta-selector-panel">
-            <div class="ta-detection-status">
-                <span class="ta-label">Therapeutic Area:</span>
-                <span id="ta-detected" class="ta-detected">Auto-detecting...</span>
-                <span id="ta-confidence" class="ta-confidence"></span>
-            </div>
-            <div class="ta-manual-override" style="display: none;">
-                <select id="ta-manual-select" class="ta-selector">
-                    <option value="auto">Auto-Detect</option>
-                    <option value="oncology">Oncology</option>
-                    <option value="cardiology">Cardiology</option>
-                    <option value="endocrinology">Endocrinology</option>
-                    <option value="neurology">Neurology</option>
-                    <option value="respiratory">Respiratory</option>
-                    <option value="infectious_disease">Infectious Disease</option>
-                    <option value="gastroenterology">Gastroenterology</option>
-                    <option value="rheumatology">Rheumatology</option>
-                    <option value="dermatology">Dermatology</option>
-                    <option value="ophthalmology">Ophthalmology</option>
-                </select>
-                <button id="ta-override-btn" class="ta-btn">Override</button>
-            </div>
-            <button id="ta-toggle-manual" class="ta-toggle">Manual Select</button>
+        <!-- Tab Navigation -->
+        <div class="tab-navigation">
+            <button class="tab-btn active" data-tab="analysis">Issues</button>
+            <button class="tab-btn" data-tab="optimization">TA Tools</button>
         </div>
 
-        <!-- Protocol Optimization Tools -->
-        <div class="protocol-optimization-panel">
-            <div class="optimization-layer">
-                <div class="layer-header">
-                    <span class="layer-icon">🎯</span>
-                    <span class="layer-title">Disease-Specific Module</span>
-                    <span id="disease-module-status" class="layer-status">Ready</span>
-                </div>
-                <div id="disease-recommendations" class="layer-content"></div>
-            </div>
-            
-            <div class="optimization-layer">
-                <div class="layer-header">
-                    <span class="layer-icon">📋</span>
-                    <span class="layer-title">Protocol Optimization</span>
-                    <span id="protocol-opt-status" class="layer-status">Ready</span>
-                </div>
-                <div id="protocol-suggestions" class="layer-content"></div>
-            </div>
-            
-            <div class="optimization-layer">
-                <div class="layer-header">
-                    <span class="layer-icon">⚖️</span>
-                    <span class="layer-title">Compliance Engine</span>
-                    <span id="compliance-status" class="layer-status">Ready</span>
-                </div>
-                <div id="compliance-citations" class="layer-content"></div>
-            </div>
-        </div>
+        <!-- Analysis Tab Content -->
+        <div id="analysis-tab" class="tab-content active">
         
         <!-- Top Navigation Bar -->
         <div class="top-navigation">
-            <div class="overall-score-container" style="display: flex; justify-content: center; align-items: center;">
+            <div class="overall-score-container">
+                <div class="circular-score" id="overall-score">
+                    <svg viewBox="0 0 72 72" class="score-circle">
+                        <circle cx="36" cy="36" r="32" fill="none" stroke="#E7E9F5" stroke-width="5"></circle>
+                        <circle id="score-progress" cx="36" cy="36" r="32" fill="none" stroke="#3b82f6" stroke-width="5" 
+                                stroke-dasharray="201" stroke-dashoffset="201" transform="rotate(-90 36 36)" stroke-linecap="round"></circle>
+                        <text x="36" y="36" text-anchor="middle" dy=".3em" class="score-text" id="score-value">--</text>
+                    </svg>
+                </div>
                 <button class="analyze-btn" onclick="startAnalysis()">
                     <span>Analyze Protocol</span>
                 </button>
             </div>
             
             <!-- Category Navigation with Issue Counts -->
-            <div class="category-navigation" style="display: flex; justify-content: center; gap: 10px;">
+            <div class="category-navigation">
                 <button class="category-btn" data-filter="clarity">
                     <div class="category-count" id="clarity-count">0</div>
                     <div class="category-progress">
@@ -141,6 +102,66 @@
         <!-- Bottom Controls -->
         <div class="bottom-controls">
         </div>
+        </div>
+
+        <!-- TA Optimization Tab Content -->
+        <div id="optimization-tab" class="tab-content" style="display: none;">
+            <!-- TA Selector with Auto-Detection -->
+            <div id="ta-selector-container" class="ta-selector-panel">
+                <div class="ta-detection-status">
+                    <span class="ta-label">Therapeutic Area:</span>
+                    <span id="ta-detected" class="ta-detected">Auto-detecting...</span>
+                    <span id="ta-confidence" class="ta-confidence"></span>
+                </div>
+                <div class="ta-manual-override" style="display: none;">
+                    <select id="ta-manual-select" class="ta-selector">
+                        <option value="auto">Auto-Detect</option>
+                        <option value="oncology">Oncology</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="endocrinology">Endocrinology</option>
+                        <option value="neurology">Neurology</option>
+                        <option value="respiratory">Respiratory</option>
+                        <option value="infectious_disease">Infectious Disease</option>
+                        <option value="gastroenterology">Gastroenterology</option>
+                        <option value="rheumatology">Rheumatology</option>
+                        <option value="dermatology">Dermatology</option>
+                        <option value="ophthalmology">Ophthalmology</option>
+                    </select>
+                    <button id="ta-override-btn" class="ta-btn">Override</button>
+                </div>
+                <button id="ta-toggle-manual" class="ta-toggle">Manual Select</button>
+            </div>
+
+            <!-- Protocol Optimization Tools -->
+            <div class="protocol-optimization-panel">
+                <div class="optimization-layer">
+                    <div class="layer-header">
+                        <span class="layer-icon">🎯</span>
+                        <span class="layer-title">Disease-Specific Module</span>
+                        <span id="disease-module-status" class="layer-status">Ready</span>
+                    </div>
+                    <div id="disease-recommendations" class="layer-content"></div>
+                </div>
+                
+                <div class="optimization-layer">
+                    <div class="layer-header">
+                        <span class="layer-icon">📋</span>
+                        <span class="layer-title">Protocol Optimization</span>
+                        <span id="protocol-opt-status" class="layer-status">Ready</span>
+                    </div>
+                    <div id="protocol-suggestions" class="layer-content"></div>
+                </div>
+                
+                <div class="optimization-layer">
+                    <div class="layer-header">
+                        <span class="layer-icon">⚖️</span>
+                        <span class="layer-title">Compliance Engine</span>
+                        <span id="compliance-status" class="layer-status">Ready</span>
+                    </div>
+                    <div id="compliance-citations" class="layer-content"></div>
+                </div>
+            </div>
+        </div>
 
         <!-- Processing Indicator -->
         <div class="processing-overlay" id="processing-overlay" style="display: none;">
@@ -175,7 +196,46 @@
     </div>
 
     <!-- JavaScript -->
+    <script>
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+                tab.style.display = 'none';
+            });
+            
+            // Remove active from all tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            const selectedTab = document.getElementById(tabName + '-tab');
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+                selectedTab.style.display = 'flex';
+            }
+            
+            // Activate selected tab button
+            const selectedBtn = document.querySelector(`[data-tab="${tabName}"]`);
+            if (selectedBtn) {
+                selectedBtn.classList.add('active');
+            }
+        }
+        
+        // Initialize tab functionality when Office loads
+        Office.onReady(() => {
+            // Set up tab click handlers
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabName = btn.getAttribute('data-tab');
+                    switchTab(tabName);
+                });
+            });
+        });
+    </script>
     <script src="ta_selector_ui.js"></script>
-    <script src="ilana-comprehensive.js?v=1.0.1"></script>
+    <script src="ilana-comprehensive.js?v=1.0.2"></script>
 </body>
 </html>
