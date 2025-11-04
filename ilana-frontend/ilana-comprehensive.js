@@ -1293,9 +1293,6 @@ function showGrammarlyStyleSuggestion(issue) {
             <button class="suggestion-btn ignore" onclick="ignoreSuggestion('${issue.id}')" style="font-size: 11px; padding: 4px 8px;">
                 Ignore
             </button>
-            <button class="suggestion-btn learn" onclick="toggleLearnMore('${issue.id}')" style="font-size: 11px; padding: 4px 8px;">
-                Learn More
-            </button>
         </div>
     `;
     
@@ -1312,20 +1309,6 @@ function showGrammarlyStyleSuggestion(issue) {
     console.log(`✅ Displayed Grammarly-style suggestion for ${issue.id}`);
 }
 
-// Toggle "Learn More" educational content
-function toggleLearnMore(issueId) {
-    const learnMoreSection = document.getElementById(`learn-more-${issueId}`);
-    if (learnMoreSection) {
-        const isVisible = learnMoreSection.style.display !== 'none';
-        learnMoreSection.style.display = isVisible ? 'none' : 'block';
-        
-        // Update button text
-        const button = event.target.closest('.learn');
-        if (button) {
-            button.textContent = isVisible ? 'Learn More' : 'Show Less';
-        }
-    }
-}
 
 // Accept suggestion and apply to document
 async function acceptSuggestion(issueId) {
