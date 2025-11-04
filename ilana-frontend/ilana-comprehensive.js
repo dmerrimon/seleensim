@@ -132,6 +132,9 @@ async function startAnalysis() {
         updateStatus('Analyzing with AI...', 'analyzing');
         showProcessingOverlay(true);
         
+        // Clear any existing highlights from previous analysis
+        await clearAllHighlights();
+        
         // Extract document content
         console.log('📄 Extracting document text...');
         const documentText = await extractDocumentText();
@@ -1189,7 +1192,7 @@ function updateCategoryProgress(issues) {
 }
 
 // CRITICAL: Fix selectIssue function for Grammarly-style interaction
-function selectIssue(issueId) {
+async function selectIssue(issueId) {
     console.log(`🔍 Selecting issue: ${issueId}`);
     
     // Find issue in global state
@@ -1202,6 +1205,9 @@ function selectIssue(issueId) {
     }
     
     console.log(`✅ Found issue:`, issue);
+    
+    // Highlight and scroll to text in Word document
+    await highlightAndScrollToText(issue.text);
     
     // Show Grammarly-style expanded view
     showGrammarlyStyleSuggestion(issue);
@@ -1310,6 +1316,122 @@ function showGrammarlyStyleSuggestion(issue) {
     }
     
     console.log(`✅ Displayed Grammarly-style suggestion for ${issue.id}`);
+}
+
+// Highlight and scroll to specific text in Word document
+async function highlightAndScrollToText(searchText) {
+    if (!searchText || searchText.length < 5) {
+        console.warn('⚠️ Search text too short or empty, skipping highlight');
+        return;
+    }
+    
+    try {
+        console.log(`🎯 Highlighting and scrolling to text: "${searchText.substring(0, 50)}..."`);
+        
+        await Word.run(async (context) => {
+            // Clear any existing highlights first
+            await clearPreviousHighlights(context);
+            
+            // Search for the text
+            const searchResults = context.document.body.search(searchText.trim(), {
+                ignorePunct: true,
+                ignoreSpace: true,
+                matchCase: false,
+                matchWholeWord: false
+            });
+            
+            context.load(searchResults, 'items');
+            await context.sync();
+            
+            if (searchResults.items.length > 0) {
+                // Highlight the first occurrence in orange
+                const firstResult = searchResults.items[0];
+                
+                // Apply orange highlighting
+                firstResult.font.highlightColor = '#FFA500'; // Orange color
+                firstResult.font.bold = true;
+                
+                // Scroll to the highlighted text
+                firstResult.select();
+                
+                console.log(`✅ Successfully highlighted and scrolled to text`);
+            } else {
+                // Try a fuzzy search with just the first few words
+                const firstWords = searchText.split(' ').slice(0, 3).join(' ');
+                console.log(`🔍 Exact match not found, trying fuzzy search with: "${firstWords}"`);
+                
+                const fuzzyResults = context.document.body.search(firstWords, {
+                    ignorePunct: true,
+                    ignoreSpace: true,
+                    matchCase: false,
+                    matchWholeWord: false
+                });
+                
+                context.load(fuzzyResults, 'items');
+                await context.sync();
+                
+                if (fuzzyResults.items.length > 0) {
+                    const firstFuzzyResult = fuzzyResults.items[0];
+                    firstFuzzyResult.font.highlightColor = '#FFA500';
+                    firstFuzzyResult.font.bold = true;
+                    firstFuzzyResult.select();
+                    console.log(`✅ Fuzzy search successful`);
+                } else {
+                    console.warn(`⚠️ Text not found in document: "${searchText}"`);
+                }
+            }
+            
+            await context.sync();
+        });
+        
+    } catch (error) {
+        console.error('❌ Error highlighting text:', error);
+        // Don't throw - just log the error and continue
+    }
+}
+
+// Clear previous orange highlights
+async function clearPreviousHighlights(context) {
+    try {
+        // Search for all text with orange highlight
+        const body = context.document.body;
+        const paragraphs = body.paragraphs;
+        context.load(paragraphs, 'items');
+        await context.sync();
+        
+        // Remove orange highlighting from all text
+        for (let i = 0; i < paragraphs.items.length; i++) {
+            const paragraph = paragraphs.items[i];
+            const font = paragraph.font;
+            context.load(font, 'highlightColor');
+            await context.sync();
+            
+            // Reset any orange highlights
+            if (font.highlightColor === '#FFA500' || font.highlightColor === 'Orange') {
+                font.highlightColor = null;
+                font.bold = false;
+            }
+        }
+        
+        await context.sync();
+        console.log('🧹 Cleared previous highlights');
+    } catch (error) {
+        console.warn('⚠️ Could not clear previous highlights:', error);
+    }
+}
+
+// Clear all orange highlights in document
+async function clearAllHighlights() {
+    try {
+        console.log('🧹 Clearing all highlights...');
+        
+        await Word.run(async (context) => {
+            await clearPreviousHighlights(context);
+        });
+        
+    } catch (error) {
+        console.warn('⚠️ Could not clear highlights:', error);
+    }
 }
 
 // Toggle "Learn More" educational content
