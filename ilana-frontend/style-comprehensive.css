@@ -422,6 +422,95 @@ body {
     letter-spacing: 0.5px;
 }
 
+.enterprise-badge {
+    font-size: 10px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 8px;
+}
+
+.severity-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 6px;
+}
+
+.severity-badge.critical {
+    background: #dc2626;
+    color: white;
+}
+
+.severity-badge.high-risk {
+    background: #ea580c;
+    color: white;
+}
+
+.severity-badge.medium-risk {
+    background: #d97706;
+    color: white;
+}
+
+.enterprise-details {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 16px;
+}
+
+.regulatory-references {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.reg-ref {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 16px;
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+}
+
+.reg-ref.fda {
+    background: #fef3c7;
+    color: #92400e;
+    border-color: #fde68a;
+}
+
+.reg-ref.ema {
+    background: #ecfdf5;
+    color: #065f46;
+    border-color: #bbf7d0;
+}
+
+.risk-assessment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.risk-level, .readability {
+    color: #475569;
+}
+
+.risk-level strong, .readability strong {
+    color: #0f172a;
+}
+
 .suggestion-close {
     background: none;
     border: none;

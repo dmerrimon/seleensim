@@ -1234,47 +1234,75 @@ function showGrammarlyStyleSuggestion(issue) {
     
     if (!suggestionPreview) return;
     
-    // Build Grammarly-style content
+    // Determine if this is enterprise-grade analysis
+    const isEnterprise = issue.backendConfidence === 'enterprise_grade';
+    const severity = issue.subtype?.includes('critical') ? 'CRITICAL' : 
+                    issue.subtype?.includes('high') ? 'HIGH RISK' : 
+                    issue.subtype?.includes('medium') ? 'MEDIUM RISK' : 'MINOR';
+    
+    // Build enterprise-grade Grammarly-style content
     suggestionPreview.innerHTML = `
         <div class="suggestion-header">
             <span class="suggestion-type ${issue.type}">${issue.type.toUpperCase()}</span>
+            ${isEnterprise ? `<span class="enterprise-badge">PHARMA GRADE</span>` : ''}
+            ${severity !== 'MINOR' ? `<span class="severity-badge ${severity.toLowerCase().replace(' ', '-')}">${severity}</span>` : ''}
             <button class="suggestion-close" onclick="closeSuggestion()">×</button>
         </div>
         
         <div class="suggestion-content">
             <div class="suggestion-original">
-                <label>Original:</label>
+                <label>Protocol Text:</label>
                 <span class="text-highlight">${issue.text || issue.originalText || 'Selected text'}</span>
             </div>
             
             <div class="suggestion-replacement">
-                <label>Suggested:</label>
+                <label>Pharma-Grade Improvement:</label>
                 <span class="text-improved">${issue.suggestion}</span>
             </div>
             
             <div class="suggestion-rationale">
-                <label>Why:</label>
+                <label>Clinical Impact:</label>
                 <p>${issue.rationale}</p>
-                ${issue.complianceRationale ? `<p><strong>Compliance:</strong> ${issue.complianceRationale}</p>` : ''}
+                ${issue.complianceRationale ? `<p><strong>Regulatory Analysis:</strong> ${issue.complianceRationale}</p>` : ''}
+                ${issue.operationalImpact ? `<p><strong>Site Impact:</strong> ${issue.operationalImpact}</p>` : ''}
             </div>
+            
+            ${isEnterprise ? `
+            <div class="enterprise-details">
+                <div class="regulatory-references">
+                    ${issue.fdaReference ? `<span class="reg-ref fda">📋 ${issue.fdaReference}</span>` : ''}
+                    ${issue.emaReference ? `<span class="reg-ref ema">🌍 ${issue.emaReference}</span>` : ''}
+                    ${issue.guidanceSource && !issue.fdaReference && !issue.emaReference ? `<span class="reg-ref guidance">📖 ${issue.guidanceSource}</span>` : ''}
+                </div>
+                <div class="risk-assessment">
+                    <span class="risk-level">Risk Level: <strong>${issue.retentionRisk || 'Medium'}</strong></span>
+                    ${issue.readabilityScore ? `<span class="readability">Clarity Score: <strong>${Math.round(issue.readabilityScore)}%</strong></span>` : ''}
+                </div>
+            </div>
+            ` : ''}
             
             <div class="suggestion-learn-more" id="learn-more-${issue.id}" style="display: none;">
                 <div class="examples-table">
-                    <h4>Examples:</h4>
+                    <h4>Pharma Examples:</h4>
                     <table>
                         <tr class="example-bad">
-                            <td class="label">Unclear:</td>
+                            <td class="label">Current:</td>
                             <td>${issue.text || 'Original text'}</td>
                         </tr>
                         <tr class="example-good">
-                            <td class="label">Improved:</td>
+                            <td class="label">Pharma Standard:</td>
                             <td>${issue.suggestion}</td>
                         </tr>
                     </table>
                 </div>
                 
                 <div class="educational-content">
-                    <p>Clear, concise writing improves protocol comprehension and regulatory compliance. ${issue.complianceRationale || 'This change enhances overall protocol quality.'}</p>
+                    <h4>Regulatory Context:</h4>
+                    <p>${issue.rationale}</p>
+                    ${isEnterprise ? `
+                    <p><strong>Why This Matters:</strong> ${issue.complianceRationale}</p>
+                    <p><strong>Implementation:</strong> This change addresses ${severity.toLowerCase()} regulatory requirements and improves site operational clarity.</p>
+                    ` : `<p>This improvement enhances protocol quality and regulatory compliance.</p>`}
                 </div>
             </div>
         </div>
