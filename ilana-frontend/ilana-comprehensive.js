@@ -13,13 +13,14 @@ const IlanaState = {
     currentIssues: [],
     currentSuggestions: [],
     activeFilters: ['all'],
-    intelligenceLevel: 'Advanced AI',
-    analysisMode: 'comprehensive'
+    intelligenceLevel: 'AI-Enhanced Protocol Analysis',
+    analysisMode: 'comprehensive',
+    detectedTA: null  // Background TA detection for better recommendations
 };
 
 // API Configuration
 const API_CONFIG = {
-    baseUrl: 'http://localhost:8000',  // Use local backend for development
+    baseUrl: 'https://ilana-ta-aware-api.onrender.com',  // Production backend
     timeout: 120000,  // Increase to 2 minutes for comprehensive analysis
     retryAttempts: 1  // Single attempt to avoid multiple timeouts
 };
@@ -68,10 +69,10 @@ function verifyFunctionality() {
         console.log('✅ All functions are properly connected');
     }
     
-    // Verify HTML elements (feasibility removed)
+    // Verify HTML elements for core functionality
     const requiredElements = [
         'score-value', 'score-progress', 'counter-number', 
-        'clarity-progress', 'compliance-progress',
+        'clarity-progress', 'compliance-progress', 'feasibility-progress',
         'issues-list', 'suggestions-preview'
     ];
     
@@ -199,7 +200,9 @@ async function performComprehensiveAnalysis(text) {
     }
     
     const payload = {
-        text: text.length > 145000 ? intelligentTextSampling(text) : text
+        content: text.length > 145000 ? intelligentTextSampling(text) : text,
+        chunk_index: 0,
+        total_chunks: 1
     };
     
     console.log("🔍 Sending comprehensive analysis request:", payload);
@@ -316,9 +319,9 @@ async function performChunkedAnalysis(text) {
             console.log(`🚀 Processing chunk ${i + 1} of ${maxChunks} (${chunk.length} chars)`);
             
             try {
-                const result = await analyzeSingleChunk(chunk);
-                if (result && result.suggestions) {
-                    allSuggestions.push(...result.suggestions);
+                const result = await analyzeSingleChunk(chunk, i, selectedChunks.length);
+                if (result && result.issues) {
+                    allSuggestions.push(...result.issues);
                     
                     // Show progress after each chunk
                     if (allSuggestions.length > 0) {
@@ -347,7 +350,7 @@ async function performChunkedAnalysis(text) {
 }
 
 // Analyze a single chunk with faster timeout
-async function analyzeSingleChunk(chunkText) {
+async function analyzeSingleChunk(chunkText, chunkIndex = 0, totalChunks = 1) {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 20000); // Aggressive 20 second timeout
     
@@ -358,7 +361,11 @@ async function analyzeSingleChunk(chunkText) {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify({ text: chunkText }),
+            body: JSON.stringify({ 
+                content: chunkText,
+                chunk_index: chunkIndex,
+                total_chunks: totalChunks
+            }),
             signal: controller.signal
         });
         
@@ -373,7 +380,7 @@ async function analyzeSingleChunk(chunkText) {
     } catch (error) {
         clearTimeout(timeoutId);
         console.warn("Chunk analysis failed:", error.message);
-        return { suggestions: [] };
+        return { issues: [] };
     }
 }
 
