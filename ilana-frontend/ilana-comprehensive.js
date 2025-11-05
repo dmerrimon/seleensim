@@ -20,7 +20,7 @@ const IlanaState = {
 
 // API Configuration
 const API_CONFIG = {
-    baseUrl: 'https://ilana-ta-aware-api.onrender.com',  // Production backend
+    baseUrl: 'https://ilanalabs-add-in.onrender.com',  // Working production backend
     timeout: 120000,  // Increase to 2 minutes for comprehensive analysis
     retryAttempts: 1  // Single attempt to avoid multiple timeouts
 };
