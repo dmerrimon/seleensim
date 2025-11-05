@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Simple Protocol Analyzer</title>
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            margin: 0;
+        }
+        button { 
+            background: #0078d4; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            margin: 10px 0; 
+            border-radius: 4px; 
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover { background: #106ebe; }
+        .result { 
+            margin: 10px 0; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            background: #f9f9f9;
+        }
+        .issue { 
+            margin: 5px 0; 
+            padding: 8px; 
+            border-left: 4px solid #ff6b6b; 
+            background: #ffe0e0;
+        }
+        .loading { color: #666; }
+        .error { color: #d32f2f; }
+        .success { color: #2e7d32; }
+    </style>
+</head>
+<body>
+    <h2>Protocol Analyzer</h2>
+    
+    <button onclick="analyzeDocument()">Analyze Document</button>
+    <button onclick="testAPI()">Test API Connection</button>
+    
+    <div id="status"></div>
+    <div id="results"></div>
+
+    <script>
+        Office.onReady(() => {
+            document.getElementById('status').innerHTML = '<div class="success">✅ Office.js loaded successfully</div>';
+        });
+
+        const API_URL = 'https://ilanalabs-add-in.onrender.com';
+
+        async function testAPI() {
+            const status = document.getElementById('status');
+            const results = document.getElementById('results');
+            
+            status.innerHTML = '<div class="loading">🔍 Testing API connection...</div>';
+            results.innerHTML = '';
+            
+            try {
+                // Test 1: Health check
+                const healthResponse = await fetch(`${API_URL}/health`);
+                const healthData = await healthResponse.json();
+                
+                // Test 2: Simple analysis
+                const testText = "PROTOCOL TEMPLATE: [INSERT STUDY TITLE HERE] - Phase [TBD] study";
+                const analysisResponse = await fetch(`${API_URL}/analyze-comprehensive`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        text: testText, 
+                        chunk_index: 0, 
+                        total_chunks: 1 
+                    })
+                });
+                
+                const analysisData = await analysisResponse.json();
+                
+                status.innerHTML = '<div class="success">✅ API connection successful</div>';
+                results.innerHTML = `
+                    <div class="result">
+                        <h3>API Test Results:</h3>
+                        <p><strong>Health:</strong> ${healthData.status}</p>
+                        <p><strong>Backend Version:</strong> ${healthData.version}</p>
+                        <p><strong>Test Analysis:</strong> Found ${analysisData.suggestions?.length || 0} issues</p>
+                        <p><strong>Enterprise AI:</strong> ${analysisData.metadata?.enterprise_ai_enabled ? 'Active' : 'Inactive'}</p>
+                    </div>
+                `;
+                
+            } catch (error) {
+                status.innerHTML = '<div class="error">❌ API test failed</div>';
+                results.innerHTML = `<div class="result error">Error: ${error.message}</div>`;
+            }
+        }
+
+        async function analyzeDocument() {
+            const status = document.getElementById('status');
+            const results = document.getElementById('results');
+            
+            status.innerHTML = '<div class="loading">📄 Extracting text from document...</div>';
+            results.innerHTML = '';
+            
+            try {
+                await Word.run(async (context) => {
+                    // Get all text from the document
+                    const body = context.document.body;
+                    context.load(body, 'text');
+                    await context.sync();
+                    
+                    const documentText = body.text;
+                    const textLength = documentText.length;
+                    
+                    status.innerHTML = `<div class="loading">🔍 Analyzing ${textLength} characters...</div>`;
+                    
+                    // Show preview of text being analyzed
+                    results.innerHTML = `
+                        <div class="result">
+                            <h3>Document Text Preview:</h3>
+                            <p><strong>Length:</strong> ${textLength} characters</p>
+                            <p><strong>Preview:</strong> "${documentText.substring(0, 200)}..."</p>
+                        </div>
+                    `;
+                    
+                    if (textLength < 10) {
+                        throw new Error('Document appears to be empty or too short');
+                    }
+                    
+                    // Send to API for analysis
+                    const response = await fetch(`${API_URL}/analyze-comprehensive`, {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            text: documentText,
+                            chunk_index: 0,
+                            total_chunks: 1
+                        })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`API Error: ${response.status} ${response.statusText}`);
+                    }
+                    
+                    const analysisResult = await response.json();
+                    const suggestions = analysisResult.suggestions || [];
+                    
+                    status.innerHTML = `<div class="success">✅ Analysis complete: ${suggestions.length} issues found</div>`;
+                    
+                    if (suggestions.length === 0) {
+                        results.innerHTML = `
+                            <div class="result">
+                                <h3>❌ No Issues Found</h3>
+                                <p>This might indicate a problem with the analysis. The API returned:</p>
+                                <pre style="background: #f0f0f0; padding: 10px; overflow: auto; max-height: 200px;">${JSON.stringify(analysisResult, null, 2)}</pre>
+                            </div>
+                        `;
+                    } else {
+                        results.innerHTML = `
+                            <div class="result">
+                                <h3>✅ Found ${suggestions.length} Issues:</h3>
+                                ${suggestions.slice(0, 5).map((issue, index) => `
+                                    <div class="issue">
+                                        <strong>${index + 1}. ${issue.type.toUpperCase()} (${issue.severity})</strong><br>
+                                        <strong>Text:</strong> "${issue.text?.substring(0, 100) || 'N/A'}..."<br>
+                                        <strong>Suggestion:</strong> ${issue.suggestion}<br>
+                                        <strong>Regulatory:</strong> ${issue.regulatory_source || 'N/A'}
+                                    </div>
+                                `).join('')}
+                                ${suggestions.length > 5 ? `<p><em>...and ${suggestions.length - 5} more issues</em></p>` : ''}
+                            </div>
+                        `;
+                    }
+                });
+                
+            } catch (error) {
+                status.innerHTML = '<div class="error">❌ Analysis failed</div>';
+                results.innerHTML = `<div class="result error">Error: ${error.message}</div>`;
+                console.error('Analysis error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

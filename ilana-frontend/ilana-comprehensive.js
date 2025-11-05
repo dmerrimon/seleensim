@@ -318,8 +318,8 @@ async function performChunkedAnalysis(text) {
             
             try {
                 const result = await analyzeSingleChunk(chunk, i, selectedChunks.length);
-                if (result && result.issues) {
-                    allSuggestions.push(...result.issues);
+                if (result && result.suggestions) {
+                    allSuggestions.push(...result.suggestions);
                     
                     // Show progress after each chunk
                     if (allSuggestions.length > 0) {
@@ -353,6 +353,9 @@ async function analyzeSingleChunk(chunkText, chunkIndex = 0, totalChunks = 1) {
     const timeoutId = setTimeout(() => controller.abort(), 20000); // Aggressive 20 second timeout
     
     try {
+        // DEBUG: Log what we're actually sending
+        console.log(`🔍 DEBUG Chunk ${chunkIndex + 1}: Length=${chunkText.length}, Preview="${chunkText.substring(0, 200)}..."`);
+        
         const response = await fetch(`${API_CONFIG.baseUrl}/analyze-comprehensive`, {
             method: 'POST',
             headers: {
@@ -373,7 +376,17 @@ async function analyzeSingleChunk(chunkText, chunkIndex = 0, totalChunks = 1) {
             throw new Error(`Chunk analysis failed: ${response.status}`);
         }
         
-        return await response.json();
+        const result = await response.json();
+        
+        // DEBUG: Log what we got back
+        console.log(`🔍 DEBUG Response for chunk ${chunkIndex + 1}: ${result.suggestions ? result.suggestions.length : 0} suggestions`);
+        if (result.suggestions && result.suggestions.length > 0) {
+            console.log(`🔍 DEBUG First suggestion:`, result.suggestions[0]);
+        } else {
+            console.log(`🔍 DEBUG No suggestions returned for chunk ${chunkIndex + 1}`);
+        }
+        
+        return result;
         
     } catch (error) {
         clearTimeout(timeoutId);

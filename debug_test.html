@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ilana Debug Test</title>
+</head>
+<body>
+    <h1>Ilana Analysis Debug Test</h1>
+    <button onclick="testWithTemplateText()">Test with Template Text (Should Find Issues)</button>
+    <button onclick="testWithRealProtocol()">Test with Real Protocol Text</button>
+    <div id="results"></div>
+
+    <script>
+        const API_CONFIG = {
+            baseUrl: 'https://ilanalabs-add-in.onrender.com',
+            timeout: 120000
+        };
+
+        async function testWithTemplateText() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<p>Testing with obvious template text...</p>';
+            
+            const templateText = `
+PROTOCOL TEMPLATE: [INSERT STUDY TITLE HERE]
+A Phase [INSERT PHASE] study to evaluate [INSERT COMPOUND] in [INSERT PATIENT POPULATION].
+
+OBJECTIVES:
+Primary: [TO BE DETERMINED]
+Secondary: [TO BE DETERMINED]
+
+INCLUSION CRITERIA: [INSERT CRITERIA]
+EXCLUSION CRITERIA: [INSERT CRITERIA]
+SAMPLE SIZE: [TBD] subjects
+
+ENDPOINTS:
+Primary endpoint: [DEFINE PRIMARY ENDPOINT]
+Secondary endpoints: [DEFINE SECONDARY ENDPOINTS]
+
+STATISTICAL ANALYSIS: [TO BE COMPLETED]
+SAFETY MONITORING: [INSERT SAFETY PLAN]
+            `;
+            
+            await runTest(templateText, "Template Text");
+        }
+
+        async function testWithRealProtocol() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<p>Testing with realistic protocol text...</p>';
+            
+            const protocolText = `
+PROTOCOL SYNOPSIS
+
+Title: A Phase III, Randomized, Double-Blind, Placebo-Controlled Study to Evaluate the Efficacy and Safety of ABC-789 in Patients with Previously Treated Advanced Non-Small Cell Lung Cancer Harboring EGFR Exon 20 Insertion Mutations
+
+Primary Objective: To evaluate the efficacy of ABC-789 compared to placebo in patients with NSCLC
+
+Inclusion Criteria:
+- Age ≥ 18 years
+- Histologically confirmed NSCLC
+- EGFR exon 20 insertion mutations
+- ECOG PS 0-1
+
+Exclusion Criteria:
+- Prior treatment with similar agents
+- Active brain metastases
+- Severe cardiac dysfunction
+
+Sample Size: Approximately 300 patients will be enrolled
+
+Primary Endpoint: Progression-free survival (PFS) as assessed by blinded independent central review (BICR)
+
+Statistical Analysis: The primary efficacy analysis will be conducted using the intent-to-treat (ITT) population
+            `;
+            
+            await runTest(protocolText, "Real Protocol");
+        }
+
+        async function runTest(text, testType) {
+            const results = document.getElementById('results');
+            
+            try {
+                console.log(`🔍 Testing ${testType}:`, text.substring(0, 100));
+                
+                const response = await fetch(`${API_CONFIG.baseUrl}/analyze-comprehensive`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        text: text.trim(),
+                        chunk_index: 0,
+                        total_chunks: 1
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                
+                console.log(`✅ ${testType} Result:`, result);
+                
+                const suggestionCount = result.suggestions ? result.suggestions.length : 0;
+                
+                results.innerHTML = `
+                    <h3>${testType} Results:</h3>
+                    <p><strong>Status:</strong> ${response.ok ? 'SUCCESS' : 'FAILED'}</p>
+                    <p><strong>Suggestions Found:</strong> ${suggestionCount}</p>
+                    <p><strong>Enterprise AI:</strong> ${result.metadata?.enterprise_ai_enabled ? 'ENABLED' : 'DISABLED'}</p>
+                    <p><strong>Processing Time:</strong> ${result.metadata?.processing_time || 'unknown'}s</p>
+                    
+                    ${suggestionCount > 0 ? `
+                        <h4>Sample Suggestions:</h4>
+                        ${result.suggestions.slice(0, 3).map(s => 
+                            `<div style="border: 1px solid #ccc; padding: 10px; margin: 5px;">
+                                <strong>Type:</strong> ${s.type} (${s.severity})<br>
+                                <strong>Text:</strong> "${s.text}"<br>
+                                <strong>Suggestion:</strong> ${s.suggestion}<br>
+                                <strong>Regulatory:</strong> ${s.regulatory_source || 'N/A'}
+                            </div>`
+                        ).join('')}
+                    ` : '<p><strong style="color: red;">❌ NO SUGGESTIONS FOUND - THIS IS THE PROBLEM!</strong></p>'}
+                    
+                    <h4>Full Response:</h4>
+                    <pre style="background: #f5f5f5; padding: 10px; overflow: auto; max-height: 300px;">${JSON.stringify(result, null, 2)}</pre>
+                `;
+                
+            } catch (error) {
+                console.error(`❌ ${testType} failed:`, error);
+                results.innerHTML = `
+                    <h3>${testType} - ERROR:</h3>
+                    <p style="color: red;"><strong>Error:</strong> ${error.message}</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
