@@ -1,5 +1,5 @@
 // Configuration
-const API_BASE_URL = 'https://ilana-functions-1762210617.azurewebsites.net/api';
+const API_BASE_URL = 'https://ilanalabs-add-in.onrender.com';
 
 /**
  * Ilana Protocol Intelligence - Comprehensive AI Assistant
