@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  ilana-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.dashboard
+    container_name: ilana-team-dashboard
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    networks:
+      - ilana-internal
+    environment:
+      - NGINX_WORKER_PROCESSES=auto
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  ilana-internal:
+    driver: bridge
+
+# Optional: Add volume for logs
+volumes:
+  nginx_logs:
+    driver: local

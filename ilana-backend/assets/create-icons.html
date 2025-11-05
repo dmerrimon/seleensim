@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Ilana Icons</title>
+</head>
+<body>
+    <h1>Ilana Icon Creator</h1>
+    <canvas id="canvas16" width="16" height="16" style="border: 1px solid black; margin: 10px;"></canvas>
+    <canvas id="canvas32" width="32" height="32" style="border: 1px solid black; margin: 10px;"></canvas>
+    <canvas id="canvas80" width="80" height="80" style="border: 1px solid black; margin: 10px;"></canvas>
+    
+    <div>
+        <button onclick="downloadIcon(16)">Download 16x16</button>
+        <button onclick="downloadIcon(32)">Download 32x32</button>
+        <button onclick="downloadIcon(80)">Download 80x80</button>
+    </div>
+
+    <script>
+        function createIcon(size) {
+            const canvas = document.getElementById(`canvas${size}`);
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+            
+            // Create gradient similar to the blue folder icon
+            const gradient = ctx.createLinearGradient(0, 0, 0, size);
+            gradient.addColorStop(0, '#4A9EFF');
+            gradient.addColorStop(1, '#2B7CD6');
+            
+            // Draw rounded rectangle (folder shape)
+            const cornerRadius = size * 0.15;
+            
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.roundRect(2, size * 0.3, size - 4, size * 0.6, cornerRadius);
+            ctx.fill();
+            
+            // Draw folder tab
+            ctx.beginPath();
+            ctx.roundRect(2, size * 0.15, size * 0.6, size * 0.25, cornerRadius / 2);
+            ctx.fill();
+            
+            // Add slight shadow/depth
+            ctx.fillStyle = 'rgba(0,0,0,0.1)';
+            ctx.fillRect(2, size * 0.85, size - 4, 2);
+        }
+        
+        function downloadIcon(size) {
+            const canvas = document.getElementById(`canvas${size}`);
+            const link = document.createElement('a');
+            link.download = `icon-${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Create all icons on load
+        window.onload = function() {
+            createIcon(16);
+            createIcon(32);
+            createIcon(80);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Ilana Team Dashboard - Internal Server
+FROM nginx:alpine
+
+# Copy dashboard file
+COPY team-dashboard-intranet.html /usr/share/nginx/html/index.html
+
+# Copy custom nginx config
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Expose port
+EXPOSE 80
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost/ || exit 1
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]

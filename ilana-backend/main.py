@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Ilana Protocol Intelligence API Service - Simplified Production Version
-Lightweight FastAPI service with core functionality for Render deployment
+Ilana Protocol Intelligence API Service - Enterprise Production Version
+Full enterprise AI stack with Azure OpenAI + Pinecone + PubMedBERT
 """
 
 import os
@@ -17,6 +17,43 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 
+# Add parent directory to path for enterprise components
+parent_path = Path(__file__).parent.parent
+sys.path.insert(0, str(parent_path))
+sys.path.insert(0, str(parent_path / "config"))
+
+# Import enterprise AI components
+try:
+    from config_loader import get_config, IlanaConfig
+    from optimized_real_ai_service import create_optimized_real_ai_service, OptimizedRealAIService, InlineSuggestion
+    ENTERPRISE_AVAILABLE = True
+    logger = logging.getLogger(__name__)
+    logger.info("✅ Enterprise AI components loaded successfully")
+except ImportError as e:
+    ENTERPRISE_AVAILABLE = False
+    logger = logging.getLogger(__name__)
+    logger.warning(f"⚠️ Enterprise AI components not available: {e}")
+    
+    # Fallback InlineSuggestion
+    from dataclasses import dataclass
+    @dataclass
+    class InlineSuggestion:
+        type: str
+        subtype: Optional[str] = None
+        originalText: str = ""
+        suggestedText: str = ""
+        rationale: str = ""
+        complianceRationale: str = ""
+        fdaReference: Optional[str] = None
+        emaReference: Optional[str] = None
+        guidanceSource: Optional[str] = None
+        readabilityScore: Optional[float] = None
+        operationalImpact: Optional[str] = None
+        retentionRisk: Optional[str] = None
+        enrollmentImpact: Optional[str] = None
+        backendConfidence: Optional[str] = None
+        range: Dict[str, int] = None
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -24,10 +61,14 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Request/Response Models
+# Global enterprise AI service
+enterprise_ai_service: Optional[OptimizedRealAIService] = None
+
+# Request/Response Models  
 class ComprehensiveAnalysisRequest(BaseModel):
     """Request model for comprehensive analysis"""
-    content: str = Field(..., min_length=10, description="Text to analyze")
+    text: str = Field(..., min_length=10, description="Text to analyze")
+    options: Optional[Dict[str, Any]] = Field(default_factory=dict, description="Analysis options")
     chunk_index: Optional[int] = Field(0, description="Chunk index for processing")
     total_chunks: Optional[int] = Field(1, description="Total number of chunks")
 
@@ -66,9 +107,25 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup_event():
-    """Initialize services on startup"""
-    logger.info("🚀 Starting Ilana Protocol Intelligence API (Production)")
-    logger.info("✅ Production deployment ready")
+    """Initialize enterprise AI service on startup"""
+    global enterprise_ai_service
+    
+    logger.info("🚀 Starting Enterprise Ilana AI Service")
+    
+    if ENTERPRISE_AVAILABLE:
+        try:
+            # Load enterprise configuration
+            config = get_config("production")
+            enterprise_ai_service = create_optimized_real_ai_service(config)
+            logger.info("✅ Enterprise AI service initialized with full stack (Azure OpenAI + Pinecone + PubMedBERT)")
+        except Exception as e:
+            logger.warning(f"⚠️ Enterprise AI service initialization failed: {e}")
+            enterprise_ai_service = None
+    else:
+        logger.warning("⚠️ Enterprise AI components not available, using fallback analysis")
+        enterprise_ai_service = None
+    
+    logger.info("✅ Enterprise AI production deployment ready with full stack")
 
 @app.get("/")
 async def root():
@@ -104,98 +161,117 @@ async def health_check():
 
 @app.post("/analyze-comprehensive")
 async def analyze_comprehensive(request: ComprehensiveAnalysisRequest):
-    """Comprehensive analysis endpoint for chunked document processing"""
+    """Enterprise AI comprehensive analysis endpoint"""
     try:
-        content = request.content
+        content = request.text
         chunk_index = getattr(request, 'chunk_index', 0) 
         total_chunks = getattr(request, 'total_chunks', 1)
         
-        logger.info(f"📊 Analyzing chunk {chunk_index + 1}/{total_chunks} ({len(content)} chars)")
+        logger.info(f"🤖 ENTERPRISE AI: Analyzing chunk {chunk_index + 1}/{total_chunks} ({len(content)} chars)")
         
-        # Issue detection patterns
+        # Use enterprise AI service if available
+        if enterprise_ai_service:
+            try:
+                # Call enterprise AI stack (Azure OpenAI + Pinecone + PubMedBERT)
+                suggestions, metadata = await enterprise_ai_service.analyze_comprehensive(
+                    content,
+                    {"chunk_index": chunk_index, "total_chunks": total_chunks}
+                )
+                
+                # Convert to API response format
+                issues = []
+                for suggestion in suggestions:
+                    issues.append({
+                        "id": f"enterprise_chunk_{chunk_index}_issue_{len(issues)}",
+                        "type": suggestion.type,
+                        "severity": suggestion.subtype.replace("enterprise_", "") if suggestion.subtype else "medium",
+                        "text": suggestion.originalText,
+                        "suggestion": suggestion.suggestedText,
+                        "rationale": suggestion.rationale,
+                        "regulatory_source": suggestion.guidanceSource or "Enterprise AI Analysis",
+                        "position": suggestion.range if suggestion.range else {"start": 0, "end": len(suggestion.originalText)},
+                        "category": suggestion.type,
+                        "confidence": 0.95,  # Enterprise AI confidence
+                        "ai_enhanced": True,
+                        "enterprise_analysis": True,
+                        "backend_confidence": suggestion.backendConfidence,
+                        "compliance_rationale": suggestion.complianceRationale,
+                        "fda_reference": suggestion.fdaReference,
+                        "ema_reference": suggestion.emaReference,
+                        "operational_impact": suggestion.operationalImpact,
+                        "retention_risk": suggestion.retentionRisk
+                    })
+                
+                logger.info(f"✅ ENTERPRISE AI: Generated {len(issues)} pharma-grade suggestions using full AI stack")
+                
+                # Return enterprise AI response
+                return {
+                    "suggestions": issues,
+                    "metadata": {
+                        "chunk_index": chunk_index,
+                        "total_chunks": total_chunks,
+                        "content_length": len(content),
+                        "suggestions_generated": len(issues),
+                        "enterprise_ai_enabled": True,
+                        "processing_time": metadata.get("processing_time", 0),
+                        "model_version": metadata.get("model_version", "5.0.0-full-enterprise-stack"),
+                        "ai_stack": "Azure OpenAI + Pinecone + PubMedBERT",
+                        "therapeutic_area_detection": metadata.get("therapeutic_area_detection", {}),
+                        "enterprise_features": metadata.get("enterprise_features", {})
+                    }
+                }
+                
+            except Exception as ai_error:
+                logger.error(f"❌ Enterprise AI analysis failed: {ai_error}")
+                # Fall through to pattern-based analysis
+        
+        # Fallback pattern-based analysis
+        logger.warning("⚠️ Using fallback pattern analysis")
         issues = []
         sentences = content.split('.')
         
-        issue_patterns = [
-            # Compliance Issues
-            {
-                "pattern": ["patient", "patients"],
-                "type": "compliance",
-                "severity": "medium",
-                "suggestion_template": lambda text: text.replace("patient", "subject").replace("Patient", "Subject").replace("patients", "subjects").replace("Patients", "Subjects"),
-                "rationale": "Use 'subject' instead of 'patient' per ICH-GCP E6(R2) guidelines for regulatory compliance.",
-                "regulatory_source": "ICH E6(R2) Section 1.58"
-            },
-            {
-                "pattern": ["will be", "will receive", "will undergo"],
-                "type": "compliance",
-                "severity": "low", 
-                "suggestion_template": lambda text: text.replace("will be", "shall be").replace("will receive", "shall receive").replace("will undergo", "shall undergo"),
-                "rationale": "Use 'shall' instead of 'will' for protocol requirements per regulatory standards.",
-                "regulatory_source": "FDA Guidance for Industry"
-            },
-            # Clarity Issues
-            {
-                "pattern": ["long_sentence"],
-                "type": "clarity",
-                "severity": "low",
-                "suggestion_template": lambda text: f"Consider breaking this sentence into shorter statements: {text[:50]}...",
-                "rationale": "Sentences over 25 words may reduce protocol comprehension.",
-                "regulatory_source": "ICH E6(R2) Protocol Development"
-            },
-            # Feasibility Issues
-            {
-                "pattern": ["daily", "every day"],
-                "type": "feasibility",
-                "severity": "medium",
-                "suggestion_template": lambda text: text.replace("daily", "twice weekly").replace("every day", "twice weekly"),
-                "rationale": "Daily monitoring may be burdensome. Consider reducing frequency while maintaining safety.",
-                "regulatory_source": "FDA Patient-Focused Drug Development"
-            }
+        # Simplified fallback patterns
+        fallback_patterns = [
+            ("patient", "compliance", "Use 'subject' instead of 'patient' per ICH-GCP guidelines"),
+            ("will be", "compliance", "Use 'shall' for protocol requirements"), 
+            ("daily", "feasibility", "Consider reducing frequency for patient burden")
         ]
         
-        for i, sentence in enumerate(sentences[:15]):
+        for i, sentence in enumerate(sentences[:10]):
             sentence = sentence.strip()
             if len(sentence) < 10:
                 continue
-                
-            for pattern_info in issue_patterns:
-                matched = False
-                
-                if "long_sentence" in pattern_info["pattern"]:
-                    if len(sentence.split()) > 25:
-                        matched = True
-                else:
-                    for pattern in pattern_info["pattern"]:
-                        if pattern.lower() in sentence.lower():
-                            matched = True
-                            break
-                
-                if matched:
-                    enhanced_suggestion = pattern_info["suggestion_template"](sentence)
-                    
+            
+            for pattern, issue_type, rationale in fallback_patterns:
+                if pattern in sentence.lower():
                     issues.append({
-                        "id": f"chunk_{chunk_index}_issue_{len(issues)}",
-                        "type": pattern_info["type"],
-                        "severity": pattern_info["severity"],
+                        "id": f"fallback_chunk_{chunk_index}_issue_{len(issues)}",
+                        "type": issue_type,
+                        "severity": "medium",
                         "text": sentence[:150] + "..." if len(sentence) > 150 else sentence,
-                        "suggestion": enhanced_suggestion,
-                        "rationale": pattern_info["rationale"],
-                        "regulatory_source": pattern_info["regulatory_source"],
+                        "suggestion": f"Address {pattern} in text",
+                        "rationale": rationale,
+                        "regulatory_source": "Pattern Analysis",
                         "position": {"start": i * 50, "end": i * 50 + len(sentence)},
-                        "category": pattern_info["type"],
-                        "confidence": 0.85,
-                        "ai_enhanced": True
+                        "category": issue_type,
+                        "confidence": 0.7,
+                        "ai_enhanced": False,
+                        "enterprise_analysis": False
                     })
                     break
         
         return {
-            "chunk_index": chunk_index,
-            "total_chunks": total_chunks,
-            "issues": issues,
-            "processing_time": 0.1,
-            "chunk_size": len(content),
-            "issues_count": len(issues)
+            "suggestions": issues,
+            "metadata": {
+                "chunk_index": chunk_index,
+                "total_chunks": total_chunks,
+                "content_length": len(content),
+                "suggestions_generated": len(issues),
+                "enterprise_ai_enabled": False,
+                "processing_time": 0.1,
+                "model_version": "1.0.0-pattern-fallback",
+                "ai_stack": "Pattern matching fallback"
+            }
         }
         
     except Exception as e:

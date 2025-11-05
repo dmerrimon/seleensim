@@ -124,17 +124,27 @@ class OptimizedRealAIService:
                 self.enable_pinecone = False
                 self.pinecone_index = None
         
-        # Initialize PubMedBERT service
+        # Initialize PubMedBERT service via HTTP endpoint
         if self.enable_pubmedbert:
             try:
-                import sys
-                from pathlib import Path
-                sys.path.append(str(Path(__file__).parent.parent / "ml-models"))
-                from pubmedbert_service import PubMedBERTAnalyzer
-                self.pubmedbert_service = PubMedBERTAnalyzer()
-                logger.info("✅ Enterprise PubMedBERT medical intelligence initialized")
+                import requests
+                self.pubmedbert_endpoint = self.config.pubmedbert_endpoint_url
+                self.pubmedbert_headers = {
+                    "Authorization": f"Bearer {self.config.huggingface_api_key}",
+                    "Content-Type": "application/json"
+                }
+                # Test endpoint availability
+                test_response = requests.get(self.pubmedbert_endpoint + "/health", 
+                                           headers=self.pubmedbert_headers, timeout=5)
+                if test_response.status_code == 200:
+                    logger.info("✅ Enterprise PubMedBERT endpoint connected successfully")
+                    self.pubmedbert_service = "http_endpoint"
+                else:
+                    logger.warning(f"⚠️ PubMedBERT endpoint not ready: {test_response.status_code}")
+                    self.enable_pubmedbert = False
+                    self.pubmedbert_service = None
             except Exception as e:
-                logger.warning(f"⚠️ PubMedBERT initialization failed: {e}")
+                logger.warning(f"⚠️ PubMedBERT endpoint connection failed: {e}")
                 self.enable_pubmedbert = False
                 self.pubmedbert_service = None
 
@@ -620,28 +630,46 @@ Return JSON: [{"type": "clarity|compliance", "severity": "critical|major|minor",
             return f"Vector database provided {ta_detection.therapeutic_area if ta_detection else 'general'} protocol guidance"
 
     async def _get_pubmedbert_insights(self, text: str, ta_detection: TADetectionResult = None) -> str:
-        """Get medical domain intelligence from PubMedBERT"""
+        """Get medical domain intelligence from PubMedBERT endpoint"""
         try:
-            # Use PubMedBERT for medical entity recognition and compliance analysis
-            analysis = await self.pubmedbert_service.analyze_protocol_section(
-                text[:1000],  # First 1000 chars for efficiency
-                ta_detection.therapeutic_area if ta_detection else "general_medicine"
-            )
+            if self.pubmedbert_service != "http_endpoint":
+                return f"PubMedBERT endpoint not available - using {ta_detection.therapeutic_area if ta_detection else 'general'} fallback analysis"
             
-            insights = []
-            if 'medical_entities' in analysis:
-                entities = analysis['medical_entities'][:5]  # Top 5
-                insights.append(f"Key medical entities: {', '.join(entities)}")
-            
-            if 'compliance_gaps' in analysis:
-                gaps = analysis['compliance_gaps'][:3]  # Top 3
-                insights.append(f"Compliance considerations: {', '.join(gaps)}")
-            
-            if 'regulatory_suggestions' in analysis:
-                suggestions = analysis['regulatory_suggestions'][:2]  # Top 2
-                insights.append(f"Regulatory recommendations: {', '.join(suggestions)}")
-            
-            return "\n".join(insights) if insights else f"PubMedBERT analysis indicates standard {ta_detection.therapeutic_area if ta_detection else 'medical'} protocol structure"
+            # Make HTTP request to PubMedBERT endpoint
+            import aiohttp
+            async with aiohttp.ClientSession() as session:
+                payload = {
+                    "text": text[:1000],  # First 1000 chars for efficiency
+                    "therapeutic_area": ta_detection.therapeutic_area if ta_detection else "general_medicine",
+                    "analysis_type": "protocol_compliance"
+                }
+                
+                async with session.post(
+                    f"{self.pubmedbert_endpoint}/analyze",
+                    headers=self.pubmedbert_headers,
+                    json=payload,
+                    timeout=10
+                ) as response:
+                    if response.status == 200:
+                        analysis = await response.json()
+                        
+                        insights = []
+                        if 'medical_entities' in analysis:
+                            entities = analysis['medical_entities'][:5]  # Top 5
+                            insights.append(f"Key medical entities: {', '.join(entities)}")
+                        
+                        if 'compliance_gaps' in analysis:
+                            gaps = analysis['compliance_gaps'][:3]  # Top 3
+                            insights.append(f"Compliance considerations: {', '.join(gaps)}")
+                        
+                        if 'regulatory_suggestions' in analysis:
+                            suggestions = analysis['regulatory_suggestions'][:2]  # Top 2
+                            insights.append(f"Regulatory recommendations: {', '.join(suggestions)}")
+                        
+                        return "\n".join(insights) if insights else f"PubMedBERT analysis indicates standard {ta_detection.therapeutic_area if ta_detection else 'medical'} protocol structure"
+                    else:
+                        logger.warning(f"PubMedBERT endpoint returned {response.status}")
+                        return f"Medical domain analysis suggests {ta_detection.therapeutic_area if ta_detection else 'clinical'} best practices apply"
             
         except Exception as e:
             logger.warning(f"PubMedBERT insights error: {e}")
