@@ -161,7 +161,7 @@
 
         /* Issues list display */
         .issues-section {
-            max-height: 400px;
+            max-height: 600px;
             overflow-y: auto;
         }
 
@@ -178,14 +178,19 @@
         }
 
         .issue-card {
-            padding: 16px 20px;
-            border-bottom: 1px solid var(--border-light);
+            padding: 20px;
+            margin: 8px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.2s ease;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .issue-card:hover {
             background: var(--background-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .issue-header {
@@ -243,9 +248,14 @@
         }
 
         .issue-suggestion {
-            font-size: 13px;
+            font-size: 14px;
             color: var(--text-primary);
-            line-height: 1.5;
+            line-height: 1.6;
+            margin: 12px 0;
+            padding: 12px;
+            background: var(--background-light);
+            border-radius: 6px;
+            border-left: 4px solid var(--pharmaceutical-primary);
         }
 
         .issue-regulatory {
@@ -425,7 +435,13 @@
                         body: JSON.stringify({
                             text: documentText,
                             chunk_index: 0,
-                            total_chunks: 1
+                            total_chunks: 1,
+                            options: {
+                                analysis_depth: "detailed",
+                                provide_examples: true,
+                                include_recommendations: true,
+                                pharmaceutical_focus: true
+                            }
                         })
                     });
 
@@ -515,7 +531,7 @@
                 : issues.filter(issue => issue.severity === currentFilter);
 
             issuesList.innerHTML = filteredIssues.map((issue, index) => `
-                <div class="issue-card" onclick="highlightIssueInDocument('${issue.id}')">
+                <div class="issue-card" onclick="highlightAndScrollToIssue('${issue.id}')">
                     <div class="issue-header">
                         <span class="issue-severity-badge severity-${issue.severity}">${issue.severity}</span>
                         <span class="issue-type">${issue.type}</span>
@@ -523,17 +539,28 @@
                     
                     ${issue.text ? `
                         <div class="issue-text-preview">
-                            "${issue.text.substring(0, 120)}${issue.text.length > 120 ? '...' : ''}"
+                            <strong>Current Text:</strong><br>
+                            "${issue.text.substring(0, 200)}${issue.text.length > 200 ? '...' : ''}"
                         </div>
                     ` : ''}
                     
                     <div class="issue-suggestion">
-                        <strong>Recommendation:</strong> ${issue.suggestion}
+                        <strong>Pharmaceutical Recommendation:</strong><br>
+                        ${issue.suggestion}
+                        ${issue.rationale ? `<br><br><strong>Clinical Impact:</strong> ${issue.rationale}` : ''}
                     </div>
                     
                     ${issue.regulatory_source ? `
                         <div class="issue-regulatory">
                             📋 Regulatory Reference: ${issue.regulatory_source}
+                            ${issue.fda_reference ? ` | FDA: ${issue.fda_reference}` : ''}
+                            ${issue.ema_reference ? ` | EMA: ${issue.ema_reference}` : ''}
+                        </div>
+                    ` : ''}
+                    
+                    ${issue.operational_impact ? `
+                        <div class="issue-regulatory">
+                            🏥 Operational Impact: ${issue.operational_impact}
                         </div>
                     ` : ''}
                 </div>
@@ -559,29 +586,72 @@
             }
         }
 
-        // Highlight issue in document
-        async function highlightIssueInDocument(issueId) {
+        // Highlight and scroll to issue in document
+        async function highlightAndScrollToIssue(issueId) {
             try {
                 await Word.run(async (context) => {
                     // Find the issue
                     const issue = currentIssues.find(i => i.id === issueId);
                     if (!issue || !issue.text) return;
 
-                    // Search and highlight the text in the document
-                    const searchResults = context.document.body.search(issue.text.substring(0, 50));
+                    // Clear existing highlights first
+                    const allRanges = context.document.body.search("*", {matchWildcards: true});
+                    context.load(allRanges, 'items');
+                    await context.sync();
+                    
+                    allRanges.items.forEach(range => {
+                        range.font.highlightColor = null;
+                    });
+                    
+                    // Search for the issue text with multiple strategies
+                    let searchText = issue.text.substring(0, 100).trim();
+                    let searchResults = context.document.body.search(searchText);
                     context.load(searchResults, 'items');
                     await context.sync();
 
+                    // If not found, try shorter text
+                    if (searchResults.items.length === 0 && searchText.length > 30) {
+                        searchText = issue.text.substring(0, 30).trim();
+                        searchResults = context.document.body.search(searchText);
+                        context.load(searchResults, 'items');
+                        await context.sync();
+                    }
+
+                    // If still not found, try just the first few words
+                    if (searchResults.items.length === 0) {
+                        const words = issue.text.split(' ').slice(0, 5).join(' ');
+                        searchResults = context.document.body.search(words);
+                        context.load(searchResults, 'items');
+                        await context.sync();
+                    }
+
                     if (searchResults.items.length > 0) {
                         const firstResult = searchResults.items[0];
+                        
+                        // Highlight with severity color
                         firstResult.font.highlightColor = getSeverityColor(issue.severity);
-                        firstResult.select();
+                        
+                        // Select and scroll to the text
+                        firstResult.select("Select");
+                        firstResult.track();
+                        
+                        // Force scroll to selection
+                        const range = firstResult.getRange();
+                        range.select("Select");
+                        
+                        console.log(`✅ Highlighted and scrolled to ${issue.severity} issue: ${searchText}`);
+                    } else {
+                        console.warn(`⚠️ Could not find text in document: ${searchText}`);
+                        // Show user feedback
+                        updateStatus(`Could not locate text "${searchText.substring(0, 30)}..." in document`, 'error');
+                        setTimeout(() => updateStatus('Analysis complete', 'complete'), 3000);
                     }
 
                     await context.sync();
                 });
             } catch (error) {
                 console.error('Highlighting error:', error);
+                updateStatus(`Error highlighting text: ${error.message}`, 'error');
             }
         }
 
