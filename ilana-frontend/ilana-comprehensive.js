@@ -47,8 +47,7 @@ function initializeUI() {
     // Verify all functions are available
     verifyFunctionality();
     
-    // Initialize protocol optimization tools
-    initializeProtocolOptimization();
+    // TA tools removed - keeping simple interface for core issue detection
     
     console.log("✅ Comprehensive UI initialized");
 }
@@ -143,8 +142,7 @@ async function startAnalysis() {
         console.log('📄 Extracting document text...');
         const documentText = await extractDocumentText();
         
-        // Auto-detect therapeutic area first
-        await detectTherapeuticArea(documentText);
+        // TA detection runs in background for better recommendations (no UI updates)
         
         if (!documentText || documentText.trim().length < 100) {
             throw new Error("Document too short for comprehensive analysis (minimum 100 characters)");
@@ -200,7 +198,7 @@ async function performComprehensiveAnalysis(text) {
     }
     
     const payload = {
-        content: text.length > 145000 ? intelligentTextSampling(text) : text,
+        text: text.length > 145000 ? intelligentTextSampling(text) : text,
         chunk_index: 0,
         total_chunks: 1
     };
@@ -362,7 +360,7 @@ async function analyzeSingleChunk(chunkText, chunkIndex = 0, totalChunks = 1) {
                 'Accept': 'application/json'
             },
             body: JSON.stringify({ 
-                content: chunkText,
+                text: chunkText,
                 chunk_index: chunkIndex,
                 total_chunks: totalChunks
             }),
@@ -1447,8 +1445,7 @@ async function clearAllHighlights() {
 // Therapeutic Area Detection
 async function detectTherapeuticArea(documentText) {
     try {
-        console.log('🎯 Detecting therapeutic area...');
-        updateTAStatus('Auto-detecting...', '');
+        console.log('🎯 Detecting therapeutic area (background only)...');
         
         const response = await fetch(`${API_CONFIG.baseUrl}/api/ta-detect`, {
             method: 'POST',
@@ -1465,34 +1462,17 @@ async function detectTherapeuticArea(documentText) {
         const detectedTA = taResult.therapeutic_area || 'general_medicine';
         const confidence = Math.round((taResult.confidence || 0.7) * 100);
         
-        updateTAStatus(detectedTA, `${confidence}% confidence`);
-        IlanaState.currentTA = detectedTA;
-        
-        // Load disease-specific recommendations
-        await loadDiseaseSpecificModule(detectedTA);
-        
-        console.log(`✅ TA detected: ${detectedTA} (${confidence}%)`);
+        // Store TA for background intelligence only
+        IlanaState.detectedTA = detectedTA;
+        console.log(`✅ TA detected: ${detectedTA} (${confidence}% confidence)`);
         
     } catch (error) {
         console.error('❌ TA detection failed:', error);
-        updateTAStatus('general_medicine', 'Auto-detect failed');
-        IlanaState.currentTA = 'general_medicine';
+        IlanaState.detectedTA = 'general_medicine';
     }
 }
 
-// Update TA Status Display
-function updateTAStatus(ta, confidence) {
-    const taDetected = document.getElementById('ta-detected');
-    const taConfidence = document.getElementById('ta-confidence');
-    
-    if (taDetected) {
-        taDetected.textContent = ta.replace('_', ' ').toUpperCase();
-    }
-    
-    if (taConfidence) {
-        taConfidence.textContent = confidence;
-    }
-}
+// TA Status Display removed - using background detection only
 
 // Load Disease-Specific Module
 async function loadDiseaseSpecificModule(therapeuticArea) {
