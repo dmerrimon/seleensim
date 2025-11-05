@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilana Protocol Intelligence</title>
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <style>
+        /* Pharmaceutical protocol analyzer design system */
+        
+        :root {
+            --pharmaceutical-primary: #0066cc;
+            --pharmaceutical-secondary: #004d99;
+            --critical-red: #f23452;
+            --high-red: #ff6b6b;
+            --medium-orange: #ff9800;
+            --low-gray: #8189a9;
+            --success-green: #11a683;
+            --background-light: #f0f2fc;
+            --text-primary: #0e101a;
+            --text-secondary: #8189a9;
+            --border-light: #e4e6f2;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--white);
+            color: var(--text-primary);
+            font-size: 14px;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        /* Application header */
+        .ilana-header {
+            background: linear-gradient(135deg, var(--pharmaceutical-primary), var(--pharmaceutical-secondary));
+            padding: 16px 20px;
+            color: var(--white);
+            box-shadow: 0 2px 8px rgba(0, 102, 204, 0.15);
+        }
+
+        .ilana-logo {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .ilana-tagline {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        /* Analysis action section */
+        .action-section {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .analyze-button {
+            width: 100%;
+            background: linear-gradient(135deg, var(--pharmaceutical-primary), var(--pharmaceutical-secondary));
+            color: var(--white);
+            border: none;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
+        }
+
+        .analyze-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 102, 204, 0.3);
+        }
+
+        .analyze-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Issue counters section */
+        .counters-section {
+            padding: 20px;
+            background: var(--background-light);
+        }
+
+        .counters-header {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .issue-counters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .counter-card {
+            flex: 1;
+            min-width: 120px;
+            background: var(--white);
+            border-radius: 8px;
+            padding: 16px 12px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .counter-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .counter-number {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .counter-label {
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Severity color coding */
+        .counter-critical {
+            color: var(--critical-red);
+            border-left: 4px solid var(--critical-red);
+        }
+
+        .counter-high {
+            color: var(--high-red);
+            border-left: 4px solid var(--high-red);
+        }
+
+        .counter-medium {
+            color: var(--medium-orange);
+            border-left: 4px solid var(--medium-orange);
+        }
+
+        .counter-low {
+            color: var(--low-gray);
+            border-left: 4px solid var(--low-gray);
+        }
+
+        /* Issues list display */
+        .issues-section {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .issues-header {
+            padding: 16px 20px;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-light);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .issue-card {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .issue-card:hover {
+            background: var(--background-light);
+        }
+
+        .issue-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .issue-severity-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 8px;
+        }
+
+        .severity-critical {
+            background: var(--critical-red);
+            color: var(--white);
+        }
+
+        .severity-high {
+            background: var(--high-red);
+            color: var(--white);
+        }
+
+        .severity-medium {
+            background: var(--medium-orange);
+            color: var(--white);
+        }
+
+        .severity-low {
+            background: var(--low-gray);
+            color: var(--white);
+        }
+
+        .issue-type {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .issue-text-preview {
+            font-size: 13px;
+            color: var(--text-primary);
+            background: var(--background-light);
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 8px 0;
+            font-style: italic;
+        }
+
+        .issue-suggestion {
+            font-size: 13px;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .issue-regulatory {
+            font-size: 11px;
+            color: var(--pharmaceutical-primary);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* Status indicators */
+        .status-indicator {
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .status-analyzing {
+            background: var(--background-light);
+            color: var(--pharmaceutical-primary);
+        }
+
+        .status-complete {
+            background: var(--success-green);
+            color: var(--white);
+        }
+
+        .status-error {
+            background: var(--critical-red);
+            color: var(--white);
+        }
+
+        /* Loading animation */
+        .loading-dots {
+            display: inline-block;
+        }
+
+        .loading-dots::after {
+            content: '';
+            animation: dots 1.5s infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+
+        /* Responsive design */
+        @media (max-width: 300px) {
+            .issue-counters {
+                flex-direction: column;
+            }
+            
+            .counter-card {
+                min-width: auto;
+            }
+        }
+
+        /* Hidden state */
+        .hidden {
+            display: none;
+        }
+
+        /* Enterprise badge */
+        .enterprise-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: var(--white);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Application Header -->
+    <div class="ilana-header">
+        <div class="ilana-logo">
+            Ilana Protocol Intelligence
+            <span class="enterprise-badge">Enterprise</span>
+        </div>
+        <div class="ilana-tagline">AI-Enhanced Pharmaceutical Protocol Analysis</div>
+    </div>
+
+    <!-- Action Section -->
+    <div class="action-section">
+        <button id="analyzeButton" class="analyze-button" onclick="analyzeProtocol()">
+            Analyze Protocol
+        </button>
+    </div>
+
+    <!-- Status Indicator -->
+    <div id="statusIndicator" class="status-indicator hidden">
+        <span id="statusText"></span>
+    </div>
+
+    <!-- Issue Counters -->
+    <div id="countersSection" class="counters-section hidden">
+        <div class="counters-header">Analysis Summary</div>
+        <div class="issue-counters">
+            <div class="counter-card counter-critical" onclick="filterIssues('critical')">
+                <div class="counter-number" id="criticalCount">0</div>
+                <div class="counter-label">Critical</div>
+            </div>
+            <div class="counter-card counter-high" onclick="filterIssues('high')">
+                <div class="counter-number" id="highCount">0</div>
+                <div class="counter-label">High</div>
+            </div>
+            <div class="counter-card counter-medium" onclick="filterIssues('medium')">
+                <div class="counter-number" id="mediumCount">0</div>
+                <div class="counter-label">Medium</div>
+            </div>
+            <div class="counter-card counter-low" onclick="filterIssues('low')">
+                <div class="counter-number" id="lowCount">0</div>
+                <div class="counter-label">Low</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Issues List -->
+    <div id="issuesSection" class="issues-section hidden">
+        <div class="issues-header">
+            <span id="issuesHeader">Protocol Issues</span>
+        </div>
+        <div id="issuesList"></div>
+    </div>
+
+    <script>
+        // Pharmaceutical Protocol Analyzer
+        const API_BASE_URL = 'https://ilanalabs-add-in.onrender.com';
+        let currentIssues = [];
+        let currentFilter = 'all';
+
+        // Initialize Office.js
+        Office.onReady(() => {
+            console.log('🚀 Ilana Protocol Intelligence loaded');
+            updateStatus('Ready to analyze pharmaceutical protocols', 'complete');
+        });
+
+        // Main analysis function
+        async function analyzeProtocol() {
+            const analyzeButton = document.getElementById('analyzeButton');
+            const statusIndicator = document.getElementById('statusIndicator');
+            const statusText = document.getElementById('statusText');
+
+            try {
+                // Update UI to analyzing state
+                analyzeButton.disabled = true;
+                analyzeButton.textContent = 'Analyzing...';
+                updateStatus('Extracting protocol text<span class="loading-dots"></span>', 'analyzing');
+
+                // Extract text from Word document
+                await Word.run(async (context) => {
+                    const body = context.document.body;
+                    context.load(body, 'text');
+                    await context.sync();
+
+                    const documentText = body.text;
+                    
+                    if (documentText.length < 10) {
+                        throw new Error('Document appears to be empty or too short for analysis');
+                    }
+
+                    updateStatus(`Analyzing ${documentText.length.toLocaleString()} characters with Enterprise AI<span class="loading-dots"></span>`, 'analyzing');
+
+                    // Send to API for analysis
+                    const response = await fetch(`${API_BASE_URL}/analyze-comprehensive`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            text: documentText,
+                            chunk_index: 0,
+                            total_chunks: 1
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Analysis failed: ${response.status} ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    const issues = result.suggestions || [];
+
+                    // Display results
+                    displayAnalysisResults(issues, result.metadata);
+                    
+                    updateStatus(`Analysis complete: ${issues.length} issues found`, 'complete');
+                });
+
+            } catch (error) {
+                console.error('Analysis error:', error);
+                updateStatus(`Analysis failed: ${error.message}`, 'error');
+            } finally {
+                // Reset button
+                analyzeButton.disabled = false;
+                analyzeButton.textContent = 'Analyze Protocol';
+            }
+        }
+
+        // Display analysis results
+        function displayAnalysisResults(issues, metadata) {
+            currentIssues = issues;
+            
+            // Update counters
+            updateCounters(issues);
+            
+            // Display issues
+            displayIssues(issues);
+            
+            // Show sections
+            document.getElementById('countersSection').classList.remove('hidden');
+            document.getElementById('issuesSection').classList.remove('hidden');
+        }
+
+        // Update issue counters
+        function updateCounters(issues) {
+            const counts = {
+                critical: 0,
+                high: 0,
+                medium: 0,
+                low: 0
+            };
+
+            issues.forEach(issue => {
+                if (counts.hasOwnProperty(issue.severity)) {
+                    counts[issue.severity]++;
+                }
+            });
+
+            document.getElementById('criticalCount').textContent = counts.critical;
+            document.getElementById('highCount').textContent = counts.high;
+            document.getElementById('mediumCount').textContent = counts.medium;
+            document.getElementById('lowCount').textContent = counts.low;
+        }
+
+        // Display issues list
+        function displayIssues(issues) {
+            const issuesList = document.getElementById('issuesList');
+            const issuesHeader = document.getElementById('issuesHeader');
+            
+            if (issues.length === 0) {
+                issuesList.innerHTML = `
+                    <div class="status-indicator">
+                        <div style="color: var(--success-green); font-weight: 600;">
+                            ✅ No issues found in this protocol
+                        </div>
+                        <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">
+                            Your protocol meets current regulatory standards
+                        </div>
+                    </div>
+                `;
+                issuesHeader.textContent = 'Analysis Complete';
+                return;
+            }
+
+            issuesHeader.textContent = `${issues.length} Protocol Issues Found`;
+
+            const filteredIssues = currentFilter === 'all' 
+                ? issues 
+                : issues.filter(issue => issue.severity === currentFilter);
+
+            issuesList.innerHTML = filteredIssues.map((issue, index) => `
+                <div class="issue-card" onclick="highlightIssueInDocument('${issue.id}')">
+                    <div class="issue-header">
+                        <span class="issue-severity-badge severity-${issue.severity}">${issue.severity}</span>
+                        <span class="issue-type">${issue.type}</span>
+                    </div>
+                    
+                    ${issue.text ? `
+                        <div class="issue-text-preview">
+                            "${issue.text.substring(0, 120)}${issue.text.length > 120 ? '...' : ''}"
+                        </div>
+                    ` : ''}
+                    
+                    <div class="issue-suggestion">
+                        <strong>Recommendation:</strong> ${issue.suggestion}
+                    </div>
+                    
+                    ${issue.regulatory_source ? `
+                        <div class="issue-regulatory">
+                            📋 Regulatory Reference: ${issue.regulatory_source}
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        // Filter issues by severity
+        function filterIssues(severity) {
+            currentFilter = severity;
+            displayIssues(currentIssues);
+            
+            // Update visual feedback
+            document.querySelectorAll('.counter-card').forEach(card => {
+                card.style.opacity = '0.6';
+            });
+            
+            if (severity !== 'all') {
+                document.querySelector(`.counter-${severity}`).style.opacity = '1';
+            } else {
+                document.querySelectorAll('.counter-card').forEach(card => {
+                    card.style.opacity = '1';
+                });
+            }
+        }
+
+        // Highlight issue in document
+        async function highlightIssueInDocument(issueId) {
+            try {
+                await Word.run(async (context) => {
+                    // Find the issue
+                    const issue = currentIssues.find(i => i.id === issueId);
+                    if (!issue || !issue.text) return;
+
+                    // Search and highlight the text in the document
+                    const searchResults = context.document.body.search(issue.text.substring(0, 50));
+                    context.load(searchResults, 'items');
+                    await context.sync();
+
+                    if (searchResults.items.length > 0) {
+                        const firstResult = searchResults.items[0];
+                        firstResult.font.highlightColor = getSeverityColor(issue.severity);
+                        firstResult.select();
+                    }
+
+                    await context.sync();
+                });
+            } catch (error) {
+                console.error('Highlighting error:', error);
+            }
+        }
+
+        // Get color for severity
+        function getSeverityColor(severity) {
+            switch (severity) {
+                case 'critical': return '#f23452';
+                case 'high': return '#ff6b6b';
+                case 'medium': return '#ff9800';
+                case 'low': return '#8189a9';
+                default: return '#0066cc';
+            }
+        }
+
+        // Update status indicator
+        function updateStatus(message, type) {
+            const statusIndicator = document.getElementById('statusIndicator');
+            const statusText = document.getElementById('statusText');
+            
+            statusText.innerHTML = message;
+            statusIndicator.className = `status-indicator status-${type}`;
+            statusIndicator.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
