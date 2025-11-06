@@ -175,6 +175,78 @@ async def health_check():
         }
     }
 
+@app.get("/debug/azure-openai")
+async def debug_azure_openai():
+    """Debug Azure OpenAI connection"""
+    debug_info = {
+        "environment_check": {},
+        "connection_test": {},
+        "configuration": {}
+    }
+    
+    # Check environment variables
+    debug_info["environment_check"] = {
+        "AZURE_OPENAI_ENDPOINT": os.getenv('AZURE_OPENAI_ENDPOINT', 'NOT SET')[:50] + '...' if os.getenv('AZURE_OPENAI_ENDPOINT') else 'NOT SET',
+        "AZURE_OPENAI_API_KEY": 'SET' if os.getenv('AZURE_OPENAI_API_KEY') else 'NOT SET',
+        "AZURE_OPENAI_API_KEY_LENGTH": len(os.getenv('AZURE_OPENAI_API_KEY', '')),
+        "AZURE_OPENAI_DEPLOYMENT": os.getenv('AZURE_OPENAI_DEPLOYMENT', 'NOT SET'),
+        "ENABLE_AZURE_OPENAI": os.getenv('ENABLE_AZURE_OPENAI', 'NOT SET')
+    }
+    
+    # Test configuration loading
+    if ENTERPRISE_AVAILABLE:
+        try:
+            from config_loader import get_config
+            config = get_config("production")
+            debug_info["configuration"] = {
+                "config_loaded": True,
+                "enable_azure_openai": getattr(config, 'enable_azure_openai', 'NOT SET'),
+                "azure_openai_endpoint": getattr(config, 'azure_openai_endpoint', 'NOT SET')[:50] + '...' if hasattr(config, 'azure_openai_endpoint') else 'NOT SET',
+                "azure_openai_deployment": getattr(config, 'azure_openai_deployment', 'NOT SET'),
+                "api_key_available": bool(getattr(config, 'azure_openai_api_key', None))
+            }
+            
+            # Test Azure OpenAI connection
+            try:
+                from openai import AzureOpenAI
+                client = AzureOpenAI(
+                    api_key=config.azure_openai_api_key,
+                    api_version="2024-02-01",
+                    azure_endpoint=config.azure_openai_endpoint
+                )
+                
+                # Test models list
+                models = client.models.list()
+                model_count = len(list(models))
+                
+                debug_info["connection_test"] = {
+                    "client_created": True,
+                    "models_accessible": True,
+                    "model_count": model_count,
+                    "test_status": "SUCCESS"
+                }
+                
+            except Exception as conn_error:
+                debug_info["connection_test"] = {
+                    "client_created": False,
+                    "error_type": type(conn_error).__name__,
+                    "error_message": str(conn_error),
+                    "test_status": "FAILED"
+                }
+                
+        except Exception as config_error:
+            debug_info["configuration"] = {
+                "config_loaded": False,
+                "error": str(config_error)
+            }
+    else:
+        debug_info["configuration"] = {
+            "enterprise_available": False,
+            "message": "Enterprise components not available"
+        }
+    
+    return debug_info
+
 @app.post("/analyze-comprehensive")
 async def analyze_comprehensive(request: ComprehensiveAnalysisRequest):
     """Enterprise AI comprehensive analysis endpoint"""
