@@ -90,12 +90,23 @@ class OptimizedRealAIService:
             if hasattr(self.config, 'enable_azure_openai') and self.config.enable_azure_openai:
                 if hasattr(self.config, 'azure_openai_api_key') and self.config.azure_openai_api_key:
                     if AzureOpenAI is not None:
-                        self.azure_client = AzureOpenAI(
-                            api_key=self.config.azure_openai_api_key,
-                            api_version="2024-02-01",
-                            azure_endpoint=self.config.azure_openai_endpoint
-                        )
-                        logger.info("✅ Optimized Azure OpenAI client initialized successfully")
+                        try:
+                            self.azure_client = AzureOpenAI(
+                                api_key=self.config.azure_openai_api_key,
+                                api_version="2024-02-01",
+                                azure_endpoint=self.config.azure_openai_endpoint
+                            )
+                            logger.info("✅ Optimized Azure OpenAI client initialized successfully")
+                        except Exception as azure_init_error:
+                            logger.warning(f"⚠️ Modern AzureOpenAI init failed: {azure_init_error}")
+                            # Try legacy initialization
+                            import openai
+                            openai.api_type = "azure"
+                            openai.api_base = self.config.azure_openai_endpoint
+                            openai.api_key = self.config.azure_openai_api_key
+                            openai.api_version = "2024-02-01"
+                            self.azure_client = openai
+                            logger.info("✅ Azure OpenAI client initialized (legacy fallback)")
                     else:
                         # Fallback for older versions
                         openai.api_type = "azure"
