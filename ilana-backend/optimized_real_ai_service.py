@@ -86,37 +86,73 @@ class OptimizedRealAIService:
             logger.info(f"🔍 DEBUG: azure_openai_api_key = {bool(getattr(self.config, 'azure_openai_api_key', None))}")
             logger.info(f"🔍 DEBUG: azure_openai_endpoint = {getattr(self.config, 'azure_openai_endpoint', 'NOT SET')}")
             logger.info(f"🔍 DEBUG: azure_openai_deployment = {getattr(self.config, 'azure_openai_deployment', 'NOT SET')}")
+            logger.info(f"🔍 DEBUG: OpenAI library version = {openai.__version__ if hasattr(openai, '__version__') else 'unknown'}")
+            logger.info(f"🔍 DEBUG: AzureOpenAI class available = {AzureOpenAI is not None}")
             
             if hasattr(self.config, 'enable_azure_openai') and self.config.enable_azure_openai:
                 if hasattr(self.config, 'azure_openai_api_key') and self.config.azure_openai_api_key:
                     if AzureOpenAI is not None:
                         try:
+                            logger.info("🔄 Attempting modern AzureOpenAI initialization...")
+                            # Try modern initialization with explicit parameter names
                             self.azure_client = AzureOpenAI(
                                 api_key=self.config.azure_openai_api_key,
                                 api_version="2024-02-01",
                                 azure_endpoint=self.config.azure_openai_endpoint
                             )
-                            logger.info("✅ Optimized Azure OpenAI client initialized successfully")
+                            logger.info("✅ Modern Azure OpenAI client initialized successfully")
+                            # Test the client with a simple call
+                            test_models = self.azure_client.models.list()
+                            logger.info(f"✅ Azure OpenAI connection verified - models available: {len(list(test_models))}")
                         except Exception as azure_init_error:
-                            logger.warning(f"⚠️ Modern AzureOpenAI init failed: {azure_init_error}")
-                            # Try legacy initialization
-                            import openai
-                            openai.api_type = "azure"
-                            openai.api_base = self.config.azure_openai_endpoint
-                            openai.api_key = self.config.azure_openai_api_key
-                            openai.api_version = "2024-02-01"
-                            self.azure_client = openai
-                            logger.info("✅ Azure OpenAI client initialized (legacy fallback)")
+                            logger.error(f"❌ Modern AzureOpenAI init failed with full error: {type(azure_init_error).__name__}: {azure_init_error}")
+                            logger.error(f"❌ Error args: {azure_init_error.args}")
+                            
+                            # Try alternative initialization without optional parameters
+                            try:
+                                logger.info("🔄 Attempting simplified AzureOpenAI initialization...")
+                                from openai import AzureOpenAI as AzureOpenAIClient
+                                self.azure_client = AzureOpenAIClient(
+                                    api_key=self.config.azure_openai_api_key,
+                                    azure_endpoint=self.config.azure_openai_endpoint,
+                                    api_version="2024-02-01"
+                                )
+                                logger.info("✅ Simplified Azure OpenAI client initialized successfully")
+                            except Exception as simplified_error:
+                                logger.error(f"❌ Simplified init also failed: {simplified_error}")
+                                
+                                # Try legacy initialization as final fallback
+                                try:
+                                    logger.info("🔄 Attempting legacy openai configuration...")
+                                    import openai as legacy_openai
+                                    legacy_openai.api_type = "azure"
+                                    legacy_openai.api_base = self.config.azure_openai_endpoint
+                                    legacy_openai.api_key = self.config.azure_openai_api_key
+                                    legacy_openai.api_version = "2024-02-01"
+                                    self.azure_client = legacy_openai
+                                    logger.info("✅ Legacy Azure OpenAI configuration set successfully")
+                                except Exception as legacy_error:
+                                    logger.error(f"❌ All Azure OpenAI initialization methods failed. Legacy error: {legacy_error}")
+                                    self.azure_client = None
                     else:
+                        logger.warning("⚠️ AzureOpenAI class not available, using legacy openai configuration")
                         # Fallback for older versions
-                        openai.api_type = "azure"
-                        openai.api_base = self.config.azure_openai_endpoint
-                        openai.api_key = self.config.azure_openai_api_key
-                        openai.api_version = "2024-02-01"
-                        self.azure_client = openai
-                        logger.info("✅ Azure OpenAI client initialized (legacy)")
+                        import openai as legacy_openai
+                        legacy_openai.api_type = "azure"
+                        legacy_openai.api_base = self.config.azure_openai_endpoint
+                        legacy_openai.api_key = self.config.azure_openai_api_key
+                        legacy_openai.api_version = "2024-02-01"
+                        self.azure_client = legacy_openai
+                        logger.info("✅ Legacy Azure OpenAI configuration set successfully")
+                else:
+                    logger.warning("⚠️ Azure OpenAI API key not available")
+                    self.azure_client = None
+            else:
+                logger.warning("⚠️ Azure OpenAI not enabled in configuration")
+                self.azure_client = None
         except Exception as e:
-            logger.warning(f"⚠️ Azure OpenAI initialization failed: {e}")
+            logger.error(f"❌ Azure OpenAI initialization completely failed: {type(e).__name__}: {e}")
+            logger.error(f"❌ Full exception details: {str(e)}")
             self.azure_client = None
 
     def _initialize_enterprise_stack(self):
