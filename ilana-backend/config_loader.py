@@ -144,6 +144,9 @@ class ConfigLoader:
         def get_env(key: str, default: Any = None, required: bool = False) -> Any:
             value = env_vars.get(key, default)
             
+            if key.startswith('AZURE_OPENAI'):
+                logger.info(f"🔍 CONFIG DEBUG: {key} = {value[:20] + '...' if isinstance(value, str) and len(value) > 20 else value}")
+            
             if required and value is None:
                 raise ValueError(f"Required environment variable missing: {key}")
                 

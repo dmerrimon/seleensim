@@ -82,6 +82,11 @@ class OptimizedRealAIService:
     def _initialize_azure_only(self):
         """Initialize only Azure OpenAI for faster startup"""
         try:
+            logger.info(f"🔍 DEBUG: enable_azure_openai = {getattr(self.config, 'enable_azure_openai', 'NOT SET')}")
+            logger.info(f"🔍 DEBUG: azure_openai_api_key = {bool(getattr(self.config, 'azure_openai_api_key', None))}")
+            logger.info(f"🔍 DEBUG: azure_openai_endpoint = {getattr(self.config, 'azure_openai_endpoint', 'NOT SET')}")
+            logger.info(f"🔍 DEBUG: azure_openai_deployment = {getattr(self.config, 'azure_openai_deployment', 'NOT SET')}")
+            
             if hasattr(self.config, 'enable_azure_openai') and self.config.enable_azure_openai:
                 if hasattr(self.config, 'azure_openai_api_key') and self.config.azure_openai_api_key:
                     if AzureOpenAI is not None:
@@ -90,7 +95,7 @@ class OptimizedRealAIService:
                             api_version="2024-08-01-preview",
                             azure_endpoint=self.config.azure_openai_endpoint
                         )
-                        logger.info("✅ Optimized Azure OpenAI client initialized")
+                        logger.info("✅ Optimized Azure OpenAI client initialized successfully")
                     else:
                         # Fallback for older versions
                         openai.api_type = "azure"
