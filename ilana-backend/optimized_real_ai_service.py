@@ -87,7 +87,7 @@ class OptimizedRealAIService:
                     if AzureOpenAI is not None:
                         self.azure_client = AzureOpenAI(
                             api_key=self.config.azure_openai_api_key,
-                            api_version="2024-02-01",
+                            api_version="2024-08-01-preview",
                             azure_endpoint=self.config.azure_openai_endpoint
                         )
                         logger.info("✅ Optimized Azure OpenAI client initialized")
@@ -96,7 +96,7 @@ class OptimizedRealAIService:
                         openai.api_type = "azure"
                         openai.api_base = self.config.azure_openai_endpoint
                         openai.api_key = self.config.azure_openai_api_key
-                        openai.api_version = "2024-02-01"
+                        openai.api_version = "2024-08-01-preview"
                         self.azure_client = openai
                         logger.info("✅ Azure OpenAI client initialized (legacy)")
         except Exception as e:
@@ -407,7 +407,7 @@ Provide 5-15 specific sentence improvements with exact before/after text."""
             # OPTIMIZATION: Faster API call with aggressive timeout
             if hasattr(self.azure_client, 'chat'):
                 response = self.azure_client.chat.completions.create(
-                    model="gpt-4",
+                    model=self.config.azure_openai_deployment,
                     messages=[
                         {"role": "system", "content": system_prompt},
                         {"role": "user", "content": user_prompt}
@@ -420,7 +420,7 @@ Provide 5-15 specific sentence improvements with exact before/after text."""
             else:
                 # Legacy openai
                 response = openai.ChatCompletion.create(
-                    engine="gpt-4",
+                    engine=self.config.azure_openai_deployment,
                     messages=[
                         {"role": "system", "content": system_prompt},
                         {"role": "user", "content": user_prompt}
