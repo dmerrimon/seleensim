@@ -123,12 +123,19 @@ async def startup_event():
     
     if ENTERPRISE_AVAILABLE:
         try:
+            # Debug environment variables
+            logger.info(f"🔍 Environment check - AZURE_OPENAI_ENDPOINT: {os.getenv('AZURE_OPENAI_ENDPOINT', 'NOT SET')[:50]}...")
+            logger.info(f"🔍 Environment check - AZURE_OPENAI_API_KEY: {'SET' if os.getenv('AZURE_OPENAI_API_KEY') else 'NOT SET'}")
+            logger.info(f"🔍 Environment check - AZURE_OPENAI_DEPLOYMENT: {os.getenv('AZURE_OPENAI_DEPLOYMENT', 'NOT SET')}")
+            logger.info(f"🔍 Environment check - ENABLE_AZURE_OPENAI: {os.getenv('ENABLE_AZURE_OPENAI', 'NOT SET')}")
+            
             # Load enterprise configuration
             config = get_config("production")
             enterprise_ai_service = create_optimized_real_ai_service(config)
             logger.info("✅ Enterprise AI service initialized with full stack (Azure OpenAI + Pinecone + PubMedBERT)")
         except Exception as e:
             logger.warning(f"⚠️ Enterprise AI service initialization failed: {e}")
+            logger.warning(f"⚠️ Full error details: {str(e)}")
             enterprise_ai_service = None
     else:
         logger.warning("⚠️ Enterprise AI components not available, using fallback analysis")
