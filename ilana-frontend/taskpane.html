@@ -6,21 +6,21 @@
     <title>Ilana Protocol Intelligence</title>
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
     <style>
-        /* Grammarly taskpane authentic structure */
+        /* Professional taskpane design system */
         
         :root {
-            --grammarly-green: #11a683;
-            --grammarly-green-hover: #15c894;
-            --grammarly-red: #ea1537;
-            --grammarly-red-hover: #f23452;
-            --grammarly-blue: #3b82f6;
-            --grammarly-orange: #f59e0b;
-            --grammarly-gray: #8189a9;
-            --grammarly-dark: #0e101a;
-            --grammarly-light-bg: #f0f2fc;
-            --grammarly-border: #e4e6f2;
-            --grammarly-white: #ffffff;
-            --grammarly-hover: #f8fafc;
+            --primary-green: #11a683;
+            --primary-green-hover: #15c894;
+            --primary-red: #ea1537;
+            --primary-red-hover: #f23452;
+            --primary-blue: #3b82f6;
+            --primary-orange: #f59e0b;
+            --text-gray: #8189a9;
+            --text-dark: #0e101a;
+            --background-light: #f0f2fc;
+            --border-light: #e4e6f2;
+            --surface-white: #ffffff;
+            --surface-hover: #f8fafc;
         }
 
         * {
@@ -31,8 +31,8 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--grammarly-white);
-            color: var(--grammarly-dark);
+            background: var(--surface-white);
+            color: var(--text-dark);
             font-size: 14px;
             line-height: 1.4;
             height: 100vh;
@@ -57,7 +57,7 @@
         /* Header wrapper */
         .header-wrapper {
             padding: 16px 20px;
-            border-bottom: 1px solid var(--grammarly-border);
+            border-bottom: 1px solid var(--border-light);
             flex-shrink: 0;
         }
 
@@ -71,12 +71,12 @@
         .lens-title {
             font-size: 18px;
             font-weight: 600;
-            color: var(--grammarly-dark);
+            color: var(--text-dark);
         }
 
         .header-btn {
-            background: var(--grammarly-green);
-            color: var(--grammarly-white);
+            background: var(--primary-green);
+            color: var(--surface-white);
             border: none;
             padding: 8px 16px;
             border-radius: 4px;
@@ -87,7 +87,7 @@
         }
 
         .header-btn:hover {
-            background: var(--grammarly-green-hover);
+            background: var(--primary-green-hover);
         }
 
         .header-btn:disabled {
@@ -98,9 +98,9 @@
         /* Navigation container */
         .navigation-container {
             padding: 12px 20px;
-            border-bottom: 1px solid var(--grammarly-border);
+            border-bottom: 1px solid var(--border-light);
             flex-shrink: 0;
-            background: var(--grammarly-light-bg);
+            background: var(--background-light);
         }
 
         .all-alerts-container {
@@ -110,7 +110,7 @@
         }
 
         .all-alerts-stats {
-            color: var(--grammarly-gray);
+            color: var(--text-gray);
             font-size: 13px;
         }
 
@@ -128,8 +128,8 @@
         }
 
         .counter-number {
-            background: var(--grammarly-red);
-            color: var(--grammarly-white);
+            background: var(--primary-red);
+            color: var(--surface-white);
             padding: 2px 6px;
             border-radius: 3px;
             font-size: 11px;
@@ -139,11 +139,11 @@
         }
 
         .counter-number.low {
-            background: var(--grammarly-gray);
+            background: var(--text-gray);
         }
 
         .counter-number.medium {
-            background: var(--grammarly-orange);
+            background: var(--primary-orange);
         }
 
         /* Scroll content */
@@ -154,7 +154,7 @@
         }
 
         .card-wrapper {
-            border-bottom: 1px solid var(--grammarly-border);
+            border-bottom: 1px solid var(--border-light);
         }
 
         .card-wrapper:last-child {
@@ -164,17 +164,17 @@
         /* Full card structure */
         .full-card {
             padding: 20px;
-            background: var(--grammarly-white);
+            background: var(--surface-white);
             cursor: pointer;
             transition: background 0.2s ease;
         }
 
         .full-card:hover {
-            background: var(--grammarly-hover);
+            background: var(--surface-hover);
         }
 
         .full-card.maximized {
-            background: var(--grammarly-light-bg);
+            background: var(--background-light);
         }
 
         .card-logo {
@@ -187,23 +187,23 @@
             justify-content: center;
             font-size: 10px;
             font-weight: 600;
-            color: var(--grammarly-white);
+            color: var(--surface-white);
         }
 
         .card-logo.critical {
-            background: var(--grammarly-red);
+            background: var(--primary-red);
         }
 
         .card-logo.high {
-            background: var(--grammarly-red);
+            background: var(--primary-red);
         }
 
         .card-logo.medium {
-            background: var(--grammarly-orange);
+            background: var(--primary-orange);
         }
 
         .card-logo.low {
-            background: var(--grammarly-gray);
+            background: var(--text-gray);
         }
 
         /* Report list - suggestion items */
@@ -217,7 +217,7 @@
 
         .item-original {
             position: relative;
-            color: var(--grammarly-red);
+            color: var(--primary-red);
             text-decoration: line-through;
             margin-right: 8px;
             font-weight: 500;
@@ -225,14 +225,14 @@
 
         .item-original:after {
             content: '→';
-            color: var(--grammarly-gray);
+            color: var(--text-gray);
             margin-left: 8px;
             text-decoration: none;
         }
 
         .item-insert {
-            background: var(--grammarly-green);
-            color: var(--grammarly-white);
+            background: var(--primary-green);
+            color: var(--surface-white);
             padding: 2px 6px;
             border-radius: 4px;
             font-weight: 600;
@@ -243,12 +243,12 @@
         }
 
         .item-insert:hover {
-            background: var(--grammarly-green-hover);
+            background: var(--primary-green-hover);
         }
 
         .item-remove {
-            background: var(--grammarly-red);
-            color: var(--grammarly-white);
+            background: var(--primary-red);
+            color: var(--surface-white);
             padding: 2px 6px;
             border-radius: 4px;
             font-weight: 600;
@@ -259,27 +259,27 @@
         }
 
         .item-remove:hover {
-            background: var(--grammarly-red-hover);
+            background: var(--primary-red-hover);
         }
 
         /* Full sentence background */
         .full-sentence-background {
-            background: var(--grammarly-light-bg);
+            background: var(--background-light);
             padding: 12px;
             border-radius: 4px;
             margin: 12px 0;
             font-style: italic;
             line-height: 1.4;
-            color: var(--grammarly-dark);
+            color: var(--text-dark);
         }
 
         .full-sentence-insert {
-            color: var(--grammarly-green);
+            color: var(--primary-green);
             font-weight: 600;
         }
 
         .full-sentence-delete {
-            color: var(--grammarly-red);
+            color: var(--primary-red);
             text-decoration: line-through;
             font-weight: 600;
         }
@@ -293,8 +293,8 @@
 
         .card-footer-btn {
             background: transparent;
-            border: 1px solid var(--grammarly-border);
-            color: var(--grammarly-dark);
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
             padding: 6px 12px;
             border-radius: 4px;
             font-size: 12px;
@@ -303,19 +303,19 @@
         }
 
         .card-footer-btn:hover {
-            background: var(--grammarly-hover);
-            border-color: var(--grammarly-gray);
+            background: var(--surface-hover);
+            border-color: var(--text-gray);
         }
 
         .card-footer-btn.primary {
-            background: var(--grammarly-green);
-            border-color: var(--grammarly-green);
-            color: var(--grammarly-white);
+            background: var(--primary-green);
+            border-color: var(--primary-green);
+            color: var(--surface-white);
         }
 
         .card-footer-btn.primary:hover {
-            background: var(--grammarly-green-hover);
-            border-color: var(--grammarly-green-hover);
+            background: var(--primary-green-hover);
+            border-color: var(--primary-green-hover);
         }
 
         /* Minimized state */
@@ -333,23 +333,23 @@
             padding: 12px 20px;
             text-align: center;
             font-size: 13px;
-            background: var(--grammarly-light-bg);
-            color: var(--grammarly-gray);
-            border-bottom: 1px solid var(--grammarly-border);
+            background: var(--background-light);
+            color: var(--text-gray);
+            border-bottom: 1px solid var(--border-light);
         }
 
         .status-indicator.analyzing {
-            color: var(--grammarly-blue);
+            color: var(--primary-blue);
         }
 
         .status-indicator.complete {
-            background: var(--grammarly-green);
-            color: var(--grammarly-white);
+            background: var(--primary-green);
+            color: var(--surface-white);
         }
 
         .status-indicator.error {
-            background: var(--grammarly-red);
-            color: var(--grammarly-white);
+            background: var(--primary-red);
+            color: var(--surface-white);
         }
 
         /* Loading animation */
@@ -377,20 +377,20 @@
         .empty-state {
             padding: 40px 20px;
             text-align: center;
-            color: var(--grammarly-gray);
+            color: var(--text-gray);
         }
 
         .empty-state-icon {
             font-size: 48px;
             margin-bottom: 16px;
-            color: var(--grammarly-green);
+            color: var(--primary-green);
         }
 
         .empty-state-title {
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 8px;
-            color: var(--grammarly-dark);
+            color: var(--text-dark);
         }
 
         .empty-state-subtitle {
@@ -400,7 +400,7 @@
     </style>
 </head>
 <body>
-    <!-- Grammarly-style sidebar wrapper -->
+    <!-- Professional sidebar wrapper -->
     <div class="sidebar-wrapper">
         <div class="wrapper">
             <!-- Header wrapper -->
@@ -456,7 +456,7 @@
     </div>
 
     <script>
-        // Pharmaceutical Protocol Analyzer - Grammarly Style
+        // Pharmaceutical Protocol Analyzer - Professional Interface
         const API_BASE_URL = 'https://ilanalabs-add-in.onrender.com';
         let currentIssues = [];
         let maximizedCard = null;

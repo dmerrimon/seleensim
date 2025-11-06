@@ -230,11 +230,20 @@ async def analyze_comprehensive(request: ComprehensiveAnalysisRequest):
         issues = []
         sentences = content.split('.')
         
-        # Simplified fallback patterns
+        # Enhanced fallback patterns with specific replacements
         fallback_patterns = [
-            ("patient", "compliance", "Use 'subject' instead of 'patient' per ICH-GCP guidelines"),
-            ("will be", "compliance", "Use 'shall' for protocol requirements"), 
-            ("daily", "feasibility", "Consider reducing frequency for patient burden")
+            ("patient", "participant", "compliance", "Use 'participant' instead of 'patient' per ICH-GCP guidelines for clinical research"),
+            ("patients", "participants", "compliance", "Use 'participants' instead of 'patients' per ICH-GCP guidelines for clinical research"),
+            ("will be", "shall be", "compliance", "Use 'shall be' instead of 'will be' for protocol requirements per regulatory standards"),
+            ("daily", "once daily", "feasibility", "Consider specifying 'once daily' for clarity and reducing participant burden"),
+            ("every day", "once daily", "clarity", "Use standardized terminology 'once daily' instead of 'every day'"),
+            ("twice a day", "twice daily", "clarity", "Use standardized terminology 'twice daily' instead of 'twice a day'"),
+            ("morning", "in the morning", "clarity", "Specify 'in the morning' for clearer dosing instructions"),
+            ("evening", "in the evening", "clarity", "Specify 'in the evening' for clearer dosing instructions"),
+            ("doctor", "investigator", "compliance", "Use 'investigator' instead of 'doctor' per clinical research standards"),
+            ("study drug", "investigational product", "compliance", "Use 'investigational product' instead of 'study drug' per ICH-GCP terminology"),
+            ("side effect", "adverse event", "compliance", "Use 'adverse event' instead of 'side effect' per ICH-GCP guidelines"),
+            ("side effects", "adverse events", "compliance", "Use 'adverse events' instead of 'side effects' per ICH-GCP guidelines")
         ]
         
         for i, sentence in enumerate(sentences[:10]):
@@ -242,21 +251,31 @@ async def analyze_comprehensive(request: ComprehensiveAnalysisRequest):
             if len(sentence) < 10:
                 continue
             
-            for pattern, issue_type, rationale in fallback_patterns:
+            for pattern, replacement, issue_type, rationale in fallback_patterns:
                 if pattern in sentence.lower():
+                    # Find the exact text and create replacement
+                    original_text = sentence
+                    suggested_text = sentence.replace(pattern, replacement)
+                    
+                    # If the replacement is the same as original, skip
+                    if original_text == suggested_text:
+                        continue
+                    
                     issues.append({
                         "id": f"fallback_chunk_{chunk_index}_issue_{len(issues)}",
                         "type": issue_type,
                         "severity": "medium",
-                        "text": sentence[:150] + "..." if len(sentence) > 150 else sentence,
-                        "suggestion": f"Address {pattern} in text",
+                        "text": original_text[:150] + "..." if len(original_text) > 150 else original_text,
+                        "suggestion": suggested_text[:200] + "..." if len(suggested_text) > 200 else suggested_text,
                         "rationale": rationale,
-                        "regulatory_source": "Pattern Analysis",
+                        "regulatory_source": "ICH-GCP Guidelines",
                         "position": {"start": i * 50, "end": i * 50 + len(sentence)},
                         "category": issue_type,
-                        "confidence": 0.7,
+                        "confidence": 0.8,
                         "ai_enhanced": False,
-                        "enterprise_analysis": False
+                        "enterprise_analysis": False,
+                        "original_term": pattern,
+                        "suggested_term": replacement
                     })
                     break
         
