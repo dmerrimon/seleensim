@@ -382,11 +382,13 @@ ANALYSIS DEPTH:
 - Include severity levels: Critical/Major/Minor
 - Reference specific regulations (CFR sections, ICH guidelines)
 - Provide pharma-quality rationales with risk implications
-- Suggest specific regulatory language improvements
+- For terminology issues: provide EXACT term replacements like "patient" → "participant"
+- For language issues: provide specific text improvements showing before/after
+- Focus on specific, actionable changes rather than general recommendations
 
-Return JSON: [{"type": "clarity|compliance", "severity": "critical|major|minor", "originalText": "exact text", "suggestedText": "regulatory-compliant improvement", "rationale": "detailed pharma-quality rationale", "regulatoryReference": "specific CFR/ICH citation", "riskLevel": "high|medium|low", "implementationImpact": "site operational impact"}]"""
+Return JSON: [{"type": "clarity|compliance", "severity": "critical|major|minor", "originalText": "exact problematic text from protocol", "suggestedText": "specific improved replacement text", "rationale": "detailed pharma-quality rationale explaining the change", "regulatoryReference": "specific CFR/ICH citation", "riskLevel": "high|medium|low", "implementationImpact": "site operational impact"}]"""
 
-            user_prompt = f"Conduct enterprise pharma-grade analysis of this protocol section. Apply Big Pharma standards for regulatory compliance, operational clarity, and risk assessment:\n\n{chunk}\n\nProvide 8-20 detailed findings with regulatory citations and risk levels."
+            user_prompt = f"Conduct enterprise pharma-grade analysis of this protocol section. Apply Big Pharma standards for regulatory compliance, operational clarity, and risk assessment. Focus on specific term replacements (like 'patient' → 'participant') and exact text improvements:\n\n{chunk}\n\nProvide 8-20 detailed findings with regulatory citations and specific before/after text changes."
 
             # OPTIMIZATION: Faster API call with aggressive timeout
             if hasattr(self.azure_client, 'chat'):
