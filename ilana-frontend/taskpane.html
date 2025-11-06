@@ -6,11 +6,13 @@
     <title>Ilana Protocol Intelligence</title>
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
     <style>
-        /* Grammarly-inspired design system */
+        /* Grammarly taskpane authentic structure */
         
         :root {
             --grammarly-green: #11a683;
-            --grammarly-red: #f23452;
+            --grammarly-green-hover: #15c894;
+            --grammarly-red: #ea1537;
+            --grammarly-red-hover: #f23452;
             --grammarly-blue: #3b82f6;
             --grammarly-orange: #f59e0b;
             --grammarly-gray: #8189a9;
@@ -33,235 +35,297 @@
             color: var(--grammarly-dark);
             font-size: 14px;
             line-height: 1.4;
-            overflow-x: hidden;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        /* Application header */
-        .ilana-header {
-            background: var(--grammarly-white);
-            padding: 16px 20px;
-            color: var(--grammarly-dark);
-            border-bottom: 1px solid var(--grammarly-border);
-        }
-
-        .ilana-logo {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .ilana-tagline {
-            font-size: 12px;
-            opacity: 0.9;
-        }
-
-        /* Analysis action section */
-        .action-section {
-            padding: 20px;
-            border-bottom: 1px solid var(--grammarly-border);
-        }
-
-        .analyze-button {
+        /* Main sidebar wrapper */
+        .sidebar-wrapper {
+            height: 100%;
             width: 100%;
-            background: var(--grammarly-green);
-            color: var(--grammarly-white);
-            border: none;
-            padding: 14px 20px;
-            border-radius: 6px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .analyze-button:hover {
-            background: #15c894;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-        }
-
-        .analyze-button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* Issue counters section */
-        .counters-section {
-            padding: 20px;
-            background: var(--grammarly-white);
-            border-bottom: 1px solid var(--grammarly-border);
-        }
-
-        .counters-header {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--grammarly-dark);
-            margin-bottom: 16px;
-        }
-
-        .issue-counters {
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
+            flex-direction: column;
+            overflow: hidden;
         }
 
-        .counter-card {
-            flex: 1;
-            min-width: 120px;
-            background: var(--grammarly-white);
-            border-radius: 6px;
-            padding: 16px 12px;
-            text-align: center;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--grammarly-border);
-            cursor: pointer;
-            transition: all 0.2s ease;
+        .wrapper {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
-        .counter-card:hover {
-            background: var(--grammarly-hover);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-        }
-
-        .counter-number {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .counter-label {
-            font-size: 12px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Severity color coding */
-        .counter-critical {
-            color: var(--grammarly-red);
-            border-left: 3px solid var(--grammarly-red);
-        }
-
-        .counter-high {
-            color: var(--grammarly-red);
-            border-left: 3px solid var(--grammarly-red);
-        }
-
-        .counter-medium {
-            color: var(--grammarly-orange);
-            border-left: 3px solid var(--grammarly-orange);
-        }
-
-        .counter-low {
-            color: var(--grammarly-gray);
-            border-left: 3px solid var(--grammarly-gray);
-        }
-
-        /* Issues list display */
-        .issues-section {
-            max-height: 600px;
-            overflow-y: auto;
-        }
-
-        .issues-header {
+        /* Header wrapper */
+        .header-wrapper {
             padding: 16px 20px;
-            background: var(--grammarly-white);
             border-bottom: 1px solid var(--grammarly-border);
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--grammarly-dark);
-            position: sticky;
-            top: 0;
-            z-index: 10;
+            flex-shrink: 0;
         }
 
-        .issue-card {
-            padding: 20px;
-            margin: 12px;
-            border: 1px solid var(--grammarly-border);
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            background: var(--grammarly-white);
-        }
-
-        .issue-card:hover {
-            background: var(--grammarly-hover);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-        }
-
-        .issue-header {
+        .header {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             margin-bottom: 8px;
         }
 
-        .issue-severity-badge {
-            display: inline-block;
-            padding: 4px 8px;
+        .lens-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--grammarly-dark);
+        }
+
+        .header-btn {
+            background: var(--grammarly-green);
+            color: var(--grammarly-white);
+            border: none;
+            padding: 8px 16px;
             border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .header-btn:hover {
+            background: var(--grammarly-green-hover);
+        }
+
+        .header-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Navigation container */
+        .navigation-container {
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--grammarly-border);
+            flex-shrink: 0;
+            background: var(--grammarly-light-bg);
+        }
+
+        .all-alerts-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .all-alerts-stats {
+            color: var(--grammarly-gray);
+            font-size: 13px;
+        }
+
+        .counter-wrapper {
+            display: flex;
+            gap: 16px;
+        }
+
+        .counter-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .counter-number {
+            background: var(--grammarly-red);
+            color: var(--grammarly-white);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            min-width: 18px;
+            text-align: center;
+        }
+
+        .counter-number.low {
+            background: var(--grammarly-gray);
+        }
+
+        .counter-number.medium {
+            background: var(--grammarly-orange);
+        }
+
+        /* Scroll content */
+        .scroll-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0;
+        }
+
+        .card-wrapper {
+            border-bottom: 1px solid var(--grammarly-border);
+        }
+
+        .card-wrapper:last-child {
+            border-bottom: none;
+        }
+
+        /* Full card structure */
+        .full-card {
+            padding: 20px;
+            background: var(--grammarly-white);
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .full-card:hover {
+            background: var(--grammarly-hover);
+        }
+
+        .full-card.maximized {
+            background: var(--grammarly-light-bg);
+        }
+
+        .card-logo {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 10px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-right: 8px;
-        }
-
-        .severity-critical {
-            background: var(--grammarly-red);
             color: var(--grammarly-white);
         }
 
-        .severity-high {
+        .card-logo.critical {
             background: var(--grammarly-red);
-            color: var(--grammarly-white);
         }
 
-        .severity-medium {
+        .card-logo.high {
+            background: var(--grammarly-red);
+        }
+
+        .card-logo.medium {
             background: var(--grammarly-orange);
-            color: var(--grammarly-white);
         }
 
-        .severity-low {
+        .card-logo.low {
             background: var(--grammarly-gray);
+        }
+
+        /* Report list - suggestion items */
+        .report-list {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .item-original {
+            position: relative;
+            color: var(--grammarly-red);
+            text-decoration: line-through;
+            margin-right: 8px;
+            font-weight: 500;
+        }
+
+        .item-original:after {
+            content: '→';
+            color: var(--grammarly-gray);
+            margin-left: 8px;
+            text-decoration: none;
+        }
+
+        .item-insert {
+            background: var(--grammarly-green);
+            color: var(--grammarly-white);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+
+        .item-insert:hover {
+            background: var(--grammarly-green-hover);
+        }
+
+        .item-remove {
+            background: var(--grammarly-red);
+            color: var(--grammarly-white);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+
+        .item-remove:hover {
+            background: var(--grammarly-red-hover);
+        }
+
+        /* Full sentence background */
+        .full-sentence-background {
+            background: var(--grammarly-light-bg);
+            padding: 12px;
+            border-radius: 4px;
+            margin: 12px 0;
+            font-style: italic;
+            line-height: 1.4;
+            color: var(--grammarly-dark);
+        }
+
+        .full-sentence-insert {
+            color: var(--grammarly-green);
+            font-weight: 600;
+        }
+
+        .full-sentence-delete {
+            color: var(--grammarly-red);
+            text-decoration: line-through;
+            font-weight: 600;
+        }
+
+        /* Card footer */
+        .card-footer {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .card-footer-btn {
+            background: transparent;
+            border: 1px solid var(--grammarly-border);
+            color: var(--grammarly-dark);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .card-footer-btn:hover {
+            background: var(--grammarly-hover);
+            border-color: var(--grammarly-gray);
+        }
+
+        .card-footer-btn.primary {
+            background: var(--grammarly-green);
+            border-color: var(--grammarly-green);
             color: var(--grammarly-white);
         }
 
-        .issue-type {
-            font-size: 12px;
-            color: var(--grammarly-gray);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .card-footer-btn.primary:hover {
+            background: var(--grammarly-green-hover);
+            border-color: var(--grammarly-green-hover);
         }
 
-        .issue-text-preview {
-            font-size: 13px;
-            color: var(--grammarly-dark);
-            background: var(--grammarly-light-bg);
-            padding: 8px 12px;
-            border-radius: 4px;
-            margin: 8px 0;
-            font-style: italic;
+        /* Minimized state */
+        .minimized .report-list {
+            margin-bottom: 0;
         }
 
-        .issue-suggestion {
-            font-size: 14px;
-            color: var(--grammarly-dark);
-            line-height: 1.6;
-            margin: 12px 0;
-            padding: 12px;
-            background: var(--grammarly-light-bg);
-            border-radius: 4px;
-            border-left: 3px solid var(--grammarly-green);
-        }
-
-        .issue-regulatory {
-            font-size: 11px;
-            color: var(--grammarly-blue);
-            margin-top: 4px;
-            font-weight: 500;
+        .minimized .full-sentence-background,
+        .minimized .card-footer {
+            display: none;
         }
 
         /* Status indicators */
@@ -269,21 +333,21 @@
             padding: 12px 20px;
             text-align: center;
             font-size: 13px;
-            border-radius: 4px;
-            margin: 8px;
+            background: var(--grammarly-light-bg);
+            color: var(--grammarly-gray);
+            border-bottom: 1px solid var(--grammarly-border);
         }
 
-        .status-analyzing {
-            background: var(--grammarly-light-bg);
+        .status-indicator.analyzing {
             color: var(--grammarly-blue);
         }
 
-        .status-complete {
+        .status-indicator.complete {
             background: var(--grammarly-green);
             color: var(--grammarly-white);
         }
 
-        .status-error {
+        .status-indicator.error {
             background: var(--grammarly-red);
             color: var(--grammarly-white);
         }
@@ -304,95 +368,98 @@
             60%, 100% { content: '...'; }
         }
 
-        /* Responsive design */
-        @media (max-width: 300px) {
-            .issue-counters {
-                flex-direction: column;
-            }
-            
-            .counter-card {
-                min-width: auto;
-            }
-        }
-
         /* Hidden state */
         .hidden {
             display: none;
         }
 
-        /* Enterprise badge */
-        .enterprise-badge {
-            display: inline-block;
-            background: var(--grammarly-green);
-            color: var(--grammarly-white);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 10px;
+        /* Empty state */
+        .empty-state {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--grammarly-gray);
+        }
+
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: var(--grammarly-green);
+        }
+
+        .empty-state-title {
+            font-size: 16px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-left: 8px;
+            margin-bottom: 8px;
+            color: var(--grammarly-dark);
+        }
+
+        .empty-state-subtitle {
+            font-size: 13px;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
-    <!-- Application Header -->
-    <div class="ilana-header">
-        <div class="ilana-logo">
-            Ilana Protocol Intelligence
-            <span class="enterprise-badge">Enterprise</span>
+    <!-- Grammarly-style sidebar wrapper -->
+    <div class="sidebar-wrapper">
+        <div class="wrapper">
+            <!-- Header wrapper -->
+            <div class="header-wrapper">
+                <div class="header">
+                    <div class="lens-title">Ilana</div>
+                    <button id="analyzeButton" class="header-btn" onclick="analyzeProtocol()">
+                        Analyze
+                    </button>
+                </div>
+            </div>
+
+            <!-- Status indicator -->
+            <div id="statusIndicator" class="status-indicator hidden">
+                <span id="statusText"></span>
+            </div>
+
+            <!-- Navigation container -->
+            <div id="navigationContainer" class="navigation-container hidden">
+                <div class="all-alerts-container">
+                    <div class="all-alerts-stats">
+                        <span id="totalIssues">0 issues found</span>
+                    </div>
+                    <div class="counter-wrapper">
+                        <div class="counter-content">
+                            <span class="counter-number" id="criticalCount">0</span>
+                            <span>Critical</span>
+                        </div>
+                        <div class="counter-content">
+                            <span class="counter-number medium" id="mediumCount">0</span>
+                            <span>Medium</span>
+                        </div>
+                        <div class="counter-content">
+                            <span class="counter-number low" id="lowCount">0</span>
+                            <span>Low</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll content -->
+            <div class="scroll-content">
+                <div id="cardsList"></div>
+                
+                <!-- Empty state -->
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-state-icon">✓</div>
+                    <div class="empty-state-title">Ready to analyze</div>
+                    <div class="empty-state-subtitle">Click "Analyze" to check your pharmaceutical protocol for compliance, clarity, and feasibility issues.</div>
+                </div>
+            </div>
         </div>
-        <div class="ilana-tagline">AI-Enhanced Pharmaceutical Protocol Analysis</div>
-    </div>
-
-    <!-- Action Section -->
-    <div class="action-section">
-        <button id="analyzeButton" class="analyze-button" onclick="analyzeProtocol()">
-            Analyze Protocol
-        </button>
-    </div>
-
-    <!-- Status Indicator -->
-    <div id="statusIndicator" class="status-indicator hidden">
-        <span id="statusText"></span>
-    </div>
-
-    <!-- Issue Counters -->
-    <div id="countersSection" class="counters-section hidden">
-        <div class="counters-header">Analysis Summary</div>
-        <div class="issue-counters">
-            <div class="counter-card counter-critical" onclick="filterIssues('critical')">
-                <div class="counter-number" id="criticalCount">0</div>
-                <div class="counter-label">Critical</div>
-            </div>
-            <div class="counter-card counter-high" onclick="filterIssues('high')">
-                <div class="counter-number" id="highCount">0</div>
-                <div class="counter-label">High</div>
-            </div>
-            <div class="counter-card counter-medium" onclick="filterIssues('medium')">
-                <div class="counter-number" id="mediumCount">0</div>
-                <div class="counter-label">Medium</div>
-            </div>
-            <div class="counter-card counter-low" onclick="filterIssues('low')">
-                <div class="counter-number" id="lowCount">0</div>
-                <div class="counter-label">Low</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Issues List -->
-    <div id="issuesSection" class="issues-section hidden">
-        <div class="issues-header">
-            <span id="issuesHeader">Protocol Issues</span>
-        </div>
-        <div id="issuesList"></div>
     </div>
 
     <script>
-        // Pharmaceutical Protocol Analyzer
+        // Pharmaceutical Protocol Analyzer - Grammarly Style
         const API_BASE_URL = 'https://ilanalabs-add-in.onrender.com';
         let currentIssues = [];
-        let currentFilter = 'all';
+        let maximizedCard = null;
 
         // Initialize Office.js
         Office.onReady(() => {
@@ -403,14 +470,13 @@
         // Main analysis function
         async function analyzeProtocol() {
             const analyzeButton = document.getElementById('analyzeButton');
-            const statusIndicator = document.getElementById('statusIndicator');
-            const statusText = document.getElementById('statusText');
 
             try {
                 // Update UI to analyzing state
                 analyzeButton.disabled = true;
                 analyzeButton.textContent = 'Analyzing...';
                 updateStatus('Extracting protocol text<span class="loading-dots"></span>', 'analyzing');
+                hideEmptyState();
 
                 // Extract text from Word document
                 await Word.run(async (context) => {
@@ -462,10 +528,11 @@
             } catch (error) {
                 console.error('Analysis error:', error);
                 updateStatus(`Analysis failed: ${error.message}`, 'error');
+                showEmptyState();
             } finally {
                 // Reset button
                 analyzeButton.disabled = false;
-                analyzeButton.textContent = 'Analyze Protocol';
+                analyzeButton.textContent = 'Analyze';
             }
         }
 
@@ -473,125 +540,109 @@
         function displayAnalysisResults(issues, metadata) {
             currentIssues = issues;
             
-            // Update counters
-            updateCounters(issues);
+            if (issues.length === 0) {
+                showEmptyState();
+                hideNavigation();
+                return;
+            }
+
+            // Update navigation
+            updateNavigation(issues);
+            showNavigation();
             
-            // Display issues
-            displayIssues(issues);
-            
-            // Show sections
-            document.getElementById('countersSection').classList.remove('hidden');
-            document.getElementById('issuesSection').classList.remove('hidden');
+            // Display cards
+            displayCards(issues);
         }
 
-        // Update issue counters
-        function updateCounters(issues) {
-            const counts = {
-                critical: 0,
-                high: 0,
-                medium: 0,
-                low: 0
-            };
-
+        // Update navigation counters
+        function updateNavigation(issues) {
+            const counts = { critical: 0, high: 0, medium: 0, low: 0 };
+            
             issues.forEach(issue => {
                 if (counts.hasOwnProperty(issue.severity)) {
                     counts[issue.severity]++;
                 }
             });
 
-            document.getElementById('criticalCount').textContent = counts.critical;
-            document.getElementById('highCount').textContent = counts.high;
+            document.getElementById('totalIssues').textContent = `${issues.length} issues found`;
+            document.getElementById('criticalCount').textContent = counts.critical + counts.high;
             document.getElementById('mediumCount').textContent = counts.medium;
             document.getElementById('lowCount').textContent = counts.low;
         }
 
-        // Display issues list
-        function displayIssues(issues) {
-            const issuesList = document.getElementById('issuesList');
-            const issuesHeader = document.getElementById('issuesHeader');
+        // Display cards in Grammarly style
+        function displayCards(issues) {
+            const cardsList = document.getElementById('cardsList');
             
-            if (issues.length === 0) {
-                issuesList.innerHTML = `
-                    <div class="status-indicator">
-                        <div style="color: var(--success-green); font-weight: 600;">
-                            ✅ No issues found in this protocol
+            cardsList.innerHTML = issues.map((issue, index) => `
+                <div class="card-wrapper">
+                    <div class="full-card ${index === maximizedCard ? 'maximized' : 'minimized'}" onclick="toggleCard(${index})">
+                        <div class="card-logo ${issue.severity}">
+                            ${getSeverityIcon(issue.severity)}
                         </div>
-                        <div style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">
-                            Your protocol meets current regulatory standards
+                        
+                        <div class="report-list">
+                            ${issue.text ? `<span class="item-original">${issue.text.substring(0, 100)}${issue.text.length > 100 ? '...' : ''}</span>` : ''}
+                            <span class="item-insert" onclick="highlightAndScrollToIssue('${issue.id}', event)">${issue.suggestion.substring(0, 100)}${issue.suggestion.length > 100 ? '...' : ''}</span>
                         </div>
+                        
+                        ${index === maximizedCard ? `
+                            <div class="full-sentence-background">
+                                <strong>Pharmaceutical Recommendation:</strong><br>
+                                ${issue.suggestion}
+                                ${issue.rationale ? `<br><br><strong>Clinical Impact:</strong> ${issue.rationale}` : ''}
+                                ${issue.regulatory_source ? `<br><br>📋 <strong>Regulatory Reference:</strong> ${issue.regulatory_source}` : ''}
+                            </div>
+                            
+                            <div class="card-footer">
+                                <button class="card-footer-btn primary" onclick="highlightAndScrollToIssue('${issue.id}', event)">
+                                    Locate in Document
+                                </button>
+                                <button class="card-footer-btn" onclick="dismissIssue(${index}, event)">
+                                    Dismiss
+                                </button>
+                            </div>
+                        ` : ''}
                     </div>
-                `;
-                issuesHeader.textContent = 'Analysis Complete';
-                return;
-            }
-
-            issuesHeader.textContent = `${issues.length} Protocol Issues Found`;
-
-            const filteredIssues = currentFilter === 'all' 
-                ? issues 
-                : issues.filter(issue => issue.severity === currentFilter);
-
-            issuesList.innerHTML = filteredIssues.map((issue, index) => `
-                <div class="issue-card" onclick="highlightAndScrollToIssue('${issue.id}')">
-                    <div class="issue-header">
-                        <span class="issue-severity-badge severity-${issue.severity}">${issue.severity}</span>
-                        <span class="issue-type">${issue.type}</span>
-                    </div>
-                    
-                    ${issue.text ? `
-                        <div class="issue-text-preview">
-                            <strong>Current Text:</strong><br>
-                            "${issue.text.substring(0, 200)}${issue.text.length > 200 ? '...' : ''}"
-                        </div>
-                    ` : ''}
-                    
-                    <div class="issue-suggestion">
-                        <strong>Pharmaceutical Recommendation:</strong><br>
-                        ${issue.suggestion}
-                        ${issue.rationale ? `<br><br><strong>Clinical Impact:</strong> ${issue.rationale}` : ''}
-                    </div>
-                    
-                    ${issue.regulatory_source ? `
-                        <div class="issue-regulatory">
-                            📋 Regulatory Reference: ${issue.regulatory_source}
-                            ${issue.fda_reference ? ` | FDA: ${issue.fda_reference}` : ''}
-                            ${issue.ema_reference ? ` | EMA: ${issue.ema_reference}` : ''}
-                        </div>
-                    ` : ''}
-                    
-                    ${issue.operational_impact ? `
-                        <div class="issue-regulatory">
-                            🏥 Operational Impact: ${issue.operational_impact}
-                        </div>
-                    ` : ''}
                 </div>
             `).join('');
         }
 
-        // Filter issues by severity
-        function filterIssues(severity) {
-            currentFilter = severity;
-            displayIssues(currentIssues);
-            
-            // Update visual feedback
-            document.querySelectorAll('.counter-card').forEach(card => {
-                card.style.opacity = '0.6';
-            });
-            
-            if (severity !== 'all') {
-                document.querySelector(`.counter-${severity}`).style.opacity = '1';
-            } else {
-                document.querySelectorAll('.counter-card').forEach(card => {
-                    card.style.opacity = '1';
-                });
+        // Toggle card maximized/minimized state
+        function toggleCard(index) {
+            maximizedCard = maximizedCard === index ? null : index;
+            displayCards(currentIssues);
+        }
+
+        // Dismiss issue
+        function dismissIssue(index, event) {
+            event.stopPropagation();
+            currentIssues.splice(index, 1);
+            if (maximizedCard === index) {
+                maximizedCard = null;
+            } else if (maximizedCard > index) {
+                maximizedCard--;
+            }
+            displayAnalysisResults(currentIssues, null);
+        }
+
+        // Get severity icon
+        function getSeverityIcon(severity) {
+            switch (severity) {
+                case 'critical': return '!';
+                case 'high': return '!';
+                case 'medium': return '△';
+                case 'low': return '○';
+                default: return '?';
             }
         }
 
         // Highlight and scroll to issue in document
-        async function highlightAndScrollToIssue(issueId) {
+        async function highlightAndScrollToIssue(issueId, event) {
+            if (event) event.stopPropagation();
+            
             try {
                 await Word.run(async (context) => {
-                    // Find the issue
                     const issue = currentIssues.find(i => i.id === issueId);
                     if (!issue || !issue.text) return;
 
@@ -604,7 +655,7 @@
                         range.font.highlightColor = null;
                     });
                     
-                    // Search for the issue text with multiple strategies
+                    // Search for the issue text
                     let searchText = issue.text.substring(0, 100).trim();
                     let searchResults = context.document.body.search(searchText);
                     context.load(searchResults, 'items');
@@ -618,14 +669,6 @@
                         await context.sync();
                     }
 
-                    // If still not found, try just the first few words
-                    if (searchResults.items.length === 0) {
-                        const words = issue.text.split(' ').slice(0, 5).join(' ');
-                        searchResults = context.document.body.search(words);
-                        context.load(searchResults, 'items');
-                        await context.sync();
-                    }
-
                     if (searchResults.items.length > 0) {
                         const firstResult = searchResults.items[0];
                         
@@ -634,17 +677,11 @@
                         
                         // Select and scroll to the text
                         firstResult.select("Select");
-                        firstResult.track();
                         
-                        // Force scroll to selection
-                        const range = firstResult.getRange();
-                        range.select("Select");
-                        
-                        console.log(`✅ Highlighted and scrolled to ${issue.severity} issue: ${searchText}`);
+                        console.log(`✅ Highlighted and scrolled to ${issue.severity} issue`);
                     } else {
                         console.warn(`⚠️ Could not find text in document: ${searchText}`);
-                        // Show user feedback
-                        updateStatus(`Could not locate text "${searchText.substring(0, 30)}..." in document`, 'error');
+                        updateStatus(`Could not locate text in document`, 'error');
                         setTimeout(() => updateStatus('Analysis complete', 'complete'), 3000);
                     }
 
@@ -659,8 +696,8 @@
         // Get color for severity
         function getSeverityColor(severity) {
             switch (severity) {
-                case 'critical': return '#f23452';
-                case 'high': return '#f23452';
+                case 'critical': return '#ea1537';
+                case 'high': return '#ea1537';
                 case 'medium': return '#f59e0b';
                 case 'low': return '#8189a9';
                 default: return '#11a683';
@@ -673,8 +710,27 @@
             const statusText = document.getElementById('statusText');
             
             statusText.innerHTML = message;
-            statusIndicator.className = `status-indicator status-${type}`;
+            statusIndicator.className = `status-indicator ${type}`;
             statusIndicator.classList.remove('hidden');
+        }
+
+        // Show/hide navigation
+        function showNavigation() {
+            document.getElementById('navigationContainer').classList.remove('hidden');
+        }
+
+        function hideNavigation() {
+            document.getElementById('navigationContainer').classList.add('hidden');
+        }
+
+        // Show/hide empty state
+        function showEmptyState() {
+            document.getElementById('emptyState').classList.remove('hidden');
+            document.getElementById('cardsList').innerHTML = '';
+        }
+
+        function hideEmptyState() {
+            document.getElementById('emptyState').classList.add('hidden');
         }
     </script>
 </body>
