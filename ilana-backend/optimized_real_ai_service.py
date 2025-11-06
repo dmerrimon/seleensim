@@ -388,7 +388,21 @@ ANALYSIS DEPTH:
 
 Return JSON: [{"type": "clarity|compliance", "severity": "critical|major|minor", "originalText": "exact problematic text from protocol", "suggestedText": "specific improved replacement text", "rationale": "detailed pharma-quality rationale explaining the change", "regulatoryReference": "specific CFR/ICH citation", "riskLevel": "high|medium|low", "implementationImpact": "site operational impact"}]"""
 
-            user_prompt = f"Conduct enterprise pharma-grade analysis of this protocol section. Apply Big Pharma standards for regulatory compliance, operational clarity, and risk assessment. Focus on specific term replacements (like 'patient' → 'participant') and exact text improvements:\n\n{chunk}\n\nProvide 8-20 detailed findings with regulatory citations and specific before/after text changes."
+            user_prompt = f"""Analyze this protocol section and provide SPECIFIC SENTENCE REWRITES for regulatory compliance and clarity.
+
+For EACH problematic sentence/phrase, provide:
+1. The EXACT original text that needs improvement
+2. A COMPLETE rewritten sentence using proper pharmaceutical language
+3. Specific regulatory rationale
+
+Examples of the types of improvements needed:
+- "The patient will be administered the study drug daily" → "Participants will receive the investigational product once daily at approximately the same time each day (±2 hours)"
+- "The doctor will monitor for side effects" → "The investigator will conduct safety assessments and monitor participants for adverse events according to the protocol-specified schedule"
+
+PROTOCOL SECTION TO ANALYZE:
+{chunk}
+
+Provide 5-15 specific sentence improvements with exact before/after text."""
 
             # OPTIMIZATION: Faster API call with aggressive timeout
             if hasattr(self.azure_client, 'chat'):

@@ -22,10 +22,17 @@ parent_path = Path(__file__).parent.parent
 sys.path.insert(0, str(parent_path))
 sys.path.insert(0, str(parent_path / "config"))
 
-# Temporarily disable enterprise AI imports for testing
-ENTERPRISE_AVAILABLE = False
-logger = logging.getLogger(__name__)
-logger.info("🧪 Enterprise AI imports disabled for fallback testing")
+# Import enterprise AI components
+try:
+    from config_loader import get_config, IlanaConfig
+    from optimized_real_ai_service import create_optimized_real_ai_service, OptimizedRealAIService, InlineSuggestion
+    ENTERPRISE_AVAILABLE = True
+    logger = logging.getLogger(__name__)
+    logger.info("✅ Enterprise AI components loaded successfully")
+except ImportError as e:
+    ENTERPRISE_AVAILABLE = False
+    logger = logging.getLogger(__name__)
+    logger.warning(f"⚠️ Enterprise AI components not available: {e}")
 
 # Fallback InlineSuggestion
 from dataclasses import dataclass
@@ -105,9 +112,18 @@ async def startup_event():
     
     logger.info("🚀 Starting Enterprise Ilana AI Service")
     
-    # Temporarily disable enterprise AI to test enhanced fallback patterns
-    enterprise_ai_service = None
-    logger.info("🧪 Enterprise AI temporarily disabled - testing enhanced fallback patterns with specific replacements")
+    if ENTERPRISE_AVAILABLE:
+        try:
+            # Load enterprise configuration
+            config = get_config("production")
+            enterprise_ai_service = create_optimized_real_ai_service(config)
+            logger.info("✅ Enterprise AI service initialized with full stack (Azure OpenAI + Pinecone + PubMedBERT)")
+        except Exception as e:
+            logger.warning(f"⚠️ Enterprise AI service initialization failed: {e}")
+            enterprise_ai_service = None
+    else:
+        logger.warning("⚠️ Enterprise AI components not available, using fallback analysis")
+        enterprise_ai_service = None
     
     logger.info("✅ Enterprise AI production deployment ready with full stack")
 
@@ -151,11 +167,10 @@ async def analyze_comprehensive(request: ComprehensiveAnalysisRequest):
         chunk_index = getattr(request, 'chunk_index', 0) 
         total_chunks = getattr(request, 'total_chunks', 1)
         
-        logger.info(f"🤖 ANALYSIS: Analyzing chunk {chunk_index + 1}/{total_chunks} ({len(content)} chars)")
-        logger.info(f"🧪 DEBUG: enterprise_ai_service = {enterprise_ai_service}")
+        logger.info(f"🤖 ENTERPRISE AI: Analyzing chunk {chunk_index + 1}/{total_chunks} ({len(content)} chars)")
         
-        # Force fallback analysis for testing
-        if False and enterprise_ai_service:
+        # Use enterprise AI service if available
+        if enterprise_ai_service:
             try:
                 # Call enterprise AI stack (Azure OpenAI + Pinecone + PubMedBERT)
                 suggestions, metadata = await enterprise_ai_service.analyze_comprehensive(
