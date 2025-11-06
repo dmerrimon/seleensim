@@ -241,8 +241,14 @@ class OptimizedRealAIService:
                     logger.info(f"✅ Retrieved enterprise vector insights from Pinecone: {vector_context[:100]}...")
                 except Exception as e:
                     logger.warning(f"⚠️ Pinecone insights failed: {e}")
+                    # Use TA-specific fallback guidance
+                    if ta_detection:
+                        vector_context = "\n".join(self._get_ta_specific_guidance(ta_detection)[:3])
             else:
                 logger.info(f"🔍 Pinecone not available: enable={self.enable_pinecone}, index={hasattr(self, 'pinecone_index')}")
+                # Always provide TA-specific guidance as fallback
+                if ta_detection:
+                    vector_context = "\n".join(self._get_ta_specific_guidance(ta_detection)[:3])
             
             # Get PubMedBERT medical intelligence
             pubmedbert_insights = ""
@@ -252,8 +258,12 @@ class OptimizedRealAIService:
                     logger.info(f"✅ Generated PubMedBERT medical intelligence: {pubmedbert_insights[:100]}...")
                 except Exception as e:
                     logger.warning(f"⚠️ PubMedBERT insights failed: {e}")
+                    # Generate local medical intelligence as fallback
+                    pubmedbert_insights = await self._get_pubmedbert_insights(text, ta_detection)
             else:
                 logger.info(f"🔍 PubMedBERT not available: enable={self.enable_pubmedbert}, service={hasattr(self, 'pubmedbert_service')}")
+                # Always generate local medical intelligence
+                pubmedbert_insights = await self._get_local_medical_intelligence(text, ta_detection)
             
             for i, chunk in enumerate(chunks):
                 logger.info(f"Processing chunk {i+1}/{len(chunks)} with enterprise AI stack")
@@ -379,7 +389,8 @@ class OptimizedRealAIService:
         
         try:
             if not self.azure_client:
-                return self._fast_mock_suggestions(chunk, chunk_index, ta_detection)
+                logger.warning(f"⚠️ Azure OpenAI client not available, using fallback")
+                return self._guaranteed_suggestions(chunk, chunk_index, ta_detection)
             
             # Build TA-aware context
             ta_context = ""
@@ -451,35 +462,39 @@ ANALYSIS DEPTH:
 
 Return JSON: [{"type": "clarity|compliance", "severity": "critical|major|minor", "originalText": "exact problematic text from protocol", "suggestedText": "specific improved replacement text", "rationale": "detailed pharma-quality rationale explaining the change", "regulatoryReference": "specific CFR/ICH citation", "riskLevel": "high|medium|low", "implementationImpact": "site operational impact"}]"""
 
-            user_prompt = f"""CRITICAL: You MUST provide specific text replacements and sentence rewrites, not general recommendations.
+            user_prompt = f"""You are analyzing a pharmaceutical protocol with access to enterprise medical intelligence. Provide SPECIFIC, ACTIONABLE text improvements with exact before/after replacements.
 
-MANDATORY ANALYSIS REQUIREMENTS:
-1. Find EXACT problematic text in the protocol section
-2. Provide SPECIFIC rewritten text using proper pharmaceutical language  
-3. Include common term replacements:
-   - "patient" → "participant" 
-   - "study drug" → "investigational product"
-   - "doctor" → "investigator" 
-   - "side effects" → "adverse events"
-   - "daily" → "once daily"
+ENTERPRISE MEDICAL CONTEXT AVAILABLE:
+{enterprise_context if enterprise_context else "No specific medical context available"}
 
-RESPONSE FORMAT - Return valid JSON array only:
+ANALYSIS REQUIREMENTS:
+1. Identify EXACT problematic phrases in the protocol text
+2. Provide SPECIFIC replacement text with medical rationale
+3. Include drug-specific, TA-specific recommendations when relevant
+4. Apply ICH-GCP terminology standards
+
+EXAMPLES of required output format:
+- "The patient will receive study drug daily" → "Participants will receive the investigational product once daily at approximately the same time (±2 hours)"
+- For HER2+ protocols: "Monitor for side effects" → "Monitor for trastuzumab-related cardiotoxicity using ECHO or MUGA per ACC/AHA guidelines"
+- For immunotherapy: "Watch for adverse events" → "Monitor for immune-related adverse events including pneumonitis, colitis, and endocrinopathies per safety monitoring plan"
+
+PROTOCOL TEXT TO ANALYZE:
+{chunk}
+
+RESPONSE FORMAT - Return JSON array with specific improvements:
 [
   {{
-    "type": "terminology",
-    "severity": "major", 
-    "originalText": "The patient will receive study drug",
-    "suggestedText": "Participants will receive the investigational product",
-    "rationale": "ICH-GCP requires standardized terminology",
-    "regulatoryReference": "ICH E6(R2)",
-    "riskLevel": "medium"
+    "type": "medical_improvement",
+    "severity": "major",
+    "originalText": "exact text from protocol",
+    "suggestedText": "specific improved medical text with rationale",
+    "rationale": "medical/regulatory reasoning with specific guidelines",
+    "regulatoryReference": "specific regulation or guideline",
+    "riskLevel": "high/medium/low"
   }}
 ]
 
-PROTOCOL SECTION TO ANALYZE:
-{chunk}
-
-CRITICAL: Provide 3-8 specific text replacements showing exact original text and improved rewritten text. Focus on terminology standardization and sentence clarity improvements."""
+CRITICAL: Focus on medical accuracy, drug-specific monitoring, and regulatory compliance. Provide 2-6 specific text replacements."""
 
             # OPTIMIZATION: Faster API call with aggressive timeout
             if hasattr(self.azure_client, 'chat'):
@@ -989,6 +1004,38 @@ CRITICAL: Provide 3-8 specific text replacements showing exact original text and
                 insights.append("🎯 Metastatic disease requires different endpoint considerations vs adjuvant setting")
         
         return insights
+
+    async def _get_local_medical_intelligence(self, text: str, ta_detection: TADetectionResult = None) -> str:
+        """Generate local medical intelligence when PubMedBERT is not available"""
+        try:
+            text_lower = text.lower()
+            insights = []
+            
+            # Medical entity extraction
+            medical_entities = self._extract_medical_entities(text_lower, ta_detection)
+            if medical_entities:
+                insights.append(f"🧬 Medical entities detected: {', '.join(medical_entities[:3])}")
+            
+            # Drug interaction analysis
+            drug_interactions = self._analyze_drug_interactions(text_lower, ta_detection)
+            if drug_interactions:
+                insights.append(f"💊 Drug considerations: {', '.join(drug_interactions[:2])}")
+            
+            # Compliance gap analysis
+            compliance_gaps = self._identify_compliance_gaps(text_lower, ta_detection)
+            if compliance_gaps:
+                insights.append(f"⚖️ Compliance gaps: {', '.join(compliance_gaps[:2])}")
+            
+            # TA-specific medical insights
+            if ta_detection:
+                ta_insights = self._get_ta_specific_medical_insights(ta_detection, text_lower)
+                insights.extend(ta_insights)
+            
+            return "\n".join(insights[:4]) if insights else "Local medical intelligence analysis completed"
+            
+        except Exception as e:
+            logger.warning(f"Local medical intelligence failed: {e}")
+            return "Medical domain analysis suggests clinical best practices apply"
 
 def create_optimized_real_ai_service(config: IlanaConfig) -> OptimizedRealAIService:
     """Factory function for optimized service"""
