@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilana Protocol Intelligence - Word Add-in</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0066cc, #004d99);
+            color: white;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px 20px;
+        }
+        .logo {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .tagline {
+            font-size: 20px;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+        .description {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            opacity: 0.8;
+        }
+        .buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        .enterprise-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 8px;
+        }
+        .features {
+            margin-top: 48px;
+            text-align: left;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .feature {
+            margin: 16px 0;
+            display: flex;
+            align-items: center;
+        }
+        .feature::before {
+            content: "✓";
+            margin-right: 12px;
+            font-weight: bold;
+            color: #11a683;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            Ilana Protocol Intelligence
+            <span class="enterprise-badge">Enterprise</span>
+        </div>
+        
+        <div class="tagline">
+            AI-Enhanced Pharmaceutical Protocol Analysis
+        </div>
+        
+        <div class="description">
+            Ilana analyzes pharmaceutical protocols for regulatory compliance, clarity improvements, 
+            and feasibility optimizations using enterprise AI including Azure OpenAI, Pinecone, and PubMedBERT.
+        </div>
+        
+        <div class="buttons">
+            <a href="manifest.xml" class="btn">Download Manifest</a>
+            <a href="taskpane.html" class="btn">Open Taskpane</a>
+            <a href="https://github.com/dmerrimon/ilanalabs-add-in" class="btn">View Source</a>
+        </div>
+        
+        <div class="features">
+            <div class="feature">Enterprise AI stack with Azure OpenAI + Pinecone + PubMedBERT</div>
+            <div class="feature">Real-time regulatory compliance analysis</div>
+            <div class="feature">ICH-GCP and FDA/EMA reference integration</div>
+            <div class="feature">Document highlighting and scrolling</div>
+            <div class="feature">Severity-based issue categorization</div>
+            <div class="feature">Pharmaceutical-grade recommendations</div>
+        </div>
+    </div>
+
+    <script>
+        // Add some simple analytics
+        console.log('🚀 Ilana Protocol Intelligence - Azure Static Web App');
+        console.log('📊 Enterprise AI: Azure OpenAI + Pinecone + PubMedBERT');
+        console.log('🏥 Focus: Pharmaceutical Protocol Analysis');
+        
+        // Check if running inside Word add-in context
+        if (window.location !== window.parent.location) {
+            console.log('📝 Running in Word add-in context');
+        }
+    </script>
+</body>
+</html>
