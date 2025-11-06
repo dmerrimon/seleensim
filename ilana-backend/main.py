@@ -169,8 +169,8 @@ async def analyze_comprehensive(request: ComprehensiveAnalysisRequest):
         
         logger.info(f"🤖 ENTERPRISE AI: Analyzing chunk {chunk_index + 1}/{total_chunks} ({len(content)} chars)")
         
-        # Use enterprise AI service if available
-        if enterprise_ai_service:
+        # Use enterprise AI service if available  
+        if False:  # Temporarily disabled to use enhanced fallback patterns
             try:
                 # Call enterprise AI stack (Azure OpenAI + Pinecone + PubMedBERT)
                 suggestions, metadata = await enterprise_ai_service.analyze_comprehensive(
