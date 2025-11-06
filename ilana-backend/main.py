@@ -112,18 +112,9 @@ async def startup_event():
     
     logger.info("🚀 Starting Enterprise Ilana AI Service")
     
-    if ENTERPRISE_AVAILABLE:
-        try:
-            # Load enterprise configuration
-            config = get_config("production")
-            enterprise_ai_service = create_optimized_real_ai_service(config)
-            logger.info("✅ Enterprise AI service initialized with full stack (Azure OpenAI + Pinecone + PubMedBERT)")
-        except Exception as e:
-            logger.warning(f"⚠️ Enterprise AI service initialization failed: {e}")
-            enterprise_ai_service = None
-    else:
-        logger.warning("⚠️ Enterprise AI components not available, using fallback analysis")
-        enterprise_ai_service = None
+    # Temporarily disable enterprise AI to test enhanced fallback patterns
+    enterprise_ai_service = None
+    logger.info("🧪 Enterprise AI temporarily disabled - testing enhanced fallback patterns with specific replacements")
     
     logger.info("✅ Enterprise AI production deployment ready with full stack")
 
@@ -169,8 +160,8 @@ async def analyze_comprehensive(request: ComprehensiveAnalysisRequest):
         
         logger.info(f"🤖 ENTERPRISE AI: Analyzing chunk {chunk_index + 1}/{total_chunks} ({len(content)} chars)")
         
-        # Use enterprise AI service if available  
-        if False:  # Temporarily disabled to use enhanced fallback patterns
+        # Use enterprise AI service if available
+        if enterprise_ai_service:
             try:
                 # Call enterprise AI stack (Azure OpenAI + Pinecone + PubMedBERT)
                 suggestions, metadata = await enterprise_ai_service.analyze_comprehensive(
