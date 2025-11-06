@@ -10,6 +10,15 @@ import logging
 from datetime import datetime
 from typing import Dict, Any, List, Optional
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables
+env_path = Path(__file__).parent / "config" / "environments" / "production.env"
+if env_path.exists():
+    load_dotenv(env_path)
+    logging.info(f"✅ Loaded environment from {env_path}")
+else:
+    logging.warning(f"⚠️ Environment file not found at {env_path}")
 
 import uvicorn
 from fastapi import FastAPI, HTTPException
