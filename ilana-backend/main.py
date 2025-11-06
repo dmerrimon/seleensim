@@ -22,37 +22,30 @@ parent_path = Path(__file__).parent.parent
 sys.path.insert(0, str(parent_path))
 sys.path.insert(0, str(parent_path / "config"))
 
-# Import enterprise AI components
-try:
-    from config_loader import get_config, IlanaConfig
-    from optimized_real_ai_service import create_optimized_real_ai_service, OptimizedRealAIService, InlineSuggestion
-    ENTERPRISE_AVAILABLE = True
-    logger = logging.getLogger(__name__)
-    logger.info("✅ Enterprise AI components loaded successfully")
-except ImportError as e:
-    ENTERPRISE_AVAILABLE = False
-    logger = logging.getLogger(__name__)
-    logger.warning(f"⚠️ Enterprise AI components not available: {e}")
-    
-    # Fallback InlineSuggestion
-    from dataclasses import dataclass
-    @dataclass
-    class InlineSuggestion:
-        type: str
-        subtype: Optional[str] = None
-        originalText: str = ""
-        suggestedText: str = ""
-        rationale: str = ""
-        complianceRationale: str = ""
-        fdaReference: Optional[str] = None
-        emaReference: Optional[str] = None
-        guidanceSource: Optional[str] = None
-        readabilityScore: Optional[float] = None
-        operationalImpact: Optional[str] = None
-        retentionRisk: Optional[str] = None
-        enrollmentImpact: Optional[str] = None
-        backendConfidence: Optional[str] = None
-        range: Dict[str, int] = None
+# Temporarily disable enterprise AI imports for testing
+ENTERPRISE_AVAILABLE = False
+logger = logging.getLogger(__name__)
+logger.info("🧪 Enterprise AI imports disabled for fallback testing")
+
+# Fallback InlineSuggestion
+from dataclasses import dataclass
+@dataclass
+class InlineSuggestion:
+    type: str
+    subtype: Optional[str] = None
+    originalText: str = ""
+    suggestedText: str = ""
+    rationale: str = ""
+    complianceRationale: str = ""
+    fdaReference: Optional[str] = None
+    emaReference: Optional[str] = None
+    guidanceSource: Optional[str] = None
+    readabilityScore: Optional[float] = None
+    operationalImpact: Optional[str] = None
+    retentionRisk: Optional[str] = None
+    enrollmentImpact: Optional[str] = None
+    backendConfidence: Optional[str] = None
+    range: Dict[str, int] = None
 
 # Configure logging
 logging.basicConfig(
