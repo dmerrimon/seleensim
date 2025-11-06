@@ -621,7 +621,13 @@ Provide 2-5 specific improvements."""
         )
 
     def _guaranteed_suggestions(self, chunk: str, chunk_index: int, ta_detection: TADetectionResult = None) -> List[InlineSuggestion]:
-        """ENTERPRISE GUARANTEED: Pharma-grade fallback suggestions with TA-awareness"""
+        """GUARANTEED MEDICAL INTELLIGENCE: Real pharmaceutical recommendations"""
+        
+        # OVERRIDE: Use real medical intelligence instead of generic suggestions
+        return self._generate_real_medical_suggestions(chunk, chunk_index, ta_detection)
+
+    def _old_guaranteed_suggestions(self, chunk: str, chunk_index: int, ta_detection: TADetectionResult = None) -> List[InlineSuggestion]:
+        """OLD GENERIC: Pharma-grade fallback suggestions with TA-awareness"""
         
         # Generate enterprise-grade suggestions based on Big Pharma standards
         suggestions = []
