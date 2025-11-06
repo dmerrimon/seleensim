@@ -6,21 +6,19 @@
     <title>Ilana Protocol Intelligence</title>
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
     <style>
-        /* Pharmaceutical protocol analyzer design system */
+        /* Grammarly-inspired design system */
         
         :root {
-            --pharmaceutical-primary: #0066cc;
-            --pharmaceutical-secondary: #004d99;
-            --critical-red: #f23452;
-            --high-red: #ff6b6b;
-            --medium-orange: #ff9800;
-            --low-gray: #8189a9;
-            --success-green: #11a683;
-            --background-light: #f0f2fc;
-            --text-primary: #0e101a;
-            --text-secondary: #8189a9;
-            --border-light: #e4e6f2;
-            --white: #ffffff;
+            --grammarly-green: #11a683;
+            --grammarly-red: #f23452;
+            --grammarly-blue: #3b82f6;
+            --grammarly-orange: #f59e0b;
+            --grammarly-gray: #8189a9;
+            --grammarly-dark: #0e101a;
+            --grammarly-light-bg: #f0f2fc;
+            --grammarly-border: #e4e6f2;
+            --grammarly-white: #ffffff;
+            --grammarly-hover: #f8fafc;
         }
 
         * {
@@ -31,8 +29,8 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--white);
-            color: var(--text-primary);
+            background: var(--grammarly-white);
+            color: var(--grammarly-dark);
             font-size: 14px;
             line-height: 1.4;
             overflow-x: hidden;
@@ -40,10 +38,10 @@
 
         /* Application header */
         .ilana-header {
-            background: linear-gradient(135deg, var(--pharmaceutical-primary), var(--pharmaceutical-secondary));
+            background: var(--grammarly-white);
             padding: 16px 20px;
-            color: var(--white);
-            box-shadow: 0 2px 8px rgba(0, 102, 204, 0.15);
+            color: var(--grammarly-dark);
+            border-bottom: 1px solid var(--grammarly-border);
         }
 
         .ilana-logo {
@@ -60,26 +58,26 @@
         /* Analysis action section */
         .action-section {
             padding: 20px;
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--grammarly-border);
         }
 
         .analyze-button {
             width: 100%;
-            background: linear-gradient(135deg, var(--pharmaceutical-primary), var(--pharmaceutical-secondary));
-            color: var(--white);
+            background: var(--grammarly-green);
+            color: var(--grammarly-white);
             border: none;
             padding: 14px 20px;
-            border-radius: 8px;
+            border-radius: 6px;
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .analyze-button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(0, 102, 204, 0.3);
+            background: #15c894;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
         }
 
         .analyze-button:disabled {
@@ -91,13 +89,14 @@
         /* Issue counters section */
         .counters-section {
             padding: 20px;
-            background: var(--background-light);
+            background: var(--grammarly-white);
+            border-bottom: 1px solid var(--grammarly-border);
         }
 
         .counters-header {
             font-size: 16px;
             font-weight: 600;
-            color: var(--text-primary);
+            color: var(--grammarly-dark);
             margin-bottom: 16px;
         }
 
@@ -110,19 +109,19 @@
         .counter-card {
             flex: 1;
             min-width: 120px;
-            background: var(--white);
-            border-radius: 8px;
+            background: var(--grammarly-white);
+            border-radius: 6px;
             padding: 16px 12px;
             text-align: center;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--grammarly-border);
             cursor: pointer;
             transition: all 0.2s ease;
         }
 
         .counter-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background: var(--grammarly-hover);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
         }
 
         .counter-number {
@@ -140,23 +139,23 @@
 
         /* Severity color coding */
         .counter-critical {
-            color: var(--critical-red);
-            border-left: 4px solid var(--critical-red);
+            color: var(--grammarly-red);
+            border-left: 3px solid var(--grammarly-red);
         }
 
         .counter-high {
-            color: var(--high-red);
-            border-left: 4px solid var(--high-red);
+            color: var(--grammarly-red);
+            border-left: 3px solid var(--grammarly-red);
         }
 
         .counter-medium {
-            color: var(--medium-orange);
-            border-left: 4px solid var(--medium-orange);
+            color: var(--grammarly-orange);
+            border-left: 3px solid var(--grammarly-orange);
         }
 
         .counter-low {
-            color: var(--low-gray);
-            border-left: 4px solid var(--low-gray);
+            color: var(--grammarly-gray);
+            border-left: 3px solid var(--grammarly-gray);
         }
 
         /* Issues list display */
@@ -167,11 +166,11 @@
 
         .issues-header {
             padding: 16px 20px;
-            background: var(--white);
-            border-bottom: 1px solid var(--border-light);
+            background: var(--grammarly-white);
+            border-bottom: 1px solid var(--grammarly-border);
             font-size: 14px;
             font-weight: 600;
-            color: var(--text-primary);
+            color: var(--grammarly-dark);
             position: sticky;
             top: 0;
             z-index: 10;
@@ -179,18 +178,18 @@
 
         .issue-card {
             padding: 20px;
-            margin: 8px;
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
+            margin: 12px;
+            border: 1px solid var(--grammarly-border);
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            background: var(--grammarly-white);
         }
 
         .issue-card:hover {
-            background: var(--background-light);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background: var(--grammarly-hover);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
         }
 
         .issue-header {
@@ -202,7 +201,7 @@
         .issue-severity-badge {
             display: inline-block;
             padding: 4px 8px;
-            border-radius: 12px;
+            border-radius: 4px;
             font-size: 10px;
             font-weight: 600;
             text-transform: uppercase;
@@ -211,56 +210,56 @@
         }
 
         .severity-critical {
-            background: var(--critical-red);
-            color: var(--white);
+            background: var(--grammarly-red);
+            color: var(--grammarly-white);
         }
 
         .severity-high {
-            background: var(--high-red);
-            color: var(--white);
+            background: var(--grammarly-red);
+            color: var(--grammarly-white);
         }
 
         .severity-medium {
-            background: var(--medium-orange);
-            color: var(--white);
+            background: var(--grammarly-orange);
+            color: var(--grammarly-white);
         }
 
         .severity-low {
-            background: var(--low-gray);
-            color: var(--white);
+            background: var(--grammarly-gray);
+            color: var(--grammarly-white);
         }
 
         .issue-type {
             font-size: 12px;
-            color: var(--text-secondary);
+            color: var(--grammarly-gray);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .issue-text-preview {
             font-size: 13px;
-            color: var(--text-primary);
-            background: var(--background-light);
+            color: var(--grammarly-dark);
+            background: var(--grammarly-light-bg);
             padding: 8px 12px;
-            border-radius: 6px;
+            border-radius: 4px;
             margin: 8px 0;
             font-style: italic;
         }
 
         .issue-suggestion {
             font-size: 14px;
-            color: var(--text-primary);
+            color: var(--grammarly-dark);
             line-height: 1.6;
             margin: 12px 0;
             padding: 12px;
-            background: var(--background-light);
-            border-radius: 6px;
-            border-left: 4px solid var(--pharmaceutical-primary);
+            background: var(--grammarly-light-bg);
+            border-radius: 4px;
+            border-left: 3px solid var(--grammarly-green);
         }
 
         .issue-regulatory {
             font-size: 11px;
-            color: var(--pharmaceutical-primary);
+            color: var(--grammarly-blue);
             margin-top: 4px;
             font-weight: 500;
         }
@@ -270,21 +269,23 @@
             padding: 12px 20px;
             text-align: center;
             font-size: 13px;
+            border-radius: 4px;
+            margin: 8px;
         }
 
         .status-analyzing {
-            background: var(--background-light);
-            color: var(--pharmaceutical-primary);
+            background: var(--grammarly-light-bg);
+            color: var(--grammarly-blue);
         }
 
         .status-complete {
-            background: var(--success-green);
-            color: var(--white);
+            background: var(--grammarly-green);
+            color: var(--grammarly-white);
         }
 
         .status-error {
-            background: var(--critical-red);
-            color: var(--white);
+            background: var(--grammarly-red);
+            color: var(--grammarly-white);
         }
 
         /* Loading animation */
@@ -322,8 +323,8 @@
         /* Enterprise badge */
         .enterprise-badge {
             display: inline-block;
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-            color: var(--white);
+            background: var(--grammarly-green);
+            color: var(--grammarly-white);
             padding: 2px 6px;
             border-radius: 4px;
             font-size: 10px;
@@ -659,10 +660,10 @@
         function getSeverityColor(severity) {
             switch (severity) {
                 case 'critical': return '#f23452';
-                case 'high': return '#ff6b6b';
-                case 'medium': return '#ff9800';
+                case 'high': return '#f23452';
+                case 'medium': return '#f59e0b';
                 case 'low': return '#8189a9';
-                default: return '#0066cc';
+                default: return '#11a683';
             }
         }
 
