@@ -496,9 +496,13 @@ CRITICAL: Provide 3-8 specific text replacements showing exact original text and
                     timeout=30
                 )
                 ai_response = response.choices[0].message.content
+                logger.info(f"🤖 Azure OpenAI Response (first 200 chars): {ai_response[:200]}...")
+                logger.info(f"🤖 Azure OpenAI Response contains JSON brackets: {('[' in ai_response and ']' in ai_response)}")
 
             # Parse AI response quickly
-            suggestions.extend(self._parse_ai_response_fast(ai_response, chunk_index))
+            ai_suggestions = self._parse_ai_response_fast(ai_response, chunk_index)
+            logger.info(f"🔍 Parsed {len(ai_suggestions)} suggestions from Azure OpenAI response")
+            suggestions.extend(ai_suggestions)
             
         except Exception as e:
             logger.warning(f"⚠️ Chunk {chunk_index} analysis failed: {e}")
@@ -516,9 +520,16 @@ CRITICAL: Provide 3-8 specific text replacements showing exact original text and
             json_start = response.find('[')
             json_end = response.rfind(']') + 1
             
+            logger.info(f"🔍 JSON extraction: start={json_start}, end={json_end}")
+            
             if json_start >= 0 and json_end > json_start:
                 json_str = response[json_start:json_end]
+                logger.info(f"🔍 Extracted JSON string (first 150 chars): {json_str[:150]}...")
                 ai_suggestions = json.loads(json_str)
+                logger.info(f"🔍 Successfully parsed {len(ai_suggestions)} AI suggestions")
+            else:
+                logger.warning(f"⚠️ No valid JSON array found in response")
+                return suggestions
                 
                 for i, item in enumerate(ai_suggestions[:20]):  # Enterprise-grade limit
                     # Extract enterprise-grade fields
