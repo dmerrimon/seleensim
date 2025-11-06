@@ -440,21 +440,35 @@ ANALYSIS DEPTH:
 
 Return JSON: [{"type": "clarity|compliance", "severity": "critical|major|minor", "originalText": "exact problematic text from protocol", "suggestedText": "specific improved replacement text", "rationale": "detailed pharma-quality rationale explaining the change", "regulatoryReference": "specific CFR/ICH citation", "riskLevel": "high|medium|low", "implementationImpact": "site operational impact"}]"""
 
-            user_prompt = f"""Analyze this protocol section and provide SPECIFIC SENTENCE REWRITES for regulatory compliance and clarity.
+            user_prompt = f"""CRITICAL: You MUST provide specific text replacements and sentence rewrites, not general recommendations.
 
-For EACH problematic sentence/phrase, provide:
-1. The EXACT original text that needs improvement
-2. A COMPLETE rewritten sentence using proper pharmaceutical language
-3. Specific regulatory rationale
+MANDATORY ANALYSIS REQUIREMENTS:
+1. Find EXACT problematic text in the protocol section
+2. Provide SPECIFIC rewritten text using proper pharmaceutical language  
+3. Include common term replacements:
+   - "patient" → "participant" 
+   - "study drug" → "investigational product"
+   - "doctor" → "investigator" 
+   - "side effects" → "adverse events"
+   - "daily" → "once daily"
 
-Examples of the types of improvements needed:
-- "The patient will be administered the study drug daily" → "Participants will receive the investigational product once daily at approximately the same time each day (±2 hours)"
-- "The doctor will monitor for side effects" → "The investigator will conduct safety assessments and monitor participants for adverse events according to the protocol-specified schedule"
+RESPONSE FORMAT - Return valid JSON array only:
+[
+  {{
+    "type": "terminology",
+    "severity": "major", 
+    "originalText": "The patient will receive study drug",
+    "suggestedText": "Participants will receive the investigational product",
+    "rationale": "ICH-GCP requires standardized terminology",
+    "regulatoryReference": "ICH E6(R2)",
+    "riskLevel": "medium"
+  }}
+]
 
 PROTOCOL SECTION TO ANALYZE:
 {chunk}
 
-Provide 5-15 specific sentence improvements with exact before/after text."""
+CRITICAL: Provide 3-8 specific text replacements showing exact original text and improved rewritten text. Focus on terminology standardization and sentence clarity improvements."""
 
             # OPTIMIZATION: Faster API call with aggressive timeout
             if hasattr(self.azure_client, 'chat'):
