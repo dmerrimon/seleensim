@@ -247,6 +247,52 @@ async def debug_azure_openai():
     
     return debug_info
 
+@app.get("/debug/test-azure-ai")
+async def test_azure_ai_direct():
+    """Direct test of Azure OpenAI to see what it returns"""
+    if not enterprise_ai_service:
+        return {"error": "Enterprise AI service not available"}
+    
+    try:
+        # Test with simple medical text
+        test_text = "HER2-positive breast cancer patients will receive trastuzumab. Monitor for cardiotoxicity."
+        
+        from optimized_real_ai_service import TADetectionResult
+        # Create mock TA detection
+        ta_detection = TADetectionResult(
+            therapeutic_area="oncology",
+            subindication="breast_cancer", 
+            phase="III",
+            confidence=1.0,
+            confidence_scores={"oncology": 1.0},
+            detected_keywords=["her2", "breast cancer", "trastuzumab"],
+            reasoning="Test data"
+        )
+        
+        # Call the chunk analysis directly
+        suggestions = await enterprise_ai_service._analyze_chunk_enterprise(
+            test_text, 0, ta_detection, 
+            "Test vector context from Pinecone",
+            "Test PubMedBERT insights"
+        )
+        
+        return {
+            "test_text": test_text,
+            "suggestions_count": len(suggestions),
+            "suggestions": [
+                {
+                    "type": s.type,
+                    "subtype": s.subtype,
+                    "original": s.originalText[:100],
+                    "suggested": s.suggestedText[:100],
+                    "backend": s.backendConfidence
+                } for s in suggestions[:3]
+            ]
+        }
+        
+    except Exception as e:
+        return {"error": f"Direct Azure AI test failed: {str(e)}"}
+
 @app.post("/analyze-comprehensive")
 async def analyze_comprehensive(request: ComprehensiveAnalysisRequest):
     """Enterprise AI comprehensive analysis endpoint"""
