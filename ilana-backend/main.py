@@ -99,8 +99,8 @@ class TARecommendationsRequest(BaseModel):
 # FastAPI app
 app = FastAPI(
     title="Ilana Protocol Intelligence API",
-    description="AI-powered clinical protocol analysis and optimization",
-    version="1.2.0",
+    description="AI-powered clinical protocol analysis and optimization with real medical intelligence",
+    version="1.3.0",
     docs_url="/docs",
     redoc_url="/redoc"
 )
