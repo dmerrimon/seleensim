@@ -238,18 +238,22 @@ class OptimizedRealAIService:
             if self.enable_pinecone and hasattr(self, 'pinecone_index') and self.pinecone_index:
                 try:
                     vector_context = await self._get_pinecone_insights(text, ta_detection)
-                    logger.info(f"✅ Retrieved enterprise vector insights from Pinecone")
+                    logger.info(f"✅ Retrieved enterprise vector insights from Pinecone: {vector_context[:100]}...")
                 except Exception as e:
                     logger.warning(f"⚠️ Pinecone insights failed: {e}")
+            else:
+                logger.info(f"🔍 Pinecone not available: enable={self.enable_pinecone}, index={hasattr(self, 'pinecone_index')}")
             
             # Get PubMedBERT medical intelligence
             pubmedbert_insights = ""
             if self.enable_pubmedbert and hasattr(self, 'pubmedbert_service') and self.pubmedbert_service:
                 try:
                     pubmedbert_insights = await self._get_pubmedbert_insights(text, ta_detection)
-                    logger.info(f"✅ Generated PubMedBERT medical intelligence")
+                    logger.info(f"✅ Generated PubMedBERT medical intelligence: {pubmedbert_insights[:100]}...")
                 except Exception as e:
                     logger.warning(f"⚠️ PubMedBERT insights failed: {e}")
+            else:
+                logger.info(f"🔍 PubMedBERT not available: enable={self.enable_pubmedbert}, service={hasattr(self, 'pubmedbert_service')}")
             
             for i, chunk in enumerate(chunks):
                 logger.info(f"Processing chunk {i+1}/{len(chunks)} with enterprise AI stack")
@@ -393,8 +397,15 @@ APPLY {ta_detection.therapeutic_area.upper()} EXPERTISE:"""
             enterprise_context = ""
             if vector_context:
                 enterprise_context += f"\nPINECONE VECTOR INSIGHTS:\n{vector_context}\n"
+                logger.info(f"🗃️ Added Pinecone vector context to Azure OpenAI prompt")
             if pubmedbert_insights:
                 enterprise_context += f"\nPUBMEDBERT MEDICAL INTELLIGENCE:\n{pubmedbert_insights}\n"
+                logger.info(f"🧠 Added PubMedBERT insights to Azure OpenAI prompt")
+            
+            if enterprise_context:
+                logger.info(f"🚀 Total enterprise context length: {len(enterprise_context)} chars")
+            else:
+                logger.warning(f"⚠️ No enterprise context available for Azure OpenAI")
 
             # ENTERPRISE-GRADE: Full AI Stack with medical domain intelligence
             system_prompt = f"""You are Ilana, a senior regulatory affairs and clinical operations expert with 15+ years experience in pharmaceutical protocol development. You have access to enterprise AI systems including medical vector databases and domain-specific models. Conduct enterprise-grade analysis meeting Big Pharma standards.
