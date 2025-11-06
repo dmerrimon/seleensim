@@ -522,12 +522,19 @@ CRITICAL: Focus on medical accuracy, drug-specific monitoring, and regulatory co
                     timeout=30
                 )
                 ai_response = response.choices[0].message.content
-                logger.info(f"🤖 Azure OpenAI Response (first 200 chars): {ai_response[:200]}...")
-                logger.info(f"🤖 Azure OpenAI Response contains JSON brackets: {('[' in ai_response and ']' in ai_response)}")
+                logger.info(f"🤖 Azure OpenAI FULL Response: {ai_response}")
+                logger.info(f"🤖 Response has JSON brackets: {('[' in ai_response and ']' in ai_response)}")
 
             # Parse AI response quickly
             ai_suggestions = self._parse_ai_response_fast(ai_response, chunk_index)
-            logger.info(f"🔍 Parsed {len(ai_suggestions)} suggestions from Azure OpenAI response")
+            logger.info(f"🔍 Parsed {len(ai_suggestions)} suggestions from Azure OpenAI")
+            
+            if len(ai_suggestions) == 0:
+                logger.error(f"❌ CRITICAL: Azure OpenAI returned no parseable suggestions!")
+                logger.error(f"❌ Raw response was: {ai_response}")
+                # Don't fall back to guaranteed suggestions - this is the root cause!
+                return []
+            
             suggestions.extend(ai_suggestions)
             
         except Exception as e:
@@ -550,36 +557,44 @@ CRITICAL: Focus on medical accuracy, drug-specific monitoring, and regulatory co
             
             if json_start >= 0 and json_end > json_start:
                 json_str = response[json_start:json_end]
-                logger.info(f"🔍 Extracted JSON string (first 150 chars): {json_str[:150]}...")
-                ai_suggestions = json.loads(json_str)
-                logger.info(f"🔍 Successfully parsed {len(ai_suggestions)} AI suggestions")
-            else:
-                logger.warning(f"⚠️ No valid JSON array found in response")
-                return suggestions
-                
-                for i, item in enumerate(ai_suggestions[:20]):  # Enterprise-grade limit
-                    # Extract enterprise-grade fields
-                    severity = item.get("severity", "minor")
-                    risk_level = item.get("riskLevel", "low")
-                    regulatory_ref = item.get("regulatoryReference", "")
-                    implementation_impact = item.get("implementationImpact", "")
+                logger.info(f"🔍 Extracted JSON: {json_str}")
+                try:
+                    ai_suggestions = json.loads(json_str)
+                    logger.info(f"🔍 Successfully parsed {len(ai_suggestions)} AI suggestions")
                     
-                    # Create enterprise-grade suggestion
-                    suggestions.append(InlineSuggestion(
-                        type=item.get("type", "clarity"),
-                        subtype=f"enterprise_{severity}",
-                        originalText=item.get("originalText", "")[:300],  # More context for pharma
-                        suggestedText=item.get("suggestedText", ""),
-                        rationale=item.get("rationale", ""),
-                        complianceRationale=f"Enterprise Analysis | Risk: {risk_level.upper()} | Impact: {implementation_impact}",
-                        fdaReference=regulatory_ref if "CFR" in regulatory_ref else None,
-                        emaReference=regulatory_ref if "ICH" in regulatory_ref or "EMA" in regulatory_ref else None,
-                        guidanceSource=regulatory_ref,
-                        operationalImpact=implementation_impact,
-                        retentionRisk=risk_level,
-                        backendConfidence="enterprise_grade",
-                        range={"start": chunk_index * 8000 + (i * 50), "end": chunk_index * 8000 + (i * 50) + 150}
-                    ))
+                    # Process the AI suggestions
+                    for i, item in enumerate(ai_suggestions[:20]):  # Enterprise-grade limit
+                        # Extract enterprise-grade fields
+                        severity = item.get("severity", "minor")
+                        risk_level = item.get("riskLevel", "low")
+                        regulatory_ref = item.get("regulatoryReference", "")
+                        implementation_impact = item.get("implementationImpact", "")
+                        
+                        # Create enterprise-grade suggestion
+                        suggestions.append(InlineSuggestion(
+                            type=item.get("type", "medical_improvement"),
+                            subtype=f"azure_ai_{severity}",
+                            originalText=item.get("originalText", "")[:300],
+                            suggestedText=item.get("suggestedText", ""),
+                            rationale=item.get("rationale", ""),
+                            complianceRationale=f"Azure OpenAI Analysis | Risk: {risk_level.upper()} | Medical Intelligence",
+                            fdaReference=regulatory_ref if "CFR" in regulatory_ref else None,
+                            emaReference=regulatory_ref if "ICH" in regulatory_ref or "EMA" in regulatory_ref else None,
+                            guidanceSource=regulatory_ref,
+                            operationalImpact=implementation_impact,
+                            retentionRisk=risk_level,
+                            backendConfidence="azure_openai_powered",
+                            range={"start": chunk_index * 8000 + (i * 50), "end": chunk_index * 8000 + (i * 50) + 150}
+                        ))
+                    
+                except json.JSONDecodeError as json_error:
+                    logger.error(f"❌ JSON parsing failed: {json_error}")
+                    logger.error(f"❌ Attempted to parse: {json_str}")
+                    return suggestions
+            else:
+                logger.error(f"❌ No JSON array found in Azure OpenAI response")
+                logger.error(f"❌ Full response: {response}")
+                return suggestions
             
         except Exception as e:
             logger.warning(f"⚠️ Fast parsing failed: {e}")
