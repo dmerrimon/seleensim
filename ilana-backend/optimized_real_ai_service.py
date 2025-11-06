@@ -462,39 +462,32 @@ ANALYSIS DEPTH:
 
 Return JSON: [{"type": "clarity|compliance", "severity": "critical|major|minor", "originalText": "exact problematic text from protocol", "suggestedText": "specific improved replacement text", "rationale": "detailed pharma-quality rationale explaining the change", "regulatoryReference": "specific CFR/ICH citation", "riskLevel": "high|medium|low", "implementationImpact": "site operational impact"}]"""
 
-            user_prompt = f"""You are analyzing a pharmaceutical protocol with access to enterprise medical intelligence. Provide SPECIFIC, ACTIONABLE text improvements with exact before/after replacements.
+            user_prompt = f"""You are a pharmaceutical regulatory expert. Analyze this protocol text and provide specific medical improvements.
 
-ENTERPRISE MEDICAL CONTEXT AVAILABLE:
-{enterprise_context if enterprise_context else "No specific medical context available"}
+MEDICAL CONTEXT:
+{enterprise_context if enterprise_context else "Standard protocol analysis"}
 
-ANALYSIS REQUIREMENTS:
-1. Identify EXACT problematic phrases in the protocol text
-2. Provide SPECIFIC replacement text with medical rationale
-3. Include drug-specific, TA-specific recommendations when relevant
-4. Apply ICH-GCP terminology standards
-
-EXAMPLES of required output format:
-- "The patient will receive study drug daily" → "Participants will receive the investigational product once daily at approximately the same time (±2 hours)"
-- For HER2+ protocols: "Monitor for side effects" → "Monitor for trastuzumab-related cardiotoxicity using ECHO or MUGA per ACC/AHA guidelines"
-- For immunotherapy: "Watch for adverse events" → "Monitor for immune-related adverse events including pneumonitis, colitis, and endocrinopathies per safety monitoring plan"
-
-PROTOCOL TEXT TO ANALYZE:
+PROTOCOL TEXT:
 {chunk}
 
-RESPONSE FORMAT - Return JSON array with specific improvements:
-[
-  {{
-    "type": "medical_improvement",
-    "severity": "major",
-    "originalText": "exact text from protocol",
-    "suggestedText": "specific improved medical text with rationale",
-    "rationale": "medical/regulatory reasoning with specific guidelines",
-    "regulatoryReference": "specific regulation or guideline",
-    "riskLevel": "high/medium/low"
-  }}
-]
+Provide SPECIFIC text improvements in this EXACT format (no JSON, just numbered list):
 
-CRITICAL: Focus on medical accuracy, drug-specific monitoring, and regulatory compliance. Provide 2-6 specific text replacements."""
+1. ORIGINAL: "exact text from protocol"
+   IMPROVED: "specific better medical text"
+   REASON: medical rationale with guidelines
+
+2. ORIGINAL: "another exact text" 
+   IMPROVED: "improved version"
+   REASON: regulatory rationale
+
+REQUIREMENTS:
+- Find exact phrases that need improvement
+- Provide specific medical/regulatory improvements
+- Include drug-specific monitoring when relevant (trastuzumab→cardiotoxicity, immunotherapy→pneumonitis)
+- Use ICH-GCP terminology (patient→participant, study drug→investigational product)
+- Focus on {ta_detection.therapeutic_area if ta_detection else 'general'} protocols
+
+Provide 2-5 specific improvements."""
 
             # OPTIMIZATION: Faster API call with aggressive timeout
             if hasattr(self.azure_client, 'chat'):
@@ -545,61 +538,75 @@ CRITICAL: Focus on medical accuracy, drug-specific monitoring, and regulatory co
         return suggestions
 
     def _parse_ai_response_fast(self, response: str, chunk_index: int) -> List[InlineSuggestion]:
-        """OPTIMIZATION: Fast AI response parsing"""
+        """Parse Azure OpenAI response in simple text format"""
         suggestions = []
         
         try:
-            # Try to extract JSON
-            json_start = response.find('[')
-            json_end = response.rfind(']') + 1
+            logger.info(f"🔍 Parsing Azure OpenAI text response")
             
-            logger.info(f"🔍 JSON extraction: start={json_start}, end={json_end}")
+            # Parse numbered list format
+            lines = response.split('\n')
+            current_suggestion = {}
             
-            if json_start >= 0 and json_end > json_start:
-                json_str = response[json_start:json_end]
-                logger.info(f"🔍 Extracted JSON: {json_str}")
-                try:
-                    ai_suggestions = json.loads(json_str)
-                    logger.info(f"🔍 Successfully parsed {len(ai_suggestions)} AI suggestions")
+            for line in lines:
+                line = line.strip()
+                if not line:
+                    continue
+                
+                # Look for numbered items (1., 2., etc.)
+                if re.match(r'^\d+\.', line):
+                    # Save previous suggestion if exists
+                    if current_suggestion:
+                        suggestions.append(self._create_suggestion_from_parsed(current_suggestion, chunk_index, len(suggestions)))
+                    current_suggestion = {"number": line}
                     
-                    # Process the AI suggestions
-                    for i, item in enumerate(ai_suggestions[:20]):  # Enterprise-grade limit
-                        # Extract enterprise-grade fields
-                        severity = item.get("severity", "minor")
-                        risk_level = item.get("riskLevel", "low")
-                        regulatory_ref = item.get("regulatoryReference", "")
-                        implementation_impact = item.get("implementationImpact", "")
-                        
-                        # Create enterprise-grade suggestion
-                        suggestions.append(InlineSuggestion(
-                            type=item.get("type", "medical_improvement"),
-                            subtype=f"azure_ai_{severity}",
-                            originalText=item.get("originalText", "")[:300],
-                            suggestedText=item.get("suggestedText", ""),
-                            rationale=item.get("rationale", ""),
-                            complianceRationale=f"Azure OpenAI Analysis | Risk: {risk_level.upper()} | Medical Intelligence",
-                            fdaReference=regulatory_ref if "CFR" in regulatory_ref else None,
-                            emaReference=regulatory_ref if "ICH" in regulatory_ref or "EMA" in regulatory_ref else None,
-                            guidanceSource=regulatory_ref,
-                            operationalImpact=implementation_impact,
-                            retentionRisk=risk_level,
-                            backendConfidence="azure_openai_powered",
-                            range={"start": chunk_index * 8000 + (i * 50), "end": chunk_index * 8000 + (i * 50) + 150}
-                        ))
+                elif line.startswith("ORIGINAL:"):
+                    current_suggestion["original"] = line.replace("ORIGINAL:", "").strip().strip('"')
                     
-                except json.JSONDecodeError as json_error:
-                    logger.error(f"❌ JSON parsing failed: {json_error}")
-                    logger.error(f"❌ Attempted to parse: {json_str}")
-                    return suggestions
-            else:
-                logger.error(f"❌ No JSON array found in Azure OpenAI response")
-                logger.error(f"❌ Full response: {response}")
-                return suggestions
+                elif line.startswith("IMPROVED:"):
+                    current_suggestion["improved"] = line.replace("IMPROVED:", "").strip().strip('"')
+                    
+                elif line.startswith("REASON:"):
+                    current_suggestion["reason"] = line.replace("REASON:", "").strip()
+            
+            # Don't forget the last suggestion
+            if current_suggestion:
+                suggestions.append(self._create_suggestion_from_parsed(current_suggestion, chunk_index, len(suggestions)))
+                
+            logger.info(f"✅ Successfully parsed {len(suggestions)} suggestions from Azure OpenAI")
+            return suggestions
             
         except Exception as e:
-            logger.warning(f"⚠️ Fast parsing failed: {e}")
+            logger.error(f"❌ Text parsing failed: {e}")
+            logger.error(f"❌ Response was: {response}")
+            return suggestions
+
+    def _create_suggestion_from_parsed(self, parsed: dict, chunk_index: int, suggestion_index: int) -> InlineSuggestion:
+        """Create InlineSuggestion from parsed Azure OpenAI response"""
+        original = parsed.get("original", "")
+        improved = parsed.get("improved", "")
+        reason = parsed.get("reason", "")
         
-        return suggestions
+        # Determine type based on content
+        suggestion_type = "medical_improvement"
+        if "patient" in original.lower() and "participant" in improved.lower():
+            suggestion_type = "terminology"
+        elif "drug" in original.lower() and "investigational" in improved.lower():
+            suggestion_type = "terminology"
+        elif "monitor" in improved.lower() or "cardiotoxicity" in improved.lower():
+            suggestion_type = "safety_monitoring"
+        
+        return InlineSuggestion(
+            type=suggestion_type,
+            subtype="azure_openai_medical",
+            originalText=original,
+            suggestedText=improved,
+            rationale=reason,
+            complianceRationale="Azure OpenAI Medical Intelligence | Enterprise Analysis",
+            guidanceSource="Azure OpenAI + Medical Context",
+            backendConfidence="azure_openai_powered",
+            range={"start": chunk_index * 8000 + (suggestion_index * 100), "end": chunk_index * 8000 + (suggestion_index * 100) + len(original)}
+        )
 
     def _guaranteed_suggestions(self, chunk: str, chunk_index: int, ta_detection: TADetectionResult = None) -> List[InlineSuggestion]:
         """ENTERPRISE GUARANTEED: Pharma-grade fallback suggestions with TA-awareness"""
