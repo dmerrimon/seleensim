@@ -388,9 +388,14 @@ class OptimizedRealAIService:
         suggestions = []
         
         try:
+            logger.info(f"🔍 AZURE CLIENT CHECK: azure_client = {self.azure_client is not None}")
+            logger.info(f"🔍 AZURE CLIENT TYPE: {type(self.azure_client)}")
+            
             if not self.azure_client:
-                logger.warning(f"⚠️ Azure OpenAI client not available, using fallback")
+                logger.error(f"❌ CRITICAL: Azure OpenAI client is None - using fallback")
                 return self._guaranteed_suggestions(chunk, chunk_index, ta_detection)
+            
+            logger.info(f"✅ Azure OpenAI client available - proceeding with AI analysis")
             
             # Build TA-aware context
             ta_context = ""
@@ -490,7 +495,12 @@ REQUIREMENTS:
 Provide 2-5 specific improvements."""
 
             # OPTIMIZATION: Faster API call with aggressive timeout
+            logger.info(f"🤖 CALLING AZURE OPENAI with deployment: {self.config.azure_openai_deployment}")
+            logger.info(f"🤖 User prompt length: {len(user_prompt)} chars")
+            logger.info(f"🤖 System prompt length: {len(system_prompt)} chars")
+            
             if hasattr(self.azure_client, 'chat'):
+                logger.info(f"🤖 Using modern Azure OpenAI chat interface")
                 response = self.azure_client.chat.completions.create(
                     model=self.config.azure_openai_deployment,
                     messages=[
