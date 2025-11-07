@@ -1,0 +1,279 @@
+--- a/ai_service.py
++++ b/ai_service.py
+@@ -587,8 +587,19 @@ class IlanaAIService:
+     async def analyze_protocol_comprehensive(self, text: str) -> Dict[str, Any]:
+         """
+         Comprehensive protocol analysis using real AI with proven patterns
++        Heavy RAG operations (PubMedBERT + Pinecone) gated by RAG_ASYNC_MODE flag
+         """
+         try:
++            # Check if heavy RAG operations should run synchronously
++            rag_async_mode = os.getenv("RAG_ASYNC_MODE", "true").lower() == "true"
++            run_deep_ta_optimizer = getattr(self, '_run_deep_ta_optimizer', False)
++            
++            if rag_async_mode and not run_deep_ta_optimizer:
++                logger.info("🚀 RAG_ASYNC_MODE=true, skipping heavy vector operations for speed")
++                # Use lightweight analysis without heavy RAG
++                return await self._analyze_lightweight_mode(text)
++            
++            # Heavy RAG mode - full enterprise stack
+             logger.info("🧠 Starting REAL AI comprehensive protocol analysis")
+             
+             # 1. Find similar protocols from your 53,848 vectors
+@@ -633,6 +644,34 @@ class IlanaAIService:
+                     "ai_confidence": "medium"
+                 }
+             }
++    
++    async def _analyze_lightweight_mode(self, text: str) -> Dict[str, Any]:
++        """Lightweight analysis without heavy PubMedBERT embeddings or Pinecone retrieval"""
++        logger.info("⚡ Running lightweight mode - no heavy RAG operations")
++        
++        # Use local pattern analysis instead of vector search
++        compliance_score, compliance_issues = self.detect_compliance_risks(text)
++        clarity_score, engagement_score, clarity_issues = await self.analyze_clarity_and_engagement(text)
++        delivery_score, delivery_issues = await self.get_delivery_score(text)
++        
++        all_issues = compliance_issues + clarity_issues + delivery_issues
++        
++        return {
++            "compliance_score": int((1.0 - compliance_score) * 100),
++            "clarity_score": clarity_score,
++            "engagement_score": engagement_score, 
++            "delivery_score": delivery_score,
++            "issues": all_issues,
++            "metadata": {
++                "analysis_timestamp": datetime.now().isoformat(),
++                "text_length": len(text),
++                "model_version": "2.0.0-lightweight-mode",
++                "ai_confidence": "medium",
++                "rag_mode": "lightweight",
++                "heavy_operations_skipped": True
++            }
++        }
++    
+     async def find_similar_protocols(self, text: str, top_k: int = 10) -> List[Dict[str, Any]]:
+         """
+         Find similar protocols using vector search against your 53,848 vectors
+@@ -640,6 +679,12 @@ class IlanaAIService:
+         try:
+             # Get embedding for input text
+             query_embedding = await self.get_text_embedding(text)
++            
++            # Gate heavy operations
++            rag_async_mode = os.getenv("RAG_ASYNC_MODE", "true").lower() == "true"
++            if rag_async_mode and not getattr(self, '_run_deep_ta_optimizer', False):
++                logger.info("🚀 Skipping Pinecone query due to RAG_ASYNC_MODE=true")
++                return []
+             
+             # Query Pinecone for similar protocols
+             results = self.pinecone_index_client.query(
+@@ -673,6 +718,11 @@ class IlanaAIService:
+         Get text embedding using PubmedBERT Azure ML endpoint with enhanced fallback
+         """
+         try:
++            # Gate heavy PubMedBERT calls
++            rag_async_mode = os.getenv("RAG_ASYNC_MODE", "true").lower() == "true"
++            if rag_async_mode and not getattr(self, '_run_deep_ta_optimizer', False):
++                logger.info("🚀 Skipping PubMedBERT embedding due to RAG_ASYNC_MODE=true")
++                return self._get_enhanced_clinical_embedding(text)
++            
+             headers = {
+                 "Authorization": f"Bearer {self.huggingface_key}",
+                 "Content-Type": "application/json"
+
+--- a/legacy_pipeline_backup/optimized_real_ai_service.py
++++ b/legacy_pipeline_backup/optimized_real_ai_service.py
+@@ -230,11 +230,20 @@ class OptimizedRealAIService:
+         
+         start_time = datetime.utcnow()
+         chunks = self._split_text_into_chunks(text, max_chunk_size=8000)
++        
++        # Check RAG gating flags
++        rag_async_mode = os.getenv("RAG_ASYNC_MODE", "true").lower() == "true"
++        run_deep_ta_optimizer = getattr(self, '_run_deep_ta_optimizer', False)
++        
++        if rag_async_mode and not run_deep_ta_optimizer:
++            logger.info("🚀 RAG_ASYNC_MODE=true, using lightweight enterprise mode")
++            return await self._analyze_lightweight_enterprise(text, chunks, ta_detection)
+         
+         all_suggestions = []
++        logger.info("🧠 Running FULL enterprise RAG mode with heavy operations")
+         
+-        # Get enterprise vector insights from Pinecone
++        # Get enterprise vector insights from Pinecone (HEAVY OPERATION)
+         vector_context = ""
+         if self.enable_pinecone and hasattr(self, 'pinecone_index') and self.pinecone_index:
+             try:
+@@ -250,7 +259,7 @@ class OptimizedRealAIService:
+                 if ta_detection:
+                     vector_context = "\n".join(self._get_ta_specific_guidance(ta_detection)[:3])
+         
+-        # Get PubMedBERT medical intelligence
++        # Get PubMedBERT medical intelligence (HEAVY OPERATION)
+         pubmedbert_insights = ""
+         if self.enable_pubmedbert and hasattr(self, 'pubmedbert_service') and self.pubmedbert_service:
+             try:
+@@ -325,6 +334,42 @@ class OptimizedRealAIService:
+         
+         return all_suggestions, metadata
+     
++    async def _analyze_lightweight_enterprise(self, text: str, chunks: List[str], ta_detection: TADetectionResult) -> Tuple[List[InlineSuggestion], Dict[str, Any]]:
++        """Lightweight enterprise analysis without heavy RAG operations"""
++        logger.info("⚡ Running lightweight enterprise mode - skipping heavy RAG")
++        
++        all_suggestions = []
++        start_time = datetime.utcnow()
++        
++        # Use TA-specific guidance instead of vector search
++        vector_context = ""
++        if ta_detection:
++            vector_context = "\n".join(self._get_ta_specific_guidance(ta_detection)[:3])
++        
++        # Use local medical intelligence instead of PubMedBERT
++        pubmedbert_insights = await self._get_local_medical_intelligence(text, ta_detection)
++        
++        # Process chunks with lightweight analysis
++        for i, chunk in enumerate(chunks[:3]):  # Limit chunks for speed
++            chunk_suggestions = await self._analyze_chunk_enterprise(
++                chunk, i, ta_detection, vector_context, pubmedbert_insights
++            )
++            all_suggestions.extend(chunk_suggestions)
++        
++        processing_time = (datetime.utcnow() - start_time).total_seconds()
++        
++        metadata = {
++            "analysis_timestamp": start_time.isoformat(),
++            "text_length": len(text),
++            "chunks_processed": min(len(chunks), 3),
++            "suggestions_generated": len(all_suggestions),
++            "processing_time": processing_time,
++            "model_version": "5.0.0-lightweight-enterprise",
++            "rag_mode": "lightweight",
++            "heavy_operations_skipped": True
++        }
++        
++        return all_suggestions, metadata
++    
+     async def _get_pinecone_insights(self, text: str, ta_detection: TADetectionResult = None) -> str:
+         """Get enterprise vector insights from Pinecone database with real embeddings"""
+         try:
+@@ -783,6 +828,11 @@ class OptimizedRealAIService:
+                 query_embedding = np.random.random(768).tolist()
+             
+             # Query Pinecone with semantic similarity and TA filtering
++            rag_async_mode = os.getenv("RAG_ASYNC_MODE", "true").lower() == "true" 
++            if rag_async_mode and not getattr(self, '_run_deep_ta_optimizer', False):
++                logger.info("🚀 Skipping Pinecone query due to RAG_ASYNC_MODE=true")
++                return self._get_ta_specific_guidance_text(ta_detection)
++            
+             results = self.pinecone_index.query(
+                 vector=query_embedding,
+                 top_k=5,
+@@ -863,6 +913,11 @@ class OptimizedRealAIService:
+     async def _get_pubmedbert_insights(self, text: str, ta_detection: TADetectionResult = None) -> str:
+         """Get medical domain insights from PubMedBERT model"""
+         try:
++            # Gate heavy PubMedBERT operations
++            rag_async_mode = os.getenv("RAG_ASYNC_MODE", "true").lower() == "true"
++            if rag_async_mode and not getattr(self, '_run_deep_ta_optimizer', False):
++                logger.info("🚀 Skipping PubMedBERT due to RAG_ASYNC_MODE=true, using local intelligence")
++                return await self._get_local_medical_intelligence(text, ta_detection)
++            
+             if not hasattr(self, 'pubmedbert_service') or not self.pubmedbert_service:
+                 # Create local medical intelligence based on text analysis
+                 return await self._get_local_medical_intelligence(text, ta_detection)
+
+--- a/main.py
++++ b/main.py
+@@ -117,6 +117,17 @@ async def startup_event():
+ async def startup_event():
+     """Initialize enterprise AI service on startup"""
+     global enterprise_ai_service
++    
++    # Set default RAG_ASYNC_MODE if not specified
++    if not os.getenv("RAG_ASYNC_MODE"):
++        os.environ["RAG_ASYNC_MODE"] = "true"
++        logger.info("🚀 RAG_ASYNC_MODE defaulted to 'true' for performance")
++    else:
++        rag_mode = os.getenv("RAG_ASYNC_MODE", "true")
++        logger.info(f"🔍 RAG_ASYNC_MODE configured as: {rag_mode}")
++        if rag_mode.lower() == "false":
++            logger.warning("⚠️ RAG_ASYNC_MODE=false - Heavy RAG operations will run synchronously")
+     
+     logger.info("🚀 Starting Enterprise Ilana AI Service")
+     
+@@ -177,6 +188,26 @@ async def health_check():
+         }
+     }
+
++@app.post("/api/enable-deep-ta-optimizer")
++async def enable_deep_ta_optimizer():
++    """Endpoint to enable deep TA optimizer with heavy RAG operations"""
++    global enterprise_ai_service
++    
++    if enterprise_ai_service:
++        # Set flag to enable heavy RAG operations for this service instance
++        enterprise_ai_service._run_deep_ta_optimizer = True
++        logger.info("🔥 Deep TA Optimizer enabled - heavy RAG operations will run")
++        
++        return {
++            "status": "enabled",
++            "message": "Deep TA Optimizer with heavy RAG operations enabled",
++            "heavy_operations": ["PubMedBERT embeddings", "Pinecone vector search", "Full RAG pipeline"]
++        }
++    else:
++        return {
++            "status": "error", 
++            "message": "Enterprise AI service not available"
++        }
++
+ @app.get("/debug/azure-openai")
+ async def debug_azure_openai():
+     """Debug Azure OpenAI connection"""
+
+--- a/ilana-comprehensive.js
++++ b/ilana-comprehensive.js
+@@ -161,6 +161,34 @@ function initializeUI() {
+     }
+ }
+
++// Deep TA Optimizer button handler
++async function runDeepTAOptimizer() {
++    try {
++        updateStatus('Enabling Deep TA Optimizer...', 'analyzing');
++        
++        // Enable deep TA optimizer on backend
++        const enableResponse = await fetch(`${API_CONFIG.baseUrl}/api/enable-deep-ta-optimizer`, {
++            method: 'POST',
++            headers: { 'Content-Type': 'application/json' }
++        });
++        
++        if (!enableResponse.ok) {
++            throw new Error(`Failed to enable Deep TA Optimizer: ${enableResponse.status}`);
++        }
++        
++        const enableResult = await enableResponse.json();
++        console.log("🔥 Deep TA Optimizer enabled:", enableResult);
++        
++        // Run analysis with heavy RAG operations
++        await startAnalysis();
++        
++    } catch (error) {
++        console.error('❌ Deep TA Optimizer failed:', error);
++        showError(`Deep TA Optimizer failed: ${error.message}`);
++        updateStatus('Deep TA Optimizer failed', 'error');
++    }
++}
++
+ // Verify all functionality is working
+ function verifyFunctionality() {
+     const requiredFunctions = [
+@@ -116,6 +144,7 @@ function setupEventListeners() {
+     window.learnMore = learnMore;
+     window.closeModal = closeModal;
+     window.hideError = hideError;
++    window.runDeepTAOptimizer = runDeepTAOptimizer;
+     
+     console.log("✅ Event listeners configured");
+ }

@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ilana Model Telemetry Schema",
+  "description": "Schema for logging model API calls and performance metrics",
+  "type": "object",
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the request"
+    },
+    "user_id_hash": {
+      "type": "string",
+      "description": "SHA-256 hash of user identifier for privacy"
+    },
+    "doc_id_hash": {
+      "type": "string", 
+      "description": "SHA-256 hash of document identifier for privacy"
+    },
+    "model_path": {
+      "type": "string",
+      "enum": ["simple", "legacy"],
+      "description": "Which model pipeline was used"
+    },
+    "prompt_hash": {
+      "type": "string",
+      "description": "SHA-256 hash of the prompt for deduplication"
+    },
+    "latency_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Response latency in milliseconds"
+    },
+    "parse_success": {
+      "type": "boolean",
+      "description": "Whether response parsing succeeded"
+    },
+    "suggestion_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of suggestions generated"
+    },
+    "error_message": {
+      "type": ["string", "null"],
+      "description": "Error message if request failed, null if successful"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of the request"
+    }
+  },
+  "required": [
+    "request_id",
+    "user_id_hash", 
+    "doc_id_hash",
+    "model_path",
+    "prompt_hash",
+    "latency_ms",
+    "parse_success",
+    "suggestion_count",
+    "timestamp"
+  ],
+  "additionalProperties": false
+}
