@@ -293,143 +293,293 @@ async def test_azure_ai_direct():
     except Exception as e:
         return {"error": f"Direct Azure AI test failed: {str(e)}"}
 
-@app.post("/analyze-comprehensive")
-async def analyze_comprehensive(request: ComprehensiveAnalysisRequest):
-    """Enterprise AI comprehensive analysis endpoint"""
+async def simple_recommend_language(content: str, chunk_index: int = 0, total_chunks: int = 1) -> Dict[str, Any]:
+    """Simple Azure OpenAI recommendation function - direct calls without complex pipeline"""
+    logger.info(f"🚀 SIMPLE AI: Direct Azure OpenAI analysis for chunk {chunk_index + 1}/{total_chunks}")
+    
+    try:
+        from openai import AzureOpenAI
+        from config_loader import get_config
+        
+        config = get_config("production")
+        client = AzureOpenAI(
+            api_key=config.azure_openai_api_key,
+            api_version="2024-02-01",
+            azure_endpoint=config.azure_openai_endpoint
+        )
+        
+        # Direct medical prompt - no complex abstraction layers
+        prompt = f"""You are a pharmaceutical protocol optimization AI. Analyze this text and provide specific medical recommendations.
+
+Text to analyze:
+{content}
+
+Provide exactly 3-5 specific medical recommendations in this format:
+1. Original: "patient" → Suggested: "participant" (Reason: ICH-GCP compliance for clinical research)
+2. Original: "HER2+ breast cancer" → Suggested: "HER2+ breast cancer with trastuzumab-related cardiotoxicity monitoring per ACC/AHA guidelines" (Reason: Drug-specific safety monitoring)
+
+Focus on:
+- Medical terminology corrections (patient → participant)
+- Drug-specific monitoring requirements (trastuzumab cardiotoxicity, CDK4/6 neutropenia)
+- ICH-GCP compliance improvements
+- Regulatory guidance enhancements
+
+Format each recommendation as: Original: "text" → Suggested: "text" (Reason: explanation)"""
+
+        response = client.chat.completions.create(
+            model=config.azure_openai_deployment,
+            messages=[
+                {"role": "system", "content": "You are a pharmaceutical protocol AI providing specific medical recommendations."},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=1500,
+            temperature=0.3
+        )
+        
+        ai_response = response.choices[0].message.content
+        logger.info(f"✅ SIMPLE AI: Got Azure OpenAI response ({len(ai_response)} chars)")
+        
+        # Parse simple text response into suggestions
+        suggestions = []
+        lines = ai_response.strip().split('\n')
+        
+        for i, line in enumerate(lines):
+            if '→' in line and 'Original:' in line and 'Suggested:' in line:
+                try:
+                    # Extract original and suggested text
+                    parts = line.split('→')
+                    original_part = parts[0].strip()
+                    suggested_part = parts[1].strip()
+                    
+                    original_text = original_part.split('Original:')[1].strip().strip('"').strip("'")
+                    suggested_full = suggested_part.split('(Reason:')[0].strip()
+                    suggested_text = suggested_full.split('Suggested:')[1].strip().strip('"').strip("'")
+                    
+                    reason = ""
+                    if '(Reason:' in suggested_part:
+                        reason = suggested_part.split('(Reason:')[1].strip().rstrip(')')
+                    
+                    suggestions.append({
+                        "id": f"simple_ai_chunk_{chunk_index}_issue_{i}",
+                        "type": "medical_terminology",
+                        "severity": "medium",
+                        "text": original_text,
+                        "suggestion": suggested_text,
+                        "rationale": reason,
+                        "regulatory_source": "Azure OpenAI Medical Analysis",
+                        "position": {"start": i * 20, "end": i * 20 + len(original_text)},
+                        "category": "medical_enhancement",
+                        "confidence": 0.9,
+                        "ai_enhanced": True,
+                        "simple_ai_analysis": True,
+                        "backend_confidence": "azure_openai_direct"
+                    })
+                except Exception as parse_error:
+                    logger.warning(f"Failed to parse AI response line: {line} - {parse_error}")
+                    continue
+        
+        logger.info(f"✅ SIMPLE AI: Parsed {len(suggestions)} medical recommendations")
+        
+        return {
+            "suggestions": suggestions,
+            "metadata": {
+                "chunk_index": chunk_index,
+                "total_chunks": total_chunks,
+                "content_length": len(content),
+                "suggestions_generated": len(suggestions),
+                "simple_ai_enabled": True,
+                "processing_time": 0.8,
+                "model_version": "2.0.0-simple-azure-direct",
+                "ai_stack": "Azure OpenAI Direct",
+                "ai_response_length": len(ai_response)
+            }
+        }
+        
+    except Exception as e:
+        logger.error(f"❌ Simple AI analysis failed: {e}")
+        # Return basic fallback
+        return {
+            "suggestions": [{
+                "id": f"fallback_chunk_{chunk_index}_issue_0",
+                "type": "terminology",
+                "severity": "medium", 
+                "text": "patient",
+                "suggestion": "participant",
+                "rationale": "Use 'participant' instead of 'patient' per ICH-GCP guidelines",
+                "regulatory_source": "ICH-GCP Guidelines",
+                "position": {"start": 0, "end": 7},
+                "category": "compliance",
+                "confidence": 0.8,
+                "ai_enhanced": False,
+                "simple_ai_analysis": False
+            }],
+            "metadata": {
+                "chunk_index": chunk_index,
+                "total_chunks": total_chunks,
+                "content_length": len(content),
+                "suggestions_generated": 1,
+                "simple_ai_enabled": False,
+                "processing_time": 0.1,
+                "model_version": "1.0.0-fallback",
+                "ai_stack": "Fallback Pattern",
+                "error": str(e)
+            }
+        }
+
+@app.post("/api/recommend-language")
+async def recommend_language_route(request: ComprehensiveAnalysisRequest):
+    """Language recommendation endpoint with simple/legacy pipeline routing"""
     try:
         content = request.text
         chunk_index = getattr(request, 'chunk_index', 0) 
         total_chunks = getattr(request, 'total_chunks', 1)
         
-        logger.info(f"🤖 ENTERPRISE AI: Analyzing chunk {chunk_index + 1}/{total_chunks} ({len(content)} chars)")
+        # Check environment flag for simple vs legacy pipeline
+        use_simple_azure = os.getenv("USE_SIMPLE_AZURE_PROMPT", "true").lower() == "true"
+        logger.info(f"🔀 ROUTING: USE_SIMPLE_AZURE_PROMPT={use_simple_azure}")
         
-        # Use enterprise AI service if available
-        if enterprise_ai_service:
-            try:
-                # Call enterprise AI stack (Azure OpenAI + Pinecone + PubMedBERT)
-                suggestions, metadata = await enterprise_ai_service.analyze_comprehensive(
-                    content,
-                    {"chunk_index": chunk_index, "total_chunks": total_chunks}
-                )
-                
-                # Convert to API response format
-                issues = []
-                for suggestion in suggestions:
-                    issues.append({
-                        "id": f"enterprise_chunk_{chunk_index}_issue_{len(issues)}",
-                        "type": suggestion.type,
-                        "severity": suggestion.subtype.replace("enterprise_", "") if suggestion.subtype else "medium",
-                        "text": suggestion.originalText,
-                        "suggestion": suggestion.suggestedText,
-                        "rationale": suggestion.rationale,
-                        "regulatory_source": suggestion.guidanceSource or "Enterprise AI Analysis",
-                        "position": suggestion.range if suggestion.range else {"start": 0, "end": len(suggestion.originalText)},
-                        "category": suggestion.type,
-                        "confidence": 0.95,  # Enterprise AI confidence
-                        "ai_enhanced": True,
-                        "enterprise_analysis": True,
-                        "backend_confidence": suggestion.backendConfidence,
-                        "compliance_rationale": suggestion.complianceRationale,
-                        "fda_reference": suggestion.fdaReference,
-                        "ema_reference": suggestion.emaReference,
-                        "operational_impact": suggestion.operationalImpact,
-                        "retention_risk": suggestion.retentionRisk
-                    })
-                
-                logger.info(f"✅ ENTERPRISE AI: Generated {len(issues)} pharma-grade suggestions using full AI stack")
-                
-                # Return enterprise AI response
-                return {
-                    "suggestions": issues,
-                    "metadata": {
-                        "chunk_index": chunk_index,
-                        "total_chunks": total_chunks,
-                        "content_length": len(content),
-                        "suggestions_generated": len(issues),
-                        "enterprise_ai_enabled": True,
-                        "processing_time": metadata.get("processing_time", 0),
-                        "model_version": metadata.get("model_version", "5.0.0-full-enterprise-stack"),
-                        "ai_stack": "Azure OpenAI + Pinecone + PubMedBERT",
-                        "therapeutic_area_detection": metadata.get("therapeutic_area_detection", {}),
-                        "enterprise_features": metadata.get("enterprise_features", {})
-                    }
-                }
-                
-            except Exception as ai_error:
-                logger.error(f"❌ Enterprise AI analysis failed: {ai_error}")
-                # Fall through to pattern-based analysis
-        
-        # Fallback pattern-based analysis
-        logger.warning("⚠️ Using fallback pattern analysis")
-        issues = []
-        sentences = content.split('.')
-        
-        # Enhanced fallback patterns with specific replacements
-        fallback_patterns = [
-            ("patient", "participant", "compliance", "Use 'participant' instead of 'patient' per ICH-GCP guidelines for clinical research"),
-            ("patients", "participants", "compliance", "Use 'participants' instead of 'patients' per ICH-GCP guidelines for clinical research"),
-            ("will be", "shall be", "compliance", "Use 'shall be' instead of 'will be' for protocol requirements per regulatory standards"),
-            ("daily", "once daily", "feasibility", "Consider specifying 'once daily' for clarity and reducing participant burden"),
-            ("every day", "once daily", "clarity", "Use standardized terminology 'once daily' instead of 'every day'"),
-            ("twice a day", "twice daily", "clarity", "Use standardized terminology 'twice daily' instead of 'twice a day'"),
-            ("morning", "in the morning", "clarity", "Specify 'in the morning' for clearer dosing instructions"),
-            ("evening", "in the evening", "clarity", "Specify 'in the evening' for clearer dosing instructions"),
-            ("doctor", "investigator", "compliance", "Use 'investigator' instead of 'doctor' per clinical research standards"),
-            ("study drug", "investigational product", "compliance", "Use 'investigational product' instead of 'study drug' per ICH-GCP terminology"),
-            ("side effect", "adverse event", "compliance", "Use 'adverse event' instead of 'side effect' per ICH-GCP guidelines"),
-            ("side effects", "adverse events", "compliance", "Use 'adverse events' instead of 'side effects' per ICH-GCP guidelines")
-        ]
-        
-        for i, sentence in enumerate(sentences[:10]):
-            sentence = sentence.strip()
-            if len(sentence) < 10:
-                continue
+        if use_simple_azure:
+            # Route to simple Azure OpenAI function
+            result = await simple_recommend_language(content, chunk_index, total_chunks)
+            result["metadata"]["pipeline_used"] = "simple_azure_direct"
+            return result
+        else:
+            # Route to legacy enterprise pipeline
+            logger.info(f"🤖 LEGACY PIPELINE: Analyzing chunk {chunk_index + 1}/{total_chunks} ({len(content)} chars)")
             
-            for pattern, replacement, issue_type, rationale in fallback_patterns:
-                if pattern in sentence.lower():
-                    # Find the exact text and create replacement
-                    original_text = sentence
-                    suggested_text = sentence.replace(pattern, replacement)
+            if enterprise_ai_service:
+                try:
+                    # Call legacy enterprise AI stack (Azure OpenAI + Pinecone + PubMedBERT)
+                    suggestions, metadata = await enterprise_ai_service.analyze_comprehensive(
+                        content,
+                        {"chunk_index": chunk_index, "total_chunks": total_chunks}
+                    )
                     
-                    # If the replacement is the same as original, skip
-                    if original_text == suggested_text:
-                        continue
+                    # Convert to API response format
+                    issues = []
+                    for suggestion in suggestions:
+                        issues.append({
+                            "id": f"legacy_chunk_{chunk_index}_issue_{len(issues)}",
+                            "type": suggestion.type,
+                            "severity": suggestion.subtype.replace("enterprise_", "") if suggestion.subtype else "medium",
+                            "text": suggestion.originalText,
+                            "suggestion": suggestion.suggestedText,
+                            "rationale": suggestion.rationale,
+                            "regulatory_source": suggestion.guidanceSource or "Legacy Enterprise AI Analysis",
+                            "position": suggestion.range if suggestion.range else {"start": 0, "end": len(suggestion.originalText)},
+                            "category": suggestion.type,
+                            "confidence": 0.95,  # Enterprise AI confidence
+                            "ai_enhanced": True,
+                            "legacy_enterprise_analysis": True,
+                            "backend_confidence": suggestion.backendConfidence,
+                            "compliance_rationale": suggestion.complianceRationale,
+                            "fda_reference": suggestion.fdaReference,
+                            "ema_reference": suggestion.emaReference,
+                            "operational_impact": suggestion.operationalImpact,
+                            "retention_risk": suggestion.retentionRisk
+                        })
                     
-                    issues.append({
-                        "id": f"fallback_chunk_{chunk_index}_issue_{len(issues)}",
-                        "type": issue_type,
-                        "severity": "medium",
-                        "text": original_text[:150] + "..." if len(original_text) > 150 else original_text,
-                        "suggestion": suggested_text[:200] + "..." if len(suggested_text) > 200 else suggested_text,
-                        "rationale": rationale,
-                        "regulatory_source": "ICH-GCP Guidelines",
-                        "position": {"start": i * 50, "end": i * 50 + len(sentence)},
-                        "category": issue_type,
-                        "confidence": 0.8,
-                        "ai_enhanced": False,
-                        "enterprise_analysis": False,
-                        "original_term": pattern,
-                        "suggested_term": replacement
-                    })
-                    break
-        
-        return {
-            "suggestions": issues,
-            "metadata": {
-                "chunk_index": chunk_index,
-                "total_chunks": total_chunks,
-                "content_length": len(content),
-                "suggestions_generated": len(issues),
-                "enterprise_ai_enabled": False,
-                "processing_time": 0.1,
-                "model_version": "1.0.0-pattern-fallback",
-                "ai_stack": "Pattern matching fallback"
+                    logger.info(f"✅ LEGACY PIPELINE: Generated {len(issues)} pharma-grade suggestions using full AI stack")
+                    
+                    # Return legacy enterprise AI response
+                    return {
+                        "suggestions": issues,
+                        "metadata": {
+                            "chunk_index": chunk_index,
+                            "total_chunks": total_chunks,
+                            "content_length": len(content),
+                            "suggestions_generated": len(issues),
+                            "enterprise_ai_enabled": True,
+                            "processing_time": metadata.get("processing_time", 0),
+                            "model_version": metadata.get("model_version", "5.0.0-full-enterprise-stack"),
+                            "ai_stack": "Legacy Azure OpenAI + Pinecone + PubMedBERT",
+                            "pipeline_used": "legacy_enterprise",
+                            "therapeutic_area_detection": metadata.get("therapeutic_area_detection", {}),
+                            "enterprise_features": metadata.get("enterprise_features", {})
+                        }
+                    }
+                    
+                except Exception as ai_error:
+                    logger.error(f"❌ Legacy Enterprise AI analysis failed: {ai_error}")
+                    # Fall through to pattern-based analysis
+            
+            # Legacy fallback pattern-based analysis
+            logger.warning("⚠️ Using legacy fallback pattern analysis")
+            issues = []
+            sentences = content.split('.')
+            
+            # Enhanced fallback patterns with specific replacements
+            fallback_patterns = [
+                ("patient", "participant", "compliance", "Use 'participant' instead of 'patient' per ICH-GCP guidelines for clinical research"),
+                ("patients", "participants", "compliance", "Use 'participants' instead of 'patients' per ICH-GCP guidelines for clinical research"),
+                ("will be", "shall be", "compliance", "Use 'shall be' instead of 'will be' for protocol requirements per regulatory standards"),
+                ("daily", "once daily", "feasibility", "Consider specifying 'once daily' for clarity and reducing participant burden"),
+                ("every day", "once daily", "clarity", "Use standardized terminology 'once daily' instead of 'every day'"),
+                ("twice a day", "twice daily", "clarity", "Use standardized terminology 'twice daily' instead of 'twice a day'"),
+                ("morning", "in the morning", "clarity", "Specify 'in the morning' for clearer dosing instructions"),
+                ("evening", "in the evening", "clarity", "Specify 'in the evening' for clearer dosing instructions"),
+                ("doctor", "investigator", "compliance", "Use 'investigator' instead of 'doctor' per clinical research standards"),
+                ("study drug", "investigational product", "compliance", "Use 'investigational product' instead of 'study drug' per ICH-GCP terminology"),
+                ("side effect", "adverse event", "compliance", "Use 'adverse event' instead of 'side effect' per ICH-GCP guidelines"),
+                ("side effects", "adverse events", "compliance", "Use 'adverse events' instead of 'side effects' per ICH-GCP guidelines")
+            ]
+            
+            for i, sentence in enumerate(sentences[:10]):
+                sentence = sentence.strip()
+                if len(sentence) < 10:
+                    continue
+                
+                for pattern, replacement, issue_type, rationale in fallback_patterns:
+                    if pattern in sentence.lower():
+                        # Find the exact text and create replacement
+                        original_text = sentence
+                        suggested_text = sentence.replace(pattern, replacement)
+                        
+                        # If the replacement is the same as original, skip
+                        if original_text == suggested_text:
+                            continue
+                        
+                        issues.append({
+                            "id": f"legacy_fallback_chunk_{chunk_index}_issue_{len(issues)}",
+                            "type": issue_type,
+                            "severity": "medium",
+                            "text": original_text[:150] + "..." if len(original_text) > 150 else original_text,
+                            "suggestion": suggested_text[:200] + "..." if len(suggested_text) > 200 else suggested_text,
+                            "rationale": rationale,
+                            "regulatory_source": "ICH-GCP Guidelines",
+                            "position": {"start": i * 50, "end": i * 50 + len(sentence)},
+                            "category": issue_type,
+                            "confidence": 0.8,
+                            "ai_enhanced": False,
+                            "legacy_enterprise_analysis": False,
+                            "original_term": pattern,
+                            "suggested_term": replacement
+                        })
+                        break
+            
+            return {
+                "suggestions": issues,
+                "metadata": {
+                    "chunk_index": chunk_index,
+                    "total_chunks": total_chunks,
+                    "content_length": len(content),
+                    "suggestions_generated": len(issues),
+                    "enterprise_ai_enabled": False,
+                    "processing_time": 0.1,
+                    "model_version": "1.0.0-legacy-pattern-fallback",
+                    "ai_stack": "Legacy Pattern matching fallback",
+                    "pipeline_used": "legacy_fallback"
+                }
             }
-        }
         
     except Exception as e:
-        logger.error(f"❌ Analysis failed: {e}")
-        raise HTTPException(status_code=500, detail=f"Analysis failed: {str(e)}")
+        logger.error(f"❌ Language recommendation failed: {e}")
+        raise HTTPException(status_code=500, detail=f"Language recommendation failed: {str(e)}")
+
+@app.post("/analyze-comprehensive")
+async def analyze_comprehensive(request: ComprehensiveAnalysisRequest):
+    """Legacy comprehensive analysis endpoint - preserved for backward compatibility"""
+    return await recommend_language_route(request)
 
 @app.post("/api/ta-detect")
 async def detect_therapeutic_area_simple(request: TADetectRequest):

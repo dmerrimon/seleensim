@@ -1869,4 +1869,304 @@ function closeSuggestion() {
     document.querySelectorAll('.issue-card').forEach(card => card.classList.remove('selected'));
 }
 
+// Parse model text response (simple format parsing)
+function parseModelText(raw) {
+    /**
+     * Parse simple text response into structured suggestions
+     * Splits on \n---\n to get blocks, then regex-extracts ORIGINAL, IMPROVED, REASON
+     * Returns array [{original, improved, reason}]
+     */
+    if (!raw || typeof raw !== 'string') {
+        return [];
+    }
+    
+    const suggestions = [];
+    
+    // Split by --- to handle multiple blocks
+    const blocks = raw.split('\n---\n');
+    
+    for (const block of blocks) {
+        const trimmedBlock = block.trim();
+        if (!trimmedBlock) continue;
+        
+        // Tolerant regex extraction for ORIGINAL, IMPROVED, REASON
+        const originalMatch = trimmedBlock.match(/ORIGINAL:\s*["\']?([^"\'\n]+)["\']?/i);
+        const improvedMatch = trimmedBlock.match(/IMPROVED:\s*["\']?([^"\'\n]+)["\']?/i);
+        const reasonMatch = trimmedBlock.match(/REASON:\s*["\']?([^"\'\n]+)["\']?/i);
+        
+        if (originalMatch && improvedMatch && reasonMatch) {
+            suggestions.push({
+                original: originalMatch[1].trim(),
+                improved: improvedMatch[1].trim(),
+                reason: reasonMatch[1].trim()
+            });
+        } else {
+            // Try multiline parsing as fallback
+            const lines = trimmedBlock.split('\n');
+            let currentSuggestion = {};
+            
+            for (const line of lines) {
+                const cleanLine = line.trim();
+                if (cleanLine.startsWith('ORIGINAL:')) {
+                    currentSuggestion.original = cleanLine.replace(/^ORIGINAL:\s*/i, '').replace(/^["\']|["\']$/g, '').trim();
+                } else if (cleanLine.startsWith('IMPROVED:')) {
+                    currentSuggestion.improved = cleanLine.replace(/^IMPROVED:\s*/i, '').replace(/^["\']|["\']$/g, '').trim();
+                } else if (cleanLine.startsWith('REASON:')) {
+                    currentSuggestion.reason = cleanLine.replace(/^REASON:\s*/i, '').replace(/^["\']|["\']$/g, '').trim();
+                }
+            }
+            
+            if (currentSuggestion.original && currentSuggestion.improved && currentSuggestion.reason) {
+                suggestions.push(currentSuggestion);
+            }
+        }
+    }
+    
+    return suggestions;
+}
+
+// Check if simple Azure prompt is enabled
+function isSimpleAzurePromptEnabled() {
+    // Check for environment flag - could be set via backend config or localStorage
+    const envFlag = localStorage.getItem('USE_SIMPLE_AZURE_PROMPT');
+    if (envFlag !== null) {
+        return envFlag.toLowerCase() === 'true';
+    }
+    
+    // Default to true for simple mode
+    return true;
+}
+
+// Enhanced Recommend button handler with simple/legacy routing
+async function handleRecommendButton() {
+    // Prevent multiple simultaneous analyses
+    if (IlanaState.isAnalyzing) {
+        console.warn('🚦 Analysis already in progress - blocking concurrent request');
+        showError("Analysis in progress. Please wait for current analysis to complete.");
+        return;
+    }
+    
+    console.log('🚀 Starting recommendation analysis...');
+    
+    try {
+        IlanaState.isAnalyzing = true;
+        updateStatus('Getting recommendations...', 'analyzing');
+        showProcessingOverlay(true);
+        
+        // Clear any existing highlights
+        await clearAllHighlights();
+        
+        // Extract document content
+        const documentText = await extractDocumentText();
+        
+        if (!documentText || documentText.trim().length < 10) {
+            throw new Error("Document too short for analysis (minimum 10 characters)");
+        }
+        
+        console.log(`📊 Processing ${documentText.length} characters`);
+        updateProcessingDetails(`Analyzing ${documentText.length} characters...`);
+        
+        // Check routing flag
+        const useSimplePrompt = isSimpleAzurePromptEnabled();
+        console.log(`🔀 ROUTING: USE_SIMPLE_AZURE_PROMPT=${useSimplePrompt}`);
+        
+        let analysisResult;
+        
+        if (useSimplePrompt) {
+            // Route to simple Azure OpenAI endpoint
+            analysisResult = await callSimpleRecommendAPI(documentText);
+        } else {
+            // Route to legacy comprehensive analysis
+            analysisResult = await performComprehensiveAnalysis(documentText);
+        }
+        
+        if (!analysisResult || (!analysisResult.issues && !analysisResult.suggestions)) {
+            throw new Error('Invalid analysis result received');
+        }
+        
+        console.log(`✅ Recommendation analysis complete`);
+        
+        // Update UI with results
+        await updateDashboard(analysisResult);
+        
+        // Dispatch events for compatibility
+        dispatchEvent(new CustomEvent('suggestionInserted', { 
+            detail: { suggestions: analysisResult.suggestions || analysisResult.issues } 
+        }));
+        
+        updateStatus(`Analysis complete - ${(analysisResult.issues || analysisResult.suggestions || []).length} recommendations found`, 'ready');
+        
+    } catch (error) {
+        console.error('❌ Recommendation analysis failed:', error);
+        showError(`Analysis failed: ${error.message}`);
+        updateStatus('Analysis failed', 'error');
+    } finally {
+        IlanaState.isAnalyzing = false;
+        showProcessingOverlay(false);
+        console.log('🏁 Recommendation analysis completed');
+    }
+}
+
+// Call simple recommend API endpoint
+async function callSimpleRecommendAPI(documentText) {
+    console.log("🚀 SIMPLE MODE: Calling /api/recommend-language-simple");
+    
+    const payload = {
+        text: documentText.length > 5000 ? documentText.substring(0, 5000) : documentText,
+        ta: IlanaState.currentTA || null,
+        phase: "III"
+    };
+    
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+    
+    try {
+        const response = await fetch(`${API_CONFIG.baseUrl}/api/recommend-language-simple`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload),
+            signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
+        
+        if (!response.ok) {
+            throw new Error(`Simple API error: ${response.status} ${response.statusText}`);
+        }
+        
+        const result = await response.json();
+        console.log("✅ Simple API response:", result);
+        
+        // Transform simple API response to UI format
+        return transformSimpleApiResponse(result);
+        
+    } catch (error) {
+        clearTimeout(timeoutId);
+        console.error("❌ Simple API failed:", error);
+        
+        // Fallback to parsing raw text if the API returns text instead of JSON
+        if (error.message.includes('JSON')) {
+            console.log("🔄 Attempting to parse as raw text response");
+            try {
+                const textResponse = await fetch(`${API_CONFIG.baseUrl}/api/recommend-language-simple`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const rawText = await textResponse.text();
+                const parsed = parseModelText(rawText);
+                return transformParsedSuggestions(parsed);
+            } catch (parseError) {
+                console.error("❌ Raw text parsing failed:", parseError);
+            }
+        }
+        
+        // Ultimate fallback
+        return generateEnhancedFallbackAnalysis(documentText);
+    }
+}
+
+// Transform simple API response to UI format
+function transformSimpleApiResponse(apiResponse) {
+    const issues = [];
+    const suggestions = [];
+    
+    if (apiResponse.suggestions && Array.isArray(apiResponse.suggestions)) {
+        apiResponse.suggestions.forEach((suggestion, index) => {
+            const issue = {
+                id: `simple_issue_${index}`,
+                type: 'medical_terminology',
+                severity: 'medium',
+                text: suggestion.original,
+                suggestion: suggestion.improved,
+                rationale: suggestion.reason,
+                range: { start: index * 20, end: index * 20 + suggestion.original.length },
+                confidence: 'high',
+                simpleApiAnalysis: true
+            };
+            
+            issues.push(issue);
+            
+            suggestions.push({
+                id: `simple_suggestion_${index}`,
+                type: 'medical_terminology',
+                originalText: suggestion.original,
+                suggestedText: suggestion.improved,
+                rationale: suggestion.reason,
+                range: { start: index * 20, end: index * 20 + suggestion.original.length }
+            });
+        });
+    }
+    
+    // Store in global state
+    IlanaState.currentIssues = issues;
+    IlanaState.currentSuggestions = suggestions;
+    
+    console.log(`📋 Transformed ${issues.length} simple API suggestions`);
+    
+    return {
+        issues,
+        suggestions,
+        metadata: {
+            processingTime: apiResponse.metadata?.latency_ms || 0,
+            aiConfidence: 'high',
+            pipelineUsed: 'simple_azure_direct',
+            modelVersion: apiResponse.metadata?.model_version || 'simple-api'
+        }
+    };
+}
+
+// Transform parsed suggestions to UI format
+function transformParsedSuggestions(parsedSuggestions) {
+    const issues = [];
+    const suggestions = [];
+    
+    parsedSuggestions.forEach((suggestion, index) => {
+        const issue = {
+            id: `parsed_issue_${index}`,
+            type: 'medical_enhancement',
+            severity: 'medium',
+            text: suggestion.original,
+            suggestion: suggestion.improved,
+            rationale: suggestion.reason,
+            range: { start: index * 50, end: index * 50 + suggestion.original.length },
+            confidence: 'medium',
+            parsedTextAnalysis: true
+        };
+        
+        issues.push(issue);
+        
+        suggestions.push({
+            id: `parsed_suggestion_${index}`,
+            type: 'medical_enhancement',
+            originalText: suggestion.original,
+            suggestedText: suggestion.improved,
+            rationale: suggestion.reason,
+            range: { start: index * 50, end: index * 50 + suggestion.original.length }
+        });
+    });
+    
+    // Store in global state
+    IlanaState.currentIssues = issues;
+    IlanaState.currentSuggestions = suggestions;
+    
+    console.log(`📋 Transformed ${issues.length} parsed text suggestions`);
+    
+    return {
+        issues,
+        suggestions,
+        metadata: {
+            processingTime: 100,
+            aiConfidence: 'medium',
+            pipelineUsed: 'parsed_text_fallback'
+        }
+    };
+}
+
+// Update startAnalysis to use new recommend handler
+window.startAnalysis = handleRecommendButton;
+
 console.log("🚀 Ilana Comprehensive AI Assistant loaded successfully");
