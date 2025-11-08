@@ -474,53 +474,152 @@
             updateStatus('Ready to analyze pharmaceutical protocols', 'complete');
         });
 
-        // Main analysis function - now with hybrid API support
+        // Main analysis function with selection-first behavior
         async function analyzeProtocol() {
             const analyzeButton = document.getElementById('analyzeButton');
 
+            // Prevent multiple simultaneous analyses
+            if (analyzeButton.disabled) {
+                console.warn('Analysis already in progress');
+                return;
+            }
+
             try {
-                // Update UI to analyzing state
                 analyzeButton.disabled = true;
                 analyzeButton.textContent = 'Analyzing...';
-                updateStatus('Extracting protocol text<span class="loading-dots"></span>', 'analyzing');
-                hideEmptyState();
-
-                // Extract text from Word document
-                await Word.run(async (context) => {
-                    const body = context.document.body;
-                    context.load(body, 'text');
-                    await context.sync();
-
-                    const documentText = body.text;
-                    
-                    if (documentText.length < 10) {
-                        throw new Error('Document appears to be empty or too short for analysis');
-                    }
-
-                    updateStatus(`Analyzing ${documentText.length.toLocaleString()} characters with Hybrid AI<span class="loading-dots"></span>`, 'analyzing');
-
-                    // Use hybrid API for analysis
-                    const analysisResult = await performHybridAnalysis(documentText);
-                    
-                    // Handle both immediate and queued responses
-                    if (analysisResult.status === 'queued' && analysisResult.job_id) {
-                        await handleQueuedJob(analysisResult);
-                    } else {
-                        const issues = extractSuggestionsFromResponse(analysisResult);
-                        displayAnalysisResults(issues, analysisResult.metadata || {});
-                        updateStatus(`Analysis complete: ${issues.length} issues found`, 'complete');
-                    }
-                });
+                
+                // Get selected text first
+                const selectedText = await getSelectedText();
+                console.log(`Selected text length: ${selectedText.length}`);
+                
+                if (selectedText.length > 5) {
+                    // Selection-first behavior: analyze selection
+                    console.log('Selection detected, analyzing selection');
+                    updateStatus('Analyzing selection<span class="loading-dots"></span>', 'analyzing');
+                    await handleSelectionAnalysis(selectedText);
+                } else {
+                    // No selection: analyze whole document
+                    console.log('No selection, analyzing whole document');
+                    updateStatus('Analyzing document<span class="loading-dots"></span>', 'analyzing');
+                    await handleWholeDocumentAnalysis();
+                }
 
             } catch (error) {
                 console.error('Analysis error:', error);
                 updateStatus(`Analysis failed: ${error.message}`, 'error');
                 showEmptyState();
             } finally {
-                // Reset button
                 analyzeButton.disabled = false;
                 analyzeButton.textContent = 'Analyze';
             }
+        }
+
+        // Get selected text using Office.js
+        async function getSelectedText() {
+            try {
+                return await Word.run(async (context) => {
+                    const selection = context.document.getSelection();
+                    context.load(selection, 'text');
+                    await context.sync();
+                    return selection.text || "";
+                });
+            } catch (error) {
+                console.error('Error getting selected text:', error);
+                return "";
+            }
+        }
+
+        // Handle selection analysis
+        async function handleSelectionAnalysis(selectedText) {
+            const payload = {
+                text: selectedText,
+                mode: 'selection',
+                ta: detectTherapeuticArea(selectedText)
+            };
+            
+            const response = await fetch(`${API_BASE_URL}/api/analyze`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error(`Selection analysis failed: ${response.status}`);
+            }
+
+            const result = await response.json();
+            console.log('Selection analysis result:', result);
+
+            if (result.result?.status === 'queued') {
+                await handleQueuedJob(result.result);
+            } else {
+                const issues = extractSuggestionsFromResponse(result);
+                displayAnalysisResults(issues, result.metadata || {});
+                updateStatus(`Selection analysis complete: ${issues.length} issues found`, 'complete');
+            }
+        }
+
+        // Handle whole document analysis
+        async function handleWholeDocumentAnalysis() {
+            await Word.run(async (context) => {
+                const body = context.document.body;
+                context.load(body, 'text');
+                await context.sync();
+
+                const documentText = body.text;
+                
+                if (documentText.length < 10) {
+                    throw new Error('Document appears to be empty or too short for analysis');
+                }
+
+                const payload = {
+                    text: documentText,
+                    mode: 'document',
+                    ta: detectTherapeuticArea(documentText)
+                };
+
+                const response = await fetch(`${API_BASE_URL}/api/analyze`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Document analysis failed: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('Document analysis result:', result);
+
+                if (result.result?.status === 'queued') {
+                    await handleQueuedJob(result.result);
+                } else {
+                    const issues = extractSuggestionsFromResponse(result);
+                    displayAnalysisResults(issues, result.metadata || {});
+                    updateStatus(`Document analysis complete: ${issues.length} issues found`, 'complete');
+                }
+            });
+        }
+
+        // Simple therapeutic area detection
+        function detectTherapeuticArea(text) {
+            const textLower = text.toLowerCase();
+            
+            if (textLower.includes('oncology') || textLower.includes('cancer') || textLower.includes('tumor')) {
+                return 'oncology';
+            } else if (textLower.includes('cardio') || textLower.includes('heart')) {
+                return 'cardiology';
+            } else if (textLower.includes('neuro') || textLower.includes('brain')) {
+                return 'neurology';
+            }
+            
+            return 'general_medicine';
         }
 
         // Display analysis results
