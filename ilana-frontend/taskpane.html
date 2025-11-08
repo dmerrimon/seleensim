@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ilana Protocol Intelligence</title>
+    <title>Ilana</title>
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    
+    <script>
+        // Dev override for API base URL - replace with your ngrok or staging URL during dev
+        window.__ILANA_API_BASE__ = "http://127.0.0.1:8000";
+    </script>
     <style>
         /* Professional taskpane design system */
         
@@ -64,7 +69,7 @@
         .header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center; /* Center the button */
             margin-bottom: 8px;
         }
 
@@ -72,6 +77,7 @@
             font-size: 18px;
             font-weight: 600;
             color: var(--text-dark);
+            display: none; /* Hide this element */
         }
 
         .header-btn {
@@ -336,6 +342,7 @@
             background: var(--background-light);
             color: var(--text-gray);
             border-bottom: 1px solid var(--border-light);
+            display: none; /* Hide status indicator */
         }
 
         .status-indicator.analyzing {
@@ -449,7 +456,7 @@
                 <div id="emptyState" class="empty-state">
                     <div class="empty-state-icon">✓</div>
                     <div class="empty-state-title">Ready to analyze</div>
-                    <div class="empty-state-subtitle">Click "Analyze" to check your pharmaceutical protocol for compliance, clarity, and feasibility issues.</div>
+                    <div class="empty-state-subtitle">Click "Analyze" to check your protocol for compliance, clarity, and feasibility issues.</div>
                 </div>
             </div>
         </div>
@@ -457,7 +464,7 @@
 
     <script>
         // Pharmaceutical Protocol Analyzer - Professional Interface
-        const API_BASE_URL = 'https://ilanalabs-add-in.onrender.com';
+        const API_BASE_URL = window.__ILANA_API_BASE__ || 'https://ilanalabs-add-in.onrender.com';
         let currentIssues = [];
         let maximizedCard = null;
 
@@ -467,7 +474,7 @@
             updateStatus('Ready to analyze pharmaceutical protocols', 'complete');
         });
 
-        // Main analysis function
+        // Main analysis function - now with hybrid API support
         async function analyzeProtocol() {
             const analyzeButton = document.getElementById('analyzeButton');
 
@@ -490,39 +497,19 @@
                         throw new Error('Document appears to be empty or too short for analysis');
                     }
 
-                    updateStatus(`Analyzing ${documentText.length.toLocaleString()} characters with Enterprise AI<span class="loading-dots"></span>`, 'analyzing');
+                    updateStatus(`Analyzing ${documentText.length.toLocaleString()} characters with Hybrid AI<span class="loading-dots"></span>`, 'analyzing');
 
-                    // Send to API for analysis
-                    const response = await fetch(`${API_BASE_URL}/analyze-comprehensive`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            text: documentText,
-                            chunk_index: 0,
-                            total_chunks: 1,
-                            options: {
-                                analysis_depth: "detailed",
-                                provide_examples: true,
-                                include_recommendations: true,
-                                pharmaceutical_focus: true
-                            }
-                        })
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`Analysis failed: ${response.status} ${response.statusText}`);
-                    }
-
-                    const result = await response.json();
-                    const issues = result.suggestions || [];
-
-                    // Display results
-                    displayAnalysisResults(issues, result.metadata);
+                    // Use hybrid API for analysis
+                    const analysisResult = await performHybridAnalysis(documentText);
                     
-                    updateStatus(`Analysis complete: ${issues.length} issues found`, 'complete');
+                    // Handle both immediate and queued responses
+                    if (analysisResult.status === 'queued' && analysisResult.job_id) {
+                        await handleQueuedJob(analysisResult);
+                    } else {
+                        const issues = extractSuggestionsFromResponse(analysisResult);
+                        displayAnalysisResults(issues, analysisResult.metadata || {});
+                        updateStatus(`Analysis complete: ${issues.length} issues found`, 'complete');
+                    }
                 });
 
             } catch (error) {
@@ -538,20 +525,22 @@
 
         // Display analysis results
         function displayAnalysisResults(issues, metadata) {
-            currentIssues = issues;
+            // Normalize issues to handle different formats
+            const normalizedIssues = issues.map(issue => normalizeIssue(issue));
+            currentIssues = normalizedIssues;
             
-            if (issues.length === 0) {
+            if (normalizedIssues.length === 0) {
                 showEmptyState();
                 hideNavigation();
                 return;
             }
 
             // Update navigation
-            updateNavigation(issues);
+            updateNavigation(normalizedIssues);
             showNavigation();
             
             // Display cards
-            displayCards(issues);
+            displayCards(normalizedIssues);
         }
 
         // Update navigation counters
@@ -582,16 +571,17 @@
                         </div>
                         
                         <div class="report-list">
-                            ${issue.text ? `<span class="item-original">${issue.text.substring(0, 100)}${issue.text.length > 100 ? '...' : ''}</span>` : ''}
-                            <span class="item-insert" onclick="highlightAndScrollToIssue('${issue.id}', event)">${issue.suggestion.substring(0, 100)}${issue.suggestion.length > 100 ? '...' : ''}</span>
+                            ${getOriginalText(issue) ? `<span class="item-original">${getOriginalText(issue).substring(0, 100)}${getOriginalText(issue).length > 100 ? '...' : ''}</span>` : ''}
+                            <span class="item-insert" onclick="highlightAndScrollToIssue('${issue.id}', event)">${getSuggestionText(issue).substring(0, 100)}${getSuggestionText(issue).length > 100 ? '...' : ''}</span>
                         </div>
                         
                         ${index === maximizedCard ? `
                             <div class="full-sentence-background">
                                 <strong>Pharmaceutical Recommendation:</strong><br>
-                                ${issue.suggestion}
-                                ${issue.rationale ? `<br><br><strong>Clinical Impact:</strong> ${issue.rationale}` : ''}
-                                ${issue.regulatory_source ? `<br><br>📋 <strong>Regulatory Reference:</strong> ${issue.regulatory_source}` : ''}
+                                ${getSuggestionText(issue)}
+                                ${getRationaleText(issue) ? `<br><br><strong>Clinical Impact:</strong> ${getRationaleText(issue)}` : ''}
+                                ${getRegulatorySource(issue) ? `<br><br>📋 <strong>Regulatory Reference:</strong> ${getRegulatorySource(issue)}` : ''}
+                                ${issue.ta_enhanced ? `<br><br>🔬 <strong>TA Enhanced</strong>` : ''}
                             </div>
                             
                             <div class="card-footer">
@@ -731,6 +721,287 @@
 
         function hideEmptyState() {
             document.getElementById('emptyState').classList.add('hidden');
+        }
+
+        // ===== HYBRID API FUNCTIONS =====
+        
+        // Hybrid analysis with selection-first approach
+        async function performHybridAnalysis(documentText) {
+            // For large documents, use async document processing
+            if (documentText.length > 10000) {
+                return await createAsyncDocumentJob(documentText);
+            }
+            
+            // For smaller documents, use direct analysis
+            const response = await fetch(`${API_BASE_URL}/api/analyze`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    text: documentText,
+                    mode: 'document_chunked',
+                    ta: detectTherapeuticArea(documentText)
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`Hybrid analysis failed: ${response.status} ${response.statusText}`);
+            }
+
+            return await response.json();
+        }
+
+        // Create async document job for large documents
+        async function createAsyncDocumentJob(documentText) {
+            const response = await fetch(`${API_BASE_URL}/api/optimize-document-async`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    text: documentText,
+                    ta: detectTherapeuticArea(documentText),
+                    options: {
+                        analysis_depth: "detailed",
+                        provide_examples: true,
+                        include_recommendations: true
+                    }
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`Job creation failed: ${response.status} ${response.statusText}`);
+            }
+
+            return await response.json();
+        }
+
+        // Handle queued job with SSE streaming
+        async function handleQueuedJob(jobResult) {
+            const jobId = jobResult.job_id;
+            updateStatus(`Job queued: ${jobId}<span class="loading-dots"></span>`, 'analyzing');
+
+            try {
+                // Use EventSource for SSE streaming
+                const eventSource = new EventSource(`${API_BASE_URL}/api/stream-job/${jobId}/events`);
+                
+                eventSource.onmessage = function(event) {
+                    const data = JSON.parse(event.data);
+                    
+                    if (data.event_type === 'progress') {
+                        updateStatus(`Processing: ${data.message}<span class="loading-dots"></span>`, 'analyzing');
+                    } else if (data.event_type === 'complete') {
+                        eventSource.close();
+                        const issues = extractSuggestionsFromResponse(data);
+                        displayAnalysisResults(issues, data.metadata || {});
+                        updateStatus(`Analysis complete: ${issues.length} issues found`, 'complete');
+                    } else if (data.event_type === 'error') {
+                        eventSource.close();
+                        throw new Error(data.message);
+                    }
+                };
+
+                eventSource.onerror = function() {
+                    eventSource.close();
+                    // Fallback to polling
+                    pollJobStatus(jobId);
+                };
+
+            } catch (error) {
+                console.warn('SSE failed, falling back to polling:', error);
+                await pollJobStatus(jobId);
+            }
+        }
+
+        // Fallback polling for job status
+        async function pollJobStatus(jobId) {
+            const maxAttempts = 30;
+            let attempts = 0;
+
+            while (attempts < maxAttempts) {
+                try {
+                    const response = await fetch(`${API_BASE_URL}/api/job-status/${jobId}`);
+                    const jobStatus = await response.json();
+
+                    if (jobStatus.status === 'completed') {
+                        const issues = extractSuggestionsFromResponse(jobStatus.result);
+                        displayAnalysisResults(issues, jobStatus.metadata || {});
+                        updateStatus(`Analysis complete: ${issues.length} issues found`, 'complete');
+                        return;
+                    } else if (jobStatus.status === 'failed') {
+                        throw new Error(jobStatus.error || 'Job processing failed');
+                    }
+
+                    updateStatus(`Processing${'.'.repeat((attempts % 3) + 1)}`, 'analyzing');
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    attempts++;
+
+                } catch (error) {
+                    throw new Error(`Job polling failed: ${error.message}`);
+                }
+            }
+
+            throw new Error('Job processing timeout');
+        }
+
+        // Extract suggestions from hybrid API response
+        function extractSuggestionsFromResponse(response) {
+            // Handle hybrid controller wrapper format
+            if (response.result) {
+                const result = response.result;
+                
+                // Handle different suggestion formats
+                if (result.suggestions) {
+                    if (Array.isArray(result.suggestions)) {
+                        return result.suggestions;
+                    } else if (result.suggestions.suggestions) {
+                        return result.suggestions.suggestions;
+                    } else if (result.suggestions.raw) {
+                        try {
+                            const parsed = JSON.parse(result.suggestions.raw);
+                            return parsed.suggestions || [];
+                        } catch (e) {
+                            console.warn('Failed to parse raw suggestions:', e);
+                            return [];
+                        }
+                    }
+                }
+
+                // Handle optimize_selection with basic/enhanced suggestions
+                if (result.basic_suggestions && result.basic_suggestions.suggestions) {
+                    return result.basic_suggestions.suggestions;
+                }
+                
+                return [];
+            }
+
+            // Handle direct suggestion format (fallback)
+            if (response.suggestions) {
+                return Array.isArray(response.suggestions) ? response.suggestions : [];
+            }
+
+            // Handle raw format (fallback)
+            if (response.raw) {
+                try {
+                    const parsed = JSON.parse(response.raw);
+                    return parsed.suggestions || [];
+                } catch (e) {
+                    console.warn('Failed to parse raw response:', e);
+                    return [];
+                }
+            }
+
+            console.warn('No suggestions found in response:', response);
+            return [];
+        }
+
+        // Simple therapeutic area detection
+        function detectTherapeuticArea(text) {
+            const textLower = text.toLowerCase();
+            
+            if (textLower.includes('oncology') || textLower.includes('cancer') || textLower.includes('tumor')) {
+                return 'oncology';
+            } else if (textLower.includes('cardio') || textLower.includes('heart')) {
+                return 'cardiology';
+            } else if (textLower.includes('neuro') || textLower.includes('brain')) {
+                return 'neurology';
+            }
+            
+            return 'general_medicine';
+        }
+
+        // ===== TA ON-DEMAND ENHANCEMENT =====
+        
+        // Enhanced suggestion with TA-aware rewriting
+        async function enhanceSuggestionWithTA(issue) {
+            if (!issue.text || !issue.suggestion) return issue;
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/generate-rewrite-ta`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        text: issue.text,
+                        ta: detectTherapeuticArea(issue.text),
+                        context: 'protocol_enhancement',
+                        suggestion_id: issue.id
+                    })
+                });
+
+                if (response.status === 202) {
+                    // TA enhancement queued
+                    const queuedResult = await response.json();
+                    issue.ta_enhancement = {
+                        status: 'queued',
+                        message: queuedResult.message,
+                        suggestion_id: queuedResult.suggestion_id
+                    };
+                    return issue;
+                }
+
+                if (!response.ok) {
+                    console.warn('TA enhancement failed, using original suggestion');
+                    return issue;
+                }
+
+                const taResult = await response.json();
+                
+                // Enhance the issue with TA-aware improvements
+                issue.suggestion = taResult.improved || issue.suggestion;
+                issue.rationale = taResult.rationale || issue.rationale;
+                issue.regulatory_source = taResult.sources ? taResult.sources.join(', ') : issue.regulatory_source;
+                issue.ta_enhanced = true;
+
+                return issue;
+
+            } catch (error) {
+                console.warn('TA enhancement error:', error);
+                return issue;
+            }
+        }
+
+        // ===== SUGGESTION FORMAT HELPERS =====
+        
+        // Get original text from different suggestion formats
+        function getOriginalText(issue) {
+            return issue.text || issue.original || issue.originalText || '';
+        }
+
+        // Get suggestion text from different formats
+        function getSuggestionText(issue) {
+            return issue.suggestion || issue.improved || issue.suggestedText || 'No suggestion available';
+        }
+
+        // Get rationale text from different formats
+        function getRationaleText(issue) {
+            return issue.rationale || issue.reason || issue.complianceRationale || '';
+        }
+
+        // Get regulatory source from different formats
+        function getRegulatorySource(issue) {
+            return issue.regulatory_source || issue.fdaReference || issue.emaReference || '';
+        }
+
+        // Normalize issue format for display
+        function normalizeIssue(rawIssue) {
+            return {
+                id: rawIssue.id || `issue_${Date.now()}_${Math.random()}`,
+                type: rawIssue.type || 'medical_terminology',
+                severity: rawIssue.severity || 'medium',
+                text: getOriginalText(rawIssue),
+                suggestion: getSuggestionText(rawIssue),
+                rationale: getRationaleText(rawIssue),
+                regulatory_source: getRegulatorySource(rawIssue),
+                confidence: rawIssue.confidence || 0.9,
+                ta_enhanced: rawIssue.ta_enhanced || false,
+                position: rawIssue.position || rawIssue.range || { start: 0, end: 0 }
+            };
         }
     </script>
 </body>
