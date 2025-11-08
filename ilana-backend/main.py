@@ -20,11 +20,24 @@ if env_path.exists():
 else:
     logging.warning(f"⚠️ Environment file not found at {env_path}")
 
+# RAG Gating Configuration
+RAG_ASYNC_MODE = os.getenv("RAG_ASYNC_MODE", "true").lower() == "true"
+USE_SIMPLE_AZURE_PROMPT = os.getenv("USE_SIMPLE_AZURE_PROMPT", "true").lower() == "true"
+ENABLE_TA_ON_DEMAND = os.getenv("ENABLE_TA_ON_DEMAND", "true").lower() == "true"
+ENABLE_TA_SHADOW = os.getenv("ENABLE_TA_SHADOW", "false").lower() == "true"
+CHUNK_MAX_CHARS = int(os.getenv("CHUNK_MAX_CHARS", "3500"))
+CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "200"))
+
 import uvicorn
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request, Query, Header
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, StreamingResponse
 from pydantic import BaseModel, Field
+import uuid
+import inspect
+import json
+import asyncio
+import time
 
 # Add parent directory to path for enterprise components
 parent_path = Path(__file__).parent.parent
@@ -70,6 +83,28 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# RAG Gating Exception
+class RAGAsyncModeException(Exception):
+    """Exception raised when sync RAG operations are blocked by RAG_ASYNC_MODE"""
+    pass
+
+def check_rag_async_mode_gate(operation_name: str = "RAG operation") -> None:
+    """Check if RAG_ASYNC_MODE blocks synchronous RAG operations"""
+    if RAG_ASYNC_MODE:
+        raise RAGAsyncModeException(
+            f"{operation_name} blocked: RAG_ASYNC_MODE is enabled. "
+            "Use async endpoints or set RAG_ASYNC_MODE=false for enterprise pilot."
+        )
+
+# Log RAG configuration
+logger.info(f"🔧 RAG Configuration:")
+logger.info(f"   RAG_ASYNC_MODE: {RAG_ASYNC_MODE}")
+logger.info(f"   USE_SIMPLE_AZURE_PROMPT: {USE_SIMPLE_AZURE_PROMPT}")
+logger.info(f"   ENABLE_TA_ON_DEMAND: {ENABLE_TA_ON_DEMAND}")
+logger.info(f"   ENABLE_TA_SHADOW: {ENABLE_TA_SHADOW}")
+logger.info(f"   CHUNK_MAX_CHARS: {CHUNK_MAX_CHARS}")
+logger.info(f"   CHUNK_OVERLAP: {CHUNK_OVERLAP}")
+
 # Global enterprise AI service
 enterprise_ai_service: Optional[OptimizedRealAIService] = None
 
@@ -105,12 +140,19 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
-# Configure CORS
+# Configure CORS for development and Office Add-ins
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "*",  # Allow all origins for dev
+        "https://*.office.com",
+        "https://*.microsoft.com", 
+        "https://*.sharepoint.com",
+        "https://localhost:*",
+        "http://localhost:*"
+    ],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
 
@@ -581,6 +623,192 @@ async def analyze_comprehensive(request: ComprehensiveAnalysisRequest):
     """Legacy comprehensive analysis endpoint - preserved for backward compatibility"""
     return await recommend_language_route(request)
 
+# ---- START PATCH: Analysis Mode Routing ----
+import json
+from typing import Optional
+import httpx
+import traceback
+
+# Ensure these environment variables exist; default to "simple"
+ANALYSIS_MODE = os.getenv("ANALYSIS_MODE", "simple").lower()  # simple | hybrid | legacy
+ANALYSIS_SERVICE_BASE = os.getenv("ANALYSIS_SERVICE_BASE", "http://127.0.0.1:8000")  # local fallback
+
+analysis_mode_logger = logging.getLogger("ilana.analysis_mode")
+analysis_mode_logger.setLevel(logging.INFO)
+
+# Try to import existing simple endpoint handler; if not available, we'll call HTTP fallback
+def _call_simple_inprocess(payload: dict):
+    """
+    Attempt to call an in-process simple handler if available.
+    Expected signature in existing code (optional):
+      def recommend_language_simple(payload: dict) -> dict
+    """
+    try:
+        # adjust import path if your module name differs
+        from recommend_simple import recommend_language_simple
+        return recommend_language_simple(payload)
+    except Exception:
+        return None
+
+def _call_legacy_inprocess(payload: dict):
+    try:
+        from legacy_pipeline import run_legacy_pipeline  # if exists
+        return run_legacy_pipeline(payload)
+    except Exception:
+        return None
+
+async def _http_post(path: str, payload: dict, timeout: int = 25):
+    url = f"{ANALYSIS_SERVICE_BASE.rstrip('/')}/{path.lstrip('/')}"
+    async with httpx.AsyncClient(timeout=timeout) as client:
+        resp = await client.post(url, json=payload)
+        resp.raise_for_status()
+        # Return JSON if possible, else text
+        try:
+            return resp.json()
+        except Exception:
+            return {"raw": resp.text}
+
+def _generate_request_id():
+    return str(uuid.uuid4())
+
+@app.get("/debug/handler-types")
+async def debug_handler_types():
+    info = {}
+    try:
+        import hybrid_controller as hc
+        info["has_hybrid_controller"] = True
+        info["handler_name"] = getattr(hc, "handle_hybrid_request", None).__name__ if getattr(hc, "handle_hybrid_request", None) else None
+        info["iscoroutinefunction"] = inspect.iscoroutinefunction(hc.handle_hybrid_request) if getattr(hc, "handle_hybrid_request", None) else False
+        # Try calling with a safe dummy payload but do not await if it's a coroutine function:
+        try:
+            res = hc.handle_hybrid_request({"mode":"selection","text":"debug","request_id":"debug"})
+            info["returned_type"] = str(type(res))
+            info["is_awaitable_return"] = inspect.isawaitable(res)
+        except Exception as e:
+            info["call_exception"] = str(e)
+    except Exception as ex:
+        info["has_hybrid_controller"] = False
+        info["error"] = str(ex)
+    return info
+
+@app.post("/api/analyze")
+async def analyze_entry(request: Request):
+    """
+    Unified analyze entry point that dispatches by ANALYSIS_MODE.
+    Payload expected: {"text": "...", "mode":"selection"|"document", "ta": "...", "phase":"..."}
+    Returns either immediate suggestions (list) or a job_id for async flows.
+    """
+    import time
+    start_time = time.time()
+    
+    payload = await request.json()
+    req_id = _generate_request_id()
+    payload.setdefault("request_id", req_id)
+    payload.setdefault("mode", payload.get("mode", "selection"))
+    
+    # Start telemetry trace
+    headers_dict = dict(request.headers.items()) if request.headers else {}
+    request_id = start_trace(
+        analyze_mode=payload.get("mode", "selection"),
+        model_path="dispatch",
+        request_data=payload,
+        headers=headers_dict
+    )
+
+    analysis_mode_logger.info("Analyze entry request_id=%s mode=%s AN_MODE=%s", req_id, payload.get("mode"), ANALYSIS_MODE)
+
+    # Dispatch by ANALYSIS_MODE
+    if ANALYSIS_MODE == "simple":
+        # try in-process first
+        try:
+            inproc = _call_simple_inprocess(payload)
+            if inproc is not None:
+                response = {"request_id": req_id, "model_path": "simple_inproc", "result": inproc}
+                # Submit to shadow worker asynchronously
+                asyncio.create_task(submit_shadow_request(payload, response))
+                # End telemetry trace
+                end_trace(request_id, response, None, {"model_path": "simple_inproc"})
+                return response
+        except Exception as e:
+            analysis_mode_logger.exception("simple inproc failed: %s", e)
+
+        # fallback to HTTP simple endpoint
+        try:
+            result = await _http_post("/api/recommend-language", payload)
+            response = {"request_id": req_id, "model_path": "simple_http", "result": result}
+            # Submit to shadow worker asynchronously
+            asyncio.create_task(submit_shadow_request(payload, response))
+            # End telemetry trace
+            end_trace(request_id, response, None, {"model_path": "simple_http"})
+            return response
+        except httpx.HTTPError as e:
+            analysis_mode_logger.exception("simple http call failed: %s", e)
+            # Log error telemetry
+            end_trace(request_id, None, f"Simple HTTP analysis failed: {str(e)}", {"model_path": "simple_http"})
+            raise HTTPException(status_code=502, detail="Simple analysis service unavailable")
+
+    elif ANALYSIS_MODE == "hybrid":
+        # route to hybrid controller (in-process preferred, else HTTP fallback)
+        try:
+            # defensive import
+            from hybrid_controller import handle_hybrid_request  # type: ignore
+
+            analysis_mode_logger.info("Hybrid handler imported: %s", getattr(handle_hybrid_request, "__name__", str(handle_hybrid_request)))
+
+            # If handle_hybrid_request is a coroutine function, await it.
+            if inspect.iscoroutinefunction(handle_hybrid_request):
+                maybe_result = await handle_hybrid_request(payload)
+            else:
+                maybe_result = handle_hybrid_request(payload)
+
+            # If the handler returned a coroutine (e.g., called async function but didn't await), catch it:
+            if inspect.isawaitable(maybe_result):
+                analysis_mode_logger.warning("hybrid handler returned an awaitable; awaiting it now. type=%s", type(maybe_result))
+                # attempt to await it (this will raise if it's not awaitable in this context)
+                try:
+                    maybe_result = await maybe_result
+                except Exception as e:
+                    analysis_mode_logger.exception("Failed awaiting returned awaitable from hybrid handler: %s", e)
+                    raise HTTPException(status_code=500, detail="Hybrid handler returned unreadable coroutine/awaitable")
+
+            # Log what we got back (type + small repr)
+            analysis_mode_logger.info("Hybrid handler result type=%s", type(maybe_result))
+            # Normalize return (expect dict)
+            if isinstance(maybe_result, dict):
+                return {"request_id": req_id, "model_path": "hybrid_inproc", "result": maybe_result}
+            else:
+                # unexpected type - wrap it safely
+                analysis_mode_logger.warning("Hybrid handler returned unexpected type: %s. Wrapping in result.", type(maybe_result))
+                return {"request_id": req_id, "model_path": "hybrid_inproc", "result": {"value": maybe_result}}
+        except Exception as e:
+            # provide diagnostic info
+            tb = traceback.format_exc()
+            analysis_mode_logger.exception("hybrid inproc unavailable or failed: %s\n%s", e, tb)
+            # fallback to an HTTP hybrid endpoint if you host one
+            try:
+                result = await _http_post("/api/hybrid/analyze", payload)
+                return {"request_id": req_id, "model_path": "hybrid_http", "result": result}
+            except httpx.HTTPError as e2:
+                analysis_mode_logger.exception("hybrid http call failed: %s", e2)
+                raise HTTPException(status_code=502, detail="Hybrid analysis service unavailable")
+
+    elif ANALYSIS_MODE == "legacy":
+        # prefer in-process legacy
+        inproc = _call_legacy_inprocess(payload)
+        if inproc is not None:
+            return {"request_id": req_id, "model_path": "legacy_inproc", "result": inproc}
+        # fallback to known legacy endpoint path
+        try:
+            result = await _http_post("/api/recommend-language-legacy", payload)
+            return {"request_id": req_id, "model_path": "legacy_http", "result": result}
+        except httpx.HTTPError as e:
+            analysis_mode_logger.exception("legacy http call failed: %s", e)
+            raise HTTPException(status_code=502, detail="Legacy analysis service unavailable")
+
+    else:
+        raise HTTPException(status_code=400, detail=f"Unsupported ANALYSIS_MODE={ANALYSIS_MODE}")
+# ---- END PATCH: Analysis Mode Routing ----
+
 @app.post("/api/ta-detect")
 async def detect_therapeutic_area_simple(request: TADetectRequest):
     """Simplified therapeutic area detection endpoint"""
@@ -687,6 +915,724 @@ async def get_ta_recommendations_simple(request: TARecommendationsRequest):
         logger.error(f"❌ TA recommendations failed: {e}")
         raise HTTPException(status_code=500, detail=f"TA recommendations failed: {str(e)}")
 
+# ---- SSE Job Streaming Endpoints ----
+
+# In-memory job event storage (replace with Redis/database in production)
+job_events = {}
+job_subscribers = {}
+
+def emit_job_event(job_id: str, event_data: dict):
+    """Emit an event for a specific job"""
+    if job_id not in job_events:
+        job_events[job_id] = []
+    
+    # Add timestamp to event
+    event_data['timestamp'] = datetime.utcnow().isoformat()
+    job_events[job_id].append(event_data)
+    
+    # Write to log file for persistence
+    job_dir = Path("jobs") / job_id
+    job_dir.mkdir(parents=True, exist_ok=True)
+    
+    with open(job_dir / "events.log", "a") as f:
+        f.write(json.dumps(event_data) + "\n")
+    
+    logger.info(f"📡 Emitted event for job {job_id}: {event_data['type']}")
+
+def load_job_events(job_id: str) -> List[dict]:
+    """Load existing events for a job from file"""
+    events = []
+    job_dir = Path("jobs") / job_id
+    events_file = job_dir / "events.log"
+    
+    if events_file.exists():
+        try:
+            with open(events_file, "r") as f:
+                for line in f:
+                    line = line.strip()
+                    if line:
+                        events.append(json.loads(line))
+        except Exception as e:
+            logger.warning(f"Failed to load events for job {job_id}: {e}")
+    
+    return events
+
+async def generate_job_events(job_id: str):
+    """Generator for SSE events for a specific job"""
+    logger.info(f"🔴 Starting SSE stream for job {job_id}")
+    
+    # Send existing events first
+    existing_events = load_job_events(job_id)
+    for event in existing_events:
+        yield f"data: {json.dumps(event)}\n\n"
+    
+    # Track last event index to avoid duplicates
+    last_event_idx = len(existing_events)
+    
+    # Stream new events
+    max_duration = 300  # 5 minutes max
+    start_time = time.time()
+    
+    while time.time() - start_time < max_duration:
+        # Check for new events
+        current_events = job_events.get(job_id, [])
+        
+        if len(current_events) > last_event_idx:
+            # Send new events
+            for event in current_events[last_event_idx:]:
+                yield f"data: {json.dumps(event)}\n\n"
+            last_event_idx = len(current_events)
+            
+            # Check if job is complete
+            if current_events and current_events[-1].get('type') == 'complete':
+                logger.info(f"✅ Job {job_id} completed, ending SSE stream")
+                break
+        
+        # Wait before checking again
+        await asyncio.sleep(1)
+    
+    # Send final heartbeat
+    yield f"data: {json.dumps({'type': 'heartbeat', 'timestamp': datetime.utcnow().isoformat()})}\n\n"
+    logger.info(f"🔴 Ended SSE stream for job {job_id}")
+
+@app.get("/api/stream-job/{job_id}/events")
+async def stream_job_events(job_id: str, request: Request):
+    """SSE endpoint for streaming job progress events"""
+    logger.info(f"📡 SSE connection requested for job {job_id}")
+    
+    # Validate job exists
+    job_dir = Path("jobs") / job_id
+    if not job_dir.exists():
+        logger.warning(f"❌ Job {job_id} not found")
+        raise HTTPException(status_code=404, detail=f"Job {job_id} not found")
+    
+    async def event_stream():
+        try:
+            async for event in generate_job_events(job_id):
+                # Check if client disconnected
+                if await request.is_disconnected():
+                    logger.info(f"🔌 Client disconnected from job {job_id} stream")
+                    break
+                yield event
+        except Exception as e:
+            logger.error(f"❌ SSE stream error for job {job_id}: {e}")
+            yield f"data: {json.dumps({'type': 'error', 'message': str(e)})}\n\n"
+    
+    return StreamingResponse(
+        event_stream(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Cache-Control"
+        }
+    )
+
+@app.get("/api/job-status/{job_id}")
+async def get_job_status(job_id: str):
+    """Get current job status and latest events"""
+    job_dir = Path("jobs") / job_id
+    
+    if not job_dir.exists():
+        raise HTTPException(status_code=404, detail=f"Job {job_id} not found")
+    
+    events = load_job_events(job_id)
+    
+    # Determine job status from events
+    status = "running"
+    progress = 0
+    result = None
+    
+    if events:
+        latest_event = events[-1]
+        if latest_event.get('type') == 'complete':
+            status = "completed"
+            result = latest_event.get('result')
+            progress = 100
+        elif latest_event.get('type') == 'progress':
+            progress = (latest_event.get('processed', 0) / max(latest_event.get('total', 1), 1)) * 100
+        elif latest_event.get('type') == 'error':
+            status = "failed"
+    
+    return {
+        "job_id": job_id,
+        "status": status,
+        "progress": progress,
+        "events_count": len(events),
+        "result": result,
+        "last_updated": events[-1].get('timestamp') if events else None
+    }
+
+@app.post("/api/job/{job_id}/emit-event")
+async def emit_event_to_job(job_id: str, event_data: dict):
+    """Emit an event to a job stream (for worker processes)"""
+    emit_job_event(job_id, event_data)
+    return {"status": "emitted", "job_id": job_id, "event_type": event_data.get('type')}
+
+# ---- TA-Enhanced Rewrite Endpoint ----
+
+class GenerateRewriteTARequest(BaseModel):
+    """Request model for TA-enhanced rewrite generation"""
+    suggestion_id: str = Field(..., description="ID of the suggestion to enhance")
+    text: str = Field(..., min_length=1, max_length=5000, description="Text to rewrite")
+    ta: Optional[str] = Field(None, description="Therapeutic area (auto-detected if not provided)")
+    phase: Optional[str] = Field(None, description="Clinical trial phase")
+    doc_id: Optional[str] = Field(None, description="Document ID for context")
+
+# Rate limiting storage (replace with Redis in production)
+rate_limit_storage = {}
+MAX_REQUESTS_PER_MINUTE = int(os.getenv("TA_REWRITE_RATE_LIMIT", "10"))
+
+def check_rate_limit(user_id: str = "default") -> bool:
+    """Simple rate limiting check"""
+    now = time.time()
+    window_start = now - 60  # 1 minute window
+    
+    if user_id not in rate_limit_storage:
+        rate_limit_storage[user_id] = []
+    
+    # Clean old requests
+    rate_limit_storage[user_id] = [req_time for req_time in rate_limit_storage[user_id] if req_time > window_start]
+    
+    # Check limit
+    if len(rate_limit_storage[user_id]) >= MAX_REQUESTS_PER_MINUTE:
+        return False
+    
+    # Add current request
+    rate_limit_storage[user_id].append(now)
+    return True
+
+async def fast_ta_classifier(text: str) -> Dict[str, Any]:
+    """Fast TA classification using simple keyword matching"""
+    text_lower = text.lower()
+    
+    # Enhanced TA keywords with confidence scoring
+    ta_patterns = {
+        "oncology": {
+            "keywords": ["cancer", "tumor", "oncology", "chemotherapy", "radiation", "metastasis", "carcinoma", "lymphoma", "leukemia", "melanoma", "her2", "egfr", "kras", "pd-l1", "immunotherapy"],
+            "weight": [3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1]
+        },
+        "cardiovascular": {
+            "keywords": ["heart", "cardiac", "cardiovascular", "blood pressure", "hypertension", "arrhythmia", "coronary", "myocardial", "atherosclerosis", "stroke", "ace inhibitor", "beta blocker"],
+            "weight": [3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1]
+        },
+        "endocrinology": {
+            "keywords": ["diabetes", "insulin", "glucose", "thyroid", "hormone", "endocrine", "metabolic", "adrenal", "pituitary", "pancreatic", "hba1c", "metformin"],
+            "weight": [3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1]
+        },
+        "neurology": {
+            "keywords": ["brain", "neurological", "seizure", "stroke", "dementia", "alzheimer", "parkinson", "epilepsy", "multiple sclerosis", "cognitive", "neurodegeneration"],
+            "weight": [3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 1]
+        },
+        "infectious_disease": {
+            "keywords": ["infection", "bacterial", "viral", "antibiotic", "antiviral", "pathogen", "microbe", "sepsis", "pneumonia", "hepatitis", "hiv", "covid"],
+            "weight": [3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 1, 1]
+        },
+        "respiratory": {
+            "keywords": ["lung", "respiratory", "asthma", "copd", "pneumonia", "bronchial", "pulmonary", "ventilation", "oxygen", "breathing"],
+            "weight": [3, 3, 2, 2, 2, 2, 2, 2, 1, 1]
+        }
+    }
+    
+    ta_scores = {}
+    detected_keywords = {}
+    
+    for ta, patterns in ta_patterns.items():
+        score = 0
+        found_keywords = []
+        
+        for keyword, weight in zip(patterns["keywords"], patterns["weight"]):
+            if keyword in text_lower:
+                score += weight
+                found_keywords.append(keyword)
+        
+        if score > 0:
+            ta_scores[ta] = score
+            detected_keywords[ta] = found_keywords
+    
+    if not ta_scores:
+        return {
+            "therapeutic_area": "general_medicine",
+            "confidence": 0.5,
+            "confidence_scores": {"general_medicine": 0.5},
+            "detected_keywords": [],
+            "reasoning": "No specific TA keywords detected"
+        }
+    
+    # Get top TA
+    top_ta = max(ta_scores.keys(), key=lambda k: ta_scores[k])
+    max_score = ta_scores[top_ta]
+    confidence = min(0.95, 0.6 + (max_score / 10))  # Score-based confidence
+    
+    return {
+        "therapeutic_area": top_ta,
+        "confidence": confidence,
+        "confidence_scores": ta_scores,
+        "detected_keywords": detected_keywords.get(top_ta, []),
+        "reasoning": f"Detected {len(detected_keywords.get(top_ta, []))} {top_ta} keywords with score {max_score}"
+    }
+
+async def query_vector_db(text: str, ta: str, phase: Optional[str] = None) -> List[Dict[str, Any]]:
+    """Query vector database for exemplars (stubbed implementation)"""
+    
+    # RAG Gating Check
+    if RAG_ASYNC_MODE:
+        logger.warning("🚫 Vector DB query blocked by RAG_ASYNC_MODE")
+        raise RAGAsyncModeException(
+            "Vector DB queries blocked: RAG_ASYNC_MODE is enabled. "
+            "Use async endpoints or set RAG_ASYNC_MODE=false."
+        )
+    
+    logger.info(f"✅ RAG_ASYNC_MODE check passed for vector DB query")
+    
+    # In production, this would query Pinecone/ChromaDB/etc.
+    # For now, return mock exemplars based on TA
+    
+    exemplar_templates = {
+        "oncology": [
+            {
+                "text": "Participants with HER2-positive breast cancer will receive trastuzumab therapy with mandatory cardiac monitoring per ACC/AHA guidelines.",
+                "improved": "Study participants diagnosed with HER2-positive breast adenocarcinoma will receive trastuzumab-based therapy according to protocol, with baseline and periodic echocardiographic assessment of left ventricular ejection fraction (LVEF) as per American College of Cardiology/American Heart Association guidelines for cardiotoxicity monitoring.",
+                "rationale": "Enhanced medical terminology with specific cardiac safety monitoring requirements",
+                "sources": ["ACC/AHA Cardio-Oncology Guidelines", "FDA Trastuzumab Label"],
+                "similarity": 0.89
+            },
+            {
+                "text": "Patients will receive chemotherapy treatment daily.",
+                "improved": "Study participants will receive protocol-specified chemotherapy regimen administered once daily (QD) per institutional standards.",
+                "rationale": "Standardized dosing terminology and participant language per ICH-GCP",
+                "sources": ["ICH-GCP E6(R2)", "NCCN Guidelines"],
+                "similarity": 0.76
+            }
+        ],
+        "cardiovascular": [
+            {
+                "text": "Heart failure patients will take medications twice daily.",
+                "improved": "Participants with heart failure with reduced ejection fraction (HFrEF) will receive study medication twice daily (BID) with dose titration based on clinical response and tolerability.",
+                "rationale": "Specific HF subtype classification and standardized dosing terminology",
+                "sources": ["AHA/ACC Heart Failure Guidelines", "ESC Heart Failure Guidelines"],
+                "similarity": 0.85
+            },
+            {
+                "text": "Blood pressure will be monitored regularly.",
+                "improved": "Systolic and diastolic blood pressure will be measured at baseline and every 2 weeks (±3 days) using standardized sphygmomanometry per protocol-specified procedures.",
+                "rationale": "Specific measurement methodology and timing windows",
+                "sources": ["AHA/ACC Hypertension Guidelines"],
+                "similarity": 0.72
+            }
+        ],
+        "endocrinology": [
+            {
+                "text": "Diabetic patients will check glucose levels daily.",
+                "improved": "Participants with Type 2 diabetes mellitus will perform self-monitoring of blood glucose (SMBG) once daily in the fasting state using protocol-provided glucometers.",
+                "rationale": "Specific diabetes subtype and standardized glucose monitoring terminology",
+                "sources": ["ADA Standards of Care", "FDA Guidance on Diabetes"],
+                "similarity": 0.83
+            },
+            {
+                "text": "Insulin doses will be adjusted as needed.",
+                "improved": "Insulin dosing will be titrated according to protocol-specified algorithms based on fasting plasma glucose targets (80-130 mg/dL) and postprandial glucose levels (<180 mg/dL).",
+                "rationale": "Specific glycemic targets per clinical guidelines",
+                "sources": ["ADA/EASD Consensus Statement"],
+                "similarity": 0.78
+            }
+        ],
+        "general_medicine": [
+            {
+                "text": "Patients will be monitored for side effects.",
+                "improved": "Study participants will be assessed for adverse events (AEs) according to Common Terminology Criteria for Adverse Events (CTCAE) v5.0 at each protocol-specified visit.",
+                "rationale": "Standardized AE terminology and assessment criteria",
+                "sources": ["ICH-GCP E6(R2)", "CTCAE v5.0"],
+                "similarity": 0.70
+            },
+            {
+                "text": "Participants will visit the clinic monthly.",
+                "improved": "Study participants will attend protocol-specified clinic visits monthly (every 28 ± 7 days) for safety and efficacy assessments.",
+                "rationale": "Standardized visit windows and assessment purposes",
+                "sources": ["ICH-GCP E6(R2)"],
+                "similarity": 0.68
+            }
+        ]
+    }
+    
+    # Get exemplars for the TA, fallback to general_medicine
+    exemplars = exemplar_templates.get(ta, exemplar_templates["general_medicine"])
+    
+    # Filter by phase if provided (mock filtering)
+    if phase and phase.lower() in ["i", "ii", "iii"]:
+        # In production, this would filter by actual phase data
+        # For now, just add phase context to reasoning
+        for exemplar in exemplars:
+            exemplar["phase_context"] = f"Phase {phase.upper()} considerations applied"
+    
+    # Return top 2 exemplars
+    return exemplars[:2]
+
+def get_regulatory_guidelines(ta: str) -> List[str]:
+    """Get relevant regulatory guidelines for TA"""
+    guidelines = {
+        "oncology": [
+            "FDA Guidance: Clinical Trial Endpoints for Cancer Drug Approval",
+            "ICH E6(R2): Good Clinical Practice - ensure participant vs patient terminology"
+        ],
+        "cardiovascular": [
+            "FDA Guidance: Cardiovascular Safety Studies for Diabetes Medications",
+            "EMA Guidance: Clinical Investigation of Human Medicines for Cardiovascular Disease"
+        ],
+        "endocrinology": [
+            "FDA Guidance: Diabetes Mellitus - Evaluating Cardiovascular Risk",
+            "EMA Guidance: Clinical Investigation of Medicines for Diabetes Treatment"
+        ],
+        "neurology": [
+            "FDA Guidance: Alzheimer's Disease - Developing Drugs for Treatment",
+            "EMA Guidance: Clinical Investigation of Medicines for Neurological Disorders"
+        ],
+        "infectious_disease": [
+            "FDA Guidance: Antibacterial Therapies for Serious Bacterial Diseases",
+            "EMA Guidance: Development of Antimicrobial Medicinal Products"
+        ],
+        "respiratory": [
+            "FDA Guidance: Chronic Obstructive Pulmonary Disease - Developing Drugs",
+            "EMA Guidance: Clinical Investigation of Medicines for Respiratory Diseases"
+        ],
+        "general_medicine": [
+            "ICH E6(R2): Good Clinical Practice Guidelines",
+            "FDA Guidance: General Clinical Pharmacology Considerations"
+        ]
+    }
+    
+    return guidelines.get(ta, guidelines["general_medicine"])[:2]
+
+async def generate_ta_aware_rewrite(text: str, ta: str, phase: Optional[str], exemplars: List[Dict], guidelines: List[str]) -> Dict[str, Any]:
+    """Generate TA-aware rewrite using Azure OpenAI or mock"""
+    
+    # RAG Gating Check
+    if RAG_ASYNC_MODE:
+        logger.warning("🚫 TA-aware rewrite blocked by RAG_ASYNC_MODE")
+        raise RAGAsyncModeException(
+            "TA-aware rewrite blocked: RAG_ASYNC_MODE is enabled. "
+            "Use /api/generate-rewrite-ta or set RAG_ASYNC_MODE=false."
+        )
+    
+    logger.info(f"✅ RAG_ASYNC_MODE check passed for TA-aware rewrite")
+    
+    start_time = time.time()
+    
+    try:
+        # Try to use Azure OpenAI if available
+        if ENTERPRISE_AVAILABLE:
+            from config_loader import get_config
+            from openai import AzureOpenAI
+            
+            config = get_config("production")
+            client = AzureOpenAI(
+                api_key=config.azure_openai_api_key,
+                api_version="2024-02-01",
+                azure_endpoint=config.azure_openai_endpoint
+            )
+            
+            # Construct TA-aware prompt
+            exemplar_context = ""
+            if exemplars:
+                exemplar_context = "\n\nEXEMPLARS from similar protocols:\n"
+                for i, ex in enumerate(exemplars, 1):
+                    exemplar_context += f"{i}. Original: \"{ex['text']}\"\n"
+                    exemplar_context += f"   Improved: \"{ex['improved']}\"\n"
+                    exemplar_context += f"   Rationale: {ex['rationale']}\n\n"
+            
+            regulatory_context = ""
+            if guidelines:
+                regulatory_context = f"\n\nREGULATORY GUIDELINES for {ta.upper()}:\n"
+                for guideline in guidelines:
+                    regulatory_context += f"- {guideline}\n"
+            
+            phase_context = f"\nClinical Phase: {phase.upper()}" if phase else ""
+            
+            prompt = f"""You are a clinical protocol optimization AI specializing in {ta.replace('_', ' ').upper()}. 
+
+TASK: Rewrite this protocol text to be more precise, compliant, and therapeutic area-appropriate.
+
+ORIGINAL TEXT: "{text}"
+
+THERAPEUTIC AREA: {ta.replace('_', ' ').title()}{phase_context}{exemplar_context}{regulatory_context}
+
+REQUIREMENTS:
+1. Use "participants" instead of "patients" per ICH-GCP
+2. Include specific {ta.replace('_', ' ')} medical terminology and monitoring requirements
+3. Add relevant safety monitoring based on TA-specific risks
+4. Ensure regulatory compliance for {ta.replace('_', ' ')} studies
+5. Follow exemplar patterns for improvement style
+
+RESPONSE FORMAT:
+Provide exactly one improved version with rationale, following this structure:
+IMPROVED: [Your rewritten text here]
+RATIONALE: [Brief explanation of changes made]
+SOURCES: [Relevant guidelines or standards referenced]"""
+
+            response = client.chat.completions.create(
+                model=config.azure_openai_deployment,
+                messages=[
+                    {"role": "system", "content": f"You are a {ta.replace('_', ' ')} clinical protocol optimization specialist."},
+                    {"role": "user", "content": prompt}
+                ],
+                max_tokens=1000,
+                temperature=0.3
+            )
+            
+            ai_response = response.choices[0].message.content
+            latency_ms = int((time.time() - start_time) * 1000)
+            
+            # Parse the structured response
+            improved_text = ""
+            rationale = ""
+            sources = []
+            
+            lines = ai_response.split('\n')
+            current_section = None
+            
+            for line in lines:
+                line = line.strip()
+                if line.startswith('IMPROVED:'):
+                    current_section = 'improved'
+                    improved_text = line.replace('IMPROVED:', '').strip()
+                elif line.startswith('RATIONALE:'):
+                    current_section = 'rationale'
+                    rationale = line.replace('RATIONALE:', '').strip()
+                elif line.startswith('SOURCES:'):
+                    current_section = 'sources'
+                    sources_text = line.replace('SOURCES:', '').strip()
+                    if sources_text:
+                        sources = [s.strip() for s in sources_text.split(',')]
+                elif current_section == 'improved' and line:
+                    improved_text += " " + line
+                elif current_section == 'rationale' and line:
+                    rationale += " " + line
+                elif current_section == 'sources' and line:
+                    sources.extend([s.strip() for s in line.split(',')])
+            
+            # Clean up and validate
+            if not improved_text:
+                improved_text = ai_response[:200] + "..." if len(ai_response) > 200 else ai_response
+            if not rationale:
+                rationale = f"AI-enhanced rewrite optimized for {ta.replace('_', ' ')} protocols"
+            if not sources:
+                sources = guidelines[:2] if guidelines else ["ICH-GCP E6(R2)"]
+            
+            return {
+                "improved": improved_text.strip(),
+                "rationale": rationale.strip(),
+                "sources": sources[:3],  # Limit to 3 sources
+                "model_version": f"azure-openai-{ta}-aware",
+                "latency_ms": latency_ms,
+                "ta_context": ta,
+                "phase_context": phase
+            }
+            
+    except Exception as e:
+        logger.warning(f"Azure OpenAI failed for TA rewrite: {e}, falling back to mock")
+    
+    # Mock fallback generator
+    latency_ms = int((time.time() - start_time) * 1000)
+    
+    # Generate mock improvement based on TA patterns
+    ta_specific_improvements = {
+        "oncology": {
+            "replacements": [
+                ("patients", "study participants with confirmed malignancy"),
+                ("treatment", "protocol-specified anticancer therapy"),
+                ("side effects", "treatment-emergent adverse events per CTCAE v5.0"),
+                ("response", "objective response per RECIST v1.1 criteria")
+            ],
+            "additions": [
+                "with baseline and periodic tumor assessments",
+                "including mandatory safety laboratory monitoring",
+                "per institutional oncology protocols"
+            ]
+        },
+        "cardiovascular": {
+            "replacements": [
+                ("patients", "participants with cardiovascular disease"),
+                ("blood pressure", "systolic and diastolic blood pressure"),
+                ("heart", "cardiac function and hemodynamics"),
+                ("monitoring", "cardiovascular safety monitoring per ACC/AHA guidelines")
+            ],
+            "additions": [
+                "with baseline ECG and echocardiogram",
+                "including cardiac biomarker assessment",
+                "per cardiovascular safety protocols"
+            ]
+        }
+    }
+    
+    improved_text = text
+    ta_patterns = ta_specific_improvements.get(ta, ta_specific_improvements.get("oncology"))
+    
+    # Apply TA-specific replacements
+    for original, replacement in ta_patterns["replacements"]:
+        if original in improved_text.lower():
+            improved_text = improved_text.replace(original, replacement)
+    
+    # Add TA-specific context
+    if ta_patterns["additions"]:
+        improved_text += f" {ta_patterns['additions'][0]}"
+    
+    # Ensure participant terminology
+    improved_text = improved_text.replace("patients", "participants").replace("patient", "participant")
+    
+    return {
+        "improved": improved_text,
+        "rationale": f"TA-aware enhancement for {ta.replace('_', ' ')} with mock AI generator",
+        "sources": guidelines[:2] if guidelines else ["ICH-GCP E6(R2)", f"{ta.title()} Protocol Guidelines"],
+        "model_version": f"mock-generator-{ta}-aware",
+        "latency_ms": latency_ms,
+        "ta_context": ta,
+        "phase_context": phase,
+        "mock_fallback": True
+    }
+
+@app.post("/api/generate-rewrite-ta")
+async def generate_rewrite_ta(request: GenerateRewriteTARequest, req: Request):
+    """Generate TA-enhanced rewrite with vector DB exemplars and regulatory context"""
+    
+    # Rate limiting check
+    client_ip = req.client.host if req.client else "unknown"
+    if not check_rate_limit(client_ip):
+        raise HTTPException(
+            status_code=429, 
+            detail=f"Rate limit exceeded. Maximum {MAX_REQUESTS_PER_MINUTE} requests per minute."
+        )
+    
+    start_time = time.time()
+    logger.info(f"🎯 TA-Enhanced rewrite request: {request.suggestion_id} for TA: {request.ta}")
+    
+    # Start telemetry trace
+    headers_dict = dict(req.headers.items()) if req.headers else {}
+    request_data = {
+        "text": request.text,
+        "ta": request.ta,
+        "phase": request.phase,
+        "doc_id": request.doc_id,
+        "suggestion_id": request.suggestion_id
+    }
+    telemetry_request_id = start_trace(
+        analyze_mode="ta_enhanced",
+        model_path="ta_on_demand",
+        request_data=request_data,
+        headers=headers_dict
+    )
+    
+    try:
+        # Step 1: TA classification if not provided
+        ta = request.ta
+        ta_classification = None
+        
+        if not ta:
+            logger.info("🔍 Running fast TA classification")
+            ta_classification = await fast_ta_classifier(request.text)
+            ta = ta_classification["therapeutic_area"]
+            logger.info(f"✅ TA classified as: {ta} (confidence: {ta_classification['confidence']:.2f})")
+        
+        # Step 2: Query vector database for exemplars
+        logger.info(f"📚 Querying vector DB for {ta} exemplars")
+        exemplars = await query_vector_db(request.text, ta, request.phase)
+        logger.info(f"✅ Found {len(exemplars)} exemplars")
+        
+        # Step 3: Get regulatory guidelines
+        guidelines = get_regulatory_guidelines(ta)
+        logger.info(f"📋 Retrieved {len(guidelines)} regulatory guidelines")
+        
+        # Step 4: Generate TA-aware rewrite
+        logger.info("🤖 Generating TA-aware rewrite")
+        rewrite_result = await generate_ta_aware_rewrite(
+            request.text, ta, request.phase, exemplars, guidelines
+        )
+        
+        total_latency = int((time.time() - start_time) * 1000)
+        
+        # Step 5: Construct response
+        response = {
+            "suggestion_id": request.suggestion_id,
+            "original_text": request.text,
+            "improved": rewrite_result["improved"],
+            "rationale": rewrite_result["rationale"],
+            "sources": rewrite_result["sources"],
+            "model_version": rewrite_result["model_version"],
+            "latency_ms": total_latency,
+            "ta_info": {
+                "therapeutic_area": ta,
+                "phase": request.phase,
+                "confidence": ta_classification["confidence"] if ta_classification else 1.0,
+                "detected_keywords": ta_classification["detected_keywords"] if ta_classification else [],
+                "exemplars_used": len(exemplars),
+                "guidelines_applied": len(guidelines)
+            },
+            "metadata": {
+                "doc_id": request.doc_id,
+                "timestamp": datetime.utcnow().isoformat(),
+                "model_path": "ta_on_demand",
+                "rate_limit_remaining": MAX_REQUESTS_PER_MINUTE - len(rate_limit_storage.get(client_ip, [])),
+                "processing_steps": ["ta_classification", "vector_db_query", "regulatory_lookup", "ai_generation"]
+            }
+        }
+        
+        logger.info(f"✅ TA-Enhanced rewrite completed in {total_latency}ms")
+        
+        # End telemetry trace
+        end_trace(telemetry_request_id, response, None, {
+            "ta_detected": ta,
+            "exemplars_used": len(exemplars),
+            "guidelines_applied": len(guidelines)
+        })
+        
+        return response
+        
+    except RAGAsyncModeException as e:
+        # Handle RAG gating gracefully
+        logger.warning(f"🚫 TA-Enhanced rewrite blocked by RAG_ASYNC_MODE: {e}")
+        
+        # Return 202 with guidance when RAG is blocked
+        return JSONResponse(
+            status_code=202,
+            content={
+                "status": "queued",
+                "message": "TA-enhanced rewrite queued for async processing",
+                "reason": str(e),
+                "suggestion_id": request.suggestion_id,
+                "alternatives": {
+                    "simple_analysis": "Use /api/analyze with USE_SIMPLE_AZURE_PROMPT=true for basic suggestions",
+                    "async_document": "Use /api/optimize-document-async for large document processing",
+                    "enterprise_pilot": "Set RAG_ASYNC_MODE=false for enterprise pilot mode"
+                },
+                "configuration_help": {
+                    "RAG_ASYNC_MODE": RAG_ASYNC_MODE,
+                    "ENABLE_TA_ON_DEMAND": ENABLE_TA_ON_DEMAND,
+                    "message": "Contact support to configure enterprise pilot mode for synchronous RAG"
+                }
+            }
+        )
+    except HTTPException:
+        raise
+    except Exception as e:
+        error_latency = int((time.time() - start_time) * 1000)
+        logger.error(f"❌ TA-Enhanced rewrite failed: {e}")
+        
+        # End telemetry trace with error
+        end_trace(telemetry_request_id, None, f"TA-enhanced rewrite failed: {str(e)}", {
+            "error_type": type(e).__name__,
+            "latency_ms": error_latency
+        })
+        
+        raise HTTPException(
+            status_code=500, 
+            detail={
+                "error": "TA-enhanced rewrite generation failed",
+                "message": str(e),
+                "latency_ms": error_latency,
+                "suggestion_id": request.suggestion_id
+            }
+        )
+
 # Error handlers
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request, exc):
@@ -712,6 +1658,88 @@ async def general_exception_handler(request, exc):
             "path": str(request.url)
         }
     )
+
+# ===============================
+# TELEMETRY SYSTEM
+# ===============================
+
+from telemetry import log_model_call, start_trace, end_trace, count_suggestions, extract_user_id_from_request
+
+# ===============================
+# SHADOW WORKER ADMIN API
+# ===============================
+
+from ta_shadow_worker import get_shadow_samples, get_shadow_stats, submit_shadow_request
+
+def check_admin_auth(authorization: str = Header(None)) -> bool:
+    """Stub admin authentication - replace with real auth in production"""
+    # In production, validate JWT token or API key
+    # For now, just check for any authorization header
+    if not authorization:
+        raise HTTPException(
+            status_code=401, 
+            detail="Authorization header required",
+            headers={"WWW-Authenticate": "Bearer"}
+        )
+    
+    # Stub validation - accept any non-empty token with minimum length
+    if authorization.startswith("Bearer ") and len(authorization) > 20:
+        return True
+    
+    raise HTTPException(
+        status_code=401,
+        detail="Invalid authorization token",
+        headers={"WWW-Authenticate": "Bearer"}
+    )
+
+@app.get("/api/shadow-samples")
+async def get_shadow_samples_endpoint(
+    limit: int = Query(50, ge=1, le=200),
+    authorization: str = Header(None)
+):
+    """
+    Admin endpoint to fetch shadow processing samples
+    Requires authorization header (stubbed authentication)
+    """
+    # Check admin authentication
+    check_admin_auth(authorization)
+    
+    try:
+        samples = get_shadow_samples(limit)
+        
+        return {
+            "samples": samples,
+            "count": len(samples),
+            "limit": limit,
+            "timestamp": datetime.utcnow().isoformat(),
+            "admin_endpoint": True
+        }
+        
+    except Exception as e:
+        logger.error(f"🔮 Admin API error: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to fetch shadow samples: {str(e)}")
+
+@app.get("/api/shadow-stats")
+async def get_shadow_stats_endpoint(authorization: str = Header(None)):
+    """
+    Admin endpoint to fetch shadow processing statistics
+    Requires authorization header (stubbed authentication)
+    """
+    # Check admin authentication
+    check_admin_auth(authorization)
+    
+    try:
+        stats = get_shadow_stats()
+        
+        return {
+            "stats": stats,
+            "timestamp": datetime.utcnow().isoformat(),
+            "admin_endpoint": True
+        }
+        
+    except Exception as e:
+        logger.error(f"🔮 Admin stats API error: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to fetch shadow stats: {str(e)}")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))

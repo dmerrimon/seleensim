@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hybrid API Test</title>
+</head>
+<body>
+    <h1>Hybrid API Test</h1>
+    <button onclick="testHybridAPI()">Test Hybrid Analysis</button>
+    <div id="results"></div>
+
+    <script>
+        const API_BASE_URL = 'http://127.0.0.1:8000';
+
+        async function testHybridAPI() {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = 'Testing...';
+
+            try {
+                // Test hybrid API call
+                const response = await fetch(`${API_BASE_URL}/api/analyze`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        text: "Patients with cancer need treatment monitoring for adverse events",
+                        mode: 'selection',
+                        ta: 'oncology'
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API call failed: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('Raw API response:', result);
+
+                // Extract suggestions using hybrid parsing logic
+                const suggestions = extractSuggestionsFromResponse(result);
+                
+                resultsDiv.innerHTML = `
+                    <h3>API Response:</h3>
+                    <pre>${JSON.stringify(result, null, 2)}</pre>
+                    <h3>Extracted Suggestions (${suggestions.length}):</h3>
+                    <ul>
+                        ${suggestions.map(s => `
+                            <li>
+                                <strong>Original:</strong> ${s.original || s.text}<br>
+                                <strong>Improved:</strong> ${s.improved || s.suggestion}<br>
+                                <strong>Reason:</strong> ${s.reason || s.rationale}
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+
+            } catch (error) {
+                resultsDiv.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+                console.error('Test failed:', error);
+            }
+        }
+
+        // Copy the extraction logic from taskpane.html
+        function extractSuggestionsFromResponse(response) {
+            if (response.result) {
+                const result = response.result;
+                if (result.suggestions) {
+                    if (Array.isArray(result.suggestions)) {
+                        return result.suggestions;
+                    } else if (result.suggestions.suggestions) {
+                        return result.suggestions.suggestions;
+                    } else if (result.suggestions.raw) {
+                        try {
+                            const parsed = JSON.parse(result.suggestions.raw);
+                            return parsed.suggestions || [];
+                        } catch (e) {
+                            console.warn('Failed to parse raw suggestions:', e);
+                            return [];
+                        }
+                    }
+                }
+                if (result.basic_suggestions && result.basic_suggestions.suggestions) {
+                    return result.basic_suggestions.suggestions;
+                }
+                return [];
+            }
+            if (response.suggestions) {
+                return Array.isArray(response.suggestions) ? response.suggestions : [];
+            }
+            return [];
+        }
+    </script>
+</body>
+</html>
