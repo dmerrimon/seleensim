@@ -727,6 +727,7 @@
     <script>
         // Pharmaceutical Protocol Analyzer - Professional Interface
         const API_BASE_URL = window.__ILANA_API_BASE__ || 'https://ilanalabs-add-in.onrender.com';
+        console.log("API_BASE:", window.__ILANA_API_BASE__ || API_BASE_URL);
         const MAX_DOC_CHARS = 20000; // Default truncation limit
         let currentIssues = [];
         let maximizedCard = null;
