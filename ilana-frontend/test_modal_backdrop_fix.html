@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Modal Backdrop Diagnostic Test</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-section h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .result.pass {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .result.fail {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .result.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Modal Backdrop Diagnostic Test</h1>
+    <p>This page tests for the modal backdrop bug that prevents clicks from reaching the Analyze button.</p>
+
+    <div class="test-section">
+        <h3>Test 1: Count Modal Backdrops</h3>
+        <button onclick="testBackdropCount()">Run Test</button>
+        <div id="backdropCountResult"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 2: Check Backdrop Visibility When Modal Hidden</h3>
+        <button onclick="testBackdropVisibility()">Run Test</button>
+        <div id="backdropVisibilityResult"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 3: Check Backdrop Pointer Events</h3>
+        <button onclick="testBackdropPointerEvents()">Run Test</button>
+        <div id="backdropPointerEventsResult"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 4: Check Z-Index Stacking</h3>
+        <button onclick="testZIndexStacking()">Run Test</button>
+        <div id="zIndexResult"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Test 5: Simulate Click Interception</h3>
+        <button onclick="testClickInterception()">Run Test</button>
+        <div id="clickInterceptionResult"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>Recommended Fix</h3>
+        <pre style="background: #f8f8f8; padding: 15px; border-radius: 4px; overflow-x: auto;">
+/* Fix 1: Add pointer-events to hidden modal */
+.analysis-modal.hidden {
+    display: none; /* Already present */
+    pointer-events: none; /* ADD THIS */
+}
+
+/* Fix 2: Ensure backdrop inherits pointer-events when modal hidden */
+.analysis-modal.hidden .modal-backdrop {
+    pointer-events: none; /* ADD THIS */
+}
+
+/* Fix 3: Alternative - set pointer-events on backdrop only when visible */
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: auto; /* Only active when visible */
+}
+
+.analysis-modal.hidden .modal-backdrop {
+    pointer-events: none; /* Disabled when hidden */
+}
+        </pre>
+    </div>
+
+    <script>
+        // Mock modal structure similar to taskpane.html
+        const mockModal = document.createElement('div');
+        mockModal.id = 'analysisModal';
+        mockModal.className = 'analysis-modal hidden';
+        mockModal.innerHTML = `
+            <div class="modal-backdrop"></div>
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h2>Analysis Options</h2>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(mockModal);
+
+        // Add CSS similar to taskpane.html
+        const style = document.createElement('style');
+        style.textContent = `
+            .analysis-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1000;
+            }
+            .analysis-modal.hidden {
+                display: none;
+            }
+            .modal-backdrop {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+            }
+        `;
+        document.head.appendChild(style);
+
+        function testBackdropCount() {
+            const backdrops = document.querySelectorAll('.modal-backdrop');
+            const result = document.getElementById('backdropCountResult');
+
+            if (backdrops.length === 1) {
+                result.innerHTML = `<div class="result pass">✅ PASS: Found ${backdrops.length} backdrop (expected: 1)</div>`;
+            } else if (backdrops.length === 0) {
+                result.innerHTML = `<div class="result fail">❌ FAIL: No backdrops found</div>`;
+            } else {
+                result.innerHTML = `<div class="result fail">❌ FAIL: Found ${backdrops.length} backdrops (duplicate bug detected!)</div>`;
+            }
+        }
+
+        function testBackdropVisibility() {
+            const modal = document.getElementById('analysisModal');
+            const backdrop = document.querySelector('.modal-backdrop');
+            const result = document.getElementById('backdropVisibilityResult');
+
+            if (!backdrop) {
+                result.innerHTML = `<div class="result fail">❌ FAIL: Backdrop not found</div>`;
+                return;
+            }
+
+            const modalDisplay = getComputedStyle(modal).display;
+            const backdropDisplay = getComputedStyle(backdrop).display;
+
+            result.innerHTML = `
+                <div class="result info">
+                    📊 Modal display: ${modalDisplay}<br>
+                    📊 Backdrop display: ${backdropDisplay}
+                </div>
+                ${modalDisplay === 'none' ?
+                    '<div class="result pass">✅ PASS: Modal is hidden (display: none)</div>' :
+                    '<div class="result fail">❌ FAIL: Modal is visible when it should be hidden</div>'
+                }
+            `;
+        }
+
+        function testBackdropPointerEvents() {
+            const modal = document.getElementById('analysisModal');
+            const backdrop = document.querySelector('.modal-backdrop');
+            const result = document.getElementById('backdropPointerEventsResult');
+
+            if (!backdrop) {
+                result.innerHTML = `<div class="result fail">❌ FAIL: Backdrop not found</div>`;
+                return;
+            }
+
+            const modalDisplay = getComputedStyle(modal).display;
+            const backdropPointerEvents = getComputedStyle(backdrop).pointerEvents;
+
+            result.innerHTML = `
+                <div class="result info">
+                    📊 Modal display: ${modalDisplay}<br>
+                    📊 Backdrop pointer-events: ${backdropPointerEvents}
+                </div>
+            `;
+
+            // The bug: when modal is hidden but pointer-events is not 'none', clicks are blocked
+            if (modalDisplay === 'none' && backdropPointerEvents !== 'none') {
+                result.innerHTML += `<div class="result fail">
+                    ❌ FAIL: BUG DETECTED! Backdrop has pointer-events: ${backdropPointerEvents} while modal is hidden.<br>
+                    This will intercept clicks even when the modal is not visible!<br>
+                    <strong>Recommendation:</strong> Add "pointer-events: none" to .analysis-modal.hidden .modal-backdrop
+                </div>`;
+            } else if (modalDisplay === 'none' && backdropPointerEvents === 'none') {
+                result.innerHTML += `<div class="result pass">✅ PASS: Backdrop has pointer-events: none when modal is hidden</div>`;
+            } else {
+                result.innerHTML += `<div class="result info">ℹ️ Modal is visible, backdrop pointer-events is expected to be auto</div>`;
+            }
+        }
+
+        function testZIndexStacking() {
+            const modal = document.getElementById('analysisModal');
+            const backdrop = document.querySelector('.modal-backdrop');
+            const result = document.getElementById('zIndexResult');
+
+            const modalZIndex = getComputedStyle(modal).zIndex;
+            const backdropZIndex = getComputedStyle(backdrop).zIndex;
+
+            result.innerHTML = `
+                <div class="result info">
+                    📊 Modal z-index: ${modalZIndex}<br>
+                    📊 Backdrop z-index: ${backdropZIndex}
+                </div>
+                ${modalZIndex >= 1000 ?
+                    '<div class="result pass">✅ PASS: Modal has high z-index (1000+)</div>' :
+                    '<div class="result fail">❌ FAIL: Modal z-index is too low</div>'
+                }
+            `;
+        }
+
+        function testClickInterception() {
+            const modal = document.getElementById('analysisModal');
+            const backdrop = document.querySelector('.modal-backdrop');
+            const result = document.getElementById('clickInterceptionResult');
+
+            // Create a test button similar to analyze button
+            const testBtn = document.createElement('button');
+            testBtn.id = 'testAnalyzeButton';
+            testBtn.textContent = 'Test Analyze Button';
+            testBtn.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10;';
+            document.body.appendChild(testBtn);
+
+            let clickDetected = false;
+            testBtn.addEventListener('click', () => {
+                clickDetected = true;
+            });
+
+            // Simulate click
+            testBtn.click();
+
+            if (clickDetected) {
+                result.innerHTML = `<div class="result pass">✅ PASS: Test button click was detected (no interception)</div>`;
+            } else {
+                result.innerHTML = `<div class="result fail">❌ FAIL: Test button click was NOT detected (backdrop intercepting?)</div>`;
+            }
+
+            // Cleanup
+            testBtn.remove();
+
+            // Additional info about the issue
+            const modalDisplay = getComputedStyle(modal).display;
+            const backdropPointerEvents = getComputedStyle(backdrop).pointerEvents;
+
+            if (modalDisplay === 'none' && backdropPointerEvents !== 'none') {
+                result.innerHTML += `<div class="result fail">
+                    ⚠️ WARNING: The backdrop has pointer-events: ${backdropPointerEvents} while modal is hidden.<br>
+                    In a real scenario with the modal positioned over the button, this would intercept clicks!
+                </div>`;
+            }
+        }
+
+        // Auto-run all tests on page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                testBackdropCount();
+                testBackdropVisibility();
+                testBackdropPointerEvents();
+                testZIndexStacking();
+                testClickInterception();
+            }, 500);
+        });
+    </script>
+</body>
+</html>

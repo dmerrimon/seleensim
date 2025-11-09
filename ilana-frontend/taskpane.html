@@ -380,6 +380,15 @@
             display: none;
         }
 
+        /* Fix modal backdrop click interception bug */
+        .analysis-modal.hidden {
+            pointer-events: none;
+        }
+
+        .analysis-modal.hidden .modal-backdrop {
+            pointer-events: none;
+        }
+
         /* Spinner animation */
         .spinner {
             animation: spin 1s linear infinite;
