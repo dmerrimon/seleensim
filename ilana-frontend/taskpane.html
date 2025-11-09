@@ -1715,28 +1715,18 @@
 
         // Create async document job for large documents
         async function createAsyncDocumentJob(documentText) {
-            const response = await fetch(`${API_BASE_URL}/api/optimize-document-async`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    text: documentText,
-                    ta: detectTherapeuticArea(documentText),
-                    options: {
-                        analysis_depth: "detailed",
-                        provide_examples: true,
-                        include_recommendations: true
-                    }
-                })
-            });
+            const payload = {
+                text: documentText,
+                ta: detectTherapeuticArea(documentText),
+                user_id_hash: window.IlanaState?.userHash || null,
+                options: {
+                    analysis_depth: "detailed",
+                    provide_examples: true,
+                    include_recommendations: true
+                }
+            };
 
-            if (!response.ok) {
-                throw new Error(`Job creation failed: ${response.status} ${response.statusText}`);
-            }
-
-            return await response.json();
+            return await callOptimizeDocumentAsync(payload);
         }
 
         // Handle queued job with SSE streaming
