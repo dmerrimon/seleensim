@@ -90,6 +90,8 @@
             font-weight: 600;
             cursor: pointer;
             transition: background 0.2s ease;
+            position: relative;
+            z-index: 10; /* above normal content, below modal */
         }
 
         .header-btn:hover {
@@ -418,13 +420,20 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
+        /* Modal backdrop - hidden by default, explicit state control */
         .modal-backdrop {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            inset: 0; /* top:0; right:0; bottom:0; left:0 */
+            background: rgba(0, 0, 0, 0.35);
+            display: none;            /* hidden by default */
+            pointer-events: none;     /* don't intercept clicks when hidden */
+            z-index: 999;             /* below modal container */
+        }
+
+        /* When modal is open, show backdrop and allow clicks (to close) */
+        .modal-backdrop.open {
+            display: block;
+            pointer-events: auto;
         }
 
         .modal-container {
@@ -436,6 +445,7 @@
             overflow-y: auto;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             position: relative;
+            z-index: 1000; /* higher than backdrop */
         }
 
         .modal-header {
@@ -846,11 +856,12 @@
         window.debugFixBackdrop = function() {
             console.log('🔧 Running emergency backdrop cleanup...');
 
-            // Remove all backdrop elements
+            // Remove all backdrop elements and their state classes
             const backdrops = document.querySelectorAll('.modal-backdrop');
             console.log(`Found ${backdrops.length} backdrop(s)`);
 
             backdrops.forEach((el, index) => {
+                el.classList.remove('open'); // Remove state class
                 el.style.display = 'none';
                 el.classList.add('hidden');
                 el.remove();
@@ -871,11 +882,16 @@
             if (modal) {
                 modal.classList.add('hidden');
                 modal.setAttribute('aria-hidden', 'true');
+                // Also close backdrop if it exists
+                const backdrop = modal.querySelector('.modal-backdrop');
+                if (backdrop) {
+                    backdrop.classList.remove('open');
+                }
                 console.log('  ✓ Modal closed');
             }
 
             console.log('✅ Emergency cleanup complete!');
-            console.log('Note: This is a temporary fix. The modal may need to be recreated on next use.');
+            console.log('Note: Modal backdrop now uses explicit .open class for state management.');
 
             return {
                 backdropsRemoved: backdrops.length,
@@ -1162,13 +1178,19 @@
         function openAnalysisModal() {
             const modal = document.getElementById('analysisModal');
             const container = modal?.querySelector('.modal-container');
+            const backdrop = modal?.querySelector('.modal-backdrop');
             if (!modal || !container) return;
-            
+
             modal.classList.remove('hidden');
             modal.setAttribute('aria-hidden', 'false');
             container.setAttribute('aria-hidden', 'false');
             container.style.display = 'block';
-            
+
+            // Explicitly open backdrop with state class
+            if (backdrop) {
+                backdrop.classList.add('open');
+            }
+
             // focus first actionable element
             const firstBtn = modal.querySelector('.modal-option[tabindex="0"]');
             if (firstBtn) firstBtn.focus();
@@ -1178,14 +1200,21 @@
         function closeAnalysisModal() {
             const modal = document.getElementById('analysisModal');
             const container = modal?.querySelector('.modal-container');
+            const backdrop = modal?.querySelector('.modal-backdrop');
             if (!modal || !container) return;
-            
+
             modal.classList.add('hidden');
             modal.setAttribute('aria-hidden', 'true');
             container.setAttribute('aria-hidden', 'true');
             container.style.display = 'none';
+
+            // Explicitly close backdrop by removing state class
+            if (backdrop) {
+                backdrop.classList.remove('open');
+            }
+
             document.body.classList.remove('modal-open');
-            
+
             // restore focus to analyze button
             const analyzeBtn = document.getElementById('analyzeButton');
             if (analyzeBtn) analyzeBtn.focus();
