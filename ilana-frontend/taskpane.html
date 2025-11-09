@@ -1210,27 +1210,17 @@
             closeAnalysisModal();
             setAnalyzeButtonBusy(true);
             try {
-                // Get whole document text (or an ID) and send to async enqueue endpoint
+                // Get whole document text and send to async enqueue endpoint using smart fallback
                 await Word.run(async (context) => {
                     const body = context.document.body;
                     body.load("text");
                     await context.sync();
                     const fullText = body.text || "";
-                    const url = (window.__ILANA_API_BASE__ || API_BASE_URL) + "/api/optimize-document-async";
                     const payload = { text: fullText, ta: window.IlanaState?.currentTA || null, user_id_hash: window.IlanaState?.userHash || null };
-                    const resp = await fetchWithTimeout(url, {
-                        method: "POST",
-                        headers: {"Content-Type": "application/json"},
-                        body: JSON.stringify(payload)
-                    }, 20000);
-                    if (!resp.ok) {
-                        const txt = await resp.text();
-                        showToast("Queue failed: " + resp.status + " " + txt);
-                        setAnalyzeButtonBusy(false);
-                        return;
-                    }
-                    const json = await resp.json();
-                    // Expect { request_id, status: "queued", job_id }
+                    
+                    const json = await callOptimizeDocumentAsync(payload);
+                    
+                    // Expect { request_id, result: { status: "queued", job_id } } or { status: "queued", job_id }
                     if (json?.result?.status === "queued" || json?.status === "queued") {
                         const jobId = json.result?.job_id || json.job_id || json?.jobId;
                         showToast("Deep analysis queued. Job ID: " + jobId);
@@ -2009,6 +1999,39 @@
             // Implement showing a side panel or progress modal and call connectToJobStream(jobId)
             console.log("Opening job progress panel for job:", jobId);
             showJobQueuedMessage(jobId, 'job_' + Date.now());
+        }
+
+        async function callOptimizeDocumentAsync(payload) {
+            // payload = { text, ta, user_id_hash }
+            const apiBase = window.__ILANA_API_BASE__ || API_BASE_URL;
+            // Prefer canonical endpoint:
+            const analyzeUrl = `${apiBase}/api/analyze`;
+            try {
+                const resp = await fetch(analyzeUrl, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ text: payload.text, mode: 'document_truncated', ta: payload.ta })
+                });
+                if (!resp.ok) {
+                    // fallback to optimize-document-async for backward compatibility
+                    const fallbackResp = await fetch(`${apiBase}/api/optimize-document-async`, {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify(payload)
+                    });
+                    return await fallbackResp.json();
+                }
+                return await resp.json();
+            } catch (err) {
+                console.warn("callOptimizeDocumentAsync analyze fallback: ", err);
+                // Try direct optimize-document-async call as last resort
+                const fallback = await fetch(`${apiBase}/api/optimize-document-async`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(payload)
+                });
+                return await fallback.json();
+            }
         }
 
         function renderSuggestionCards(suggestions, requestId) {
