@@ -1872,6 +1872,53 @@ async def get_shadow_stats_endpoint(authorization: str = Header(None)):
         logger.error(f"🔮 Admin stats API error: {e}")
         raise HTTPException(status_code=500, detail=f"Failed to fetch shadow stats: {str(e)}")
 
+@app.post("/api/optimize-document-async")
+async def optimize_document_async(request: Request):
+    """
+    Back-compat endpoint expected by frontend.
+    Accepts JSON: { text, ta?, user_id_hash? }
+    Tries to enqueue a background job in-process; if not available, POSTs to /api/analyze with mode=document_truncated.
+    Returns: {"request_id": "...", "result": {"status":"queued", "job_id":"..."}}
+    """
+    try:
+        payload = await request.json()
+        text = payload.get("text", "")
+        ta = payload.get("ta")
+        user_id_hash = payload.get("user_id_hash")
+        
+        logger.info(f"📄 Async document optimization requested - length: {len(text)}, ta: {ta}")
+        
+        # 1) Try to call an in-process enqueue if available
+        try:
+            # attempt import - adjust path/name if your enqueue lives elsewhere
+            from hybrid_controller import _enqueue_document_job  # type: ignore
+            job_id = await _enqueue_document_job({"text": text, "ta": ta, "user_id_hash": user_id_hash})
+            logger.info(f"📋 Document job enqueued via in-process: {job_id}")
+            return {"request_id": job_id, "result": {"status": "queued", "job_id": job_id}}
+        except Exception as e:
+            logger.debug("In-process enqueue not available or failed: %s", e)
+
+        # 2) Fallback: call /api/analyze (local HTTP POST) with mode=document_truncated
+        try:
+            # Construct local base - respect environment if available
+            local_base = f"http://127.0.0.1:{int(os.getenv('PORT', 8000))}"
+            async with httpx.AsyncClient(timeout=30.0) as client:
+                resp = await client.post(
+                    f"{local_base}/api/analyze",
+                    json={"text": text, "mode": "document_truncated", "ta": ta}
+                )
+                resp.raise_for_status()
+                # Expect the analyze route to return wrapper {request_id, model_path, result}
+                result = resp.json()
+                logger.info(f"📋 Document job enqueued via HTTP fallback: {result.get('request_id')}")
+                return result
+        except Exception as e:
+            logger.exception("Fallback HTTP enqueue failed: %s", e)
+            raise HTTPException(status_code=502, detail="Could not enqueue document analysis")
+    except Exception as e:
+        logger.error(f"Optimize document async error: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to process async document request: {str(e)}")
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(
