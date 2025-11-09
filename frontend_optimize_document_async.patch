@@ -1,0 +1,44 @@
+--- a/ilana-frontend/taskpane.html
++++ b/ilana-frontend/taskpane.html
+@@ -1991,6 +1991,36 @@
+             showJobQueuedMessage(jobId, 'job_' + Date.now());
+         }
+
++        async function callOptimizeDocumentAsync(payload) {
++            // Smart wrapper that tries /api/analyze first, falls back to /api/optimize-document-async
++            // payload = { text, ta, user_id_hash }
++            const apiBase = window.__ILANA_API_BASE__ || API_BASE_URL;
++            const analyzeUrl = `${apiBase}/api/analyze`;
++
++            try {
++                // Prefer canonical /api/analyze endpoint
++                const resp = await fetch(analyzeUrl, {
++                    method: 'POST',
++                    headers: {'Content-Type': 'application/json'},
++                    body: JSON.stringify({ text: payload.text, mode: 'document_truncated', ta: payload.ta })
++                });
++                if (!resp.ok) {
++                    // Fallback to /api/optimize-document-async for backward compatibility
++                    const fallbackResp = await fetch(`${apiBase}/api/optimize-document-async`, {
++                        method: 'POST',
++                        headers: {'Content-Type': 'application/json'},
++                        body: JSON.stringify(payload)
++                    });
++                    return await fallbackResp.json();
++                }
++                return await resp.json();
++            } catch (err) {
++                console.warn("callOptimizeDocumentAsync fallback error: ", err);
++                // Last resort: direct call to /api/optimize-document-async
++                const fallback = await fetch(`${apiBase}/api/optimize-document-async`, {
++                    method: 'POST',
++                    headers: {'Content-Type': 'application/json'},
++                    body: JSON.stringify(payload)
++                });
++                return await fallback.json();
++            }
++        }
++
+         function renderSuggestionCards(suggestions, requestId) {
+             // Use existing displayAnalysisResults function for backward compatibility
+             displayAnalysisResults(suggestions, { request_id: requestId });
