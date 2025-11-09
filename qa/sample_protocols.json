@@ -1,0 +1,114 @@
+{
+  "sample_texts": {
+    "exploratory_study_objectives": {
+      "description": "Exploratory Study Objectives section with terminology improvements",
+      "text": "The exploratory study objectives are to characterize the pharmacokinetics and safety profile of the investigational product in patients with advanced solid tumors. Secondary objectives include assessment of preliminary antitumor activity and identification of optimal dosing regimens.",
+      "expected_issues": [
+        "Use 'participants' instead of 'patients'",
+        "Add specific safety monitoring requirements",
+        "Define 'advanced solid tumors' criteria"
+      ],
+      "therapeutic_area": "oncology"
+    },
+    "adverse_event_monitoring": {
+      "description": "Adverse event monitoring section with compliance gaps",
+      "text": "Side effects will be monitored throughout the study period. Serious adverse events must be reported to the sponsor within 24 hours. All events will be graded using standard toxicity criteria.",
+      "expected_issues": [
+        "Use 'adverse events' instead of 'side effects'",
+        "Specify CTCAE version for grading",
+        "Add FDA/EMA reporting requirements"
+      ],
+      "therapeutic_area": "general_medicine"
+    },
+    "cardiac_monitoring_protocol": {
+      "description": "Cardiac safety monitoring for cardio-oncology study",
+      "text": "ECG recordings will be obtained at baseline and every 4 weeks. ECHO will be performed if clinically indicated. Patients with history of heart disease may require additional monitoring.",
+      "expected_issues": [
+        "Specify ECG standardization (12-lead)",
+        "Define ECHO/MUGA requirements for cardiotoxic agents",
+        "Use 'participants' instead of 'patients'"
+      ],
+      "therapeutic_area": "cardiology"
+    },
+    "inclusion_exclusion_criteria": {
+      "description": "Participant eligibility criteria with regulatory compliance issues",
+      "text": "Inclusion criteria: Male or female subjects aged 18-65 years with confirmed diagnosis. Exclusion criteria: Pregnancy, nursing mothers, subjects with severe hepatic impairment. All patients must provide informed consent.",
+      "expected_issues": [
+        "Use 'participants' instead of 'subjects/patients'",
+        "Specify diagnostic confirmation method",
+        "Define 'severe hepatic impairment' criteria",
+        "Add contraception requirements"
+      ],
+      "therapeutic_area": "general_medicine"
+    },
+    "dosing_regimen_oncology": {
+      "description": "Complex oncology dosing with safety monitoring",
+      "text": "Pembrolizumab will be administered at 200mg IV every 3 weeks. Doxorubicin 60mg/m2 IV will be given every 21 days for maximum 6 cycles. Complete blood count should be monitored weekly.",
+      "expected_issues": [
+        "Add immune-related adverse event monitoring for pembrolizumab",
+        "Specify cardiac monitoring for doxorubicin (cumulative dose limits)",
+        "Add neutropenia management protocols"
+      ],
+      "therapeutic_area": "oncology"
+    },
+    "full_protocol_excerpt": {
+      "description": "Larger text sample for document-level analysis testing",
+      "text": "PROTOCOL TITLE: A Phase 2, Multicenter, Open-Label Study to Evaluate the Efficacy and Safety of Experimental Drug X in Patients with Advanced Non-Small Cell Lung Cancer\n\nSTUDY OBJECTIVES:\nPrimary Objective: To assess the overall response rate (ORR) in patients with advanced NSCLC treated with Drug X.\n\nSecondary Objectives:\n- To evaluate progression-free survival (PFS)\n- To assess overall survival (OS)\n- To characterize the safety profile\n- To evaluate quality of life measures\n\nSTUDY DESIGN:\nThis is a phase 2, multicenter, open-label, single-arm study. Approximately 100 patients will be enrolled across 15 sites in the United States and Europe.\n\nINCLUSION CRITERIA:\n1. Male or female subjects ≥18 years of age\n2. Histologically confirmed advanced NSCLC\n3. Eastern Cooperative Oncology Group (ECOG) performance status 0-1\n4. Adequate organ function as defined by laboratory values\n5. Life expectancy >12 weeks\n\nEXCLUSION CRITERIA:\n1. Prior treatment with similar investigational agents\n2. Active brain metastases\n3. Pregnant or nursing women\n4. Severe cardiac dysfunction\n\nTREATMENT PLAN:\nDrug X will be administered orally at 200mg twice daily continuously in 28-day cycles until disease progression or unacceptable toxicity.\n\nSAFETY MONITORING:\nSide effects will be assessed at each visit using CTCAE version 4.0. Serious adverse events must be reported within 24 hours. Regular monitoring will include complete blood count, comprehensive metabolic panel, and liver function tests.",
+      "expected_issues": [
+        "Use 'participants' instead of 'patients/subjects' throughout",
+        "Use 'adverse events' instead of 'side effects'",
+        "Update to CTCAE version 5.0",
+        "Add specific cardiac monitoring for lung cancer therapy",
+        "Define 'adequate organ function' with specific lab criteria",
+        "Add contraception requirements for participants of childbearing potential"
+      ],
+      "therapeutic_area": "oncology"
+    }
+  },
+  "test_configurations": {
+    "selection_mode_tests": [
+      {
+        "name": "short_selection",
+        "text_key": "adverse_event_monitoring",
+        "mode": "selection",
+        "expected_response_time_ms": 5000,
+        "min_suggestions": 2
+      },
+      {
+        "name": "oncology_selection", 
+        "text_key": "dosing_regimen_oncology",
+        "mode": "selection",
+        "expected_response_time_ms": 8000,
+        "min_suggestions": 3
+      }
+    ],
+    "document_mode_tests": [
+      {
+        "name": "full_protocol_analysis",
+        "text_key": "full_protocol_excerpt", 
+        "mode": "document_truncated",
+        "expected_response_time_ms": 15000,
+        "min_suggestions": 5
+      }
+    ],
+    "highlight_tests": [
+      {
+        "name": "locate_adverse_event_text",
+        "search_text": "Side effects will be monitored",
+        "expected_highlight_range": {"start": 0, "end": 30}
+      },
+      {
+        "name": "locate_patient_terminology",
+        "search_text": "patients with advanced solid tumors",
+        "expected_highlight_range": {"start": 100, "end": 135}
+      }
+    ]
+  },
+  "metadata": {
+    "created": "2024-11-09",
+    "version": "1.0",
+    "description": "Sample protocol texts for QA testing of Ilana analyze and highlight functionality",
+    "total_samples": 6,
+    "therapeutic_areas": ["oncology", "cardiology", "general_medicine"]
+  }
+}

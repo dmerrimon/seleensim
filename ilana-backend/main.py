@@ -156,6 +156,56 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Global error handlers for structured error responses
+@app.exception_handler(HTTPException)
+async def http_exception_handler(request: Request, exc: HTTPException):
+    """Handle HTTP exceptions with structured error response"""
+    request_id = getattr(request.state, 'request_id', str(uuid.uuid4()))
+    
+    error_response = {
+        "error_code": f"HTTP_{exc.status_code}",
+        "message": exc.detail,
+        "request_id": request_id,
+        "timestamp": datetime.utcnow().isoformat(),
+        "path": str(request.url.path)
+    }
+    
+    logger.error(f"HTTP Exception {exc.status_code}: {exc.detail} - Request: {request_id}")
+    return JSONResponse(
+        status_code=exc.status_code,
+        content=error_response
+    )
+
+@app.exception_handler(Exception)
+async def general_exception_handler(request: Request, exc: Exception):
+    """Handle general exceptions with structured error response"""
+    request_id = getattr(request.state, 'request_id', str(uuid.uuid4()))
+    
+    error_response = {
+        "error_code": "INTERNAL_ERROR",
+        "message": "An internal server error occurred. Please try again later.",
+        "request_id": request_id,
+        "timestamp": datetime.utcnow().isoformat(),
+        "path": str(request.url.path)
+    }
+    
+    logger.error(f"Unhandled exception: {str(exc)} - Request: {request_id}", exc_info=True)
+    return JSONResponse(
+        status_code=500,
+        content=error_response
+    )
+
+@app.middleware("http")
+async def add_request_id_middleware(request: Request, call_next):
+    """Add request ID to all requests for tracking"""
+    request_id = str(uuid.uuid4())
+    request.state.request_id = request_id
+    
+    # Add to response headers
+    response = await call_next(request)
+    response.headers["X-Request-ID"] = request_id
+    return response
+
 @app.on_event("startup")
 async def startup_event():
     """Initialize enterprise AI service on startup"""
@@ -467,6 +517,87 @@ Format each recommendation as: Original: "text" → Suggested: "text" (Reason: e
                 "error": str(e)
             }
         }
+
+@app.post("/api/telemetry")
+async def log_telemetry(request: Request, telemetry_data: dict):
+    """Log frontend telemetry events for monitoring and analytics"""
+    try:
+        request_id = getattr(request.state, 'request_id', str(uuid.uuid4()))
+        
+        # Add server-side metadata
+        enriched_telemetry = {
+            **telemetry_data,
+            "server_request_id": request_id,
+            "server_timestamp": datetime.utcnow().isoformat(),
+            "user_agent": request.headers.get("user-agent"),
+            "origin": request.headers.get("origin"),
+            "referer": request.headers.get("referer")
+        }
+        
+        # Log to console and telemetry system
+        logger.info(f"📊 Frontend Telemetry: {json.dumps(enriched_telemetry)}")
+        
+        # Send to telemetry service if available
+        if hasattr(globals(), 'telemetry_service') and telemetry_service:
+            try:
+                telemetry_service.log_event(enriched_telemetry)
+            except Exception as e:
+                logger.warning(f"Telemetry service error: {e}")
+        
+        return {
+            "status": "logged",
+            "request_id": request_id,
+            "timestamp": datetime.utcnow().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Telemetry logging failed: {e}")
+        return {
+            "status": "error", 
+            "message": "Failed to log telemetry",
+            "request_id": getattr(request.state, 'request_id', 'unknown')
+        }
+
+@app.post("/api/diagnose-highlight")
+async def diagnose_highlight(request: Request, highlight_data: dict):
+    """Simulate highlight functionality for QA testing"""
+    try:
+        request_id = getattr(request.state, 'request_id', str(uuid.uuid4()))
+        search_text = highlight_data.get('search_text', '')
+        
+        # Simulate finding text ranges (mock Office.js behavior)
+        if not search_text:
+            raise HTTPException(status_code=400, detail="search_text is required")
+        
+        # Mock range calculation based on text length
+        text_length = len(search_text)
+        mock_range = {
+            "start": 0,
+            "end": min(text_length, 50),
+            "found": True,
+            "highlight_color": "#FFA500" if "adverse" in search_text.lower() else "#ea1537"
+        }
+        
+        # Simulate processing delay
+        import time
+        time.sleep(0.1)  # 100ms simulation
+        
+        return {
+            "status": "success",
+            "request_id": request_id,
+            "search_text": search_text,
+            "range": mock_range,
+            "simulation": True,
+            "message": f"Mock highlight applied to '{search_text[:30]}...' at range {mock_range['start']}-{mock_range['end']}",
+            "timestamp": datetime.utcnow().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Diagnose highlight failed: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Highlight diagnosis failed: {str(e)}"
+        )
 
 @app.post("/api/recommend-language")
 async def recommend_language_route(request: ComprehensiveAnalysisRequest):

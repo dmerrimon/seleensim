@@ -380,6 +380,220 @@
             display: none;
         }
 
+        /* Spinner animation */
+        .spinner {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Analysis Modal Styles */
+        .analysis-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-container {
+            background: white;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px 0;
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            color: var(--text-dark);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-gray);
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s;
+        }
+
+        .modal-close:hover {
+            background-color: var(--surface-hover);
+        }
+
+        .modal-body {
+            padding: 0 24px 24px;
+        }
+
+        .modal-description {
+            margin: 0 0 20px 0;
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .modal-option {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+        }
+
+        .modal-option:hover,
+        .modal-option:focus {
+            border-color: var(--primary-green);
+            background: var(--surface-hover);
+            outline: none;
+        }
+
+        .option-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .option-content h3 {
+            margin: 0 0 4px 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .option-content p {
+            margin: 0;
+            font-size: 12px;
+            color: var(--text-gray);
+            line-height: 1.4;
+        }
+
+        .modal-warning {
+            padding: 12px;
+            background: var(--background-light);
+            border-radius: 6px;
+            font-size: 12px;
+            color: var(--text-gray);
+            border-left: 3px solid var(--primary-orange);
+        }
+
+        /* Job Queued Styles */
+        .job-queued-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 24px;
+            background: var(--background-light);
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
+            margin: 20px;
+        }
+
+        .job-queued-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .job-queued-content h3 {
+            margin: 0 0 8px 0;
+            color: var(--primary-blue);
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .job-queued-content p {
+            margin: 4px 0;
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        .job-queued-content code {
+            background: var(--surface-white);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 11px;
+        }
+
+        .job-queued-description {
+            margin: 12px 0;
+            padding: 12px;
+            background: var(--surface-white);
+            border-radius: 6px;
+            font-size: 13px;
+            line-height: 1.4;
+            color: var(--text-dark);
+        }
+
+        .job-queued-actions {
+            margin-top: 12px;
+        }
+
+        .check-status-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .check-status-btn:hover {
+            background: var(--primary-blue);
+            filter: brightness(1.1);
+        }
+
         /* Empty state */
         .empty-state {
             padding: 40px 20px;
@@ -415,7 +629,8 @@
                 <div class="header">
                     <div class="lens-title">Ilana</div>
                     <button id="analyzeButton" class="header-btn" onclick="analyzeProtocol()">
-                        Analyze
+                        <span id="analyzeButtonText">Analyze</span>
+                        <span id="analyzeSpinner" class="spinner hidden">⏳</span>
                     </button>
                 </div>
             </div>
@@ -462,55 +677,179 @@
         </div>
     </div>
 
+    <!-- Analysis Options Modal -->
+    <div id="analysisModal" class="analysis-modal hidden" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+        <div class="modal-backdrop" onclick="closeAnalysisModal()"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 id="modalTitle">Analysis Options</h2>
+                <button class="modal-close" onclick="closeAnalysisModal()" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">
+                    No text selection detected. How would you like to analyze your document?
+                </p>
+                <div class="modal-options">
+                    <button class="modal-option" onclick="selectTextOption()" tabindex="0">
+                        <div class="option-icon">📝</div>
+                        <div class="option-content">
+                            <h3>Select Text First</h3>
+                            <p>Select specific text to get targeted suggestions (recommended for quick analysis)</p>
+                        </div>
+                    </button>
+                    <button class="modal-option" onclick="analyzeTruncatedDocument()" tabindex="0">
+                        <div class="option-icon">⚡</div>
+                        <div class="option-content">
+                            <h3>Analyze Document (Truncated)</h3>
+                            <p>Fast analysis of first 20,000 characters. Results in 10-30 seconds.</p>
+                        </div>
+                    </button>
+                    <button class="modal-option" onclick="queueDeepAnalysis()" tabindex="0">
+                        <div class="option-icon">🔍</div>
+                        <div class="option-content">
+                            <h3>Queue Deep Analysis</h3>
+                            <p>Comprehensive analysis of entire document. Runs in background, check back in 2-5 minutes.</p>
+                        </div>
+                    </button>
+                </div>
+                <div class="modal-warning">
+                    <strong>Performance Note:</strong> Large document analysis may take longer. Select text for fastest results.
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Pharmaceutical Protocol Analyzer - Professional Interface
         const API_BASE_URL = window.__ILANA_API_BASE__ || 'https://ilanalabs-add-in.onrender.com';
+        const MAX_DOC_CHARS = 20000; // Default truncation limit
         let currentIssues = [];
         let maximizedCard = null;
+
+        // Global state for current therapeutic area
+        window.IlanaState = {
+            currentTA: 'general_medicine'
+        };
+
+        // Debounce tracking for highlight clicks
+        const highlightDebounce = {
+            lastIssueId: null,
+            lastClickTime: 0,
+            debounceMs: 500
+        };
+
+        // Global spinner tracking
+        const activeSpinners = new Set();
+
+        // Global spinner helpers
+        function showSpinner(id) {
+            activeSpinners.add(id);
+            console.log(`🔄 Spinner started: ${id}`);
+            
+            // Update UI based on spinner type
+            if (id === 'analyze') {
+                setAnalyzeButtonState(true, 'Analyzing...');
+            } else if (id === 'ta_enhancement') {
+                const button = document.querySelector(`[data-spinner-id="${id}"]`);
+                if (button) {
+                    button.disabled = true;
+                    button.innerHTML = '⏳ Loading...';
+                }
+            }
+        }
+
+        function hideSpinner(id) {
+            activeSpinners.delete(id);
+            console.log(`✅ Spinner stopped: ${id}`);
+            
+            // Update UI based on spinner type
+            if (id === 'analyze') {
+                setAnalyzeButtonState(false, 'Analyze');
+            } else if (id === 'ta_enhancement') {
+                const button = document.querySelector(`[data-spinner-id="${id}"]`);
+                if (button) {
+                    button.disabled = false;
+                    button.innerHTML = 'TA-Enhanced';
+                }
+            }
+        }
+
+        // Global fetch wrapper with timeout and error handling
+        async function fetchWithTimeout(url, options = {}, timeoutMs = 25000) {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+            
+            try {
+                const response = await fetch(url, {
+                    ...options,
+                    signal: controller.signal
+                });
+                
+                clearTimeout(timeoutId);
+                
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({}));
+                    return {
+                        ok: false,
+                        reason: 'http_error',
+                        status: response.status,
+                        statusText: response.statusText,
+                        error_code: errorData.error_code,
+                        message: errorData.message || `HTTP ${response.status}: ${response.statusText}`,
+                        request_id: errorData.request_id
+                    };
+                }
+                
+                return {
+                    ok: true,
+                    response: response,
+                    json: async () => await response.json()
+                };
+                
+            } catch (error) {
+                clearTimeout(timeoutId);
+                
+                if (error.name === 'AbortError') {
+                    return {
+                        ok: false,
+                        reason: 'timeout',
+                        message: `Request timed out after ${timeoutMs}ms. Please try selecting smaller text or check your connection.`,
+                        timeoutMs: timeoutMs
+                    };
+                }
+                
+                return {
+                    ok: false,
+                    reason: 'network_error',
+                    message: error.message || 'Network error occurred',
+                    error: error
+                };
+            }
+        }
 
         // Initialize Office.js
         Office.onReady(() => {
             console.log('🚀 Ilana Protocol Intelligence loaded');
             updateStatus('Ready to analyze pharmaceutical protocols', 'complete');
+            setupKeyboardHandlers();
         });
 
-        // Main analysis function with selection-first behavior
+        // Main analysis function with improved flow
         async function analyzeProtocol() {
-            const analyzeButton = document.getElementById('analyzeButton');
-
-            // Prevent multiple simultaneous analyses
-            if (analyzeButton.disabled) {
-                console.warn('Analysis already in progress');
-                return;
-            }
-
             try {
-                analyzeButton.disabled = true;
-                analyzeButton.textContent = 'Analyzing...';
-                
-                // Get selected text first
                 const selectedText = await getSelectedText();
                 console.log(`Selected text length: ${selectedText.length}`);
                 
                 if (selectedText.length > 5) {
-                    // Selection-first behavior: analyze selection
-                    console.log('Selection detected, analyzing selection');
-                    updateStatus('Analyzing selection<span class="loading-dots"></span>', 'analyzing');
-                    await handleSelectionAnalysis(selectedText);
+                    // Selection detected: analyze immediately
+                    await performAnalysis(selectedText, 'selection');
                 } else {
-                    // No selection: analyze whole document
-                    console.log('No selection, analyzing whole document');
-                    updateStatus('Analyzing document<span class="loading-dots"></span>', 'analyzing');
-                    await handleWholeDocumentAnalysis();
+                    // No selection: show modal with options
+                    showAnalysisModal();
                 }
-
             } catch (error) {
                 console.error('Analysis error:', error);
-                updateStatus(`Analysis failed: ${error.message}`, 'error');
-                showEmptyState();
-            } finally {
-                analyzeButton.disabled = false;
-                analyzeButton.textContent = 'Analyze';
+                showError(`Failed to start analysis: ${error.message}`);
             }
         }
 
@@ -622,6 +961,351 @@
             return 'general_medicine';
         }
 
+        // Core analysis function with timeout and UI handling
+        async function performAnalysis(text, mode) {
+            const startTime = Date.now();
+            const requestId = `req_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+            
+            // Prevent multiple simultaneous analyses
+            if (activeSpinners.has('analyze')) {
+                console.warn('Analysis already in progress');
+                return;
+            }
+
+            // Start spinner and telemetry
+            showSpinner('analyze');
+            
+            // Log analyze start
+            logTelemetry({
+                event: 'analyze_start',
+                request_id: requestId,
+                mode: mode,
+                selection_length: text.length,
+                ta: window.IlanaState.currentTA || 'unknown',
+                timestamp: new Date().toISOString()
+            });
+
+            try {
+                // Detect therapeutic area and store globally
+                window.IlanaState.currentTA = detectTherapeuticArea(text);
+                
+                const payload = {
+                    text: mode === 'document_truncated' ? text.substring(0, MAX_DOC_CHARS) : text,
+                    mode: mode,
+                    ta: window.IlanaState.currentTA,
+                    request_id: requestId
+                };
+
+                console.log(`🚀 Calling /api/analyze with mode: ${mode}`, payload);
+
+                // Use new fetch wrapper with timeout
+                const fetchResult = await fetchWithTimeout(`${API_BASE_URL}/api/analyze`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                }, 25000);
+
+                if (!fetchResult.ok) {
+                    // Handle structured errors from fetchWithTimeout
+                    let errorMessage = fetchResult.message;
+                    
+                    if (fetchResult.reason === 'timeout') {
+                        errorMessage = 'Analysis timed out after 25 seconds. Please try selecting smaller text or check your connection.';
+                    } else if (fetchResult.reason === 'http_error') {
+                        errorMessage = `Server error: ${fetchResult.message}`;
+                    }
+                    
+                    // Log failure telemetry
+                    logTelemetry({
+                        event: 'analyze_end',
+                        request_id: requestId,
+                        latency_ms: Date.now() - startTime,
+                        parse_success: false,
+                        error_reason: fetchResult.reason,
+                        error_code: fetchResult.error_code,
+                        status_code: fetchResult.status,
+                        timestamp: new Date().toISOString()
+                    });
+                    
+                    throw new Error(errorMessage);
+                }
+
+                const result = await fetchResult.json();
+                console.log('✅ Analysis result:', result);
+
+                // Parse success telemetry
+                const suggestions = extractSuggestionsFromResponse(result);
+                logTelemetry({
+                    event: 'analyze_end',
+                    request_id: result.request_id || requestId,
+                    latency_ms: Date.now() - startTime,
+                    parse_success: suggestions.length > 0,
+                    suggestions_count: suggestions.length,
+                    timestamp: new Date().toISOString()
+                });
+
+                // Handle response wrapper format {request_id, model_path, result}
+                if (result.result && result.result.status === 'queued' && result.result.job_id) {
+                    showJobQueuedMessage(result.result.job_id, result.request_id || requestId);
+                } else if (suggestions.length > 0) {
+                    displaySuggestions(suggestions, result.request_id || requestId);
+                } else {
+                    showError('No suggestions found in analysis result');
+                }
+
+                updateStatus(`${mode === 'selection' ? 'Selection' : 'Document'} analysis complete`, 'complete');
+
+            } catch (error) {
+                console.error('❌ Analysis failed:', error);
+                showError(error.message);
+                updateStatus('Analysis failed', 'error');
+                
+                // Log error telemetry if not already logged
+                if (!error.message.includes('timed out')) {
+                    logTelemetry({
+                        event: 'analyze_end',
+                        request_id: requestId,
+                        latency_ms: Date.now() - startTime,
+                        parse_success: false,
+                        error_message: error.message,
+                        timestamp: new Date().toISOString()
+                    });
+                }
+            } finally {
+                hideSpinner('analyze');
+            }
+        }
+
+        // Update analyze button state
+        function setAnalyzeButtonState(isAnalyzing, text) {
+            const analyzeButton = document.getElementById('analyzeButton');
+            const buttonText = document.getElementById('analyzeButtonText');
+            const spinner = document.getElementById('analyzeSpinner');
+
+            analyzeButton.disabled = isAnalyzing;
+            analyzeButton.setAttribute('aria-busy', isAnalyzing.toString());
+            
+            if (isAnalyzing) {
+                buttonText.classList.add('hidden');
+                spinner.classList.remove('hidden');
+            } else {
+                buttonText.classList.remove('hidden');
+                spinner.classList.add('hidden');
+                buttonText.textContent = text;
+            }
+        }
+
+        // Show analysis modal
+        function showAnalysisModal() {
+            const modal = document.getElementById('analysisModal');
+            modal.classList.remove('hidden');
+            
+            // Focus trap: focus first option
+            const firstOption = modal.querySelector('.modal-option');
+            if (firstOption) {
+                firstOption.focus();
+            }
+        }
+
+        // Close analysis modal
+        function closeAnalysisModal() {
+            const modal = document.getElementById('analysisModal');
+            modal.classList.add('hidden');
+        }
+
+        // Modal option handlers
+        function selectTextOption() {
+            closeAnalysisModal();
+            updateStatus('Please select text in your document, then click Analyze again', 'ready');
+        }
+
+        async function analyzeTruncatedDocument() {
+            closeAnalysisModal();
+            try {
+                const documentText = await getFullDocumentText();
+                await performAnalysis(documentText, 'document_truncated');
+            } catch (error) {
+                showError(`Failed to get document text: ${error.message}`);
+            }
+        }
+
+        async function queueDeepAnalysis() {
+            closeAnalysisModal();
+            const startTime = Date.now();
+            const requestId = `deep_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+            
+            try {
+                const documentText = await getFullDocumentText();
+                
+                showSpinner('analyze');
+                
+                // Log queue start
+                logTelemetry({
+                    event: 'deep_analysis_start',
+                    request_id: requestId,
+                    text_length: documentText.length,
+                    ta: window.IlanaState.currentTA || 'general_medicine',
+                    timestamp: new Date().toISOString()
+                });
+                
+                const fetchResult = await fetchWithTimeout(`${API_BASE_URL}/api/optimize-document-async`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        text: documentText,
+                        ta: window.IlanaState.currentTA || 'general_medicine',
+                        request_id: requestId,
+                        options: {
+                            analysis_depth: "detailed",
+                            provide_examples: true,
+                            include_recommendations: true
+                        }
+                    })
+                }, 30000); // Longer timeout for queue requests
+
+                if (!fetchResult.ok) {
+                    logTelemetry({
+                        event: 'deep_analysis_queue_failed',
+                        request_id: requestId,
+                        latency_ms: Date.now() - startTime,
+                        error_reason: fetchResult.reason,
+                        error_message: fetchResult.message,
+                        timestamp: new Date().toISOString()
+                    });
+                    throw new Error(fetchResult.message);
+                }
+
+                const result = await fetchResult.json();
+                
+                logTelemetry({
+                    event: 'deep_analysis_queued',
+                    request_id: result.request_id || requestId,
+                    job_id: result.job_id,
+                    latency_ms: Date.now() - startTime,
+                    timestamp: new Date().toISOString()
+                });
+                
+                showJobQueuedMessage(result.job_id, result.request_id || requestId);
+                
+            } catch (error) {
+                showError(`Failed to queue deep analysis: ${error.message}`);
+                logTelemetry({
+                    event: 'deep_analysis_error',
+                    request_id: requestId,
+                    latency_ms: Date.now() - startTime,
+                    error_message: error.message,
+                    timestamp: new Date().toISOString()
+                });
+            } finally {
+                hideSpinner('analyze');
+            }
+        }
+
+        // Get full document text
+        async function getFullDocumentText() {
+            return await Word.run(async (context) => {
+                const body = context.document.body;
+                context.load(body, 'text');
+                await context.sync();
+                return body.text;
+            });
+        }
+
+        // Setup keyboard handlers for accessibility
+        function setupKeyboardHandlers() {
+            document.addEventListener('keydown', (e) => {
+                const modal = document.getElementById('analysisModal');
+                if (!modal.classList.contains('hidden')) {
+                    if (e.key === 'Escape') {
+                        closeAnalysisModal();
+                        e.preventDefault();
+                    }
+                }
+            });
+        }
+
+        // Show error message
+        function showError(message) {
+            updateStatus(`Error: ${message}`, 'error');
+            console.error('Error:', message);
+        }
+
+        // Display suggestions (wrapper for existing displayAnalysisResults)
+        function displaySuggestions(suggestions, requestId) {
+            const issues = suggestions.map((suggestion, index) => ({
+                id: `${requestId}_${index}`,
+                type: suggestion.type || 'medical_terminology',
+                severity: suggestion.severity || 'medium',
+                text: suggestion.original || suggestion.text || 'Selected text',
+                suggestion: suggestion.improved || suggestion.suggestion || 'Enhanced text',
+                rationale: suggestion.reason || suggestion.rationale || 'AI analysis suggests improvement',
+                range: suggestion.position || { start: 0, end: 20 },
+                confidence: suggestion.confidence || 0.9,
+                request_id: requestId
+            }));
+
+            displayAnalysisResults(issues, { request_id: requestId });
+        }
+
+        // Show job queued message
+        function showJobQueuedMessage(jobId, requestId) {
+            const cardsList = document.getElementById('cardsList');
+            if (cardsList) {
+                cardsList.innerHTML = `
+                    <div class="job-queued-container">
+                        <div class="job-queued-icon">⏱️</div>
+                        <div class="job-queued-content">
+                            <h3>Analysis Queued</h3>
+                            <p>Job ID: <code>${jobId}</code></p>
+                            <p>Request: <code>${requestId}</code></p>
+                            <div class="job-queued-description">
+                                Your document analysis is processing in the background. 
+                                Large document analysis typically takes 2-5 minutes. 
+                                You can close this window and check back later.
+                            </div>
+                            <div class="job-queued-actions">
+                                <button onclick="checkJobStatus('${jobId}')" class="check-status-btn">
+                                    Check Status
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            hideEmptyState();
+            updateStatus('Analysis queued - check back in a few minutes', 'analyzing');
+        }
+
+        // Check job status
+        async function checkJobStatus(jobId) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/job-status/${jobId}`);
+                const status = await response.json();
+                
+                if (status.status === 'completed' && status.result) {
+                    const suggestions = extractSuggestionsFromResponse(status.result);
+                    if (suggestions.length > 0) {
+                        displaySuggestions(suggestions, jobId);
+                        updateStatus('Analysis complete', 'complete');
+                    } else {
+                        showError('No suggestions found in completed analysis');
+                    }
+                } else if (status.status === 'failed') {
+                    showError(`Analysis failed: ${status.error || 'Unknown error'}`);
+                } else {
+                    updateStatus(`Job status: ${status.status}`, 'analyzing');
+                }
+            } catch (error) {
+                showError(`Failed to check job status: ${error.message}`);
+            }
+        }
+
         // Display analysis results
         function displayAnalysisResults(issues, metadata) {
             // Normalize issues to handle different formats
@@ -726,59 +1410,205 @@
             }
         }
 
-        // Highlight and scroll to issue in document
+        // Highlight and scroll to issue in document (Office.js-safe with debounce)
         async function highlightAndScrollToIssue(issueId, event) {
             if (event) event.stopPropagation();
             
+            const startTime = Date.now();
+            
+            // Debounce: ignore repeated clicks to same issue within 500ms
+            const now = Date.now();
+            if (highlightDebounce.lastIssueId === issueId && 
+                (now - highlightDebounce.lastClickTime) < highlightDebounce.debounceMs) {
+                console.log(`🚦 Debounced repeat click for issue: ${issueId}`);
+                return;
+            }
+            highlightDebounce.lastIssueId = issueId;
+            highlightDebounce.lastClickTime = now;
+
+            // Log telemetry
+            logTelemetry({
+                event: 'locate_issue_clicked',
+                issue_id: issueId,
+                selection_length: 0, // Will be updated below
+                frontend_duration_ms: 0 // Will be updated at end
+            });
+
             try {
                 await Word.run(async (context) => {
                     const issue = currentIssues.find(i => i.id === issueId);
-                    if (!issue || !issue.text) return;
+                    if (!issue || !issue.text) {
+                        showLocateErrorMessage("Issue data not found");
+                        return;
+                    }
 
-                    // Clear existing highlights first
-                    const allRanges = context.document.body.search("*", {matchWildcards: true});
-                    context.load(allRanges, 'items');
+                    // Get current selection length for telemetry
+                    const selection = context.document.getSelection();
+                    context.load(selection, 'text');
                     await context.sync();
                     
-                    allRanges.items.forEach(range => {
-                        range.font.highlightColor = null;
-                    });
-                    
-                    // Search for the issue text
-                    let searchText = issue.text.substring(0, 100).trim();
-                    let searchResults = context.document.body.search(searchText);
-                    context.load(searchResults, 'items');
-                    await context.sync();
+                    const selectionLength = selection.text ? selection.text.length : 0;
 
-                    // If not found, try shorter text
-                    if (searchResults.items.length === 0 && searchText.length > 30) {
-                        searchText = issue.text.substring(0, 30).trim();
-                        searchResults = context.document.body.search(searchText);
-                        context.load(searchResults, 'items');
+                    // Clear existing highlights efficiently (avoid large DOM operations)
+                    await clearPreviousHighlights(context);
+                    
+                    // Yield to UI to prevent freeze
+                    await new Promise(resolve => setTimeout(resolve, 50));
+
+                    // Search for the issue text efficiently
+                    const targetRange = await findIssueText(context, issue);
+                    
+                    if (targetRange) {
+                        // Apply highlight and scroll in single operation
+                        await highlightAndSelectRange(context, targetRange, issue);
+                        
+                        // Activate application focus
+                        context.application.activate();
                         await context.sync();
-                    }
-
-                    if (searchResults.items.length > 0) {
-                        const firstResult = searchResults.items[0];
                         
-                        // Highlight with severity color
-                        firstResult.font.highlightColor = getSeverityColor(issue.severity);
-                        
-                        // Select and scroll to the text
-                        firstResult.select("Select");
-                        
-                        console.log(`✅ Highlighted and scrolled to ${issue.severity} issue`);
+                        console.log(`✅ Located and highlighted issue: ${issueId}`);
                     } else {
-                        console.warn(`⚠️ Could not find text in document: ${searchText}`);
-                        updateStatus(`Could not locate text in document`, 'error');
-                        setTimeout(() => updateStatus('Analysis complete', 'complete'), 3000);
+                        showLocateErrorMessage();
                     }
 
-                    await context.sync();
+                    // Log final telemetry
+                    logTelemetry({
+                        event: 'locate_issue_clicked',
+                        issue_id: issueId,
+                        selection_length: selectionLength,
+                        frontend_duration_ms: Date.now() - startTime
+                    });
                 });
             } catch (error) {
-                console.error('Highlighting error:', error);
-                updateStatus(`Error highlighting text: ${error.message}`, 'error');
+                console.error('Office.js highlighting error:', error);
+                showLocateErrorMessage();
+                
+                // Log error telemetry
+                logTelemetry({
+                    event: 'locate_issue_error',
+                    issue_id: issueId,
+                    error: error.message,
+                    frontend_duration_ms: Date.now() - startTime
+                });
+            }
+        }
+
+        // Clear previous highlights efficiently
+        async function clearPreviousHighlights(context) {
+            try {
+                // Only clear highlights in visible content, not entire document
+                const visibleRange = context.document.getSelection().getRange();
+                context.load(visibleRange);
+                await context.sync();
+                
+                // Clear highlights in paragraph containing selection
+                const paragraph = visibleRange.paragraphs.getFirst();
+                context.load(paragraph);
+                await context.sync();
+                
+                paragraph.font.highlightColor = null;
+                await context.sync();
+            } catch (error) {
+                console.warn('Could not clear previous highlights:', error);
+                // Continue execution - this is not critical
+            }
+        }
+
+        // Find issue text efficiently
+        async function findIssueText(context, issue) {
+            try {
+                // Try exact text first (limited to reasonable length)
+                let searchText = issue.text.substring(0, 80).trim();
+                let searchResults = context.document.body.search(searchText, {matchCase: false});
+                context.load(searchResults, 'items');
+                await context.sync();
+
+                if (searchResults.items.length > 0) {
+                    return searchResults.items[0];
+                }
+
+                // If not found, try shorter text
+                if (searchText.length > 20) {
+                    searchText = issue.text.substring(0, 20).trim();
+                    searchResults = context.document.body.search(searchText, {matchCase: false});
+                    context.load(searchResults, 'items');
+                    await context.sync();
+                    
+                    if (searchResults.items.length > 0) {
+                        return searchResults.items[0];
+                    }
+                }
+
+                return null;
+            } catch (error) {
+                console.warn('Search failed:', error);
+                return null;
+            }
+        }
+
+        // Apply highlight and select range efficiently
+        async function highlightAndSelectRange(context, range, issue) {
+            try {
+                // Apply highlight color
+                range.font.highlightColor = getSeverityColor(issue.severity);
+                
+                // Select and scroll to range (Office.js handles scroll automatically)
+                range.select("Start");
+                
+                // Single sync for all operations
+                await context.sync();
+                
+            } catch (error) {
+                console.warn('Could not highlight range:', error);
+                // Try fallback selection without highlight
+                try {
+                    range.select("Start");
+                    await context.sync();
+                } catch (fallbackError) {
+                    throw new Error('Could not locate text in document view');
+                }
+            }
+        }
+
+        // Show user-friendly error for locate failures
+        function showLocateErrorMessage(customMessage) {
+            const message = customMessage || "Could not locate text in this view — please use Find (Ctrl+F)";
+            updateStatus(message, 'error');
+            
+            // Show inline message in the issue card
+            const issueCard = event?.target?.closest('.full-card');
+            if (issueCard) {
+                const existingMessage = issueCard.querySelector('.locate-error-message');
+                if (existingMessage) existingMessage.remove();
+                
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'locate-error-message';
+                errorDiv.style.cssText = 'background:#fef2f2;color:#dc2626;padding:8px;margin:8px 0;border-radius:4px;font-size:12px;';
+                errorDiv.textContent = message;
+                issueCard.appendChild(errorDiv);
+                
+                // Remove message after 5 seconds
+                setTimeout(() => {
+                    if (errorDiv.parentNode) errorDiv.remove();
+                }, 5000);
+            }
+        }
+
+        // Log telemetry events
+        function logTelemetry(eventData) {
+            try {
+                console.log('📊 Telemetry:', eventData);
+                
+                // Send to telemetry endpoint if available
+                if (window.fetch && API_BASE_URL) {
+                    fetch(`${API_BASE_URL}/api/telemetry`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(eventData)
+                    }).catch(err => console.warn('Telemetry failed:', err));
+                }
+            } catch (error) {
+                console.warn('Telemetry error:', error);
             }
         }
 
