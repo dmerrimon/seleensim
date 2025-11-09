@@ -87,6 +87,51 @@ Result: Clicks pass through to Analyze button
 3. **Cascading specificity** - These rules only apply when the modal has the `hidden` class
 4. **No side effects** - When modal is visible (no `hidden` class), backdrop retains default `pointer-events: auto` for proper click handling
 
+## Emergency Fix (If Button Is Stuck)
+
+If the Analyze button becomes unresponsive, run this in the browser DevTools console:
+
+### Quick Fix (One-Liner)
+```javascript
+window.debugFixBackdrop()
+```
+
+### Manual Console Commands (Alternative)
+```javascript
+// Remove all backdrops and re-enable the analyze button
+document.querySelectorAll('.modal-backdrop').forEach(el => {
+  el.style.display = 'none';
+  el.classList.add('hidden');
+  el.remove(); // remove from DOM to be safe
+});
+
+// Re-enable analyze button
+const analyzeBtn = document.getElementById('analyzeButton');
+if (analyzeBtn) {
+  analyzeBtn.disabled = false;
+  analyzeBtn.removeAttribute('aria-busy');
+  analyzeBtn.focus();
+}
+console.log('Backdrops removed and Analyze re-enabled.');
+```
+
+### What This Does
+1. ✅ Finds and removes all modal backdrop elements from the DOM
+2. ✅ Re-enables the Analyze button (removes `disabled` and `aria-busy` attributes)
+3. ✅ Restores focus to the Analyze button
+4. ✅ Returns diagnostic information about what was fixed
+
+### Expected Console Output
+```
+🔧 Running emergency backdrop cleanup...
+Found 1 backdrop(s)
+  ✓ Removed backdrop 1
+  ✓ Analyze button re-enabled and focused
+  ✓ Modal closed
+✅ Emergency cleanup complete!
+Note: This is a temporary fix. The modal may need to be recreated on next use.
+```
+
 ## Testing
 
 ### Manual Test

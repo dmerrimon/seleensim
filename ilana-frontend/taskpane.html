@@ -842,9 +842,52 @@
             }
         }
 
+        // Emergency backdrop cleanup function (accessible via console)
+        window.debugFixBackdrop = function() {
+            console.log('🔧 Running emergency backdrop cleanup...');
+
+            // Remove all backdrop elements
+            const backdrops = document.querySelectorAll('.modal-backdrop');
+            console.log(`Found ${backdrops.length} backdrop(s)`);
+
+            backdrops.forEach((el, index) => {
+                el.style.display = 'none';
+                el.classList.add('hidden');
+                el.remove();
+                console.log(`  ✓ Removed backdrop ${index + 1}`);
+            });
+
+            // Re-enable analyze button
+            const analyzeBtn = document.getElementById('analyzeButton');
+            if (analyzeBtn) {
+                analyzeBtn.disabled = false;
+                analyzeBtn.removeAttribute('aria-busy');
+                analyzeBtn.focus();
+                console.log('  ✓ Analyze button re-enabled and focused');
+            }
+
+            // Close modal if open
+            const modal = document.getElementById('analysisModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.setAttribute('aria-hidden', 'true');
+                console.log('  ✓ Modal closed');
+            }
+
+            console.log('✅ Emergency cleanup complete!');
+            console.log('Note: This is a temporary fix. The modal may need to be recreated on next use.');
+
+            return {
+                backdropsRemoved: backdrops.length,
+                analyzeButtonFixed: !!analyzeBtn,
+                modalClosed: !!modal
+            };
+        };
+
         // Initialize Office.js
         Office.onReady(() => {
             console.log('🚀 Ilana loaded');
+            console.log('💡 Debug help: Run window.debugFixBackdrop() if Analyze button is unresponsive');
             updateStatus('Ready to analyze pharmaceutical protocols', 'complete');
             setupKeyboardHandlers();
         });
