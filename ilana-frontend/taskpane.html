@@ -1098,112 +1098,137 @@
             }
         }
 
-        // Show analysis modal
-        function showAnalysisModal() {
+        /* --- Modal helpers & option handlers --- */
+
+        // Utility: show/hide modal and manage aria/focus
+        function openAnalysisModal() {
             const modal = document.getElementById('analysisModal');
+            if (!modal) return;
             modal.classList.remove('hidden');
-            
-            // Focus trap: focus first option
-            const firstOption = modal.querySelector('.modal-option');
-            if (firstOption) {
-                firstOption.focus();
-            }
+            modal.setAttribute('aria-hidden', 'false');
+            // focus first actionable element
+            const firstBtn = modal.querySelector('.modal-option[tabindex="0"]');
+            if (firstBtn) firstBtn.focus();
+            document.body.classList.add('modal-open'); // optional body lock
         }
 
-        // Close analysis modal
         function closeAnalysisModal() {
             const modal = document.getElementById('analysisModal');
+            if (!modal) return;
             modal.classList.add('hidden');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('modal-open');
+            // restore focus to analyze button
+            const analyzeBtn = document.getElementById('analyzeButton');
+            if (analyzeBtn) analyzeBtn.focus();
         }
 
-        // Modal option handlers
+        // Backward compatibility
+        function showAnalysisModal() {
+            openAnalysisModal();
+        }
+
+        // Small UI helpers
+        function setAnalyzeButtonBusy(isBusy) {
+            const btn = document.getElementById('analyzeButton');
+            if (!btn) return;
+            btn.disabled = isBusy;
+            btn.setAttribute('aria-busy', String(isBusy));
+            // show/hide a spinner if you have one
+            const spinner = document.getElementById('analyzeSpinner');
+            if (spinner) spinner.style.display = isBusy ? 'inline-block' : 'none';
+        }
+
+        /* --- Option handlers --- */
+
+        // 1) User wants to select text first (close modal and focus the doc)
         function selectTextOption() {
+            // simply close modal and give user instruction
             closeAnalysisModal();
-            updateStatus('Please select text in your document, then click Analyze again', 'ready');
+            // Optionally show a short toast
+            showToast("Select text in the document, then click Analyze for fast results.");
+            // If you want to automatically focus the document selection UI, try:
+            try { Office.context.document.getSelectedDataAsync("text", () => {}); } catch(e) {}
         }
 
+        // 2) Truncated sync analysis (fast)
         async function analyzeTruncatedDocument() {
             closeAnalysisModal();
+            setAnalyzeButtonBusy(true);
             try {
-                const documentText = await getFullDocumentText();
-                await performAnalysis(documentText, 'document_truncated');
-            } catch (error) {
-                showError(`Failed to get document text: ${error.message}`);
+                // Extract document text via Office.js (safest pattern)
+                await Word.run(async (context) => {
+                    const body = context.document.body;
+                    body.load("text");
+                    await context.sync();
+                    let fullText = body.text || "";
+                    const truncated = fullText.slice(0, 20000); // first 20k chars
+                    // call backend
+                    const url = (window.__ILANA_API_BASE__ || API_BASE_URL) + "/api/analyze";
+                    const payload = { text: truncated, mode: "document_truncated", ta: window.IlanaState?.currentTA || null };
+                    const resp = await fetchWithTimeout(url, {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify(payload)
+                    }, 25000);
+                    if (!resp.ok) {
+                        const txt = await resp.text();
+                        showToast("Server error: " + resp.status + " " + txt);
+                        setAnalyzeButtonBusy(false);
+                        return;
+                    }
+                    const json = await resp.json();
+                    handleAnalyzeResult(json);
+                });
+            } catch (err) {
+                if (err.name === 'AbortError') showToast("Request timed out. Try 'Queue Deep Analysis' instead.");
+                else showToast("Error during analysis: " + (err.message || err));
+                console.error(err);
+            } finally {
+                setAnalyzeButtonBusy(false);
             }
         }
 
+        // 3) Queue background deep analysis (async job)
         async function queueDeepAnalysis() {
             closeAnalysisModal();
-            const startTime = Date.now();
-            const requestId = `deep_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-            
+            setAnalyzeButtonBusy(true);
             try {
-                const documentText = await getFullDocumentText();
-                
-                showSpinner('analyze');
-                
-                // Log queue start
-                logTelemetry({
-                    event: 'deep_analysis_start',
-                    request_id: requestId,
-                    text_length: documentText.length,
-                    ta: window.IlanaState.currentTA || 'general_medicine',
-                    timestamp: new Date().toISOString()
+                // Get whole document text (or an ID) and send to async enqueue endpoint
+                await Word.run(async (context) => {
+                    const body = context.document.body;
+                    body.load("text");
+                    await context.sync();
+                    const fullText = body.text || "";
+                    const url = (window.__ILANA_API_BASE__ || API_BASE_URL) + "/api/optimize-document-async";
+                    const payload = { text: fullText, ta: window.IlanaState?.currentTA || null, user_id_hash: window.IlanaState?.userHash || null };
+                    const resp = await fetchWithTimeout(url, {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify(payload)
+                    }, 20000);
+                    if (!resp.ok) {
+                        const txt = await resp.text();
+                        showToast("Queue failed: " + resp.status + " " + txt);
+                        setAnalyzeButtonBusy(false);
+                        return;
+                    }
+                    const json = await resp.json();
+                    // Expect { request_id, status: "queued", job_id }
+                    if (json?.result?.status === "queued" || json?.status === "queued") {
+                        const jobId = json.result?.job_id || json.job_id || json?.jobId;
+                        showToast("Deep analysis queued. Job ID: " + jobId);
+                        // Optionally open job progress panel
+                        openJobProgressPanel(jobId);
+                    } else {
+                        handleAnalyzeResult(json);
+                    }
                 });
-                
-                const fetchResult = await fetchWithTimeout(`${API_BASE_URL}/api/optimize-document-async`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        text: documentText,
-                        ta: window.IlanaState.currentTA || 'general_medicine',
-                        request_id: requestId,
-                        options: {
-                            analysis_depth: "detailed",
-                            provide_examples: true,
-                            include_recommendations: true
-                        }
-                    })
-                }, 30000); // Longer timeout for queue requests
-
-                if (!fetchResult.ok) {
-                    logTelemetry({
-                        event: 'deep_analysis_queue_failed',
-                        request_id: requestId,
-                        latency_ms: Date.now() - startTime,
-                        error_reason: fetchResult.reason,
-                        error_message: fetchResult.message,
-                        timestamp: new Date().toISOString()
-                    });
-                    throw new Error(fetchResult.message);
-                }
-
-                const result = await fetchResult.json();
-                
-                logTelemetry({
-                    event: 'deep_analysis_queued',
-                    request_id: result.request_id || requestId,
-                    job_id: result.job_id,
-                    latency_ms: Date.now() - startTime,
-                    timestamp: new Date().toISOString()
-                });
-                
-                showJobQueuedMessage(result.job_id, result.request_id || requestId);
-                
-            } catch (error) {
-                showError(`Failed to queue deep analysis: ${error.message}`);
-                logTelemetry({
-                    event: 'deep_analysis_error',
-                    request_id: requestId,
-                    latency_ms: Date.now() - startTime,
-                    error_message: error.message,
-                    timestamp: new Date().toISOString()
-                });
+            } catch (err) {
+                console.error(err);
+                showToast("Failed to queue deep analysis: " + (err.message || err));
             } finally {
-                hideSpinner('analyze');
+                setAnalyzeButtonBusy(false);
             }
         }
 
@@ -1931,6 +1956,48 @@
                 ta_enhanced: rawIssue.ta_enhanced || false,
                 position: rawIssue.position || rawIssue.range || { start: 0, end: 0 }
             };
+        }
+
+        /* --- Result handler & UI helpers --- */
+
+        function handleAnalyzeResult(wrapper) {
+            // normalize wrapper: { request_id, model_path, result }
+            const result = wrapper?.result || wrapper;
+            if (!result) {
+                showToast("No result returned from server.");
+                return;
+            }
+            if (result.status === "queued") {
+                showToast("Analysis queued (job id: " + (result.job_id || result.jobId) + ")");
+                return;
+            }
+            const suggestions = result.suggestions || result;
+            renderSuggestionCards(suggestions, wrapper.request_id || result.request_id);
+        }
+
+        function showToast(message, ms = 5000) {
+            // Implement simple toast if you have one, or alert as fallback
+            const t = document.getElementById('ilanaToast');
+            if (t) {
+                t.innerText = message;
+                t.style.display = 'block';
+                setTimeout(() => t.style.display = 'none', ms);
+            } else {
+                console.log("TOAST:", message);
+                // Fallback to status update for now
+                updateStatus(message, 'ready');
+            }
+        }
+
+        function openJobProgressPanel(jobId) {
+            // Implement showing a side panel or progress modal and call connectToJobStream(jobId)
+            console.log("Opening job progress panel for job:", jobId);
+            showJobQueuedMessage(jobId, 'job_' + Date.now());
+        }
+
+        function renderSuggestionCards(suggestions, requestId) {
+            // Use existing displayAnalysisResults function for backward compatibility
+            displayAnalysisResults(suggestions, { request_id: requestId });
         }
     </script>
 </body>
