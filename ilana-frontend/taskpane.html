@@ -390,6 +390,11 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Modal body scroll lock */
+        body.modal-open {
+            overflow: hidden;
+        }
+
         /* Analysis Modal Styles */
         .analysis-modal {
             position: fixed;
@@ -680,7 +685,7 @@
     <!-- Analysis Options Modal -->
     <div id="analysisModal" class="analysis-modal hidden" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
         <div class="modal-backdrop" onclick="closeAnalysisModal()"></div>
-        <div class="modal-container">
+        <div class="modal-container" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle" style="display:none;">
             <div class="modal-header">
                 <h2 id="modalTitle">Analysis Options</h2>
                 <button class="modal-close" onclick="closeAnalysisModal()" aria-label="Close modal">&times;</button>
@@ -1103,9 +1108,14 @@
         // Utility: show/hide modal and manage aria/focus
         function openAnalysisModal() {
             const modal = document.getElementById('analysisModal');
-            if (!modal) return;
+            const container = modal?.querySelector('.modal-container');
+            if (!modal || !container) return;
+            
             modal.classList.remove('hidden');
             modal.setAttribute('aria-hidden', 'false');
+            container.setAttribute('aria-hidden', 'false');
+            container.style.display = 'block';
+            
             // focus first actionable element
             const firstBtn = modal.querySelector('.modal-option[tabindex="0"]');
             if (firstBtn) firstBtn.focus();
@@ -1114,10 +1124,15 @@
 
         function closeAnalysisModal() {
             const modal = document.getElementById('analysisModal');
-            if (!modal) return;
+            const container = modal?.querySelector('.modal-container');
+            if (!modal || !container) return;
+            
             modal.classList.add('hidden');
             modal.setAttribute('aria-hidden', 'true');
+            container.setAttribute('aria-hidden', 'true');
+            container.style.display = 'none';
             document.body.classList.remove('modal-open');
+            
             // restore focus to analyze button
             const analyzeBtn = document.getElementById('analyzeButton');
             if (analyzeBtn) analyzeBtn.focus();
