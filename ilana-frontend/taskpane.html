@@ -702,43 +702,41 @@
     </div>
 
     <!-- Analysis Options Modal -->
-    <div id="analysisModal" class="analysis-modal hidden" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
-        <div class="modal-backdrop" onclick="closeAnalysisModal()"></div>
-        <div class="modal-container" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle" style="display:none;">
-            <div class="modal-header">
-                <h2 id="modalTitle">Analysis Options</h2>
-                <button class="modal-close" onclick="closeAnalysisModal()" aria-label="Close modal">&times;</button>
+    <!-- Note: .modal-backdrop is created dynamically by ensureBackdrop() -->
+    <div class="modal-container" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle" style="display:none;">
+        <div class="modal-header">
+            <h2 id="modalTitle">Analysis Options</h2>
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p class="modal-description">
+                No text selection detected. How would you like to analyze your document?
+            </p>
+            <div class="modal-options">
+                <button class="modal-option select-text" tabindex="0">
+                    <div class="option-icon">📝</div>
+                    <div class="option-content">
+                        <h3>Select Text First</h3>
+                        <p>Select specific text to get targeted suggestions (recommended for quick analysis)</p>
+                    </div>
+                </button>
+                <button class="modal-option truncated" tabindex="0">
+                    <div class="option-icon">⚡</div>
+                    <div class="option-content">
+                        <h3>Analyze Document (Truncated)</h3>
+                        <p>Fast analysis of first 20,000 characters. Results in 10-30 seconds.</p>
+                    </div>
+                </button>
+                <button class="modal-option queue" tabindex="0">
+                    <div class="option-icon">🔍</div>
+                    <div class="option-content">
+                        <h3>Queue Deep Analysis</h3>
+                        <p>Comprehensive analysis of entire document. Runs in background, check back in 2-5 minutes.</p>
+                    </div>
+                </button>
             </div>
-            <div class="modal-body">
-                <p class="modal-description">
-                    No text selection detected. How would you like to analyze your document?
-                </p>
-                <div class="modal-options">
-                    <button class="modal-option" onclick="selectTextOption()" tabindex="0">
-                        <div class="option-icon">📝</div>
-                        <div class="option-content">
-                            <h3>Select Text First</h3>
-                            <p>Select specific text to get targeted suggestions (recommended for quick analysis)</p>
-                        </div>
-                    </button>
-                    <button class="modal-option" onclick="analyzeTruncatedDocument()" tabindex="0">
-                        <div class="option-icon">⚡</div>
-                        <div class="option-content">
-                            <h3>Analyze Document (Truncated)</h3>
-                            <p>Fast analysis of first 20,000 characters. Results in 10-30 seconds.</p>
-                        </div>
-                    </button>
-                    <button class="modal-option" onclick="queueDeepAnalysis()" tabindex="0">
-                        <div class="option-icon">🔍</div>
-                        <div class="option-content">
-                            <h3>Queue Deep Analysis</h3>
-                            <p>Comprehensive analysis of entire document. Runs in background, check back in 2-5 minutes.</p>
-                        </div>
-                    </button>
-                </div>
-                <div class="modal-warning">
-                    <strong>Performance Note:</strong> Large document analysis may take longer. Select text for fastest results.
-                </div>
+            <div class="modal-warning">
+                <strong>Performance Note:</strong> Large document analysis may take longer. Select text for fastest results.
             </div>
         </div>
     </div>
@@ -904,6 +902,12 @@
         Office.onReady(() => {
             console.log('🚀 Ilana loaded');
             console.log('💡 Debug help: Run window.debugFixBackdrop() if Analyze button is unresponsive');
+
+            // Initialize modal system
+            console.log('📋 Initializing modal system...');
+            ensureBackdrop();
+            wireModalOptionHandlers();
+
             updateStatus('Ready to analyze pharmaceutical protocols', 'complete');
             setupKeyboardHandlers();
         });
@@ -1174,55 +1178,134 @@
 
         /* --- Modal helpers & option handlers --- */
 
-        // Utility: show/hide modal and manage aria/focus
-        function openAnalysisModal() {
-            const modal = document.getElementById('analysisModal');
-            const container = modal?.querySelector('.modal-container');
-            const backdrop = modal?.querySelector('.modal-backdrop');
-            if (!modal || !container) return;
-
-            modal.classList.remove('hidden');
-            modal.setAttribute('aria-hidden', 'false');
-            container.setAttribute('aria-hidden', 'false');
-            container.style.display = 'block';
-
-            // Explicitly open backdrop with state class
-            if (backdrop) {
-                backdrop.classList.add('open');
+        // Ensure only one backdrop exists and that open/close logic is idempotent
+        function ensureBackdrop() {
+            let bd = document.querySelector('.modal-backdrop');
+            if (!bd) {
+                bd = document.createElement('div');
+                bd.className = 'modal-backdrop';
+                bd.setAttribute('role', 'presentation');
+                bd.setAttribute('aria-hidden', 'true');
+                // Attach listener in same scope (no inline onclick)
+                bd.addEventListener('click', () => {
+                    closeAnalysisModal();
+                });
+                document.body.appendChild(bd);
+                console.log('✨ Created modal backdrop');
             }
-
-            // focus first actionable element
-            const firstBtn = modal.querySelector('.modal-option[tabindex="0"]');
-            if (firstBtn) firstBtn.focus();
-            document.body.classList.add('modal-open'); // optional body lock
+            return bd;
         }
 
+        // Open modal with proper accessibility and focus management
+        function openAnalysisModal() {
+            const container = document.querySelector('.modal-container');
+            if (!container) return;
+
+            const bd = ensureBackdrop();
+
+            // Show backdrop + modal
+            bd.classList.add('open');
+            bd.setAttribute('aria-hidden', 'false');
+            container.style.display = 'block';
+            container.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('modal-open');
+
+            // Prevent background elements from being focused
+            document.querySelectorAll('button, a, input, textarea, [tabindex]').forEach(el => {
+                if (!container.contains(el)) {
+                    el.dataset._ilanaTabIndex = el.getAttribute('tabindex') || '';
+                    el.setAttribute('tabindex', '-1');
+                }
+            });
+
+            // Focus first actionable element in modal
+            const firstBtn = container.querySelector('.modal-option[tabindex="0"]');
+            if (firstBtn) {
+                firstBtn.focus();
+            } else {
+                // Fallback to close button
+                const closeBtn = container.querySelector('.modal-close');
+                if (closeBtn) closeBtn.focus();
+            }
+
+            console.log('✅ Modal opened');
+        }
+
+        // Close modal and restore previous state
         function closeAnalysisModal() {
-            const modal = document.getElementById('analysisModal');
-            const container = modal?.querySelector('.modal-container');
-            const backdrop = modal?.querySelector('.modal-backdrop');
-            if (!modal || !container) return;
+            const container = document.querySelector('.modal-container');
 
-            modal.classList.add('hidden');
-            modal.setAttribute('aria-hidden', 'true');
-            container.setAttribute('aria-hidden', 'true');
-            container.style.display = 'none';
+            // Hide modal
+            if (container) {
+                container.style.display = 'none';
+                container.setAttribute('aria-hidden', 'true');
+            }
 
-            // Explicitly close backdrop by removing state class
-            if (backdrop) {
-                backdrop.classList.remove('open');
+            // Hide backdrop (but keep in DOM to avoid re-creation thrash)
+            const bd = document.querySelector('.modal-backdrop');
+            if (bd) {
+                bd.classList.remove('open');
+                bd.setAttribute('aria-hidden', 'true');
+                bd.style.display = 'none'; // Ensure hidden
             }
 
             document.body.classList.remove('modal-open');
 
-            // restore focus to analyze button
+            // Restore previously saved tabindex
+            document.querySelectorAll('[data-_ilana-tab-index]').forEach(el => {
+                const prev = el.dataset._ilanaTabIndex;
+                if (prev === '') {
+                    el.removeAttribute('tabindex');
+                } else {
+                    el.setAttribute('tabindex', prev);
+                }
+                delete el.dataset._ilanaTabIndex;
+            });
+
+            // Restore focus to analyze button
             const analyzeBtn = document.getElementById('analyzeButton');
-            if (analyzeBtn) analyzeBtn.focus();
+            if (analyzeBtn) {
+                analyzeBtn.disabled = false;
+                analyzeBtn.removeAttribute('aria-busy');
+                analyzeBtn.focus();
+            }
+
+            console.log('✅ Modal closed');
         }
 
         // Backward compatibility
         function showAnalysisModal() {
             openAnalysisModal();
+        }
+
+        // Wire modal option handlers (attach listeners instead of inline onclick)
+        function wireModalOptionHandlers() {
+            const selectBtn = document.querySelector('.modal-option.select-text');
+            if (selectBtn) {
+                selectBtn.addEventListener('click', selectTextOption);
+                console.log('  ✓ Wired select-text handler');
+            }
+
+            const truncatedBtn = document.querySelector('.modal-option.truncated');
+            if (truncatedBtn) {
+                truncatedBtn.addEventListener('click', analyzeTruncatedDocument);
+                console.log('  ✓ Wired truncated handler');
+            }
+
+            const queueBtn = document.querySelector('.modal-option.queue');
+            if (queueBtn) {
+                queueBtn.addEventListener('click', queueDeepAnalysis);
+                console.log('  ✓ Wired queue handler');
+            }
+
+            // Close button
+            const closeBtn = document.querySelector('.modal-close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeAnalysisModal);
+                console.log('  ✓ Wired close handler');
+            }
+
+            console.log('✅ Modal handlers wired');
         }
 
         // Small UI helpers
