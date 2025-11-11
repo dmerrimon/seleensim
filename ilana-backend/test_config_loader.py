@@ -87,12 +87,16 @@ class TestConfigLoaderTolerance:
 
     def test_default_values_used_when_no_env_file_or_vars(self):
         """Test that defaults are used when env file and vars are missing."""
-        # Clear specific vars but keep essential system vars
-        with patch.dict(os.environ, {
-            "RAG_ASYNC_MODE": "",
-            "CHUNK_MAX_CHARS": "",
-            "CHUNK_OVERLAP": ""
-        }, clear=False):
+        # Save original values
+        orig_rag = os.environ.get("RAG_ASYNC_MODE")
+        orig_chunk_max = os.environ.get("CHUNK_MAX_CHARS")
+        orig_chunk_overlap = os.environ.get("CHUNK_OVERLAP")
+
+        try:
+            # Remove vars entirely (not just set to "")
+            for var in ["RAG_ASYNC_MODE", "CHUNK_MAX_CHARS", "CHUNK_OVERLAP"]:
+                os.environ.pop(var, None)
+
             # Check default values from main.py constants
             rag_async_mode = os.getenv("RAG_ASYNC_MODE", "true").lower() == "true"
             assert rag_async_mode is True  # Default
@@ -102,6 +106,14 @@ class TestConfigLoaderTolerance:
 
             chunk_overlap = int(os.getenv("CHUNK_OVERLAP", "200"))
             assert chunk_overlap == 200  # Default
+        finally:
+            # Restore original values
+            if orig_rag is not None:
+                os.environ["RAG_ASYNC_MODE"] = orig_rag
+            if orig_chunk_max is not None:
+                os.environ["CHUNK_MAX_CHARS"] = orig_chunk_max
+            if orig_chunk_overlap is not None:
+                os.environ["CHUNK_OVERLAP"] = orig_chunk_overlap
 
     def test_no_warning_logged_for_missing_file(self, caplog):
         """Test that WARNING is not logged when env file is missing."""
