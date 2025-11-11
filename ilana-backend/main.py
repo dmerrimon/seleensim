@@ -30,6 +30,7 @@ else:
 
 # RAG Gating Configuration
 RAG_ASYNC_MODE = os.getenv("RAG_ASYNC_MODE", "true").lower() == "true"
+RAG_ASYNC_ALLOW_SYNC = os.getenv("RAG_ASYNC_ALLOW_SYNC", "false").lower() == "true"
 USE_SIMPLE_AZURE_PROMPT = os.getenv("USE_SIMPLE_AZURE_PROMPT", "true").lower() == "true"
 ENABLE_TA_ON_DEMAND = os.getenv("ENABLE_TA_ON_DEMAND", "true").lower() == "true"
 ENABLE_TA_SHADOW = os.getenv("ENABLE_TA_SHADOW", "false").lower() == "true"
@@ -107,20 +108,46 @@ class RAGAsyncModeException(Exception):
 
 def check_rag_async_mode_gate(operation_name: str = "RAG operation") -> None:
     """Check if RAG_ASYNC_MODE blocks synchronous RAG operations"""
-    if RAG_ASYNC_MODE:
+    if RAG_ASYNC_MODE and not RAG_ASYNC_ALLOW_SYNC:
         raise RAGAsyncModeException(
             f"{operation_name} blocked: RAG_ASYNC_MODE is enabled. "
-            "Use async endpoints or set RAG_ASYNC_MODE=false for enterprise pilot."
+            "Use async endpoints or set RAG_ASYNC_ALLOW_SYNC=true in config."
+        )
+    elif RAG_ASYNC_MODE and RAG_ASYNC_ALLOW_SYNC:
+        logger.warning(
+            f"⚠️ {operation_name} executing synchronously with RAG_ASYNC_ALLOW_SYNC=true. "
+            "This may cause timeouts. Not recommended in production."
         )
 
 # Log RAG configuration
 logger.info(f"🔧 RAG Configuration:")
 logger.info(f"   RAG_ASYNC_MODE: {RAG_ASYNC_MODE}")
+logger.info(f"   RAG_ASYNC_ALLOW_SYNC: {RAG_ASYNC_ALLOW_SYNC}")
 logger.info(f"   USE_SIMPLE_AZURE_PROMPT: {USE_SIMPLE_AZURE_PROMPT}")
 logger.info(f"   ENABLE_TA_ON_DEMAND: {ENABLE_TA_ON_DEMAND}")
 logger.info(f"   ENABLE_TA_SHADOW: {ENABLE_TA_SHADOW}")
 logger.info(f"   CHUNK_MAX_CHARS: {CHUNK_MAX_CHARS}")
 logger.info(f"   CHUNK_OVERLAP: {CHUNK_OVERLAP}")
+
+# Explain RAG_ASYNC_MODE behavior
+if RAG_ASYNC_MODE and not RAG_ASYNC_ALLOW_SYNC:
+    logger.info(
+        "ℹ️  RAG_ASYNC_MODE=true — Synchronous TA-heavy operations (vector DB queries, "
+        "TA-aware rewrites) will be queued and return HTTP 202. This prevents timeouts "
+        "in production. To allow synchronous operations for testing, set "
+        "RAG_ASYNC_ALLOW_SYNC=true (not recommended in production)."
+    )
+elif RAG_ASYNC_MODE and RAG_ASYNC_ALLOW_SYNC:
+    logger.warning(
+        "⚠️ RAG_ASYNC_ALLOW_SYNC=true — Synchronous RAG operations are permitted despite "
+        "RAG_ASYNC_MODE=true. This may cause request timeouts. Only use for testing or "
+        "debugging. Not recommended in production environments."
+    )
+else:
+    logger.info(
+        "ℹ️  RAG_ASYNC_MODE=false — All operations including TA-heavy vector DB queries "
+        "will execute synchronously. Suitable for development/testing with small datasets."
+    )
 
 # Global enterprise AI service
 enterprise_ai_service: Optional[OptimizedRealAIService] = None
@@ -980,6 +1007,28 @@ async def analyze_entry(request: Request):
 
     analysis_mode_logger.info("Analyze entry request_id=%s mode=%s AN_MODE=%s", req_id, payload.get("mode"), ANALYSIS_MODE)
 
+    try:
+        # Dispatch by ANALYSIS_MODE
+        return await _dispatch_analysis(payload, req_id, request_id, request)
+    except RAGAsyncModeException as e:
+        # Handle RAG gating gracefully - return standardized 202 response
+        logger.info(f"ℹ️  Analysis blocked by RAG_ASYNC_MODE (expected behavior)")
+        end_trace(request_id, None, None, {"status": "queued", "reason": "RAG_ASYNC_MODE"})
+        return JSONResponse(
+            status_code=202,
+            content={
+                "request_id": req_id,
+                "result": {"status": "queued"},
+                "message": (
+                    "RAG is in async mode — TA-heavy operations are queued to prevent timeouts. "
+                    "Use USE_SIMPLE_AZURE_PROMPT=true for immediate suggestions, "
+                    "or set RAG_ASYNC_ALLOW_SYNC=true for testing (not recommended in production)."
+                )
+            }
+        )
+
+async def _dispatch_analysis(payload: dict, req_id: str, request_id: str, request: Request):
+    """Internal helper to dispatch analysis by ANALYSIS_MODE"""
     # Dispatch by ANALYSIS_MODE
     if ANALYSIS_MODE == "simple":
         # try in-process first
@@ -1438,15 +1487,10 @@ async def fast_ta_classifier(text: str) -> Dict[str, Any]:
 
 async def query_vector_db(text: str, ta: str, phase: Optional[str] = None) -> List[Dict[str, Any]]:
     """Query vector database for exemplars (stubbed implementation)"""
-    
-    # RAG Gating Check
-    if RAG_ASYNC_MODE:
-        logger.warning("🚫 Vector DB query blocked by RAG_ASYNC_MODE")
-        raise RAGAsyncModeException(
-            "Vector DB queries blocked: RAG_ASYNC_MODE is enabled. "
-            "Use async endpoints or set RAG_ASYNC_MODE=false."
-        )
-    
+
+    # RAG Gating Check - centralized gate function
+    check_rag_async_mode_gate("Vector DB query")
+
     logger.info(f"✅ RAG_ASYNC_MODE check passed for vector DB query")
     
     # In production, this would query Pinecone/ChromaDB/etc.
@@ -1569,15 +1613,10 @@ def get_regulatory_guidelines(ta: str) -> List[str]:
 
 async def generate_ta_aware_rewrite(text: str, ta: str, phase: Optional[str], exemplars: List[Dict], guidelines: List[str]) -> Dict[str, Any]:
     """Generate TA-aware rewrite using Azure OpenAI or mock"""
-    
-    # RAG Gating Check
-    if RAG_ASYNC_MODE:
-        logger.warning("🚫 TA-aware rewrite blocked by RAG_ASYNC_MODE")
-        raise RAGAsyncModeException(
-            "TA-aware rewrite blocked: RAG_ASYNC_MODE is enabled. "
-            "Use /api/generate-rewrite-ta or set RAG_ASYNC_MODE=false."
-        )
-    
+
+    # RAG Gating Check - centralized gate function
+    check_rag_async_mode_gate("TA-aware rewrite generation")
+
     logger.info(f"✅ RAG_ASYNC_MODE check passed for TA-aware rewrite")
     
     start_time = time.time()
@@ -1852,26 +1891,19 @@ async def generate_rewrite_ta(request: GenerateRewriteTARequest, req: Request):
         
     except RAGAsyncModeException as e:
         # Handle RAG gating gracefully
-        logger.warning(f"🚫 TA-Enhanced rewrite blocked by RAG_ASYNC_MODE: {e}")
-        
-        # Return 202 with guidance when RAG is blocked
+        logger.info(f"ℹ️  TA-Enhanced rewrite blocked by RAG_ASYNC_MODE (expected behavior)")
+
+        # Return standardized 202 response
         return JSONResponse(
             status_code=202,
             content={
-                "status": "queued",
-                "message": "TA-enhanced rewrite queued for async processing",
-                "reason": str(e),
-                "suggestion_id": request.suggestion_id,
-                "alternatives": {
-                    "simple_analysis": "Use /api/analyze with USE_SIMPLE_AZURE_PROMPT=true for basic suggestions",
-                    "async_document": "Use /api/optimize-document-async for large document processing",
-                    "enterprise_pilot": "Set RAG_ASYNC_MODE=false for enterprise pilot mode"
-                },
-                "configuration_help": {
-                    "RAG_ASYNC_MODE": RAG_ASYNC_MODE,
-                    "ENABLE_TA_ON_DEMAND": ENABLE_TA_ON_DEMAND,
-                    "message": "Contact support to configure enterprise pilot mode for synchronous RAG"
-                }
+                "request_id": request.suggestion_id,
+                "result": {"status": "queued"},
+                "message": (
+                    "RAG is in async mode — TA-enhanced operations are queued to prevent timeouts. "
+                    "Use /api/analyze with USE_SIMPLE_AZURE_PROMPT=true for immediate suggestions, "
+                    "or set RAG_ASYNC_ALLOW_SYNC=true for testing (not recommended in production)."
+                )
             }
         )
     except HTTPException:
