@@ -13,12 +13,20 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # Load environment variables
-env_path = Path(__file__).parent / "config" / "environments" / "production.env"
+# Note: In managed deployments (Render, Heroku, AWS, etc.), environment variables
+# should be set via the platform dashboard, not via .env files. This loader attempts
+# to read from file but falls back gracefully to system environment variables.
+env_path = os.getenv(
+    "PRODUCTION_ENV_PATH",
+    str(Path(__file__).parent / "config" / "environments" / "production.env")
+)
+env_path = Path(env_path)
+
 if env_path.exists():
     load_dotenv(env_path)
     logging.info(f"✅ Loaded environment from {env_path}")
 else:
-    logging.warning(f"⚠️ Environment file not found at {env_path}")
+    logging.info(f"Production env file not found at {env_path}; falling back to environment variables.")
 
 # RAG Gating Configuration
 RAG_ASYNC_MODE = os.getenv("RAG_ASYNC_MODE", "true").lower() == "true"

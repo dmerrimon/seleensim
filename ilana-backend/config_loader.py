@@ -37,9 +37,20 @@ else:
     from dotenv import load_dotenv
     
     # Load environment from simple location
-    env_path = Path(__file__).parent / "config" / "environments" / "production.env"
+    # Note: In managed deployments (Render, Heroku, AWS, etc.), environment variables
+    # should be set via the platform dashboard, not via .env files.
+    env_path = os.getenv(
+        "PRODUCTION_ENV_PATH",
+        str(Path(__file__).parent / "config" / "environments" / "production.env")
+    )
+    env_path = Path(env_path)
+
     if env_path.exists():
         load_dotenv(env_path)
+        # Silent success - main.py already logs this
+    else:
+        # Silent fallback - main.py already logs this
+        pass
     
     @dataclass
     class IlanaConfig:
