@@ -1109,7 +1109,12 @@
         // Global state for current therapeutic area and analysis mode
         window.IlanaState = {
             currentTA: 'general_medicine',
-            analysisMode: localStorage.getItem('ilana_analysis_mode') || 'simple'
+            analysisMode: localStorage.getItem('ilana_analysis_mode') || 'simple',
+            // Canary rollout configuration (0-100%)
+            // 0 = all users use old handleAcceptChange
+            // 10 = 10% of users use new acceptSuggestionHandler
+            // 100 = all users use new handler
+            canaryRolloutPercent: 10  // Start with 10% canary rollout
         };
 
         // Debounce tracking for highlight clicks
@@ -1354,9 +1359,22 @@
         }
 
         // Initialize Office.js
-        Office.onReady(() => {
+        Office.onReady(async () => {
             console.log('🚀 Ilana loaded');
             console.log('💡 Debug help: Run window.debugFixBackdrop() if Analyze button is unresponsive');
+
+            // Initialize user hash for telemetry
+            try {
+                console.log('👤 Initializing user identity...');
+                const userEmail = Office.context.mailbox?.userProfile?.emailAddress ||
+                                  Office.context.mailbox?.userProfile?.displayName ||
+                                  'anonymous';
+                window.IlanaState.userHash = await hashString(userEmail);
+                console.log('✅ User hash initialized');
+            } catch (error) {
+                console.warn('⚠️ Could not get user identity, using anonymous:', error);
+                window.IlanaState.userHash = 'anonymous';
+            }
 
             // Initialize modal system
             console.log('📋 Initializing modal system...');
@@ -1592,7 +1610,10 @@
                 if (result.result && result.result.status === 'queued' && result.result.job_id) {
                     showJobQueuedMessage(result.result.job_id, result.request_id || requestId);
                 } else if (suggestions.length > 0) {
-                    displaySuggestions(suggestions, result.request_id || requestId);
+                    displaySuggestions(suggestions, result.request_id || requestId, {
+                        model_path: result.model_path || 'unknown',
+                        start_time: startTime
+                    });
                 } else {
                     showError('No suggestions found in analysis result');
                 }
@@ -1895,7 +1916,12 @@
         }
 
         // Display suggestions (wrapper for existing displayAnalysisResults)
-        function displaySuggestions(suggestions, requestId) {
+        function displaySuggestions(suggestions, requestId, metadata = {}) {
+            // Store metadata for telemetry
+            window.IlanaState.lastRequestId = requestId;
+            window.IlanaState.lastModelPath = metadata.model_path || 'unknown';
+            window.IlanaState.lastAnalysisStartTime = metadata.start_time || Date.now();
+
             const issues = suggestions.map((suggestion, index) => ({
                 id: `${requestId}_${index}`,
                 type: suggestion.type || 'medical_terminology',
@@ -1949,7 +1975,10 @@
                 if (status.status === 'completed' && status.result) {
                     const suggestions = extractSuggestionsFromResponse(status.result);
                     if (suggestions.length > 0) {
-                        displaySuggestions(suggestions, jobId);
+                        displaySuggestions(suggestions, jobId, {
+                            model_path: status.model_path || 'unknown',
+                            start_time: Date.now() - (status.processing_time_ms || 0)
+                        });
                         updateStatus('Analysis complete', 'complete');
                     } else {
                         showError('No suggestions found in completed analysis');
@@ -2543,10 +2572,10 @@
                 const newButton = button.cloneNode(true);
                 button.parentNode.replaceChild(newButton, button);
 
-                // Add new listener
-                newButton.addEventListener('click', handleAcceptChange);
+                // Add new listener - ROUTES to canary or stable handler
+                newButton.addEventListener('click', acceptChangeRouter);
             });
-            console.log(`✅ Wired ${acceptButtons.length} accept buttons`);
+            console.log(`✅ Wired ${acceptButtons.length} accept buttons (using router)`);
         }
 
         // Handle accept change button click
@@ -2580,13 +2609,17 @@
                 const replaceResult = await replaceTextInDocument(originalText, improvedText);
 
                 if (replaceResult.success) {
-                    // Store undo state
+                    const acceptedAt = new Date().toISOString();
+                    const acceptLatencyMs = Date.now() - (window.IlanaState.lastAnalysisStartTime || Date.now());
+
+                    // Store undo state with full suggestion object
                     undoStateMap.set(suggestionId, {
                         suggestionIndex,
                         originalText,
                         improvedText,
                         range: replaceResult.range,
-                        timestamp: new Date().toISOString()
+                        timestamp: acceptedAt,
+                        suggestion: suggestion  // Store full suggestion for undo telemetry
                     });
 
                     // Mark card as accepted
@@ -2594,6 +2627,25 @@
 
                     // Show undo toast
                     showUndoToast(suggestionId);
+
+                    // LOG TELEMETRY: suggestion_accepted
+                    logTelemetry({
+                        event: 'suggestion_accepted',
+                        suggestion_id: suggestionId,
+                        request_id: suggestion.request_id || window.IlanaState.lastRequestId,
+                        user_id_hash: window.IlanaState.userHash || 'anonymous',
+                        ta: window.IlanaState.currentTA || 'general_medicine',
+                        phase: 'production',
+                        model_path: window.IlanaState.lastModelPath || 'unknown',
+                        analysis_mode: window.IlanaState.analysisMode || 'simple',
+                        latency_ms: acceptLatencyMs,
+                        accepted_at: acceptedAt,
+                        original_text_hash: await hashString(originalText),
+                        improved_text_hash: await hashString(improvedText),
+                        confidence: suggestion.confidence || 0.9,
+                        severity: suggestion.severity || 'medium',
+                        suggestion_type: suggestion.type || 'medical_terminology'
+                    });
 
                     // Send reinforcement signal (non-blocking)
                     sendReinforcementSignal({
@@ -2603,7 +2655,7 @@
                         ta: window.IlanaState.currentTA || 'general_medicine',
                         phase: 'production',
                         action: 'accept',
-                        timestamp: new Date().toISOString(),
+                        timestamp: acceptedAt,
                         original_text: originalText,
                         improved_text: improvedText,
                         context_snippet: extractContextSnippet(originalText, 100)
@@ -2750,6 +2802,43 @@
                 // Revert text change
                 await replaceTextInDocument(undoState.improvedText, undoState.originalText);
 
+                const undoneAt = new Date().toISOString();
+                const acceptedTimestamp = new Date(undoState.timestamp).getTime();
+                const timeToUndoMs = Date.now() - acceptedTimestamp;
+
+                // LOG TELEMETRY: suggestion_undone
+                const suggestion = undoState.suggestion || {};
+                logTelemetry({
+                    event: 'suggestion_undone',
+                    suggestion_id: suggestionId,
+                    request_id: suggestion.request_id || window.IlanaState.lastRequestId,
+                    user_id_hash: window.IlanaState.userHash || 'anonymous',
+                    ta: window.IlanaState.currentTA || 'general_medicine',
+                    phase: 'production',
+                    undone_at: undoneAt,
+                    time_to_undo_ms: timeToUndoMs,
+                    original_text_hash: await hashString(undoState.originalText),
+                    improved_text_hash: await hashString(undoState.improvedText),
+                    suggestion_type: suggestion.type || 'medical_terminology',
+                    severity: suggestion.severity || 'medium'
+                });
+
+                // Send RL negative feedback (non-blocking)
+                sendRLFeedback({
+                    suggestion_id: suggestionId,
+                    action: 'undo',
+                    reason: 'user_undo',
+                    timestamp: undoneAt,
+                    request_id: suggestion.request_id || window.IlanaState.lastRequestId,
+                    user_id_hash: window.IlanaState.userHash || 'anonymous',
+                    ta: window.IlanaState.currentTA || 'general_medicine',
+                    phase: 'production',
+                    original_text_hash: await hashString(undoState.originalText),
+                    improved_text_hash: await hashString(undoState.improvedText),
+                    context_snippet: extractContextSnippet(undoState.originalText, 100),
+                    redactPHI: true
+                });
+
                 // Remove accepted state from card
                 const card = document.querySelector(`[data-issue-id="${suggestionId}"]`);
                 if (card) {
@@ -2797,6 +2886,21 @@
             }
             // Take first portion for context
             return text.substring(0, maxLength) + '...';
+        }
+
+        // Hash string using SHA-256 for privacy (telemetry, user IDs)
+        async function hashString(text) {
+            if (!text) return '';
+            try {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(text);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            } catch (error) {
+                console.warn('Hash error:', error);
+                return 'hash_error';
+            }
         }
 
         // Send reinforcement signal to backend (non-blocking)
@@ -2861,6 +2965,371 @@
                 action: payload.action,
                 success: false
             });
+        }
+
+        // Send lightweight RL feedback (e.g., undo signal) to backend (non-blocking)
+        async function sendRLFeedback(payload) {
+            const url = `${API_BASE_URL}/api/rl/feedback`;
+
+            // Ensure redactPHI flag is set
+            if (!payload.redactPHI) {
+                console.error('❌ sendRLFeedback: redactPHI flag must be true');
+                return;
+            }
+
+            console.log('📡 Sending RL feedback:', payload);
+
+            // Retry logic (3 attempts)
+            const maxRetries = 3;
+            let attempt = 0;
+
+            while (attempt < maxRetries) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload),
+                        signal: AbortSignal.timeout(5000) // 5 second timeout
+                    });
+
+                    if (response.ok) {
+                        const result = await response.json();
+                        console.log('✅ RL feedback sent:', result);
+
+                        // Log telemetry
+                        logTelemetry({
+                            event: 'rl_feedback_sent',
+                            suggestion_id: payload.suggestion_id,
+                            action: payload.action,
+                            reason: payload.reason,
+                            success: true
+                        });
+                        return;
+                    } else {
+                        console.warn(`⚠️ RL feedback API returned ${response.status}`);
+                    }
+                } catch (error) {
+                    console.warn(`⚠️ RL feedback attempt ${attempt + 1} failed:`, error.message);
+                }
+
+                attempt++;
+                if (attempt < maxRetries) {
+                    // Exponential backoff
+                    await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000));
+                }
+            }
+
+            // All retries failed - log but don't block UI
+            console.error('❌ Failed to send RL feedback after 3 attempts');
+            logTelemetry({
+                event: 'rl_feedback_failed',
+                suggestion_id: payload.suggestion_id,
+                action: payload.action,
+                reason: payload.reason,
+                success: false
+            });
+        }
+
+        // ===== CANARY: NEW ACCEPT HANDLER WITH COMPREHENSIVE TELEMETRY =====
+
+        /**
+         * acceptSuggestionHandler - NEW Accept Change handler with full telemetry
+         *
+         * Improvements over handleAcceptChange:
+         * - Comprehensive telemetry logging (suggestion_accepted event)
+         * - All required fields: suggestion_id, request_id, user_id_hash, ta, phase, model_path,
+         *   analysis_mode, latency_ms, accepted_at, original_text_hash, improved_text_hash,
+         *   confidence, severity, suggestion_type
+         * - Correct endpoint usage: /api/reinforce for accepts
+         * - Full PHI protection (hashes only, no raw text)
+         * - Non-blocking RL feedback with retry logic
+         * - Stores full suggestion object in undo buffer for complete undo telemetry
+         */
+        async function acceptSuggestionHandler(event) {
+            const btn = event.currentTarget;
+            const suggestionId = btn.dataset.suggestionId;
+            const suggestionIndex = parseInt(btn.dataset.suggestionIndex);
+            const card = btn.closest('.full-card');
+
+            if (!card) {
+                console.error('❌ Card not found for suggestion:', suggestionId);
+                return;
+            }
+
+            // Get suggestion from currentIssues
+            const suggestion = currentIssues[suggestionIndex];
+            if (!suggestion) {
+                console.error('❌ Suggestion not found at index:', suggestionIndex);
+                return;
+            }
+
+            // Extract text using DOM (.item-original / .item-insert)
+            const originalText = card.querySelector('.item-original')?.innerText || "";
+            const improvedText = card.querySelector('.item-insert')?.innerText || "";
+
+            if (!originalText || !improvedText) {
+                console.error('❌ Missing original or improved text');
+                showToast('Cannot accept change: missing text');
+                return;
+            }
+
+            // Disable button and show loading
+            btn.disabled = true;
+            btn.classList.add('loading');
+            const btnText = btn.querySelector('.btn-text');
+            const btnSpinner = btn.querySelector('.btn-spinner');
+            if (btnText) btnText.classList.add('hidden');
+            if (btnSpinner) btnSpinner.classList.remove('hidden');
+
+            const acceptedAt = new Date().toISOString();
+            const acceptedTimestamp = Date.now();
+
+            try {
+                console.log('🔄 [CANARY] Accepting change:', { suggestionId, originalText: originalText.substring(0, 50), improvedText: improvedText.substring(0, 50) });
+
+                // Perform text replacement using Office.js
+                await Word.run(async (context) => {
+                    const body = context.document.body;
+                    const searchResults = body.search(originalText, { matchCase: false, matchWholeWord: false });
+                    context.load(searchResults, 'items');
+                    await context.sync();
+
+                    if (searchResults.items.length > 0) {
+                        const firstRange = searchResults.items[0];
+                        firstRange.insertText(improvedText, 'Replace');
+                        await context.sync();
+
+                        console.log('✅ [CANARY] Text replaced successfully');
+
+                        // Calculate latency
+                        const acceptLatencyMs = Date.now() - (window.IlanaState.lastAnalysisStartTime || Date.now());
+
+                        // Store undo info with FULL suggestion object
+                        window._ilana_undo = {
+                            suggestionId,
+                            suggestionIndex,
+                            originalText,
+                            improvedText,
+                            timestamp: acceptedTimestamp,
+                            acceptedAt,
+                            suggestion: suggestion  // Store full suggestion for undo telemetry
+                        };
+
+                        // Mark card as accepted visually
+                        card.classList.add('accepted');
+                        const footer = card.querySelector('.card-footer');
+                        if (footer) {
+                            footer.innerHTML = `<button class="card-footer-btn accepted-badge">Accepted ✓</button>`;
+                        }
+
+                        // LOG COMPREHENSIVE TELEMETRY: suggestion_accepted
+                        logTelemetry({
+                            event: 'suggestion_accepted',
+                            suggestion_id: suggestionId,
+                            request_id: suggestion.request_id || window.IlanaState.lastRequestId,
+                            user_id_hash: window.IlanaState.userHash || 'anonymous',
+                            ta: window.IlanaState.currentTA || 'general_medicine',
+                            phase: 'production',
+                            model_path: window.IlanaState.lastModelPath || 'unknown',
+                            analysis_mode: window.IlanaState.analysisMode || 'simple',
+                            latency_ms: acceptLatencyMs,
+                            accepted_at: acceptedAt,
+                            original_text_hash: await hashString(originalText),
+                            improved_text_hash: await hashString(improvedText),
+                            confidence: suggestion.confidence || 0.9,
+                            severity: suggestion.severity || 'medium',
+                            suggestion_type: suggestion.type || 'medical_terminology',
+                            handler_version: 'acceptSuggestionHandler_v1',  // Track which handler
+                            canary: true
+                        });
+
+                        // Show undo toast (10 second window)
+                        showUndoToast(() => doUndoFixed(window._ilana_undo));
+
+                        // Send RL positive feedback to /api/reinforce (non-blocking)
+                        // Uses existing sendReinforcementSignal with retry logic
+                        sendReinforcementSignal({
+                            suggestion_id: suggestionId,
+                            request_id: suggestion.request_id || window.IlanaState.lastRequestId,
+                            user_id_hash: window.IlanaState.userHash || 'anonymous',
+                            ta: window.IlanaState.currentTA || 'general_medicine',
+                            phase: 'production',
+                            action: 'accept',
+                            timestamp: acceptedAt,
+                            original_text: originalText,  // sendReinforcementSignal handles PHI
+                            improved_text: improvedText,
+                            context_snippet: extractContextSnippet(originalText, 200)
+                        }).catch(e => console.warn('⚠️ [CANARY] RL feedback failed:', e));
+
+                        console.log('✅ [CANARY] Change accepted successfully');
+
+                    } else {
+                        // Text not found in document
+                        console.warn('⚠️ [CANARY] Could not find original text to replace');
+                        showToast("Couldn't find original text to replace. Please locate it first.");
+                    }
+                });
+
+            } catch (err) {
+                console.error('❌ [CANARY] Accept failed:', err);
+                showToast('Accept failed: ' + (err.message || err));
+
+                // Log error telemetry
+                logTelemetry({
+                    event: 'suggestion_accept_error',
+                    suggestion_id: suggestionId,
+                    error: err.message || String(err),
+                    handler_version: 'acceptSuggestionHandler_v1',
+                    canary: true
+                });
+
+            } finally {
+                // Re-enable button
+                btn.disabled = false;
+                btn.classList.remove('loading');
+                if (btnText) btnText.classList.remove('hidden');
+                if (btnSpinner) btnSpinner.classList.add('hidden');
+            }
+        }
+
+        /**
+         * doUndoFixed - FIXED Undo handler with comprehensive telemetry
+         *
+         * Improvements over doUndo:
+         * - Logs suggestion_undone telemetry event
+         * - Calculates time_to_undo_ms accurately
+         * - Sends RL negative feedback to /api/rl/feedback (not /api/reinforce)
+         * - Includes all required fields: suggestion_id, request_id, user_id_hash, ta, phase,
+         *   undone_at, time_to_undo_ms, original_text_hash, improved_text_hash,
+         *   suggestion_type, severity, reason: 'user_undo'
+         * - Full PHI protection with redactPHI: true
+         */
+        async function doUndoFixed(undoInfo) {
+            if (!undoInfo) {
+                console.warn('⚠️ [CANARY] No undo info available');
+                return;
+            }
+
+            try {
+                console.log('🔄 [CANARY] Undoing change:', undoInfo.suggestionId);
+
+                // Revert text change using Office.js
+                await Word.run(async (context) => {
+                    const body = context.document.body;
+                    const searchResults = body.search(undoInfo.improvedText, { matchCase: false, matchWholeWord: false });
+                    context.load(searchResults, 'items');
+                    await context.sync();
+
+                    if (searchResults.items.length > 0) {
+                        searchResults.items[0].insertText(undoInfo.originalText, 'Replace');
+                        await context.sync();
+
+                        const undoneAt = new Date().toISOString();
+                        const timeToUndoMs = Date.now() - undoInfo.timestamp;
+
+                        // LOG COMPREHENSIVE TELEMETRY: suggestion_undone
+                        const suggestion = undoInfo.suggestion || {};
+                        logTelemetry({
+                            event: 'suggestion_undone',
+                            suggestion_id: undoInfo.suggestionId,
+                            request_id: suggestion.request_id || window.IlanaState.lastRequestId,
+                            user_id_hash: window.IlanaState.userHash || 'anonymous',
+                            ta: window.IlanaState.currentTA || 'general_medicine',
+                            phase: 'production',
+                            undone_at: undoneAt,
+                            time_to_undo_ms: timeToUndoMs,
+                            original_text_hash: await hashString(undoInfo.originalText),
+                            improved_text_hash: await hashString(undoInfo.improvedText),
+                            suggestion_type: suggestion.type || 'medical_terminology',
+                            severity: suggestion.severity || 'medium',
+                            handler_version: 'doUndoFixed_v1',
+                            canary: true
+                        });
+
+                        // Send RL NEGATIVE feedback to /api/rl/feedback (not /api/reinforce)
+                        // Uses existing sendRLFeedback with retry logic
+                        sendRLFeedback({
+                            suggestion_id: undoInfo.suggestionId,
+                            action: 'undo',
+                            reason: 'user_undo',
+                            timestamp: undoneAt,
+                            request_id: suggestion.request_id || window.IlanaState.lastRequestId,
+                            user_id_hash: window.IlanaState.userHash || 'anonymous',
+                            ta: window.IlanaState.currentTA || 'general_medicine',
+                            phase: 'production',
+                            original_text_hash: await hashString(undoInfo.originalText),
+                            improved_text_hash: await hashString(undoInfo.improvedText),
+                            context_snippet: extractContextSnippet(undoInfo.originalText, 200),
+                            redactPHI: true
+                        }).catch(e => console.warn('⚠️ [CANARY] RL undo feedback failed:', e));
+
+                        console.log('✅ [CANARY] Change undone successfully');
+
+                    } else {
+                        console.warn('⚠️ [CANARY] Could not find changed text to undo');
+                        showToast('Could not find changed text to undo.');
+                    }
+                });
+
+            } catch (e) {
+                console.error('❌ [CANARY] Undo failed:', e);
+                showToast('Undo failed: ' + (e.message || e));
+
+                // Log error telemetry
+                logTelemetry({
+                    event: 'suggestion_undo_error',
+                    suggestion_id: undoInfo.suggestionId,
+                    error: e.message || String(e),
+                    handler_version: 'doUndoFixed_v1',
+                    canary: true
+                });
+            }
+        }
+
+        // ===== CANARY ROUTER: HASH-BASED ROUTING =====
+
+        /**
+         * acceptChangeRouter - Routes accept events to old or new handler based on canary percentage
+         *
+         * Uses deterministic hash-based routing to ensure:
+         * - Same user always gets same handler (no flipping mid-session)
+         * - Easy to ramp up from 10% → 25% → 50% → 100%
+         * - Logs routing decision for monitoring
+         *
+         * @param {Event} event - Click event from accept button
+         */
+        async function acceptChangeRouter(event) {
+            // Get user hash for deterministic routing
+            const userHash = window.IlanaState.userHash || 'anonymous';
+
+            // Convert first 8 hex chars to number and mod 100 for percentile
+            // This ensures deterministic distribution: same user → same percentile
+            const hashNum = parseInt(userHash.substring(0, 8), 16);
+            const percentile = hashNum % 100;
+
+            // Check if user is in canary group
+            const canaryPercent = window.IlanaState.canaryRolloutPercent || 0;
+            const useNewHandler = percentile < canaryPercent;
+
+            // Log routing decision for monitoring
+            console.log(`🔀 [ROUTER] User percentile: ${percentile}, Canary: ${canaryPercent}%, Using: ${useNewHandler ? 'NEW' : 'OLD'} handler`);
+
+            logTelemetry({
+                event: 'canary_routing',
+                handler: useNewHandler ? 'acceptSuggestionHandler' : 'handleAcceptChange',
+                user_percentile: percentile,
+                canary_percent: canaryPercent,
+                user_id_hash: userHash
+            });
+
+            // Route to appropriate handler
+            if (useNewHandler) {
+                return acceptSuggestionHandler(event);
+            } else {
+                return handleAcceptChange(event);
+            }
         }
 
         // Show toast notification

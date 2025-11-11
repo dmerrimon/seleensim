@@ -70,8 +70,85 @@
     },
     "event_type": {
       "type": "string",
-      "enum": ["start", "success", "error"],
+      "enum": [
+        "start",
+        "success",
+        "error",
+        "suggestion_accepted",
+        "suggestion_undone",
+        "rl_feedback_sent",
+        "rl_feedback_failed",
+        "reinforcement_sent",
+        "reinforcement_failed"
+      ],
       "description": "Type of telemetry event"
+    },
+    "suggestion_id": {
+      "type": "string",
+      "description": "Unique identifier for a suggestion (used in accept/undo events)"
+    },
+    "accepted_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when suggestion was accepted"
+    },
+    "undone_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when suggestion was undone"
+    },
+    "time_to_undo_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Time elapsed between accept and undo in milliseconds"
+    },
+    "original_text_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256 hash of original text (PHI-protected)"
+    },
+    "improved_text_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256 hash of improved text (PHI-protected)"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Confidence score of the suggestion"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"],
+      "description": "Severity level of the suggestion"
+    },
+    "suggestion_type": {
+      "type": "string",
+      "description": "Type of suggestion (e.g., medical_terminology, compliance, clarity)"
+    },
+    "ta": {
+      "type": "string",
+      "description": "Therapeutic area (e.g., general_medicine, oncology, cardiology)"
+    },
+    "phase": {
+      "type": "string",
+      "enum": ["development", "staging", "production"],
+      "description": "Deployment phase"
+    },
+    "analysis_mode": {
+      "type": "string",
+      "enum": ["simple", "comprehensive", "optimize_selection"],
+      "description": "Analysis mode used for the suggestion"
+    },
+    "action": {
+      "type": "string",
+      "enum": ["accept", "undo"],
+      "description": "Action taken by user (for RL feedback events)"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Reason for action (e.g., user_undo)"
     },
     "metadata": {
       "type": ["object", "null"],
@@ -99,15 +176,59 @@
     }
   },
   "required": [
-    "request_id",
-    "user_id_hash", 
-    "analyze_mode",
-    "model_path",
-    "latency_ms",
-    "parse_success",
-    "suggestion_count",
     "timestamp",
     "event_type"
   ],
-  "additionalProperties": false
+  "additionalProperties": true,
+  "oneOf": [
+    {
+      "description": "Analysis events (start/success/error)",
+      "properties": {
+        "event_type": {"enum": ["start", "success", "error"]}
+      },
+      "required": ["request_id", "user_id_hash", "analyze_mode", "model_path", "latency_ms", "parse_success", "suggestion_count"]
+    },
+    {
+      "description": "Suggestion accepted event",
+      "properties": {
+        "event_type": {"const": "suggestion_accepted"}
+      },
+      "required": ["suggestion_id", "request_id", "user_id_hash", "ta", "phase", "model_path", "latency_ms", "accepted_at", "original_text_hash", "improved_text_hash"]
+    },
+    {
+      "description": "Suggestion undone event",
+      "properties": {
+        "event_type": {"const": "suggestion_undone"}
+      },
+      "required": ["suggestion_id", "request_id", "user_id_hash", "ta", "phase", "undone_at", "time_to_undo_ms", "original_text_hash", "improved_text_hash"]
+    },
+    {
+      "description": "RL feedback sent event",
+      "properties": {
+        "event_type": {"const": "rl_feedback_sent"}
+      },
+      "required": ["suggestion_id", "action"]
+    },
+    {
+      "description": "RL feedback failed event",
+      "properties": {
+        "event_type": {"const": "rl_feedback_failed"}
+      },
+      "required": ["suggestion_id", "action"]
+    },
+    {
+      "description": "Reinforcement sent event",
+      "properties": {
+        "event_type": {"const": "reinforcement_sent"}
+      },
+      "required": ["suggestion_id", "action"]
+    },
+    {
+      "description": "Reinforcement failed event",
+      "properties": {
+        "event_type": {"const": "reinforcement_failed"}
+      },
+      "required": ["suggestion_id", "action"]
+    }
+  ]
 }

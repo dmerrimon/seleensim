@@ -56,6 +56,15 @@ except ImportError as e:
     logger = logging.getLogger(__name__)
     logger.warning(f"⚠️ Enterprise AI components not available: {e}")
 
+# Import RL feedback module
+from rl_feedback import (
+    RLFeedbackEvent,
+    ReinforcementEvent,
+    validate_phi_redacted,
+    store_feedback_event,
+    store_reinforcement_event
+)
+
 # Fallback InlineSuggestion
 from dataclasses import dataclass
 @dataclass
@@ -553,10 +562,125 @@ async def log_telemetry(request: Request, telemetry_data: dict):
     except Exception as e:
         logger.error(f"Telemetry logging failed: {e}")
         return {
-            "status": "error", 
+            "status": "error",
             "message": "Failed to log telemetry",
             "request_id": getattr(request.state, 'request_id', 'unknown')
         }
+
+@app.post("/api/rl/feedback")
+async def rl_feedback(request: Request, feedback_data: dict):
+    """
+    Accept RL feedback events (e.g., undo signals) with strict PHI protection.
+
+    This endpoint enforces:
+    - redactPHI flag must be true
+    - No raw text fields allowed (use hashes)
+    - Stores events to shadow/feedback/ for replay
+    """
+    try:
+        request_id = getattr(request.state, 'request_id', str(uuid.uuid4()))
+
+        # Validate PHI redaction
+        is_valid, error_msg = validate_phi_redacted(feedback_data)
+        if not is_valid:
+            logger.warning(f"❌ RL feedback rejected: {error_msg}")
+            raise HTTPException(
+                status_code=400,
+                detail=f"PHI validation failed: {error_msg}"
+            )
+
+        # Validate and parse event using Pydantic
+        try:
+            event = RLFeedbackEvent(**feedback_data)
+        except Exception as e:
+            logger.warning(f"❌ RL feedback validation failed: {e}")
+            raise HTTPException(
+                status_code=422,
+                detail=f"Validation error: {str(e)}"
+            )
+
+        # Store event to shadow/feedback/
+        result = store_feedback_event(event, event_type="rl_feedback")
+
+        if result["success"]:
+            logger.info(f"✅ RL feedback stored: {event.suggestion_id} (action: {event.action})")
+            return {
+                "status": "success",
+                "message": "RL feedback received",
+                "suggestion_id": event.suggestion_id,
+                "action": event.action,
+                "request_id": request_id,
+                "timestamp": datetime.utcnow().isoformat()
+            }
+        else:
+            logger.error(f"❌ Failed to store RL feedback: {result.get('error')}")
+            raise HTTPException(
+                status_code=500,
+                detail="Failed to store RL feedback"
+            )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"❌ RL feedback endpoint error: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Internal server error: {str(e)}"
+        )
+
+@app.post("/api/reinforce")
+async def reinforce(request: Request, feedback_data: dict):
+    """
+    Legacy reinforcement endpoint for backward compatibility.
+
+    Accepts reinforcement signals (accept/undo) with optional PHI protection.
+    Stores events to shadow/feedback/ for replay.
+    """
+    try:
+        request_id = getattr(request.state, 'request_id', str(uuid.uuid4()))
+
+        # Validate and parse event using Pydantic
+        try:
+            event = ReinforcementEvent(**feedback_data)
+        except Exception as e:
+            logger.warning(f"❌ Reinforcement validation failed: {e}")
+            raise HTTPException(
+                status_code=422,
+                detail=f"Validation error: {str(e)}"
+            )
+
+        # Log warning if PHI protection is not enabled
+        if not event.redactPHI:
+            logger.warning(f"⚠️ Reinforcement signal without PHI protection: {event.suggestion_id}")
+
+        # Store event to shadow/feedback/
+        result = store_reinforcement_event(event)
+
+        if result["success"]:
+            logger.info(f"✅ Reinforcement signal stored: {event.suggestion_id} (action: {event.action})")
+            return {
+                "status": "success",
+                "message": "Reinforcement signal received",
+                "suggestion_id": event.suggestion_id,
+                "action": event.action,
+                "request_id": request_id,
+                "timestamp": datetime.utcnow().isoformat()
+            }
+        else:
+            logger.error(f"❌ Failed to store reinforcement signal: {result.get('error')}")
+            raise HTTPException(
+                status_code=500,
+                detail="Failed to store reinforcement signal"
+            )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"❌ Reinforcement endpoint error: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Internal server error: {str(e)}"
+        )
 
 @app.post("/api/diagnose-highlight")
 async def diagnose_highlight(request: Request, highlight_data: dict):
