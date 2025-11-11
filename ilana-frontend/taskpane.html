@@ -1359,22 +1359,24 @@
         }
 
         // Initialize Office.js
-        Office.onReady(async () => {
+        Office.onReady(() => {
             console.log('🚀 Ilana loaded');
             console.log('💡 Debug help: Run window.debugFixBackdrop() if Analyze button is unresponsive');
 
-            // Initialize user hash for telemetry
-            try {
-                console.log('👤 Initializing user identity...');
-                const userEmail = Office.context.mailbox?.userProfile?.emailAddress ||
-                                  Office.context.mailbox?.userProfile?.displayName ||
-                                  'anonymous';
-                window.IlanaState.userHash = await hashString(userEmail);
-                console.log('✅ User hash initialized');
-            } catch (error) {
-                console.warn('⚠️ Could not get user identity, using anonymous:', error);
-                window.IlanaState.userHash = 'anonymous';
-            }
+            // Initialize user hash for telemetry (async, non-blocking)
+            (async () => {
+                try {
+                    console.log('👤 Initializing user identity...');
+                    const userEmail = Office.context.mailbox?.userProfile?.emailAddress ||
+                                      Office.context.mailbox?.userProfile?.displayName ||
+                                      'anonymous';
+                    window.IlanaState.userHash = await hashString(userEmail);
+                    console.log('✅ User hash initialized');
+                } catch (error) {
+                    console.warn('⚠️ Could not get user identity, using anonymous:', error);
+                    window.IlanaState.userHash = 'anonymous';
+                }
+            })();
 
             // Initialize modal system
             console.log('📋 Initializing modal system...');
