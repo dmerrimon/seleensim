@@ -103,6 +103,76 @@
             cursor: not-allowed;
         }
 
+        /* Mode pill selector */
+        .mode-pill-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .mode-pill {
+            background: var(--surface-gray);
+            color: var(--text-dark);
+            border: 1px solid #ddd;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .mode-pill:hover {
+            background: #e8e8e8;
+            border-color: #ccc;
+        }
+
+        .mode-pill-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 4px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            min-width: 140px;
+            display: none;
+        }
+
+        .mode-pill-dropdown.open {
+            display: block;
+        }
+
+        .mode-option {
+            padding: 10px 16px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mode-option:last-child {
+            border-bottom: none;
+        }
+
+        .mode-option:hover {
+            background: var(--surface-gray);
+        }
+
+        .mode-option.active {
+            background: var(--primary-green);
+            color: white;
+            font-weight: 600;
+        }
+
+        .mode-option.active:hover {
+            background: var(--primary-green-hover);
+        }
+
         /* Navigation container */
         .navigation-container {
             padding: 12px 20px;
@@ -172,9 +242,16 @@
         /* Full card structure */
         .full-card {
             padding: 20px;
-            background: var(--surface-white);
+            background: #fff;
             cursor: pointer;
-            transition: background 0.2s ease;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(10, 20, 40, 0.08);
+            transition: box-shadow 0.18s ease, transform 0.08s ease, background 0.2s ease;
+        }
+
+        .full-card.minimized:hover, .full-card.maximized:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(10, 20, 40, 0.12);
         }
 
         .full-card:hover {
@@ -183,6 +260,11 @@
 
         .full-card.maximized {
             background: var(--background-light);
+        }
+
+        .full-card.accepted {
+            border: 1px solid #2ecc71;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.08);
         }
 
         .card-logo {
@@ -324,6 +406,109 @@
         .card-footer-btn.primary:hover {
             background: var(--primary-green-hover);
             border-color: var(--primary-green-hover);
+        }
+
+        .card-footer-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .card-footer-btn .btn-spinner {
+            margin-left: 4px;
+        }
+
+        .card-footer-btn.accepted-badge {
+            background: transparent;
+            color: #2ecc71;
+            border: 1px solid rgba(46, 204, 113, 0.12);
+            cursor: default;
+        }
+
+        /* Accepted state */
+        .issue-card.accepted {
+            border-left: 4px solid var(--primary-green);
+            background: linear-gradient(to right, rgba(76, 175, 80, 0.05) 0%, transparent 100%);
+        }
+
+        .accepted-badge {
+            display: inline-block;
+            background: var(--primary-green);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .accepted-timestamp {
+            font-size: 11px;
+            color: var(--text-gray);
+            margin-left: 4px;
+        }
+
+        /* Undo toast */
+        .undo-toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #323232;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                bottom: -100px;
+                opacity: 0;
+            }
+            to {
+                bottom: 20px;
+                opacity: 1;
+            }
+        }
+
+        .undo-toast.hiding {
+            animation: slideDown 0.3s ease forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                bottom: 20px;
+                opacity: 1;
+            }
+            to {
+                bottom: -100px;
+                opacity: 0;
+            }
+        }
+
+        .undo-toast-text {
+            font-size: 13px;
+        }
+
+        .undo-toast-btn {
+            background: var(--primary-green);
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .undo-toast-btn:hover {
+            background: var(--primary-green-hover);
         }
 
         /* Minimized state */
@@ -652,10 +837,25 @@
             <div class="header-wrapper">
                 <div class="header">
                     <div class="lens-title">Ilana</div>
-                    <button id="analyzeButton" class="header-btn" onclick="analyzeProtocol()">
-                        <span id="analyzeButtonText">Analyze</span>
-                        <span id="analyzeSpinner" class="spinner hidden">⏳</span>
-                    </button>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <!-- Mode selector pill -->
+                        <div class="mode-pill-container">
+                            <div class="mode-pill" id="modePill">
+                                <span id="modePillText">Mode: Simple</span>
+                                <span>▾</span>
+                            </div>
+                            <div class="mode-pill-dropdown" id="modePillDropdown">
+                                <div class="mode-option" data-mode="simple">Simple</div>
+                                <div class="mode-option" data-mode="hybrid">Hybrid</div>
+                                <div class="mode-option" data-mode="legacy">Legacy</div>
+                            </div>
+                        </div>
+
+                        <button id="analyzeButton" class="header-btn" onclick="analyzeProtocol()">
+                            <span id="analyzeButtonText">Analyze</span>
+                            <span id="analyzeSpinner" class="spinner hidden">⏳</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -749,9 +949,10 @@
         let currentIssues = [];
         let maximizedCard = null;
 
-        // Global state for current therapeutic area
+        // Global state for current therapeutic area and analysis mode
         window.IlanaState = {
-            currentTA: 'general_medicine'
+            currentTA: 'general_medicine',
+            analysisMode: localStorage.getItem('ilana_analysis_mode') || 'simple'
         };
 
         // Debounce tracking for highlight clicks
@@ -898,6 +1099,103 @@
             };
         };
 
+        /* --- Mode Pill Management --- */
+
+        // Initialize mode pill UI and event handlers
+        function initializeModePill() {
+            const modePill = document.getElementById('modePill');
+            const modePillText = document.getElementById('modePillText');
+            const modePillDropdown = document.getElementById('modePillDropdown');
+
+            if (!modePill || !modePillText || !modePillDropdown) {
+                console.warn('Mode pill elements not found');
+                return;
+            }
+
+            // Set initial mode display
+            updateModePillDisplay();
+
+            // Toggle dropdown on pill click
+            modePill.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = modePillDropdown.classList.contains('open');
+                if (isOpen) {
+                    modePillDropdown.classList.remove('open');
+                } else {
+                    modePillDropdown.classList.add('open');
+                }
+            });
+
+            // Handle mode option selection
+            const modeOptions = modePillDropdown.querySelectorAll('.mode-option');
+            modeOptions.forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const selectedMode = option.getAttribute('data-mode');
+                    setAnalysisMode(selectedMode);
+                    modePillDropdown.classList.remove('open');
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', () => {
+                modePillDropdown.classList.remove('open');
+            });
+
+            console.log('✅ Mode pill initialized:', window.IlanaState.analysisMode);
+        }
+
+        // Update mode pill display text and active state
+        function updateModePillDisplay() {
+            const mode = window.IlanaState.analysisMode;
+            const modePillText = document.getElementById('modePillText');
+            const modeOptions = document.querySelectorAll('.mode-option');
+
+            if (modePillText) {
+                const modeLabel = mode.charAt(0).toUpperCase() + mode.slice(1);
+                modePillText.textContent = `Mode: ${modeLabel}`;
+            }
+
+            // Update active state in dropdown
+            modeOptions.forEach(option => {
+                const optionMode = option.getAttribute('data-mode');
+                if (optionMode === mode) {
+                    option.classList.add('active');
+                } else {
+                    option.classList.remove('active');
+                }
+            });
+        }
+
+        // Set analysis mode and persist
+        function setAnalysisMode(mode) {
+            const validModes = ['simple', 'hybrid', 'legacy'];
+            if (!validModes.includes(mode)) {
+                console.warn('Invalid analysis mode:', mode);
+                return;
+            }
+
+            const previousMode = window.IlanaState.analysisMode;
+            window.IlanaState.analysisMode = mode;
+            localStorage.setItem('ilana_analysis_mode', mode);
+
+            console.log(`🔄 Analysis mode changed: ${previousMode} → ${mode}`);
+
+            // Update UI
+            updateModePillDisplay();
+
+            // Dispatch custom event for other components to listen
+            const event = new CustomEvent('analysisModeChanged', {
+                detail: { analysisMode: mode, previousMode: previousMode }
+            });
+            window.dispatchEvent(event);
+        }
+
+        // Get current analysis mode
+        function getAnalysisMode() {
+            return window.IlanaState.analysisMode || localStorage.getItem('ilana_analysis_mode') || 'simple';
+        }
+
         // Initialize Office.js
         Office.onReady(() => {
             console.log('🚀 Ilana loaded');
@@ -907,6 +1205,14 @@
             console.log('📋 Initializing modal system...');
             ensureBackdrop();
             wireModalOptionHandlers();
+
+            // Initialize mode pill
+            console.log('🎛️ Initializing mode selector...');
+            initializeModePill();
+
+            // Initialize accept change handlers
+            console.log('✅ Initializing accept change handlers...');
+            initializeAcceptChangeHandlers();
 
             updateStatus('Ready to analyze pharmaceutical protocols', 'complete');
             setupKeyboardHandlers();
@@ -1540,19 +1846,21 @@
         // Display cards in Grammarly style
         function displayCards(issues) {
             const cardsList = document.getElementById('cardsList');
-            
+
             cardsList.innerHTML = issues.map((issue, index) => `
                 <div class="card-wrapper">
-                    <div class="full-card ${index === maximizedCard ? 'maximized' : 'minimized'}" onclick="toggleCard(${index})">
+                    <div class="full-card issue-card ${index === maximizedCard ? 'maximized' : 'minimized'}" data-issue-id="${issue.id}" onclick="toggleCard(${index})">
                         <div class="card-logo ${issue.severity}">
                             ${getSeverityIcon(issue.severity)}
                         </div>
-                        
-                        <div class="report-list">
-                            ${getOriginalText(issue) ? `<span class="item-original">${getOriginalText(issue).substring(0, 100)}${getOriginalText(issue).length > 100 ? '...' : ''}</span>` : ''}
-                            <span class="item-insert" onclick="highlightAndScrollToIssue('${issue.id}', event)">${getSuggestionText(issue).substring(0, 100)}${getSuggestionText(issue).length > 100 ? '...' : ''}</span>
+
+                        <div class="issue-header">
+                            <div class="report-list">
+                                ${getOriginalText(issue) ? `<span class="item-original">${getOriginalText(issue).substring(0, 100)}${getOriginalText(issue).length > 100 ? '...' : ''}</span>` : ''}
+                                <span class="item-insert" onclick="highlightAndScrollToIssue('${issue.id}', event)">${getSuggestionText(issue).substring(0, 100)}${getSuggestionText(issue).length > 100 ? '...' : ''}</span>
+                            </div>
                         </div>
-                        
+
                         ${index === maximizedCard ? `
                             <div class="full-sentence-background">
                                 <strong>Recommendation:</strong><br>
@@ -1561,10 +1869,11 @@
                                 ${getRegulatorySource(issue) ? `<br><br>📋 <strong>Regulatory Reference:</strong> ${getRegulatorySource(issue)}` : ''}
                                 ${issue.ta_enhanced ? `<br><br>🔬 <strong>TA Enhanced</strong>` : ''}
                             </div>
-                            
+
                             <div class="card-footer">
-                                <button class="card-footer-btn primary" onclick="highlightAndScrollToIssue('${issue.id}', event)">
-                                    Locate in Document
+                                <button class="card-footer-btn primary accept-btn" data-suggestion-id="${issue.id}" data-suggestion-index="${index}">
+                                    <span class="btn-text">Accept Change</span>
+                                    <span class="btn-spinner hidden">⏳</span>
                                 </button>
                                 <button class="card-footer-btn" onclick="dismissIssue(${index}, event)">
                                     Dismiss
@@ -1574,6 +1883,9 @@
                     </div>
                 </div>
             `).join('');
+
+            // Wire accept change buttons after rendering
+            wireAcceptButtons();
         }
 
         // Toggle card maximized/minimized state
@@ -2015,7 +2327,7 @@
         // Simple therapeutic area detection
         function detectTherapeuticArea(text) {
             const textLower = text.toLowerCase();
-            
+
             if (textLower.includes('oncology') || textLower.includes('cancer') || textLower.includes('tumor')) {
                 return 'oncology';
             } else if (textLower.includes('cardio') || textLower.includes('heart')) {
@@ -2023,8 +2335,360 @@
             } else if (textLower.includes('neuro') || textLower.includes('brain')) {
                 return 'neurology';
             }
-            
+
             return 'general_medicine';
+        }
+
+        // ===== ACCEPT CHANGE FUNCTIONALITY =====
+
+        // Store undo state for accepted changes
+        const undoStateMap = new Map();
+        let currentUndoToast = null;
+
+        // Initialize accept change handlers
+        function initializeAcceptChangeHandlers() {
+            // Will attach event listeners after cards are rendered
+            console.log('✅ Accept change handlers ready');
+        }
+
+        // Wire accept buttons after cards are rendered
+        function wireAcceptButtons() {
+            const acceptButtons = document.querySelectorAll('.accept-btn');
+            acceptButtons.forEach(button => {
+                // Remove existing listener if any
+                const newButton = button.cloneNode(true);
+                button.parentNode.replaceChild(newButton, button);
+
+                // Add new listener
+                newButton.addEventListener('click', handleAcceptChange);
+            });
+            console.log(`✅ Wired ${acceptButtons.length} accept buttons`);
+        }
+
+        // Handle accept change button click
+        async function handleAcceptChange(event) {
+            event.stopPropagation();
+
+            const button = event.currentTarget;
+            const suggestionId = button.getAttribute('data-suggestion-id');
+            const suggestionIndex = parseInt(button.getAttribute('data-suggestion-index'));
+
+            const suggestion = currentIssues[suggestionIndex];
+            if (!suggestion) {
+                console.error('Suggestion not found:', suggestionIndex);
+                return;
+            }
+
+            // Disable button and show spinner
+            button.disabled = true;
+            const btnText = button.querySelector('.btn-text');
+            const btnSpinner = button.querySelector('.btn-spinner');
+            if (btnText) btnText.classList.add('hidden');
+            if (btnSpinner) btnSpinner.classList.remove('hidden');
+
+            try {
+                const originalText = getOriginalText(suggestion);
+                const improvedText = getSuggestionText(suggestion);
+
+                console.log('🔄 Accepting change:', { suggestionId, originalText: originalText.substring(0, 50), improvedText: improvedText.substring(0, 50) });
+
+                // Perform text replacement using Office.js
+                const replaceResult = await replaceTextInDocument(originalText, improvedText);
+
+                if (replaceResult.success) {
+                    // Store undo state
+                    undoStateMap.set(suggestionId, {
+                        suggestionIndex,
+                        originalText,
+                        improvedText,
+                        range: replaceResult.range,
+                        timestamp: new Date().toISOString()
+                    });
+
+                    // Mark card as accepted
+                    markCardAsAccepted(suggestionIndex, suggestionId);
+
+                    // Show undo toast
+                    showUndoToast(suggestionId);
+
+                    // Send reinforcement signal (non-blocking)
+                    sendReinforcementSignal({
+                        suggestion_id: suggestionId,
+                        request_id: suggestion.request_id || window.IlanaState.lastRequestId,
+                        user_id_hash: window.IlanaState.userHash || 'anonymous',
+                        ta: window.IlanaState.currentTA || 'general_medicine',
+                        phase: 'production',
+                        action: 'accept',
+                        timestamp: new Date().toISOString(),
+                        original_text: originalText,
+                        improved_text: improvedText,
+                        context_snippet: extractContextSnippet(originalText, 100)
+                    });
+
+                    console.log('✅ Change accepted successfully');
+                } else {
+                    // Replacement failed
+                    console.warn('⚠️ Could not find text to replace');
+                    showToast('Could not find original text — please locate it manually.');
+                }
+            } catch (error) {
+                console.error('❌ Error accepting change:', error);
+                showError(`Failed to accept change: ${error.message}`);
+            } finally {
+                // Re-enable button
+                button.disabled = false;
+                if (btnText) btnText.classList.remove('hidden');
+                if (btnSpinner) btnSpinner.classList.add('hidden');
+            }
+        }
+
+        // Replace text in document using Office.js
+        async function replaceTextInDocument(originalText, improvedText) {
+            try {
+                return await Word.run(async (context) => {
+                    const body = context.document.body;
+                    const searchResults = body.search(originalText, {
+                        matchCase: false,
+                        matchWholeWord: false
+                    });
+
+                    context.load(searchResults, 'items');
+                    await context.sync();
+
+                    if (searchResults.items.length > 0) {
+                        const firstRange = searchResults.items[0];
+                        firstRange.insertText(improvedText, 'Replace');
+                        await context.sync();
+
+                        console.log('✅ Text replaced in document');
+                        return { success: true, range: firstRange };
+                    } else {
+                        console.warn('⚠️ Text not found in document');
+                        return { success: false };
+                    }
+                });
+            } catch (error) {
+                console.error('❌ Office.js replace error:', error);
+                throw error;
+            }
+        }
+
+        // Mark card as accepted visually
+        function markCardAsAccepted(suggestionIndex, suggestionId) {
+            const card = document.querySelector(`[data-issue-id="${suggestionId}"]`);
+            if (!card) return;
+
+            // Add accepted class
+            card.classList.add('accepted');
+
+            // Add accepted badge to header
+            const header = card.querySelector('.issue-header');
+            if (header && !header.querySelector('.accepted-badge')) {
+                const badge = document.createElement('span');
+                badge.className = 'accepted-badge';
+                badge.textContent = 'ACCEPTED';
+
+                const timestamp = document.createElement('span');
+                timestamp.className = 'accepted-timestamp';
+                timestamp.textContent = new Date().toLocaleTimeString();
+
+                header.appendChild(badge);
+                header.appendChild(timestamp);
+            }
+
+            // Replace accept button with accepted state
+            const acceptBtn = card.querySelector('.accept-btn');
+            if (acceptBtn) {
+                const btnText = acceptBtn.querySelector('.btn-text');
+                if (btnText) {
+                    btnText.textContent = '✓ Accepted';
+                }
+                acceptBtn.disabled = true;
+                acceptBtn.style.background = '#dcedc8';
+                acceptBtn.style.color = '#33691e';
+                acceptBtn.style.borderColor = '#aed581';
+            }
+        }
+
+        // Show undo toast
+        function showUndoToast(suggestionId) {
+            // Remove existing toast if any
+            if (currentUndoToast) {
+                currentUndoToast.remove();
+                currentUndoToast = null;
+            }
+
+            // Create toast
+            const toast = document.createElement('div');
+            toast.className = 'undo-toast';
+            toast.innerHTML = `
+                <span class="undo-toast-text">Change accepted</span>
+                <button class="undo-toast-btn" data-suggestion-id="${suggestionId}">Undo</button>
+            `;
+
+            document.body.appendChild(toast);
+            currentUndoToast = toast;
+
+            // Wire undo button
+            const undoBtn = toast.querySelector('.undo-toast-btn');
+            undoBtn.addEventListener('click', () => handleUndo(suggestionId));
+
+            // Auto-hide after 10 seconds
+            setTimeout(() => {
+                hideUndoToast(toast);
+            }, 10000);
+        }
+
+        // Hide undo toast
+        function hideUndoToast(toast) {
+            if (!toast) return;
+
+            toast.classList.add('hiding');
+            setTimeout(() => {
+                toast.remove();
+                if (currentUndoToast === toast) {
+                    currentUndoToast = null;
+                }
+            }, 300);
+        }
+
+        // Handle undo
+        async function handleUndo(suggestionId) {
+            const undoState = undoStateMap.get(suggestionId);
+            if (!undoState) {
+                console.warn('No undo state for suggestion:', suggestionId);
+                return;
+            }
+
+            try {
+                console.log('🔄 Undoing change:', suggestionId);
+
+                // Revert text change
+                await replaceTextInDocument(undoState.improvedText, undoState.originalText);
+
+                // Remove accepted state from card
+                const card = document.querySelector(`[data-issue-id="${suggestionId}"]`);
+                if (card) {
+                    card.classList.remove('accepted');
+
+                    // Remove badge
+                    const badge = card.querySelector('.accepted-badge');
+                    const timestamp = card.querySelector('.accepted-timestamp');
+                    if (badge) badge.remove();
+                    if (timestamp) timestamp.remove();
+
+                    // Restore accept button
+                    const acceptBtn = card.querySelector('.accept-btn');
+                    if (acceptBtn) {
+                        const btnText = acceptBtn.querySelector('.btn-text');
+                        if (btnText) {
+                            btnText.textContent = 'Accept Change';
+                        }
+                        acceptBtn.disabled = false;
+                        acceptBtn.style.background = '';
+                        acceptBtn.style.color = '';
+                        acceptBtn.style.borderColor = '';
+                    }
+                }
+
+                // Remove undo state
+                undoStateMap.delete(suggestionId);
+
+                // Hide toast
+                if (currentUndoToast) {
+                    hideUndoToast(currentUndoToast);
+                }
+
+                console.log('✅ Change undone successfully');
+            } catch (error) {
+                console.error('❌ Error undoing change:', error);
+                showError(`Failed to undo change: ${error.message}`);
+            }
+        }
+
+        // Extract context snippet (PHI-redacted snippet around text)
+        function extractContextSnippet(text, maxLength) {
+            if (text.length <= maxLength) {
+                return text;
+            }
+            // Take first portion for context
+            return text.substring(0, maxLength) + '...';
+        }
+
+        // Send reinforcement signal to backend (non-blocking)
+        async function sendReinforcementSignal(payload) {
+            const url = `${API_BASE_URL}/api/reinforce`;
+
+            // Add redactPHI flag
+            const enrichedPayload = {
+                ...payload,
+                redactPHI: true,
+                analysis_mode: window.IlanaState.analysisMode || 'simple'
+            };
+
+            console.log('📡 Sending reinforcement signal:', enrichedPayload);
+
+            // Retry logic (3 attempts)
+            const maxRetries = 3;
+            let attempt = 0;
+
+            while (attempt < maxRetries) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(enrichedPayload),
+                        signal: AbortSignal.timeout(5000) // 5 second timeout
+                    });
+
+                    if (response.ok) {
+                        const result = await response.json();
+                        console.log('✅ Reinforcement signal sent:', result);
+
+                        // Log telemetry
+                        logTelemetry({
+                            event: 'reinforcement_sent',
+                            suggestion_id: payload.suggestion_id,
+                            action: payload.action,
+                            success: true
+                        });
+                        return;
+                    } else {
+                        console.warn(`⚠️ Reinforcement API returned ${response.status}`);
+                    }
+                } catch (error) {
+                    console.warn(`⚠️ Reinforcement attempt ${attempt + 1} failed:`, error.message);
+                }
+
+                attempt++;
+                if (attempt < maxRetries) {
+                    // Exponential backoff
+                    await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000));
+                }
+            }
+
+            // All retries failed - log but don't block UI
+            console.error('❌ Failed to send reinforcement signal after 3 attempts');
+            logTelemetry({
+                event: 'reinforcement_failed',
+                suggestion_id: payload.suggestion_id,
+                action: payload.action,
+                success: false
+            });
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'undo-toast';
+            toast.innerHTML = `<span class="undo-toast-text">${message}</span>`;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                hideUndoToast(toast);
+            }, 3000);
         }
 
         // ===== TA ON-DEMAND ENHANCEMENT =====
