@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timeout Handling Test</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+        .test-section { 
+            margin: 20px 0; 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            background: #f9f9f9; 
+        }
+        .test-button { 
+            background: #007acc; 
+            color: white; 
+            padding: 10px 20px; 
+            margin: 5px; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            font-size: 14px;
+        }
+        .test-button:hover { background: #005a9e; }
+        .test-button:disabled { background: #ccc; cursor: not-allowed; }
+        .code-block { 
+            background: #f5f5f5; 
+            padding: 15px; 
+            border-radius: 4px; 
+            font-family: monospace; 
+            margin: 10px 0; 
+            border: 1px solid #ddd;
+        }
+        .result { 
+            margin: 10px 0; 
+            padding: 10px; 
+            border-radius: 4px; 
+        }
+        .result.success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .result.error { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .result.info { background: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; }
+        .spinner { animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .mock-analyze-btn {
+            background: #28a745;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .mock-analyze-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Frontend Timeout & Error Handling Tests</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Backend Timeout Simulation</h2>
+        <p>This test simulates a backend timeout and verifies the UI shows friendly timeout message and re-enables the Analyze button.</p>
+        
+        <div class="code-block">
+// Mock server that never responds (simulates timeout)
+const mockTimeoutServer = () => {
+    return new Promise((resolve) => {
+        // Never resolve - will trigger timeout
+    });
+};
+        </div>
+        
+        <button class="test-button" onclick="testBackendTimeout()">Test Backend Timeout</button>
+        <button class="mock-analyze-btn" id="mockAnalyzeBtn" onclick="runMockAnalysis()">Mock Analyze Button</button>
+        
+        <div id="timeout-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: HTTP Error Response</h2>
+        <p>This test simulates various HTTP error responses and verifies structured error handling.</p>
+        
+        <div class="code-block">
+// Mock server that returns HTTP 500 error
+const mockErrorServer = () => {
+    return Promise.resolve({
+        ok: false,
+        status: 500,
+        json: () => Promise.resolve({
+            error_code: "INTERNAL_ERROR",
+            message: "Analysis service temporarily unavailable",
+            request_id: "test_req_123"
+        })
+    });
+};
+        </div>
+        
+        <button class="test-button" onclick="testHTTPError()">Test HTTP 500 Error</button>
+        <button class="test-button" onclick="testHTTPError(404)">Test HTTP 404 Error</button>
+        <button class="test-button" onclick="testHTTPError(429)">Test HTTP 429 Rate Limit</button>
+        
+        <div id="error-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Network Error Simulation</h2>
+        <p>This test simulates network connection errors.</p>
+        
+        <div class="code-block">
+// Mock network error
+const mockNetworkError = () => {
+    return Promise.reject(new Error("Failed to fetch"));
+};
+        </div>
+        
+        <button class="test-button" onclick="testNetworkError()">Test Network Error</button>
+        
+        <div id="network-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 4: Telemetry Integration</h2>
+        <p>This test verifies telemetry events are properly logged for all scenarios.</p>
+        
+        <button class="test-button" onclick="testTelemetryLogging()">Test Telemetry Events</button>
+        <button class="test-button" onclick="clearTelemetryLog()">Clear Telemetry Log</button>
+        
+        <div id="telemetry-results">
+            <h4>Telemetry Events Log:</h4>
+            <div id="telemetry-log" style="max-height: 200px; overflow-y: auto; background: white; padding: 10px; border: 1px solid #ddd; border-radius: 4px;"></div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 5: Spinner State Management</h2>
+        <p>This test verifies spinner states are properly managed across all scenarios.</p>
+        
+        <button class="test-button" onclick="testSpinnerStates()">Test All Spinner States</button>
+        
+        <div id="spinner-results"></div>
+        
+        <div style="margin-top: 10px;">
+            <strong>Active Spinners:</strong> <span id="active-spinners">None</span>
+        </div>
+    </div>
+
+    <script>
+        // Mock implementations of the core functions
+        const activeSpinners = new Set();
+        const telemetryLog = [];
+
+        function showSpinner(id) {
+            activeSpinners.add(id);
+            updateSpinnerDisplay();
+            console.log(`🔄 Spinner started: ${id}`);
+            
+            if (id === 'analyze') {
+                const btn = document.getElementById('mockAnalyzeBtn');
+                if (btn) {
+                    btn.disabled = true;
+                    btn.innerHTML = '<span class="spinner">⏳</span> Analyzing...';
+                }
+            }
+        }
+
+        function hideSpinner(id) {
+            activeSpinners.delete(id);
+            updateSpinnerDisplay();
+            console.log(`✅ Spinner stopped: ${id}`);
+            
+            if (id === 'analyze') {
+                const btn = document.getElementById('mockAnalyzeBtn');
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerHTML = 'Mock Analyze Button';
+                }
+            }
+        }
+
+        function updateSpinnerDisplay() {
+            const display = document.getElementById('active-spinners');
+            if (display) {
+                display.textContent = activeSpinners.size > 0 ? Array.from(activeSpinners).join(', ') : 'None';
+            }
+        }
+
+        function logTelemetry(eventData) {
+            const timestamp = new Date().toISOString();
+            const logEntry = { ...eventData, timestamp };
+            telemetryLog.push(logEntry);
+            console.log('📊 Telemetry:', logEntry);
+            
+            // Update telemetry display
+            const logDiv = document.getElementById('telemetry-log');
+            if (logDiv) {
+                const entry = document.createElement('div');
+                entry.style.cssText = 'margin: 5px 0; padding: 5px; background: #f8f9fa; border-radius: 3px; font-size: 12px; font-family: monospace;';
+                entry.textContent = JSON.stringify(logEntry, null, 2);
+                logDiv.appendChild(entry);
+                logDiv.scrollTop = logDiv.scrollHeight;
+            }
+        }
+
+        async function fetchWithTimeout(url, options = {}, timeoutMs = 25000) {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+            
+            try {
+                const response = await fetch(url, {
+                    ...options,
+                    signal: controller.signal
+                });
+                
+                clearTimeout(timeoutId);
+                
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({}));
+                    return {
+                        ok: false,
+                        reason: 'http_error',
+                        status: response.status,
+                        statusText: response.statusText,
+                        error_code: errorData.error_code,
+                        message: errorData.message || `HTTP ${response.status}: ${response.statusText}`,
+                        request_id: errorData.request_id
+                    };
+                }
+                
+                return {
+                    ok: true,
+                    response: response,
+                    json: async () => await response.json()
+                };
+                
+            } catch (error) {
+                clearTimeout(timeoutId);
+                
+                if (error.name === 'AbortError') {
+                    return {
+                        ok: false,
+                        reason: 'timeout',
+                        message: `Request timed out after ${timeoutMs}ms. Please try selecting smaller text or check your connection.`,
+                        timeoutMs: timeoutMs
+                    };
+                }
+                
+                return {
+                    ok: false,
+                    reason: 'network_error',
+                    message: error.message || 'Network error occurred',
+                    error: error
+                };
+            }
+        }
+
+        // Test 1: Backend Timeout
+        async function testBackendTimeout() {
+            const resultsDiv = document.getElementById('timeout-results');
+            resultsDiv.innerHTML = '<div class="result info">Testing timeout handling...</div>';
+            
+            const startTime = Date.now();
+            showSpinner('analyze');
+            
+            logTelemetry({
+                event: 'analyze_start',
+                request_id: 'timeout_test_' + Date.now(),
+                mode: 'test',
+                selection_length: 50
+            });
+
+            try {
+                // Use very short timeout to trigger timeout quickly
+                const result = await fetchWithTimeout('https://httpstat.us/200?sleep=30000', {}, 2000);
+                
+                if (!result.ok && result.reason === 'timeout') {
+                    resultsDiv.innerHTML = `
+                        <div class="result success">✅ Timeout handled correctly!</div>
+                        <div class="result info">Message: ${result.message}</div>
+                        <div class="result info">Duration: ${Date.now() - startTime}ms</div>
+                    `;
+                    
+                    logTelemetry({
+                        event: 'analyze_end',
+                        request_id: 'timeout_test_' + startTime,
+                        latency_ms: Date.now() - startTime,
+                        parse_success: false,
+                        error_reason: 'timeout'
+                    });
+                } else {
+                    resultsDiv.innerHTML = '<div class="result error">❌ Timeout not triggered as expected</div>';
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="result error">❌ Unexpected error: ${error.message}</div>`;
+            } finally {
+                hideSpinner('analyze');
+            }
+        }
+
+        // Test 2: HTTP Error Response
+        async function testHTTPError(statusCode = 500) {
+            const resultsDiv = document.getElementById('error-results');
+            resultsDiv.innerHTML = `<div class="result info">Testing HTTP ${statusCode} error handling...</div>`;
+            
+            const startTime = Date.now();
+            showSpinner('analyze');
+            
+            try {
+                const result = await fetchWithTimeout(`https://httpstat.us/${statusCode}`, {}, 5000);
+                
+                if (!result.ok && result.reason === 'http_error') {
+                    resultsDiv.innerHTML = `
+                        <div class="result success">✅ HTTP ${statusCode} handled correctly!</div>
+                        <div class="result info">Status: ${result.status}</div>
+                        <div class="result info">Message: ${result.message}</div>
+                        <div class="result info">Error Code: ${result.error_code || 'N/A'}</div>
+                    `;
+                    
+                    logTelemetry({
+                        event: 'analyze_end',
+                        request_id: 'http_error_test_' + startTime,
+                        latency_ms: Date.now() - startTime,
+                        parse_success: false,
+                        error_reason: 'http_error',
+                        status_code: statusCode
+                    });
+                } else {
+                    resultsDiv.innerHTML = `<div class="result error">❌ HTTP error not handled as expected: ${JSON.stringify(result)}</div>`;
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="result error">❌ Unexpected error: ${error.message}</div>`;
+            } finally {
+                hideSpinner('analyze');
+            }
+        }
+
+        // Test 3: Network Error
+        async function testNetworkError() {
+            const resultsDiv = document.getElementById('network-results');
+            resultsDiv.innerHTML = '<div class="result info">Testing network error handling...</div>';
+            
+            const startTime = Date.now();
+            showSpinner('analyze');
+            
+            try {
+                const result = await fetchWithTimeout('https://this-domain-does-not-exist-12345.com', {}, 5000);
+                
+                if (!result.ok && result.reason === 'network_error') {
+                    resultsDiv.innerHTML = `
+                        <div class="result success">✅ Network error handled correctly!</div>
+                        <div class="result info">Message: ${result.message}</div>
+                    `;
+                    
+                    logTelemetry({
+                        event: 'analyze_end',
+                        request_id: 'network_error_test_' + startTime,
+                        latency_ms: Date.now() - startTime,
+                        parse_success: false,
+                        error_reason: 'network_error'
+                    });
+                } else {
+                    resultsDiv.innerHTML = `<div class="result error">❌ Network error not handled as expected: ${JSON.stringify(result)}</div>`;
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="result error">❌ Unexpected error: ${error.message}</div>`;
+            } finally {
+                hideSpinner('analyze');
+            }
+        }
+
+        // Test 4: Telemetry
+        function testTelemetryLogging() {
+            logTelemetry({
+                event: 'test_event',
+                request_id: 'telemetry_test_' + Date.now(),
+                test_data: 'This is a test event',
+                frontend_duration_ms: 123
+            });
+            
+            const resultsDiv = document.getElementById('telemetry-results');
+            const logCount = telemetryLog.length;
+            resultsDiv.querySelector('h4').textContent = `Telemetry Events Log (${logCount} events):`;
+        }
+
+        function clearTelemetryLog() {
+            telemetryLog.length = 0;
+            const logDiv = document.getElementById('telemetry-log');
+            if (logDiv) logDiv.innerHTML = '';
+            const resultsDiv = document.getElementById('telemetry-results');
+            resultsDiv.querySelector('h4').textContent = 'Telemetry Events Log (0 events):';
+        }
+
+        // Test 5: Spinner States
+        function testSpinnerStates() {
+            const resultsDiv = document.getElementById('spinner-results');
+            resultsDiv.innerHTML = '<div class="result info">Testing spinner states...</div>';
+            
+            // Test sequence
+            setTimeout(() => {
+                showSpinner('analyze');
+                resultsDiv.innerHTML += '<div class="result info">Step 1: Started analyze spinner</div>';
+            }, 500);
+            
+            setTimeout(() => {
+                showSpinner('ta_enhancement');
+                resultsDiv.innerHTML += '<div class="result info">Step 2: Started TA enhancement spinner</div>';
+            }, 1000);
+            
+            setTimeout(() => {
+                hideSpinner('analyze');
+                resultsDiv.innerHTML += '<div class="result info">Step 3: Stopped analyze spinner</div>';
+            }, 1500);
+            
+            setTimeout(() => {
+                hideSpinner('ta_enhancement');
+                resultsDiv.innerHTML += '<div class="result success">Step 4: All spinners stopped - Test complete!</div>';
+            }, 2000);
+        }
+
+        // Mock analyze function
+        function runMockAnalysis() {
+            testBackendTimeout();
+        }
+
+        // Initialize
+        updateSpinnerDisplay();
+        console.log('🧪 Timeout handling test suite loaded');
+    </script>
+</body>
+</html>

@@ -1,0 +1,596 @@
+/**
+ * WholeDocModal Component Styles
+ * Accessible modal with focus trap and smooth animations
+ */
+
+/* Modal Container */
+.whole-doc-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.whole-doc-modal.whole-doc-modal-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Backdrop */
+.whole-doc-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+/* Modal Container */
+.whole-doc-modal-container {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    margin: 1rem;
+    transform: scale(0.95) translateY(10px);
+    transition: transform 0.2s ease;
+}
+
+.whole-doc-modal-open .whole-doc-modal-container {
+    transform: scale(1) translateY(0);
+}
+
+/* Modal Content */
+.whole-doc-modal-content {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Modal Header */
+.whole-doc-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.whole-doc-modal-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.3;
+}
+
+.whole-doc-modal-close {
+    background: none;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whole-doc-modal-close:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.whole-doc-modal-close:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+/* Modal Body */
+.whole-doc-modal-body {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.whole-doc-modal-icon {
+    margin: 0 auto 1rem;
+    width: 48px;
+    height: 48px;
+    color: #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whole-doc-modal-description {
+    margin: 0 0 1.5rem 0;
+    font-size: 1rem;
+    color: #374151;
+    line-height: 1.5;
+}
+
+.whole-doc-modal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #475569;
+}
+
+.info-icon {
+    font-size: 1rem;
+    width: 1.5rem;
+    text-align: center;
+}
+
+/* Modal Footer */
+.whole-doc-modal-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+/* Modal Buttons */
+.whole-doc-modal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    min-height: 44px;
+    position: relative;
+}
+
+.whole-doc-modal-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.whole-doc-modal-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Button Variants */
+.whole-doc-modal-btn-secondary {
+    background: #f8fafc;
+    color: #475569;
+    border-color: #e2e8f0;
+}
+
+.whole-doc-modal-btn-secondary:hover:not(:disabled) {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.whole-doc-modal-btn-primary {
+    background: #3b82f6;
+    color: #ffffff;
+    border-color: #3b82f6;
+}
+
+.whole-doc-modal-btn-primary:hover:not(:disabled) {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.whole-doc-modal-btn-accent {
+    background: #10b981;
+    color: #ffffff;
+    border-color: #10b981;
+}
+
+.whole-doc-modal-btn-accent:hover:not(:disabled) {
+    background: #059669;
+    border-color: #059669;
+}
+
+/* Button Icons */
+.whole-doc-modal-btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* Body Lock When Modal Open */
+body.whole-doc-modal-active {
+    overflow: hidden;
+}
+
+/* Toast Notifications */
+.toast-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    pointer-events: none;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid;
+    max-width: 400px;
+    font-size: 0.875rem;
+    pointer-events: auto;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.toast.toast-show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-info {
+    border-left-color: #3b82f6;
+}
+
+.toast-success {
+    border-left-color: #10b981;
+}
+
+.toast-warning {
+    border-left-color: #f59e0b;
+}
+
+.toast-error {
+    border-left-color: #ef4444;
+}
+
+.toast-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.toast-message {
+    flex: 1;
+    color: #374151;
+    line-height: 1.4;
+}
+
+.toast-close {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: color 0.15s ease;
+}
+
+.toast-close:hover {
+    color: #6b7280;
+}
+
+.toast-close:focus {
+    outline: none;
+    color: #374151;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .whole-doc-modal-container {
+        margin: 0.5rem;
+    }
+    
+    .whole-doc-modal-header,
+    .whole-doc-modal-body,
+    .whole-doc-modal-footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .whole-doc-modal-footer {
+        gap: 0.5rem;
+    }
+    
+    .whole-doc-modal-btn {
+        padding: 0.875rem 0.75rem;
+        font-size: 0.8125rem;
+    }
+    
+    .info-item {
+        padding: 0.5rem;
+        font-size: 0.8125rem;
+    }
+    
+    .toast-container {
+        left: 0.5rem;
+        right: 0.5rem;
+        top: 0.5rem;
+    }
+    
+    .toast {
+        max-width: none;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .whole-doc-modal-content {
+        background: #1f2937;
+        color: #f9fafb;
+    }
+    
+    .whole-doc-modal-title {
+        color: #f9fafb;
+    }
+    
+    .whole-doc-modal-close {
+        color: #9ca3af;
+    }
+    
+    .whole-doc-modal-close:hover {
+        background: #374151;
+        color: #d1d5db;
+    }
+    
+    .whole-doc-modal-description {
+        color: #d1d5db;
+    }
+    
+    .info-item {
+        background: #374151;
+        color: #d1d5db;
+    }
+    
+    .whole-doc-modal-btn-secondary {
+        background: #374151;
+        color: #d1d5db;
+        border-color: #4b5563;
+    }
+    
+    .whole-doc-modal-btn-secondary:hover:not(:disabled) {
+        background: #4b5563;
+        border-color: #6b7280;
+    }
+    
+    .toast {
+        background: #1f2937;
+        color: #f9fafb;
+    }
+    
+    .toast-message {
+        color: #e5e7eb;
+    }
+    
+    .toast-close {
+        color: #9ca3af;
+    }
+    
+    .toast-close:hover {
+        color: #d1d5db;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .whole-doc-modal-backdrop {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    .whole-doc-modal-content {
+        border: 2px solid #000000;
+    }
+    
+    .whole-doc-modal-btn {
+        border-width: 2px;
+    }
+    
+    .toast {
+        border: 2px solid;
+        border-left-width: 6px;
+    }
+}
+
+/* Reduced Motion */
+/* Job Progress Bar Styles */
+.job-progress-container {
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.job-progress-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.job-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.job-progress-title {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 0.875rem;
+}
+
+.job-progress-id {
+    font-size: 0.75rem;
+    color: #6b7280;
+    font-family: 'Monaco', 'Courier New', monospace;
+}
+
+.job-progress-cancel {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: color 0.15s ease;
+}
+
+.job-progress-cancel:hover {
+    color: #6b7280;
+    background: #f3f4f6;
+}
+
+.job-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #f3f4f6;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.job-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #10b981);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.job-progress-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.job-progress-text {
+    font-size: 0.875rem;
+    color: #374151;
+    flex: 1;
+}
+
+.job-progress-percentage {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1f2937;
+    font-family: 'Monaco', 'Courier New', monospace;
+}
+
+.job-progress-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.75rem;
+}
+
+.job-connection-status {
+    color: #6b7280;
+}
+
+.job-suggestions-count {
+    color: #059669;
+    font-weight: 500;
+}
+
+/* Dark mode support for job progress */
+@media (prefers-color-scheme: dark) {
+    .job-progress-card {
+        background: #1f2937;
+        border-color: #374151;
+        color: #f9fafb;
+    }
+    
+    .job-progress-title {
+        color: #f9fafb;
+    }
+    
+    .job-progress-id {
+        color: #9ca3af;
+    }
+    
+    .job-progress-cancel {
+        color: #9ca3af;
+    }
+    
+    .job-progress-cancel:hover {
+        color: #d1d5db;
+        background: #374151;
+    }
+    
+    .job-progress-bar {
+        background: #374151;
+    }
+    
+    .job-progress-text {
+        color: #e5e7eb;
+    }
+    
+    .job-progress-percentage {
+        color: #f9fafb;
+    }
+    
+    .job-connection-status {
+        color: #9ca3af;
+    }
+    
+    .job-suggestions-count {
+        color: #10b981;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .whole-doc-modal,
+    .whole-doc-modal-container,
+    .whole-doc-modal-btn,
+    .toast,
+    .job-progress-fill {
+        transition: none;
+    }
+    
+    .whole-doc-modal-backdrop {
+        backdrop-filter: none;
+    }
+}

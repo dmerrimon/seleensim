@@ -1,0 +1,131 @@
+# hybrid_controller.py
+"""
+Hybrid controller (safe, async-first).
+This implementation is defensive:
+- `handle_hybrid_request` is async and will await async helpers.
+- Any returned awaitable is awaited before being returned.
+- Logs types for easier debugging.
+- Keeps selection quick-pass and document enqueue behavior.
+"""
+
+import os
+import uuid
+import logging
+import asyncio
+import inspect
+from typing import Dict, Any, Optional
+
+logger = logging.getLogger("ilana.hybrid")
+logger.setLevel(logging.INFO)
+
+CHUNK_MAX_CHARS = int(os.getenv("CHUNK_MAX_CHARS", "3500"))
+CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "200"))
+
+# Attempt to import recommend_simple.recommend_language_simple if available.
+# That function may be sync or async; we will handle both cases.
+def _import_simple_handler() -> Optional[Any]:
+    try:
+        # adjust import path if your module name differs
+        from recommend_simple import recommend_language_simple  # type: ignore
+        return recommend_language_simple
+    except Exception:
+        return None
+
+async def _call_simple_http(payload: Dict[str, Any]) -> Any:
+    """
+    Fallback: call the simple endpoint over HTTP.
+    """
+    try:
+        import httpx
+        url = "http://127.0.0.1:8000/api/recommend-language"
+        async with httpx.AsyncClient(timeout=25) as client:
+            resp = await client.post(url, json=payload)
+            resp.raise_for_status()
+            # Try JSON, else return raw text
+            try:
+                return await resp.json()
+            except Exception:
+                return {"raw": resp.text}
+    except Exception as e:
+        logger.exception("Simple HTTP call failed: %s", e)
+        raise
+
+# Placeholder enqueue function for document jobs (replace with real queue integration)
+async def _enqueue_document_job(payload: Dict[str, Any]) -> str:
+    job_id = str(uuid.uuid4())
+    # In a real implementation, push payload to Redis/Celery/Bull queue here.
+    # For now, log and return job id
+    logger.info("Simulated enqueue job created: %s", job_id)
+    # Optionally store minimal job metadata to a simple file for debugging
+    try:
+        import json, pathlib
+        p = pathlib.Path("jobs")
+        p.mkdir(exist_ok=True)
+        (p / f"{job_id}.json").write_text(json.dumps({"payload": payload, "status": "queued"}))
+    except Exception:
+        logger.debug("Could not write job file (non-fatal).")
+    return job_id
+
+async def _maybe_await(value: Any) -> Any:
+    """
+    If value is awaitable/coroutine, await it. Otherwise return as-is.
+    Logs helpful info for debugging.
+    """
+    if inspect.isawaitable(value):
+        logger.debug("Value is awaitable, awaiting now. type=%s", type(value))
+        try:
+            return await value
+        except Exception as e:
+            logger.exception("Awaiting value raised exception: %s", e)
+            raise
+    return value
+
+async def handle_hybrid_request(payload: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Main hybrid controller entrypoint (async).
+    Returns a dict with shape:
+      - selection quick-pass: {"request_id":..., "status":"ok", "suggestions": [...]}
+      - document enqueue: {"request_id":..., "status":"queued", "job_id": "..."}
+      - error: {"request_id":..., "status":"error", "error":"..."}
+    """
+    mode = payload.get("mode", "selection")
+    request_id = payload.get("request_id", str(uuid.uuid4()))
+    logger.info("Hybrid request start request_id=%s mode=%s", request_id, mode)
+
+    # Quick-pass selection behavior
+    if mode in ("selection", "selection_only"):
+        # Try to call an in-process simple handler if available
+        simple_handler = _import_simple_handler()
+        if simple_handler:
+            try:
+                logger.debug("Found in-process simple handler: %s", getattr(simple_handler, "__name__", str(simple_handler)))
+                # Call it whether it's sync or async
+                maybe = simple_handler(payload if isinstance(payload, dict) else payload.get("text", ""))
+                result = await _maybe_await(maybe)
+                # Ensure result is serializable; wrap if necessary
+                return {"request_id": request_id, "status": "ok", "suggestions": result}
+            except Exception as e:
+                logger.exception("In-process simple handler failed: %s", e)
+                # fallback to HTTP below
+
+        # Fallback to HTTP simple endpoint
+        try:
+            result = await _call_simple_http(payload)
+            return {"request_id": request_id, "status": "ok", "suggestions": result}
+        except Exception as e:
+            logger.exception("Fallback simple HTTP failed: %s", e)
+            return {"request_id": request_id, "status": "error", "error": "quick-pass-unavailable"}
+
+    # Document / whole-doc behavior - enqueue background job
+    elif mode in ("document", "document_truncated", "document_chunked"):
+        try:
+            job_id = await _enqueue_document_job(payload)
+            return {"request_id": request_id, "status": "queued", "job_id": job_id}
+        except Exception as e:
+            logger.exception("Failed to enqueue document job: %s", e)
+            return {"request_id": request_id, "status": "error", "error": "enqueue-failed"}
+
+    # Unknown mode
+    else:
+        logger.warning("Unknown hybrid mode: %s", mode)
+        return {"request_id": request_id, "status": "error", "error": f"unknown-mode:{mode}"}

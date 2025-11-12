@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whole Document Modal - Ilana Protocol Intelligence</title>
+    <link rel="stylesheet" href="WholeDocModal.css">
+    <style>
+        /* Demo page styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+        
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .demo-title {
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .demo-subtitle {
+            color: #6b7280;
+            margin: 0;
+        }
+        
+        .demo-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .demo-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            background: #3b82f6;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        
+        .demo-btn:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+        
+        .demo-btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #3b82f6;
+        }
+        
+        .demo-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-card {
+            padding: 1.5rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background: #fafbfc;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-description {
+            color: #6b7280;
+            font-size: 0.875rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+        
+        .code-example {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+        }
+        
+        .code-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        /* Simulate Office.js environment indicator */
+        .office-status {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            background: #10b981;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            z-index: 100;
+        }
+        
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .demo-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .demo-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="office-status">
+        📄 Office.js Mock Active
+    </div>
+    
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1 class="demo-title">WholeDocModal Component</h1>
+            <p class="demo-subtitle">Accessible modal for document analysis options with focus trap and ARIA support</p>
+        </div>
+        
+        <div class="demo-actions">
+            <button class="demo-btn" onclick="showWholeDocModal()">
+                Open Whole Document Modal
+            </button>
+            <button class="demo-btn" onclick="testToastNotifications()">
+                Test Toast Notifications
+            </button>
+        </div>
+        
+        <div class="demo-features">
+            <div class="feature-card">
+                <div class="feature-title">🔒 Accessibility First</div>
+                <p class="feature-description">
+                    Focus trap, ARIA labels, screen reader announcements, and keyboard navigation support.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-title">⚡ Performance Options</div>
+                <p class="feature-description">
+                    Three analysis modes: selection (fast), document truncated (medium), and deep background processing.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-title">🎨 Responsive Design</div>
+                <p class="feature-description">
+                    Mobile-friendly with dark mode support and high contrast accessibility options.
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-title">🔧 API Integration</div>
+                <p class="feature-description">
+                    Direct integration with /api/analyze endpoint and job status polling for background tasks.
+                </p>
+            </div>
+        </div>
+        
+        <div class="code-title">Integration Example:</div>
+        <div class="code-example">
+// Basic usage
+showWholeDocModal();
+
+// Programmatic control
+const modal = initializeWholeDocModal();
+modal.open();
+modal.close();
+
+// Event handling
+modal.on('document-sync', async (data) => {
+    console.log('Sync analysis requested:', data);
+});
+
+// Toast notifications
+modal.showToast('Analysis complete!', 'success');
+        </div>
+        
+        <div class="code-title">HTML Integration:</div>
+        <div class="code-example">
+&lt;!-- Include CSS --&gt;
+&lt;link rel="stylesheet" href="WholeDocModal.css"&gt;
+
+&lt;!-- Include JavaScript --&gt;
+&lt;script src="WholeDocModal.js"&gt;&lt;/script&gt;
+
+&lt;!-- Modal auto-initializes --&gt;
+&lt;button onclick="showWholeDocModal()"&gt;Open Modal&lt;/button&gt;
+        </div>
+    </div>
+    
+    <!-- Include the modal component -->
+    <script src="WholeDocModal.js"></script>
+    
+    <!-- Demo functionality -->
+    <script>
+        // Mock Office.js for demo
+        if (typeof Office === 'undefined') {
+            window.Office = {
+                onReady: (callback) => callback({ host: { HostType: { Word: 'Word' } } })
+            };
+        }
+        
+        if (typeof Word === 'undefined') {
+            window.Word = {
+                run: async (callback) => {
+                    return callback({
+                        document: {
+                            body: {
+                                text: 'Mock document content for demo purposes. This would be the actual Word document text in a real Office Add-in environment.'
+                            }
+                        },
+                        load: () => {},
+                        sync: async () => {}
+                    });
+                }
+            };
+        }
+        
+        // Mock API endpoints
+        const originalFetch = window.fetch;
+        window.fetch = async (url, options) => {
+            console.log('📡 Mock API call:', url, options?.method || 'GET');
+            
+            if (url.includes('/api/analyze')) {
+                // Simulate API delay
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                const body = JSON.parse(options?.body || '{}');
+                
+                if (body.mode === 'document_chunked') {
+                    // Return job queued response
+                    return {
+                        ok: true,
+                        json: async () => ({
+                            request_id: 'mock-req-' + Date.now(),
+                            model_path: 'hybrid_inproc',
+                            result: {
+                                status: 'queued',
+                                job_id: 'job-' + Math.random().toString(36).substr(2, 9)
+                            }
+                        })
+                    };
+                } else {
+                    // Return immediate results
+                    return {
+                        ok: true,
+                        json: async () => ({
+                            request_id: 'mock-req-' + Date.now(),
+                            model_path: 'hybrid_inproc',
+                            result: {
+                                suggestions: [
+                                    {
+                                        type: 'medical_terminology',
+                                        text: 'patients',
+                                        suggestion: 'participants',
+                                        rationale: 'Use "participants" per ICH-GCP guidelines',
+                                        confidence: 0.9
+                                    }
+                                ]
+                            }
+                        })
+                    };
+                }
+            }
+            
+            if (url.includes('/api/job-status/')) {
+                // Simulate job completion after 10 seconds
+                const jobStarted = parseInt(sessionStorage.getItem('jobStartTime') || '0');
+                const now = Date.now();
+                
+                if (!jobStarted) {
+                    sessionStorage.setItem('jobStartTime', now.toString());
+                }
+                
+                const elapsed = now - jobStarted;
+                
+                return {
+                    ok: true,
+                    json: async () => ({
+                        status: elapsed > 10000 ? 'completed' : 'running',
+                        progress: Math.min(100, (elapsed / 10000) * 100),
+                        result: elapsed > 10000 ? {
+                            suggestions: [
+                                {
+                                    type: 'medical_terminology',
+                                    text: 'patients',
+                                    suggestion: 'participants',
+                                    rationale: 'Deep analysis confirms ICH-GCP compliance requirement'
+                                }
+                            ]
+                        } : null
+                    })
+                };
+            }
+            
+            // Fallback to original fetch for other requests
+            return originalFetch(url, options);
+        };
+        
+        // Demo functions
+        function testToastNotifications() {
+            const modal = initializeWholeDocModal();
+            const types = ['info', 'success', 'warning', 'error'];
+            const messages = [
+                'Analysis starting...',
+                'Document analysis complete!',
+                'Large document detected',
+                'API connection failed'
+            ];
+            
+            types.forEach((type, index) => {
+                setTimeout(() => {
+                    modal.showToast(messages[index], type);
+                }, index * 500);
+            });
+        }
+        
+        // Mock global functions for integration
+        window.displaySelectionSuggestions = async (result) => {
+            console.log('🔄 Processing analysis results:', result);
+            
+            const modal = initializeWholeDocModal();
+            modal.showToast(`Found ${result.result?.suggestions?.length || 0} suggestions`, 'success');
+        };
+        
+        window.updateDashboard = async (data) => {
+            console.log('📊 Updating dashboard:', data);
+        };
+        
+        // Initialize demo
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 WholeDocModal demo ready');
+            
+            // Add keyboard shortcut for demo
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'm' && e.ctrlKey) {
+                    e.preventDefault();
+                    showWholeDocModal();
+                }
+            });
+        });
+        
+        // Cleanup demo state
+        window.addEventListener('beforeunload', () => {
+            sessionStorage.removeItem('jobStartTime');
+        });
+    </script>
+</body>
+</html>

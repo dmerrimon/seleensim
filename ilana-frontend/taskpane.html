@@ -1104,6 +1104,27 @@
         let currentIssues = [];
         let maximizedCard = null;
 
+        // ===== SAFE DOM HELPER =====
+        // Safely query DOM elements and warn if not found
+        function getEl(selector) {
+            const el = document.querySelector(selector);
+            if (!el) {
+                console.warn(`getEl: selector "${selector}" not found in DOM`);
+                return null;
+            }
+            return el;
+        }
+
+        // Safe helper for getElementById
+        function getById(id) {
+            const el = document.getElementById(id);
+            if (!el) {
+                console.warn(`getById: element with id "${id}" not found in DOM`);
+                return null;
+            }
+            return el;
+        }
+
         // Track Clinical Impact expand/collapse state
         const clinicalImpactExpanded = new Map(); // suggestionId -> boolean
         const clinicalImpactLoading = new Set(); // Set of suggestionIds currently loading
@@ -2080,8 +2101,9 @@
         // Setup keyboard handlers for accessibility
         function setupKeyboardHandlers() {
             document.addEventListener('keydown', (e) => {
-                const modal = document.getElementById('analysisModal');
-                if (!modal.classList.contains('hidden')) {
+                // FIXED: Guard against null modal element
+                const modal = getById('analysisModal');
+                if (modal && !modal.classList.contains('hidden')) {
                     if (e.key === 'Escape') {
                         closeAnalysisModal();
                         e.preventDefault();
@@ -2123,21 +2145,23 @@
             const cardsList = document.getElementById('cardsList');
             if (cardsList) {
                 cardsList.innerHTML = `
-                    <div class="job-queued-container">
-                        <div class="job-queued-icon">⏱️</div>
-                        <div class="job-queued-content">
-                            <h3>Analysis Queued</h3>
-                            <p>Job ID: <code>${jobId}</code></p>
-                            <p>Request: <code>${requestId}</code></p>
-                            <div class="job-queued-description">
-                                Your document analysis is processing in the background. 
-                                Large document analysis typically takes 2-5 minutes. 
-                                You can close this window and check back later.
-                            </div>
-                            <div class="job-queued-actions">
-                                <button onclick="checkJobStatus('${jobId}')" class="check-status-btn">
-                                    Check Status
-                                </button>
+                    <div class="job-queued-card" data-job-id="${jobId}">
+                        <div class="job-queued-container">
+                            <div class="job-queued-icon">⏱️</div>
+                            <div class="job-queued-content">
+                                <h3>Analysis Queued</h3>
+                                <p>Job ID: <code>${jobId}</code></p>
+                                <p>Request: <code>${requestId}</code></p>
+                                <div class="job-queued-description">
+                                    Your document analysis is processing in the background.
+                                    Large document analysis typically takes 2-5 minutes.
+                                    You can close this window and check back later.
+                                </div>
+                                <div class="job-queued-actions">
+                                    <button onclick="checkJobStatus('${jobId}')" class="check-status-btn">
+                                        Check Status
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2147,13 +2171,36 @@
             updateStatus('Analysis queued - check back in a few minutes', 'analyzing');
         }
 
-        // Check job status
-        async function checkJobStatus(jobId) {
+        // Job status polling state
+        const jobPollers = new Map(); // jobId -> { intervalId, attempts, backoff }
+
+        // Check job status with resilient error handling
+        async function checkJobStatus(jobId, isManualCheck = true) {
             try {
+                console.log(`Checking status for job: ${jobId}`);
                 const response = await fetch(`${API_BASE_URL}/api/job-status/${jobId}`);
+
+                // FIXED: Handle 404 - job not found
+                if (response.status === 404) {
+                    console.warn(`Job ${jobId} not found (404)`);
+                    stopJobPoller(jobId);
+                    showJobNotFound(jobId);
+                    // Telemetry: log job not found event
+                    sendTelemetry('job_status_notfound', { job_id: jobId });
+                    return;
+                }
+
+                // FIXED: Handle 500/503 errors with exponential backoff
+                if (response.status >= 500) {
+                    console.error(`Server error ${response.status} for job ${jobId}`);
+                    handleJobStatusError(jobId, `Server error: ${response.status}`);
+                    return;
+                }
+
                 const status = await response.json();
-                
+
                 if (status.status === 'completed' && status.result) {
+                    stopJobPoller(jobId);
                     const suggestions = extractSuggestionsFromResponse(status.result);
                     if (suggestions.length > 0) {
                         displaySuggestions(suggestions, jobId, {
@@ -2165,13 +2212,99 @@
                         showError('No suggestions found in completed analysis');
                     }
                 } else if (status.status === 'failed') {
+                    stopJobPoller(jobId);
                     showError(`Analysis failed: ${status.error || 'Unknown error'}`);
                 } else {
+                    // Still processing
                     updateStatus(`Job status: ${status.status}`, 'analyzing');
+                    if (isManualCheck) {
+                        showToast(`Job is ${status.status}. Check back in a few minutes.`);
+                    }
                 }
             } catch (error) {
-                showError(`Failed to check job status: ${error.message}`);
+                console.error(`Error checking job ${jobId}:`, error);
+                handleJobStatusError(jobId, error.message);
             }
+        }
+
+        // Handle job status errors with exponential backoff
+        function handleJobStatusError(jobId, errorMsg) {
+            const poller = jobPollers.get(jobId);
+            if (!poller) return;
+
+            poller.attempts = (poller.attempts || 0) + 1;
+            const maxAttempts = 5;
+
+            if (poller.attempts >= maxAttempts) {
+                console.error(`Max retry attempts (${maxAttempts}) reached for job ${jobId}`);
+                stopJobPoller(jobId);
+                showJobFailed(jobId, errorMsg);
+            } else {
+                // Exponential backoff: 2s, 4s, 8s, 16s, 32s
+                poller.backoff = Math.min(2000 * Math.pow(2, poller.attempts), 32000);
+                console.log(`Retry attempt ${poller.attempts}/${maxAttempts} for job ${jobId} in ${poller.backoff}ms`);
+                updateStatus(`Retrying job status check (${poller.attempts}/${maxAttempts})...`, 'analyzing');
+            }
+        }
+
+        // Stop job poller
+        function stopJobPoller(jobId) {
+            const poller = jobPollers.get(jobId);
+            if (poller && poller.intervalId) {
+                clearInterval(poller.intervalId);
+                jobPollers.delete(jobId);
+                console.log(`Stopped poller for job ${jobId}`);
+            }
+        }
+
+        // Show job not found UI
+        function showJobNotFound(jobId) {
+            const card = getEl(`.job-queued-card[data-job-id="${jobId}"]`);
+            if (card) {
+                card.innerHTML = `
+                    <div class="job-queued-content">
+                        <h3 style="color: var(--error-red);">⚠️ Job Not Found</h3>
+                        <p>Job ID: <code>${jobId}</code></p>
+                        <p class="job-queued-description">
+                            This job could not be found on the server. It may have expired or been removed.
+                        </p>
+                        <div class="job-queued-actions">
+                            <button onclick="analyzeProtocol()" class="check-status-btn">
+                                Retry Analysis
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+            updateStatus('Job not found - please retry analysis', 'error');
+        }
+
+        // Show job failed UI
+        function showJobFailed(jobId, errorMsg) {
+            const card = getEl(`.job-queued-card[data-job-id="${jobId}"]`);
+            if (card) {
+                card.innerHTML = `
+                    <div class="job-queued-content">
+                        <h3 style="color: var(--error-red);">❌ Job Failed</h3>
+                        <p>Job ID: <code>${jobId}</code></p>
+                        <p class="job-queued-description">
+                            Analysis failed after multiple retry attempts: ${errorMsg}
+                        </p>
+                        <div class="job-queued-actions">
+                            <button onclick="analyzeProtocol()" class="check-status-btn">
+                                Retry Analysis
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+            updateStatus(`Job failed: ${errorMsg}`, 'error');
+        }
+
+        // Simple telemetry sender (logs to console in dev, can extend for production)
+        function sendTelemetry(eventName, data) {
+            console.log(`📊 Telemetry: ${eventName}`, data);
+            // TODO: Integrate with your telemetry service (e.g., Application Insights, Mixpanel)
         }
 
         // Display analysis results
