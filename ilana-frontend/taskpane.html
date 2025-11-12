@@ -1480,43 +1480,96 @@
             return window.IlanaState.analysisMode || localStorage.getItem('ilana_analysis_mode') || 'simple';
         }
 
-        // Initialize Office.js
-        Office.onReady(() => {
-            console.log('🚀 Office.onReady fired!');
-            console.log('🚀 Ilana loaded');
-            console.log('💡 Debug help: Run window.debugFixBackdrop() if Analyze button is unresponsive');
+        // Initialize Ilana UI (non-Office-API dependent initialization)
+        function initIlanaUI() {
+            console.log('🎨 Initializing Ilana UI...');
 
-            // Initialize user hash for telemetry (async, non-blocking)
-            (async () => {
+            try {
+                // Initialize modal system
+                console.log('📋 Initializing modal system...');
+                ensureBackdrop();
+                wireModalOptionHandlers();
+
+                // Initialize mode pill
+                console.log('🎛️ Initializing mode selector...');
+                initializeModePill();
+
+                // Initialize accept change handlers
+                console.log('✅ Initializing accept change handlers...');
+                initializeAcceptChangeHandlers();
+
+                // Update status and keyboard handlers
+                updateStatus('Ready to analyze pharmaceutical protocols', 'complete');
+                setupKeyboardHandlers();
+
+                console.log('✅ Ilana UI initialization complete');
+            } catch (error) {
+                console.error('❌ Error during UI initialization:', error);
+            }
+        }
+
+        // Initialize Office.js with proper error handling
+        if (window.Office && typeof Office.onReady === 'function') {
+            Office.onReady().then(() => {
+                console.log('🚀 Office ready — initializing Ilana UI');
+                console.log('💡 Debug help: Run window.debugFixBackdrop() if Analyze button is unresponsive');
+
+                // Initialize user hash for telemetry (async, non-blocking, Office-API dependent)
+                (async () => {
+                    try {
+                        console.log('👤 Initializing user identity...');
+                        const userEmail = Office.context.mailbox?.userProfile?.emailAddress ||
+                                          Office.context.mailbox?.userProfile?.displayName ||
+                                          'anonymous';
+                        window.IlanaState.userHash = await hashString(userEmail);
+                        console.log('✅ User hash initialized');
+                    } catch (error) {
+                        console.warn('⚠️ Could not get user identity, using anonymous:', error);
+                        window.IlanaState.userHash = 'anonymous';
+                    }
+                })();
+
+                // Call main UI initialization
                 try {
-                    console.log('👤 Initializing user identity...');
-                    const userEmail = Office.context.mailbox?.userProfile?.emailAddress ||
-                                      Office.context.mailbox?.userProfile?.displayName ||
-                                      'anonymous';
-                    window.IlanaState.userHash = await hashString(userEmail);
-                    console.log('✅ User hash initialized');
-                } catch (error) {
-                    console.warn('⚠️ Could not get user identity, using anonymous:', error);
-                    window.IlanaState.userHash = 'anonymous';
+                    if (typeof initIlanaUI === 'function') {
+                        initIlanaUI();
+                    }
+                } catch (e) {
+                    console.error('Error initializing Ilana UI:', e);
                 }
-            })();
 
-            // Initialize modal system
-            console.log('📋 Initializing modal system...');
-            ensureBackdrop();
-            wireModalOptionHandlers();
-
-            // Initialize mode pill
-            console.log('🎛️ Initializing mode selector...');
-            initializeModePill();
-
-            // Initialize accept change handlers
-            console.log('✅ Initializing accept change handlers...');
-            initializeAcceptChangeHandlers();
-
-            updateStatus('Ready to analyze pharmaceutical protocols', 'complete');
-            setupKeyboardHandlers();
-        });
+                // Safe call to debug helper if available (dev only)
+                if (window.debugFixBackdrop && (window.__ILANA_DEBUG__ || location.search.includes('ilana_debug=1'))) {
+                    window.debugFixBackdrop().then(result => {
+                        console.log('🐛 Auto-ran debugFixBackdrop:', result);
+                    }).catch(err => {
+                        console.error('🐛 debugFixBackdrop failed:', err);
+                    });
+                }
+            }).catch(err => {
+                console.error('❌ Office.onReady failed:', err);
+                // Fallback: try to init UI anyway
+                try {
+                    if (typeof initIlanaUI === 'function') {
+                        initIlanaUI();
+                    }
+                } catch (e) {
+                    console.error('Fallback UI init failed:', e);
+                }
+            });
+        } else {
+            console.warn('⚠️ Office.onReady not available — you may be outside Office context.');
+            // Fallback: init after short delay
+            setTimeout(() => {
+                try {
+                    if (typeof initIlanaUI === 'function') {
+                        initIlanaUI();
+                    }
+                } catch (e) {
+                    console.error('Fallback UI init failed:', e);
+                }
+            }, 500);
+        }
 
         // Main analysis function with improved flow
         async function analyzeProtocol() {
