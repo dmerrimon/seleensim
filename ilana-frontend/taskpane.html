@@ -1213,105 +1213,135 @@
             }
         }
 
-        // Emergency backdrop cleanup function (accessible via console)
-        // Defensive debug helper - only exposed in debug mode
+        // --- debug helper: defensive fix for stuck modal/backdrop ---
+        // Place this near modal helper functions (openAnalysisModal/closeAnalysisModal)
         (function() {
-            // Check if debug mode is enabled
-            const isDebugMode =
-                window.__ILANA_DEBUG__ === true ||
-                window.location.hostname === 'localhost' ||
-                window.location.hostname.includes('ngrok') ||
-                (window.location.search && new URLSearchParams(window.location.search).get('ilana_debug') === '1');
-
-            if (!isDebugMode) {
-                // Production mode - function not exposed
-                return;
-            }
-
-            // Debug mode active - expose comprehensive fix function
-            window.debugFixBackdrop = function() {
-                console.log('🔧 Running comprehensive backdrop and modal repair...');
-
-                // Step 1: Remove all orphaned backdrop elements
-                const backdrops = document.querySelectorAll('.modal-backdrop');
-                console.log(`  → Found ${backdrops.length} backdrop element(s)`);
-
-                backdrops.forEach((el, index) => {
-                    el.classList.remove('open');
-                    el.style.display = 'none';
-                    el.classList.add('hidden');
-                    el.remove();
-                    console.log(`    ✓ Removed backdrop ${index + 1}`);
-                });
-
-                // Step 2: Ensure fresh backdrop with click listener
+            const isDebugAllowed = () => {
                 try {
-                    if (typeof ensureBackdrop === 'function') {
-                        ensureBackdrop();
-                        console.log('  ✓ Fresh backdrop created with click listener');
-                    } else {
-                        console.warn('  ⚠️ ensureBackdrop() function not found');
-                    }
-                } catch (error) {
-                    console.error('  ❌ Error creating backdrop:', error);
-                }
-
-                // Step 3: Close modal using correct selector (.modal-container, not #analysisModal)
-                const modal = document.querySelector('.modal-container');
-                let modalClosed = false;
-                if (modal) {
-                    modal.classList.add('hidden');
-                    modal.setAttribute('aria-hidden', 'true');
-                    modal.style.display = 'none';
-                    console.log('  ✓ Modal closed (.modal-container)');
-                    modalClosed = true;
-                } else {
-                    console.log('  ℹ️ No modal open');
-                }
-
-                // Step 4: Re-enable analyze button
-                const analyzeBtn = document.getElementById('analyzeButton');
-                let analyzeEnabled = false;
-                if (analyzeBtn) {
-                    analyzeBtn.disabled = false;
-                    analyzeBtn.removeAttribute('aria-busy');
-                    analyzeBtn.focus();
-                    console.log('  ✓ Analyze button re-enabled and focused');
-                    analyzeEnabled = true;
-                } else {
-                    console.warn('  ⚠️ Analyze button not found');
-                }
-
-                // Step 5: Re-wire all modal option button handlers
-                let handlersRewired = false;
-                try {
-                    if (typeof wireModalOptionHandlers === 'function') {
-                        wireModalOptionHandlers();
-                        console.log('  ✓ Modal option handlers re-wired');
-                        handlersRewired = true;
-                    } else {
-                        console.warn('  ⚠️ wireModalOptionHandlers() function not found');
-                    }
-                } catch (error) {
-                    console.error('  ❌ Error re-wiring handlers:', error);
-                }
-
-                // Step 6: Return telemetry
-                const telemetry = {
-                    removed: backdrops.length,
-                    ensuredBackdrop: true,
-                    analyzeEnabled: analyzeEnabled,
-                    modalClosed: modalClosed,
-                    handlersRewired: handlersRewired
-                };
-
-                console.log('✅ Backdrop and modal repair complete!');
-                console.log('📊 Telemetry:', telemetry);
-
-                return telemetry;
+                    if (window.__ILANA_DEBUG__ === true) return true;
+                    const host = window.location.hostname || "";
+                    if (host.includes("localhost") || host.includes("127.0.0.1") || host.includes("ngrok")) return true;
+                    if (window.location.search && window.location.search.includes("ilana_debug=1")) return true;
+                } catch (e) {}
+                return false;
             };
 
-            console.log('🐛 Debug mode active: window.debugFixBackdrop() available');
+            async function debugFixBackdrop() {
+                const result = { removed: 0, ensuredBackdrop: false, analyzeEnabled: false, reWired: false, errors: [] };
+
+                try {
+                    // 1) Remove orphan/backdrop duplicates
+                    const bds = Array.from(document.querySelectorAll('.modal-backdrop'));
+                    bds.forEach((el, idx) => {
+                        try {
+                            // hide then remove to avoid immediate layout thrash
+                            el.style.display = 'none';
+                            el.classList.remove('open');
+                            el.remove();
+                            result.removed += 1;
+                        } catch (e) {
+                            result.errors.push(`remove-backdrop-${idx}:${e.message}`);
+                        }
+                    });
+
+                    // 2) Ensure single backdrop exists and is wired
+                    // Use ensureBackdrop() if available, otherwise create manually
+                    try {
+                        if (typeof ensureBackdrop === 'function') {
+                            ensureBackdrop();
+                            result.ensuredBackdrop = true;
+                        } else {
+                            // Fallback: manual backdrop creation
+                            let bd = document.querySelector('.modal-backdrop');
+                            if (!bd) {
+                                bd = document.createElement('div');
+                                bd.className = 'modal-backdrop';
+                                bd.setAttribute('role', 'presentation');
+                                document.body.appendChild(bd);
+                            }
+                            // Strip all event listeners by cloning
+                            const newBd = bd.cloneNode(false);
+                            bd.replaceWith(newBd);
+                            // Add canonical click listener
+                            newBd.addEventListener('click', () => {
+                                try { if (typeof closeAnalysisModal === 'function') closeAnalysisModal(); } catch(e){ console.warn(e); }
+                            });
+                            result.ensuredBackdrop = true;
+                        }
+                    } catch (e) {
+                        result.errors.push('ensureBackdrop:' + e.message);
+                    }
+
+                    // 3) Restore modal container state if present
+                    const container = document.querySelector('.modal-container');
+                    if (container) {
+                        // Ensure it's hidden by default unless explicitly open
+                        if (!container.classList.contains('open')) {
+                            container.style.display = 'none';
+                            container.setAttribute('aria-hidden', 'true');
+                        }
+                    }
+
+                    // 4) Re-enable Analyze button
+                    const analyzeBtn = document.getElementById('analyzeButton');
+                    if (analyzeBtn) {
+                        analyzeBtn.disabled = false;
+                        analyzeBtn.removeAttribute('aria-busy');
+                        analyzeBtn.focus?.();
+                        result.analyzeEnabled = true;
+                    }
+
+                    // 5) Re-wire modal option handlers
+                    // Use wireModalOptionHandlers() if available, otherwise manual re-wire
+                    try {
+                        if (typeof wireModalOptionHandlers === 'function') {
+                            wireModalOptionHandlers();
+                            result.reWired = true;
+                        } else {
+                            // Fallback: manual re-wiring
+                            const selectBtn = document.querySelector('.modal-option.select-text');
+                            if (selectBtn && typeof selectTextOption === 'function') {
+                                selectBtn.removeEventListener('click', selectTextOption);
+                                selectBtn.addEventListener('click', selectTextOption);
+                            }
+                            const truncatedBtn = document.querySelector('.modal-option.truncated');
+                            if (truncatedBtn && typeof analyzeTruncatedDocument === 'function') {
+                                truncatedBtn.removeEventListener('click', analyzeTruncatedDocument);
+                                truncatedBtn.addEventListener('click', analyzeTruncatedDocument);
+                            }
+                            const queueBtn = document.querySelector('.modal-option.queue');
+                            if (queueBtn && typeof queueDeepAnalysis === 'function') {
+                                queueBtn.removeEventListener('click', queueDeepAnalysis);
+                                queueBtn.addEventListener('click', queueDeepAnalysis);
+                            }
+                            const closeBtn = document.querySelector('.modal-close');
+                            if (closeBtn && typeof closeAnalysisModal === 'function') {
+                                closeBtn.removeEventListener('click', closeAnalysisModal);
+                                closeBtn.addEventListener('click', closeAnalysisModal);
+                            }
+                            result.reWired = true;
+                        }
+                    } catch (e) {
+                        result.errors.push('rewire:' + e.message);
+                    }
+
+                    // 6) cleanup any stray aria-hidden on body
+                    try {
+                        document.body.classList.remove('modal-open');
+                    } catch(e) {}
+
+                } catch (err) {
+                    result.errors.push('fatal:' + (err && err.message));
+                }
+
+                console.info('debugFixBackdrop:', result);
+                return result;
+            }
+
+            if (isDebugAllowed()) {
+                window.debugFixBackdrop = debugFixBackdrop;
+                console.info('Ilana debug helper: window.debugFixBackdrop() is available (debug mode)');
+            }
         })();
 
         /*
@@ -1325,7 +1355,7 @@
          * 1. Enable debug mode (choose ONE method):
          *    a) Add ?ilana_debug=1 to URL and reload, OR
          *    b) Run in console: window.__ILANA_DEBUG__ = true; (then reload), OR
-         *    c) Use localhost/ngrok (automatically enabled)
+         *    c) Use localhost/ngrok/127.0.0.1 (automatically enabled)
          *
          * 2. Open browser console (F12 → Console tab)
          *
@@ -1333,9 +1363,9 @@
          *    typeof window.debugFixBackdrop
          *    // Should output: "function"
          *
-         * 4. Run the repair function:
-         *    window.debugFixBackdrop()
-         *    // Should output telemetry: {removed: N, ensuredBackdrop: true, ...}
+         * 4. Run the repair function (async):
+         *    await window.debugFixBackdrop()
+         *    // Should output: {removed: N, ensuredBackdrop: true, analyzeEnabled: true, reWired: true, errors: []}
          *
          * 5. Test functionality:
          *    - Click mode pill dropdown (should open)
@@ -1345,10 +1375,10 @@
          * EXPECTED OUTPUT:
          * {
          *   removed: 0-N,              // Number of orphaned backdrops removed
-         *   ensuredBackdrop: true,     // Fresh backdrop created
-         *   analyzeEnabled: true,      // Analyze button re-enabled
-         *   modalClosed: true,         // Modal properly closed
-         *   handlersRewired: true      // Button handlers re-attached
+         *   ensuredBackdrop: true,     // Fresh backdrop created with click listener
+         *   analyzeEnabled: true,      // Analyze button re-enabled and focused
+         *   reWired: true,             // Modal button handlers re-attached
+         *   errors: []                 // Empty if no errors, or array of error messages
          * }
          */
 
