@@ -2265,7 +2265,7 @@
                         ` : ''}
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
 
             // Wire accept change buttons after rendering
             wireAcceptButtons();
@@ -3988,6 +3988,14 @@
             // Use existing displayAnalysisResults function for backward compatibility
             displayAnalysisResults(suggestions, { request_id: requestId });
         }
+
+        // Expose functions to window object for inline onclick handlers
+        window.analyzeProtocol = analyzeProtocol;
+        window.checkJobStatus = checkJobStatus;
+        window.toggleCard = toggleCard;
+        window.highlightAndScrollToIssue = highlightAndScrollToIssue;
+        window.dismissIssue = dismissIssue;
+        window.toggleClinicalImpact = toggleClinicalImpact;
     </script>
 </body>
 </html>
