@@ -548,10 +548,12 @@
         }
 
         .clinical-impact-text.truncated {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            /* Removed line-clamp to allow full text display */
+            /* Text expand/collapse is handled by Read more/Show less button */
+            /* display: -webkit-box; */
+            /* -webkit-line-clamp: 3; */
+            /* -webkit-box-orient: vertical; */
+            /* overflow: hidden; */
         }
 
         .clinical-impact-loading {
@@ -2102,7 +2104,7 @@
         function setupKeyboardHandlers() {
             document.addEventListener('keydown', (e) => {
                 // FIXED: Guard against null modal element
-                const modal = getById('analysisModal');
+                const modal = getEl('.modal-container');
                 if (modal && !modal.classList.contains('hidden')) {
                     if (e.key === 'Escape') {
                         closeAnalysisModal();
