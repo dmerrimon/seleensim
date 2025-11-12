@@ -1343,38 +1343,37 @@ async def stream_job_events(job_id: str, request: Request):
 
 @app.get("/api/job-status/{job_id}")
 async def get_job_status(job_id: str):
-    """Get current job status and latest events"""
-    job_dir = Path("jobs") / job_id
-    
-    if not job_dir.exists():
-        raise HTTPException(status_code=404, detail=f"Job {job_id} not found")
-    
-    events = load_job_events(job_id)
-    
-    # Determine job status from events
-    status = "running"
-    progress = 0
-    result = None
-    
-    if events:
-        latest_event = events[-1]
-        if latest_event.get('type') == 'complete':
-            status = "completed"
-            result = latest_event.get('result')
-            progress = 100
-        elif latest_event.get('type') == 'progress':
-            progress = (latest_event.get('processed', 0) / max(latest_event.get('total', 1), 1)) * 100
-        elif latest_event.get('type') == 'error':
-            status = "failed"
-    
-    return {
-        "job_id": job_id,
-        "status": status,
-        "progress": progress,
-        "events_count": len(events),
-        "result": result,
-        "last_updated": events[-1].get('timestamp') if events else None
-    }
+    """
+    Get current job status and latest events.
+
+    Returns 200 with job data if found, 404 if not found.
+    Validates job_id is UUID format.
+    """
+    # Import JobStore
+    from server.jobs import get_job_store
+
+    # Validate UUID format (400 Bad Request if invalid)
+    try:
+        uuid.UUID(job_id)
+    except (ValueError, AttributeError):
+        logger.warning(f"⚠️ Invalid job_id format (not UUID): {job_id}")
+        raise HTTPException(status_code=400, detail="Invalid job_id format (must be UUID)")
+
+    # Log request
+    logger.info(f"📊 Job status request for job_id: {job_id}")
+
+    # Get job from store
+    job_store = get_job_store()
+    job_data = job_store.get_job(job_id)
+
+    if not job_data:
+        # Log at INFO level (not ERROR) - 404 is normal for expired/non-existent jobs
+        logger.info(f"ℹ️ Job {job_id} not found (404)")
+        raise HTTPException(status_code=404, detail="Job not found")
+
+    # Return job data
+    logger.info(f"✅ Returning job {job_id} status: {job_data.get('status')}")
+    return job_data
 
 @app.post("/api/job/{job_id}/emit-event")
 async def emit_event_to_job(job_id: str, event_data: dict):
