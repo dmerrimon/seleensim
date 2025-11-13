@@ -23,7 +23,7 @@ I need to create a Microsoft Word add-in called "Ilana" that analyzes pharmaceut
 ### 3. Enterprise AI Stack Configuration (WORKING - Keep As-Is)
 - **Azure OpenAI**: GPT-4 integration with pharmaceutical prompts
 - **Pinecone**: Vector database with regulatory knowledge
-- **PubMedBERT**: Medical domain intelligence at https://usz78oxlybv4xfh2.eastus.azure.endpoints.huggingface.cloud
+- **PubMedBERT**: Medical domain intelligence at https://dk8e3vdcuov185qm.us-east-1.aws.endpoints.huggingface.cloud
 - **Location**: All environment variables configured in Render
 
 ## What Needs to be Built (START FRESH)
