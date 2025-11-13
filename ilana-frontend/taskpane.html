@@ -1901,7 +1901,7 @@
             // Prevent background elements from being focused
             document.querySelectorAll('button, a, input, textarea, [tabindex]').forEach(el => {
                 if (!container.contains(el)) {
-                    el.dataset._ilanaTabIndex = el.getAttribute('tabindex') || '';
+                    el.dataset.ilanaTabIndex = el.getAttribute('tabindex') || '';
                     el.setAttribute('tabindex', '-1');
                 }
             });
@@ -1940,14 +1940,14 @@
             document.body.classList.remove('modal-open');
 
             // Restore previously saved tabindex
-            document.querySelectorAll('[data-_ilana-tab-index]').forEach(el => {
-                const prev = el.dataset._ilanaTabIndex;
+            document.querySelectorAll('[data-ilana-tab-index]').forEach(el => {
+                const prev = el.dataset.ilanaTabIndex;
                 if (prev === '') {
                     el.removeAttribute('tabindex');
                 } else {
                     el.setAttribute('tabindex', prev);
                 }
-                delete el.dataset._ilanaTabIndex;
+                delete el.dataset.ilanaTabIndex;
             });
 
             // Restore focus to analyze button
