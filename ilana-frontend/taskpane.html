@@ -2178,9 +2178,34 @@
 
         // Check job status with resilient error handling
         async function checkJobStatus(jobId, isManualCheck = true) {
+            // Defensive: Find the Check Status button for this job (if manual check)
+            let checkStatusBtn = null;
+            if (isManualCheck) {
+                const card = document.querySelector(`.job-queued-card[data-job-id="${jobId}"]`);
+                if (card) {
+                    checkStatusBtn = card.querySelector('.check-status-btn');
+                }
+            }
+
+            // Disable button and show spinner
+            if (checkStatusBtn && !checkStatusBtn.disabled) {
+                checkStatusBtn.disabled = true;
+                checkStatusBtn.textContent = 'Checking...';
+                checkStatusBtn.setAttribute('aria-busy', 'true');
+            }
+
             try {
                 console.log(`Checking status for job: ${jobId}`);
-                const response = await fetch(`${API_BASE_URL}/api/job-status/${jobId}`);
+
+                // Fetch with 10s timeout
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+                const response = await fetch(`${API_BASE_URL}/api/job-status/${jobId}`, {
+                    signal: controller.signal
+                });
+
+                clearTimeout(timeoutId);
 
                 // FIXED: Handle 404 - job not found
                 if (response.status === 404) {
@@ -2215,17 +2240,39 @@
                     }
                 } else if (status.status === 'failed') {
                     stopJobPoller(jobId);
-                    showError(`Analysis failed: ${status.error || 'Unknown error'}`);
+                    showError(`Analysis failed: ${status.error_message || status.error || 'Unknown error'}`);
                 } else {
-                    // Still processing
+                    // Still processing (queued/running)
                     updateStatus(`Job status: ${status.status}`, 'analyzing');
                     if (isManualCheck) {
-                        showToast(`Job is ${status.status}. Check back in a few minutes.`);
+                        const progress = status.progress ? ` (${Math.round(status.progress)}%)` : '';
+                        showToast(`Job is ${status.status}${progress}. Check back in a few minutes.`);
+                    }
+
+                    // Re-enable button for manual checks
+                    if (checkStatusBtn) {
+                        checkStatusBtn.disabled = false;
+                        checkStatusBtn.textContent = 'Check Status';
+                        checkStatusBtn.removeAttribute('aria-busy');
                     }
                 }
             } catch (error) {
                 console.error(`Error checking job ${jobId}:`, error);
-                handleJobStatusError(jobId, error.message);
+
+                // Handle timeout specifically
+                if (error.name === 'AbortError') {
+                    console.warn(`Job status check timed out for ${jobId}`);
+                    handleJobStatusError(jobId, 'Request timed out');
+                } else {
+                    handleJobStatusError(jobId, error.message);
+                }
+
+                // Re-enable button on error
+                if (checkStatusBtn) {
+                    checkStatusBtn.disabled = false;
+                    checkStatusBtn.textContent = 'Check Status';
+                    checkStatusBtn.removeAttribute('aria-busy');
+                }
             }
         }
 
@@ -2261,24 +2308,65 @@
 
         // Show job not found UI
         function showJobNotFound(jobId) {
-            const card = getEl(`.job-queued-card[data-job-id="${jobId}"]`);
-            if (card) {
-                card.innerHTML = `
-                    <div class="job-queued-content">
-                        <h3 style="color: var(--error-red);">⚠️ Job Not Found</h3>
-                        <p>Job ID: <code>${jobId}</code></p>
-                        <p class="job-queued-description">
-                            This job could not be found on the server. It may have expired or been removed.
-                        </p>
-                        <div class="job-queued-actions">
-                            <button onclick="analyzeProtocol()" class="check-status-btn">
-                                Retry Analysis
-                            </button>
-                        </div>
-                    </div>
-                `;
+            const card = document.querySelector(`.job-queued-card[data-job-id="${jobId}"]`);
+            if (!card) {
+                console.warn('Job card not found for jobId:', jobId);
+                return;
             }
+
+            card.innerHTML = `
+                <div class="job-queued-content">
+                    <h3 style="color: var(--error-red);">⚠️ Job Not Found</h3>
+                    <p>Job ID: <code>${jobId}</code></p>
+                    <p class="job-queued-description">
+                        This job could not be found on the server. It may have expired or been removed.
+                    </p>
+                    <div class="job-queued-actions">
+                        <button onclick="retryJobCreation()" class="check-status-btn">
+                            Create New Job
+                        </button>
+                        <button onclick="analyzeProtocol()" class="check-status-btn" style="margin-left: 8px;">
+                            Analyze Again
+                        </button>
+                    </div>
+                </div>
+            `;
+
             updateStatus('Job not found - please retry analysis', 'error');
+        }
+
+        // Retry creating a job via POST /api/queue-job
+        async function retryJobCreation() {
+            try {
+                updateStatus('Creating new job...', 'analyzing');
+
+                // Get the current document text (simplified - adjust as needed)
+                const text = await getDocumentText();
+
+                const response = await fetch(`${API_BASE_URL}/api/queue-job`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        text: text,
+                        mode: 'document_truncated'
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Failed to create job: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log('New job created:', data.job_id);
+
+                // Show the new job queued message
+                showJobQueuedMessage(data.job_id, data.job_id);
+                showToast('New job created successfully!');
+
+            } catch (error) {
+                console.error('Error creating new job:', error);
+                showError(`Failed to create new job: ${error.message}`);
+            }
         }
 
         // Show job failed UI

@@ -26,12 +26,12 @@ class JobStore:
     All operations are defensive with proper error handling and logging.
     """
 
-    def __init__(self, base_dir: str = "jobs"):
+    def __init__(self, base_dir: str = "shadow/jobs"):
         """
         Initialize JobStore with base directory.
 
         Args:
-            base_dir: Base directory for job storage (default: "jobs")
+            base_dir: Base directory for job storage (default: "shadow/jobs")
         """
         self.base_dir = Path(base_dir)
         self.base_dir.mkdir(parents=True, exist_ok=True)
@@ -326,12 +326,12 @@ class JobStore:
 _job_store = None
 
 
-def get_job_store(base_dir: str = "jobs") -> JobStore:
+def get_job_store(base_dir: str = "shadow/jobs") -> JobStore:
     """
     Get or create global JobStore instance.
 
     Args:
-        base_dir: Base directory for job storage
+        base_dir: Base directory for job storage (default: "shadow/jobs")
 
     Returns:
         JobStore instance
@@ -340,3 +340,33 @@ def get_job_store(base_dir: str = "jobs") -> JobStore:
     if _job_store is None:
         _job_store = JobStore(base_dir=base_dir)
     return _job_store
+
+
+def create_job(payload: Dict[str, Any]) -> str:
+    """
+    Create a new job with queued status.
+
+    Args:
+        payload: Job payload (text, ta, etc.)
+
+    Returns:
+        Job ID (UUID string)
+    """
+    job_id = str(uuid.uuid4())
+    job_store = get_job_store()
+
+    job = {
+        "job_id": job_id,
+        "status": "queued",
+        "payload": payload,
+        "created_at": datetime.utcnow().isoformat(),
+        "updated_at": datetime.utcnow().isoformat(),
+    }
+
+    success = job_store.store_job(job)
+    if success:
+        logger.info(f"✅ Created job {job_id} with status queued")
+    else:
+        logger.error(f"❌ Failed to create job {job_id}")
+
+    return job_id

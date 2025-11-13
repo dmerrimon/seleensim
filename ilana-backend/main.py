@@ -1375,6 +1375,52 @@ async def get_job_status(job_id: str):
     logger.info(f"✅ Returning job {job_id} status: {job_data.get('status')}")
     return job_data
 
+@app.post("/api/queue-job")
+async def queue_job(request: Request):
+    """
+    Create a new job with queued status.
+
+    Accepts minimal payload and returns job_id.
+
+    Request body:
+        {
+            "text": str (optional),
+            "ta": str (optional),
+            "mode": str (optional),
+            "user_id_hash": str (optional)
+        }
+
+    Returns:
+        {
+            "job_id": str (UUID),
+            "status": "queued",
+            "created_at": str (ISO timestamp)
+        }
+    """
+    from server.jobs import create_job
+
+    try:
+        payload = await request.json()
+        logger.info(f"📥 Queue job request: {len(payload.get('text', ''))} chars")
+
+        # Create job
+        job_id = create_job(payload)
+
+        # Get job data to return
+        from server.jobs import get_job_store
+        job_store = get_job_store()
+        job_data = job_store.get_job(job_id)
+
+        logger.info(f"✅ Job {job_id} queued successfully")
+        return {
+            "job_id": job_id,
+            "status": job_data.get("status", "queued"),
+            "created_at": job_data.get("created_at")
+        }
+    except Exception as e:
+        logger.error(f"❌ Error queueing job: {e}")
+        raise HTTPException(status_code=500, detail=f"Failed to queue job: {str(e)}")
+
 @app.post("/api/job/{job_id}/emit-event")
 async def emit_event_to_job(job_id: str, event_data: dict):
     """Emit an event to a job stream (for worker processes)"""
