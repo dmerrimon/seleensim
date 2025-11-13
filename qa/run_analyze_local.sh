@@ -6,7 +6,9 @@
 set -e  # Exit on any error
 
 # Configuration
-API_BASE_URL="http://127.0.0.1:8000"
+# Set ILANA_API_BASE environment variable to test against production
+# Default: http://127.0.0.1:8000
+API_BASE_URL="${ILANA_API_BASE:-http://127.0.0.1:8000}"
 QA_DIR="$(dirname "$0")"
 SAMPLE_PROTOCOLS_FILE="$QA_DIR/sample_protocols.json"
 

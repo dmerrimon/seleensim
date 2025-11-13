@@ -7,8 +7,13 @@
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
     
     <script>
-        // Dev override for API base URL - replace with your ngrok or staging URL during dev
-        window.__ILANA_API_BASE__ = "http://127.0.0.1:8000";
+        // API Base URL Configuration
+        // Production: Uses Render backend (https://ilanalabs-add-in.onrender.com)
+        // Development: Set window.__DEV_MODE__ = true before this script loads to use localhost
+        // Example: Add <script>window.__DEV_MODE__ = true;</script> above this script tag
+        window.__ILANA_API_BASE__ = window.__DEV_MODE__
+            ? "http://127.0.0.1:8000"
+            : "https://ilanalabs-add-in.onrender.com";
     </script>
     <style>
         /* Professional taskpane design system */
@@ -81,7 +86,7 @@
         }
 
         .header-btn {
-            background: var(--primary-green);
+            background: #0700ff;
             color: var(--surface-white);
             border: none;
             padding: 8px 16px;
@@ -95,7 +100,7 @@
         }
 
         .header-btn:hover {
-            background: var(--primary-green-hover);
+            background: #0500cc;
         }
 
         .header-btn:disabled {
@@ -1058,7 +1063,7 @@
                 <div id="emptyState" class="empty-state">
                     <div class="empty-state-icon">✓</div>
                     <div class="empty-state-title">Ready to analyze</div>
-                    <div class="empty-state-subtitle">Click "Analyze" to check your protocol for compliance, clarity, and feasibility issues.</div>
+                    <div class="empty-state-subtitle">Select text and click "Analyze" to get targeted suggestions and check for clarity and compliance issues</div>
                 </div>
             </div>
         </div>
@@ -1066,44 +1071,6 @@
 
     <!-- Analysis Options Modal -->
     <!-- Note: .modal-backdrop is created dynamically by ensureBackdrop() -->
-    <div class="modal-container" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle" style="display:none;">
-        <div class="modal-header">
-            <h2 id="modalTitle">Select Text to Analyze</h2>
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-        </div>
-        <div class="modal-body">
-            <p class="modal-description">
-                To use Ilana's analysis features, please select specific text in your document and click Analyze again.
-            </p>
-            <div class="modal-options">
-                <button class="modal-option select-text" tabindex="0">
-                    <div class="option-icon">📝</div>
-                    <div class="option-content">
-                        <h3>Select Text First</h3>
-                        <p>Select specific text to get targeted suggestions (recommended for quick analysis)</p>
-                    </div>
-                </button>
-                <button class="modal-option truncated" tabindex="0">
-                    <div class="option-icon">⚡</div>
-                    <div class="option-content">
-                        <h3>Analyze Document (Truncated)</h3>
-                        <p>Fast analysis of first 20,000 characters. Results in 10-30 seconds.</p>
-                    </div>
-                </button>
-                <button class="modal-option queue" tabindex="0">
-                    <div class="option-icon">🔍</div>
-                    <div class="option-content">
-                        <h3>Queue Deep Analysis</h3>
-                        <p>Comprehensive analysis of entire document. Runs in background, check back in 2-5 minutes.</p>
-                    </div>
-                </button>
-            </div>
-            <div class="modal-warning">
-                <strong>Performance Note:</strong> Large document analysis may take longer. Select text for fastest results.
-            </div>
-        </div>
-    </div>
-
     <script>
         // Pharmaceutical Protocol Analyzer - Professional Interface
         const API_BASE_URL = window.__ILANA_API_BASE__ || 'https://ilanalabs-add-in.onrender.com';

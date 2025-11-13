@@ -9,7 +9,10 @@
     <div id="results"></div>
 
     <script>
-        const API_BASE_URL = 'http://127.0.0.1:8000';
+        // Test API Configuration
+        // Set window.__ILANA_API_BASE__ before loading, or defaults to localhost
+        // For production testing: window.__ILANA_API_BASE__ = "https://ilanalabs-add-in.onrender.com"
+        const API_BASE_URL = window.__ILANA_API_BASE__ || 'http://127.0.0.1:8000';
 
         async function testHybridAPI() {
             const resultsDiv = document.getElementById('results');

@@ -8,9 +8,11 @@ const fs = require('fs').promises;
 const path = require('path');
 
 // Test configuration
+// Set ILANA_API_BASE environment variable to test against production
+// Set ILANA_TASKPANE_URL environment variable to test against deployed taskpane
 const TEST_CONFIG = {
-    BACKEND_URL: 'http://127.0.0.1:8000',
-    TASKPANE_URL: 'http://127.0.0.1:3000/taskpane.html',
+    BACKEND_URL: process.env.ILANA_API_BASE || 'http://127.0.0.1:8000',
+    TASKPANE_URL: process.env.ILANA_TASKPANE_URL || 'http://127.0.0.1:3000/taskpane.html',
     TIMEOUT_MS: 30000,
     MOCK_OFFICE_JS: true
 };
