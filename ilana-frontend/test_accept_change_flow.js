@@ -3,6 +3,11 @@
  * Tests Accept Change button click, Office.js text replacement, and reinforcement API call
  */
 
+// Test API Configuration
+// Set ILANA_API_BASE environment variable to test against production
+// Default: http://localhost:8000
+const API_BASE_URL = process.env.ILANA_API_BASE || 'http://localhost:8000';
+
 describe('Accept Change Flow', () => {
     let mockWordRun, mockFetch, currentIssues, undoStateMap;
 
@@ -327,7 +332,7 @@ describe('Accept Change Flow', () => {
                     analysis_mode: 'simple'
                 };
 
-                const response = await fetch('http://localhost:8000/api/reinforce', {
+                const response = await fetch(`${API_BASE_URL}/api/reinforce`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(enrichedPayload),
@@ -340,7 +345,7 @@ describe('Accept Change Flow', () => {
             await sendReinforcementSignal(payload);
 
             expect(mockFetch).toHaveBeenCalledWith(
-                'http://localhost:8000/api/reinforce',
+                `${API_BASE_URL}/api/reinforce`,
                 expect.objectContaining({
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -387,7 +392,7 @@ describe('Accept Change Flow', () => {
                 throw new Error('Max retries exceeded');
             };
 
-            await sendWithRetry('http://localhost:8000/api/reinforce', {});
+            await sendWithRetry(`${API_BASE_URL}/api/reinforce`, {});
 
             expect(mockFetch).toHaveBeenCalledTimes(3);
         });
@@ -397,7 +402,7 @@ describe('Accept Change Flow', () => {
 
             const sendReinforcementNonBlocking = async (payload) => {
                 try {
-                    await fetch('http://localhost:8000/api/reinforce', {
+                    await fetch(`${API_BASE_URL}/api/reinforce`, {
                         method: 'POST',
                         body: JSON.stringify(payload)
                     });
@@ -527,7 +532,7 @@ describe('Accept Change Flow', () => {
             expect(card.classList.contains('accepted')).toBe(true);
 
             // 4. Send reinforcement signal
-            const reinforceResponse = await fetch('http://localhost:8000/api/reinforce', {
+            const reinforceResponse = await fetch(`${API_BASE_URL}/api/reinforce`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

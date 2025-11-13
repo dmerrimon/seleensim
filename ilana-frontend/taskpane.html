@@ -7,8 +7,13 @@
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
     
     <script>
-        // Dev override for API base URL - replace with your ngrok or staging URL during dev
-        window.__ILANA_API_BASE__ = "http://127.0.0.1:8000";
+        // API Base URL Configuration
+        // Production: Uses Render backend (https://ilanalabs-add-in.onrender.com)
+        // Development: Set window.__DEV_MODE__ = true before this script loads to use localhost
+        // Example: Add <script>window.__DEV_MODE__ = true;</script> above this script tag
+        window.__ILANA_API_BASE__ = window.__DEV_MODE__
+            ? "http://127.0.0.1:8000"
+            : "https://ilanalabs-add-in.onrender.com";
     </script>
     <style>
         /* Professional taskpane design system */
