@@ -863,6 +863,12 @@
             outline: none;
         }
 
+        /* Hide document analysis options (selection-only mode) */
+        .modal-option.truncated,
+        .modal-option.queue {
+            display: none !important;
+        }
+
         .option-icon {
             font-size: 24px;
             flex-shrink: 0;
@@ -1062,12 +1068,12 @@
     <!-- Note: .modal-backdrop is created dynamically by ensureBackdrop() -->
     <div class="modal-container" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle" style="display:none;">
         <div class="modal-header">
-            <h2 id="modalTitle">Analysis Options</h2>
+            <h2 id="modalTitle">Select Text to Analyze</h2>
             <button class="modal-close" aria-label="Close modal">&times;</button>
         </div>
         <div class="modal-body">
             <p class="modal-description">
-                No text selection detected. How would you like to analyze your document?
+                To use Ilana's analysis features, please select specific text in your document and click Analyze again.
             </p>
             <div class="modal-options">
                 <button class="modal-option select-text" tabindex="0">
@@ -1602,12 +1608,20 @@
             try {
                 const selectedText = await getSelectedText();
                 console.log(`Selected text length: ${selectedText.length}`);
-                
+
                 if (selectedText.length > 5) {
                     // Selection detected: analyze immediately
                     await performAnalysis(selectedText, 'selection');
                 } else {
-                    // No selection: show modal with options
+                    // No selection: show modal with guidance
+                    // Log telemetry: user attempted document analysis (now disabled)
+                    logTelemetry({
+                        event: 'document_analysis_disabled',
+                        attempted_mode: 'no_selection',
+                        selection_length: selectedText.length,
+                        user_id_hash: window.IlanaState?.userHash || 'anonymous',
+                        timestamp: new Date().toISOString()
+                    });
                     showAnalysisModal();
                 }
             } catch (error) {

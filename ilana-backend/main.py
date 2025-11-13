@@ -34,6 +34,7 @@ RAG_ASYNC_ALLOW_SYNC = os.getenv("RAG_ASYNC_ALLOW_SYNC", "false").lower() == "tr
 USE_SIMPLE_AZURE_PROMPT = os.getenv("USE_SIMPLE_AZURE_PROMPT", "true").lower() == "true"
 ENABLE_TA_ON_DEMAND = os.getenv("ENABLE_TA_ON_DEMAND", "true").lower() == "true"
 ENABLE_TA_SHADOW = os.getenv("ENABLE_TA_SHADOW", "false").lower() == "true"
+ENABLE_DOCUMENT_ANALYSIS = os.getenv("ENABLE_DOCUMENT_ANALYSIS", "false").lower() == "true"
 CHUNK_MAX_CHARS = int(os.getenv("CHUNK_MAX_CHARS", "3500"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "200"))
 
@@ -126,6 +127,7 @@ logger.info(f"   RAG_ASYNC_ALLOW_SYNC: {RAG_ASYNC_ALLOW_SYNC}")
 logger.info(f"   USE_SIMPLE_AZURE_PROMPT: {USE_SIMPLE_AZURE_PROMPT}")
 logger.info(f"   ENABLE_TA_ON_DEMAND: {ENABLE_TA_ON_DEMAND}")
 logger.info(f"   ENABLE_TA_SHADOW: {ENABLE_TA_SHADOW}")
+logger.info(f"   ENABLE_DOCUMENT_ANALYSIS: {ENABLE_DOCUMENT_ANALYSIS}")
 logger.info(f"   CHUNK_MAX_CHARS: {CHUNK_MAX_CHARS}")
 logger.info(f"   CHUNK_OVERLAP: {CHUNK_OVERLAP}")
 
@@ -990,11 +992,20 @@ async def analyze_entry(request: Request):
     """
     import time
     start_time = time.time()
-    
+
     payload = await request.json()
     req_id = _generate_request_id()
     payload.setdefault("request_id", req_id)
     payload.setdefault("mode", payload.get("mode", "selection"))
+
+    # Gate document analysis modes when feature flag is disabled
+    mode = payload.get("mode", "selection")
+    if not ENABLE_DOCUMENT_ANALYSIS and mode in ["document", "document_truncated"]:
+        logger.warning(f"🚫 Document analysis disabled - rejecting mode={mode} request_id={req_id}")
+        raise HTTPException(
+            status_code=410,
+            detail="Document analysis disabled. Use selection-based analysis."
+        )
     
     # Start telemetry trace
     headers_dict = dict(request.headers.items()) if request.headers else {}
@@ -2089,12 +2100,20 @@ async def optimize_document_async(request: Request):
     Tries to enqueue a background job in-process; if not available, POSTs to /api/analyze with mode=document_truncated.
     Returns: {"request_id": "...", "result": {"status":"queued", "job_id":"..."}}
     """
+    # Gate document analysis when feature flag is disabled
+    if not ENABLE_DOCUMENT_ANALYSIS:
+        logger.warning("🚫 Document analysis disabled - rejecting /api/optimize-document-async request")
+        raise HTTPException(
+            status_code=410,
+            detail="Document analysis disabled. Use selection-based analysis."
+        )
+
     try:
         payload = await request.json()
         text = payload.get("text", "")
         ta = payload.get("ta")
         user_id_hash = payload.get("user_id_hash")
-        
+
         logger.info(f"📄 Async document optimization requested - length: {len(text)}, ta: {ta}")
         
         # 1) Try to call an in-process enqueue if available
