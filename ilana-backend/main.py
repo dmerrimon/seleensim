@@ -921,8 +921,7 @@ from typing import Optional
 import httpx
 import traceback
 
-# Ensure these environment variables exist; default to "simple"
-ANALYSIS_MODE = os.getenv("ANALYSIS_MODE", "simple").lower()  # simple | hybrid | legacy
+# Analysis service base URL for fallback requests
 ANALYSIS_SERVICE_BASE = os.getenv("ANALYSIS_SERVICE_BASE", "http://127.0.0.1:8000")  # local fallback
 
 analysis_mode_logger = logging.getLogger("ilana.analysis_mode")
@@ -986,9 +985,10 @@ async def debug_handler_types():
 @app.post("/api/analyze")
 async def analyze_entry(request: Request):
     """
-    Unified analyze entry point that dispatches by ANALYSIS_MODE.
-    Payload expected: {"text": "...", "mode":"selection"|"document", "ta": "...", "phase":"..."}
-    Returns either immediate suggestions (list) or a job_id for async flows.
+    Protocol analysis using Legacy Pipeline (RAG + PubMedBERT + Pinecone)
+
+    Payload expected: {"text": "...", "ta": "...", "phase":"..."}
+    Returns: {"request_id": str, "model_path": "legacy_pipeline", "result": {...}}
     """
     import time
     start_time = time.time()
@@ -996,141 +996,50 @@ async def analyze_entry(request: Request):
     payload = await request.json()
     req_id = _generate_request_id()
     payload.setdefault("request_id", req_id)
-    payload.setdefault("mode", payload.get("mode", "selection"))
 
-    # Gate document analysis modes when feature flag is disabled
-    mode = payload.get("mode", "selection")
-    if not ENABLE_DOCUMENT_ANALYSIS and mode in ["document", "document_truncated"]:
-        logger.warning(f"🚫 Document analysis disabled - rejecting mode={mode} request_id={req_id}")
-        raise HTTPException(
-            status_code=410,
-            detail="Document analysis disabled. Use selection-based analysis."
-        )
-    
     # Start telemetry trace
     headers_dict = dict(request.headers.items()) if request.headers else {}
     request_id = start_trace(
-        analyze_mode=payload.get("mode", "selection"),
-        model_path="dispatch",
+        analyze_mode="legacy_pipeline",
+        model_path="legacy_pipeline",
         request_data=payload,
         headers=headers_dict
     )
 
-    analysis_mode_logger.info("Analyze entry request_id=%s mode=%s AN_MODE=%s", req_id, payload.get("mode"), ANALYSIS_MODE)
+    logger.info(f"🚀 Legacy pipeline analysis: request_id={req_id} text_len={len(payload.get('text', ''))}")
 
     try:
-        # Dispatch by ANALYSIS_MODE
-        return await _dispatch_analysis(payload, req_id, request_id, request)
-    except RAGAsyncModeException as e:
-        # Handle RAG gating gracefully - return standardized 202 response
-        logger.info(f"ℹ️  Analysis blocked by RAG_ASYNC_MODE (expected behavior)")
-        end_trace(request_id, None, None, {"status": "queued", "reason": "RAG_ASYNC_MODE"})
-        return JSONResponse(
-            status_code=202,
-            content={
-                "request_id": req_id,
-                "result": {"status": "queued"},
-                "message": (
-                    "RAG is in async mode — TA-heavy operations are queued to prevent timeouts. "
-                    "Use USE_SIMPLE_AZURE_PROMPT=true for immediate suggestions, "
-                    "or set RAG_ASYNC_ALLOW_SYNC=true for testing (not recommended in production)."
-                )
-            }
+        # Import legacy pipeline
+        from legacy_pipeline import run_legacy_pipeline_with_fallback
+
+        # Call legacy pipeline with fallback
+        result = await run_legacy_pipeline_with_fallback(
+            text=payload.get("text", ""),
+            ta=payload.get("ta"),
+            phase=payload.get("phase"),
+            request_id=req_id
         )
 
-async def _dispatch_analysis(payload: dict, req_id: str, request_id: str, request: Request):
-    """Internal helper to dispatch analysis by ANALYSIS_MODE"""
-    # Dispatch by ANALYSIS_MODE
-    if ANALYSIS_MODE == "simple":
-        # try in-process first
+        # End telemetry trace
+        end_trace(request_id, result, None, {"model_path": "legacy_pipeline"})
+
+        # Submit to shadow worker if enabled
         try:
-            inproc = _call_simple_inprocess(payload)
-            if inproc is not None:
-                response = {"request_id": req_id, "model_path": "simple_inproc", "result": inproc}
-                # Submit to shadow worker asynchronously
-                asyncio.create_task(submit_shadow_request(payload, response))
-                # End telemetry trace
-                end_trace(request_id, response, None, {"model_path": "simple_inproc"})
-                return response
-        except Exception as e:
-            analysis_mode_logger.exception("simple inproc failed: %s", e)
+            asyncio.create_task(submit_shadow_request(payload, result))
+        except Exception as shadow_err:
+            logger.debug(f"Shadow worker submission failed (non-critical): {shadow_err}")
 
-        # fallback to HTTP simple endpoint
-        try:
-            result = await _http_post("/api/recommend-language", payload)
-            response = {"request_id": req_id, "model_path": "simple_http", "result": result}
-            # Submit to shadow worker asynchronously
-            asyncio.create_task(submit_shadow_request(payload, response))
-            # End telemetry trace
-            end_trace(request_id, response, None, {"model_path": "simple_http"})
-            return response
-        except httpx.HTTPError as e:
-            analysis_mode_logger.exception("simple http call failed: %s", e)
-            # Log error telemetry
-            end_trace(request_id, None, f"Simple HTTP analysis failed: {str(e)}", {"model_path": "simple_http"})
-            raise HTTPException(status_code=502, detail="Simple analysis service unavailable")
+        return result
 
-    elif ANALYSIS_MODE == "hybrid":
-        # route to hybrid controller (in-process preferred, else HTTP fallback)
-        try:
-            # defensive import
-            from hybrid_controller import handle_hybrid_request  # type: ignore
+    except Exception as e:
+        logger.error(f"❌ Legacy pipeline failed: {req_id} - {type(e).__name__}: {e}")
+        end_trace(request_id, None, f"Legacy pipeline failed: {str(e)}", {"model_path": "legacy_pipeline"})
+        raise HTTPException(
+            status_code=500,
+            detail=f"Analysis failed: {str(e)}"
+        )
 
-            analysis_mode_logger.info("Hybrid handler imported: %s", getattr(handle_hybrid_request, "__name__", str(handle_hybrid_request)))
-
-            # If handle_hybrid_request is a coroutine function, await it.
-            if inspect.iscoroutinefunction(handle_hybrid_request):
-                maybe_result = await handle_hybrid_request(payload)
-            else:
-                maybe_result = handle_hybrid_request(payload)
-
-            # If the handler returned a coroutine (e.g., called async function but didn't await), catch it:
-            if inspect.isawaitable(maybe_result):
-                analysis_mode_logger.warning("hybrid handler returned an awaitable; awaiting it now. type=%s", type(maybe_result))
-                # attempt to await it (this will raise if it's not awaitable in this context)
-                try:
-                    maybe_result = await maybe_result
-                except Exception as e:
-                    analysis_mode_logger.exception("Failed awaiting returned awaitable from hybrid handler: %s", e)
-                    raise HTTPException(status_code=500, detail="Hybrid handler returned unreadable coroutine/awaitable")
-
-            # Log what we got back (type + small repr)
-            analysis_mode_logger.info("Hybrid handler result type=%s", type(maybe_result))
-            # Normalize return (expect dict)
-            if isinstance(maybe_result, dict):
-                return {"request_id": req_id, "model_path": "hybrid_inproc", "result": maybe_result}
-            else:
-                # unexpected type - wrap it safely
-                analysis_mode_logger.warning("Hybrid handler returned unexpected type: %s. Wrapping in result.", type(maybe_result))
-                return {"request_id": req_id, "model_path": "hybrid_inproc", "result": {"value": maybe_result}}
-        except Exception as e:
-            # provide diagnostic info
-            tb = traceback.format_exc()
-            analysis_mode_logger.exception("hybrid inproc unavailable or failed: %s\n%s", e, tb)
-            # fallback to an HTTP hybrid endpoint if you host one
-            try:
-                result = await _http_post("/api/hybrid/analyze", payload)
-                return {"request_id": req_id, "model_path": "hybrid_http", "result": result}
-            except httpx.HTTPError as e2:
-                analysis_mode_logger.exception("hybrid http call failed: %s", e2)
-                raise HTTPException(status_code=502, detail="Hybrid analysis service unavailable")
-
-    elif ANALYSIS_MODE == "legacy":
-        # prefer in-process legacy
-        inproc = _call_legacy_inprocess(payload)
-        if inproc is not None:
-            return {"request_id": req_id, "model_path": "legacy_inproc", "result": inproc}
-        # fallback to known legacy endpoint path
-        try:
-            result = await _http_post("/api/recommend-language-legacy", payload)
-            return {"request_id": req_id, "model_path": "legacy_http", "result": result}
-        except httpx.HTTPError as e:
-            analysis_mode_logger.exception("legacy http call failed: %s", e)
-            raise HTTPException(status_code=502, detail="Legacy analysis service unavailable")
-
-    else:
-        raise HTTPException(status_code=400, detail=f"Unsupported ANALYSIS_MODE={ANALYSIS_MODE}")
-# ---- END PATCH: Analysis Mode Routing ----
+# Legacy mode routing functions removed - now using direct legacy_pipeline.py calls
 
 @app.post("/api/ta-detect")
 async def detect_therapeutic_area_simple(request: TADetectRequest):

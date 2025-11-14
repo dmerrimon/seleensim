@@ -161,15 +161,12 @@ class OptimizedRealAIService:
         # Initialize Azure OpenAI
         self._initialize_azure_only()
         
-        # Initialize Pinecone vector database
+        # Initialize Pinecone vector database (using Pinecone 6.0+ API)
         if self.enable_pinecone:
             try:
-                import pinecone
-                pinecone.init(
-                    api_key=self.config.pinecone_api_key,
-                    environment=self.config.pinecone_environment
-                )
-                self.pinecone_index = pinecone.Index(self.config.pinecone_index_name)
+                from pinecone import Pinecone
+                pinecone_client = Pinecone(api_key=self.config.pinecone_api_key)
+                self.pinecone_index = pinecone_client.Index(self.config.pinecone_index_name)
                 logger.info("✅ Enterprise Pinecone vector database initialized")
             except Exception as e:
                 logger.warning(f"⚠️ Pinecone initialization failed: {e}")

@@ -10,7 +10,6 @@
         // API Base URL Configuration
         // Production: Uses Render backend (https://ilanalabs-add-in.onrender.com)
         // Development: Set window.__DEV_MODE__ = true before this script loads to use localhost
-        // Example: Add <script>window.__DEV_MODE__ = true;</script> above this script tag
         window.__ILANA_API_BASE__ = window.__DEV_MODE__
             ? "http://127.0.0.1:8000"
             : "https://ilanalabs-add-in.onrender.com";
@@ -108,13 +107,8 @@
             cursor: not-allowed;
         }
 
-        /* Mode pill selector */
-        .mode-pill-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .mode-pill {
+        /* Legacy pipeline label */
+        .legacy-mode-label {
             background: var(--surface-gray);
             color: var(--text-dark);
             border: 1px solid #ddd;
@@ -122,60 +116,9 @@
             border-radius: 12px;
             font-size: 11px;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
             gap: 4px;
-        }
-
-        .mode-pill:hover {
-            background: #e8e8e8;
-            border-color: #ccc;
-        }
-
-        .mode-pill-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            margin-top: 4px;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            z-index: 1000;
-            min-width: 140px;
-            display: none;
-        }
-
-        .mode-pill-dropdown.open {
-            display: block;
-        }
-
-        .mode-option {
-            padding: 10px 16px;
-            font-size: 13px;
-            cursor: pointer;
-            transition: background 0.2s ease;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .mode-option:last-child {
-            border-bottom: none;
-        }
-
-        .mode-option:hover {
-            background: var(--surface-gray);
-        }
-
-        .mode-option.active {
-            background: var(--primary-green);
-            color: white;
-            font-weight: 600;
-        }
-
-        .mode-option.active:hover {
-            background: var(--primary-green-hover);
         }
 
         /* Navigation container */
@@ -366,6 +309,8 @@
             font-style: italic;
             line-height: 1.4;
             color: var(--text-dark);
+            max-height: 200px;
+            overflow-y: auto;
         }
 
         .full-sentence-insert {
@@ -403,14 +348,14 @@
         }
 
         .card-footer-btn.primary {
-            background: var(--primary-green);
-            border-color: var(--primary-green);
+            background: #0700ff;
+            border-color: #0700ff;
             color: var(--surface-white);
         }
 
         .card-footer-btn.primary:hover {
-            background: var(--primary-green-hover);
-            border-color: var(--primary-green-hover);
+            background: #0500cc;
+            border-color: #0500cc;
         }
 
         .card-footer-btn:disabled {
@@ -1006,17 +951,9 @@
                 <div class="header">
                     <div class="lens-title">Ilana</div>
                     <div style="display: flex; gap: 8px; align-items: center;">
-                        <!-- Mode selector pill -->
-                        <div class="mode-pill-container">
-                            <div class="mode-pill" id="modePill">
-                                <span id="modePillText">Mode: Simple</span>
-                                <span>▾</span>
-                            </div>
-                            <div class="mode-pill-dropdown" id="modePillDropdown">
-                                <div class="mode-option" data-mode="simple" title="Fast, streamlined analysis focusing on critical compliance issues">Simple</div>
-                                <div class="mode-option" data-mode="hybrid" title="Balanced analysis with enhanced therapeutic area insights and regulatory references">Hybrid</div>
-                                <div class="mode-option" data-mode="legacy" title="Original analysis method with comprehensive rule-based checks">Legacy</div>
-                            </div>
+                        <!-- Legacy pipeline label -->
+                        <div class="legacy-mode-label" title="Production RAG pipeline with Pinecone vector search (53,848 exemplars) and PubMedBERT medical embeddings">
+                            <span>Legacy (RAG + PubMedBERT)</span>
                         </div>
 
                         <button id="analyzeButton" class="header-btn" onclick="analyzeProtocol()">
@@ -1105,10 +1042,9 @@
         const clinicalImpactLoading = new Set(); // Set of suggestionIds currently loading
         const clinicalImpactFullText = new Map(); // suggestionId -> full text string
 
-        // Global state for current therapeutic area and analysis mode
+        // Global state for current therapeutic area
         window.IlanaState = {
             currentTA: 'general_medicine',
-            analysisMode: localStorage.getItem('ilana_analysis_mode') || 'simple',
             // Canary rollout configuration (0-100%)
             // 0 = all users use old handleAcceptChange
             // 10 = 10% of users use new acceptSuggestionHandler
@@ -1381,103 +1317,7 @@
          * }
          */
 
-        /* --- Mode Pill Management --- */
-
-        // Initialize mode pill UI and event handlers
-        function initializeModePill() {
-            console.log('✅ initializeModePill called!');
-            const modePill = document.getElementById('modePill');
-            const modePillText = document.getElementById('modePillText');
-            const modePillDropdown = document.getElementById('modePillDropdown');
-
-            if (!modePill || !modePillText || !modePillDropdown) {
-                console.warn('Mode pill elements not found');
-                return;
-            }
-
-            // Set initial mode display
-            updateModePillDisplay();
-
-            // Toggle dropdown on pill click
-            modePill.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isOpen = modePillDropdown.classList.contains('open');
-                if (isOpen) {
-                    modePillDropdown.classList.remove('open');
-                } else {
-                    modePillDropdown.classList.add('open');
-                }
-            });
-
-            // Handle mode option selection
-            const modeOptions = modePillDropdown.querySelectorAll('.mode-option');
-            modeOptions.forEach(option => {
-                option.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const selectedMode = option.getAttribute('data-mode');
-                    setAnalysisMode(selectedMode);
-                    modePillDropdown.classList.remove('open');
-                });
-            });
-
-            // Close dropdown when clicking outside
-            document.addEventListener('click', () => {
-                modePillDropdown.classList.remove('open');
-            });
-
-            console.log('✅ Mode pill initialized:', window.IlanaState.analysisMode);
-        }
-
-        // Update mode pill display text and active state
-        function updateModePillDisplay() {
-            const mode = window.IlanaState.analysisMode;
-            const modePillText = document.getElementById('modePillText');
-            const modeOptions = document.querySelectorAll('.mode-option');
-
-            if (modePillText) {
-                const modeLabel = mode.charAt(0).toUpperCase() + mode.slice(1);
-                modePillText.textContent = `Mode: ${modeLabel}`;
-            }
-
-            // Update active state in dropdown
-            modeOptions.forEach(option => {
-                const optionMode = option.getAttribute('data-mode');
-                if (optionMode === mode) {
-                    option.classList.add('active');
-                } else {
-                    option.classList.remove('active');
-                }
-            });
-        }
-
-        // Set analysis mode and persist
-        function setAnalysisMode(mode) {
-            const validModes = ['simple', 'hybrid', 'legacy'];
-            if (!validModes.includes(mode)) {
-                console.warn('Invalid analysis mode:', mode);
-                return;
-            }
-
-            const previousMode = window.IlanaState.analysisMode;
-            window.IlanaState.analysisMode = mode;
-            localStorage.setItem('ilana_analysis_mode', mode);
-
-            console.log(`🔄 Analysis mode changed: ${previousMode} → ${mode}`);
-
-            // Update UI
-            updateModePillDisplay();
-
-            // Dispatch custom event for other components to listen
-            const event = new CustomEvent('analysisModeChanged', {
-                detail: { analysisMode: mode, previousMode: previousMode }
-            });
-            window.dispatchEvent(event);
-        }
-
-        // Get current analysis mode
-        function getAnalysisMode() {
-            return window.IlanaState.analysisMode || localStorage.getItem('ilana_analysis_mode') || 'simple';
-        }
+        /* --- Legacy Pipeline - No Mode Selection Required --- */
 
         // Initialize Ilana UI (non-Office-API dependent initialization)
         function initIlanaUI() {
@@ -1488,10 +1328,6 @@
                 console.log('📋 Initializing modal system...');
                 ensureBackdrop();
                 wireModalOptionHandlers();
-
-                // Initialize mode pill
-                console.log('🎛️ Initializing mode selector...');
-                initializeModePill();
 
                 // Initialize accept change handlers
                 console.log('✅ Initializing accept change handlers...');
@@ -1616,7 +1452,6 @@
         async function handleSelectionAnalysis(selectedText) {
             const payload = {
                 text: selectedText,
-                mode: 'selection',
                 ta: detectTherapeuticArea(selectedText)
             };
             
@@ -1803,7 +1638,7 @@
                     showError('No suggestions found in analysis result');
                 }
 
-                updateStatus(`${mode === 'selection' ? 'Selection' : 'Document'} analysis complete`, 'complete');
+                updateStatus('Analysis complete', 'complete');
 
             } catch (error) {
                 console.error('❌ Analysis failed:', error);
@@ -3022,7 +2857,7 @@
                         ta: window.IlanaState.currentTA || 'general_medicine',
                         phase: 'production',
                         model_path: window.IlanaState.lastModelPath || 'unknown',
-                        analysis_mode: window.IlanaState.analysisMode || 'simple',
+                        analysis_mode: 'legacy',
                         latency_ms: acceptLatencyMs,
                         accepted_at: acceptedAt,
                         original_text_hash: await hashString(originalText),
@@ -3296,7 +3131,7 @@
             const enrichedPayload = {
                 ...payload,
                 redactPHI: true,
-                analysis_mode: window.IlanaState.analysisMode || 'simple'
+                analysis_mode: 'legacy'
             };
 
             console.log('📡 Sending reinforcement signal:', enrichedPayload);
@@ -3518,7 +3353,7 @@
                             ta: window.IlanaState.currentTA || 'general_medicine',
                             phase: 'production',
                             model_path: window.IlanaState.lastModelPath || 'unknown',
-                            analysis_mode: window.IlanaState.analysisMode || 'simple',
+                            analysis_mode: 'legacy',
                             latency_ms: acceptLatencyMs,
                             accepted_at: acceptedAt,
                             original_text_hash: await hashString(originalText),
@@ -3894,7 +3729,7 @@
                     body: JSON.stringify({
                         suggestion_id: suggestionId,
                         ta: window.IlanaState?.currentTA || 'general_medicine',
-                        analysis_mode: window.IlanaState?.analysisMode || 'simple'
+                        analysis_mode: 'legacy'
                     }),
                     signal: AbortSignal.timeout(10000) // 10 second timeout
                 });
