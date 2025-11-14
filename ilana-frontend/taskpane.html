@@ -1614,9 +1614,13 @@
 
                 const result = await fetchResult.json();
                 console.log('✅ Analysis result:', result);
+                console.log('🔍 result.result:', result.result);
+                console.log('🔍 result.result.suggestions:', result.result?.suggestions);
 
                 // Parse success telemetry
                 const suggestions = extractSuggestionsFromResponse(result);
+                console.log('🔍 Extracted suggestions count:', suggestions.length);
+                console.log('🔍 Extracted suggestions:', suggestions);
                 logTelemetry({
                     event: 'analyze_end',
                     request_id: result.request_id || requestId,
