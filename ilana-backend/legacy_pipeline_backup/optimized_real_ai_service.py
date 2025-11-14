@@ -179,7 +179,7 @@ class OptimizedRealAIService:
                 self.pinecone_index = pinecone_client.Index(self.config.pinecone_index_name)
                 logger.info("✅ Enterprise Pinecone vector database initialized")
             except Exception as e:
-                logger.warning(f"⚠️ Pinecone initialization failed: {e}")
+                logger.warning(f"⚠️ [CODE_VERSION_NOV14_2024_DEPLOYED] Pinecone initialization failed: {e}")
                 logger.error(f"❌ DEBUG: Exception type: {type(e).__name__}")
                 logger.error(f"❌ DEBUG: Exception args: {e.args}")
                 import traceback
