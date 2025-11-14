@@ -189,11 +189,15 @@ class OptimizedRealAIService:
                     logger.info("✅ Enterprise PubMedBERT endpoint connected successfully")
                     self.pubmedbert_service = "http_endpoint"
                 else:
-                    logger.warning(f"⚠️ PubMedBERT endpoint not ready: {test_response.status_code}")
+                    # TELEMETRY: pubmedbert_unavailable - PubMedBERT endpoint returned non-200 status (e.g. 503)
+                    logger.warning(f"⚠️ [pubmedbert_unavailable] PubMedBERT endpoint not ready: {test_response.status_code}")
+                    logger.info(f"🔄 Continuing without PubMedBERT - will use local medical intelligence fallback")
                     self.enable_pubmedbert = False
                     self.pubmedbert_service = None
             except Exception as e:
-                logger.warning(f"⚠️ PubMedBERT endpoint connection failed: {e}")
+                # TELEMETRY: pubmedbert_unavailable - PubMedBERT endpoint connection failed
+                logger.warning(f"⚠️ [pubmedbert_unavailable] PubMedBERT endpoint connection failed: {e}")
+                logger.info(f"🔄 Continuing without PubMedBERT - will use local medical intelligence fallback")
                 self.enable_pubmedbert = False
                 self.pubmedbert_service = None
 
@@ -462,7 +466,7 @@ ANALYSIS DEPTH:
 - For language issues: provide specific text improvements showing before/after
 - Focus on specific, actionable changes rather than general recommendations
 
-Return JSON: [{"type": "clarity|compliance", "severity": "critical|major|minor", "originalText": "exact problematic text from protocol", "suggestedText": "specific improved replacement text", "rationale": "detailed pharma-quality rationale explaining the change", "regulatoryReference": "specific CFR/ICH citation", "riskLevel": "high|medium|low", "implementationImpact": "site operational impact"}]"""
+Return JSON: [{{"type": "clarity|compliance", "severity": "critical|major|minor", "originalText": "exact problematic text from protocol", "suggestedText": "specific improved replacement text", "rationale": "detailed pharma-quality rationale explaining the change", "regulatoryReference": "specific CFR/ICH citation", "riskLevel": "high|medium|low", "implementationImpact": "site operational impact"}}]"""
 
             user_prompt = f"""You are a pharmaceutical regulatory expert. Analyze this protocol text and provide specific medical improvements.
 
@@ -538,10 +542,12 @@ Provide 2-5 specific improvements."""
             suggestions.extend(ai_suggestions)
             
         except Exception as e:
-            logger.error(f"❌ Chunk {chunk_index} Azure OpenAI analysis failed: {e}")
+            # TELEMETRY: azure_analysis_error - Azure OpenAI analysis failure
+            logger.error(f"❌ [azure_analysis_error] Chunk {chunk_index} Azure OpenAI analysis failed: {e}")
             logger.error(f"❌ Exception type: {type(e).__name__}")
             logger.error(f"❌ Full exception: {str(e)}")
-            # Generate REAL medical suggestions even without Azure OpenAI
+            # FALLBACK: Generate REAL medical suggestions even without Azure OpenAI
+            logger.info(f"🔄 [legacy_fallback] Using fallback suggestion generator for chunk {chunk_index}")
             suggestions.extend(self._generate_real_medical_suggestions(chunk, chunk_index, ta_detection))
         
         return suggestions
