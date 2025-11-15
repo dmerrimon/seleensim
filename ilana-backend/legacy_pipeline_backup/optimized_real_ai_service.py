@@ -184,9 +184,17 @@ class OptimizedRealAIService:
                     "Authorization": f"Bearer {self.config.huggingface_api_key}",
                     "Content-Type": "application/json"
                 }
-                # Test endpoint availability
-                test_response = requests.get(self.pubmedbert_endpoint + "/health", 
-                                           headers=self.pubmedbert_headers, timeout=5)
+                # Test endpoint availability with actual inference request
+                # Hugging Face Inference Endpoints don't have /health, use POST with test input
+                test_payload = {
+                    "inputs": "test medical protocol"
+                }
+                test_response = requests.post(
+                    self.pubmedbert_endpoint,
+                    headers=self.pubmedbert_headers,
+                    json=test_payload,
+                    timeout=10
+                )
                 if test_response.status_code == 200:
                     logger.info("✅ Enterprise PubMedBERT endpoint connected successfully")
                     self.pubmedbert_service = "http_endpoint"
