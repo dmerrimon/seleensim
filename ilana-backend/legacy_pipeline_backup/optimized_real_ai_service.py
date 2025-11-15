@@ -162,29 +162,17 @@ class OptimizedRealAIService:
         # Initialize Azure OpenAI
         self._initialize_azure_only()
         
-        # Initialize Pinecone vector database (using Pinecone 6.0+ API)
+        # Initialize Pinecone vector database (using Pinecone 6.0+ client-based API)
         if self.enable_pinecone:
+            import pinecone
+
             try:
-                logger.info(f"🔍 DEBUG: About to import Pinecone from file: {__file__}")
-                logger.info(f"🔍 DEBUG: Python bytecode optimization: {__debug__}")
-
-                from pinecone import Pinecone
-                import pinecone
-                logger.info(f"🔍 DEBUG: Successfully imported Pinecone class")
-                logger.info(f"🔍 DEBUG: Pinecone module file: {pinecone.__file__ if hasattr(pinecone, '__file__') else 'unknown'}")
-                logger.info(f"🔍 DEBUG: Pinecone version: {pinecone.__version__ if hasattr(pinecone, '__version__') else 'unknown'}")
-
-                pinecone_client = Pinecone(api_key=self.config.pinecone_api_key)
-                logger.info(f"🔍 DEBUG: Successfully created Pinecone client instance")
-
-                self.pinecone_index = pinecone_client.Index(self.config.pinecone_index_name)
-                logger.info("✅ Enterprise Pinecone vector database initialized")
+                # New client-based API
+                client = pinecone.Client(api_key=self.config.pinecone_api_key, environment=self.config.pinecone_environment)
+                self.pinecone_index = client.Index(self.config.pinecone_index_name)
+                logger.info("✅ Enterprise Pinecone vector database initialized (client.Index)")
             except Exception as e:
-                logger.warning(f"⚠️ [CODE_VERSION_NOV14_2024_DEPLOYED] Pinecone initialization failed: {e}")
-                logger.error(f"❌ DEBUG: Exception type: {type(e).__name__}")
-                logger.error(f"❌ DEBUG: Exception args: {e.args}")
-                import traceback
-                logger.error(f"❌ DEBUG: Full traceback:\n{traceback.format_exc()}")
+                logger.warning(f"⚠️ Pinecone initialization failed: {e}")
                 self.enable_pinecone = False
                 self.pinecone_index = None
         
