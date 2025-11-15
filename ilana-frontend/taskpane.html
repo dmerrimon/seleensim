@@ -1406,27 +1406,26 @@
             }, 500);
         }
 
-        // Main analysis function with improved flow
+        // Main analysis function - selection-first only
         async function analyzeProtocol() {
             try {
                 const selectedText = await getSelectedText();
                 console.log(`Selected text length: ${selectedText.length}`);
 
-                if (selectedText.length > 5) {
-                    // Selection detected: analyze immediately
-                    await performAnalysis(selectedText, 'selection');
-                } else {
-                    // No selection: show modal with guidance
-                    // Log telemetry: user attempted document analysis (now disabled)
+                if (selectedText.length < 5) {
+                    // No selection: show inline error
+                    showError('Please select text to analyze (minimum 5 characters)');
                     logTelemetry({
-                        event: 'document_analysis_disabled',
-                        attempted_mode: 'no_selection',
+                        event: 'no_selection_error',
                         selection_length: selectedText.length,
                         user_id_hash: window.IlanaState?.userHash || 'anonymous',
                         timestamp: new Date().toISOString()
                     });
-                    showAnalysisModal();
+                    return;
                 }
+
+                // Selection detected: analyze immediately
+                await performAnalysis(selectedText, 'selection');
             } catch (error) {
                 console.error('Analysis error:', error);
                 showError(`Failed to start analysis: ${error.message}`);
@@ -1478,51 +1477,6 @@
                 displayAnalysisResults(issues, result.metadata || {});
                 updateStatus(`Selection analysis complete: ${issues.length} issues found`, 'complete');
             }
-        }
-
-        // Handle whole document analysis
-        async function handleWholeDocumentAnalysis() {
-            await Word.run(async (context) => {
-                const body = context.document.body;
-                context.load(body, 'text');
-                await context.sync();
-
-                const documentText = body.text;
-                
-                if (documentText.length < 10) {
-                    throw new Error('Document appears to be empty or too short for analysis');
-                }
-
-                const payload = {
-                    text: documentText,
-                    mode: 'document',
-                    ta: detectTherapeuticArea(documentText)
-                };
-
-                const response = await fetch(`${API_BASE_URL}/api/analyze`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    throw new Error(`Document analysis failed: ${response.status}`);
-                }
-
-                const result = await response.json();
-                console.log('Document analysis result:', result);
-
-                if (result.result?.status === 'queued') {
-                    await handleQueuedJob(result.result);
-                } else {
-                    const issues = extractSuggestionsFromResponse(result);
-                    displayAnalysisResults(issues, result.metadata || {});
-                    updateStatus(`Document analysis complete: ${issues.length} issues found`, 'complete');
-                }
-            });
         }
 
         // Simple therapeutic area detection
