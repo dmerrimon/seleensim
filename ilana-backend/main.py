@@ -121,6 +121,7 @@ def check_rag_async_mode_gate(operation_name: str = "RAG operation") -> None:
         )
 
 # Log RAG configuration
+logger.warning("🚨🚨🚨 [MAIN_PY_DEPLOYMENT_MARKER_NOV15_2024] Application starting 🚨🚨🚨")
 logger.info(f"🔧 RAG Configuration:")
 logger.info(f"   RAG_ASYNC_MODE: {RAG_ASYNC_MODE}")
 logger.info(f"   RAG_ASYNC_ALLOW_SYNC: {RAG_ASYNC_ALLOW_SYNC}")
