@@ -91,13 +91,18 @@ class IlanaAIService:
     
     def _init_pinecone(self):
         """Initialize Pinecone client"""
+        logger.warning("🚨 [AI_SERVICE_NOV15_2024] Initializing Pinecone 🚨")
         try:
             from pinecone import Pinecone
+            logger.warning(f"🚨 [AI_SERVICE_NOV15_2024] About to create Pinecone client")
             self.pinecone_client = Pinecone(api_key=self.pinecone_api_key)
+            logger.warning(f"🚨 [AI_SERVICE_NOV15_2024] About to get Index")
             self.pinecone_index_client = self.pinecone_client.Index(self.pinecone_index)
             logger.info("✅ Pinecone initialized successfully")
         except Exception as e:
-            logger.error(f"❌ Pinecone initialization failed: {e}")
+            logger.error(f"❌ [AI_SERVICE_NOV15_2024] Pinecone initialization failed: {e}")
+            import traceback
+            logger.error(f"❌ Traceback: {traceback.format_exc()}")
             raise
     
     async def get_text_embedding(self, text: str) -> List[float]:
