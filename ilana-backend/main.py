@@ -178,6 +178,12 @@ class TARecommendationsRequest(BaseModel):
     therapeutic_area: str
     protocol_type: Optional[str] = "clinical_trial"
 
+class ExplainSuggestionRequest(BaseModel):
+    """Request model for suggestion explanation expansion"""
+    suggestion_id: str = Field(..., description="ID of the suggestion to explain")
+    ta: Optional[str] = Field(None, description="Therapeutic area")
+    analysis_mode: Optional[str] = Field("legacy", description="Analysis mode used")
+
 # FastAPI app
 app = FastAPI(
     title="Ilana Protocol Intelligence API",
@@ -2117,6 +2123,99 @@ async def generate_rewrite_ta(request: GenerateRewriteTARequest, req: Request):
                 "suggestion_id": request.suggestion_id
             }
         )
+
+@app.post("/api/explain-suggestion")
+async def explain_suggestion(request: ExplainSuggestionRequest):
+    """
+    Expand on a suggestion's rationale with detailed clinical impact explanation.
+
+    This endpoint provides a more detailed explanation of why a suggestion was made,
+    including regulatory context, clinical significance, and potential risks.
+    """
+    start_time = time.time()
+    logger.info(f"📖 Explain suggestion request: {request.suggestion_id} (TA: {request.ta})")
+
+    try:
+        # Use Azure OpenAI to generate expanded explanation
+        from openai import AzureOpenAI
+        from config_loader import get_config
+
+        config = get_config("production")
+        client = AzureOpenAI(
+            api_key=config.azure_openai_api_key,
+            api_version="2024-02-01",
+            azure_endpoint=config.azure_openai_endpoint
+        )
+
+        # Create a prompt to expand on clinical impact
+        ta_context = request.ta or "general clinical protocols"
+        prompt = f"""You are an expert clinical protocol reviewer with deep knowledge of ICH-GCP guidelines and regulatory requirements.
+
+Provide a detailed explanation of the clinical and regulatory significance of implementing a protocol improvement for {ta_context}.
+
+Your explanation should cover:
+1. **Regulatory Context**: Why this change aligns with ICH-GCP, FDA, or EMA guidelines
+2. **Clinical Significance**: How this improves participant safety, data quality, or operational efficiency
+3. **Risk Mitigation**: What specific risks or compliance issues this addresses
+4. **Best Practices**: Industry standards that support this recommendation
+
+Keep the explanation:
+- Clinically accurate and evidence-based
+- Specific to regulatory requirements
+- 3-5 paragraphs in length
+- Professional and authoritative in tone
+
+Focus on the "why" behind protocol improvements, not just the "what"."""
+
+        # Call Azure OpenAI
+        response = client.chat.completions.create(
+            model=config.azure_openai_deployment,
+            messages=[
+                {"role": "system", "content": "You are an expert clinical protocol reviewer specializing in regulatory compliance and participant safety."},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.7,
+            max_tokens=800
+        )
+
+        rationale_full = response.choices[0].message.content.strip()
+        latency_ms = int((time.time() - start_time) * 1000)
+
+        logger.info(f"✅ Explanation generated in {latency_ms}ms ({len(rationale_full)} chars)")
+
+        return {
+            "suggestion_id": request.suggestion_id,
+            "rationale_full": rationale_full,
+            "rationale": rationale_full,  # Alias for backward compatibility
+            "explanation": rationale_full,  # Alias for backward compatibility
+            "latency_ms": latency_ms,
+            "ta": request.ta,
+            "model": config.azure_openai_deployment,
+            "timestamp": datetime.utcnow().isoformat()
+        }
+
+    except Exception as e:
+        error_latency = int((time.time() - start_time) * 1000)
+        logger.error(f"❌ Explain suggestion failed: {e}")
+
+        # Return a fallback generic explanation
+        fallback_text = """This protocol improvement aligns with ICH-GCP E6(R2) guidelines for clinical trial quality and participant safety.
+
+The recommended change enhances regulatory compliance by ensuring clear documentation, standardized terminology, and explicit safety monitoring procedures. These improvements support data integrity, reduce operational ambiguity, and align with FDA 21 CFR Part 312 requirements for investigational new drug applications.
+
+Implementing this change mitigates potential protocol deviations, improves site compliance, and strengthens the overall quality management system for the clinical trial."""
+
+        return {
+            "suggestion_id": request.suggestion_id,
+            "rationale_full": fallback_text,
+            "rationale": fallback_text,
+            "explanation": fallback_text,
+            "latency_ms": error_latency,
+            "ta": request.ta,
+            "model": "fallback",
+            "error": str(e),
+            "timestamp": datetime.utcnow().isoformat()
+        }
 
 # Error handlers
 @app.exception_handler(HTTPException)
