@@ -301,7 +301,7 @@ async def root():
 
 @app.get("/health")
 async def health_check():
-    """Health check endpoint"""
+    """Basic health check endpoint - lightweight for load balancers"""
     return {
         "status": "healthy",
         "timestamp": datetime.utcnow().isoformat(),
@@ -313,6 +313,106 @@ async def health_check():
             "analysis": "active"
         }
     }
+
+
+@app.get("/health/services")
+async def health_check_services():
+    """Detailed health check for Pinecone, PubMedBERT, and Azure OpenAI"""
+    health_status = {
+        "status": "healthy",
+        "timestamp": datetime.utcnow().isoformat(),
+        "services": {}
+    }
+
+    # Check Azure OpenAI
+    try:
+        from openai import AzureOpenAI
+        azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+        azure_key = os.getenv("AZURE_OPENAI_API_KEY")
+
+        if azure_endpoint and azure_key:
+            health_status["services"]["azure_openai"] = {
+                "status": "configured",
+                "endpoint": azure_endpoint[:30] + "...",
+                "deployment": os.getenv("AZURE_OPENAI_DEPLOYMENT", "unknown"),
+                "enabled": os.getenv("ENABLE_AZURE_OPENAI", "false")
+            }
+        else:
+            health_status["services"]["azure_openai"] = {
+                "status": "not_configured",
+                "error": "Missing AZURE_OPENAI_ENDPOINT or API key"
+            }
+    except Exception as e:
+        health_status["services"]["azure_openai"] = {
+            "status": "error",
+            "error": str(e)
+        }
+
+    # Check Pinecone
+    try:
+        pinecone_key = os.getenv("PINECONE_API_KEY")
+        pinecone_index = os.getenv("PINECONE_INDEX_NAME")
+
+        if pinecone_key and pinecone_index:
+            health_status["services"]["pinecone"] = {
+                "status": "configured",
+                "index_name": pinecone_index,
+                "enabled": os.getenv("ENABLE_PINECONE_INTEGRATION", "false")
+            }
+        else:
+            health_status["services"]["pinecone"] = {
+                "status": "not_configured",
+                "error": "Missing PINECONE_API_KEY or INDEX_NAME"
+            }
+    except Exception as e:
+        health_status["services"]["pinecone"] = {
+            "status": "error",
+            "error": str(e)
+        }
+
+    # Check PubMedBERT
+    try:
+        pubmedbert_endpoint = os.getenv("PUBMEDBERT_ENDPOINT_URL")
+        huggingface_key = os.getenv("HUGGINGFACE_API_KEY")
+
+        if pubmedbert_endpoint and huggingface_key:
+            health_status["services"]["pubmedbert"] = {
+                "status": "configured",
+                "endpoint": pubmedbert_endpoint[:40] + "...",
+                "enabled": "true"
+            }
+        else:
+            health_status["services"]["pubmedbert"] = {
+                "status": "not_configured",
+                "error": "Missing PUBMEDBERT_ENDPOINT_URL or HUGGINGFACE_API_KEY"
+            }
+    except Exception as e:
+        health_status["services"]["pubmedbert"] = {
+            "status": "error",
+            "error": str(e)
+        }
+
+    # Check legacy pipeline
+    health_status["services"]["legacy_pipeline"] = {
+        "status": "enabled" if not USE_SIMPLE_AZURE_PROMPT else "disabled",
+        "flag": f"USE_SIMPLE_AZURE_PROMPT={USE_SIMPLE_AZURE_PROMPT}",
+        "components": {
+            "azure_openai": health_status["services"]["azure_openai"]["status"],
+            "pinecone": health_status["services"]["pinecone"]["status"],
+            "pubmedbert": health_status["services"]["pubmedbert"]["status"]
+        }
+    }
+
+    # Overall status
+    all_healthy = all(
+        svc.get("status") in ["configured", "enabled"]
+        for svc in health_status["services"].values()
+        if isinstance(svc, dict) and svc.get("status") != "disabled"
+    )
+
+    health_status["status"] = "healthy" if all_healthy else "degraded"
+
+    return health_status
 
 @app.get("/debug/azure-openai")
 async def debug_azure_openai():
