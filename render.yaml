@@ -36,3 +36,5 @@ services:
         value: true
       - key: ENABLE_PINECONE_INTEGRATION  # ⭐ ADD THIS
         value: true
+      - key: USE_SIMPLE_AZURE_PROMPT  # Controls legacy pipeline routing
+        value: false  # false = legacy mode ENABLED
