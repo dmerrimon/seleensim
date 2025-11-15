@@ -2,7 +2,7 @@ services:
   - type: web
     name: ilana-backend
     runtime: python
-    buildCommand: "echo 'CACHE_BUST_NOV14_2024_15:30' && find . -type f -name '*.pyc' -delete && find . -type d -name '__pycache__' -exec rm -rf {} + 2>/dev/null || true && rm -rf ~/.cache/pip && pip install --no-cache-dir --force-reinstall -r requirements.txt"
+    buildCommand: "echo 'CACHE_BUST_NOV15_2024_16:50_ENABLE_PUBMEDBERT' && find . -type f -name '*.pyc' -delete && find . -type d -name '__pycache__' -exec rm -rf {} + 2>/dev/null || true && rm -rf ~/.cache/pip && pip install --no-cache-dir --force-reinstall -r requirements.txt"
     startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
     rootDir: ilana-backend
     envVars:
@@ -11,7 +11,7 @@ services:
       - key: PYTHONUNBUFFERED
         value: "1"
       - key: CACHE_BUST_VERSION
-        value: "NOV14_2024_v3"
+        value: "NOV15_2024_ENABLE_PUBMEDBERT_FIX"
       - key: PYTHON_VERSION
         value: 3.11
       - key: ENVIRONMENT
