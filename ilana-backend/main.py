@@ -385,7 +385,7 @@ async def health_check_services():
             health_status["services"]["pubmedbert"] = {
                 "status": "configured",
                 "endpoint": pubmedbert_endpoint[:40] + "...",
-                "enabled": "true"
+                "enabled": os.getenv("ENABLE_PUBMEDBERT", "true")
             }
         else:
             health_status["services"]["pubmedbert"] = {

@@ -59,9 +59,9 @@ class OptimizedRealAIService:
         self.config = config
         self.azure_client = None
         
-        # ENTERPRISE FEATURE FLAGS (enabled for pharma-grade analysis)
-        self.enable_pinecone = True  # ENABLED: Enterprise vector search for pharma expertise
-        self.enable_pubmedbert = True  # ENABLED: Medical domain intelligence
+        # ENTERPRISE FEATURE FLAGS (read from environment for production control)
+        self.enable_pinecone = self.config.enable_pinecone_integration  # Environment-controlled: Enterprise vector search
+        self.enable_pubmedbert = self.config.enable_pubmedbert  # Environment-controlled: Medical domain intelligence
         self.enable_deep_feasibility = False  # DISABLED: Heavy computation per user direction
         self.enable_timeline_estimation = False  # DISABLED: Complex calculations
         self.enable_amendment_risk = False  # DISABLED: Ensemble model overhead
@@ -158,6 +158,7 @@ class OptimizedRealAIService:
     def _initialize_enterprise_stack(self):
         """Initialize full enterprise AI stack: Azure OpenAI + Pinecone + PubMedBERT"""
         logger.warning("🚨🚨🚨 [DEPLOYMENT_MARKER_V2_NOV14_23:00] Enterprise stack initialization starting 🚨🚨🚨")
+        logger.info(f"🔧 Enterprise feature flags: Pinecone={self.enable_pinecone}, PubMedBERT={self.enable_pubmedbert}")
 
         # Initialize Azure OpenAI
         self._initialize_azure_only()
@@ -174,6 +175,9 @@ class OptimizedRealAIService:
                 logger.warning(f"⚠️ Pinecone initialization failed: {e}")
                 self.enable_pinecone = False
                 self.pinecone_index = None
+        else:
+            logger.info("ℹ️ Pinecone disabled via ENABLE_PINECONE_INTEGRATION=false; skipping vector DB initialization")
+            self.pinecone_index = None
         
         # Initialize PubMedBERT service via HTTP endpoint
         if self.enable_pubmedbert:
@@ -210,6 +214,9 @@ class OptimizedRealAIService:
                 logger.info(f"🔄 Continuing without PubMedBERT - will use local medical intelligence fallback")
                 self.enable_pubmedbert = False
                 self.pubmedbert_service = None
+        else:
+            logger.info("ℹ️ PubMedBERT disabled via ENABLE_PUBMEDBERT=false; skipping inference endpoint initialization")
+            self.pubmedbert_service = None
 
     async def analyze_comprehensive(
         self, 
@@ -925,6 +932,11 @@ Provide 2-5 specific improvements."""
 
     async def _query_external_pubmedbert(self, text: str, ta_detection: TADetectionResult = None) -> str:
         """Query external PubMedBERT endpoint"""
+        # Guard: Skip if PubMedBERT is disabled via environment
+        if not self.enable_pubmedbert:
+            logger.info("ℹ️ PubMedBERT disabled via env; skipping inference endpoint call")
+            return ""
+
         import aiohttp
         async with aiohttp.ClientSession() as session:
             payload = {

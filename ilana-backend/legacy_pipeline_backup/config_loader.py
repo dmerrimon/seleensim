@@ -66,6 +66,7 @@ class IlanaConfig:
     enable_advanced_analytics: bool = True
     enable_pinecone_integration: bool = True
     enable_azure_openai: bool = True
+    enable_pubmedbert: bool = True
 
 
 class ConfigLoader:
@@ -213,7 +214,8 @@ class ConfigLoader:
             enable_continuous_learning=get_env("ENABLE_CONTINUOUS_LEARNING", True),
             enable_advanced_analytics=get_env("ENABLE_ADVANCED_ANALYTICS", True),
             enable_pinecone_integration=get_env("ENABLE_PINECONE_INTEGRATION", True),
-            enable_azure_openai=get_env("ENABLE_AZURE_OPENAI", True)
+            enable_azure_openai=get_env("ENABLE_AZURE_OPENAI", True),
+            enable_pubmedbert=get_env("ENABLE_PUBMEDBERT", True)
         )
         
         return config
@@ -304,7 +306,8 @@ class ConfigLoader:
                 "continuous_learning": config.enable_continuous_learning,
                 "advanced_analytics": config.enable_advanced_analytics,
                 "pinecone_integration": config.enable_pinecone_integration,
-                "azure_openai": config.enable_azure_openai
+                "azure_openai": config.enable_azure_openai,
+                "pubmedbert": config.enable_pubmedbert
             },
             "performance": {
                 "max_sequence_length": config.max_sequence_length,
