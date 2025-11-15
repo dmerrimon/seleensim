@@ -157,7 +157,8 @@ class OptimizedRealAIService:
 
     def _initialize_enterprise_stack(self):
         """Initialize full enterprise AI stack: Azure OpenAI + Pinecone + PubMedBERT"""
-        
+        logger.warning("🚨🚨🚨 [DEPLOYMENT_MARKER_V2_NOV14_23:00] Enterprise stack initialization starting 🚨🚨🚨")
+
         # Initialize Azure OpenAI
         self._initialize_azure_only()
         
