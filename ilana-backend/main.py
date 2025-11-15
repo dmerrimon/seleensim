@@ -820,6 +820,99 @@ async def reinforce(request: Request, feedback_data: dict):
             detail=f"Internal server error: {str(e)}"
         )
 
+@app.get("/api/audit/events")
+async def get_audit_events(
+    tenant_id: str = None,
+    user_id_hash: str = None,
+    action: str = None,
+    start_date: str = None,
+    end_date: str = None,
+    limit: int = 100
+):
+    """
+    B2B Audit Log Dashboard - Query RL feedback events with tenant filtering
+
+    Query parameters:
+    - tenant_id: Filter by tenant (required for multi-tenant deployments)
+    - user_id_hash: Filter by hashed user ID
+    - action: Filter by action type (accept, undo, reject)
+    - start_date: ISO 8601 start date filter
+    - end_date: ISO 8601 end date filter
+    - limit: Max number of events to return (default: 100, max: 1000)
+    """
+    try:
+        import json
+        from pathlib import Path
+
+        # Limit max results
+        limit = min(limit, 1000)
+
+        # Read all feedback events from shadow/feedback/
+        feedback_dir = Path(__file__).parent / "shadow" / "feedback"
+        if not feedback_dir.exists():
+            return {
+                "events": [],
+                "count": 0,
+                "filtered_count": 0,
+                "message": "No feedback events found"
+            }
+
+        # Load all feedback JSON files
+        events = []
+        for feedback_file in feedback_dir.glob("*.json"):
+            try:
+                with open(feedback_file, 'r') as f:
+                    event = json.load(f)
+
+                    # Apply filters
+                    if tenant_id and event.get('tenant_id') != tenant_id:
+                        continue
+                    if user_id_hash and event.get('user_id_hash') != user_id_hash:
+                        continue
+                    if action and event.get('action') != action:
+                        continue
+
+                    # Date filtering
+                    if start_date or end_date:
+                        event_time = event.get('timestamp', '')
+                        if start_date and event_time < start_date:
+                            continue
+                        if end_date and event_time > end_date:
+                            continue
+
+                    events.append(event)
+            except Exception as e:
+                logger.warning(f"Failed to load feedback file {feedback_file}: {e}")
+                continue
+
+        # Sort by timestamp descending (newest first)
+        events.sort(key=lambda x: x.get('timestamp', ''), reverse=True)
+
+        # Apply limit
+        total_count = len(events)
+        events = events[:limit]
+
+        return {
+            "events": events,
+            "count": len(events),
+            "total_count": total_count,
+            "filters": {
+                "tenant_id": tenant_id,
+                "user_id_hash": user_id_hash,
+                "action": action,
+                "start_date": start_date,
+                "end_date": end_date
+            },
+            "timestamp": datetime.utcnow().isoformat()
+        }
+
+    except Exception as e:
+        logger.error(f"❌ Audit events endpoint error: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to query audit events: {str(e)}"
+        )
+
 @app.post("/api/diagnose-highlight")
 async def diagnose_highlight(request: Request, highlight_data: dict):
     """Simulate highlight functionality for QA testing"""
@@ -1086,16 +1179,26 @@ async def debug_handler_types():
 @app.post("/api/analyze")
 async def analyze_entry(request: Request):
     """
-    Protocol analysis using Legacy Pipeline (RAG + PubMedBERT + Pinecone)
+    Protocol analysis using Legacy Pipeline (RAG + PubMedBERT + Pinecone) - Selection Mode Only
 
-    Payload expected: {"text": "...", "ta": "...", "phase":"..."}
-    Returns: {"request_id": str, "model_path": "legacy_pipeline", "result": {...}}
+    Payload expected: {"text": str, "mode": "selection", "request_id": str}
+    Returns: {"suggestions": [...]}
     """
     import time
     start_time = time.time()
 
     payload = await request.json()
-    req_id = _generate_request_id()
+    req_id = payload.get("request_id") or _generate_request_id()
+
+    # Enforce selection mode only
+    mode = payload.get("mode", "selection")
+    if mode != "selection":
+        logger.warning(f"⚠️ Rejecting non-selection mode: {mode}")
+        raise HTTPException(
+            status_code=400,
+            detail=f"Only 'selection' mode is supported. Received mode: {mode}"
+        )
+
     payload.setdefault("request_id", req_id)
 
     # Start telemetry trace
@@ -1130,7 +1233,28 @@ async def analyze_entry(request: Request):
         except Exception as shadow_err:
             logger.debug(f"Shadow worker submission failed (non-critical): {shadow_err}")
 
-        return result
+        # Transform response format to match API spec
+        # From: {request_id, model_path, result: {suggestions, metadata}}
+        # To: {suggestions: [{id, improved_text, ta, phase, model_path, latency_ms}]}
+        suggestions = result.get("result", {}).get("suggestions", [])
+        metadata = result.get("result", {}).get("metadata", {})
+
+        transformed_suggestions = []
+        for suggestion in suggestions:
+            transformed_suggestions.append({
+                "id": suggestion.get("id", f"suggestion_{req_id}"),
+                "improved_text": suggestion.get("suggestion") or suggestion.get("suggestedText", ""),
+                "original_text": suggestion.get("text") or suggestion.get("originalText", ""),
+                "ta": payload.get("ta", "general_medicine"),
+                "phase": payload.get("phase", "objectives"),
+                "model_path": "legacy",
+                "latency_ms": metadata.get("latency_ms", 0),
+                "confidence": suggestion.get("confidence", 0.9),
+                "type": suggestion.get("type", "medical_terminology"),
+                "rationale": suggestion.get("rationale", "")
+            })
+
+        return {"suggestions": transformed_suggestions}
 
     except Exception as e:
         logger.error(f"❌ Legacy pipeline failed: {req_id} - {type(e).__name__}: {e}")

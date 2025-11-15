@@ -1045,11 +1045,6 @@
         // Global state for current therapeutic area
         window.IlanaState = {
             currentTA: 'general_medicine',
-            // Canary rollout configuration (0-100%)
-            // 0 = all users use old handleAcceptChange
-            // 10 = 10% of users use new acceptSuggestionHandler
-            // 100 = all users use new handler
-            canaryRolloutPercent: 10  // Start with 10% canary rollout
         };
 
         // Debounce tracking for highlight clicks
@@ -1239,16 +1234,7 @@
                                 selectBtn.removeEventListener('click', selectTextOption);
                                 selectBtn.addEventListener('click', selectTextOption);
                             }
-                            const truncatedBtn = document.querySelector('.modal-option.truncated');
-                            if (truncatedBtn && typeof analyzeTruncatedDocument === 'function') {
-                                truncatedBtn.removeEventListener('click', analyzeTruncatedDocument);
-                                truncatedBtn.addEventListener('click', analyzeTruncatedDocument);
-                            }
-                            const queueBtn = document.querySelector('.modal-option.queue');
-                            if (queueBtn && typeof queueDeepAnalysis === 'function') {
-                                queueBtn.removeEventListener('click', queueDeepAnalysis);
-                                queueBtn.addEventListener('click', queueDeepAnalysis);
-                            }
+                            // Document analysis event listeners removed - selection-only mode
                             const closeBtn = document.querySelector('.modal-close');
                             if (closeBtn && typeof closeAnalysisModal === 'function') {
                                 closeBtn.removeEventListener('click', closeAnalysisModal);
@@ -1748,17 +1734,7 @@
                 console.log('  ✓ Wired select-text handler');
             }
 
-            const truncatedBtn = document.querySelector('.modal-option.truncated');
-            if (truncatedBtn) {
-                truncatedBtn.addEventListener('click', analyzeTruncatedDocument);
-                console.log('  ✓ Wired truncated handler');
-            }
-
-            const queueBtn = document.querySelector('.modal-option.queue');
-            if (queueBtn) {
-                queueBtn.addEventListener('click', queueDeepAnalysis);
-                console.log('  ✓ Wired queue handler');
-            }
+            // Document analysis event listeners removed - selection-only mode
 
             // Close button
             const closeBtn = document.querySelector('.modal-close');
@@ -1794,85 +1770,7 @@
         }
 
         // 2) Truncated sync analysis (fast)
-        async function analyzeTruncatedDocument() {
-            closeAnalysisModal();
-            setAnalyzeButtonBusy(true);
-            try {
-                // Extract document text via Office.js (safest pattern)
-                await Word.run(async (context) => {
-                    const body = context.document.body;
-                    body.load("text");
-                    await context.sync();
-                    let fullText = body.text || "";
-                    const truncated = fullText.slice(0, 20000); // first 20k chars
-                    // call backend
-                    const url = (window.__ILANA_API_BASE__ || API_BASE_URL) + "/api/analyze";
-                    const payload = { text: truncated, mode: "document_truncated", ta: window.IlanaState?.currentTA || null };
-                    const resp = await fetchWithTimeout(url, {
-                        method: "POST",
-                        headers: {"Content-Type": "application/json"},
-                        body: JSON.stringify(payload)
-                    }, 25000);
-                    if (!resp.ok) {
-                        const txt = await resp.text();
-                        showToast("Server error: " + resp.status + " " + txt);
-                        setAnalyzeButtonBusy(false);
-                        return;
-                    }
-                    const json = await resp.json();
-                    handleAnalyzeResult(json);
-                });
-            } catch (err) {
-                if (err.name === 'AbortError') showToast("Request timed out. Try 'Queue Deep Analysis' instead.");
-                else showToast("Error during analysis: " + (err.message || err));
-                console.error(err);
-            } finally {
-                setAnalyzeButtonBusy(false);
-            }
-        }
-
-        // 3) Queue background deep analysis (async job)
-        async function queueDeepAnalysis() {
-            closeAnalysisModal();
-            setAnalyzeButtonBusy(true);
-            try {
-                // Get whole document text and send to async enqueue endpoint using smart fallback
-                await Word.run(async (context) => {
-                    const body = context.document.body;
-                    body.load("text");
-                    await context.sync();
-                    const fullText = body.text || "";
-                    const payload = { text: fullText, ta: window.IlanaState?.currentTA || null, user_id_hash: window.IlanaState?.userHash || null };
-                    
-                    const json = await callOptimizeDocumentAsync(payload);
-                    
-                    // Expect { request_id, result: { status: "queued", job_id } } or { status: "queued", job_id }
-                    if (json?.result?.status === "queued" || json?.status === "queued") {
-                        const jobId = json.result?.job_id || json.job_id || json?.jobId;
-                        showToast("Deep analysis queued. Job ID: " + jobId);
-                        // Optionally open job progress panel
-                        openJobProgressPanel(jobId);
-                    } else {
-                        handleAnalyzeResult(json);
-                    }
-                });
-            } catch (err) {
-                console.error(err);
-                showToast("Failed to queue deep analysis: " + (err.message || err));
-            } finally {
-                setAnalyzeButtonBusy(false);
-            }
-        }
-
-        // Get full document text
-        async function getFullDocumentText() {
-            return await Word.run(async (context) => {
-                const body = context.document.body;
-                context.load(body, 'text');
-                await context.sync();
-                return body.text;
-            });
-        }
+        // Full-document analysis functions removed - selection-only mode
 
         // Setup keyboard handlers for accessibility
         function setupKeyboardHandlers() {
@@ -2750,8 +2648,8 @@
                 const newButton = button.cloneNode(true);
                 button.parentNode.replaceChild(newButton, button);
 
-                // Add new listener - ROUTES to canary or stable handler
-                newButton.addEventListener('click', acceptChangeRouter);
+                // Always use acceptSuggestionHandler (legacy RAG pipeline)
+                newButton.addEventListener('click', acceptSuggestionHandler);
             });
             console.log(`✅ Wired ${acceptButtons.length} accept buttons (using router)`);
         }
@@ -3210,7 +3108,7 @@
             });
         }
 
-        // ===== CANARY: NEW ACCEPT HANDLER WITH COMPREHENSIVE TELEMETRY =====
+        // ===== ACCEPT HANDLER WITH COMPREHENSIVE TELEMETRY (Legacy RAG Pipeline) =====
 
         /**
          * acceptSuggestionHandler - NEW Accept Change handler with full telemetry
@@ -3265,7 +3163,7 @@
             const acceptedTimestamp = Date.now();
 
             try {
-                console.log('🔄 [CANARY] Accepting change:', { suggestionId, originalText: originalText.substring(0, 50), improvedText: improvedText.substring(0, 50) });
+                console.log('🔄 Accepting change:', { suggestionId, originalText: originalText.substring(0, 50), improvedText: improvedText.substring(0, 50) });
 
                 // Perform text replacement using Office.js
                 await Word.run(async (context) => {
@@ -3279,7 +3177,7 @@
                         firstRange.insertText(improvedText, 'Replace');
                         await context.sync();
 
-                        console.log('✅ [CANARY] Text replaced successfully');
+                        console.log('✅ Text replaced successfully');
 
                         // Calculate latency
                         const acceptLatencyMs = Date.now() - (window.IlanaState.lastAnalysisStartTime || Date.now());
@@ -3319,8 +3217,7 @@
                             confidence: suggestion.confidence || 0.9,
                             severity: suggestion.severity || 'medium',
                             suggestion_type: suggestion.type || 'medical_terminology',
-                            handler_version: 'acceptSuggestionHandler_v1',  // Track which handler
-                            canary: true
+                            handler_version: 'acceptSuggestionHandler_v1'
                         });
 
                         // Show undo toast (10 second window)
@@ -3339,19 +3236,19 @@
                             original_text: originalText,  // sendReinforcementSignal handles PHI
                             improved_text: improvedText,
                             context_snippet: extractContextSnippet(originalText, 200)
-                        }).catch(e => console.warn('⚠️ [CANARY] RL feedback failed:', e));
+                        }).catch(e => console.warn('⚠️ RL feedback failed:', e));
 
-                        console.log('✅ [CANARY] Change accepted successfully');
+                        console.log('✅ Change accepted successfully');
 
                     } else {
                         // Text not found in document
-                        console.warn('⚠️ [CANARY] Could not find original text to replace');
+                        console.warn('⚠️ Could not find original text to replace');
                         showToast("Couldn't find original text to replace. Please locate it first.");
                     }
                 });
 
             } catch (err) {
-                console.error('❌ [CANARY] Accept failed:', err);
+                console.error('❌ Accept failed:', err);
                 showToast('Accept failed: ' + (err.message || err));
 
                 // Log error telemetry
@@ -3359,8 +3256,7 @@
                     event: 'suggestion_accept_error',
                     suggestion_id: suggestionId,
                     error: err.message || String(err),
-                    handler_version: 'acceptSuggestionHandler_v1',
-                    canary: true
+                    handler_version: 'acceptSuggestionHandler_v1'
                 });
 
             } finally {
@@ -3386,12 +3282,12 @@
          */
         async function doUndoFixed(undoInfo) {
             if (!undoInfo) {
-                console.warn('⚠️ [CANARY] No undo info available');
+                console.warn('⚠️ No undo info available');
                 return;
             }
 
             try {
-                console.log('🔄 [CANARY] Undoing change:', undoInfo.suggestionId);
+                console.log('🔄 Undoing change:', undoInfo.suggestionId);
 
                 // Revert text change using Office.js
                 await Word.run(async (context) => {
@@ -3422,8 +3318,7 @@
                             improved_text_hash: await hashString(undoInfo.improvedText),
                             suggestion_type: suggestion.type || 'medical_terminology',
                             severity: suggestion.severity || 'medium',
-                            handler_version: 'doUndoFixed_v1',
-                            canary: true
+                            handler_version: 'doUndoFixed_v1'
                         });
 
                         // Send RL NEGATIVE feedback to /api/rl/feedback (not /api/reinforce)
@@ -3441,18 +3336,18 @@
                             improved_text_hash: await hashString(undoInfo.improvedText),
                             context_snippet: extractContextSnippet(undoInfo.originalText, 200),
                             redactPHI: true
-                        }).catch(e => console.warn('⚠️ [CANARY] RL undo feedback failed:', e));
+                        }).catch(e => console.warn('⚠️ RL undo feedback failed:', e));
 
-                        console.log('✅ [CANARY] Change undone successfully');
+                        console.log('✅ Change undone successfully');
 
                     } else {
-                        console.warn('⚠️ [CANARY] Could not find changed text to undo');
+                        console.warn('⚠️ Could not find changed text to undo');
                         showToast('Could not find changed text to undo.');
                     }
                 });
 
             } catch (e) {
-                console.error('❌ [CANARY] Undo failed:', e);
+                console.error('❌ Undo failed:', e);
                 showToast('Undo failed: ' + (e.message || e));
 
                 // Log error telemetry
@@ -3460,55 +3355,12 @@
                     event: 'suggestion_undo_error',
                     suggestion_id: undoInfo.suggestionId,
                     error: e.message || String(e),
-                    handler_version: 'doUndoFixed_v1',
-                    canary: true
+                    handler_version: 'doUndoFixed_v1'
                 });
             }
         }
 
-        // ===== CANARY ROUTER: HASH-BASED ROUTING =====
-
-        /**
-         * acceptChangeRouter - Routes accept events to old or new handler based on canary percentage
-         *
-         * Uses deterministic hash-based routing to ensure:
-         * - Same user always gets same handler (no flipping mid-session)
-         * - Easy to ramp up from 10% → 25% → 50% → 100%
-         * - Logs routing decision for monitoring
-         *
-         * @param {Event} event - Click event from accept button
-         */
-        async function acceptChangeRouter(event) {
-            // Get user hash for deterministic routing
-            const userHash = window.IlanaState.userHash || 'anonymous';
-
-            // Convert first 8 hex chars to number and mod 100 for percentile
-            // This ensures deterministic distribution: same user → same percentile
-            const hashNum = parseInt(userHash.substring(0, 8), 16);
-            const percentile = hashNum % 100;
-
-            // Check if user is in canary group
-            const canaryPercent = window.IlanaState.canaryRolloutPercent || 0;
-            const useNewHandler = percentile < canaryPercent;
-
-            // Log routing decision for monitoring
-            console.log(`🔀 [ROUTER] User percentile: ${percentile}, Canary: ${canaryPercent}%, Using: ${useNewHandler ? 'NEW' : 'OLD'} handler`);
-
-            logTelemetry({
-                event: 'canary_routing',
-                handler: useNewHandler ? 'acceptSuggestionHandler' : 'handleAcceptChange',
-                user_percentile: percentile,
-                canary_percent: canaryPercent,
-                user_id_hash: userHash
-            });
-
-            // Route to appropriate handler
-            if (useNewHandler) {
-                return acceptSuggestionHandler(event);
-            } else {
-                return handleAcceptChange(event);
-            }
-        }
+        // Hybrid mode switching removed - always use legacy RAG pipeline with acceptSuggestionHandler
 
         // Show toast notification
         function showToast(message) {

@@ -27,11 +27,12 @@ class RLFeedbackEvent(BaseModel):
     All events must have redactPHI=true and use hashed text instead of raw PHI.
     """
     suggestion_id: str = Field(..., description="Unique suggestion identifier")
-    action: Literal["accept", "undo"] = Field(..., description="Action type")
-    reason: Optional[str] = Field(None, description="Reason for action (e.g., 'user_undo')")
+    action: Literal["accept", "undo", "reject"] = Field(..., description="Action type")
+    reason: Optional[str] = Field(None, description="Reason for action (e.g., 'user_undo', 'manual_dismiss')")
     timestamp: str = Field(..., description="ISO 8601 timestamp")
     request_id: str = Field(..., description="Original request ID")
     user_id_hash: str = Field(..., description="Hashed user identifier (SHA-256)")
+    tenant_id: str = Field(default="default", description="Tenant identifier for B2B multi-tenancy")
     ta: str = Field(default="general_medicine", description="Therapeutic area")
     phase: str = Field(default="production", description="Deployment phase")
 
@@ -94,6 +95,7 @@ class ReinforcementEvent(BaseModel):
     suggestion_id: str
     request_id: str
     user_id_hash: str
+    tenant_id: str = "default"
     ta: str = "general_medicine"
     phase: str = "production"
     action: str = "accept"
