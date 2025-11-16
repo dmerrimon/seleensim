@@ -60,8 +60,8 @@ class OptimizedRealAIService:
         self.azure_client = None
         
         # ENTERPRISE FEATURE FLAGS (read from environment for production control)
-        self.enable_pinecone = self.config.enable_pinecone_integration  # Environment-controlled: Enterprise vector search
-        self.enable_pubmedbert = self.config.enable_pubmedbert  # Environment-controlled: Medical domain intelligence
+        self.enable_pinecone = getattr(self.config, 'enable_pinecone_integration', True)  # Environment-controlled: Enterprise vector search
+        self.enable_pubmedbert = getattr(self.config, 'enable_pubmedbert', True)  # Environment-controlled: Medical domain intelligence (with backward compatibility)
         self.enable_deep_feasibility = False  # DISABLED: Heavy computation per user direction
         self.enable_timeline_estimation = False  # DISABLED: Complex calculations
         self.enable_amendment_risk = False  # DISABLED: Ensemble model overhead
