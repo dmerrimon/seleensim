@@ -159,8 +159,10 @@ class OptimizedRealAIService:
 
     def _initialize_enterprise_stack(self):
         """Initialize full enterprise AI stack: Azure OpenAI + Pinecone + PubMedBERT"""
-        logger.warning("🚨🚨🚨 [DEPLOYMENT_MARKER_V2_NOV14_23:00] Enterprise stack initialization starting 🚨🚨🚨")
-        logger.info(f"🔧 Enterprise feature flags: Pinecone={self.enable_pinecone}, PubMedBERT={self.enable_pubmedbert}")
+        # DEPLOYMENT MARKER - NOV 16, 2024 - Option 2 Complete
+        logger.warning("🚨🚨🚨 [DEPLOYMENT_V3_NOV16_2024_CACHE_CLEAR] Enterprise initialization 🚨🚨🚨")
+        logger.warning(f"🔧 Enterprise feature flags: Pinecone={self.enable_pinecone}, PubMedBERT={self.enable_pubmedbert}")
+        logger.warning(f"🔧 USE_SIMPLE_AZURE_PROMPT={os.getenv('USE_SIMPLE_AZURE_PROMPT', 'not_set')}")
 
         # Initialize Azure OpenAI
         self._initialize_azure_only()

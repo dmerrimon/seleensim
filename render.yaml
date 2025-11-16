@@ -1,17 +1,40 @@
+# ========================================
+# Ilana Backend - Render Deployment Config
+# ========================================
+#
+# IMPORTANT: Environment variables defined below are NOT automatically applied
+# when creating a new service on Render. You MUST manually configure them in
+# the Render dashboard under Environment tab.
+#
+# See RENDER_ENV_CHECKLIST.md for complete setup instructions.
+#
 services:
   - type: web
     name: ilana-backend-v2
     runtime: python
-    buildCommand: "echo 'CACHE_BUST_NOV15_2024_OPTION2_HUGGINGFACE_FIX' && find . -type f -name '*.pyc' -delete && find . -type d -name '__pycache__' -exec rm -rf {} + 2>/dev/null || true && rm -rf ~/.cache/pip && pip install --no-cache-dir --force-reinstall -r requirements.txt"
+    buildCommand: "echo 'CACHE_BUST_NOV16_2024_BYTECODE_CLEAR' && find . -type f -name '*.pyc' -delete && find . -type d -name '__pycache__' -exec rm -rf {} + 2>/dev/null || true && rm -rf ~/.cache/pip && rm -rf /opt/render/.cache/Python* 2>/dev/null || true && pip install --no-cache-dir --force-reinstall -r requirements.txt"
     startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
     rootDir: ./ilana-backend
+
+    # ==========================================
+    # ENVIRONMENT VARIABLES
+    # ==========================================
+    # CRITICAL: These must be manually configured in Render dashboard!
+    # When creating a new service, go to:
+    #   1. Render Dashboard → Your Service → Environment tab
+    #   2. Add each variable below manually
+    #   3. Mark secrets (API keys) as "Secret" in Render UI
+    #   4. Save and redeploy
+    #
+    # See RENDER_ENV_CHECKLIST.md for detailed instructions
+    #
     envVars:
       - key: PYTHONDONTWRITEBYTECODE
         value: "1"
       - key: PYTHONUNBUFFERED
         value: "1"
       - key: CACHE_BUST_VERSION
-        value: "NOV15_2024_OPTION2_HUGGINGFACE_FIX"
+        value: "NOV16_2024_BYTECODE_CLEAR"
       - key: PYTHON_VERSION
         value: 3.11
       - key: ENVIRONMENT
@@ -32,9 +55,28 @@ services:
         sync: false
       - key: PINECONE_INDEX_NAME      # ⭐ ADD THIS
         sync: false
-      - key: ENABLE_AZURE_OPENAI      # ⭐ ADD THIS
-        value: true
-      - key: ENABLE_PINECONE_INTEGRATION  # ⭐ ADD THIS
-        value: true
-      - key: USE_SIMPLE_AZURE_PROMPT  # Controls legacy pipeline routing
-        value: false  # false = legacy mode ENABLED
+      # ==========================================
+      # CRITICAL ROUTING VARIABLE
+      # ==========================================
+      # This controls which pipeline is used:
+      #   true  = Simple mode (Azure OpenAI only)
+      #   false = Legacy mode (PubMedBERT + Pinecone + Azure RAG stack)
+      #
+      - key: USE_SIMPLE_AZURE_PROMPT
+        value: false  # false = Enable full enterprise RAG stack
+
+      # ==========================================
+      # FEATURE FLAGS (for Legacy Mode)
+      # ==========================================
+      # Only used when USE_SIMPLE_AZURE_PROMPT=false
+      #
+      - key: ENABLE_AZURE_OPENAI
+        value: true  # Enable Azure OpenAI GPT-4
+
+      - key: ENABLE_PINECONE_INTEGRATION
+        value: true  # Enable vector DB RAG retrieval
+                     # Set to false for Option 1 (disable Pinecone)
+
+      - key: ENABLE_PUBMEDBERT
+        value: true  # Enable PubMedBERT medical inference
+                     # Set to false for Option 1 (disable PubMedBERT)
