@@ -230,14 +230,17 @@ After deployment completes, verify you see these logs (in order):
 🔄 ADAPTER: Routing to legacy enterprise pipeline  ← Confirms legacy mode active
 ✅ ADAPTER: Legacy pipeline imported successfully
 
-🚨🚨🚨 [DEPLOYMENT_MARKER_V2_NOV14_23:00] Enterprise stack initialization starting 🚨🚨🚨
+🚨🚨🚨 [DEPLOYMENT_V3_NOV16_2024_CACHE_CLEAR] Enterprise initialization 🚨🚨🚨  ← NEW MARKER
 🔧 Enterprise feature flags: Pinecone=True, PubMedBERT=True  ← Confirms features enabled
+🔧 USE_SIMPLE_AZURE_PROMPT=false  ← Confirms routing variable is correct
 
 ✅ PubMedBERT inference endpoint configured: https://xxx.endpoints.huggingface.cloud
 ✅ Pinecone vector DB initialized: protocol-intelligence-768
 
 INFO:     Application startup complete.
 ```
+
+**If you see the OLD marker `[DEPLOYMENT_MARKER_V2_NOV14_23:00]` instead of `[DEPLOYMENT_V3_NOV16_2024_CACHE_CLEAR]`, that proves Render is using cached bytecode. Manual redeploy required.**
 
 #### Test Health Endpoint
 
@@ -268,6 +271,25 @@ Expected response with Option 2 enabled:
 ```
 
 ### Troubleshooting
+
+#### Issue: Still seeing old deployment marker after Git push
+
+**Symptom:** Logs show `[DEPLOYMENT_MARKER_V2_NOV14_23:00]` instead of `[DEPLOYMENT_V3_NOV16_2024_CACHE_CLEAR]`
+
+**Cause:** Render is using cached Python bytecode (.pyc files) instead of recompiling from source
+
+**Fix:**
+1. Go to Render Dashboard → Your Service
+2. Click **Manual Deploy** → **Clear build cache & deploy**
+3. Wait for deployment to complete
+4. Check logs for `[DEPLOYMENT_V3_NOV16_2024_CACHE_CLEAR]` marker
+5. If STILL showing old marker after cache clear, contact Render support (rare but possible)
+
+**Alternative Fix (if dashboard cache clear doesn't work):**
+1. Go to Render Dashboard → Environment tab
+2. Add a temporary variable: `FORCE_REBUILD=1`
+3. Click Save Changes (triggers redeploy)
+4. After successful deployment, remove `FORCE_REBUILD` variable
 
 #### Issue: Logs show "Simple mode active, legacy pipeline bypassed"
 
@@ -397,12 +419,17 @@ Files modified:
 **Final Implementation Commit:** `317ae611`
 - Added version comment to force Docker layer invalidation
 - All Option 2 code changes verified working
-- **This is the current production commit**
 
-**Documentation Update Commit:** (Current)
+**Bytecode Cache Fix Commit:** `147a64d9` ← **DEPLOY THIS**
+- Changed feature flags log from INFO to WARNING level (ensures visibility in Render logs)
+- Added explicit USE_SIMPLE_AZURE_PROMPT value logging
+- Updated deployment marker to V3_NOV16_2024
+- Added Python bytecode cache deletion: `/opt/render/.cache/Python*`
+- Updated cache bust version to NOV16_2024_BYTECODE_CLEAR
 - Added `RENDER_ENV_CHECKLIST.md` with complete environment variable checklist
 - Updated `render.yaml` with clear documentation
 - Updated `DEPLOYMENT_NOTES.md` with step-by-step Render dashboard instructions
+- **This is the current production commit - deploy this to fix bytecode caching issue**
 
 ### Files Modified for Option 2
 
