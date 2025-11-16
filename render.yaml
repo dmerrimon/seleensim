@@ -4,7 +4,7 @@ services:
     runtime: python
     buildCommand: "echo 'CACHE_BUST_NOV15_2024_OPTION2_HUGGINGFACE_FIX' && find . -type f -name '*.pyc' -delete && find . -type d -name '__pycache__' -exec rm -rf {} + 2>/dev/null || true && rm -rf ~/.cache/pip && pip install --no-cache-dir --force-reinstall -r requirements.txt"
     startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
-    rootDir: ilana-backend
+    rootDir: ./ilana-backend
     envVars:
       - key: PYTHONDONTWRITEBYTECODE
         value: "1"
