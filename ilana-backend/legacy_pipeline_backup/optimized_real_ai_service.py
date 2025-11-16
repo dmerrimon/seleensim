@@ -931,7 +931,7 @@ Provide 2-5 specific improvements."""
             return "Medical domain analysis suggests clinical best practices apply"
 
     async def _query_external_pubmedbert(self, text: str, ta_detection: TADetectionResult = None) -> str:
-        """Query external PubMedBERT endpoint"""
+        """Query external PubMedBERT endpoint using HuggingFace Inference API format"""
         # Guard: Skip if PubMedBERT is disabled via environment
         if not self.enable_pubmedbert:
             logger.info("ℹ️ PubMedBERT disabled via env; skipping inference endpoint call")
@@ -939,42 +939,49 @@ Provide 2-5 specific improvements."""
 
         import aiohttp
         async with aiohttp.ClientSession() as session:
+            # HuggingFace Inference Endpoints use simple {"inputs": "text"} format
             payload = {
-                "text": text[:1500],  # More text for better analysis
-                "therapeutic_area": ta_detection.therapeutic_area if ta_detection else "general_medicine",
-                "analysis_type": "comprehensive_protocol_analysis",
-                "include_entities": True,
-                "include_interactions": True,
-                "include_compliance": True
+                "inputs": text[:1500]  # HuggingFace accepts only "inputs" key with text
             }
-            
+
             async with session.post(
-                f"{self.pubmedbert_endpoint}/analyze",
+                self.pubmedbert_endpoint,  # POST to root endpoint (no /analyze path)
                 headers=self.pubmedbert_headers,
                 json=payload,
-                timeout=15
+                timeout=30  # Longer timeout for potential model cold start
             ) as response:
                 if response.status == 200:
-                    analysis = await response.json()
+                    # HuggingFace returns embeddings, classification, or NER results
+                    result = await response.json()
                     insights = []
-                    
-                    if 'medical_entities' in analysis:
-                        entities = analysis['medical_entities'][:5]
-                        insights.append(f"🧬 Medical entities: {', '.join(entities)}")
-                    
-                    if 'drug_interactions' in analysis:
-                        interactions = analysis['drug_interactions'][:3]
-                        insights.append(f"💊 Drug considerations: {', '.join(interactions)}")
-                    
-                    if 'compliance_recommendations' in analysis:
-                        compliance = analysis['compliance_recommendations'][:3]
-                        insights.append(f"⚖️ Compliance: {', '.join(compliance)}")
-                    
-                    if 'safety_signals' in analysis:
-                        safety = analysis['safety_signals'][:2]
-                        insights.append(f"🛡️ Safety signals: {', '.join(safety)}")
-                    
-                    return "\n".join(insights) if insights else "External PubMedBERT analysis completed"
+
+                    # Handle different HuggingFace response formats
+                    if isinstance(result, list) and len(result) > 0:
+                        first_item = result[0]
+
+                        # Handle classification output: [{"label": "...", "score": ...}]
+                        if isinstance(first_item, dict) and 'label' in first_item:
+                            label = first_item.get('label', 'N/A')
+                            score = first_item.get('score', 0)
+                            insights.append(f"🧬 Medical domain classification: {label} (confidence: {score:.2%})")
+
+                        # Handle NER output: [{"entity": "...", "word": "...", "score": ...}]
+                        elif isinstance(first_item, dict) and 'entity' in first_item:
+                            entities = [item.get('word', '') for item in result[:5] if item.get('word')]
+                            if entities:
+                                insights.append(f"🧬 Medical entities detected: {', '.join(entities)}")
+
+                        # Handle embeddings: [[0.123, 0.456, ...]]
+                        elif isinstance(first_item, (list, float)):
+                            insights.append("🧬 Medical domain embeddings generated successfully")
+
+                    # Add therapeutic area context if available
+                    if ta_detection:
+                        insights.append(f"🎯 Analysis for {ta_detection.therapeutic_area}")
+                        if hasattr(ta_detection, 'subindication') and ta_detection.subindication:
+                            insights[-1] += f" - {ta_detection.subindication}"
+
+                    return "\n".join(insights) if insights else "PubMedBERT analysis completed"
                 else:
                     raise Exception(f"PubMedBERT endpoint returned {response.status}")
 
