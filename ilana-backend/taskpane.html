@@ -21,44 +21,9 @@
         
         <!-- Top Navigation Bar -->
         <div class="top-navigation">
-            <div class="overall-score-container">
-                <div class="circular-score" id="overall-score">
-                    <svg viewBox="0 0 72 72" class="score-circle">
-                        <circle cx="36" cy="36" r="32" fill="none" stroke="#E7E9F5" stroke-width="5"></circle>
-                        <circle id="score-progress" cx="36" cy="36" r="32" fill="none" stroke="#3b82f6" stroke-width="5" 
-                                stroke-dasharray="201" stroke-dashoffset="201" transform="rotate(-90 36 36)" stroke-linecap="round"></circle>
-                        <text x="36" y="36" text-anchor="middle" dy=".3em" class="score-text" id="score-value">--</text>
-                    </svg>
-                </div>
-                <button class="analyze-btn" onclick="startAnalysis()">
-                    <span>Analyze Protocol</span>
-                </button>
-            </div>
-            
-            <!-- Category Navigation with Issue Counts -->
-            <div class="category-navigation">
-                <button class="category-btn" data-filter="clarity">
-                    <div class="category-count" id="clarity-count">0</div>
-                    <div class="category-progress">
-                        <div class="progress-bar clarity-bar" id="clarity-progress"></div>
-                    </div>
-                    <span class="category-name">Clarity</span>
-                </button>
-                <button class="category-btn" data-filter="compliance">
-                    <div class="category-count" id="compliance-count">0</div>
-                    <div class="category-progress">
-                        <div class="progress-bar compliance-bar" id="compliance-progress"></div>
-                    </div>
-                    <span class="category-name">Compliance</span>
-                </button>
-                <button class="category-btn" data-filter="feasibility">
-                    <div class="category-count" id="feasibility-count">0</div>
-                    <div class="category-progress">
-                        <div class="progress-bar feasibility-bar" id="feasibility-progress"></div>
-                    </div>
-                    <span class="category-name">Feasibility</span>
-                </button>
-            </div>
+            <button class="analyze-btn" onclick="startAnalysis()">
+                <span>Analyze Protocol</span>
+            </button>
         </div>
 
         <!-- Issues Counter -->
