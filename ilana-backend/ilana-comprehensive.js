@@ -592,10 +592,10 @@ async function showTAEnhanced(issueId) {
             event: 'ta_enhanced_rewrite_completed',
             suggestion_id: issueId,
             model_path: 'ta_on_demand',
-            latency_ms: result.latency_ms,
-            ta_detected: result.ta_info.therapeutic_area,
-            confidence: result.ta_info.confidence,
-            exemplars_used: result.ta_info.exemplars_used,
+            latency_ms: result.latency_ms || 0,
+            ta_detected: result.ta_info?.therapeutic_area || 'unknown',
+            confidence: result.ta_info?.confidence || 0,
+            exemplars_used: result.ta_info?.exemplars_used || 0,
             timestamp: new Date().toISOString()
         });
         
@@ -639,7 +639,8 @@ function showTAEnhancedModal(issue, state = {}) {
     } else if (state.error) {
         title.textContent = '❌ TA-Enhancement Error';
     } else if (state.result) {
-        title.textContent = `✨ TA-Enhanced Analysis - ${state.result.ta_info.therapeutic_area.replace('_', ' ').toUpperCase()}`;
+        const taName = state.result.ta_info?.therapeutic_area?.replace('_', ' ').toUpperCase() || 'GENERAL MEDICINE';
+        title.textContent = `✨ TA-Enhanced Analysis - ${taName}`;
     } else {
         title.textContent = `TA-Enhanced Analysis - ${IlanaState.detectedTA || 'General Medicine'}`;
     }
@@ -687,36 +688,41 @@ function showTAEnhancedModal(issue, state = {}) {
         `;
     } else if (state.result) {
         const result = state.result;
-        const sourcesHtml = result.sources.map(source => `<li>${source}</li>`).join('');
-        const keywordsHtml = result.ta_info.detected_keywords.map(kw => `<span class="keyword-tag">${kw}</span>`).join(' ');
-        
+        const sourcesHtml = result.sources?.map(source => `<li>${source}</li>`).join('') || '<li>No sources available</li>';
+        const detectedKeywords = result.ta_info?.detected_keywords || [];
+        const keywordsHtml = detectedKeywords.map(kw => `<span class="keyword-tag">${kw}</span>`).join(' ');
+
+        const therapeuticArea = result.ta_info?.therapeutic_area?.replace('_', ' ').toUpperCase() || 'GENERAL MEDICINE';
+        const confidence = result.ta_info?.confidence ? Math.round(result.ta_info.confidence * 100) : 0;
+        const phase = result.ta_info?.phase?.toUpperCase() || null;
+
         body.innerHTML = `
             <div class="modal-section">
-                <h4>🎯 Therapeutic Area: ${result.ta_info.therapeutic_area.replace('_', ' ').toUpperCase()}</h4>
+                <h4>🎯 Therapeutic Area: ${therapeuticArea}</h4>
                 <p class="modal-text">
-                    <strong>Confidence:</strong> ${Math.round(result.ta_info.confidence * 100)}% 
-                    ${result.ta_info.phase ? `| <strong>Phase:</strong> ${result.ta_info.phase.toUpperCase()}` : ''}
+                    <strong>Confidence:</strong> ${confidence}%
+                    ${phase ? `| <strong>Phase:</strong> ${phase}` : ''}
                 </p>
-                ${result.ta_info.detected_keywords.length > 0 ? 
+                ${detectedKeywords.length > 0 ?
                     `<p class="modal-text"><strong>Keywords detected:</strong> ${keywordsHtml}</p>` : ''
                 }
             </div>
             
             <div class="modal-section">
                 <h4>📝 Original Text:</h4>
-                <p class="modal-text original-text">"${result.original_text}"</p>
+                <p class="modal-text original-text">"${result.original_text || 'N/A'}"</p>
             </div>
-            
+
             <div class="modal-section">
                 <h4>✨ TA-Enhanced Version:</h4>
                 <p class="modal-text enhanced-text" style="background: #f0fdf4; padding: 1rem; border-left: 4px solid #10b981; border-radius: 4px;">
-                    "${result.improved}"
+                    "${result.improved || 'Enhanced text not available'}"
                 </p>
             </div>
-            
+
             <div class="modal-section">
                 <h4>💡 Enhancement Rationale:</h4>
-                <p class="modal-text">${result.rationale}</p>
+                <p class="modal-text">${result.rationale || 'No rationale provided'}</p>
             </div>
             
             <div class="modal-section">
@@ -728,18 +734,18 @@ function showTAEnhancedModal(issue, state = {}) {
             
             <div class="modal-section modal-metadata">
                 <small style="color: #6b7280;">
-                    <strong>Model:</strong> ${result.model_version} | 
-                    <strong>Latency:</strong> ${result.latency_ms}ms | 
-                    <strong>Exemplars:</strong> ${result.ta_info.exemplars_used} used | 
-                    <strong>Guidelines:</strong> ${result.ta_info.guidelines_applied} applied
+                    <strong>Model:</strong> ${result.model_version || 'N/A'} |
+                    <strong>Latency:</strong> ${result.latency_ms || 0}ms |
+                    <strong>Exemplars:</strong> ${result.ta_info?.exemplars_used || 0} used |
+                    <strong>Guidelines:</strong> ${result.ta_info?.guidelines_applied || 0} applied
                 </small>
             </div>
-            
+
             <div class="modal-actions">
                 <button class="modal-btn secondary" onclick="closeModal()">
                     Close
                 </button>
-                <button class="modal-btn primary" onclick="useEnhancedVersion('${issue.id}', '${result.improved.replace(/'/g, "\\'")}')">
+                <button class="modal-btn primary" onclick="useEnhancedVersion('${issue.id}', '${(result.improved || '').replace(/'/g, "\\'")}')">
                     Use Enhanced Version
                 </button>
             </div>
