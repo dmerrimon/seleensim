@@ -41,7 +41,8 @@ CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "200"))
 import uvicorn
 from fastapi import FastAPI, HTTPException, Request, Query, Header
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, StreamingResponse
+from fastapi.responses import JSONResponse, StreamingResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 import uuid
 import inspect
@@ -298,12 +299,27 @@ async def root():
         "deployment": "production",
         "features": [
             "Protocol Issue Detection",
-            "Therapeutic Area Classification", 
+            "Therapeutic Area Classification",
             "Text Enhancement",
             "Compliance Analysis",
             "Feasibility Assessment"
         ]
     }
+
+@app.get("/taskpane.html")
+async def serve_taskpane():
+    """Serve the Office add-in taskpane HTML"""
+    return FileResponse("taskpane.html", media_type="text/html")
+
+@app.get("/ilana-comprehensive.js")
+async def serve_js():
+    """Serve the taskpane JavaScript"""
+    return FileResponse("ilana-comprehensive.js", media_type="application/javascript")
+
+@app.get("/style-comprehensive.css")
+async def serve_css():
+    """Serve the taskpane CSS"""
+    return FileResponse("style-comprehensive.css", media_type="text/css")
 
 @app.get("/health")
 async def health_check():

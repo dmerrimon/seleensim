@@ -1,5 +1,5 @@
 // Configuration
-const API_BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE_URL = 'https://ilanalabs-add-in.onrender.com';
 
 /**
  * Ilana Protocol Intelligence - Comprehensive AI Assistant
@@ -22,7 +22,7 @@ const IlanaState = {
 
 // API Configuration
 const API_CONFIG = {
-    baseUrl: 'http://127.0.0.1:8000',  // Local backend
+    baseUrl: 'https://ilanalabs-add-in.onrender.com',  // Production backend
     timeout: 120000,
     retryAttempts: 1
 };
