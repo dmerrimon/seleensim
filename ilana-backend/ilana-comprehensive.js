@@ -192,9 +192,9 @@ async function displaySelectionSuggestions(analysisResult) {
             id: `selection_${index}`,
             type: suggestion.type || 'medical_terminology',
             severity: 'medium',
-            text: suggestion.original || suggestion.text || 'Selected text',
-            suggestion: suggestion.improved || suggestion.suggestion || 'Enhanced text',
-            rationale: suggestion.reason || suggestion.rationale || 'AI analysis suggests improvement',
+            text: suggestion.original || suggestion.text || suggestion.originalText || 'No original text provided',
+            suggestion: suggestion.improved || suggestion.suggestion || suggestion.suggestedText || suggestion.rewrite || 'No suggestion available',
+            rationale: suggestion.reason || suggestion.rationale || suggestion.explanation || 'No rationale provided',
             range: suggestion.position || { start: 0, end: 20 },
             confidence: suggestion.confidence || 0.9,
             selectionAnalysis: true,
@@ -421,9 +421,6 @@ function displaySuggestionCard(issue) {
             <div class="suggestion-actions">
                 <button class="action-btn explain" onclick="explainSuggestion('${issue.id}')">
                     Explain
-                </button>
-                <button class="action-btn ta-enhanced" onclick="showTAEnhanced('${issue.id}')">
-                    TA-Enhanced
                 </button>
                 <button class="action-btn insert" onclick="insertSuggestion('${issue.id}')">
                     Insert
