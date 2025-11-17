@@ -189,12 +189,13 @@ async function displaySelectionSuggestions(analysisResult) {
     
     suggestions.forEach((suggestion, index) => {
         const issue = {
-            id: `selection_${index}`,
+            id: suggestion.id || `selection_${index}`,
             type: suggestion.type || 'medical_terminology',
             severity: 'medium',
-            text: suggestion.original || suggestion.text || suggestion.originalText || 'No original text provided',
-            suggestion: suggestion.improved || suggestion.suggestion || suggestion.suggestedText || suggestion.rewrite || 'No suggestion available',
-            rationale: suggestion.reason || suggestion.rationale || suggestion.explanation || 'No rationale provided',
+            // API returns: improved_text, original_text, rationale
+            text: suggestion.original_text || suggestion.originalText || suggestion.text || suggestion.original || 'No original text provided',
+            suggestion: suggestion.improved_text || suggestion.suggestedText || suggestion.improved || suggestion.suggestion || suggestion.rewrite || 'No suggestion available',
+            rationale: suggestion.rationale || suggestion.reason || suggestion.explanation || 'No rationale provided',
             range: suggestion.position || { start: 0, end: 20 },
             confidence: suggestion.confidence || 0.9,
             selectionAnalysis: true,
@@ -215,13 +216,21 @@ async function displaySelectionSuggestions(analysisResult) {
 
 // Extract suggestions from hybrid API response
 function extractSuggestionsFromHybridResponse(response) {
+    // Primary format: Direct suggestions array from /api/analyze
+    // API returns: {"suggestions": [{improved_text, original_text, rationale, ...}]}
+    if (response.suggestions && Array.isArray(response.suggestions)) {
+        console.log(`📥 Extracted ${response.suggestions.length} suggestions from direct format`);
+        return response.suggestions;
+    }
+
     // Handle hybrid controller wrapper format
     if (response.result) {
         const result = response.result;
-        
+
         // Handle different suggestion formats
         if (result.suggestions) {
             if (Array.isArray(result.suggestions)) {
+                console.log(`📥 Extracted ${result.suggestions.length} suggestions from result.suggestions`);
                 return result.suggestions;
             } else if (result.suggestions.suggestions) {
                 return result.suggestions.suggestions;
@@ -240,13 +249,8 @@ function extractSuggestionsFromHybridResponse(response) {
         if (result.basic_suggestions && result.basic_suggestions.suggestions) {
             return result.basic_suggestions.suggestions;
         }
-        
-        return [];
-    }
 
-    // Handle direct suggestion format (fallback)
-    if (response.suggestions) {
-        return Array.isArray(response.suggestions) ? response.suggestions : [];
+        return [];
     }
 
     console.warn('No suggestions found in response:', response);
