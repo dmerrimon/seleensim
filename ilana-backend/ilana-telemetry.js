@@ -23,7 +23,7 @@ const IlanaTelemetry = (function() {
         tenant_id: null,
         user_id_hash: null,
         enabled: true,
-        endpoint: '/api/rl/feedback',
+        endpoint: '/api/telemetry',
         batch_size: 10,
         batch_timeout_ms: 5000
     };
