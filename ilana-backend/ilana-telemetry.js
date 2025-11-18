@@ -1,8 +1,8 @@
 /**
  * Ilana Telemetry Module
  *
- * Provides PHI-safe event tracking for reinforcement learning and analytics.
- * All events are hashed to protect Protected Health Information (PHI).
+ * Provides privacy-safe event tracking for reinforcement learning and analytics.
+ * All protocol text content is hashed to protect proprietary and confidential information.
  *
  * Event Types:
  * 1. analysis_requested - User initiates protocol analysis
@@ -33,11 +33,12 @@ const IlanaTelemetry = (function() {
     let batchTimer = null;
 
     /**
-     * SHA-256 hash function for PHI protection
+     * SHA-256 hash function for proprietary content protection
+     * Protects confidential protocol text and business-sensitive information
      * @param {string} text - Text to hash
      * @returns {Promise<string>} - Hex-encoded hash
      */
-    async function hashPHI(text) {
+    async function hashContent(text) {
         if (!text) return 'empty';
 
         try {
@@ -47,7 +48,7 @@ const IlanaTelemetry = (function() {
             const hashArray = Array.from(new Uint8Array(hashBuffer));
             return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
         } catch (error) {
-            console.error('❌ PHI hashing failed:', error);
+            console.error('❌ Content hashing failed:', error);
             return 'hash_error';
         }
     }
@@ -61,11 +62,11 @@ const IlanaTelemetry = (function() {
         config.tenant_id = tenantId || 'default_tenant';
 
         if (userId) {
-            config.user_id_hash = await hashPHI(userId);
+            config.user_id_hash = await hashContent(userId);
         } else {
             // Generate anonymous user hash from browser fingerprint
             const fingerprint = `${navigator.userAgent}_${navigator.language}_${screen.width}x${screen.height}`;
-            config.user_id_hash = await hashPHI(fingerprint);
+            config.user_id_hash = await hashContent(fingerprint);
         }
 
         console.log('📊 Telemetry initialized:', {
@@ -154,7 +155,7 @@ const IlanaTelemetry = (function() {
      * @param {number} selectionLength - Character count of selection
      */
     async function trackAnalysisRequested(requestId, selectedText, selectionLength) {
-        const text_hash = await hashPHI(selectedText);
+        const text_hash = await hashContent(selectedText);
 
         queueEvent({
             event_type: 'analysis_requested',
@@ -199,8 +200,8 @@ const IlanaTelemetry = (function() {
      * @param {string} type - Suggestion type (e.g., "medical_terminology")
      */
     async function trackSuggestionShown(requestId, suggestionId, originalText, improvedText, confidence, type) {
-        const original_hash = await hashPHI(originalText);
-        const improved_hash = await hashPHI(improvedText);
+        const original_hash = await hashContent(originalText);
+        const improved_hash = await hashContent(improvedText);
 
         queueEvent({
             event_type: 'suggestion_shown',
@@ -226,8 +227,8 @@ const IlanaTelemetry = (function() {
      * @param {number} confidence - Confidence score (0-1)
      */
     async function trackSuggestionInsertedAsComment(requestId, suggestionId, commentId, originalText, improvedText, confidence) {
-        const original_hash = await hashPHI(originalText);
-        const improved_hash = await hashPHI(improvedText);
+        const original_hash = await hashContent(originalText);
+        const improved_hash = await hashContent(improvedText);
 
         queueEvent({
             event_type: 'suggestion_inserted_as_comment',
@@ -254,8 +255,8 @@ const IlanaTelemetry = (function() {
      * @param {number} timeToDecisionMs - Time from shown to accepted
      */
     async function trackSuggestionAccepted(requestId, suggestionId, originalText, improvedText, confidence, timeToDecisionMs) {
-        const original_hash = await hashPHI(originalText);
-        const improved_hash = await hashPHI(improvedText);
+        const original_hash = await hashContent(originalText);
+        const improved_hash = await hashContent(improvedText);
 
         queueEvent({
             event_type: 'suggestion_accepted',
