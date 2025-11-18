@@ -781,9 +781,11 @@ async function insertAsComment(issueId) {
             // Insert comment using Office.js Comments API
             const comment = selection.insertComment(commentBody);
 
-            // Set comment author if available (requires API 1.4+)
-            if (comment.authorName) {
+            // Set comment author (requires API 1.4+)
+            try {
                 comment.authorName = "Ilana";
+            } catch (e) {
+                console.warn('⚠️ Could not set comment author (API not available):', e);
             }
 
             context.load(comment, 'id');
