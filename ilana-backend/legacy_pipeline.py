@@ -208,15 +208,18 @@ async def run_legacy_pipeline_with_fallback(
 
             result = await recommend_language_simple(simple_request)
 
+            # Convert Pydantic model to dict
+            result_dict = result.model_dump() if hasattr(result, 'model_dump') else result.dict()
+
             # Add fallback metadata
-            result["metadata"]["pipeline_used"] = "simple_pipeline_fallback"
-            result["metadata"]["fallback_reason"] = str(e)
-            result["metadata"]["legacy_pipeline_failed"] = True
+            result_dict["metadata"]["pipeline_used"] = "simple_pipeline_fallback"
+            result_dict["metadata"]["fallback_reason"] = str(e)
+            result_dict["metadata"]["legacy_pipeline_failed"] = True
 
             return {
                 "request_id": request_id or f"fallback_{int(time.time() * 1000)}",
                 "model_path": "simple_fallback",
-                "result": result
+                "result": result_dict
             }
 
         except Exception as fallback_error:
