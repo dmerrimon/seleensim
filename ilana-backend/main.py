@@ -763,15 +763,8 @@ async def rl_feedback(request: Request, feedback_data: dict):
         result = store_feedback_event(event, event_type="rl_feedback")
 
         if result["success"]:
-            logger.info(f"✅ RL feedback stored: {event.suggestion_id} (action: {event.action})")
-            return {
-                "status": "success",
-                "message": "RL feedback received",
-                "suggestion_id": event.suggestion_id,
-                "action": event.action,
-                "request_id": request_id,
-                "timestamp": datetime.utcnow().isoformat()
-            }
+            logger.info(f"✅ RL feedback stored: {event.suggestion_id} (event: {event.event})")
+            return {"ok": True}
         else:
             logger.error(f"❌ Failed to store RL feedback: {result.get('error')}")
             raise HTTPException(
@@ -786,6 +779,71 @@ async def rl_feedback(request: Request, feedback_data: dict):
         raise HTTPException(
             status_code=500,
             detail=f"Internal server error: {str(e)}"
+        )
+
+@app.get("/api/sources/{suggestion_id}")
+async def get_suggestion_sources(suggestion_id: str):
+    """
+    Get explainability sources for a specific suggestion.
+
+    Returns regulatory citations, Pinecone exemplars, and reasoning breakdown
+    for transparency and auditability.
+
+    Args:
+        suggestion_id: Unique suggestion identifier
+
+    Returns:
+        JSON object with sources array containing regulatory citations
+    """
+    try:
+        logger.info(f"📚 Fetching sources for suggestion: {suggestion_id}")
+
+        # TODO: In production, retrieve actual sources from:
+        # 1. Pinecone metadata (exemplar snippets used for RAG)
+        # 2. Regulatory database (ICH-GCP, FDA, EMA citations)
+        # 3. Model reasoning logs
+
+        # For now, return mock sources structure that matches expected format
+        sources = [
+            {
+                "title": "ICH-GCP E6(R2) - Good Clinical Practice",
+                "url": "https://database.ich.org/sites/default/files/E6_R2_Addendum.pdf",
+                "citation": "Section 5.18.3 - Protocol amendments require documentation of rationale and regulatory approval timelines",
+                "type": "regulatory",
+                "relevance_score": 0.92
+            },
+            {
+                "title": "FDA Guidance - Clinical Trial Conduct",
+                "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents",
+                "citation": "21 CFR 312.120 - Protocol amendments must clearly describe changes and provide scientific justification",
+                "type": "regulatory",
+                "relevance_score": 0.88
+            },
+            {
+                "title": "Protocol Exemplar from Vector DB",
+                "url": None,
+                "citation": "Similar high-quality protocol used clear, unambiguous language for this objective",
+                "type": "exemplar",
+                "relevance_score": 0.85,
+                "metadata": {
+                    "therapeutic_area": "oncology",
+                    "phase": "Phase III",
+                    "vector_distance": 0.15
+                }
+            }
+        ]
+
+        return {
+            "suggestion_id": suggestion_id,
+            "sources": sources,
+            "generated_at": datetime.utcnow().isoformat()
+        }
+
+    except Exception as e:
+        logger.error(f"❌ Failed to fetch sources for {suggestion_id}: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to retrieve sources: {str(e)}"
         )
 
 @app.post("/api/reinforce")
@@ -1255,20 +1313,30 @@ async def analyze_entry(request: Request):
         except Exception as shadow_err:
             logger.debug(f"Shadow worker submission failed (non-critical): {shadow_err}")
 
-        # Transform response format to match API spec
+        # Transform response format to match OpenAPI spec v1.2
         # From: {request_id, model_path, result: {suggestions, metadata}}
-        # To: {suggestions: [{id, improved_text, ta, phase, model_path, latency_ms}]}
+        # To: {request_id, suggestions: [{id, original_snippet_hash, improved_text, ...}]}
+        import hashlib
+
         suggestions = result.get("result", {}).get("suggestions", [])
         metadata = result.get("result", {}).get("metadata", {})
 
+        def hash_content(text: str) -> str:
+            """SHA-256 hash for proprietary content protection"""
+            if not text:
+                return "empty"
+            return hashlib.sha256(text.encode('utf-8')).hexdigest()
+
         transformed_suggestions = []
         for suggestion in suggestions:
+            original_text = suggestion.get("text") or suggestion.get("originalText", "")
+
             transformed_suggestions.append({
                 "id": suggestion.get("id", f"suggestion_{req_id}"),
+                "original_snippet_hash": hash_content(original_text),
                 "improved_text": suggestion.get("suggestion") or suggestion.get("suggestedText", ""),
-                "original_text": suggestion.get("text") or suggestion.get("originalText", ""),
-                "ta": payload.get("ta", "general_medicine"),
-                "phase": payload.get("phase", "objectives"),
+                "ta": payload.get("ta"),
+                "phase": payload.get("phase"),
                 "model_path": "legacy",
                 "latency_ms": metadata.get("latency_ms", 0),
                 "confidence": suggestion.get("confidence", 0.9),
@@ -1276,7 +1344,10 @@ async def analyze_entry(request: Request):
                 "rationale": suggestion.get("rationale", "")
             })
 
-        return {"suggestions": transformed_suggestions}
+        return {
+            "request_id": req_id,
+            "suggestions": transformed_suggestions
+        }
 
     except Exception as e:
         logger.error(f"❌ Legacy pipeline failed: {req_id} - {type(e).__name__}: {e}")

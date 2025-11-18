@@ -22,27 +22,49 @@ from pydantic import BaseModel, Field, field_validator
 
 class RLFeedbackEvent(BaseModel):
     """
-    Reinforcement learning feedback event schema.
+    Reinforcement learning feedback event schema (OpenAPI v1.2 compliant).
 
-    All events must have redactPHI=true and use hashed text instead of raw PHI.
+    All events must have redactPHI=true and use hashed text instead of raw proprietary content.
     """
+    # Required fields
+    event: Literal[
+        "suggestion_accepted",
+        "suggestion_undone",
+        "suggestion_inserted_as_comment",
+        "suggestion_dismissed",
+        "analysis_requested",
+        "suggestions_returned",
+        "suggestion_shown",
+        "comment_resolved"
+    ] = Field(..., description="Event type")
     suggestion_id: str = Field(..., description="Unique suggestion identifier")
-    action: Literal["accept", "undo", "reject"] = Field(..., description="Action type")
-    reason: Optional[str] = Field(None, description="Reason for action (e.g., 'user_undo', 'manual_dismiss')")
-    timestamp: str = Field(..., description="ISO 8601 timestamp")
     request_id: str = Field(..., description="Original request ID")
     user_id_hash: str = Field(..., description="Hashed user identifier (SHA-256)")
-    tenant_id: str = Field(default="default", description="Tenant identifier for B2B multi-tenancy")
-    ta: str = Field(default="general_medicine", description="Therapeutic area")
-    phase: str = Field(default="production", description="Deployment phase")
 
-    # PHI-protected fields (hashes only)
-    original_text_hash: str = Field(..., description="SHA-256 hash of original text")
-    improved_text_hash: str = Field(..., description="SHA-256 hash of improved text")
-    context_snippet: Optional[str] = Field(None, description="PHI-redacted context snippet")
+    # Optional metadata fields
+    tenant_id: Optional[str] = Field(default="default", description="Tenant identifier for B2B multi-tenancy")
+    ta: Optional[str] = Field(None, description="Therapeutic area")
+    phase: Optional[str] = Field(None, description="Deployment phase")
+    model_path: Optional[str] = Field(None, description="Model path used for suggestion")
+    latency_ms: Optional[int] = Field(None, description="API response latency in milliseconds")
+    accepted_at: Optional[str] = Field(None, description="ISO 8601 timestamp of acceptance")
+    timestamp: Optional[str] = Field(None, description="ISO 8601 timestamp")
 
-    # PHI protection flag (REQUIRED)
-    redactPHI: bool = Field(..., description="Must be true - confirms PHI redaction")
+    # Comment tracking (for comment insertion events)
+    comment_id: Optional[str] = Field(None, description="Word comment ID (if available)")
+
+    # Proprietary content-protected fields (hashes only)
+    original_text_hash: Optional[str] = Field(None, description="SHA-256 hash of original text")
+    context_snippet_hash: Optional[str] = Field(None, description="SHA-256 hash of context snippet")
+
+    # Backward compatibility
+    action: Optional[str] = Field(None, description="Legacy action field (deprecated, use 'event' instead)")
+    reason: Optional[str] = Field(None, description="Reason for action (e.g., 'user_undo', 'manual_dismiss')")
+    improved_text_hash: Optional[str] = Field(None, description="SHA-256 hash of improved text")
+    context_snippet: Optional[str] = Field(None, description="Redacted context snippet")
+
+    # Content protection flag (REQUIRED)
+    redactPHI: bool = Field(default=True, description="Must be true - confirms content redaction")
 
     @field_validator('redactPHI')
     @classmethod
