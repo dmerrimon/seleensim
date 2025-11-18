@@ -17,7 +17,26 @@ const IlanaState = {
     intelligenceLevel: 'AI-Enhanced Protocol Analysis',
     analysisMode: 'comprehensive',
     detectedTA: null,
-    currentRequestId: null
+    currentRequestId: null,
+
+    // UI State Management
+    uiState: 'idle', // idle, selection_ready, analyzing, results, applied, dismissed
+
+    // Undo Management
+    undoBuffer: null, // {issueId, originalText, improvedText, applyTime}
+
+    // Comment Tracking
+    commentMap: {}, // {commentId: {suggestionId, requestId, insertedAt}}
+
+    // Telemetry Tracking
+    suggestionShownTime: {}, // {suggestionId: timestamp}
+
+    // Telemetry Configuration
+    telemetry: {
+        tenant_id: 'default_tenant',
+        user_id: null,
+        enabled: true
+    }
 };
 
 // API Configuration
@@ -31,9 +50,22 @@ const API_CONFIG = {
 Office.onReady((info) => {
     if (info.host === Office.HostType.Word) {
         console.log("🚀 Ilana Comprehensive AI loaded successfully");
+
+        // Initialize telemetry
+        if (typeof IlanaTelemetry !== 'undefined') {
+            IlanaTelemetry.initialize(
+                IlanaState.telemetry.tenant_id,
+                IlanaState.telemetry.user_id
+            );
+            console.log('📊 Telemetry initialized');
+        }
+
         initializeUI();
         setupEventListeners();
         updateStatus('Ready', 'ready');
+
+        // Set initial UI state
+        IlanaState.uiState = 'idle';
     }
 });
 
@@ -130,20 +162,33 @@ async function handleSelectionAnalysis(selectedText) {
     try {
         updateStatus('Analyzing selection...', 'analyzing');
         showProcessingOverlay(true);
-        
+
         // Detect therapeutic area if not already set
         if (!IlanaState.detectedTA) {
             IlanaState.detectedTA = detectTherapeuticArea(selectedText);
         }
-        
+
         const payload = {
             text: selectedText,
             mode: 'selection',
             ta: IlanaState.detectedTA || 'general_medicine'
         };
-        
+
+        // Generate request ID for tracking
+        const requestId = `req_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        IlanaState.currentRequestId = requestId;
+
+        // Track telemetry: analysis_requested
+        if (typeof IlanaTelemetry !== 'undefined') {
+            IlanaTelemetry.trackAnalysisRequested(
+                requestId,
+                selectedText,
+                selectedText.length
+            );
+        }
+
         console.log('🚀 Calling hybrid /api/analyze:', payload);
-        
+
         const response = await fetch(`${API_CONFIG.baseUrl}/api/analyze`, {
             method: 'POST',
             headers: {
@@ -186,7 +231,23 @@ async function handleSelectionAnalysis(selectedText) {
 async function displaySelectionSuggestions(analysisResult) {
     const suggestions = extractSuggestionsFromHybridResponse(analysisResult);
     const issues = [];
-    
+
+    // Track telemetry: suggestions_returned
+    if (typeof IlanaTelemetry !== 'undefined') {
+        const latencyMs = analysisResult.latency_ms || analysisResult.result?.latency_ms || 0;
+        const therapeuticArea = analysisResult.ta_info?.therapeutic_area ||
+                               analysisResult.result?.ta_info?.therapeutic_area ||
+                               IlanaState.detectedTA ||
+                               'unknown';
+
+        IlanaTelemetry.trackSuggestionsReturned(
+            IlanaState.currentRequestId,
+            suggestions.length,
+            latencyMs,
+            therapeuticArea
+        );
+    }
+
     suggestions.forEach((suggestion, index) => {
         const issue = {
             id: suggestion.id || `selection_${index}`,
@@ -202,15 +263,29 @@ async function displaySelectionSuggestions(analysisResult) {
             request_id: IlanaState.currentRequestId
         };
         issues.push(issue);
+
+        // Track telemetry: suggestion_shown (record timestamp for time-to-decision tracking)
+        IlanaState.suggestionShownTime[issue.id] = Date.now();
+
+        if (typeof IlanaTelemetry !== 'undefined') {
+            IlanaTelemetry.trackSuggestionShown(
+                IlanaState.currentRequestId,
+                issue.id,
+                issue.text,
+                issue.suggestion,
+                issue.confidence,
+                issue.type
+            );
+        }
     });
-    
+
     // Store in global state
     IlanaState.currentIssues = issues;
     IlanaState.currentSuggestions = issues;
-    
+
     // Update dashboard
     await updateDashboard({ issues, suggestions: issues });
-    
+
     console.log(`📋 Displayed ${issues.length} selection suggestions`);
 }
 
@@ -423,14 +498,19 @@ function displaySuggestionCard(issue) {
             </div>
             
             <div class="suggestion-actions">
+                <button class="action-btn apply" onclick="applySuggestion('${issue.id}')"
+                        ${(issue.confidence || 1) < 0.5 ? 'disabled title="Confidence too low"' : ''}>
+                    Apply
+                </button>
+                <button class="action-btn insert-comment" onclick="insertAsComment('${issue.id}')"
+                        ${(issue.confidence || 1) < 0.5 ? 'disabled title="Confidence too low"' : ''}>
+                    Insert as Comment
+                </button>
                 <button class="action-btn explain" onclick="explainSuggestion('${issue.id}')">
                     Explain
                 </button>
-                <button class="action-btn insert" onclick="insertSuggestion('${issue.id}')">
-                    Insert
-                </button>
-                <button class="action-btn reject" onclick="rejectSuggestion('${issue.id}')">
-                    Reject
+                <button class="action-btn dismiss" onclick="dismissSuggestion('${issue.id}')">
+                    Dismiss
                 </button>
             </div>
         </div>
@@ -486,9 +566,242 @@ function dispatchSuggestionInsertedEvent(issue) {
             timestamp: new Date().toISOString()
         }
     });
-    
+
     window.dispatchEvent(event);
     console.log('📡 Dispatched suggestionInserted event:', event.detail);
+}
+
+// Apply suggestion with undo functionality (10-second buffer)
+async function applySuggestion(issueId) {
+    const issue = IlanaState.currentIssues.find(i => i.id === issueId);
+    if (!issue) return;
+
+    const startTime = Date.now();
+
+    try {
+        await Word.run(async (context) => {
+            const selection = context.document.getSelection();
+            context.load(selection, 'text');
+            await context.sync();
+
+            const originalText = selection.text;
+
+            // Replace selection with improved text
+            selection.insertText(issue.suggestion, Word.InsertLocation.replace);
+
+            // Apply green highlighting to indicate acceptance
+            const insertedRange = context.document.getSelection();
+            insertedRange.font.highlightColor = '#90EE90';
+
+            await context.sync();
+
+            console.log(`✅ Applied suggestion: ${issue.id}`);
+
+            // Track telemetry
+            if (typeof IlanaTelemetry !== 'undefined') {
+                const timeToDecision = Date.now() - (IlanaState.suggestionShownTime?.[issueId] || startTime);
+                IlanaTelemetry.trackSuggestionAccepted(
+                    IlanaState.currentRequestId,
+                    issue.id,
+                    originalText,
+                    issue.suggestion,
+                    issue.confidence || 1,
+                    timeToDecision
+                );
+            }
+
+            // Store undo information
+            IlanaState.undoBuffer = {
+                issueId: issueId,
+                originalText: originalText,
+                improvedText: issue.suggestion,
+                applyTime: Date.now()
+            };
+
+            // Update UI to show undo button
+            const card = document.querySelector(`[data-issue-id="${issueId}"]`);
+            if (card) {
+                const actionsDiv = card.querySelector('.suggestion-actions');
+                actionsDiv.innerHTML = `
+                    <button class="action-btn undo" onclick="undoSuggestion('${issueId}')">
+                        Undo (10s)
+                    </button>
+                    <span class="applied-badge">✓ Applied</span>
+                `;
+
+                // Start 10-second countdown
+                let countdown = 10;
+                const undoTimer = setInterval(() => {
+                    countdown--;
+                    const undoBtn = actionsDiv.querySelector('.action-btn.undo');
+                    if (undoBtn && countdown > 0) {
+                        undoBtn.textContent = `Undo (${countdown}s)`;
+                    } else {
+                        clearInterval(undoTimer);
+                        if (undoBtn) {
+                            undoBtn.remove();
+                        }
+                        // Clear undo buffer after 10 seconds
+                        if (IlanaState.undoBuffer?.issueId === issueId) {
+                            IlanaState.undoBuffer = null;
+                        }
+                    }
+                }, 1000);
+            }
+        });
+
+    } catch (error) {
+        console.error('Failed to apply suggestion:', error);
+        showError('Could not apply suggestion to document');
+    }
+}
+
+// Undo an applied suggestion
+async function undoSuggestion(issueId) {
+    if (!IlanaState.undoBuffer || IlanaState.undoBuffer.issueId !== issueId) {
+        showError('Undo window has expired');
+        return;
+    }
+
+    const undoDelayMs = Date.now() - IlanaState.undoBuffer.applyTime;
+
+    try {
+        await Word.run(async (context) => {
+            const selection = context.document.getSelection();
+
+            // Restore original text
+            selection.insertText(IlanaState.undoBuffer.originalText, Word.InsertLocation.replace);
+
+            // Remove highlighting
+            const restoredRange = context.document.getSelection();
+            restoredRange.font.highlightColor = null;
+
+            await context.sync();
+
+            console.log(`↩️ Undid suggestion: ${issueId}`);
+
+            // Track telemetry
+            if (typeof IlanaTelemetry !== 'undefined') {
+                IlanaTelemetry.trackSuggestionUndone(
+                    IlanaState.currentRequestId,
+                    issueId,
+                    undoDelayMs
+                );
+            }
+
+            // Restore original UI
+            const card = document.querySelector(`[data-issue-id="${issueId}"]`);
+            if (card) {
+                const issue = IlanaState.currentIssues.find(i => i.id === issueId);
+                if (issue) {
+                    const actionsDiv = card.querySelector('.suggestion-actions');
+                    actionsDiv.innerHTML = `
+                        <button class="action-btn apply" onclick="applySuggestion('${issue.id}')"
+                                ${(issue.confidence || 1) < 0.5 ? 'disabled title="Confidence too low"' : ''}>
+                            Apply
+                        </button>
+                        <button class="action-btn insert-comment" onclick="insertAsComment('${issue.id}')"
+                                ${(issue.confidence || 1) < 0.5 ? 'disabled title="Confidence too low"' : ''}>
+                            Insert as Comment
+                        </button>
+                        <button class="action-btn explain" onclick="explainSuggestion('${issue.id}')">
+                            Explain
+                        </button>
+                        <button class="action-btn dismiss" onclick="dismissSuggestion('${issue.id}')">
+                            Dismiss
+                        </button>
+                    `;
+                }
+            }
+
+            // Clear undo buffer
+            IlanaState.undoBuffer = null;
+        });
+
+    } catch (error) {
+        console.error('Failed to undo suggestion:', error);
+        showError('Could not undo suggestion');
+    }
+}
+
+// Insert suggestion as Word comment
+async function insertAsComment(issueId) {
+    const issue = IlanaState.currentIssues.find(i => i.id === issueId);
+    if (!issue) return;
+
+    try {
+        await Word.run(async (context) => {
+            const selection = context.document.getSelection();
+            context.load(selection, 'text');
+            await context.sync();
+
+            const originalText = selection.text;
+
+            // Construct comment body with improved text, rationale, and confidence
+            const confidencePercent = Math.round((issue.confidence || 1) * 100);
+            const commentBody = `${issue.suggestion}\n\n${issue.rationale}\n\nConfidence: ${confidencePercent}%\n\n[View sources]`;
+
+            // Insert comment using Office.js Comments API
+            const comment = selection.insertComment(commentBody);
+
+            // Set comment author if available (requires API 1.4+)
+            if (comment.authorName) {
+                comment.authorName = "Ilana";
+            }
+
+            context.load(comment, 'id');
+            await context.sync();
+
+            const commentId = comment.id;
+
+            console.log(`💬 Inserted comment: ${commentId} for suggestion: ${issueId}`);
+
+            // Track telemetry
+            if (typeof IlanaTelemetry !== 'undefined') {
+                IlanaTelemetry.trackSuggestionInsertedAsComment(
+                    IlanaState.currentRequestId,
+                    issue.id,
+                    commentId,
+                    originalText,
+                    issue.suggestion,
+                    issue.confidence || 1
+                );
+            }
+
+            // Update UI to show comment was inserted
+            const card = document.querySelector(`[data-issue-id="${issueId}"]`);
+            if (card) {
+                card.style.opacity = '0.7';
+                const actionsDiv = card.querySelector('.suggestion-actions');
+                actionsDiv.innerHTML = `
+                    <span class="comment-badge">💬 Inserted as Comment</span>
+                    <button class="action-btn dismiss" onclick="dismissSuggestion('${issueId}')">
+                        Dismiss
+                    </button>
+                `;
+            }
+
+            // Store comment mapping for tracking
+            if (!IlanaState.commentMap) {
+                IlanaState.commentMap = {};
+            }
+            IlanaState.commentMap[commentId] = {
+                suggestionId: issueId,
+                requestId: IlanaState.currentRequestId,
+                insertedAt: new Date().toISOString()
+            };
+        });
+
+    } catch (error) {
+        console.error('Failed to insert comment:', error);
+
+        // Check if it's an API version issue
+        if (error.message && error.message.includes('insertComment')) {
+            showError('Comment insertion requires Word 2016 or later. Please update your Office version.');
+        } else {
+            showError('Could not insert comment into document');
+        }
+    }
 }
 
 // Explain suggestion modal
@@ -897,16 +1210,36 @@ function logTelemetry(data) {
 }
 
 // Reject suggestion
-function rejectSuggestion(issueId) {
+function dismissSuggestion(issueId) {
+    const issue = IlanaState.currentIssues.find(i => i.id === issueId);
+    const startTime = IlanaState.suggestionShownTime?.[issueId] || Date.now();
+    const timeToDecision = Date.now() - startTime;
+
     const card = document.querySelector(`[data-issue-id="${issueId}"]`);
     if (card) {
-        card.remove();
+        // Soft dismiss with fade effect
+        card.style.opacity = '0';
+        card.style.transition = 'opacity 0.3s ease';
+
+        setTimeout(() => {
+            card.remove();
+        }, 300);
     }
-    
+
+    // Track telemetry
+    if (typeof IlanaTelemetry !== 'undefined' && issue) {
+        IlanaTelemetry.trackSuggestionDismissed(
+            IlanaState.currentRequestId,
+            issueId,
+            issue.confidence || 1,
+            timeToDecision
+        );
+    }
+
     // Remove from state
     IlanaState.currentIssues = IlanaState.currentIssues.filter(i => i.id !== issueId);
-    
-    console.log(`❌ Rejected suggestion: ${issueId}`);
+
+    console.log(`❌ Dismissed suggestion: ${issueId}`);
 }
 
 // Extract text from Word document

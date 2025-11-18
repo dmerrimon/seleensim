@@ -1,0 +1,362 @@
+/**
+ * Ilana Telemetry Module
+ *
+ * Provides PHI-safe event tracking for reinforcement learning and analytics.
+ * All events are hashed to protect Protected Health Information (PHI).
+ *
+ * Event Types:
+ * 1. analysis_requested - User initiates protocol analysis
+ * 2. suggestions_returned - Backend returns AI suggestions
+ * 3. suggestion_shown - User views a specific suggestion
+ * 4. suggestion_inserted_as_comment - Suggestion inserted as Word comment
+ * 5. suggestion_accepted - User applies suggestion (replaces text)
+ * 6. suggestion_undone - User undoes an applied suggestion
+ * 7. suggestion_dismissed - User dismisses a suggestion
+ * 8. comment_resolved - User resolves a comment in Word
+ */
+
+const IlanaTelemetry = (function() {
+    'use strict';
+
+    // Configuration
+    const config = {
+        tenant_id: null,
+        user_id_hash: null,
+        enabled: true,
+        endpoint: '/api/rl/feedback',
+        batch_size: 10,
+        batch_timeout_ms: 5000
+    };
+
+    // Event queue for batching
+    const eventQueue = [];
+    let batchTimer = null;
+
+    /**
+     * SHA-256 hash function for PHI protection
+     * @param {string} text - Text to hash
+     * @returns {Promise<string>} - Hex-encoded hash
+     */
+    async function hashPHI(text) {
+        if (!text) return 'empty';
+
+        try {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(text);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        } catch (error) {
+            console.error('❌ PHI hashing failed:', error);
+            return 'hash_error';
+        }
+    }
+
+    /**
+     * Initialize telemetry with tenant and user information
+     * @param {string} tenantId - Tenant identifier
+     * @param {string} userId - User identifier (will be hashed)
+     */
+    async function initialize(tenantId, userId) {
+        config.tenant_id = tenantId || 'default_tenant';
+
+        if (userId) {
+            config.user_id_hash = await hashPHI(userId);
+        } else {
+            // Generate anonymous user hash from browser fingerprint
+            const fingerprint = `${navigator.userAgent}_${navigator.language}_${screen.width}x${screen.height}`;
+            config.user_id_hash = await hashPHI(fingerprint);
+        }
+
+        console.log('📊 Telemetry initialized:', {
+            tenant_id: config.tenant_id,
+            user_id_hash: config.user_id_hash.substring(0, 8) + '...'
+        });
+    }
+
+    /**
+     * Generate ISO timestamp
+     */
+    function getTimestamp() {
+        return new Date().toISOString();
+    }
+
+    /**
+     * Send event to backend API
+     * @param {Array} events - Array of telemetry events
+     */
+    async function sendEvents(events) {
+        if (!config.enabled || events.length === 0) return;
+
+        try {
+            const response = await fetch(config.endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ events })
+            });
+
+            if (!response.ok) {
+                console.error('❌ Telemetry send failed:', response.status);
+            } else {
+                console.log(`📤 Sent ${events.length} telemetry events`);
+            }
+        } catch (error) {
+            console.error('❌ Telemetry error:', error);
+        }
+    }
+
+    /**
+     * Add event to queue and trigger batch send if needed
+     * @param {object} event - Telemetry event object
+     */
+    function queueEvent(event) {
+        // Add common fields
+        event.tenant_id = config.tenant_id;
+        event.user_id_hash = config.user_id_hash;
+        event.timestamp = getTimestamp();
+
+        eventQueue.push(event);
+
+        // Trigger immediate send if batch size reached
+        if (eventQueue.length >= config.batch_size) {
+            flushEvents();
+        } else if (!batchTimer) {
+            // Schedule batch send
+            batchTimer = setTimeout(flushEvents, config.batch_timeout_ms);
+        }
+    }
+
+    /**
+     * Flush all queued events to backend
+     */
+    function flushEvents() {
+        if (batchTimer) {
+            clearTimeout(batchTimer);
+            batchTimer = null;
+        }
+
+        if (eventQueue.length > 0) {
+            const eventsToSend = [...eventQueue];
+            eventQueue.length = 0;
+            sendEvents(eventsToSend);
+        }
+    }
+
+    // ===========================================
+    // Event Type 1: analysis_requested
+    // ===========================================
+    /**
+     * Track when user initiates protocol analysis
+     * @param {string} requestId - Unique request identifier
+     * @param {string} selectedText - Text selected for analysis (will be hashed)
+     * @param {number} selectionLength - Character count of selection
+     */
+    async function trackAnalysisRequested(requestId, selectedText, selectionLength) {
+        const text_hash = await hashPHI(selectedText);
+
+        queueEvent({
+            event_type: 'analysis_requested',
+            request_id: requestId,
+            text_hash: text_hash,
+            selection_length: selectionLength,
+            source: 'taskpane'
+        });
+    }
+
+    // ===========================================
+    // Event Type 2: suggestions_returned
+    // ===========================================
+    /**
+     * Track when backend returns AI suggestions
+     * @param {string} requestId - Request identifier
+     * @param {number} suggestionCount - Number of suggestions returned
+     * @param {number} latencyMs - API response time
+     * @param {string} therapeuticArea - Detected therapeutic area
+     */
+    function trackSuggestionsReturned(requestId, suggestionCount, latencyMs, therapeuticArea) {
+        queueEvent({
+            event_type: 'suggestions_returned',
+            request_id: requestId,
+            suggestion_count: suggestionCount,
+            latency_ms: latencyMs,
+            therapeutic_area: therapeuticArea || 'unknown',
+            model_path: 'legacy'
+        });
+    }
+
+    // ===========================================
+    // Event Type 3: suggestion_shown
+    // ===========================================
+    /**
+     * Track when user views a specific suggestion
+     * @param {string} requestId - Request identifier
+     * @param {string} suggestionId - Unique suggestion identifier
+     * @param {string} originalText - Original text (will be hashed)
+     * @param {string} improvedText - Suggested text (will be hashed)
+     * @param {number} confidence - Confidence score (0-1)
+     * @param {string} type - Suggestion type (e.g., "medical_terminology")
+     */
+    async function trackSuggestionShown(requestId, suggestionId, originalText, improvedText, confidence, type) {
+        const original_hash = await hashPHI(originalText);
+        const improved_hash = await hashPHI(improvedText);
+
+        queueEvent({
+            event_type: 'suggestion_shown',
+            request_id: requestId,
+            suggestion_id: suggestionId,
+            original_text_hash: original_hash,
+            improved_text_hash: improved_hash,
+            confidence: confidence,
+            suggestion_type: type
+        });
+    }
+
+    // ===========================================
+    // Event Type 4: suggestion_inserted_as_comment
+    // ===========================================
+    /**
+     * Track when suggestion is inserted as Word comment
+     * @param {string} requestId - Request identifier
+     * @param {string} suggestionId - Unique suggestion identifier
+     * @param {string} commentId - Word comment ID
+     * @param {string} originalText - Original text (will be hashed)
+     * @param {string} improvedText - Suggested text (will be hashed)
+     * @param {number} confidence - Confidence score (0-1)
+     */
+    async function trackSuggestionInsertedAsComment(requestId, suggestionId, commentId, originalText, improvedText, confidence) {
+        const original_hash = await hashPHI(originalText);
+        const improved_hash = await hashPHI(improvedText);
+
+        queueEvent({
+            event_type: 'suggestion_inserted_as_comment',
+            request_id: requestId,
+            suggestion_id: suggestionId,
+            comment_id: commentId,
+            original_text_hash: original_hash,
+            improved_text_hash: improved_hash,
+            confidence: confidence,
+            action: 'insert_comment'
+        });
+    }
+
+    // ===========================================
+    // Event Type 5: suggestion_accepted
+    // ===========================================
+    /**
+     * Track when user applies suggestion (replaces text)
+     * @param {string} requestId - Request identifier
+     * @param {string} suggestionId - Unique suggestion identifier
+     * @param {string} originalText - Original text (will be hashed)
+     * @param {string} improvedText - Applied text (will be hashed)
+     * @param {number} confidence - Confidence score (0-1)
+     * @param {number} timeToDecisionMs - Time from shown to accepted
+     */
+    async function trackSuggestionAccepted(requestId, suggestionId, originalText, improvedText, confidence, timeToDecisionMs) {
+        const original_hash = await hashPHI(originalText);
+        const improved_hash = await hashPHI(improvedText);
+
+        queueEvent({
+            event_type: 'suggestion_accepted',
+            request_id: requestId,
+            suggestion_id: suggestionId,
+            original_text_hash: original_hash,
+            improved_text_hash: improved_hash,
+            confidence: confidence,
+            time_to_decision_ms: timeToDecisionMs,
+            action: 'apply'
+        });
+    }
+
+    // ===========================================
+    // Event Type 6: suggestion_undone
+    // ===========================================
+    /**
+     * Track when user undoes an applied suggestion
+     * @param {string} requestId - Request identifier
+     * @param {string} suggestionId - Unique suggestion identifier
+     * @param {number} undoDelayMs - Time between apply and undo
+     */
+    function trackSuggestionUndone(requestId, suggestionId, undoDelayMs) {
+        queueEvent({
+            event_type: 'suggestion_undone',
+            request_id: requestId,
+            suggestion_id: suggestionId,
+            undo_delay_ms: undoDelayMs,
+            action: 'undo'
+        });
+    }
+
+    // ===========================================
+    // Event Type 7: suggestion_dismissed
+    // ===========================================
+    /**
+     * Track when user dismisses a suggestion
+     * @param {string} requestId - Request identifier
+     * @param {string} suggestionId - Unique suggestion identifier
+     * @param {number} confidence - Confidence score (0-1)
+     * @param {number} timeToDecisionMs - Time from shown to dismissed
+     */
+    function trackSuggestionDismissed(requestId, suggestionId, confidence, timeToDecisionMs) {
+        queueEvent({
+            event_type: 'suggestion_dismissed',
+            request_id: requestId,
+            suggestion_id: suggestionId,
+            confidence: confidence,
+            time_to_decision_ms: timeToDecisionMs,
+            action: 'dismiss'
+        });
+    }
+
+    // ===========================================
+    // Event Type 8: comment_resolved
+    // ===========================================
+    /**
+     * Track when user resolves a Word comment
+     * @param {string} requestId - Request identifier (if available)
+     * @param {string} suggestionId - Unique suggestion identifier
+     * @param {string} commentId - Word comment ID
+     * @param {boolean} wasAccepted - Whether suggestion was accepted before resolving
+     */
+    function trackCommentResolved(requestId, suggestionId, commentId, wasAccepted) {
+        queueEvent({
+            event_type: 'comment_resolved',
+            request_id: requestId || 'unknown',
+            suggestion_id: suggestionId,
+            comment_id: commentId,
+            was_accepted: wasAccepted,
+            action: 'resolve_comment'
+        });
+    }
+
+    // ===========================================
+    // Enable/Disable Telemetry
+    // ===========================================
+    function enable() {
+        config.enabled = true;
+        console.log('📊 Telemetry enabled');
+    }
+
+    function disable() {
+        config.enabled = false;
+        flushEvents(); // Send any pending events
+        console.log('📊 Telemetry disabled');
+    }
+
+    // Public API
+    return {
+        initialize,
+        enable,
+        disable,
+        flushEvents,
+        trackAnalysisRequested,
+        trackSuggestionsReturned,
+        trackSuggestionShown,
+        trackSuggestionInsertedAsComment,
+        trackSuggestionAccepted,
+        trackSuggestionUndone,
+        trackSuggestionDismissed,
+        trackCommentResolved
+    };
+})();
