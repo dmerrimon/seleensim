@@ -316,6 +316,11 @@ async def serve_js():
     """Serve the taskpane JavaScript"""
     return FileResponse("ilana-comprehensive.js", media_type="application/javascript")
 
+@app.get("/ilana-telemetry.js")
+async def serve_telemetry_js():
+    """Serve the telemetry JavaScript module"""
+    return FileResponse("ilana-telemetry.js", media_type="application/javascript")
+
 @app.get("/style-comprehensive.css")
 async def serve_css():
     """Serve the taskpane CSS"""
