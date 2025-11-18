@@ -158,7 +158,7 @@ const IlanaTelemetry = (function() {
         const text_hash = await hashContent(selectedText);
 
         queueEvent({
-            event_type: 'analysis_requested',
+            event: 'analysis_requested',
             request_id: requestId,
             text_hash: text_hash,
             selection_length: selectionLength,
@@ -178,7 +178,7 @@ const IlanaTelemetry = (function() {
      */
     function trackSuggestionsReturned(requestId, suggestionCount, latencyMs, therapeuticArea) {
         queueEvent({
-            event_type: 'suggestions_returned',
+            event: 'suggestions_returned',
             request_id: requestId,
             suggestion_count: suggestionCount,
             latency_ms: latencyMs,
@@ -204,7 +204,7 @@ const IlanaTelemetry = (function() {
         const improved_hash = await hashContent(improvedText);
 
         queueEvent({
-            event_type: 'suggestion_shown',
+            event: 'suggestion_shown',
             request_id: requestId,
             suggestion_id: suggestionId,
             original_text_hash: original_hash,
@@ -231,7 +231,7 @@ const IlanaTelemetry = (function() {
         const improved_hash = await hashContent(improvedText);
 
         queueEvent({
-            event_type: 'suggestion_inserted_as_comment',
+            event: 'suggestion_inserted_as_comment',
             request_id: requestId,
             suggestion_id: suggestionId,
             comment_id: commentId,
@@ -259,7 +259,7 @@ const IlanaTelemetry = (function() {
         const improved_hash = await hashContent(improvedText);
 
         queueEvent({
-            event_type: 'suggestion_accepted',
+            event: 'suggestion_accepted',
             request_id: requestId,
             suggestion_id: suggestionId,
             original_text_hash: original_hash,
@@ -281,7 +281,7 @@ const IlanaTelemetry = (function() {
      */
     function trackSuggestionUndone(requestId, suggestionId, undoDelayMs) {
         queueEvent({
-            event_type: 'suggestion_undone',
+            event: 'suggestion_undone',
             request_id: requestId,
             suggestion_id: suggestionId,
             undo_delay_ms: undoDelayMs,
@@ -301,7 +301,7 @@ const IlanaTelemetry = (function() {
      */
     function trackSuggestionDismissed(requestId, suggestionId, confidence, timeToDecisionMs) {
         queueEvent({
-            event_type: 'suggestion_dismissed',
+            event: 'suggestion_dismissed',
             request_id: requestId,
             suggestion_id: suggestionId,
             confidence: confidence,
@@ -322,7 +322,7 @@ const IlanaTelemetry = (function() {
      */
     function trackCommentResolved(requestId, suggestionId, commentId, wasAccepted) {
         queueEvent({
-            event_type: 'comment_resolved',
+            event: 'comment_resolved',
             request_id: requestId || 'unknown',
             suggestion_id: suggestionId,
             comment_id: commentId,

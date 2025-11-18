@@ -22,9 +22,6 @@ const IlanaState = {
     // UI State Management
     uiState: 'idle', // idle, selection_ready, analyzing, results, applied, dismissed
 
-    // Undo Management
-    undoBuffer: null, // {issueId, originalText, improvedText, applyTime}
-
     // Comment Tracking
     commentMap: {}, // {commentId: {suggestionId, requestId, insertedAt}}
 
@@ -38,6 +35,48 @@ const IlanaState = {
         enabled: true
     }
 };
+
+// Undo buffer store (in-memory) - supports multiple concurrent undos
+const _undoBuffers = {}; // request_id -> {originalText, rangeInfo, expiryTimestamp}
+
+/**
+ * Add undo buffer for a specific request/suggestion
+ * @param {string} requestId - Request or suggestion identifier
+ * @param {string} originalText - Original text before change
+ * @param {object} rangeInfo - Range location metadata
+ */
+function addUndoBuffer(requestId, originalText, rangeInfo) {
+    _undoBuffers[requestId] = {
+        originalText,
+        rangeInfo,
+        expiryTimestamp: Date.now() + 10000 // 10 seconds
+    };
+}
+
+/**
+ * Get undo buffer for a request (returns null if expired)
+ * @param {string} requestId - Request or suggestion identifier
+ * @returns {object|null} Undo buffer or null if expired
+ */
+function getUndoBuffer(requestId) {
+    const item = _undoBuffers[requestId];
+    if (!item) return null;
+
+    if (Date.now() > item.expiryTimestamp) {
+        delete _undoBuffers[requestId];
+        return null;
+    }
+
+    return item;
+}
+
+/**
+ * Clear undo buffer for a request
+ * @param {string} requestId - Request or suggestion identifier
+ */
+function clearUndoBuffer(requestId) {
+    delete _undoBuffers[requestId];
+}
 
 // API Configuration
 const API_CONFIG = {
@@ -610,13 +649,12 @@ async function applySuggestion(issueId) {
                 );
             }
 
-            // Store undo information
-            IlanaState.undoBuffer = {
-                issueId: issueId,
-                originalText: originalText,
-                improvedText: issue.suggestion,
-                applyTime: Date.now()
-            };
+            // Store undo information using new multi-item buffer
+            addUndoBuffer(issueId, originalText, {
+                // TODO: Store paragraph index, offset for better range tracking
+                suggestionId: issueId,
+                requestId: IlanaState.currentRequestId
+            });
 
             // Update UI to show undo button
             const card = document.querySelector(`[data-issue-id="${issueId}"]`);
@@ -642,9 +680,7 @@ async function applySuggestion(issueId) {
                             undoBtn.remove();
                         }
                         // Clear undo buffer after 10 seconds
-                        if (IlanaState.undoBuffer?.issueId === issueId) {
-                            IlanaState.undoBuffer = null;
-                        }
+                        clearUndoBuffer(issueId);
                     }
                 }, 1000);
             }
@@ -658,19 +694,20 @@ async function applySuggestion(issueId) {
 
 // Undo an applied suggestion
 async function undoSuggestion(issueId) {
-    if (!IlanaState.undoBuffer || IlanaState.undoBuffer.issueId !== issueId) {
-        showError('Undo window has expired');
+    const buffer = getUndoBuffer(issueId);
+    if (!buffer) {
+        showError('Undo window has expired or no undo available');
         return;
     }
 
-    const undoDelayMs = Date.now() - IlanaState.undoBuffer.applyTime;
+    const undoDelayMs = Date.now() - (buffer.expiryTimestamp - 10000); // Calculate time since apply
 
     try {
         await Word.run(async (context) => {
             const selection = context.document.getSelection();
 
             // Restore original text
-            selection.insertText(IlanaState.undoBuffer.originalText, Word.InsertLocation.replace);
+            selection.insertText(buffer.originalText, Word.InsertLocation.replace);
 
             // Remove highlighting
             const restoredRange = context.document.getSelection();
@@ -715,7 +752,7 @@ async function undoSuggestion(issueId) {
             }
 
             // Clear undo buffer
-            IlanaState.undoBuffer = null;
+            clearUndoBuffer(issueId);
         });
 
     } catch (error) {
@@ -752,7 +789,24 @@ async function insertAsComment(issueId) {
             context.load(comment, 'id');
             await context.sync();
 
-            const commentId = comment.id;
+            let commentId = comment.id;
+
+            // Fallback: If comment.id is not available, create anchor hash
+            if (!commentId || commentId === undefined) {
+                console.warn('⚠️ Comment ID not available, using anchor hash fallback');
+
+                // Create anchor hash from selection text + request_id
+                const anchorData = `${originalText}_${IlanaState.currentRequestId}_${issueId}`;
+                commentId = await (async () => {
+                    const encoder = new TextEncoder();
+                    const data = encoder.encode(anchorData);
+                    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+                    const hashArray = Array.from(new Uint8Array(hashBuffer));
+                    return 'anchor_' + hashArray.map(b => b.toString(16).padStart(2, '0')).join('').substring(0, 32);
+                })();
+
+                console.log(`📌 Generated anchor hash: ${commentId}`);
+            }
 
             console.log(`💬 Inserted comment: ${commentId} for suggestion: ${issueId}`);
 
