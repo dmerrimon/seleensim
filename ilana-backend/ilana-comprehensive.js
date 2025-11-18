@@ -178,8 +178,8 @@ async function handleRecommendButton() {
         console.log(`📝 Selected text length: ${selectedText.length}`);
         
         if (selectedText.length > 5) {
-            // Selection-first behavior: call hybrid /api/analyze
-            console.log('🎯 Selection detected, using hybrid selection analysis');
+            // Selection-first behavior: call Legacy Pipeline /api/analyze
+            console.log('🎯 Selection detected, using Legacy Pipeline analysis');
             await handleSelectionAnalysis(selectedText);
         } else {
             // No selection: open Whole-Document confirm modal
@@ -196,7 +196,7 @@ async function handleRecommendButton() {
     }
 }
 
-// Handle selection analysis with hybrid /api/analyze
+// Handle selection analysis with Legacy Pipeline /api/analyze
 async function handleSelectionAnalysis(selectedText) {
     try {
         updateStatus('Analyzing selection...', 'analyzing');
@@ -226,7 +226,7 @@ async function handleSelectionAnalysis(selectedText) {
             );
         }
 
-        console.log('🚀 Calling hybrid /api/analyze:', payload);
+        console.log('🚀 Calling Legacy Pipeline /api/analyze:', payload);
 
         const response = await fetch(`${API_CONFIG.baseUrl}/api/analyze`, {
             method: 'POST',
@@ -242,7 +242,7 @@ async function handleSelectionAnalysis(selectedText) {
         }
         
         const result = await response.json();
-        console.log('✅ Hybrid selection analysis result:', result);
+        console.log('✅ Legacy Pipeline selection analysis result:', result);
         
         // Store request ID for tracking
         IlanaState.currentRequestId = result.request_id;
@@ -266,9 +266,9 @@ async function handleSelectionAnalysis(selectedText) {
     }
 }
 
-// Display selection suggestions with hybrid response format
+// Display selection suggestions with Legacy Pipeline response format
 async function displaySelectionSuggestions(analysisResult) {
-    const suggestions = extractSuggestionsFromHybridResponse(analysisResult);
+    const suggestions = extractSuggestionsFromLegacyResponse(analysisResult);
     const issues = [];
 
     // Track telemetry: suggestions_returned
@@ -328,8 +328,8 @@ async function displaySelectionSuggestions(analysisResult) {
     console.log(`📋 Displayed ${issues.length} selection suggestions`);
 }
 
-// Extract suggestions from hybrid API response
-function extractSuggestionsFromHybridResponse(response) {
+// Extract suggestions from Legacy Pipeline API response
+function extractSuggestionsFromLegacyResponse(response) {
     // Primary format: Direct suggestions array from /api/analyze
     // API returns: {"suggestions": [{improved_text, original_text, rationale, ...}]}
     if (response.suggestions && Array.isArray(response.suggestions)) {
@@ -337,7 +337,7 @@ function extractSuggestionsFromHybridResponse(response) {
         return response.suggestions;
     }
 
-    // Handle hybrid controller wrapper format
+    // Handle Legacy Pipeline controller wrapper format
     if (response.result) {
         const result = response.result;
 
@@ -1618,7 +1618,7 @@ async function handleQueuedJob(jobResult) {
                 updateQueuedJobProgress(data.progress || 50);
             } else if (data.event_type === 'complete') {
                 eventSource.close();
-                const suggestions = extractSuggestionsFromHybridResponse(data);
+                const suggestions = extractSuggestionsFromLegacyResponse(data);
                 displaySelectionSuggestions({ result: { suggestions } });
                 hideQueuedJobIndicator();
                 updateStatus('Analysis complete', 'ready');
@@ -1733,7 +1733,7 @@ async function pollJobStatus(jobId) {
             const jobStatus = await response.json();
 
             if (jobStatus.status === 'completed') {
-                const suggestions = extractSuggestionsFromHybridResponse(jobStatus.result);
+                const suggestions = extractSuggestionsFromLegacyResponse(jobStatus.result);
                 displaySelectionSuggestions({ result: { suggestions } });
                 hideQueuedJobIndicator();
                 updateStatus('Analysis complete', 'ready');
