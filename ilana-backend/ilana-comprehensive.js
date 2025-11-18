@@ -243,6 +243,7 @@ async function handleSelectionAnalysis(selectedText) {
         
         const result = await response.json();
         console.log('✅ Legacy Pipeline selection analysis result:', result);
+        console.log('  - Suggestions array:', result.suggestions || result.result?.suggestions);
         
         // Store request ID for tracking
         IlanaState.currentRequestId = result.request_id;
@@ -288,6 +289,10 @@ async function displaySelectionSuggestions(analysisResult) {
     }
 
     suggestions.forEach((suggestion, index) => {
+        // DEBUG: Log suggestion object to see actual field names
+        console.log(`🔍 Suggestion ${index}:`, suggestion);
+        console.log(`  - Keys: ${Object.keys(suggestion).join(', ')}`);
+
         const issue = {
             id: suggestion.id || `selection_${index}`,
             type: suggestion.type || 'medical_terminology',
@@ -301,6 +306,7 @@ async function displaySelectionSuggestions(analysisResult) {
             selectionAnalysis: true,
             request_id: IlanaState.currentRequestId
         };
+        console.log(`  - Mapped issue:`, { text: issue.text, suggestion: issue.suggestion, rationale: issue.rationale });
         issues.push(issue);
 
         // Track telemetry: suggestion_shown (record timestamp for time-to-decision tracking)
