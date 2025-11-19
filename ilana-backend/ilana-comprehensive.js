@@ -247,12 +247,17 @@ async function handleSelectionAnalysis(selectedText) {
         
         // Store request ID for tracking
         IlanaState.currentRequestId = result.request_id;
-        
+
         // Handle both immediate and queued responses
-        if (result.result && result.result.status === 'queued' && result.result.job_id) {
+        if (result.status === 'queued' && result.job_id) {
+            // Large selection queued for background processing
+            console.log(`📋 Job queued: ${result.job_id}`);
+            await handleQueuedJob(result);
+        } else if (result.result && result.result.status === 'queued' && result.result.job_id) {
+            // Legacy format support
             await handleQueuedJob(result.result);
         } else {
-            // Display immediate suggestions
+            // Display immediate suggestions (fast path or legacy)
             await displaySelectionSuggestions(result);
         }
         

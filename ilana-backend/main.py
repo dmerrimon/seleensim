@@ -1262,7 +1262,7 @@ async def debug_handler_types():
     return info
 
 @app.post("/api/analyze")
-async def analyze_entry(request: Request):
+async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
     """
     Protocol analysis with automatic fast/deep path selection
 
@@ -1371,53 +1371,51 @@ async def analyze_entry(request: Request):
             return response
 
         else:
-            # === DEEP PATH: Background job (NOT YET IMPLEMENTED) ===
-            logger.warning(f"⚠️ Text exceeds fast threshold ({text_len} > {SELECTION_CHUNK_THRESHOLD})")
-            logger.warning(f"🚧 Deep path not yet implemented - falling back to legacy pipeline")
+            # === DEEP PATH: Background job queue ===
+            logger.info(f"📋 Using DEEP path (background job): {req_id} ({text_len} > {SELECTION_CHUNK_THRESHOLD} chars)")
 
-            # Temporary: Fall back to legacy pipeline for large selections
-            from legacy_pipeline import run_legacy_pipeline_with_fallback
+            # Import job queue
+            from job_queue import create_job, process_job_async
+            from server.jobs import get_job_store
+            import uuid
 
-            result = await run_legacy_pipeline_with_fallback(
+            # Create job in job queue
+            job_id = create_job(
                 text=text,
                 ta=payload.get("ta"),
-                phase=payload.get("phase"),
-                request_id=req_id
+                phase=payload.get("phase")
             )
 
-            # End telemetry trace
-            end_trace(request_id, result, None, {"model_path": "legacy_fallback"})
-
-            # Transform response
-            suggestions = result.get("result", {}).get("suggestions", [])
-            metadata = result.get("result", {}).get("metadata", {})
-
-            def hash_content(text: str) -> str:
-                if not text:
-                    return "empty"
-                return hashlib.sha256(text.encode('utf-8')).hexdigest()
-
-            transformed_suggestions = []
-            for suggestion in suggestions:
-                original_text = suggestion.get("text") or suggestion.get("originalText", "")
-
-                transformed_suggestions.append({
-                    "id": suggestion.get("id", f"suggestion_{req_id}"),
-                    "original_text": original_text,  # Fixed field name
-                    "improved_text": suggestion.get("suggestion") or suggestion.get("suggestedText", ""),  # Fixed field name
-                    "rationale": suggestion.get("rationale", ""),
-                    "confidence": suggestion.get("confidence", 0.9),
-                    "type": suggestion.get("type", "medical_terminology"),
+            # Also create job in JobStore for status persistence
+            job_store = get_job_store()
+            job_uuid = str(uuid.uuid4())
+            job_store.create_job(
+                job_id=job_uuid,
+                payload={
+                    "text": text,
                     "ta": payload.get("ta"),
                     "phase": payload.get("phase"),
-                    "model_path": "legacy"
-                })
+                    "mode": "selection",
+                    "request_id": req_id
+                }
+            )
 
+            # Queue background task to process the job (uses injected background_tasks)
+            background_tasks.add_task(process_job_async, job_id)
+
+            # End telemetry trace
+            end_trace(request_id, {"status": "queued", "job_id": job_id}, None, {"model_path": "deep_queued"})
+
+            logger.info(f"✅ Job queued: {job_id} ({job_uuid})")
+
+            # Return queued response
             return {
-                "status": "legacy_fallback",
+                "status": "queued",
                 "request_id": req_id,
-                "suggestions": transformed_suggestions,
-                "latency_ms": metadata.get("latency_ms", 0)
+                "job_id": job_uuid,  # Use JobStore UUID for status polling
+                "message": "Analysis queued for background processing",
+                "poll_url": f"/api/job-status/{job_uuid}",
+                "estimated_time_s": 30
             }
 
     except Exception as e:
