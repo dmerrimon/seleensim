@@ -623,6 +623,38 @@ async def get_prometheus_metrics():
             status_code=500
         )
 
+@app.get("/health/config")
+async def get_optimization_config():
+    """
+    Get optimization configuration summary (Step 9)
+
+    Returns:
+    - All environment variables for Steps 3-7
+    - Configuration validation status
+    - Default values and descriptions
+    - Current loaded values
+    """
+    from config_optimization import get_config, get_config_summary, get_environment_variables_docs
+
+    try:
+        config = get_config()
+        summary = get_config_summary(config)
+        env_docs = get_environment_variables_docs()
+
+        return {
+            "status": "ok" if config._validated else "warning",
+            "timestamp": datetime.utcnow().isoformat(),
+            "configuration": summary,
+            "environment_variables": env_docs,
+            "step": "Step 9: Config Flags"
+        }
+    except Exception as e:
+        logger.error(f"❌ Failed to get config: {e}")
+        return {
+            "status": "error",
+            "error": str(e)
+        }
+
 @app.get("/debug/azure-openai")
 async def debug_azure_openai():
     """Debug Azure OpenAI connection"""
