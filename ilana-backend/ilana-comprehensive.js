@@ -94,6 +94,10 @@ Office.onReady((info) => {
     if (info.host === Office.HostType.Word) {
         console.log("🚀 Ilana Comprehensive AI loaded successfully");
 
+        // Reset state on load (defensive fix for stuck flag)
+        IlanaState.isAnalyzing = false;
+        console.log("🔄 State reset: isAnalyzing = false");
+
         // Initialize telemetry
         if (typeof IlanaTelemetry !== 'undefined') {
             IlanaTelemetry.initialize(
