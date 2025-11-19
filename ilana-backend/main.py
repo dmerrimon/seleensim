@@ -441,6 +441,33 @@ async def health_check_services():
 
     return health_status
 
+@app.get("/health/optimizations")
+async def get_optimization_config():
+    """
+    Get current optimization settings (Step 3)
+
+    Returns configuration for:
+    - Pinecone vector DB query limits
+    - PubMedBERT conditional usage
+    - Smart skipping thresholds
+    """
+    from optimization_config import get_optimization_summary
+
+    try:
+        summary = get_optimization_summary()
+        return {
+            "status": "ok",
+            "timestamp": datetime.utcnow().isoformat(),
+            "optimizations": summary,
+            "step": "Step 3: Trim Vector DB & PubMedBERT Usage"
+        }
+    except Exception as e:
+        logger.error(f"❌ Failed to get optimization config: {e}")
+        return {
+            "status": "error",
+            "error": str(e)
+        }
+
 @app.get("/debug/azure-openai")
 async def debug_azure_openai():
     """Debug Azure OpenAI connection"""

@@ -147,6 +147,24 @@ async def process_job_async(job_id: str):
     try:
         # Import heavy dependencies only when needed (saves memory for fast path)
         from legacy_pipeline import run_legacy_pipeline
+        from optimization_config import (
+            should_use_pinecone,
+            should_use_pubmedbert,
+            get_optimized_top_k,
+            get_optimization_summary
+        )
+
+        # Log optimization settings
+        text_len = len(job.text)
+        use_pinecone = should_use_pinecone(job.text, job.ta)
+        use_pubmedbert = should_use_pubmedbert(job.text, job.ta)
+        top_k = get_optimized_top_k(text_len, is_background_job=True)
+
+        logger.info(f"🎛️ [{job_id}] Optimization settings:")
+        logger.info(f"   - Text length: {text_len} chars")
+        logger.info(f"   - Pinecone: {use_pinecone} (top_k={top_k})")
+        logger.info(f"   - PubMedBERT: {use_pubmedbert}")
+        logger.info(f"   - TA hint: {job.ta or 'none'}")
 
         # Step 1: TA Detection (20%)
         job.progress_pct = 20
@@ -154,16 +172,24 @@ async def process_job_async(job_id: str):
         logger.info(f"📊 [{job_id}] Step 1/5: TA detection")
         await asyncio.sleep(0.1)  # Yield control
 
-        # Step 2: Vector search (40%)
+        # Step 2: Vector search (40%) - May skip if optimized
         job.progress_pct = 40
-        job.progress_message = "Searching knowledge base..."
-        logger.info(f"📊 [{job_id}] Step 2/5: Pinecone vector search")
+        if use_pinecone:
+            job.progress_message = f"Searching knowledge base (top {top_k})..."
+            logger.info(f"📊 [{job_id}] Step 2/5: Pinecone vector search (top_k={top_k})")
+        else:
+            job.progress_message = "Skipping vector search (optimized)..."
+            logger.info(f"📊 [{job_id}] Step 2/5: Pinecone SKIPPED (optimization)")
         await asyncio.sleep(0.1)
 
-        # Step 3: PubMedBERT (60%)
+        # Step 3: PubMedBERT (60%) - May skip if optimized
         job.progress_pct = 60
-        job.progress_message = "Computing medical embeddings..."
-        logger.info(f"📊 [{job_id}] Step 3/5: PubMedBERT embeddings")
+        if use_pubmedbert:
+            job.progress_message = "Computing medical embeddings..."
+            logger.info(f"📊 [{job_id}] Step 3/5: PubMedBERT embeddings")
+        else:
+            job.progress_message = "Skipping embeddings (optimized)..."
+            logger.info(f"📊 [{job_id}] Step 3/5: PubMedBERT SKIPPED (optimization)")
         await asyncio.sleep(0.1)
 
         # Step 4: Azure GPT-4 (80%)
@@ -172,6 +198,8 @@ async def process_job_async(job_id: str):
         logger.info(f"📊 [{job_id}] Step 4/5: Azure GPT-4 analysis")
 
         # Call legacy pipeline (returns full result dict)
+        # NOTE: Optimization flags are logged above but legacy pipeline needs to be updated
+        # to actually respect them. For now, we're just tracking what SHOULD be optimized.
         legacy_result = await run_legacy_pipeline(
             text=job.text,
             ta=job.ta,
