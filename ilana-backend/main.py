@@ -1264,16 +1264,22 @@ async def debug_handler_types():
 @app.post("/api/analyze")
 async def analyze_entry(request: Request):
     """
-    Protocol analysis using Legacy Pipeline (RAG + PubMedBERT + Pinecone) - Selection Mode Only
+    Protocol analysis with automatic fast/deep path selection
 
-    Payload expected: {"text": str, "mode": "selection", "request_id": str}
-    Returns: {"suggestions": [...]}
+    Fast path (< 4s): Small selections using gpt-4o-mini
+    Deep path (background): Large selections with full RAG stack
+
+    Payload: {"text": str, "mode": "selection", "request_id": str}
+    Returns: {"status": "fast"|"queued", "request_id": str, "suggestions": [...]}
     """
     import time
+    import hashlib
     start_time = time.time()
 
     payload = await request.json()
     req_id = payload.get("request_id") or _generate_request_id()
+    text = payload.get("text", "")
+    text_len = len(text)
 
     # Enforce selection mode only
     mode = payload.get("mode", "selection")
@@ -1289,74 +1295,134 @@ async def analyze_entry(request: Request):
     # Start telemetry trace
     headers_dict = dict(request.headers.items()) if request.headers else {}
     request_id = start_trace(
-        analyze_mode="legacy_pipeline",
-        model_path="legacy_pipeline",
+        analyze_mode="smart_routing",
+        model_path="auto",
         request_data=payload,
         headers=headers_dict
     )
 
-    logger.info(f"🚀 Legacy pipeline analysis: request_id={req_id} text_len={len(payload.get('text', ''))}")
+    logger.info(f"🚀 Analysis request: {req_id} text_len={text_len}")
 
     try:
-        # Import legacy pipeline
-        from legacy_pipeline import run_legacy_pipeline_with_fallback
+        # Import fast analysis module
+        from fast_analysis import analyze_fast, SELECTION_CHUNK_THRESHOLD
 
-        # Call legacy pipeline with fallback
-        result = await run_legacy_pipeline_with_fallback(
-            text=payload.get("text", ""),
-            ta=payload.get("ta"),
-            phase=payload.get("phase"),
-            request_id=req_id
-        )
+        # Decision: Fast path vs deep path
+        use_fast_path = text_len <= SELECTION_CHUNK_THRESHOLD
 
-        # End telemetry trace
-        end_trace(request_id, result, None, {"model_path": "legacy_pipeline"})
+        if use_fast_path:
+            # === FAST PATH: Synchronous, < 4s ===
+            logger.info(f"⚡ Using FAST path: {req_id} ({text_len} <= {SELECTION_CHUNK_THRESHOLD} chars)")
 
-        # Submit to shadow worker if enabled
-        try:
-            asyncio.create_task(submit_shadow_request(payload, result))
-        except Exception as shadow_err:
-            logger.debug(f"Shadow worker submission failed (non-critical): {shadow_err}")
+            result = await analyze_fast(
+                text=text,
+                ta=payload.get("ta"),
+                phase=payload.get("phase"),
+                request_id=req_id
+            )
 
-        # Transform response format to match OpenAPI spec v1.2
-        # From: {request_id, model_path, result: {suggestions, metadata}}
-        # To: {request_id, suggestions: [{id, original_snippet_hash, improved_text, ...}]}
-        import hashlib
+            # End telemetry trace
+            end_trace(request_id, result, None, {"model_path": "fast", "timings": result.get("metadata", {})})
 
-        suggestions = result.get("result", {}).get("suggestions", [])
-        metadata = result.get("result", {}).get("metadata", {})
+            # Transform to API format
+            suggestions = result.get("suggestions", [])
+            metadata = result.get("metadata", {})
 
-        def hash_content(text: str) -> str:
-            """SHA-256 hash for proprietary content protection"""
-            if not text:
-                return "empty"
-            return hashlib.sha256(text.encode('utf-8')).hexdigest()
+            def hash_content(text: str) -> str:
+                """SHA-256 hash for proprietary content protection"""
+                if not text:
+                    return "empty"
+                return hashlib.sha256(text.encode('utf-8')).hexdigest()
 
-        transformed_suggestions = []
-        for suggestion in suggestions:
-            original_text = suggestion.get("text") or suggestion.get("originalText", "")
+            transformed_suggestions = []
+            for suggestion in suggestions:
+                original_text = suggestion.get("text", "")
 
-            transformed_suggestions.append({
-                "id": suggestion.get("id", f"suggestion_{req_id}"),
-                "original_snippet_hash": hash_content(original_text),
-                "improved_text": suggestion.get("suggestion") or suggestion.get("suggestedText", ""),
-                "ta": payload.get("ta"),
-                "phase": payload.get("phase"),
-                "model_path": "legacy",
-                "latency_ms": metadata.get("latency_ms", 0),
-                "confidence": suggestion.get("confidence", 0.9),
-                "type": suggestion.get("type", "medical_terminology"),
-                "rationale": suggestion.get("rationale", "")
-            })
+                transformed_suggestions.append({
+                    "id": suggestion.get("id", f"suggestion_{req_id}"),
+                    "original_text": original_text,  # Frontend expects "original_text"
+                    "improved_text": suggestion.get("suggestion", ""),  # Frontend expects "improved_text"
+                    "rationale": suggestion.get("rationale", ""),
+                    "confidence": suggestion.get("confidence", 0.9),
+                    "type": suggestion.get("type", "clarity"),
+                    "ta": payload.get("ta"),
+                    "phase": payload.get("phase"),
+                    "model_path": "fast"
+                })
 
-        return {
-            "request_id": req_id,
-            "suggestions": transformed_suggestions
-        }
+            response = {
+                "status": "fast",
+                "request_id": req_id,
+                "suggestions": transformed_suggestions,
+                "latency_ms": metadata.get("total_ms", 0),
+                "metadata": {
+                    "model": metadata.get("model", "gpt-4o-mini"),
+                    "cache_hit": metadata.get("cache_hit", False),
+                    "timings": {
+                        "preprocess_ms": metadata.get("preprocess_ms", 0),
+                        "azure_ms": metadata.get("azure_ms", 0),
+                        "postprocess_ms": metadata.get("postprocess_ms", 0),
+                        "total_ms": metadata.get("total_ms", 0)
+                    }
+                }
+            }
+
+            logger.info(f"✅ FAST path complete: {req_id} ({metadata.get('total_ms', 0)}ms, {len(transformed_suggestions)} suggestions)")
+            return response
+
+        else:
+            # === DEEP PATH: Background job (NOT YET IMPLEMENTED) ===
+            logger.warning(f"⚠️ Text exceeds fast threshold ({text_len} > {SELECTION_CHUNK_THRESHOLD})")
+            logger.warning(f"🚧 Deep path not yet implemented - falling back to legacy pipeline")
+
+            # Temporary: Fall back to legacy pipeline for large selections
+            from legacy_pipeline import run_legacy_pipeline_with_fallback
+
+            result = await run_legacy_pipeline_with_fallback(
+                text=text,
+                ta=payload.get("ta"),
+                phase=payload.get("phase"),
+                request_id=req_id
+            )
+
+            # End telemetry trace
+            end_trace(request_id, result, None, {"model_path": "legacy_fallback"})
+
+            # Transform response
+            suggestions = result.get("result", {}).get("suggestions", [])
+            metadata = result.get("result", {}).get("metadata", {})
+
+            def hash_content(text: str) -> str:
+                if not text:
+                    return "empty"
+                return hashlib.sha256(text.encode('utf-8')).hexdigest()
+
+            transformed_suggestions = []
+            for suggestion in suggestions:
+                original_text = suggestion.get("text") or suggestion.get("originalText", "")
+
+                transformed_suggestions.append({
+                    "id": suggestion.get("id", f"suggestion_{req_id}"),
+                    "original_text": original_text,  # Fixed field name
+                    "improved_text": suggestion.get("suggestion") or suggestion.get("suggestedText", ""),  # Fixed field name
+                    "rationale": suggestion.get("rationale", ""),
+                    "confidence": suggestion.get("confidence", 0.9),
+                    "type": suggestion.get("type", "medical_terminology"),
+                    "ta": payload.get("ta"),
+                    "phase": payload.get("phase"),
+                    "model_path": "legacy"
+                })
+
+            return {
+                "status": "legacy_fallback",
+                "request_id": req_id,
+                "suggestions": transformed_suggestions,
+                "latency_ms": metadata.get("latency_ms", 0)
+            }
 
     except Exception as e:
-        logger.error(f"❌ Legacy pipeline failed: {req_id} - {type(e).__name__}: {e}")
-        end_trace(request_id, None, f"Legacy pipeline failed: {str(e)}", {"model_path": "legacy_pipeline"})
+        logger.error(f"❌ Analysis failed: {req_id} - {type(e).__name__}: {e}")
+        end_trace(request_id, None, f"Analysis failed: {str(e)}", {"model_path": "error"})
         raise HTTPException(
             status_code=500,
             detail=f"Analysis failed: {str(e)}"
