@@ -240,9 +240,9 @@ async def _call_azure_fast(prompt: str, request_id: str) -> Dict[str, Any]:
     import json
     from openai import AsyncAzureOpenAI
 
-    # Get Azure credentials
+    # Get Azure credentials (support both naming conventions)
     azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-    azure_key = os.getenv("AZURE_OPENAI_KEY")
+    azure_key = os.getenv("AZURE_OPENAI_API_KEY") or os.getenv("AZURE_OPENAI_KEY")
 
     if not azure_endpoint or not azure_key:
         raise ValueError("Azure OpenAI credentials not configured")
