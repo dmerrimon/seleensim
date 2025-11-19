@@ -1266,7 +1266,7 @@ async def analyze_entry(request: Request):
     """
     Protocol analysis with automatic fast/deep path selection
 
-    Fast path (< 4s): Small selections using gpt-4o-mini
+    Fast path (< 10s): Selections up to 2000 chars using gpt-4o-mini
     Deep path (background): Large selections with full RAG stack
 
     Payload: {"text": str, "mode": "selection", "request_id": str}

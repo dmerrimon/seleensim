@@ -23,10 +23,10 @@ logger = logging.getLogger(__name__)
 
 # Configuration
 FAST_MODEL = os.getenv("ANALYSIS_FAST_MODEL", "gpt-4o-mini")
-FAST_TIMEOUT_MS = int(os.getenv("SIMPLE_PROMPT_TIMEOUT_MS", "4000"))
+FAST_TIMEOUT_MS = int(os.getenv("SIMPLE_PROMPT_TIMEOUT_MS", "10000"))  # 10 second timeout
 FAST_MAX_TOKENS = 300
 FAST_TEMPERATURE = 0.2
-SELECTION_CHUNK_THRESHOLD = int(os.getenv("SELECTION_CHUNK_THRESHOLD", "500"))
+SELECTION_CHUNK_THRESHOLD = int(os.getenv("SELECTION_CHUNK_THRESHOLD", "2000"))  # 2000 chars = ~3-5 protocol sentences
 
 # Simple in-memory cache (24h TTL)
 _cache = {}
@@ -63,7 +63,7 @@ def _build_fast_prompt(text: str, ta: Optional[str] = None) -> str:
     Build minimal prompt for fast analysis
 
     Args:
-        text: Selected protocol text (already trimmed to ~500 chars)
+        text: Selected protocol text (up to 2000 chars, ~3-5 sentences)
         ta: Optional therapeutic area hint
 
     Returns:
@@ -97,10 +97,10 @@ async def analyze_fast(
     """
     Fast synchronous analysis for small selections
 
-    Target: < 4 seconds total
+    Target: < 10 seconds total (typically 3-6s for uncached)
 
     Args:
-        text: Selected protocol text
+        text: Selected protocol text (up to 2000 chars)
         ta: Optional therapeutic area
         phase: Optional study phase (currently unused in fast path)
         request_id: Request tracking ID
@@ -201,8 +201,8 @@ async def analyze_fast(
         _set_cache(cache_key, result)
 
         # Emit performance warning if slow
-        if timings["total_ms"] > 3000:
-            logger.warning(f"⚠️ Slow fast analysis: {timings['total_ms']}ms (target: <4000ms)")
+        if timings["total_ms"] > 8000:
+            logger.warning(f"⚠️ Slow fast analysis: {timings['total_ms']}ms (target: <10000ms)")
 
         logger.info(f"✅ Fast analysis complete: {req_id} ({timings['total_ms']}ms, {len(suggestions)} suggestions)")
 
