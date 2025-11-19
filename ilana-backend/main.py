@@ -542,6 +542,34 @@ async def get_resilience_status():
             "error": str(e)
         }
 
+@app.get("/health/cache")
+async def get_cache_stats_endpoint():
+    """
+    Get cache statistics and performance (Step 6)
+
+    Returns:
+    - Hit/miss rates
+    - Cache sizes (memory and Redis)
+    - LRU eviction stats
+    - Performance vs target
+    """
+    from cache_manager import get_cache_stats
+
+    try:
+        stats = get_cache_stats()
+        return {
+            "status": "ok",
+            "timestamp": datetime.utcnow().isoformat(),
+            "cache": stats,
+            "step": "Step 6: Enhanced Caching"
+        }
+    except Exception as e:
+        logger.error(f"❌ Failed to get cache stats: {e}")
+        return {
+            "status": "error",
+            "error": str(e)
+        }
+
 @app.get("/debug/azure-openai")
 async def debug_azure_openai():
     """Debug Azure OpenAI connection"""

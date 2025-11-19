@@ -14,13 +14,15 @@ For deep analysis with full RAG stack, use background job queue.
 import os
 import time
 import logging
-import hashlib
 from typing import Dict, Any, List, Optional
-from datetime import datetime, timedelta
+from datetime import datetime
 import asyncio
 
 # Step 4: Import prompt optimization utilities
 from prompt_optimizer import build_fast_prompt, track_token_usage
+
+# Step 6: Import enhanced cache manager
+from cache_manager import get_cached, set_cached
 
 logger = logging.getLogger(__name__)
 
@@ -31,37 +33,8 @@ FAST_MAX_TOKENS = 300
 FAST_TEMPERATURE = 0.2
 SELECTION_CHUNK_THRESHOLD = int(os.getenv("SELECTION_CHUNK_THRESHOLD", "2000"))  # 2000 chars = ~3-5 protocol sentences
 
-# Simple in-memory cache (24h TTL)
-_cache = {}
-_cache_ttl = {}
 
-
-def _cache_key(text: str, ta: Optional[str], model: str) -> str:
-    """Generate cache key from inputs"""
-    content = f"{text}|{ta or 'general'}|{model}"
-    return hashlib.sha256(content.encode()).hexdigest()
-
-
-def _get_cached(key: str) -> Optional[Dict[str, Any]]:
-    """Get cached result if still valid"""
-    if key in _cache:
-        if datetime.now() < _cache_ttl.get(key, datetime.min):
-            logger.info(f"✅ Cache hit: {key[:12]}...")
-            return _cache[key]
-        else:
-            # Expired
-            del _cache[key]
-            del _cache_ttl[key]
-    return None
-
-
-def _set_cache(key: str, value: Dict[str, Any], ttl_hours: int = 24):
-    """Cache result with TTL"""
-    _cache[key] = value
-    _cache_ttl[key] = datetime.now() + timedelta(hours=ttl_hours)
-
-
-# _build_fast_prompt removed in Step 4 - now using prompt_optimizer.build_fast_prompt
+# Old cache functions removed in Step 6 - now using cache_manager
 
 
 async def analyze_fast(
@@ -113,13 +86,19 @@ async def analyze_fast(
         else:
             trimmed_text = text
 
-        # Check cache
-        cache_key = _cache_key(trimmed_text, ta, FAST_MODEL)
-        cached_result = _get_cached(cache_key)
+        # Check cache (Step 6: Enhanced cache manager)
+        cached_result = get_cached(
+            text=trimmed_text,
+            model=FAST_MODEL,
+            ta=ta,
+            phase=phase,
+            analysis_type="fast"
+        )
 
         if cached_result:
             cached_result["metadata"]["cache_hit"] = True
             cached_result["metadata"]["total_ms"] = int((time.time() - start_time) * 1000)
+            logger.info(f"✅ Returning cached result: {req_id}")
             return cached_result
 
         timings["preprocess_ms"] = int((time.time() - preprocess_start) * 1000)
@@ -206,8 +185,15 @@ async def analyze_fast(
             }
         }
 
-        # Cache successful result
-        _set_cache(cache_key, result)
+        # Cache successful result (Step 6: Enhanced cache manager)
+        set_cached(
+            text=trimmed_text,
+            model=FAST_MODEL,
+            result=result,
+            ta=ta,
+            phase=phase,
+            analysis_type="fast"
+        )
 
         # Emit performance warning if slow
         if timings["total_ms"] > 8000:
