@@ -82,7 +82,9 @@ function clearUndoBuffer(requestId) {
 const API_CONFIG = {
     baseUrl: 'https://ilanalabs-add-in.onrender.com',  // Production backend
     timeout: 120000,
-    retryAttempts: 1
+    retryAttempts: 3,  // Increased for 502 handling
+    retryDelay: 2000,  // 2 seconds base delay
+    retryOn502: true   // Auto-retry on cold start errors
 };
 
 // Office.js initialization
@@ -114,6 +116,34 @@ Office.onReady((info) => {
         console.warn("⚠️ Not running in Word, host is:", info.host);
     }
 });
+
+// Retry helper for handling 502 errors (cold starts)
+async function fetchWithRetry(url, options, attemptNumber = 1) {
+    try {
+        const response = await fetch(url, options);
+
+        // If 502 (Bad Gateway) and retries remaining, retry after delay
+        if (response.status === 502 && API_CONFIG.retryOn502 && attemptNumber < API_CONFIG.retryAttempts) {
+            const delay = API_CONFIG.retryDelay * attemptNumber; // Progressive delay
+            console.log(`⏳ 502 error (attempt ${attemptNumber}/${API_CONFIG.retryAttempts}), retrying in ${delay/1000}s...`);
+            updateStatus(`Service starting (attempt ${attemptNumber}/${API_CONFIG.retryAttempts})...`, 'analyzing');
+
+            await new Promise(resolve => setTimeout(resolve, delay));
+            return fetchWithRetry(url, options, attemptNumber + 1);
+        }
+
+        return response;
+    } catch (error) {
+        // Network error - retry if attempts remaining
+        if (attemptNumber < API_CONFIG.retryAttempts) {
+            const delay = API_CONFIG.retryDelay * attemptNumber;
+            console.log(`⏳ Network error (attempt ${attemptNumber}/${API_CONFIG.retryAttempts}), retrying in ${delay/1000}s...`);
+            await new Promise(resolve => setTimeout(resolve, delay));
+            return fetchWithRetry(url, options, attemptNumber + 1);
+        }
+        throw error;
+    }
+}
 
 // Get selected text using Office.js
 async function getSelectedText() {
@@ -239,7 +269,7 @@ async function handleSelectionAnalysis(selectedText) {
 
         console.log('🚀 Calling Legacy Pipeline /api/analyze:', payload);
 
-        const response = await fetch(`${API_CONFIG.baseUrl}/api/analyze`, {
+        const response = await fetchWithRetry(`${API_CONFIG.baseUrl}/api/analyze`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -247,7 +277,7 @@ async function handleSelectionAnalysis(selectedText) {
             },
             body: JSON.stringify(payload)
         });
-        
+
         if (!response.ok) {
             throw new Error(`Selection analysis failed: ${response.status}`);
         }
