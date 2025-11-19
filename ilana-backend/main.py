@@ -468,6 +468,38 @@ async def get_optimization_config():
             "error": str(e)
         }
 
+@app.get("/health/prompts")
+async def get_prompt_stats():
+    """
+    Get prompt optimization statistics and token usage (Step 4)
+
+    Returns:
+    - Token budgets for fast and deep paths
+    - Cumulative token usage statistics
+    - Cost estimates
+    - Optimization impact metrics
+    """
+    from prompt_optimizer import get_token_stats, FAST_TOKEN_BUDGET, DEEP_TOKEN_BUDGET
+
+    try:
+        stats = get_token_stats()
+        return {
+            "status": "ok",
+            "timestamp": datetime.utcnow().isoformat(),
+            "token_budgets": {
+                "fast_path": FAST_TOKEN_BUDGET,
+                "deep_path": DEEP_TOKEN_BUDGET
+            },
+            "usage": stats,
+            "step": "Step 4: Prompt + Model Tuning"
+        }
+    except Exception as e:
+        logger.error(f"❌ Failed to get prompt stats: {e}")
+        return {
+            "status": "error",
+            "error": str(e)
+        }
+
 @app.get("/debug/azure-openai")
 async def debug_azure_openai():
     """Debug Azure OpenAI connection"""

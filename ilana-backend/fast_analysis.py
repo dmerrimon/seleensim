@@ -19,6 +19,9 @@ from typing import Dict, Any, List, Optional
 from datetime import datetime, timedelta
 import asyncio
 
+# Step 4: Import prompt optimization utilities
+from prompt_optimizer import build_fast_prompt, track_token_usage
+
 logger = logging.getLogger(__name__)
 
 # Configuration
@@ -58,34 +61,7 @@ def _set_cache(key: str, value: Dict[str, Any], ttl_hours: int = 24):
     _cache_ttl[key] = datetime.now() + timedelta(hours=ttl_hours)
 
 
-def _build_fast_prompt(text: str, ta: Optional[str] = None) -> str:
-    """
-    Build minimal prompt for fast analysis
-
-    Args:
-        text: Selected protocol text (up to 2000 chars, ~3-5 sentences)
-        ta: Optional therapeutic area hint
-
-    Returns:
-        Concise prompt optimized for gpt-4o-mini
-    """
-    ta_context = f" in the {ta.replace('_', ' ')} domain" if ta else ""
-
-    return f"""You are a clinical protocol editor. Analyze this protocol text{ta_context} and suggest ONE improvement focused on clarity, precision, or regulatory compliance.
-
-PROTOCOL TEXT:
-{text}
-
-RESPOND IN JSON:
-{{
-  "original_text": "exact quote needing improvement",
-  "improved_text": "your rewrite",
-  "rationale": "brief explanation (1 sentence)",
-  "type": "clarity|compliance|terminology",
-  "confidence": 0.0-1.0
-}}
-
-If no issues found, return {{"original_text": "", "improved_text": "", "rationale": "No changes needed", "type": "none", "confidence": 1.0}}"""
+# _build_fast_prompt removed in Step 4 - now using prompt_optimizer.build_fast_prompt
 
 
 async def analyze_fast(
@@ -148,15 +124,22 @@ async def analyze_fast(
 
         timings["preprocess_ms"] = int((time.time() - preprocess_start) * 1000)
 
-        # 2. Build prompt
-        prompt = _build_fast_prompt(trimmed_text, ta)
+        # 2. Build optimized prompt (Step 4)
+        prompt_data = build_fast_prompt(trimmed_text, ta)
+
+        # Log token budget info
+        token_info = prompt_data["tokens"]
+        logger.info(
+            f"📊 [{req_id}] Prompt tokens: {token_info['total_input']} "
+            f"(budget: {token_info['budget']}, system: {token_info['system']}, user: {token_info['user']})"
+        )
 
         # 3. Call Azure OpenAI with timeout
         azure_start = time.time()
 
         try:
-            suggestion_data = await asyncio.wait_for(
-                _call_azure_fast(prompt, req_id),
+            suggestion_data, actual_tokens = await asyncio.wait_for(
+                _call_azure_fast(prompt_data["system"], prompt_data["user"], req_id),
                 timeout=FAST_TIMEOUT_MS / 1000.0
             )
         except asyncio.TimeoutError:
@@ -164,6 +147,13 @@ async def analyze_fast(
             raise Exception(f"Analysis timeout after {FAST_TIMEOUT_MS}ms")
 
         timings["azure_ms"] = int((time.time() - azure_start) * 1000)
+
+        # Track token usage (Step 4)
+        track_token_usage(
+            "fast_path",
+            actual_tokens.get("prompt_tokens", token_info["total_input"]),
+            actual_tokens.get("completion_tokens", token_info["expected_output"])
+        )
 
         # 4. Postprocess: Format response
         postprocess_start = time.time()
@@ -193,7 +183,14 @@ async def analyze_fast(
                 "cache_hit": False,
                 "text_length": len(text),
                 "trimmed": len(text) > SELECTION_CHUNK_THRESHOLD,
-                "timestamp": datetime.utcnow().isoformat()
+                "timestamp": datetime.utcnow().isoformat(),
+                # Step 4: Token usage tracking
+                "tokens": {
+                    "prompt": actual_tokens.get("prompt_tokens", token_info["total_input"]),
+                    "completion": actual_tokens.get("completion_tokens", token_info["expected_output"]),
+                    "total": actual_tokens.get("total_tokens", 0),
+                    "budget": token_info["budget"]
+                }
             }
         }
 
@@ -226,16 +223,17 @@ async def analyze_fast(
         }
 
 
-async def _call_azure_fast(prompt: str, request_id: str) -> Dict[str, Any]:
+async def _call_azure_fast(system_prompt: str, user_prompt: str, request_id: str) -> tuple[Dict[str, Any], Dict[str, int]]:
     """
-    Call Azure OpenAI with fast model and aggressive settings
+    Call Azure OpenAI with fast model and optimized prompts (Step 4)
 
     Args:
-        prompt: JSON-formatted prompt
+        system_prompt: System message (optimized)
+        user_prompt: User message (optimized)
         request_id: Request tracking ID
 
     Returns:
-        Parsed JSON response from model
+        Tuple of (parsed JSON response, token usage dict)
     """
     import json
     from openai import AsyncAzureOpenAI
@@ -259,11 +257,11 @@ async def _call_azure_fast(prompt: str, request_id: str) -> Dict[str, Any]:
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a clinical protocol editor. Always respond with valid JSON."
+                    "content": system_prompt
                 },
                 {
                     "role": "user",
-                    "content": prompt
+                    "content": user_prompt
                 }
             ],
             max_tokens=FAST_MAX_TOKENS,
@@ -273,13 +271,20 @@ async def _call_azure_fast(prompt: str, request_id: str) -> Dict[str, Any]:
 
         content = response.choices[0].message.content
 
+        # Extract token usage (Step 4)
+        token_usage = {
+            "prompt_tokens": response.usage.prompt_tokens if response.usage else 0,
+            "completion_tokens": response.usage.completion_tokens if response.usage else 0,
+            "total_tokens": response.usage.total_tokens if response.usage else 0
+        }
+
         # Parse JSON response
         try:
             result = json.loads(content)
-            return result
+            return result, token_usage
         except json.JSONDecodeError as e:
             logger.error(f"❌ JSON parse error: {e}\nContent: {content}")
-            return {}
+            return {}, token_usage
 
     except Exception as e:
         logger.error(f"❌ Azure call failed: {request_id} - {type(e).__name__}: {e}")
