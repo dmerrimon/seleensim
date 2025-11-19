@@ -570,6 +570,59 @@ async def get_cache_stats_endpoint():
             "error": str(e)
         }
 
+@app.get("/health/metrics")
+async def get_metrics_endpoint():
+    """
+    Get comprehensive telemetry metrics (Step 7)
+
+    Returns:
+    - Request counts and latency percentiles
+    - Cache hit rates
+    - Token usage and costs
+    - Error rates and recent errors
+    - Performance vs targets
+    """
+    from metrics_collector import get_all_metrics
+
+    try:
+        metrics = get_all_metrics()
+        return {
+            "status": "ok",
+            "timestamp": datetime.utcnow().isoformat(),
+            "metrics": metrics,
+            "step": "Step 7: Telemetry & Profiling"
+        }
+    except Exception as e:
+        logger.error(f"❌ Failed to get metrics: {e}")
+        return {
+            "status": "error",
+            "error": str(e)
+        }
+
+@app.get("/metrics")
+async def get_prometheus_metrics():
+    """
+    Get metrics in Prometheus text format (Step 7)
+
+    Returns:
+    - Prometheus-compatible metrics export
+    - For use with Prometheus/Grafana monitoring
+    """
+    from metrics_collector import export_prometheus
+
+    try:
+        prometheus_text = export_prometheus()
+        from fastapi.responses import PlainTextResponse
+        return PlainTextResponse(content=prometheus_text, media_type="text/plain")
+    except Exception as e:
+        logger.error(f"❌ Failed to export Prometheus metrics: {e}")
+        from fastapi.responses import PlainTextResponse
+        return PlainTextResponse(
+            content=f"# Error exporting metrics: {str(e)}",
+            media_type="text/plain",
+            status_code=500
+        )
+
 @app.get("/debug/azure-openai")
 async def debug_azure_openai():
     """Debug Azure OpenAI connection"""

@@ -24,6 +24,9 @@ from prompt_optimizer import build_fast_prompt, track_token_usage
 # Step 6: Import enhanced cache manager
 from cache_manager import get_cached, set_cached
 
+# Step 7: Import metrics collector
+from metrics_collector import record_request
+
 logger = logging.getLogger(__name__)
 
 # Configuration
@@ -96,9 +99,26 @@ async def analyze_fast(
         )
 
         if cached_result:
+            total_ms = int((time.time() - start_time) * 1000)
             cached_result["metadata"]["cache_hit"] = True
-            cached_result["metadata"]["total_ms"] = int((time.time() - start_time) * 1000)
+            cached_result["metadata"]["total_ms"] = total_ms
             logger.info(f"✅ Returning cached result: {req_id}")
+
+            # Step 7: Record cache hit metrics
+            record_request(
+                request_id=req_id,
+                endpoint="/api/analyze",
+                duration_ms=total_ms,
+                status_code=200,
+                path_type="fast",
+                cache_hit=True,
+                suggestions_count=len(cached_result.get("suggestions", [])),
+                tokens_used=0,  # No tokens used for cache hits
+                error=None,
+                text_length=len(text),
+                model=FAST_MODEL
+            )
+
             return cached_result
 
         timings["preprocess_ms"] = int((time.time() - preprocess_start) * 1000)
@@ -201,11 +221,41 @@ async def analyze_fast(
 
         logger.info(f"✅ Fast analysis complete: {req_id} ({timings['total_ms']}ms, {len(suggestions)} suggestions)")
 
+        # Step 7: Record metrics
+        record_request(
+            request_id=req_id,
+            endpoint="/api/analyze",
+            duration_ms=timings["total_ms"],
+            status_code=200,
+            path_type="fast",
+            cache_hit=False,
+            suggestions_count=len(suggestions),
+            tokens_used=actual_tokens.get("total_tokens", 0),
+            error=None,
+            text_length=len(text),
+            model=FAST_MODEL
+        )
+
         return result
 
     except Exception as e:
         total_ms = int((time.time() - start_time) * 1000)
         logger.error(f"❌ Fast analysis failed: {req_id} ({total_ms}ms) - {type(e).__name__}: {e}")
+
+        # Step 7: Record error metrics
+        record_request(
+            request_id=req_id,
+            endpoint="/api/analyze",
+            duration_ms=total_ms,
+            status_code=500,
+            path_type="fast",
+            cache_hit=False,
+            suggestions_count=0,
+            tokens_used=0,
+            error=f"{type(e).__name__}: {str(e)}",
+            text_length=len(text),
+            model=FAST_MODEL
+        )
 
         # Return error response
         return {
