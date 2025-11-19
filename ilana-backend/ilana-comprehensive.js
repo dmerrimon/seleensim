@@ -87,6 +87,8 @@ const API_CONFIG = {
 
 // Office.js initialization
 Office.onReady((info) => {
+    console.log("📦 Office.onReady called, host:", info.host);
+
     if (info.host === Office.HostType.Word) {
         console.log("🚀 Ilana Comprehensive AI loaded successfully");
 
@@ -105,6 +107,11 @@ Office.onReady((info) => {
 
         // Set initial UI state
         IlanaState.uiState = 'idle';
+
+        // Diagnostic: Verify button is wired
+        console.log("🔍 Diagnostic - window.startAnalysis available:", typeof window.startAnalysis === 'function');
+    } else {
+        console.warn("⚠️ Not running in Word, host is:", info.host);
     }
 });
 
@@ -163,20 +170,23 @@ function setupEventListeners() {
 
 // Enhanced Recommend button handler with selection-first behavior
 async function handleRecommendButton() {
+    console.log("🔘 handleRecommendButton called - startAnalysis button clicked!");
+
     // Prevent multiple simultaneous analyses
     if (IlanaState.isAnalyzing) {
         console.warn('🚦 Analysis already in progress - blocking concurrent request');
         showError("Analysis in progress. Please wait for current analysis to complete.");
         return;
     }
-    
+
     try {
         IlanaState.isAnalyzing = true;
-        
+        console.log("✅ isAnalyzing set to true, starting analysis...");
+
         // Get selected text
         const selectedText = await getSelectedText();
         console.log(`📝 Selected text length: ${selectedText.length}`);
-        
+
         if (selectedText.length > 5) {
             // Selection-first behavior: call Legacy Pipeline /api/analyze
             console.log('🎯 Selection detected, using Legacy Pipeline analysis');
@@ -186,13 +196,14 @@ async function handleRecommendButton() {
             console.log('📄 No selection, showing whole-document modal');
             showWholeDocumentModal();
         }
-        
+
     } catch (error) {
         console.error('❌ Recommend button failed:', error);
         showError(`Analysis failed: ${error.message}`);
         updateStatus('Analysis failed', 'error');
     } finally {
         IlanaState.isAnalyzing = false;
+        console.log("✅ Analysis complete, isAnalyzing set to false");
     }
 }
 
