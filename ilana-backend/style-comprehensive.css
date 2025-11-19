@@ -50,7 +50,7 @@ body {
     height: 100vh;
     max-height: 100vh;
     overflow-x: hidden;
-    background: var(--color-background);
+    background: #ffffff;
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
@@ -110,12 +110,15 @@ body {
     background-color: #ffffff !important;
 }
 
-/* Top Navigation */
-.top-navigation {
-    padding: 20px 16px;
-    background: var(--color-background);
-    border-bottom: 1px solid var(--color-border);
+/* Header with Analyze Button - Minimal Grammarly Style */
+.ilana-header {
+    padding: 24px 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
     flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .overall-score-container {
@@ -145,32 +148,32 @@ body {
 }
 
 .analyze-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px;
-    background: #003dff;
+    padding: 10px 24px;
+    background: #15c;
     color: white;
     border: none;
-    border-radius: 4px;
-    font-weight: 500;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
     font-family: Inter, sans-serif;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    width: 120px;
-    height: 40px;
+    transition: all 0.15s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    height: 36px;
+    min-width: 140px;
 }
 
 .analyze-btn:hover {
-    background: #0033cc;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 61, 255, 0.3);
+    background: #0d47a1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .analyze-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transform: scale(0.98);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .category-navigation {
@@ -252,46 +255,7 @@ body {
 
 
 
-/* Issues Counter */
-.issues-counter {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px;
-    background: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-    flex-shrink: 0;
-}
-
-.counter-badge {
-    background: #003dff;
-    color: white;
-    border-radius: 4px;
-    padding: 8px 12px;
-    min-width: 40px;
-    text-align: center;
-    font-family: Inter, sans-serif;
-    font-weight: 600;
-    box-shadow: 0 1px 3px rgba(0, 61, 255, 0.2);
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.counter-number {
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.counter-text {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    font-family: Inter, sans-serif;
-}
-
-/* Issues Panel */
+/* Issues Panel - Minimal Design */
 .issues-panel {
     flex: 1;
     display: flex;
@@ -300,11 +264,11 @@ body {
     overflow: hidden;
 }
 
-/* Issues List */
+/* Issues List - Better Spacing */
 .issues-list {
     flex: 1;
     overflow-y: auto;
-    padding: 16px;
+    padding: 0;
 }
 
 .no-issues {
@@ -312,54 +276,45 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 120px;
-    color: #9ca3af;
+    padding: 80px 32px;
     text-align: center;
 }
 
-.no-issues-icon {
-    font-size: 32px;
-    margin-bottom: 12px;
-    color: #10b981;
-}
-
 .no-issues-text {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
-    margin-bottom: 4px;
-    color: var(--color-text-primary);
+    margin-bottom: 8px;
+    color: #1e293b;
     font-family: Inter, sans-serif;
 }
 
 .no-issues-subtitle {
-    font-size: 12px;
-    color: var(--color-text-secondary);
+    font-size: 13px;
+    color: #64748b;
     font-family: Inter, sans-serif;
+    line-height: 1.5;
 }
 
-/* Issue Cards */
+/* Issue Cards - Improved Spacing */
 .issue-card {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 16px;
+    padding: 16px 20px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    border-bottom: 1px solid var(--color-border);
+    transition: all 0.15s ease;
+    border-bottom: 1px solid #f1f5f9;
     font-family: Inter, sans-serif;
 }
 
 .issue-card:hover {
-    background: var(--color-background-subtle);
-    border-left: 3px solid var(--color-primary);
-    padding-left: 13px;
+    background: #f8fafc;
 }
 
 .issue-card.selected {
-    background: var(--color-background-subtle);
-    border-left: 3px solid var(--color-primary);
-    padding-left: 13px;
-    box-shadow: 0 1px 3px rgba(74, 110, 224, 0.1);
+    background: #f1f5f9;
+    border-left: 2px solid #15c;
+    padding-left: 18px;
 }
 
 .issue-card:last-child {
@@ -672,45 +627,6 @@ body {
     box-shadow: 0 2px 8px rgba(74, 110, 224, 0.3);
 }
 
-/* Bottom Controls */
-.bottom-controls {
-    padding: 12px 16px;
-    background: #f8fafc;
-    border-top: 1px solid #e2e8f0;
-    flex-shrink: 0;
-}
-
-.quick-actions {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-}
-
-.control-btn {
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--color-border);
-    background: var(--color-background);
-    border-radius: var(--border-radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: Inter, sans-serif;
-}
-
-.control-btn:hover {
-    background: var(--color-background-subtle);
-    border-color: var(--color-primary);
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(74, 110, 224, 0.15);
-}
-
-.control-icon {
-    font-size: 16px;
-    color: var(--color-text-secondary);
-}
 
 /* Processing Overlay */
 .processing-overlay {
