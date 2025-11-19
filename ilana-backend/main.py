@@ -500,6 +500,48 @@ async def get_prompt_stats():
             "error": str(e)
         }
 
+@app.get("/health/resilience")
+async def get_resilience_status():
+    """
+    Get resilience status (Step 5)
+
+    Returns:
+    - Circuit breaker states for all services
+    - Retry statistics
+    - Fallback usage metrics
+    """
+    from resilience import get_all_circuit_breaker_states
+
+    try:
+        circuit_breakers = get_all_circuit_breaker_states()
+
+        # Calculate health score
+        total_breakers = len(circuit_breakers)
+        closed_breakers = sum(1 for cb in circuit_breakers.values() if cb["state"] == "closed")
+        health_score = (closed_breakers / total_breakers * 100) if total_breakers > 0 else 100
+
+        overall_status = "healthy" if health_score == 100 else "degraded" if health_score >= 50 else "critical"
+
+        return {
+            "status": overall_status,
+            "health_score": health_score,
+            "timestamp": datetime.utcnow().isoformat(),
+            "circuit_breakers": circuit_breakers,
+            "configuration": {
+                "circuit_breaker_threshold": os.getenv("CIRCUIT_BREAKER_THRESHOLD", "5"),
+                "circuit_breaker_timeout": os.getenv("CIRCUIT_BREAKER_TIMEOUT", "60"),
+                "max_retries": os.getenv("MAX_RETRIES", "3"),
+                "retry_backoff_base": os.getenv("RETRY_BACKOFF_BASE", "1.0")
+            },
+            "step": "Step 5: Timeouts & Fallbacks"
+        }
+    except Exception as e:
+        logger.error(f"❌ Failed to get resilience status: {e}")
+        return {
+            "status": "error",
+            "error": str(e)
+        }
+
 @app.get("/debug/azure-openai")
 async def debug_azure_openai():
     """Debug Azure OpenAI connection"""

@@ -134,13 +134,25 @@ async def analyze_fast(
             f"(budget: {token_info['budget']}, system: {token_info['system']}, user: {token_info['user']})"
         )
 
-        # 3. Call Azure OpenAI with timeout
+        # 3. Call Azure OpenAI with circuit breaker + retry + timeout
         azure_start = time.time()
 
+        from resilience import get_circuit_breaker, retry_with_backoff, with_timeout
+
+        circuit_breaker = get_circuit_breaker("azure_openai")
+
         try:
-            suggestion_data, actual_tokens = await asyncio.wait_for(
-                _call_azure_fast(prompt_data["system"], prompt_data["user"], req_id),
-                timeout=FAST_TIMEOUT_MS / 1000.0
+            # Wrap in circuit breaker → retry → timeout (Step 5)
+            # Use optimized prompts from prompt_data (Step 4)
+            suggestion_data, actual_tokens = await circuit_breaker.call_async(
+                retry_with_backoff,
+                with_timeout,
+                _call_azure_fast,
+                FAST_TIMEOUT_MS / 1000.0,
+                prompt_data["system"],
+                prompt_data["user"],
+                req_id,
+                max_retries=2  # Fast path: only 2 retries (not 3)
             )
         except asyncio.TimeoutError:
             logger.error(f"⏱️ Azure timeout after {FAST_TIMEOUT_MS}ms: {req_id}")
