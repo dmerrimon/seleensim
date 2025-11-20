@@ -160,19 +160,31 @@ JSON RESPONSE:""",
 )
 
 
-def build_fast_prompt(text: str, ta: Optional[str] = None) -> Dict[str, Any]:
+def build_fast_prompt(text: str, ta: Optional[str] = None, exemplars: Optional[List[Dict[str, Any]]] = None) -> Dict[str, Any]:
     """
-    Build optimized prompt for fast analysis
+    Build optimized prompt for fast analysis with optional RAG exemplars
 
     Args:
         text: Protocol text to analyze
         ta: Optional therapeutic area hint
+        exemplars: Optional list of similar protocol exemplars from RAG
 
     Returns:
         Dict with system and user messages, token counts
     """
     # Build TA context (only if provided)
     ta_context = f" in {ta.replace('_', ' ')}" if ta else ""
+
+    # Build exemplars context (lightweight for fast path - max 300 chars)
+    exemplars_text = ""
+    if exemplars:
+        for idx, ex in enumerate(exemplars[:2], 1):  # Max 2 exemplars for fast path
+            ex_text = ex.get('text', '')[:150]  # Limit to 150 chars per exemplar
+            exemplars_text += f"\nExample {idx}: {ex_text}..."
+
+        # Prepend exemplars to text if present
+        if exemplars_text:
+            text = f"{exemplars_text}\n\nSELECTED TEXT TO ANALYZE:\n{text}"
 
     # Fill template
     user_content = FAST_ANALYSIS_TEMPLATE.user_template.format(

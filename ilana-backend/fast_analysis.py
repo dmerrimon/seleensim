@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """
-Fast Analysis Module - Optimized for Sub-4s Response Times
+Fast Analysis Module - Optimized for Sub-15s Response Times
 
 Provides lightweight protocol analysis for interactive selections using:
-- Minimal context (selected text + ±1 sentence, max 500 chars)
+- Up to 10000 chars (full protocol sections)
 - Fast Azure model (gpt-4o-mini by default)
+- Lightweight RAG: Pinecone + PubMedBERT (top 3 exemplars, 2s timeout)
+- Domain-expert ICH-GCP prompts with regulatory guidance
 - Aggressive timeouts and caching
-- No heavy RAG/PubMedBERT/Pinecone operations
 
-For deep analysis with full RAG stack, use background job queue.
+For deep analysis with full RAG stack + citations, use background job queue.
 """
 
 import os
@@ -27,14 +28,17 @@ from cache_manager import get_cached, set_cached
 # Step 7: Import metrics collector
 from metrics_collector import record_request
 
+# Step 8: Import lightweight RAG for fast path
+from fast_rag import get_fast_exemplars
+
 logger = logging.getLogger(__name__)
 
 # Configuration
 FAST_MODEL = os.getenv("ANALYSIS_FAST_MODEL", "gpt-4o-mini")
-FAST_TIMEOUT_MS = int(os.getenv("SIMPLE_PROMPT_TIMEOUT_MS", "10000"))  # 10 second timeout
-FAST_MAX_TOKENS = 600  # Increased from 300 to handle multiple issues with recommendations
+FAST_TIMEOUT_MS = int(os.getenv("SIMPLE_PROMPT_TIMEOUT_MS", "15000"))  # 15 second timeout for longer sections
+FAST_MAX_TOKENS = 800  # Increased from 600 to handle multiple issues in longer sections
 FAST_TEMPERATURE = 0.2
-SELECTION_CHUNK_THRESHOLD = int(os.getenv("SELECTION_CHUNK_THRESHOLD", "2000"))  # 2000 chars = ~3-5 protocol sentences
+SELECTION_CHUNK_THRESHOLD = int(os.getenv("SELECTION_CHUNK_THRESHOLD", "10000"))  # 10000 chars = full protocol sections
 
 
 # Old cache functions removed in Step 6 - now using cache_manager
@@ -47,14 +51,14 @@ async def analyze_fast(
     request_id: Optional[str] = None
 ) -> Dict[str, Any]:
     """
-    Fast synchronous analysis for small selections
+    Fast synchronous analysis for protocol sections
 
-    Target: < 10 seconds total (typically 3-6s for uncached)
+    Target: < 15 seconds total (typically 3-8s for uncached)
 
     Args:
-        text: Selected protocol text (up to 2000 chars)
+        text: Selected protocol text (up to 10000 chars = full sections)
         ta: Optional therapeutic area
-        phase: Optional study phase (currently unused in fast path)
+        phase: Optional study phase
         request_id: Request tracking ID
 
     Returns:
@@ -73,6 +77,7 @@ async def analyze_fast(
     # Timing breakdown
     timings = {
         "preprocess_ms": 0,
+        "rag_ms": 0,
         "azure_ms": 0,
         "postprocess_ms": 0,
         "total_ms": 0
@@ -123,8 +128,32 @@ async def analyze_fast(
 
         timings["preprocess_ms"] = int((time.time() - preprocess_start) * 1000)
 
-        # 2. Build optimized prompt (Step 4)
-        prompt_data = build_fast_prompt(trimmed_text, ta)
+        # 2. Fetch RAG exemplars (lightweight, 2s timeout, graceful degradation)
+        rag_start = time.time()
+        exemplars = []
+
+        try:
+            # Only fetch RAG if Pinecone/PubMedBERT are enabled
+            enable_rag = os.getenv("ENABLE_PINECONE_INTEGRATION", "true").lower() == "true"
+
+            if enable_rag:
+                logger.info(f"🔍 [{req_id}] Fetching RAG exemplars...")
+                exemplars = await get_fast_exemplars(trimmed_text, req_id)
+
+                if exemplars:
+                    logger.info(f"✅ [{req_id}] Retrieved {len(exemplars)} exemplars")
+                else:
+                    logger.info(f"ℹ️ [{req_id}] No RAG exemplars (degraded mode)")
+            else:
+                logger.info(f"ℹ️ [{req_id}] RAG disabled in configuration")
+
+        except Exception as e:
+            logger.warning(f"⚠️ [{req_id}] RAG failed, continuing without: {type(e).__name__}: {e}")
+
+        timings["rag_ms"] = int((time.time() - rag_start) * 1000)
+
+        # 3. Build optimized prompt with RAG exemplars (Step 4 + Step 8)
+        prompt_data = build_fast_prompt(trimmed_text, ta, exemplars)
 
         # Log token budget info
         token_info = prompt_data["tokens"]
@@ -133,7 +162,7 @@ async def analyze_fast(
             f"(budget: {token_info['budget']}, system: {token_info['system']}, user: {token_info['user']})"
         )
 
-        # 3. Call Azure OpenAI with circuit breaker + retry + timeout
+        # 4. Call Azure OpenAI with circuit breaker + retry + timeout
         azure_start = time.time()
 
         from resilience import get_circuit_breaker, retry_with_backoff, with_timeout
@@ -166,7 +195,7 @@ async def analyze_fast(
             actual_tokens.get("completion_tokens", token_info["expected_output"])
         )
 
-        # 4. Postprocess: Format response (handles new issues array format)
+        # 5. Postprocess: Format response (handles new issues array format)
         postprocess_start = time.time()
 
         suggestions = []
@@ -212,6 +241,9 @@ async def analyze_fast(
                 "text_length": len(text),
                 "trimmed": len(text) > SELECTION_CHUNK_THRESHOLD,
                 "timestamp": datetime.utcnow().isoformat(),
+                # Step 8: RAG info
+                "rag_exemplars": len(exemplars),
+                "rag_enabled": len(exemplars) > 0,
                 # Step 4: Token usage tracking
                 "tokens": {
                     "prompt": actual_tokens.get("prompt_tokens", token_info["total_input"]),
@@ -233,8 +265,8 @@ async def analyze_fast(
         )
 
         # Emit performance warning if slow
-        if timings["total_ms"] > 8000:
-            logger.warning(f"⚠️ Slow fast analysis: {timings['total_ms']}ms (target: <10000ms)")
+        if timings["total_ms"] > 12000:
+            logger.warning(f"⚠️ Slow fast analysis: {timings['total_ms']}ms (target: <15000ms)")
 
         logger.info(f"✅ Fast analysis complete: {req_id} ({timings['total_ms']}ms, {len(suggestions)} suggestions)")
 
