@@ -222,8 +222,8 @@ async function handleRecommendButton() {
         console.log(`📝 Selected text length: ${selectedText.length}`);
 
         if (selectedText.length > 5) {
-            // Selection-first behavior: call Legacy Pipeline /api/analyze
-            console.log('🎯 Selection detected, using Legacy Pipeline analysis');
+            // Selection-first behavior: call fast_analysis.py with RAG
+            console.log('🎯 Selection detected, using fast analysis with RAG');
             await handleSelectionAnalysis(selectedText);
         } else {
             // No selection: open Whole-Document confirm modal
@@ -241,7 +241,7 @@ async function handleRecommendButton() {
     }
 }
 
-// Handle selection analysis with Legacy Pipeline /api/analyze
+// Handle selection analysis with fast_analysis.py /api/analyze
 async function handleSelectionAnalysis(selectedText) {
     try {
         updateStatus('Analyzing selection...', 'analyzing');
@@ -271,7 +271,7 @@ async function handleSelectionAnalysis(selectedText) {
             );
         }
 
-        console.log('🚀 Calling Legacy Pipeline /api/analyze:', payload);
+        console.log('🚀 Calling fast analysis /api/analyze:', payload);
 
         const response = await fetchWithRetry(`${API_CONFIG.baseUrl}/api/analyze`, {
             method: 'POST',
@@ -287,7 +287,7 @@ async function handleSelectionAnalysis(selectedText) {
         }
         
         const result = await response.json();
-        console.log('✅ Legacy Pipeline selection analysis result:', result);
+        console.log('✅ Fast analysis selection result:', result);
         console.log('  - Suggestions array:', result.suggestions || result.result?.suggestions);
         
         // Store request ID for tracking
@@ -317,7 +317,7 @@ async function handleSelectionAnalysis(selectedText) {
     }
 }
 
-// Display selection suggestions with Legacy Pipeline response format
+// Display selection suggestions with fast_analysis.py response format
 async function displaySelectionSuggestions(analysisResult) {
     const suggestions = extractSuggestionsFromLegacyResponse(analysisResult);
     const issues = [];
@@ -385,7 +385,7 @@ async function displaySelectionSuggestions(analysisResult) {
     console.log(`📋 Displayed ${issues.length} selection suggestions`);
 }
 
-// Extract suggestions from Legacy Pipeline API response
+// Extract suggestions from fast_analysis.py API response
 function extractSuggestionsFromLegacyResponse(response) {
     // Primary format: Direct suggestions array from /api/analyze
     // API returns: {"suggestions": [{improved_text, original_text, rationale, ...}]}
