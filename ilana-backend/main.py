@@ -39,7 +39,7 @@ CHUNK_MAX_CHARS = int(os.getenv("CHUNK_MAX_CHARS", "3500"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "200"))
 
 import uvicorn
-from fastapi import FastAPI, HTTPException, Request, Query, Header
+from fastapi import FastAPI, HTTPException, Request, Query, Header, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
