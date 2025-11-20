@@ -166,11 +166,28 @@ async def analyze_fast(
             actual_tokens.get("completion_tokens", token_info["expected_output"])
         )
 
-        # 4. Postprocess: Format response
+        # 4. Postprocess: Format response (handles new issues array format)
         postprocess_start = time.time()
 
         suggestions = []
-        if suggestion_data and suggestion_data.get("original_text"):
+
+        # New format: {"issues": [...]}
+        if suggestion_data and "issues" in suggestion_data:
+            issues = suggestion_data.get("issues", [])
+            for idx, issue in enumerate(issues[:10]):  # Limit to 10 issues max
+                # Map new schema to frontend format
+                suggestions.append({
+                    "id": issue.get("id", f"{req_id}_fast_{idx+1}"),
+                    "text": issue.get("original_text", ""),
+                    "suggestion": issue.get("improved_text", ""),
+                    "rationale": issue.get("rationale", ""),
+                    "confidence": issue.get("confidence", 0.8),
+                    "type": issue.get("category", "clarity"),  # category -> type mapping
+                    "severity": issue.get("severity", "minor"),
+                    "recommendation": issue.get("recommendation", "")
+                })
+        # Legacy format fallback: single issue object
+        elif suggestion_data and suggestion_data.get("original_text"):
             suggestions.append({
                 "id": f"{req_id}_fast_1",
                 "text": suggestion_data.get("original_text", ""),

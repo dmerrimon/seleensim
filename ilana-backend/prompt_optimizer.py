@@ -88,49 +88,75 @@ def count_tokens_precise(text: str, model: str = "gpt-4") -> int:
 # Optimized prompt templates
 
 FAST_ANALYSIS_TEMPLATE = PromptTemplate(
-    system="Clinical protocol editor. Respond with valid JSON only.",
-    user_template="""Analyze this protocol text{ta_context} and suggest ONE improvement for clarity, precision, or compliance.
+    system="""You are Ilana, a clinical protocol editor for pharmaceutical and academic clinical trials with expertise in ICH-GCP, FDA clinical trial guidance, and statistical analysis principles (including intention-to-treat, as-treated analyses, and bias threats). When asked to analyze a selected protocol text, identify ALL material issues that could cause regulatory non-compliance, statistical bias, safety misunderstanding, ambiguous analysis, or wording that could lead to amendments. Provide clear, auditable, and prescriptive rewrites suitable for insertion into the protocol.""",
+    user_template="""Analyze the following SELECTED PROTOCOL TEXT{ta_context}. Return a JSON object (no extra prose) with "issues" array. Each issue must include: id, category, severity, original_text, improved_text, rationale, recommendation, confidence (0-1). If there are no issues return {{"issues": []}}.
 
 TEXT:
 {text}
 
-JSON RESPONSE:
+RULES:
+- Do NOT invent citations in the fast path. You may name canonical guidance (e.g., "ICH E6", "FDA Bioresearch Guidance") but do not fabricate section numbers.
+- Focus on clarity, pre-specification of analysis, statistical risks (immortal time bias, selection bias), population definitions (ITT, per-protocol), safety monitoring, and ambiguous conditional language ("if deemed appropriate", "may", "as needed").
+- Return multiple issues if present, ordered by severity (critical first).
+- Provide short, copy-paste ready "improved_text" (1-2 sentences), and a 1-2 sentence "rationale" referencing the rule or statistical risk.
+- Keep JSON compact to conserve tokens.
+
+CATEGORIES: statistical|analysis_population|terminology|documentation|regulatory|safety|other
+SEVERITIES: critical|major|minor|advisory
+
+EXAMPLE INPUT:
+"The statistical analyses may reflect the clinical status/symptoms at the time samples were collected if deemed appropriate."
+
+EXAMPLE OUTPUT:
 {{
-  "original_text": "exact quote needing improvement",
-  "improved_text": "your rewrite",
-  "rationale": "brief explanation (1 sentence)",
-  "type": "clarity|compliance|terminology",
-  "confidence": 0.0-1.0
+  "issues": [
+    {{
+      "id":"1",
+      "category":"statistical",
+      "severity":"critical",
+      "original_text":"The statistical analyses may reflect the clinical status/symptoms at the time samples were collected if deemed appropriate",
+      "improved_text":"Statistical analyses will be pre-specified in the SAP; analyses reflecting clinical status at sample collection will be described in Section 7 with analytic methods, handling of missing data, and multiplicity control.",
+      "rationale":"Statistical analysis plans must be pre-specified to avoid post-hoc analytic choices and alpha inflation (ICH E9 principles).",
+      "recommendation":"Add prespecified SAP details: primary/secondary analyses, covariates, handling of time-varying covariates, and multiplicity plan.",
+      "confidence":0.95
+    }}
+  ]
 }}
 
-If no issues: {{"original_text": "", "improved_text": "", "rationale": "No changes needed", "type": "none", "confidence": 1.0}}""",
+JSON RESPONSE:""",
     max_input_tokens=FAST_TOKEN_BUDGET,
-    expected_output_tokens=150
+    expected_output_tokens=400
 )
 
 # Previous verbose template (for comparison):
 # ORIGINAL was ~180 tokens, NEW is ~120 tokens (33% reduction)
 
 DEEP_ANALYSIS_TEMPLATE = PromptTemplate(
-    system="Clinical protocol expert. Provide detailed analysis with regulatory compliance focus.",
-    user_template="""Analyze protocol text{ta_context} for {phase} trial.
+    system="""You are Ilana, a senior clinical trial methodologist, regulatory writer and statistical reviewer. Use ICH E6(E9), FDA guidance, and exemplar Phase-specific protocol language when evaluating protocol text. If asked, retrieve exemplars from the vector database and include citations to regulatory guidance or exemplar protocols.""",
+    user_template="""Perform a detailed, evidence-backed analysis of the following protocol passage{ta_context} for {phase} trial. Produce a JSON object containing "issues" array. For each issue provide:
+- id, category, severity (critical|major|minor|advisory), original_text, improved_text (authoritative rewrite), rationale (1-3 sentences referencing guidance or statistical risk), recommendation (detailed steps: where to add text, what to pre-specify), citations array (type, ref), and confidence (0-1).
+- Where applicable, show short example language for SAP/statistical methods (e.g., model specification, covariate handling, definition of analysis populations).
+- If you used exemplars or guidance, list them under citations with brief justification for relevance.
 
 TEXT:
 {text}
 
 {exemplars_context}
 
-Provide 3-5 suggestions as JSON array:
-[{{
-  "original_text": "...",
-  "improved_text": "...",
-  "rationale": "...",
-  "type": "clarity|compliance|terminology|structure",
-  "confidence": 0.0-1.0,
-  "regulatory_impact": "low|medium|high"
-}}]""",
+RAG_INSTRUCTIONS:
+- Pull up to N=3 exemplars from Pinecone; prefer Phase and TA-matched exemplars.
+- For statistical issues, include explicit recommended method (e.g., "Use Cox proportional hazards model adjusted for baseline severity; pre-specify time-dependent covariate handling using marginal structural models or include time-updated severity as a covariate").
+- Do NOT include PHI.
+
+CATEGORIES: statistical|analysis_population|terminology|documentation|regulatory|safety|other
+SEVERITIES: critical|major|minor|advisory
+
+OUTPUT:
+Return strict JSON only with "issues" array. If no issues, return {{"issues": []}}.
+
+JSON RESPONSE:""",
     max_input_tokens=DEEP_TOKEN_BUDGET,
-    expected_output_tokens=800
+    expected_output_tokens=1200
 )
 
 

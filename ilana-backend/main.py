@@ -1559,6 +1559,8 @@ async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
                     "rationale": suggestion.get("rationale", ""),
                     "confidence": suggestion.get("confidence", 0.9),
                     "type": suggestion.get("type", "clarity"),
+                    "severity": suggestion.get("severity", "minor"),  # New field
+                    "recommendation": suggestion.get("recommendation", ""),  # New field
                     "ta": payload.get("ta"),
                     "phase": payload.get("phase"),
                     "model_path": "fast"
