@@ -544,7 +544,8 @@ body {
 
 .suggestion-original,
 .suggestion-rewrite,
-.suggestion-rationale {
+.suggestion-rationale,
+.suggestion-recommendation {
     font-size: 12px;
     margin-bottom: 8px;
     line-height: 1.4;
@@ -569,6 +570,29 @@ body {
 .suggestion-rationale {
     color: #6b7280;
     font-style: italic;
+}
+
+.suggestion-recommendation {
+    background: #eff6ff;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 3px solid #3b82f6;
+    color: #1e40af;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.suggestion-recommendation label {
+    color: #1e40af;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.suggestion-recommendation p {
+    margin-top: 4px;
+    color: #1e3a8a;
 }
 
 .suggestion-actions {

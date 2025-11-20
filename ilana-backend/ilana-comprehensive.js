@@ -346,11 +346,12 @@ async function displaySelectionSuggestions(analysisResult) {
         const issue = {
             id: suggestion.id || `selection_${index}`,
             type: suggestion.type || 'medical_terminology',
-            severity: 'medium',
-            // API returns: improved_text, original_text, rationale
+            severity: suggestion.severity || 'medium',  // Read from API (critical|major|minor|advisory)
+            // API returns: improved_text, original_text, rationale, recommendation
             text: suggestion.original_text || suggestion.originalText || suggestion.text || suggestion.original || 'No original text provided',
             suggestion: suggestion.improved_text || suggestion.suggestedText || suggestion.improved || suggestion.suggestion || suggestion.rewrite || 'No suggestion available',
             rationale: suggestion.rationale || suggestion.reason || suggestion.explanation || 'No rationale provided',
+            recommendation: suggestion.recommendation || '',  // NEW: actionable recommendation field
             range: suggestion.position || { start: 0, end: 20 },
             confidence: suggestion.confidence || 0.9,
             selectionAnalysis: true,
@@ -590,8 +591,15 @@ function displaySuggestionCard(issue) {
                     <label>REASON:</label>
                     <p>${issue.rationale}</p>
                 </div>
+
+                ${issue.recommendation ? `
+                <div class="suggestion-recommendation">
+                    <label>RECOMMENDATION:</label>
+                    <p>${issue.recommendation}</p>
+                </div>
+                ` : ''}
             </div>
-            
+
             <div class="suggestion-actions">
                 <button class="action-btn apply" onclick="applySuggestion('${issue.id}')"
                         ${(issue.confidence || 1) < 0.5 ? 'disabled title="Confidence too low"' : ''}>
