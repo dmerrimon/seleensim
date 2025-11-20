@@ -32,7 +32,7 @@ logger = logging.getLogger(__name__)
 # Configuration
 FAST_MODEL = os.getenv("ANALYSIS_FAST_MODEL", "gpt-4o-mini")
 FAST_TIMEOUT_MS = int(os.getenv("SIMPLE_PROMPT_TIMEOUT_MS", "10000"))  # 10 second timeout
-FAST_MAX_TOKENS = 300
+FAST_MAX_TOKENS = 600  # Increased from 300 to handle multiple issues with recommendations
 FAST_TEMPERATURE = 0.2
 SELECTION_CHUNK_THRESHOLD = int(os.getenv("SELECTION_CHUNK_THRESHOLD", "2000"))  # 2000 chars = ~3-5 protocol sentences
 
