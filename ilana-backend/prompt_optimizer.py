@@ -19,8 +19,8 @@ from dataclasses import dataclass
 logger = logging.getLogger(__name__)
 
 # Configuration
-FAST_TOKEN_BUDGET = int(os.getenv("FAST_TOKEN_BUDGET", "500"))  # Input tokens for fast path
-DEEP_TOKEN_BUDGET = int(os.getenv("DEEP_TOKEN_BUDGET", "2000"))  # Input tokens for deep path
+FAST_TOKEN_BUDGET = int(os.getenv("FAST_TOKEN_BUDGET", "1000"))  # Input tokens for fast path (increased for domain-expert prompt)
+DEEP_TOKEN_BUDGET = int(os.getenv("DEEP_TOKEN_BUDGET", "2500"))  # Input tokens for deep path (increased for citations)
 ENABLE_TOKEN_TRACKING = os.getenv("ENABLE_TOKEN_TRACKING", "true").lower() == "true"
 
 # Token tracking statistics
