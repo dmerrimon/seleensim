@@ -34,6 +34,9 @@ from fast_rag import get_fast_exemplars
 # Step 9: Import rule-based compliance engine
 from compliance_rules import run_compliance_checks
 
+# Step 10: Import suggestion validator (Phase 2A)
+from suggestion_validator import validate_suggestions_batch
+
 logger = logging.getLogger(__name__)
 
 # Configuration
@@ -83,6 +86,7 @@ async def analyze_fast(
         "rule_engine_ms": 0,
         "rag_ms": 0,
         "azure_ms": 0,
+        "validation_ms": 0,  # Phase 2A
         "postprocess_ms": 0,
         "total_ms": 0
     }
@@ -260,6 +264,26 @@ async def analyze_fast(
                 "source": "llm"
             })
 
+        # 5c. Validate suggestions (Phase 2A: Backend validator)
+        validation_start = time.time()
+        validation_result = validate_suggestions_batch(suggestions)
+
+        # Use only accepted suggestions
+        validated_suggestions = validation_result["accepted"]
+        rejected_suggestions = validation_result["rejected"]
+
+        logger.info(
+            f"📊 [{req_id}] Validation: {validation_result['stats']['accepted']}/{validation_result['stats']['total']} accepted, "
+            f"{validation_result['stats']['rejected']} rejected"
+        )
+
+        if rejected_suggestions:
+            logger.warning(
+                f"⚠️ [{req_id}] Rejected suggestions: "
+                f"{[s.get('_rejection_reason') for s in rejected_suggestions[:3]]}"
+            )
+
+        timings["validation_ms"] = int((time.time() - validation_start) * 1000)
         timings["postprocess_ms"] = int((time.time() - postprocess_start) * 1000)
         timings["total_ms"] = int((time.time() - start_time) * 1000)
 
@@ -267,7 +291,7 @@ async def analyze_fast(
         result = {
             "status": "fast",
             "request_id": req_id,
-            "suggestions": suggestions,
+            "suggestions": validated_suggestions,  # Phase 2A: Use validated suggestions only
             "metadata": {
                 **timings,
                 "model": FAST_MODEL,
@@ -278,6 +302,9 @@ async def analyze_fast(
                 # Step 9: Rule engine info
                 "rule_issues_count": len(rule_issues),
                 "llm_issues_count": len(suggestions) - len(rule_issues),
+                # Phase 2A: Validation stats
+                "validation": validation_result["stats"],
+                "validation_warnings": validation_result["warnings"],
                 # Step 8: RAG info
                 "rag_exemplars": len(exemplars),
                 "rag_enabled": len(exemplars) > 0,
@@ -305,7 +332,10 @@ async def analyze_fast(
         if timings["total_ms"] > 12000:
             logger.warning(f"⚠️ Slow fast analysis: {timings['total_ms']}ms (target: <15000ms)")
 
-        logger.info(f"✅ Fast analysis complete: {req_id} ({timings['total_ms']}ms, {len(suggestions)} suggestions)")
+        logger.info(
+            f"✅ Fast analysis complete: {req_id} ({timings['total_ms']}ms, "
+            f"{len(validated_suggestions)}/{len(suggestions)} validated suggestions)"
+        )
 
         # Step 7: Record metrics
         record_request(
