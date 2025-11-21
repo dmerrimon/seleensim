@@ -31,6 +31,9 @@ from metrics_collector import record_request
 # Step 8: Import lightweight RAG for fast path
 from fast_rag import get_fast_exemplars
 
+# Step 9: Import rule-based compliance engine
+from compliance_rules import run_compliance_checks
+
 logger = logging.getLogger(__name__)
 
 # Configuration
@@ -77,6 +80,7 @@ async def analyze_fast(
     # Timing breakdown
     timings = {
         "preprocess_ms": 0,
+        "rule_engine_ms": 0,
         "rag_ms": 0,
         "azure_ms": 0,
         "postprocess_ms": 0,
@@ -93,6 +97,19 @@ async def analyze_fast(
             trimmed_text = text[:SELECTION_CHUNK_THRESHOLD]
         else:
             trimmed_text = text
+
+        # 1a. Run rule-based compliance checks (< 1ms, deterministic)
+        rule_engine_start = time.time()
+        rule_issues = []
+
+        try:
+            rule_issues = run_compliance_checks(trimmed_text)
+            if rule_issues:
+                logger.info(f"🔍 [{req_id}] Rule engine found {len(rule_issues)} issues")
+        except Exception as e:
+            logger.warning(f"⚠️ [{req_id}] Rule engine failed: {e}")
+
+        timings["rule_engine_ms"] = int((time.time() - rule_engine_start) * 1000)
 
         # Check cache (Step 6: Enhanced cache manager)
         cached_result = get_cached(
@@ -200,6 +217,21 @@ async def analyze_fast(
 
         suggestions = []
 
+        # 5a. Add rule-based issues first (highest priority)
+        for rule_issue in rule_issues:
+            suggestions.append({
+                "id": rule_issue.get("id"),
+                "text": rule_issue.get("original_text"),
+                "suggestion": rule_issue.get("improved_text"),
+                "rationale": rule_issue.get("rationale"),
+                "confidence": rule_issue.get("confidence"),
+                "type": rule_issue.get("category"),
+                "severity": rule_issue.get("severity"),
+                "recommendation": rule_issue.get("recommendation"),
+                "source": "rule_engine"
+            })
+
+        # 5b. Add LLM-generated issues
         # New format: {"issues": [...]}
         if suggestion_data and "issues" in suggestion_data:
             issues = suggestion_data.get("issues", [])
@@ -213,7 +245,8 @@ async def analyze_fast(
                     "confidence": issue.get("confidence", 0.8),
                     "type": issue.get("category", "clarity"),  # category -> type mapping
                     "severity": issue.get("severity", "minor"),
-                    "recommendation": issue.get("recommendation", "")
+                    "recommendation": issue.get("recommendation", ""),
+                    "source": "llm"
                 })
         # Legacy format fallback: single issue object
         elif suggestion_data and suggestion_data.get("original_text"):
@@ -223,7 +256,8 @@ async def analyze_fast(
                 "suggestion": suggestion_data.get("improved_text", ""),
                 "rationale": suggestion_data.get("rationale", ""),
                 "confidence": suggestion_data.get("confidence", 0.8),
-                "type": suggestion_data.get("type", "clarity")
+                "type": suggestion_data.get("type", "clarity"),
+                "source": "llm"
             })
 
         timings["postprocess_ms"] = int((time.time() - postprocess_start) * 1000)
@@ -241,6 +275,9 @@ async def analyze_fast(
                 "text_length": len(text),
                 "trimmed": len(text) > SELECTION_CHUNK_THRESHOLD,
                 "timestamp": datetime.utcnow().isoformat(),
+                # Step 9: Rule engine info
+                "rule_issues_count": len(rule_issues),
+                "llm_issues_count": len(suggestions) - len(rule_issues),
                 # Step 8: RAG info
                 "rag_exemplars": len(exemplars),
                 "rag_enabled": len(exemplars) > 0,
