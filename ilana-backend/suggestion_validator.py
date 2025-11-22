@@ -13,9 +13,132 @@ This runs AFTER LLM but BEFORE returning suggestions to frontend.
 
 import re
 import logging
+import json
+import os
+from pathlib import Path
 from typing import Dict, Any, List, Tuple
+from collections import defaultdict
 
 logger = logging.getLogger(__name__)
+
+# ============================================================================
+# FEEDBACK-BASED LEARNING (Phase 2 - Adaptive System)
+# ============================================================================
+
+def load_feedback_stats() -> Dict[str, Dict[str, float]]:
+    """
+    Load feedback statistics from shadow/feedback/ directory
+
+    Calculates acceptance rates per suggestion type/category to adjust
+    confidence scores based on real user behavior.
+
+    Returns:
+        {
+            "statistical": {"acceptance_rate": 0.65, "total_count": 20},
+            "clarity": {"acceptance_rate": 0.85, "total_count": 15},
+            ...
+        }
+    """
+    feedback_dir = Path("shadow/feedback")
+
+    if not feedback_dir.exists():
+        logger.info("No feedback directory found - using default confidence scores")
+        return {}
+
+    # Count accepts/rejects per category
+    stats = defaultdict(lambda: {"accepted": 0, "rejected": 0, "dismissed": 0})
+
+    try:
+        for feedback_file in feedback_dir.glob("*.json"):
+            try:
+                with open(feedback_file, 'r') as f:
+                    data = json.load(f)
+
+                    action = data.get("action", "")
+                    category = data.get("category", data.get("type", "unknown"))
+
+                    if action == "accept":
+                        stats[category]["accepted"] += 1
+                    elif action in ["reject", "dismiss", "undo"]:
+                        stats[category]["rejected"] += 1
+
+            except Exception as e:
+                logger.warning(f"Failed to load feedback file {feedback_file}: {e}")
+                continue
+
+        # Calculate acceptance rates
+        result = {}
+        for category, counts in stats.items():
+            total = counts["accepted"] + counts["rejected"]
+            if total > 0:
+                acceptance_rate = counts["accepted"] / total
+                result[category] = {
+                    "acceptance_rate": acceptance_rate,
+                    "total_count": total,
+                    "accepted": counts["accepted"],
+                    "rejected": counts["rejected"]
+                }
+
+        if result:
+            logger.info(f"Loaded feedback stats for {len(result)} categories")
+
+        return result
+
+    except Exception as e:
+        logger.error(f"Failed to load feedback stats: {e}")
+        return {}
+
+
+def adjust_confidence_from_feedback(
+    suggestion: Dict[str, Any],
+    feedback_stats: Dict[str, Dict[str, float]]
+) -> float:
+    """
+    Adjust suggestion confidence based on historical acceptance rates
+
+    Args:
+        suggestion: Suggestion dict with type/category
+        feedback_stats: Feedback statistics per category
+
+    Returns:
+        Adjusted confidence score (0.0-1.0)
+    """
+    base_confidence = suggestion.get("confidence", 0.8)
+    category = suggestion.get("type", suggestion.get("category", "unknown"))
+
+    # Check if we have feedback data for this category
+    if category not in feedback_stats:
+        return base_confidence
+
+    stats = feedback_stats[category]
+    acceptance_rate = stats["acceptance_rate"]
+    total_count = stats["total_count"]
+
+    # Need minimum 5 samples to adjust confidence
+    if total_count < 5:
+        return base_confidence
+
+    # Adjust confidence based on acceptance rate
+    # High acceptance (>80%) → boost confidence by up to +0.15
+    # Low acceptance (<50%) → lower confidence by up to -0.25
+
+    if acceptance_rate >= 0.8:
+        # High acceptance - boost confidence
+        boost = min(0.15, (acceptance_rate - 0.8) * 0.75)
+        adjusted = min(1.0, base_confidence + boost)
+        logger.debug(f"Boosting confidence for {category}: {base_confidence:.2f} → {adjusted:.2f} (acceptance: {acceptance_rate:.2f})")
+        return adjusted
+
+    elif acceptance_rate < 0.5:
+        # Low acceptance - lower confidence
+        penalty = min(0.25, (0.5 - acceptance_rate) * 0.5)
+        adjusted = max(0.1, base_confidence - penalty)
+        logger.debug(f"Lowering confidence for {category}: {base_confidence:.2f} → {adjusted:.2f} (acceptance: {acceptance_rate:.2f})")
+        return adjusted
+
+    # Medium acceptance (50-80%) - minimal adjustment
+    return base_confidence
+
 
 # ============================================================================
 # VALIDATION RULES
@@ -295,7 +418,7 @@ def validate_suggestion(suggestion: Dict[str, Any]) -> Dict[str, Any]:
 
 def validate_suggestions_batch(suggestions: List[Dict[str, Any]]) -> Dict[str, Any]:
     """
-    Validate a batch of suggestions
+    Validate a batch of suggestions with feedback-based learning
 
     Args:
         suggestions: List of suggestion dicts
@@ -310,7 +433,8 @@ def validate_suggestions_batch(suggestions: List[Dict[str, Any]]) -> Dict[str, A
                 "accepted": int,
                 "rejected": int,
                 "auto_apply_count": int,
-                "requires_review_count": int
+                "requires_review_count": int,
+                "feedback_adjusted": int  # NEW: Count of suggestions with adjusted confidence
             }
         }
     """
@@ -318,15 +442,29 @@ def validate_suggestions_batch(suggestions: List[Dict[str, Any]]) -> Dict[str, A
     rejected = []
     overall_warnings = []
 
+    # Load feedback statistics for adaptive learning (Phase 2)
+    feedback_stats = load_feedback_stats()
+
     stats = {
         "total": len(suggestions),
         "accepted": 0,
         "rejected": 0,
         "auto_apply_count": 0,
-        "requires_review_count": 0
+        "requires_review_count": 0,
+        "feedback_adjusted": 0  # Track how many suggestions were adjusted by feedback
     }
 
     for suggestion in suggestions:
+        # Apply feedback-based confidence adjustment (Phase 2 - Adaptive Learning)
+        if feedback_stats:
+            original_confidence = suggestion.get("confidence", 0.8)
+            adjusted_confidence = adjust_confidence_from_feedback(suggestion, feedback_stats)
+
+            if abs(adjusted_confidence - original_confidence) > 0.01:  # Meaningful change
+                suggestion["confidence"] = adjusted_confidence
+                suggestion["_feedback_adjusted"] = True
+                suggestion["_original_confidence"] = original_confidence
+                stats["feedback_adjusted"] += 1
         try:
             validation = validate_suggestion(suggestion)
 

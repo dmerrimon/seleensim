@@ -7,14 +7,18 @@ Reduces token usage by 20-30% through:
 - Dynamic prompt assembly (only include relevant context)
 - Token counting and budget enforcement
 - Optimized templates for different analysis types
+- Feedback-based example injection (Phase 2B - Adaptive Learning)
 
 Target cost savings: $10-20/month by reducing token consumption
 """
 
 import os
+import json
 import logging
 from typing import Dict, Any, Optional, List
 from dataclasses import dataclass
+from pathlib import Path
+from collections import defaultdict
 
 logger = logging.getLogger(__name__)
 
@@ -85,7 +89,136 @@ def count_tokens_precise(text: str, model: str = "gpt-4") -> int:
         return count_tokens(text)
 
 
-# Optimized prompt templates
+# ============================================================================
+# FEEDBACK-BASED LEARNING (Phase 2B - Adaptive Prompts)
+# ============================================================================
+
+def load_feedback_examples() -> Dict[str, List[Dict[str, Any]]]:
+    """
+    Load feedback examples from shadow/feedback/ directory
+
+    Extracts accepted vs rejected suggestions to use as few-shot examples.
+    Only returns examples with sufficient context (original + improved text).
+
+    Returns:
+        {
+            "accepted": [{"original": str, "improved": str, "category": str}, ...],
+            "rejected": [{"original": str, "improved": str, "category": str, "reason": str}, ...]
+        }
+    """
+    feedback_dir = Path("shadow/feedback")
+
+    if not feedback_dir.exists():
+        logger.debug("No feedback directory found - skipping example injection")
+        return {"accepted": [], "rejected": []}
+
+    accepted_examples = []
+    rejected_examples = []
+
+    try:
+        # Note: Feedback files currently store action but not suggestion details
+        # This will work once feedback includes original_text, improved_text, category
+        for feedback_file in feedback_dir.glob("*.json"):
+            try:
+                with open(feedback_file, 'r') as f:
+                    data = json.load(f)
+
+                    action = data.get("action", "")
+
+                    # Extract example details (if available)
+                    example = {
+                        "original": data.get("original_text", ""),
+                        "improved": data.get("improved_text", ""),
+                        "category": data.get("category", data.get("type", "unknown")),
+                        "context": data.get("context_snippet", "")[:100]  # Limit context
+                    }
+
+                    # Only include if we have both original and improved text
+                    if example["original"] and example["improved"]:
+                        if action == "accept":
+                            accepted_examples.append(example)
+                        elif action in ["reject", "dismiss", "undo"]:
+                            example["reason"] = data.get("reason", "user_rejected")
+                            rejected_examples.append(example)
+
+            except Exception as e:
+                logger.debug(f"Skipping feedback file {feedback_file}: {e}")
+                continue
+
+        # Limit to most recent examples (top 10 each)
+        accepted_examples = accepted_examples[-10:]
+        rejected_examples = rejected_examples[-10:]
+
+        if accepted_examples or rejected_examples:
+            logger.info(
+                f"📚 Loaded {len(accepted_examples)} accepted + "
+                f"{len(rejected_examples)} rejected examples from feedback"
+            )
+
+        return {
+            "accepted": accepted_examples,
+            "rejected": rejected_examples
+        }
+
+    except Exception as e:
+        logger.warning(f"Failed to load feedback examples: {e}")
+        return {"accepted": [], "rejected": []}
+
+
+def build_feedback_examples_section(feedback_examples: Dict[str, List[Dict[str, Any]]], max_chars: int = 500) -> str:
+    """
+    Build few-shot examples section from feedback data
+
+    Prioritizes accepted examples (good patterns to follow).
+    Only includes rejected examples as "avoid" patterns if space permits.
+
+    Args:
+        feedback_examples: Dict with "accepted" and "rejected" lists
+        max_chars: Maximum characters for examples section
+
+    Returns:
+        Formatted examples string for prompt injection
+    """
+    examples_text = ""
+    chars_used = 0
+
+    # Prioritize accepted examples (good patterns)
+    accepted = feedback_examples.get("accepted", [])
+    if accepted:
+        examples_text += "\n✅ LEARNED FROM USER FEEDBACK (Accept patterns):\n"
+
+        for idx, ex in enumerate(accepted[:3], 1):  # Max 3 accepted examples
+            example_str = f"\nExample {idx} ({ex['category']}):\n"
+            example_str += f"Original: \"{ex['original'][:80]}...\"\n"
+            example_str += f"Improved: \"{ex['improved'][:80]}...\"\n"
+
+            if chars_used + len(example_str) > max_chars:
+                break
+
+            examples_text += example_str
+            chars_used += len(example_str)
+
+    # Add rejected examples as "avoid" patterns if space permits
+    rejected = feedback_examples.get("rejected", [])
+    if rejected and chars_used < max_chars * 0.7:  # Only use 30% for avoid patterns
+        examples_text += "\n❌ AVOID (User rejected these patterns):\n"
+
+        for idx, ex in enumerate(rejected[:2], 1):  # Max 2 rejected examples
+            example_str = f"\nAvoid Pattern {idx}: \"{ex['improved'][:60]}...\" - "
+            example_str += f"Reason: {ex.get('reason', 'unclear')}\n"
+
+            if chars_used + len(example_str) > max_chars:
+                break
+
+            examples_text += example_str
+            chars_used += len(example_str)
+
+    return examples_text
+
+
+# ============================================================================
+# OPTIMIZED PROMPT TEMPLATES
+# ============================================================================
 
 FAST_ANALYSIS_TEMPLATE = PromptTemplate(
     system="""You are Ilana, an enterprise-grade clinical protocol editor and regulatory reviewer. You follow ICH E6(R3), ICH E9/E8 principles, FDA guidance on protocol design, CONSORT reporting, and statistical best practice. Your job is to:
@@ -177,7 +310,7 @@ JSON RESPONSE:""",
 
 def build_fast_prompt(text: str, ta: Optional[str] = None, exemplars: Optional[List[Dict[str, Any]]] = None) -> Dict[str, Any]:
     """
-    Build optimized prompt for fast analysis with optional RAG exemplars
+    Build optimized prompt for fast analysis with optional RAG exemplars + feedback learning
 
     Args:
         text: Protocol text to analyze
@@ -201,8 +334,23 @@ def build_fast_prompt(text: str, ta: Optional[str] = None, exemplars: Optional[L
         if exemplars_text:
             text = f"{exemplars_text}\n\nSELECTED TEXT TO ANALYZE:\n{text}"
 
-    # Fill template
-    user_content = FAST_ANALYSIS_TEMPLATE.user_template.format(
+    # Load feedback-based examples (Phase 2B - Adaptive Learning)
+    feedback_examples = load_feedback_examples()
+    feedback_section = ""
+    if feedback_examples["accepted"] or feedback_examples["rejected"]:
+        feedback_section = build_feedback_examples_section(feedback_examples, max_chars=400)
+        logger.debug(f"Injecting {len(feedback_section)} chars of feedback examples into prompt")
+
+    # Fill template (inject feedback examples before FEW-SHOT EXAMPLES section)
+    user_template = FAST_ANALYSIS_TEMPLATE.user_template
+    if feedback_section:
+        # Insert feedback examples after RESPONSE FORMAT and before FEW-SHOT EXAMPLES
+        user_template = user_template.replace(
+            "FEW-SHOT EXAMPLES:",
+            f"{feedback_section}\n\nFEW-SHOT EXAMPLES:"
+        )
+
+    user_content = user_template.format(
         ta_context=ta_context,
         text=text
     )
@@ -447,6 +595,8 @@ __all__ = [
     "track_token_usage",
     "get_token_stats",
     "reset_token_stats",
+    "load_feedback_examples",
+    "build_feedback_examples_section",
     "FAST_TOKEN_BUDGET",
     "DEEP_TOKEN_BUDGET"
 ]
