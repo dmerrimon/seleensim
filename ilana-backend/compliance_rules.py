@@ -107,7 +107,7 @@ def check_conditional_language(text: str) -> ComplianceIssue:
     """
     Rule 1: Detect conditional/ambiguous language requiring pre-specification
 
-    CRITICAL: Statistical analysis must be pre-specified (ICH E9)
+    ADVISORY: Statistical analysis must be pre-specified (ICH E9)
     """
     evidence = find_matches(text, CONDITIONAL_TOKENS)
 
@@ -115,11 +115,11 @@ def check_conditional_language(text: str) -> ComplianceIssue:
         return ComplianceIssue(
             rule_id="COND_001",
             category="statistical",
-            severity="critical",
-            short_description="Conditional language in statistical analysis",
+            severity="minor",  # Downgraded from critical to advisory
+            short_description="Conditional language in statistical analysis (advisory)",
             detail="Found conditional/ambiguous phrasing that requires pre-specification in Statistical Analysis Plan (SAP). Language like 'may', 'if deemed appropriate', 'as needed' creates risk of post-hoc analysis decisions and alpha inflation.",
             evidence=evidence[:3],  # Limit to first 3 matches
-            confidence=0.95
+            confidence=0.6  # Lowered from 0.95 to allow LLM suggestions to take priority
         )
     return None
 
@@ -128,7 +128,7 @@ def check_reassignment(text: str) -> ComplianceIssue:
     """
     Rule 2: Detect post-enrollment reassignment without pre-specification
 
-    MAJOR: Risk of immortal time bias and selection bias
+    ADVISORY: Risk of immortal time bias and selection bias
     """
     evidence = find_matches(text, REASSIGNMENT_TOKENS)
 
@@ -136,11 +136,11 @@ def check_reassignment(text: str) -> ComplianceIssue:
         return ComplianceIssue(
             rule_id="REASS_001",
             category="analysis_population",
-            severity="major",
-            short_description="Post-enrollment reassignment described",
+            severity="minor",  # Downgraded from major to advisory
+            short_description="Post-enrollment reassignment described (advisory)",
             detail="Text implies reassignment of subjects post-enrollment. Must pre-specify: (1) ITT analysis by enrollment group, (2) handling of time-varying severity in SAP, (3) methods to mitigate immortal time bias (e.g., time-varying covariates, marginal structural models).",
             evidence=evidence[:3],
-            confidence=0.90
+            confidence=0.6  # Lowered from 0.90 to allow LLM suggestions to take priority
         )
     return None
 
@@ -161,11 +161,11 @@ def check_safety_reporting(text: str) -> ComplianceIssue:
             return ComplianceIssue(
                 rule_id="SAFETY_001",
                 category="safety",
-                severity="major",
-                short_description="SAE reporting timeline missing",
+                severity="minor",  # Downgraded from major to advisory
+                short_description="SAE reporting timeline missing (advisory)",
                 detail="Safety reporting language found but missing required 24-hour SAE reporting timeline. Regulatory requirement: investigators must report SAEs to sponsor within 24 hours of awareness.",
                 evidence=evidence[:2],
-                confidence=0.85
+                confidence=0.6  # Lowered from 0.85 to allow LLM suggestions to take priority
             )
     return None
 
@@ -186,11 +186,11 @@ def check_terminology(text: str) -> ComplianceIssue:
             return ComplianceIssue(
                 rule_id="TERM_001",
                 category="terminology",
-                severity="minor",
-                short_description="Outdated terminology: 'subjects' or 'patients'",
+                severity="minor",  # Already minor, now advisory
+                short_description="Outdated terminology: 'subjects' or 'patients' (advisory)",
                 detail="ICH-GCP E6(R3) recommends using 'participants' instead of 'subjects' or 'patients' in clinical protocols. Update terminology for regulatory alignment.",
                 evidence=evidence[:2],
-                confidence=0.75
+                confidence=0.6  # Lowered from 0.75 to allow LLM suggestions to take priority
             )
     return None
 
@@ -207,11 +207,11 @@ def check_vague_endpoints(text: str) -> ComplianceIssue:
         return ComplianceIssue(
             rule_id="ENDPT_001",
             category="documentation",
-            severity="major",
-            short_description="Vague endpoint language",
+            severity="minor",  # Downgraded from major to advisory
+            short_description="Vague endpoint language (advisory)",
             detail="Endpoint description lacks specificity. Must include: (1) exact measurement/instrument, (2) timepoint, (3) missing data handling. Example: 'Clinical response defined as ≥50% reduction in XYZ score from baseline at Day 28 using ABC instrument; missing data handled via multiple imputation per SAP Section 9.'",
             evidence=evidence[:2],
-            confidence=0.80
+            confidence=0.6  # Lowered from 0.80 to allow LLM suggestions to take priority
         )
     return None
 
@@ -220,7 +220,7 @@ def check_visit_schedule(text: str) -> ComplianceIssue:
     """
     Rule 6: Detect vague visit schedule language
 
-    MAJOR: Visit windows must be explicitly defined
+    ADVISORY: Visit windows must be explicitly defined
     """
     evidence = find_matches(text, VISIT_SCHEDULE_TOKENS)
 
@@ -228,11 +228,11 @@ def check_visit_schedule(text: str) -> ComplianceIssue:
         return ComplianceIssue(
             rule_id="VISIT_001",
             category="documentation",
-            severity="major",
-            short_description="Vague visit schedule",
+            severity="minor",  # Downgraded from major to advisory
+            short_description="Vague visit schedule (advisory)",
             detail="Visit schedule lacks explicit windows. Specify exact windows: e.g., 'Day 0 ± 2 days, Day 7 ± 3 days, Day 28 ± 4 days' with reference to visit schedule table.",
             evidence=evidence[:2],
-            confidence=0.80
+            confidence=0.6  # Lowered from 0.80 to allow LLM suggestions to take priority
         )
     return None
 
