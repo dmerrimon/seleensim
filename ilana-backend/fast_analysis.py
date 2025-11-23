@@ -103,6 +103,7 @@ def _deduplicate_suggestions(
     Strategy:
     - When rule-based and AI suggestions overlap (>70% text similarity),
       keep only the AI suggestion (better rationale, more context)
+    - ALSO check category/type matching for rule-based placeholders
     - Keep all unique suggestions from both sources
 
     Args:
@@ -124,23 +125,36 @@ def _deduplicate_suggestions(
 
     for rule_sugg in rule_suggestions:
         rule_text = rule_sugg.get("text", "")
+        rule_type = rule_sugg.get("type", "")
 
         # Check if this rule suggestion overlaps with any AI suggestion
         is_duplicate = False
 
         for ai_sugg in ai_suggestions:
             ai_text = ai_sugg.get("text", "")
+            ai_type = ai_sugg.get("type", "")
 
+            # Method 1: Text overlap (for real text)
             overlap = _calculate_text_overlap(rule_text, ai_text)
 
-            if overlap >= OVERLAP_THRESHOLD:
+            # Method 2: Category/type matching (for rule-based placeholders)
+            # If rule-based uses placeholder like "[Rule-based detection: ...]",
+            # check if both suggestions target the same category
+            same_category = (rule_type == ai_type) and rule_type != ""
+            is_rule_placeholder = rule_text.startswith("[Rule-based detection:")
+
+            # Consider duplicate if either:
+            # 1. High text overlap (>70%)
+            # 2. Same category AND rule uses placeholder format
+            if overlap >= OVERLAP_THRESHOLD or (same_category and is_rule_placeholder):
                 # Duplicate found - AI suggestion already covers this
                 is_duplicate = True
                 duplicates_found += 1
 
+                match_method = "text overlap" if overlap >= OVERLAP_THRESHOLD else "category match"
                 logger.debug(
-                    f"📍 [{request_id}] Deduplication: Skipping rule-based '{rule_sugg.get('type')}' "
-                    f"(overlap {overlap:.2f} with AI suggestion)"
+                    f"📍 [{request_id}] Deduplication: Skipping rule-based '{rule_type}' "
+                    f"({match_method}: {overlap:.2f if overlap >= OVERLAP_THRESHOLD else 'N/A'})"
                 )
                 break
 
