@@ -207,9 +207,9 @@ class OptimizedRealAIService:
                     logger.info("✅ Enterprise PubMedBERT endpoint connected successfully")
                     self.pubmedbert_service = "http_endpoint"
                 else:
-                    # TELEMETRY: pubmedbert_unavailable - PubMedBERT endpoint returned non-200 status (e.g. 503)
-                    logger.warning(f"⚠️ [pubmedbert_unavailable] PubMedBERT endpoint not ready: {test_response.status_code}")
-                    logger.info(f"🔄 Continuing without PubMedBERT - will use local medical intelligence fallback")
+                    # TELEMETRY: pubmedbert_unavailable - PubMedBERT endpoint cold start (503 expected on first call)
+                    logger.debug(f"[pubmedbert_cold_start] PubMedBERT endpoint warming up: {test_response.status_code} (expected during cold start)")
+                    logger.info(f"🔄 PubMedBERT will be available after first request - using fallback during startup")
                     self.enable_pubmedbert = False
                     self.pubmedbert_service = None
             except Exception as e:

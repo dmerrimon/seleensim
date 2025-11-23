@@ -104,7 +104,7 @@ class ConfigLoader:
             env_vars = self._load_env_file(env_file)
             logger.info(f"Loaded configuration from {env_file}")
         else:
-            logger.info(f"Environment file not found: {env_file}; falling back to environment variables.")
+            logger.debug(f"Environment file not found: {env_file}; falling back to environment variables.")
             
         # Override with actual environment variables
         env_vars.update(os.environ)

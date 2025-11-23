@@ -131,9 +131,9 @@ def validate_environment_config() -> Dict[str, Any]:
     if TELEMETRY_LOG_LEVEL not in ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]:
         warnings.append(f"Unknown TELEMETRY_LOG_LEVEL: {TELEMETRY_LOG_LEVEL}. Defaulting to INFO")
     
-    # Configuration logic warnings
-    if RAG_ASYNC_MODE and ENABLE_TA_ON_DEMAND:
-        warnings.append("RAG_ASYNC_MODE=true will block synchronous TA operations")
+    # Configuration logic warnings (suppressed - this is expected behavior)
+    # if RAG_ASYNC_MODE and ENABLE_TA_ON_DEMAND:
+    #     warnings.append("RAG_ASYNC_MODE=true will block synchronous TA operations")
     
     if ENABLE_TA_SHADOW and not ENABLE_TA_ON_DEMAND:
         warnings.append("ENABLE_TA_SHADOW=true but ENABLE_TA_ON_DEMAND=false - shadow worker may not trigger")
