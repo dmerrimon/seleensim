@@ -50,6 +50,116 @@ SELECTION_CHUNK_THRESHOLD = int(os.getenv("SELECTION_CHUNK_THRESHOLD", "10000"))
 # Old cache functions removed in Step 6 - now using cache_manager
 
 
+def _calculate_text_overlap(text1: str, text2: str) -> float:
+    """
+    Calculate text overlap percentage between two strings
+
+    Uses character-level comparison to detect if two suggestions
+    are targeting the same text (e.g., rule-based and AI both
+    flagging "subjects" → "participants")
+
+    Args:
+        text1: First text string
+        text2: Second text string
+
+    Returns:
+        Overlap ratio (0.0 to 1.0)
+    """
+    if not text1 or not text2:
+        return 0.0
+
+    # Normalize: lowercase, strip whitespace
+    t1 = text1.lower().strip()
+    t2 = text2.lower().strip()
+
+    # Calculate character overlap using set intersection
+    set1 = set(t1)
+    set2 = set(t2)
+
+    intersection = len(set1 & set2)
+    union = len(set1 | set2)
+
+    if union == 0:
+        return 0.0
+
+    # Jaccard similarity for character sets
+    jaccard = intersection / union
+
+    # Also check substring containment (one text contains the other)
+    if t1 in t2 or t2 in t1:
+        return max(jaccard, 0.8)  # Boost score if one contains the other
+
+    return jaccard
+
+
+def _deduplicate_suggestions(
+    rule_suggestions: List[Dict[str, Any]],
+    ai_suggestions: List[Dict[str, Any]],
+    request_id: str
+) -> List[Dict[str, Any]]:
+    """
+    Deduplicate rule-based and AI suggestions
+
+    Strategy:
+    - When rule-based and AI suggestions overlap (>70% text similarity),
+      keep only the AI suggestion (better rationale, more context)
+    - Keep all unique suggestions from both sources
+
+    Args:
+        rule_suggestions: List of rule-based issue dicts
+        ai_suggestions: List of AI-generated issue dicts
+        request_id: Request tracking ID
+
+    Returns:
+        Deduplicated list of suggestions (AI + unique rule-based)
+    """
+    OVERLAP_THRESHOLD = 0.7  # 70% text overlap = considered duplicate
+
+    # Start with all AI suggestions (higher quality)
+    deduplicated = ai_suggestions.copy()
+
+    # Track which rule suggestions to keep
+    unique_rule_suggestions = []
+    duplicates_found = 0
+
+    for rule_sugg in rule_suggestions:
+        rule_text = rule_sugg.get("text", "")
+
+        # Check if this rule suggestion overlaps with any AI suggestion
+        is_duplicate = False
+
+        for ai_sugg in ai_suggestions:
+            ai_text = ai_sugg.get("text", "")
+
+            overlap = _calculate_text_overlap(rule_text, ai_text)
+
+            if overlap >= OVERLAP_THRESHOLD:
+                # Duplicate found - AI suggestion already covers this
+                is_duplicate = True
+                duplicates_found += 1
+
+                logger.debug(
+                    f"📍 [{request_id}] Deduplication: Skipping rule-based '{rule_sugg.get('type')}' "
+                    f"(overlap {overlap:.2f} with AI suggestion)"
+                )
+                break
+
+        if not is_duplicate:
+            # Unique rule-based suggestion - keep it
+            unique_rule_suggestions.append(rule_sugg)
+
+    # Add unique rule-based suggestions to final list
+    deduplicated.extend(unique_rule_suggestions)
+
+    if duplicates_found > 0:
+        logger.info(
+            f"🔍 [{request_id}] Deduplication: Removed {duplicates_found} duplicate rule-based issues, "
+            f"kept {len(unique_rule_suggestions)} unique rule-based + {len(ai_suggestions)} AI suggestions"
+        )
+
+    return deduplicated
+
+
 async def analyze_fast(
     text: str,
     ta: Optional[str] = None,
@@ -219,11 +329,12 @@ async def analyze_fast(
         # 5. Postprocess: Format response (handles new issues array format)
         postprocess_start = time.time()
 
-        suggestions = []
+        rule_suggestions = []
+        ai_suggestions = []
 
-        # 5a. Add rule-based issues first (highest priority)
+        # 5a. Collect rule-based issues
         for rule_issue in rule_issues:
-            suggestions.append({
+            rule_suggestions.append({
                 "id": rule_issue.get("id"),
                 "text": rule_issue.get("original_text"),
                 "suggestion": rule_issue.get("improved_text"),
@@ -235,13 +346,13 @@ async def analyze_fast(
                 "source": "rule_engine"
             })
 
-        # 5b. Add LLM-generated issues
+        # 5b. Collect LLM-generated issues
         # New format: {"issues": [...]}
         if suggestion_data and "issues" in suggestion_data:
             issues = suggestion_data.get("issues", [])
             for idx, issue in enumerate(issues[:10]):  # Limit to 10 issues max
                 # Map new schema to frontend format
-                suggestions.append({
+                ai_suggestions.append({
                     "id": issue.get("id", f"{req_id}_fast_{idx+1}"),
                     "text": issue.get("original_text", ""),
                     "suggestion": issue.get("improved_text", ""),
@@ -254,7 +365,7 @@ async def analyze_fast(
                 })
         # Legacy format fallback: single issue object
         elif suggestion_data and suggestion_data.get("original_text"):
-            suggestions.append({
+            ai_suggestions.append({
                 "id": f"{req_id}_fast_1",
                 "text": suggestion_data.get("original_text", ""),
                 "suggestion": suggestion_data.get("improved_text", ""),
@@ -263,6 +374,17 @@ async def analyze_fast(
                 "type": suggestion_data.get("type", "clarity"),
                 "source": "llm"
             })
+
+        # 5b-1. Deduplicate: Remove rule-based issues that overlap with AI suggestions
+        suggestions = _deduplicate_suggestions(rule_suggestions, ai_suggestions, req_id)
+
+        # Track deduplication stats
+        dedup_stats = {
+            "rule_based_total": len(rule_suggestions),
+            "ai_total": len(ai_suggestions),
+            "deduplicated_total": len(suggestions),
+            "duplicates_removed": len(rule_suggestions) + len(ai_suggestions) - len(suggestions)
+        }
 
         # 5c. Validate suggestions (Phase 2A: Backend validator)
         validation_start = time.time()
@@ -302,6 +424,8 @@ async def analyze_fast(
                 # Step 9: Rule engine info
                 "rule_issues_count": len(rule_issues),
                 "llm_issues_count": len(suggestions) - len(rule_issues),
+                # Phase 2B: Deduplication stats
+                "deduplication": dedup_stats,
                 # Phase 2A: Validation stats
                 "validation": validation_result["stats"],
                 "validation_warnings": validation_result["warnings"],
@@ -334,7 +458,8 @@ async def analyze_fast(
 
         logger.info(
             f"✅ Fast analysis complete: {req_id} ({timings['total_ms']}ms, "
-            f"{len(validated_suggestions)}/{len(suggestions)} validated suggestions)"
+            f"{len(validated_suggestions)}/{len(suggestions)} validated, "
+            f"{dedup_stats['duplicates_removed']} duplicates removed)"
         )
 
         # Step 7: Record metrics
