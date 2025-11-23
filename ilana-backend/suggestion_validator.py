@@ -459,6 +459,18 @@ def validate_suggestions_batch(suggestions: List[Dict[str, Any]]) -> Dict[str, A
     }
 
     for suggestion in suggestions:
+        # Skip validation for grouped suggestions (sub-issues already validated)
+        if suggestion.get("grouped") and suggestion.get("sub_issues"):
+            # Grouped suggestions are always accepted (they contain validated sub-issues)
+            suggestion["_validation"] = {
+                "confidence_tier": "requires_review",
+                "warnings": []
+            }
+            accepted.append(suggestion)
+            stats["accepted"] += 1
+            stats["requires_review_count"] += 1
+            continue
+
         # Apply feedback-based confidence adjustment (Phase 2 - Adaptive Learning)
         if feedback_stats:
             original_confidence = suggestion.get("confidence", 0.8)

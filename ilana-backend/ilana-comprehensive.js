@@ -569,24 +569,30 @@ function showJobQueuedMessage(jobId) {
 
 // Display suggestion cards with enhanced UI
 function displaySuggestionCard(issue) {
+    // Check if this is a grouped suggestion
+    if (issue.grouped && issue.sub_issues && issue.sub_issues.length > 0) {
+        return displayGroupedSuggestionCard(issue);
+    }
+
+    // Regular single suggestion card
     return `
         <div class="suggestion-card" data-issue-id="${issue.id}">
             <div class="suggestion-header">
                 <span class="suggestion-type ${issue.type}">${issue.type.toUpperCase()}</span>
                 <span class="suggestion-severity ${issue.severity}">${issue.severity}</span>
             </div>
-            
+
             <div class="suggestion-content">
                 <div class="suggestion-original">
                     <label>Original:</label>
                     <div class="text-preview">${issue.text}</div>
                 </div>
-                
+
                 <div class="suggestion-improved">
                     <label>Improved:</label>
                     <div class="text-preview improved">${issue.suggestion}</div>
                 </div>
-                
+
                 <div class="suggestion-reason">
                     <label>REASON:</label>
                     <p>${issue.rationale}</p>
@@ -614,6 +620,62 @@ function displaySuggestionCard(issue) {
                 </button>
                 <button class="action-btn dismiss" onclick="dismissSuggestion('${issue.id}')">
                     Dismiss
+                </button>
+            </div>
+        </div>
+    `;
+}
+
+// Display grouped suggestion card with multiple sub-issues
+function displayGroupedSuggestionCard(issue) {
+    const subIssuesCount = issue.sub_issues.length;
+
+    return `
+        <div class="suggestion-card grouped" data-issue-id="${issue.id}">
+            <div class="suggestion-header">
+                <span class="suggestion-type grouped">MULTIPLE ISSUES (${subIssuesCount})</span>
+                <span class="suggestion-severity ${issue.severity}">${issue.severity}</span>
+            </div>
+
+            <div class="suggestion-content">
+                <div class="suggestion-original">
+                    <label>Original Text:</label>
+                    <div class="text-preview">${issue.text}</div>
+                </div>
+
+                <div class="suggestion-improved">
+                    <label>Suggested Fix:</label>
+                    <div class="text-preview improved">${issue.suggestion}</div>
+                </div>
+
+                <div class="sub-issues-container">
+                    <label>Issues Found:</label>
+                    <ol class="sub-issues-list">
+                        ${issue.sub_issues.map((subIssue, idx) => `
+                            <li class="sub-issue">
+                                <div class="sub-issue-header">
+                                    <span class="sub-issue-type ${subIssue.type}">[${subIssue.type.toUpperCase()}]</span>
+                                    <span class="sub-issue-severity ${subIssue.severity}">${subIssue.severity}</span>
+                                </div>
+                                <div class="sub-issue-content">
+                                    <p><strong>Issue:</strong> ${subIssue.rationale}</p>
+                                    ${subIssue.recommendation ? `<p><strong>Recommendation:</strong> ${subIssue.recommendation}</p>` : ''}
+                                </div>
+                            </li>
+                        `).join('')}
+                    </ol>
+                </div>
+            </div>
+
+            <div class="suggestion-actions">
+                <button class="action-btn insert-comment" onclick="insertGroupedAsComment('${issue.id}')">
+                    Insert as Comment
+                </button>
+                <button class="action-btn explain" onclick="explainGroupedSuggestion('${issue.id}')">
+                    Explain All
+                </button>
+                <button class="action-btn dismiss" onclick="dismissSuggestion('${issue.id}')">
+                    Dismiss All
                 </button>
             </div>
         </div>
@@ -965,6 +1027,91 @@ function explainSuggestion(issueId) {
         `;
         
         modal.style.display = 'flex';
+    }
+}
+
+// Explain grouped suggestion - show all sub-issues in modal
+function explainGroupedSuggestion(issueId) {
+    const issue = IlanaState.currentIssues.find(i => i.id === issueId);
+    if (!issue || !issue.grouped) return;
+
+    const modal = document.getElementById('modal-overlay') || createWholeDocumentModal();
+    const title = document.getElementById('modal-title');
+    const body = document.getElementById('modal-body');
+
+    if (modal && title && body) {
+        title.textContent = `MULTIPLE ISSUES (${issue.sub_issues.length}) - Detailed Explanation`;
+
+        const subIssuesHTML = issue.sub_issues.map((subIssue, idx) => `
+            <div class="modal-section sub-issue-section">
+                <h4>Issue ${idx + 1}: [${subIssue.type.toUpperCase()}] - ${subIssue.severity}</h4>
+                <div class="modal-subsection">
+                    <strong>Problem:</strong>
+                    <p class="modal-text">${subIssue.rationale}</p>
+                </div>
+                ${subIssue.recommendation ? `
+                <div class="modal-subsection">
+                    <strong>Recommendation:</strong>
+                    <p class="modal-text">${subIssue.recommendation}</p>
+                </div>
+                ` : ''}
+            </div>
+        `).join('<hr style="margin: 15px 0; border: none; border-top: 1px solid #e0e0e0;">');
+
+        body.innerHTML = `
+            <div class="modal-section">
+                <h4>Original Text:</h4>
+                <p class="modal-text">${issue.text}</p>
+            </div>
+
+            <div class="modal-section">
+                <h4>Suggested Fix:</h4>
+                <p class="modal-text modal-highlight">${issue.suggestion}</p>
+            </div>
+
+            <div class="modal-section">
+                <h4>Issues Identified:</h4>
+                ${subIssuesHTML}
+            </div>
+
+            <div class="modal-actions">
+                <button class="modal-btn primary" onclick="closeModal()">
+                    Close
+                </button>
+            </div>
+        `;
+
+        modal.style.display = 'flex';
+    }
+}
+
+// Insert grouped suggestion as Word comment with all sub-issues
+async function insertGroupedAsComment(issueId) {
+    const issue = IlanaState.currentIssues.find(i => i.id === issueId);
+    if (!issue || !issue.grouped) return;
+
+    try {
+        await Word.run(async (context) => {
+            const selection = context.document.getSelection();
+
+            // Create bulleted list of all sub-issues
+            const subIssuesList = issue.sub_issues.map((subIssue, idx) =>
+                `${idx + 1}. [${subIssue.type.toUpperCase()}] ${subIssue.rationale}`
+            ).join('\n');
+
+            const commentText = `MULTIPLE ISSUES FOUND:\n\n${subIssuesList}\n\nSUGGESTED FIX:\n${issue.suggestion}`;
+
+            // Insert comment
+            const comment = selection.insertComment(commentText);
+            comment.authorName = "Ilana AI";
+
+            await context.sync();
+            console.log('✅ Grouped comment inserted successfully');
+            showToast('Comment inserted with all issues', 'success');
+        });
+    } catch (error) {
+        console.error('Error inserting grouped comment:', error);
+        showToast('Failed to insert comment', 'error');
     }
 }
 

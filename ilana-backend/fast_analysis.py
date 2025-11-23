@@ -174,6 +174,132 @@ def _deduplicate_suggestions(
     return deduplicated
 
 
+def _group_suggestions_by_text(
+    suggestions: List[Dict[str, Any]],
+    request_id: str
+) -> tuple[List[Dict[str, Any]], Dict[str, int]]:
+    """
+    Group suggestions that target the same or very similar original text
+
+    Strategy:
+    - Use existing _calculate_text_overlap() to find similar "text" fields
+    - When multiple suggestions target same text (>70% similarity):
+      - Create ONE grouped suggestion with multiple sub-issues
+      - Use highest-confidence suggestion as primary improved text
+      - Preserve all rationales/recommendations as sub-points
+      - Use highest severity from group
+
+    Args:
+        suggestions: List of deduplicated suggestions
+        request_id: Request tracking ID
+
+    Returns:
+        (grouped_suggestions, stats_dict)
+    """
+    GROUPING_THRESHOLD = 0.7  # 70% text overlap = group together
+
+    if len(suggestions) <= 1:
+        # No grouping needed
+        return suggestions, {"groups_created": 0, "suggestions_grouped": 0}
+
+    # Track which suggestions have been grouped
+    grouped_indices = set()
+    grouped_suggestions = []
+    groups_created = 0
+    suggestions_grouped = 0
+
+    for i, suggestion in enumerate(suggestions):
+        if i in grouped_indices:
+            continue  # Already part of a group
+
+        # Find all suggestions that overlap with this one
+        group = [suggestion]
+        group_indices = [i]
+
+        for j in range(i + 1, len(suggestions)):
+            if j in grouped_indices:
+                continue
+
+            other = suggestions[j]
+            overlap = _calculate_text_overlap(
+                suggestion.get("text", ""),
+                other.get("text", "")
+            )
+
+            if overlap >= GROUPING_THRESHOLD:
+                group.append(other)
+                group_indices.append(j)
+                grouped_indices.add(j)
+
+        # If group has multiple suggestions, create grouped suggestion
+        if len(group) > 1:
+            # Mark all as grouped
+            for idx in group_indices:
+                grouped_indices.add(idx)
+
+            # Find suggestion with highest confidence
+            best_suggestion = max(group, key=lambda s: s.get("confidence", 0.0))
+
+            # Find highest severity
+            severity_order = ["critical", "major", "minor", "advisory"]
+            severities = [s.get("severity", "minor") for s in group]
+            highest_severity = min(severities, key=lambda s: severity_order.index(s) if s in severity_order else 999)
+
+            # Create grouped suggestion
+            grouped_sugg = {
+                "id": f"{request_id}_group_{groups_created + 1}",
+                "text": best_suggestion.get("text", ""),  # Use best suggestion's original text
+                "suggestion": best_suggestion.get("suggestion", ""),  # Use best suggestion's improved text
+                "rationale": f"Multiple issues found ({len(group)} total). See sub-issues below for details.",
+                "confidence": best_suggestion.get("confidence", 0.8),
+                "type": "grouped",
+                "severity": highest_severity,
+                "recommendation": "Review all sub-issues and address each concern.",
+                "source": best_suggestion.get("source", "llm"),
+                "grouped": True,
+                "sub_issues": [
+                    {
+                        "id": s.get("id", ""),
+                        "type": s.get("type", ""),
+                        "severity": s.get("severity", "minor"),
+                        "rationale": s.get("rationale", ""),
+                        "recommendation": s.get("recommendation", ""),
+                        "confidence": s.get("confidence", 0.8)
+                    }
+                    for s in group
+                ]
+            }
+
+            grouped_suggestions.append(grouped_sugg)
+            groups_created += 1
+            suggestions_grouped += len(group)
+
+            logger.info(
+                f"📦 [{request_id}] Grouped {len(group)} suggestions into group_{groups_created}: "
+                f"types=[{', '.join([s.get('type', 'unknown') for s in group])}]"
+            )
+
+        else:
+            # Single suggestion - keep as is
+            grouped_suggestions.append(suggestion)
+
+    stats = {
+        "groups_created": groups_created,
+        "suggestions_grouped": suggestions_grouped,
+        "total_before_grouping": len(suggestions),
+        "total_after_grouping": len(grouped_suggestions)
+    }
+
+    if groups_created > 0:
+        logger.info(
+            f"📦 [{request_id}] Grouping complete: {groups_created} groups created, "
+            f"{suggestions_grouped} suggestions consolidated, "
+            f"{len(suggestions)} → {len(grouped_suggestions)} total cards"
+        )
+
+    return grouped_suggestions, stats
+
+
 async def analyze_fast(
     text: str,
     ta: Optional[str] = None,
@@ -400,6 +526,9 @@ async def analyze_fast(
             "duplicates_removed": len(rule_suggestions) + len(ai_suggestions) - len(suggestions)
         }
 
+        # 5b-2. Group suggestions: Consolidate multiple issues targeting same text
+        suggestions, grouping_stats = _group_suggestions_by_text(suggestions, req_id)
+
         # 5c. Validate suggestions (Phase 2A: Backend validator)
         validation_start = time.time()
         validation_result = validate_suggestions_batch(suggestions)
@@ -440,6 +569,8 @@ async def analyze_fast(
                 "llm_issues_count": len(suggestions) - len(rule_issues),
                 # Phase 2B: Deduplication stats
                 "deduplication": dedup_stats,
+                # Phase 2B: Grouping stats
+                "grouping": grouping_stats,
                 # Phase 2A: Validation stats
                 "validation": validation_result["stats"],
                 "validation_warnings": validation_result["warnings"],
