@@ -146,8 +146,8 @@ def adjust_confidence_from_feedback(
 
 # Critical: No changes to these patterns
 PROHIBITED_PATTERNS = {
-    "numeric_values": r"\d+(\.\d+)?",  # Any numbers
-    "dosing": r"\d+\s*(mg|g|ml|mcg|ug|IU|units?)",  # Dosing patterns
+    "numeric_values": r"\d+(?:\.\d+)?",  # Any numbers (non-capturing group to avoid empty string matches)
+    "dosing": r"\d+\s*(?:mg|g|ml|mcg|ug|IU|units?)",  # Dosing patterns (non-capturing group)
     "endpoints": [
         r"primary endpoint",
         r"secondary endpoint",
@@ -207,7 +207,10 @@ def contains_pattern(text: str, patterns: List[str]) -> List[str]:
 
 def changes_numeric_values(original: str, improved: str) -> Tuple[bool, str]:
     """
-    Check if improved text changes numeric values from original
+    Check if improved text REMOVES or CHANGES numeric values from original
+
+    Note: ADDING new numbers (e.g., regulatory timelines) is allowed.
+    Only REMOVING existing numbers is prohibited.
 
     Returns:
         (has_changes, reason)
@@ -215,12 +218,13 @@ def changes_numeric_values(original: str, improved: str) -> Tuple[bool, str]:
     orig_nums = set(extract_numbers(original))
     imp_nums = set(extract_numbers(improved))
 
-    if orig_nums != imp_nums:
-        added = imp_nums - orig_nums
-        removed = orig_nums - imp_nums
-        reason = f"Numeric changes: removed={removed}, added={added}"
+    # Check if any numbers were REMOVED (prohibited)
+    removed = orig_nums - imp_nums
+    if removed:
+        reason = f"Numeric changes: removed={removed}"
         return True, reason
 
+    # Adding new numbers is OK (e.g., "within 3-6 days" for regulatory clarity)
     return False, ""
 
 
