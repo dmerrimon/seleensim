@@ -152,9 +152,10 @@ def _deduplicate_suggestions(
                 duplicates_found += 1
 
                 match_method = "text overlap" if overlap >= OVERLAP_THRESHOLD else "category match"
+                overlap_str = f"{overlap:.2f}" if overlap >= OVERLAP_THRESHOLD else "N/A"
                 logger.debug(
                     f"📍 [{request_id}] Deduplication: Skipping rule-based '{rule_type}' "
-                    f"({match_method}: {overlap:.2f if overlap >= OVERLAP_THRESHOLD else 'N/A'})"
+                    f"({match_method}: {overlap_str})"
                 )
                 break
 
