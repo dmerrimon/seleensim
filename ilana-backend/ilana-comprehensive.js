@@ -355,7 +355,10 @@ async function displaySelectionSuggestions(analysisResult) {
             range: suggestion.position || { start: 0, end: 20 },
             confidence: suggestion.confidence || 0.9,
             selectionAnalysis: true,
-            request_id: IlanaState.currentRequestId
+            request_id: IlanaState.currentRequestId,
+            // IMPORTANT: Preserve grouped suggestion fields
+            grouped: suggestion.grouped || false,
+            sub_issues: suggestion.sub_issues || []
         };
         console.log(`  - Mapped issue:`, { text: issue.text, suggestion: issue.suggestion, rationale: issue.rationale });
         issues.push(issue);
