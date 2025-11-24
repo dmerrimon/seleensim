@@ -15,7 +15,7 @@ For deep analysis with full RAG stack + citations, use background job queue.
 import os
 import time
 import logging
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Tuple
 from datetime import datetime
 import asyncio
 
@@ -177,7 +177,7 @@ def _deduplicate_suggestions(
 def _group_suggestions_by_text(
     suggestions: List[Dict[str, Any]],
     request_id: str
-) -> tuple[List[Dict[str, Any]], Dict[str, int]]:
+) -> Tuple[List[Dict[str, Any]], Dict[str, int]]:
     """
     Group suggestions that target the same or very similar original text
 
