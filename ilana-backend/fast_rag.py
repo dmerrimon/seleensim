@@ -28,9 +28,14 @@ PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME", "protocol-intelligence-76
 
 # Fast path RAG limits
 FAST_RAG_TOP_K = 3  # Only top 3 exemplars for speed
+FAST_RAG_REGULATORY_TOP_K = 2  # Top 2 regulatory citations
 FAST_RAG_TIMEOUT_MS = 2000  # 2s timeout for RAG query
 PUBMEDBERT_RETRY_ATTEMPTS = 3  # Max 3 retry attempts
 PUBMEDBERT_INITIAL_DELAY_MS = 500  # Initial retry delay
+
+# Pinecone namespaces
+PROTOCOL_NAMESPACE = ""  # Default namespace for protocol exemplars
+REGULATORY_NAMESPACE = "regulatory-guidance"  # Regulatory docs namespace
 
 # Singleton Pinecone client
 _pinecone_client = None
@@ -213,24 +218,66 @@ def _get_enhanced_clinical_embedding(text: str) -> List[float]:
     return embedding
 
 
-async def get_fast_exemplars(text: str, request_id: str = "unknown") -> List[Dict[str, Any]]:
+async def get_regulatory_citations(text: str, embedding: List[float], request_id: str = "unknown") -> List[Dict[str, Any]]:
     """
-    Get top 3 similar protocol exemplars using Pinecone + PubMedBERT (fast path)
+    Get relevant regulatory citations from FDA/ICH guidance documents
+
+    Args:
+        text: Protocol text being analyzed
+        embedding: Pre-computed embedding vector
+        request_id: Request tracking ID
+
+    Returns:
+        List of regulatory citations (max 2)
+    """
+    try:
+        results = _pinecone_index.query(
+            vector=embedding,
+            top_k=FAST_RAG_REGULATORY_TOP_K,
+            namespace=REGULATORY_NAMESPACE,
+            include_metadata=True
+        )
+
+        citations = []
+        for match in results.matches:
+            metadata = match.metadata
+            citations.append({
+                'id': match.id,
+                'score': float(match.score),
+                'text': metadata.get('full_text', metadata.get('text', ''))[:600],
+                'source': metadata.get('source', 'FDA/ICH Guidance'),
+                'section': metadata.get('section', ''),
+                'title': metadata.get('title', ''),
+                'regulatory_weight': metadata.get('regulatory_weight', 'mandatory'),
+                'type': 'regulatory'
+            })
+
+        logger.info(f"📜 [{request_id}] Retrieved {len(citations)} regulatory citations")
+        return citations
+
+    except Exception as e:
+        logger.warning(f"⚠️ [{request_id}] Regulatory citation retrieval failed: {e}")
+        return []
+
+
+async def get_fast_exemplars(text: str, request_id: str = "unknown") -> Dict[str, List[Dict[str, Any]]]:
+    """
+    Get protocol exemplars AND regulatory citations using dual-namespace queries
 
     Args:
         text: Protocol text to find similar examples for
         request_id: Request tracking ID
 
     Returns:
-        List of exemplars (max 3), each with: {id, score, text, metadata}
-        Returns [] if RAG unavailable or times out
+        Dict with 'exemplars' and 'regulatory' keys, each containing list of results
+        Returns {'exemplars': [], 'regulatory': []} if RAG unavailable
     """
     start_time = time.time()
 
     # Initialize Pinecone if needed
     if not _init_pinecone():
         logger.warning(f"⚠️ [{request_id}] Pinecone not available, skipping RAG")
-        return []
+        return {'exemplars': [], 'regulatory': []}
 
     try:
         # 1. Get embedding with retry logic
@@ -241,64 +288,92 @@ async def get_fast_exemplars(text: str, request_id: str = "unknown") -> List[Dic
             logger.warning(f"⚠️ [{request_id}] PubMedBERT unavailable, using enhanced fallback")
             embedding = _get_enhanced_clinical_embedding(text)
 
-        # 2. Query Pinecone (synchronous - no async support)
-        # Wrap in timeout
+        # 2. Query both namespaces in parallel
         query_start = time.time()
 
-        results = _pinecone_index.query(
+        # Protocol exemplars (default namespace)
+        protocol_results = _pinecone_index.query(
             vector=embedding,
             top_k=FAST_RAG_TOP_K,
+            namespace=PROTOCOL_NAMESPACE,
             include_metadata=True
         )
 
+        # Regulatory citations
+        regulatory_citations = await get_regulatory_citations(text, embedding, request_id)
+
         query_ms = int((time.time() - query_start) * 1000)
 
-        # 3. Format exemplars
+        # 3. Format protocol exemplars
         exemplars = []
-        for match in results.matches:
+        for match in protocol_results.matches:
             exemplars.append({
                 'id': match.id,
                 'score': float(match.score),
-                'text': match.metadata.get('text', '')[:500],  # Limit to 500 chars per exemplar
+                'text': match.metadata.get('text', '')[:500],
                 'protocol_id': match.metadata.get('protocol_id', 'unknown'),
                 'section_type': match.metadata.get('type', 'unknown'),
+                'type': 'protocol',
                 'metadata': match.metadata
             })
 
         total_ms = int((time.time() - start_time) * 1000)
         logger.info(
-            f"✅ [{request_id}] RAG retrieved {len(exemplars)} exemplars "
+            f"✅ [{request_id}] RAG retrieved {len(exemplars)} exemplars + "
+            f"{len(regulatory_citations)} regulatory citations "
             f"(query: {query_ms}ms, total: {total_ms}ms)"
         )
 
-        return exemplars
+        return {
+            'exemplars': exemplars,
+            'regulatory': regulatory_citations
+        }
 
     except Exception as e:
         total_ms = int((time.time() - start_time) * 1000)
         logger.error(f"❌ [{request_id}] RAG failed ({total_ms}ms): {type(e).__name__}: {e}")
-        return []
+        return {'exemplars': [], 'regulatory': []}
 
 
-def format_exemplars_for_prompt(exemplars: List[Dict[str, Any]]) -> str:
+def format_exemplars_for_prompt(rag_results: Dict[str, List[Dict[str, Any]]]) -> str:
     """
-    Format exemplars for injection into enhanced prompt
+    Format protocol exemplars AND regulatory citations for prompt injection
 
     Args:
-        exemplars: List of exemplars from get_fast_exemplars()
+        rag_results: Dict with 'exemplars' and 'regulatory' lists from get_fast_exemplars()
 
     Returns:
-        Formatted string for prompt injection
+        Formatted string for prompt injection with regulatory citations first
     """
-    if not exemplars:
-        return ""
+    formatted = ""
 
-    formatted = "\n\nRELEVANT PROTOCOL EXAMPLES:\n"
+    # Add regulatory citations first (most important for compliance)
+    regulatory = rag_results.get('regulatory', [])
+    if regulatory:
+        formatted += "\n\nREGULATORY GUIDANCE (Must cite specific sections in your rationale):\n"
+        for idx, reg in enumerate(regulatory, 1):
+            source = reg.get('source', 'FDA/ICH')
+            section = reg.get('section', '')
+            title = reg.get('title', '')
+            text = reg.get('text', '')[:400]
 
-    for idx, ex in enumerate(exemplars, 1):
-        formatted += f"\nExample {idx} (score: {ex['score']:.3f}):\n"
-        formatted += f"{ex['text'][:300]}...\n"  # Max 300 chars per exemplar
+            formatted += f"\n{idx}. {source}"
+            if section:
+                formatted += f" - Section: {section}"
+            if title:
+                formatted += f"\n   Title: {title}"
+            formatted += f"\n   Content: {text}...\n"
 
-    formatted += "\nUse these examples to inform your analysis quality and regulatory expectations.\n"
+    # Add protocol exemplars (for writing quality)
+    exemplars = rag_results.get('exemplars', [])
+    if exemplars:
+        formatted += "\n\nPROTOCOL WRITING EXAMPLES (Best practices):\n"
+        for idx, ex in enumerate(exemplars, 1):
+            formatted += f"\nExample {idx} (relevance: {ex.get('score', 0):.3f}):\n"
+            formatted += f"{ex.get('text', '')[:300]}...\n"
+
+    if formatted:
+        formatted += "\nIMPORTANT: Cite specific regulatory sections (e.g., 'ICH E9 Section 5.7') in your rationale.\n"
 
     return formatted
 
