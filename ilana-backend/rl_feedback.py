@@ -15,7 +15,7 @@ import json
 import re
 from datetime import datetime
 from pathlib import Path
-from typing import Literal, Optional
+from typing import Literal, Optional, Tuple
 
 from pydantic import BaseModel, Field, field_validator
 
@@ -133,7 +133,7 @@ class ReinforcementEvent(BaseModel):
     analysis_mode: Optional[str] = Field(default="simple", description="Analysis mode")
 
 
-def validate_phi_redacted(payload: dict) -> tuple[bool, Optional[str]]:
+def validate_phi_redacted(payload: dict) -> Tuple[bool, Optional[str]]:
     """
     Validate that PHI is properly redacted in payload.
 

@@ -657,7 +657,7 @@ async def analyze_fast(
         }
 
 
-async def _call_azure_fast(system_prompt: str, user_prompt: str, request_id: str) -> tuple[Dict[str, Any], Dict[str, int]]:
+async def _call_azure_fast(system_prompt: str, user_prompt: str, request_id: str) -> Tuple[Dict[str, Any], Dict[str, int]]:
     """
     Call Azure OpenAI with fast model and optimized prompts (Step 4)
 
