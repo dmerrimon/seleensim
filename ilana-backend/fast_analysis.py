@@ -39,11 +39,11 @@ from suggestion_validator import validate_suggestions_batch
 
 logger = logging.getLogger(__name__)
 
-# Configuration
-FAST_MODEL = os.getenv("ANALYSIS_FAST_MODEL", "gpt-4o-mini")
+# Configuration - Premium Quality (GPT-4o)
+FAST_MODEL = os.getenv("ANALYSIS_FAST_MODEL", "gpt-4o")  # Upgraded from gpt-4o-mini for enterprise quality
 FAST_TIMEOUT_MS = int(os.getenv("SIMPLE_PROMPT_TIMEOUT_MS", "15000"))  # 15 second timeout for longer sections
-FAST_MAX_TOKENS = int(os.getenv("FAST_MAX_TOKENS", "1500"))  # Allow multiple detailed issues (increased from 800)
-FAST_TEMPERATURE = 0.2
+FAST_MAX_TOKENS = int(os.getenv("FAST_MAX_TOKENS", "2000"))  # Increased for detailed regulatory citations
+FAST_TEMPERATURE = 0.2  # Low temperature for consistent regulatory citations
 SELECTION_CHUNK_THRESHOLD = int(os.getenv("SELECTION_CHUNK_THRESHOLD", "10000"))  # 10000 chars = full protocol sections
 
 
