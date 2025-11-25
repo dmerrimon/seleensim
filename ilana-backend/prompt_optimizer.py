@@ -278,6 +278,24 @@ Original: "Subjects will be enrolled..."
 Improved: "Participants will be enrolled..."
 Rationale: ICH E6(R3) Section 1.58 requires use of 'participant' instead of 'subject' to respect person-first language and align with modern regulatory standards.
 
+Example 4 - Primary Endpoint Specification (Critical):
+Original: "The primary endpoint is change in disease severity score."
+Improved: "The primary endpoint is change from baseline in disease severity score at Week 12, analyzed using ANCOVA with baseline score as covariate. Non-inferiority margin: -3 points (FDA Guidance: Non-Inferiority Clinical Trials, Section 4.2)."
+Rationale: ICH E9 Section 2.2.2 requires primary endpoints to specify: (1) measurement timing, (2) direction of benefit, (3) analysis method, and (4) clinically meaningful difference. FDA Non-Inferiority Guidance Section 4.2 requires pre-specification of NI margins with clinical justification.
+Recommendation: Define in Protocol Section 4.1: precise timing (Week 12), analysis method (ANCOVA), and NI/superiority margin with clinical justification.
+
+Example 5 - Safety Monitoring Specificity (Major):
+Original: "Adverse events will be monitored throughout the study."
+Improved: "Adverse events will be actively monitored at each study visit (Weeks 0, 4, 8, 12, 16) using standardized questionnaires and targeted physical examination. Grade 3+ AEs must be reported to the Medical Monitor within 24 hours per ICH E6(R3) Section 5.17. All AEs will be coded using MedDRA v25.0."
+Rationale: ICH E6(R3) Section 5.17 requires specification of: (1) AE assessment methods, (2) reporting timelines for serious/severe events, (3) standardized coding dictionaries. FDA Safety Monitoring Guidance Section 6.3 requires active surveillance with defined procedures.
+Recommendation: Add to Protocol Section 6.2: specific AE collection procedures, grading criteria (CTCAE v5.0), expedited reporting timelines, and MedDRA coding version.
+
+Example 6 - Inclusion Criteria Precision (Major):
+Original: "Patients with adequate organ function."
+Improved: "Participants with adequate organ function defined as: (1) Hepatic: AST/ALT ≤2.5× ULN, total bilirubin ≤1.5× ULN; (2) Renal: eGFR ≥60 mL/min/1.73m² (CKD-EPI equation); (3) Hematologic: ANC ≥1,500/μL, platelets ≥100,000/μL, hemoglobin ≥9.0 g/dL. Laboratory values must be obtained within 14 days prior to enrollment."
+Rationale: ICH E8 Section 3.1.3 requires eligibility criteria to be objective, measurable, and clinically justified. Ambiguous criteria ("adequate") violate reproducibility standards per ICH E6(R3) Section 8.3.3. FDA Eligibility Guidance Section 2.4 requires specific laboratory thresholds with timing.
+Recommendation: Replace all subjective criteria with measurable thresholds. Specify: (1) exact laboratory values with units, (2) reference ranges source (local vs central lab), (3) timing window for assessments.
+
 JSON RESPONSE:""",
     max_input_tokens=FAST_TOKEN_BUDGET,
     expected_output_tokens=600
