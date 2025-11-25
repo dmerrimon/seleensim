@@ -12,9 +12,12 @@ services:
   - type: web
     name: ilana-backend-v2
     runtime: python
+    plan: free
+    region: oregon
     buildCommand: "echo 'CACHE_BUST_NOV16_2024_BYTECODE_CLEAR' && find . -type f -name '*.pyc' -delete && find . -type d -name '__pycache__' -exec rm -rf {} + 2>/dev/null || true && rm -rf ~/.cache/pip && rm -rf /opt/render/.cache/Python* 2>/dev/null || true && pip install --no-cache-dir --force-reinstall -r requirements.txt"
     startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
     rootDir: ./ilana-backend
+    pythonVersion: "3.11"
 
     # ==========================================
     # ENVIRONMENT VARIABLES
