@@ -20,6 +20,9 @@ from dataclasses import dataclass
 from pathlib import Path
 from collections import defaultdict
 
+# Import RAG formatting for regulatory citations
+from fast_rag import format_exemplars_for_prompt
+
 logger = logging.getLogger(__name__)
 
 # Configuration
@@ -225,11 +228,13 @@ FAST_ANALYSIS_TEMPLATE = PromptTemplate(
 
 1) Identify ALL material issues in the selected protocol text that could cause regulatory non-compliance, statistical bias, safety misunderstanding, ambiguous analysis, or operational confusion.
 2) Provide precise, auditable, copy-paste ready rewrites that preserve scientific meaning and do NOT invent facts.
-3) For each issue, return structured JSON with: id, category, severity, original_text, improved_text, rationale (explicitly referencing regulatory/statistical principle), recommendation (action step), and confidence (0-1).
+3) For each issue, return structured JSON with: id, category, severity, original_text, improved_text, rationale (MUST cite specific regulatory sections, e.g., "ICH E9 Section 5.7" or "FDA Statistical Guidance Section 3.2"), recommendation (action step), and confidence (0-1).
 4) NEVER include raw PHI in outputs or telemetry. Where needed, return hashes for sensitive values.
 5) DO NOT change endpoints, eligibility criteria, dosing, or key scientific claims without explicit user instruction - only improve clarity, compliance, structure, and pre-specification.
 6) For statistical or population issues, always indicate preferred analytic approach (e.g., ITT with sensitivity analyses, time-varying covariates, marginal structural models) and recommend SAP text. If language is conditional ("may", "if deemed appropriate", "as appropriate"), mark as CRITICAL.
-7) Return ALL issues (array) ordered by severity (critical → major → minor → advisory). Limit to 10 issues. If none, return issues: [].""",
+7) Return ALL issues (array) ordered by severity (critical → major → minor → advisory). Limit to 10 issues. If none, return issues: [].
+
+REGULATORY CITATION REQUIREMENT: Your rationale MUST include specific section numbers from regulatory guidance (e.g., "ICH E9 Section 5.7" NOT just "ICH E9"). If regulatory context is provided, cite it. If not, use general regulatory principles with specific sections.""",
     user_template="""Analyze the following SELECTED PROTOCOL TEXT{ta_context}. Return strict JSON only (no extra prose) with "issues" array.
 
 TEXT:
@@ -254,22 +259,24 @@ RESPONSE FORMAT:
   ]
 }}
 
-FEW-SHOT EXAMPLES:
+FEW-SHOT EXAMPLES (Note the SPECIFIC regulatory section citations):
 
-Example 1 - Conditional SAP:
+Example 1 - Conditional SAP (Critical):
 Original: "The statistical analyses may reflect the clinical status/symptoms at the time samples were collected if deemed appropriate."
 Improved: "Statistical analyses will be pre-specified in the Statistical Analysis Plan (SAP). Analyses reflecting clinical status at sample collection must be defined in SAP Section 7 with analytic methods and handling of time-varying covariates."
-Rationale: Pre-specification required (ICH E9).
+Rationale: Conditional language ("if deemed appropriate") violates pre-specification requirements. ICH E9 Section 5.7 requires all analyses to be pre-specified in the SAP before database lock. Time-varying covariates must be handled using established methods (e.g., marginal structural models per FDA Statistical Guidance Section 3.4.2).
+Recommendation: Add to SAP Section 7: specific methods for time-varying severity covariates.
 
-Example 2 - Reassignment:
+Example 2 - Post-randomization Reassignment (Critical):
 Original: "Patients may be reassigned to the highest severity group they achieve during follow-up."
-Improved: "Define analysis populations: the primary analysis will be intention-to-treat (by enrollment group). Any post-enrollment severity-based analyses will be pre-specified in the SAP, including time-varying covariate methods and procedures to mitigate immortal time bias."
-Rationale: Post-randomization reassignment needs pre-specification.
+Improved: "Analysis populations will follow intention-to-treat principles (enrollment group). Post-enrollment severity-based analyses will be pre-specified in SAP Section 8 using time-varying covariate methods to mitigate immortal time bias and guarantee time bias."
+Rationale: Post-randomization reassignment violates randomization integrity per ICH E9 Section 5.2.1. Must maintain ITT as primary analysis. If secondary analyses by achieved severity are needed, ICH E9 Section 5.7 and FDA Statistical Guidance Section 3.4.2 require pre-specification of time-varying covariate handling.
+Recommendation: Define primary ITT analysis population. Pre-specify secondary time-varying analyses in SAP Section 8 with explicit methods to avoid immortal time bias.
 
-Example 3 - Terminology:
+Example 3 - Terminology (Minor):
 Original: "Subjects will be enrolled..."
 Improved: "Participants will be enrolled..."
-Rationale: ICH-GCP E6(R3) requires use of 'participants' instead of 'subjects'.
+Rationale: ICH E6(R3) Section 1.58 requires use of 'participant' instead of 'subject' to respect person-first language and align with modern regulatory standards.
 
 JSON RESPONSE:""",
     max_input_tokens=FAST_TOKEN_BUDGET,
@@ -308,14 +315,14 @@ JSON RESPONSE:""",
 )
 
 
-def build_fast_prompt(text: str, ta: Optional[str] = None, exemplars: Optional[List[Dict[str, Any]]] = None) -> Dict[str, Any]:
+def build_fast_prompt(text: str, ta: Optional[str] = None, rag_results: Optional[Dict[str, List[Dict[str, Any]]]] = None) -> Dict[str, Any]:
     """
-    Build optimized prompt for fast analysis with optional RAG exemplars + feedback learning
+    Build optimized prompt for fast analysis with RAG (protocol exemplars + regulatory citations) + feedback learning
 
     Args:
         text: Protocol text to analyze
         ta: Optional therapeutic area hint
-        exemplars: Optional list of similar protocol exemplars from RAG
+        rag_results: Optional Dict with 'exemplars' and 'regulatory' lists from get_fast_exemplars()
 
     Returns:
         Dict with system and user messages, token counts
@@ -323,16 +330,14 @@ def build_fast_prompt(text: str, ta: Optional[str] = None, exemplars: Optional[L
     # Build TA context (only if provided)
     ta_context = f" in {ta.replace('_', ' ')}" if ta else ""
 
-    # Build exemplars context (lightweight for fast path - max 300 chars)
-    exemplars_text = ""
-    if exemplars:
-        for idx, ex in enumerate(exemplars[:2], 1):  # Max 2 exemplars for fast path
-            ex_text = ex.get('text', '')[:150]  # Limit to 150 chars per exemplar
-            exemplars_text += f"\nExample {idx}: {ex_text}..."
+    # Build regulatory + exemplar context using centralized formatter
+    rag_context = ""
+    if rag_results:
+        rag_context = format_exemplars_for_prompt(rag_results)
 
-        # Prepend exemplars to text if present
-        if exemplars_text:
-            text = f"{exemplars_text}\n\nSELECTED TEXT TO ANALYZE:\n{text}"
+        # Prepend RAG context to text if present
+        if rag_context.strip():
+            text = f"{rag_context}\n\nSELECTED TEXT TO ANALYZE:\n{text}"
 
     # Load feedback-based examples (Phase 2B - Adaptive Learning)
     feedback_examples = load_feedback_examples()

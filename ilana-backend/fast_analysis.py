@@ -400,22 +400,25 @@ async def analyze_fast(
 
         timings["preprocess_ms"] = int((time.time() - preprocess_start) * 1000)
 
-        # 2. Fetch RAG exemplars (lightweight, 2s timeout, graceful degradation)
+        # 2. Fetch RAG exemplars + regulatory citations (lightweight, 2s timeout, graceful degradation)
         rag_start = time.time()
-        exemplars = []
+        rag_results = {'exemplars': [], 'regulatory': []}
 
         try:
             # Only fetch RAG if Pinecone/PubMedBERT are enabled
             enable_rag = os.getenv("ENABLE_PINECONE_INTEGRATION", "true").lower() == "true"
 
             if enable_rag:
-                logger.info(f"🔍 [{req_id}] Fetching RAG exemplars...")
-                exemplars = await get_fast_exemplars(trimmed_text, req_id)
+                logger.info(f"🔍 [{req_id}] Fetching RAG exemplars + regulatory citations...")
+                rag_results = await get_fast_exemplars(trimmed_text, req_id)
 
-                if exemplars:
-                    logger.info(f"✅ [{req_id}] Retrieved {len(exemplars)} exemplars")
+                exemplar_count = len(rag_results.get('exemplars', []))
+                regulatory_count = len(rag_results.get('regulatory', []))
+
+                if exemplar_count > 0 or regulatory_count > 0:
+                    logger.info(f"✅ [{req_id}] Retrieved {exemplar_count} exemplars + {regulatory_count} regulatory citations")
                 else:
-                    logger.info(f"ℹ️ [{req_id}] No RAG exemplars (degraded mode)")
+                    logger.info(f"ℹ️ [{req_id}] No RAG results (degraded mode)")
             else:
                 logger.info(f"ℹ️ [{req_id}] RAG disabled in configuration")
 
@@ -424,8 +427,8 @@ async def analyze_fast(
 
         timings["rag_ms"] = int((time.time() - rag_start) * 1000)
 
-        # 3. Build optimized prompt with RAG exemplars (Step 4 + Step 8)
-        prompt_data = build_fast_prompt(trimmed_text, ta, exemplars)
+        # 3. Build optimized prompt with RAG (exemplars + regulatory citations) (Step 4 + Step 8)
+        prompt_data = build_fast_prompt(trimmed_text, ta, rag_results)
 
         # Log token budget info
         token_info = prompt_data["tokens"]
