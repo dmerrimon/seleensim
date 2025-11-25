@@ -1,0 +1,23 @@
+{
+  "id": "fda_guidance_chunk_0651",
+  "title": "Introduction - Part 651",
+  "text": "& Pennello (2001) discuss prior distributions for trials under regulatory review. 4.6 Borrowing strength from other studies: hierarchical models Bayesian hierarchical modeling is a specific methodology you may use to combine results from multiple studies to obtain estimates of safety and effectiveness parameters. The name hierarchical model derives from the hierarchical manner in which observations and parameters are structured. Some Bayesian analysts refer to this approach as “borrowing strength.” For device trials, the amount of strength borrowed can be translated into sample size, and the extent of borrowing depends on how closely results from the current study (the study of interest) reflect the results from the previous studies (from whence we are “borrowing strength”; note that mathematically these need not necessarily occur at an earlier point in time). If results are very similar, the current study can borrow considerable strength. As current results vary from the previous information, the current study borrows less and less. Very different results borrow no strength at all, or even potentially “borrow negatively”. In a regulatory setting, hierarchical models can be very appealing: They reward having good prior information on device performance by lessening the burden in demonstrating safety and effectiveness. At the same time, the approach can protect against over-reliance on previous studies that turn out to be overly optimistic for the pivotal study parameter. An example of a hierarchical model Suppose you want to combine information on the success probabilities from two earlier studies of an approved device with results from a new study. You may decide to use two levels in a hierarchical model: the patient level and the study level. The first (patient) level of the hierarchy assumes that within each study (current or historical), patients are exchangeable. However, patients from 25 previous studies are not exchangeable with patients in the current study, so patient data from the earlier studies and the current study may not be simply pooled. The second (study) level of the hierarchy applies a model that assumes the success probabilities from the previous studies and the current study are exchangeable, but the success probabilities may differ. This assumption is prudent since you are not sure if patients from the previous studies are directly exchangeable with the patients from the current study. However, the success probabilities from all three studies are related",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 873600,
+  "end_pos": 875136,
+  "tokens": 512,
+  "tags": [
+    "safety",
+    "efficacy",
+    "statistical",
+    "regulatory",
+    "clinical_trial",
+    "data"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "guidance",
+  "created_at": "2025-10-23T02:25:44.728Z"
+}

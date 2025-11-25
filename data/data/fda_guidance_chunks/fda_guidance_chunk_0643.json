@@ -1,0 +1,21 @@
+{
+  "id": "fda_guidance_chunk_0643",
+  "title": "Introduction - Part 643",
+  "text": "The more information that is accrued, the less uncertainty there may be about the posterior distribution for θ. As more and more information is collected, the influence of the original prior distribution is usually less. If enough data are collected, the relative importance of the prior distribution will be negligible compared to the likelihood. 3.6 What is a predictive distribution? The Bayesian approach allows for the derivation of a special type of posterior probability; namely, the probability of unobserved outcomes (future or missing) given what has already been observed. This probability is called the predictive probability. Collectively, the probabilities for all possible values of the unobserved outcome are called the predictive distribution. Predictive distributions have many uses, including: • determining when to stop a trial (based on predicting outcomes for patients not yet observed), • helping a physician and patient make decisions by predicting the patient’s clinical outcome, given the observed outcomes of patients in the clinical trial, • predicting a clinical outcome from an earlier or more easily measured outcome for that patient, • augmenting trial results for missing data (imputation), and • model checking. These uses are discussed in more detail in Section 5. Analyzing a Bayesian Clinical Trial. 3.7 What is exchangeability? Exchangeability is a fundamental concept underlying statistical inference. It can be of particular importance in Bayesian trials. Formally, we would say that units (patients or trials) are considered exchangeable if the probability of observing any particular set of outcomes on those units is invariant to any re-ordering of the units. This definition can be made clearer through examples. Exchangeability of patients In a clinical trial, patients within the trial are usually assumed to be exchangeable. Under exchangeability, patient outcomes are not expected to depend on the order in which the patients were enrolled, the order in which the outcomes are observed, or any other re-indexing or re-numbering of the patients. If patients in the trial are exchangeable with patients in the population from which they were sampled (e.g., the intended use population), then inferences can be made about the population on the basis of data observed on the trial patients. Thus, the concept of a representative sample can be expressed in terms of exchangeability. Exchangeability of trials For a Bayesian clinical trial, another level of exchangeability is often assumed.",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 862848,
+  "end_pos": 864384,
+  "tokens": 512,
+  "tags": [
+    "efficacy",
+    "statistical",
+    "clinical_trial",
+    "data"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "recommendation",
+  "created_at": "2025-10-23T02:25:44.727Z"
+}

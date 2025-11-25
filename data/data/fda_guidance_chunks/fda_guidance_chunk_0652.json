@@ -1,0 +1,23 @@
+{
+  "id": "fda_guidance_chunk_0652",
+  "title": "Introduction - Part 652",
+  "text": "studies and the current study are exchangeable, but the success probabilities may differ. This assumption is prudent since you are not sure if patients from the previous studies are directly exchangeable with the patients from the current study. However, the success probabilities from all three studies are related in that they are assumed exchangeable. As a result, the previous studies provide some information about the success probability in the current study, although not as much information as if the patients in the three groups were directly poolable. Similarity of previous studies to the current study The key clinical question in using hierarchical modeling to borrow strength from previous studies is whether the previous studies are sufficiently similar to the current study to be considered exchangeable, as discussed in Section 3.7. To achieve study exchangeability, statistical adjustments for certain differences in covariates such as demographic and prognostic variables using patient-level data may be necessary. This is called exchangeability conditioned on covariates. Generally, proper calibration of your study depends on having the same covariate information at the patient level as in previous studies, and on incorporating it appropriately. For example, if prior information from historical controls is to be used to augment the sample size in a concurrent control group, but covariates indicate that the concurrent control patients are healthier, then exchangeability of the historical and concurrent controls may be plausible only after adjustment for the covariates (Pennello and Thompson, 2008, Section 3; O’Malley, Normand, and Kuntz, 2003). Calibration based only on covariate summaries (such as from the literature) may be inadequate because the relationship of the covariate level to the outcome can be determined in the current study but not in the previous studies. This forces the untestable assumption that covariate effects in your study and in the previous studies are the same; that is, that study and covariate effects do not interact. Previous studies with large sample sizes in a hierarchical model can be very informative. As we will discuss in Section 7.1, if the prior probability of a successful trial is too high, it might be necessary to modify the study design and analysis plan. Hierarchical models may also be used to combine data across centers in a multi-center trial. For an example, see the Summary of Safety and Effectiveness for PMA P980048,",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 874944,
+  "end_pos": 876480,
+  "tokens": 512,
+  "tags": [
+    "safety",
+    "efficacy",
+    "design",
+    "statistical",
+    "clinical_trial",
+    "data"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "recommendation",
+  "created_at": "2025-10-23T02:25:44.728Z"
+}

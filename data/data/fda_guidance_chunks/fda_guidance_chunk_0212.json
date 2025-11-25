@@ -1,0 +1,21 @@
+{
+  "id": "fda_guidance_chunk_0212",
+  "title": "Introduction - Part 212",
+  "text": "be used, for example, to select the number and timing of interim analyses, or to determine the appropriate critical value of a test statistic for declaring efficacy or futility. Simulations can also be useful for comparing the performance of alternative designs. A major use of simulations in adaptive trial design is to estimate trial operating characteristics and to demonstrate that these operating characteristics meet desired levels. Traditional non-adaptive clinical trials have generally relied on statistical theory to ensure that Type I error probability is controlled at a desired level and to obtain estimates of the power of the trial. In the simplest case, when testing a single endpoint in a fixed-sample size clinical trial design, it can typically be shown that the final test statistic has a certain asymptotic probability distribution,21 and inference and operating characteristics can then be based on the properties of this distribution. For many adaptive designs, such as traditional group sequential designs, it is similarly possible to derive asymptotic probability distributions mathematically and base inference and planning on those distributions. For some adaptive designs, however, it either is not possible to derive relevant distributions of test statistics, or the distributions themselves are not computationally tractable. This tends to be the case for more complex adaptive designs, such as designs that adapt several elements or designs that use predictive probability models to determine analysis time points. In these cases, trial operating characteristics can often be estimated by means of clinical trial simulations. For example, for Type I error probability and power, the basic logic of this approach is to simulate many instances of the trial based on various assumptions and evaluate the proportion of simulations that would have met the predetermined bar for supporting a conclusion of effectiveness under each set of assumptions. For simulations intended to estimate Type I error probability, hypothetical clinical trials would be simulated under a series of assumptions compatible with the null hypothesis. For each set of such assumptions, the proportion of simulated trials that led to a false positive conclusion would be taken as an estimate of Type I error probability under those assumptions. In almost all cases, there are an infinite number of scenarios potentially compatible with the null hypothesis. Identifying which scenarios should be considered when estimating Type I error probability can be",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 283584,
+  "end_pos": 285120,
+  "tokens": 512,
+  "tags": [
+    "efficacy",
+    "design",
+    "statistical",
+    "clinical_trial"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "recommendation",
+  "created_at": "2025-10-23T02:25:44.692Z"
+}

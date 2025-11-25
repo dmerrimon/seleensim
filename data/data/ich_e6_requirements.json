@@ -1,0 +1,606 @@
+{
+  "ich_e6_r3_protocol_requirements": {
+    "version": "ICH E6(R3) - January 2025",
+    "description": "Clinical Trial Protocol Requirements based on ICH GCP E6(R3) Appendix B",
+    "sections": {
+      "B.1": {
+        "section_id": "B.1",
+        "title": "General Information",
+        "ich_reference": "ICH E6(R3) Appendix B.1",
+        "required_elements": [
+          {
+            "element": "protocol_title",
+            "description": "Protocol title with clear identification of the study",
+            "severity": "critical",
+            "detection_keywords": ["protocol title", "study title", "trial title"],
+            "validation_rules": ["must be present in first section", "should be descriptive"]
+          },
+          {
+            "element": "protocol_version_date",
+            "description": "Protocol version number and date",
+            "severity": "critical",
+            "detection_keywords": ["version", "protocol version", "date", "protocol date"],
+            "validation_rules": ["version number required", "date required"]
+          },
+          {
+            "element": "sponsor_information",
+            "description": "Sponsor name and complete address",
+            "severity": "critical",
+            "detection_keywords": ["sponsor", "sponsor name", "sponsor address"],
+            "validation_rules": ["sponsor name required", "sponsor address required"]
+          },
+          {
+            "element": "authorized_signatory",
+            "description": "Name and title of person(s) authorized to sign protocol",
+            "severity": "critical",
+            "detection_keywords": ["authorized", "signatory", "protocol signature"],
+            "validation_rules": ["authorized person name required"]
+          },
+          {
+            "element": "medical_expert",
+            "description": "Sponsor's medical expert contact information",
+            "severity": "critical",
+            "detection_keywords": ["medical expert", "medical monitor", "medical advisor"],
+            "validation_rules": ["medical expert name required", "contact information required"]
+          },
+          {
+            "element": "principal_investigator",
+            "description": "Name and title of principal investigator(s)",
+            "severity": "critical",
+            "detection_keywords": ["principal investigator", "PI", "lead investigator"],
+            "validation_rules": ["PI name required", "PI credentials required"]
+          },
+          {
+            "element": "trial_sites",
+            "description": "Names and addresses of clinical trial sites",
+            "severity": "critical",
+            "detection_keywords": ["trial site", "study site", "clinical site", "investigational site"],
+            "validation_rules": ["site name required", "site address required"]
+          }
+        ]
+      },
+      "B.2": {
+        "section_id": "B.2",
+        "title": "Background Information",
+        "ich_reference": "ICH E6(R3) Appendix B.2",
+        "required_elements": [
+          {
+            "element": "investigational_product_description",
+            "description": "Name and description of investigational product(s)",
+            "severity": "critical",
+            "detection_keywords": ["investigational product", "study drug", "study medication", "IMP"],
+            "validation_rules": ["product name required", "product description required"]
+          },
+          {
+            "element": "nonclinical_summary",
+            "description": "Summary of findings from nonclinical studies",
+            "severity": "critical",
+            "detection_keywords": ["nonclinical", "preclinical", "animal studies", "in vitro"],
+            "validation_rules": ["nonclinical data summary required"]
+          },
+          {
+            "element": "risk_benefit_summary",
+            "description": "Summary of known and potential risks and benefits",
+            "severity": "critical",
+            "detection_keywords": ["risk", "benefit", "safety profile", "adverse events"],
+            "validation_rules": ["risk assessment required", "benefit description required"]
+          },
+          {
+            "element": "dosage_justification",
+            "description": "Justification for route, dosage, regimen, and treatment period",
+            "severity": "critical",
+            "detection_keywords": ["dosage", "dose", "route of administration", "treatment period"],
+            "validation_rules": ["dosage justification required", "route justification required"]
+          },
+          {
+            "element": "gcp_compliance_statement",
+            "description": "Statement of compliance with protocol, GCP and regulatory requirements",
+            "severity": "critical",
+            "detection_keywords": ["GCP", "Good Clinical Practice", "compliance", "regulatory"],
+            "validation_rules": ["GCP compliance statement required"]
+          }
+        ]
+      },
+      "B.3": {
+        "section_id": "B.3",
+        "title": "Trial Objectives and Purpose",
+        "ich_reference": "ICH E6(R3) Appendix B.3",
+        "required_elements": [
+          {
+            "element": "trial_objectives",
+            "description": "Detailed description of trial objectives",
+            "severity": "critical",
+            "detection_keywords": ["objective", "aim", "goal", "purpose"],
+            "validation_rules": ["clear objectives required", "specific objectives required"]
+          },
+          {
+            "element": "primary_endpoint",
+            "description": "Primary endpoint(s) definition",
+            "severity": "critical",
+            "detection_keywords": ["primary endpoint", "primary outcome", "primary efficacy"],
+            "validation_rules": ["primary endpoint clearly defined", "measurable endpoint"]
+          },
+          {
+            "element": "secondary_endpoints",
+            "description": "Secondary endpoint(s) definition",
+            "severity": "important",
+            "detection_keywords": ["secondary endpoint", "secondary outcome", "secondary efficacy"],
+            "validation_rules": ["secondary endpoints defined if applicable"]
+          },
+          {
+            "element": "exploratory_endpoints",
+            "description": "Exploratory endpoint(s) if applicable",
+            "severity": "recommended",
+            "detection_keywords": ["exploratory endpoint", "exploratory outcome", "biomarker"],
+            "validation_rules": ["exploratory endpoints defined if applicable"]
+          }
+        ]
+      },
+      "B.4": {
+        "section_id": "B.4",
+        "title": "Trial Design",
+        "ich_reference": "ICH E6(R3) Appendix B.4",
+        "required_elements": [
+          {
+            "element": "trial_design_description",
+            "description": "Description of trial design and study type",
+            "severity": "critical",
+            "detection_keywords": ["trial design", "study design", "randomized", "controlled", "blinded"],
+            "validation_rules": ["design type specified", "methodology described"]
+          },
+          {
+            "element": "trial_schematic",
+            "description": "Schematic diagram of trial design and procedures",
+            "severity": "important",
+            "detection_keywords": ["schematic", "diagram", "flowchart", "study flow"],
+            "validation_rules": ["visual representation of design"]
+          },
+          {
+            "element": "bias_minimization",
+            "description": "Measures to minimize/avoid bias",
+            "severity": "critical",
+            "detection_keywords": ["bias", "blinding", "randomization", "allocation concealment"],
+            "validation_rules": ["bias mitigation strategies described"]
+          },
+          {
+            "element": "treatment_description",
+            "description": "Description of trial treatment(s) and dosage regimen",
+            "severity": "critical",
+            "detection_keywords": ["treatment", "dosage", "regimen", "administration"],
+            "validation_rules": ["treatment details specified"]
+          },
+          {
+            "element": "participation_duration",
+            "description": "Expected duration of participant participation",
+            "severity": "critical",
+            "detection_keywords": ["duration", "participation period", "study period"],
+            "validation_rules": ["duration clearly specified"]
+          },
+          {
+            "element": "stopping_rules",
+            "description": "Stopping rules or discontinuation criteria",
+            "severity": "critical",
+            "detection_keywords": ["stopping rules", "discontinuation", "termination criteria"],
+            "validation_rules": ["stopping criteria defined"]
+          },
+          {
+            "element": "accountability_procedures",
+            "description": "Accountability procedures for investigational products",
+            "severity": "critical",
+            "detection_keywords": ["accountability", "drug accountability", "dispensing"],
+            "validation_rules": ["accountability procedures described"]
+          },
+          {
+            "element": "randomization_procedures",
+            "description": "Randomization codes maintenance and code-breaking procedures",
+            "severity": "critical",
+            "detection_keywords": ["randomization", "code breaking", "emergency unblinding"],
+            "validation_rules": ["randomization procedures described"]
+          }
+        ]
+      },
+      "B.5": {
+        "section_id": "B.5",
+        "title": "Selection of Participants",
+        "ich_reference": "ICH E6(R3) Appendix B.5",
+        "required_elements": [
+          {
+            "element": "inclusion_criteria",
+            "description": "Participant inclusion criteria",
+            "severity": "critical",
+            "detection_keywords": ["inclusion criteria", "inclusion", "eligible participants"],
+            "validation_rules": ["inclusion criteria clearly defined", "measurable criteria"]
+          },
+          {
+            "element": "exclusion_criteria",
+            "description": "Participant exclusion criteria",
+            "severity": "critical",
+            "detection_keywords": ["exclusion criteria", "exclusion", "ineligible participants"],
+            "validation_rules": ["exclusion criteria clearly defined"]
+          },
+          {
+            "element": "withdrawal_criteria",
+            "description": "Participant withdrawal criteria",
+            "severity": "critical",
+            "detection_keywords": ["withdrawal criteria", "withdrawal", "discontinuation"],
+            "validation_rules": ["withdrawal criteria specified"]
+          }
+        ]
+      },
+      "B.6": {
+        "section_id": "B.6",
+        "title": "Discontinuation of Trial Intervention and Participant Withdrawal",
+        "ich_reference": "ICH E6(R3) Appendix B.6",
+        "required_elements": [
+          {
+            "element": "discontinuation_criteria",
+            "description": "Criteria and procedures for discontinuing trial intervention",
+            "severity": "critical",
+            "detection_keywords": ["discontinuation", "stopping treatment", "intervention discontinuation"],
+            "validation_rules": ["discontinuation criteria defined"]
+          },
+          {
+            "element": "withdrawal_procedures",
+            "description": "Procedures for participant withdrawal from trial",
+            "severity": "critical",
+            "detection_keywords": ["withdrawal procedure", "study withdrawal", "early termination"],
+            "validation_rules": ["withdrawal procedures described"]
+          },
+          {
+            "element": "followup_procedures",
+            "description": "Follow-up procedures for withdrawn participants",
+            "severity": "critical",
+            "detection_keywords": ["follow-up", "post-withdrawal", "safety follow-up"],
+            "validation_rules": ["follow-up procedures specified"]
+          }
+        ]
+      },
+      "B.7": {
+        "section_id": "B.7",
+        "title": "Treatment and Interventions for Participants",
+        "ich_reference": "ICH E6(R3) Appendix B.7",
+        "required_elements": [
+          {
+            "element": "investigational_products",
+            "description": "Description of investigational products to be administered",
+            "severity": "critical",
+            "detection_keywords": ["investigational product", "study medication", "treatment"],
+            "validation_rules": ["products clearly described"]
+          },
+          {
+            "element": "administration_route",
+            "description": "Route(s) of administration",
+            "severity": "critical",
+            "detection_keywords": ["route of administration", "oral", "intravenous", "subcutaneous"],
+            "validation_rules": ["administration route specified"]
+          },
+          {
+            "element": "dosage_regimen",
+            "description": "Dosage and dosage regimen details",
+            "severity": "critical",
+            "detection_keywords": ["dosage", "dose", "regimen", "frequency"],
+            "validation_rules": ["dosage clearly specified"]
+          },
+          {
+            "element": "packaging_labelling",
+            "description": "Packaging and labelling requirements",
+            "severity": "critical",
+            "detection_keywords": ["packaging", "labelling", "blinding", "masking"],
+            "validation_rules": ["packaging described"]
+          },
+          {
+            "element": "concomitant_medications",
+            "description": "Concomitant medication requirements and restrictions",
+            "severity": "important",
+            "detection_keywords": ["concomitant", "concomitant medication", "prohibited medication"],
+            "validation_rules": ["concomitant medication policy described"]
+          },
+          {
+            "element": "compliance_assessment",
+            "description": "Participant compliance assessment procedures",
+            "severity": "important",
+            "detection_keywords": ["compliance", "adherence", "pill count"],
+            "validation_rules": ["compliance assessment described"]
+          }
+        ]
+      },
+      "B.8": {
+        "section_id": "B.8",
+        "title": "Assessment of Efficacy",
+        "ich_reference": "ICH E6(R3) Appendix B.8",
+        "required_elements": [
+          {
+            "element": "efficacy_parameters",
+            "description": "Specification of primary and secondary efficacy parameters",
+            "severity": "critical",
+            "detection_keywords": ["efficacy parameter", "efficacy assessment", "primary efficacy"],
+            "validation_rules": ["efficacy parameters defined"]
+          },
+          {
+            "element": "assessment_methods",
+            "description": "Methods and timing for assessing efficacy parameters",
+            "severity": "critical",
+            "detection_keywords": ["assessment method", "measurement", "evaluation"],
+            "validation_rules": ["assessment methods described"]
+          },
+          {
+            "element": "primary_efficacy_endpoint",
+            "description": "Definition of primary efficacy endpoint",
+            "severity": "critical",
+            "detection_keywords": ["primary efficacy endpoint", "primary endpoint"],
+            "validation_rules": ["primary endpoint clearly defined"]
+          },
+          {
+            "element": "secondary_efficacy_endpoints",
+            "description": "Definition of secondary efficacy endpoints",
+            "severity": "important",
+            "detection_keywords": ["secondary efficacy endpoint", "secondary endpoint"],
+            "validation_rules": ["secondary endpoints defined"]
+          }
+        ]
+      },
+      "B.9": {
+        "section_id": "B.9",
+        "title": "Assessment of Safety",
+        "ich_reference": "ICH E6(R3) Appendix B.9",
+        "required_elements": [
+          {
+            "element": "safety_parameters",
+            "description": "Specification of safety parameters",
+            "severity": "critical",
+            "detection_keywords": ["safety parameter", "safety assessment", "adverse event"],
+            "validation_rules": ["safety parameters defined"]
+          },
+          {
+            "element": "safety_assessment_methods",
+            "description": "Methods and timing for assessing safety parameters",
+            "severity": "critical",
+            "detection_keywords": ["safety assessment", "safety monitoring", "laboratory tests"],
+            "validation_rules": ["safety assessment methods described"]
+          },
+          {
+            "element": "adverse_event_procedures",
+            "description": "Procedures for recording and reporting adverse events",
+            "severity": "critical",
+            "detection_keywords": ["adverse event", "AE", "serious adverse event", "SAE"],
+            "validation_rules": ["AE procedures described"]
+          },
+          {
+            "element": "safety_followup",
+            "description": "Type and duration of follow-up after adverse events",
+            "severity": "critical",
+            "detection_keywords": ["safety follow-up", "AE follow-up", "safety monitoring"],
+            "validation_rules": ["safety follow-up procedures described"]
+          }
+        ]
+      },
+      "B.10": {
+        "section_id": "B.10",
+        "title": "Statistical Considerations",
+        "ich_reference": "ICH E6(R3) Appendix B.10",
+        "required_elements": [
+          {
+            "element": "statistical_methods",
+            "description": "Description of statistical methods to be employed",
+            "severity": "critical",
+            "detection_keywords": ["statistical method", "statistical analysis", "statistical test"],
+            "validation_rules": ["statistical methods described"]
+          },
+          {
+            "element": "sample_size",
+            "description": "Planned number of participants to be enrolled",
+            "severity": "critical",
+            "detection_keywords": ["sample size", "number of participants", "enrollment"],
+            "validation_rules": ["sample size specified with justification"]
+          },
+          {
+            "element": "significance_level",
+            "description": "Level of significance to be used",
+            "severity": "critical",
+            "detection_keywords": ["significance level", "alpha", "p-value"],
+            "validation_rules": ["significance level specified"]
+          },
+          {
+            "element": "termination_criteria",
+            "description": "Criteria for termination of the entire trial",
+            "severity": "critical",
+            "detection_keywords": ["termination criteria", "stopping rules", "futility"],
+            "validation_rules": ["termination criteria defined"]
+          },
+          {
+            "element": "missing_data_procedures",
+            "description": "Procedures for accounting for missing, unused and spurious data",
+            "severity": "important",
+            "detection_keywords": ["missing data", "dropout", "imputation"],
+            "validation_rules": ["missing data procedures described"]
+          },
+          {
+            "element": "deviation_reporting",
+            "description": "Procedures for reporting deviations from statistical plan",
+            "severity": "important",
+            "detection_keywords": ["protocol deviation", "statistical deviation"],
+            "validation_rules": ["deviation procedures described"]
+          },
+          {
+            "element": "analysis_populations",
+            "description": "Selection of participants to be included in analyses",
+            "severity": "critical",
+            "detection_keywords": ["analysis population", "ITT", "per protocol", "safety population"],
+            "validation_rules": ["analysis populations defined"]
+          }
+        ]
+      },
+      "B.11": {
+        "section_id": "B.11",
+        "title": "Direct Access to Source Records",
+        "ich_reference": "ICH E6(R3) Appendix B.11",
+        "required_elements": [
+          {
+            "element": "access_statement",
+            "description": "Statement permitting trial-related monitoring, audits, and inspections",
+            "severity": "critical",
+            "detection_keywords": ["direct access", "monitoring", "audit", "inspection"],
+            "validation_rules": ["access statement included"]
+          },
+          {
+            "element": "source_data_access",
+            "description": "Provision for direct access to source data/documents",
+            "severity": "critical",
+            "detection_keywords": ["source data", "source document", "medical records"],
+            "validation_rules": ["source data access described"]
+          }
+        ]
+      },
+      "B.12": {
+        "section_id": "B.12",
+        "title": "Quality Control and Quality Assurance",
+        "ich_reference": "ICH E6(R3) Appendix B.12",
+        "required_elements": [
+          {
+            "element": "quality_measures",
+            "description": "Description of quality control and quality assurance measures",
+            "severity": "critical",
+            "detection_keywords": ["quality control", "quality assurance", "QC", "QA"],
+            "validation_rules": ["quality measures described"]
+          },
+          {
+            "element": "monitoring_procedures",
+            "description": "Monitoring procedures and responsibilities",
+            "severity": "critical",
+            "detection_keywords": ["monitoring", "monitor", "monitoring plan"],
+            "validation_rules": ["monitoring procedures described"]
+          }
+        ]
+      },
+      "B.13": {
+        "section_id": "B.13",
+        "title": "Ethics",
+        "ich_reference": "ICH E6(R3) Appendix B.13",
+        "required_elements": [
+          {
+            "element": "ethical_considerations",
+            "description": "Description of ethical considerations relating to the trial",
+            "severity": "critical",
+            "detection_keywords": ["ethics", "ethical", "Declaration of Helsinki"],
+            "validation_rules": ["ethical considerations described"]
+          },
+          {
+            "element": "irb_iec_information",
+            "description": "IRB/IEC information and procedures",
+            "severity": "critical",
+            "detection_keywords": ["IRB", "IEC", "ethics committee", "institutional review board"],
+            "validation_rules": ["IRB/IEC procedures described"]
+          },
+          {
+            "element": "informed_consent",
+            "description": "Informed consent procedures",
+            "severity": "critical",
+            "detection_keywords": ["informed consent", "consent process", "consent form"],
+            "validation_rules": ["informed consent procedures described"]
+          },
+          {
+            "element": "ethical_compliance",
+            "description": "Statement of compliance with ethical standards",
+            "severity": "critical",
+            "detection_keywords": ["ethical compliance", "ethical standards"],
+            "validation_rules": ["ethical compliance statement included"]
+          }
+        ]
+      },
+      "B.14": {
+        "section_id": "B.14",
+        "title": "Data Handling and Record Keeping",
+        "ich_reference": "ICH E6(R3) Appendix B.14",
+        "required_elements": [
+          {
+            "element": "data_handling_procedures",
+            "description": "Description of data handling procedures",
+            "severity": "critical",
+            "detection_keywords": ["data handling", "data management", "data collection"],
+            "validation_rules": ["data handling procedures described"]
+          },
+          {
+            "element": "crf_guidelines",
+            "description": "Case report form completion guidelines",
+            "severity": "critical",
+            "detection_keywords": ["CRF", "case report form", "eCRF"],
+            "validation_rules": ["CRF guidelines provided"]
+          },
+          {
+            "element": "data_management",
+            "description": "Data management procedures",
+            "severity": "critical",
+            "detection_keywords": ["data management", "database", "data entry"],
+            "validation_rules": ["data management procedures described"]
+          },
+          {
+            "element": "record_retention",
+            "description": "Record retention requirements",
+            "severity": "critical",
+            "detection_keywords": ["record retention", "document retention", "archiving"],
+            "validation_rules": ["record retention period specified"]
+          }
+        ]
+      },
+      "B.15": {
+        "section_id": "B.15",
+        "title": "Financing and Insurance",
+        "ich_reference": "ICH E6(R3) Appendix B.15",
+        "required_elements": [
+          {
+            "element": "financing_information",
+            "description": "Financing information",
+            "severity": "important",
+            "detection_keywords": ["financing", "funding", "sponsor funding"],
+            "validation_rules": ["financing source described"]
+          },
+          {
+            "element": "insurance_provisions",
+            "description": "Insurance provisions",
+            "severity": "critical",
+            "detection_keywords": ["insurance", "indemnity", "liability"],
+            "validation_rules": ["insurance provisions described"]
+          },
+          {
+            "element": "compensation",
+            "description": "Compensation to participants and investigators",
+            "severity": "important",
+            "detection_keywords": ["compensation", "payment", "reimbursement"],
+            "validation_rules": ["compensation arrangements described"]
+          }
+        ]
+      },
+      "B.16": {
+        "section_id": "B.16",
+        "title": "Publication Policy",
+        "ich_reference": "ICH E6(R3) Appendix B.16",
+        "required_elements": [
+          {
+            "element": "publication_circumstances",
+            "description": "Circumstances under which sponsors and investigators anticipate publication",
+            "severity": "important",
+            "detection_keywords": ["publication", "dissemination", "results publication"],
+            "validation_rules": ["publication policy described"]
+          },
+          {
+            "element": "publication_timeline",
+            "description": "Publication timeline and procedures",
+            "severity": "recommended",
+            "detection_keywords": ["publication timeline", "manuscript", "authorship"],
+            "validation_rules": ["publication procedures described"]
+          }
+        ]
+      }
+    },
+    "severity_definitions": {
+      "critical": "Essential element required for regulatory compliance and participant safety",
+      "important": "Significant element that affects trial quality and scientific validity",
+      "recommended": "Best practice element that enhances trial quality"
+    },
+    "compliance_scoring": {
+      "critical_weight": 10,
+      "important_weight": 5,
+      "recommended_weight": 1
+    }
+  }
+}

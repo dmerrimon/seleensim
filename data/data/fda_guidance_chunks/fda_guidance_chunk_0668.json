@@ -1,0 +1,23 @@
+{
+  "id": "fda_guidance_chunk_0668",
+  "title": "Introduction - Part 668",
+  "text": "rate of a Bayesian experimental design to be too large, we recommend you modify the design or the model to reduce that rate. Determination of “too large” is specific to a submission because some sources of type I error inflation (e.g., large amounts of valid prior information) may be more acceptable than others (e.g., inappropriate choice of studies for construction of the prior, inappropriate statistical model, or inappropriate criteria for study success). The seriousness (cost) of a Type I error is also a consideration. There are many options for decreasing the type I error rate. These options include: • increasing the posterior (or predictive) probability that defines a successful trial (e.g., 97 percent, 98 percent, 99 percent), • increasing the number of patients before the first interim analysis, • reducing the number of interim analyses, • discounting the prior information, a) Choice of hyperprior parameter values b) Discounting historical data c) Limiting the effective number of patients “borrowed” from the historical control d) Including an inflation factor on the variance between studies in hierarchical models e) Putting restrictions on the amount of borrowing that is allowed from previous studies14 14 In a regulatory setting, it is of paramount concern if the result of current study is substantially different from that of previous studies. Therefore, a restriction on the amount of borrowing might be determined at the design stage according to relevant experts’ input. For example, to guide against using the previous control data when the serious adverse event rate of the current control arm is substantially smaller than that of the previous study, an empirical rule may be set such that if the serious adverse event rate of the current control arm is smaller than that of the previous study by a fixed number, no data from the previous study will be used. Such empirical rules should be reflected in simulations of the operating characteristics. • increasing the maximum sample size (again, to reduce the influence of the prior), • changing the criteria for terminating enrollment in an adaptive trial, • Altering the calculation of type I error rate, or a) Inclusion (or not) of prior information in the calculation of type I error b) Inclusion (or not) of covariate adjustments in the calculation of type I error c) Calculation of type I error",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 896448,
+  "end_pos": 897984,
+  "tokens": 512,
+  "tags": [
+    "safety",
+    "design",
+    "statistical",
+    "regulatory",
+    "clinical_trial",
+    "data"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "guidance",
+  "created_at": "2025-10-23T02:25:44.729Z"
+}

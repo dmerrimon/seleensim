@@ -1,0 +1,20 @@
+{
+  "id": "fda_guidance_chunk_0176",
+  "title": "Introduction - Part 176",
+  "text": "the Holm procedure, if the 177 first test of hypothesis does not show statistical significance, testing proceeds to compare the 178 second-largest p-value to the second-largest adjusted alpha value, α/2. Sequential testing 179 continues in this manner until a p-value for an endpoint is statistically significant, whereupon the 180 Hochberg procedure provides a conclusion of statistically significant treatment effects for that 181 endpoint and all endpoints with smaller p-values. For example, when the largest p-value is less 182 than α, then the method concludes that there are significant treatment effects for all endpoints. In 183 another situation, when the largest p-value is not less than α, but the second-largest p-value is 184 less than α/2, then the method concludes that treatment effects have been demonstrated for all 185 endpoints except for the one associated with the largest p-value. 186 187 The Bonferroni and the Holm procedures are well known for being assumption-free. The 188 methods can be applied without concern for the endpoint types, their statistical distributions, and 189 the type of correlation structure. The Hochberg procedure, on the other hand, is not assumption-190 free in this way. The Hochberg procedure is known to provide adequate overall alpha-control for 191 independent endpoint tests or for positively correlated dependent tests with standard test statistics 192 in some cases (e.g., the test statistics are jointly bivariate normal). It is also a valid test procedure 193 Contains Nonbinding Recommendations 20 when certain conditions are met. Various simulation experiments for the general case (e.g., for 194 more than two endpoints with unequal correlation structures) indicate that the Hochberg 195 procedure usually will, but is not guaranteed to, control the overall Type I error rate for 196 positively correlated endpoints, but fails to do so for some negatively correlated tests (Sarkar et 197 al. 1997, Huque 2016). 198 199 4. Prospective Alpha Allocation Scheme 200 201 The Prospective Alpha Allocation Scheme (PAAS) (Moye 2000) is a single-step method that has 202 a slight advantage in power over the Bonferroni method. The method allows equal or unequal 203 alpha allocations to all endpoints, but, as with the Bonferroni method, each specific endpoint 204 receives a prospective allocation of a specific amount of the overall alpha. The alpha allocations 205 are required to satisfy the equation: 206 207 (1 - α1)(1",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 235200,
+  "end_pos": 236736,
+  "tokens": 512,
+  "tags": [
+    "efficacy",
+    "design",
+    "statistical"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "guidance",
+  "created_at": "2025-10-23T02:25:44.689Z"
+}

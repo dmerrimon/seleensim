@@ -1,0 +1,21 @@
+{
+  "id": "fda_guidance_chunk_0182",
+  "title": "Introduction - Part 182",
+  "text": "approach (e.g., Bretz et al. 2009) is a means for developing and evaluating 343 multiple analysis strategies for Bonferroni-based sequentially rejective methods. This approach 344 illustrates differences in endpoint importance as well as the relationships among the endpoints by 345 mapping onto a test strategy that ensures control of the Type I error rate and aids in creating and 346 evaluating alternative test strategies. 347 348 Graphical displays of complex analysis strategies can aid in describing and assessing the 349 proposed plan by displaying all the logical relationships among endpoint tests of hypotheses. 350 351 Basics of the Graphical Approach: Use of vertex (node) and path (order or direction) 352 353 In the graphical approach, the testing strategy is defined by a figure (graph) that shows each of 354 the hypotheses (H1, H2,..., Hm) located at a vertex (or node, a junction of testing order paths). 355 Each vertex (hypothesis) is allocated an initial amount of alpha, which this document defines as 356 the endpoint-specific alpha (with the understanding that a test of an endpoint is associated with a 357 test of a hypothesis, and vice versa). A key requirement is that the sum of all of the endpoint-358 specific alpha levels is equal to the total alpha level available for the study (the overall Type I 359 error rate). At each step of the algorithm, endpoints are tested at the endpoint-specific 360 significance levels using Bonferroni procedure. 361 362 Another feature of the figure (graph) is a set of directed edges. Each directed edge (or arrow) 363 connects two hypotheses and is assigned a value between 0 and 1, called a weight for that edge 364 and shown above the arrow, which indicates the fraction of the preserved alpha to be shifted 365 H3 : treatment inferior to control for Endpoint 2 (i.e., test for non-inferiority) H2 : treatment not superior to control for Endpoint 1 (i.e., test for superiority) H1 : treatment inferior to control for Endpoint 1 (i.e., test for non-inferiority) H4 : treatment not superior to control for Endpoint 2 (i.e., test for superiority) α1 α2 α2 Contains Nonbinding Recommendations 24 along that path to the receiving hypothesis, when the hypothesis at the tail end of the path is 366 successful (i.e., is rejected). The sum of the weights across",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 243264,
+  "end_pos": 244800,
+  "tokens": 512,
+  "tags": [
+    "efficacy",
+    "design",
+    "statistical",
+    "clinical_trial"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "guidance",
+  "created_at": "2025-10-23T02:25:44.689Z"
+}

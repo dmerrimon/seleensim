@@ -1,0 +1,21 @@
+{
+  "id": "fda_guidance_chunk_0645",
+  "title": "Introduction - Part 645",
+  "text": "engineering, and statistical point of view. • The clinicians should be satisfied that the previous trials that are proposed as prior information are similar enough in design and execution to the current trial. A priori, they should not have any reason to believe that there are systematic differences among the trials in any given direction. In particular, they should not be able to predict the direction of a difference between the proposed trial and any of the other previous trials. • The engineers should be satisfied that any design or manufacturing differences among the devices in the trials should not alter significantly the expected performance of the devices, at least in terms of the outcome or parameter of interest. • The statisticians should be able to agree on the appropriate statistical model to be used. The statistical model should be developed in consultation with the clinicians and engineers. In some circumstances, a model can be developed that removes systematic, directional differences among the trials such that exchangeability can still be assumed after adjustment for these differences (see Section 4.6). Bayesian hierarchical models are used to implement exchangeability of trials and exchangeability of patients within trials (see Section 4: Planning a Bayesian Clinical Trial). For an introductory discussion of exchangeability, see Gelman et. al. (2004), Spiegelhalter et. al. (2004), or Lad (1996). For technical definitions of exchangeability, see Bernardo & Smith (1995). 3.8 What is the Likelihood Principle? The Likelihood Principle is an important concept in statistics, but is central to the Bayesian approach. The principle states that all information about the parameter of interest, θ, obtained from a clinical trial, is contained in the likelihood function. In the Bayesian approach, the prior distribution for θ is updated using the information provided by the trial through the likelihood function, and nothing else. Bayesian analysts base all inferences about θ solely on the posterior distribution produced in this manner. A trial can be altered in many ways without changing the likelihood function. Adherence to the likelihood principle allows for flexibility in conducting Bayesian clinical trials, in particular with respect to: • modifications to sample size, • adaptive designs, • interim looks for the purpose of possibly stopping the trial early, and • multiplicity. Note that due to regulatory considerations trial modifications may need to be pre-specified",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 865536,
+  "end_pos": 867072,
+  "tokens": 512,
+  "tags": [
+    "efficacy",
+    "design",
+    "statistical",
+    "clinical_trial"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "recommendation",
+  "created_at": "2025-10-23T02:25:44.728Z"
+}

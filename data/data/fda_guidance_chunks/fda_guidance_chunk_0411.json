@@ -1,0 +1,20 @@
+{
+  "id": "fda_guidance_chunk_0411",
+  "title": "Introduction - Part 411",
+  "text": "• Covariate adjustment through a linear model is an acceptable method for estimating the average treatment effect, which is the difference in expected outcomes between subjects assigned to treatment and control groups. Generally, the outcome is regressed on an intercept, treatment assignment indicator, and baseline covariates, and the model is estimated using ordinary least squares. The resulting estimated regression coefficient for the treatment indicator is the estimate of the average treatment effect. • The average treatment effect is an example of an unconditional treatment effect, which quantifies the effect at the population level of moving a target population from untreated to treated. • Even when the linear regression model is misspecified and does not accurately capture the relationships between the outcome, covariates, and treatment, covariate adjustment through a linear model is a valid method for estimating and performing inference for the average treatment effect (Lin, 2013). However, the power of hypothesis tests and precision of estimates generally improves if the model more closely approximates the true relationships among the outcome, covariates, and treatment. • Nominal standard errors are often the default method in most statistical software packages. Even if the model is incorrectly specified, they are acceptable in two arm trials with 1:1 randomization. However, in other settings, these standard errors can be inaccurate when the model is misspecified. Therefore, the Agency recommends that sponsors consider use of a robust standard error method such as the Huber-White “sandwich” standard error when the model does not include treatment by covariate interactions (Rosenblum and van der Laan Contains Nonbinding Recommendations 2009; Lin 2013). Other robust standard error methods proposed in the literature can also cover cases with interactions (Ye et al. 2022). An appropriate nonparametric bootstrap procedure can also be used (Efron and Tibshirani 1993). • An analysis ignoring stratified randomization is likely to overestimate standard errors and can be unduly conservative when performing inference for the average treatment effect. The Agency recommends that the standard error computation account for stratified randomization. There are several methods for computing standard errors when combining stratification with covariate adjustment and possible model misspecification (Bugni et al. 2018; Ye et al. 2021). The statistical properties of such methods are best understood when the number of strata is small relative to the sample size. Sponsors can propose methods to account for",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 551040,
+  "end_pos": 552576,
+  "tokens": 512,
+  "tags": [
+    "efficacy",
+    "design",
+    "statistical"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "recommendation",
+  "created_at": "2025-10-23T02:25:44.708Z"
+}

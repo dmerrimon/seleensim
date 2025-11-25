@@ -1,0 +1,21 @@
+{
+  "id": "fda_guidance_chunk_0181",
+  "title": "Introduction - Part 181",
+  "text": "with the 308 option of testing of more than one endpoint if a preceding test is successful. When there are 309 multiple levels of this sequential hierarchy, and branching is applied at several of the steps, the 310 possible paths of endpoint testing become a complex, multi-branched structure. 311 312 As a simple illustration (Figure A1), consider a clinical trial that compares a treatment to control 313 on two primary endpoints (Endpoint 1 and Endpoint 2) to determine first whether the treatment 314 is non-inferior to the control for at least one endpoint. If, for either of the two endpoints, the 315 treatment is found non-inferior to the control, there is also a desire to test whether it is superior to 316 control for that endpoint. The analytic plan for the trial thus sets the following logical 317 restrictions: 318 319 i. Test endpoint two only after non-inferiority for endpoint one is first established. 320 321 ii. Test for superiority on an endpoint only after non-inferiority for that endpoint is first 322 concluded. 323 324 The following diagram shows the decision structure of the test strategy. In this diagram, each 325 block (or node) states the null hypothesis that it tests. 326 327 328 329 Contains Nonbinding Recommendations 23 330 331 Figure A1: Example of a flow diagram for non-inferiority and superiority tests for endpoints one and two of a trial 332 with logical restrictions, where α1 + α2 = α. To test for superiority for Endpoint 1 and/or 2, one should first establish 333 non-inferiority for that endpoint. 334 335 Thus, the above test strategy has a two-dimensional hierarchical structure, one dimension for the 336 two different endpoints and the other for the non-inferiority and superiority tests, with the logical 337 restrictions as stated above. Note that for this type of procedure, if multiple branches split off 338 from a single node, the alpha should be split across the multiple branches. 339 340 8. Graphical Approaches Based on Sequentially Rejective Tests 341 342 The graphical approach (e.g., Bretz et al. 2009) is a means for developing and evaluating 343 multiple analysis strategies for Bonferroni-based sequentially rejective methods. This approach 344 illustrates differences in endpoint importance as well as the relationships among the endpoints by 345 mapping onto a test strategy that ensures control",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 241920,
+  "end_pos": 243456,
+  "tokens": 512,
+  "tags": [
+    "efficacy",
+    "design",
+    "statistical",
+    "clinical_trial"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "recommendation",
+  "created_at": "2025-10-23T02:25:44.689Z"
+}

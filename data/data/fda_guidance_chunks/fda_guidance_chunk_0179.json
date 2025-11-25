@@ -1,0 +1,20 @@
+{
+  "id": "fda_guidance_chunk_0179",
+  "title": "Introduction - Part 179",
+  "text": "increases. With these methods, a distribution of the possible 255 test-statistic values under the null hypothesis is generated based upon the observed data of the 256 trial. This data-based distribution is then used to find the p-value of the observed study result 257 instead of using a theoretical distribution of the test statistics (e.g., a normal distribution of Z-258 scores, or a t-distribution for t-scores) as with most other methods. 259 260 Resampling methods include the bootstrap and permutation approaches for multiple endpoints 261 and require few, albeit important, assumptions about the true distribution of the endpoints. There 262 are, however, some drawbacks to these methods. The important assumptions are generally 263 difficult to verify, particularly for small study sample sizes. These methods, consequently, 264 usually require large study sample sizes (particularly bootstrap methods) and often require 265 simulations to ensure the data-based distribution of the test statistics from the limited trial data is 266 applicable and to ensure adequate Type I error rate control. Inflation of the Type I error rate may 267 occur, for example, if the shape of the data distribution is different between the treatment groups 268 being compared. 269 270 7. Gatekeeping Testing Strategies 271 272 Gatekeeping procedures (e.g., Dmitrienko et al. 2008, Dmitrienko and D’Agostino 2013) address 273 the problems of testing hierarchically ordered families of null hypotheses. Families usually 274 correspond to primary and secondary objectives in a clinical trial (see section III.A.). Inferences 275 in each family depend on the acceptance or rejection of null hypotheses in the earlier families 276 consistent with logical relationships that may exist among the null hypotheses. The relationships 277 usually reflect the relevant clinical considerations and are specified using a set of logical 278 restrictions. Different types of logical gatekeeping constraints have been studied including serial 279 gatekeeping, parallel gatekeeping and their generalization referred to as tree-structured 280 gatekeeping. 281 282 A serial strategy can be applied, for example, in the scenario where the endpoints of the primary 283 family are tested as co-primary endpoints (section III.C.). If all endpoints in the primary family 284 are statistically significant at the alpha level (e.g., α = 0.05), the endpoints in the second family 285 Contains Nonbinding Recommendations 22 are examined. The endpoints in the second family can be tested at the",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 239232,
+  "end_pos": 240768,
+  "tokens": 512,
+  "tags": [
+    "design",
+    "clinical_trial",
+    "data"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "recommendation",
+  "created_at": "2025-10-23T02:25:44.689Z"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "fda_guidance_chunk_0666",
+  "title": "Introduction - Part 666",
+  "text": "from using prior information as opposed to using noninformative priors. To calculate this prior probability, you can simulate data using only the prior distribution. For example, if you are using a computer program that performs Markov Chain Monte Carlo (MCMC) simulation, you provide no current data and have the program simulate these values instead. Simulations done in this manner provide the prior probability of the study claim. If necessary, the prior probability of the study claim can be lowered by modifying the prior distribution on the variance among studies to have a larger prior mean than initially. Alternatively, the prior distribution of the variance can be restricted to be greater than a constant, and the constant can be varied until the prior probability of the claim is lowered to the desired value. These approaches can work for three or more studies. However, for only two studies, i.e., a proposed and a previous study, the prior distribution may also have to be fairly precise because data from two studies may not by themselves provide much information about this variance. Effective Sample Size 39 A useful summary that can be computed for any simulations using posterior variance information is the effective sample size in the new trial. That is, Effective sample size (ESS) is given by: ESS = n * V1/V2, Where n = the sample size in the new trial V1 = the variance of the parameter of interest without borrowing (computed using a non-informative prior distribution) V2 = the variance of the parameter of interest with borrowing (computed using the proposed informative prior) Then, the quantity (ESS – n) can be interpreted as the number of patients “borrowed” from the previous trial. This summary is useful in quantifying the efficiency you are gaining from using the prior information. It is also useful for gauging if the prior is too informative. For example, if the number of patients “borrowed” is larger than the sample size for the trial, then the prior may be too informative and may need to be modified by using, for example, the techniques mentioned above (see last paragraph of previous subsection). Program code FDA recommends you submit the program code and any data that you use to conduct simulations as part of the IDE submission. We also recommend you include an",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 893760,
+  "end_pos": 895296,
+  "tokens": 512,
+  "tags": [
+    "statistical",
+    "regulatory",
+    "clinical_trial",
+    "data"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "recommendation",
+  "created_at": "2025-10-23T02:25:44.729Z"
+}

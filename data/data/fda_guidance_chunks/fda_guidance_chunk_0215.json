@@ -1,0 +1,22 @@
+{
+  "id": "fda_guidance_chunk_0215",
+  "title": "Introduction - Part 215",
+  "text": "of approximately ± 0.1%, which would be sufficient in most cases. This will allow very small differences in estimated Type I error probability to be identified, which may be important in some cases. In general, it is also preferable to use different random seeds for different simulation scenarios; this helps avoid consistently atypical results across scenarios. In 22 Additional discussion on the Bonferroni, Holm, and other multiple testing approaches can be found in the FDA draft guidance for industry Multiple Endpoints in Clinical Trials (January 2017). When final, this guidance will represent the FDA’s current thinking on this topic. Contains Nonbinding Recommendations some cases, fewer iterations might suffice to evaluate Type I error probability. For example, it might be sufficient to use 10,000 iterations if a particularly fine grid of scenarios is explored and every scenario has an estimated Type I error probability below the desired level. Also, a smaller number of simulations can generally be used if the upper bound of the 95% confidence interval for the Type I error probability estimate is below the desired level. Clinical trial simulations can also be used to estimate power and other relevant operating characteristics, such as expected sample size, expected duration, and bias in treatment effect estimates, for complex adaptive designs. Similar considerations apply to these estimates as to Type I error probability estimates. The level of precision expected for Type I error probability estimates, however, is generally not needed for other operating characteristics, so it is usually appropriate to investigate a sparser set of scenarios using smaller numbers of iterations for power and other operating characteristics. B. Bayesian Adaptive Designs The term Bayesian adaptive design has been used to refer to a wide variety of clinical trial designs that use Bayesian statistical reasoning and/or calculations in various ways (Berry, et al. 2010). Some examples of Bayesian adaptive design features are: • Use of predictive statistical modeling, possibly incorporating information external to a trial, to govern the timing and decision rules for interim analyses • Use of assumed dose-response relationships to govern dose escalation and selection • Explicit borrowing of information from external sources, e.g., previous trials, natural history studies, and registries, via informative prior distributions to improve the efficiency of a trial • Use of posterior probability distributions to form trial success criteria In",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 287616,
+  "end_pos": 289152,
+  "tokens": 512,
+  "tags": [
+    "efficacy",
+    "design",
+    "statistical",
+    "regulatory",
+    "clinical_trial"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "recommendation",
+  "created_at": "2025-10-23T02:25:44.692Z"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "fda_guidance_chunk_0195",
+  "title": "Introduction - Part 195",
+  "text": "a Type I error would exceed 2.5 percent. This is a well-known problem, and a variety of methods exist to determine appropriate significance levels for interim and final analyses that together ensure the overall Type I error probability of the trial is controlled at 2.5 percent (Jennison and Turnbull 1999). Explicit multiple hypothesis tests are not the only way adaptive design features can lead to erroneous conclusions. Consider a naive approach to adaptive patient population selection, in which data in the overall trial population and in a subpopulation are examined halfway through a trial, and the population with the larger treatment effect at that point is chosen for continued study. If the final analysis is performed in the selected population at a .025 significance level and includes the same data that were used to choose the patient population, the Type I error probability would exceed 2.5 percent. Other adaptive design features may introduce still more subtle Type I error probability inflation. Adaptive design proposals for trials incorporating null hypothesis testing should therefore address the possibility of Type I error probability inflation. In some cases, such as simple group sequential designs (section V.A.), statistical theory can be used to derive significance levels that ensure Type I error probability is controlled at the desired level. In other cases, such as sample size re-estimation based on non-comparative interim results (section IV.), it can be shown that performing analyses at the conventional .025 significance level has no effect or a limited effect Contains Nonbinding Recommendations on the Type I error probability. In still other cases, such as many Bayesian adaptive designs (section VI.B.), it may be critical to use simulations (section VI.A.) to evaluate the chance of an erroneous conclusion. B. Estimating Treatment Effects It is important that clinical trials produce sufficiently reliable treatment effect estimates to facilitate an evaluation of benefit-risk and to appropriately label new drugs, enabling the practice of evidence-based medicine. Some adaptive design features can lead to statistical bias in the estimation of treatment effects and related quantities. For example, each of the two cases of Type I error probability inflation mentioned in section III.A. above has a potential for biased estimates. Specifically, a conventional end-of-trial treatment effect estimate such as a sample mean that does not take the adaptations into account would tend",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 260736,
+  "end_pos": 262272,
+  "tokens": 512,
+  "tags": [
+    "safety",
+    "design",
+    "statistical",
+    "clinical_trial",
+    "data"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "guidance",
+  "created_at": "2025-10-23T02:25:44.690Z"
+}

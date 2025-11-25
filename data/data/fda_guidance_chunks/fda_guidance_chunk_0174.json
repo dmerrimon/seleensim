@@ -1,0 +1,21 @@
+{
+  "id": "fda_guidance_chunk_0174",
+  "title": "Introduction - Part 174",
+  "text": "of its 119 simplicity and broad applicability. The drug is considered to have shown effects for each 120 endpoint that succeeds on this test. The Holm and Hochberg methods (see below) are more 121 powerful than the Bonferroni method for primary endpoints and are therefore preferable in many 122 cases. However, sponsors might still wish to use the Bonferroni method for primary endpoints to 123 maximize power for secondary endpoints or because the assumptions of the Hochberg method 124 are not justified. 125 126 The most common form of the Bonferroni method divides the available total  (typically 0.05 127 two-sided) equally among the chosen endpoints. The method then concludes that a treatment 128 effect is significant at the  level for each one of the m endpoints for which the endpoint’s p-129 value is less than α/m. Thus, with two endpoints, the critical  for each endpoint is two-sided 130 0.025. The Bonferroni test can also be performed with different weights assigned to endpoints, 131 with the sum of the relative weights equal to 1.0 (e.g., 0.4, 0.3, 0.2, and 0.1 for four endpoints). 132 These weights should be prespecified in the design of the trial, taking into consideration the 133 clinical importance of the endpoints, the likelihood of success, or other factors. 134 135 2. The Holm Procedure 136 137 The Holm procedure is a multi-step step-down procedure; it is useful for endpoints with any 138 degree of correlation. It is less conservative than the Bonferroni method because a success with 139 the smallest p-value (at the same endpoint-specific alpha as the Bonferroni method) allows other 140 endpoints to be tested at larger endpoint-specific alpha levels than does the Bonferroni method. 141 The algorithm for performing this test is as follows: 142 143 The endpoint p-values resulting from the completed study are first ordered from the smallest to 144 the largest. Suppose that there are m endpoints to be tested and p(1) represents the smallest p-145 value, p(2) the next-smallest p-value, p(3) the third-smallest p-value, and so on. 146 147 Contains Nonbinding Recommendations 19 i. The test begins by comparing the smallest p-value, p(1), to α/m, the same threshold used 148 in the equally-weighted Bonferroni correction. If this p(1) is less than α/m, the treatment 149 effect for the endpoint associated with",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 232512,
+  "end_pos": 234048,
+  "tokens": 512,
+  "tags": [
+    "efficacy",
+    "design",
+    "statistical",
+    "clinical_trial"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "guidance",
+  "created_at": "2025-10-23T02:25:44.689Z"
+}

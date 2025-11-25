@@ -1,0 +1,23 @@
+{
+  "id": "fda_guidance_chunk_0650",
+  "title": "Introduction - Part 650",
+  "text": "of the quantity of interest as being more likely than others (such as Figure 1). These preferences are usually based on previous studies. Lack of preference among the values or lack of information can be represented through a non-informative prior distribution (such as Figure 2). Incorporating informative prior distributions A Bayesian analysis of a current study of a new device may include prior information from: • the new device, • the control device, or • both devices. When incorporating prior information from a previous study, the patients in the previous study are rarely considered exchangeable with the patients in the current study. Instead, a hierarchical model is often used to “borrow strength” from the previous studies. At the first level of the hierarchy, these models assume that patients are exchangeable within a study but not across studies. At a second level of the hierarchy, the previous studies are assumed to be exchangeable with the current study, which acknowledges variation between studies. For more detail on hierarchical models, see Section 4.6. If the prior information for a study is based on many more patients than are to be enrolled in the study, the prior distribution may be too informative. The judgment of what constitutes too informative is a case-by-case decision. In this case, some modifications to the study design and analysis plan may be warranted. 24 Non-informative prior distributions Non-informative prior distributions are used frequently in Bayesian adaptive trials when no prior information is available. As another example, in a Bayesian hierarchical model for combining studies, a non-informative prior distribution may be placed on a parameter that captures the variability between studies because, ordinarily, no informative prior is available on this parameter. There is broad literature on the issues surrounding prior distributions, for example the definition of “non-informative”, the effect of changes in the measurement scale, et cetera. Discussion of these issues can be found in Lee (1997), Kass & Wasserman (1996), Box & Tiao (1973), Bernardo & Smith (1993), and Bernardo, Berger, and Sun (2008). Irony & Pennello (2001) discuss prior distributions for trials under regulatory review. 4.6 Borrowing strength from other studies: hierarchical models Bayesian hierarchical modeling is a specific methodology you may use to combine results from multiple studies to obtain estimates of safety and effectiveness parameters. The name hierarchical model derives",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 872256,
+  "end_pos": 873792,
+  "tokens": 512,
+  "tags": [
+    "safety",
+    "efficacy",
+    "design",
+    "statistical",
+    "regulatory",
+    "clinical_trial"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "recommendation",
+  "created_at": "2025-10-23T02:25:44.728Z"
+}

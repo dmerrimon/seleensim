@@ -1,0 +1,24 @@
+{
+  "id": "fda_guidance_chunk_0660",
+  "title": "Introduction - Part 660",
+  "text": "outcomes of the patients in a clinical trial, provided the current patient is exchangeable with the patients in the trial. In fact, that probability answers the following questions: • Given the results of the clinical trial, what is the probability that a new patient receiving the experimental treatment will be successful? • What would that probability be if the patient were treated in the control group? We recommend that you consider the usefulness of this information in helping physicians and patients make decisions regarding treatment options and whether it should be included in the device labeling. Predicting (imputing) missing data You may use predictive probabilities to predict (or impute) missing data, and trial results can be adjusted accordingly. There are also frequentist methods for missing data imputation. Regardless of the method, the adjustment depends on the assumption that patients with missing outcomes follow the same statistical model as patients with observed outcomes. This means the missing patients are exchangeable with the non-missing patients, or that data are missing at random. If this assumption is questionable, FDA recommends you conduct a sensitivity analysis using the prediction model. For examples of missing data adjustments and sensitivity analysis, see the Summary and Safety Effectiveness for PMA P980048, BAK/Cervical Interbody Fusion System, by Sulzer Spine-Tech.10 When the missing data are suspected not to be missing at random, a sensitivity analysis can be built into the computational code to determine what degree of departure from the missing at random assumption is needed for conclusions to change (reference cf. Sulzer-Spine PMA SSED), which can help in alleviating the concern that the missing data may lead to invalid conclusions. Predicting a clinical outcome from earlier measurements If patients have measurements of the same outcome at earlier and later follow-up visits, you may make predictions for the later follow-up visit (even before the follow-up time has elapsed). Basing predictions on measures at the earlier visit requires that: • some patients have results from both follow-up visits • there is sufficiently high correlation between the early and the later measurement. In this example, the outcome at the first time point is being used to predict the outcome at the second. This type of prediction was used to justify early stopping for the clinical trial of the INTERFIX Intervertebral Body Fusion Device.11 The earlier",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 885696,
+  "end_pos": 887232,
+  "tokens": 512,
+  "tags": [
+    "safety",
+    "efficacy",
+    "design",
+    "statistical",
+    "regulatory",
+    "clinical_trial",
+    "data"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "recommendation",
+  "created_at": "2025-10-23T02:25:44.729Z"
+}

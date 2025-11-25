@@ -1,0 +1,21 @@
+{
+  "id": "fda_guidance_chunk_0641",
+  "title": "Introduction - Part 641",
+  "text": "an example of a type of decision rule. For Bayesian trials, one common type of decision rule considers that a hypothesis has been demonstrated (with reasonable assurance) if its posterior probability is large enough (“large enough” will be discussed later). The Bayesian approach encompasses a number of key concepts, some of which are not part of the traditional statistical approach. Below, we briefly discuss these concepts and contrast the Bayesian and frequentist approaches. 3.3 What is a prior distribution? Suppose that the Greek letter θ (“theta”) represents a parameter in a clinical trial. The initial knowledge about θ prior to data collection is represented by the prior distribution for θ, which we denote in symbols as P(θ). As an example, suppose θ is the rate of a serious adverse event. Its possible values lie between 0 and 1. The prior distribution might give preference to lower values of θ. Figure 1 shows an example of such a prior distribution. The probability that θ takes on any particular set of values is determined by the area under the curve for that set of values. So the prior probability that the adverse event rate θ is greater than 0.4 (the shaded area) is about 0.38. 0.00.20.40.60.81.0θ Figure 1. Example of a unimodal, right-skewed prior distribution for a serious adverse event rate, denoted by θ. The prior probability that θ is greater than 0.4 (the shaded area) is about 0.38. Alternatively, another prior distribution is the uniform distribution indicating no preference for any value of θ. (Figure 2) For a uniform distribution, the probability that θ lies between 0.2 and 0.3 is 0.10, the same as the probability that θ lies between 0.7 and 0.8, or between 0.55 and 0.65, or in any interval of length 0.10. For this prior, the prior probability that θ is greater than 0.4 (again represented by the shaded area) is 0.60. 0.00.20.40.60.81.0θ Figure 2. Example of a uniform prior distribution for a serious adverse event rate, denoted by θ. The prior probability that θ is greater than 0.4 (the shaded area) is 0.60. 3.4 What is the likelihood of the observed data? Now suppose outcomes have been obtained from a clinical trial. The likelihood function is a mathematical representation of the relationships between observed outcomes and the parameter θ. The likelihood",
+  "source": "FDA_clinical_trial_guidance.txt",
+  "section_heading": "Introduction",
+  "start_pos": 860160,
+  "end_pos": 861696,
+  "tokens": 512,
+  "tags": [
+    "safety",
+    "statistical",
+    "clinical_trial",
+    "data"
+  ],
+  "jurisdiction": "US",
+  "document_type": "fda_guidance",
+  "guidance_section": "general_guidance",
+  "regulatory_weight": "mandatory",
+  "created_at": "2025-10-23T02:25:44.727Z"
+}
