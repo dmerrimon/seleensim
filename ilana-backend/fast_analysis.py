@@ -685,7 +685,7 @@ async def _call_azure_fast(system_prompt: str, user_prompt: str, request_id: str
 
     client = AsyncAzureOpenAI(
         api_key=azure_key,
-        api_version="2024-02-15-preview",
+        api_version="2024-08-01-preview",
         azure_endpoint=azure_endpoint
     )
 
