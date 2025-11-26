@@ -1,5 +1,5 @@
 // Configuration
-const API_BASE_URL = 'https://ilanalabs-add-in.onrender.com';
+const API_BASE_URL = 'https://ilana-backend-v2.onrender.com';
 
 /**
  * Ilana Protocol Intelligence - Comprehensive AI Assistant
@@ -80,7 +80,7 @@ function clearUndoBuffer(requestId) {
 
 // API Configuration
 const API_CONFIG = {
-    baseUrl: 'https://ilanalabs-add-in.onrender.com',  // Production backend
+    baseUrl: 'https://ilana-backend-v2.onrender.com',  // Production backend
     timeout: 120000,
     retryAttempts: 3,  // Increased for 502 handling
     retryDelay: 2000,  // 2 seconds base delay
