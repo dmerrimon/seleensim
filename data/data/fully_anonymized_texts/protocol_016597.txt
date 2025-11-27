@@ -1,0 +1,122 @@
+Vestibular  Rehabilitation  utilizing  Virtual  Environments  to Train  Sensory  Integration for Postural 
+Control in a Functional Context  
+[STUDY_ID_REMOVED]  
+ 
+STUDY  PROTOCOL  
+ 
+May 6th, [ADDRESS_1875] (IRB, # 19-
+02-223), the IRB at Icahn School of Medicine at Mount Sinai and [LOCATION_001] University Committee on activities 
+involving research subjects.  
+ 
+Participants  
+All patients signed consent prior to enrolling in the study. We recruited patients referred to an outpatient vestibular 
+rehabilitation clinic with chief complaints of dizziness and/or imbalance. The participants first underwent an initial 
+vestibular physic al therapy evaluation of approximately 60 minutes. The evaluation included: detailed history, 
+oculomotor screening which included saccades, smooth pursuit and convergence, assessment of spontaneous 
+and gaze evoked nystagmus with and without infrared goggle s, Dix -Hallpi[INVESTIGATOR_2105] (BPPV), and bedside head impulse test to screen for vestibulo -ocular (VOR) 
+impairment. The assessment also included gait speed and gait stability with head turns in both horizon tal planes 
+and vertical planes, as well as the modified clinical test of sensory integration to assess static balance. Peripheral 
+vestibular hypofunction was diagnosed by [CONTACT_2108]/ or positive bedside head impulse test, head shaking nystagmus and gaze evoked 
+nystagmus and/or clinical history characterized by [CONTACT_2109], aural symptoms 
+unilaterally and ruling out other central causes. Central vestibular cond itions were diagnosed based upon history 
+of head injury leading to symptoms, history of resected acoustic neuroma or migraine history with epi[INVESTIGATOR_2106]. We excluded patients if they had bilateral or unstable vestibular loss or another neurological cond ition, 
+active BPPV, acute orthopedic injuries, peripheral neuropathy and visual impairment not corrected with glasses.    
+ 
+Procedure  
+When a clinician identified a patient as eligible, they reviewed the informed consent and explained the study 
+procedures. Following consent, patients underwent a baseline assessment including functional measures 
+(Functional Gait Assessment [FGA], Timed -Up and Go [TUG], The Four -Square Step Test [FSST]), and self -
+reported questionnaires ( Visual Vertigo Analog Scale [VVAS] [27–29], Activities Specific Balance Confidence 
+Scale [ABC] , The Dizziness Handicap Inventory [DHI].  The assessment also included a postural control test 
+using HMD. Standing hips -width apart on the floor, participants experienced two levels of visual surround and 
+white noise while their head sway was recorded via the HTC Vive Pro headset. The total duration of the session 
+was approximately [ADDRESS_1876] assessment.  
+ 
+System  
+Our platform runs at 120 frames per second with either HTC Vive or Oculus Rift, on a Windows 10 laptop with 
+8GB RAM, Intel i7 -7820HK CPU, Nvidia GTX 1080 Max -Q GPU, and Bose SoundTrue around -ear headphones 
+II. The software was developed in C# with Unity3D 2018.2.0f1(64 -bit) (Unity Technologies, San Francisco, 
+[LOCATION_004]). The system utilizes SteamVR.  Oculus Rift and HTC Vive both operate at [ADDRESS_1877] station in New Y ork City and a real airport terminal in the US.  The contents in the system are fully 
+controllable by [CONTACT_2110] (see Figure 3). Three -dimensional sounds were implemented using Wwise 
+middleware and Google Resonance audio plugin. Using the head -track ing data, audio is modulated according 
+to the position of the listener's head. The technology allows for creation of a rich soundscape in all directions 
+around the listener. Audio assets used in the system are divided into two main groups: sound objects an d 
+ambiances. Sound objects are attached to the visual objects in the scene and their position is changing 
+accordingly. Sounds include: footsteps, trains, announcements, cars, balls, airplanes, etc. Ambiances are 
+created from original recordings from differ ent locations in [LOCATION_001]. These include different background sounds, 
+i.e. sounds of the crowd chatter, distant trains, wind, birds, traffic, and general room tone of each of the spaces. 
+All of the sounds used in the system are assigned to three different intensity levels which relate to the increasing 
+complexity of the soundscape.  
+ 
+  
+Randomization and Group Allocation: We used a blocked randomization method. Instead of randomizing each 
+patient individually, this scheme randomizes several patients at a time in such a way as to ensure that equal 
+numbers are allocated to each group across each segment of time during the len gth of the study. For example, 
+if the block size is four, we randomize four patients at a time ensuring that two patients are allocated to the C.S.I 
+group and two patients to the traditional group. As it happens, there are six different possible ways we co uld 
+randomize four patients equally to two treatments. The randomization was done following the baseline 
+assessment and only the study statistician had access to the randomization sequence.  
+ 
+Interventions  
+Following the baseline assessments, we randomized patients to a C.S.I. group or a traditional vestibular 
+rehabilitation control group. We planned each program to be 8 weeks (1 30 -minute weekly session + home 
+program). We conducted a post -assessment, identical to the baseline assessment, within one week from the 
+completion of the 8th intervention session .  
+ 
+The main difference between participants was the timing of progression which was individualized based on 
+patient symptoms (dizziness and / or instability). Each exercise (in clinic or home) was prescribed at the highest 
+level of challenge that was considered safe (i.e., no loss of balance or no significant increase in dizziness). We 
+assigned all patients a home exercise program ( the C.S.I group had similar exercises without eyes closed tasks, 
+effectively 2 minutes less exercise per day) which they were aske d to complete twice daily, for [ADDRESS_1878] patients completed several different environments (e.g., 
+street, subway, airport). The  duration varied with starting point at 1 minute with increase in time up to 5 minutes 
+based upon patients’ symptoms. Beyond duration, the exact progression the patient underwent varied by 
+[CONTACT_2111][INVESTIGATOR_541]. Some therapi[INVESTIGATOR_2107] (i.e., increased amount people, 
+increased speed of people adding sounds, or changing directions of walking), while others chose to add tasks 
+in the scene (i.e., walking for a maximum. of 4 -5 steps, changing base of support or adding head turns).  
+ 
+The following are the exercise variation for the traditional group : Gait: walking with head turns, progress with 
+range, speed  and planes of head movement; change of walking base of support: wide, normal, tandem; Gaze: 
+focus on a target while moving head side to side / up down. Progress with speed, duration, busier background, 
+standing to walking; Balance: standing balance tasks, progress with BOS (wide to narrow to tandem), support 
+surface, eyes closed, duration, head turns. See Table 1 for further details.  
+ 
+  
+ 
+Table 1.  A detailed description of the study’s intervention programs  
+ Experimental Group  Control Group  
+Study 
+Initiation  Eligible participants will be provided with patient education and a basic home exercise 
+program (gait, balance, no exercises with eyes closed) while they are considering 
+participation in the study.  
+Program 
+Dose  8 weeks, 1 visit per week, 30 minutes long  
+In-Clinic 
+Activities  Progressive immersive training with 
+the C.S.I. app  Progressive gait, gaze stability and balance 
+exercises  
+Program 
+Guidelines  Scenes : start from most salient to 
+the patient, eventually do all  
+Duration : start at 60 seconds, 
+increase over time up to 3 minutes 
+per scene  
+Complexity : start minimal, gradually 
+increase up to most complex  
+Tasks : standing with diverse base of 
+support (BOS), head turns (progress 
+with speed, planes); steppi[INVESTIGATOR_007], turning  Gait: walking with head turns, progress with range, 
+speed and planes of head movement; change of 
+walking BOS: wide, normal, tandem  
+Gaze: focus on a target while moving head side to 
+side / up down. Progress with speed, duration, 
+busier background, standing to walking.  
+Balance: standing balance tasks, progress with 
+BOS (wide to narrow to tandem), support surface, 
+eyes closed, duration, head turns.  
+Progression / 
+Regression 
+Rule  The highest level of challenge that can be done for 60 seconds with no loss of balance 
+(LOB); No more than moderate symptoms in clinic based on the Simulator Sickness 
+Questionnaire53; If symptoms persisted over [ADDRESS_1879] level of challenge that is safe (no LOB, no increased symptoms) for 60 seconds 
+per task  
+ 

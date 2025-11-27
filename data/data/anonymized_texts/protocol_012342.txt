@@ -1,0 +1,709 @@
+PI Version:  02/02/2023                              Page 1 of 17                                             BR05   
+ 
+ 
+ 
+ 
+ 
+ 
+Improving Breast Radiotherapy Setup and Delivery Using Mixed -Reality 
+Visualization  
+ 
+Principal Investigator: Perry Johnson, PhD  
+ 
+[STUDY_ID_REMOVED]  
+ 
+02/02/2023  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+PI Version:  02/02/2023                              Page 2 of 17                                             BR05  1.) Title:  Improving breast radiotherapy setup and delivery using mixed -reality 
+visualization  
+ 
+2.) Investigators  :  
+Principal Investigator :    
+Perry Johnson , PhD   
+                     
+Co-Investigators  :                                 Sub-Investigators  : 
+Julie Bradley , MD                                Mohammad Saki, PhD  
+Ray Mail hot, MD , MPH  Amanda Jackson, MS  
+Eric Brooks, MD  
+Nancy P. Mendenhall, MD  
+ 
+3.) Abstract:  
+Breast radiotherapy (RT) begins with an  initial CT scan of the patient followed several 
+days later by the actual treatment delivery where the patient is re -setup on the couch of the 
+RT device. At this time, it is critically important to both reproduce the specific patient 
+posture used during th e initial CT scan and precisely align the patient (and lesion) with the 
+RT device. Any difference in these two aspects can lead to under -dosing the lesion or 
+overdosing critical structures like the lungs or heart. Currently, image -guided radiotherapy 
+(IGRT ) and surface -guided radiotherapy (SGRT) are the two main systems used to address 
+these issues. IGRT is the gold standard for aligning an internal target with the radiation 
+beam but 1) uses ionizing radiation which increases radiation dose to the patient a nd 2) 
+lacks real -time feedback which prolongs overall setup time, potentially leading to further 
+patient discomfort and anxiety. SGRT uses external light emitters and cameras to guide 
+patient setup in real -time but lacks portability and is limited by line -of-sight obstruction, 
+poor ergonomics, and prohibitive costs. Thus, there remains a tangible opportunity to 
+improve the setup process for breast RT that would benefit patients and expand 
+accessibility to advanced techniques.  
+To achieve this aim, we have de veloped  a novel concept for patient posture 
+correction and alignment using mixed -reality (MixR) visualization. MixR is an emerging 
+domain whereby virtual objects (holograms) are overlaid upon physical environments via 
+immersive technology. The concept is b est implemented in optical see -through head -
+mounted displays (OST -HMD), like the Microsoft HoloLens  v2 (Redmond, WA), that use 
+a variety of sensors to map the surroundings, track physical objects, and render holograms 
+at specific locations. Notably, these attributes are enabled while a user dynamically 
+navigates a space, thereby affording natural viewing and even interaction with 3D virtual 
+objects.  
+In our implementation of MixR, a user is able to simultaneously and directly view 
+a patient and a reference hologram of their external surface derived from their initial 
+planning CT scan. The hologram provides a visual reference for the exact posture needed 
+during treatment and is initialized in relation to the origin of the RT device. Thus, by 
+matching a patien t to their hologram, the correct posture is achieved while subsequently 
+registering the patient with the RT device.  This is highly relevant in breast RT where setup 
+is challenged by the independent movement of local anatomy and the deformability of 
+pendulous breasts . Such a system removes  the need for expensive and restrictive external 
+PI Version:  02/02/2023                              Page 3 of 17                                             BR05  cameras and holds the promise to improve outcomes by improving accuracy and safety 
+while reducing both setup time and imaging dose. By designing an application for a 
+commercial off -the-shelf device with a cost of less than $4,000, we also believe the method 
+capable of improving portability, reducing cost, and increasing accessibility for centers 
+with limited resources. We have developed an initial version of this applic ation using the 
+HoloLens v2 and collected preliminary data using phantoms. The data supports an overall 
+alignment accuracy of 3 -4 mm.  
+The purpose of the current research  is to  extend this testing to patients by  
+perform ing a pilot study to assess the accur acy, overall setup time, and amount of IGRT 
+needed when utilizing MixRT for patient setup in breast RT. Comparisons will be made 
+between MixRT and 3 -point alignment for 3D conformal photon treatment, and 
+MixRT/IGRT versus IGRT alone for pencil beam scannin g proton treatment. This data will 
+be used to establish viability and provide the framework for larger comparative 
+effectiveness research studies and eventual FDA clearance.  
+4.) Background:  
+Radiotherapy workflow  
+Over half of all patients treated for invasi ve breast cancer will receive some form of RT.1 
+The treatment workflow for external -beam RT involves three main steps. (1) Simulation; 
+A CT scan of the patient is acquired  with the patient in a predetermined position to provide 
+an imaged -based, volumetric representation of the patient’s anatomy. (2) Treatment 
+Planning;  This step links the patient’s CT images with the radiation beams to be delivered 
+by an RT device. Planning occurs within a computer -based platform where a radiation 
+oncologist provides contou rs for the target and critical structures, and a dosimetrist 
+optimizes beam design to meet dose -related objectives. In most cases, all beams share a 
+common intersection point inside the patient (i.e., patient isocenter).  (3) Treatment; Once 
+the plan is rea dy (5 -10 days after simulation), the patient returns and is positioned on the 
+couch of the RT device. The patient isocenter is aligned with the radiation isocenter of the 
+RT device, thus linking the treatment plan to the treatment delivery. Because the tre atment 
+plan is based on the specific CT acquired at simulation, it is critical that the patient’s pose, 
+orientation, and any ancillary devices used during simulation be reproducible at this time.  
+Image -Guided Radiotherapy  
+Patient alignment with the radiation isocenter and reproduction of the simulation setup is 
+achieved in a variety of ways. A 3 -point setup involves the alignment of surface marks 
+(left, right, and anterior) with external lasers calibrated to intersect at the radiation 
+isocenter. The 3-point setup is the most commonly utilized technique for the initial setup 
+but is often supplemented with image guidance using portal imaging, stereoscopic 
+radiographic imaging, fan -beam, or cone -beam CT (CBCT).2 IGRT allows for the 
+visualization of inter nal anatomy and is the gold standard for registering an internal target 
+with the radiation isocenter, albeit at the cost of increased radiation dose to the patient. 
+Such dose increases the risk of secondary malignancy and should be managed through 
+minimiza tion and the introduction of alternative, non -ionizing modalities when 
+appropriate.3 
+In addition to aligning the patient and radiation isocenters, IGRT also helps verify 
+patient posture. This involves an iterative approach of adjusting the patient, assessi ng 
+posture based on imaging, and then re -adjusting to minimize any difference with the 
+PI Version:  02/02/2023                              Page 4 of 17                                             BR05  simulation setup. For IGRT, this is a delayed process due not only to the time it takes to 
+acquire, register, and analyze an image, but also the fact that image review t akes place at a 
+location separate from the immediate vicinity of the patient. Certain sites, like breasts, 
+require more iteration than others due to independent movement of anatomy in the 
+treatment field (e.g., breast, arms, shoulders, head and neck). This  issue of non -rigidity 
+distinguishes patient registration from other types of rigid registration encountered in 
+medicine. Even when IGRT identifies differences in setup, it is not always intuitive as to 
+how to make the appropriate corrections to patient po sture in 3D based on 2D projections 
+(either planar images or 3D datasets visualized in 2D axial, coronal, and sagittal planes), 
+and in certain cases the treatment volume can exceed the field of view (FOV) of the 
+imaging system. These limitations as well as  the pressure to stay on schedule can lead staff 
+to accept suboptimal setups with the hope that any difference in patient posture will have 
+minimal effect on the dose distribution; ultimately, this depends on several factors, 
+including the extent of the ta rget and its relation to critical structures, the uniformity of the 
+dose distribution, the type of delivery, and modality. Certain modalities, such as proton 
+therapy, are extremely sensitive to changes in the amount of material between the beam 
+entrance an d target [i.e., the water equivalent path -length (WEP)].4 Changes in body 
+posture are a primary cause of WEP discrepancy and can lead to significant under -coverage 
+of the target.  
+Surface -Guided Radiotherapy  
+Surface -guided radiation therapy (SGRT) is a tech nique that complements IGRT in many 
+respects. While IGRT excels at aligning internal anatomy, SGRT emphasizes the matching 
+of external surfaces.5 In terms of setup, the strength of the technique is a real -time, 3D 
+reconstruction of the patient surface,  which allows for immediate correction of patient 
+posture and alignment when compared to a reference body surface derived at the time of 
+simulation. To accomplish this, SGRT systems utilize ceiling -mounted light emitters and 
+optical cameras. The emitters proje ct a known light pattern onto the patient’s skin that is 
+reflected and captured by the optical cameras; thereafter, the patient surface can be 
+reconstructed in 3D and displayed on a conventional 2D monitor. Several studies have 
+quantified the benefits of S GRT in comparison to a tradition al 3-point setup (no IGRT) for 
+patients with tumors of the breast, chest wall, and extremities.6-10 The largest improvements 
+are seen when treating intact breasts, which present challenges based on the independent 
+movement o f the local anatomy and the deformability of the pendulous target. By reducing 
+the initial shifts, the need for iterative adjustment is reduced. In one study, this translated 
+to a decreased setup time from 11 to 6 minutes, indicating reduced radiographic i maging 
+and, consequently, reduced imaging dose to the patient.11 Reducing setup time also 
+minimizes patient discomfort that can occur with prolonged time on the treatment couch.  
+While SGRT represents a favorable complement to IGRT, it is not without 
+limit ations. For the patient surface to be recognized, the ceiling -mounted components must 
+remain unobstructed during the setup procedure and map only the skin surface that can 
+receive and reflect the light pattern. This line -of-sight approach often means a lim ited FOV 
+and an inability to track surfaces in contact with the couch or behind other anatomy. 
+Obstruction is also a limiting issue for certain room designs when components of the RT 
+delivery system can block the overhead cameras during portions of the set up process. 
+Besides obstruction and FOV limitations, SGRT is not currently optimized for the ways in 
+which therapists set up patients. Because the real -time surface is displayed on a computer 
+PI Version:  02/02/2023                              Page 5 of 17                                             BR05  monitor placed outside the immediate perspective of the user, th e therapist must redirect 
+their gaze from the patient, resulting in a cognitive delay and interruption of the natural 
+hand -eye coordination used to perform patient adjustments. Furthermore, monitor size and 
+distance limit the therapists’ ability to observe  small details, and the overall design 
+eliminates the possibility of direct observation. For instance, it is currently impossible to 
+make a direct eye -level inspection to determine registration accuracy between the patient 
+surface and the reference body su rface. This type of inspection comes naturally to a human 
+observer and improves the perception of size, irrespective of distance.12 Taken together, 
+these issues portend a lack of human factors engineering, which seeks to optimize the fit 
+between a user, te chnology, and the environment.13 Finally, commercial SGRT systems 
+lack portability and are prohibitively expensive for many cancer centers with limited 
+resources. Three commercial products currently exist: Align RT (Vision RT, London, UK), 
+Identify (Varian  Medical Systems, Palo Alto, CA), and Catalyst (C -Rad, Uppsala, 
+Sweden). While costs for these systems vary, the baseline price for a single, stand -alone 
+system is in excess of $100,000.  
+Mixed Reality Visualization  
+Mixed reality (MixR) is an emerging domain whereby virtual objects (holograms) are 
+overlaid upon physical environments via immersive technology. The concept is best 
+implemented in optical -see-through head mounted displays (OST -HMD) which use a 
+variety of sensors to map the surroundings, track 
+physical objects, and render virtual objects at 
+specific locations. Notably, these attributes are 
+enabled while a user dynamically navigates a  
+space, thus affording natural viewing and even 
+interaction with holograms (Figure 1). MixR 
+differs from both virtual reality (VR) and 
+augmented reality (AR). In VR, the user is closed 
+to the physical world and sees only the virtual 
+environment. In AR, vir tual content is displayed 
+in the real world, but the content typically moves 
+with the user and does not interact with the physical environment, e.g., Google Glass. MixR 
+can be thought of as a more sophisticated version of AR, though the terminology is not 
+completely settled. The first usage of MixR in medicine began in the early 2010’s with 
+physical simulators,14 experimental HMDs,15-16 and most recently with a commercial off -
+the-shelf system, HoloLens (Microsoft Corp., Redmond, WA) released in 2016.17-21 
+Currently, the HoloLens (now on version 2) and the Magic Leap One (released in 2018 by 
+Magic Leap Inc., Plantation, FL) are the only two devices competing  in the consumer space 
+for MixR implemented using OST -HMDs.   
+MixR offers incredible potential to the me dical professional. At a basic level, MixR 
+can be used to improve both situational awareness and information management by 
+allowing for the optimal placement of relevant content in the user’s local space. In the 
+surgical suite this has been implemented usi ng virtual 2D panels to display pre -operative 
+planning materials (images, notes, etc.) directly within the surgeon’s field -of-view.17 These 
+displays are visible through the OST -HMD thus absolving the need for the surgeon to 
+redirect their gaze from the sur gical site. A more advanced use -case is surgical navigation 
+which spans a broad area related to the orientation and/or positioning of external tools in 
+Figure 1.  Example of MixR in an 
+industrial setting using the HoloLens v2.  
+PI Version:  02/02/2023                              Page 6 of 17                                             BR05  relationship to a patient. Thus far, MixR -navigation has been used for pedicle screw 
+insertion in orthop edic surgery18 and needle insertion in brachytherapy.19  
+The novelty of these applications is the alignment of a physical object to a patient 
+via a 3D hologram. The hologram itself is registered to the patient through inside -out 
+tracking using only the sen sors available on the OST -HMD. This differs from an outside -
+in approach, such as SGRT, in which external hardware is required to track and register 
+objects. Outside -in navigation systems increase clutter in the operational space, suffer from 
+line-of-sight obstructions issues, preclude optimal ergonomics, lack portability, and can be 
+prohibitively expensive.22-23 The type of inside -out tracking used for MixR can be 
+categorized as either marker -based or marker -less. In the former, the position of the 
+hologram  is determined via its relationship to a known object placed in the physical space 
+and subsequently recognized through feature detection. In the latter, the system utilizes 
+visual simultaneous localization and mapping (VSLAM), a process that involves 
+estim ating the spatial relationship between the OST -HMD and multiple key points 
+identified within a series of viewpoints.24 Current OST -HMDs have a variety of sensors to 
+draw upon for tracking purposes including IR cameras, RGB cameras, and inertial sensors. 
+While marker -less tracking is native to current OST -HMDs, marker -based tracking is 
+available via custom development or third -party SDKs using both RGB and IR data 
+streams.20,25  
+MixR -Guided RT  
+As noted above, SGRT systems represent an outside -in approach . We propose to improve 
+the setup process through inside -out tracking  and the use of MixR visualization. To that 
+end, we have developed a novel method for registering a patient with an RT device using 
+a hologram as an intermediary [i.e., MixR -Guided Radiotherap y (MixRT)]. The hologram 
+is generated based on the body contour derived from the patient’s planning CT dataset 
+(Figure 2A -B). The patient isocenter is linked to the hologram and registered to the 
+radiation isocenter through a simple procedure using both ma rker and marker -less tracking 
+(Figure 2C). In this way, the patient isocenter is linked to the radiation isocenter. The 
+hologram can be viewed directly through a commercial device (HoloLens v2) and provides 
+the reference posture to be matched during patien t setup (Figure 2D -E). The approach 
+improves upon SGRT in that the patient’s surface (real as opposed to reconstruction) is 
+matched to a reference surface. Obstruction, FOV, ergonomic, and economic limitations 
+are all remedied through the use of the Holole ns v2 and inside -out tracking, which allows 
+the user to view the patient and hologram directly from multiple angles using one portable 
+device. The key feature of the system is the way in which it transforms non -rigid 
+registration into rigid registration by  providing an efficient and cost -effective mechanism 
+for reproducing patient posture without the use of ionizing radiation. While IGRT will still 
+be required in certain cases to observe internal anatomy, by improving the initial setup the 
+need for iterativ e IGRT is reduced, subsequently reducing setup time and the radiation dose 
+associated with imaging. We thus envision MixRT being used independently or in 
+conjunction with minimal IGRT to improve speed and accuracy while simultaneously 
+reducing the radiatio n dose to the patient from additional imaging.   
+ 
+PI Version:  02/02/2023                              Page 7 of 17                                             BR05  Figure 2.  System for patient alignment via hologram: A) Initial simulation CT scan, B) Creation 
+of 3D object file from body contour, C) Development platform where patient isocenter is linked 
+with virtual representation of physical marker, D) Physical marker attache d to machine at pre -
+determined location linking patient isocenter with radiation isocenter; patient hologram (blue) 
+is visualized through HoloLens v2 highlighting the mis -alignment of the mannequin (white), E) 
+Physical mannequin adjusted to match the refer ence hologram, thus reproducing the required 
+posture and registering the mannequin with the RT device.   
+ 
+ 
+ 
+ 
+ 
+ 
+In preparation for this study, we have 
+developed a preliminary application to 
+enable  MixRT and provide initial 
+estimates of hologram stability, 
+alignment accuracy, and user 
+variability. In one experiment, three 
+users were tasked with aligning a rigid 
+anthropomorphic phantom with an RT 
+device (linear accelerator) while 
+wearing the HoloLens  v2. Each user 
+performed the alignment five times, and 
+accuracy was quantified using IGRT.  
+For each user, all five measurements were completed within the same session. Between 
+measurements, the setup was disassembled and reset.  The results shown in Table 1  
+preliminary estimate an overall accuracy of 3±1 mm. These results were consistent between 
+all users across all sessions. Considering the preliminary nature of the study, these results 
+User 1 User 2 User 3 Mean StDev
+Shift (mm)
+Vrt 0.8 0.6 1.5 1.0 0.8
+Lng 1.1 1.3 1.2 1.2 0.7
+Lat 2.0 1.8 2.4 2.1 1.5
+RMS 2.4 2.6 3.3 2.8 1.4
+Shift (°)
+Rtn 0.4 0.7 0.7 0.6 0.6
+Pitch 0.1 0.1 0.0 0.1 0.1
+Roll 0.1 0.1 0.1 0.1 0.1n = 5 n = 15Table 1.  Preliminary accuracy of MixRT for rigid 
+alignment.  
+
+PI Version:  02/02/2023                              Page 8 of 17                                             BR05  are extremely encouraging, achieving less than the 5  mm alignment toler ance for 3D 
+photon treatments and approaching the 2  mm alignment  tolerance for proton treatments.  
+In a second experiment, an attempt was made to reproduce the posture of a non -
+rigid, female mannequin placed on the couch of a CT scanner. The first setup was done 
+using only setup photos and room lasers, typically the only tools available for this type of  
+“verification CT scan”.4 The second setup was performed using MixRT. In both cases, CT 
+scans of the mannequin were acquired and registered with the initial, simulation CT scan 
+using the torso as the area of focus. With the torso aligned in both registrations, the 
+difference in ar m position provides a way to assess the correctness of the overall posture. 
+As seen in Figure 3, the MixRT setup outperforms the standard setup which showed a 
+difference in arm position of 2 cm and further required a roll of 6 -7 degrees in order to 
+align t he torso. In a real treatment scenario, this misalignment would require further manual 
+correction, increasing the utilization of IGRT, overall setup time, and with no guarantee of 
+a result matching that provided by MixRT. As previously noted, sub -optimal s etups are 
+often accepted, even with IGRT, due to the pressure to stay on schedule, minimize patient 
+discomfort that can occur with prolonged time on the treatment couch, and the limitations 
+of current methods. Thus, MixRT, with its ability to naturally gui de both patient alignment 
+and adjustment in real -time, provides a mechanism for increasing the overall accuracy of 
+the treatment delivery and associated outcomes.  
+ 
+Figure 3.  Preliminary accuracy of MixRT for non -rigid alignment demonstrating the eliminat ion 
+of roll and accurate arm placement compared to standard alignment methods. Left -to-right (axial, 
+sagittal, coronal views).  
+PI Version:  02/02/2023                              Page 9 of 17                                             BR05   
+5.) Specific Aims:   
+Perform a pilot study to assess the feasibility of MixRT. Feasibility will be based on the 
+accuracy, overal l setup time, and amount of IGRT needed when utilizing MixRT for patient 
+setup in breast RT  and in comparison, with current methods . Comparisons will be made 
+between MixRT and 3 -point alignment for photon treatment, and MixRT/IGRT versus 
+IGRT alone for pen cil beam scanning proton treatment. This data will establish viability 
+and provide the framework for larger comparative effectiveness research studies and 
+eventual FDA clearance.  
+ 
+6.) Research Plan:   
+ 
+ Describe the inclusion and exclusion criteria for this project: This study will 
+target adult patients  who are planning to undergo photon or proton radiation therapy 
+at UF HPTI for treatment of the breast or chest wall.  As this type of treatment is rare 
+in men, the study will focus on female patients only.  
+ 
+ Provide a thorough step -by-step description of what you intend to do 
+throughout the course of the study in a logical and sequential format:   
+ 
+Hologram creation  
+For all patients included in this study, we will create holograms based on the external 
+body co ntour derived from their planning CT dataset . This contour is routinely 
+segmented  during treatment planning; thus, we will only need to access the existing 
+contour located in the software system MimVista and export it to our software 
+system . We will also access patient setup photos  located in a clinical file system  and 
+export  these  to our application . 
+ 
+Mixed -reality guided patient setup  
+At UFHPTI, we treat breast/chest wall patients using various modalities and 
+techniques. In all cases, patient setup begins  with a 3 -point alignment. The additional 
+use of IGRT depends on modality, approach, and patient -specific variables. Most 
+patients treated with 3D conformal photon therapy (3DCRT) receive only weekly 
+IGRT, including kV orthogonal and MV portal imaging. The  3-point alignment, 
+thus, represents the standard setup for the majority of treatment, both here and across 
+the nation, as 3DCRT is the most common technique for breast RT. As such, one of 
+our primary aims  is to pilot the clinical implementation of MixRT with the goal of 
+accuracy similar to or better than a traditional breast setup involving 3 -point 
+alignment (5mm tolerance).  
+ We will recruit 12 patients scheduled to receive whole breast  or chest wall  RT u sing 
+a supine, 3DCRT  or IMRT  approach. All patients will be consented for a study 
+comparing the accuracy of MixRT with a traditional 3 -point alignment as quantified 
+using CBCT. To control for setup variation which typically decreases after the first 
+few tr eatment fractions, we will stratify patients into two groups  using an alternating 
+method . In the first group, the therapists will position the patient using 3 -point 
+alignment during fractions 1-5 (5 total), then using MixRT for fractions 6-10 (note: 
+PI Version:  02/02/2023                              Page 10 of 17                                             BR05  16 fra ctions is a common course of breast RT). For the second group, we will reverse 
+the order, using MixRT for fractions 1-5 and 3 -point alignment for fractions 6-10. 
+In this way,  each patient will serve as their own control. In all cases, patient 
+alignment wil l be verified using CBCT which will be registered to the simulation 
+CT by the treatment therapists using the standard clinical workflow. The magnitude 
+of the resulting shift will be recorded. If further adjustment is necessary, the number 
+of repeated CBCTs  will be recorded along with the shift magnitude. All registrations 
+will be reviewed by a board -certified radiation oncologist (one of the co -
+investigators) who will qualitatively assess the accuracy of the setup while blinded 
+to the setup method.  The proc ess for mixed -reality alignment is noted below:  
+1. Identify the patient and initialize their hologram by detecting a QR -coded 
+cube attached to the treatment device.  
+2. Setup the patient according to their setup photos, related immobilization 
+devices  (typically o nly an inclined breast board) , and 3 -point alignment. 
+Further match the patient to their hologram as viewed through the 
+HoloLens 2 device.  
+3. Utilize IGRT to verify proper alignment per protocol or departmental 
+standards.  
+4. Make corrections as needed based on I GRT.  
+5. Repeat steps 1 -3 if necessary.  
+ For patients receiving proton therapy, setup typically includes routine CBCT, the 
+challenges of which were previously discussed for non -rigid alignment including 
+prolonged setup time and increased imaging dose. The primary goal of this sub -aim 
+is thus to s how that MixRT can reduce setup time and the amount of imaging dose 
+in cases requiring CBCT alignment. To evaluate this, we will recruit an additional 
+12 patients scheduled to receive RT using a supine, pencil -beam scanning approach. 
+As with 3DCRT /IMRT  approach , we will divide patients into two groups  using an 
+alternating method  and alternate the setup approach between fractions 1-5 and 6-10, 
+reversing the order between the two groups. Setup time will be tracked from the 
+moment the patient lies on the treat ment couch to when the final position is 
+confirmed by the therapist prior to treatment. Patient alignment will be 
+verified/quantified  in a similar manner as noted above . 
+ 
+A window period of 2 additional fractions is permissible for  the collection of study 
+data.  This window period is provided to allow a patient to remain on study through 
+her 12th fraction of treatment if the patient is not able to receive the study 
+intervention during one  to two  of her first 10 fractions.   
+ 
+ To summarize, we intend to enroll 12 patients receiving either 3DCRT or IMRT and 
+12 patients receiving proton therapy. Within each modality, patients will be 
+randomized into two groups using an alternating method. T he order in which MixRT 
+will be utilized  will be reversed between the groups . The measured data will include 
+registration accuracy (6 DoF shifts), setup time, and number of CBCT’s utilized. 
+Registration accuracy will be quantified using the image registration module that is 
+used as part of the IG RT process. Setup time will be quantified using a stopwatch. 
+PI Version:  02/02/2023                              Page 11 of 17                                             BR05  The number of CBCT’s will be quantified via counting the number that are used 
+during the setup process.  Patients receiving photon IMRT receive daily  CBCT as 
+part of the standard of care. Thus, th is investigation would likely not introduce 
+additional imaging dose  for these patients. For proton therapy CBCT is used weekly, 
+and for 3DCRT it is not routinely used. Thus, this investigation would represent a 
+marginal increase in the utilization of CBCT for these patients, up to 10 extra 
+CBCT’s nominally.  
+ 
+Setup during Verification CT  
+Radiotherapy patients at UFHPTI often receive repeat CT scans (verification scans) 
+at periodic timepoints during the course of treatment to assess for anthropomorphic 
+change s that could have dosimetric effect. Reproducing the posture from the initial 
+CT simulation is critically important yet difficult to achieve due to the lack of real -
+time feedback. For patients who receive  a verification CT (likely all proton patients) , 
+we will implement holographic  alignment during this process and assess its accuracy 
+in comparison to CT acquisition without the aid of holographic alignment. The 
+procedure will be as follows:  
+ 
+1. Identify enrolled  patients scheduled to receive a verification CT scan.  
+2. Setup patient without the aid of holographic alignment (standard 
+method).  
+3. Acquire verification CT scan.  
+4. Dismantle the setup.  
+5. Utilize holographic alignment to correct patient posture. This involves a 
+therapist wearing the HoloLens 2 device and viewing  the patient’s 
+reference hologram overlaid the patient. The therapist will manually 
+adjust the patient to match the hologram.  
+6. Re-acquire verification CT scan.  
+7. Export datasets to MimVista software.  
+8. Register each dataset with the simulation CT using mutual i nformation 
+based automatic alignment.  
+9. Quantify registration accuracy of the outer body contour both 
+qualitatively and quantitatively, the latter of which will utilize similarity 
+metrics such as the Hausdorff distance and symmetric mean absolute 
+surface di stance.  
+ 
+ Discuss procedures for recruiting and consenting potential study participants:      
+Eligible patients who are planning to undergo radiot herapy at UF HPTI will be 
+approached by co nsent and protocol trained staff  to participate in this study. Since 
+this will not affect the patient’s actual treatment course, they may be simultaneously 
+enrolled in any of the other protocols open at the time.  
+ 
+ Describe the targeted study population (the target population should be 
+representative of the population that ma y potentially benefit from the research) 
+and the setting in which the research will take place: Our application should 
+PI Version:  02/02/2023                              Page 12 of 17                                             BR05  benefit all patients undergoing radiotherapy, but benefit will be greatest for  cases  
+where non -rigid alignment is a critical aspec t of patient setup. Breast -RT is a perfect 
+example of this, and the study will focus on patients undergoing this type of 
+treatment.  
+ 
+ If you intend to use a vulnerable population, describe the scientific and ethical 
+reasons for including them and what, if a ny, additional safeguards are needed 
+to protect them: We do not intend on targeting vulnerable population s. However , 
+UF/Shands staff and students will be considered for participation. We feel we cannot 
+refuse them potential enrollment if they present to us , meet the eligibility criteria, 
+and wish to participate in the study. We will adhere to the strict policies and 
+confidentiality and the informed consent process with these patients as with all our 
+patients. Potential subjects are presented with treatment alternatives as part of the 
+informed consent process. It is stressed that participation in the clinical study is 
+entirely voluntary,  and that consent can be withdrawn at any time without penalty.  
+ 
+ Describe how potential subjects will be identified and recruited:  Patients will be 
+identified and recruited during their pretreatment workup . 
+ Describe how subjects protected health information will be accessed and by 
+whom: Data will be accessed and collected from the treatment planning system, 
+RayStation, clin ical database software, MimVista, and the radiation oncology 
+information system, Mosaiq. These are all clinical systems used to facilitate patient 
+treatment at UFHPTI.  Only the investigators and research staff will screen or access 
+patient medical records for the purpose of this study.  
+ 
+ Describe how consent will be obtained, by whom, and in what setting, and how 
+and where consent will be documented: Patients will be consent ed during standard 
+of care clinic visits by protocol/consent trained staff .  Document ation of informed 
+consent will be noted in the patient’s chart in Mosaiq.   
+ 
+ Describe the number of subjects that will be screened , and the number of 
+evaluable subjects needed based on power analysis: Up to 40 patients may enroll, 
+but a pproximately 24 patients are needed  in this pilot study.  We recognize the study  
+is underpowered, however, this is a pilot study where the purpose is to collect 
+preliminary data to help establish viability of the method.  
+ 
+ Describe completely all drugs, devices,  or instrum ents that are being proposed: 
+This study involves no drugs. The specific device, HoloLens 2, will be worn by the 
+therapists during patient setup. This device will display relevant information needed 
+during the setup procedure including setup photos and the  patient’s hologram as 
+registered to the radiotherapy device.  Final positioning will be made according to 
+IGRT which is standard of care.  
+ 
+ Provide a clear and concise description of the treatment, intervention,  or 
+observation to be carried out in the study : The intervention for the study is the 
+use of the HoloLens v2 device to aid in patient alignment. As noted in the study 
+PI Version:  02/02/2023                              Page 13 of 17                                             BR05  description above, this device utilizes mixed -reality to display a hologram of the 
+patient as registered to the treatment machine. The patient will be matched to the 
+hologram by a radiation therapist who is wearing the device. The patient will not 
+wear the device. The device will not come into contact with the patient. The sensors 
+on the device emit only non -ionizing signals such as IR . 
+ 
+ Clearly state the nature of the experimental control (placebo, other    treatment, 
+historical) or the absence of a control:  Patients who receive verification CT , each 
+patient will have their own control represented by the verification CT acquired 
+without t he use of holographic alignment. During the use of MixRT during patient 
+setup, each patient will also have their own control represented by the sub -set of 
+fractions where data is collected but holographic alignment is not employed.  
+ 
+ Describe any randomiza tion procedures : Randomization is included during the 
+use of MixRT guided patient setup  where the patients are segmented into two 
+groups. The order in which holographic alignment is introduced into the course of 
+treatment is reversed for the two groups. Th e purpose is to control for setup variation 
+which typically decreases after the first few fractions of treatment.  
+ 
+  Describe completely all physical examinations, blood tests, x -rays, any special 
+tests or procedures, surveys, questionnaires, and/or observa tions that will be 
+used to obtain information about subjects: No additional tests will be done  that 
+are outside the radiotherapy workflow. The study does include an increased 
+utilization of specific aspects of the radiotherapy workflow, namely addition CT and 
+CBCT acquisition.   
+ 
+ Describe who will be responsible for obtaining the information and in what type 
+of setting the information will be obtained:  Data will be collected during the 
+course of radiotherapy treatment and during the acquisition of verificati on CT scans. 
+Either t he study investigators  or trained radiation therapist  will be responsible for 
+collecting this data.  The PI will serve as the primary data manager based on 
+familiarity with the data.  
+ 
+ Describe how these activities will answer the study questions:  The main question 
+we seek to answer is whether mixed reality visualization is a feasible method for 
+patient alignment in radiation therapy. To answer this question, we will collect 
+relevant clinical data including registration error, registratio n time, and the amount 
+of imaging used during the registration process. While we are not yet attaching 
+power or a formal sample size structure to this data, we believe this data work 
+together as our primary endpoints to answer the question of feasibility.  
+ 
+ 
+ Clearly describe  the procedures you will use to protect the privacy of subjects 
+and ensure confidentiality of all data and study records including hard copy 
+and computer files:  For a given patient, we will export from our treatment planning 
+system a DICO M structure and plan file. This data will exist within computers 
+PI Version:  02/02/2023                              Page 14 of 17                                             BR05  controlled by the study investigators and stored in protected folders. This type of 
+information is commonly exported and temporarily stored for clinical operations. 
+The files will be converte d to a new file type that is readable by the HoloLens v2 
+device . The data will then be uploaded to the HoloLens v2 device. The HoloLens v2 
+is basically a wearable computer system. Data encryption is enabled on the 
+HoloLens v2 by default  using BitLocker.  The HoloLens v2 device will remain on -
+site (UFHP TI) at all times and be securely stored when not in use.  
+ 
+Data collected during patient setup, e.g., setup time, registration shifts, number of 
+CBCTs, will stored in an excel spreadsheet located in a secure fol der on computers 
+controlled by the study investigators. Each patient will be given a study ID to 
+anonymous the data stored in the excel spreadsheet.  
+ 
+   Discuss how research interventions differ from standard therapies, and 
+alternatives to participation in  the study, if they exist:  As noted in the background 
+section, IGRT, SGRT, and 3 -point alignment are the mechanisms used for patient 
+alignment in breast radiotherapy. The current method using mixed -reality improves 
+on these approaches by allowing natural v iewing of the patient and a reference 
+surface derived from their CT scan. We believe by using our system, patients can be 
+aligned faster and with less utilization of ionizing radiation.  
+  
+7.) Statistical Analysis:   
+ 
+ Describe the statistical analysis you will use to analyze your data including 
+sample size and associated power:  This is a pilot study.  The choice of sample size 
+is one of practicality . 
+ 
+ Briefly outline the data analyses that are proposed and who will do the analysis:  
+Mean estimates and associ ated 95% confidence intervals will be attained for 
+registration error and registration time for the mixed reality and standard of care 
+methods and the paired difference of the two techniques. We will assess feasibility 
+using a paired T -test. The hypothesis  is that the mean paired differences across all 
+measures of registration error and registration time are not significantly different 
+than 3 mm and 5 minutes, respectively. The number of CBCTs collected as part of 
+the registration process will be assessed s ubjectively since count data are not truly 
+continuous . This analysis  will be carried out by the study investigator  and study 
+statistician.  
+ 
+ Describe your plan for conducting interim analysis.  What stopping rules are in 
+place? N/A.  
+   
+8.) Data Safety and M onitoring Plan:   
+ 
+ Is there a Data Safety Monitoring Board (DSMB) or an oversight committee 
+for this research project? The UF Data Integrity & Safety Committee will provide 
+oversight through annual monitoring.  
+PI Version:  02/02/2023                              Page 15 of 17                                             BR05   
+ Describe your plans for monitoring study conduct and subject safety: The 
+Principal Investigator will be responsible for monitoring.  
+ 
+ Provide Information about the DSMB or committee including who is on the 
+committee, how frequently will the committee meet,  and when will you get 
+information from the committee: N/A  
+   
+9.) Possible Discomforts and Risks:   
+ 
+ Identify all discomforts and risks (physical, psychological, social, and/or 
+economic) study participants may encounter, listing more common risks first 
+and less common risks separately:  Based on prior study utilizing anthropomorphic 
+phantoms, we anticipate that our patient alignment system will ultimately reduce 
+setup time and the number of X -ray images used for alignment. We have yet to try 
+this with patien ts, however, and there is a risk that it could marginally increase setup 
+time, at least during the initial implementation.   
+ 
+The study also involves an increased utilization of CT and CBCT in order to quantify 
+the difference in registration accuracy when u sing the mixed -reality method. 
+Patients who receive a verification CT  will receive 1 -2 additional CT scans. During 
+MixRT guided patient setup , patients will receive  at least  0-10 additional CBCT 
+scans  (depends on modality) . While it is routine for breast 3 DCRT to employ planar 
+kV imaging weekly as opposed to CBCT, it is not uncommon to utilize daily CBCT 
+for difficult cases. Daily CBCT is also used for all cases where an IMRT approach 
+is utilized. The dose from CBCT imaging is orders of magnitude less than the dose 
+received during treatment , (approx. 1 -2 mGy vs 45 Gy). According to the linear -no 
+threshold model, there is non -zero risk of developing a radiation induced malignancy 
+from any level of ionizing radiation. We believe the marginal increase in risk 
+incurred through participation in this study, however, is low based  on the limited 
+amount of radiation delivered during CT and CBCT acquisition and the fact that 
+these patients are already receiving high levels of ionizing radiation as part of their 
+cancer treatment.   
+ 
+Only those Adverse Events related to the use of the HoloLens will be reported.  
+ 
+ Identify potential financial risks study participants may incur:  None    
+ 
+ Indicate any procedures, medications, tests, or therapies that study 
+participants (or their insurer) will have to pay for.  Are these considered 
+standard therapies  or are they specific to the research study? None  
+ 
+ Describe procedures to protect against or minimize potential discomforts and 
+risks:  For individual cases, we will discontinue the use of the holographic alignment 
+system if setup time is increased by more 30% during two consecutive sessions.  
+ 
+PI Version:  02/02/2023                              Page 16 of 17                                             BR05   Discuss why the risks to subjects are reasonable in relation to the anticipated 
+benefits and in relation to the importance of the knowledge that may reasonably 
+be gained:  We believe the marginal increase in risk of developing a radiation 
+induced malignancy incurred through participation in this study is low . The 
+immediate benefit to the study participants is that the additional CT and CBCT may 
+improve the accuracy of their setups for instances in which these images are 
+acquired. The long -term benefit for patients outside the study cohort will be the 
+knowledg e gained about the clinical use of mixed -reality for patient setup. We 
+believe this method can improve the patient setup and alignment process and will 
+eventually make the process faster and with the use of less ionizing radiation.   
+ 
+10.) Possible Benefits :  
+ 
+ Describe the potential benefits to subjects or to others that may be reasonably 
+expected to result from the research:  Based on prior study utilizing 
+anthropomorphic phantoms, we anticipate that our patient alignment system will 
+ultimately reduce setup time and the number of X -ray images used for alignment. 
+By reducing setup time, we increase patient comfort and minimize the risk of patient 
+movement during treatment. By reducing the number of X -ray images used, we 
+reduce the amount of ionizing radiation the patient receives.  
+ 
+ If there is no potential for direct benefits, you must state this in the Informed 
+Consent Form: Due to the fact that CBCT will be utilized for all study fractions, 
+patients may benefit from a more accurate setup if CBCT was not standard of care 
+for their treatment approach.  
+ 
+ Will the research study benefit future populations? Yes, possibly.  
+   
+11.) Conflict of Interest:   
+ 
+ Describe any real or potential conflict of interest you or any other investigators 
+may have with regard to this research project: The pri ncipal  investigator has filed 
+a provisional patent  application  in coordination with UF Innovate related to concept 
+of aligning a patient via hologram.  
+ 
+ When deciding whether a conflict may exist, consider the following:    
+ 
+ Do you, the University of Florida, or any of the sub -investigators hold a 
+patent or license for any material, object, or process used in this project? 
+No 
+ 
+ Is a patent or license pending or under consideration or is there any 
+intention to file a patent application at a later date? Yes. 
+ 
+ Do you, the University of Florida, or any of the sub -investigators own stock 
+in the company sponsoring the project? No  
+PI Version:  02/02/2023                              Page 17 of 17                                             BR05   
+ Do you or any of the sub -investigators give presentations for or serve as a 
+consultant to the sponsoring company on their behalf? No   
+   
+   
+ 

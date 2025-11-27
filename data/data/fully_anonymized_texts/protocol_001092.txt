@@ -1,0 +1,1197 @@
+Cover Page  
+ 
+Protocol d ocument version dat e Sept 27 , 2021  
+Document submi<ed Nov 25, [ADDRESS_897257] #  [STUDY_ID_REMOVED]  
+Title: Cannabidiol Eﬀects on Blood Alcohol Level and IntoxicaMon  
+Sta$s$cal Analysis Plan  
+Prior to hypothesis tes,ng, we will conduct data wrangling and visualiza,ons on the raw data for 
+all outcomes using the R programming language and packages included in ,dyverse (Team 2013; 
+Wickham et al. 2019)  (e.g., ggplot2 (Wickham 2016) ). To examine changes over ,me in BrAC, alcohol 
+craving, aﬀect, seda,on, and s,mula,on during the descending limb of the BrAC curve (T2 – T8, see 
+Figure 1) and to compare these changes by [CONTACT_664302],on, we will run a series of Mul,level Structural 
+Equa,on Models (MSEM; (Mehta and Neale 2005)  using Mplus 8 (Muthén and Muthen 2017) . Due to the 
+research design, where each par,cipant completed each condi,on (placebo, 30mg CBD and 200mg CBD) 
+and within each condi,on there were [ADDRESS_897258] 
+were taken at ,mepoints T2 -T8, which represent the descending limb of the BrAC curve. We will focus  
+on the descending limb because evidence suggests that some subjec,ve eﬀects of alcohol may be 
+par,cularly prominent during the descending limb (Pi[INVESTIGATOR_664288]. 2003; Brick 2006) . In addi,on, prior 
+medica,on studies have demonstrated that notable medica,on eﬀects such as reduc,on in craving and 
+s,mula,on are observed in both the descending and ascending limb (Ray and Hutchison 2007) , but 
+some unique eﬀects such as increased tension may be speciﬁc to the descending limb (Ray et al. 2008) . 
+Another advantage of focusing on the descending limb is that changes during this ,me are expected to 
+be approximately linear (e.g., BrAC decreases linearly (Posey and Mozayani 2007) ), which supports a 
+more straigh_orward interpreta,on of model results. Note that T2= 90 minutes aaer the start of the 
+alcohol administra,on session and T8=4.[ADDRESS_897259] with placebo as the referent group (i.e., comparing placebo to 30mg CBD and placebo 
+to 200mg of CBD) and then again with 30mg CBD as the referent group (i.e., to get the comparison of 
+30mg CBD to 200mg CBD). To determine if sex moderate s the condi,on àchange rela,onship we will 
+create  a random slope of condi,on predic,ng the latent slope variable and then regressed that random 
+slope on the between -person binary sex variable. This is referred to as the random coeﬃcient predic,on 
+meth od (Preacher et al. 2010, 2016) . We will also use this method to determine if the overall change 
+over ,me is moderated by [CONTACT_664303] -person 
+sex variable. The MSEM approach allows paths that include within -level eﬀects to have random 
+intercepts and allows for the crea,on of Bayesian credible intervals for  assessing signiﬁcance of eﬀects. 
+Bayesian credible intervals provide a robust test of direct and modera,on eﬀects, are computa,onally 
+eﬃcient, and are amenable to a variet y of variable characteris,cs (e.g., hierarchical –nested and non -
+normal data; (Gelman et al. 2004; Muthén and Asparouhov 2012) .  
+ 
+ 
+#1903 -  Exploring the Effects of Acute Cannabidiol Administration on Blood Alcohol Levela
+nd Intoxication in Adult Human SubjectsPr
+otocol InformationAp
+proval CommentAme
+ndment [v7] has been reviewed and granted approval by [CONTACT_70601] (§46.110(b)(2)) of minor changes on September 27, 2021. This amen
+dment includes updated recruitment flyer CBD Alcohol Flyer 2. The IRB has determined that the risk level remains unchanged and the sa
+feguards for participants is appropriate. The study was assessed as being in accordance with 45 CFR 46.111 of the 2018 Requirements. RISK
+: More than MinimalSPONSOR: CC
+TSIP
+rotocol Amendment Form
+Am
+endmentA
+mendment Instructions1
+.Complete this Amendment overview.2
+.Update the sections of your protocol that you are requesting to amend.3
+.Upload any amended documentation (consent; assent; attachments)4
+.When it is ready to go, click Submit in the menu on the right-hand side of this page.N
+ote: If you are amending a currently approved document, delete the file that is currently attached and add a Tracked Changes and updatedC
+lean Version. The IRB will approve the project with only the clean version included. Previous versions are available in your protocol versionhi
+story and do not need to be maintained on the current amendment.Sum
+marize the proposed changes to the protocol in lay terms.W
+e have resubmitted a new recruitment Yyer for distribution.Indi
+cate whether you think the level of risk increases, decreases, or does not change the risk determined by [CONTACT_664304].(If
+ level of risk has changed, please update the section 'Risks' in the protocol information.)No
+ ChangeReview TypeEx
+peditedStatusSup
+ersededApproval DateS
+ep 27, 2021Continuing Review Date--
+E
+xpi[INVESTIGATOR_664289] 18, 2022Initial Approval DateM
+ar 09, 2021Initial Review TypeFu
+ll BoardFe
+edbackPROTOCOLSProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...1 of
+ 391 1/29/23, 12:[ADDRESS_897260] been enrolled to date who may be impacted by [CONTACT_664305].no
+ participants will be impacted by [CONTACT_664306]-consent subjects?No
+G
+eneral InformationP
+rincipal InvestigatorL ead UnitTi
+tleE
+xploring the Effects of Acute Cannabidiol Administration on Blood Alcohol Level and Intoxication in Adult HumanSu
+bjects
+Pe
+opleP
+eopleP
+ersonH
+ome UnitP
+sychology (CO-1876)Ema
+il Addressh
+[EMAIL_12636]
+honeC
+SU StatusR
+esearcher RoleP
+rincipal InvestigatorC
+ontact RolesP
+ermissionsFu
+ll AccessP
+eople AttachmentsP
+ersonKaroly, Hollis CatherinePsy chology (CO-1876)Kar
+oly, Hollis CatherineDr
+ennan, Meggan LProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...2 of
+ 391 1/29/23, 12:27 PM
+Home UnitEma
+il Addressm
+[EMAIL_12637]
+hone2545636569
+C
+SU StatusOt
+herR
+esearcher RoleK
+ey PersonC
+ontact RolesAd
+minP
+ermissionsFu
+ll AccessP
+eople AttachmentsA
+ttachmentNam
+eC
+ITI RCR for grad studentsA
+ttachment TypeOt
+herC
+ommentsA
+ttachmentNam
+eCI
+TI group 2A
+ttachment TypeOt
+herC
+ommentsCITICOMPLETIONREPORT_DRENNAN(1).PDFC
+ITICOMPLETIONREPORT5005905_DRENNAN(1).PDFProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...3 of
+ 391 1/29/23, 12:27 PM
+PersonH
+ome UnitEma
+il Addressh
+[EMAIL_12638]
+honeC
+SU StatusOt
+herR
+esearcher RoleK
+ey PersonC
+ontact RolesAd
+minP
+ermissionsFu
+ll AccessP
+eople AttachmentsA
+ttachmentNam
+eCI
+TIA
+ttachment TypeOt
+herC
+ommentsP
+ersonH
+ome UnitEma
+il Addresst
+[EMAIL_12639],HectorH
+G CITI CERTIFICATION(1).PDFAd
+ams, Tyler AnnProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...4 of
+ 391 1/29/23, 12:[ADDRESS_897261] RolesAd
+minP
+ermissionsFu
+ll AccessP
+eople AttachmentsA
+ttachmentNam
+eCI
+TI RCRA
+ttachment TypeOt
+herC
+ommentsA
+ttachmentNam
+eCI
+TIA
+ttachment TypeOt
+herC
+ommentsA
+ttachmentNam
+eCI
+TI GCPCITI RESPONSIBLE CONDUCT_TYLERADAMS.PDFC
+ITI HUMAN RESEARCH_TYLERADAMS.PDFC
+ITI GOOD CLINICAL PRACTICES_TYLERADAMS.PDFProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...5 of
+ 391 1/29/23, 12:27 PM
+Attachment TypeOt
+herC
+ommentsP
+ersonH
+ome UnitEma
+il Addressm
+[EMAIL_12640]
+hone3148429280
+C
+SU StatusOt
+herR
+esearcher RoleK
+ey PersonC
+ontact RolesAd
+minP
+ermissionsFu
+ll AccessP
+eople AttachmentsA
+ttachmentNam
+eMe
+lanie_Ford_CITIA
+ttachment TypeOt
+herC
+ommentsP
+ersonFord,MelanieMF
+ CITI CERTIFICATION.PDFZu
+lic, LeilaProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...6 of
+ 391 1/29/23, 12:27 PM
+Home UnitEma
+il Addressl
+[EMAIL_12641]
+honeC
+SU StatusR
+esearcher RoleK
+ey PersonC
+ontact RolesAd
+minP
+ermissionsFu
+ll AccessP
+eople AttachmentsA
+ttachmentNam
+eCI
+TIA
+ttachment TypeOt
+herC
+ommentsA
+ttachmentNam
+eCI
+TI RCRA
+ttachment TypeOt
+herC
+ommentsP
+ersonLEILA ZULIC SHBR CITI.PNGLE
+ILA ZULIC RCR CITI.PNGCr
+ain, Sage AProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...7 of
+ 391 1/29/23, 12:27 PM
+Home UnitEma
+il Addresss
+[EMAIL_12642]
+honeC
+SU StatusR
+esearcher RoleK
+ey PersonC
+ontact RolesAd
+minP
+ermissionsFu
+ll AccessP
+eople AttachmentsA
+ttachmentNam
+eCI
+TIA
+ttachment TypeOt
+herC
+ommentsA
+ttachmentNam
+eGC
+PA
+ttachment TypeOt
+herC
+ommentsA
+ttachmentSAGE_GROUP1.PDFS
+AGE_CGP .PDFS
+AGE_RCR.PDFProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...8 of
+ 391 1/29/23, 12:27 PM
+NameRCR
+A
+ttachment TypeOt
+herC
+ommentsP
+ersonH
+ome UnitEma
+il Addressv
+[EMAIL_12643]
+hone5616318973
+C
+SU StatusR
+esearcher RoleK
+ey PersonC
+ontact RolesAd
+minP
+ermissionsFu
+ll AccessP
+eople AttachmentsA
+ttachmentNam
+eCI
+TIA
+ttachment TypeOt
+herC
+ommentsBrefere,VeronicaV
+B_GROUP1.PDFProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...9 of
+ 391 1/29/23, 12:27 PM
+AttachmentNam
+eCI
+TI RCR UndergradA
+ttachment TypeOt
+herC
+ommentsA
+ttachmentNam
+eCI
+TI GCPA
+ttachment TypeOt
+herC
+ommentsP
+ersonH
+ome UnitEma
+il Addressb
+[EMAIL_12644]
+honeC
+SU StatusR
+esearcher RoleK
+ey PersonC
+ontact RolesAd
+minP
+ermissionsFu
+ll AccessP
+eople AttachmentsVB_RCR UNDERGRAD.PDFV
+B_GCP .PDFGr
+ay, Bethany ArielProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...10 of
+ 391 1/29/23, 12:27 PM
+AttachmentNam
+eCI
+TIA
+ttachment TypeOt
+herC
+ommentsA
+ttachmentNam
+eRCR
+A
+ttachment TypeOt
+herC
+ommentsA
+ttachmentNam
+ere
+fresherA
+ttachment TypeOt
+herC
+ommentsP
+ersonH
+ome UnitEma
+il Addressm
+[EMAIL_12645]
+hone9136081620
+GRAY_CITI.PDFRCR.
+PDFRE
+FRESHER.PDFWe
+ishaar, Megan Marie GardnerProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...1
+1 of 391 1/29/23, 12:[ADDRESS_897262] RolesAd
+minP
+ermissionsFu
+ll AccessP
+eople AttachmentsA
+ttachmentNam
+eCI
+TIA
+ttachment TypeOt
+herC
+ommentsA
+ttachmentNam
+eCI
+TI2A
+ttachment TypeOt
+herC
+ommentsP
+ersonH
+ome UnitEma
+il Addressm
+.[EMAIL_12646]
+honeMEGAN GARDNER WEISHAAR CITI GROUP 1 - 5.2021(1).PDFME
+GAN GARDNER WEISHAAR CITI GROUP 2 - 5.2021(1).PDFCl
+ark, MacKenzieProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...12 of
+ 391 1/29/23, 12:[ADDRESS_897263] RolesAd
+minP
+ermissionsFu
+ll AccessP
+eople AttachmentsA
+ttachmentNam
+eci
+ti training certihcate_humanresearchA
+ttachment TypeOt
+herC
+ommentsA
+ttachmentNam
+eci
+ti training certihcate_RCRA
+ttachment TypeOt
+herC
+ommentsNo
+L
+egacy eProtocol ID numberIf
+ applicable, enter the ID number this study was previously assigned in eProtocol.20-
+10303H
+G
+eneral QuestionnaireA
+pplication TypeFu
+ll BoardDo
+es this study include use of existing data or biospecimens?No
+Do
+es this study include use of student educational records and data?No
+Do
+es this study include the use of human blood, cells, tissues or body fluids?Ye
+sDo
+es this study include evaluation of medical equipment or devices?CITI_HUMANRESEARCH_MC.PNGC
+ITI_RCR_MC.PNGProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...13 of
+ 391 1/29/23, 12:27 PM
+NoDo
+es this study include evaluation of drugs, biologics, reagents or chemicals?Ye
+sIs
+ this study a clinical trial?No
+Do
+es this study include the use of Protected Health Information (PHI)?No
+Is
+ this study a Graduate Level Thesis or Dissertation Project?No
+Is
+ this study another type of class project?No
+Is
+ the project funded?Ye
+s
+S
+tudy ParticipantsSub
+jects Checklist (Select All that Apply)Ad
+ults
+Collab
+oratorsWi
+ll Colorado State serve as the Single IRB for other collaborating institutions on this study?No
+, Colorado State University is the only participating institution in this study.
+Fu
+ndingF
+unding SourcesFu
+nding TypeOt
+her (i.e. State, Local)KP
+ Proposal Number or OSP ReferenceNum
+ber147332
+Ti
+tle of Grant (if different from protocol title)CC
+TSIP
+eriod of FundingProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...14 of
+ 391 1/29/23, 12:27 PM
+Is the study occurring at CSU?Ye
+sP
+rime or Subawardee?P
+rimeFu
+nding was secured by:C
+SU Ojce of Sponsored ProgramsP
+lease provide your IRB Approval documentation to Sponsored Programs upon receipt.
+S
+ummary and PurposeP
+roposed Start DateF
+ebruary 15, 2021Proposed End DateF
+ebruary 15, 2022P
+rovide a brief summary or abstract of the project, using non-technical terms that would be understood by a non-scientific reader. Thissu
+mmary should be no more than 200 words.C
+annabidiol, or CBD, is commonly found in the cannabis plant and has shown promise in treating alcohol used
+isorders (AUD). Several rodent studies show that CBD decreases alcohol intake. However, only three humans
+tudies have ever been conducted on this topic. These studies showed conYicting results regarding the impact ofC
+BD on intoxication and blood-alcohol level. Importantly, existing studies have used synthetic CBD, which isd
+issimilar from the plant-based CBD products popular in the U.S. Thus, the conclusions that can be drawn fromt
+he existing work are limited, and tightly controlled human studies of the effects of plant-based CBD on blooda
+lcohol level, psychomotor intoxication and subjective intoxication following acute alcohol consumption aren
+eeded. In this study, we will explore the effects of two doses of plant-based CBD (compared to placebo CBD) onb
+lood alcohol level, motor and balance impairment as craving/desire for alcohol over the course 4 hours afters
+ubjects consume a standardized dose of alcohol. We hypothesize that in the CBD condition, blood alcohol level(
+estimated using a breathalyzer) will be lower, cognitive and motor/balance performance will be better and cravingw
+ill be lower for all timepoints. These outcomes have implications for understanding the potential of CBD as anAU
+D treatment.De
+scribe the purpose for the proposed project.T
+he purpose of the project is to improve our understanding of how plant-based CBD products may impact alcoholu
+se among individuals who regularly use alcohol. Since alcohol and cannabis co-use is common in the U.S., CBDis c
+ommonly found in recreational and medical cannabis products, and animal research suggests that CBD mayd
+ecrease alcohol intake, it is important to determine whether CBD have applications for reducing drinking inh
+umans. Ultimately, this could have implications regarding the use of CBD as a potential treatment for alcohol used
+isorders. Primary objectives are to explore how CBD impacts blood alcohol level, as well as cognitive and motorp
+erformance during an acute alcohol administration session. Specihc Aims are described in detail below: Aim 1.A
+ssess effects of CBD+alcohol vs. placebo+alcohol on breath alcohol level (BrAC). Hypothesis 1. After consumingC
+BD, subjects will have lower BrAC throughout the 4-hour period compared to when they consume placebo CBD.A
+im 2. Assess effects of CBD+alcohol vs. placebo+alcohol on subjective intoxication. Hypothesis 2a. Afterc
+onsuming CBD, subjects will experience decreased alcohol craving across all timepoints post-alcoholc
+onsumption compared to when they consume placebo CBD. Hypothesis 2b. Differences in self-reportedstim
+ulation and sedation effects will emerge in the CBD condition compared to the placebo condition across allp
+ost-alcohol consumption timepoints. We lack sujcient prior evidence to predict the direction of these effects.A
+im 3. Assess effects of CBD+alcohol vs. placebo+alcohol on psychomotor intoxication. Hypothesis 3a. CBD willb
+e associated with better performance on an inhibitory control task compared to placebo across all timepoints.Hy
+pothesis 3b. CBD will also be associated with better balance/motor performance at all timepoints after alcoholconsum
+ption compared to placebo.Protocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...15 of
+ 391 1/29/23, 12:[ADDRESS_897264]?W
+e hope to gain a better understanding of the impact of CBD on blood alcohol level. We also hope to betteru
+nderstand whether CBD impacts levels of acute alcohol intoxication (specihcally as regards craving, subjectivee
+ffects of alcohol and cognitive and motor impairment). This has implications regarding CBD's potential as at
+reatment for alcohol use disorder.De
+scribe how sharing results of this study could influence behavior, practice, theory, future research designs. Specifically, how will studyre
+sults apply to a larger population than the studied participants?T
+he results from this research will be disseminated as publications (estimated at least 3-4 papers total spanninga
+ll three main study aims) and as symposia/presentations and posters at national and international conferences.
+Back
+groundP
+rovide a brief overview of the relevant background. Discuss the present knowledge, appropriate literature and rationale for conducting there
+search.I
+ncreases in alcohol consumption, high risk drinking and AUD constitute a public health crisis in the U.S.(Grant eta
+l., 2017). Although decades of preclinical and clinical research have shed light on risk factors associated with thee
+tiology and maintenance of AUD, currently available interventions demonstrate only modest ejcacy (Dutra et al.,2
+008; Jonas et al., 2014). Thus, there is increasing interest in exploring alternative AUD treatments targeting novelb
+iological systems. Notably, the endocannabinoid system (ECS) has emerged in recent years as a potentialt
+reatment target for AUD (Sloan et al., 2017). In particular, the non-psychoactive cannabinoid cannabidiol (CBD)h
+as shown preclinical promise in ameliorating numerous clinical symptoms of AUD. Specihcally, CBD reduces ther
+einforcing properties of alcohol and decreases drinking motivation and consumption in mice (Viudez-Martínez,G
+arcía-Gutiérrez, et al., 2018; Viudez-Martínez, García-Gutiérrez, et al., 2018) and attenuates cue-induced andstr
+ess-induced alcohol-seeking, reinstatement, anxiety, and impulsivity in a rat model of AUD (Gonzalez-Cuevas eta
+l., 2018). Although we lack a complete understanding of the mechanism(s) through which CBD may reducea
+lcohol consumption and/or ameliorate the clinical symptoms of AUD, CBD is known to modulate several neuralp
+athways implicated in AUD. For example, in one rodent study, administration of CBD during ethanol self-a
+dministration was associated with decreased expression of the opi[INVESTIGATOR_664290]1 gene, the GPR55 gene,a
+nd the CB1 gene (all of which code for proteins associated with AUD and the reward response to alcohol (Maguea
+nd Blendy, 2010; Musella et al., 2017; Parsons and Hurd, 2015), and increased expression of the CB2 gene in then
+ucelus accumbens (NAcc). This study also found that CBD was associated with decreased expression of thet
+yrosine hydroxylase gene (TH; an enzyme critical for regulation of dopamine synthesis, and which inYuencesd
+opamine levels after alcohol administration) in the ventral tegmental area (VTA). Given that the dopaminergics
+ignaling from the VTA to the NAcc is responsible for mediating the rewarding effects of alcohol (Koob, 1992;S
+panagel and Weiss, 1999), and that increased TH expression is observed in association with acute and chronica
+lcohol (Lee et al., 2005; Oliva et al., 2008; Ortiz et al., 1995), it is possible that modulation of reward-related genesi
+n the VTA and NAcc could contribute to the ejcacy of CBD in decreasing alcohol consumption. In another study,C
+BD administered with the opi[INVESTIGATOR_664291] a greater extent than either CBD or naltrexone alone (Viudez-Martínez et al., 2018a). Thiss
+tudy also found that serotonin 1A (5HT1A) receptor expression was reduced in the dorsal raphe nucleus afterC
+BD+naltrexone treatment. The serotonergic pathway projecting from the dorsal raphe to the NAcc is activatedd
+uring reward-associated tasks in mice (Liu et al., 2014). Given that chronic alcohol exposure is associated withi
+ncreased 5HT1A receptor sensitivity and increased ethanol drinking in mice (Kelaï et al., 2006), these studiess
+uggest that reduction of 5HT1A receptor expression in the dorsal raphe may be one mechanism through whichC
+BD reduces the rewarding properties of alcohol. In sum, CBD modulates several neural pathways implicated inA
+UD, and the next logical step is to explore the effects of CBD on alcohol consumption and other AUD phenotypesi
+n heavy drinking human subjects, as is proposed in this study.Pl
+ease describe the expertise you have, or have access to, which prepares you to conduct research in this location and/or with this subjectpopul
+ation, including specific qualifications (e.g., relevant coursework, background, experience, and training).Protocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...16 of
+ 391 1/29/23, 12:[ADDRESS_897265] all research activity procedures in which a participant will be involved, including follow-up procedures. Please provide details.Pr
+ocedure DescriptionS
+tudy Overview. Heavy drinkers (N=40) who do not regularly use cannabis but are not cannabis naïve will ber
+ecruited for this pi[INVESTIGATOR_143388] [ADDRESS_897266] visit. For both visits, subjects will be asked toa
+rrive in the lab at 11:15am and will be asked to have someone drive them to the lab and pi[INVESTIGATOR_664292]
+f the day if possible. If this is not possible we will call a Lyft for them and cover the cost. At the hrst visit, theyw
+ill complete informed consent and a demographics form and several questionnaires on psychologicalf
+unctioning and substance use. Subjects will then consume their their CBD (30 mg or 200 mg) or placebo.A
+lcohol administration (up to .8g/kg) will occur about [ADDRESS_897267] occurs in the blood after 45 minutes (Williams et al 2021) Also, peak BrACo
+ccurs for the alcohol dose we are administering (up to .8g/kg) approx. 1 hour after alcohol ingestion. The ordero
+f study visits (CBD 30 mg vs. CBD 200 mg vs. placebo) will be counterbalanced across participants, such thatp
+articipants will be randomly assigned to complete each the three visits in different orders. Also note that ther
+esearch assistants running the study will also be blinded to participant condition (and a non-blinded graduates
+tudent will prepare the CBD product for the subjects before the session). The three study visits will occur 1w
+eek apart. There will also be 3 venous blood draws for Blood Cannabinoids at both visits. Blood draws willo
+ccur before CBD/placebo ingestion (to verify no CBD use prior to experiment), before alcohol consumption and6
+[ADDRESS_897268]-alcohol ingestion. Blood will be assayed for CBD, THC and THC metabolites using HighP
+erformance Liquid Chromatography-Mass Spectrometry.Th
+is procedure is:Ot
+her ProcedurePle
+ase explain:Ov
+erview of procedures/activities.Protocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...17 of
+ 391 1/29/23, 12:27 PM
+Procedure DescriptionLa
+boratory Sessions (CBD 30 mg Session, CBD 200 mg Session and Placebo-CBD Session). At each subject’sh
+rst session, they will arrive at the lab at approximately 11:15am, undergo informed consent procedures with at
+rained research assistant, undergo urine pregnancy and drug screening and receive a breathalyzer test. We willu
+se the Intoximeter Alcosensor IV Breathalyzer, which is the gold standard for alcohol research studies. Urined
+rug screening will test for the presence of illicit drugs (besides cannabis). If urine drug or pregnancy tests arep
+ositive, participants will be disqualihed from participation. If BrAC is above 0.000, participants will ber
+escheduled. If all tests are negative, participants will complete a brief demographics form and psychologicalf
+uctioning/substance use questionnaires. Next, they do the hrst blood draw and will then be given either 30 or2
+00mg CBD dissolved in water or plain water (as the placebo CBD condition). They will then be asked to wait for2
+[ADDRESS_897269] their blood drawn and will complete measures of balance/motorp
+erformance, inhibitory control, alcohol craving, stimulation and sedation. Specihcally, the following measureswi
+ll be administered to measure alcohol craving, stimulation and sedation: The Biphasic Alcohol Effects Scale(
+BAES) is a self-report rating scale measuring stimulant and sedative effects of alcohol. It has shown goodr
+eliability and validity in AUD. The Subjective High Assessment Scale (SHAS) is a standard self-report measureu
+sed to assess subjective responses to alcohol. The Alcohol Urge Questionnaire (AUQ) is a well-establishedm
+easure of alcohol craving and desire to drink that is commonly used in the context of acute alcohola
+dministration. To test balance/motor function we will use a psychomotor battery designed to capturem
+easures of cognitive and motor impairment in divided attention, decision making, reaction time, motor trackinga
+nd balance movements following the intake of drugs or alcohol and designed to be administered repeatedly ina
+ single session to assess changes in impairment without being susceptible to practice effects. Finally, to testi
+nhibitory control we will use the The Flanker Inhibitory Control and Attention Task, which requires participants tof
+ocus on a stimulus while inhibiting attention to stimuli Yanking it. These measures will be administered on ani
+pad. Next, participants will consume up to .8g/kg of vodka mixed with orange juice, following procedures fromp
+revious alcohol and cannabis co-administration studies. The dose will be reduced 8% for females to adjust fore
+xpected BrAC differences between males and females. An .8g/kg dose should produce a peak BrAC of no moret
+han.089% approximately [ADDRESS_897270] blood draw at this time(
+approximately 1 hour after the start of the alcohol administration procedure). As in the three prior humans
+tudies of alcohol and CBD co-administration, participants will be asked to consume their alcohol within a 20-m
+in. time period. The above procedures (breathalyzer measurement of BrAC, measures of inhibitory control andb
+alance/motor performance, alcohol craving, stimulation and sedation) will be repeated every [ADDRESS_897271]-alcohol administration. Participants will be required to reach a BrAC of <.[ADDRESS_897272] for them.P
+articipants will be offered snacks after testing is complete to facilitate BrAC reduction. The visit will end ata
+pprox. 4:00pm. They will also be required to either have someone pi[INVESTIGATOR_664293], or if this is not possible our lab will call them a Lyft. CBD Product. Consistent with the ColoradoD
+epartment of Agriculture (CDA) and CSU regulations, the 30 mg and 200 mg CBD products will be sourced byC
+aliper Foods (https://www.caliperfoods.life/), which is a CDA compliant product containing <.3%THC (thusq
+ualifying as hemp rather than cannabis, which means it is allowed on CSU’s campus). Subjects will consumeC
+aliper's 5% CBD concentrate liquid in water on the day of their CBD study appointment, and they will consumep
+lain water with no CBD on the day of their placebo-CBD appointment. Caliper's CBD readily solubilizes intow
+ater within seconds and does not impact Yavor, consistency, texture or appearance of the water. Thus,p
+articipants will not be able to tell whether they are consuming water containing CBD or plain water. Note thatIndi
+viduals who report very high levels of alcohol consumption on the questionnaires, those that reports
+ymptoms of severe depression or suicidality, or those that determine that they do need to seek alcoholt
+reatment will be referred to the Psychological Services Center in the CSU Psychology Department(
+https://psychology.colostate.edu/psc/), Aspenridge recovery (https://www.aspenridgefortcollins.com/) andProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...18 of
+ 391 1/29/23, 12:[ADDRESS_897273], which provides inpatient MH services (https://www.uchealth.org/locations/uchealth-mountain-c
+rest-behavioral-health-center/). More specihcally, if suicidality is revealed during the study session (i.e., if thep
+articipant selects a 2 ("I would like to kill myself') or a 3 ("I would kill myself if I have the chance") on BDI item#
+9), the study procedures will be stopped and the research assistant will call the PI, [CONTACT_664318], who has a PhD inC
+linical Psychology. [CONTACT_664318] will then conduct a risk assessment over the phone. If participants indicate thatt
+hey have plans, means and intent to harm themselves, and [CONTACT_664318] determines that the participant would be ad
+anger to themselves if allowed to leave the session, procedures for hospi[INVESTIGATOR_664294]. At this time,D
+r. Bradley Conner (a licensed clinical psychologist in the psychology department) will be called to assist, as al
+icensed psychologist is needed to sign off on hospi[INVESTIGATOR_664295]. Please note that this is extremelyunlik
+ely to happen, given that we will screen individuals out of participating in the study if the report suicidali
+deation on the phone screen. However, because we are administering a self-report measure that asks abouts
+uicidality, the procedures described above are in place to ensure participant safety.Th
+is procedure is:R
+esearch Activity Involving Participants, Participants Data, or BiospecimensThi
+s procedure is:E
+xperimentalWher
+e and when will this procedure take place?Please identif
+y the location of procedures.Who wi
+ll conduct this procedure?Pe
+rsonnelK
+aroly, Hollis CatherinePe
+rsonnelDr
+ennan, Meggan LPe
+rsonnelG
+utierrez,HectorPe
+rsonnelA
+dams, Tyler AnnPe
+rsonnelFo
+rd,MelanieIndi
+cate the frequency and duration of visits/sessions as well as the subject's total time commitment for the study.V
+isits will take about 4.5 hours.De
+scribe how the data will be collected (i.e. in person or online).I
+n personWi
+ll any video, photography, or audio be recorded as part of this procedure?No
+Privacy and ConSdentialityEx
+plain how the established data management plan along with consent processes and other elements of the research design address theProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...19 of
+ 391 1/29/23, 12:27 PM
+Will data be collected anonymously?No
+following.Pr
+ivacy is considered from the perspective of the participant and is a right to be protected. Privacy refers to an individual's interest inco
+ntrolling others' access to themselves. Based on their privacy interests, participants may want to control:•             The t
+ime and place where they give information•             The nat
+ure of the information they give•             Who r
+eceives and can use the informationFo
+r example, persons might not want to be seen entering a place that might stigmatize them, such as a pregnancy-counseling centerid
+entified as such by [CONTACT_120824].De
+scribe how you will protect subject's privacy.P
+articipants are recruited either using targeted mailer or or online. Initial screening is conducted via phone, andpr
+ospective participants are asked at the beginning of the call if they are in a location where they feel comfortablea
+nswering questions about substance use. The study will be conducted in a secure space in [CONTACT_664318]'s researchlab
+ at CSU.Co
+nfidentiality is about data. Confidentiality pertains to protecting information from disclosure based on an agreement between thepa
+rticipant and the researcher. When an individual shares information in a relationship of trust and expects it to be kept private or will bedi
+sclosed only with specific permissions, researchers must uphold this agreement and maintain data appropriately.De
+scribe how you will maintain the confidentiality of subjects' information.T
+he PI [INVESTIGATOR_664296], which will be stored in locked hling cabinets.Resear
+ch data will be stored separately, in a password-protected documents on a secure, password-protectedser
+ver.
+Biosp
+ecimensIdent
+ify which type(s) of biospecimens will be used as part of this research project:Blo
+odF
+ecal/Urine SamplesAr
+e the specimens known to be diseased or dangerousNo
+Wi
+ll tissues be stored for future research projects? Ye
+sWi
+ll tissues or associated data be sent out of this institution as part of a research agreement under a Data Use Agreement or MaterialTr
+ansfer Agreement?No
+D
+o you require approval through the Institutional Biosafety Committee (IBC)?Ye
+sI
+BC Project Approval Request Form (PARF)# or pendingPr
+oject 21-012BIBC Agent Approval Request Form (AARF)# or pending  no
+t requiredFo
+r more information or support, contact [CONTACT_664307]: RIC [EMAIL_12647]
+Dr
+ugs and DevicesIdent
+ify which drugs, reagents or chemicals will be used as part of this research:Protocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...20 of
+ 391 1/29/23, 12:27 PM
+Drug/Agent NameC
+BD 30 mg and 200 mg CBD products will be sourced by [CONTACT_664308]/Hemp/CBD
+P
+articipant PopulationAr
+e you interacting or intervening with participants? Ye
+sP
+rovide an estimate of the anticipated participant total.20
+Ar
+e you analyzing existing data records or biospecimens?No
+Inc
+lusion and Exclusion Criteria (e.g., Participants must have 20/[ADDRESS_897274] be 30-45 years of age, etc.) This should matchyo
+ur screening, consent, and recruitment materials.Pl
+ease list all inclusion criteriaP
+articipants must be between 21-60 years old, be able to provide consent, be willing to consume CBD during thes
+tudy, be a heavy drinker (>5 drinks [>4 for women] per occasion) at least 5 days/month in the past 3 months).T
+hey must not be a regular or recent cannabis user (used cannabis less than monthly over past year and not inp
+ast month), but they must not be cannabis naiive (they must report having using THC or CBD at least once inp
+ast year).Pl
+ease list all exclusion criteriaP
+articipants will be ineligible if they report daily tobacco use, state that they are currently seeking treatment forA
+UD or other substance use disorder, are pregnant, breastfeeding or trying to become pregnant, meet criteria forp
+sychotic, bipolar or major depressive disorder with suicidal ideation, report illicit drug use in past 60-days or failu
+rine drug screen, or have a major medical condition contradicting alcohol or CBD use (e.g., liver disease, heartd
+isease). They are also ineligible if they report taking blood thinners, as CBD may increase the level of bloodt
+hinners in a person's body. Regarding the urine drug screen, will be using the 6-panel Germaine™ LaboratoriesS
+afeCup™ III Urine Test Cup from Fisher Scientihc, catalog number 23-111-320. This product tests for thep
+resence of amphetamines, benzodiazepi[INVESTIGATOR_1651], cocain,e THC, methamphetamine and opi[INVESTIGATOR_2438]. Individuals thatd
+etermine that they do need or want to seek alcohol treatment will be referred to the Psychological ServicesC
+enter in the CSU Psychology Department (https://psychology.colostate.edu/psc/), Aspenridge recovery(
+https://www.aspenridgefortcollins.com/) and Mountain Crest, which provides inpatient MH services(
+https://www.uchealth.org/locations/uchealth-mountain-crest-behavioral-health-center/).What
+ is the rationale for studying the requested group(s) of participants?A
+ge criteria minimizes noise and reduces the impact of age-related differences on biological and behavioralo
+utcomes. Individuals under 21 are not legally allowed to use alcohol or cannabis, and thus cannot be included int
+his study. This age criteria is also consistent with my other alcohol and cannabis study protocol which has beenp
+reviously approved by [CONTACT_1201] (Protocol # 20=10213H). Because the primary aims of the study involve exploringt
+he effects of legal-market cannabis on alcohol consumption and involve an alcohol and CBD administration, wen
+eed to recruit heavy alcohol users. Heavy drinking criteria is consistent with The Substance Abuse and MentalHe
+alth Service Administration dehnition. We will recruit individuals who are not regular or recent cannabis users toe
+nsure that they do not have signihcant CBD or THC in their blood during the visits. However, because subjects areb
+eing given CBD (a hemp-based product), they should not be cannabis naïve. Overall, inclusion criteria areProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...21 of
+ 391 1/29/23, 12:[ADDRESS_897275], to increase the range of use patterns represented in the sample.Wi
+ll you use a screening procedure, instruments, tools, questionnaires etc.?Ye
+sDe
+scribe any planned screening procedures. Attach your screening document(s) (e.g., health history questionnaire), if applicable at then endof
+ the form. I
+nterested subjects will be screened over the phone by a trained research assistant. Phone screeningdo
+cumentation is attached in the attachment section.
+R
+ecruitment ProcessDe
+scribe the procedures for identifying and recruiting potential research subjects or requesting pre-existing data or materials. P
+articipant Group DescriptorAd
+ultsPle
+ase describe the recruitment process:P
+articipants will be recruited from the greater Fort Collins/Denver/Boulder metropolitan area in Colorado. Wew
+ill use Yyers in the community as well as targeted mailings that make use of a list of names and addresses ofi
+ndividuals from publicly available records purchased from a marketing hrm who ht target demographics andg
+eographical area. In addition to posting Yyers, we will print out smaller versions of our Yyers and research staffwi
+ll hand them out to adults in public spaces such as downtown Fort Collins They will approach adults walkingi
+n the area and offer a Yyer. We will also post ads on social media (e.g., Facebook, craigslist, reddit, etc.).R
+ecruitment materials will direct individuals to call a phone number to reach a professional research assistant tob
+e screened for participation in the study.Pl
+anned Subject Identification MethodsDir
+ect advertisingW
+ill a specific agency or institution provide access to prospective subjects?  No
+Pl
+ease select the recruitment personnelK
+aroly, Hollis CatherineDr
+ennan, Meggan LG
+utierrez,HectorA
+dams, Tyler AnnFo
+rd,MelanieW
+eishaar, Megan Marie GardnerZ
+ulic, LeilaProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...22 of
+ 391 1/29/23, 12:[ADDRESS_897276]
+anned Recruitment Materials/Methods*(Al
+l advertising must be submitted for review in its final printed/recorded form)No
+te: Attach copi[INVESTIGATOR_664297]/postersI
+nternet ads/postingsIs
+ there any possibility that potential participants may feel coerced to participate? No
+Is
+ there any possibility that potential participants may feel undue influence to participate?No
+P
+articipant Compensation/CostsWi
+ll participants be compensated?Ye
+sF
+orm of CompensationC
+ash or CheckWhat
+ is the approximate monetary value?297
+De
+scribe the remuneration plan.C
+ompensation is $99 per session which will be disbursed in cash following the completion of each session.M
+aximum compensation for the study is $297. A 1099 will not be issued.Wi
+ll a 1099 be issued?No
+Wi
+ll participants incur any costs to participate in this research?No
+R
+isks and BeneStsMi
+nimal risk “means that the probability and magnitude of harm or discomfort anticipated in the research are not greater in and ofth
+emselves than those ordinarily encountered in daily life or during the performance of routine physical or psychological examinations orProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...23 of
+ 391 1/29/23, 12:27 PM
+tests. ” [Department of Health and Human Services 45 CFR 46.102(j)]P
+lease indicate the researchers' evaluation of the overall risk level, and describe all known risks or discomforts associated with the studypr
+ocedures, as prompted below. Note that any risks identified here should be consistent with risks you will disclose to participants in theco
+nsent process.G
+reater than Minimal RiskAr
+e there risks associated with physical well-being?Ye
+sPl
+ease describe.R
+isk of Phlebotomy. When having blood drawn, participants may experience some discomfort as a result of then
+eedle prick in the arm. Some bruising or slight bleeding may occur. Although infection is possible, it is extremelyr
+are, because the needle is sterile and disposable. Occasionally, people feel lightheaded or faint when blood isd
+rawn, but the volume taken will be small (no more than 10mL is drawn for each of three blood draws). ProtectionA
+gainst Risks of Phlebotomy. Individuals trained in phlebotomy will conduct all blood draws. They have completedI
+BC training, BBP , BSL1, BSL2 and Hazardous Waste trainings and have demonstrated competence in phlebotomy,f
+ollowing the Karoly lab's SOP . Individuals who may draw blood during the study are: Meggan Drennan, HectorG
+uttierez, Patrick Gonzalez, Leila Zulic and Cody Conner. Risks of Alcohol Administration. Adverse effects ofa
+lcohol such as intoxication, acute mood shifts (e.g., feelings of sadness or depression), and odd perceptuale
+xperiences are possible. However, individuals are recruited because they are heavy drinkers, dehned asc
+onsuming >5 drinks [>4 for women] per occasion) at least 5 days/month in the past [ADDRESS_897277] Risks of Alcohol Administration. Several steps will be taken to minimize risk top
+articipants as a result of the acute effects of alcohol including those based on guidelines provided by [CONTACT_50533](
+NIAAA Recommended Council Guidelines on Ethyl Alcohol Administration in Human Experimentation; NIAAA,2
+005). More specihcally, the following protections are in place: First, participants will be excluded from the study ift
+hey have a medical condition, have an alcohol use disorder (AUD) or another substance use disorder (SUD), arec
+urrent in treatment for or seeking treatment for AUD or another SUD, or have a medical condition that that mayc
+ontraindicate the consumption of alcohol. Urinalysis drug screens will be used at both laboratory sessions toe
+xclude for any illicit drug use. Participants will only be included in the study if they are current heavy drinkers whor
+eport [ADDRESS_897278] three months (note that a binge is dehned by [CONTACT_664309] 5 drinks per occasion [4 for women]). Study staff will closely monitor participant BAC via breathalyzert
+hroughout the alcohol administration protocols to ensure that BAC never xceeds .089 (which is roughly thee
+quivalent of four standard drinks and is at the legal limit for alcohol impairment) following established alcohol-a
+dministration procedures. Thus, the amount of alcohol provided over the sessions will not exceed the dosagel
+evel consistent with participants’ normal drinking practices. At both laboratory visits, a pi[INVESTIGATOR_664298]
+o prove age eligibility (> 21 years). Female participants will be required to take a private urine sample pregnancyt
+est on the day of both laboratory sessions. In case of any positive reading, participants will not be eligible top
+articipate. The results of all pregnancy tests will be kept conhdential and the tests will be safely discarded.D
+uring the laboratory procedures, an experimenter will be present at all times. Participants will be required tor
+emain in the laboratory until their BAC <.03 g/dL. Participants will be supervised by [CONTACT_664310]. Participants will also have an opportunity to ask questions of the experimenter. In addition, [CONTACT_664318] (at
+rained clinical psychologist) will be on call during all study appointments if any participant experiences negativep
+sychological effects. Risks of CBD Administration. There may be mild physical side effects of CBD consumption,i
+ncluding nausea, fatigue and irritability. In addition, CBD can increase the level in your blood of the blood thinnerc
+oumadin. Individuals will be screened out and not allowed to participate in this study if they are taking thisme
+dication.Ar
+e there risks associated with psychological well-being?Ye
+sProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...24 of
+ 391 1/29/23, 12:27 PM
+Please describe.P
+sychological Risk Associated with Questionnaires: Participants may experience some discomfort associatedw
+ith hlling out questionnaires and answering personal questions during baseline and follow-up study sessions.T
+hey may also experience embarrassment because of items about medical conditions, health- related behaviors,a
+nd stigmatized behaviors, such as alcohol use, cannabis use and use of other legal and illegal psychoactives
+ubstances. Protection Against Risks Association With Questionnaires. Participants will be forewarned of thispossi
+bility and notihed that discomfort with questions may be handled by [CONTACT_664311] a trained clinician (e.g., the study PI, [CONTACT_664318], a clinical psychologist) to help resolve the issue or, in somec
+ases, by [CONTACT_664312].A
+re there risks associated with economic well-being, including employability?No
+Ar
+e there risks associated with social well-being, including reputational risks?Ye
+sPl
+ease describe.T
+he Risk of Breach of Conhdentiality. A conhdentiality breach is possible, but highly unlikely given the precautionst
+aken (see below) Protection Against The Risk of Breach of Conhdentiality. The study staff will have access toi
+dentifying information, which will be stored in locked hling cabinets. Research data will be stored separately inpa
+ssword-protected documents on a secure, password-protected server.De
+scribe how the benefits of the research justify the likely risks to participants.Br
+oadly, the hndings of this investigation will increase the body of knowledge about the effects of CBD on alcoholc
+onsumption among heavy drinkers. Existing research on the effects of alcohol and CBD together is very minimal,a
+nd has has largely used either animal models with extracted synthetic CBD (which differs considerably from thep
+lant-based cannabis used by [CONTACT_1978]). Data are therefore lacking in terms of the effects of plant-based CBD ona
+lcohol consumption. Thus, the proposed study will ultimately add critical information to the knowledge baser
+egarding alcohol and CBD. These results may inform public policy approaches to harm reduction, which is muchn
+eeded in states that are legalizing cannabis use. In addition, the proposed study will provide an evidence-baset
+hat will inform personal decisions and could reduce harm in individuals who are currently using alcohol andc
+annabis. The results of this study will be disseminated through national and international scientihc conferences,p
+ublication in peer-reviewed scientihc journals, and press releases to mainstream media outlets. Given that thiss
+tudy could generate highly externally valid data to potentially inform harm reduction efforts at relatively low riskt
+o participants, the risks/benehts ratio seems reasonable. The risks associated with participating have beenm
+inimized via procedures described above.De
+scribe direct research benefits to the participants, if any.No
+neDe
+scribe the indirect research benefits to society.T
+his study could beneht public health by [CONTACT_664313] (CBD) impacts the braina
+nd body when used in combination with alcoohol. This information may help people who use alcohol and/orc
+annabis to make decisions about their use, and may help clinicians advise patients regarding cannabis andalc
+ohol use.
+Da
+ta ManagementDa
+ta management plans, including plans for data sharing, are integral to project development. How you decide to collect, store, share and/ord
+estroy data impacts your consent process, research procedures, data analysis, and publication.  
+Res
+ponses in this section constitute your plan. For guidance on how to answer these questions and plan for the data lifecycle,re
+ference the re sources and t ools listed here.   
+Protocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...25 of
+ 391 1/29/23, 12:27 PM
+Data Management Services at CSU Libraries  Gener
+al guidance and unfunded projects ( DMPTool)  Fu
+nder-specific guidance and templates ( DMPTool)  If
+ you choose to create a standalone data management plan (DMP) for your own purposes or at the direction of a funding agency, pleaseattac
+h that document to your protocol, also.  A 
+DMP fillable template i s available from CSU Libraries.Ho
+w will the data be stored and backed up during the research?P
+articipant conhdentiality is strictly held in trust by [CONTACT_978]. Signed paper consent forms will be stored in a lockedh
+ling cabinet in [CONTACT_664318]’s lab. All data, including biological data, from the proposed study will be identihed by [CONTACT_664314]. Self-report data for this study will be collected via individual password-protected laptopc
+omputers using Qaltrics. Participant data that is not self-report, such as blood cannabinoid levels, will bere
+ported to the PI [INVESTIGATOR_664299]'s password protected server. Adverse events will be documented and reported using the CSUA
+dverse Event forms (i.e. mild/moderate adverse event form; and the serious/unanticipated adverse event form).Who wi
+ll be responsible for data and access management, andse
+curity?D
+ata Access ResponsibilityK
+aroly, Hollis CatherineWho wi
+ll have access to study records orsp
+ecimens?P
+ersonnelK
+aroly, Hollis CatherineP
+ersonnelDr
+ennan, Meggan LP
+ersonnelG
+utierrez,HectorP
+ersonnelA
+dams, Tyler AnnP
+ersonnelFo
+rd,MelanieP
+ersonnelW
+eishaar, Megan Marie GardnerP
+ersonnelG
+ray, Bethany ArielProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...26 of
+ 391 1/29/23, 12:[ADDRESS_897279] access to study records or specimens?No
+Ho
+w will you share the data?No
+ identihable data will be released.Wi
+ll identifiable data collected as part of the research be released in identifiable form? (e.g., pi[INVESTIGATOR_499], recordings, responses to researchques
+tions, quotes)  No
+W
+ill the identifying information be destroyed at a specific date? For guidance, please reference any associated contract or grant (ifap
+plicable) and/or the C SU Research Data Policy. No
+What
+ is the long-term preservation plan for the dataset?D
+ata will be retained in excel spreadsheets indehnitely following project completion. A small amount of bloods
+pecimens from each subject will also be retained in a -80degree freezer for up to 5 years following studyc
+ompletion, to facilitate further study should the PI [INVESTIGATOR_664300] (e.g., tom
+easure inYammatory markers or other markers of health that are commonly collected in heavy drinkers).I
+dentifying information will be destroyed [ADDRESS_897280] completion. It will be permanently deleted from alls
+ervers and computers.Do
+ you intend to deposit your research data/specimens into a repository for future use? No
+C
+onsent/AssentConse
+ntProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...27 of
+ 391 1/29/23, 12:[ADDRESS_897281] meets specific criteria. F
+ollow the prompts below to describe all consent processes and provide justification for any requested alterations or waivers.Wi
+ll informed consent be obtained from all research subjects (and/or their parents or legally authorized representatives)?Ye
+sC
+SU Consent PersonnelK
+aroly, Hollis CatherineDr
+ennan, Meggan LG
+utierrez,HectorA
+dams, Tyler AnnFo
+rd,MelanieZ
+ulic, LeilaCr
+ain, Sage ABr
+efere,VeronicaG
+ray, Bethany ArielW
+eishaar, Megan Marie GardnerC
+lark, MacKenzieNo
+Ar
+e you requesting a waiver of documentation of consent?No
+Co
+nsentProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...28 of
+ 391 1/29/23, 12:[ADDRESS_897282] each consent processWho wi
+ll obtain subjects consent?P
+ersonnelK
+aroly, Hollis CatherineP
+ersonnelDr
+ennan, Meggan LP
+ersonnelG
+utierrez,HectorP
+ersonnelA
+dams, Tyler AnnP
+ersonnelFo
+rd,MelanieP
+ersonnelZ
+ulic, LeilaP
+ersonnelCr
+ain, Sage AP
+ersonnelBr
+efere,VeronicaP
+ersonnelG
+ray, Bethany ArielP
+ersonnelW
+eishaar, Megan Marie GardnerP
+ersonnelC
+lark, MacKenzieWhi
+ch participant group is this consent processfo
+r?Ad
+ultProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...29 of
+ 391 1/29/23, 12:27 PM
+How is consent being obtained?I
+n personWi
+ll non-English speaking participants beenr
+olled?  No
+Bilin
+gual will be included.A
+re any subjects unable to legally provide consent?No
+ConXict of InterestsFo
+r guidance on how to answer these questions and information please visit the CSU  Conflict of Interest page. Do
+es the research involve a drug, device, or biological invented by [CONTACT_10825], an immediate family member or other Research Personnel?No
+Is
+ the research sponsored by [CONTACT_120827], an immediate family member, or other Research Personnel have a paid consulting orad
+vising relationship?No
+Wi
+ll you, members of your immediate family, or other Research Personnel receive special compensation or increased compensation if there
+search generates a favorable outcome?No
+W
+ill you, members of your immediate family, or other Research Personnel receive any money, gift or anything of monetary value above andbe
+yond the actual costs of enrollment, conduct of the research, and reporting on the results, including, but not limited to, finders fees, referralfe
+es, recruitment bonuses, and an enrollment bonus for reaching an accrual goal or similar types of payments?No
+Do
+ you, members of your immediate family or other Research Personnel have any other interests or relationships (including volunteerse
+rvices) that might constitute a conflict of interest or an appearance of conflict of interest in connection with the research project?No
+W
+ill the payment you receive for services provided during the conduct of the research (e.g., investigator and Research Personnel time andte
+sts) be inconsistent with fair market value for those services?No
+Si
+gnificant Financial Interest: Please check Yes or No for each item below.W
+ill you, your immediate family members or other Research Personnel receive salaries, royalties and/or other payments for services (e.g.,co
+nsulting fees, honoraria, research design, management position, independent contractor, service on advisory or review committees, boardmember
+ship seminars, lectures or teaching engagements when totaled together exceeded $5,000 during the previous 12 months or aree
+xpected to exceed $5,000 over the next 12 months)? This excludes reasonable costs of conducting the research, as specified in the researchagr
+eement.No
+Do
+ you, your immediate family members, or other Research Personnel hold any ownership interests including stocks, bonds, or stock optionsth
+at exceed $5,000 and/or that constitute more than a five percent (5%) ownership interest in the sponsoring organization? This does noti
+nclude any interests held solely by [CONTACT_120828] a business by a mutual, pension or other institutional investment fund over whichth
+e investigator and/or his or her immediate family do not exercise day-to-day control of investment decisions.No
+Mi
+nimizing Risks and Disclosure to SubjectsHa
+ve you disclosed any actual, potential or perceived conflicts of interest in the consent form? Research Personnel are required to discloseal
+l such conflicts to all research participants in the research consent form.No
+By s
+ubmitting this form, you are attesting that you have read Co lorado State University’s policy on Conflict of Interest and agr ee to abide by [CONTACT_664315]. You will update this disclosure form when new or changes in conflict of interest arise, and that you will comply with any conflictProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...30 of
+ 391 1/29/23, 12:[ADDRESS_897283] (IRB) to manage, reduce, or eliminate any actual or potential conflict of interestfo
+r the duration of the research.
+At
+tachmentsAt
+tach all relevant documentation to your research in this section. Please label each item appropriately, so your IRB reviewers understand thepur
+pose and population each document aims to address. Please delete the existing attachment and upload the Tracked Changes version andCl
+ean revised document for review to update or revise any existing attachments.A
+ny documentation that a participant will see must be reviewed and approved by [CONTACT_1201], including consent, recruitment, communications,to
+ols, instruments, etc. Additional documents required for review include funding proposals, contracts, letters of agreement, methodology,r
+elated approvals, etc. For more information and guidance on what documentation to attach, please visit the IRB website.An
+swers within your application indicate that the following documentation is required:A
+ttachment TypeCo
+nsentA
+ttachmentNam
+eA
+ttachment TypeR
+ecruitment MaterialsA
+ttachmentNam
+eA
+ttachment TypeG
+rant or ContractA
+ttachmentNam
+eA
+ttachment TypeD
+rug DocumentationA
+ttachmentCONSENT_CBD ALCOHOL_FINAL (2).DOCXEM
+AIL SCRIPTS_UPDATE.DOCXCO
+-X-20-39.PDFCALI
+PER TS-002, T -P-S-5_ REV 4.0 .PDFProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...31 of
+ 391 1/29/23, 12:27 PM
+NameA
+ttachment TypeD
+rug DocumentationA
+ttachmentNam
+eA
+ttachment TypeD
+ata Safety and Monitoring PlanA
+ttachmentNam
+eA
+ttachment TypeOt
+herA
+ttachmentNam
+eA
+ttachment TypeOt
+herA
+ttachmentNam
+eA
+ttachment TypeOt
+herA
+ttachmentNam
+eCOMPARISON OF FIVE CBD PREPARATIONS (1).PDFK
+AROL Y_DATASAFETYMONITORING_CBD (1).DOCXK
+AROL Y LAB SAFETY PLAN(1).DOCXDO
+A INFO.DOCXC
+ONSROE1979_ARTICLE_INTERACTIONOFCANNABIDIOLANDALC.PDFProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...32 of
+ 391 1/29/23, 12:27 PM
+Attachment TypeS
+creening Tool or ProcedureA
+ttachmentNam
+eA
+ttachment TypeS
+creening Tool or ProcedureA
+ttachmentNam
+eA
+ttachment TypeR
+ecruitment MaterialsA
+ttachmentNam
+eA
+ttachment TypeS
+creening Tool or ProcedureA
+ttachmentNam
+eA
+ttachment Typee
+Protocol HistoryA
+ttachmentNam
+eA
+ttachment Typee
+Protocol HistoryQUALTRICS REVISED CBD_ALCOHOL_PI[INVESTIGATOR_8571]_2021.DOCXQ
+UALTRICS REVISED CBD_ALCOHOL_SESSION_1_DEMOGRAPHICS__INITIAL_QUESTIONNAIRES.DOCXO
+NLINE AD_CBD ALCOHOL STUDY.DOCP
+HONESCREENSCRIPT_KAROL Y_CBD.DOCXPR
+OTOCOL_INITIAL 20-10303H.ZIPProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...33 of
+ 391 1/29/23, 12:27 PM
+AttachmentNam
+eA
+ttachment Typee
+Protocol HistoryA
+ttachmentNam
+eA
+ttachment TypeOt
+herA
+ttachmentNam
+eC
+ITI forms--Melanie FordA
+ttachment TypeOt
+herA
+ttachmentNam
+eC
+ITI training HectorA
+ttachment TypeOt
+herA
+ttachmentNam
+eMe
+ggan Drennan CITIA
+ttachment TypeOt
+herPROTOCOL_AMEND 1 20-10303H.ZIPP
+ROTOCOL_AMEND 2 20-10303H.ZIPMF
+ CITI CERTIFICATION.PDFH
+G CITI CERTIFICATION.PDFC
+ITICOMPLETIONREPORT_DRENNAN.PDFProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...34 of
+ 391 1/29/23, 12:27 PM
+AttachmentNam
+eC
+ITI_TaylorSullivanA
+ttachment TypeOt
+herA
+ttachmentNam
+eC
+ITI_RCR_ TaylorSullivanA
+ttachment TypeOt
+herA
+ttachmentNam
+eC
+ITI_GCP_Taylor SullivanA
+ttachment TypeA
+ttachmentNam
+eA
+ttachment TypeA
+ttachmentNam
+eA
+ttachment TypeA
+ttachmentTAYLOR_GROUP1.PDFTA
+YLOR_RCR.PDFT
+AYLOR_GCP .PDFMA
+RISSA_CITI.PDFMA
+RISSA_RCR.PDFM
+ARISSA_GCP .PDFProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...35 of
+ 391 1/29/23, 12:27 PM
+NameA
+ttachment TypeOt
+herA
+ttachmentNam
+eCI
+TI_Cody ConnerA
+ttachment TypeOt
+herA
+ttachmentNam
+eCI
+TI_TabithaMcMichaelA
+ttachment TypeOt
+herA
+ttachmentNam
+eCI
+TIA
+ttachment TypeOt
+herA
+ttachmentNam
+eRCR
+A
+ttachment TypeOt
+herA
+ttachmentCITI CERT_CODY.PDFT
+ABITHA_CITI CERT .PDFPA
+TRICK_CITI.PDFPA
+TRICKRCR.PDFC
+ITI_HUMANRESEARCH_MC.PNGProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...36 of
+ 391 1/29/23, 12:[ADDRESS_897284]. Obligations of the Principal Investigator [INVESTIGATOR_664301]:·
+        Receive IRB approval or determination prior to enrolling any subjects or collecting any data intended for research use.·        Ma
+nage and maintain all research records, including consent retention, for at least three (3) years after the close of the study, or longerper
+ sponsor requirement.·        Ens
+ure that personnel training status remains current.·
+        Provide all subjects a copy of the signed consent form, when applicable.·
+        Keep protocol up to date by [CONTACT_664316].·
+        Maintain current protocol approval by [CONTACT_664317], as required.·        Pr
+omptly report any violations, deviations, unanticipated problems or adverse events to the IRB.·        N
+otify the IRB when the study is complete and take steps to close the protocol.I
+ understand that as the Principal Investigator I am fully responsible for the execution and management of thisCITI_RCR_MC.PNGDA
+NIELLEOLSON_HUMANRESEARCH.PDFD
+ANIELLEOLSON_RESPONSIBLECONDUCT .PDFC
+BD ALCOHOL FL YER 2.DOCXProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...37 of
+ 391 1/29/23, 12:[ADDRESS_897285] of my knowledge.Protocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...38 of
+ 391 1/29/23, 12:27 PM
+Administrative Details Form
+De
+terminationsRe
+view TypeStud
+y StatusProtocolsht tps://colostate.kuali.co/protocols/protocols/6152325798638a0038ea60...39 of
+ 391 1/29/23, 12:27 PM

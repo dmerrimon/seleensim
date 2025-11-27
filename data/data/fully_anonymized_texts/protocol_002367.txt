@@ -1,0 +1,4016 @@
+CONFIDENTIA L
+The GlaxoSmithKline group of companies 202152
+1Division :World wide Development
+Information Type :Reporting and Anal ysis Plan (RAP)
+Title :Reporting and An alysis Plan for Study  202152: A 
+multicentre, randomised, double -blind (sponsor -unblinded), 
+placebo- controlled study  with open label extension to 
+investigate the safet y and tolerability , pharmacokinetics, 
+pharmacod ynamics, and efficacy  of [COMPANY_004]2982772 in subjects 
+with active ulcerative colitis.
+Compound Number :[COMPANY_004]2982772
+Effective Date :18-Jul-2019
+Description:
+The purpose of this RAP is to describe the planned anal yses and output to be 
+included in the Clinical Study  Report (CSR) for Protocol 202152.
+This R AP is intended to describe the interim and final a nalyses required for the 
+study .
+This RAP will be provided to the study  team members to convey  the content of the 
+Statistical Analy sis Complete ( SAC ) deliverable.
+RAP Author(s):
+Author’s Name [CONTACT_493648]: 
+15-JUL-2019Principal Statistician ( IIClinical Statistics)
+15-JUL-2019Statistics Manager (IIClinical Statistics)
+Copy right 2020 the GlaxoSmithKline group of companies. All rights reserved.  
+Unauthorised cop ying or use of this information is prohibited. 2019N425893_00
+[COMPANY_003]
+[COMPANY_003]
+CONFIDENTIA L
+The GlaxoSmithKline group of companies 202152
+2RAP Team Review Confirmation :
+(Email)
+Reviewer Date
+Principal Programmer /Analy st (Clinical 
+Programming)16-JUL-2019
+16-JUL-2019 Operations and Science Lead (II Global Clinical 
+& Data Operations)
+16-JUL-[ADDRESS_771766] Phy sician Lead, iiTA16-JUL-2019
+Senior Medical Director, GCSP SERM16-JUL-2019
+15-JUL-2019 Data Qualit y Lead (II Global Clinical & Data 
+Operations)
+Clinical Statistics and Clin ical Programming Line Approvals:
+(PharmaTMF signoff)
+Approver Date
+18-JUL-2019Snr Statistical Director (II Clinical Statistics)
+18-JUL-2019Programming Manager (II Clinical Programming) 2019N425893_00
+[COMPANY_003]
+[COMPANY_003]
+[COMPANY_003]
+[COMPANY_003]
+[COMPANY_003]
+[COMPANY_003]
+[COMPANY_003]
+[COMPANY_003]
+[COMPANY_003]
+CONFIDENTIA L
+202152
+3TABLE OF CONTENTS
+PAGE
+1.INTRODUCTION ...................................................................................................... 6
+2.SUMMARY OF KEY PROTO COL INFORMATION .................................................. 6
+2.1. Changes to the Protocol Defined Statistical Analysis Plan ............................ 6
+2.2. Study Objective(s) and Endpoint(s) ............................................................... 7
+2.3. Study Design .............................................................................................. 10
+2.4. Statistical Analyses ..................................................................................... 11
+3.PLANNED ANALYSES .......................................................................................... 12
+3.1. Interim Analyses ......................................................................................... 12
+3.2. Final Analyses ............................................................................................ 13
+4.ANALYSIS POPULATIONS ................................................................................... 13
+4.1. Protocol Deviations ..................................................................................... 13
+5.CONSIDERATIONS FOR D ATA ANALYSES AND DATA HANDLING 
+CONVENTIONS ..................................................................................................... 14
+5.1. Study Treatment & Sub -group Display Descriptors ..................................... [ADDRESS_771767] ................................................................... 25
+8.1.2. Statistical Analyses / Methods ..................................................... 25
+[IP_ADDRESS]. Statistical Methodology Specification .......................... 25
+[IP_ADDRESS].1 Continuous Endpoints ................................................ 25
+[IP_ADDRESS].2 Binary Endpoints ........................................................ 26
+8.2. Exploratory Effic acy Analyses ..................................................................... 27
+8.2.1. Responder Across Endpoints ....................................................... 27 2019N425893_00
+CONFIDENTIA L
+202152
+48.2.2. Probabilities of Success ............................................................... 27
+8.3. Exploratory Pharmacodynamic / Efficacy Analyses ..................................... 28
+9.PHARMACOKINETIC ANAL YSES ......................................................................... 28
+9.1. Pharmacokinetic Analyses .......................................................................... 28
+9.1.1. Endpoint / Variables ..................................................................... 28
+[IP_ADDRESS]. Drug Concentration Measures .................................... [ADDRESS_771768] ................................................................... 29
+9.2. Population PK Analyses .............................................................................. 29
+9.3. Pharmacokinetic/Pharmacodynamic Analyses ............................................ 29
+10.BIOMARKER ANALYSES ...................................................................................... 30
+10.1. Biomarker/Target Engagement/Pathway Engagement/ 
+Transcriptomics Analyses ........................................................................... 30
+10.1.1. Endpoint / Variables ..................................................................... [ADDRESS_771769] ................................................................... 31
+10.1.3. Statistical Ana lyses / Methods ..................................................... 31
+[IP_ADDRESS]. Statistical Methodology Specification .......................... 31
+11.REFERENCES ....................................................................................................... 36
+12.APPENDICES ........................................................................................................ 37
+12.1. Appendix 1: Protocol Deviati on M anagement and Definitions for Per 
+Protocol Population ..................................................................................... 37
+12.1.1. Exclusions from Per Protocol Population ..................................... 37
+12.2. Appendix 2: Schedule of Activities .............................................................. 38
+12.2.1. Proto col Defined Schedule of Events ........................................... 38
+12.3. Appendix 3: Assessment W indows ............................................................. 42
+12.3.1. Definitions of Assessment Windows for Analyses ........................ 42
+12.4. Appendix 4: Study Phases and Tr eatment Emergent Adverse 
+Events ........................................................................................................ 43
+12.4.1. Study Phases .............................................................................. 43
+[IP_ADDRESS]. Study Phases for Concomitant Medication ................. 43
+12.4.2. Treatment Emergent Flag for Adverse Events ............................. 43
+12.5. Appendix 5: Data Display Standards & Handling Conventions .................... 44
+12.5.1. Reporting Process ....................................................................... 44
+12.5.2. Reporting Standards .................................................................... 44
+12.5.3. Reportin g Standards for Pharmacokinetic .................................... 45
+12.6. Appendix 6: Derived and Transformed Data ............................................... 46
+12.6.1. General ........................................................................................ 46
+12.6.2. Study Population .......................................................................... 46
+12.6.3. Safety .......................................................................................... 47
+12.6.4. Efficacy ........................................................................................ 48
+12.6.5. Biomarker .................................................................................... 53
+12.7. Appendix 7: Reporting Standards for Missing Data ..................................... 54
+12.7.1. Premature W ithdrawals ................................................................ 54
+12.7.2. Handling of Missing Data ............................................................. 54
+[IP_ADDRESS]. Handling of Missing and Partial Dates ........................ 54
+12.8. Appendix 8: Values of Potential Clinical Importance ................................... 55
+12.8.1. Laboratory Values ........................................................................ 55
+12.8.2. ECG ............................................................................................. 56
+12.8.3. Vital Signs .................................................................................... 56 2019N425893_00
+CONFIDENTIA L
+202152
+512.9. Appendix 9: Abbreviations & Trade Marks .................................................. 57
+12.9.1. Abbrev iations ............................................................................... 57
+12.9.2. Trademarks ................................................................................. 58
+12.10. Appendix 10: List of Data Displays .............................................................. 59
+12.10.1. Data Display Numbering .............................................................. 59
+12.10.2. Mock Example Shell Referencing ................................................ 59
+12.10.3. Deliverables ................................................................................. 59
+12.10.4. Study Population Tables .............................................................. 60
+12.10.5. Safety Tables ............................................................................... 63
+12.10.6. Safety Figures ............................................................................. 71
+12.10.7. Efficacy Tables ............................................................................ 72
+12.10.8. Efficacy Figures ........................................................................... 77
+12.10.9. Pharmacokinetic Tables ............................................................... 83
+12.10.10. Pharmacokinetic Figures ............................................................. 84
+12.10.11. Pharmacodynamic and/or Biomarker Tables ............................... 87
+12.10.12.Pharmacodynamic and/or Biomarker Figures .............................. 90
+12.10.13. ICH Listings ................................................................................. 95
+12.10.14. Non-ICH Listings ........................................................................ 103
+12.11. Appendix 11: Example Mock Shells for Data Displays .............................. 109
+12.12. Appendix 12: NONMEM datafile specification ........................................... 110 2019N425893_00
+CONFIDENTIA L
+202152
+61. INTRODUCTION
+The purpose of this reporting and a nalysis plan (RAP) is to describe the analy ses to be 
+included in the CSR for Protocol 202152 :
+Revision Chronology:
+2015N251758_00 23-MAY -2016 Original
+2015N251758_01 20-APR-2017 Protocol Amendment 1 -Change in dosing regimen from 60 
+mg BID to 60 mg TID, updates to Inclusion criteria 3 and 6 
+and Exclusion criteria 3, 9, 21 and 22, allowance for 
+rescreening, and addition of suicidality stoppi[INVESTIGATOR_586563].
+2. SUMM ARY OF K EY PROTOCOL I NFORM ATION
+2.1. Changes to the Protocol Defined Statistical A nalysis Plan
+Changes from the originally  planned statistical analy sis specified in the protocol are 
+outlined in Table 1.
+Table 1 Changes to Prot ocol Defined A nalysis Plan
+Protocol Reporting & Analysis Plan
+Statistical Analysis Plan Statistical Analysis Plan Rationale for Changes
+Two interim analyses (IA) were 
+planned. The decision whether the
+first IA will be conducted was to be 
+based on the rec ommendation of 
+the DRC review to assess futility 
+based on [ADDRESS_771770] IA.
+Endpoints for the 3-domain partial 
+Mayo , 3-domain Mayo clinical 
+response and 3 -domain Mayo 
+clinical remission are not specified 
+in the prot ocol. Relevant definitions and required 
+summaries was added to the 
+RAP. The landscape for UC has 
+changed since the protocol was 
+developed. 
+The total score for the Mayo is The RAP uses the Total Mayo To match terminology used in the  2019N425893_00
+CONFIDENTIA L
+202152
+7Protocol Reporting & Analysis Plan
+Statistical Analysis Plan Statistical Analysis Plan Rationale for Changes
+called the complete Mayo in the 
+Protocol.Score termi nology . FDA’s Ulcerative Colitis: Clinical 
+Trial Endpoints Guidance for 
+Industry document.
+The scoring algorithm for the 
+Modified Riley Scale in Table [ADDRESS_771771] MRS 
+scores as provided by [CONTACT_586577] 
+(central reader). To fix an error in the protocol.
+Further details can be found in 
+the Protocol Note to File #4 
+dated 24 Ma y 2018. 
+No endpoint and derivations for the 
+Robarts Histology Index (RHI) was 
+explicitly mentioned in the protocol. 
+The protocol endpoints section 
+states: Change from baseline on 
+histologic severity including but not 
+limited to MRS and Geboes. 
+Robarts w ill also provide [COMPANY_004] with 
+the RHI alongside the MRS and 
+Geboes.Relevant definitions for the RHI 
+and required summaries were 
+added to the RAPTo enable analysis of the RHI 
+data.  
+[COMPANY_004]2982772 plasma 
+concentrations will be summarised 
+descriptively by [CONTACT_586578] d nominal 
+sampling time (Pre-dose on Day [ADDRESS_771772] 
+dose on Days 1 and 43 and trough 
+on Day 85 or Early Withdrawal ).The predicted trough 
+concentration at 7am on Day 43 
+will be calculated using the 
+observed pre -dose concentration 
+at the time of the PK sample (see 
+Section [IP_ADDRESS] for calculations)
+The predicted Day 43 trough 
+concentration will be used in 
+PK/PD assessments instead of 
+the observed Day 43 Pre -Dose 
+concentrationSince the half -life of 
+[COMPANY_004]2982772 is short (2 -3h), the 
+duration of time between the Day 
+43 clinic visit and the usual 
+dosing time (assumed to be 7am 
+for all subjects) may result in the 
+reported “pre- dose” 
+concentration being lower than 
+the true “trough concentration ”
+2.2. Stud y Objective(s) and Endpoint(s)
+Objectives Endpoints
+Primary Objectives Primary Endpoints
+To investigate the safety and tolerability 
+of 60 mg three times daily doses of 
+[COMPANY_004]2982772 in subjects with moderate 
+to severe ulcerative colitis.Adverse events.
+Clinical laborato ry values (clinical chemistry, 
+haematology and urinalysis).
+Vital sign measurements (blood pressure, heart rate, 
+respi[INVESTIGATOR_697], and body temperature).
+12-Lead ECG monitoring.
+Secondary Objectives Secondary Endpoints
+To investigate the preliminary effi cacy of 
+60 mg three times daily doses of 
+[COMPANY_004]2982772 in achieving mucosal 
+healing after 6 and 12 weeks of treatment 
+in subjects with active ulcerative colitis. The proportion of subjects who achieve an absolute 
+Mayo endoscopy subscore of 0 or 1 at Days 43 
+(Week 6) and 85 (Week 12).
+Change from baseline in mucosal appearance 
+determined by [CONTACT_586579]  2019N425893_00
+CONFIDENTIA L
+202152
+8Objectives Endpoints
+Severity (UCEIS).
+To investigate the effect of 60 mg three 
+times daily doses of [COMPANY_004]2982772 on 
+biomarkers of disease activity in subje cts 
+with active ulcerative colitis.Change from baseline in markers which may include, 
+but are not limited to, mean CRP and faecal 
+calprotectin (FCP).
+To investigate the effect of 60 mg t hree 
+times daily doses of [COMPANY_004]2982772 on 
+histologic disease activity in subjects with 
+active ulcerative colitis.Change from baseline in histologic severity, including 
+but not limited to Modified Riley Score and Geboes 
+Index.
+To investigate the effect of 60 mg t hree 
+times daily doses of [COMPANY_004]2982772 in 
+achieving clinical res ponse and remission 
+after 6 and 12 weeks of treatment in 
+subjects with active ulcerative colitis. The proportion of subjects who achieve clinical 
+response defined as reduction by ≥3 points or ≥30% 
+improvement from baseline complete Mayo score, 
+along with a decrease in the rectal bleeding score of 
+≥1 point, at Days 43 (Week 6) and 85 (Week 12).
+The proportion of subjects who achieve clinical 
+remission defined as a complete Mayo score of 2 
+points or lower, with no individual subscore exceeding 
+1 point, at Day s 43 (Week 6) and 85 (Week 12).
+To investigate the preliminary efficacy of 
+60 mg three times daily doses of 
+[COMPANY_004]2982772 in achieving symptomatic 
+clinical remission after 6 and 12 weeks of 
+treatment in subjects with active 
+ulcerative colitis.Change from ba seline in partial Mayo score.
+To investigate the plasma concentrations 
+of [COMPANY_004]2982772 following 60 mg t hree 
+times daily in subjects with active 
+ulcerative colitis. Pre-dose plasma concentrations of [COMPANY_004]2982772 at 
+Day 43 (Week 6). 
+ Post- dose plasma concentra tions of [COMPANY_004]2982772 on 
+Days 1 and 43 (Week 6) at 1, 2, 4 and 6 hours.
+Trough concentrations on Day 85 (Week 12).
+Exploratory Objectives Exploratory Endpoints
+To investigate the effect of 60 mg three 
+times daily doses of [COMPANY_004]2982772 on 
+expression of inflam matory biomarkers in 
+mucosal tissue biopsies in subjects with 
+active ulcerative colitis.Change fr om baseline in inflammatory markers which 
+may include, but are not limited to IL -1, IL-6, IL- 8, 
+MMP3, TNFα, IFNγ.
+To investigate pathway and target 
+engagement following 60 mg t hree times
+daily doses of [COMPANY_004]2982772 in blood and 
+colon biopsy tissue. Pharmaco logy biomarker endpoints may include, but 
+are not limited to the following, pre -dose at Days 1, 
+43 (Week 6) and trough on Day 85 (Week 12), as 
+applicable and if evaluable samples and data permit:
+oTarget Engagement Assay RiP1 (TEAR1) in 
+blood and colon tiss ue.
+Phosphorylated or total RIP1, MLKL, RIP3, cleaved 
+and total caspase 3 and 8 signatures in colon biopsy 
+tissue.
+To investigate the concentration of 
+[COMPANY_004]2982772 and possible drug -related 
+material, as well as specific distribution 
+within tissue if feasible, in the colon tissue Pre-dose [COMPANY_004]2982772 and possible drug -related 
+material concentrations, as well as specific distribution 
+within tissue if feasible, in colon biopsies at Days 43 
+(Week 6) and 85 (Week 12), as evaluable samples  2019N425893_00
+CONFIDENTIA L
+202152
+9Objectives Endpoints
+after 60 mg t hree times daily doses of 
+[COMPANY_004]2982772.and data permit.
+To investigate the effect of 60 mg t hree 
+times daily doses of [COMPANY_004]2982772 on 
+quality of life in subjects with active 
+ulcerative colitis.Change from baseline in Inflammatory Bowel Disease 
+Questionnaire (IBDQ).
+Toinvestigate the effect of 60 mg t hree 
+times daily doses of [COMPANY_004]2982772 on 
+gene expression in the blood in subjects 
+with active ulcerative colitis.Transcriptomic analysis of mRNA isolated from blood 
+Days 1 and 43 (Week 6) and trough on Day 85 (Week 
+12).
+To investigate the effect of 60 mg t hree 
+times daily doses of [COMPANY_004]2982772 on 
+gene expression in colon tissue biopsies 
+in subjects with active ulcerative colitis.Transcriptomic analysis of mRNA isolated from colon 
+tissue biopsies at Screening, and Days 43 (W eek 6) 
+and trough on Day 85 (Week 12). 2019N425893_00
+CONFIDENTIA L
+202152
+102.3. Stud y Design
+Overview of Study Design and Key Features
+Key assessments:
+Safety assessments, PK samples, Mayo score, Modified Riley Scale , 
+Geboes Index, IBDQ and PD samples
+Design Features This is a multicentre , randomized, double -blind (sponsor -unblinded), placebo -
+controlled (Part A) study with an open label extension (Part B) . 
+Investigate the safety and tolerability, PK, PD, and preliminary efficacy of 
+[COMPANY_004]2982772 in subjects with active U C.
+Study Du ration 
+and DosingEach participant will participate in the study for approximately 20 weeks. This 
+includes a screening period up to 30 days, an 84 -day (12 week) treatment period, 
+and a 28- dayfollow -up period after the last dose.
+Within 30 days of the screening visit (defined as day of consent signing), eligible 
+participants enter a 2- part treatment phase as follows with study treatment starting 
+on study day 1:
+oPart A : Approximately 36 participants are randomly assigned to receive either 
+[COMPANY_004]2982772 60 mg three times daily (TID) or placebo TIDfor 42 days (6 
+weeks) in a 2:1 ratio .
+oPart B :Allparticipants who complete Part A move on toreceive open label 
+treatment of [COMPANY_004]2982772 60 mg TIDfor an additional 42 days (6 weeks).  
+Treatment duration is a total of 84 days (12 weeks) inclusive of Parts A and B.
+Participants are followed -up for 28 days (4 weeks) after the last dose in Part B. 
+Prior to amendment 01 being effective in each country, participants were randomly 
+assigned to receive either: 
+Part A: [COMPANY_004]298 2772 60 mg two times daily (BID) or placebo BID for 42 days 
+(6 weeks) in a 2:1 ratio. 
+Part B: Open label treatment for all participant s who have completed Part A
+of [COMPANY_004]2982772 60 mg BID for an additional 42 days (6 weeks).  
+Time & Events Refer to Appendix 2 : Schedule of Activities .
+During the 84 -day(12 week) treatment period, participants attend the clinical for 
+visits on Day s1, 15, 29, 43, 57, 71 and 85. 
+At specific visits, participants must not take treatment prior to their scheduled 
+treatment. 
+On Days 8, 22, 36, 50, 64 and 78 participant s were to be contact[CONTACT_586580]. 
+Participants aregiven a diary card at every visit and asked to record daily study  2019N425893_00
+CONFIDENTIA L
+202152
+11Overview of Study Design and Key Features
+medication, concomitant medication and adverse events. 
+Treatment 
+AssignmentAt Screening a unique CRF number (Subject Number) isassigned.
+Participants who meet screening eligibility c riteria and complete pre-treatment 
+assessments are randomised through an Interactive Response Technology 
+System (IRTS). The IRTS confirm sthe participant’s CRF number (Subject 
+Number) and provide s the randomisation number.
+Therandomisation number is generated by [CONTACT_278814], prior to the start of 
+the study, using validated internal software.  Once a ssigned, this randomisation
+number must not be reassigned to any other participant in the study.
+The randomisation is centrally controlled by [CONTACT_586581].
+Approximately 36 participants were randomised in a 2:1 ratio to receive 
+[COMPANY_004]2982772 60mg TID or Placebo T ID in Part A. 
+Any participant that is re -screened outside of the allowed screening window at the 
+approval of the [COMPANY_004] Medical Monitor, must be assigned a new unique Subject 
+Number.
+Interim Analysis An internal [COMPANY_004] Safety Review Team (SRT) reviews blinded safety data at 
+appropriate intervals during the study and an internal [COMPANY_004] Data Review 
+Committee (DRC) review sunblinded safety, inflammatory biomarkers, clinical and 
+mechanistic data at appropriate intervals during the study in accordance with the 
+DRC Charter.
+Two interim analyses were planned in the protocol to facilitate decision making 
+regarding the subsequent clinical development of [COMPANY_004]2982772 for UC.
+Interim Analysis #1 : 
+Was planned to occur either on the recommendation of the DRC, or when an 
+appropri ate number have completed [ADDRESS_771773]. 
+The p urpose was to assess whether to stop the study for futility and, if 
+appropriate, to perfor m a sample size re -estimation. 
+Interim Analysis #2 :
+Was planned to occur when an approp riate number of participants have 
+completed 12 weeks of treatment. 
+The purpose was to assess whether to stop the study for futility.  
+A formal interim analysis at [ADDRESS_771774] completed 12 weeks of treatment.
+The DRC data review of the [ADDRESS_771775] completed 12 weeks 
+of treatment. 
+This DRC data review will be considered in replacement of the first interim 
+analysis .
+2.4. Statist ical Analyses
+The primary  objective of the study  is to investigate the safet y and tolerability of 
+[COMPANY_004]2982772 60mg tid following 12 weeks of treatment. No formal statistical hy potheses 
+will be conducted to assess this objective.  2019N425893_00
+CONFIDENTIA L
+202152
+12If appropriate, comparisons between the [COMPANY_004]2982772 arm and the placebo arm will be 
+made to investigate the secondary  pharmacody namic, mechanistic and efficacy  
+objectives. Trends over time will be investigated for both treatment arms along with 
+associations between each of the parame ters. 
+3. PLANNED ANAL YSES
+3.1. Interim Analyses
+Two interim anal yses were planned to be conducted during the study .  Additionally , two 
+review teams monitor data on an ongoing basis for routine pharmacovigilance and 
+decision making regarding the subsequent clinic al development of [COMPANY_004]2982772 for UC.
+In line with routine pharmacovigilance, an internal [COMPANY_004] Safet y Review Team (SRT) 
+which include s members of the [COMPANY_004]2982772 project team, reviews blinded safet y data, 
+including clinical laboratory  parameters and adverse e vents, at appropriate intervals 
+during the period of study  conduct.
+Once an appropriate number of participants have completed Day  43 (Week 6), mucosal 
+healing will be reviewed in an unblinded manner by  [CONTACT_586582], the st udy statistician, the study  pharmacokineticist, the PRR DPU Head, 
+EDL  and SRT Leader or designees on an ongoing basis.  A phy sician external to the 
+[COMPANY_004]2982772 project team may  also be involved in the data review. Additional 
+inflammatory  biomarkers, clinica l and mechanistic endpoints (e.g. target engagement) 
+may be reviewed if available. No other member of the [COMPANY_004] core study  team will be 
+unblinded to this data. The primary  purpose of these reviews isto monitor mucosal 
+healing rates.  On review of mucosal he aling data, the review group may  recommend an 
+interim analy sis of key  clinical and mechanistic data is first conducted prior to any  
+decision to terminate the study  for futility .  A data review charter identif iesthe specific 
+[COMPANY_004] individuals involved; outli ne in detail the activities of this review and how the 
+integrit y of the stud y will be maintained.
+The timing of Interim Analy sis #[ADDRESS_771776].  The purpose of Interim 
+Analy sis #1 would be to assess whether to stop the study  for futility  and, if appropriate, to 
+perform a sample size re -estimation.  The timing of Interim A nalysis #[ADDRESS_771777] completed 12 weeks of treatment.  The purpose of the 
+Interim Anal ysis #[ADDRESS_771778] interim analy sis. 2019N425893_00
+CONFIDENTIA L
+202152
+133.2. Final A nalyses
+The final planned primary  analy ses will be performed after the completion of the 
+following sequen tial steps:
+1.All participants have completed the study  as defined in the protocol.
+2.All required database cleaning activities have been completed and final database 
+release and database freeze has been declared by  [CONTACT_29018].
+3. All criteria for unblinding the randomisation codes have been met. 
+4.Randomisation codes have been distributed perRandAll NG procedures.
+4. ANALYSIS P OPUL ATIONS
+Population Definition / Criteria Analyses Evaluated
+All Subjects Comprises of all participants who were screened for 
+the study .Selected Study 
+Population
+Safety Comprise of all participant s who receive at least one 
+dose of study treatment.Study Population
+Safety
+Efficacy
+PD
+Biomarker
+Pharmacokinetic Participants in the ‘Safety’ population who received an 
+active dose and fo r whom a [COMPANY_004]2982772 
+pharmacokinetic sample was obtained and analysed.PK
+Per Protocol (PP) All participants in the Safety population who comply 
+with the protocol.
+Protocol deviations that would exclude participants 
+from the PP population are defined in Se ction 4.1
+(Protocol Deviations) and Appendix 1 : Protocol
+Deviation Management and Definitions for Per 
+Protocol Population ).Efficacy: Mayo only
+PP + Completer s All partici pants in the PP population who also 
+complete the study (Parts A, B and Follow -up)[1]Efficacy: Mayo only
+Refer to Appendix 10: List of Data Displays which details the population used for each display.
+[1] Completion of the study a s defined from the eCRF study conclusion page. 
+Note: All data displays (Tables, Figures & Listings) will use the term “Subject” which reflects CDISC and [COMPANY_004] 
+Data Display Standards terminology
+4.1. Protocol Deviations
+Important protocol deviations (including deviations related to study  inclusion/exclusion 
+criteria, conduct of the trial, patient management or patient assessment) will be 
+summari sed and listed . 2019N425893_00
+CONFIDENTIA L
+202152
+14Important deviations which result in exclusion from the anal ysis population will also be 
+summarised and listed. (Please refer to Appendix 1 : Protocol Deviation Management and 
+Definitions for Per Protocol Population).
+Protocol deviations will be tracked by  [CONTACT_586583] 3, dated 14thJune
+oData will be reviewed instream prior to unblinding and fre ezing the database to 
+ensure all important deviations are captured and categori sed on the protocol 
+deviations dataset. 
+oThis dataset will be th e basis for the summaries and listings of protocol 
+deviations.
+A separate summary  and listing of all inclusion/exclusion criteria deviations will also be 
+provided. This summary will be based on data as recorded on the inclusion/exclusion 
+page of the eCRF.
+5. CONSIDERA TIONS FOR D ATA ANALYSES AND DATA
+HANDLING CONVENTIONS
+5.1. Stud y Treatment & Sub -group Display  Descriptors
+One subject was randomised to a BID regimen before the protocol was amended. Per 
+instructions in the protocol, d ata will be summarised in tables and figures by [CONTACT_3148] 
+([COMPANY_004]2982772 60mg or Placebo) irrespective of dosing regimen received (BID or TID) . 
+Data will be listed pertreatment and dosi ng regimen received (BID or TID) . Some key 
+safet y endpoints will be summarised by [CONTACT_586584], 
+details are provided in Appendix 9.
+Should a participant receive the wrong medication at an y point during the study in error, 
+that participant will be treated as having received [COMPANY_004]2982772 60mg TID for the 
+duration of the study .   
+Randomised Treatment Group Descriptions
+RandAll NG Data Displays for Reporting 
+Code Description Description in 
+tables/non- PK figuresOrder 
+in TF Description in 
+Listings /PK figuresOrder in 
+Listing
+A [COMPANY_004]2982772 60mg BID 
+(Double- blind)[COMPANY_004]2982772 60mg 2 [COMPANY_004]2982772 60mg 
+BID3
+C [COMPANY_004]2982772 60mg TID 
+(Double- blind)[COMPANY_004]2982772 60mg 2 [COMPANY_004]2982772 60mg 
+TID4
+P Placebo B ID (Double -blind) Placebo 1 Placebo B ID 1
+Q Placebo TID (Double -blind) Placebo 1 Placebo TID 2 2019N425893_00
+CONFIDENTIA L
+202152
+15Period Treatment Group Descriptions
+RandAll NG Data Displays for Reporting 
+Code Description Description in tables Order 
+in TF Description in 
+ListingsOrder in 
+Listing
+A [COMPANY_004]2982772 60mg BID 
+(Double- blind)[COMPANY_004]2982772 60mg 2 [COMPANY_004]2982772 60mg 
+DB BID3
+B [COMPANY_004]2982772 60mg B ID 
+(Open- label)[COMPANY_004]2982772 60mg 2 [COMPANY_004]2982772 60mg 
+OL BID5
+C [COMPANY_004]2982772 60mg TID 
+(Double- blind)[COMPANY_004]2982772 60mg 2 [COMPANY_004]2982772 60mg 
+DB TID4
+D [COMPANY_004]2982772 60mg TID 
+(Open- label)[COMPANY_004]2982772 60mg 2 [COMPANY_004]2982772 60mg 
+OL T ID6
+P Placebo B ID (Double -blind) Placebo 1 Placebo DB B ID 1
+Q Placebo TID (Double -blind) Placebo 1 Placebo DB TID 2
+Treatment comparisons will be display ed as follows using the descriptors as specified:
+[COMPANY_004]2982772 60mg vs Placebo.
+5.2. Baseline Definition s
+For all endpoints ( excep tas noted in baseline definitions) the baseline value will be the 
+latest pre -dose assessment. Triplicate assessments a t a timepoint will be averaged. An 
+additional period baseline will be determined for vital signs, ECGs and clinical labs.
+Unless otherwise stated, if baseline data is missing ,no derivation will be performed and 
+baseline will be set to missing.
+For tables summarising from Day  43 (Part B), all data recorded on day  43 w illbe used as 
+baseline and if this result is missing then there is no part B baseli ne.
+Parameter Study Assessments Considered as Baseline Baseline Used 
+in Data DisplayPeriod 
+Baseline 
+Used in Data 
+DisplayScreening 
+(-30)Screening ( -
+7 to 30)Day 1 
+(Pre-Dose)Day 1 
+Primary: Safety 
+Vital Signs[1,2] X X Day 1
+(Pre-Dose)Day 43
+12-Lead ECG[2] X[3] X Screening
+or
+Day 1 
+(Pre-Dose)Day 43
+Clinical Laboratory 
+Values including CRP 
+[2,4]X X Day 1
+(Pre-Dose)Day 43 2019N425893_00
+CONFIDENTIA L
+202152
+16Parameter Study Assessments Considered as Baseline Baseline Used 
+in Data DisplayPeriod 
+Baseline 
+Used in Data 
+DisplayScreening 
+(-30)Screening ( -
+7 to 30)Day 1 
+(Pre-Dose)Day 1 
+Columbia Suicide 
+Severity Rating Scale 
+(C-SSRS)X X Day 1 
+(Pre-Dose)
+Secondary
+Mayo Score [5] X Scree ning
+UCEIS X Screening
+Modified Riley X Screening
+Geboes Index X Screening
+RHI X Screening
+FCP X X Screening
+Exploratory
+Blood Sample: PK X Day 1 
+Blood Sample: 
+Exploratory 
+Biomarkers, Target 
+Engagement and 
+mRNA Expression X Day 1 
+(Pre-Dose)
+Biopsy Tissue: PK, 
+Inflammatory 
+Biomarkers, mRNA 
+Expression, Target 
+Engagement and 
+Pathway Marker X Screening
+IBDQ X Day 1 
+(Pre-Dose)
+NOTES:
+ Unless otherwise stated, the mean of replicate assessments at any given time point will be used as the value for that time point.
+1: Vital sign measurements include Blood Pressure, Heart Rate, Respi[INVESTIGATOR_13581], and Body Temperature.
+2: Where both screening and pre -dose are available, the value closest to first dose will be used.
+3: ECG r ecordings will be performed in triplicate at screening. The mean of the triplicate measurements should be used.
+4: Clinical Laboratory measurements include Clinical Chemistry (which includes CRP), Haematology and Urinalysis.
+5: Includes Total Mayo, Partial Mayo and 3- domain Mayo Scores. 2019N425893_00
+CONFIDENTIA L
+202152
+175.2.1. Derivations and Handling of Missing Baseline Data
+Definition Reporting Details
+Change from Baseline = Post- Dose Visit Value –Baseline
+Log-Transformed Change from 
+Baseline (Log eChange)=Log e(Visit) –log e(Baseline) .
+NOTES :
+ Unless otherwise specified, the bas eline definitions specified in S ection 5.2.Baseline Definitions will be used 
+for derivations for endpoints / parameters . 
+ Unless otherwise stated, if baseline data is missing no deri vation will be performed and will be set to missing.
+ The baseline definition will be footnoted on all the change from baseline displays. 
+5.3. Multicentre Studies
+There are no planned adjustments for multiple centres or regions due to the size of the 
+study . Enrolment will be presented b y country . For all other analy ses, all sites, countries 
+and regions will be pooled.
+5.4. Examination of Covariates , Other Strata and Subgroups
+There are no planned subgroup anal yses to be conducted on this study .
+Category Details
+Strata Not applicable for this study
+Covariates Baseline measure will be included as a covariate
+5.5. Multiple Comparisons and Multiplicity
+Overall, no adjustments will be made for multiple comparisons or multiplicity  across 
+different endpoints.
+The process to reduce the false discovery  rate for the transcriptomic analyses of mRNA
+expression is detailed in Section [IP_ADDRESS] . 
+5.6. Other Considerations for Data A nalyses and Data Handling 
+Conventions
+Other considerations for data anal yses an d data handling conventions are outlined in the 
+appendices:
+Section Component
+12.1 Appendix 1 : Protocol Deviation Management and Definitions for Per Protocol Population
+12.2 Appendix 2 : Schedule of Activities
+12.3 Appendix 3 : Assessment Windows
+12.4 Appendix 4 : Study Phases and Treatment Emergent Adverse Events
+12.5 Appendix 5 : Data Display Standards & Handling Conventions 2019N425893_00
+CONFIDENTIA L
+202152
+18Section Component
+12.6 Appendix 6 : Derived and Transformed Data
+12.7 Appendix 7 : Reporting Standards for Missing Data
+12.8 Appendix 8 : Values of Potential Clinical Importance
+12.9 Appendix 9: Abbreviati ons & Trademarks
+12.10 Appendix 10: List of Data Displays
+12.11 Appendix 11: Example Mock Shells for Data Displays
+12.12 Appendix 12 : NONMEM datafile specification
+6. STUDY POPULA TION ANALYSES
+6.1. Overview of Planned Stud y Population Analyses
+Study  population anal yses including anal yses of participant ’sdisposition, protocol 
+deviations, demographic and baseline characteristics, prior and concomitant medications, 
+and exposure and treatment c ompliance will be based on [COMPANY_004] C ore Data Standards.  
+Details of the planned display sare presented in Table 2below and  Appendix 10: List of 
+Data Display s.
+The study  population analy ses will be based on the Safet y population, unless otherwise 
+specified. 
+6.1.1. Study Population Summary  Measure
+Population analy ses will be presented (summarised in tables and listed) by  [CONTACT_586585] y. 
+Table 2 Overview of Planned Study  Populati on A nalyses
+Endpoint / Parameter / Display Type Data Displays Generated
+Table Figure Listing
+Subject Disposition
+Subject Disposition for the Subject Conclusion Record Y
+Treatment Status and Reasons for Discontinuation of Study 
+TreatmentY Y
+Screen Status and Reason for Screen Failure Y Y
+Subjects by [CONTACT_312423] Y
+Reasons for Subject Withdrawal Y
+Subjects for Whom the Treatment Blind was Broken Y
+Planned and Actual Treatments Y
+Protocol Deviations
+Important Protocol Deviations Y Y
+Subjects with Inclusion/Exclusion Criteria Deviations Y 2019N425893_00
+CONFIDENTIA L
+202152
+19Endpoint / Parameter / Display Type Data Displays Generated
+Table Figure Listing
+Populations Analysed
+Study Populations Y
+Exclusion from Any Population Y Y
+Demographic and Baseline Characteristics
+Demographic Characteristics Y Y
+Age Ranges Y
+Race and Racial Combinations Y Y [1]
+Ulcerative Colitis Baseline Characteristics[2] Y Y
+Prior/Current Medical Conditions and Concomitant Medications[3]
+Medical Conditions Y Y
+Concomitant Medications[4] Y Y
+Cardiovascular Risk Factors Y Y
+Exposure and Treat ment Compliance
+Exposure to Study Treatment Y Y
+Study Drug Accountability Y
+NOTES:
+ Y = Yes display generated.
+1:Listing of race.
+2:Baseline characteristics including :Baseline Mucosal Appearance at Endoscopy Mayo Subscore , Baseline Total 
+Mayo Sco re,Baseline Partial Mayo Score, Baseline 3 -domain Mayo Score, Baseline UCEIS T otal Score, Baseline 
+Modified Riley Scale , Baseline FCP, Baseline FCP category ,Baseline concomitant medications for UC
+(Glucocorticoids only, Immunosuppressants only, Glucocor ticoids and immunosuppressants, No glucocorticoids or 
+immunosuppressants) ,Baseline Prednisone dose, Family History of Premature Coronary Artery D isease and History of 
+Tobacco U se.
+3:Separate summaries for Current and P ast Medical C onditions/C ardiovascula rRisk F actors /Concomitant Medications .
+4: The ingredients of c oncomitant medications will be reviewed by [CONTACT_586586], Immunosuppressants and Prednisone . 2019N425893_00
+CONFIDENTIA L
+202152
+207. SAFETY ANAL YSES
+The safet y analyses will be based on the Safet y population, unless otherwise specified.
+7.1. Adverse Events A nalyses
+Adverse events analy sesincluding the anal ysis of adverse events (AEs), Serious (SAEs)
+and other significant AEs will be based on [COMPANY_004] Core Data Standards. The detai ls of the 
+planned display s are provided inTable 3 below and Appendix 12: L ist of Data Display s.
+7.1.1. Adverse Event Summary  Measures
+AEdata will be summarised in tables and figures by  [CONTACT_716] : 
+Part A by [CONTACT_444987];
+Parts A, B and follow -up by [CONTACT_586587] t reatment ; 
+Parts A, Band follow -upby [CONTACT_586588] (i.e. treatment participant actually  
+received). 
+AE data will be presented in data listing s by [CONTACT_716]: 
+Parts A, B and follow -up by [CONTACT_586588] (i.e. treatment participant actually  
+received). 
+Table 3 Overview of Planned Adverse Event Analyses
+Endpoint / Parameter/ Display Type Absolute
+Summary Individual
+T F L
+Adverse Events (AEs)
+All AE by [CONTACT_193010] m Intensity by [CONTACT_3592] Y
+All Drug -Related AEs by [CONTACT_586589] Y
+Common ( >=10 %) AEs / Drug -Related AEs by [CONTACT_586590] Y Y [1]
+Common (>=10 %) Non- serious AEs by [CONTACT_93455] P T(Number of Subjects and 
+Occurrences)Y
+All AEs Y Y
+Subject Numbers for Individual AEs Y
+Relationship Between AE SOCs, PT & Verbatim Text Y
+Serious and Other Significant AEs
+Serious AEs by [CONTACT_3592] (Number of Subjects and Occurrences) Y
+Fatal Serious AEs Y
+Non-Fatal Serious AEs Y
+AEs Leading to Permanent Discontinuation of Study Treatment or Withdrawal 
+from Study Y Y
+Reasons for Considering as a Serious AE Y
+Possible Suicidality -Related AE ( PSRAE ) Y 2019N425893_00
+CONFIDENTIA L
+202152
+21NOTES:
+ T = Table, F = Figures, L = Listings, Y = Yes display generated, SOC = System Organ Class, PT = Preferred 
+Term.
+ Summary = Represents TF related to any summaries (i.e. descriptive statistics) of the observed raw data.
+ Individual = Represents L related to any displays of individual participant observed raw data.
+1:Plot of co mmon AEs and relative risk will be generated.
+7.2. Clinical Laboratory  Analyses
+Laboratory  evaluations including the anal yses of Chemistry  laboratory  tests, Hematology  
+laboratory  tests, Urinal ysis, and liver function tests will be based on [COMPANY_004] C ore Data 
+Standar ds. Table 4 provides an overview of the planned analy ses with further detail being 
+presented in Appendix 10: List of Data Display s.
+7.2.1. Clinical Laboratory  Summary  Measures
+Clinical L aboratory  data will be summar ised in tables and figures b y the following: 
+Parts A, B and Follow -up by [CONTACT_444987];
+Parts A, B and Follow -up by [CONTACT_586588] (i.e. treatment participant actually  
+received). 
+Clinical L aboratory  data will be presented in data listings by  [CONTACT_716]:  
+Parts A and B and follow -up by  [CONTACT_586588] (i.e. treatment participant actuall y 
+received). 
+Table 4 Overview of Planned Clinical Laboratory  Analyses
+Endpoint / Parameter/ Display Type Absolute Change from BL
+Summary Individual Summary Individual
+T F L T F L
+Chemistry
+Chemistry Results Y
+Chemistry Lipi[INVESTIGATOR_586564] [1] Y[2]
+Worst Case Chemistry Results Relative to PCI Criteria 
+Post- Baseline Relative to BaselineY
+Worst Case Lipi[INVESTIGATOR_586564] R elative to NR Criteria Post -
+Baseline Relative to Baseline [1] Y
+Lipi[INVESTIGATOR_586565] [1] Y
+Hematology
+Hematology Results Y
+Worst Case Hematology Results Relative to PCI Criteria 
+Post- Baseline Relative to BaselineY 2019N425893_00
+CONFIDENTIA L
+202152
+22Endpoint / Parameter/ Display Type Absolute Change from BL
+Summary Individual Summary Individual
+T F L T F L
+Urinalysis
+Urine Concentration Y
+Worst Case Urinalysis Results (Discrete or Character 
+Values) Post -Baseline Relative to BaselineY
+Hepatobiliary (Liver)
+Liver Monitoring/Stoppi[INVESTIGATOR_586566] Y
+Hepatobiliary Laboratory Abnormalities Y
+Medical Conditions for Subjects with Liver Stoppi[INVESTIGATOR_586567] Y
+Scatter Plot of Maximum Versus Baseline for ALT Y
+Scatter Plot of Maximum ALT Versus Maximum Total 
+BilirubinY
+All Laboratory[3]
+All Laboratory Data for Subjects with Any Value of PCI Y
+Laboratory Data with Character Results Y
+NOTES:
+ T = Table, F = Figures, L = Listings, Y = Yes display generated, PCI = Potential Clinical Importance
+ Summary = Represents TF related to any summaries (i.e. descriptive statistics) of the observed raw data.
+ Individual = Represents L related to any displays of individual participant observed raw data.
+1: Lipi[INVESTIGATOR_50403] = LDL Cholesterol, HDL Cholesterol, Total Cholest erol, Triglycerides and Cholesterol/HDL ratio
+2: Percentage change sfrom baseline. 
+3:Chemistry, Hematology and Urinalysis will be considered.
+7.3. Other Safety  Analyses
+The anal yses of non -laboratory  safet y test results including ECG sand vital signs will b e 
+based on [COMPANY_004] Core Data Standards, unless otherwise specified. The details of the 
+planned display s are presented in Table 5 below and Appendix 10: List of Data Display s.
+7.3.1. Summary  Measures
+Non-laboratory  safet y results will be summarised in tables and figures b y the following: 
+Parts A, B and Follow -up by  [CONTACT_444987]; 
+Parts A, B and Follow -up by  [CONTACT_586588] (i.e. treatment participant actually  
+received). 
+Non-laboratory  safety  results will be pre sented in data listings b y the following:  
+Parts A and B and follow -up by  [CONTACT_586588] (i.e. treatment participant actuall y 
+received).  2019N425893_00
+CONFIDENTIA L
+202152
+23Table 5 Overview of Planned Other Safety  Analyses
+Endpoint / Parameter/ Display Type Absolute Change from BL
+Summary Individual Summary Individual
+T F L T F L
+ECG
+ECG Findings Y
+ECG Values1 Y
+Maximum QTc Values Post -Baseline Relative to 
+Baseline by [CONTACT_61117]1 Y
+Maximum Increase in QTc Values Post -Baseline 
+Relative to Base line by [CONTACT_61117]1 Y
+All ECG Values for Subjects with Any Value of PCI1 Y
+Vital Signs
+Vital Signs Y
+Worst Case Vital Signs Results by [CONTACT_586591]-
+Baseline Relative to BaselineY
+All Vital Signs for Subjects with Any V alue of PCI Y
+C-SSRS V4
+C-SSRS Suicidal Ideation and Behaviour Data Y 
+NOTES:
+1. ECGs change from baseline are to be produced for change from screening (average triplicate) and change from 
+baseline
+ T = Table, F = Figures, L = Listings, Y = Yes disp lay generated, PCI = Potential Clinical Importance
+ Summary = Represents TFL related to any summaries (i.e. descriptive statistics) of the observed raw data.
+ Individual = Represents FL related to any displays of individual participant observed raw data.
+7.4. Other Safety  Analyses
+If any of the following events are recorded in the eCRF as a CV event during the stud y,
+posthoc patient profile listings will be generated per IDSL and provided to the GCSP 
+department:
+Arrh ythmias, Congestive heart failure, Cerebrova scular events stroke (CVA) and 
+Transient ischemic attack (TIA) , Deep vein thrombosis (DVT)/Pulmonary  
+embolism (PE), My ocardial I nfarction/Unstable Angina, Peripheral arterial 
+thromboembolism, Pulmonary  Hypertension, Revascularisation , Valvopathy . 2019N425893_00
+CONFIDENTIA L
+202152
+248. EFFICACY
+8.1. Efficacy  Endpoints
+Table 6 below provides an overview of the planned efficacy anal yses, with full details of 
+data display s being available in Appendix 10: List of Data Display s.  
+Table 6 Overview of Planned Efficacy  Analyses
+Endpoint Absolute Change from Baseline
+Stats Analysis Summary Individual Stats Analysis Summary Individual
+T F L[1]T F F L T F L[1] T F F L
+Mayo –Endoscop y Respon se
+Mucosal Appearance 
+at Endoscopy Mayo 
+Subscore Y Y
+Proportion Achieving 
+Mayo Endoscopy 
+Remission C C C Y Y Y
+Mayo –Clinical Response and Remission 
+Proportion Achieving 
+Mayo Clinical 
+Response C C C Y Y Y
+Proportion Achieving 
+Mayo Clinical 
+RemissionC C C Y Y Y
+Proportion Achieving 
+3-domain Mayo 
+Clinical Response C C C Y Y Y
+Proportion Achieving 
+3-domain Mayo 
+Clinical RemissionC C C Y Y Y
+Mayo –Symptomatic Clinical Remission 
+Total Y Y Y C C C Y Y Y
+Partial Mayo Y Y Y C C C Y Y Y
+3-domain Mayo Y Y Y C C C Y Y Y
+UCEIS –Mucosal Healing 
+UCEIS Total Score Y Y Y C C C Y Y Y
+UCEIS –Remission 
+Proportion Achieving 
+UCEIS Remission C C C Y Y Y
+Biomarkers of Disease Activity
+CRP Y Y Y C C C Y Y Y
+FCP [2] Y Y Y C C C Y Y Y
+Histologic Disease Activity
+Modified Riley Scale Y Y Y C C C Y Y Y
+Geboes Index Total 
+ScoreY Y Y C C C Y Y Y
+RHI Total Score Y Y Y C C C Y Y Y 2019N425893_00
+CONFIDENTIA L
+202152
+25Endpoint Absolute Change from Baseline
+Stats Analysis Summary Individual Stats Analysis Summary Individual
+T F L[1]T F F L T F L[1] T F F L
+Quality of Life
+IBDQ Domains [3] Y Y Y Y
+IBDQ Total Score Y Y Y C C C Y Y Y
+Subject Symptom Diary Cards
+Diary Card [4]Y Y
+NOTES:
+T = Table, F = Figure, L = Listing, Y = Yes display generated, C = conditional 
+Stats Analysis = Represents TFL related to any formal statistical analy ses (i.e. modelling) conducted.
+Summary = Represents TFL related to any summaries (i.e. descriptive statistics) of the observed raw data.
+Individual = Represents FL related to any displays of individual participant observed raw data.
+1. Listing of the RAW SAS output from the statistical modelling. 
+2. FCP will be log -transformed before determining change from baseline.
+3. IBDQ domains: Bowel Symptoms, Systemic Systems, Emotional Function and Social Function. 
+4. Data from diary cards will be transcribed into the eCRF f or the 5 days prior to the following visits: Screening, 
+Day 15, Day 29, Day 43, Day [ADDRESS_771779] 
+Analyses of the May o will be based on the S afety , PP and PP + Completers populations 
+respectivel y. 
+All other efficacy  anal yses will be based on the Safet y Population only.
+8.1.2. Statistical A nalyses / Methods
+Details of the planned display s are provided in Appendix 10: List of Data Display s and 
+will be based on [COMPANY_004] data standards and statistical principles.
+All efficacy  data will be summarised for Parts A, B and Follow -up (if applicable) by 
+[CONTACT_444987]. 
+Unless otherwise specified, endpoints / variables defined will be summarised using 
+descriptive statistics, graphically  presented (where appropriate) and listed.
+[IP_ADDRESS]. Statistical Methodology  Specification
+[IP_ADDRESS].1 Continuous Endpoints
+Secondary and Exploratory Endpoint(s)
+Change from baseline in Total and 3-d omain Mayo Score at Day 43 pre -dose and Day 85.
+Change from baseline in Partial Mayo Score at Day 15, Day 29, Da y 43 pre -dose and Day 85.
+Change from baseline in UCEIS Total Score at Day 43 pre -dose and Day 85.
+Change from baseline Modified Riley Scaleat Day 43 pre -dose and Day 85.
+Change from baseline Geboes Index Total Score at Day 43 pre -dose and Day 85.
+Change from baseline RHI Score at Day 43 pre -dose and Day 85.
+Change from baseline in CRP at Day 43 pre -dose and Day 85.
+Change from baseline in Log-transformed FCP at Day 15, Day 29, Day 43, Day 57, Day 71 and Day 85.
+Change from baseline in IBDQ Total Score at Day 43 pre -dose and Day 85. 2019N425893_00
+CONFIDENTIA L
+202152
+26Model Specification
+Continuous e ndpoints will be statistically analyzed using a Mixed Models Repeated M easures (MMRM) 
+approach. 
+Terms fitted in the MMRM model will include:
+oFixed Category                           : Treatment , Day, Treatment*Day
+oFixed Continuous Covariates     : Baseline Score, baseline*Day
+oRepeated Effect                         : Day
+The Kenward and Roger method for approximating the denominator degrees of freedom and correcting 
+for bias in the estimated var iance -covariance of the fixed effects will be used. 
+An unstructured covariance structure for the R matrix will be used by [CONTACT_312424] ‘type=UN’ on the 
+REPEATED line with a subject=SUBJID option.
+oIn the event that this model fails to converge, alternative c orrelation structures may be 
+considered such as CS or AR(1). 
+oAkaike's Information Criteria (AIC) will be used to assist with the selection of covariance 
+structure.
+Other covariates maybe explored, if deemed appropriate for sensitivity analyses.
+Model Che cking & Diagnostics
+MMRM m odel assumptions will be applied, but appropriate adjustments may be made based on the 
+data.
+Distributional assumptions underlying the MMRM model will be examined by [CONTACT_19201] a normal 
+probability plot of the residuals and a plot of the residuals versus the fitted values (i.e. checking the 
+normality assumption and constant variance assumption of the model respectively) to gain confidence 
+that the model assumptions are reasonable. 
+If there are any departures from the distributiona l assumptions, alternative models will be explored using 
+appropriate transformed data.
+Model Results Presentation -Untransformed
+Point estimates and corresponding 95% confidence intervals will be constructed for the treatment 
+differences ([COMPANY_004]2982772 60mg tid-Placebo), using the residual error from the repeated measures 
+model.
+Plots of LS means and 95% confidence intervals from the model will be generated for each treatment 
+group by [CONTACT_5586].
+For log -transformed data the adjusted back -transformed geometric means and CV will be presented.
+Model Results Presentation -  Log transformed
+Adjusted geometric means, the mean difference between each dose (test) and the placebo (reference) at 
+each timepoint and associated 95% confidence interval will be constructed using the residual variance
+The treatment ratios and 95% CI will be calculated by [CONTACT_3382] -transforming the difference between the least 
+square means and associated 95% CI
+Sensitivity and Supportive Statistical Analyses
+Non-parametric analyses may be conducte d if the normality assumption does not hold.
+Analyses using different covariance structures may be explored if the unstructured covariance matrix 
+does not converge.
+[IP_ADDRESS].2 Binary  Endpoints
+Secondary and Exploratory Endpoint(s)
+Proportion of participa nts achieving a Mayo endos copy remission at Day 43 pre -dose and Day 85.
+Proportion of participant sachieving Mayo clinical response and 3 -domain Mayo clinical response at Day 
+43 pre- dose and Day 85. 2019N425893_00
+CONFIDENTIA L
+202152
+27Proportion of participants achieving Mayo clinical remiss ion and 3 -domain Mayo clinical remission at Day 
+43 pre- dose and Day 85.
+Proportion of participant sachieving an UCEIS remission at Day 43 pre -dose and Day 85.
+Model Specification
+Binary efficacy endpoints will be statistically analysed using a Generalise d Estimating Equations (GEE) 
+model.
+GEE modelling will only be performed if at least 30% response rate atDay 85 for any one treatment 
+group.
+The model will be fitted using an unstructured covariance structure of the correlated responses.
+Terms fitted in the GEE model will include:
+Fixed Categorical : Treatment group, Visit, Treatment group * Visit Interaction
+Repeated : Visit
+Model Results Presentation
+Binary endpoints will be summarised using counts and proportions of participant sachieving a re sponse by 
+[CONTACT_1570].
+Point estimates and corresponding 95% confidence intervals will be constructed using contrasts for the 
+treatment group by [CONTACT_23259].
+Plots of the point estimates and 95% confidence intervals from the model will be generat ed for each 
+treatment group by [CONTACT_5586].
+If a minimum 30% response rate at Day 85 for any one treatment group is not achi eved, the display should 
+be created with ‘Insufficient data to produce GEE analysis’ printed in the main body of the display.
+8.2. Exploratory Efficacy  Analyses
+8.2.1. Responder A cross Endpoints 
+For appraisal of trends across secondary  efficacy  endpoints, a nine -panel plotforeach 
+participant with a single panel for each of the following efficacy  endpoints will be 
+produced:  
+Mayo Endoscopy  Remission
+UCEI S Total Score,
+FCP,
+CRP,
+Modified Riley Scale Total Score
+Geboes Index Total Score, 
+Total May o Score, 
+Partial May o Score
+3-domain Mayo Score.
+8.2.2. Probabilities of Success 
+Probabilities of success may be determined, based on the data observed in the st udy, 
+where the definition of success will be dependent on the endpoint. For example, what is 
+the probability  that we would observe a certain proportion of May o Endoscopic 
+Remission (0 or 1) (i.e., comparatory  rate), based on the data that we have observed in 
+thisstudy . 2019N425893_00
+CONFIDENTIA L
+202152
+28A Bay esian approach will be employ ed to determine a 95% credible confidence interval 
+around the observed probability  of success with a flat Beta (1, 1) prior. Any such 
+analyses will be done b y [COMPANY_004] II Clinical Statistics after unblinding of the interim data 
+and thus will be deemed post -hoc.
+8.3. Exploratory  Pharmacodynamic / Efficacy  Analyses
+If deemed appropriate, the relationship between the biopsy  biomarkers and efficacy  
+endpoints will be explored further using multivariate statistical metho ds and/or Bay esian 
+methodology  as recommended by  [CONTACT_586592]. 
+The consistency  in the changes over time between the endpoints will also be assessed.  
+Any such anal yses will be defined after unblinding of the interim data and thus will be 
+deemed post -hoc.
+9. PHA RMACOKINETIC A NALYSES
+9.1. Pharmacokinetic Analy ses
+9.1.1. Endpoint / Variables
+[IP_ADDRESS]. Drug Concentration Measures
+PK plasma and biopsy tissue Concentration data for [COMPANY_004]2982772 will be summarised 
+and listed, no statistical analy sis will be conducted. Summary  statistics of [COMPANY_004]2982772 
+concentration by  [CONTACT_2006]  (1, 43, and 85) and nominal blood sampling time will be 
+determined. PK blood samples are taken pre -dose on Day  [ADDRESS_771780] -dose on Day s 1 
+and Day  43 at the following time points: 1, 2, 4, and 6 hours and trough on Day  85 or 
+Early Withdrawal.
+PK data will be summarised for Parts A andB by [CONTACT_444987]. 
+Refer to Appendix 5 : Data Display Standards & Handling Conventions (Section 12.5.3
+Reporting Standards for Pharmacokinetic) .
+Table 7 Overview of Planned Pharmacokinetic A nalyses
+Endpoints Untransformed Log-transformed 
+Summary Individual Summary Individual
+T F F L T F F L
+Pharmacokinetic 
+Plasma Drug concentration Y Y[1][2] Y[1] Y
+Biopsy Tissue Drug 
+concentration Y Y[1][2] Y[1] Y 2019N425893_00
+CONFIDENTIA L
+202152
+29NOTES:
+ T = Table, F = Figure, L = Listings, Y = Display generated.
+ Summary = represents TF related to any summaries (i.e. descriptive statistics) of the observed raw data.
+ Individual = represents FL related to any displays of individual participant observed raw data.  
+1:  Linear and Semi -Log plots will be created on the same display.
+2: Separate Mean (± SE) and Median plots will be generated.
+Since the half -life of [COMPANY_004]2982772 is short (2 -3h), the duration of time between the Day  
+43 clinic visit and the usual dosing time may  result in the reported “pre- dose” 
+concentration being lower than the true “pre -dose” or trough concentration (e.g. if the 
+usual dose time was 7am and the clinic visit was 10am the “pre-dose” sample collected at 
+10 am would be approximately  ½ that of the true “trough” concentration assuming a 3 
+hour half -life).  Therefore, the predicted “trough” concentration will be calculated usin g 
+the following equation -
+where
+Ctrough = predicted trough concentration prior to usual dosing time 
+Cpredose = observed “pre -dose” concentration collected at the clinic 
+t = time in hours between pre-dose blood sample collection and time of dosing 
+(assumed to be 7am) 
+ke = elimination rate constant (0.693/ t½), (t½ assumed to be 2.5h) 
+9.1.2. Population of Interest 
+The PKanalyses will be based on the Pharmacokinetic population, unless otherwise 
+specified.
+9.2. Population PK A nalyses
+[COMPANY_004]2982772 plasma concentratio ns from this study  may  be included in a cross -study  
+population pharmacokinetic (Pop PK) analysis. If deemed appropriate to conduct a Pop
+PK analy sis,a NONMEM datafile will be generated. The details for the dataset 
+specifications are provided in Appendix 12. 
+9.3. Pharmacokinetic /Pharmacody namic Anal yses
+The relationship between [COMPANY_004]2982772 predicted trough concentration and the following 
+variables will be explored graphicall y: 
+Target engagement from the corresponding blood/biopsy tissue sample ;
+Change from baseline in continuous efficacy  endpoints (Total Mayo Score, Partial 
+Mayo Score , 3-domain Mayo Score , UCEIS Total Score, Modified Riley  Scale
+Score, Geboes Index Total Score, RHI Score, CRP and FCP.  2019N425893_00
+CONFIDENTIA L
+202152
+30Box plot of [COMPANY_004]2982772 concentrati ons in participant s not achieving a May o Endoscopy  
+Remission and participants achieving a May o Endoscopy  Remission.
+10. BIOM ARKER ANALYSES
+10.1. Biomarker/Target Engagement/Pathway  Engagement/ 
+Transcriptomics A nalyses
+10.1.1. Endpoint / Variables
+Table [ADDRESS_771781] and t arget 
+engagement in blood2Y Y Y Y Y3Y
+Pathwa y and target 
+engagement in biopsy 
+tissue2Y Y Y Y Y Y
+Transcriptomics 
+mRNA 
+expression from 
+blood[3][4]Y Y Y Y Y Y
+mRNA expres sion from 
+biopsy tissue[3][4] Y Y Y Y Y Y
+NOTES:
+ T = Table, F = Figure, L = Listing, Y = Yes display generated.
+ Stats Analysis = Represents TFL related to any formal statistical analyses (i.e. modelling) conducted.
+ Summary = Represents TF related to any summaries (i.e. descriptive statistics) of the observed raw data.
+ Individual = Represents FL related to any displays of individual participant observed raw data
+1: Markers including but not limited to:  IL -1, IL-6, IL-8, MMP -3, TNFα and IFNy 
+2: TEAR1, phosp horylated or total RIP1, MLKL, and RIP3, cleaved and total caspase 3 and caspase 8 signatures 
+in blood and biopsy tissue if sample quantity and data allow.
+3:mRNA expression of inflammatory gene transcripts including but not limited to: IL -4, IL-10, IL -17, IL -21, IL -22, 
+IL-23, TNF and IFNγ .
+4: Data to be analysed by [CONTACT_586593]-SAC.
+Scatter plots of Target Engagement and blood/biopsy  tissue biomarkers for Day  43 and 
+Day 85 will also be produced.   2019N425893_00
+CONFIDENTIA L
+202152
+31If deemed appropriate, the relationship between Target Engagement and the blood/biopsy  
+tissue biomarkers will be explored further using multivariate statistical analy ses. The 
+consistency  in the changes over time between the endpoints will also be assessed.  An y 
+such anal yses will be defined after unblinding of the data and thus deemed post -hoc.
+10.1.2. Population of Interest
+The pharmacod ynamic/b iomarker analyses will be based on the Safetypopulation, unless 
+otherwise specified .
+10.1.3. Statistical A nalyses / Methods
+Details of the planned display s are provided in Appendix 10: List of Data Display s and 
+will be based on [COMPANY_004] Data Standards and statistical principles.
+Unless otherwise specified, endpoints / variables defined in Section 10.1.1 will be 
+summarised using descriptive statistics, graphically presented (where appropriate) and 
+listed.
+Biomarker data will be summarised for Parts A and B combined by  [CONTACT_586594]. 
+[IP_ADDRESS]. Statistical Methodology  Specification
+Exploratory Inflammatory Biomarkers
+Endpoints
+Change from baseline on log transformed inflammatory biomarkers in biopsy tissue on Day 43 pre -dose 
+and Day 85: Log eChange = Log e(Visit) – log e(Baseline).
+Markers include but not limited to : IL-1, IL-6, IL- 8, MMP -3, TNFα and IFNy .
+Model Specification
+Endpoints will be statistically analyzed using a mixed model repeated measures (MMRM) approach. 
+Terms fitted in the MMRM model will include:
+oFixed Category                           : Treatme nt, Day, Treatment*Day
+oFixed Continuous Covariates     : Baseline Score, baseline*Day
+oRepeated Effect                          : Day
+The Kenward and Roger method for approximating the denominator degrees of freedom and correcting 
+for bias in the estimated variance -covariance of the fixed effects will be used. 
+An unstructured covariance structure for the R matrix will be used by [CONTACT_312424] ‘type=UN’ on the 
+REPEATED line with a subject=SUBJID option.
+Model Checking & Diagnostics
+For the MMRM, model assump tions will be applied, but appropriate adjustments may be applied based 
+on the data.
+In the unlikely circumstance that there are convergence problems with the MMRM analysis, this will be 
+explored. For example, the SCORING=[ADDRESS_771782] 4 iterations. If the convergence problem cannot be resolved, the 
+unstructured covariance matrix will be replaced by [CONTACT_586595] ( 1) covariance structure in combination with a  2019N425893_00
+CONFIDENTIA L
+[ADDRESS_771783].
+oIfthis model fails to converge, alternative correlation structures may be considered such 
+as CS or AR (1). 
+oAkaike's Information Criteria (AIC) will be used to assist with the selection of covariance 
+structure.
+Distributional assumptions underlying the m odel used for analysis will be examined by [CONTACT_19201] a 
+normal probability plot of the residuals and a plot of the residuals versus the fitted values (i.e. checking 
+the normality assumption and constant variance assumption of the model respectively) to gain
+confidence that the model assumptions are reasonable. 
+If there are any departures from the distributional assumptions, alternative models will be explored 
+using appropriate transformed data.
+Presentation of results
+Adjusted geometric means, the mean di fference between each dose (test) and the placebo (reference) 
+at each timepoint and associated 95% confidence interval will be constructed using the residual 
+variance.
+The treatment ratios and 95% CI will be calculated by [CONTACT_3382] -transforming the difference b etween the 
+least square means and associated 95% CI.
+Percentage change from baseline at each timepoint will be calculated from the adjusted geometric 
+means using the formula 100% x (exp (adj mean) -1).
+Pathway and Target Engagement 
+Endpoints
+Log Rat io = Log (free TEAR1) –log (total TEAR1). 
+Model Specification
+A mixed effect model will be fitted with randomised treatment, time (i.e. planned relative time) and 
+randomised treatment * time as a fixed effect and participant as a random effect.  Baseli ne log ratio will 
+be fitted as a continuous covariate along with Baseline log ratio* time.
+The Kenward and Roger method for approximating the denominator degrees of freedom and correcting 
+for bias in the estimated variance -covariance of the fixed effects w ill be used. 
+An unstructured covariance structure for the R matrix will be used by [CONTACT_312424] ‘type=UN’ on the 
+REPEATED line with a subject=SUBJID option.
+Model Checking
+For the MMRM, model assumptions will be applied, but appropriate adjustments may be applied based 
+on the data.
+In the unlikely circumstance that there are convergence problems with the MMRM analysis, this will be 
+explored. For example, the SCORING=[ADDRESS_771784] 4 iterations. If the convergence problem cannot be resolved, the 
+unstructured covariance matrix will be replaced by [CONTACT_586595] ( 1) covariance structure in combination with a 
+random participant effect.
+Ifthis model fails to converge, alternative correlation structures may be considered such as CSH or CS. 
+Distributional assumptions underlying the model used for analysis will be examined by [CONTACT_19201] a 
+normal probability plot of the residuals and a plot of the residuals versus the fitted values (i.e. checking
+the normality assumption and constant variance assumption of the model respectively) to gain 
+confidence that the model assumptions are reasonable. 
+If there are any departures from the distributional assumptions, alternative models will be explored 
+using appropriate transformed data. 2019N425893_00
+CONFIDENTIA L
+[ADDRESS_771785] and Target Engagement 
+Presentation of Results
+Adjusted geometric means, the mean difference between each dose (test) and the placebo (reference) 
+at each timepoint and associated 95% confidence interval will be constructed using the residual 
+variance.
+The treatment ratios and 95% CI will be calculated by [CONTACT_3382] -transforming the difference between the 
+least square means and associated 95% CI.
+Percentage target engagement at each timepoint will be calculated from the adjusted geometric means 
+using the formula :100% x (exp (ln (v2 / v1) + 1) 
+percentage target engagement = (1 –engagement ratio) * 100.
+Transcriptomics –Fold Change Analysis
+The log 2normalised copy numbers (also referred to as log2(intensity)) received from the normalised 
+process will be listed and summarised appropriately by [CONTACT_444987].
+As the data will be log 2transformed prior to the analysis, the randomised treatment effects will be 
+expressed as ratios after back transformation to the original scale. These ratios can be c onverted from 
+randomised treatment ratios to fold change values as follows:  
+If ratio ≥ 0 then fold change = ratio
+If ratio <0 then fold change = - 1/ratio
+Endpoint(s)
+Log2(intensity) mRNA expression of inflammatory gene transcripts 
+Model Specification
+Endpoints will be statistically analyzed using a linear repeated measure mixed effects model. 
+Terms fitted in the linear repeated measures mixed effects model will include:
+oFixed Cat egory                          : Treatment, Visit, Treatment * Visit
+oRandom Effect                           : Participant
+Model Checking & Diagnostics
+Model assumptions will be applied, but appropriate adjustments may be applied based on the data.
+In the unlikely circumstance that there are convergence problems with the an alysis, this will be 
+explored. 
+If this model fails to converge, alternative correlation structures may be considered such as CSH or CS. 
+Distributional assumptions underlying the model used for analysis will be examined by [CONTACT_19201] a 
+normal probability p lot of the residuals and a plot of the residuals versus the fitted values (i.e. checking 
+the normality assumption and constant variance assumption of the model respectively) to gain 
+confidence that the model assumptions are reasonable. 
+If there are any de partures from the distributional assumptions, alternative models will be explored 
+using appropriate transformed data.
+Presentation of Results
+For each probeset analysed adjusted means with corresponding 95% CI and fold changes with 
+corresponding 95% CI’s can be outputted. The fold change is derived from the ratio of the back -
+transformed estimate of the difference between adjusted means.
+Plots of LS means and 95% confidence intervals from the model will be generated for each treatment 
+by [CONTACT_5586]. Additionally , plots of differences and 95% confidence intervals for the comparison between the 
+treatment groups will be generated.
+For each comparison subsets of probesets will be identified based on an appropriate fold -change, for 
+example, fold changes >1.5 or <- 1.5.The proportion of probesets with fold changes >1.5 or < -1.5 will  2019N425893_00
+CONFIDENTIA L
+202152
+34Transcriptomics –Fold Change Analysis
+be summarised in a frequency table.
+Exploratory graphical reporting on the back -transformed scale can include:
+Log 2(intensity) plotted against time point separately for individual participa nts, grouped by 
+[CONTACT_586596]
+Adjusted mean intensity and 95 CI%  plotted by [CONTACT_11571].
+Transcriptomics -MicroArray RNA Analysis
+MicroArray RNA will be extracted and hybridised using a balanced batch design by [CONTACT_55396][CONTACT_46557]. An 
+appropriate microarray platform will be determined at the time of hybridisation, to allow for 
+improvements in technology. The quality of the data will be assessed and then normalised using 
+appropriate methodologies and software.
+Microarray mRNA data wi llbe normalised using gcRMA or RMA in Array Studio v5.0 or later. After 
+normalisation, the data will be quality assessed and any samples deemed as QC fails will be excluded 
+from any further analysis. This quality assessment will involve looking for outlyi ng signals in both the 
+normalised expression data and the MAS5 QC metrics generated from each sample. If any samples 
+are excluded, the remaining data will be re -normalised. The output from the normalisation will be log 2
+transformed mRNA intensity data (me asured in arbitrary units).
+Microarray data consists of expression values (log 2-transformed) derived from individual probesets 
+designed against coding regions of individual genes. More than one probeset can exist per gene. This 
+analysis will be conducted a t the probeset level.
+To identify the most robustly expressed probesets, the data can be filtered to remove low intensity 
+probesets, low quality and control probe sets prior to analysis. This could be done simply by [CONTACT_586597] <6 (on the log 2scale). Note it has been observed empi[INVESTIGATOR_586568] 100 (6.6 on the log 2scale) you are into the noise of the assay. Other more 
+stringent methods of filtering the data could be used. In total, there are 53,617 p robesets that could be 
+analysed. 
+To compare the expression value for each probeset, the following linear repeated measures mixed 
+effects model will be fitted to each probeset that passes any pre -filtering, with log 2(intensity) as the 
+response variable. R andomised Treatment by [CONTACT_765], randomised treatment and visit will be fitted as fixed 
+effects and participant as a random effect. Example SAS code is given below: 
+proc mixed data=data; 
+ods output covparms=cov lsmeans=lse estimates=Compare;
+class subjid treatment visit; 
+model lgintensity= treatment visit treatment*visit /ddfm=kr;
+repeated visit / subject=subjid type=un;  
+lsmeans treatment*visit / diff cl alpha=0.05; 
+run; 
+For each probeset analysed adjusted means with corresponding 95% CI and fold changes with 
+corresponding 95% CI’s can be outputted. The fold change is derived from the ratio of the back -
+transformed estimate of the difference between adjusted means. 2019N425893_00
+CONFIDENTIA L
+202152
+35Transcriptomics -MicroArray RNA Analysis
+Where appropriate, particularly with microarray data, multiple testing will be considered using the 
+Benjamini -Hochberg correction (Benjamini, Y; J Royal Stat Soc 1995;57:289 -300) to calculate FDR 
+adjusted p -values. Proc Multtest incorporating the FDR adjusted p -value option is SAS is used to 
+convert the raw p- values from the proc mixed code abo ve into the FDR adjusted p -values based on the 
+Benjamini -Hochberg correction. Example code to generate the FDR adjusted p -values is given below:
+data pvalues (keep = probsid label probt rename=(probt=raw_p));
+     set compare;
+run;
+proc multtest pdata=pvalues fdr out=FDRres noprint;
+run;
+Where the FDRes dataset will include the following columns:
+p-values
+Test Raw False Discovery Rate
+1 0.2828 0.9243
+2 0.9437 0.9437
+3 0.0350 0.6305
+etc.
+Appropriate outputs will be created containing all the results for the relevant comparisons for all 
+analysed probesets. A summary may be generated, including probeset ID, gene ID, time point, adjusted 
+means with corresponding 95% CI for each randomised treatment group, Benjamini -Hochberg FDR 
+adjusted p -value and fold changes corresponding 95% CI from each comparison. Note that probeset ID 
+is required if there is more than one probeset per gene.  
+For each comparison subsets of probesets will be identified based on an appropriate fold -change, for 
+example, fold changes >1.5 or < -1.5. The proportion of probesets with fold changes >1.5 or <- 1.5 will 
+be summarised in a frequency table.
+The outputs should be reviewed by [CONTACT_586598] -agreed subset of biologically relevant 
+probesets will be reported within the CSR. If based on the fold -changes observed other probesets, 
+which were not pre -specified in the RAP, are deemed relevant then these should be interpreted with 
+caution. 
+Exploratory graphical reporting on the back -transformed scale can include:
+Log 2(intensit y) plotted against time point separately for individual participants , grouped by 
+[CONTACT_586596]
+Adjusted mean intensity and 95 CI%  plotted by [CONTACT_586599]. 2019N425893_00
+CONFIDENTIA L
+202152
+36Transcriptomics –Microarray Percentage Inhibition Analy sis
+The log 2normalised data is back transformed and the percentage inhibition is derived on a participant
+level on the back transformed data for each probeset. The percentage inhibition will be determined for 
+each probeset per participant , where it is de fined as the reduction from baseline. For example: 
+Day X –baseline = -40% would be a 40% reduction (i.e. - 40% change from baseline) which in turn is 
+defined as a 40% inhibition. So, the percentage inhibition would be calculated as:
+[ (Day x –Baseline) / Baseline] * -100 = % inhibition
+A subset of probesets may be identified and individual participant mRNA intensities and percentage 
+inhibitions may be listed, summarised and plotted appropriately for each selected probeset. The 
+selected probesets will be s tatistically analysed appropriately, and the output from the mixed effects 
+model summarised. The probeset, gene or gene description will be included in the outputs.
+To compare the percentage inhibition for each selected probeset, the following linear repea ted 
+measures mixed effects model will be fitted to each selected probeset, with percentage inhibition as the 
+response variable. Randomised Treatment by [CONTACT_765], randomised treatment and visit will be fitted as fixed 
+effects and participant as a random effect . Example SAS code is given below :
+proc mixed data=data; 
+class subjid treatment visit; 
+model perinhibit= treatment visit treatment*visit /ddfm=kr;
+repeated visit / subject=subjid type=un;  
+lsmeans treatment*visit / diff cl alpha= 0.05; 
+run; 
+11. REFERENC ES
+Guyatt, G, Mitchell A , Irvine E J , Singer J ,Williams N, G oodacre R , and T omkins C ;
+A New Measure of Health Status for Clinical Trials in I nflammatory  Bowel Disease . 
+Gastroenterology . 1989; 96:804-10 2019N425893_00
+CONFIDENTIA L
+[PHONE_12175]. APPENDICES
+12.1. Appendix 1: Protocol Deviation Management and Definitions 
+for Per Protocol Population
+12.1.1. Exclusions from Per Protocol Population
+A participant meeting any  of the following criteria will be excluded from the Per Protocol 
+population:
+Number Exclusion Description
+01Inclusion # 9 –Informed Consent: Informed Consent not available at site or Patient 
+did not sign or date
+02 Inclusion #2 – Eligibility: Other medical conditions
+03 Inclusion #3 – Eligibility: Confirmed diagnosis of UC
+04 Inclusion #4 – Eligibility: Total Mayo score and endoscopy subscore
+05 Inclusion #5 – Eligibility: Stable concurrent medication
+06 Inclusion #6 – Eligibility: Prior treatment
+[ADDRESS_771786] randomisation or study unblinding procedures
+A participant meeting any of the following criteria will be reviewed for exclusion fr om 
+the Per Protocol population:
+Number Exclusion Description
+08 Exclusion #17 –Concomitant Medication 2019N425893_00
+CONFIDENTIA L
+[PHONE_12176].2. Appendix 2: Schedule of A ctivities
+12.2.1. Protocol Defined Schedule of Events
+Procedures
+Screening (-30)
+Screening (-7 to -30)Treatment Period18
+Early 
+Withdrawal
+19
+Follow Up 
+(3)20
+PART A PART BDay 1 
+Day 8 ( 3)
+Day 15 ( 3)
+Day 22 ( 3)
+Day 29 ( 3)
+Day 36 ( 3)
+Day 43 ( 3)
+(week 6)
+Day 50 ( 3)
+Day 57 ( 3)
+Day 64 ( 3)
+Day 71 ( 3)
+Day 78 ( 3)
+Day 85 (+2)
+(week 12)
+Site Visit X X X X X X X X X X X
+Phone call X X X X X X
+General/Safety Assessments and Procedures
+Informed Consent X
+Subject Demography X
+Full medical history1 X
+Inclusion/Exclusion Criteria X
+Full physical exam2 X X X X
+Brief physical exam X4 X X X4 X X
+Vital signs (BP, HR, RR, 
+temperature)X X4 X X X4 X X X X X
+12-lead ECG3 X X4 X X X4 X X X X X
+Concomitant medication review & 
+AE reporting/SAEs5X--------- -----------------------------------------------------------------------------------------------------
+PROs/Questionnaires/Disease Assessments and Procedures
+Columbia Suicide Severity Rating X X4 X4 X X 
+ 
+ 2019N425893_00
+CONFIDENTIA L
+202152
+39Procedures
+Screening (-30)
+Screening (-7 to -30)Treatment Period18
+Early 
+Withdrawal
+19
+Follow Up 
+(3)20
+PART A PART BDay 1 
+Day 8 ( 3)
+Day 15 ( 3)
+Day 22 ( 3)
+Day 29 ( 3)
+Day 36 ( 3)
+Day 43 ( 3)
+(week 6)
+Day 50 ( 3)
+Day 57 ( 3)
+Day 64 ( 3)
+Day 71 ( 3)
+Day 78 ( 3)
+Day 85 (+2)
+(week 12)
+Scale (C -SSRS)
+IBDQ6 X4 X4X X
+UCEIS, Modified Riley, Geboes 
+IndexX------- X7 X4 X X
+Mayo Score (including 
+sigmoidoscopy and biopsy)X-----X7 X4, 8 X X9
+Partial Mayo Score X-----X7 X X X4 X X
+Study Treatment
+Randomisation X
+Study medication (three times 
+daily)10X---------------------------------------- XX--------------------------------------- X11
+Dispensing of study medication X X X
+Dispensing of diary cards X X X X X X
+Collection of diary cards X X X X X X
+Laboratory (Safety) Assessments and Procedures
+TB, HIV, Hep B, Hep C Ab, C. 
+Difficile toxin X
+FSH & estradiol (if applicable) X
+Serum pregnancy test (WCBP 
+only)X 
+ 
+ 2019N425893_00
+CONFIDENTIA L
+202152
+40Procedures
+Screening (-30)
+Screening (-7 to -30)Treatment Period18
+Early 
+Withdrawal
+19
+Follow Up 
+(3)20
+PART A PART BDay 1 
+Day 8 ( 3)
+Day 15 ( 3)
+Day 22 ( 3)
+Day 29 ( 3)
+Day 36 ( 3)
+Day 43 ( 3)
+(week 6)
+Day 50 ( 3)
+Day 57 ( 3)
+Day 64 ( 3)
+Day 71 ( 3)
+Day 78 ( 3)
+Day 85 (+2)
+(week 12)
+Urine pregnancy test (WCBP 
+only)12 X4X X X4 X X X X X
+Haematology, chemistry, 
+urinalysis X X4 X X13 X4 X13 X13 X X X
+Faecal calprotectin14 X X X X X X X X X
+Blood sample for exploratory 
+biomarkers and TE15X4 X4 X X
+PK blood sample s [COMPANY_004]298277216 X X4 X X
+Biopsies for PK, inflammatory 
+biomarkers, mRNA, TE & pathway 
+marker analysisX------- X7 X4 X X8
+Pharmacogenetic sample (PGx)17 X
+Footnotes:
+1. Full medical history (includes past and current conditions, medication history, substance usage, and family history of premature CV disease).
+2. Full physical exam (includes height/weight at screening, height not measured at later time points).
+3. Triplicate ECG to be performed at screening only and if stopp ing criteria are met .
+4. Pre-dose.  
+5. Any SAEs assessed as related to study participation (e.g., protocol -mandated procedures, invasive tests, or change in existing therapy) or related to a [COMPANY_004] product will be 
+recorded from the time a participant consents to p articipate in the study up to and including any follow -up.  AEs will be collected from the start of Study Treatment until the follow -
+up contact.
+6. PRO assessments should be conducted before any tests, procedures or assessments to avoid influencing the partic ipants’ perception. 
+ 
+ 2019N425893_00
+CONFIDENTIA L
+202152
+417. Sigmoidoscopy may be performed at any time during the screening window as an additional visit (if required) up to Day -7 in order for central reading confirmation of Mayo Score 
+for inclusion.  If a shorter window is required (e.g., with in Day -3 to Day -7), this will be permitted as long as it has been confirmed with the sponsor and central reader that results 
+of the Mayo endoscopy score will be available before end of screening window.  Histological disease (e.g., UCEIS, MRS and Geb oes Index) along with Mayo score assessments 
+will also be completed.
+8. Sigmoidoscopy may be performed on a separate day within the Day 43 visit window allowance ( 3 days).  A separate visit to perform sigmoidoscopy is only allowed to 
+accommodate scheduling.  Thi s separate visit should be done before the full Day [ADDRESS_771787] be done at the 2ndvisit (if separate visits are performed).
+9. Biopsy only required at Early Withdrawal visit if after at least [ADDRESS_771788] 
+nottake their study medication at home in the morning. Participant will complete specified pre -dose assessments and then will be administered their morning dose of medication 
+at site on Day 43.  On Day 85, participants are no longer receiving study medicatio n.
+11. In Part A, participants will be randomised 2:[ADDRESS_771789]- dose serial PK samples will be taken on Days 1 and Day 43 at the following time points: 1, 2, 4, and 6 
+hours and trough on Day 85 or Early Withdrawal.
+17. A PGx blo od sample is collected at the baseline visit (Day 1), after the participant has been randomized and provided informed consent for genetic research.  If the sample is not 
+collected at the baseline visit, it can be collected at any time during the study afte r randomization.
+18. Visit windows during the treatment period are relative to Day 1.
+19. If a participant withdraws from the study, every effort will be made for the participant to complete an Early Withdrawal visi t prior to the Follow Up visit.
+20. Follow -up visit s hould be completed 28 days ( 3 days) after the last dose of study medication. 
+ 
+ 2019N425893_00
+CONFIDENTIA L
+[PHONE_12177].3. Appendix 3: A ssessment Windows
+12.3.1. Definitions of A ssessment Windows for Analy ses
+No Assessment Windows will be defined for Analy sis, and summaries and anal yses will 
+be based on nom inal visits. 2019N425893_00
+CONFIDENTIA L
+[PHONE_12178].4. Appendix 4: Study  Phases and Treatment Emergent 
+Adverse Events
+12.4.1. Study Phases
+Treatment phases will be defined for Part A and Part B of the study . Therefore,
+assessments and events will be classified according to the time of occurrence relative to 
+study  treatment start date and the Day  43 visit.
+Study Phase Definition
+Pre-Treatment Date ≤ Study Treatment Start Date
+On-Treatment Study Treatment Start Date < Date ≤ Study Treatment Stop Date
+On-Treatment (Part A) Study Treatment Start Date < Date ≤ Day 43 Visit Date
+On-Treatment (Part B) Day 43 Visit Date < Date ≤ Study Treatment Sto p Date
+Post-Treatment Date > Study Treatment Stop Date 
+[IP_ADDRESS]. Study  Phases for Concomitant Medication
+Study Phase Definition
+Prior If medication end date is not missing and is before [ADDRESS_771790]- Treatment Any medication that is started >= Study Treatment Stop Date +1
+NOTES: 
+ Please refer to Appendix 7 : Reporting Standards for Missing Data for handling of missing and partial dates for 
+concomitant medication. Use t he rules in this table if concomitant medication date is completely missing.
+12.4.2. Treatment Emergent Flag for A dverse Events
+Treatment State Definition
+AE = Pre -TreatmentIf AE onset date is before treatment start date:
+= AE Onset Date < Study Treatment Star t Date
+AE = On -Treatment If AE onset date is on or after treatment start date and on or before treatment stop date:
+= Study Treatment Start Date ≤ AE Start Date ≤ Study Treatment Stop Date +1
+AE = Post- Treatment If AE onset date i s after the treatment stop date:
+= AE Start Date > Study Treatment Stop Date +1
+AE Onset Time 
+Since 1stDose 
+(Days)If Treatment Start Date ˃AE Onset Date: 
+= AE Onset Date -Treatment Start Date
+If Treatment Start Date ≤ AE Onset Date: 
+= AE Onset Date - Treatment Start Date +1
+Missing otherwise.
+AE Duration (Days) AE Resolution Date –AE Onset Date + 1
+AE = Drug -related If relationship is marked ‘YES’ on Inform/CRF OR value is missing .
+NOTES: 
+ If the study treatment stop date is missing, then the AE will be considered to be On -Treatment. 2019N425893_00
+CONFIDENTIA L
+[PHONE_12179].5. Appendix 5: Data Display  Standards & Handling 
+Conventions
+12.5.1. Reporting Process
+Software
+The currently supported versions of SAS so ftware will be used.
+Reporting Area for Interim Analysis 
+HARP Server [LOCATION_006]1SALX00175
+HARP Area arenv \ arprod \gsk2982772 \mid202152 \interim1 
+QC Spreadsheet arenv \ arwork \gsk2982772 \mid202152 \interim1 \documents
+Reporting Area for Final Rep orting
+HARP Server [LOCATION_006]1SALX00175
+HARP Area arenv \ arprod \gsk2982772 \mid202152 \final
+QC Spreadsheet arenv \ arwork \gsk2982772 \mid202152 \final \documents
+Analysis Datasets 
+Analysis datasets will be created per Integrated Data Standards Lib rary (IDSL) [COMPANY_004] A&R dataset 
+standards.
+Generation of RTF Files
+RTF files will be generated for all tables at the time of the SAC.
+12.5.2. Reporting Standards
+General
+The current [COMPANY_004] Integrated Data Standards Library (IDSL) will be applied for reporting, unles s 
+otherwise stated ( IDSL Standards Location: 
+https://spope.gsk.com/sites/IDSLLibrary/SitePages/Home.aspx :
+4.03 to 4.23: General Principles
+5.01 to 5.08: Principles Related to Data Listings
+6.01 to 6.11: Principles Related to Summary Tables
+7.01 to 7.13: Principles Related to Graphics 
+Participant level listings will not be provided in the main body of the [COMPANY_004] Clinical Study Report. All 
+participant level listings will be located in the modular appendices as ICH or non -ICH listings.
+Formats
+[COMPANY_004] IDSL Statist ical Principles (5.03 & 6.06.3) for decimal places (DP’s) will be adopted for reporting of 
+data based on the raw data collected, unless otherwise stated.
+Numeric data will be reported at the precision collected on the eCRF.
+The reported precision from non eCRF sources will follow the IDSL statistical principles but may be 
+adjusted to a clinically interpretable number of DP’s. 
+Planned and Actual Time
+Reporting for tables, figures and formal statistical analyses:
+Planned time relative to dosing will be use d in figures, summaries, statistical analyses and 
+calculation of any derived parameters, unless otherwise stated.
+The impact of any major deviation from the planned assessment times and/or scheduled visit days 
+on the analyses and interpretation of the resu lts will be assessed as appropriate. 2019N425893_00
+CONFIDENTIA L
+202152
+45Reporting for Data Listings: 
+Planned and actual time relative to study drug dosing will be shown in listings (Refer to IDSL 
+Statistical Principle 5.05.1).
+Unscheduled or unplanned readings will be presented within the participant ’s listings. 
+Unscheduled Visits
+For all safety data:
+Unscheduled visits will not be included in summary tables.
+Unscheduled visits will not be included in figures.
+All unscheduled visits will be included in listings.
+For efficacy data:
+Early withdrawal visit will be included in all summary tables, figures and listings
+Early withdrawal visit will be assigned to closest planned study assessment following withdrawal i.e. 
+for data collected from biopsies at the Day 43 visit or Day 85 visit
+Descri ptive Summary Statistics
+Continuous Data N, n, mean, median, SD, SE, min, max
+Categorical Data N, n, frequency, %
+Graphical Displays
+Refer to IDSL Statistical Principals 7.01 to 7.13.
+Placebo in graphs to be shown in Black and [COMPANY_004]2982772 in Green
+12.5.3. Reporting Standards for Pharmacokinetic
+Pharmacokinetic Concentration Data
+Descriptive Summary 
+Statistics, Graphical 
+Displays and ListingsRefer to IDSL PK Display Standards.
+Refer to IDSL Statistical Principle 6.06.1.
+Note: Concentration values will be imputed as per GUI_51487 for descriptive 
+summary statistics/analysis and summarized graphical displays only. 
+NONMEM/PK/PD 
+FilePK/PD file (CSV format) for the PK/PD analysis by [CONTACT_586600] 12 : NONMEM datafile Specification. 2019N425893_00
+CONFIDENTIA L
+[PHONE_12180].6. Appendix 6: Derived and Transformed Data
+12.6.1. General
+Multiple Measurements at One Analysis Time Point
+Mean of the measurements will be c alculated and used in any derivation of summary statistics but if 
+listed, all data will be presented.
+Participant s having both High and Low values for Normal Ranges at any post -baseline visit for safety 
+parameters will be counted in both the High and Low c ategories of “Any visit post -baseline” row of 
+related summary tables. This will also be applicable to relevant Potential Clinical Importance (PCI) 
+summary tables.
+Study Day
+Calculated as the number of days from First Dose Date:
+Ref Date = Missing              → Study Day = Missing 
+Ref Date < First Dose Date → Study Day = Ref Date – First Dose Date
+Ref Data ≥ First Dose Date → Study Day = Ref Date – (First Dose Date ) + 1    
+12.6.2. Study Population
+Demographics
+Date of Birth 
+Only the year of birth will be ca ptured, and therefore the date of birth is then derived as follows:
+Year of birth = YYYY → Date of birth = 30th June YYYY
+Age
+Calculated as the integer part of (date of screening   –date of birth)
+       Age = integer part (date of study day 1   –30thJune YYYY)
+Birth date will be presented in listings as ‘YYYY’.
+Body Mass Index (BMI)
+Calculated as Weight (kg) / [Height (m)2]
+Race category 
+White: ‘White: Arabic/North African Heritage’ and ‘White: White/Caucasian/European Heritage’, or both 
+of these , but no other category checked .
+African descent: ‘African American/African Heritage’, and no other category checked .
+Asian: ‘Asian –Central/South Asian Heritage’, ‘Asian – East Asian Heritage’, ‘Asian –Japanese 
+Heritage’, and ‘Asian –South East Asian Heritage’, or any combination of these, but no other category 
+checked .
+Other: Any combination that has not been categorized above (‘mixed race’).
+Treatment Compliance
+Participant compliance will be based on the number of expected tablets to be taken and t he number 
+actually taken and will depend on whether a participant was taking investigational product (two tablets) 
+twice a day or three times a day. 
+Treatment compliance will be calculated based on the formula:  
+Treatment Compliance = (Total tablets take n/total tablets expected to be taken) *100
+Total tablets taken = (Total number of Tablets Dispensed -Total Tablets Returned) 
+Total Tablets expected to be taken is duration of exposure*4 (see derivation below) for BID 
+participant s and *6 for TID participant s. 2019N425893_00
+CONFIDENTIA L
+202152
+47Demographics
+Note compliance will only be calculated for participant s who took at least one dose (i.e. number of 
+tablets taken is >=1 ).
+Extent of Exposure
+Number of days of exposure to study drug will be calculated based on the formula:  
+Duration of Exposure in D ays = Treatment Stop Date –(Treatment Start Date) + 1
+Participant s who were randomized but did not report a treatment start date will be categorised as 
+having zero days of exposure. 
+The cumulative dose will be based on the formula: Cumulative Dose = Total Tablets taken*60 .
+Concomitant Medications
+The following information will be added to the baseline characteristics table: 
+Concomitant Medications for UC : Participant s will be categorized into one of 4 groups based on 
+their ongoing prior concomitant med ications : 
+Glucocorticoids only,
+Immunosuppressants only,  
+Glucocorticoids and immunosuppressants and 
+No glucocorticoids or immunosuppressants .
+Prednisone dose (or equivalent) : Summary statistics will be presented .
+Glucocorticoids, Immunosuppressants and Prednisone will be identified by [CONTACT_586601].
+12.6.3. Safety
+ECG Parameters
+RR Interval
+IF RR interval (msec) is not provided directly, then RR can be derived as:
+[1]IfQTcB is machine read & QTcF is not provided, then:
+[2]If QTcF is machine read and QTcB is not provided, then: 
+If ECGs are manually read, the RR value preceding the measurement QT interval should be a 
+collected value then do not derive.
+Corrected QT Intervals
+When not entered directly in the eCRF, corre cted QT intervals by [CONTACT_35019]’s (QTcB) and 
+Fridericia’s (QTcF) formulas will be calculated, in msec, depending on the availability of other 
+measurements.
+IF RR interval (msec) is provided then missing QTcB and/or QTcF will be derived as:  2019N425893_00
+CONFIDENTIA L
+202152
+48Laboratory Pa rameters
+If a laboratory value which is expected to have a numeric value for summary purposes, has a 
+non-detectable level reported in the database, where the numeric value is missing, but typi[INVESTIGATOR_897] 
+a character value starting with ‘<x’ or ‘>x’ (or indicate d as less than x or greater than x in the 
+comment field) is present, the number of decimal places in the observed values will be used to 
+determine how much to add or subtract in order to impute the corresponding numeric value. 
+oExample 1: 2 Significant Dig its = ‘< x ‘becomes x –0.01
+oExample 2: 1 Significant Digit   = ‘> x’ becomes x + 0.1
+oExample 3: 0 Significant Digits = ‘< x’ becomes x – 1    
+12.6.4. Efficacy
+Clinical Efficacy
+Mayo
+The Mayo is a 12 -point scoring system used to assess UC disease activity ba sed 4 subscores: , 
+ and  The following table 
+describes how each subscore is composed: 
+Subscore Score
+The following endpoints for the Mayo score are to be considered using the following algorithms : 
+Mayo Endoscopy Remission:   Participant s with a score or or  on the
+subscore.
+Total Mayo Score: the total score of all 4 domain subscores -
+and 
+Partial Mayo Score: the total score of the [ADDRESS_771791] been excluded.
+CCI
+CONFIDENTIA L
+202152
+49Clinical Efficacy
+3-domain Mayo Score: the total score of the 3 domain subscores: and 
+Mayo Clinical Response: ≥3 points or ≥30% improvement from baseline in total Mayo score , along with 
+a decrease in the subscore of ≥1 point. 
+oi.e.,(< change from baseline in total mayo score <= OR% change from baseline in total 
+mayo score <= )AND change from baseline in subscore <= .
+3-domain Mayo Clinical Response: ≥2points or ≥30% improvement from baseline in partial Mayo score, 
+along with a decrease in the subscore of ≥1 point or a  subscore of or . 
+oi.e., ( < change from baseline in partial mayo score <= OR % change from baseline in 
+partial mayo score <= )AND (change from baseline in subscore <= OR 
+ subscore of or ). 
+Mayo Clinical Remission: Total Mayo score of 2 points or lower, with no individual subscore ex ceeding 1 
+point.
+oi.e., <= total mayo score <= AND  subscore =  or AND
+subscore =  or  AND  subscore = or  AND  
+subscore = or . 
+3-domain Mayo Clinical Remission: At least one point decrease in  subscore from 
+Baseline to achieve a  subscore of  or  and subscore =  and
+ subscore of or .
+oi.e. (  subscore  or  AND change from baseline in subscore <= 
+)AND subscore of  AND subscore =  or 
+.
+Clinical Efficacy 
+UCEIS
+The UCEIS is used as an additional tool to assess disease activity based o n endoscopic , 
+and . The following table describes how the UCEIS is scored:
+Descriptor (score most
+severe lesions)Likert scale anchor points Definition 2019N425893_00
+CCI
+CCI
+CCI
+CCI
+CCI
+C
+CI
+C
+C
+I
+CCI
+CC
+I
+C
+C
+I
+CCI
+C
+CI
+C
+C
+I
+CC
+I
+CCI
+CCI
+C
+CI
+C
+CI
+C
+CI
+C
+CI
+C
+C
+I
+C
+C
+I
+CCI
+C
+CI
+C
+C
+I
+C
+CI
+C
+C
+I
+CCI
+C
+CI
+C
+C
+I
+C
+C
+I
+CCI
+CCI
+C
+CI
+C
+C
+I
+C
+CI
+C
+C
+I
+C
+C
+I
+C
+C
+I
+C
+C
+I
+C
+C
+I
+C
+CI
+C
+C
+I
+CCI
+CCI
+CCI
+CCI
+CCI
+CCI
+CCI
+CCI
+CCI
+CCI
+C
+C
+I
+CCI - This section contained Clinical Outcome Assessment data collection questionnaires or indices, which are protected 
+by [CONTACT_14561].
+CCI
+CCI
+CCI
+CONFIDENTIA L
+202152
+50Clinical Efficacy
+The following endpoint for the UCEIS is to be considered at each visit: 
+UCEIS Total Score:   Sum of all likert scale anchor points scores. 
+UCEIS Remission: Participant s with a score or 0 or 1 on the UCEIS Total Score.
+Geboes
+The Geboes Index is divided in 6 grades: architectural changes [grade 0], chronic inflammatory infiltrate [grade 1], 
+lamina propria neutrophils and eosinophils [grade 2], neutrophils in epi[INVESTIGATOR_2130] [grade 3], crypt destruction [grade 
+4] and erosions or ulcerations [grade 5], and each grade of the score is divided in 4 or5 subcategories. 
+Grade Subgrade
+0 Structural (architectural change) 0.0 No abnormality
+0.1 Mild abnormality
+0.2 Mild or moderate diffuse or multi focal 
+abnormalities
+0.3 Severe diffuse or multifocal abnormalities
+1 Chronic inflammatory infiltrate 1.0 No increase
+1.1 Mild but unequivocal increase
+1.2 Moderate increase
+1.3 Marked increase
+2 Lamina propria eosinophils and 
+neutrophils (to be graded separately)2.0 No increase
+2.1 Mild but unequivocal increase
+2.2 Moderate increase
+2.3 Marked increase
+3 Neutrophils in epi[INVESTIGATOR_2130] 3.0 None
+3.1 <5% crypts involved
+3.2 =<50% crypts involved
+3.3 >=50% crypts involved
+4 Crypt destruction 4.0 None
+4.1 Probable –local excess of neutrophils in part 
+of crypt 2019N425893_00
+CCI - This section contained Clinical Outcome Assessment data collection questionnaires or indices, which are protected 
+by [CONTACT_14561].
+CONFIDENTIA L
+202152
+51Clinical Efficacy
+4.2 Probable –marked attenuation
+4.3 Unequivocal crypt destruction
+5 Erosion or ulcerative 5.0 No erosion, ulceration, or granulation tissue
+5.1 Recovering epi[INVESTIGATOR_586569]
+5.2 Probable erosion –focally stripped
+5.3 Unequivocal erosion
+5.4 Ulcer or granulation tissue
+The following endpoint for the Geboes is to be considered at each relevant visit: 
+Geboes Index Total Score:   Sum of the all the subgrades (i.e. Structural (architectural change) = 0.2 is a 
+score of 2, Chronic inflammatory infiltrate = 1.1 is scored as a 1 etc.).
+
+Robarts Histology Index (RHI)
+The RHI will be provided by [CONTACT_586602]. 
+The RHI Score is a continuous score, ranging from 0 -33 with h igher scores indicating more severe disease.
+For the frequency table of RHI Score the following cut -points will be used: 
+Remission: Score <= 6, 
+Low: Scores >6-<12, 
+Moderate/Severe Score: > = 12
+Modified Riley Scale
+The Modified Riley Scale (MRS) is a 4 -point scale (none, mild, moderate and severe) which scores histologic 
+activity based on localization and quantification of neutrophils in the mucosa. A single mod ified riley scale score is 
+collected at each relevant visit.  
+Activity Histological Characteristics
+None 0 Normal biopsy or inactive colitis
+Mild 1 Lamina propria neutrophils only = Scattered 
+individual neutrophils
+2 Lamina propria neutrophils o nly = Patchy 
+collections of neutrophils
+3 Lamina propria neutrophils only = Diffuse 
+neutrophils infiltrate
+Moderate 4 Cryptitis/crypt abscesses = <25%  crypts involved
+5 Cryptitis/crypt abscesses = 25% -74% crypts 
+involved
+6 Cryptitis/crypt absce sses = >=75% crypts 
+involved
+Severe 7 Erosion or ulceration = Present 2019N425893_00
+CONFIDENTIA L
+202152
+52Clinical Efficacy
+Faecal Calprotectin (FCP)
+FCP, a protein biomarker, is measured from the faecal samples. The raw FCP data is highly variable and 
+therefore data should be log -transformed before a change from baseline is calculated. 
+For the frequency table of FCP categories the following cut -points will be used: 
+<250, 
+>=250 and 
+>=1000.
+C-Reactive Protein (CRP)
+CRP will be provided as a clinical chemistry parameter in the Clinical Laborato ry dataset.
+Inflammatory Bowel Disease Questionnaire (IBDQ)
+The IBDQ is a 32 -item Inflammatory Bowel Disease -specific health related quality of life instrument evaluating 
+general activities of daily living, intestinal function, social performance, pers onal interactions, and emotional 
+status. Each item is presented on seven -point scale with higher representing better functioning. 
+The IBDQ items are grouped into four domains with a total score for each being calculated as follows:
+Bowel symptoms (10 it ems): Sum items 1, 5, 9, 13, 17, 20, 22, 24, 26, 29
+Systemic Symptoms (5 items): Sum items 2, 6, 10, 14, 18.
+Emotional Function (12 items): Sum items 3, 7, 11, 15, 19, 21, 23, 25, 27, 30, 31, 32
+Social Function (5 items): Sum items 4, 8, 12, 16 and 28
+The IBDQ Total Score is calculated as follows:
+IBDQ Total Score:   Sum of all [ADDRESS_771792] at each visit. The number of stools, stool frequency score and rectal 
+Bleeding Score will be trans cribed into the eCRF for the 5 days prior to the following visits: Screening, Day 15, 
+Day 29, Day 43, Day 85 and EW. 
+The stool frequency score is on a 4 -point scale as follows: 
+0 =Normal
+1 = 1- 2 stools/day more than normal
+2 = 3- 4 stools/day more than normal
+3 =>=4 stools/day more than normal 
+The rectal bleeding score is on a 4 -point scale as follows: 
+0 =Noblood seen
+1 =Streaks of blood with stool less than half the time
+2 =Obvious blood with stool most of the time  2019N425893_00
+CONFIDENTIA L
+202152
+53Clinical Efficacy
+3 = B lood alone passed.
+The average score and maximum score be considered for both stool frequency and rectal bleeding over the 5 
+days prior to at each visit: 
+Average Score: [ Sum of scores over 5 prior days] / [number of prior days with a score available] 
+Maximum Score: Maximum ( i.e. highest) score collected over 5 prior days. 
+The average score will be considered for number of stools over the 5 days prior to at each visit: 
+Average Score: [ Sum of number of stools over 5 prior days] / [number of prior days with a stool data 
+available] 
+12.6.5. Biomarker
+TEAR
+Target Engagement
+Ratio = free / total
+Target Engagement = 100 –(ratio post/ratio baseline ) * 100))
+BIOMARK dataset:
+BICAT = TRIPK1 (total) or FRIPK1 (free) and BITESTCD = CONC  2019N425893_00
+CONFIDENTIA L
+[PHONE_12181].7. Appendix 7: Reporting Standards for Missing Data
+12.7.1. Premature Withdrawals
+Element Reporting Detail
+General Participant study completion was defined as one who has completed all phases of the 
+study including the follow -up visit. 
+Withdrawn participants may be replaced in the study at the discretion of the 
+investigator.
+All available data from participants who were withdrawn from the study will be listed 
+and all available planned data will be included in summary tables and figures, unless 
+otherwise specified. 
+12.7.2. Handling of Missing Data
+Element Reporting Deta il
+General Missing data occurs when any requested data is not provided, leading to blank fields on 
+the collection instrument:
+These data will be indicated by [CONTACT_2224] a “blank” in participant listing displays. 
+Unless all data for a specific visit are mi ssing in which case the data is excluded 
+from the table. 
+Answers such as “Not applicable” and “Not evaluable” are not considered to be 
+missing data and should be displayed as such.
+Outliers Any participants excluded from the summaries and/or statistical analyses will be 
+documented along with the reason for exclusion in the clinical study report.
+[IP_ADDRESS]. Handling of Missing and Partial Dates
+Element Reporting Detail
+General Partial dates will be displayed as captured in participant listing displays.
+Adverse 
+EventsThe eCRF allows for the possibility of partial dates (i.e., only month and year) to be 
+recorded for AE start and end dates; that is, the day of the month may be missing. In 
+such a case, the following conventions will be applied for calculating the time to onset 
+and the duration of the event:
+Missing Start Day: First of the month will be used unless this is before the start 
+date of study treatment; in this case the study treatment start date will be used and 
+hence the event is considered On -treatment as per Appendix 4 : Study Phases and 
+Treatment Emergent Adverse Events.
+Missing Stop Day: Last day of the month will be used, unless this is after the stop 
+date of study treatment; in this case the study treatment stop dat e will be used.
+Completely missing start or end dates will remain missing, with no imputation applied. 
+Consequently, time to onset and duration of such events will be missing.
+Concomitant 
+Medications/Partial dates for any concomitant medications recorded in the CRF will be imputed 
+using the following convention:
+If the partial date is a start date, a '01' will be used for the day and 'Jan' will be used for 
+the month
+If the partial date is a stop date, a '28/29/30/31' will be used for the day (dependent 
+on the month and year) and 'Dec' will be used for the month.
+The recorded partial date will be displayed in listings. 2019N425893_00
+CONFIDENTIA L
+[PHONE_12182].8. Appendix 8: Values of Potential Clinical Importance
+12.8.1. Laboratory  Values
+Haematology
+Laboratory Parameter Units Category Clinical Concern R ange
+Low Flag (< x) High Flag (>x)
+Hematocrit Ratio of 
+1Male 0.54
+Female 0.54
+∆from BL ↓0.075
+Hemoglobin g/LMale 180
+Female 180
+∆from BL ↓25
+Lymphocytes x109/ L 0.8
+Neutrophil Count x109/ L 1.5
+Platelet Count x109/ L 100 550
+While Blood Cell Count (WBC) x109/ L 3 20
+Clinical Chemistry
+Laboratory Parameter Units Category Clinical Concern Range
+Low Flag (< x) High Flag (>x)
+Albumin g/L 30
+Calcium mmol/L 2 2.75
+Creatinine µmol/L ∆from BL ↑ 44.2
+Glucose mmol/L 3 9
+Magnesium mmol/L 0.5 1.23
+Phosphorus mmol/L 0.8 1.6
+Potassium mmol/L 3 5.5
+Sodium mmol/L 130 150
+Total CO2 mmol/L [ADDRESS_771793] Analyte Units Category Clinical Concern Range
+ALT/SGPT U/L High 2x ULN
+AST/SGOT U/L High 2x ULN
+AlkPhos U/L High 2x ULN
+T Bilirubin µmol/L High 1.5xULN
+T. Bilirubin + ALTµmol/L
+High1.5xULN T. Bilirubin
++
+U/L 2x ULN ALT 2019N425893_00
+CONFIDENTIA L
+[PHONE_12183].8.2. ECG
+ECG Parameter Units Clinical Concern Range
+Lower Upper
+Absolute
+Absolute QTc Inte rval msec> 450 ≤ 479 
+≥ 480 ≤ 499
+≥ 500 
+Absolute PR Interval msec < 110 > 220 
+Absolute QRS Interval msec < 75 > 110
+Change from Baseline
+Increase from Baseline QTcmsec > 30 <60
+msec ≥60 
+12.8.3. Vital Signs
+Vital Sign Parameter
+(Absolute)Units Clinical Concern Range
+Lower Upper
+Systolic Blood Pressure mmHg < 85 > 160
+Diastolic Blood Pressure mmHg < 45 > 100
+Heart Rate bpm < 40 > 110
+Vital Sign Parameter
+(Change from Baseline)Units Clinical Concern Range
+Decrease Increase
+Lower Upper Lower Upper
+Systolic Blood Pressure mmHg ≥ 20 ≥ 40 ≥ 20 ≥ 40
+Diastolic Blood Pressure mmHg ≥ 10 ≥ 20 ≥ 10 ≥ 20
+Heart Rate bpm ≥ 15 ≥ 30 ≥ 15 ≥ 30 2019N425893_00
+CONFIDENTIA L
+[PHONE_12184].9. Appendix 9: Abbreviations & Trade Marks
+12.9.1. Abbrev iations
+Abbreviation Description
+AE Adverse Event
+A&R Analysis and Reporting 
+AIC Akaike's Infor mation Criteria
+BID Twice a day
+CI Confidence Interval
+CRF Case Report Form
+CRP C-Reactive Protein
+CSR Clinical Study Report
+C-SSRS Columbia Suicide Severity Rating Scale
+CTR Clinical Trial Register
+CV b / CV w Coefficient of Variation (Between) / Co efficient of Variation (Within)
+DB Double -Blind
+DBF Database Freeze
+DBR Database Release
+DOB Date of Birth
+DP Decimal Places
+DRC Data Review Committee
+ECG Electrocardiogram
+eCRF Electronic Case Record Form
+EMA European Medicines Agency
+FCP Faecal Calprotectin
+FDA Food and Drug Administration
+FDAAA Food and Drug Administration Clinical Results Disclosure Requirements
+GEE Generalised Estimating Equations
+[COMPANY_004] GlaxoSmithKline
+IA Interim Analysis
+IBDQ Inflammatory Bowel Disease Questionnaire
+ICH International Conference on Harmonization
+IDSL Integrated Data Standards Library
+IMMS International Modules Management System
+IP Investigational Product
+IRTS Interactive Response Technology System
+ITT Intent -To-Treat
+Kg Kilogram
+mmol Millimole
+MMR M Mixed Model Repeated Measures
+MRS Modified Riley Sc ale
+NR Normal Range
+OL Open -Label
+PCI Potential Clinical Importance 
+PD Pharmacodynamic
+PDMP Protocol Deviation Management Plan
+PK Pharmacokinetic
+PopPK Population PK
+PP Per Protocol 2019N425893_00
+CONFIDENTIA L
+202152
+58Abbreviation Description
+PP Per Pro tocol
+PSRAE Possible Suicidality -Related Adverse Event
+PT Preferred Term
+QC Quality Control
+QTcB Bazett’s QT Interval Corrected for Heart Rate
+QTcF Frederica’s QT Interval Corrected for Heart Rate
+RAMOS Randomization & Medication Ordering System 
+RAP Reporting & Analysis Plan
+RHI Robarts Histology Index
+SAC Statistical Analysis Complete
+SAE Serious Adverse Event
+SE Standard Error
+SOC System Organ Class
+SOP Standard Operation Procedure
+SRT Safety Review Team
+TA Therapeutic Area
+TEAR1 Target Engagement Assay RIP1
+TFL Tables, Figures & Listings 
+TID Three times a day
+UC Ulcerative Colitis
+UCEIS Ulcerative Colitis Endoscopic Index of Severity
+ULN Upper Limit of Normal
+12.9.2. Trademarks
+Trademarks of the GlaxoSmithKline 
+Group of CompaniesTradema rks not owned by [CONTACT_586603] 2019N425893_00
+CONFIDENTIA L
+[PHONE_12185].10. Appendix 10: List of Data Display s
+12.10.1. Data Display  Numbering
+The following numbering will be applied for RAP generated display s:
+Section Tables Figures
+Study Populat ion 1.1 to 1. 16 NA
+Efficacy 2.1 to 2. 41 2.1 to 2. 44
+Safety 3.1 to 3. 56 3.1 to 3. 7
+Pharmacokinetic 4.1 4.1 to 4. 28
+Pharmacodynamic and / or Biomarker 6.1 to 6. 11 6.1 to 6. 19
+Section Listings
+ICH Listings 1 to 42
+Other Listings 43 to 83
+12.10.2. Mock Exam ple Shell Referencing
+Non IDSL  specifications will be referenced as indicated and if required example mock-up 
+display s provided in Appendix 11: Example Mock Shells for Data Display s
+Section Figure Table Listing
+Study Population POP_F n POP_Tn POP_Ln
+Efficacy EFF_Fn EFF_Tn EFF_Ln
+Safety SAFE_Fn SAFE_Tn SAFE_Ln
+Pharmacokinetic PK_Fn PK_Tn PK_Ln
+Pharmacodynamic and / or Biomarker PD_Fn PD_Tn PD_Ln
+NOTES: 
+ Non-Standard displays are indicated in the ‘IDSL / Example Shell’ or ‘Programmi ng Notes’ column as ‘[Non -
+Standard] + Reference.’
+12.10.3. Deliverables
+Delivery [Priority] [1] Description
+IA SAC [X] Interim Analysis Statistical Analysis Complete
+SAC [X] Final Statistical Analysis Complete
+SAC2 [X] Post- Final Statistical Analysis Complete
+NOTES: 
+1. Indicates priority (i.e. order) in which displays will be generated for the reporting effort 2019N425893_00
+CON FIDENTIA L
+[PHONE_12186].10.4. Study Population Tables
+Study Population Tables
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+Subject Dispositio n
+1.1. Safety ES1Summary of Subject Disposition for the Subject Conclusion 
+Record by [CONTACT_586604] E3, FDAAA, EudraCT
+Footnote: Add footnote : Note: 
+“Subjects” is used to refer to 
+“Participants” in all data displays to 
+reflect [COMPANY_004] Display Standar dsIA SAC[1],
+SAC [1]
+1.2. Safety SD1Summary of Treatment Status and Reasons for Discontinuation 
+of Study Treatment by [CONTACT_586605] E3IA SAC [1], 
+SAC [1]
+1.3. All Subjects ES6Summary of Screening Status and Reasons for Screen Failure
+by [CONTACT_586606] d TreatmentJournal RequirementsIASAC [1], 
+SAC [1]
+1.4. All Subjects NS1Summary of Number of Subjects by [CONTACT_586607]/ Clinical OperationsIA SAC [1], 
+SAC [1]
+Protocol Deviation
+1.5. Safety DV1Summary of Important Prot ocol Deviations by [CONTACT_586608] E3IA SAC [1], 
+SAC [1]
+Population Analysed
+1.6. Safety SP1 Summary of Study Populations by [CONTACT_586609] [1], 
+SAC [1]
+1.7. SafetySP2 / 
+SP2ASummary of Exclusions from the PP and PP + Completer s
+PopulationIDSL IA SAC [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+61Study Population Tables
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+Demographic and Baseline Characteristics
+1.8. Safety DM1 Summary of Demographic Characteristics by [CONTACT_586608] E3, FDAAA, EudraCT
+If height and weight are collected 
+only at baseline, then display in this 
+demographic summary. Otherwise 
+display height and weight with the 
+vital signs data. IASAC [1], 
+SAC [1]
+1.9. All Subjects DM11 Summary of Age Ranges by [CONTACT_586610] [1], 
+SAC [1]
+1.10. Safety DM5Summary of Race and Racial Combinations by [CONTACT_586611] E3, FDA, FDAAA, EudraCTIA SAC [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+62Study Population Tables
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+1.11. Safety DM1Summary of Ulcerative Colitis Baseline Characteristics by 
+[CONTACT_586612]:
+Baseline Mucosal Appearance at 
+Endoscopy Mayo Subscore, Baseline 
+Total Mayo Score,
+Baseline Partial Mayo Score Baseline 
+3-domain Mayo Score, Baseline UCEIS 
+Total Score, Baseline Modified Riley 
+ScaleScore,
+Baseline FCP, 
+Baseline FCP category, 
+Baseline Concomitant Medications for 
+UC (Glucocorticoids only, 
+Immunosuppressants only, 
+Glucocortic oids and 
+Immunosuppressants, No 
+Glucocorticoids or 
+Immunosuppressants, 
+Baseline Prednisone dose,
+Family History of Premature Coronary 
+Artery Disease and History of Tobacco 
+Use.
+Include the footnote:
+Note: Glucocorticoids and 
+Immunosuppressants were identified by 
+[CONTACT_586613].IA SAC[1],
+SAC [1]
+Prior/Current Medical Conditions and Concomitant Medications
+1.12. Safety MH4Summary of Current/Past Medical Conditions by [CONTACT_586608] E3 
+Separate summaries for Current & 
+Past conditions, if collected.IA SAC [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+63Study Population Tables
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+1.13. Safety MH1 Summary of Current/Past Cardiovascular Risk Factors by 
+[CONTACT_586605] E3
+Separate summaries for Current & 
+Past, if collectedIASAC [1], 
+SAC [1]
+1.14. Safety CM1 Summary of P rior Medications by [CONTACT_586605] E3 IA SAC [1], 
+SAC [1]
+1.15. Safety CM1Summary of Concomitant Medications by [CONTACT_586608] E3IA SAC [1], 
+SAC [1]
+Exposure and Treatment Compliance
+1.16. SafetyEX1 / 
+EX5Summary of Exposure to Study Tre atment by [CONTACT_586608] E3IA SAC [1], 
+SAC [1]
+12.10.5. Safety  Tables
+Safety : Tables
+No. PopulationIDSL / Example 
+ShellTitle Programming NotesDeliverable 
+[Priority]
+Adverse Events (AEs)
+3.1. Safety AE5ASummary of All Adverse Events by [CONTACT_586614] (Part A only) by 
+[CONTACT_586605] E3
+Include total column across all 
+intensitiesIASAC [1], 
+SAC [1]
+3.2. Safety AE5ASummary of All Adverse Events by [CONTACT_586615] d Term (Parts A, B and 
+Follow -up)by [CONTACT_586605] E3
+Include total column across all 
+intensitiesIASAC [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+64Safety : Tables
+No. PopulationIDSL / Example 
+ShellTitle Programming NotesDeliverable 
+[Priority]
+3.3. Safety AE5ASummary of All Adverse Events by [CONTACT_586616] (Parts A, B and 
+Follow- up)by [CONTACT_586617] E3
+Include total column across all 
+intensitiesIA SAC[1], 
+SAC [1]
+3.4. Safety AE1Summary of All Adverse Events by [CONTACT_177346] (Part A only) by [CONTACT_586618][1],
+SAC [1]
+3.5. Safety AE1Summary of All Adverse Events by [CONTACT_177346] (Parts A, B and Follow -up) by [CONTACT_586619][1],
+SAC [1]
+3.6. Safety AE1Summary of All Adverse Events by [CONTACT_177346] (Parts A, B and Follow -up) by [CONTACT_586620][1],
+SAC [1]
+3.7. Safety AE3Summary of Common (>=10%) Adverse Events by [CONTACT_586621] (Part A only) by [CONTACT_586605] E3
+Common defined as >= 10% within 
+either randomised treatment groupI[INVESTIGATOR_586570] [1], 
+SAC [1]
+3.8. Safety AE3Summary of Common (>=10%) Adverse Events by [CONTACT_586621] (Parts A, B and Follow -up) by [CONTACT_586608] E3
+Common defined as >= 10% within 
+either randomised treatment groupIA SAC[1], 
+SAC [1]
+3.9. Safety AE3Summary of Common (>=10%) Adverse Ev ents by [CONTACT_586621] (Parts A, B and Follow -up) by [CONTACT_586617] E3
+Common defined as >= 10% within 
+either randomised treatment groupIA SAC[1], 
+SAC [1]
+3.10. Safety AE5ASummary of All Drug -Related Adverse Events by [CONTACT_586622] (Part A 
+only) by [CONTACT_586605] E3
+Include total column across all 
+intensitiesIA SAC [ 1], 
+SAC [1]
+3.11. Safety AE5ASummary of All Drug -Related Adverse Events by [CONTACT_586622] (Parts A, 
+B and Follow -up) by [CONTACT_586605] E3
+Include total column across all 
+intensitiesIASAC [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+65Safety : Tables
+No. PopulationIDSL / Example 
+ShellTitle Programming NotesDeliverable 
+[Priority]
+3.12. Safety AE5ASummary of All Drug -Related Adverse Events by [CONTACT_586622] (Parts A,
+B and Follow -up) by [CONTACT_586617] E3
+Include total column across all 
+intensitiesIASAC [1], 
+SAC [1]
+3.13. Safety AE15Summary of Common (>=10%) Non -serious Adverse Events by 
+[CONTACT_39960] (Number of Subjects 
+and Occurrences) (P art A only) by [CONTACT_586623], EudraCT IA SAC [ 1], 
+SAC [1]
+3.14. Safety AE15Summary of Common (>=10%) Non -serious Adverse Events by 
+[CONTACT_39960] (Number of Subjects 
+and Occurrences) (Parts A, B and Follow -up) by [CONTACT_586624], EudraCT IASAC [1], 
+SAC [1]
+3.15. Safety AE15Summary of Common (>=10%) Non -serious Adverse Events by 
+[CONTACT_39960] (Number of Subjects 
+and Occurrences) (Parts A, B and Follow -up) by [CONTACT_586625], EudraCT IASAC [1], 
+SAC [1]
+3.16. Safety AE3Summary of Common (>=10%) Drug -Related Adverse Events 
+by [CONTACT_586590] (Part A only) by [CONTACT_586605] E3 IASAC [1], 
+SAC [1]
+3.17. Safety AE3Summary of Common (>=10%) Drug -Related Adverse Events 
+by [CONTACT_586590] (Parts A, B and Follow -up) by 
+[CONTACT_586605] E3 IA SAC [ 1], 
+SAC [1]
+3.18. Safety AE3Summary of Common (>=10%) Drug -Related Adverse Events 
+by [CONTACT_586590] (Parts A, B and Follow -up) by [CONTACT_586626] E3 IA SAC [ 1], 
+SAC [1]
+Serious and Other Significant Adverse Events
+3.19. Safety AE16Summary of Serious Adverse Events by [CONTACT_174380] (Number of Subjects and Occurrences) 
+(Part A only) by [CONTACT_586623], EudraCT IASAC [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+66Safety : Tables
+No. PopulationIDSL / Example 
+ShellTitle Programming NotesDeliverable 
+[Priority]
+3.20. Safety AE16Summary of Serious Adverse Events by [CONTACT_174380] (Number of Subjects and Occurrences) 
+(Parts A, B and Follow -up) by [CONTACT_586623], EudraCT IA SAC [ 1],
+SAC [1]
+3.21. Safety AE16Summary of Serious Adverse Events by [CONTACT_11875] m Organ Class 
+and Preferred Term (Number of Subjects and Occurrences) 
+(Parts A, B and Follow -up) by [CONTACT_586627], EudraCT IA SAC [1], 
+SAC [1]
+3.22. Safety AE1 Summary of Adverse Events Leading to Permanent 
+Discontinuation of Study Treatment or With drawal from Study 
+(Part A only) by [CONTACT_586628] [1], 
+SAC [1]
+3.23. Safety AE1 Summary of Adverse Events Leading to Permanent 
+Discontinuation of Study Treatment or Withdrawal from Study
+(Parts A, B and Follow -up) by [CONTACT_586628] [1], 
+SAC [1]
+3.24. Safety AE1 Summary of Adverse Events Leading to Permanent 
+Discontinuation of Study Treatment or Withdrawal from Study
+(Parts A, B and Follow -up) by [CONTACT_586629] [1], 
+SAC [1]
+Laboratory: Chemistry 
+3.25. Safety LB1Summary of Chemistry Changes from Baseline (Parts A, B and 
+Follow -up) by [CONTACT_586605] E3 IASAC [1], 
+SAC [1]
+3.26. Safety LB1Summary of Chemistry Changes from Period Baseline (Parts A, 
+B and Follow -up) by [CONTACT_586617] E3 IA SAC [ 1], 
+SAC [ 1]
+3.27. Safety LB1Summary of Lipi[INVESTIGATOR_586571] (Parts A, 
+B and Follow -up) by [CONTACT_586630][INVESTIGATOR_50403] = LDL 
+Cholesterol, HDL Cholesterol, Total 
+Cholesterol, Triglycerides and 
+Cholesterol/HDL ratioIA SAC [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+67Safety : Tables
+No. PopulationIDSL / Example 
+ShellTitle Programming NotesDeliverable 
+[Priority]
+3.28. Safety LB1Summary of Lipi[INVESTIGATOR_586572] 
+(Parts A, B and Follow -up) by [CONTACT_586631][INVESTIGATOR_50403] = LDL 
+Cholesterol, HDL Cholesterol, Total 
+Cholesterol Triglycerides and 
+Cholesterol/HDL ratioIA SAC[1],
+SAC [1]
+3.29. Safet y LB17Summary of Worst Case Chemistry Results by [CONTACT_586632]- Baseline Relative to Baseline (Parts A, B and Follow -up) by 
+[CONTACT_586605] E3 (i.e. treatment emergent) IA SAC [1], 
+SAC [1]
+3.30. Safety LB17Summary of Worst Case Chemistry Results by [CONTACT_586632]- Baseline Relative to Period Baseline (Parts A, B and 
+Follow -up) by [CONTACT_586617] E3 (i.e. treatment emergent) IA SAC [1], 
+SAC [1]
+3.31. Safety LB17Summary of Worst Case Lipi[INVESTIGATOR_586573] -
+Baseline Relative to Base line (Parts A, B and Follow -up) by 
+[CONTACT_586630][INVESTIGATOR_50403] = LDL 
+Cholesterol, HDL Cholesterol, Total 
+CholesterolTriglycerides and 
+Cholesterol/HDL ratioIASAC [1], 
+SAC [1]
+3.32. Safety LB17Summary of Worst Case Lipi[INVESTIGATOR_586574] t-
+Baseline Relative to Period Baseline (Parts A, B and Follow -up) 
+by [CONTACT_586631][INVESTIGATOR_50403] = LDL 
+Cholesterol, HDL Cholesterol, Total 
+Cholesterol, Triglycerides and 
+Cholesterol/HDL ratioIASAC [1], 
+SAC [1]
+Laboratory: Hematology
+3.33. Safety LB1Summary of Hematology Changes from Baseline (Parts A, B 
+and Follow -up) by [CONTACT_586605] E3 IA SAC [1], 
+SAC [1]
+3.34. Safety LB1Summary of Hematology Changes from Period Baseline (Parts 
+A, B and Follow -up) by [CONTACT_586617] E3 IA SAC [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+68Safety : Tables
+No. PopulationIDSL / Example 
+ShellTitle Programming NotesDeliverable 
+[Priority]
+3.35. Safety LB17Summary of Worst Case Hematology Results by [CONTACT_586632]- Baseline Relative to Baseline (Parts A, B and Follow -up) by 
+[CONTACT_586605] E3 IA SAC [1], 
+SAC [1]
+3.36. Safety LB17Summary of Worst Case Hematology Results by [CONTACT_586633]- Baseline Relative to Period Baseline (Parts A, B and 
+Follow -up) by [CONTACT_586617] E3 IA SAC [1], 
+SAC [1]
+Laboratory: Urinalysis
+3.37. Safety LB1Summary of Urine Concentration Changes from Baseline (Parts 
+A, B and Follow -up) by [CONTACT_586604] E3 IA SAC [1], 
+SAC [1]
+3.38. Safety LB1Summary of Urine Concentration Changes from Period Baseline 
+(Parts A, B and Follow -up) by [CONTACT_586617] E3 IA SAC [1], 
+SAC [1]
+3.39. Safety UR1Summary of Worst Case Urinalysis Results (Discrete or 
+Character Values) Post -Baseline Relative to Baseline (Parts A, 
+B and Follow -up) by [CONTACT_586605] E3 IA SAC [1], 
+SAC [1]
+3.40. Safety UR1Summary of Worst Case Urinalysis Results (Discrete or 
+Character Values) Post -Baseline Relative to Period Baseline 
+(Parts A, B and Follow -up) by [CONTACT_586617] E3 IA SAC [1], 
+SAC [1]
+Laboratory: Hepatobiliary (Liver)
+3.41. Safety LIVER1Summary of Liver Monitoring/Stoppi[INVESTIGATOR_586566] (Parts A, 
+B and Follow -up) by [CONTACT_586634] [1], 
+SAC [1]
+3.42. Safety LIVER1Summary of Liver Monitoring/Stoppi[INVESTIGATOR_586566] (Parts A, 
+B and Follow -up) by [CONTACT_586635] [1], 
+SAC [1]
+3.43. Safety LIVER10Summary of Hepatobiliary Laboratory Abnormalities (Parts A, B 
+and Follow -up) by [CONTACT_586636] [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+69Safety : Tables
+No. PopulationIDSL / Example 
+ShellTitle Programming NotesDeliverable 
+[Priority]
+3.44. Safety LIVER10Summary of Hepatobiliary Laboratory Abnormalities (Parts A, B 
+and Follow -up) by [CONTACT_586629] [1], 
+SAC [1]
+ECGs
+3.45. Safety EG1Summary of ECG Findings (Parts A, B and Follow -up) by 
+[CONTACT_586637] [1], 
+SAC [1]
+3.46. Safety EG1Summary of ECG Findings (Parts A, B and Follow -up) by [CONTACT_586638] [1], 
+SAC [1]
+3.47. Safety EG10Summary of Maximum QTc Values Post -Baseline Relative to 
+Baseline by [CONTACT_61117] (Parts A, B and Follow -up) by 
+[CONTACT_586639] [1], 
+SAC [1]
+3.48. Safety EG10Summary of Maximum QTc Values Post -Baseline Relative to 
+Screening by [CONTACT_61117] (Parts A, B and Follow -up) by 
+[CONTACT_586640] a verage of 
+screening triplicates SAC[1]
+3.49. Safety EG10Summary of Maximum QTc Values Post -Baseline Relative to 
+Period Baseline by [CONTACT_61117] (Parts A, B and Follow -up) by 
+[CONTACT_586635] [1], 
+SAC [1]
+3.50. Safety EG2Summary of Change from Baseline in ECG Values (Parts A, B 
+and F ollow -up) by [CONTACT_586637] [1], 
+SAC [1]
+3.51. Safety EG2Summary of Change from Screening in ECG Values (Parts A, B 
+and Follow -up) by [CONTACT_586641] [1]
+3.52. Safety EG2Summary of C hange from Period Baseline in ECG Values (Parts 
+A, B and Follow -up) by [CONTACT_586642] [1], 
+SAC [1]
+3.53. Safety EG11Summary of Maximum Increase in QTc Values Post -Baseline 
+Relative to Baseline by [CONTACT_61117] (Parts A, B and Follow -up) by 
+[CONTACT_586634] [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+70Safety : Tables
+No. PopulationIDSL / Example 
+ShellTitle Programming NotesDeliverable 
+[Priority]
+3.54. Safety EG11Summary of Maximum Increase in QTc Values Post -Baseline 
+Relative to Screening by [CONTACT_61117] (Parts A, B and Follow -up) by 
+[CONTACT_586643] [1]
+3.55. Safety EG11Summary of Maximum Increase in QTc Values Post -Baseline 
+Relative to Period Baseline by [CONTACT_61117] (Parts A, B and Follow -
+up) by [CONTACT_586644] [1], 
+SAC [1]
+Vital Signs
+3.56. Safety VS1Summary of Change from Baseline in Vital Signs (Parts A, B 
+and Follow -up) by [CONTACT_586605] E3 IASAC [1], 
+SAC [1]
+3.57. Safety VS1Summary of Change from Period Baseline in Vital Signs (Parts 
+A, B and Follow -up) by [CONTACT_586617] E3 IASAC [1], 
+SAC [1]
+3.58. Safety VS7Summary of Worst Case V ital Signs Results by [CONTACT_586632]- Baseline Relative to Baseline (Parts A, B and Follow -up) by 
+[CONTACT_586634] [1], 
+SAC [1]
+3.59. Safety VS7Summary of Worst Case Vital Signs Results by [CONTACT_586632]- Baseline Relative to Period Baseline (Parts A, B and 
+Follow -up) by [CONTACT_586644] [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+[PHONE_12187].10.6. Safety  Figures
+Safety : Figures
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+Adverse Events
+3.1. Safety AE10Plot of Common (>=10%) Adverse Events and Relative Risk
+(Part A only) by [CONTACT_586639] [1], 
+SAC [1]
+3.2. Safety AE10Plot of Common (>=10%) Adverse Events and Relative Risk 
+(Parts A, B and Follow -up)by [CONTACT_586639] [1], 
+SAC [1]
+3.3. Safety AE10Plot of Common (>=10%) Adverse Events and Relative Risk 
+(Parts A, B and Follow -up)by [CONTACT_586644] [1], 
+SAC [1]
+Laboratory
+3.4. Safety LIVER14Scatter Plot of Maximum Versus Baseline for ALT (Parts A, B 
+and Follow -up)by [CONTACT_586628] [1], 
+SAC [1]
+3.5. Safety LIVER14Scatter Plot of Maximum Versus Period Baseline for ALT (Parts 
+A, B and Follow -up)by [CONTACT_586642] [1], 
+SAC [1]
+3.6. Safety LIVER9Scatter Plot of Maximum ALT Versus Maximum Total Bilirubin 
+ALT (Parts A, B and Follow -up)by [CONTACT_586637] [1], 
+SAC [1]
+3.7. Safety LIVER9Scatter Plot of Maximum ALT Versus Maximum Total Bilirubin 
+(Parts A, B and Follow -up)by [CONTACT_586642] [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+[PHONE_12188].10.7. Efficacy  Tables
+Efficacy: Tables
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+Mayo – Endoscop yRespons e
+2.1. Safety EFF_T1Summary Statistics for Actual and Change from Baseline in
+Mucosal A ppearance at Endoscopy Mayo Subscore (Parts A
+and B) by [CONTACT_586645] [1], 
+SAC [1]
+2.2. Safety EFF_T2 bFrequency Table of Mucosal Appearance at Endoscopy Mayo 
+Subscore (Parts A and B) by [CONTACT_586618] [1], 
+SAC [1]
+2.3. Safety EFF_T3GEE Point Estimate and 95% CI for Subjects Achieving Mayo 
+Endoscopy Remission (Parts A and B) by [CONTACT_586646] 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1]
+2.4. PP EFF_T1Summary Statistics for Actual and Change from Baseline in 
+Mucosal Ap pearance at Endoscopy Mayo Subscore (Parts A 
+and B) by [CONTACT_586618] [1], 
+SAC [1]
+2.5. PP EFF_T2bFrequency Table of Mucosal Appearance at Endoscopy Mayo 
+Subscore (Parts A and B) by [CONTACT_586618] [1], 
+SAC [1]
+2.6. PP EFF_T3GEE Poi nt Estimate and 95% CI for Subjects Achieving Mayo 
+Endoscopy Remission (Parts A and B) by [CONTACT_586646] 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1]
+2.7.PP + 
+CompletersEFF_T1Summary Statistics for Actual and Change from Baseline in 
+Mucosal Appearance at Endoscopy Mayo Subscore (Parts A 
+and B) by [CONTACT_586618] [1], 
+SAC [1]
+2.8.PP + 
+CompletersEFF_T2bFrequency Table of Mucosal Appearance at Endoscopy Mayo 
+Subscore (Parts A and B) by [CONTACT_586618] [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+73Efficacy: Tables
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+2.9.PP + 
+CompletersEFF_T3GEE Point Estimate and 95% CI for Subjects Achieving Mayo 
+Endoscopy Remission (Parts A and B) by [CONTACT_586647] 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1]
+Mayo – Clinical Response and Remission
+2.10. Safety EFF_T2aFrequency Table of Subjects Achieving Mayo Clinical Response, 
+3-domain Clinical Response, Mayo Clinical Remission and 3-
+Domain Mayo Clinical Remission (Parts A and B) by 
+[CONTACT_586618] [1], 
+SAC [1]
+2.11. Safety EFF_T3GEE Point Estimate and 95% CI for Subjects Achieving Mayo 
+Clinical Response, 3-domain Mayo Clinical Response, Mayo 
+Clinical Remission and 3 -domain Mayo Clinical Remission 
+(Parts A and B) by [CONTACT_586648] 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1]
+2.12. PP EFF_T2aFrequency Table of Subjects Achieving Mayo Clinical Response, 
+3-domain Clinical Response, Mayo Clinical Remission and 3 -
+Domain Mayo Clinical Remission (Parts A and B) by 
+[CONTACT_586618] [1], 
+SAC [1]
+2.13. PP EFF_T3GEE Point Estimate and 95% CI for Subjects Achieving Mayo 
+Clinical Response, 3 -domai n Mayo Clinical Response, Mayo 
+Clinical Remission and 3 -domain Mayo Clinical Remission 
+(Parts A and B) by [CONTACT_586648] 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1]
+2.14.PP + 
+CompletersEFF_T2aFrequency Table of Subjects Achieving Mayo Clinical Response, 
+3-domain Clinical Response, Mayo Clinical Remission and 3 -
+Domain Mayo Clinical Remission (Parts A and B) by 
+[CONTACT_586618] [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+74Efficacy: Tables
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+2.15.PP + 
+CompletersEFF_T3GEE Point Estimate and 95% CI for Subjects Achieving Mayo 
+Clinical Response, 3 -domain Mayo Clinical Response, Mayo 
+Clinical Remission and 3 -domain Mayo Clinical Remission 
+(Parts A and B) by [CONTACT_586648] 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1]
+Mayo – Symptomatic Clinical Remission  
+2.16. Safety EFF_T1Summary Statistics for Actual and Change from Baseline in 
+Total, Partial and 3 -domain Mayo Scores (Parts A and B) by 
+[CONTACT_586618] [1], 
+SAC [1]
+2.17. Safety EFF_T4Adjusted Mean (95% CI) of the Change from Baseline in Total, 
+Partial and 3 -domain Mayo Scores (Parts A and B) by 
+[CONTACT_586618] [1], 
+SAC [1]
+2.18. PP EFF_T1Summary Statistics for Actua l and Change from Baseline in 
+Total, Partial and 3 -domain Mayo Scores (Parts A and B) by 
+[CONTACT_586618] [1], 
+SAC [1]
+2.19. PP EFF_T4Adjusted Mean (95% CI) of the Change from Baseline in Total, 
+Partial and 3 -domain Mayo Scores (Parts A and B) by 
+[CONTACT_586618] [1], 
+SAC [1]
+2.20.PP + 
+CompletersEFF_T1Summary Statistics for Actual and Change from Baseline in 
+Total, Partial and 3 -domain Mayo Scores (Parts A and B) by 
+[CONTACT_586618] [1], 
+SAC [1]
+2.21.PP + 
+CompletersEFF_T4Adjus ted Mean (95% CI) of the Change from Baseline in Total, 
+Partial and 3 -domain Mayo Scores (Parts A and B) by 
+[CONTACT_586618] [1], 
+SAC [1]
+UCEIS –Mucosal Healing 
+2.22. Safety EFF_T1Summary Statistics for Actual and Change from Baseline in 
+UCEIS Total Score (Parts A and B) by [CONTACT_586618] [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+75Efficacy: Tables
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+2.23. Safety EFF_T4Adjusted Mean (95% CI) of the Change from Baseline in UCEIS 
+Total Score (Parts A and B) by [CONTACT_586618] [1], 
+SAC [1]
+UCEIS –Remission 
+2.24. Safety EFF_T2aFrequency Table of Subjects Achieving UCEIS Remission (Parts 
+A and B) by [CONTACT_586618] [1], 
+SAC [1]
+2.25. Safety EFF_T3GEE Point Estimate and 95% CI for Subjects Achieving UCEIS 
+Remission (Parts A and B) by [CONTACT_586648] 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1]
+Biomarkers of Disease Activity
+2.26. Safety EFF_T1Summary Statistics for Actual and Change from Baseline in CRP 
+(Parts A and B) by [CONTACT_586645] [1], 
+SAC [1]
+2.27. Safety EFF_T4Adjusted Mean (95% CI) of the Change from Baseline in CRP 
+(Parts A and B) by [CONTACT_586618] [1], 
+SAC [1]
+2.28. Safety EFF_T2bFrequency Table of FCP Categories (Parts A and B) by 
+[CONTACT_586618] [1], 
+SAC [1]
+2.29. Safety EFF_T1Summary Statistics for Actual and Log -Transformed Change 
+from Baseline in FCP (Parts A and B) by [CONTACT_586618] [1], 
+SAC [1]
+2.30. Safety EFF_T4Adjusted Mean (95% CI) of the Log -transformed Change from 
+Baseline in FCP (Parts A and B) by [CONTACT_586649] [1], 
+SAC [1]
+Histologic Disease Activity
+2.31. Safety EFF_T2bFrequency Table of Modified Riley Scale Categories (Parts A 
+and B ) by [CONTACT_586618] [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+76Efficacy: Tables
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+2.32. Safety EFF_T1Summary Statistics for Actual and Change from Baseline in 
+Modified Riley Scale Score (Parts A and B) by [CONTACT_586619] [1], 
+SAC [1]
+2.33. Safety EFF_T4Adjusted Mean (95% CI) of the C hange from Baseline in 
+Modified Riley Scale Score (Parts A and B) by [CONTACT_586619] [1], 
+SAC [1]
+2.34. Safety EFF_T2 bFrequency Table of RHI Categories (Parts A and B) by 
+[CONTACT_586618] [1], 
+SAC [1]
+2.35. Safety EFF_T1Summary Statistic s for Actual and Change from Baseline in RHI 
+Score (Parts A and B) by [CONTACT_586618] [1], 
+SAC [1]
+2.36. Safety EFF_T4Adjusted Mean (95% CI) of the Change from Baseline in RHI 
+Score (Parts A and B) by [CONTACT_586618] [1], 
+SAC [1]
+2.37. Safety EFF_T1Summary Statistics for Actual and Change from Baseline in 
+Geboes Index Total Score (Parts A and B) by [CONTACT_586619] [1], 
+SAC [1]
+2.38. Safety EFF_T4Adjusted Mean (95% CI) of the Change from Baseline in 
+Geboes Index Total Score (Parts A and B) by [CONTACT_586619] [1], 
+SAC [1]
+Quality of Life
+2.39. Safety EFF_T1Summary Statistics for Actual and Change from Baseline in 
+IBDQ Domain Scores and Total Score (Parts A and B) by 
+[CONTACT_586650] [1]
+2.40. Safety EFF_T4Adjusted Mean (95% CI) of the Change from Baseline in IBDQ 
+Total Score (Parts A and B) by [CONTACT_586651] [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+77Efficacy: Tables
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+Subject Symptom Diary Cards
+2.41. Safety EFF_T1Summary Statistics of Average and Maximum Stool Frequency 
+Score over [ADDRESS_771794] Symptom D iary (Parts A and B) 
+by [CONTACT_586652], Average 
+and Maximum Rectal Bleeding 
+Score and Average Number of 
+Stools.SAC [1]
+12.10.8. Efficacy  Figures
+Efficacy: Figures
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+Mayo
+2.1. Safety EFF_F1Individual Subject Profiles for Subjects Achieving Mayo 
+Endoscopy Remission, Total Mayo Score, Partial Mayo Score, 
+3-domain Mayo Score , Mayo Clinical Response, 3 -domain Mayo 
+Clinical Response, Mayo Clinical Remission and 3 -domain 
+Clinical Remission over Time (Parts A and B) by [CONTACT_586653]. IA SAC [1], 
+SAC [1]
+2.2. Safety EFF_F4Proportion of Subjects Achieving Mayo Endoscopy Remission 
+and over Time (Parts A and B) by [CONTACT_586654] [1], 
+SAC [1]
+2.3. Safety EFF_F3Odds Ratio and 95% CI for Proportion of Subjects Achieving 
+Mayo Endoscopy Remission (Parts A and B) by [CONTACT_586655] 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+78Efficacy: Figures
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+2.4. Safety EFF_F4Proportion of Subjects Mayo Clinical Response, 3 -domain Mayo 
+Clinical Response, Mayo Clinical Remission and 3 -domain 
+Clinical Remission over Time (Parts A and B) by [CONTACT_586656].
+Line graph with randomised 
+treatment on the same plot.IA SAC [1], 
+SAC [1]
+2.5. Safety EFF_F3Odds Ratio and 95% CI for Achieving Mayo Clinical Response, 
+3-domain Mayo Clinical Response, Mayo Clinical Remission and 
+3-domain Clinical Remission over Time (Parts A and B) by 
+[CONTACT_586657]. 
+GEE modelling will only be 
+performed if at least 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1]
+2.6. Safety EFF_F2Mean ( SE) Total, Partial and 3 -domain Mayo Scores over Time 
+(Parts A and B) by [CONTACT_586657]. IA SAC [1], 
+SAC [1]
+2.7. Safety EFF_F3Point Estimates and 95% C I of Change from Baseline in Total, 
+Partial and 3 -domain Mayo Scores over Time (Parts A and B) by 
+[CONTACT_586657].
+Grey dashed line at y=0. IA SAC [1], 
+SAC [1]
+2.8. PP EFF_F1Individual Subject Profiles for Subjects A chieving Mayo 
+Endoscopy Remission, Total Mayo Score, Partial Mayo Score, 
+3-domain Mayo Score , Mayo Clinical Response, 3 -domain Mayo 
+Clinical Response, Mayo Clinical Remission and 3 -domain 
+Clinical Remission over Time (Parts A and B) by [CONTACT_586653]. IA SAC [1], 
+SAC [1]
+2.9. PP EFF_F4Proportion of Subjects Achieving Mayo Endoscopy Remission 
+and over Time (Parts A and B) by [CONTACT_586654] [1], 
+SAC [1]
+2.10. PP EFF_F3Odds Ratio and 95% CI for Proportion of Subjects Achieving 
+Mayo Endoscopy Remission (Parts A and B) by [CONTACT_586658] 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1]
+2.11. PP EFF_F4 Proportion of Subjects Mayo Clinical Response, 3 -domain Mayo Separate pages for each endpoint. IA SAC [1],  
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+79Efficacy: Figures
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+Clinical Response, Mayo Clinical Remission and 3 -domain 
+Clinical Remission over Time (Parts A and B) by [CONTACT_586659] r andomised 
+treatment on the same plot.SAC [1]
+2.12. PP EFF_F3Odds Ratio and 95% CI for Achieving Mayo Clinical Response, 
+3-domain Mayo Clinical Response, Mayo Clinical Remission and 
+3-domain Clinical Remission over Time (Parts A and B) by 
+[CONTACT_586657]. 
+GEE modelling will only be 
+performed if at least 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1]
+2.13. PP EFF_F2Mean ( SE) Total, Partial and 3 -domain Mayo Scores over Time 
+(Parts A and B) by [CONTACT_586657]. IA SAC [1], 
+SAC [1]
+2.14. PP EFF_F3Point Estimates and 95% CI of Change from Baseline in Total, 
+Partial and 3 -domain Mayo Scores over Time (Parts A and B) by 
+[CONTACT_586657].
+Grey dashed line at y=0. IA SAC [1], 
+SAC [1]
+2.15.PP + 
+CompletersEFF_F1Individual Subject Profiles for Subjects Achieving Mayo 
+Endoscopy Remission, Total Mayo Score, Partial Mayo Score, 
+3-domain Mayo Score , Mayo Clinical Response, Mayo Clinical 
+Remission and 3 -domain Clinical Remission over Time (Parts A 
+and B) by [CONTACT_586660]. IA SAC [1], 
+SAC [1]
+2.16.PP + 
+CompletersEFF_F4Proportion of Subjects Achieving Mayo Endoscopy Remission 
+and over Ti me (Parts A and B) by [CONTACT_586654] [1], 
+SAC [1]
+2.17.PP + 
+CompletersEFF_F3Odds Ratio and 95% CI for Proportion of Subjects Achieving 
+Mayo Endoscopy Remission (Parts A and B) by [CONTACT_586658] 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1]
+2.18.PP + 
+CompletersEFF_F4Proportion of Subjects Mayo Clinical Response, 3 -domain Mayo 
+Clinical Response, Mayo Clinical Remission and 3 -domain 
+Clinical Remission over Time (Parts A and B) by [CONTACT_586661].
+Line graph with randomised 
+treatment on the same plot.IA SAC [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+80Efficacy: Figures
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+Treatment  
+2.19.PP + 
+CompletersEFF_F3Odds Ratio and 95% CI for Ac hieving Mayo Clinical Response, 
+3-domain Mayo Clinical Response, Mayo Clinical Remission and 
+3-domain Clinical Remission over Time (Parts A and B) by 
+[CONTACT_586657]. 
+GEE modelling will only be 
+performed if at least 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1]
+2.20.PP + 
+CompletersEFF_F2Mean ( SE) Total, Partial and 3 -domain Mayo Scores over Time 
+(Parts A and B) by [CONTACT_586657]. IA SAC [1], 
+SAC [1]
+2.21.PP + 
+CompletersEFF_F3Point Estimates and 95% CI of Change from Baseline in Total, 
+Partial and 3 -domain Mayo Scores over Time (Parts A and B) by 
+[CONTACT_586657].
+Grey dashed line at y=0. IA SAC [1], 
+SAC [1]
+UCEIS
+2.22. Safety EFF_F1Individual Subject Profiles for UCEIS Total Score over Time
+(Parts A and B) by [CONTACT_586618] [1], 
+SAC [1]
+2.23. Safety EFF_F2Mean ( SE) UCEIS Total Score over Time (Parts A and B) by 
+[CONTACT_586662] [1], 
+SAC [1]
+2.24. Safety EFF_F3Point Estimates and 95% CI of Change from Baseline in UCEIS 
+Total Score over Time (Parts A and B) by [CONTACT_586663] y=0. IA SAC [1], 
+SAC [1]
+2.25. Safety EFF_F4Proportion of Subjects Achieving UCEIS Clinica l Remission over 
+Time (Parts A and B) by [CONTACT_586664].IA SAC [1], 
+SAC [1]
+2.26. Safety EFF_F3Odds Ratio and 95% CI for Achieving UCEIS Clinical Remission 
+over Time (Parts A and B) by [CONTACT_586665] 30% response 
+rate at Day 85 for any one treatment 
+group.IA SAC [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+81Efficacy: Figures
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+Biomarkers of Disease Activity 
+2.27. Safety EFF_F1Individual Subject Profiles for CRP and FCP over Time (Parts A 
+and B) by [CONTACT_586660]. IA SAC [1], 
+SAC [1]
+2.28. Safety EFF_F2Mean ( SE) CRP over Time (Parts A and B) by [CONTACT_586666] [1], 
+SAC [1]
+2.29. Safety EFF_F3Point Estimates and 95% CI of Change from Baseline in CR P 
+over Time (Parts A and B) by [CONTACT_586667] y=0. IA SAC [1], 
+SAC [1]
+2.30. Safety EFF_F2Mean ( SE) FCP over Time (Parts A and B) by [CONTACT_586666] [1], 
+SAC [1]
+2.31. Safety EFF_F3Point Estimates and 95% CI of Change from Baseline in log -
+transformed FCP over Time (Parts A and B) by [CONTACT_586663] y=0. IA SAC [1], 
+SAC [1]
+Histologic Disease Activity
+2.32. Safety EFF_F1Individual Subject Profiles for Modified Riley Scale Score over 
+Time (Parts A and B) by [CONTACT_586660]. IA SAC [1], 
+SAC [1]
+2.33. Safety EFF_F2Mean ( SE) Modified Riley Scale Score over Time (Parts A and 
+B) by [CONTACT_586657].IA SAC [1], 
+SAC [1]
+2.34. Safety EFF_F3Point Estimates and 95% CI of Change from Baseline in 
+Modified Riley Scale Score over Time (Parts A and B) by 
+[CONTACT_586657].
+Grey dashed line at y=0. IA SAC [1], 
+SAC [1]
+2.35. Safety EFF_F1Individual Subj ect Profiles for RHI Total Score over Time (Parts 
+A and B) by [CONTACT_586618] [1], 
+SAC [1]
+2.36. Safety EFF_F2Mean ( SE) RHITotal Score over Time (Parts A and B) by 
+[CONTACT_586662] [1], 
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+82Efficacy: Figures
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+2.37. Safety EFF_F3Point Estimates and 95% CI of Change from Baseline in RHI
+Total Score over Time (Parts A and B) by [CONTACT_586663] y=0. IA SAC [1], 
+SAC [1]
+2.38. Safety EFF_F1Individual Subject Profiles for Geboes Index Total Score over 
+Time (Parts A and B) by [CONTACT_586668] [1], 
+SAC [1]
+2.39. Safety EFF_F2Mean ( SE) Geboes Index Total Score over Time (Parts A and 
+B) by [CONTACT_586662] [1], 
+SAC [1]
+2.40. Safety EFF_F3Point Estimates and 95% CI of Change from Baseline in Geboes 
+Index Total Score over Time (Parts A and B) by [CONTACT_586663] y=0. IA SAC [1], 
+SAC [1]
+Quality of Life
+2.41. Safety EFF_F1Individual Subject Profiles for IBDQ Total Score over Time 
+(Parts A and B) by [CONTACT_586660]. SAC [1]
+2.42. Safety EFF_F2Mean ( SE) IBDQ Total Score over Time (Parts A and B) by 
+[CONTACT_586669] [1]
+2.43. Safety EFF_F3Point Estimates and 95% CI of Change from Baseline in IBDQ 
+Total Score over Time (Parts A and B) by [CONTACT_586663] y=0. SAC [1]
+Responder Across Efficacy Endpoints
+2.44. Safety EFF_F4Individual Subject Profile Plot of Efficacy Endpoints over Time 
+(Parts A and B) by [CONTACT_586670] 
+9 panel plot with a pane l for: 
+(order change following IA )
+Top Row: Total Mayo Score, Partial 
+Mayo Score, 3 -domain Mayo ScoreIA SAC [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+83Efficacy: Figures
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+Middle Row: Mayo Endoscopy 
+Remission, Mayo Rectal Bleed,
+UCEIS Total Score,
+Bottom Row: Geboes Index Total 
+Score , FCP, CRP
+12.10.9. Pharmac okinetic Tables
+Pharmacokinetic : Tables
+No. PopulationIDSL /
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+PK concentration data 
+4.1. PK PK01 Summary of [COMPANY_004]2982772 Concentration -Time Data (ng/mL)Separate summaries for blood and 
+biopsy tissue s amples. 
+Pre-dose: Day 43, Post -dose: Day 1 
+and 43 at 1, 2, 4 and 6 hours.IA SAC [1]
+SAC [1]
+Summary of [COMPANY_004]2982772 Predicted Trough Concentrations
+(ng/mL)Predicted trough Day 43 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+[PHONE_12189].10.10. Pharmacokinetic Figures
+Pharmacokinetic : Figures
+No. PopulationIDSL / Example 
+ShellTitle Programming NotesDeliverable 
+[Priority]
+Individual PK Concentration
+4.1.
+Mean/Median Concentration
+4.2. PK PKCF2Mean ( SE) Plot: [COMPANY_004]2982772 Concentrations versus Time
+(Linear) on Day 1 and Day 43 (60 mg TID only)IA SAC [1 ]
+SAC [1]
+4.3.
+Trough Concentration 
+4.4. PK[COMPANY_004]2982772 Observed pre -dose Concentration Data vs Day (60 
+TID only)Separate pages for plasma
+Spaghetti Plot of individual trough 
+concentrations vs day.IA SAC [1]
+SAC [1]
+4.5. PK [COMPANY_004]2982772 Observed Pre-Dose Concentration Data vs DayPlot of individual trough 
+concentrations vs day overlaid 
+with box and whisker plot.IA SAC [1]
+SAC [1]
+4.6. PK PD_F1Scatter Plot [COMPANY_004]2982772 Observed Pre-Dose Plasma
+Concentration Versus Biopsy Pre-Dose Tissue ConcentrationX axis –Plasma
+Y axis –BiopsyIA SAC [1]
+SAC [1]
+PK/PD
+4.7. PK PD_F1Scatter Plot of Individual [COMPANY_004]2982772 Pre-Dose Concentration s
+Versus Individual Pre-Dose % Target Engagement Separate pages sample type 
+(Plasma/Biopsy)
+X axis –PK concentration,
+Y axis –TEIA SAC [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+85Pharmacokinetic : Figures
+No. PopulationIDSL / Example 
+ShellTitle Programming NotesDeliverable 
+[Priority]
+4.8. PK PD_F1Box Plots of [COMPANY_004]2982772 Day 43 Predicted Trough 
+Concentration for participants not a chieving Mayo Endoscopy 
+Remission and for participants a chieving Mayo Endoscopy 
+Remission Separate pages sample type 
+(predicted trough /Biopsy)
+X axis –Non Mayo Endoscopy 
+Remission / Mayo Endoscopy 
+Remission
+Y axis –PK ConcIA SAC [1]
+SAC [1]
+4.9. PK PD_F1Scatter Plot of Individual [COMPANY_004]2982772 Predicted Trough 
+Concentration Versus Change from Baseline in Total Mayo 
+Score Separate pages sample typ e 
+(Blood/Biopsy)
+X axis –PK concentration,
+Y axis –Efficacy Parameter IA SAC [1]
+SAC [1]
+4.10. PK PD_F1Scatter Plot of Individual [COMPANY_004]2982772 Predicted Trough 
+Concentration Versus Change from Baseline in Partial Mayo 
+Score Separate pages sample type 
+(Blood /Biopsy)
+X axis –PK concentration,
+Y axis –Efficacy Parameter IA SAC [1]
+SAC [1]
+4.11. PK PD_F1Scatter Plot of Individual [COMPANY_004]2982772 Predicted Trough 
+Concentration Versus Change from Baseline in 3 -domain Mayo 
+Score Separate pages sample type 
+(Blood/Biopsy )
+X axis –PK concentration,
+Y axis –Efficacy Parameter IA SAC [1]
+SAC [1]
+4.12. PK PD_F1Scatter Plot of Individual [COMPANY_004]2982772 Predicted Trough 
+Concentration Versus Change from Baseline in UCEIS Total 
+Score Separate pages sample type 
+(Blood/Biopsy)
+X axis –PK concentration,
+Y axis –Efficacy Parameter IA SAC [1]
+SAC [1]
+4.13. PK PD_F1Scatter Plot of Individual [COMPANY_004]2982772 Predicted Trough 
+Concentration Versus Change from Baseline in Modified Riley 
+Scale Score Separate pages sample type 
+(Blood/Biopsy)
+X axis –PK concentration,
+Y axis –Efficacy Parameter IA SAC [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+86Pharmacokinetic : Figures
+No. PopulationIDSL / Example 
+ShellTitle Programming NotesDeliverable 
+[Priority]
+4.14. PK PD_F1Scatter Plot of Individual [COMPANY_004]2982772 Predicted Trough 
+Concentration Versus Change from Baseline in RHI  Separate pages sample type 
+(Blood/Biopsy)
+X axis –PK concentration,
+Y axis –Efficacy Parameter IA SAC [1]
+SAC [1]
+4.15. PK PD_F1Scatter Plot of Individual [COMPANY_004]2982772 Predicted Trough 
+Concentration Versus Change from Baseline in Geboes Index 
+Total Score Separate pages sample type 
+(Blood/Biopsy)
+X axis –PK concentration,
+Y axis –Efficacy Parameter IA SAC [1]
+SAC [1]
+4.16. PK PD_F1Scatter Plot of Individual [COMPANY_004]2982772 Predicted Trough 
+Concentration Versus Change from Baseline in CRPSeparate pages sample type 
+(Blood/Biopsy)
+X axis –PK concentration,
+Y axis –Efficacy ParameterIA SAC [1]
+SAC [1]
+4.17. PK PD_F1Scatter Plot of Individual [COMPANY_004]2982772 Predicted Trough 
+Concentration Versus Change from Baseline in FCPSeparate pages sample type 
+(Blood/Biopsy)
+X axis –PK concentration,
+Y axis –Efficacy Parameter IA SAC [1]
+SAC [1]
+4.18. PK PD_F1Scatter Plot of [COMPANY_004]2982772 Pre-Dose Concentration Versus 
+Pre-Dose TEAR 1 % Target Engagement Separate pages sample type 
+(Blood/Biopsy)
+X axis –PK Trough 
+concentration,
+Y axis –TESAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+[PHONE_12190].10.11. Pharmacody namic and/or Biomarker Tables
+Pharmacodynamic andBiomarker : Tables
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+Exploratory Biomarkers
+6.1. Safety PD_T1Summary Statistics for Actual and Percentage Change from 
+Baseline in Biopsy Tissue Inflammatory Biomarkers (Parts A and 
+B) One page for each cell 
+type/measure by [CONTACT_765]/time and 
+treatmentSAC [1]
+6.2. Safety PD_T2Adjusted Mean (95% CI) of Percentage Change from Baseline in 
+Biopsy Tissue Inflammatory Biomarkers (Parts A and B) One page for each cell 
+type/measur e by [CONTACT_765]/time and 
+treatment/dosing regimenSAC [1]
+Pathway and Target E ngagement
+6.3. Safety EFF_T1Summary Statistics forObserved TEAR1 %Target Engagement 
+(Parts A and B) Separate summaries for sample 
+type (Blood/Biopsy)
+% Target Engagement by [CONTACT_765]/t imeSAC [1]
+6.4.Summary Statistics for Predicted  TEAR1 % Target Engagement 
+based on predicted [COMPANY_004]2982772 trough concentrations (Parts A 
+and B)
+6.5. Safety PD_T 3Adjusted Mean (95% CI) of TEAR1 %  Target Engagement in 
+Blood (Parts A and B) by [CONTACT_586671] [1]
+6.6. Safety PD_T3Adjusted Mean (95% CI) of TEA R1 %  Target Engagement in 
+Biopsy Tissue (Parts A and B) by [CONTACT_586651] [1]
+6.7. SafetyEFF_T1 Summary Statistics of Pathway Engagement (Parts A and B) by 
+[CONTACT_586672] (Blood/Biopsy)SAC [1]
+6.8. Safety PD_T3Adjusted Mean (95% CI) of Pathway Engagement in Blood 
+(Parts A and B) by [CONTACT_586651] [1]
+6.9. Safety PD_T3Adjusted Mean (95% CI) of Pathway Engagement in Biopsy 
+Tissue (Parts A and B ) by [CONTACT_586651] [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+88Pharmacodynamic andBiomarker : Tables
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+mRNA Expression 
+6.10. Safety PD_T4Summary of mRNA Expression of Inflammatory Gene 
+Transcripts (Parts A and B) by [CONTACT_586673] (Blood/Biopsy)
+qPCR –micarray datasetSAC2 [1]
+6.11. Safety PD_T5Frequency Table Summarising the Number of Probe Sets with 
+Various Fold Change (Parts A and B) by [CONTACT_586673] (Blood/Biopsy).
+Use cut -offs 1.5 and -1.5 initially.  
+Change to - 1.25 and 1.5 if no one 
+achieves the initial cut -offsSAC2 [1]
+6.12. Safety PD_T6Summary of Adjusted Mean Fold Changes in mRNA Expression 
+of Inflammatory Gene Transcripts (Parts A and B) by 
+[CONTACT_586673] (Blood/Biopsy).
+If Adj Mean FC lies betwe en -1 and 
+1 then do not include on tableSAC2 [1]
+6.13. SafetySummary of Analysis for Microaray mRNA Intensity Data in 
+Blood  [COMPANY_004] to produce 
+Only to be produced for significant 
+probsets based on adjusted p -values.
+If Adj Mean FC lies between -1 and 1 
+then do not include on tableSAC2 [1]
+6.14. SafetySummary of mRNA Percentage Inhibition of Inflammatory 
+Gene Transcripts in Blood [COMPANY_004] to produce
+Only to be produced for significant 
+probsets based on adjusted p -values.SAC2 [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+89Pharmacodynamic andBiomarker : Tables
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+6.15. SafetySummary of Analysis for Microaray mRNA Percentage Inhibition 
+Data in Blood  [COMPANY_004] to produce 
+Only to be produced for significant 
+probsets based on adjusted p -values.
+If Adj Mean FC lies between -1 and 1 
+then do not include on tableSAC2 [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+[PHONE_12191].10.12. Pharmacody namic and/or Biomarker Figures
+Pharmacodynamic and or Biomark er: Figures
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+Exploratory Biomarkers
+6.1. Safety EFF_F1Individual Subject Profiles for Biopsy Tissue Inflammatory 
+Biomarkers over Time (Parts A and B) by [CONTACT_586653]. SAC [1]
+6.2. Safety EFF_F3Point Estimates and 95% CI for Percentage Change from 
+Baseline inBiopsy Tissue Inflammatory Biomarkers over Time 
+(Parts A and B) by [CONTACT_586651] [1]
+Pathway and Target Engagement
+6.3. Safety EFF_F1Individual Subject Profiles for TEAR1 % Target Engagement 
+(Parts A and B) by [CONTACT_586674] 
+(Blood/Biopsy)
+Panel plot, line colours by [CONTACT_6490], subjid as cell hea derSAC [1]
+6.4. Safety EFF_F3Point Estimates and (95% CI) TEAR1 %  Target Engagement in 
+Blood (Parts A and B) by [CONTACT_586651] [1]
+6.5. Safety EFF_F3Point Estimates and (95% CI) TEAR1 %  Target Engagement in 
+Biopsy Tissue (Parts A and B) by [CONTACT_586675] [1]
+6.6. Safety PD_F1Scatter Plot of TEAR 1 % Target Engagement in Blood Versus 
+TEAR1 %  Target Engagement in Biopsy Tissue by [CONTACT_586676] [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+91Pharmacodynamic and or Biomark er: Figures
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+6.7. PK PD_F1Scatter Plot of TEAR 1 % Target Engagement 
+Versus Proportion Achieving Mayo Endoscopy Remission 
+Randomised TreatmentSeparate pages sample type 
+(Blood/Biopsy)
+X axis –PK concentration,
+Y axis –Efficacy Parameter SAC2[1]
+6.8. Safety PD_F1Scatter Plot of TEAR1 % Target Engagement Versus Change 
+from Baseline in Total Mayo Sco reby [CONTACT_586677] (blood/ 
+Biopsy)
+X axis –Target Engagement,
+Y axis –Efficacy Parameter 
+Different markers for each 
+randomised treatment groupSAC2[1]
+6.9. Safety PD_F1Scatter Plot of TE AR1 % Target Engagement Versus Change 
+from Baseline in Partial Mayo Score by [CONTACT_586677] (blood/ 
+Biopsy)
+X axis –Target Engagement,
+Y axis –Efficacy Parameter 
+Different markers for eac h 
+randomised treatment groupSAC2[1]
+6.10. Safety PD_F1Scatter Plot of TEAR1 % Target Engagement Versus Change 
+from Baseline in 3-domain Mayo Score by [CONTACT_586678] (blood/ 
+Biopsy)
+X axis – Target Engagement,
+Y axis –Efficacy Parameter 
+Different markers for each 
+randomised treatment groupSAC2[1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+92Pharmacodynamic and or Biomark er: Figures
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+6.11. Safety PD_F1Scatter Plot of TEAR1 % Target Engagement Versus Change 
+from Baseline in UCEIS Total Score by [CONTACT_586679] f or each biomarker 
+parameter and sample type (blood/ 
+Biopsy)
+X axis –Target Engagement,
+Y axis –Efficacy Parameter 
+Different markers for each 
+randomised treatment groupSAC2[1]
+6.12. Safety PD_F1Scatter Plot of TEAR1 % Target Engagement Versus Change 
+from Baseline in Modified Riley Scale Score by [CONTACT_586678] (blood/ 
+Biopsy)
+X axis –Target Engagement,
+Y axis –Efficacy Parameter 
+Different markers for each 
+randomised treatment groupSAC2 [1]
+6.13. Safety PD_F1Scatter Plot of TEAR1 % Target Engagement Versus Change 
+from Baseline in RHI by [CONTACT_586677] 
+(blood/Biopsy)
+X axis –Target Engagement,
+Y axis –Efficacy Parameter 
+Different markers for each 
+randomised treatment groupSAC2[1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+93Pharmacodynamic and or Biomark er: Figures
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+6.14. Safety PD_F1Scatter Plot of TEAR1 % Target Engagement Versus Change 
+from Baseline in Geboes Index Total Score by [CONTACT_586678] 
+(blood/Biopsy)
+X axis –Target Engagement,
+Y axis –Efficacy Parameter 
+Different markers for each 
+randomised treatment groupSAC2[1]
+6.15. Safety PD_F1Scatter Plot of TEAR1 % Target Engagement Versus Change 
+from Baseline in CRP by [CONTACT_586680] 
+(blood/Biopsy)
+X axis –Target Engagement,
+Y axis –Efficacy Parameter 
+Different markers for each 
+randomised treatment groupSAC2[1]
+6.16. Safety PD_F1Scatter Plot of TEAR1 % Target Engagement Versus Cha nge 
+from Baseline in FCP by [CONTACT_586677] 
+(blood/Biopsy)
+X axis –Target Engagement,
+Y axis –Efficacy Parameter 
+Different markers for each 
+randomised treatment groupSAC2[1]
+mRNA Expres sion
+6.17. Safety EFF_F1Individual Subject Profiles for mRNA Expression of Inflammatory 
+Gene Transcripts (Parts A and B) by [CONTACT_586681] (blood/Biopsy). SAC2 [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+94Pharmacodynamic and or Biomark er: Figures
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+6.18. Safety PD_F2Adjusted Mean Intensities f or mRNA Expression of Inflammatory 
+Gene Transcripts (Parts A and B) by [CONTACT_586681] (blood/biopsy). 
+. SAC2 [1]
+6.19. Safety PD_F3Adjusted Mean (95% CI) Fold Change in mRNA Expression of 
+Inflammatory Gen e Transcripts (Parts A and B) by [CONTACT_586682] (blood/biopsy) . 
+Include band from FC -1 to 1, 
+transparency 0.5SAC2 [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+[PHONE_12192].10.13. ICH Listings
+ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programmi ng NotesDeliverable 
+[Priority]
+Subject Disposition
+1. All Subjects ES7 Listing of Reasons for Screen Failure by [CONTACT_586683] [1]
+SAC [1]
+2. Safety ES2 Listing of Reasons for Study Withdrawal by [CONTACT_586608] E3IA SAC [1]
+SAC [1]
+3. Safety SD2Listing of Reasons for Study Treatment Discontinuation by 
+[CONTACT_586605] E3 IA SAC [1]
+SAC [1] 1]
+4. Safety BL1 Listing of Subjects for Whom the Treatment Blind was Broken 
+During the Study by [CONTACT_586605] E3 IA SAC [1]
+SAC [1]
+5. Safety TA1 Listing of Planned and Actual TreatmentsIDSL IA SAC [1]
+SAC [1] [1]
+Protocol Deviations
+6. Safety DV2Listing of Important Protocol Deviations by [CONTACT_586608] E3 IA SAC [1]
+SAC [1]
+7. SafetyIE3 Listing of Subjects with Inclusion/Exclusion Criteria Deviations
+by [CONTACT_586605] E3IA SAC [1]
+SAC [1] 1]
+Populations Analysed
+8. Safety SP3Listing of Subjects Excluded from Any Population by 
+[CONTACT_586605] E3 IA SAC [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+96ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programmi ng NotesDeliverable 
+[Priority]
+Demographic and Baseline Characteristics
+9. Safety DM2 / DM4Listing of Demographic Characteristics by [CONTACT_586608] E3IA SAC [1]
+SAC [1]
+10. Safety DM9 / DM10 Listing of Race by [CONTACT_586604] E3IA SAC [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+97ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programmi ng NotesDeliverable 
+[Priority]
+11. Safety DM2Listing of Ulce rativeColitis Baseline Characteristics by 
+[CONTACT_586612]:
+Baseline Mucosal Appearance at 
+Endoscopy Mayo Subscore, Baseline 
+Total Mayo Score, 
+Baseline Partial Mayo Score Baseline 
+3-domain Mayo Score, Baseline UCEIS 
+Total Score, Baseline M odified Riley 
+Scale Score 
+Baseline FCP, 
+Baseline FCP category, 
+Baseline Concomitant Medications for 
+UC (Glucocorticoids only, 
+Immunosuppressants only, 
+Glucocorticoids and 
+Immunosuppressants, No 
+Glucocorticoids or 
+Immunosuppressants, 
+Baseline Prednisone dose,
+Family History of Premature Coronary 
+Artery Disease and History of Tobacco 
+Use.
+Include the footnote:
+Note: Glucocorticoids and 
+Immunosuppressants were identified by 
+[CONTACT_586613].IA SAC [1]
+SAC [1]
+Prior, Current and Concomitant Medications
+12. Safety MH2 Listing of Medical Conditions by [CONTACT_586618] [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+98ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programmi ng NotesDeliverable 
+[Priority]
+13. Safety CP_CM3 Listing of Concomitant Medications by [CONTACT_586637] [1]
+SAC [1]
+Exposure and Treatment Complia nce
+14. Safety EX3 / EX4 Listing of Exposure Data by [CONTACT_586604] E3IA SAC [1]
+SAC [1]
+15. Safety COMP3A/ 
+COMP3BListing of Drug Accountability Data by [CONTACT_586618] [1]
+SAC [1]
+Adverse Events
+16.SafetyAE9CP Listing of All Advers e Events by [CONTACT_586684] E3IA SAC [1]
+SAC [1]
+17.SafetyAE7Listing of Subject Numbers for Individual Adverse Events by 
+[CONTACT_586617] E3IA SAC [1]
+SAC [1] 1]
+18.SafetyAE2Listing of Relationship Between Adverse Event System Organ 
+Classes, Preferred Terms, and Verbatim TextIDSLIA SAC [1]
+SAC [1] ]
+Serious and Other Significant Adverse Events
+19.SafetyAE9CPa Listing of Fatal Serious Adverse Events by [CONTACT_586684] E3IA SAC [1]
+SAC [1]
+20.SafetyAE9CPaListing of Non -Fatal Serious Adverse Events by [CONTACT_586626] E3IA SAC [1]
+SAC [1]
+21.SafetyAE14Listing of Reasons for Considering as a Serious Adverse Even t
+by [CONTACT_586684] E3IA SAC [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+99ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programmi ng NotesDeliverable 
+[Priority]
+22. Safety AE9CPListing of Adverse Events Leading to Withdrawal from Study / 
+Permanent Discontinuation of Study Treatment by [CONTACT_586626] E3IA SAC [1]
+SAC [1]
+23.SafetyAE9CP Listing of Other Significant Adverse Events by [CONTACT_586684] E3IA SAC [1]
+SAC [1] [1]
+24.Safety
+PSRAE1Listing of Possible Suicidality -Relate d Adverse Event Data: 
+Event and Description (Se ction 1-Section 2) by [CONTACT_586685] [1]
+SAC [1]
+25.Safety
+PSRAE2Listing of Possible Suicidality -Related Adverse Event Data: 
+Event and Description (Sections 1 -Section 2) by [CONTACT_586685] [1]
+SAC [1] 1]
+26.SafetyPSRAE3Listing of Possible Suicidality -Related Adverse Event Data: 
+Possible Cause(s) (Section 3) by [CONTACT_586635] [1]
+SAC [1]
+27.SafetyPSRAE4Listing of Possible Suicidality -Related Adverse Event Data 
+(Sectio n 4) by [CONTACT_586635] [1]
+SAC [1] 1]
+Hepatobiliary (Liver)
+28. Safety MH2Listing of Medical Conditions for Subjects with Liver Stoppi[INVESTIGATOR_586575] [1]
+SAC [1] ]
+29. Safety SU2Listing of Substance Use for Subjects wit h Liver Stoppi[INVESTIGATOR_586575] [1]
+SAC [1] [1]
+All Laboratory
+30.SafetyLB5 Listing of All Laboratory Data for Subjects with Any Value of 
+Potential Clinical Importance by [CONTACT_586617] E3 IA SAC [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+100ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programmi ng NotesDeliverable 
+[Priority]
+31.SafetyLB5 Listing of Laboratory Values of Potential Clinical Importance by 
+[CONTACT_586686] [1]
+SAC [1] [1]
+32.SafetyLB14Listing of Laboratory Data with Character Results by [CONTACT_586626] E3 IA SAC [1]
+SAC [1] ]
+33.SafetyUR2AListing of Urinalysis Data for Subjects with Any Value of 
+Potential Clinical Importance by [CONTACT_586617] E3 IA SAC [1]
+SAC [1]
+34.Safety
+LB5 Listing of Lipi[INVESTIGATOR_586576] = LDL 
+Cholesterol, HDL Cholesterol, Total 
+Cholest erol Triglycerides and
+Cholesterol/HDL ratio
+Include fasted statusIA SAC [1]
+SAC [1]
+ECG
+35. Safety EG3*Listing of All ECG Values for Subjects with Any Value of 
+Potential Clinical Importance by [CONTACT_586687] (including 
+manually corrected values)IDSL EG3 plus extra columns for 
+Manually Calculated QTcBand 
+QTcF .  Highlighted provided Q Tc 
+value
+See 203168 Listing 89 for shell
+Include absolute PCI subjects.
+Footnote: H=High absolute, L= Low 
+absolute.
+* Provided QTc IA SAC [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+101ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programmi ng NotesDeliverable 
+[Priority]
+36. Safety EG3*Listing of All ECG Changes for Subjects with a Value of 
+Potential Clinical Importance by [CONTACT_586687] (including 
+manually corrected values)Include change from baseline or 
+change from screening PCI 
+subjects. 
+IDSL EG3 plus extra columns for 
+Manually Calcula ted QTcB and 
+QTcF.  Highlighted provided QTc 
+value
+Footnote:  H=High change from 
+baseline value, L= Low change from 
+baseline value
+* Provided QTcIA SAC [1]
+SAC [1]
+37. Safety EG3 Listing of ECG Values of Potential Clinical Importance by [CONTACT_586688] (including manually corrected values)"Include absolute PCIs. 
+IDSL EG3 plus extra columns for 
+Manually Calculated QTcB and 
+QTcF.  Highlighted provided QTc 
+value
+Footnote: H=High absolute, L= Low 
+absolute."
+* Provided QTcIA SAC [1]
+SAC [1] ] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+102ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programmi ng NotesDeliverable 
+[Priority]
+38. Safety EG3Listing of ECG Changes of Potential Clinical Importance by 
+[CONTACT_586687] (including manually corrected values)"Include change from baseline 
+PCIs. 
+IDSL EG3 plus extra columns for 
+Manually Calculated QTcB and 
+QTcF.  Highlighted provided QTc 
+value
+Footnote: H=High change, L= Low 
+change."IA SAC [1]
+SAC [1]
+39. Safety EG5Listing of All ECG Findings for Subjects with an Abnormal ECG 
+Finding by [CONTACT_586642] [1]
+SAC [1]
+40. Safety EG5 Listing of Abnormal ECG Findings by [CONTACT_586642] [1]
+SAC [1]
+Vital Signs
+41. Safety VS4 / VS5Listing of All Vital Signs Data for Subjects with Any Value of 
+Potential Clinical Importance by [CONTACT_586642] [1]
+SAC [1]
+42. Safety VS4 / VS5Listing of Vital Signs of Potential Clinical Importance by [CONTACT_586689] [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+[ZIP_CODE].10.14. Non- ICH Listings
+Non-ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+CSSRS
+43. Safety ECSSRS4Listing of C- SSRS Suicidal Ideation and Behaviour Data by 
+[CONTACT_586686] [1]
+SAC [1]
+44. Safety ECSSRS5Listing of C- SSRS Suicidal Behaviour Details by [CONTACT_586690] [1]
+SAC [1]
+PK
+45. PKPK07 Listing of [COMPANY_004]2982772 Pharmacokinetic Concentration -Time 
+DataSeparate listings for Blood and 
+Biopsy dataIA SAC [1]
+SAC [1]
+Efficacy
+46. SafetyLS2 Listing of Individual Mayo S ubscores by [CONTACT_586619] [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+104Non-ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+47. Safety LS2 Listing of Mayo Data by [CONTACT_586691], Partial Mayo and 3-
+domain Mayo Scores .
+Proportion of Subjects Achieving 
+Endoscopy Remission, Mayo 
+Clinical Response , 3-domain Mayo 
+Clinical Response, Mayo Clinical 
+Remission and 3 -domain Mayo 
+Clinical Remission.
+Add variables which determine if 
+the subjects arein the P P and /or 
+PP + Completer sPopulation.IA SAC [1]
+SAC [1]
+48. SafetyLS2Listing of Individual UCEIS Scores by [CONTACT_586618] [1]
+SAC [1]
+49. Safety LS2 Listing of UCEIS Data by [CONTACT_586692] [1]
+SAC [1]
+50. SafetyLS2 Listing of Actual and Change from Baseline in CRP by 
+[CONTACT_586618] [1]
+SAC [1]
+51. Safety LS2Listing of Actual and Log -transformed Change from Baseline in 
+FCP by [CONTACT_586618] [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+105Non-ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+52. Safety LS2Listing of Actual and Change from Baseline in Modified Riley 
+Scale Score by [CONTACT_586618] [1]
+SAC [1]
+53. Safety LS2Listing of Actual and Change from Baseline in RHI Score by
+[CONTACT_586618] [1]
+SAC [1]
+54. Safety LS2Listing of Actual and Change from Baseline in Geboes Index 
+Total Score by [CONTACT_586618] [1]
+SAC [1]
+55. Safety LS2Listing of Actual and Change from Baseline in IBDQ Domains 
+and Total Sc oreby [CONTACT_586651] [1]
+56. Safety EFF_L1Listing of Subject Symptom Diary Card Data by [CONTACT_586693] 12.6.[ADDRESS_771795] 
+defined in FCEORS.SAC [1]
+57. Safetyn/aRaw SAS output of Statistical Analysis Results for GEE 
+Analysis for Subjects Achieving Mayo Endoscopic Remission 
+(Parts A and B) by [CONTACT_586648] 30% response 
+rate at Day 85 for any one 
+treatment group.IA SAC [1]
+SAC [1]
+58. PPn/aRaw SAS output of Statistical Analysis Results for GEE 
+Analysis for Subjects Achieving Mayo Endoscopic Remission 
+(Parts A and B) by [CONTACT_586648] 30% response 
+rate at Day 85 for any one 
+treatment group.IA SAC [1]
+SAC [1]
+59.PP + 
+Completersn/aRaw SAS output of Statistical Analysis Results for GEE 
+Analysis for Subjects Achieving Mayo Endoscopic Remission 
+(Parts A and B) by [CONTACT_586648] 30% response 
+rate at Day 85 for any one 
+treatment group.IA SAC [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+106Non-ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+60. Safety n/aRaw SAS Output of Statistical Analysis Results for GEE 
+Analysis for Subjects Achieving Mayo Clinical Response. 3 -
+domain Mayo Clinical Response, Mayo Clinical Remission and 
+3-domain Mayo Clinical Remission (Parts A and B) by 
+[CONTACT_586648] 30% response 
+rate at Day 85 for any one 
+treatment group.IA SAC [1]
+SAC [1]
+61. PP n/aRaw SAS Output of Stati stical Analysis Results for GEE 
+Analysis for Subjects Achieving Mayo Clinical Response. 3 -
+domain Mayo Clinical Response, Mayo Clinical Remission and 
+3-domain Mayo Clinical Remission (Parts A and B) by 
+[CONTACT_586694] 30% response 
+rate at Day 85 for any one 
+treatment group.IA SAC [1]
+SAC [1]
+62.PP + 
+Completersn/aRaw SAS Output of Statistical Analysis Results for GEE 
+Analysis for Subjects Achieving Mayo Clinical Response. 3 -
+domain Mayo Clinical Response, Mayo Clinical Remission and 
+3-domain Mayo Clinical Remission (Parts A and B) by 
+[CONTACT_586648] 30% response 
+rate at Day 85 for any one 
+treatment group.IA SAC [1]
+SAC [1]
+63. Safety n/aRaw SAS Output o f Statistical Analysis Results for MMRM 
+Analysis of the Change from Baseline in Total, Partial and 3 -
+domain Mayo Scores (Parts A and B) by [CONTACT_586619] [1]
+SAC [1]
+64. PP n/aRaw SAS Output of Statistical Analysis Results for MMRM 
+Analysis of the Change from Baseline in Total, Partial and 3 -
+domain Mayo Scores (Parts A and B) by [CONTACT_586619] [1]
+SAC [1]
+65.PP + 
+Completersn/aRaw SAS Output of Statistical Analysis Results for MMRM 
+Analysis of the Change from Baseline in Total, Pa rtial and 3 -
+domain Mayo Scores (Parts A and B) by [CONTACT_586619] [1]
+SAC [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+107Non-ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+66. Safety n/aRaw SAS Output of Statistical Analysis Results for MMRM 
+Analysis of the Change from Baseline in UCEIS Total Score 
+(Parts A and B) by [CONTACT_586695] [1]
+SAC [1]
+67. Safety n/aRaw SAS Output of Statistical Analysis Results for GEE 
+Analysis for Subjects Achieving UCEIS Remission (Parts A and 
+B) by [CONTACT_586648] 30% response 
+rate at Day 85 f or any one 
+treatment group.IA SAC [1]
+SAC [1] ]
+68. Safety n/aRaw SAS Output of Statistical Analysis Results for MMRM 
+Analysis of the Change from Baseline in CRP (Parts A and B) 
+by [CONTACT_586618] [1]
+SAC [1]
+69. Safety n/aRaw SAS Output of Stat istical Analysis Results for MMRM 
+Analysis of the Change from Baseline in Log -Transformed FCP 
+(Parts A and B) by [CONTACT_586696] [1]
+SAC [1]
+70. Safety n/aRaw SAS Output of Statistical Analysis Results for MMRM 
+Analysis of the Change from Base line in Modified Riley Scale 
+Score (Parts A and B) by [CONTACT_586618] [1]
+SAC [1]
+71. Safety n/aRaw SAS Output of Statistical Analysis Results for MMRM 
+Analysis of the Change from Baseline in RHI Score (Parts A 
+and B) by [CONTACT_586618] [1]
+SAC [1]
+72. Safety n/aRaw SAS Output of Statistical Analysis Results for MMRM 
+Analysis of the Change from Baseline in Geboes Index Total 
+Score (Parts A and B) by [CONTACT_586618] [1]
+SAC [1] ]
+73. Safety n/aRaw SAS Output of Statistical Analysis Results for MMRM 
+Analysis of the Change from Baseline in IBDQ Total Score 
+(Parts A and B) by [CONTACT_586651] [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+108Non-ICH: Listings
+No. PopulationIDSL / 
+Example ShellTitle Programming NotesDeliverable 
+[Priority]
+Biomarker
+74. SafetyPD_L1 Listing of Inflammatory Biomarkers in Biopsy Tissue by 
+[CONTACT_586651] [1]
+75. SafetyPD_L 2 Listing of TEAR1 Concentrations % Target Engagement and 
+Pathway Engagement by [CONTACT_586697] [1]
+76. Safety PD_L3Listing of mRNA Expression of Inflammatory Gene Transcripts 
+by [CONTACT_586697] [1]
+77. Safety n/aRaw SAS Output of Statistical Analysis of Biopsy Tissue 
+Inflammatory Biomarkers (Parts A and B) by [CONTACT_586698] [1]
+78. Safety n/aRaw SAS Output of Statistical Analysis of TEAR1 % Target 
+Engagement in Blood (Parts A and B) by [CONTACT_586698] [1]
+79. Safety n/aRaw SAS Output of Statistical Analysis of TEAR1 % Target 
+Engagement in Biopsy Tissue (Parts A and B) by [CONTACT_586698] [1]
+80. Safety n/aRaw SAS Output of S tatistical Analysis of Pathway 
+Engagement in Blood (Parts A and B) by [CONTACT_586698] [1]
+81. Safety n/aRaw SAS Output of Statistical Analysis of Pathway 
+Engagement in Biopsy Tissue (Parts A and B) by [CONTACT_586698] [1]
+82. Safety n/aRaw SAS Output of Statistical Analysis of mRNA Expression in 
+Blood (Parts A and B) by [CONTACT_586651]2 [1]
+83. Safety n/aRaw SAS Output of Statistical Analysis of mRNA Expression in 
+Biopsy Tissue (Parts A and B) by [CONTACT_586651]2 [1] 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+[ZIP_CODE].11. Appendix 11: Example Mock Shells for Data Display s
+Data Display Specification will be made available on Request 
+ 
+ 2019N425893_00
+CON FIDENTIA L
+202152
+[ZIP_CODE].12. Appendix 12: NONMEM datafile specification
+[COMPANY_004] to produce based on 203176 dataspec file 
+ 
+ 2019N425893_00

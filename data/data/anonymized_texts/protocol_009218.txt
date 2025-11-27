@@ -1,0 +1,1565 @@
+Protocol A0081105 Statistical Analysis Plan
+Statistical Analysis Plan Version 3.0 Page 1 of 39
+Protocol A0081105
+A randomized, double-blind, placebo-controlled, parallel group,  multi-
+center trial of pregabalin as adjunctive therapy in pediatric a nd adult 
+subjects with primary generalized tonic-clonic seizures
+Statistical Analysis Plan 
+(SAP)
+Version : 4.0
+Author : - New York, NY), and  
+                        – Groton, CT), and
+ - New York, NY)
+Date : 18 March 2019PPD
+PPD
+PPD
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistica l Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 2of 39TABLE OF CONTENTS
+LIST OF TABLES .................................................................................................................... 3
+1. AMENDMENTS FROM P REVI OUS VERSION(S) .......................................................... 4
+2. INTRODUCTION ................................................................................................................ 7
+2.1. Study  Design ............................................................................................................ 7
+2.2. Statistical Power and Sample Size ........................................................................... 8
+2.3. Study  Objectives ..................................................................................................... 10
+3. INTERIM ANALYSES, FINAL ANALYSES AND U NBLIN DING...............................
+11
+3.1. I nterim Safet y Anal ysis.......................................................................................... 11
+3.2. Final Anal ysis and Unblinding ............................................................................... 12
+4. HYPOTHESES AND DE CISION RULES ........................................................................ 12
+4.1. Statistical Hy potheses ............................................................................................. 12
+4.2. Statistical Decision Rules
+....................................................................................... 13
+5. ANALYSIS SETS .............................................................................................................. 13
+5.1. Full Anal ysis Set (Intent -to-Treat Population) ....................................................... 13
+5.2. ‘Per Protocol’ Anal ysis Set 
+(PP Population).......................................................... 13
+5.3. Safet y Anal ysis Set ................................................................................................. 13
+5.4. Other Anal ysis Sets ................................................................................................ 13
+5.5. Treatment Misallocations....................................................................................... 13
+5.6. Protocol Deviations ................................................................................................ 13
+6. ENDPOINTS AND COV ARIATES .................................................................................. 14
+6.1. Efficacy  Endpoint(s) ............................................................................................... 14
+6.1.1. Primary  Endpoint ....................................................................................... 14
+6.1.2. Secondary  Efficacy  Endpoint .................................................................... 14
+6.1.3. Exploratory  Endpoints ............................................................................... 15
+6.1.3.1. Proportion of Seizure -Free Day s
+................................ .............. 15
+6.1.3.2. Number of Seizure -Free Day s Gained ..................................... 15
+6.1.3.3. Proportion of Subjects with PGTC Seizure
+-Freedom .............. 15
+6.1.3.4. Time to NthSeizure .................................................................. 15
+6.2. Safet y Endpoints ..................................................................................................... 16
+6.2.1. Adverse Events .......................................................................................... 16
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistica l Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 3of 396.2.2. Prior and Concomitant Treatments and Medications ................................ 16
+6.2.3. Suicidal I deation and Behavior Assessments During the Clinical 
+Trial ................................................................................................................. 16
+6.3. Other Endpoints ...................................................................................................... 17
+6.3.1. PK/PD Endpoints ....................................................................................... 17
+6.4. Covariates ............................................................................................................... 17
+7. HANDLING OF MI SSING VALUES ............................................................................... 18
+8. STATI STICAL METHO DOLOGY AND STATI STIC
+AL ANALYSES ......................... 20
+8.1. Analy sis of Primary  Efficacy  Endpoint .................................................................. 20
+8.2. Analy sis of Secondary  Efficacy  Endpoints ............................................................ 23
+8.3. Analy sis of Exploratory  Endpoints ........................................................................ 23
+8.4. Safet y Anal yses...................................................................................................... 24
+8.4.1. Adverse Events .......................................................................................... 24
+8.4.2. Suicidal I deation and Behavior .................................................................. 25
+8.5. Summary  of Efficacy  Analyses.............................................................................. 26
+9. REFERENCES ................................................................................................................... 28
+LIST OF TABLES
+Table 1. Power Calculations and Sample Size Assumptio ns with 56 
+Subjects per Group for the Primary Endpoint (loge (28 -day 
+seizure rate + 1) ................................ ................................ ......................... 9
+APPENDICES
+Appendix 1. Data Derivation Details ...................................................................................... 29
+Appendix 2. C
+-SSRS Mapped to C -CASA - Suicidal I deation and Behavior Events 
+and Codes ................................................................................................. 31
+Appen dix3. Windowing for Study  Months 1, 2 and 3 ................................ ........................... 32
+Appendix 4. Analy sis Strategy  Using Multiple I mputations ................................ .................. 33
+Appendix 5. Analy sis Strateg y Using a Poisson Model ......................................................... 37
+Appendix 6. Blinded Sample Size Re -Estimation ................................ ................................ .. 38
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 4of 391. AMENDMENTS FROM PREVIOUS VERSION(S) 
+Status of the study  when amendments were made: Stud y is still ongoing and blinded.
+Final 
+Date: 04
+-Jan-2013
+Version 1.01. This is the first SAP for protocol 
+A0081105.1. N/A
+Amendment 1
+Date: 21- Apr-
+2017
+Version 2.02. Updated to the reference of the 
+blinded sample size formula of 
+Friede and Kieser (2011) to appl y 
+the latest methodology  with 
+considering covariate of continuous 
+data under Section 2.2, References, 
+and Appendix 6.
+From: Kieser, M. and Friede, T. 
+(2003). Simple Procedures for 
+Blinded Sample Size         
+Adjustment that Do Not Affect the 
+Type I Error R ate. Statistics in 
+Medicine, 32: 3571- 3581.
+To: Friede, T and Kieser, M. (2011). 
+Blinded Sample Size Recalculation 
+for Clinical Trials with Normal Data 
+and Baseline Adjusted Analy sis.
+Pharmaceut. Statist., 10: 8-13.
+3.Added the description to explain 
+the pro
+cedure for final analy sis and 
+unblinding under Section 3.2.
+4.Revised the anal ysis of pattern 
+mixture model under Section 7, 
+Reference, and Appendix 4.
+5.Added to calculate odds ratio with 
+95% confidence interval of 
+responder rate and added the 
+explanation of SAS code for p-
+value calculation under Section 8.2.2.To update the samp le 
+size re -estimation 
+reference .
+3.To match protocol 
+procedure.
+4. To replace multiple 
+imputation analy sis 
+method consistent 
+with A0081041 and 
+A0081042.
+5.To add detailed 
+specificat ion of the 
+responder anal ysis 
+with SAS code.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 5of 39Amendment 2
+Date : 01-Mar-
+2019
+Version 3 .01.Add the following equation in 
+Section 6.1, Section 8.1, and 
+Appendix 1 for additional 
+presentation of percent reduction of 
+treatment difference relative to 
+placebo: 
+2.Amended the seizure ty pe for
+evaluat ionfrom partial seizure sto 
+PGTC seizure sunder Section 
+6.1.3.4.
+3.Removed cognitive testing of safet y 
+endpoint under Section 6.2.
+4.Added a sensitivity  anal ysis with 
+age group (5 -16 years of age and 
+17-65 years of age) as a covariate in 
+Section 8.1.
+5.Added a supplemental analy sis with 
+treatment -by-age group (5
+-16 years 
+of age and 17 -65 years of age) 
+interaction term in the ANCOVA 
+model in Section 8.1.
+6.Updated geographical region 
+definition under Section 6.4 with 
+consider ation of enrollment by 
+country based on SSR dataset ,and 
+updated the definition to remain
+consistent under Section 8.1.
+7.Moved supplemental analy sis detail 
+from Section 7 toSection 8.
+8.Updated a sensitivity  analy sis of 
+pattern mixture model of multiple 
+imputat ion under Section 8.1, 
+Section 8.5 and Appendix 4.
+9. Updated dependent variable of 
+ranked ANCOVA and Wilcoxon -
+Mann Whitney  test from “log -
+transformed 28 day  seizure rate ”to 
+“change from baseline to double 
+blind phase of log -transformed 28 1.This back 
+transfo rmation was 
+requested b y FDA for 
+A0081042. It is added 
+to be consistent with 
+A0081042.
+2.Correction, consistent
+with the protocol -
+specified population.
+3.Cognitive test ingwas 
+not included in the 
+study protocol.
+4.To differentiate results 
+in pediatric vs adult 
+population.
+5.
+Specified in the 
+protocol.
+6.Based on actual 
+enrollment.
+7.Editorial changes .
+8. Added more details 
+with multiple 
+imputation .
+9.To be consistent with 
+A0081042 anal yses
+and to be able to adjust 
+the model for any 
+baseline seizure 
+imbalance .
+10. The plot is not 
+necessary  as the 
+interaction is 
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 6of 39day seizure rate” under Section 8.1.
+10.Removed the possibility  of forest 
+plot to evaluate interaction by  age 
+under Section 8.1.
+11.Updated the anal ysis with Poisson 
+and negative binominal models 
+with considering baseline seizure 
+count as a covariate and Pearson as 
+the scale para meter (Poisson model 
+only) under Section 8.1, Section 8.5 
+and Appendix 5.
+12.Updated the anal ysis of the 
+proportion of seizure -free day s for 
+each seizure t ype from logistic 
+regression to ANCOVA anal ysis 
+under Section 8.3. 
+13.Clarified the definition of 
+proporti on of subjects with PGTC 
+seizure -freedom in Section 6.1.3.3.
+14.Added clarification regarding 
+seizure free day s and proportion of 
+seizure free day sin Section 6.1.3.1.
+15.Clarified the definition of number 
+of 12 week adjusted seizure free 
+days gained in Section 6.1.3.2 .
+16.Added contingency  plan in case the 
+primary  anal ysis model fails due to 
+covariates ofregion andage strata
+in Section 8.1.
+17.Added a secondary  analysis based 
+on combined European Union and 
+US
+18.Added clarification of responder 
+rate analytically  checked 
+by ANCOVA model
+11.To be consistent with 
+A0081042 anal yses, to 
+adjust for baseline 
+seizure imbalance in 
+the model (Pearson as 
+the scale parameter) .
+12.To correct an error in 
+the anal ysis model in 
+the previous SAP.
+13.To be consistent with 
+adult PGTC seizure -
+freedom definition
+used in past pregabalin 
+studies .
+14.To add detailed 
+specifications.
+15.To add detailed 
+specifications.
+16.To make anal ysis 
+viable in case small 
+numbers of subjects in 
+certain region (s)
+and/orage strata cause 
+any issue with analysis 
+model.
+17.Based on blinded 
+number of subjects 
+across countries, US 
+enrolled only  5 
+subjects
+18. Make the definition of 
+responder ratemore 
+clear
+Date: 18 -Mar-
+20191.Revised responder definition in 
+Appendix I1.Tomake the definition 
+of responder rate 
+consistent with adult 
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 7of 39Version 4.0 study ’s definition.
+2.INTRODUCTION
+Protocol A0081105 is a randomized, double- blind, parallel -group, placebo-controlled, 
+multi -center trial in subjects 5 to 65 years of age with PGTC seizures. This study will
+evaluate the efficacy of 2 dose levels of pregab alin [Dose Level 1: pregabalin 
+5 mg/kg/day (maximum 300 mg/day) or Dose Level 2: pregabalin 10 mg/kg/day 
+(maximum 600 mg/day), administered BID ] compared with placebo.
+2.1.Study Design
+This study wi ll consist of an 8- week baseline phase, a 12 -week double -blind assessment 
+phase (including a 2 -week double -blind dose escalation phase and a 10 -week double -
+blind fixed dose phase), and a 1- week double -blind taper phase.   Eligible subjects will be 
+randomly assigned to receive double -blind treatment with 1 of 2 dose levels of pregabalin 
+or placebo.  Study drug treatments are to be taken orally twice daily (BID) in equally 
+divided doses for 12 weeks during the double -blind assessment phase and t hen 1 week 
+double -blind taper.  Subjects who complete the double -blind phase of this trial may be 
+eligible for screening for a 1- year open -label pregabalin safety study.
+A total sample size of 168 subjects (ie, 56 subjects per group) is needed to have been 
+randomized, r eceived treatment and had a baseline and post baseline efficacy 
+assessment. Randomization will be stratified by site and subject age (Stratum 1: 5-7 years 
+of age; Stratum
+2: 8-11 years of age; Stratum 3: 12 -16 years of age; Stratum 4: 
+17-65 years of age). Subjects in each age stratum within site will be randomized to a 
+fixed dose of either placebo, Dose Level 1: pregabalin 5 mg/kg/day (maximum 
+300 mg/day) or Dose Level 2: pregabalin 10 mg/kg/day (maximum 600mg/day) in a 
+1:1:1 ratio.  Approximately 30% of p lanned enrollment (approximately 50 subjects) will 
+be subjects <17 years of age.  Every reasonable effort will be made to enroll a minimum 
+of 12 subjects in each of the 4 age strata.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 8of 39Study Design Diagram:
+Visit V1 V2 V3V4 V5 V6 V7 V8 V9 V10
+Week    -8 -4 0 1 2 3 6 9 12 13
+Day -56 -28 1 8 15 22 43 64 85 92
+Window (days) ±3 ± 3 0 ±3 ± 3 ±3 ±3 ±3 ±3 ±3
+RandomizationScreening V isit / 
+Baseline Phase
+(8 weeks)
+Dose Escalation Phase (2 weeks)Fixed Dose Phase (10 weeks)
+Double-Blind Taper Phase (1 week)
+PlaceboDose Level 1:
+Pregabalin 5 mg/kg/day**
+(maximum 300 mg/day)Dose Level 2:
+Pregabalin 10 mg/kg/day***
+(maximum 600 mg/day)Double -Blind Assessment Phase
+(12 weeks)
+*Optional Open-Label Study A0081106
+*Eligible subjects may be assessed for a 1 -year open -label pregabalin safety study (Study A0081106) and 
+complete end of study activities for A0081105 at Visit 10 (V10).
+** Dose Level 1: 7 mg/kg/day for pediatric subjects <30 kg and 300 mg/day for subjects 17 years of age.
+*** Dose Level 2: 14 mg/kg/d ay for pediatric subjects <30 kg and 600 mg/day for subjects 17 years of 
+age.
+Phone visits are also scheduled for Study Days 3, 10, 17, and 89 (each w ith a ±3 day window ).
+2.2.Statistical Power and Sample Size
+A total sample size estimate of 168 subjects allo ws for the evaluation of efficacy using the 
+primary endpoint, log e(28-day seizure rate + 1), for making comparisons between 
+placebo vs. 5 mg/kg/day pregabalin (maximum 300 mg/day; Dose Level 1), and placebo 
+vs. 10 mg/kg/day (maximum 600 mg/day; Dose Level 2) pregabalin groups for the 
+treatment period of the study.  The following sample size assumptions and corresponding 
+power calculations are provided in Table 1below.  This sample size will also allow for a 
+genera l assessment of safety and tolerability.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 9of 39Table 1. Power Calculations and Sample Size Assumptions with 56 Subjects per 
+Group for the Primary Endpoint (loge (28- day seizure rate + 1)
+ComparisonLog 
+Transformed 
+Difference from 
+PlaceboPercent Difference 
+from PlaceboSD (log 
+transformed 28 
+day seizure rate)Power
+Expected 
+difference1between 
+600 mg/day and 
+placebo-0.534 -41.4%0.73
+0.670.970
+0.984
+Expected 
+difference1between 
+300 mg/day and 
+placebo-0.358 -30.1%0.73
+0.670.742
+0.800
+1 Expected difference is 80% of the observed difference between the specified pregabalin dose minus 
+placebo based on a meta -analysis of Studies 1008- 009, 1008 -011, and 1008 -034 based on the log 
+transformed 28 day seizure rate, with 300 mg/day only in St udy1008 -034.
+The primary statistical analysis will model the log transformed 28 day seizure rate, and 
+compare each dose of pregabalin to placebo in a step- wise manner, starting with the 
+highest dose of pregabalin.  Since there is a significant dose respo nse of pregabalin, the 
+power to detect expected differences for each pregabalin dose relative to placebo will be 
+different.  Hence, this step
+-wise testing procedure will provide maximum power as well 
+as control for multiplicity of testing at the desired 0.05 level of significance for the 
+primary analysis.
+Based on a meta -analysis of double -blind placebo controlled adult adjunctive therapy 
+studies (Studies 1008 -009, 1008 -
+011, and 1008-034) using the log transformed 28 day 
+seizure rate, the expected differenc es from placebo (ie, the difference in the observed 
+least squares means after adjusting out the study -to-study differences and site clustering 
+within study effects) were -0.668 ( -48.7%) and 
+-0.448 ( -36.1%) for 600 mg/day 
+(Dose Level 2) and 300 mg/day (Dose Level 1), respectively.  This study is powered on 
+80% of these estimated treatment differences; - 0.534 ( -41.4%) and -0.358 ( -30.1%) for 
+600 mg/day (Dose Level 2) and 300 mg/day (Dose Level 1), respectively.
+A meta- analysis of Studies 1008 -009, 1008-011, and 1008-034 was used to estimate a 
+pooled standard deviation of 0.73 on the log transformed 28 day seizure rate scale, with 
+a 95% confidence interval of [0.70, 0.76 ].  For the purposes of this study, a smaller 
+standard deviation of 0.67 was used to assess the power and initial sample size 
+requirements for comparing the 2 pregabalin group to placebo.  The rationale for 
+assuming the smaller SD of 0.67 is based on the Study 1008
+-034 data which included all 
+three treatment groups of interest (i.e., placebo, 300 mg/day, and 600 mg/day).  This 
+study had a point estimate for the standard deviation of 0.72 and a 95% confidence 
+interval for the standard deviation of [0.67, 0.77] .
+To ensure that the sample size is reasonably sufficient using an assumed pooled standard
+deviation of 0.67 on the log escale, in order to provide at least 80% power to detect a 
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 10of 39treatment difference of 0.358 on the log escale a blinded sample size re -estimation 
+procedure ( Friede and Keiser, 2011 )3based upon a residual variance of ANCOVA under 
+the null hypothesis will be applied when approximately the first 110 subjects in total have 
+had the opportunity to complete the study (ie, no ongoing subjects will be included in this 
+sample size re -estimation pr
+ocedure).  The blinded sample size re -estimation procedure 
+for this study will not allow for a reduction in the planned sample size of 56 subjects per 
+group or an increase in sample size greater than 65 subjects per group (195 subjects 
+total).  T his repres ents the sample size required to provide 80% power to detect a 
+treatment difference of -0.358 on the log scale with a standard deviation of 0.72.  The 
+sample size also allows for operational feasibility. Details regarding the statistical 
+methodology of the blinded sample size re -estimation procedure will be documented in 
+Appendix 6.  This blinded sample size re -estimation procedure will be conducted by a 
+statistician who is not associated with the conduct or final analysis of the study.
+There will be no penalty applied to the p
+-values or confidence intervals for assessing 
+treatment difference from placebo due to this blinded sample size re -estimation 
+procedure.
+2.3. Study Objectives 
+Primary Objective:
+To demonstrate superior efficacy of pregabalin compared to placebo for treatment of 
+PGTC seizures as measured by the 28 day seizure rate.
+Safety Objectives:
+To assess the safety and tolerability of pregabalin relative to placebo in pediatric and 
+adult subjects with PGTC seizures.
+Secondary Objectives:
+To demonstrate superior efficacy of pregabalin compared to placebo for PGTC 
+seizures as determined by responder rate.
+Exploratory Efficacy Objectives:
+To demonstrate superior efficacy of pregabalin compared to placebo as 
+determined by seizure
+-free days for PGTC, myoclonic, tonic/atonic, absence, and 
+clonic seizures.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 11of 39To demonstrate superior efficacy of pregabalin compared to placebo as 
+determined by seizure -freedom of PGTC seizures over the last 28 days of the 
+double -blind assessment phase and over the entire double- blind assessment 
+phase.  In those subjects with myoclonic, tonic/atonic, absence, or clonic seizures 
+at baseline, seizure freedom over the last 28 days of the study and over the entire 
+double -blind assessment phase will be summarized descriptively.
+To demonstrate superior efficacy of pregabalin compared to placebo as 
+determined by the time to experience the same total number of PGTC seizures in 
+the 12- week double -blind assessment phase that was observed during the b aseline 
+phase for each subject (referred to as ‘Time to Nth Seizure’). This analy sis will be 
+reported separat elyfrom the main clinical study  report.
+3.INTERIM ANALYSES, FI NAL ANALYSES AND UNB LINDING 
+3.1.Interim Safety Analysis
+In additional to the regular revi ew of blinded safety data during the conduct of the study, 
+as described in the “Safety Analysis” section, 2 unblinded Interim Safety Analyses (ISA) 
+to be reviewed by an E -DMC will be conducted to further assess safety.  The timing of the 
+first ISA will be w hen the first one -third of the subjects enrolled (randomized) has had an 
+opportunity to complete the study.  The second ISA will be performed when 
+approximately two -thirds of the subjects enrolled (randomized) have had an opportunity 
+to complete the study .  
+The I SA will involve the descriptive review of deaths, SAEs, discontinuations due to 
+AEs, and discontinuations due to the following 4 events:
+1. An episode of status epilepticus during the 12- week double -blind assessment 
+phase.
+2.A 28
+-day seizure rate for a ll PGTC seizures during the 12- week double -blind 
+assessment phase that is greater than 2-times the maximum 28- day study seizure 
+rate during the baseline phase (a 28 -day period is defined as 4 consecutive study 
+weeks).
+3.An episode of a newly emergent generalized seizure type during the 12- week 
+double -blind assessment phase.
+4. An increase in the rate or intensity of PGTC or other generalized seizure activity 
+during the 12- week double -blind assessment phase that, according to the 
+investigator, is clinically signi ficant.
+The I SA will not include any  anal ysis for efficacy  and therefore no t ype I error (alpha) 
+spending penalty  applies.
+An External Data Monitoring Committee (E -DMC) will conduct this unblinded interim 
+safet y analysis and provide recommendation to the s ponsor.  An E- DMC Charter will 
+specify  the details of how the safety interim analyses are to be conducted, and how 
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 12of 39communications between the sponsor and the E -DMC will take place through open and 
+closed meeting sessions. Additionally , the Charter will ad dress the confidentiality  of the 
+interim safet y information and appropriate measures will be taken to minimize bias so 
+that the integrity of the study is protected.
+3.2.Final Analysis and Unblinding 
+Blinding codes should only be used for an individual subject and the blind broken only in 
+an emergency situation or when it is critical to guide treatment and care of a given 
+subject for reasons of subject safety.  At the initiation of the study, the study site will be 
+instructed on the method for breaking the blind for an individual subject.  The method 
+will be either a manual or electronic process.  When breaking the blind is required the 
+investigator should contact Pfizer before breaking the blind if possible.  W hen the 
+blinding code is broken for a subject, the reason must be fully documented and entered 
+on the appropriate case report form.
+The unblinding for the final anal ysiswill follow standard Pfizer procedures. 
+4.HYPOTHESES AND DECIS ION RULES 
+4.1.Statistical Hypotheses
+There will be 2 pair -wise comparisons of i nterest: 
+a)Dose Level 2: pregabalin 10 mg/kg/day (maximum 600 mg/day) -placebo, and
+b)Dose Level 1: pregabalin 5 mg/kg/day (maximum 300 mg/day) -placebo.
+Each dose of pregabalin will be compared to placebo in a pair -wise manner using a 
+sequential step -wise testing procedure to control for multiplicity of testing such that the 
+experiment -wise type I error rate will not exceed the 5% level of significance.
+1) The first step will test the null hypothesis of equal treatment effect of Dose Level 2 vs. 
+placebo at =0.05 2- sided for the primary endpoint.
+H01:  µPGB Dose Level 2 -µPBO= 0
+Ha1:  µPGB Dose Level 2 -µPBO≠ 0
+2) The second step will test the null hypothesis of equal treatment effect of Dose Level 
+1vs. placebo at =0.05 2 -sided for the primary endpoint.
+H02:  µPGB Dose Level 1 -µPBO= 0
+Ha2:  µPGB Dose Level 1 -µPBO≠ 0
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 13of 394.2.Statistical Decision Rules
+If the null hypothesis (H01)of the first step is rejected, then proceed to the second step 
+(H02), otherwise, accept the null hypothesis of the first step (H01), stop further testing, and 
+claim no treatment effect .
+If the null hypothesis of the second step (H02)is rejected, then claim a treatment 
+difference for both dose groups of pregabalin [Dose Level 2: 10 mg/kg/day ( maximum 
+600mg/day) and Dose Level 1: 5mg/kg/day ( maximum 300 mg/day) ] from the placebo 
+group for the primary endpoint only; otherwise accept th e null hypothesis of the second 
+step(H02), stop further testing, and claim a treatment difference for only pregabalin Dose 
+Level 2: 10 mg/kg/day ( maximum 600 mg/day) from placebo for the primary endpoint 
+only.
+5.ANALYSIS SETS
+5.1. Full Analysis Set (Intent- to-Treat Population)
+The efficacy analyses will be performed on the intent to treat (ITT) population which 
+consists of randomized subjects who took at least 1 dose of investigational product 
+during the double -blind assessment phase, have a baseline value and at least 1 post -
+baseline efficacy assessment (diary  entry ).
+5.2.‘Per Protocol’ Analysis Set (PP Population)
+None.  Protocol Deviations will be addressed (See Section 5.6) but no PP analy ses are 
+planned.
+5.3.Safety Analysis Set
+The primary  anal ysis set for safety  will be the Safety  population which will include 
+randomized subjects who took at least one dose of the investigational product. 
+5.4. Other Analysis Sets
+Not applicable.
+5.5.Treatment Misallocations 
+If a su bject was randomized but took incorrect treatment, then they  will be reported under 
+their randomized treatment group for the efficacy  anal yses, but will be reported under the 
+treatment they  actually  received for all safety  analy ses.
+5.6. Protocol Deviations
+Thelist of protocol deviations will be compiled prior to database closure and study  
+unblinding.  All deviations will be reviewed and decisions for handling each of the 
+deviations will be made prior to unblinding of the study .
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 14of 396.ENDPOINTS AND COVARI ATES
+6.1.Efficac y Endpoint(s)
+For all 28-day log seizure endpoints, the results will be reported as “percent reduction in 
+seizures” relative to placebo. For example, a difference between one of the pregabalin 
+doses and placebo of - 0.400 on the log transformed scale for th e 28-day seizure rate 
+translates into a 33% reduction in the 28- day seizure rate of the pregabalin group from 
+the placebo group (ie, 100%*[exp -0.400-1]= -33%).  The “percent reduction in seizures” 
+will be calculated for changes versus placebo on the follow ing statistics: the two -sided 
+95% confidence intervals, the least square means and their standard errors .
+An additional back transformation will be calculated for percent reduction in seizures for 
+each pregabalin treatment group relative to placebo for pr esentation as follows: 
+6.1.1. Primary Endpoint 
+The primary endpoint will be the log- transformed (log e) 28-day seizure rate for all PGTC 
+seizures collected during the double- blind assessment phase ( not including the 1 -week 
+double -blind taper phase) .  The 28 -day seizure rate will be calculated as follows for the 
+double -blind assessment phase:
+28-day seizure rate =# of seizures in the double -blind assessment phase of study28[# of days in period -# of missing diary days in period]
+When the l og-transformation is used, the quantity “1” is added to the 28 -day seizure rate 
+for all subjects to account for any possible "0" seizure incidence.  This will result in the 
+following primary efficacy endpoint: log e(28-day seizure rate + 1). 
+The 28- day sei zure rate for all PGTC seizures collected during the baseline phase will be 
+calculated similarly.
+6.1.2. Secondary Efficacy Endpoint
+Responder Rate, defined as subjects who have a 50% reduction in the 28 -day seizure 
+rate for all PGTC seizures during the double-blind assessment phase, as measured from 
+baseline (data collected during the 8
+-week baseline phase) will be defined as a responder, 
+otherwise they  be considered as a non -responder.
+The responder rate will be based on the percentage change from baseline in t he 12 -
+week 
+double -blind treatment phase 28- day seizure rate , which is defined as follow s :
+% Change = [(28 -day seizure rate t – 28- day seizure rate b) / 28 -day seizure rate b] × 100%,
+where t is the 12- week double -blind treatment phase and b is for the 8- week baseline 
+phase.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 15of 396.1.3. Exploratory Endpoints
+6.1.3.1. Proportion of S eizure -Free Days
+The proportion of seizure -free days for each seizure type: PGTC, myoclonic, tonic/atonic, 
+absence, and clonic seizures will be computed. Proportion of PGTC seizure -free daysis 
+defined as number of seizure -free day s in a period divided by  “number of day s in a period
+-number of missing Seizure diary  days”.
+6.1.3.2. Number of 
+Seizure -Free Days G ained
+The number of seizure -free days gained for each seizure type: PGTC, myoclonic, 
+tonic/atonic, abse nce, and clonic seizures will be calculated.  The number of seizure -free 
+days will be adjusted to a per 12 weeks value (ie, 84 days) for the baseline and 12- week 
+double -blind assessment phases.  Changes from baseline are to be computed and the 
+analysis performed accordingly. The 12 week adjusted number of seizure -free day sis 
+defined as follows:
+number of seizure -free day s in a period * 84 / (number of day s in a period –number of 
+missing diary  days in a period) .
+Period r efersto the length time in baselin e, and in DB.  The 12 week adjusted number of 
+seizure -free days will be calculated for baseline andDB; change from baseline will also 
+be calculated.
+6.1.3.3. Proportion of S ubjects with PGTC S eizure -Freedom
+The proportion of subjects with PGTC seizure -freedom will be computed.  The numerator 
+for seizure -freedom is defined as the number of subjects that experience no PGTC 
+seizures over the last 28 days of the double- blind assessment phase (must be a minimum 
+of 4weeks ), patient must have received at least 42 day s (2weeks + 28 day s) of study  
+medication and have a minimum of 21 of the last 28 day s as non -missing diary (ignore 
+the first 2 weeks from dose escalation phase) .The denominator is the 
+number of subjects 
+in the ITT population with 42 day s (2 weeks + 28 day s) of study  medication .
+The proportion of subjects with PGTC seizure -freedom over the entire double blind fixed 
+dose assessment phase will also be computed. The numerator for seizure -freedom is 
+defined as the number of subjects that experience no PGTC seizure s over the fixed dose 
+phase, patient must have received at least 84 day s (2 weeks + 14 +28 +28 day s)dosing
+and have a minimum of 11 of the 14 day s and 21 of each of the two28 day periods with 
+non-missing seizure diary (ignore the first 2 weeks from dose escalation phase) .The 
+denominator is the number of subjects in the ITT population with 84days of study  
+medication.
+6.1.3.4. Time to NthSeizure
+The time to experience the same total number of PGTC seizures in the double- blind phase 
+that were observed during the baseline phase for each subject, referred to as ‘Time to Nth
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 16of 39Seizure’ will be assessed as an exploratory endpoint and will be described and conducted 
+according to a separate exploratory statistical analysis plan (ESAP) for endpoint 
+development , and reporte d separate from the main clinical study  report .
+6.2.Safety Endpoints
+Safety  endpoints include adverse event data (eg, occurrence, nature, intensity , and 
+relationship to study  drug), Hy ’s law, vital signs, weight, clinical laboratory  assessments, 
+ECG, neurologi cal examination, phy sical examination, prior and concomitant 
+medications, suicidal ideation and behavior assessments (as age appropriate).
+6.2.1. Adverse Events
+All AEs occurring during the course of the study  will be coded using the MedDRA 
+coding dictionary .  
+All AEs (serious and non -serious) reported from the first day  of study  treatment through 
+and including 999 calendar day s after the last administration of the study  drug will be 
+considered treatment emergent AEs (TEAEs). 
+6.2.2. Prior and Concomitant Treatments and Medications
+Concomitant and prior medications, defined as medications stopped, ongoing or started 
+on or after the first day  of study  treatment up to the last dose of study  treatment, will be 
+summarized, using the WHO -drug coding dictionary . In addition, c oncomitant and prior 
+non-drug treatments/procedures will be summarized using the MedDRA coding 
+dictionary .
+6.2.3.
+Suicidal Ideation and Behavior Assessments During the Clinical Trial
+C-SSRS responses will be mapped to the Columbia Classification Algorithm of Suic ide 
+Assessment (C -CASA). (see Appendix 2)
+The following 3 endpoints are for suicidality  data anal ysis and evaluation: 
+Suicidal Behavior ;
+Suicidal I deation ;
+Suicidal Behavior or Ideation .
+Suicidal behavior : A subject is said to have suicidal behavior if the subject has 
+experienced an y of the following events (C -CASA event codes 1- 3): 
+Completed suicide;
+Suicide attempt; or
+Preparatory  acts toward imminent suicidal behavior.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 17of 39Suicidal ideation : Any  observed suicidal ideation maps to a single C- CASA category .   
+The C -SSRS, for example, includes five ideation questions (that map to C- CASA 
+category  4) with increasing severit y.    
+Subjects with new onset suicidal ideation and behavior : A subject will be considered to 
+have a new onset of suicidal ideation and behavior if the subject reported no ideation and 
+no behavior at the baseline assessment (note that self
+-injurious behavior, no suicidal 
+intent [C -CASA code 7] is not considered to be suicidal ideation or behavior) a nd 
+reported an y behavior or ideation post- baseline.  Data observed at screening is not 
+considered in the definition of new onset.
+Subjects with worsening suicidal ideation and behavior relative to baseline : A subject 
+will be considered to have a worsening of suicidal ideation and behavior if the subject 
+moved to a lower numbered C -CASA category  (observed in categories 1 -4) than was 
+reported at baseline.  Movement within C- CASA categories 5 -9 would not be considered 
+worsening.  In addition, worsening will be considered within the suicide ideation 
+C-CASA category  4 if there is an increase in severity  identified in the C -SSRS which 
+captures additional granularity  on suicide ideation. A subject who reports only  ideation at 
+baseline and who reports any  behavior post -baseline is considered to have worsened.  
+Data observed at screening is not considered in the definition of worsening.
+6.3.Other Endpoints 
+6.3.1. PK/PD Endpoints 
+PK/PD endpoints and analy ses will be described in a separate document created by  
+Clinical Pharmacol ogy.
+6.4.Covariates 
+Log-transformed 28- day seizure rate [log e(28-days seizure rate b+ 1)] at baseline will be 
+utilized as a covariate in the linear model used in the primary  anal ysis, and for secondary  
+analyses utilizing a similar model
+. 
+Additional terms con sidered in the primary  anal ysis and included in the responder rate 
+analysis areage strata and geographic region. Because it is anticipated that this study  will 
+have man y investigator centers having very  few subjects in each treatment group , age 
+strata, and geographic region combination; a pre -specified pooling will take place (See 
+below ).
+Two covariates about age are defined as follows.  
+Age strata will be defined as Stratum 1: 5- 7 years of age; Stratum 2: 8-11 years of age; 
+Stratum 3: 12
+-16 years of age; or Stratum 4; 17 -65 years of age. This covariate is applied 
+toprimary analysis.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 18of 39Age group will be defined as: group 1 , 5-16 years of age (at randomization) ; group 2: 17-
+65 years of age (at randomization) .  This covari ate is applied to the anal ysis of primary  
+efficacy  endpoint as a sensitivity analy sis. This age group definition will also be used to 
+investigate treatment- by-age interaction for the primary  efficacy  endpoint.
+Age will be defined as subjects’ age at randomization. If a subject turns 66 at 
+randomization after screening, he/she will be counted in the 17- 65 age group.
+Region will be defined as follows (Upon closing of the randomization, region 
+determinations will be further evaluated -Seecontingency  plan):
+United States (US) : Subjects who participate in the U.S . or Puerto Rico centers 
+will be pooled together;
+European Union: All subjects who participate in Europe an Union (eg, Austria, 
+Belgium, Denmark, France, German y, Greece, Italy, Netherlands, Portugal, 
+Spain, Sweden, United Kingdom, Bulgaria, Croatia, Czech Republic, Estonia,
+Hungary , Lithuania ,Poland, Romania, and Slovakia, ) centers will be pooled 
+together . 
+The member countries of European Union are explained in m ore detail 
+at https://europa.eu/european -union/about- eu/countries_en ;
+Asia-Pacific : All subjects participating in Asia-Pacific (China, India ,Korea, 
+Mala ysia, Philippines, Singapore) centers will be pooled together ;
+Other s: All subjects not participating i n above three regions (eg, Russian 
+Federation, Ukraine ,Belarus, Bosnia and Herzegovina ,Serbia ,Montenegro,
+Turkey ) centers will be pooled together .
+Any region not enroll ingany subjects will not be included in the anal ysis.
+7.HANDLING OF MISSING VALUES
+Missing data will be handled based on the nature of the endpoint and the proposed 
+statistical methods for analy zing the data.  
+For all endpoints that include seizure rate, day s with missing seizure diary  data will be 
+subtracted from the seizure rate calcula tions. If seizure rate for an y phase cannot be 
+calculated for a subject due to missing information, the endpoint that involves seizure rate 
+during that phase will be also missing for that subject.
+For scales used in this study , scores will be imputed according to the imputation rules and 
+algorithms for missing component scores that are provided in the data standard 
+documents. Partial dates for AEs and concomitant medications will be imputed 
+according to Pfizer standard algorithms. 
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 19of 39The assessment of missi ng data for the primary endpoint will require the construction of 
+the following windows and drop- out categories:
+Windowing for each subject will be constructed for the 1stmonth, 2ndmonth, and 
+3rdmonth the subject was in the study. Thus a 28 -day seizure rate will be 
+determined for each windowed month for which seizure data exist, otherwise the 
+seizure data will be considered missing with a corresponding reason for it being 
+missing. Specific details are provided in Appendix 3.
+Drop -out patterns will be constructed based on the reason the seizure data is 
+missing for the corresponding windowed month. Hence, the following drop -out 
+patterns will be defined for three
+specific categories of related to lack of efficacy 
+or adverse eve ntor other reason :
+Completed study as planned .
+Drop -out due to lack of efficacy:
+Drop -out at month 1 due to lack of efficacy ;
+Drop -out at month 2 due lack of efficacy ;
+Drop -out at month 3 due to lack of efficacy .
+Drop -out due to an adverse event :
+Drop -outat month 1 due to an adverse event ;
+Drop -out at month 2 due to an adverse event ;
+Drop -out at month 3 due to an adverse event .
+Drop -out due to other reason :
+Drop -out at month 1 due to other reason;
+Drop -out at month 2 due to other reason;
+Drop -out at month 3 due to other reason .
+Other reason includes any drop -outs excluding efficacy  and adverse event.
+These drop -out patterns will be summarized by treatment group to assess any imbalance 
+using frequency counts. If there is a significant amount of missing dat a, then multiple 
+imputation techniques will also be applied to the primary analysis model. However, if the 
+amount of mis sing data is not significant (i e, less than 5% across all treatment group s), 
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 20of 39then the assessment of missing data will not include multiple imputation techniques 
+applied to the primary analysis model. 
+Further details regarding the statistical strategy of assessing missing data will be 
+provided in Appendices Appendix 4, Appendix 5, and Appendix 6.
+8.
+STATISTICAL METHODOL OGY AND STATISTICAL ANALYSES
+The ITT population will be used in the anal yses of the primary  efficacy  endpoint, and for 
+all other efficacy  endpoints. The Safet y population will be used in the analy ses of the 
+safet y data.  
+8.1.Analysis of Primary Efficacy Endpoint
+The primary efficacy analysis of the primary endpoint, log e(28-days seizure rate t+ 1) as 
+defined in Section 6.1 of this document, will utilize a linear model with the following 
+fixed effect terms:
+A log etransformed baseline seizure rate log e(28-days seizure rate b+ 1) forall 
+PGTC seizures , as a continuous covariate;
+Age strata (Stratum 1: 5 -7 years of age; Stratum 2:8-11 years of a ge; Stratum 3: 
+12-16 years of age; Stratum 4; 17- 65 years of age);
+Geographic region (See Section 6.4) by  pooling of investigator centers;
+Treatment group [placebo, Dose Level 1: pregabalin 5 mg/k g/day (maximum 
+300
+mg/day), Dose Level 2: pregabalin 10 mg/kg/day (maximum 600 mg/day) ].
+There will be two pair -wise comparisons of interest: 
+1) Dose Level 2: pregabalin 10 mg/kg/day  (maximum 600 mg/day ) -placebo, and
+2) Dose Level 1: pregabalin 5 mg/kg /day (maximum 300 mg/day ) -placebo.
+The difference in the least squares means and their standard errors for these two pair -wise 
+comparisons will be used for constructing test statistics and two sided 95% confidence 
+intervals. 
+Each dose of pregabalin wil l be compared to placebo in a pair -wise manner using a 
+sequential step -wise testing procedure to control for multiplicity of testing such that the 
+experiment -wise type I error rate will not exceed the 5% level of significance:
+1.The first step will test the null hypothesis of equal treatment effect of Dose Level 2 
+vs. placebo at =0.05 2 -sided for the primary endpoint. 
+If the null hypothesis of the first step is rejected, then proceed to the second step, 
+otherwise accept the null hypothesis of the first step, stop further testing, and 
+claim no treatment effect.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 21of 392. The second step will test the null hypothesis of equal treatment effect of 
+Dose Level 1 vs. placebo at =0.05 2 -sided for the primary endpoint.
+If the null hypothesis of the second step is rejected, then claim a treatment difference 
+for both dose groups of pregabalin [Dose Level 2: 10 mg/kg/day ( maximum 
+600mg/day) and Dose Level 1: 5 mg/kg/day ( maximum 300 mg/day) ] from the 
+placebo group for the primary endpoint only; otherwise accept the null hypothes is of 
+the second step, stop further testing, and claim a treatment difference for only 
+pregabalin Dose Level 2: 10 mg/kg/day ( maximum 600 mg/day) from placebo for the 
+primary endpoint only.
+The difference in the least squares means and their standard errors for these 2 
+pair
+-wise comparisons will be used for constructing test statistics and 2 -sided 95% 
+confidence intervals.  Results will be reported as “percent reduction in seizures from 
+baseline” relative to placebo.  For example, a difference between 1 of the pregabalin 
+doses and placebo of -0.358 on the log -transformed scale for the 28 -day seizure rate, 
+translates into a 30.1% reduction in the 28 -day seizure rate of the pregabalin group 
+from the placebo group (ie, 100%*[exp-0.358-1]= -30.1% ]).
+An additional back transformation will be calculated for percent reduction in seizures 
+for each pregabalin treatment group relative to placebo for presentation as follows:
+The 28- day seizure rate of log scale in the double -blind treatment phase will be 
+summarized by  each month and the entire 12- weeks double -blind period for each 
+treatment group, agegroup [pediatrics overall (<17 y ears) and adults (17- 65 years)], 
+and geographic region.
+Conti ngenc y plan for the primary  ANCOVA anal ysis model
+If after unbli nding, the primary  ANCOVA anal ysis model as described above performs 
+well without any issue s, the primary  anal ysis model will stay  as described above. 
+However, in case of ANCOVA anal ysis issue s, for example, with convergence or missing 
+cells in a particula r treatment within a region or within an age strata , the cause of the 
+analysis model issue swill be mitigated , for example , as follows :
+If a small region, say  US region, causes the model issue alone , the small region 
+(say US region) will be pooled with European Union ; Other ANCOVA model 
+terms will stay  as is;
+If age strata causes the model issue alone , the age group (
+5-16 years of age and 
+17-65 years of age ) as described in Section 6.4 will be used instead of the age 
+strata; Other ANCOVA model terms will stay  as is;
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 22of 39If both a small region and age strata cause the model issue, then ANCOVA 
+analysis will be performed with the small region (say  US region) pooled with 
+Europe an Union and age group (instea d of age strata), Other ANCOVA model 
+terms will stay  as is.
+Other anal yses of continuous dependent variables with ANCOVA model will follow the 
+same procedure as the primary  efficacy  endpoint analy sis. Responder rates and an y other 
+binary  variables that use the same planned model as primary  efficacy  endpoint analy sis 
+will similarly  be adjusted as needed.
+Sensitivity  Anal ysis
+As a sensitivity  anal ysis of the primary  endpoint, multiple imputation methods will be 
+used to evaluate the impact of missing data ( SeeAppendix 4). 
+Subjects who discontinue the study  for insufficient clinical response, adverse event, or 
+death will be imputed based on the observed placebo distribution, regardless of 
+randomized treatment assignment.  Imputatio n will be based on baseline log e(28-days 
+seizure rate b+1), geographical region, baseline weight (continuous) , and age strata .
+Subjects who discontinue the study  for other reasons, or who complete the study  but have 
+a missing double blind seizure rate, will be imputed based on observed subjects in the 
+same randomized treatment group.  Imputation will be based on treatment group , baseline 
+log e(28-days seizure rate b+1), geographical region, baseline weight (continuous), and age 
+strata .
+A sensitivity  anal ysis will be performed using 
+the same linear model as the primary  
+efficacy analysisexcept for the age covariate , which will be applied for the 2age group s
+(
+5-16 years of age ; 17-65 years of age ) . 
+Anadditional sensitivity  anal ysis will be performed using t he same linear model as the 
+primary  efficacy analysis with two age group s covariate as well as pooled region of US 
+and European Union.
+A ranked ANCOVA will be performed for the change from baseline to double blind phase
+of log -transformed (log e) 28-day sei zure rate for all PGTC seizures, including age strata, 
+treatment group, and region.
+A Wilcoxon -Mann Whitney test will also be performed and reported for the change from 
+baseline to double blind phase of log -transformed (log e) 28-day seizure rate for all PG TC 
+seizures .
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 23of 39Supple mental Anal ysis
+A supplemental analysis will be performed to investigate generalizability of the treatment 
+difference with respect to the 2 age categories (ie, a possible treatment -by-age 
+interaction that is statistically and clinically relevant). The estimated seizure rate, 
+standard error and the corresponding 95% confidence interval in addition to the treatment 
+difference between each pregabalin treatment group and placebo will be calculated for 
+both pediatric (5 -16 years of age) and a dult population (17- 65 years of age).  This 
+supplemental anal ysis will also be a re -evaluation of the primary  anal ysis model with an 
+interaction term for treatment- by-age.  This model will not replace the primary  model.    
+As a supplemental analysis, a generalized linear model assuming a Poisson and negative 
+binomial distribution
+sand canonical log link function will be applied to the raw seizure 
+counts.1, 2  The model will have an off -set parameter for the amount of time (i.e., 
+log e(days ) ) the subject was in the double blind treatment phase. A scale parameter of 
+Pearson will be specified to fit the Poisson distribution .
+The analyses with Poisson and negative binomia l models will be performed with baseline 
+seizure count as covariate . 
+The raw 28 -day seizure rate will be summarized overall, and separately  byage group of
+pediatrics overall (<17 years) and adults (17
+-65 years).
+8.2.Analysis of Secondary Efficacy Endpoints
+The secondary efficacy endpoint will be the responder rate, defined as the proportion of 
+subjects who had at least a 50% reduction in the 28- day seizure rate for all PGTC 
+seizures during the double-blind assessment phase, as measured from baseline (data 
+collected during the 8 -week baseline phase) on the I TT population .  This secondary 
+endpoint will be analyzed using a logistic regression model with the following fixed 
+covariate terms: treatment, age stratum , and geographical region.  No adjustments for 
+multi plicity will be taken, and nominal p -values from 2 -sided tests and the 
+correspondence odds ratio with 95% confidence interval will be reported.
+NOTE: The “PARAM=GL M”option in CL ASS statement of SAS will be applied for 
+logistic regression . 
+The responders and non-responders will be summarized descriptively by treatment using 
+counts and percentages, and additionally by treatment group, age strata . Descriptive 
+statistics for responder will also be provide for pediatrics overall (<17 y ears) and adults 
+(17-65 years) and geographical region.
+8.3.Analysis of Exploratory Endpoints
+The proportion of seizure -free days for each seizure type: PGTC, myoclonic, tonic/atonic, 
+absence, and clonic seizures will utilize ANCOVA model.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 24of 39The number of seizure -free days gained for ea ch seizure type: PGTC, myoclonic, 
+tonic/atonic, absence, and clonic seizures will be analyzed utilizing a linear model 
+similar to the primary analysis.  
+The proportion of subjects with PGTC seizure -freedom will utilize a logistic regression 
+model similar to the responder rate analysis. 
+No adjustments for multiplicity will be taken and nominal p -values from 2 -sided tests will 
+be reported.
+The exploratory  endpoints will additionally  be presented descriptivel y overall, and 
+separately  byage group ofpediatri cs overall (<17 y ears) and adults (17 -65 years).
+8.4.Safety Analyses
+All subjects with at least 1 dose of study medication will be included in the safet y 
+analyses. Baseline assessments are done at Day  1 (Visit 3). If Visit 3 data is missing the 
+last available observation prior to start of study treatment is considered as a baseline.
+No inferential safet y analyses are planned. Pfizer safet y reporting standards will be 
+utilized for all safety  endpoints.
+All safet y anal yses will be presented overall, and separatel y byage group of pediatrics 
+overall (<17 years) and adults (17- 65 years).
+8.4.1. Adverse Events
+All AEs occurring during the course of the study  will be coded using MedDRA coding 
+dictionary .  
+All AEs (serious and non -serious) reported from the first day  of stud y treatment through 
+and including 28 calendar day s after the last administration of the study  drug will be 
+considered treatment emergent AEs (TEAEs). An overall summary  of treatment -
+emergent AEs will be provided.  TEAEs will also be summarized by  system or gan class, 
+preferred term, severity , and relationship to study  drug. TEAEs will be presented overall, 
+and separatel y by age group of pediatrics overall (<17 y ears) and adults (17-65 years) .
+Summaries and listings of all AEs, SAEs and treatment -related AEs will be presented in 
+accordance with the current Pfizer Standard Operating Procedures (SOPs) and standards .
+The 3 -
+tier Approach for summarizing AEs will be implemented, and events (MedDRA 
+PTs) will be classified into the following tier definitions:
+Tier 1: None 
+Tier 2: Targeted Medical Events (TMEs) identified in the Ly rica Safety  Review Plan
+Tier 3: Standard safet y output (no new outputs- see above)
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 25of 39The Tier 2 and 3 AEs will be presented overall, and separately  by age group of   
+pediatrics overall (<17 years) and adults (17- 65 years).
+8.4.2. Suicidal Ideation and Behavior
+C-CASA/C -SSRS
+The denominator used in the percentages will be the number of subjects assessed for 
+suicidal ideation and behavior.  For worsening, the denominator would include the subset 
+of subjects who had an y level of suicidal ideation and behavior reported at baseline.  For 
+new onset, the denominator would include the subset of subjects with no suicidal ideation 
+and behavior reported at baseline.
+A subject listing of C -CASA categories as well a s the underl ying C- SSRS scale data will 
+be presented.  
+In addition, a summary  table with the number and percent of subjects within each C -
+CASA category  by treatment group at screening, baseline, and at any  time post -baseline 
+without regard to baseline will be reported.   
+C-CASA will be presented overall, and separatel y byage group of   pediatrics overall 
+(<17 years) and adults (17
+-65 years).
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 26of 398.5.Summary of Efficacy Analyses 
+Endpoint (Key 
+Summary 
+Metrics)Analysis 
+SetStatistical 
+Method Model/ 
+Covariates/ 
+StrataMissing Data Interpretation
+Log e 28-day 
+PGTC seizure 
+rate 
+(N, LS Mean
+Diff/ SE)ITT ANCOVA Treatment, 
+region, age 
+strata, 
+baseline 
+seizure rateDays missing 
+from Seizure 
+Diary will be 
+subtracted from 
+rate calculationsPrimary Analysis
+Note: a ge str ata is 
+protocol defined age 
+strata .Baseline is the 
+log of 28 -day PGTC 
+rate at baseline
+Key summary statistics will be presented for the Log e 28-day PGTC seizure rate and for the back 
+transformed “percent reduction in seizures” relative to placebo. 
+Log e 28-day 
+PGTC seizure 
+rate 
+(N, LS Mean 
+Diff/SE)
+(treatment -by-
+age p -value)ITT ANCOVA Treatment, 
+region, age 
+group, 
+treatment -by-
+agegroup
+interaction , 
+baseline 
+seizure rateDays missing 
+from Seizure 
+Diary will be 
+subtracted from 
+rate calculationsSupplem ental Analysis
+Note: age group sare 
+Age< 17 yrs and Age>= 
+17 yrs . Baseline is the 
+log of 28 -day PGTC 
+rate at baseline.
+Key summary statistics will be presented for the Log e 28-day PGTC seizure rate and for the back 
+transformed “percent reduction in seizures” relative to placebo. 
+Responder rate
+(%)ITT Logistic 
+regressionTreatment, 
+region, age 
+strataDays missing 
+from Seizure 
+Diary will be 
+subtracted from 
+rate calculationsSecondary Analysis
+Proportion 
+Seizure- free 
+days
+(%)ITT
+ANCOVATreatment, 
+region, age 
+strata , 
+baselineDays missing 
+from Seizure 
+Diary will be 
+subtracted from 
+rate calculationsExploratory Analysis
+Each seizure type: 
+PGTC, myoclonic, 
+tonic/atonic, absence, 
+and clonic seizures .  
+Baseline for this 
+endpoint is the 
+proportion of seizure
+free days at baseline .
+Number of 
+seizure -free 
+days gained 
+(N, Mean, SE)ITT ANCOVA Treatment, 
+region, age 
+strata, 
+baseline Days missing 
+from Seizure 
+Diary will be 
+subtracted from 
+rate calculationsExploratory Analysis
+Each seizure type: 
+PGTC, myoclonic , 
+tonic/atonic, absence, 
+and clonic seizures .
+Baseline for this 
+endpoint is the number 
+of adjusted seizure free 
+days at baseline .
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 27of 39Proportion 
+PGTC Seizure -
+freedom
+(%)ITT Logistic 
+regressionTreatment, 
+region, age 
+strata Days missing 
+from Seizure 
+Diary w ill be 
+subtracted from 
+rate calculationsExploratory Analysis
+Log e 28-day 
+PGTC seizure 
+rate 
+(N, LS Mean 
+Diff/SE)ITT ANCOVA Treatment, 
+region, age 
+strata , 
+baseline Multiple 
+imputation will 
+be applied.Sensitivity Analysis .  
+Baseline is the log of 
+28-da y PGTC rate at 
+baseline .
+Log e 28-day 
+PGTC seizure 
+rate 
+(N, LS Mean 
+Diff/SE)ITT ANCOVA Treatment, 
+region, 2age 
+groups , 
+baseline Days missing 
+from Seizure 
+Diary will be 
+subtracted from 
+rate calculationsSensitivity Analysis
+Note: age group are 
+Age< 17 yrs and Age>= 
+17 yrs .  Baseline is the 
+log of 28 -day PGTC 
+rate at baseline
+Log e 28-day 
+PGTC seizure 
+rate 
+(N, LS Mean 
+Diff/SE)ITT ANCOVA Treatment, 
+pooled 
+region, 2age 
+groups , 
+baseline Days missing 
+from Seizure 
+Diary will be 
+subtracted from 
+rate calcul ationsSensitivity Analysis
+Note: age group are 
+Age< 17 yrs and Age>= 
+17 yrs. US and 
+European Union will be 
+pooled in the region 
+class. Baseline is the 
+log of 28 -day PGTC 
+rate at baseline
+Change from 
+baseline to 
+double blind 
+phase of Log e 
+28-day PGTC 
+seizure rate ITTRank
+ANCOVATreatment, 
+region, age 
+strata, region 
+and ranked 
+log-BLSensitivity Analysis
+(Log-Scale) . Baseline 
+is the ranked log of 28 -
+day PGTC rate at 
+baseline .
+Change from 
+baseline to 
+double blind 
+phase of Log e 
+28-day PGTC 
+seizure rat e 
+(DB Phase)ITTWilcoxon -
+Mann 
+Whitney 
+TestSensitivity Analysis
+(Log-Scale)
+Raw Seizure 
+CountITTGENMOD, 
+Poisson 
+and 
+negative 
+binomial 
+distribution 
+with log 
+linkTreatment , 
+andbaselinescale parameter = 
+Pearson for the Poisson 
+model . Baseline for this 
+endpoint is seizure 
+count at baseline.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 28of 39All efficacy endpoints will be presented descriptively  overall, and separately  as by 
+age group of pediatrics overall (<17 y ears) and adults (17 -65 years).
+9.REFERENCES
+1. McCullagh, P. and Nelder, J.A. (1989). Gener alized Linear Models, Second Edition, 
+New York: Chapman & Hall/CRC.
+2. Stokes, M.E., Davis, C.S., and Koch, G.G. (2000). Categorical Data Analysis Using 
+the SAS System , Second Edition, Cary , NC: SAS Institute.
+3. Friede, T. andKeiser, M. (20
+11). “ Blinded sample size recalculation for clinical 
+trials with normal data and baseline adjusted anlaysis ” Pharmaceutical Statistics ,
+10: 8-13.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 29of 39APPENDICES 
+Appendix 1.Data Derivation Details 
+This table describes how seizure related endpoints have been defined. 
+Endpoint Derivation
+8-week baseline phase (b) 
+28-day  seizure rate 28-day  seizure rate b= [(# of seizures b) ÷ (#of days b -# of 
+missing diary b)] × 28, where #of day sbis defined as (first dose 
+date-1) 
+–screening date +1.
+12-week double - blind 
+treatment phase (t) 28 -day 
+seizure rate 28-day  seizure rate t= [(# of seizures t) ÷ (#of days t-# of 
+missing diary t)] × 28, where #of day stis defined as date of 
+last dose in phase –date of first dose in phase +1.
+Primary  endpoint : Log e of 
+28-day  seizure rate during 
+12-week double - blind 
+treatment phaseLoge (28-day  seizure rate t +1)
+“Percent reduction in 
+seizures” relative to 
+placeboFor example, a difference between one of the pregabalin 
+doses and placebo of -0.400 on the log transformed scale 
+for the 28- day seizure rate translates in to a 33% reduction 
+in the 28- day seizure rate of the pregabalin group from the 
+placebo group (ie, 100%*[exp
+-0.400-1]= -33%)
+An additional back transformation will be calculated for 
+the percent reduction in seizures for each pregabalin 
+treatment group rela tive to placebo for presentation in the 
+CSR  as follows: 
+Percent change from 
+baseline in 12 -week 28-day 
+seizure rate% Change = [28-day  seizure rate t -28-day seizure rate b)/ 28-
+day seizure rate b] × 100%
+Responders 50% reduction in the 28 -day seizure rate from baseline 
+during the 12 -week double -blind treatment phase, then
+response = 1 (responder) otherwise response = 0 (non -
+responder).
+The response status will be set as missing if the baseline 
+seizure rate is missing. If baseline seizure rate is non-missing 
+but there are no double -blind phase seizure rates, then the 
+response status will be set as non -response
+Proportion Seizure -free 
+daysThe numerator for seizure -free day s is defined as the 
+number of day s the subject experience no seizures over the 
+double -blind assessment phase.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 30of 39Number of seizure -free 
+days gainedThe number of seizure- free day s will be adjusted to a per 
+12weeks value (ie, 84 days) for the baseline and 12 -week 
+double -blind assessment phases.  Changes from baseline 
+are to be computed and the anal ysis performed accordingl y.
+Number of 12 week adjusted seizure free day s is defined as 
+follows:
+Number of seizure free day s in a period x 84 / numb er of 
+days in a period.
+Proportion PGTC Seizure-
+freedomThe numerator for seizure -free dom is defined as the 
+number of subjects that experience no PGTC seizures over 
+the last 28 days of the double -blind assessment phase 
+(Patient must have received at least 42 day s(2 weeks + 28 
+days) of study  medication and have a minimum of 21 of the 
+last 2 8 day s as non -missing diary ).The denominator is the 
+ITT pop ulation with 42 day s (2 weeks + 28 day s) of study  
+medication.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 31of 39Appendix 2. C- SSRS Mapped to C -CASA -Suicidal Ideation and B ehavior Events 
+and Codes
+C-CASA 
+Event Code C-CASA Event C-SSRS Response
+1 Complete d suicide As captured in the safety database
+2 Suicide attempt “Yes” on “Actual Attempt”
+3 Preparatory acts towards 
+imminent suicidal behavior“Yes” on any of the following:
+“Aborted attempt”, or
+“Interrupted attempt”, or
+“Preparatory  Acts or Behavior”
+4 Suicidal ideation “Yes” on any of the following:
+“Wish to be dead”, or
+“Non -Specific Active Suicidal 
+Thoughts”, or
+“Active Suicidal Ideation with Any  
+Methods (Not Plan) without I ntent to 
+Act”, or
+“Active Suicidal Ideation with Some 
+Intent to Act, without Specific Plan”, 
+or
+“Active Suicidal Ideation with 
+Specific Plan and Intent”
+7 Self-injurious behavior, no 
+suicidal intent“Yes” on “Has subject engaged in Non- suicidal 
+Self-Injurious Behavior?”
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 32of 39Appendix 3.Windowing for Study Months 1, 2 and 3
+A 28 -day seizur e rate will be determined for each windowed month for which seizure 
+data exist. Assignment of seizure data to visits during the Double -Blind Treatment Phase 
+will use visit windows based on the day  of the assessment relative to the date of the start 
+of the double blind treatment phase. The following visit windows will be defined for 
+statistical outputs:
+Visit Windows 
+Month Time Interval
+(Days)
+Month 1 1 to 28
+Month 2 29to 56
+Month 3 57to 90
+Derive stud y day as the (assessment date -date of start of double blind treatment phase) 
++ 1. A subject must have at least 24 diary  days to be counted in any  monthly  visit 
+window data. Any data collected after Day 90 will be excluded from the monthly  visit 
+window calculations. 
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 33of 39Appendix 4.Analysis Strategy Using Multip le Imputations
+If the amount of missing data is not significant in the primary  endpoint (ie, less than 5% 
+within each treatment groups), then the multiple imputation analysis will not be 
+performed.
+Concept of multiple imputation strategy
+Multiple imputatio n procedure is used under the assumption of missing at random (MAR) 
+data and under the assumption of a monotone missing data pattern. In general, let Y be 
+the response data (monthly  seizu re rate) where that part of Y which is missing is denoted 
+by Ymis, and that part of Ywhich is observed is denoted by  Yobs.  A data pattern is said to 
+have a missing monotone data pattern when the variable Yjfor an individual subject is 
+missing at time point j, and all subsequent variables for that individual are also mis
+sing 
+for Ykin which k>j.
+The three steps for conducting statistical inferences using a multiple imputation 
+procedure consist of the following :
+Imputation step: Missing data are filled in m times to generate m complete data sets, 
+where m > 1 ;For this stu dy, we will let m take on the value 100.
+Analysis step: Them complete d atasets are analy zed using standard procedures;
+Combination step: The results from the m complete data sets are combined for the final 
+statistical inference .
+The imputation step is pe
+rhaps the most critical, since it relies upon assumptions 
+regarding the missing data mechanism. The goal of the imputation is to account for the 
+relationships between the unobserved and observed variables, while taking into account 
+the uncertaint y of the imputation. The MAR assumption is key  to the validity  of multiple 
+imputation. Use of this assumption allows the analy st to generate imputations ( Y{1},Y{2}, . 
+. .Y {m}) from the distribution f(Ymis|Yobs), since after conditioning on Yobs, the 
+missingness i s assumed to be due to chance and is considered ignorable .In this 
+application, we will use the regression method in which the variable Y jwith missing 
+values, is fitted with non- missing observations as the dependent variables. This allows 
+for the follow ing regression model to be employ ed:
+Yj= β 0+ β 1*Y1+ β 2*Y2+ … + β (j-1)Y(j-1).
+The fitted model has parameter estimates (b 0, b1, b2, …, b (j-1)) and the associated 
+covariance matrix 
+s2
+jVj, where V jis the usual XTX matrix from the intercept and 
+variables Y 1, Y2, …, Y(j-1). 
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 34of 39For each imputatio n, new parameters (β*
+0, β*
+1, β*
+2, …, β*
+(j-1); and *2) are dra wn from a 
+posterior predictive dis tribution of the missing data. The missing values of Y jare then 
+replaced with the predicted values using the following equation:
+β*
+0 + β*
+1*y1+ β*
+2*y2+ … + β*
+(j-1)*y(j-1)+ z i**2
+where y1, y2, …, y (j-1)are covariates values for the first (j
+-1) variables and z ia simulated 
+standard normal deviate for the ithindivi dual. 
+The next step is to carry  out the anal ysis of interest for each of the 
+m imputed complete -
+observation datasets, storing the parameter vector and standard error estimates.
+Finally , the results are combined using results from Rubin (1987), to calculate estimates 
+of the within imputation and between imputation variability .These statistics accoun t for 
+the variability  of the imputations and assuming that the imputation model is correct, 
+provide consistent estimates of the parameters and their standard errors. 
+SAS sample programs for multiple imputation strategy  for this study
+A pattern mixture model of multiple imputation is applied, and sample SAS programs are 
+described as below.  Note that the variable names/labels are suggestions only  and the 
+actual names/labels and code levels should be consistent with current sponsor reporting 
+standards. 
+SUBJ ID:subject identification number .
+REGION and AGE _strata (See covariates Section 6.4).
+TRT : Treatment group (Placebo, Pregabalin Level 1
+, Pregabalin Level 2 ).
+LN_BSZRT : A log etransformed baseline seizure rate log e(28-days seizure rate b
++1).
+LN_SZRATE: A log etransformed double -blind seizure rate log e(28-days seizure 
+rate t+1).
+IMPSTAT : Impstat = 1 if DC due to AE, death, or insufficient clinical response.  
+Impstat = 2 otherwise .
+MISS: Miss = 1 if ln_szrate is missing.  Miss = 0 otherwise.
+In order to impute missing data at the singular time point, first prepare an input dataset, 
+making sure that it will contain only  the intended donor and recipient patterns.   Separate 
+the input dataset <efficacy> into two 
+datasets: I MP, containing all placebo subjects and 
+those subjects from the pregabalin arms that have missing LN_SZRATE [Miss=1] and 
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 35of 39Impstat=1 ; and REST, containing the rest of the subjects from the pregabalin arms (those 
+with non- missing LN_SZRATE [Miss=0] or I mpstat=2 ).
+title1 'Pattern Imputation based on reason for DC';
+*these sets are exhaustive and mutually  exclusive;
+data IMP REST;
+   set <efficacy >;
+   if trt ne “Placebo” and (impstat = 2 or miss = 0) then output REST;
+   else output I MP;
+run;
+Call PROC MI  to impute missing data at the time point using dataset IMP as input.
+*order of variables matters in proc mi;
+proc midata = IMP out = impout nimpute= 100seed = 100;
+   class region age _strata;
+   var region age_strata ln_bszrt ln_szrate weigh t;
+   monotone regression (ln_szrate = ln_bszrt region age_strata weight );
+run;
+Call PROC MI  to impute missing data at the time point using dataset REST as input.
+*impute like randomized trtfor active who are 'ignorably missing';
+proc midata = REST out = restout nimpute=100 seed = 101 ;
+class region age _strata trt ;
+   var region age_strata trt ln_bszrt ln_szrate weight ;
+   monotone regression(ln_szrate = trt ln_bszrt region age_strata weight ) ;
+run;
+Assemble back a dataset containing all subjects.
+*fully imputed integrated dataset;
+data main ;
+  set impout restout ;
+run ;
+proc sortdata = main ;
+  by _imputation_ trt ;
+run ;
+*Analy sis of imputed data sets;
+*Confirm the ordering of the trt variable for specify ing the vector.  Here it is assumed 
+Placebo, Pregabalin Level 1, and Pregabalin Level 2 ;
+proc glmdata=main; 
+  by _imputation_ ;
+  class region age _strata trt ;
+  model ln_szrate = trt region age_strata ln_bszrt;
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 36of 39lsmeans trt / diff=control('Placebo') tdiff pdiff cl ;
+  estimate ‘ Pregabalin Leve l 1vs Placebo’ trt -1 1 0 ;
+  estimate ‘ Pregabalin Level 2 vs Placebo’ trt -1 0 1 ;
+  ods output lsmeans=lsm diffs=lsdiff estimates=estdiffs ;
+run ;
+quit ;
+*integrated summary  of results of imputed datasets;
+proc mianal yzeparms(classvar=full)=lsm edf=xxx;
+  class trt ;
+  modeleffects trt ;
+run ;
+proc sort data = estdiffs ;
+  by parameter _imputation_ ;
+run ;
+proc mianal yzedata=estdiffs ;
+  by parameter ;
+  modeleffects estimate ;
+  stderr stderr ;
+run ;
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 37of 39Appendix 5.Analysis Strategy Using a Poisson Model
+Poisson D istributions often arise from a Counting process
+Seizure counts as a random variable Y
+The expected value of the seizure counts is E(Y) = 
+The variance of the seizure counts is Var(Y) = 
+Generalized L inear Model for Seizure Counts with equal duration
+g() = ln() = +X
+Distribution is Poisson
+Link function g( ) is the natural log 
+In other words = exp(+X)
+Incorporating exposure time (T) in the Model 
+Off-setting the exposure time by  ln(T)
+ln(/T) = +X
+  = T·exp(+X)
+Adjust for unequal exposure times among treatment groups
+Exposure time T is derived in months as study  day/28, where study  day is derived as the 
+(assessment date -date of start of double blind treatment phase) + 1.  Eg, if the subject 
+dropped out at day  26, the exposure time would be 26/
+28=0. 93months.
+The scale parameter will be set to Pearson in the Poisson model
+.
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 38of 39Appendix 6.Blinded Sample Size Re -Estimation
+The proposed sample size re -estimation formula ( Friede and Keiser , 2011)3is the 
+following:
+ 
+22 2 2
+1 2 / 12
+*1 ) ( 1
+        
+   z zn
+where,
+*nis the revised total sample size of two treatment group s for this estimation ;
+is the ratio of the estimated sample size of two treatment groups;
+2 / 1z is a perce ntile from a standard normal cdf with α/2=0.025; 
+1z is a percentile from a standard normal cdf with β=0.20;
+2is the blinded estimate of pooled variance for outcome variable at the interim review;
+is the blinded estimate for the correlation between an outcome and a covariate variable;
+is the clinically  meaningful difference between Dose Level 1: pregabalin 5 mg/kg/day 
+(maximum 300 mg/day) and placebo (i.e., 0. 358) asspecified in the protocol. 
+For this study , the ratio of estimated sample size of two treatment group ( ) is assumed 
+as one due to 1:1 randomization with respect to placebo versus dose level 1.  In addition, 
+the estimat esfor correla tion () and pooled variance (2) is estimated based on the 
+residual variance of ANCOVA.  Therefore, the simpli fied equation for this study  is: 
+22 2
+1 2 / 1 *~) ( 4
+    s z zn 
+where, 
+2~sis the blind ed estimate of the residual variance based on ANCOVA at the interim 
+review .  
+The pooled blinded estimate of the variance, 2~s, will be based in a blinded manner 
+without making an y correction for possible treatment group differences after the 1st
+110subjects have had the opportunity  to complete the study . Since baseline 28 day  
+seizure rate, age strata, and geographical region are important pr e-specified modeling 
+terms that explain sources of variability  in the data, the estimate 2~swill take into 
+consideration these three modeling terms as the mean squared error. While this pooled 
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)
+
+Protocol A0081105 Statistical Analy sis Plan
+Statistical Analysis Plan Version 3.0 Page 39of 39estimate of the variance under the null hy pothesis will be biased upwards, this bias is 
+negligible when the overall sample is reasonabl y large. Results from a thorough 
+simulation study  indicated that the re- estimated sample size using the uncorrected pooled 
+variance required onl y 2 -to-3 more subjects per group relative to using a corrected 
+pooled variance estimate. The proposed blinded sample size re-estimation procedure will 
+only allow for a new sample size (n New) to be increased bey ond the initial targeted sample 
+size (n Initial), but not bey ond the pre -determined maximum sample size (n Max=195 ). 
+090177e1919540bd\Approved\Approved On: 31-Jul-2019 07:35 (GMT)

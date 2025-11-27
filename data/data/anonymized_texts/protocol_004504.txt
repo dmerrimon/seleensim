@@ -1,0 +1,1553 @@
+
+
+
+67$7,67,&$/$1$/<6,63/$1
+
+
+
+6WXG\7LWOH $0XOWLFHQWHU5DQGRPL]HG'RXEOHEOLQG3ODFHERFRQWUROOHG
+3KDVH6WXG\WR(YDOXDWHWKH(IILFDF\DQG6DIHW\RI&\FOR =LQ
+3DWLHQWVZLWK2EHVH7\SH'LDEHWHV
+ 
+3KDVH 
+3URWRFRO1XPEHU 103&<=3
+3URWRFRO9HUVLRQ'DWH 9HUVLRQ'HFHPEHU
+6$39HUVLRQ'DWH 9HUVLRQ2FWREHU
+$XWKRUV +\XQ-L.LP
+3UHSDUHG)RU 1RY0HWD3KDUPD&R/WG
+
+&21),'(17,$/$1'35235,(7$5<,1)250$7,21
+
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 3 16 October 2017  Document Version History 
+ 
+Version Date Author Description of Changes  
+1.0 21 June 2017  Hyun Ji Kim  Initial version  
+1.1 29 August 2017  Hyun Ji Kim  Modified the following by sponsor request.  
+1. Added exploratory efficacy analysis for TAFGC . 
+2. Added paired t -test (or Wilcoxon signed -rank test ) to 
+    analysis the change of efficacy endpoints within each group.  
+3. Deleted Analysis for unexpected adverse events . 
+1.2 16 October 2017  Hyun Ji Kim  Modified the following by sponsor request.  
+1. Added 1 exploratory efficacy endpoint  – BMI.  
+2. Added exploratory efficacy analyses for BMI.  
+3. Updated calculation for TAFGC.  
+4. Added sponsor defined  definitions for Hypoglycemia and  
+    Hyperglycemia  
+5. Added section for Subgroup Analysis.  
+6. Added section for Post -hoc Analysis.  
+ 
+  
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 4 16 October 2017  Table of Abbreviations 
+ 
+Abbreviation  Description  
+AE Adverse Event  
+ADDQoL  Audit of Diabetes -Dependent Quality of Life  
+BMI  Body Mass Index  
+BP Blood Pressure  
+BSA  Bio-Statistics Associate  
+BSM Bio-statistics Manager  
+BW Body Weight  
+cGMP  Current Good Manufacturing Practice  
+CHP  Cyclo (His -pro) 
+CRO   Contract Research Organization  
+CTCAE  Common Terminology Criteria for Adverse Events  
+Cyclo  Cyclic dipeptide  
+DBMS  Database Management System  
+DM Diabetes Mellitus  
+DPP Dipeptidyl Peptidase  
+DW Distilled Water  
+eCRF  Electronic Case Report Form  
+EAS  Efficacy Analysis Set  
+EDC  Electronic Data Capture  
+FAS Full Analysis Set  
+FDA  Food and Drug Administration  
+FPG Fasting Plasma Glucose  
+GCP  Good Clinical Practice  
+G-K Goto -Kakizaki  
+GLP  Good Laboratory Practice  
+GLP -1 Glucagon -like protein -1 
+GLUT -4 Glucose transporter -4 
+GMP  Good Manufacturing Practice  
+HbA1c  Hemoglobin A1c  
+hCG  human chorionic gonadotropin  
+IB Investigator ‟s Brochure  
+ICF Informed Consent Form  
+ICH International Conference on Harmonization  
+IDE Insulin Degrading Enzyme  
+IEC Independent Ethics Committee  
+IP Investigational Product  
+IRB Institutional Review Board  
+LOCF  Last Observation Carried Forward  
+MedDRA  Medical Dictionary for Regulatory Activities  
+MsSQL Microsoft Structured Query Language  
+NIDDM  Non-insulin -dependent Diabetes Mellitus  
+ODBC  Open Database Connectivity  
+OGTT  Oral Glucose Tolerance Test  
+PT Preferred Term  
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 5 16 October 2017  SAE  Serious Adverse Event  
+SAP Statistical Analysis Plan  
+SD Standard Deviation  
+S-D Sprague -Dawley 
+SEM  Standard Error of the Mean  
+SMC  Safety Monitoring Committee  
+SOC  System Organ Class  
+SOP Standard Operating Procedure  
+TAFGC  Three -hour-area-average Above Fasting Glucose Concentration  
+TSH Thyroid Stimulating Hormone  
+T3 Triiodothyronine  
+T4 Thyroxine  
+WHODRUG  World Health Organization Drug  
+  
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 6 16 October 2017  Table of Contents 
+DOCUMENT VERSION HISTORY ...............................................................................................................3 
+TABLE OF ABBREVIATIO NS .......................................................................................................................4 
+TABL
+E OF CONTENTS ..................................................................................................................................6 
+1. INTRO
+DUCTION ......................................................................................................................................8 
+2. STUDY OBJECTIVE(S) ...........................................................................................................................8 
+2.1  Primary Objective ..............................................................................................................................8 
+2.2  Secondary Objective ..........................................................................................................................8 
+3. STUDY OVERVIEW.................................................................................................................................8 
+3.1  Study Design ......................................................................................................................................8 
+3.1.1  Overall Study Design ................................................................................................................................  8 
+3.1.2  Schedule of Assessment ............................................................................................................................  9 
+3.2 Study Population ..............................................................................................................................10 
+3.2.1  Inclusion Criteria .................................................................................................................................... 10 
+3.2.2  Exclusion Criteria ................................................................................................................................... 10 
+3.3 Sample Size Considerations .............................................................................................................11 
+3.4 Randomization and Blinding ...........................................................................................................11 
+3.4.1  Randomization ........................................................................................................................................ 11 
+3.4.2  Blinding .................................................................................................................................................. 12 
+4. STUDY ENDPOINTS AND COVARI ATES .........................................................................................12 
+4.1 Primary Endpoints ...........................................................................................................................12 
+4.2 Secondary Endpoints .......................................................................................................................12 
+4.3 Exploratory Endpoints .....................................................................................................................12 
+4.4 Safe
+ty Endpoints ..............................................................................................................................13 
+4.5 Cyclo (His-pro) (CHP) Concentration Evaluation ...........................................................................13 
+5. HYPOTHESES .........................................................................................................................................13 
+6. DE
+FINITIONS .........................................................................................................................................13 
+7. AN
+ALYSIS SUBSETS .............................................................................................................................14 
+7.1 Full An
+alysis Set ..............................................................................................................................14 
+7.2 Efficacy Analysis Set .......................................................................................................................15 
+7.3 Per Protocol Set ................................................................................................................................15 
+7.4 Safety Analysis Set ..........................................................................................................................15 
+8. INTERIM ANALYSIS.............................................................................................................................16 
+9. DATA SCREENING AND ACCPET ANCE .........................................................................................16 
+9.1 General Principles ............................................................................................................................16 
+9.2 Data Handling and Electronic Transfer of Data ...............................................................................16  
+9.3 Handling of Missing and Incomplete Data ......................................................................................16 
+9.3.1  Missing and Incomplete Dates ................................................................................................................ 16 
+9.3.2  Missing Baseline Evaluation ................................................................................................................... 17 
+9.3.3  Missing Post-Baseline Evaluation .......................................................................................................... 17 
+9.3.4  Handling of Repeated Laboratory Test Results ......................................................................................  17 
+9.4 Handling of Early Termination ........................................................................................................17 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 7 16 October 2017  9.5 Outliers Detection ............................................................................................................................18 
+9.6 Bias Detection ..................................................................................................................................19 
+9.7 Distributional Characteristics ...........................................................................................................19 
+9.8 Va
+lidation of Statistical Analyses ....................................................................................................19 
+10. STATISTICAL ANALYSES ...................................................................................................................19 
+10.1  General Principles ............................................................................................................................19 
+10.2  Subject Disposition ..........................................................................................................................20 
+10.3  Protocol Deviations ..........................................................................................................................20 
+10.4  Demographic and Baseline Characteristics ......................................................................................20 
+10.4.1  Demographic Characteristics .................................................................................................................. 20 
+10.4.2  Medical History ...................................................................................................................................... 21 
+10.4.3  Concomitant Medications .......................................................................................................................  21 
+10.4.4  Efficacy Variables at Baseline ................................................................................................................ 21 
+10.5  Efficacy Analyses ............................................................................................................................21 
+10.5.1  Primary Efficacy Analyses ..................................................................................................................... 23 
+10.5.2  Secondary Efficacy Analyses ................................................................................................................. 24 
+10.5.3  Exploratory Efficacy Analyses ............................................................................................................... 25 
+10.6  Safety Analyses ................................................................................................................................26 
+10.6.1  Adverse Events ....................................................................................................................................... 26 
+10.6.2  Laboratory Test Results ..........................................................................................................................  28 
+10.6.3  Vital Signs .............................................................................................................................................. 28 
+10.6.4  Physical Examination and 12-lead ECG ................................................................................................ . 28 
+10.6.5  Exposure to IP ......................................................................................................................................... 28 
+10.6.6  Concomitant Medication Use ................................................................................................................. 29 
+10.7  CHP Concentration Analysis ...........................................................................................................29 
+10.8  Subgroup Analysis ...........................................................................................................................29 
+10.9  Post-hoc Analysis .............................................................................................................................29 
+11. REPORTING CONVENTIONS .............................................................................................................29 
+12. ADJUSTED STATISTICAL ANALYSIS METHOD ..........................................................................30 
+13. CH
+ANGES IN THE STATISTICAL ANALYSIS FROM THE PROTOCOL ..................................30 
+14. REFERENCES .........................................................................................................................................33 
+ 
+  
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 8 16 October 2017  1. INTRODUCTION 
+ 
+This Statistical Analysis Plan (SAP) is developed to guide the details of the statistical analysis method of the 
+phase 2 study to evaluate the efficacy and safety of Cyclo-Z in patients with obese type 2 diabetes. The SAP 
+includes detailed definitions of the populations to be analyzed, the subject characteristics and the efficacy and 
+safety endpoints, as well as the specific statistical analysis methods to be performed. 
+ 
+2. STUDY OBJECTIVE(S) 
+ 
+2.1  Primary Objective 
+ 
+The primary objective is to assess the dose-dependent efficacy of Cyclo-Z for the treatment of subjects with 
+obese type 2 diabetes. 
+ 
+2.2  Secondary Objective 
+ 
+The secondary objective is to assess the safety of Cyclo-Z in the treatment of subjects with obese type 2 
+diabetes. 
+ 
+3. STUDY OVERVIEW  
+ 
+3.1  Study Design 
+3.1.1 Overall Study Design 
+ 
+This is a double-blind, randomized, placebo-controlled, parallel-group comparison study to evaluate the 
+efficacy and safety of Cyclo-Z vs. placebo in adult subjects with obese type 2 diabetes. Up to four sites may 
+be utilized in the United States so that a total of 80 subjects (a potential 20% screening failure rate) may be 
+screened for total 16-week study period (2 weeks for screening, 12 weeks for treatment, and 2 weeks for 
+safety follow-up). 
+ 
+Subjects who meet preliminary inclusion and exclusion criteria at Screening will undergo a 2-week 
+assessment period of record-keeping compliance. Subjects will be asked to record daily blood glucose values 
+(fasting before breakfast and two hours after dinner) and study medication adherence throughout study 
+participation. 
+ 
+Sixty-four (64) qualified subjects will be assigned randomly to either the placebo arm or to one of the three 
+treatment groups requiring the oral intake of a single gel capsule of Cyclo-Z or placebo once daily before 
+bedtime for 12 consecutive weeks. 
+ 
+Refer to the schedule of assessment of Section 3.1.2  for a display of all assessments to be conducted. All 
+visits are to be scheduled according to their time from the randomization visit (Visit 2).  
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 9 16 October 2017  3.1.2 Schedule of Assessment 
+ Screening  Treatment Period  Follow-
+up 
+Study Visits 1) V1 V2 V3 V4 V5 V6 V7 V8 V9 
+Screen 
+(Week -2) Baseline 
+(Week 0) Week 2 Week 4 Week 6 Week 8 Week 10 Week 12 Week 14 
+Informed  Consent X         
+Inclusion/Exclusion Criteria  X X        
+Demographic (including 
+height) X         
+Medical/Medication History  X         
+Physical Examination  X X  X  X  X  
+Vital Signs and Body 
+Weight  X X X X X X X X X 
+12-lead ECG  X       X  
+Blood Sampling for serum 
+chemistry, hematology, 
+FPG, HbA1c, hCG, TSH, 
+T3, and T4 2) X X  X  X  X  
+Blood Sampling for zinc, 
+insulin, adiponectin, C -
+peptide, leptin, glucagon, 
+[CHP in a subset of  
+subjects 3)]  X  X  X  X  
+Urine Sampling for glucose, 
+microalbumin, copper, and 
+zinc   X  X  X  X  
+Dispense and Review  
+Daily Log  X X X X X X X X  
+Dispense and Review 
+Medications   X X X X X X X  
+Waist Circumference   X  X  X  X  
+OGTT 4)   X      X  
+ADDQoL Questionnaire   X      X  
+Review of Adverse Event 
+and Concomitant 
+Medication 5)  X X X X X X X X 
+1)  Visits 3 to 8 have ±3 day visit window and Visit 9 has +7 day visit window. 
+2) Serum chemistry, hematology: Weeks -2, 0, 4, 8, and 12 
+         HbA1c: Weeks -2, 0, 4, 8, and 12 
+         FPG: Weeks 0, 4, 8, and 12 
+         TSH, T3, T4: Weeks 0 and 12  
+         Serum hCG (pregnancy): Weeks -2 and 12 
+3) CHP levels may be analyzed in a subset of subjects if residual serum and/or plasma samples are available after  
+         completion of protocol-required tests. 
+4)  Subjects will be advised to maintain similar exercise and eating habits 3 days prior to the OGTT. Each subject will be 
+instructed not to take his or her usual oral medications or insulin injection and food at least 12 hours before coming to the 
+clinical site between 7:00 am and 8:30 am for an OGTT. Each subject will be allowed to drink only water during the 12-
+hour fasting period prior to the OGTT and advised not to consume any food. Initial blood will be drawn (15 min prior to 
+OGTT) for serum chemical analysis. The subject will then consume a glucose solution (75 g), followed by one drop of 
+blood drawn for glucose measurements with a glucometer at 0, 0.5, 1.0, 1.5, 2.0, 2.5 and 3 h in the clinical site. 
+5)  Assess hypoglycemic & hyperglycemic episodes at Visits 2 to 8 only. 
+  
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 10 16 October 2017  3.2 Study Population 
+3.2.1 Inclusion Criteria 
+ 
+To be enrolled in the study, a subject must meet all of the following criteria: 
+ 
+1) Males or females aged 18 or older. 
+2) Subjects diagnosed with type 2 diabetes mellitus according to the American Diabetes Association (ADA) 
+criteria. 
+3) Subjects treated with stable doses of insulin and/or other hypoglycemic agent(s) for type 2 diabetes 
+mellitus for at least 2 months prior to randomization. 
+4) Subjects whose fasting blood glucose levels are reasonably stable for at least 2 months prior to 
+randomization and during the 2-week screening period. Stable glucose levels are defined based on the fact 
+that the study subjects did not change the dose and/or type of insulin injection and/or other hypoglycemic 
+agent(s) during the last 2 months and during the 2-week screening period to adjust blood glucose. 
+5) Subjects who have Hemoglobin A1c levels of 7.5 to 10.0 % at Screening. 
+6) Subjects whose BMI is 30 or above. 
+7) Subjects who can give written informed consent. 
+ 
+3.2.2 Exclusion Criteria 
+ 
+A subject must not be enrolled in the study if any of the following criteria are met: 
+ 
+1) Subjects who have any DM-related end-organ damages.  
+2) Subjects who have a history of diabetic ketoacidosis or hyperosmolar non-ketotic coma. 
+3) Subjects who have any disease likely to limit life span and/or increase risks of interventions such as: 
+• Carotid B-mode ultrasound test results indicating clinically significant stenosis in the common carotid 
+arteries requiring intervention by angioplasty or resection. 
+• Cancer treatment in the past 5 years, with the exception of cancers which have been cured, and carry 
+a good prognosis. 
+• Infectious disease: HIV positivity, active tuberculosis, or pneumonia. 
+4) Subjects who have any of the following conditions related to cardiovascular disease: 
+• Hospitalization for the treatment of heart disease in the past 12 months. 
+• New York Heart Association Functional Class > 2. 
+• Left Bundle branch block on ECG at Screening. 
+• Third degree atrioventricular block on ECG at Screening. 
+• Uncontrolled hypertension with average systolic blood pressure of > 160 mmHg or diastolic blood 
+pressure > 95 mmHg at Screening and Baseline. 
+• Pulse rate > 95 beats per minute at Screening and Baseline. 
+• Stroke or transient ischemic attack in the past 12 months. 
+5) Subjects who have any of the following conditions related to gastrointestinal disease: 
+• Chronic hepatitis or cirrhosis. 
+• Episode of alcoholic hepatitis or alcoholic pancreatitis in the past 2 months. 
+• Inflammatory bowel disease requiring treatment in the past 12 months. 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 11 16 October 2017  • Significant abdominal surgery (e.g., gastrectomy, gastric bypass) in the past 2 months. 
+6) Subjects who have serum creatinine > 1.5 mg/dL for male or > 1.4 mg/dL for female. 
+7) Subjects who have chronic obstructive airway disease or asthma requiring daily therapy or home use 
+oxygen. 
+8) Subjects who have hematocrit < 36.0% for male or < 33.0% for female. 
+9) Subjects who have any of the following conditions or behaviors likely to affect the conduct of the study: 
+• Weight loss of > 10% in the past 6 months. 
+• Unable to walk without assisted device. 
+• Major psychiatric disorder which would impede conduct of the research. 
+• Excessive alcohol intake (i.e., more than 2 drinks/day). 
+10) Subjects who take any of the following medications: 
+• Psychoactive agents such as monoamine oxidase inhibitors and antidepressants (e.g., lithium, Prozac, 
+Zoloft, Serzone, Paxil, Effexor). 
+• Any other medications that may pose harm to the subject. 
+11) Female subjects who have a positive serum pregnancy test at Screening, plan a pregnancy during study 
+period, or are breast feeding.  
+12) Female subjects who don‟t meet any of the following criteria: 
+• Surgically sterile (i.e., have had bilateral tubal ligation, hysterectomy, or bilateral oophorectomy) at 
+least 6 months before randomization.  
+• Post-menopausal for at least 12 months prior to Screening. 
+• If sexually active, they should use oral contraceptives, double barrier contraception (e.g., condom 
+with spermicide), intrauterine device, or other methods approved by the Sponsor. 
+ 
+3.3 Sample Size Considerations 
+ 
+This is a Phase 2 clinical trial to evaluate safety and explore the potential efficacy of the study drug. Therefore, 
+the number of subjects was not based on formal statistical power considerations. In this clinical trial, a total of 
+64 subjects was deemed sufficient and will be enrolled and randomly assigned to be administered with 1 of 3 
+dose levels of Cyclo-Z or placebo. 
+ 
+3.4 Randomization and Blinding 
+3.4.1 Randomization  
+ 
+At Visit 2 (Week 0), subjects who meet the inclusion/exclusion criteria will be randomly assigned to receive 
+placebo or 1 of 3 doses of Cyclo-Z in accordance with the randomization code, which will be generated by 
+other Bio-statistics associate (BSA) at Medihelpline rather than the BSA in charge. Specifically, the subjects 
+will be randomly assigned in a 1:1:1:1 ratio to the following: 
+ 
+• Dose A: Cyclo-Z containing 23 mg zinc plus 3 mg CHP – 16 subjects 
+• Dose B
+: Cyclo-Z containing 23 mg zinc plus 9 mg CHP – 16 subjects 
+• Dose C
+: Cyclo-Z containing 23 mg zinc plus 15 mg CHP – 16 subjects 
+• Dose D
+: Placebo – 16 subjects 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 12 16 October 2017  3.4.2 Blinding  
+ 
+As this is a double-blind study, blinding of the drug contents from the subjects, Investigator, and other study 
+personnel at each site is necessary. The subject will be assigned with an identification number at Visit 2 
+which will remain with the subject throughout the study. 
+ 
+A code-break document including the randomization code information will be retained by each site and can 
+be opened, revealing the randomization information, for emergency purposes only. The Investigator should 
+note that the occurrence of a SAE should not routinely precipitate immediate unblinding. An attempt to 
+contact the Sponsor must be made prior to unblinding. If unblinding occurs, the study medication for the 
+subject must be discontinued; a written explanation on the relevant form must be prepared immediately. 
+ 
+4. STUDY ENDPOINTS AND COVARIATES 
+ 
+4.1 Primary Endpoints 
+ 
+The primary clinical efficacy variables used to evaluate the efficacy of Cyclo-Z are: 
+ 
+• Change of HbA1c level from baseline at Week 12  
+• Change of body weight (BW) from baseline at Week 12 
+ 
+4.2 Secondary Endpoints 
+ 
+The secondary clinical efficacy variables used to evaluate the efficacy of Cyclo-Z are: 
+ 
+• Change of fasting plasma glucose (FPG) level from baseline at Week 12 
+• Proportion of subjects achieving HbA1c goal of < 7.0% at Week 12 
+• Proportion of subjects achieving HbA1c goal of < 6.5% at Week 12 
+• Change in waist circumference from baseline at Week 12 
+• Change of postprandial (2 hours after dinner) blood glucose level from baseline at Week 12 
+• Change of OGTT from baseline at Week 12 
+• Change of score in Audit of Diabetes-Dependent Quality of Life (ADDQoL) Questionnaire from baseline 
+at Week 12 
+ 
+4.3 Exploratory Endpoints 
+ 
+In addition to the primary and secondary endpoints, the following exploratory efficacy variables will be 
+separately evaluated for the change from baseline at Week 12: 
+ 
+• Thyroid Function Test: Thyroid Stimulating Hormone (TSH), Triiodothyronine (T3) and Thyroxine (T4) 
+• Serum Parameters: zinc, insulin, adiponectin, C-peptide, leptin and glucagon 
+• Urine Parameters: zinc, glucose, microalbumin and copper 
+• Three-hour-area-average Above Fasting Glucose Concentration (TAFGC) 
+• Body Mass Index (BMI) 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 13 16 October 2017  4.4 Safety Endpoints 
+ 
+The following safety parameters will be evaluated for the change from baseline assessment: 
+ 
+• Blood samples for complete laboratory evaluation 
+• ECG evaluation 
+• Physical examination 
+• Vital signs 
+• Adverse events 
+• Episodes of hypoglycemia and hyperglycemia 
+ 
+4.5 Cyclo (His-pro) ( CHP ) Concentration Evaluation 
+ 
+In a subset of subjects where residual serum and/or plasma are available after completion of study-required 
+tests, CHP levels in blood may be measured for the change from baseline. 
+ 
+5. HYPOTHESES 
+ 
+The primary objective is to assess the dose-dependent efficacy of Cyclo-Z for the treatment of subjects with 
+obese type 2 diabetes. The hypothesis of this study is set as follows. 
+ 
+The dose-dependent efficacy of Cyclo-Z will be demonstrated by identifying statistically significant 
+difference in the change of HbA1c level and BW from baseline at Week 12 in Dose A, B, C, and D using one-
+way analysis of variance (ANOVA) methods. Specifically, all three experimental groups will be compared to 
+the control group on the change: Dose A vs. D, B vs. D, and C vs. D. 
+ 
+                
+          
+ 
+   the mean of the primary clinical efficacy variables by each of the four dose groups 
+ 
+6. DE
+FINITIONS  
+ 
+• Baseline  is defined as the last non-missing measurement taken on Week 0.  
+ 
+• Study day 1  is defined as the first IP dose date. For subjects who are randomized but not dosed after 
+randomization, the study day 1 is defined as the date of randomization. 
+ 
+• Study day is defined as the number of days from study day 1. 
+ 
+Before study day 1:  study day = (date of interest – date of study day 1) 
+On or a
+fter study day 1:  study day = (date of interest – date of study day 1) + 1 
+ 
+Therefore, the day prior to study day 1 is -1. 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 14 16 October 2017   
+• Study drug exposure day  is defined as the number of days that subjects were on the study drug. 
+ 
+• Age (years)  is calculated as follows, and is rounded down to an integer. 
+ 
+                                          
+       
+ 
+• Diabetes disease period (years)  is calculated as follows, and is rounded down to an integer. 
+ 
+                                                            
+       
+ 
+*If the month and day of date of diagnosis are unknown, it will be converted into January, first day. 
+ 
+• OGTT  of secondary endpoint is used glucose value at 2 hour after glucose intake. 
+ 
+• TAFGC  is calculated as follows: 
+ 
+      ∑[                 ( )                                            ]  
+   
+                                   
+ 
+• BMI (kg/m2) is calculated as follows: 
+ 
+                (  )
+       ( )        ( ) 
+ 
+• Compliance (%)  is calculated as follows: 
+ 
+                                   
+                                                     
+ 
+*By visit:              ( )              (   ) , where n= 3, 4, 5, 6, 7, and 8 
+  Overall: ∑(             ( )              (   ))  , where n= 3, 4, 5, 6, 7, and 8 
+ 
+7. ANALYSIS SUBSETS 
+ 
+This study is planned to analy ze in analysis subsets of four groups : Full Analysis Set , Efficacy Analysis Set , 
+Per Protocol Set, and Safety Analysis Set. For efficacy analysis, the Efficacy Analysis Set will be considered 
+primar ily and the Per Protocol Set will be considered as supportive. The Safety Analysis Set will be used in 
+the safety analysis. 
+ 
+7.1 Full Analysis Set  
+ 
+The Full Analysis Set (FAS) includes all subjects who were randomized in the study. Subjects will be 
+analyzed according to their randomized treatment, regardless of the treatment received. Tabulations of subject 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 15 16 October 2017  enrollment by site, subject disposition, analysis subsets, demographic and baseline characteristics including 
+diabetes disease, past and present medical history, concomitant medication, and protocol deviations including 
+major protocol deviations will utilize this analysis set. 
+ 
+7.2 Efficacy Analysis Set  
+ 
+The Efficacy Analysis Set (EAS) will be used to carry out the efficacy analyses of efficacy endpoints, which 
+is a subset of the FAS consisting of subjects who received at least one dose of study medication and who had 
+baseline and any post-baseline efficacy data. Subjects will be analyzed according to their randomized 
+treatment, regardless of the treatment received. Analyses for efficacy endpoints will utilize this analysis set. 
+  
+7.3 Per Pr
+otocol Set  
+ 
+All subjects valid for EAS who meet ALL the following criteria will be „valid per protocol‟ (also called „valid 
+for efficacy‟): 
+ 
+• Complete at least 2 weeks of treatment after randomization. 
+• Have both baseline and at least 2 weeks of efficacy data. 
+• Subject did not have any significant violation after randomization. 
+ 
+Major protocol deviations that will potentially impact the primary analysis of efficacy endpoints at Week12 or 
+violate GCP at site will be discussed and decided prior to the database lock and will be applied in per protocol 
+analysis: 
+ 
+The following cases  are excluded from the P er Protocol Set : 
+ 
+• Informed consent was not provided 
+• Subjects who were withdrawn/early terminated 
+• Subjects who have not met inclusion/exclusion criteria 
+• Subjects who received excluded concomitant medications 
+• Subjects who have major protocol deviations - all protocol deviations will be classified as major or minor 
+under the discussion with Sponsor before database is locked. 
+ 
+Additional criteria maybe added prior to unblinding of the study database.  
+ 
+The Per Protocol Set will be used to perform the sensitivity analysis on the primary, the secondary, and 
+the explor
+atory efficacy endpoints. 
+ 
+7.4 Safety Analysis Set 
+ 
+The Safety Analysis Set will consist of all randomized subjects who received at least one dose of study 
+medication and had any post-randomization safety data collected will be included in the evaluation of safety. 
+Analyses of demographic and baseline characteristics, safety endpoints and summary of study medication 
+administration will utilize this analysis set. 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 16 16 October 2017  8. INTERIM ANALYS IS 
+ 
+No interim analyses are planned for this Phase 2 study. 
+ 
+9. DATA SCREENING AND ACCPETANCE 
+ 
+9.1 General Principles 
+ 
+The objective of data screening is to assess the quantity, quality, and statistical characteristics of the data 
+relative to the requirements of the planned analyses. The Bio-statistics associate (BSA) who is in charge of 
+this study will check errors of raw data prior to the beginning of data analysis.  
+ 
+9.2 Data Handling and Electronic Transfer of Data 
+ 
+After database is locked, a raw data validated by using Microsoft Structured Query Language (MsSQL) will 
+be directly accessed using SAS Open Database Connectivity ( ODBC ) Driver. The raw data needed for 
+analysis will be transferred from Database Management System (DBMS) to standard folder to store the raw 
+data on the server via SAS ODBC, and the analysis dataset will be created in „DATASET‟ folder. The 
+analysis dataset will be generated using SAS software version 9.4 according to analysis dataset specification 
+created in accordance with this SAP. 
+ 
+9.3 Handling of Missing and Incomplete Data 
+ 
+If 
+subjects either discontinues from the clinical trial or the outcome measurement at any point is missing post-
+baseline, then the missing data will be imputed from the last measured outcome value using the Last 
+Observation Carried Forward (LOCF) method. 
+ 
+9.3.1 Missing and Incomplete Dates 
+ 
+Missing or incomplete dates will be listed as it is in any listings. 
+ 
+Incomplete start date of an adverse event or concomitant medication taken will be handled by following rule: 
+ 
+Start Date  Missing  Imputation  Exception  
+Adverse Event  
+Concomitant Medication  
+ 
+ Day 
+ 
+ 
+ 01 Default to Study Day 1 if an AE starts at the same 
+year and month as Study Day 1 and the flag 
+indicates that the AE started on or after the first 
+dose on the AE CRF  
+Day/Month  
+ 
+ 
+ 01JAN Default to Study Day 1 if an AE started at the 
+same year as Study Day 1 and the flag indicates 
+that the AE started on or after the first dose on the 
+AE CRF 
+Day/Month/Year  
+ No Imputation   
+ 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 17 16 October 2017  9.3.2 Missing Baseline Evaluation 
+ 
+Missing baseline will not be imputed. 
+ 
+9.3.3 Missing Post-Baseline Evaluation 
+ 
+Primary analysis of continuous efficacy endpoints will be analyzed based on observed data without 
+imputation. 
+ 
+In the sensitivity analysis of primary and the secondary efficacy endpoints, missing continuous efficacy 
+endpoints will be handled using the LOCF method. 
+ 
+In the LOCF method, post-baseline missing continuous endpoints will be imputed using the last observed 
+value including baseline value. For example, if subject has all of the post-baseline values as missing, then all 
+of the post-baseline values will be imputed using the observed baseline value. 
+ 
+9.3.4 Handling of Repeated Laboratory Test Results 
+ 
+Repeated laboratory test data will be handled after identifying the reason. If it is due to a test error, then the 
+last value of the visit will be used, and if a clinical opinion is required, then the team will request the 
+clinician‟s opinion and will decide what value to use. 
+ 
+9.4 Handling of Early Termination  
+ 
+In order to analyze and summarize the data consistently, the last visit performed for Early Termination will be 
+mapped to their closest to scheduled visit within the analysis dataset. 
+ 
+For example, if a subject completed efficacy measurement at Week 0, then the subject got early terminated 
+from the study 4 weeks later and completed efficacy measurement, then the efficacy measurement for ET will 
+be mapped to Week 4 visit.  
+ 
+Example #1: 
+ 
+Before: 
+Week 0 ( 02FEB2017)  ET (02MAR2017) 
+Efficacy Measurement – Done  Efficacy Measurement – Done  
+ 
+After:  
+Week 0 (02FEB2017)  Week 4 (02MAR2017) 
+Efficacy Measurement – Done  Efficacy Measurement – Done  
+Note: Week 2 to Week 12 have ± 3 day visit window 
+ 
+  
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 18 16 October 2017  Example #2: 
+ 
+Before: 
+Week 0 (02FEB2017)  ET (05MAR2017) 
+Efficacy Measurement – Done  Efficacy Measurement – Done  
+ 
+After:  
+Week 0 (02FEB2017)  Week 4 (05MAR2017) 
+Efficacy Measurement – Done  Efficacy Measurement – Done  
+Note: Week 2 to Week 12 have ± 3 day visit window 
+ 
+For example, if a subject completed efficacy measurement at Weeks 0, 4, 8 then the subject got early 
+terminated from the study 4 weeks later after Week 8 and completed efficacy measurement, and then the 
+efficacy measurement for ET will be mapped to Week 12 visit.  
+  
+Example #3: 
+ 
+Before: 
+Week 0 ( 29MAR2017)  Week 4 (26APR2017)  Week 8 (24MAY2017)  ET (21JUN2017)  
+Efficacy Measurement – 
+Done  Efficacy Measurement – 
+Done  Efficacy Measurement – 
+Done Efficacy Measurement – 
+Done 
+ 
+After:  
+Week 0 ( 29MAR2017)  Week 4 (26APR2017)  Week 8 (24MAY2017)  Week 12 (21JUN2017)  
+Efficacy Measurement – 
+Done  Efficacy Measurement – 
+Done  Efficacy Measurement – 
+Done Efficacy Measurement – 
+Done 
+Note: Week 2 to Week 12 have ± 3 day visit window 
+ 
+Each case will be discussed and decided with the study team and will be documented in the analysis dataset 
+specification. 
+ 
+9.5 Outliers Detection 
+ 
+Histograms or raw data review will be examined to identify outliers in any of the continuous variables used in 
+the analyses. Unexpected and/or unexplained values in categorical data will be identified by utilizing 
+frequency tables. 
+ 
+Outliers due to data entry errors will be corrected by the study team before the database lock. The validity of 
+any questionable values or outliers will be confirmed. Outliers or any questionable values with confirmed 
+validity will be included in the analyses. However, ad-hoc sensitivity analyses may be conducted to evaluate 
+the influence of extreme values in the data.   If it is deemed necessary after the team reviews the output from 
+the planned analyses after the database lock, post-hoc analyses excluding subjects with outliers may be 
+performed. 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 19 16 October 2017  9.6 Bias Detection 
+ 
+Randomization and blinding are performed for avoiding bias in this phase 2 study. Major protocol deviations 
+will be listed and or/tabulated in the clinical study report (CSR). Any breaking of the blind for individual 
+subjects prior to unblinding of the study will be documented in the CSR. The timing of and reasons for 
+premature withdrawal from treatment and from study will be tabulated and /or listed. 
+ 
+9.7 Distributional Characteristics 
+ 
+Continuous endpoints of change from baseline value will be analyzed under normality assumption. If they 
+deviate appreciably from normality, then appropriate non-parametric alternatives will be considered. 
+ 
+9.8 Validation of Statistical Analyses 
+ 
+The procedure for the validation of the analysis result is as follows: 
+ 
+1) Self-check: The BSA in charge will check for oneself that the SAS program code, output, execution log, 
+etc. are written correctly. 
+2) Double programming and the review: The BSA in charge and other BSA will write SAS program code 
+independently, and the Bio-statistics manager (BSM; Reviewer) will compare the outputs such as table, 
+graph, listing that are printed by the SAS program code. 
+3) Source code check: The BSM will check the written source code visually, and will check whether it is 
+properly processed according to its purpose. 
+4) Table/Graph: The BSM will check the values displayed in tables and graphs. 
+5) Listing/Raw data: The BSM will check whether the raw data and listing are the same or not. 
+ 
+10. STATISTICAL ANALYSES 
+ 
+10.1 General Principles 
+ 
+Statistical analysis will be conducted after database is locked and performed using SAS software version 9.4 
+according to this SAP. If statistical analysis methods are changed, it will be described in the final clinical 
+study report. 
+ 
+Continuous variables will be summarized with means, standard deviations, medians, 25th & 75th percentiles, 
+minimums, and maximums. Categorical variables will be summarized with counts and percentages. P-values 
+less than 0.05 will be considered statistically significant. No adjustments for multiple comparison will be 
+made to the result presented in this study because this is a phase 2 clinical trial and it is not formally powered 
+with statistical algorithms. 
+ 
+  
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 20 16 October 2017  10.2 Subject Disposition 
+ 
+The disposition of all randomized patients will be tabulated by randomized treatment group. The numbers of 
+all patients classified as follows will be summarized with count, percentage and flow chart by site and 
+treatment group. 
+ 
+• All patients who enrolled into the study 
+• Patients who were randomized 
+• Patients who were treated  
+• Patients who were completed 
+• Prematurely withdrawn  
+• The reasons for premature withdraw al 
+ 
+10.3 Protocol Deviations  
+ 
+• All protocol deviations occurred during this study will be summarized by treatment group. Subjects who 
+have protocol deviations will be categorized as follows; 
+ 
+1) Subjects who have visits outside window 
+2) Subjects who have not met inclusion criteria or met exclusion criteria but were entered into the study 
+3) Subjects who received an excluded concomitant medications/treatment 
+4) Subjects who have other protocol deviations 
+ 
+• Individual patients with these protocol deviations will be listed by site. 
+ 
+10.4 Demographic and Baseline Characteristics 
+ 
+Demographic characteristics, medical history, medication history, extent of exposure, and efficacy variables 
+at baseline will be summarized using descriptive statistics by randomized treatment group and overall study 
+population using FAS and Safety Analysis Set. Continuous variables will be summarized with mean, standard 
+deviation, median, 25th & 75th percentiles, minimum and maximum. Categorical variables will be summarized 
+with count (number of subjects and/or number of events) and percentage. Because, in theory, the goal of 
+randomization is to balance out the subject characteristics, statistical tests are not planned for these variables. 
+ 
+10.4.1 Demographic Characteristics 
+ 
+• Sex (Male, Female) 
+• Age 
+• Ethnicity (Hispanic, Non-Hispanic) 
+• Race (Black or African American, Native Hawaiian or other Pacific Islander, Native American Indian or 
+Native Alaskan, Asian, White, Other) 
+• Height 
+ 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 21 16 October 2017  10.4.2 Medical History 
+ 
+• Type of Diabetes (Type I Diabetes, Type II Diabetes, Gestational Diabetes) 
+• Diabetes disease period 
+• Past medical history status (Yes, No) and past medical history classified by System Organ Class (SOC) 
+and Preferred Term (PT) according to MedDRA (Medical Dictionary for Regulatory Activities) version 
+20.0. 
+• Present medical history status (Yes, No) and present medical history classified by SOC and PT according 
+to MedDRA version 20.0 
+ 
+10.4.3 Concomitant Medications 
+ 
+• Status (Yes, No) of concomitant medications and concomitant medications classified by Level1 and 
+Level2 according to Anatomical Therapeutic Chemical (ATC) code WHODRUG version 2017 at V1 
+(screening) 
+ 
+10.4.4 Efficacy Variables at Baseline 
+ 
+• HbA1c 
+• Body Weight (BW) 
+• FPG level 
+• Waist Circumference 
+• Mean value of postprandial (2 hours after dinner) blood glucose level 
+• OGTT 
+• ADDQoL questionnaire scores 
+• Thyroid Function Test: TSH, T3, and T4 
+• Serum parameters: zinc, insulin, adiponectin, C-peptide, leptin, and glucagon 
+• Urine parameters: zinc, glucose, microalbumin, and copper 
+• TAFGC 
+• BMI  
+ 
+10.5 Efficacy Analyses 
+ 
+The analyses of efficacy endpoints will utilize EAS. Subjects will be analyzed according to their randomized 
+treatment group regardless of the actual treatment received during the study. Per protocol analyses of the 
+primary, secondary, and exploratory endpoints will utilize the Per Protocol Set. 
+ 
+  
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 22 16 October 2017  Detailed primary analysis methods, sensitivity analyses are summarized in the table below. 
+ 
+ 
+Endpoint s Primary Analysis and 
+Analysis Method   
+Sensitivity Analysis at Week 12  
+Primary Endpoint s 
+Change of HbA1c level from 
+baseline at Week 12  
+Change of BW from baseline at 
+Week 12  1. EAS: Summary statistics by 
+visit using observed data  
+2. EAS: ANOVA model and 
+Dunnett's test , and paired t -test 1. LOCF , EAS : Summary statistics 
+and analyze using an ANOVA model  
+and Dunnett's test , and paired t -test 
+2. Per Protocol Set : Same as primary 
+summary and analysis method at 
+Week 12  
+Secondary Endpoint s 
+Change of FPG level from baseline  
+at Week 12  1. EAS: Summary statistics by 
+visit using observed data  
+2. EAS: ANOVA model and 
+Dunnett's test , and paired t -test 1. LOCF , EAS : Summary statistics 
+and analyze using an ANOVA model  
+and Dunnett's test , and paired t -test 
+2. Per Protocol Set : Same as primary 
+summary and analysis method at 
+Week 12  
+Proportion of subjects achieving 
+HbA1c goal of  < 7.0% at Week 12  1. EAS: Summary statistics by 
+visit using observed data  
+2. EAS: Chi-square test  
+ 1. LOCF , EAS : Summary statistics 
+and analyze using chi-square test  
+2. Per Protocol Set : Same as primary 
+summary and analysis method at 
+Week 12  
+Proportion of subjects achieving 
+HbA1c goal of < 6.5% at Week 12  Same as above  Same as  above  
+Change in waist circumference from 
+baseline at Week 12  1. EAS: Summary statistics by 
+visit using observed data  
+2. EAS: ANOVA model and 
+Dunnett's test , and paired t -test 1. LOCF , EAS : Summary statistics 
+and analyze using an ANOVA model  
+and Dunnett's  test, and paired t -test 
+2. Per Protocol Set : Same as primary 
+summary and analysis method at 
+Week 12  
+Change of postprandial (2 hours 
+after dinner) blood glucose level 
+from baseline at Week 12  Same as above  Same as above  
+Change of OGTT from baseline at 
+Week 12  Same as above  Same as above  
+Change of score in ADDQoL 
+questionnaire from baseline at  
+Week 12  
+ 
+ 
+ 
+ Same as above  Same as above  
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 23 16 October 2017   
+Endpoint s Primary Analysis and 
+Analysis Method   
+Sensitivity Analysis at Week 12  
+Exploratory Endpoints  
+Change of following variables from 
+baseline at Week 12:  
+Thyroid Function Test : TSH, T3, 
+and T4  
+Serum Parameters : zinc, insulin, 
+adiponectin, C-peptide, leptin, and     
+glucagon  
+Urine Parameters : zinc, glucose, 
+microalbumin, and copper  
+TAFGC  
+BMI  1. EAS: Summary statistics by 
+visit using observed data  
+2. EAS: ANOVA model and 
+Dunnett's test , and paired  t-test 
+ 1. Per Protocol Set : Same as primary 
+summary and analysis method at 
+Week 12  
+ 
+10.5.1 Primary Efficacy Analyses 
+ 
+• The change of HbA1c level from baseline at Week 12 will be summarized with mean, standard deviation, 
+median, 25th & 75th percentiles, minimum, and maximum, overall and by each of the four groups, 
+separately. To identify statistically significant difference in the change of HbA1c level from baseline at 
+Week 12 between the four groups, one-way ANOVA will be performed. The tests between the 
+experimental groups and the control group will be performed using Dunnett's test. If the change variables 
+are markedly non-normally distributed then Kruskal-Wallis test and Wilcoxon rank-sum test will be used 
+respectively. Specifically, all three experimental groups will be compared to the control group on the 
+change: Dose A vs. D, B vs. D, and C vs. D. Also, to identify statistical significant difference between 
+baseline and Week 12, one-sample t-test (paired t-test) or Wilcoxon signed-rank test will be performed 
+within each of the four groups. 
+ 
+• The change of BW from baseline at Week 12 will be summarized with mean, standard deviation, median , 
+25th & 75th percentiles, minimum, and maximum, overall and by each of the four groups, separately. To 
+identify statistically significant difference in the change of BW from baseline at Week 12 between the 
+four groups, one-way ANOVA will be performed. The tests between the experimental groups and the 
+control group will be performed using Dunnett's test. If the change variables are markedly non-normally 
+distributed then Kruskal-Wallis test and Wilcoxon rank-sum test will be used respectively. Specifically, 
+all three experimental groups will be compared to the control group on the change: Dose A vs. D, B vs. D, 
+and C vs. D. Also, to identify statistical significant difference between baseline and Week 12, one-sample 
+t-test (paired t-test) or Wilcoxon signed-rank test will be performed within each of the four groups. 
+ 
+• Sensitiv
+ity analysis described below will be performed for the primary endpoints at Week 12: 
+ 
+1. Summary statistics and ANOVA model for continuous endpoints using imputed data by LOCF, EAS. 
+2. Primary summary and analysis method based on Per Protocol Set. 
+  
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 24 16 October 2017  10.5.2 Secondary Efficacy Analyses 
+ 
+• The change of FPG level from baseline at Week 12 will be summarized with mean, standard deviation, 
+median, 25th & 75th percentiles, minimum, and maximum, overall and by each of the four groups, 
+separately. To identify statistically significant difference in the change of FPG level from baseline at 
+Week 12 between the four groups, one-way ANOVA will be performed. The tests between the 
+experimental groups and the control group will be performed using Dunnett's test. If the change variables 
+are markedly non-normally distributed then Kruskal-Wallis test and Wilcoxon rank-sum test will be used 
+respectively. Specifically, all three experimental groups will be compared to the control group on the 
+change: Dose A vs. D, B vs. D, and C vs. D. Also, to identify statistical significant difference between 
+baseline and Week 12, one-sample t-test (paired t-test) or Wilcoxon signed-rank test will be performed 
+within each of the four groups. 
+ 
+• The proportion of subjects achieving HbA1c goal of < 7.0% at Week 12 will be summarized with count 
+and percentage, overall and by each of the four groups, separately. The proportion of subjects achieving 
+HbA1c goal of < 7.0% at Week 12 will be compared for the experimental groups versus the control group 
+using chi-square test method. In a case when the expected cell frequencies are less than 5 in >20%, 
+Fisher‟s exact test will be used. 
+ 
+• The 
+proportion of subjects achieving HbA1c goal of < 6.5% at Week 12 will be summarized with count 
+and percentage, overall and by each of the four groups, separately. The proportion of subjects achieving 
+HbA1c goal of < 6.5% at Week 12 will be compared for the experimental groups versus the control group 
+using chi-square test method. In a case when the expected cell frequencies are less than 5 in >20% , 
+Fisher‟s exact test will be used. 
+ 
+• The change in waist circumference from baseline at Week 12 will be summarized with mean, standard 
+deviation, median, 25th & 75th percentiles, minimum , and maximum, overall and by each of the four 
+groups, separately. To identify statistically significant difference in the change in waist circumference 
+from baseline at Week 12 between the four groups, one-way ANOVA will be performed. The tests 
+between the experimental groups and the control group will be performed using Dunnett's test. If the 
+change variables are markedly non-normally distributed then Kruskal-Wallis test and Wilcoxon rank-sum 
+test will be used respectively. Specifically, all three experimental groups will be compared to the control 
+group on the change: Dose A vs. D, B vs. D, and C vs. D. Also, to identify statistical significant 
+difference between baseline and Week 12, one-sample t-test (paired t-test) or Wilcoxon signed-rank test 
+will be performed within each of the four groups. 
+ 
+• The change of postprandial (2 hours after dinner) blood glucose level from baseline at Week 12 will be 
+summarized with mean, standard deviation, median, 25th & 75th percentiles, minimum, and maximum, 
+overall and by each of the four groups, separately. To identify statistically significant difference in the 
+change of postprandial (2 hours after dinner) blood glucose level from baseline at Week 12 between the 
+four groups, one-way ANOVA will be performed. The tests between the experimental groups and the 
+control group will be performed using Dunnett's test. If the change variables are markedly non-normally 
+distributed then Kruskal-Wallis test and Wilcoxon rank-sum test will be used respectively. Specifically, 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 25 16 October 2017  all three experimental groups will be compared to the control group on the change: Dose A vs. D, B vs. D, 
+and C vs. D. Also, to identify statistical significant difference between baseline and Week 12, one-sample 
+t-test (paired t-test) or Wilcoxon signed-rank test will be performed within each of the four groups. 
+ 
+• The chang
+e of OGTT from baseline at Week 12 will be summarized with mean, standard deviation, 
+median, 25th & 75th percentiles, minimum, and maximum, overall and by each of the four groups, 
+separately. To identify statistically significant difference in the change of OGTT from baseline at Week 
+12 between the four groups, one-way ANOVA will be performed. The tests between the experimental 
+groups and the control group will be performed using Dunnett's test. If the change variables are markedly 
+non-normally distributed then Kruskal-Wallis test and Wilcoxon rank-sum test will be used respectively. 
+Specifically, all three experimental groups will be compared to the control group on the change: Dose A 
+vs. D, B vs. D, and C vs. D. Also, to identify statistical significant difference between baseline and Week 
+12, one-sample t-test (paired t-test) or Wilcoxon signed-rank test will be performed within each of the 
+four groups. 
+ 
+• The change of score in ADDQoL questionnaire from baseline at Week 12 will be summarized with mean, 
+standard deviation, median, 25th & 75th percentiles, minimum, and maximum, overall and by each of the 
+four groups, separately. To identify statistically significant difference in the change of score in ADDQoL 
+questionnaire from baseline at Week 12 between the four groups, one-way ANOVA will be performed. 
+The tests between the experimental groups and the control group will be performed using Dunnett's test. 
+If the change variables are markedly non-normally distributed then Kruskal-Wallis test and Wilcoxon 
+rank-sum test will be used respectively. Specifically, all three experimental groups will be compared to 
+the control group on the change: Dose A vs. D, B vs. D, and C vs. D. Also, to identify statistical 
+significant difference between baseline and Week 12, one-sample t-test (paired t-test) or Wilcoxon 
+signed-rank test will be performed within each of the four groups. 
+ 
+• Sensitivity analysis described below will be performed for the secondary endpoints at Week 12: 
+ 
+1. Summary statistics and ANOVA model for continuous endpoints using imputed data by LOCF, EAS. 
+2. Primary summary and analysis method based on Per Protocol Set. 
+ 
+10.5.3 Exploratory Efficacy Analyses 
+ 
+The exploratory efficacy variables will be summarized with mean, standard deviation, median, 25th & 75th 
+percentiles, minimum, and maximum, overall and by each of the four groups, separately. To identify 
+statistically significant difference in the exploratory efficacy variables between the four groups, one-way 
+ANOVA will be performed. The tests between the experimental groups and the control group will be 
+performed using Dunnett's test. If the change variables are markedly non-normally distributed then Kruskal-
+Wallis test and Wilcoxon rank-sum test will be used respectively. Specifically, all three experimental groups 
+will be compared to the control group on the change : Dose A vs. D, B vs. D, and C vs. D. Also, to identify 
+statistical significant difference between baseline and Week 12, one-sample t-test (paired t-test) or Wilcoxon 
+signed-rank test will be performed within each of the four groups. 
+ 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 26 16 October 2017  • Thyroid Function Test: TSH, T3, and T4 
+• Serum Parameters: zinc, insulin, adiponectin, C-peptide, leptin, and glucagon 
+• Urine Parameters: zinc, glucose, microalbumin, and copper 
+• TAFGC 
+• BMI 
+ 
+• Sensitivity analysis described below will be performed for the exploratory endpoints at Week 12: 
+ 
+1. Primary summary and analysis method based on Per Protocol Set. 
+ 
+10.6 Safety Analyses 
+ 
+Safety analysis will be performed based on data of safety analysis set. Safety variables will be summarized 
+with descriptive statistics, overall and by each of the four groups, separately. Continuous safety variables will 
+be summarized with mean, standard deviation, median, 25th & 75th percentiles, minimum, and maximum. 
+Categorical safety variables will be summarized with count and percentage.  
+ 
+No statistical testing comparing treatment groups will be performed in the safety analyses. 
+ 
+10.6.1 Adverse Events 
+ 
+• All adverse events (AEs) in CRF will be classified by SOC and PT according to MedDRA version 20.0.  
+ 
+• A treatment-emergent AE (TEAE) will be defined as an AE that began or worsened on or after the first 
+treatment dose. AEs recorded prior to the first application of study treatment will be considered non-
+treatment-emergent. AEs with insufficient date or time information to determine whether or not they were 
+treatment-emergent will be considered treatment-emergent. 
+ 
+• All reported AEs (treatment-emergent or not) will be listed. Only TEAEs will be summarized. 
+ 
+(1) TEAEs will be summarized with the number of subjects who have AEs, incidence rate of AE s, and 
+the number of AEs by categorizing as follows; 
+① AE/ADR* (Adverse event/ Adv erse drug reaction)  
+*TEAEs which have the relationship to investigational product as 'Definite', 'Probable', and 
+'Possible' are regarded as Drug-Related Adverse Events (ADR). 
+② SAE/SADR ( Serious adverse event/Serious  adverse drug reaction) 
+ 
+(2) TEA
+Es will also be summarized with the number of subjects who have AEs, incidence rate of AEs , 
+the number of AEs, and its percentage by categorizing as follows. 
+① Outcome  
+- Recovered or Resolved 
+- Recovering or Resolving 
+- Recovered or Resolved with Sequelae 
+- Not Recovered or Not Resolved 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 27 16 October 2017  - Death Related to Adverse Event 
+- Unknown 
+② Severity  
+- Mild 
+- Moderate 
+- Severe 
+③ Relationship to Investigational Product (IP) 
+- Definite 
+- Probable 
+- Possible 
+- Not Likely 
+- Not Related 
+④ Action Taken Regarding IP 
+- None 
+- Reduced 
+- Increased 
+- Interrupted 
+- Discontinued 
+⑤ Treatment Required  
+- Yes 
+- No 
+⑥ Seriousness  
+- Is life-threatening 
+- Requires in-patient hospitalization or prolongation of existing hospitalization 
+- Results in persistent or significant disability or incapacity 
+- Is a congenital anomaly or birth defect 
+- Is an important medical event 
+- Results in death 
+ 
+• Episodes of hypoglycemia and hyperglycemia (V2-V8) 
+ 
+(1) Hypoglycemia occurred after previous visit will be summarized with the number of subjects who are 
+occurred episode and the count of episode by each visit separately. 
+ 
+(2) Hyperglycemia occurred after previous visit will be summarized with the number of subjects who are 
+occurred episode and the count of episode by each visit separately. 
+ 
+(3) Sponsor defined Hypoglycemia (blood glucose ≤ 70 mg/dL) occurred after previous visit will be 
+summarized with the number of subjects who are occurred episode and the count of episode by each 
+visit separately. 
+ 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 28 16 October 2017  (4) Sponsor defined Hyperglycemia (blood glucose ≥ 180 mg/dL) occurred after previous visit will be 
+summarized with the number of subjects who are occurred episode and the count of episode by each 
+visit separately. 
+ 
+10.6.2 Laboratory Test Results 
+ 
+• Laboratory tests are: 
+ 
+- Hematology: RBC, WBC, Neutrophil count, Lymphocyte count, Monocyte count, Eosinophil count, 
+Basophil count, Hematocrit, Hemoglobin, Platelets, MCH, MCHC, MCV, and RDW 
+ 
+- Chemistry: ALT, Albumin, Alkaline phosphatase, AST, Total Bilirubin, BUN, Calcium, Bicarbonate, 
+Chloride, Creatinine, Potassium, Total Protein, Sodium, and Glucose 
+ 
+• Laboratory test results will be collected at V1, V2, V4, V6, and V8. These variables will be summarized 
+with mean, standard deviation, median, 25th & 75th percentiles, minimum, and maximum by each 
+treatment group and by each visit separately.  
+ 
+• Normality of laboratory test results [Normal, Abnormal (CS, NCS) ] will be summarized with count 
+(number of subjects) and percentage by each treatment group and by each visit separately.  
+ 
+10.6.3 Vital Signs 
+ 
+• Vital signs [Sitting blood pressure (systolic, diastolic), Heart rate, Breathing, and Temperature] will be 
+collected at V1, V2, V3, V4, V5, V6, V7, V8, and V9. These variables will be summarized with mean, 
+standard deviation, median, 25th & 75th percentiles, minimum and maximum by each treatment group and 
+by each visit separately.  
+ 
+10.6.4 Physical Examination and 12-lead ECG 
+ 
+• Result of physical examination (General Appearance, Head-Ears-Eyes-Nose-Throat, Neck, Heart, Lungs, 
+Abdomen, Lymph Nodes, Genitourinary, Extremities, Neurological, Skin, Musculoskeletal, and Others) 
+will be collected at V1, V2, V4, V6, and V8. These results (Normal, Abnormal) will be summarized with 
+count (number of subjects) and percentage by each treatment group and by each visit separately.  
+ 
+• Result of 12-lead ECG will be collected at V1 and V8. This result [Normal, Abnormal (CS, NCS)] will be 
+summarized with count and percentage by each treatment group and by each visit separately. 
+ 
+10.6.5 Exposure to IP 
+ 
+• Study drug exposure day will be summarized with mean, standard deviation, median, 25th & 75th 
+percentiles, minimum, and maximum by each treatment group and by each visit separately.  
+ 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 29 16 October 2017  • Number of Capsules taken will be summarized with mean, standard deviation, median, 25th & 75th 
+percentiles, minimum, and maximum by each treatment group and by each visit separately.  
+ 
+• Compliance will be summarized with mean, standard deviation, median, 25th & 75th percentiles, minimum, 
+and maximum by each treatment group and by each visit separately.  
+ 
+10.6.6 Concomitant Medication Use 
+ 
+• Concomitant medications status (Yes, No) collected at V2-V9 will be summarized with count and 
+percentage by each treatment group separately. Concomitant medications classified by Level1 and Level2 
+according to ATC code WHODRUG version 2017 will be also summarized. 
+ 
+10.7 CHP Concentration Analysis 
+ 
+Levels of CHP assessed in blood for a subset of subjects if there are residual serum and/or plasma after 
+completion of protocol-required tests will be summarized with mean, standard deviation, median, 25th & 75th 
+percentiles, minimum, and maximum.  
+ 
+No statistical tests are planned for these data. 
+ 
+10.8 Subgroup Analysi s  
+ 
+To explore the robustness of efficacy signal, primary, secondary, and exploratory efficacy endpoints may also 
+be analyzed separately by excluding potential outliers.  
+ 
+10.9 Post-hoc Analysis  
+ 
+To understand the data better for future study design, post-hoc analyses may also be performed separately. 
+ 
+11. REPORTING CONVENTIONS 
+ 
+All results of analysis will be reported in table or figure format to assist the understanding for the study results. 
+The descriptive summary statistics for continuous variables will be presented in the number of subjects (n), 
+mean, standard deviation, median, 25th & 75th percentiles, minimum, and maximum and the descriptive 
+summary statistics for categorical variables will be given as frequencies, percentages.  
+ 
+The number of decimal places presented for each statistic will be as follows: 
+ 
+• Mean, median, 25th percentile, 75th percentile: one more than the number of decimal places recorded x  
+• Standar
+d deviation: two more than the number of decimal places recorded x  
+• Minimum and maximum: equal to the number of decimal places recorded  
+• Percentage: reported to one decimal place using rounding off 
+• P-value: reported to four decimal places and if p-values smaller than 0.0001 will be written as „<0.0001‟. 
+ 
+All dates will be displayed in DDMMMYYYY format (for example, 11JAN2015). 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 30 16 October 2017  Data for individual subjects will be presented in data listings.  
+ 
+12. AD
+JUSTED STATISTICAL ANALYSIS METHOD 
+ 
+Not applicable. 
+ 
+13. CHANGES IN THE STATISTICAL ANALYSIS FROM THE PROTOCOL 
+ 
+Section 4.3  Two exploratory endpoints have been added. The endpoints are as follows: 
+ 
+• Change in TAFGC from baseline at Week 12 
+• Change in BMI from baseline at Week 12 
+ 
+Section 6  New definitions have been added for Baseline, Study Day. The definitions are as follows: 
+ 
+Baseline  is defined as the last non-missing measurement taken on Week 0.  
+ 
+Study day 1  is defined as the first IP dose date. For subjects who are randomized but not dosed after 
+randomization, the study day 1 is defined as the date of randomization. 
+ 
+Study day  is defined as the number of days from study day 1. 
+ 
+Before study day 1:  study day = (date of interest – date of study day 1) 
+On or a
+fter study day 1:  study day = (date of interest – date of study day 1) + 1 
+ 
+Therefore, the day prior to study day 1 is -1. 
+ 
+Section 7.1  Full Analysis Set has been added. The definition of FAS is as follows:  
+ 
+The Full Analysis Set (FAS) includes all subjects who were randomized in the study. Subjects will be 
+analyzed according to their randomized treatment, regardless of the treatment received. Tabulations of subject 
+enrollment by site, analysis subsets, demographic and baseline characteristics including diabetes disease, past 
+and present medical history, concomitant medication, subject disposition, and major protocol deviations will 
+utilize this analysis set. 
+ 
+Section 7.2  Efficacy Analysis Set has been replaced with Intent- to-Treat Set. The updated definition of EAS 
+is as follows:  
+ 
+The Efficacy Analysis Set (EAS) will be used to carry out the efficacy analyses of efficacy endpoints, which 
+is a subset of the FAS consisting of subjects who received at least one dose of study medication and who had 
+baseline and any post-baseline efficacy data. Subjects will be analyzed according to their randomized 
+treatment, regardless of the treatment received. Analyses for efficacy endpoints will utilize this analysis set.  
+ 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 31 16 October 2017  Section 9.3  Handling of missing, incomple te data, and repeated laboratory test data has been added in detail. 
+The details are as follows: 
+ 
+Only participants whose efficacy variable were measured least once after baseline. If participants either 
+discontinues from the clinical trial or the outcome measurement at any point is missing, then the missing data 
+will be imputed from the last measured outcome value using the Last Observation Carried Forward (LOCF) 
+method. 
+ 
+If repeated laboratory test data collected is due to a test error, then the last value of the visit will be used, and 
+if a clinical opinion is required, then it will be used one value determined under discussion. 
+ 
+No imputation methods are planned for safety analysis. 
+ 
+Section 9.4  Handling of Early Termination has been added in detail. The details are as follows:  
+ 
+In order to analyze and summarize the data consistently, the last visit performed for Early Termination will be 
+mapped to their closest to scheduled visit within the analysis dataset. See Section 9.4 of this SAP to see more 
+examples in detail. 
+ 
+Section 10.5  Efficacy Analyses. The detailed primary analysis methods, sensitivity analyses are added and 
+summarized in the table below. 
+ 
+Endpoint  Primary Analysis and Analysis 
+Method Sensitivity Analysis at Week 12  
+Primary Endpoints  
+Chang e of HbA1c level from 
+baseline at Week 12  
+Change of BW from baseline at 
+Week 12  1. EAS: Summary statistics by visit 
+using observed data  
+2. EAS: ANOVA model and 
+Dunnett's test, and paired t -test 1. LOCF , EAS : Summary statistics 
+and analyze using an ANOVA 
+model and Dunnett's test , and 
+paired t -test 
+2. Per Protocol Set : Same as 
+primary summary and analysis 
+method at Week 12  
+Secondary Endpoints  
+Change of FPG level from baseline  
+at Week 12  1. EAS: Summary statistics by visit 
+using observed data  
+2. EAS: ANOVA model and 
+Dunnett's test , and paired t -test 1. LOCF , EAS : Summary statistics 
+and analyze using an ANOVA 
+model and Dunnett's test , and 
+paired  t-test 
+2. Per Protocol Set : Same as 
+primary summary and analysis 
+method at Week 12  
+Proportion of subjects achieving 
+HbA1c goal of < 7.0% at Week 12  1. EAS: Summary statistics by visit 
+using observed data  
+2. EAS: Chi-square test  1. LOCF , EAS : Summary statistics 
+and analyze using chi -square test  
+2. Per Protocol Set : Same as 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 32 16 October 2017  Endpoint  Primary Analysis and Analysis 
+Method Sensitivity Analysis at Week 12  
+ primary summary and analysis 
+method at Week 12  
+Proportion of subjects achieving 
+HbA1c goal of < 6.5% at Week 12  Same as above  Same as above  
+Change in waist circumference 
+from baseline at Week 12  1. EAS: Summary statistics by visit 
+using observed data  
+2. EAS: ANOVA model and 
+Dunnett's test , and paired t -test 1. LOCF , EAS : Summary statistics 
+and analyze using an ANOVA 
+model and Dunnett's test , and 
+paired t -test 
+2. Per Protocol Set: Same as 
+primary summary and analysis 
+method at Week 12  
+Change of postprandial (2 hours 
+after dinner) blood glucose level 
+from baseline at Week 12  Same as above  Same as above  
+Change of OGTT from baseline at 
+Week 12 Same as above  Same as above  
+Change  of score in ADDQoL 
+questionnaire from baseline at 
+Week 12 Same as above  Same as above  
+Exploratory Endpoints  
+Change of following variables 
+from baseline at Week 12:  
+Thyroid Function Test : TSH, T3, 
+and T4 
+Serum Parameters : zinc, insulin, 
+adiponectin, C-peptide, leptin, and 
+glucagon 
+Urine Parameters : zinc, glucose, 
+microalbumin, and copper  
+TAFGC  
+BMI  1. EAS: Summary statistics by visit 
+using observed data  
+2. EAS: ANOVA model and 
+Dunnett's test , and paired t -test 
+ 1. Per Protocol Set : Same as 
+primary summary and analysis 
+method at Week 12  
+ 
+Section 10.6.1  New definition of Hypoglycemia and Hypoglycemia have been added in detail. The details are 
+as follows:  
+ 
+(1) Sponsor defined Hypoglycemia (blood glucose ≤ 70 mg/dL) occurred after previous visit will be 
+summarized with the number of subjects who are occurred episode and the count of episode by each 
+visit separately. 
+ 
+NovMetaPharma Co., Ltd. 
+NMP- CYZ -P2-001  
+Statistical Analysis Plan                                                                                                                     Version 1.2 
+ 
+ 
+ 
+CONFIDENTIAL Page 33 16 October 2017  (2) Sponsor defined Hyperglycemia (blood glucose ≥ 180 mg/dL) occurred after previous visit will be 
+summarized with the number of subjects who are occurred episode and the count of episode by each 
+visit separately. 
+ 
+Section 10.8  Subgroup Analysis has been added. The details are as follows: 
+ 
+To explore the robustness of efficacy signal, primary, secondary, and exploratory efficacy endpoints may also 
+be analyzed separately by excluding potential outliers.  
+ 
+Section 10.9  Post-hoc Analysis has been added. The details are as follows: 
+ 
+To understand the data better for future study design, post-hoc analyses may also be performed separately. 
+ 
+14. REFERENCES 
+ 
+Clinical Study Protocol “A Multicenter, Randomized, Double-blind, Placebo-controlled, Phase 2 Study to 
+Evaluate the Efficacy and Safety of Cyclo-Z in Patients with Obese Type 2 Diabetes”, Version 2.4, December 
+9, 2016  
+ 

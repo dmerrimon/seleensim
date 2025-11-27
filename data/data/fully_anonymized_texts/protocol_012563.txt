@@ -1,0 +1,1584 @@
+Replicatio n of the AMP LIFY Anticoagulant Trial in Healthcare 
+Claims Data  
+NCT 00643201 
+May 25, 2021  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+1. RCT Details  
+This section provides a high-level overview of a published RCT that the described real-world evidence study is trying to replicate 
+as closely as possible given the remaining limitations inherent in the healthcare databases.  1.1 Title 
+Oral Api[INVESTIGATOR_675218] ( AMPLIFY ) 
+ 1.2 Intended aim(s) 
+To compare the risk of symptomatic, recurrent venous thromboembolism (VTE) in patients with symptomatic deep vein 
+thrombosis (DVT), pulmonary embolism (PE), or both  for api[INVESTIGATOR_675219]. 
+ 1.3 Primary endpoint for replication  
+The primary outcome of the study was symptomatic, recurrent VTE or death related to VTE  
+1.4 Required power for primary endpoint and noninferiority margin (if applicable) 
+Assuming  a non-inferiority margin of 1.80, it was determined that 4,094 patients would be needed to achieve  90% power to 
+conclude noninferiority of api[INVESTIGATOR_675220] -sided alpha level of 0.025.  
+ 
+1.5 Secondary endpoint for replication (assay sensitivity) and RCT finding  
+Major bleeding; RR=  0.31 (95% CI 0.17–0.55) 
+ 
+1.6 Trial estimate  
+ RR = 0.84 (95% CI 0.60-1. 18) comparing api[INVESTIGATOR_675221] (Agnelli  et al., 2013) 
+ 
+2. Person responsible for implementation of replication in Aetion 
+Dureshahwar Jawaid, MPH implemented the study design in the Aetion Evidence Platform. She is not responsible for the validity of 
+the design and analytic choices. All implementation steps are recorded and the implementation history is archived in the plat form.  
+ 3. Data Source(s)  
+Optum, MarketScan, Medicare   
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+4. Study Design Diagram  
+The study design diag ram visualize s key aspects of the longitudinal study design for expedited review.  
+ 
+Figure 1.  
+ 
+
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+5. Cohort Identification  
+ 
+5.[ADDRESS_912558] continuous enrollment during a baseline period of 180 days 
+before initiation of api[INVESTIGATOR_675222] w arfari n (index date) . We will restrict the analyses to patients with a diagnosis of proximal DVT , 
+PE, or both. 
+ 
+5.[ADDRESS_912559] 21, 2014 
+• For Medicare: August 21, 2014 – December 31, 2017 (end of available data)  
+• For Marketscan: August 21, 2014 – December 31, 2018 (end of available data)  
+• For Optum: August 21, 2014 – March 31, 2020 (end of available data)  
+ 
+5.2.2  Specify inclusion/exclusion  criteria for cohort entry and define the index date . 
+Inclusion and exclusion criteria were adapted from the trial as closely as possible. Definitions for all inclusion/exclusion 
+are provided in Appendix A and are summarized in the flowcharts below. 
+ 
+5.3 Flowchart of the study cohort assembly 
+ Optum  Marketscan  Medicare  
+ Less 
+Excluded 
+Patients  Remaining 
+Patients  Less 
+Excluded 
+Patients  Remaining 
+Patients  Less 
+Excluded 
+Patients  Remaining 
+Patients  
+All patients   77,673,639   200,203,908   6,886,908  
+Did not meet cohort entry criteria  -76,868,532  805,107 -
+199,645,422  558,486 -4,150,733  2,736,175  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+Excluded due to insufficient enrollment  -101,912 703,195 -39,077 519,409 -53,978 2,682,197  
+Excluded due to prior use of referent  -347,539 355,656 -307,198 212,211 -1,789,291  892,906 
+Excluded due to prior use of exposure  and because patient 
+qualified in >1 exposure category  -254,675 100,981 -137,453 74,763 -554,606 338,300 
+Excluded based on Age  0 100,981 0 74,758 -104 338,196 
+Excluded based on Gender  0 100,981 0 74,758 0 338,196 
+Excluded based on Use of other NOACs (rivaroxaban, 
+dabigatran, edoxaban)  -5,094 95,887 -3118 71,640 -[ZIP_CODE] 319,192 
+Excluded based on Inclusion # 3a - Acute Symptomatic Proximal 
+DVT -82,653 13,234 -[ZIP_CODE] 11,234 -277,170 42,022 
+Excluded based on Inclusion # 3b - Acute Symptomatic PE  and 
+based on Inclusion # 4 - Age -4,641 8,593  -2852 8,382 -21,229 20,793 
+Excluded based on Exclusion # 1 -  pregnancy -14 8,579 -42 8,340 -22 20,771 
+Excluded based on Exclusion # 6 -  Thrombectomy, Insertion of 
+Caval Filter, or Use of Fibrinolytic Agent -211 8,368 -143 8,197 -24 20,747 
+Excluded based on Exclusion # 7 -  Active bleeding (HAS_BLED 
+Score >=3) , based on Exclusion # 10A -  Mechanical Valve , and 
+based on Exclusion # 11.1 -  Intracranial Bleeding  -3,708  4,660  -1447 6,750 -11,55 8 9,189 
+Excluded based on Exclusion # 11.2 - Intraocular Bleeding 0 4,660 0 6,750 0 9,189 
+Excluded based on Exclusion # 11.3 - Gastrointestinal Bleeding  -12 4,648 -52 6,698 -78 9,111 
+Excluded based on Exclusion # 11.4 - Head Trauma or Other 
+Major Trauma  -60 4,588 -65 6,633 -96 9,015 
+Excluded based on Exclusion # 11.5 - Major Surgery , Exclusion # 
+11.6 - Ischemic Stroke , Exclusion # 11.7 – Neurosurgery , 
+Exclusion # 11.8 - Gross Hematuri a, Exclusion # 11.9 - Non - 
+healing surgical wound , Exclusion # 11.10 - Intracranial 
+neoplasm, arteriovenous malformation or aneurysm , and 
+Exclusion # 11.11 - Overt Major Bleeding  -57 4,531 -33 6,600 -111 8,904 
+Excluded based on Exclusion # 11.12 - Coagulation defects or 
+malignant neoplasm of tissue  -36 4,495 -20 6,580 -33 8,871 
+Excluded based on Exclusion # 12 - active liver disease  -133 4,362 -142 6,438 -226 8,645 
+Excluded based on Exclusion # 13 - CCI >= 10 and bas ed on 
+Exclusion # 14 - Bacterial Endocarditis  -39 4,323  -33 6,405 -28 8,617 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+Excluded based on Exclusion # 15 - Uncontrolled Hypertension  
+and based on Exclusion # 16 -  thrombocytopenia  -26 4,297 -36 6,369 -78 8,539 
+Excluded based on Exclusion # 17 – anemia,  Exclusion # 18 - 
+CKD/ESRD, and Exclusion # 22 - Heparin- induced 
+thrombocytopenia  -33 4,264 -31 6,338 -139 8,400 
+Excluded based on Exclusion # 27 - aspi[INVESTIGATOR_248] (ASA) >165 mg  0 4,264 0 6,338 0 8,400 
+Excluded based on Exclusion # 28 - ASA plus clopi[INVESTIGATOR_675223]  0 4,264 0 6,338 0 8,400 
+Final cohort   4,264  6,338  8,400 
+ 
+ 6. Variables  
+ 
+6.1 Exposure -related variables:  
+ Study drug:  
+The study exposur e of interest is initiation of api[INVESTIGATOR_3822]. New i nitiation will be defined by [CONTACT_675239][INVESTIGATOR_675224] 6 
+months before treatme nt initiation (washout period). 
+ Comparator: 
+New initiators of warfarin,  defined by [CONTACT_675239][INVESTIGATOR_675224] 6 months. 
+ 6.2 Covariates: 
+• Age 
+• Sex 
+• Combined Comorbidity Index (CCI), measured over the baseline covariate assessment period, defined as 180 days pr ior to 
+and including index date  
+ Covariates listed above represent only a small subset of covariates that will ultimately be controlled for in the design and analysis. We use the covariates above only for initial feasibility analyses to judge whether there is likely to be sufficient  overlap 
+between treatment groups to proceed with the study. Remaining covariates are defined only after the study has passed the initial feasibility analysis and the initial power assessment  and are listed in Table 1 (Appendix B).  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 6.3 Outcome variables and study follow -up:  
+ 6.3.[ADDRESS_912560]: (definitions provided in Appendix A): 
+ 
+• Primary Outcome:  VTE and cause -specific mortality  
+• Secondary Outcome:  Individual components 
+o Hospi[INVESTIGATOR_326376] (principal diagnosis position) 
+o Cause-specific m ortality 
+§ Inpatient mortality identified using discharge status codes from hospi[INVESTIGATOR_675225]:  
+1. Major bleeding 
+  6.3.2  Study follow -up 
+Both as-treated (AT) and intention-to-treat (ITT) analyses will be conducted with treatment defined as the index drug on the day of 
+cohort entry. Because adherence in the real-world databases is expected to be much worse than in the trial, the AT analysis is the 
+primary analysis, as it targets the relative hazard of outcomes on treatment.  
+ For the AT analyses, the follow-up will start the day after initiation of api[INVESTIGATOR_675226]:  
+• The first occurrence of the outcome of interest, unless otherwise specified for selected outcomes,  
+• The date of end of continuous registration in the database,  
+• End of the study period,  
+• Measured death event occurs,  
+• Nursing home admission 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+o Nursing home admissions are considered a censoring event because the data sources utilized typi[INVESTIGATOR_8371] a patient, particularly on drug utilization, after admission. We will utilize this as an exclusion reason for 
+cohorts for the same reason. 
+• The date of drug discontinuation, defined as the date of the last continuous treatm ent epi[INVESTIGATOR_8372] (api[INVESTIGATOR_675227]) plus a defined grace period (i.e., [ADDRESS_912561] prescription’s days’ supply in main analyses). 
+• The date of augmentation or switching from exposure to comparator or vice versa or augmentation/switching to any other NOAC (e.g. switching from api[INVESTIGATOR_675228] a censoring event);  
+o A dosage change on the index treatment does not fulfill this criterion 
+o An added treatment that is not part of the exposure or comparator group does not fulfill this criterion  
+• Treatment of current epi[INVESTIGATOR_675229], insertion of caval filter , or use of fibrinolytic agent (streptokinase,  
+alteplase, reteplase, tenecteplase ) 
+ 
+ For the intention-to-treat (ITT) analyses, the censoring based on the augmentation/switching and treatment discontinuation 
+will be replaced with a maximum allowed follow-up time of 365 days.  
+ 
+7. Initial Feasibility Analysis  
+Aetion report name:  
+[CONTACT_675242][INVESTIGATOR_675230]. warfarin  
+Optum - https://bwh -dope.aetion.com/projects/details/1484/results/[ZIP_CODE]/result/0   
+Marketscan - https://bwh -dope.aetion.com/projects/deta ils/1481/results/[ZIP_CODE]/result/0   
+Medicare - https://bwh -dope.aetion.com/projects/details/1483/results/[ZIP_CODE]/result/0   
+ 
+Date conducted:  1/19/21 
+  Complete Aetion feasibility analysis using age, sex, and CCI as the only covariates and the primary endpoint (Section 6.3.1) as the outcome. No measures of association will be computed nor will incidence rates stratified by [CONTACT_1570]. 
+ 
+• Report patient characteristics by [CONTACT_1570] 
+• Report summary parameter s of study population 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+• Report median f ollow -up time  by [CONTACT_1570] 
+• Report reasons for censoring in the overall study population 
+ 
+8. Initial Power Assessment 
+Aetion report name:  
+[CONTACT_675242][INVESTIGATOR_675230]. warfarin  
+Optum - https://bwh -dope.aetion.com/projects/details/1484/results/[ZIP_CODE]/result/0   
+Marketscan - https://bwh -dope.aetion.com/projects/details/1481/results/[ZIP_CODE]/result/0   
+Medicare - https://bwh-dope.aetion.com/projects/details/1483/results/[ZIP_CODE]/result/0  
+ 
+Date conducted:   1/19/[ADDRESS_912562] are available at this stag e. 
+Complete a 1:1 PS -matched comparative analysis using this outcome. PS should include only 3 covariates: age, sex, and combined 
+comorbidity index. Power calculations are based on the formulas from Chow et al. (2008).  
+• Stop analyses until feasibility and power are reviewed by [CONTACT_8414]. Reviewers evaluate the results of the analyses described above in Sections 7 and 8, including numbers of patients, patient characteristics, follow -up time, and reasons 
+for censoring by [CONTACT_1570], as well as overall rates of outcomes and study power. These parameters are re -evaluated and 
+reported in the subsequent sections, after incorporating feedback and refining the protocol. 
+ 
+• Stop analyses until balance and final power assessment are reviewed by [CONTACT_61337], FDA, and assigned members of 
+advisory board.  
+Reviewed by [CONTACT_976]:  [INVESTIGATOR_126082]:  11/18/20 20 
+Reviewed by [CONTACT_8415]:  Ken Quinto  Date reviewed:  11/29/2020  
+Reasons for stoppi[INVESTIGATOR_99932] (if required):   
+ 9. Balance Assessment 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+Aetion report links:  
+Optum:  https://bwh -dope.aetion.com/projects/details/1484/results/[ZIP_CODE]/result/0   
+Marketscan:  https://bwh -dope.aetion.com/projects/details/1481/results/[ZIP_CODE]/result/0   
+Medicare:  https://bwh -dope.aetion.com/projects/details/1483/results/[ZIP_CODE]/result/0   
+ 
+Date conducted:  1/19/2021 
+ After review of initial feasibility and power analyses, complete creation of the remaining covariates from Section 6.2. Again, using the dummy outcome of a 90-day gap in database enrollment, complete a 1:[ADDRESS_912563] of covariates. 
+• Provide plot of PS distributions stratified by [CONTACT_1570]. 
+ 
+Note - Please refer to Appendix B .  
+ 
+• Report covariate balance after matching. 
+ 
+Note - For Table 1, please refer to Appendix B .  
+ 
+ 
+        
+• Report reasons for censoring by [CONTACT_1570]. 
+ Overall  Referent  Exposure  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+Dummy outcome  67 (0.94%) 25 (0.70%)  42 (1.18%)  
+Death  103 (1.44%)  49 (1.37%)  54 (1.51%) 
+Start of an additional exposure 232 (3.25%)  175 (4.90%)  57 (1.60%)  
+End of index exposure  4,701 (65.84%)  2,202 (61.68%)  2,499 (70.00%)  
+Specified date reached  857 (12.00%)  424 (11.88%)  433 (12.13%)  
+End of patient enrollment 425 (5.95%)  198 (5.55%)  227 (6.36%)  
+Switch to NOACs (for censoring) + nursing home 
+admission  + thrombectomy, insertion of caval filter, 
+use of fibrinolytic agent  755 (10.57%) 497 (13.92%)  258 (7.23%)  
+ 
+• Report follow -up time by [CONTACT_1570]. 
+Median Follow -Up Time (Days) [IQR] 
+Patient Group Optum  Marketscan  Medicare  
+Overall Patient Population  82.5 [38-174.5]  96 [38-186] 74 [38- 170] 
+Referent  72 [37-189] 88 [38-171] 73 [38- 161] 
+Exposure  96.5 [38-155] 100 [38-195] 78 [38-183] 
+ 
+• Report overall risk of the primary outcome. 
+ Optum Marketscan  Medicare  Pooled  
+Risk per 1,000 patients 12.93  13.13  14.66  13.74  
+ 
+ 10. Final Power Assessment 
+ Date conducted : 12/16/20  
+• Re-calculate power in the appropriate excel table, using the revised number of matched patients from the PS -match in Section 9. 
+All other parameters in the table should be the same as in Section 8. 
+ 
+o Pooled  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 
+           
+ 
+o Optum Non-inferiority Analysis
+Number of patients matched7,[ADDRESS_912564] 0.84
+Alpha (2-sided) 0.05
+Non-inferiority margin 1.8
+Number of events expected 98.1036
+Power0.965194245
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 
+o Marketscan 
+ 
+ Non-inferiority Analysis
+Number of patients matched980
+Reference [ADDRESS_912565] 0.84
+Alpha (2-sided) 0.[ADDRESS_912566] 0.84
+Alpha (2-sided) 0.05
+Non-inferiority margin 1.8
+Number of events expected 36.[ZIP_CODE]
+Power0.631133873
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+o Medicare  
+ 
+ 
+• Stop analyses until balance and final power assessment are reviewed by [CONTACT_61337], FDA, and assigned members of 
+advisory board. 
+Reviewed by [CONTACT_976] : [INVESTIGATOR_126083]:  12/24/2020  
+Reviewed by [CONTACT_8415]:  Ken Quinto  Date reviewed:  01/18/2020  
+Reasons for stoppi[INVESTIGATOR_99932] (if required):   
+ 11. Study Confidence and Concerns  
+ Deadline for voting on study confidence and listing concerns:  
+Date votes and concerns are summarized:    
+ 
+• If final feasibility and power analyses are reviewed and approved, proceed to the remaining protocol steps.  
+• All study team and advisory board members that review this protocol should at this stage provide their level of confidence fo r the 
+success of the RWD study in the Google Form. This form also provides space for reviewers to list any concerns that they feel may Non-inferiority Analysis
+Number of patients matched3,[ADDRESS_912567] 0.84
+Alpha (2-sided) 0.05
+Non-inferiority margin 1.8
+Number of events expected 49.[ZIP_CODE]
+Power0.767185633
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+contribute to a failure to replicate the findings of the RCT, including differences in study populations, poor measurement of  study 
+variables, or residual confounding. All responses will be kept confidential and individual-level results will only be shared with the 
+individual respondent. 
+• After the deadline for voting has passed, provide the distribution of responses and summarize all conce rns here.  
+ 12. Register study protocol on clinicalTrials.gov  
+ 
+Date conducted:    
+ 
+• Register the study on clinicalTrials.gov and upload this document. 
+ 
+13. Comparative Analyses 
+ Aetion report name:  
+[CONTACT_8420]:    
+ 13.1 For primary analysis:  
+ 13.2 For sensitivity analyses:  
+  14.  Requested Results  
+ 
+14.1 Table 1: Baseline characteristics before and after adjustment  
+ 
+Variable  
+ Before adjustment  After adjustment  
+Referent  Exposure  Std. diff.  Referent  Exposure  Std. diff.  
+Number of patients    -   - 
+Age categories        
+…       
+  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+14.2 Table 2: Follow -up time  
+ 
+Patient Group Median Follow -Up Time (Days) [IQR] 
+Overall Patient Population   
+Referent   
+Exposure   
+ 
+14.3 Table 3: Censoring events 
+ 
+ Overall  Referent  Exposure  
+Outcome     
+Death     
+Start of an additional exposure    
+End of index exposure     
+Specified date reached     
+End of patient data     
+End of patient enrollment    
+…    
+ 
+14.4 Table 4: Results from primary analyses;  
+ 
+Analysis  No. exposed events  No. referent events  Exposed rate  Referent rate  HR (95% CI)  
+Crude      
+Analysis [ADDRESS_912568] Ratio; CI, Confidence Interval.  
+ 
+14.5 Table 5: Results from secondary analyses;  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 15. References  
+ Agnelli G, Buller HR, Cohen A, et al. Oral Api[INVESTIGATOR_675218]. N Engl J Med. 2013; 369:799-808.   Chow S, Shao J, Wang H. 2008.  Sample Size Calculations in Clinical Research . 2nd Ed. Chapman & Hall/CRC Biostatistics Series. page 
+177   
+AMPLIFY trial definitions Implementation in routine care
+References/Rationale Color coding
+Api[INVESTIGATOR_3822] (dose of 10 mg twice daily for 7 days, followed by 5 mg twice daily for 6 months) verus 
+conventional therapy (subcutaneous enoxaparin, followed by [CONTACT_406190])Api[INVESTIGATOR_199029]. WarfarinCriteria
+Can be replicated in claims
+The primary efficacy outcome was recurrent symptomatic venous thromboembolism or death related to 
+venous thromboembolism. Measured 1 day after drug initiation
+Venous thromboembolism: 
+See 'VTE' sheet for codesFang MC, Fan D, Sung SH, et al. Validity of Using Inpatient and Outpatient Administrative Codes to 
+Identify Acute Venous Thromboembolism: The CVRN VTE Study. Med Care. 2017;55(12):e137-
+e143. Can be intermediately 
+measured in claims
+Can't be measured in claims
+Signed Written Informed ConsentN/ACan't be measured in claims 
+but not important for the 
+analysis
+Subjects whose index event was either unprovoked OR provoked with a risk for
+recurrence as described in the eligibility checklistN/A
+Either of the following:
+• Acute symptomatic  proximal deep vein thrombosis (DVT) with evidence of proximal thrombosis that 
+involves at least the popliteal vein or a more proximal vein, demonstrated by [CONTACT_675240]: − compression 
+ultrasound (CUS), including grey-scale or color-coded Doppler, OR − ascending contrast venographyMeasured 180 days prior to and including day of drug initiation in any diagnosis position and in 
+an inpatient or ED care setting
+Deep vein thrombosis (DVT): 
+ICD-9 Dx: 451.xx, 453.xx
+ICD-10 Dx: I26.xx, I80.xx, I81.xx, I82.xx, I26.xx
+• Acute symptomatic PE  with evidence of thrombosis demonstrated by [CONTACT_675241]:
+− an intraluminal filling defect in segmental or more proximal branches on spi[INVESTIGATOR_85004] 
+(CT) scan; or
+− an intraluminal filling defect or a sudden cutoff of vessels more than 2.5 mm in diameter on the 
+pulmonary angiogram; or
+− a perfusion defect of at least 75% of a segment with a local normal ventilation result (high probability) on 
+ventilation/perfusion lung scan (VPLS)Measured 180 days prior to and including day of drug initiation in any diagnosis position and in 
+an inpatient or ED care setting
+Pulmonary embolism (PE):
+ICD-9 Dx: 415.xx
+ICD-10 Dx: I26.xx
+Men and women, ages 18 years or greaterMeasured at day of drug initiation 
+Age >= 18  
+Women of childbearing potential (WOCBP) must be using an adequate method of contraception to avoid 
+pregnancy  throughout the study in such a manner that the risk of pregnancy is minimized. (Additional 
+details in Supplementary Appendix)
+WOCBP must have a negative serum or urine pregnancy test (minimum sensitivity 25 IU/L or equivalent 
+units of human chorionic gonadotropin [HCG]) within [ADDRESS_912569].
+WOCBP who are unwilling or unable to use an acceptable method of birth control (such as oral 
+contraceptives, other hormonal contraceptives [vaginal products, skin patches, or implanted or injectable 
+products], or mechanical products such as an intrauterine device or barrier methods [diaphragm, 
+condoms, spermicides]) to avoid pregnancy for the entire study.
+Women who are pregnant or breastfeeding.
+Women with a positive pregnancy test on enrollment or prior to investigational product administration.
+ Subjects with a provoked index event without the existence of a persistent risk factor for recurrence as 
+described in the eligibility checklistN/A
+Less than [ADDRESS_912570] recent DVT or pulmonary embolism (PE) (index 
+event)N/APRIMARY OUTCOME
+Measured 180 days prior to and including day of drug initiation in any dignosis position and in 
+an inpatient or outpatient care setting
+See 'Pregnancy' sheet for codesN/A
+EXCLUSION CRITERIACriteria captured as an exclusion criteria in the  Pregnancy measure Please see the following Google Drive for further details or any missing information: 
+https://drive.google.com/drive/folders/1WD618wrywYjEaXzfLTcuK-VCcnb6b-gV?usp=sharing
+ICD-[ADDRESS_912571] Folder (link above). ICD-[ADDRESS_912572]/backward mappi[INVESTIGATOR_8377]-9 to ICD-10 mappi[INVESTIGATOR_007]:
+ https://www.nber.org/data/icd9-icd-10-cm-and-pcs-crosswalk-general-equivalence-mappi[INVESTIGATOR_007].html
+Trial details- Secondary approval, Successful NI with label change
+EXPOSURE vs. COMPARISON
+INCLUSION CRITERIA
+Appendix A 
+Thrombectomy, insertion of a caval filter, or use of a fibrinolytic agent to treat the current epi[INVESTIGATOR_675231] (VTE).Measured 30 days prior and including the day of drug initiation in any diagnosis position in an 
+inpatient or ED care setting
+Thrombectomy:
+CPT codes: [ZIP_CODE], [ZIP_CODE], [ZIP_CODE], [ZIP_CODE], [ZIP_CODE]
+HCPCS codes:  C1757 
+Caval filter: 
+CPT codes: [ZIP_CODE], [ZIP_CODE], [ZIP_CODE]
+HCPCS codes: C1880
+Fibrinolytic agent: 
+streptokinase, alteplase, reteplase, tenecteplaseComponents will act as both exclusion criterion and censoring events
+Active bleeding or high risk for bleeding contraindicating treatment with low-molecularweight heparin 
+(LMWH) and a vitamin K antagonist (VKA)Measured 30 days prior to and including the day of drug initiation
+HAS-BLED score >=3 Major bleeding risk 5.8% per year for score 3
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4407886/
+Subjects with cancer who will be treated for 6 months or more with LMWH therapyN/A
+Subjects with contraindications according to the local prescribing information of enoxaparin or warfarinN/A
+Subjects with an indication, other than VTE, intended for long-term treatment with a VKA such as:N/A
+Mechanical valveMeasured 180 days prior to and including the drug initiation in any diagnosis position and in 
+an inpatient or outpatient care setting
+Mechanical valve
+ICD-9 Dx: V43.3x
+ICD-10 Dx: Z95.2x, Z95.3x, Z95.4x
+ICD-9 Px: 35.0x, 35.2x, 35.3x
+ICD-10 Px: 02RGxxx, 02RFxxx, 02RHxxx, 02RJxxx, 02QGxxx, 02QFxxx, 02QHxxx, 02QJxxx
+ Atrial fibrillation or atrial flutter with moderate to high risk of systemic thromboembolism. Subjects with 
+atrial fibrillation that appears to be associated with acute PE may participate.N/A
+Conditions for which serious bleeding may occur and the time of exclusion relative to the time of 
+randomization:
+ • 6 months
+Intracranial bleedingMeasured 180 days prior to and including the day of drug initiation in any diagnosis position 
+and in an inpatient care setting
+Intracranial hemorrhage: 
+ICD-9 Dx: 430.xx, 431.xx, 432.xx
+ICD-10 Dx: I60.xx, I61.xx, I62.xx
+Intraocular bleedingMeasured 180 days prior to and including the day of drug initiation in any diagnosis position 
+and in an inpatient care setting
+Vitreous hemorrhage:
+ICD-9 Dx: 379.23 
+ICD-10 Dx: H43.1x  
+Retinal hemorrhage 
+ICD-9 Dx: 362.81 
+ICD-10 Dx: H35.6x, H35.73
+Hemophthalmos
+ICD-9 Dx: 360.43, 459.0x, 364.41
+ICD-10 Dx: H44.8xx
+Appendix A 
+Gastrointestinal bleeding and/or endoscopi[INVESTIGATOR_675232] 180 days prior to and including day of drug initiation in any diagnosis position and in 
+an inpatient care setting
+Gastrointestinal bleeding:
+ICD-9 Dx: 
+531.0x gastric ulcer w/ hemorrhage, 
+531.2x gastric ulcer w/ hemorrhage and perforation 
+531.4x
+531.6x chronic / unspecified ulcer w/ hemorrhage 
+532.0x, 532.2x, 532.4x, 532.6x, 533.0x, 533.2x, 533.4x, 533.6x,
+534.0x, 534.2x, 534.4x, 534.6x, 562.0x, 562.1x, 568.8x, 569.3x, 569.8x
+578.x Gastrointestinal hemorrhage
+ICD-10 Dx: 
+K25.0x, K25.2x, K25.6x, K26.0x, K26.2x, K26.4x, K26.6x, K27.0x, K27.2x, K27.4x, K27.6x, 
+K28.0x, K28.2x, K28.4x, K28.6x, K55.21, K57.xx, K62.5x, K63.1x, K63.81, K66.1x, K92.0x, 
+K92.1x, K92.2x
+ICD-9 Px: 44.43
+ICD-10 Px:  0W3P8ZZ
+• 2 months
+Head trauma or other major traumaMeasured 60 days prior to and including the day of drug initiation in any diagnosis position 
+and in an inpatient our outpatient care setting 
+See 'Major Trauma' sheet for codes
+Major surgeryMeasured 60 days prior to and including the day of drug initiation in any diagnosis position 
+and in an inpatient or outpatient care setting
+Major surgery selected from codes range 35.x- 84.x 
+• 1 week
+− Ischemic strokeMeasured 7 days prior to and inluding the day of drug initiation in any diagnosis position and 
+in an inpatient care setting
+Ischemic stroke: 
+ICD-9 Dx: 433.x, 434. x, 436.xx
+− NeurosurgeryMeasured 7 days prior to and including the day of drug initiation in any diagnosis position and 
+in an inpatient care setting
+Neurosurgery:
+ICD-9 Px: 
+01.xx, 02.xx, 03.xx, 04.xx, 05.xx
+ICD-10 Px: 
+00xxxx
+• Time of randomization
+− Gross hematuriaMeasured 1 day prior to and including the of drug initiation in any diagnosis position in an 
+inpatient or outpatient care setting
+Gross hematuria: 
+ICD-9 Dx: 599.71 (not 599.7x)
+ICD-10 Dx: R31.0
+− Evidence of poor healing of a major wound or major traumaMeasured 1 day prior and including the day of drug initiation in any diagnosis position in an 
+inpatient or outpatient care setting
+Non-healing surgical wound
+ICD-9 Dx: 998.33
+ICD-10 Dx: T81.33XA
+− Planned major surgeryN/A
+Appendix A 
+− Intracranial neoplasm, arteriovenous malformation or aneurysmMeasured 1 day prior to and including the day of  drug initiation in any diagnosis position and 
+in an inpatient or outpatient care setting
+Intracranial neoplasm: 
+ICD-9 Dx: 239.6x, 191.xx, 225.xx
+ICD-10 Dx: D49.6x, C71.x, D33.0x, D33.1x, D33.2x
+AV malformation of brain:
+ICD-9 Dx: 747.81
+ICD-10 Dx: Q28.2x, Q28.3x 
+Cerebral aneurysm
+ICD-9 Dx: 437.3x
+ICD-10 Dx: I67.1x
+− Overt major bleedingMeasured 1 day prior and including the day of drug initiation in any diagnosis position and in 
+an inpatient or outpatient care setting
+See ' Major Bleeding' sheet for codes
+− Documented hemorrhagic tendencies or blood dyscrasiasMeasured 1 day prior and including the day of drug initiation in any diagnosis position in an 
+inpatient or outpatient care setting
+Coagulation defects
+ICD-9 Dx: 286.x 
+ICD-10 Dx: D65.x, D66.x, D67.xx, D68.xx, D69.xx
+Malignant Neoplasm Of Lymphatic And Hematopoietic Tissue
+ICD-9 Dx: 200.xx to 209.xx
+ICD-10 Dx: C81.xx to C96.xx
+Active and clinically significant liver disease (eg, hepatorenal syndrome)Measured 180 days prior to and including the day of drug initiation in any diagnosis position 
+and in an inpatient or oupatient care setting
+Liver disease: 
+ICD-9 Dx:
+070.xx, 570.xx- 573.xx 
+456.0x-456.2x, 576.8x, 782.4x, 789.5x 
+ICD-9 Px:
+39.1x, 42.91 
+Hepatorenal syndrome:
+ICD-9 Dx: 572.4
+ICD-10 Dx : K76.7
+Life expectancy <6 monthsMeasured 180 days prior to drug initiation in any diagnosis position and in an inpatient or 
+outpatient care setting
+CCI>=10 
+Bacterial endocarditisMeasured 180 days prior to and including the day of drug initiation in any diagnosis position 
+and in an inpatient or outpatient care setting
+Bacterial endocarditis:
+ICD-9 Dx: 421.0x
+ICD-10 Dx: I33.0x
+Uncontrolled hypertension: systolic blood pressure >180 mm Hg or diastolic blood pressure >100 mm Hg; 
+(subjects who have a transient, higher blood pressure elevation associated with acute PE [upper limit: 
+systolic blood pressure 200 mm Hg or diastolic blood pressure 100 mm Hg] may enter the study;) elevated 
+blood pressure that is persistent 1-2 days after the index DVT or PE should be treated according to local 
+guidelines.Measured 180 days prior to and including the day of drug initiation in any diagnosis position 
+and in an inpatient or outpatient care setting
+Malignant hypertension: 
+ICD-9 Dx: 401.0x 
+Hypertensive urgency/ Hypertensive crisis: 
+ICD-10 Dx : I16.xx 
+Platelet count <100,000/mm3Measured 180 days prior to and including the day of drug initiation in any diagnosis position 
+and in an inpatient or outpatient care setting
+Thrombocytopenia:
+ICD-9 Dx: 287.3x, 287.4x, 287.5x 
+ICD-10 Dx: D69.3x, D69.4x, D69.5x, D69.6x
+Appendix A 
+Hemoglobin <9 g/dLMeasured 180 days prior to and incuding the day of  drug initiation in any diagnosis position 
+and in an inpatient or outpatient care setting
+Anemia:
+ICD 9 Dx:
+282.x (hereditary hemolytic anemias)
+283.x (acquired hemolytic anemias, autoimmune etc) 
+284.x (aplastic anemia and other bone marrow failure syndromes)
+Serum creatinine >2.5 mg/dL (221 umol/L)
+Calculated creatinine clearance <25 ml/min
+ALT or AST >2 times upper limit of normal
+Total bilirubin >1.5 times upper limit of normal (unless an alternative causative factor is identified [eg, 
+Gilbert’s syndrome]).
+Heparin-induced thrombocytopenia;Measured 180 days prior to and including the day of drug initiation in any position and in an 
+inpatient or outpatient care setting
+Heparin induced thrombocytopenia (HIT) 
+ICD-9 Dx: 289.84
+ICD-10 Dx: D75.82
+Allergic reaction to unfractionated heparin, LMWH, fondaparinux, or any VKA.N/A
+DVT or PE treatment with more than two doses of fondaparinux or a LMWH that is labeled for once-daily 
+dosing, or more than three doses of a LMWH that is labeled for twice-daily dosing, or continuous infusion of 
+unfractionated heparin for more than [ADDRESS_912573] administration of study drug; and/or -- N/A
+DVT or PE treatment with more than two doses of oral VKA therapy before the first administration of study 
+drug.N/A
+Treatment with api[INVESTIGATOR_34219] a previous clinical trial. N/A
+Subjects requiring aspi[INVESTIGATOR_248] (ASA) >165 mg/day at randomization.Measured 1 day prior to and including  the day of drug initiation in any diagnosis position and 
+in an inpatient our outpatient care setting
+Aspi[INVESTIGATOR_248] (prescription only)
+dose greater than >165 mg
+Subjects requirin g dual antiplatelet therap y (ASA plus clopi[INVESTIGATOR_675233]) at 
+randomization. Subjects who transition from dual antiplatelet therapy to monotherapy prior to 
+randomization will be eligible for the trial.Measured 1 day prior to and including the day of drug initiation in any diagnosis position and 
+in an inpatient or outpatient care setting
+(both concurrent prescription and combination products)
+Aspi[INVESTIGATOR_248] + clopi[INVESTIGATOR_675234] + ticlopi[INVESTIGATOR_675235]/A
+Subjects who are compulsorily detained for treatment of either a psychiatric or physical (eg, infectious 
+disease) illnessN/A
+Receiving concurrent investigational agents or has received an investigational agent within the past [ADDRESS_912574] dose of study treatment (with the exception of approved medications being used for an 
+approved indication, eg, investigating a new dosing regimen for an approved indication)N/A
+Any condition, which in the opi[INVESTIGATOR_871], would put the subject at an unacceptable risk from 
+participating in the studyN/A
+Any other medical, social, logistical, or psychological reason, which in the opi[INVESTIGATOR_871], 
+would preclude compliance with, or successful completion of, the study protocol.N/AN/A
+(Incorporated into moderate/severe liver disease above)Measured [ADDRESS_912575]: 
+ICD-9 Dx: 
+585.4x, 585.5x, 585.6x: CKD 4, 5, ESRD
+586.xx: renal failure
+ICD-10 Dx:
+N19.xx
+N18.4x Chronic kidney disease, stage 4 (severe)
+N18.5x Chronic kidney disease, stage 5
+N18.6x End stage renal disease
+N18.9x Chronic kidney disease, unspecified
+Appendix A 
+Trial ID 
+Trial Name (with web links) AMPLIFY
+Trial Name (with pdf links)
+NCT [STUDY_ID_REMOVED]
+Therapeutic Area Cardiology/Vascular Diseases
+Brand Name [CONTACT_675243][INVESTIGATOR_675236]-Myers Squibb
+Year 2013
+Measurable endpointPercentage of Participants With Symptomatic Recurrent Venous Thromboembolism [VTE] (i.e. the 
+Composite of Recurrent Deep Vein Thrombosis [DVT] or Fatal or Non-fatal Pulmonary Embolism [PE]) Until 
+the Intended End of Study Treatment 
+Exposure Api[INVESTIGATOR_675237], Warfarin
+Population
+Trial finding HR = 0.84 (95%CI 0.60–1.18)
+Notes
+No. of Patients 5,395
+Non-inferiority margin HR = 1.8
+Assay Sens. Endpoint
+Assay Sens. Finding
+Power0.90; With the use of an estimated incidence of the primary efficacy outcome of 3% at [ADDRESS_912576] 90% power to show the noninferiority of api[INVESTIGATOR_3822], at a one-
+sided alpha level of 0.025. This sample was increased to 4816 patients to account for up to 15% of patients 
+discontinuing treatment early.
+Appendix A 
+Title
+Major Bleeding
+ICD-9 Dx 
+423  HEMOPERICARDIUM
+430  SUBARACHNOID HEMORRHAGE
+431  INTRACEREBRAL HEMORRHAGE
+432  NONTRAUMATIC EXTRADURAL HEMORRHAGE
+432.1  SUBDURAL HEMORRHAGE
+432.9  UNSPECIFIED INTRACRANIAL HEMORRHAGE
+459  HEMORRHAGE UNSPECIFIED
+531  ACUTE GASTRIC ULCER WITH HEMORRHAGE
+531  ACUTE GASTRIC ULCER WITH HEMORRHAGE WITHOUT OBSTRUCTION
+531.01  ACUTE GASTRIC ULCER WITH HEMORRHAGE WITH OBSTRUCTION
+531.2  ACUTE GASTRIC ULCER WITH HEMORRHAGE AND PERFORATION
+531.2  ACUTE GASTRIC ULCER WITH HEMORRHAGE AND PERFORATION WITHOUT OBSTRUCTION
+531.21  ACUTE GASTRIC ULCER WITH HEMORRHAGE AND PERFORATION WITH OBSTRUCTION
+531.4  CHRONIC OR UNSPECIFIED GASTRIC ULCER WITH HEMORRHAGE
+531.4  CHRONIC OR UNSPECIFIED GASTRIC ULCER WITH HEMORRHAGE WITHOUT OBSTRUCTION
+531.41  CHRONIC OR UNSPECIFIED GASTRIC ULCER WITH HEMORRHAGE WITH OBSTRUCTION
+531.6  CHRONIC OR UNSPECIFIED GASTRIC ULCER WITH HEMORRHAGE AND PERFORATION
+531.6  CHRONIC OR UNSPECIFIED GASTRIC ULCER WITH HEMORRHAGE AND PERFORATION WITHOUT OBSTRUCTION
+531.61  CHRONIC OR UNSPECIFIED GASTRIC ULCER WITH HEMORRHAGE AND PERFORATION WITH OBSTRUCTION
+532  ACUTE DUODENAL ULCER WITH HEMORRHAGE
+532  ACUTE DUODENAL ULCER WITH HEMORRHAGE WITHOUT OBSTRUCTION
+532.01  ACUTE DUODENAL ULCER WITH HEMORRHAGE WITH OBSTRUCTION
+532.2  ACUTE DUODENAL ULCER WITH HEMORRHAGE AND PERFORATION
+532.2  ACUTE DUODENAL ULCER WITH HEMORRHAGE AND PERFORATION WITHOUT OBSTRUCTION
+532.21  ACUTE DUODENAL ULCER WITH HEMORRHAGE AND PERFORATION WITH OBSTRUCTION
+532.4  CHRONIC OR UNSPECIFIED DUODENAL ULCER WITH HEMORRHAGE
+532.4  CHRONIC OR UNSPECIFIED DUODENAL ULCER WITH HEMORRHAGE WITHOUT OBSTRUCTION
+532.41  CHRONIC OR UNSPECIFIED DUODENAL ULCER WITH HEMORRHAGE WITH OBSTRUCTION
+532.6  CHRONIC OR UNSPECIFIED DUODENAL ULCER WITH HEMORRHAGE AND PERFORATION
+532.6  CHRONIC OR UNSPECIFIED DUODENAL ULCER WITH HEMORRHAGE AND PERFORATION WITHOUT OBSTRUCTION
+532.61  CHRONIC OR UNSPECIFIED DUODENAL ULCER WITH HEMORRHAGE AND PERFORATION WITH OBSTRUCTION
+Appendix A 
+533  ACUTE PEPTIC ULCER OF UNSPECIFIED SITE WITH HEMORRHAGE
+533  ACUTE PEPTIC ULCER OF UNSPECIFIED SITE WITH HEMORRHAGE WITHOUT OBSTRUCTION
+533.01  ACUTE PEPTIC ULCER OF UNSPECIFIED SITE WITH HEMORRHAGE WITH OBSTRUCTION
+533.2  ACUTE PEPTIC ULCER OF UNSPECIFIED SITE WITH HEMORRHAGE AND PERFORATION
+533.2  ACUTE PEPTIC ULCER OF UNSPECIFIED SITE WITH HEMORRHAGE AND PERFORATION WITHOUT OBSTRUCTION
+533.21  ACUTE PEPTIC ULCER OF UNSPECIFIED SITE WITH HEMORRHAGE AND PERFORATION WITH OBSTRUCTION
+533.4  CHRONIC OR UNSPECIFIED PEPTIC ULCER OF UNSPECIFIED SITE WITH HEMORRHAGE
+533.4  CHRONIC OR UNSPECIFIED PEPTIC ULCER OF UNSPECIFIED SITE WITH HEMORRHAGE WITHOUT OBSTRUCTION
+533.41  CHRONIC OR UNSPECIFIED PEPTIC ULCER OF UNSPECIFIED SITE WITH HEMORRHAGE WITH OBSTRUCTION
+533.6  CHRONIC OR UNSPECIFIED PEPTIC ULCER OF UNSPECIFIED SITE WITH HEMORRHAGE AND PERFORATION
+533.6  CHRONIC OR UNSPECIFIED PEPTIC ULCER OF UNSPECIFIED SITE WITH HEMORRHAGE AND PERFORATION WITHOUT OBSTRUCTION
+533.61  CHRONIC OR UNSPECIFIED PEPTIC ULCER OF UNSPECIFIED SITE WITH HEMORRHAGE AND PERFORATION WITH OBSTRUCTION
+534  ACUTE GASTROJEJUNAL ULCER WITH HEMORRHAGE
+534  ACUTE GASTROJEJUNAL ULCER WITH HEMORRHAGE WITHOUT OBSTRUCTION
+534.01  ACUTE GASTROJEJUNAL ULCER WITH HEMORRHAGE WITH OBSTRUCTION
+534.2  ACUTE GASTROJEJUNAL ULCER WITH HEMORRHAGE AND PERFORATION
+534.2  ACUTE GASTROJEJUNAL ULCER WITH HEMORRHAGE AND PERFORATION WITHOUT OBSTRUCTION
+534.21  ACUTE GASTROJEJUNAL ULCER WITH HEMORRHAGE AND PERFORATION WITH OBSTRUCTION
+534.4  CHRONIC OR UNSPECIFIED GASTROJEJUNAL ULCER WITH HEMORRHAGE
+534.4  CHRONIC OR UNSPECIFIED GASTROJEJUNAL ULCER WITH HEMORRHAGE WITHOUT OBSTRUCTION
+534.41  CHRONIC OR UNSPECIFIED GASTROJEJUNAL ULCER WITH HEMORRHAGE WITH OBSTRUCTION
+534.6  CHRONIC OR UNSPECIFIED GASTROJEJUNAL ULCER WITH HEMORRHAGE AND PERFORATION
+534.6  CHRONIC OR UNSPECIFIED GASTROJEJUNAL ULCER WITH HEMORRHAGE AND PERFORATION WITHOUT OBSTRUCTION
+534.61  CHRONIC OR UNSPECIFIED GASTROJEJUNAL ULCER WITH HEMORRHAGE AND PERFORATION WITH OBSTRUCTION
+562.02  DIVERTICULOSIS OF SMALL INTESTINE WITH HEMORRHAGE
+562.03  DIVERTICULITIS OF SMALL INTESTINE WITH HEMORRHAGE
+562.12  DIVERTICULOSIS OF COLON WITH HEMORRHAGE
+562.13  DIVERTICULITIS OF COLON WITH HEMORRHAGE
+568.81  HEMOPERITONEUM (NONTRAUMATIC
+569.3  HEMORRHAGE OF RECTUM AND ANUS
+569.83  PERFORATION OF INTESTINE
+569.85  ANGIODYSPLASIA OF INTESTINE WITH HEMORRHAGE
+569.86  DIEULAFOY LESION (HEMORRHAGIC) OF INTESTINE
+[ADDRESS_912577] UNSPECIFIED
+719.1  HEMARTHROSIS
+719.1  HEMARTHROSIS SITE UNSPECIFIED
+719.11  HERARTHROSIS INVOLVING SHOULDER REGION
+719.12  HEMARTHORSIS INVOLVING UPPER ARM
+719.13  HEMARTHROSIS INVOLVING FOREARM
+719.14  HEMARTHROSIS INVOLVING HAND
+719.15  HEMARTHROSIS INVOLVING PELVIC REGION AND THIGH
+719.16  HEMARTHROSIS INVOLVING LOWER LEG
+719.17  HEMARTHROSIS INVOLVING ANKLE AND FOOT
+719.18  HEMARTHROSIS INVOLVING OTHER SPECIFIED SITES
+719.19  HEMARTHROSIS INVOLVING MULTIPLE SITES
+ICD-10 Dx 
+I31.2  Hemopericardium, not elsewhere classified
+I60.00  Nontraumatic subarachnoid hemorrhage from unspecified carotid siphon and bifurcation
+I60.01  Nontraumatic subarachnoid hemorrhage from right carotid siphon and bifurcation
+I60.02  Nontraumatic subarachnoid hemorrhage from left carotid siphon and bifurcation
+I60.10  Nontraumatic subarachnoid hemorrhage from unspecified middle cerebral artery
+I60.11  Nontraumatic subarachnoid hemorrhage from right middle cerebral artery
+I60.12  Nontraumatic subarachnoid hemorrhage from left middle cerebral artery
+I60.2  Nontraumatic subarachnoid hemorrhage from anterior communicating artery
+I60.30  Nontraumatic subarachnoid hemorrhage from unspecified posterior communicating artery
+I60.31  Nontraumatic subarachnoid hemorrhage from right posterior communicating artery
+I60.32  Nontraumatic subarachnoid hemorrhage from left posterior communicating artery
+I60.4  Nontraumatic subarachnoid hemorrhage from basilar artery
+I60.50  Nontraumatic subarachnoid hemorrhage from unspecified vertebral artery
+I60.51  Nontraumatic subarachnoid hemorrhage from right vertebral artery
+I60.52  Nontraumatic subarachnoid hemorrhage from left vertebral artery
+I60.6  Nontraumatic subarachnoid hemorrhage from other intracranial arteries
+I60.7  Nontraumatic subarachnoid hemorrhage from unspecified intracranial artery
+I60.8  Other nontraumatic subarachnoid hemorrhage
+I60.9  Nontraumatic subarachnoid hemorrhage, unspecified
+I61.0  Nontraumatic intracerebral hemorrhage in hemisphere, subcortical
+I61.1  Nontraumatic intracerebral hemorrhage in hemisphere, cortical
+Appendix A 
+I61.2  Nontraumatic intracerebral hemorrhage in hemisphere, unspecified
+I61.3  Nontraumatic intracerebral hemorrhage in brain stem
+I61.4  Nontraumatic intracerebral hemorrhage in cerebellum
+I61.5  Nontraumatic intracerebral hemorrhage, intraventricular
+I61.6  Nontraumatic intracerebral hemorrhage, multiple localized
+I61.8  Other nontraumatic intracerebral hemorrhage
+I61.9  Nontraumatic intracerebral hemorrhage, unspecified
+I62.00  Nontraumatic subdural hemorrhage, unspecified
+I62.01  Nontraumatic acute subdural hemorrhage
+I62.02  Nontraumatic subacute subdural hemorrhage
+I62.03  Nontraumatic chronic subdural hemorrhage
+I62.1  Nontraumatic extradural hemorrhage
+I62.9  Nontraumatic intracranial hemorrhage, unspecified
+K25.0  Acute gastric ulcer with hemorrhage
+K25.2  Acute gastric ulcer with both hemorrhage and perforation
+K25.4  Chronic or unspecified gastric ulcer with hemorrhage
+K25.6  Chronic or unspecified gastric ulcer with both hemorrhage and perforation
+K26.0  Acute duodenal ulcer with hemorrhage
+K26.2  Acute duodenal ulcer with both hemorrhage and perforation
+K26.4  Chronic or unspecified duodenal ulcer with hemorrhage
+K26.6  Chronic or unspecified duodenal ulcer with both hemorrhage and perforation
+K27.0  Acute peptic ulcer, site unspecified, with hemorrhage
+K27.2  Acute peptic ulcer, site unspecified, with both hemorrhage and perforation
+K27.4  Chronic or unspecified peptic ulcer, site unspecified, with hemorrhage
+K27.6  Chronic or unspecified peptic ulcer, site unspecified, with both hemorrhage and perforation
+K28.0  Acute gastrojejunal ulcer with hemorrhage
+K28.2  Acute gastrojejunal ulcer with both hemorrhage and perforation
+K28.4  Chronic or unspecified gastrojejunal ulcer with hemorrhage
+K28.6  Chronic or unspecified gastrojejunal ulcer with both hemorrhage and perforation
+K55.21  Angiodysplasia of colon with hemorrhage
+K56.60  Unspecified intestinal obstruction
+K57.01  Diverticulitis of small intestine with perforation and abscess with bleeding
+K57.11  Diverticulosis of small intestine without perforation or abscess with bleeding
+K57.13  Diverticulitis of small intestine without perforation or abscess with bleeding
+K57.21  Diverticulitis of large intestine with perforation and abscess with bleeding
+Appendix A 
+K57.31  Diverticulosis of large intestine without perforation or abscess with bleeding
+K57.33  Diverticulitis of large intestine without perforation or abscess with bleeding
+K57.41  Diverticulitis of both small and large intestine with perforation and abscess with bleeding
+K57.51  Diverticulosis of both small and large intestine without perforation or abscess with bleeding
+K57.53  Diverticulitis of both small and large intestine without perforation or abscess with bleeding
+K57.81  Diverticulitis of intestine, part unspecified, with perforation and abscess with bleeding
+K57.91  Diverticulosis of intestine, part unspecified, without perforation or abscess with bleeding
+K57.93  Diverticulitis of intestine, part unspecified, without perforation or abscess with bleeding
+K62.5  Hemorrhage of anus and rectum
+K63.1  Perforation of intestine (nontraumatic
+K63.[ADDRESS_912578] DELIVERY
+73.99   OTHER OPERATIONS ASSISTING DELIVERY
+74.0   CLASSICAL CESAREAN SECTION
+74.1   LOW CERVICAL CESAREAN SECTION
+74.2   EXTRAPERITONEAL CESAREAN SECTION
+74.3   REMOVAL OF EXTRATUBAL ECTOPIC PREGNANCY
+74.4   CESAREAN SECTION OF OTHER SPECIFIED TYPE
+74.9   CESAREAN SECTION OF UNSPECIFIED TYPE
+74.91   HYSTEROTOMY TO TERMINATE PREGNANCY
+74.99   OTHER CESAREAN SECTION OF UNSPECIFIED TYPE
+75.4   MANUAL REMOVAL OF RETAINED PLACENTA
+75.5   REPAIR OF CURRENT OBSTETRIC LACERATION OF UTERUS
+75.6   REPAIR OF OTHER CURRENT OBSTETRIC LACERATION
+75.7   MANUAL EXPLORATION OF UTERINE CAVITY, POSTPARTUM
+75.9   OTHER OBSTETRIC OPERATIONS
+Appendix A 
+Title
+Venous Thromboembolism (VTE)
+ICD-9 Dx inpatient primary position
+PE
+415.1  PULMONARY EMBOLISM AND INFARCTION
+415.11  IATROGENIC PULMONARY EMBOLISM AND INFARCTION
+415.19  OTHER PULMONARY EMBOLISM AND INFARCTION
+DVT
+451.1  PHLEBITIS AND THROMBOPHLEBITIS OF DEEP VEINS OF LOWER EXTREMITIES
+451.11  PHLEBITIS AND THROMBOPHLEBITIS OF FEMORAL VEIN (DEEP) (SUPERFICIAL)
+451.[ADDRESS_912579]. Diff.
+Number of patients 1,472 2,783 2,464 3,874 4,983 3,406 8,919 10,063 
+Age
+...mean (sd) 56.64 (14.48) 56.04 (14.74) 0.04 51.80 (12.29) 50.99 (12.53) 0.07 62.86 (14.56) 63.42 (13.81) -0.04 58.78 (13.96) 56.59 (13.60) 0.16
+Age categories without zero category
+...18 - 54; n (%) 605 (41.1%) 1,207 (43.4%) -0.05 1,318 (53.5%) 2,133 (55.1%) -0.03 1,326 (26.6%) 852 (25.0%) 0.04 3,249 (36.4%) 4192 (41.7%) -0.11
+...55 - 64; n (%) 500 (34.0%) 878 (31.5%) 0.05 989 (40.1%) 1,531 (39.5%) 0.01 1,364 (27.4%) 856 (25.1%) 0.05 2,853 (32.0%) 3,265 (32.4%) -0.01
+...65 - 74; n (%) 185 (12.6%) 398 (14.3%) -0.05 86 (3.5%) 118 (3.0%) 0.03 1,233 (24.7%) 998 (29.3%) -0.10 1,504 (16.9%) 1,514 (15.0%) 0.05
+...>= 75; n (%) 182 (12.4%) 300 (10.8%) 0.05 71 (2.9%) 92 (2.4%) 0.03 1,060 (21.3%) 700 (20.6%) 0.02 1,313 (14.7%) 1,092 (10.9%) 0.11
+Gender without zero category- United
+...Males; n (%) 747 (50.7%) 1,386 (49.8%) 0.02 1,324 (53.7%) 1,972 (50.9%) 0.06 2,339 (46.9%) 1,571 (46.1%) 0.02 4,410 (49.4%) 4,929 (49.0%) 0.01
+...Females; n (%) 725 (49.3%) 1,397 (50.2%) -0.02 1,140 (46.3%) 1,902 (49.1%) -0.06 2,644 (53.1%) 1,835 (53.9%) -0.02 4,509 (50.6%) 5,134 (51.0%) -0.01
+Race 
+...White; n (%) 4,106 (82.4%) 2,789 (81.9%) 4,106 (82.4%) 2,789 (81.9%) 0.00
+...Black; n (%) 630 (12.6%) 470 (13.8%) 630 (12.6%) 470 (13.8%) 0.00
+...Asian; n (%) 24 (0.5%) 13 (0.4%) 24 (0.5%) 13 (0.4%) 0.00
+...Hispanic; n (%) 98 (2.0%) 46 (1.4%) 98 (2.0%) 46 (1.4%) 0.00
+...North American Native; n (%) 24 (0.5%) 18 (0.5%) 24 (0.5%) 18 (0.5%) 0.00
+...Other/Unknown; n (%) 101 (2.0%) 70 (2.1%) 101 (2.0%) 70 (2.1%) 0.00
+Region without zero category- United v3 (lumpi[INVESTIGATOR_8408]&other category with West)
+...Northeast; n (%) 156 (10.6%) 262 (9.4%) 0.04 452 (18.3%) 622 (16.1%) 0.06 1,000 (20.1%) 644 (18.9%) 0.03 1608 (18.0%) 1,528 (15.2%) 0.08
+...South; n (%) 414 (28.1%) 1,333 (47.9%) -0.42 749 (30.4%) 869 (22.4%) 0.18 1,368 (27.5%) 1,425 (41.8%) -0.30 2,531 (28.4%) 3,627 (36.0%) -0.[ADDRESS_912580]; n (%) 503 (34.2%) 658 (23.6%) 0.24 802 (32.5%) 1,978 (51.1%) -0.38 1,556 (31.2%) 795 (23.3%) 0.18 2,861 (32.1%) 3,431 (34.1%) -0.[ADDRESS_912581]; n (%) 399 (27.1%) 530 (19.0%) 0.19 456 (18.5%) 394 (10.2%) 0.24 1,059 (21.3%) 542 (15.9%) 0.14 1,914 (21.5%) 1,466 (14.6%) 0.18
+...Unknown+missing; n (%) N/A N/A #VALUE! ** (0.2%) ** (0.3%) -0.02 N/A N/A #VALUE! ** (0.2%) ** (0.3%) -0.02
+CV Covariates
+Ischemic heart disease; n (%) 226 (15.4%) 459 (16.5%) -0.03 305 (12.4%) 499 (12.9%) -0.02 968 (19.4%) 714 (21.0%) -0.04 1,499 (16.8%) 1,672 (16.6%) 0.01
+Acute MI; n (%) 67 (4.6%) 123 (4.4%) 0.01 106 (4.3%) 169 (4.4%) 0.00 210 (4.2%) 168 (4.9%) -0.03 383 (4.3%) 460 (4.6%) -0.01
+ACS/unstable angina; n (%) 40 (2.7%) 99 (3.6%) -0.05 71 (2.9%) 129 (3.3%) -0.02 178 (3.6%) 131 (3.8%) -0.01 289 (3.2%) 359 (3.6%) -0.02
+Old MI; n (%) 36 (2.4%) 72 (2.6%) -0.01 31 (1.3%) 47 (1.2%) 0.01 269 (5.4%) 171 (5.0%) 0.02 336 (3.8%) 290 (2.9%) 0.05
+Stable angina; n (%) 19 (1.3%) 70 (2.5%) -0.09 27 (1.1%) 82 (2.1%) -0.08 92 (1.8%) 81 (2.4%) -0.04 138 (1.5%) 233 (2.3%) -0.06
+Coronary atherosclerosis and other forms of chronic 
+ischemic heart disease; n (%) 137 (9.3%) 278 (10.0%) -0.02 165 (6.7%) 260 (6.7%) 0.00 683 (13.7%) 516 (15.1%) -0.04 985 (11.0%) 1,054 (10.5%) 0.02
+Other atherosclerosis with ICD10 v2 Copy; n (%) ** (0.5%) 12 (0.4%) 0.01 12 (0.5%) ** (0.2%) 0.05 38 (0.8%) 18 (0.5%) 0.04 #VALUE! #VALUE! #VALUE!
+Previous cardiac procedure (CABG or PTCA or Stent) 
+v4; n (%) ** (0.3%) ** (0.1%) 0.04 ** (0.2%) 21 (0.5%) -0.05 20 (0.4%) 13 (0.4%) 0.00 #VALUE! #VALUE! #VALUE!
+History of CABG or PTCA; n (%) 40 (2.7%) 66 (2.4%) 0.02 19 (0.8%) 32 (0.8%) 0.00 226 (4.5%) 165 (4.8%) -0.01 285 (3.2%) 263 (2.6%) 0.04
+Any stroke; n (%) ** (0.7%) 37 (1.3%) -0.06 25 (1.0%) 34 (0.9%) 0.01 158 (3.2%) 103 (3.0%) 0.01 #VALUE! 174 (1.7%) #VALUE!
+Ischemic stroke (w and w/o mention of cerebral 
+infarction); n (%) ** (0.7%) 37 (1.3%) -0.06 25 (1.0%) 33 (0.9%) 0.01 146 (2.9%) 100 (2.9%) 0.00 #VALUE! 170 (1.7%) #VALUE!
+Hemorrhagic stroke; n (%) 0 (0.0%) ** (0.1%) -0.04 0 (0.0%) ** (0.0%) #DIV/0! 12 (0.2%) ** (0.1%) 0.03 012 (0.1%) #VALUE! #VALUE!
+TIA; n (%) ** (0.3%) ** (0.4%) -0.02 ** (0.3%) 12 (0.3%) 0.00 44 (0.9%) 19 (0.6%) 0.03 #VALUE! #VALUE! #VALUE!
+Other cerebrovascular disease; n (%) ** (0.7%) 15 (0.5%) 0.03 20 (0.8%) 22 (0.6%) 0.02 72 (1.4%) 53 (1.6%) -0.02 #VALUE! 90 (0.9%) #VALUE!
+Cerebrovascular procedure; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.0%) ** (0.0%) #DIV/0! #VALUE! #VALUE! #VALUE!
+Heart failure (CHF); n (%) 145 (9.9%) 273 (9.8%) 0.00 197 (8.0%) 326 (8.4%) -0.01 805 (16.2%) 506 (14.9%) 0.04 1147 (12.9%) 1,105 (11.0%) 0.06
+Peripheral Vascular Disease (PVD) or PVD Surgery v2; 
+n (%) 52 (3.5%) 92 (3.3%) 0.01 65 (2.6%) 67 (1.7%) 0.06 315 (6.3%) 206 (6.0%) 0.01 432 (4.8%) 365 (3.6%) 0.06
+Atrial fibrillation; n (%) 104 (7.1%) 173 (6.2%) 0.04 131 (5.3%) 247 (6.4%) -0.05 503 (10.1%) 309 (9.1%) 0.03 738 (8.3%) 729 (7.2%) 0.04
+Other cardiac dysrhythmia; n (%) 263 (17.9%) 433 (15.6%) 0.06 409 (16.6%) 635 (16.4%) 0.01 1,028 (20.6%) 668 (19.6%) 0.02 1,700 (19.1%) 1,736 (17.3%) 0.05
+Cardiac conduction disorders; n (%) 94 (6.4%) 176 (6.3%) 0.00 136 (5.5%) 169 (4.4%) 0.05 366 (7.3%) 234 (6.9%) 0.02 596 (6.7%) 579 (5.8%) 0.04
+Other CVD; n (%) 396 (26.9%) 811 (29.1%) -0.05 579 (23.5%) 1,035 (26.7%) -0.07 1,178 (23.6%) 852 (25.0%) -0.03 2,153 (24.1%) 2,698 (26.8%) -0.06
+Diabetes-related complications
+Occurrence of Diabetic Neuropathy v2 Copy; n (%) 31 (2.1%) 123 (4.4%) -0.13 46 (1.9%) 74 (1.9%) 0.00 291 (5.8%) 154 (4.5%) 0.06 368 (4.1%) 351 (3.5%) 0.03
+Occurrence of diabetic nephropathy V3 with ICD10 
+Copy; n (%) 21 (1.4%) 51 (1.8%) -0.03 34 (1.4%) 37 (1.0%) 0.04 110 (2.2%) 51 (1.5%) 0.05 165 (1.8%) 139 (1.4%) 0.03
+Hypoglycemia v2; n (%) ** (0.4%) ** (0.1%) 0.06 ** (0.3%) ** (0.1%) 0.04 131 (2.6%) 83 (2.4%) 0.01 #VALUE! #VALUE! #VALUE!
+Hyperglycemia; n (%) 131 (8.9%) 230 (8.3%) 0.02 117 (4.7%) 208 (5.4%) -0.03 452 (9.1%) 301 (8.8%) 0.01 700 (7.8%) 739 (7.3%) 0.02
+Diabetic ketoacidosis; n (%) ** (0.3%) 16 (0.6%) -0.04 ** (0.3%) 19 (0.5%) -0.03 27 (0.5%) 15 (0.4%) 0.01 #VALUE! 50 (0.5%) #VALUE!
+Hypertension: 1 inpatient or 2 outpatient claims 
+within 365 days; n (%) 588 (39.9%) 996 (35.8%) 0.08 974 (39.5%) 1,599 (41.3%) -0.04 2,258 (45.3%) 1,402 (41.2%) 0.08 3,820 (42.8%) 3,997 (39.7%) 0.06
+Hyperlipi[INVESTIGATOR_035] v2; n (%) 508 (34.5%) 964 (34.6%) 0.00 705 (28.6%) 1,203 (31.1%) -0.05 1,995 (40.0%) 1,423 (41.8%) -0.04 3,208 (36.0%) 3,590 (35.7%) 0.01
+Edema; n (%) 243 (16.5%) 444 (16.0%) 0.01 335 (13.6%) 550 (14.2%) -0.02 789 (15.8%) 506 (14.9%) 0.02 1367 (15.3%) 1500 (14.9%) 0.01
+Renal Dysfunction (non-diabetic) v2; n (%) 213 (14.5%) 407 (14.6%) 0.00 307 (12.5%) 486 (12.5%) 0.00 916 (18.4%) 580 (17.0%) 0.04 1,436 (16.1%) 1,473 (14.6%) 0.04
+Occurrence of acute renal disease v2; n (%) 86 (5.8%) 202 (7.3%) -0.06 159 (6.5%) 265 (6.8%) -0.01 513 (10.3%) 284 (8.3%) 0.07 758 (8.5%) 751 (7.5%) 0.04
+Occurrence of chronic renal insufficiency; n (%) 87 (5.9%) 124 (4.5%) 0.06 84 (3.4%) 113 (2.9%) 0.03 359 (7.2%) 197 (5.8%) 0.06 530 (5.9%) 434 (4.3%) 0.07Unmatched
+Optum MarketScan Medicare POOLEDAppendix B 
+Chronic kidney disease v2; n (%) 80 (5.4%) 116 (4.2%) 0.06 76 (3.1%) 102 (2.6%) 0.03 345 (6.9%) 189 (5.5%) 0.06 501 (5.6%) 407 (4.0%) 0.07
+CKD Stage 3-4; n (%) 48 (3.3%) 90 (3.2%) 0.01 56 (2.3%) 75 (1.9%) 0.03 249 (5.0%) 143 (4.2%) 0.04 353 (4.0%) 308 (3.1%) 0.05
+Occurrence of hypertensive nephropathy; n (%) 41 (2.8%) 51 (1.8%) 0.07 53 (2.2%) 69 (1.8%) 0.03 213 (4.3%) 98 (2.9%) 0.08 307 (3.4%) 218 (2.2%) 0.07
+Occurrence of miscellaneous renal insufficiency v2; n 
+(%) 92 (6.2%) 163 (5.9%) 0.01 132 (5.4%) 192 (5.0%) 0.02 326 (6.5%) 229 (6.7%) -0.01 550 (6.2%) 584 (5.8%) 0.02
+Other Covariates
+Liver disease; n (%) ** (0.5%) ** (0.1%) 0.07 0 (0.0%) ** (0.1%) -0.04 28 (0.6%) ** (0.2%) 0.06 #VALUE! #VALUE! #VALUE!
+Osteoarthritis; n (%) 283 (19.2%) 553 (19.9%) -0.02 397 (16.1%) 570 (14.7%) 0.04 1,164 (23.4%) 836 (24.5%) -0.03 1844 (20.7%) 1959 (19.5%) 0.03
+Other arthritis, arthropathies and musculoskeletal 
+pain; n (%) 868 (59.0%) 1,587 (57.0%) 0.04 1,414 (57.4%) 2,100 (54.2%) 0.06 2,917 (58.5%) 1,938 (56.9%) 0.03 5199 (58.3%) 5625 (55.9%) 0.05
+Dorsopathies; n (%) 440 (29.9%) 894 (32.1%) -0.05 634 (25.7%) 995 (25.7%) 0.00 1,702 (34.2%) 1,139 (33.4%) 0.02 2776 (31.1%) 3028 (30.1%) 0.02
+Fractures; n (%) 62 (4.2%) 99 (3.6%) 0.03 78 (3.2%) 114 (2.9%) 0.02 347 (7.0%) 227 (6.7%) 0.01 487 (5.5%) 440 (4.4%) 0.05
+Falls v2; n (%) 88 (6.0%) 140 (5.0%) 0.04 47 (1.9%) 98 (2.5%) -0.04 241 (4.8%) 124 (3.6%) 0.06 376 (4.2%) 362 (3.6%) 0.03
+Osteoporosis; n (%) 66 (4.5%) 115 (4.1%) 0.02 53 (2.2%) 68 (1.8%) 0.03 400 (8.0%) 306 (9.0%) -0.04 519 (5.8%) 489 (4.9%) 0.04
+Depression; n (%) 286 (19.4%) 455 (16.3%) 0.08 334 (13.6%) 495 (12.8%) 0.02 1,352 (27.1%) 888 (26.1%) 0.02 1972 (22.1%) 1838 (18.3%) 0.09
+Anxiety; n (%) 305 (20.7%) 617 (22.2%) -0.04 407 (16.5%) 699 (18.0%) -0.04 1,372 (27.5%) 959 (28.2%) -0.02 2084 (23.4%) 2275 (22.6%) 0.02
+Sleep_Disorder; n (%) 74 (5.0%) 81 (2.9%) 0.11 196 (8.0%) 109 (2.8%) 0.23 376 (7.5%) 105 (3.1%) 0.20 646 (7.2%) 295 (2.9%) 0.20
+Dementia; n (%) 73 (5.0%) 136 (4.9%) 0.00 49 (2.0%) 70 (1.8%) 0.01 577 (11.6%) 375 (11.0%) 0.02 699 (7.8%) 581 (5.8%) 0.08
+Delirium; n (%) 34 (2.3%) 80 (2.9%) -0.04 42 (1.7%) 55 (1.4%) 0.02 345 (6.9%) 203 (6.0%) 0.04 421 (4.7%) 338 (3.4%) 0.07
+Psychosis; n (%) 25 (1.7%) 51 (1.8%) -0.01 25 (1.0%) 37 (1.0%) 0.00 418 (8.4%) 305 (9.0%) -0.02 468 (5.2%) 393 (3.9%) 0.06
+Obesity; n (%) 561 (38.1%) 974 (35.0%) 0.06 869 (35.3%) 1,303 (33.6%) 0.04 1,465 (29.4%) 837 (24.6%) 0.11 2895 (32.5%) 3114 (30.9%) 0.03
+Overweight; n (%) 64 (4.3%) 193 (6.9%) -0.11 74 (3.0%) 212 (5.5%) -0.12 175 (3.5%) 165 (4.8%) -0.07 313 (3.5%) 570 (5.7%) -0.11
+Smoking; n (%) 538 (36.5%) 1,004 (36.1%) 0.01 444 (18.0%) 742 (19.2%) -0.03 2,380 (47.8%) 1,651 (48.5%) -0.01 3362 (37.7%) 3397 (33.8%) 0.08
+Alcohol abuse or dependence; n (%) 25 (1.7%) 56 (2.0%) -0.02 33 (1.3%) 45 (1.2%) 0.01 102 (2.0%) 80 (2.3%) -0.02 160 (1.8%) 181 (1.8%) 0.00
+Drug abuse or dependence; n (%) 75 (5.1%) 163 (5.9%) -0.04 50 (2.0%) 87 (2.2%) -0.01 319 (6.4%) 228 (6.7%) -0.01 444 (5.0%) 478 (4.8%) 0.01
+COPD; n (%) 256 (17.4%) 430 (15.5%) 0.05 219 (8.9%) 306 (7.9%) 0.04 1,312 (26.3%) 902 (26.5%) 0.00 1787 (20.0%) 1638 (16.3%) 0.10
+Asthma; n (%) 203 (13.8%) 348 (12.5%) 0.04 284 (11.5%) 441 (11.4%) 0.00 773 (15.5%) 484 (14.2%) 0.04 1260 (14.1%) 1273 (12.7%) 0.04
+Obstructive sleep apnea; n (%) 261 (17.7%) 405 (14.6%) 0.08 375 (15.2%) 538 (13.9%) 0.04 748 (15.0%) 465 (13.7%) 0.04 1384 (15.5%) 1408 (14.0%) 0.04
+Pneumonia; n (%) 258 (17.5%) 513 (18.4%) -0.02 363 (14.7%) 651 (16.8%) -0.06 1,074 (21.6%) 748 (22.0%) -0.01 1695 (19.0%) 1912 (19.0%) 0.00
+Other Medications
+Use of ACE inhibitors; n (%) 223 (15.1%) 334 (12.0%) 0.09 392 (15.9%) 614 (15.8%) 0.00 751 (15.1%) 437 (12.8%) 0.07 1366 (15.3%) 1385 (13.8%) 0.04
+Use of ARBs; n (%) 94 (6.4%) 200 (7.2%) -0.03 218 (8.8%) 364 (9.4%) -0.02 233 (4.7%) 163 (4.8%) 0.00 545 (6.1%) 727 (7.2%) -0.04
+Use of Loop Diuretics - United; n (%) 117 (7.9%) 190 (6.8%) 0.04 166 (6.7%) 232 (6.0%) 0.03 677 (13.6%) 383 (11.2%) 0.07 960 (10.8%) 805 (8.0%) 0.10
+Use of other diuretics- United; n (%) 34 (2.3%) 60 (2.2%) 0.01 52 (2.1%) 78 (2.0%) 0.01 138 (2.8%) 74 (2.2%) 0.04 224 (2.5%) 212 (2.1%) 0.03
+Use of nitrates-United; n (%) 20 (1.4%) 42 (1.5%) -0.01 33 (1.3%) 43 (1.1%) 0.02 158 (3.2%) 123 (3.6%) -0.02 211 (2.4%) 208 (2.1%) 0.02
+Use of other hypertension drugs; n (%) 33 (2.2%) 69 (2.5%) -0.02 65 (2.6%) 89 (2.3%) 0.02 235 (4.7%) 147 (4.3%) 0.02 333 (3.7%) 305 (3.0%) 0.04
+Use of Anti-arrhythmics; n (%) 16 (1.1%) 34 (1.2%) -0.01 25 (1.0%) 59 (1.5%) -0.05 57 (1.1%) 53 (1.6%) -0.04 98 (1.1%) 146 (1.5%) -0.04
+Use of COPD/asthma meds- United; n (%) 243 (16.5%) 463 (16.6%) 0.00 359 (14.6%) 635 (16.4%) -0.05 1,077 (21.6%) 815 (23.9%) -0.05 1679 (18.8%) 1913 (19.0%) -0.01
+Use of statins; n (%) 288 (19.6%) 557 (20.0%) -0.01 459 (18.6%) 739 (19.1%) -0.01 1,330 (26.7%) 935 (27.5%) -0.02 2077 (23.3%) 2231 (22.2%) 0.03
+Use of other lipid-lowering drugs; n (%) 47 (3.2%) 95 (3.4%) -0.01 94 (3.8%) 153 (3.9%) -0.01 236 (4.7%) 155 (4.6%) 0.00 377 (4.2%) 403 (4.0%) 0.01
+Use of antiplatelet agents; n (%) 24 (1.6%) 43 (1.5%) 0.01 53 (2.2%) 92 (2.4%) -0.01 235 (4.7%) 161 (4.7%) 0.00 312 (3.5%) 296 (2.9%) 0.03
+Use of heparin and other low-molecular weight 
+heparins; n (%) 840 (57.1%) 122 (4.4%) 1.39 ** (0.1%) ** (0.0%) 0.04 2,098 (42.1%) 154 (4.5%) 0.99 #VALUE! #VALUE! #VALUE!
+Use of NSAIDs; n (%) 156 (10.6%) 344 (12.4%) -0.06 348 (14.1%) 620 (16.0%) -0.05 542 (10.9%) 385 (11.3%) -0.01 1046 (11.7%) 1349 (13.4%) -0.05
+Use of opi[INVESTIGATOR_2438]- United; n (%) 589 (40.0%) 1,111 (39.9%) 0.00 1,127 (45.7%) 1,713 (44.2%) 0.03 2,163 (43.4%) 1,464 (43.0%) 0.01 3879 (43.5%) 4288 (42.6%) 0.02
+Use of antidepressants; n (%) 385 (26.2%) 715 (25.7%) 0.01 560 (22.7%) 915 (23.6%) -0.02 1,907 (38.3%) 1,309 (38.4%) 0.00 2852 (32.0%) 2939 (29.2%) 0.06
+Use of antipsychotics; n (%) 69 (4.7%) 147 (5.3%) -0.03 94 (3.8%) 144 (3.7%) 0.01 763 (15.3%) 544 (16.0%) -0.02 926 (10.4%) 835 (8.3%) 0.07
+Labs 3,936 6,657 
+Lab values- HbA1c (%) v3; n (%) 129 (8.8%) 284 (10.2%) -0.05 ** (0.4%) 35 (0.9%) -0.06 N/A N/A #VALUE! #VALUE! 319 (4.8%) #VALUE!
+Lab values- HbA1c (%) (within 3 months) v3; n (%) 75 (5.1%) 179 (6.4%) -0.06 ** (0.3%) 23 (0.6%) -0.04 N/A N/A #VALUE! #VALUE! 202 (3.0%) #VALUE!
+Lab values- HbA1c (%) (within 6 months) v3; n (%) 129 (8.8%) 284 (10.2%) -0.05 ** (0.4%) 35 (0.9%) -0.06 N/A N/A #VALUE! #VALUE! 319 (4.8%) #VALUE!
+Lab values- BNP; n (%) 22 (1.5%) 37 (1.3%) 0.02 0 (0.0%) ** (0.2%) -0.06 N/A N/A #VALUE! 022 (0.6%) #VALUE! #VALUE!
+Lab values- BNP (within 3 months); n (%) 21 (1.4%) 35 (1.3%) 0.01 0 (0.0%) ** (0.2%) -0.06 N/A N/A #VALUE! 021 (0.5%) #VALUE! #VALUE!
+Lab values- BNP (within 6 months); n (%) 22 (1.5%) 37 (1.3%) 0.02 0 (0.0%) ** (0.2%) -0.06 N/A N/A #VALUE! 022 (0.6%) #VALUE! #VALUE!
+Lab values- BUN (mg/dl); n (%) 290 (19.7%) 642 (23.1%) -0.08 18 (0.7%) 49 (1.3%) -0.06 N/A N/A #VALUE! 308 (7.8%) 691 (10.4%) -0.09
+Lab values- BUN (mg/dl) (within 3 months); n (%) 203 (13.8%) 452 (16.2%) -0.07 ** (0.4%) 32 (0.8%) -0.05 N/A N/A #VALUE! #VALUE! 484 (7.3%) #VALUE!
+Lab values- BUN (mg/dl) (within 6 months); n (%) 290 (19.7%) 642 (23.1%) -0.08 18 (0.7%) 49 (1.3%) -0.06 N/A N/A #VALUE! 308 (7.8%) 691 (10.4%) -0.09
+Lab values- Creatinine (mg/dl) v2; n (%) 297 (20.2%) 679 (24.4%) -0.10 20 (0.8%) 52 (1.3%) -0.05 N/A N/A #VALUE! 317 (8.1%) 731 (11.0%) -0.10
+Lab values- Creatinine (mg/dl) (within 3 months) v2; 
+n (%) 206 (14.0%) 483 (17.4%) -0.09 12 (0.5%) 34 (0.9%) -0.05 N/A N/A #VALUE! 218 (5.5%) 517 (7.8%) -0.09
+Lab values- Creatinine (mg/dl) (within 6 months) v2; 
+n (%) 297 (20.2%) 679 (24.4%) -0.10 20 (0.8%) 52 (1.3%) -0.05 N/A N/A #VALUE! 317 (8.1%) 731 (11.0%) -0.10
+Lab values- HDL level (mg/dl); n (%) 164 (11.1%) 376 (13.5%) -0.07 12 (0.5%) 37 (1.0%) -0.06 N/A N/A #VALUE! 176 (4.5%) 413 (6.2%) -0.08
+Lab values- HDL level (mg/dl) (within 3 months); n (%) 90 (6.1%) 211 (7.6%) -0.06 ** (0.3%) 23 (0.6%) -0.04 N/A N/A #VALUE! #VALUE! 234 (3.5%) #VALUE!
+Lab values- HDL level (mg/dl) (within 6 months); n (%) 164 (11.1%) 376 (13.5%) -0.07 12 (0.5%) 37 (1.0%) -0.06 N/A N/A #VALUE! 176 (4.5%) 413 (6.2%) -0.08
+Lab values- LDL level (mg/dl) v2; n (%) 167 (11.3%) 387 (13.9%) -0.08 13 (0.5%) 37 (1.0%) -0.06 N/A N/A #VALUE! 180 (4.6%) 424 (6.4%) -0.08Appendix B 
+Lab values- LDL level (mg/dl) (within 3 months) v2; n 
+(%) 91 (6.2%) 217 (7.8%) -0.06 ** (0.3%) 24 (0.6%) -0.04 N/A N/A #VALUE! #VALUE! 241 (3.6%) #VALUE!
+Lab values- LDL level (mg/dl) (within 6 months) v2; n 
+(%) 167 (11.3%) 387 (13.9%) -0.08 13 (0.5%) 37 (1.0%) -0.06 N/A N/A #VALUE! 180 (4.6%) 424 (6.4%) -0.08
+Lab values- NT-proBNP; n (%) ** (0.6%) ** (0.2%) 0.06 0 (0.0%) 0 (0.0%) #DIV/0! N/A N/A #VALUE! #VALUE! #VALUE! #VALUE!
+Lab values- NT-proBNP (within 3 months); n (%) ** (0.5%) ** (0.1%) 0.07 0 (0.0%) 0 (0.0%) #DIV/0! N/A N/A #VALUE! #VALUE! #VALUE!-
+Lab values- NT-proBNP (within 6 months); n (%) ** (0.6%) ** (0.2%) 0.06 0 (0.0%) 0 (0.0%) #DIV/0! N/A N/A #VALUE! #VALUE! #VALUE!-
+Lab values- Total cholesterol (mg/dl) v2; n (%) 169 (11.5%) 386 (13.9%) -0.07 ** (0.4%) 38 (1.0%) -0.07 N/A N/A #VALUE! #VALUE! 424 (6.4%) #VALUE!
+Lab values- Total cholesterol (mg/dl) (within 3 
+months) v2; n (%) 92 (6.2%) 215 (7.7%) -0.06 ** (0.3%) 24 (0.6%) -0.04 N/A N/A #VALUE! #VALUE! 239 (3.6%) #VALUE!
+Lab values- Total cholesterol (mg/dl) (within 6 
+months) v2; n (%) 169 (11.5%) 386 (13.9%) -0.07 ** (0.4%) 38 (1.0%) -0.07 N/A N/A #VALUE! #VALUE! 424 (6.4%) #VALUE!
+Lab values- Triglyceride level (mg/dl); n (%) 167 (11.3%) 382 (13.7%) -0.07 12 (0.5%) 36 (0.9%) -0.05 N/A N/A #VALUE! 179 (4.5%) 418 (6.3%) -0.08
+Lab values- Triglyceride level (mg/dl) (within 3 
+months); n (%) 90 (6.1%) 212 (7.6%) -0.06 ** (0.3%) 22 (0.6%) -0.04 N/A N/A #VALUE! #VALUE! 234 (3.5%) #VALUE!
+Lab values- Triglyceride level (mg/dl) (within 6 
+months); n (%) 167 (11.3%) 382 (13.7%) -0.07 12 (0.5%) 36 (0.9%) -0.05 N/A N/A #VALUE! 179 (4.5%) 418 (6.3%) -0.08
+Lab result number- HbA1c (%) mean (only 2 to 20 
+included) v4 129 283 11 35 N/A N/A 140 318 
+...mean (sd) 6.38 (1.65) 6.67 (1.84) -0.17 7.09 (1.28) 7.19 (1.62) -0.07 N/A N/A #VALUE! 6.44 (1.63) 6.73 (1.82) -0.17
+...Missing; n (%) 1,343 (91.2%) 2,500 (89.8%) 0.05 2,453 (99.6%) 3,839 (99.1%) 0.06 N/A N/A #VALUE! 3,796 (96.4%) 6,339 (95.2%) 0.06
+Lab result number- BNP mean v2 22 37 - 6 N/A N/A 22 43 
+...mean (sd) 188.71 (481.48) 211.85 (716.09) -0.04 - (-) 821.82 (1,746.63) #VALUE! N/A N/A #VALUE! #VALUE! 296.96 (918.07) #VALUE!
+...Missing; n (%) 1,450 (98.5%) 2,746 (98.7%) -0.02 2,464 (100.0%) 3,868 (99.8%) 0.06 N/A N/A #VALUE! 3,914 (99.4%) 6,614 (99.4%) 0.00
+Lab result number- BUN (mg/dl) mean v2 290 642 18 49 N/A N/A 308 691 
+...mean (sd) 14.97 (5.67) 14.75 (4.93) 0.04 11,126.96 (35,122.84) 14.95 (5.16) 0.45 N/A N/A #VALUE! 664.37 (8292.09) 14.76 (4.95) 0.11
+...Missing; n (%) 1,182 (80.3%) 2,141 (76.9%) 0.08 2,446 (99.3%) 3,825 (98.7%) 0.06 N/A N/A #VALUE! 3,628 (92.2%) 5,966 (89.6%) 0.09
+Lab result number- Creatinine (mg/dl) mean (only 0.1 
+to 15 included) v3 292 674 18 52 N/A N/A 310 726 
+...mean (sd) 0.91 (0.29) 0.92 (0.23) -0.04 1.05 (0.31) 0.95 (0.19) 0.39 N/A N/A #VALUE! 0.92 (0.29) 0.92 (0.23) 0.00
+...Missing; n (%) 1,180 (80.2%) 2,109 (75.8%) 0.11 2,446 (99.3%) 3,822 (98.7%) 0.06 N/A N/A #VALUE! 3,626 (92.1%) 5,931 (89.1%) 0.10
+Lab result number- HDL level (mg/dl) mean (only 
+=<5000 included) v2 164 376 11 37 N/A N/A 175 413 
+...mean (sd) 54.89 (18.99) 49.89 (16.20) 0.28 48.00 (11.92) 42.95 (12.24) 0.42 N/A N/A #VALUE! 54.46 (18.71) 49.27 (15.91) 0.30
+...Missing; n (%) 1,308 (88.9%) 2,407 (86.5%) 0.07 2,453 (99.6%) 3,837 (99.0%) 0.07 N/A N/A #VALUE! 3,761 (95.6%) 6,244 (93.8%) 0.08
+Lab result number- LDL level (mg/dl) mean (only 
+=<5000 included) v2 164 385 11 34 N/A N/A 175 419 
+...mean (sd) 108.72 (37.92) 112.46 (39.24) -0.10 92.09 (39.78) 94.24 (30.60) -0.06 N/A N/A #VALUE! 107.67 (38.14) 110.98 (38.67) -0.09
+...Missing; n (%) 1,308 (88.9%) 2,398 (86.2%) 0.08 2,453 (99.6%) 3,840 (99.1%) 0.06 N/A N/A #VALUE! 3,761 (95.6%) 6,238 (93.7%) 0.08
+Lab result number- Total cholesterol (mg/dl) mean 
+(only =<5000 included) v2 169 386 10 38 N/A N/A 179 424 
+...mean (sd) 191.79 (42.02) 191.77 (43.11) 0.00 176.40 (28.15) 173.63 (53.27) 0.07 N/A N/A #VALUE! 190.93 (41.54) 190.14 (44.15) 0.02
+...Missing; n (%) 1,303 (88.5%) 2,397 (86.1%) 0.07 2,454 (99.6%) 3,836 (99.0%) 0.07 N/A N/A #VALUE! 3,757 (95.5%) 6,233 (93.6%) 0.08
+Lab result number- Triglyceride level (mg/dl) mean 
+(only =<5000 included) v2 167 382 11 36 N/A N/A 178 418 
+...mean (sd) 132.55 (72.17) 147.15 (76.74) -0.20 163.09 (137.89) 220.01 (535.52) -0.15 N/A N/A #VALUE! 134.44 (77.63) 153.43 (172.03) -0.14
+...Missing; n (%) 1,305 (88.7%) 2,401 (86.3%) 0.07 2,453 (99.6%) 3,838 (99.1%) 0.06 N/A N/A #VALUE! 3,758 (95.5%) 6,239 (93.7%) 0.08
+Lab result number- Hemoglobin mean (only >0 
+included) 255 568 13 41 N/A N/A 268 609 
+...mean (sd) 13.68 (1.85) 13.90 (1.82) -0.12 18,472.91 (45,243.58) 14.22 (1.44) 0.58 N/A N/A #VALUE! 909.09 (9627.75) 13.92 (1.80) 0.13
+...Missing; n (%) 1,217 (82.7%) 2,215 (79.6%) 0.08 2,451 (99.5%) 3,833 (98.9%) 0.07 N/A N/A #VALUE! 3,668 (93.2%) 6,048 (90.9%) 0.09
+Lab result number- Serum sodium mean (only > 90 
+and < 190 included) 283 641 16 50 N/A N/A 299 691 
+...mean (sd) 140.35 (2.52) 140.27 (2.65) 0.03 138.74 (3.71) 139.42 (2.77) -0.21 N/A N/A #VALUE! 140.26 (2.60) 140.21 (2.66) 0.02
+...Missing; n (%) 1,189 (80.8%) 2,142 (77.0%) 0.09 2,448 (99.4%) 3,824 (98.7%) 0.07 N/A N/A #VALUE! 3,637 (92.4%) 5,966 (89.6%) 0.10
+Lab result number- Albumin mean (only >0 and <=10 
+included) 254 602 14 41 N/A N/A 268 643 
+...mean (sd) 4.05 (0.45) 4.16 (0.37) -0.27 4.10 (0.28) 4.09 (0.41) 0.03 N/A N/A #VALUE! 4.05 (0.44) 4.16 (0.37) -0.27
+...Missing; n (%) 1,218 (82.7%) 2,181 (78.4%) 0.11 2,450 (99.4%) 3,833 (98.9%) 0.05 N/A N/A #VALUE! 3,668 (93.2%) 6,014 (90.3%) 0.11
+Lab result number- Glucose (fasting or random) mean 
+(only 10-1000 included) 282 638 17 52 N/A N/A 299 690 
+...mean (sd) 107.08 (33.93) 111.43 (45.57) -0.11 140.46 (83.78) 142.00 (79.78) -0.02 N/A N/A #VALUE! 108.98 (38.37) 113.73 (48.97) -0.11
+...Missing; n (%) 1,190 (80.8%) 2,145 (77.1%) 0.09 2,447 (99.3%) 3,822 (98.7%) 0.06 N/A N/A #VALUE! 3,637 (92.4%) 5,967 (89.6%) 0.10
+Lab result number- Potassium mean (only 1-7 
+included) 294 667 17 48 N/A N/A 311 715 
+...mean (sd) 4.33 (0.42) 4.36 (0.38) -0.07 4.36 (0.54) 4.28 (0.39) 0.17 N/A N/A #VALUE! 4.33 (0.43) 4.35 (0.38) -0.05
+...Missing; n (%) 1,178 (80.0%) 2,116 (76.0%) 0.10 2,447 (99.3%) 3,826 (98.8%) 0.05 N/A N/A #VALUE! 3,625 (92.1%) 5,942 (89.3%) 0.10
+Comorbidity Scores
+Combined comorbidity score, 365 days Copy
+...mean (sd) 3.18 (2.27) 3.34 (2.24) -0.07 2.50 (2.14) 2.91 (2.13) -0.19 3.69 (2.64) 3.77 (2.52) -0.03 3.28 (2.45) 3.32 (2.30) -0.02Appendix B 
+Non-Frailty; n (%) 607 (41.2%) 1,297 (46.6%) -0.11 986 (40.0%) 1,622 (41.9%) -0.04 219 (4.4%) 103 (3.0%) 0.07 1,812 (20.3%) 3,022 (30.0%) -0.22
+Frailty Score (mean): Empi[INVESTIGATOR_8409] 365 days, v2
+...mean (sd) 0.17 (0.06) 0.17 (0.06) 0.00 0.16 (0.05) 0.15 (0.05) 0.20 0.10 (0.08) 0.09 (0.07) 0.13 0.13 (0.07) 0.14 (0.06) -0.15
+Healthcare Utilization
+Any hospi[INVESTIGATOR_059]; n (%) 1,342 (91.2%) 2,517 (90.4%) 0.03 2,456 (99.7%) 3,872 (99.9%) -0.04 4,571 (91.7%) 2,940 (86.3%) 0.17 8,369 (93.8%) 9,329 (92.7%) 0.04
+Any hospi[INVESTIGATOR_8410] 30 days; n (%) 1,218 (82.7%) 2,064 (74.2%) 0.21 2,325 (94.4%) 3,266 (84.3%) 0.33 3,605 (72.3%) 2,224 (65.3%) 0.15 7148 (80.1%) 7554 (75.1%) 0.12
+Any hospi[INVESTIGATOR_8411] 31-180 days; n (%) 210 (14.3%) 596 (21.4%) -0.19 279 (11.3%) 830 (21.4%) -0.28 1,509 (30.3%) 1,094 (32.1%) -0.04 1998 (22.4%) 2520 (25.0%) -0.06
+Internal medicine/family medicine visits; n (%) 1,258 (85.5%) 2,349 (84.4%) 0.03 1,907 (77.4%) 3,135 (80.9%) -0.09 4,700 (94.3%) 3,253 (95.5%) -0.05 7865 (88.2%) 8737 (86.8%) 0.04
+Internal medicine/family medicine visits (30 days 
+prior) v2; n (%) 1,116 (75.8%) 1,989 (71.5%) 0.10 1,366 (55.4%) 2,291 (59.1%) -0.07 4,141 (83.1%) 2,772 (81.4%) 0.04 6623 (74.3%) 7052 (70.1%) 0.09
+Internal medicine/family medicine visits (31 to 180 
+days prior) v2; n (%) 789 (53.6%) 1,532 (55.0%) -0.03 1,473 (59.8%) 2,428 (62.7%) -0.06 3,375 (67.7%) 2,384 (70.0%) -0.05 5637 (63.2%) 6344 (63.0%) 0.[ADDRESS_912582] visit; n (%) 1,070 (72.7%) 2,090 (75.1%) -0.05 635 (25.8%) 1,120 (28.9%) -0.07 3,481 (69.9%) 2,461 (72.3%) -0.05 5186 (58.1%) 5671 (56.4%) 0.[ADDRESS_912583] visits (30 days prior); n (%) 938 (63.7%) 1,782 (64.0%) -0.01 430 (17.5%) 779 (20.1%) -0.07 2,604 (52.3%) 1,815 (53.3%) -0.02 3972 (44.5%) 4376 (43.5%) 0.[ADDRESS_912584] visits (31 to 180 days prior); 
+n (%) 283 (19.2%) 629 (22.6%) -0.08 286 (11.6%) 527 (13.6%) -0.06 1,509 (30.3%) 1,143 (33.6%) -0.07 2078 (23.3%) 2299 (22.8%) 0.01
+Electrocardiogram v2; n (%) 1,212 (82.3%) 2,366 (85.0%) -0.07 1,173 (47.6%) 1,921 (49.6%) -0.04 4,197 (84.2%) 2,949 (86.6%) -0.07 6582 (73.8%) 7236 (71.9%) 0.[ADDRESS_912585] strips; n (%) 12 (0.8%) 29 (1.0%) -0.02 28 (1.1%) 41 (1.1%) 0.00 79 (1.6%) 49 (1.4%) 0.02 119 (1.3%) 119 (1.2%) 0.01
+Dialysis; n (%) 0 (0.0%) ** (0.0%) #DIV/0! ** (0.1%) ** (0.0%) 0.04 ** (0.1%) ** (0.1%) 0.00 #VALUE! #VALUE! #VALUE!
+number of different/distinct medication 
+prescriptions
+...mean (sd) 7.51 (5.02) 7.40 (5.43) 0.02 7.83 (4.96) 7.62 (5.35) 0.04 9.24 (6.13) 9.03 (6.18) 0.03 8.56 (5.65) 8.04 (5.67) 0.00
+Number of Hospi[INVESTIGATOR_602]
+...mean (sd) 1.06 (0.59) 1.04 (0.59) 0.03 1.15 (0.49) 1.15 (0.46) 0.00 1.26 (0.90) 1.19 (0.91) 0.08 1.20 (0.76) 1.13 (0.68) 0.00
+Number of hospi[INVESTIGATOR_598]
+...mean (sd) 4.88 (4.21) 3.69 (3.93) 0.29 5.81 (5.06) 4.29 (4.36) 0.32 5.63 (6.19) 4.42 (5.91) 0.20 5.56 (5.60) 4.17 (4.84) 0.00
+Number of Emergency Department (ED) visits v3
+...mean (sd) 1.67 (2.14) 1.71 (2.26) -0.02 3.11 (4.52) 3.36 (5.17) -0.05 2.65 (5.20) 2.69 (4.62) -0.01 2.62 (4.64) 2.68 (4.35) 0.00
+Number of Office visits
+...mean (sd) 4.43 (4.31) 4.96 (4.44) -0.12 4.45 (4.21) 5.00 (4.89) -0.12 9.79 (12.11) 11.14 (13.34) -0.11 7.43 (9.48) 7.07 (8.65) 0.00
+Number of internal medicine/family medicine visits
+...mean (sd) 8.44 (11.38) 8.11 (12.98) 0.03 5.17 (8.34) 5.69 (9.30) -0.06 11.97 (12.82) 10.87 (11.70) 0.09 9.51 (11.51) 8.11 (11.23) 0.[ADDRESS_912586] visits
+...mean (sd) 2.25 (3.08) 2.58 (3.92) -0.09 0.63 (1.78) 0.78 (2.35) -0.07 2.57 (4.11) 2.71 (4.05) -0.03 1.98 (3.45) 1.93 (3.45) 0.00
+Number electrocardiograms received v2
+...mean (sd) 1.88 (1.87) 2.01 (1.96) -0.07 0.85 (1.27) 0.91 (1.37) -0.05 2.23 (2.51) 2.36 (2.62) -0.05 1.79 (2.13) 1.70 (2.03) 0.00
+Number of HbA1c tests ordered
+...mean (sd) 0.24 (0.56) 0.27 (0.59) -0.05 0.20 (0.49) 0.22 (0.53) -0.04 0.29 (0.63) 0.29 (0.62) 0.00 0.26 (0.58) 0.26 (0.58) 0.00
+Number of glucose tests ordered
+...mean (sd) 0.10 (0.52) 0.17 (0.82) -0.10 0.11 (0.91) 0.11 (0.52) 0.00 0.16 (0.58) 0.17 (0.72) -0.02 0.14 (0.68) 0.15 (0.68) 0.00
+Number of lipid tests ordered
+...mean (sd) 0.35 (0.62) 0.37 (0.64) -0.03 0.35 (0.72) 0.36 (0.90) -0.01 0.34 (0.65) 0.40 (0.65) -0.09 0.34 (0.67) 0.38 (0.75) 0.[ADDRESS_912587] ICD9/ICD10 diagnoses at the 3rd 
+digit level Copy
+...mean (sd) 10.10 (11.60) 10.98 (12.08) -0.07 8.83 (10.24) 10.70 (10.19) -0.18 15.68 (15.31) 15.80 (15.08) -0.01 12.87 (13.50) 12.50 (12.54) 0.00
+For PS
+Hemorrhagic stroke+Other cerebrovascular 
+disease+Cerebrovascular procedure (for PS); n (%) ** (0.7%) 17 (0.6%) 0.01 20 (0.8%) 23 (0.6%) 0.02 78 (1.6%) 54 (1.6%) 0.00 #VALUE! 94 (0.9%) #VALUE! Major trauma potentially causing prolonged 
+immobilization; n (%) 37 (2.5%) 73 (2.6%) #DIV/0! 52 (2.1%) 75 (1.9%) #DIV/0! 2.01 (1.68) 1.45 (1.21) 52 (2.1%) 75 (1.9%) 0.21
+Occurrence of creatinine tests ordered (for PS); n (%) 82 (5.6%) 194 (7.0%) -0.06 147 (6.0%) 199 (5.1%) 0.04 430 (8.6%) 286 (8.4%) 0.01 659 (7.4%) 679 (6.7%) 0.03
+Occurrence of BUN tests ordered (for PS); n (%) 33 (2.2%) 81 (2.9%) -0.04 76 (3.1%) 103 (2.7%) 0.02 225 (4.5%) 151 (4.4%) 0.00 334 (3.7%) 335 (3.3%) 0.02
+Occurrence of chronic renal insufficiency w/o CKD 
+(for PS) v2; n (%) 18 (1.2%) 13 (0.5%) 0.08 23 (0.9%) 16 (0.4%) 0.06 102 (2.0%) 32 (0.9%) 0.09 143 (1.6%) 61 (0.6%) 0.10
+Chronic kidney disease Stage 1-2 (for PS); n (%) 27 (1.8%) 28 (1.0%) 0.07 18 (0.7%) 29 (0.7%) 0.00 0 0 #VALUE! #VALUE! #VALUE! #VALUE!
+Chronic kidney disease Stage 3-6 (for PS); n (%) 48 (3.3%) 90 (3.2%) 0.01 56 (2.3%) 75 (1.9%) 0.03 249 (5.0%) 143 (4.2%) 0.04 353 (4.0%) 308 (3.1%) 0.05
+Acute kidney injury; n (%) 86 (5.8%) 204 (7.3%) #DIV/0! 159 (6.5%) 264 (6.8%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0! 159 (6.5%) 264 (6.8%) 0.37
+Bladder stones+Kidney stones (for PS); n (%) 58 (3.9%) 111 (4.0%) -0.01 69 (2.8%) 118 (3.0%) -0.01 177 (3.6%) 117 (3.4%) 0.01 304 (3.4%) 346 (3.4%) 0.00
+Alcohol abuse or dependence+Drug abuse or 
+dependence (for PS); n (%) 93 (6.3%) 210 (7.5%) -0.05 77 (3.1%) 126 (3.3%) -0.01 387 (7.8%) 279 (8.2%) -0.01 557 (6.2%) 615 (6.1%) 0.00
+Other atherosclerosis+Cardiac conduction 
+disorders+Other CVD (for PS) v2 Copy; n (%) 459 (31.2%) 916 (32.9%) -0.04 670 (27.2%) 1,136 (29.3%) -0.05 1,423 (28.6%) 1,010 (29.7%) -0.02 2552 (28.6%) 3062 (30.4%) -0.04Appendix B 
+Previous cardiac procedure (CABG or PTCA or Stent) + 
+History of CABG or PTCA (for PS) v3; n (%) 44 (3.0%) 67 (2.4%) 0.04 24 (1.0%) 41 (1.1%) -0.01 236 (4.7%) 166 (4.9%) -0.01 304 (3.4%) 274 (2.7%) 0.04
+Diabetes with complication; n (%) 61 (4.1%) 193 (6.9%) #DIV/0! 96 (3.9%) 139 (3.6%) #DIV/0! 240 (4.8%) 165 (4.8%) #DIV/0! 96 (3.9%) 139 (3.6%) 0.28
+Delirium + Psychosis (for PS); n (%) 56 (3.8%) 123 (4.4%) -0.03 58 (2.4%) 88 (2.3%) 0.01 681 (13.7%) 456 (13.4%) 0.01 795 (8.9%) 667 (6.6%) 0.09
+Any use of Meglitinides (for PS); n (%) 0 (0.0%) ** (0.1%) -0.04 ** (0.1%) ** (0.0%) 0.04 ** (0.0%) ** (0.0%) #DIV/0! #VALUE! #VALUE! #VALUE!
+Any use of AGIs (for PS); n (%) ** (0.1%) ** (0.0%) 0.04 ** (0.0%) ** (0.0%) #DIV/0! ** (0.0%) 0 (0.0%) #DIV/0! #VALUE! #VALUE! #VALUE!
+CKD stage 3-6 + dialysis (for PS); n (%) 48 (3.3%) 93 (3.3%) 0.00 58 (2.4%) 77 (2.0%) 0.03 251 (5.0%) 147 (4.3%) 0.03 357 (4.0%) 317 (3.2%) 0.04
+Use of thiazide- United; n (%) 80 (5.4%) 111 (4.0%) 0.07 144 (5.8%) 218 (5.6%) 0.01 218 (4.4%) 132 (3.9%) 0.03 442 (5.0%) 461 (4.6%) 0.02
+Use of beta blockers; n (%) 204 (13.9%) 361 (13.0%) 0.03 391 (15.9%) 629 (16.2%) -0.01 933 (18.7%) 556 (16.3%) 0.06 1528 (17.1%) 1546 (15.4%) 0.05
+Use of calcium channel blockers; n (%) 151 (10.3%) 283 (10.2%) 0.00 280 (11.4%) 463 (12.0%) -0.02 507 (10.2%) 305 (9.0%) 0.04 938 (10.5%) 1051 (10.4%) 0.00
+All antidiabetic medications except Insulin; n (%) 146 (9.9%) 299 (10.7%) -0.03 259 (10.5%) 426 (11.0%) -0.02 620 (12.4%) 405 (11.9%) 0.02 1025 (11.5%) 1130 (11.2%) 0.01
+DM Medications - Insulin Copy; n (%) 48 (3.3%) 111 (4.0%) -0.04 112 (4.5%) 147 (3.8%) 0.04 247 (5.0%) 149 (4.4%) 0.03 407 (4.6%) 407 (4.0%) 0.03
+Use of Low Intensity Statins; n (%) 169 (11.5%) 283 (10.2%) 0.04 245 (9.9%) 375 (9.7%) 0.01 788 (15.8%) 546 (16.0%) -0.01 1202 (13.5%) 1204 (12.0%) 0.04
+Use of High Intensity Statins; n (%) 127 (8.6%) 281 (10.1%) -0.05 216 (8.8%) 380 (9.8%) -0.03 562 (11.3%) 417 (12.2%) -0.03 905 (10.1%) 1078 (10.7%) -0.02
+Malignant hypertension; n (%) ** (0.6%) ** (0.1%) 0.08 317 (12.9%) 101 (2.6%) 0.39 517 (10.4%) 93 (2.7%) 0.32 #VALUE! #VALUE! #VALUE!
+Cardiovascular stress test; n (%) ** (0.7%) 12 (0.4%) 0.04 12 (0.5%) 26 (0.7%) -0.03 73 (1.5%) 60 (1.8%) -0.02 #VALUE! 98 (1.0%) #VALUE!
+Echocardiogram; n (%) 909 (61.8%) 1,927 (69.2%) -0.16 1,573 (63.8%) 2,714 (70.1%) -0.13 2,941 (59.0%) 2,092 (61.4%) -0.05 5423 (60.8%) 6733 (66.9%) -0.13
+Number of BNP tests
+...mean (sd) 0.14 (0.44) 0.19 (0.52) -0.10 0.13 (0.44) 0.17 (0.48) -0.09 0.20 (0.56) 0.23 (0.56) -0.05 0.17 (0.51) 0.20 (0.52) -0.06
+Number of Cardiac biomarkers tests (tropnin, CK-MBs, Myoglobin, CPK)
+...mean (sd) 0.45 (1.21) 0.61 (1.57) -0.11 0.42 (1.08) 0.50 (1.30) -0.07 0.41 (0.85) 0.49 (1.00) -0.09 0.42 (0.98) 0.53 (1.29) 0.00
+Number of Ambulatory Blood pressure monitoring tests
+...mean (sd) 0.00 (0.00) 0.00 (0.03) 0.00 0.00 (0.03) 0.00 (0.02) 0.00 0.00 (0.00) 0.00 (0.00) #DIV/0! 0.00 (0.02) 0.00 (0.02) 0.00
+N of days on antihypertensive medications during baseline 0 0
+...mean (sd) 37.98 (65.20) 35.77 (64.02) 0.03 43.81 (70.14) 45.02 (70.00) -0.02 41.02 (66.36) 38.28 (65.03) 0.04 41.29 (67.24) 40.18 (66.72) 0.00
+N of days in database anytime prior 0 0
+...mean (sd) 1,695.95 (1,337.57) 1,675.11 (1,387.51) 0.02 2,110.22 (1,479.65) 2,106.29 (1,554.62) 0.00 650.58 (464.01) 703.17 (394.05) -0.12 1226.36 (1010.09) 1512.13 (1231.02) 0.[ADDRESS_912588] (charges in U.S. $) (180-1 day prior) 0 0
+...mean (sd) 22.40 (42.74) 20.39 (46.66) 0.04 11.68 (20.56) 11.08 (17.18) 0.03 110.93 (145.27) 119.78 (325.16) -0.04 68.90 (110.50) 50.45 (191.05) 0.00
+...Missing; n (%) 215 (14.6%) 305 (11.0%) 0.11 296 (12.0%) 380 (9.8%) 0.07 595 (11.9%) 349 (10.2%) 0.05 1106 (12.4%) 1034 (10.3%) 0.07
+Colonoscopy; n (%) 45 (3.1%) 102 (3.7%) -0.03 109 (4.4%) 148 (3.8%) 0.03 131 (2.6%) 105 (3.1%) -0.03 285 (3.2%) 355 (3.5%) -0.02
+Fecal occult blood (FOB) test; n (%) 44 (3.0%) 53 (1.9%) 0.07 81 (3.3%) 117 (3.0%) 0.02 93 (1.9%) 83 (2.4%) -0.03 218 (2.4%) 253 (2.5%) -0.01
+Flu vaccine; n (%) 180 (12.2%) 385 (13.8%) -0.05 243 (9.9%) 376 (9.7%) 0.01 1,351 (27.1%) 881 (25.9%) 0.03 1774 (19.9%) 1642 (16.3%) 0.09
+Mammogram; n (%) 139 (9.4%) 279 (10.0%) -0.02 228 (9.3%) 382 (9.9%) -0.02 437 (8.8%) 313 (9.2%) -0.01 804 (9.0%) 974 (9.7%) -0.02
+Pap smear; n (%) 81 (5.5%) 152 (5.5%) 0.00 165 (6.7%) 307 (7.9%) -0.05 164 (3.3%) 120 (3.5%) -0.01 410 (4.6%) 579 (5.8%) -0.05
+Pneumonia vaccine; n (%) 254 (17.3%) 595 (21.4%) -0.10 250 (10.1%) 504 (13.0%) -0.09 1,373 (27.6%) 1,063 (31.2%) -0.08 1877 (21.0%) 2162 (21.5%) -0.[ADDRESS_912589] or Prostate exam for DRE; n (%) 117 (7.9%) 283 (10.2%) -0.08 225 (9.1%) 381 (9.8%) -0.02 379 (7.6%) 313 (9.2%) -0.06 721 (8.1%) 977 (9.7%) -0.06
+Bone mineral density; n (%) 28 (1.9%) 66 (2.4%) -0.03 29 (1.2%) 55 (1.4%) -0.02 133 (2.7%) 136 (4.0%) -0.07 190 (2.1%) 257 (2.6%) -0.03
+Use of CNS stimulants; n (%) 15 (1.0%) 43 (1.5%) -0.05 19 (0.8%) 67 (1.7%) -0.08 40 (0.8%) 28 (0.8%) 0.00 74 (0.8%) 138 (1.4%) -0.06
+Use of estrogens, progestins, androgens; n (%) 151 (10.3%) 309 (11.1%) -0.03 284 (11.5%) 637 (16.4%) -0.14 220 (4.4%) 183 (5.4%) -0.05 655 (7.3%) 1129 (11.2%) -0.13
+Use of Angiogenesis inhibitors; n (%) ** (0.1%) ** (0.0%) 0.04 ** (0.0%) ** (0.1%) -0.04 ** (0.1%) ** (0.1%) 0.00 #VALUE! #VALUE! #VALUE!
+Use of Oral Immunosuppressants; n (%) ** (0.1%) ** (0.2%) -0.03 13 (0.5%) ** (0.3%) 0.03 12 (0.2%) ** (0.2%) 0.00 #VALUE! #VALUE! #VALUE!
+Use of fondaparinux or Bivalirudin; n (%) ** (0.2%) ** (0.1%) 0.03 13 (0.5%) ** (0.1%) 0.07 ** (0.2%) ** (0.1%) 0.03 #VALUE! #VALUE! #VALUE!
+Use of other direct thrombin inhibitors (lepi[INVESTIGATOR_8412], 
+desirudin, argatroban); n (%) 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0!
+Use of Ticagrelor ON CED; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.0%) ** (0.1%) -0.04 ** (0.0%) ** (0.1%) -0.04 #VALUE! #VALUE! #VALUE!
+Use of Ticagrelor; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.0%) ** (0.1%) -0.04 ** (0.0%) ** (0.3%) -0.08 #VALUE! #VALUE! #VALUE!
+Number of D-dimer tests
+...mean (sd) 0.18 (0.45) 0.20 (0.47) -0.04 0.16 (0.42) 0.19 (0.48) -0.07 0.18 (0.44) 0.22 (0.50) -0.08 0.17 (0.44) 0.20 (0.48) 0.00
+Numbe of CRP, high-sensitivity CRP tests
+...mean (sd) 0.09 (0.43) 0.12 (0.59) -0.06 0.09 (0.39) 0.11 (0.56) -0.04 0.12 (0.54) 0.15 (0.58) -0.05 0.11 (0.49) 0.13 (0.58) 0.00
+Number of PT or aPTTt tests
+...mean (sd) 1.08 (2.54) 0.67 (1.47) 0.20 0.97 (2.49) 0.63 (1.48) 0.17 1.27 (2.98) 0.42 (0.90) 0.39 1.16 (2.78) 0.57 (1.31) 0.00
+Number of Bleeding time tests
+...mean (sd) 0.00 (0.00) 0.00 (0.00) #DIV/0! 0.00 (0.02) 0.00 (0.00) 0.00 0.00 (0.00) 0.00 (0.00) #DIV/0! 0.00 (0.01) 0.00 (0.00) 0.00
+HAS-BLED Score (ICD-9 and ICD-10), 180 days
+...mean (sd) 2.01 (0.69) 1.99 (0.71) 0.03 1.88 (0.70) 1.88 (0.68) 0.00 2.34 (0.79) 2.36 (0.77) -0.03 2.16 (0.75) 2.07 (0.72) 0.00
+N of Generic name [CONTACT_8422]
+...mean (sd) 13.81 (14.14) 12.17 (14.72) 0.11 11.84 (10.98) 10.94 (11.84) 0.08 18.87 (18.89) 17.63 (18.34) 0.07 16.09 (16.30) 13.54 (15.09) 0.00
+N of Brand name [CONTACT_8422]
+...mean (sd) 1.91 (3.43) 3.26 (4.17) -0.35 2.10 (3.31) 3.10 (3.40) -0.30 3.01 (5.24) 4.06 (5.03) -0.20 2.58 (4.51) 3.47 (4.22) 0.00
+Use of clopi[INVESTIGATOR_7745] ; n (%) 12 (0.8%) ** (0.3%) 0.07 18 (0.7%) 16 (0.4%) 0.04 175 (3.5%) 113 (3.3%) 0.01 205 (2.3%) #VALUE! #VALUE!
+Systemic embolism; n (%) 28 (1.9%) 47 (1.7%) 0.02 52 (2.1%) 73 (1.9%) 0.01 76 (1.5%) 58 (1.7%) -0.02 156 (1.7%) 178 (1.8%) -0.01
+DVT; n (%) 861 (58.5%) 1,392 (50.0%) 0.17 1,610 (65.3%) 1,981 (51.1%) 0.29 2,794 (56.1%) 1,519 (44.6%) 0.23 5265 (59.0%) 4892 (48.6%) 0.[ADDRESS_912590]-thrombotic syndrome; n (%) 0 (0.0%) ** (0.1%) #DIV/0! ** (0.1%) ** (0.2%) #DIV/0! 131 (2.6%) 41 (1.2%) #DIV/0! ** (0.1%) ** (0.2%) 0.04
+PE; n (%) 1,472 (100.0%) 2,783 (100.0%) #DIV/0! 2,457 (99.7%) 3,874 (100.0%) -0.08 4,964 (99.6%) 3,400 (99.8%) -0.04 8893 (99.7%) [ZIP_CODE] (99.9%) -0.04
+Coagulation defects; n (%) 28 (1.9%) 42 (1.5%) #DIV/0! 83 (3.4%) 99 (2.6%) #DIV/0! 0 0 #DIV/0! 83 (3.4%) 99 (2.6%) 0.27
+Diabetes: 1 inpatient or 2 outpatient claims within 
+183 days ; n (%) 217 (14.7%) 446 (16.0%) -0.04 383 (15.5%) 574 (14.8%) 0.02 1,134 (22.8%) 694 (20.4%) 0.06 1734 (19.4%) 1714 (17.0%) 0.06Appendix B 
+Intracranial or retroperitoneal hemorrhage: 1 
+inpatient or 2 outpatient claims within 183 days ; n 
+(%) ** (0.2%) ** (0.2%) 0.00 ** (0.1%) ** (0.1%) 0.00 17 (0.3%) ** (0.2%) 0.02 #VALUE! #VALUE! #VALUE!
+Peptic Ulcer Disease; n (%) 372 (25.3%) 669 (24.0%) 0.03 442 (17.9%) 777 (20.1%) -0.06 1,545 (31.0%) 1,080 (31.7%) -0.02 2359 (26.4%) 2526 (25.1%) 0.03
+Upper GI bleed; n (%) ** (0.2%) ** (0.1%) 0.03 ** (0.1%) ** (0.1%) 0.00 ** (0.1%) ** (0.3%) -0.04 #VALUE! #VALUE! #VALUE!
+Lower/ unspecified GI bleed; n (%) 17 (1.2%) 32 (1.1%) 0.01 38 (1.5%) 38 (1.0%) 0.05 59 (1.2%) 36 (1.1%) 0.01 114 (1.3%) 106 (1.1%) 0.02
+Urogenital bleed; n (%) 41 (2.8%) 77 (2.8%) 0.00 75 (3.0%) 115 (3.0%) 0.00 137 (2.7%) 92 (2.7%) 0.00 253 (2.8%) 284 (2.8%) 0.00
+Other bleeds; n (%) 49 (3.3%) 103 (3.7%) -0.02 96 (3.9%) 144 (3.7%) 0.01 196 (3.9%) 114 (3.3%) 0.03 341 (3.8%) 361 (3.6%) 0.01
+Prior cancer; n (%) 194 (13.2%) 447 (16.1%) -0.08 279 (11.3%) 511 (13.2%) -0.06 901 (18.1%) 751 (22.0%) -0.10 1374 (15.4%) 1709 (17.0%) -0.04
+Antibiotics; n (%) 633 (43.0%) 1,313 (47.2%) #DIV/0! 1,127 (45.7%) 1,866 (48.2%) #DIV/0! 899 (18.0%) 523 (15.4%) #DIV/0! 1,127 (45.7%) 1,866 (48.2%) 1.30
+Aspi[INVESTIGATOR_248]; n (%) ** (0.6%) 15 (0.5%) 0.01 24 (1.0%) 50 (1.3%) -0.03 ** (0.1%) ** (0.2%) -0.03 #VALUE! #VALUE! #VALUE!
+Aspi[INVESTIGATOR_248]/dipyridamole; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) ** (0.0%) #DIV/0! ** (0.0%) ** (0.1%) -0.04 #VALUE! #VALUE! #VALUE!
+Other antiplatelet agents; n (%) ** (0.1%) ** (0.1%) 0.00 ** (0.1%) ** (0.1%) 0.00 13 (0.3%) ** (0.2%) 0.02 #VALUE! #VALUE! #VALUE!
+PGP inhibitors; n (%) 290 (19.7%) 590 (21.2%) -0.04 512 (20.8%) 842 (21.7%) -0.02 1,127 (22.6%) 834 (24.5%) -0.04 1929 (21.6%) 2266 (22.5%) -0.02
+Other gastroprotective agents; n (%) 14 (1.0%) 38 (1.4%) -0.04 22 (0.9%) 51 (1.3%) -0.04 94 (1.9%) 57 (1.7%) 0.02 130 (1.5%) 146 (1.5%) 0.00
+Number of lipid tests ordered
+...mean (sd) 0.35 (0.62) 0.37 (0.64) -0.03 0.35 (0.72) 0.36 (0.90) -0.01 0.36 (0.72) 0.42 (0.70) -0.08 0.36 (0.70) 0.38 (0.77) 0.00
+Proton pump inhibitor; n (%) 265 (18.0%) 493 (17.7%) 0.01 416 (16.9%) 666 (17.2%) -0.01 1,416 (28.4%) 947 (27.8%) 0.01 2097 (23.5%) 2106 (20.9%) 0.[ADDRESS_912591]; n (%) 48 (3.3%) 74 (2.7%) 0.04 91 (3.7%) 127 (3.3%) 0.02 348 (7.0%) 249 (7.3%) -0.01 487 (5.5%) 450 (4.5%) 0.05
+Vitamin K therapy; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.0%) ** (0.0%) #DIV/0! ** (0.0%) 0 (0.0%) #DIV/0! #VALUE! #VALUE! #VALUE!
+Number of INR (prothrombin) tests ordered
+...mean (sd) 0.84 (2.15) 0.35 (0.80) 0.30 0.76 (2.07) 0.39 (0.86) 0.23 1.24 (2.96) 0.40 (0.86) 0.39 1.04 (2.62) 0.38 (0.84) 0.[ADDRESS_912592]; n (%) 950 (64.5%) 1,803 (64.8%) -0.01 1,503 (61.0%) 2,341 (60.4%) 0.01 2,604 (52.3%) 1,815 (53.3%) -0.02 5057 (56.7%) 5959 (59.2%) -0.05
+Treating prescriber - Primary Care Physician; n (%) 1,278 (86.8%) 2,280 (81.9%) 0.14 1,112 (45.1%) 1,672 (43.2%) 0.04 1,906 (38.3%) 1,293 (38.0%) 0.01 4296 (48.2%) 5245 (52.1%) -0.08
+Treating prescriber - Other; n (%) 1,449 (98.4%) 2,693 (96.8%) 0.10 2,303 (93.5%) 3,562 (91.9%) 0.06 4,710 (94.5%) 3,212 (94.3%) 0.01 8462 (94.9%) 9467 (94.1%) 0.04
+Alpha blockers; n (%) 73 (5.0%) 146 (5.2%) -0.01 95 (3.9%) 155 (4.0%) -0.01 373 (7.5%) 278 (8.2%) -0.03 541 (6.1%) 579 (5.8%) 0.01
+CHA2DS2 VASc score, 180 days, V
+...mean (sd) 1.73 (1.38) 1.29 (1.12) 0.35 1.73 (1.43) 1.08 (1.06) 0.52 2.01 (1.68) 1.45 (1.21) 0.38 1.89 (1.57) 1.26 (1.13) 0.00
+Use of Prasugrel; n (%) 0 (0.0%) ** (0.1%) -0.04 0 (0.0%) ** (0.1%) -0.04 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) #VALUE! #VALUE!
+Use of Loop Diuretics+other diuretics+other 
+hypertension drugs; n (%) 154 (10.5%) 275 (9.9%) 0.02 241 (9.8%) 344 (8.9%) 0.03 899 (18.0%) 523 (15.4%) 0.07 1294 (14.5%) 1142 (11.3%) 0.[ADDRESS_912593] ONE - OPTUM
+...Commercial; n (%) 0,857 (58.2%) 1657 (59.5%) -0.03 0,177 (7.2%) 224 (5.8%) 0.06 - - #VALUE! #VALUE! 1881 (28.3%) #VALUE!
+...Medicare Advantage; n (%) 0,615 (41.8%) 1126 (40.5%) 0.03 2,287 (92.8%) 3650 (94.2%) -0.06 - - #VALUE! #VALUE! 4776 (71.7%) #VALUE!
+Commercial vs Medicare Advantage- Business Type 
+Code
+...COM = COMMERCIAL; n (%) 857 (58.2%) 1,657 (59.5%) -0.03 - - - - #VALUE! 857 (58.2%) 1,657 (59.5%) -0.03
+...MCR = MEDICARE; n (%) 615 (41.8%) 1,126 (40.5%) 0.03 - - - - #VALUE! 615 (41.8%) 1,126 (40.5%) 0.03
+...MCD = MEDICAID; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! - - - - #VALUE! 0 (0.0%) 0 (0.0%) #DIV/0!
+...NONE = NO BUSINESS LINE CODE (added in 2015); n 
+(%) 0 (0.0%) 0 (0.0%) #DIV/0! - - - - #VALUE! 0 (0.0%) 0 (0.0%) #DIV/0!
+...UNK = UNKNOWN (added in 2015); n (%) 0 (0.0%) 0 (0.0%) #DIV/0! - - - - #VALUE! 0 (0.0%) 0 (0.0%) #DIV/0!
+Commercial vs Medicare Advantage- Data Type
+...1 - Fee For Service; n (%) - - 2,058 (83.5%) 3,291 (85.0%) -0.04 - - 2,058 (83.5%) 3,291 (85.0%) -0.04
+...2 - Encounter; n (%) - - 229 (9.3%) 359 (9.3%) 0.00 - - 229 (9.3%) 359 (9.3%) 0.00
+...3 - Medicare; n (%) - - 157 (6.4%) 204 (5.3%) 0.05 - - 157 (6.4%) 204 (5.3%) 0.05
+...4 - Medicare Encounter; n (%) - - 20 (0.8%) 20 (0.5%) 0.04 - - 20 (0.8%) 20 (0.5%) 0.04
+Metropolitan Statistical Area - Urban (any MSA) vs 
+Rural (non-MSA) 0 0 0.00
+...Urban; n (%) - - 1,819 (73.8%) 2,639 (68.1%) 0.13 - - 1,819 (73.8%) 2,639 (68.1%) 0.13
+...Rural; n (%) - - 197 (8.0%) 483 (12.5%) -0.15 - - 197 (8.0%) 483 (12.5%) -0.15
+...Unknown/Missing; n (%) - - 448 (18.2%) 752 (19.4%) -0.03 - - 448 (18.2%) 752 (19.4%) -0.03
+Due to CMS cell suppression policy, all values less than 11 are denoted with **Appendix B 
+Variable Reference - Warfarin Exposure - Api[INVESTIGATOR_675238]. Diff. Reference - Warfarin Exposure - Api[INVESTIGATOR_675238]. Diff. Reference - Warfarin Exposure - Api[INVESTIGATOR_675238]. Diff.  Reference - Warfarin  Exposure - Api[INVESTIGATOR_675238]. Diff.
+Number of patients 490 490 1,381 1,381 1,699 1,699 3,570 3,570 
+Age
+...mean (sd) 57.18 (14.30) 57.47 (14.12) -0.02 51.78 (12.29) 51.77 (12.07) 0.00 62.91 (14.58) 62.87 (14.01) 0.00 57.82 (13.70) 57.83 (13.31) 0.00
+Age categories without zero category
+...18 - 54; n (%) 201 (41.0%) 184 (37.6%) 0.07 726 (52.6%) 748 (54.2%) -0.03 449 (26.4%) 453 (26.7%) -0.01 1376 (38.5%) 1385 (38.8%) -0.01
+...55 - 64; n (%) 167 (34.1%) 170 (34.7%) -0.01 568 (41.1%) 547 (39.6%) 0.03 494 (29.1%) 475 (28.0%) 0.02 1,229 (34.4%) 1,192 (33.4%) 0.02
+...65 - 74; n (%) 54 (11.0%) 87 (17.8%) -0.19 53 (3.8%) 48 (3.5%) 0.02 383 (22.5%) 427 (25.1%) -0.06 490 (13.7%) 562 (15.7%) -0.06
+...>= 75; n (%) 68 (13.9%) 49 (10.0%) 0.12 34 (2.5%) 38 (2.8%) -0.02 373 (22.0%) 344 (20.2%) 0.04 475 (13.3%) 431 (12.1%) 0.04
+Gender without zero category- United
+...Males; n (%) 240 (49.0%) 229 (46.7%) 0.05 727 (52.6%) 709 (51.3%) 0.03 786 (46.3%) 781 (46.0%) 0.01 1,753 (49.1%) 1,719 (48.2%) 0.02
+...Females; n (%) 250 (51.0%) 261 (53.3%) -0.05 654 (47.4%) 672 (48.7%) -0.03 913 (53.7%) 918 (54.0%) -0.01 1,817 (50.9%) 1,851 (51.8%) -0.02
+Race 
+...White; n (%) 1,373 (80.8%) 1,381 (81.3%) 1,373 (80.8%) 1,381 (81.3%) 0.00
+...Black; n (%) 247 (14.5%) 240 (14.1%) 247 (14.5%) 240 (14.1%) 0.00
+...Asian; n (%) ** (0.5%) ** (0.4%) ** (0.5%) ** (0.4%) 0.00
+...Hispanic; n (%) 34 (2.0%) 33 (1.9%) 34 (2.0%) 33 (1.9%) 0.00
+...North American Native; n (%) ** (0.4%) ** (0.6%) ** (0.4%) ** (0.6%) 0.00
+...Other/Unknown; n (%) 29 (1.7%) 28 (1.6%) 29 (1.7%) 28 (1.6%) 0.00
+Region without zero category- United
+v3 (lumpi[INVESTIGATOR_61331]&other category 
+...Northeast; n (%) 59 (12.0%) 66 (13.5%) -0.04 246 (17.8%) 232 (16.8%) 0.03 345 (20.3%) 339 (20.0%) 0.01 650 (18.2%) 637 (17.8%) 0.01
+...South; n (%) 191 (39.0%) 187 (38.2%) 0.02 387 (28.0%) 397 (28.7%) -0.02 609 (35.8%) 608 (35.8%) 0.00 1,187 (33.2%) 1,192 (33.4%) 0.[ADDRESS_912594]; n (%) 137 (28.0%) 136 (27.8%) 0.00 527 (38.2%) 526 (38.1%) 0.00 442 (26.0%) 468 (27.5%) -0.03 1,106 (31.0%) 1,130 (31.7%) -0.[ADDRESS_912595]; n (%) 103 (21.0%) 101 (20.6%) 0.01 218 (15.8%) 223 (16.1%) -0.01 303 (17.8%) 284 (16.7%) 0.03 624 (17.5%) 608 (17.0%) 0.01
+...Unknown+missing; n (%) N/A N/A #VALUE! ** (0.2%) ** (0.2%) 0.00 N/A N/A #VALUE! ** (0.2%) ** (0.2%) 0.00
+CV Covariates
+Ischemic heart disease; n (%) 90 (18.4%) 93 (19.0%) -0.02 186 (13.5%) 158 (11.4%) 0.06 373 (22.0%) 375 (22.1%) 0.00 649 (18.2%) 626 (17.5%) 0.02
+Acute MI; n (%) 23 (4.7%) 25 (5.1%) -0.02 64 (4.6%) 59 (4.3%) 0.01 81 (4.8%) 84 (4.9%) 0.00 168 (4.7%) 168 (4.7%) 0.00
+ACS/unstable angina; n (%) 18 (3.7%) 17 (3.5%) 0.01 44 (3.2%) 35 (2.5%) 0.04 74 (4.4%) 69 (4.1%) 0.01 136 (3.8%) 121 (3.4%) 0.02
+Old MI; n (%) 18 (3.7%) 13 (2.7%) 0.06 16 (1.2%) 12 (0.9%) 0.03 89 (5.2%) 97 (5.7%) -0.02 123 (3.4%) 122 (3.4%) 0.00
+Stable angina; n (%) ** (1.4%) ** (1.0%) 0.04 19 (1.4%) 16 (1.2%) 0.02 42 (2.5%) 43 (2.5%) 0.00 #VALUE! #VALUE! #VALUE!
+Coronary atherosclerosis and other 
+forms of chronic ischemic heart disease; 
+n (%) 62 (12.7%) 58 (11.8%) 0.03 104 (7.5%) 90 (6.5%) 0.04 266 (15.7%) 271 (16.0%) -0.01 432 (12.1%) 419 (11.7%) 0.01
+Other atherosclerosis with ICD10 v2 
+Copy; n (%) ** (0.4%) ** (0.6%) -0.03 ** (0.4%) ** (0.3%) 0.02 12 (0.7%) ** (0.6%) 0.01 #VALUE! #VALUE! #VALUE!
+Previous cardiac procedure (CABG or 
+PTCA or Stent) v4; n (%) ** (0.4%) 0 (0.0%) 0.09 ** (0.3%) ** (0.7%) -0.06 ** (0.6%) ** (0.4%) 0.03 #VALUE! #VALUE! #VALUE!
+History of CABG or PTCA; n (%) 20 (4.1%) 14 (2.9%) 0.07 ** (0.8%) ** (0.4%) 0.05 87 (5.1%) 96 (5.7%) -0.03 #VALUE! #VALUE! #VALUE!
+Any stroke; n (%) ** (1.6%) ** (1.0%) 0.05 13 (0.9%) ** (0.8%) 0.01 58 (3.4%) 58 (3.4%) 0.00 #VALUE! #VALUE! #VALUE!
+Ischemic stroke (w and w/o mention of 
+cerebral infarction); n (%) ** (1.6%) ** (1.0%) 0.05 13 (0.9%) ** (0.8%) 0.01 54 (3.2%) 56 (3.3%) -0.01 #VALUE! #VALUE! #VALUE!
+Hemorrhagic stroke; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.2%) ** (0.1%) 0.03 #VALUE! #VALUE! #VALUE!
+TIA; n (%) ** (0.4%) ** (0.4%) 0.00 ** (0.2%) ** (0.2%) 0.00 ** (0.6%) 13 (0.8%) -0.02 #VALUE! #VALUE! #VALUE!
+Other cerebrovascular disease; n (%) ** (1.4%) ** (1.2%) 0.02 ** (0.8%) ** (0.8%) 0.00 28 (1.6%) 30 (1.8%) -0.02 #VALUE! #VALUE! #VALUE!
+Cerebrovascular procedure; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.1%) 0 (0.0%) 0.04 #VALUE! 0 (0.0%) #VALUE!
+Heart failure (CHF); n (%) 52 (10.6%) 53 (10.8%) -0.01 114 (8.3%) 115 (8.3%) 0.00 285 (16.8%) 304 (17.9%) -0.03 451 (12.6%) 472 (13.2%) -0.02
+Peripheral Vascular Disease (PVD) or PVD 
+Surgery v2; n (%) 16 (3.3%) 15 (3.1%) 0.01 31 (2.2%) 32 (2.3%) -0.01 116 (6.8%) 111 (6.5%) 0.01 163 (4.6%) 158 (4.4%) 0.01
+Atrial fibrillation; n (%) 36 (7.3%) 36 (7.3%) 0.00 90 (6.5%) 84 (6.1%) 0.02 178 (10.5%) 180 (10.6%) 0.00 304 (8.5%) 300 (8.4%) 0.00
+Other cardiac dysrhythmia; n (%) 90 (18.4%) 90 (18.4%) 0.00 241 (17.5%) 234 (16.9%) 0.02 365 (21.5%) 379 (22.3%) -0.02 696 (19.5%) 703 (19.7%) -0.01
+Cardiac conduction disorders; n (%) 28 (5.7%) 28 (5.7%) 0.00 87 (6.3%) 68 (4.9%) 0.06 126 (7.4%) 127 (7.5%) 0.00 241 (6.8%) 223 (6.2%) 0.02
+Other CVD; n (%) 137 (28.0%) 132 (26.9%) 0.02 332 (24.0%) 359 (26.0%) -0.05 420 (24.7%) 450 (26.5%) -0.04 889 (24.9%) 941 (26.4%) -0.03
+Diabetes-related complications
+Occurrence of Diabetic Neuropathy v2 
+Copy; n (%) 18 (3.7%) 24 (4.9%) -0.06 26 (1.9%) 25 (1.8%) 0.01 100 (5.9%) 99 (5.8%) 0.00 144 (4.0%) 148 (4.1%) -0.01
+Occurrence of diabetic nephropathy V3 
+with ICD10 Copy; n (%) 13 (2.7%) ** (1.2%) 0.11 18 (1.3%) 14 (1.0%) 0.03 47 (2.8%) 31 (1.8%) 0.07 78 (2.2%) #VALUE! #VALUE!
+Hypoglycemia v2; n (%) ** (0.6%) ** (0.2%) 0.06 ** (0.2%) ** (0.1%) 0.03 51 (3.0%) 44 (2.6%) 0.02 #VALUE! #VALUE! #VALUE!
+Hyperglycemia; n (%) 53 (10.8%) 41 (8.4%) 0.08 76 (5.5%) 80 (5.8%) -0.01 151 (8.9%) 158 (9.3%) -0.01 280 (7.8%) 279 (7.8%) 0.00
+Diabetic ketoacidosis; n (%) ** (0.6%) ** (0.4%) 0.03 ** (0.1%) ** (0.7%) -0.10 ** (0.4%) ** (0.4%) 0.00 #VALUE! #VALUE! #VALUE!
+Hypertension: 1 inpatient or 2 
+outpatient claims within 365 days; n (%) 207 (42.2%) 210 (42.9%) -0.01 553 (40.0%) 564 (40.8%) -0.02 775 (45.6%) 782 (46.0%) -0.01 1,535 (43.0%) 1,556 (43.6%) -0.01
+Hyperlipi[INVESTIGATOR_035] v2; n (%) 172 (35.1%) 171 (34.9%) 0.00 419 (30.3%) 405 (29.3%) 0.02 709 (41.7%) 710 (41.8%) 0.00 1,300 (36.4%) 1,286 (36.0%) 0.01
+Edema; n (%) 92 (18.8%) 74 (15.1%) 0.10 194 (14.0%) 188 (13.6%) 0.01 279 (16.4%) 281 (16.5%) 0.00 565 (15.8%) 543 (15.2%) 0.02
+Renal Dysfunction (non-diabetic) v2; n 
+(%) 76 (15.5%) 80 (16.3%) -0.02 188 (13.6%) 179 (13.0%) 0.02 297 (17.5%) 334 (19.7%) -0.06 561 (15.7%) 593 (16.6%) -0.02
+Occurrence of acute renal disease v2; n 
+(%) 36 (7.3%) 43 (8.8%) -0.06 97 (7.0%) 98 (7.1%) 0.00 166 (9.8%) 183 (10.8%) -0.03 299 (8.4%) 324 (9.1%) -0.02
+Occurrence of chronic renal 
+insufficiency; n (%) 27 (5.5%) 25 (5.1%) 0.02 44 (3.2%) 32 (2.3%) 0.06 109 (6.4%) 128 (7.5%) -0.04 180 (5.0%) 185 (5.2%) -0.01 PS-matched
+MarketScan Medicare POOLED OptumAppendix B 
+Chronic kidney disease v2; n (%) 24 (4.9%) 23 (4.7%) 0.01 41 (3.0%) 29 (2.1%) 0.06 105 (6.2%) 124 (7.3%) -0.04 170 (4.8%) 176 (4.9%) 0.00
+CKD Stage 3-4; n (%) 16 (3.3%) 15 (3.1%) 0.01 34 (2.5%) 23 (1.7%) 0.06 79 (4.6%) 92 (5.4%) -0.04 129 (3.6%) 130 (3.6%) 0.00
+Occurrence of hypertensive 
+nephropathy; n (%) 15 (3.1%) 17 (3.5%) -0.02 30 (2.2%) 21 (1.5%) 0.05 63 (3.7%) 73 (4.3%) -0.03 108 (3.0%) 111 (3.1%) -0.01
+Occurrence of miscellaneous renal 
+insufficiency v2; n (%) 31 (6.3%) 34 (6.9%) -0.02 88 (6.4%) 77 (5.6%) 0.03 109 (6.4%) 117 (6.9%) -0.02 228 (6.4%) 228 (6.4%) 0.00
+Other Covariates
+Liver disease; n (%) ** (0.4%) 0 (0.0%) 0.09 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.4%) ** (0.3%) 0.02 #VALUE! #VALUE! #VALUE!
+Osteoarthritis; n (%) 104 (21.2%) 112 (22.9%) -0.04 226 (16.4%) 233 (16.9%) -0.01 436 (25.7%) 414 (24.4%) 0.03 766 (21.5%) 759 (21.3%) 0.00
+Other arthritis, arthropathies and 
+musculoskeletal pain; n (%) 282 (57.6%) 277 (56.5%) 0.02 771 (55.8%) 760 (55.0%) 0.02 997 (58.7%) 996 (58.6%) 0.00 2050 (57.4%) 2033 (56.9%) 0.01
+Dorsopathies; n (%) 154 (31.4%) 165 (33.7%) -0.05 368 (26.6%) 358 (25.9%) 0.02 589 (34.7%) 579 (34.1%) 0.01 1111 (31.1%) 1102 (30.9%) 0.00
+Fractures; n (%) 26 (5.3%) 28 (5.7%) -0.02 40 (2.9%) 47 (3.4%) -0.03 123 (7.2%) 135 (7.9%) -0.03 189 (5.3%) 210 (5.9%) -0.03
+Falls v2; n (%) 33 (6.7%) 38 (7.8%) -0.04 29 (2.1%) 26 (1.9%) 0.01 88 (5.2%) 89 (5.2%) 0.00 150 (4.2%) 153 (4.3%) 0.00
+Osteoporosis; n (%) 19 (3.9%) 23 (4.7%) -0.04 31 (2.2%) 28 (2.0%) 0.01 147 (8.7%) 146 (8.6%) 0.00 197 (5.5%) 197 (5.5%) 0.00
+Depression; n (%) 100 (20.4%) 96 (19.6%) 0.02 188 (13.6%) 196 (14.2%) -0.02 479 (28.2%) 471 (27.7%) 0.01 767 (21.5%) 763 (21.4%) 0.00
+Anxiety; n (%) 113 (23.1%) 116 (23.7%) -0.01 236 (17.1%) 250 (18.1%) -0.03 483 (28.4%) 481 (28.3%) 0.00 832 (23.3%) 847 (23.7%) -0.01
+Sleep_Disorder; n (%) 21 (4.3%) 25 (5.1%) -0.04 64 (4.6%) 66 (4.8%) -0.01 83 (4.9%) 80 (4.7%) 0.01 168 (4.7%) 171 (4.8%) 0.00
+Dementia; n (%) 26 (5.3%) 29 (5.9%) -0.03 27 (2.0%) 33 (2.4%) -0.03 207 (12.2%) 218 (12.8%) -0.02 260 (7.3%) 280 (7.8%) -0.02
+Delirium; n (%) 16 (3.3%) 16 (3.3%) 0.00 21 (1.5%) 23 (1.7%) -0.02 137 (8.1%) 136 (8.0%) 0.00 174 (4.9%) 175 (4.9%) 0.00
+Psychosis; n (%) ** (1.8%) 12 (2.4%) -0.04 15 (1.1%) 13 (0.9%) 0.02 154 (9.1%) 160 (9.4%) -0.01 #VALUE! 185 (5.2%) #VALUE!
+Obesity; n (%) 188 (38.4%) 193 (39.4%) -0.02 502 (36.4%) 507 (36.7%) -0.01 472 (27.8%) 483 (28.4%) -0.01 1162 (32.5%) 1183 (33.1%) -0.01
+Overweight; n (%) 23 (4.7%) 27 (5.5%) -0.04 49 (3.5%) 57 (4.1%) -0.03 70 (4.1%) 63 (3.7%) 0.02 142 (4.0%) 147 (4.1%) -0.01
+Smoking; n (%) 192 (39.2%) 196 (40.0%) -0.02 255 (18.5%) 250 (18.1%) 0.01 829 (48.8%) 826 (48.6%) 0.00 1276 (35.7%) 1272 (35.6%) 0.00
+Alcohol abuse or dependence; n (%) ** (2.0%) ** (1.6%) 0.03 18 (1.3%) 16 (1.2%) 0.01 39 (2.3%) 38 (2.2%) 0.01 #VALUE! #VALUE! #VALUE!
+Drug abuse or dependence; n (%) 26 (5.3%) 29 (5.9%) -0.03 29 (2.1%) 35 (2.5%) -0.03 131 (7.7%) 118 (6.9%) 0.03 186 (5.2%) 182 (5.1%) 0.00
+COPD; n (%) 92 (18.8%) 97 (19.8%) -0.03 122 (8.8%) 129 (9.3%) -0.02 482 (28.4%) 481 (28.3%) 0.00 696 (19.5%) 707 (19.8%) -0.01
+Asthma; n (%) 68 (13.9%) 63 (12.9%) 0.03 160 (11.6%) 163 (11.8%) -0.01 251 (14.8%) 263 (15.5%) -0.02 479 (13.4%) 489 (13.7%) -0.01
+Obstructive sleep apnea; n (%) 90 (18.4%) 95 (19.4%) -0.03 215 (15.6%) 212 (15.4%) 0.01 255 (15.0%) 258 (15.2%) -0.01 560 (15.7%) 565 (15.8%) 0.00
+Pneumonia; n (%) 89 (18.2%) 87 (17.8%) 0.01 217 (15.7%) 229 (16.6%) -0.02 417 (24.5%) 403 (23.7%) 0.02 723 (20.3%) 719 (20.1%) 0.00
+Other Medications
+Use of ACE inhibitors; n (%) 75 (15.3%) 70 (14.3%) 0.03 220 (15.9%) 222 (16.1%) -0.01 266 (15.7%) 261 (15.4%) 0.01 561 (15.7%) 553 (15.5%) 0.01
+Use of ARBs; n (%) 34 (6.9%) 42 (8.6%) -0.06 124 (9.0%) 132 (9.6%) -0.02 84 (4.9%) 79 (4.6%) 0.01 242 (6.8%) 253 (7.1%) -0.01
+Use of Loop Diuretics - United; n (%) 47 (9.6%) 49 (10.0%) -0.01 94 (6.8%) 94 (6.8%) 0.00 236 (13.9%) 243 (14.3%) -0.01 377 (10.6%) 386 (10.8%) -0.01
+Use of other diuretics- United; n (%) 18 (3.7%) 13 (2.7%) 0.06 30 (2.2%) 22 (1.6%) 0.04 47 (2.8%) 53 (3.1%) -0.02 95 (2.7%) 88 (2.5%) 0.01
+Use of nitrates-United; n (%) ** (1.6%) ** (1.2%) 0.03 20 (1.4%) 19 (1.4%) 0.00 65 (3.8%) 63 (3.7%) 0.01 #VALUE! #VALUE! #VALUE!
+Use of other hypertension drugs; n (%) 14 (2.9%) 16 (3.3%) -0.02 37 (2.7%) 41 (3.0%) -0.02 85 (5.0%) 92 (5.4%) -0.02 136 (3.8%) 149 (4.2%) -0.02
+Use of Anti-arrhythmics; n (%) ** (1.4%) ** (1.8%) -0.03 18 (1.3%) 21 (1.5%) -0.02 24 (1.4%) 31 (1.8%) -0.03 #VALUE! #VALUE! #VALUE!
+Use of COPD/asthma meds- United; n (%) 91 (18.6%) 87 (17.8%) 0.02 203 (14.7%) 255 (18.5%) -0.10 398 (23.4%) 389 (22.9%) 0.01 692 (19.4%) 731 (20.5%) -0.03
+Use of statins; n (%) 111 (22.7%) 111 (22.7%) 0.00 261 (18.9%) 259 (18.8%) 0.00 468 (27.5%) 468 (27.5%) 0.00 840 (23.5%) 838 (23.5%) 0.00
+Use of other lipid-lowering drugs; n (%) 20 (4.1%) 18 (3.7%) 0.02 52 (3.8%) 48 (3.5%) 0.02 77 (4.5%) 78 (4.6%) 0.00 149 (4.2%) 144 (4.0%) 0.01
+Use of antiplatelet agents; n (%) ** (1.6%) ** (2.0%) -0.03 26 (1.9%) 31 (2.2%) -0.02 95 (5.6%) 81 (4.8%) 0.04 #VALUE! #VALUE! #VALUE!
+Use of heparin and other low-molecular 
+weight heparins; n (%) 95 (19.4%) 101 (20.6%) -0.03 1 (0.1%) 0 (0.0%) 0.04 156 (9.2%) 153 (9.0%) 0.01 252 (7.1%) 254 (7.1%) 0.00
+Use of NSAIDs; n (%) 47 (9.6%) 55 (11.2%) -0.05 205 (14.8%) 209 (15.1%) -0.01 203 (11.9%) 193 (11.4%) 0.02 455 (12.7%) 457 (12.8%) 0.00
+Use of opi[INVESTIGATOR_2438]- United; n (%) 199 (40.6%) 193 (39.4%) 0.02 631 (45.7%) 622 (45.0%) 0.01 740 (43.6%) 718 (42.3%) 0.03 1570 (44.0%) 1533 (42.9%) 0.02
+Use of antidepressants; n (%) 137 (28.0%) 135 (27.6%) 0.01 322 (23.3%) 338 (24.5%) -0.03 683 (40.2%) 671 (39.5%) 0.01 1142 (32.0%) 1144 (32.0%) 0.00
+Use of antipsychotics; n (%) 27 (5.5%) 32 (6.5%) -0.04 58 (4.2%) 57 (4.1%) 0.01 285 (16.8%) 287 (16.9%) 0.00 370 (10.4%) 376 (10.5%) 0.00
+Labs 1,871 1,871 
+Lab values- HbA1c (%) v3; n (%) 52 (10.6%) 49 (10.0%) 0.02 ** (0.2%) 21 (1.5%) -0.14 N/A N/A #VALUE! #VALUE! 070 (3.7%) #VALUE!
+Lab values- HbA1c (%) (within 3 months) 
+v3; n (%) 28 (5.7%) 29 (5.9%) -0.01 ** (0.1%) 12 (0.9%) -0.11 N/A N/A #VALUE! #VALUE! 041 (2.2%) #VALUE!
+Lab values- HbA1c (%) (within 6 months) 
+v3; n (%) 52 (10.6%) 49 (10.0%) 0.02 ** (0.2%) 21 (1.5%) -0.14 N/A N/A #VALUE! #VALUE! 070 (3.7%) #VALUE!
+Lab values- BNP; n (%) ** (1.0%) ** (2.0%) -0.08 0 (0.0%) ** (0.2%) -0.06 N/A N/A #VALUE! #VALUE! #VALUE! #VALUE!
+Lab values- BNP (within 3 months); n (%) ** (1.0%) ** (2.0%) -0.08 0 (0.0%) ** (0.2%) -0.06 N/A N/A #VALUE! #VALUE! #VALUE! #VALUE!
+Lab values- BNP (within 6 months); n (%) ** (1.0%) ** (2.0%) -0.08 0 (0.0%) ** (0.2%) -0.06 N/A N/A #VALUE! #VALUE! #VALUE! #VALUE!
+Lab values- BUN (mg/dl); n (%) 107 (21.8%) 107 (21.8%) 0.00 ** (0.8%) 21 (1.5%) -0.07 N/A N/A #VALUE! #VALUE! 128 (6.8%) #VALUE!
+Lab values- BUN (mg/dl) (within 3 
+months); n (%) 72 (14.7%) 80 (16.3%) -0.04 ** (0.4%) 12 (0.9%) -0.06 N/A N/A #VALUE! #VALUE! 092 (4.9%) #VALUE!
+Lab values- BUN (mg/dl) (within 6 
+months); n (%) 107 (21.8%) 107 (21.8%) 0.00 ** (0.8%) 21 (1.5%) -0.07 N/A N/A #VALUE! #VALUE! 128 (6.8%) #VALUE!
+Lab values- Creatinine (mg/dl) v2; n (%) 109 (22.2%) 115 (23.5%) -0.03 ** (0.8%) 23 (1.7%) -0.08 N/A N/A #VALUE! #VALUE! 138 (7.4%) #VALUE!
+Lab values- Creatinine (mg/dl) (within 3 
+months) v2; n (%) 73 (14.9%) 87 (17.8%) -0.08 ** (0.4%) 13 (0.9%) -0.06 N/A N/A #VALUE! #VALUE! 100 (5.3%) #VALUE!
+Lab values- Creatinine (mg/dl) (within 6 
+months) v2; n (%) 109 (22.2%) 115 (23.5%) -0.03 ** (0.8%) 23 (1.7%) -0.08 N/A N/A #VALUE! #VALUE! 138 (7.4%) #VALUE!
+Lab values- HDL level (mg/dl); n (%) 58 (11.8%) 66 (13.5%) -0.05 ** (0.4%) 20 (1.4%) -0.11 N/A N/A #VALUE! #VALUE! 086 (4.6%) #VALUE!
+Lab values- HDL level (mg/dl) (within 3 
+months); n (%) 34 (6.9%) 42 (8.6%) -0.06 ** (0.1%) ** (0.8%) -0.10 N/A N/A #VALUE! #VALUE! #VALUE! #VALUE!
+Lab values- HDL level (mg/dl) (within 6 
+months); n (%) 58 (11.8%) 66 (13.5%) -0.05 ** (0.4%) 20 (1.4%) -0.11 N/A N/A #VALUE! #VALUE! 086 (4.6%) #VALUE!
+Lab values- LDL level (mg/dl) v2; n (%) 59 (12.0%) 69 (14.1%) -0.06 ** (0.4%) 19 (1.4%) -0.11 N/A N/A #VALUE! #VALUE! 088 (4.7%) #VALUE!Appendix B 
+Lab values- LDL level (mg/dl) (within 3 
+months) v2; n (%) 34 (6.9%) 43 (8.8%) -0.07 ** (0.2%) ** (0.8%) -0.09 N/A N/A #VALUE! #VALUE! #VALUE! #VALUE!
+Lab values- LDL level (mg/dl) (within 6 
+months) v2; n (%) 59 (12.0%) 69 (14.1%) -0.06 ** (0.4%) 19 (1.4%) -0.11 N/A N/A #VALUE! #VALUE! 088 (4.7%) #VALUE!
+Lab values- NT-proBNP; n (%) ** (0.8%) 0 (0.0%) 0.13 0 (0.0%) 0 (0.0%) #DIV/0! N/A N/A #VALUE! #VALUE! 0 (0.0%) #VALUE!
+Lab values- NT-proBNP (within 3 
+months); n (%) ** (0.8%) 0 (0.0%) 0.13 0 (0.0%) 0 (0.0%) #DIV/0! N/A N/A #VALUE! #VALUE! 0 (0.0%)-
+Lab values- NT-proBNP (within 6 
+months); n (%) ** (0.8%) 0 (0.0%) 0.13 0 (0.0%) 0 (0.0%) #DIV/0! N/A N/A #VALUE! #VALUE! 0 (0.0%)-
+Lab values- Total cholesterol (mg/dl) v2; 
+n (%) 60 (12.2%) 69 (14.1%) -0.06 ** (0.3%) 20 (1.4%) -0.12 N/A N/A #VALUE! #VALUE! 089 (4.8%) #VALUE!
+Lab values- Total cholesterol (mg/dl) 
+(within 3 months) v2; n (%) 35 (7.1%) 43 (8.8%) -0.06 ** (0.1%) ** (0.8%) -0.10 N/A N/A #VALUE! #VALUE! #VALUE! #VALUE!
+Lab values- Total cholesterol (mg/dl) 
+(within 6 months) v2; n (%) 60 (12.2%) 69 (14.1%) -0.06 ** (0.3%) 20 (1.4%) -0.12 N/A N/A #VALUE! #VALUE! 089 (4.8%) #VALUE!
+Lab values- Triglyceride level (mg/dl); n 
+(%) 60 (12.2%) 68 (13.9%) -0.05 ** (0.4%) 19 (1.4%) -0.11 N/A N/A #VALUE! #VALUE! 087 (4.6%) #VALUE!
+Lab values- Triglyceride level (mg/dl) 
+(within 3 months); n (%) 35 (7.1%) 43 (8.8%) -0.06 ** (0.1%) ** (0.8%) -0.10 N/A N/A #VALUE! #VALUE! #VALUE! #VALUE!
+Lab values- Triglyceride level (mg/dl) 
+(within 6 months); n (%) 60 (12.2%) 68 (13.9%) -0.05 ** (0.4%) 19 (1.4%) -0.11 N/A N/A #VALUE! #VALUE! 087 (4.6%) #VALUE!
+Lab result number- HbA1c (%) mean 
+(only 2 to 20 included) v4 52 49 3 21 N/A N/A 55 70 
+...mean (sd) 6.43 (1.98) 6.63 (1.68) -0.11 7.47 (1.98) 6.61 (1.26) 0.52 N/A N/A #VALUE! 6.49 (2.00) 6.62 (1.58) -0.07
+...Missing; n (%) 438 (89.4%) 441 (90.0%) -0.02 1,378 (99.8%) 1,360 (98.5%) 0.14 N/A N/A #VALUE! 1,816 (97.1%) 1,801 (96.3%) 0.04
+Lab result number- BNP mean v2 5 10 - 3 N/A N/A 5 13 
+...mean (sd) 82.32 (68.33) 593.05 (1,341.63) -0.54 - (-) 1,474.33 (2,513.81) #VALUE! N/A N/A #VALUE! #VALUE! 796.42 (1698.18) #VALUE!
+...Missing; n (%) 485 (99.0%) 480 (98.0%) 0.08 1,381 (100.0%) 1,378 (99.8%) 0.06 N/A N/A #VALUE! 1,866 (99.7%) 1,858 (99.3%) 0.06
+Lab result number- BUN (mg/dl) mean v2 107 107 11 21 N/A N/A 118 128 
+...mean (sd) 14.59 (4.94) 14.77 (5.11) -0.04 18,197.88 (44,223.54) 14.28 (4.67) 0.58 N/A N/A #VALUE! 1709.64 ([ZIP_CODE].81) 14.69 (5.06) 0.18
+...Missing; n (%) 383 (78.2%) 383 (78.2%) 0.00 1,370 (99.2%) 1,360 (98.5%) 0.07 N/A N/A #VALUE! 1,753 (93.7%) 1,743 (93.2%) 0.02
+Lab result number- Creatinine (mg/dl) 
+mean (only 0.1 to 15 included) v3 109 115 9 23 N/A N/A 118 138 
+...mean (sd) 0.89 (0.22) 0.90 (0.23) -0.04 1.02 (0.21) 0.94 (0.18) 0.41 N/A N/A #VALUE! 0.90 (0.22) 0.91 (0.22) -0.05
+...Missing; n (%) 381 (77.8%) 375 (76.5%) 0.03 1,372 (99.3%) 1,358 (98.3%) 0.09 N/A N/A #VALUE! 1,753 (93.7%) 1,733 (92.6%) 0.04
+Lab result number- HDL level (mg/dl) 
+mean (only =<5000 included) v2 58 66 4 20 N/A N/A 62 86 
+...mean (sd) 53.28 (16.01) 51.19 (15.56) 0.13 43.75 (16.07) 45.90 (14.63) -0.14 N/A N/A #VALUE! 52.67 (16.15) 49.96 (15.45) 0.17
+...Missing; n (%) 432 (88.2%) 424 (86.5%) 0.05 1,377 (99.7%) 1,361 (98.6%) 0.12 N/A N/A #VALUE! 1,809 (96.7%) 1,785 (95.4%) 0.07
+Lab result number- LDL level (mg/dl) 
+mean (only =<5000 included) v2 58 68 4 17 N/A N/A 62 85 
+...mean (sd) 113.22 (39.81) 110.23 (37.87) 0.08 80.50 (59.31) 88.47 (23.32) -0.18 N/A N/A #VALUE! 111.11 (41.35) 105.88 (35.75) 0.14
+...Missing; n (%) 432 (88.2%) 422 (86.1%) 0.06 1,377 (99.7%) 1,364 (98.8%) 0.10 N/A N/A #VALUE! 1,809 (96.7%) 1,786 (95.5%) 0.06
+Lab result number- Total cholesterol 
+(mg/dl) mean (only =<5000 included) v2 60 69 3 20 N/A N/A 63 89 
+...mean (sd) 193.95 (42.54) 190.48 (38.93) 0.09 186.67 (41.79) 161.78 (32.05) 0.67 N/A N/A #VALUE! 193.60 (42.87) 184.03 (37.75) 0.24
+...Missing; n (%) 430 (87.8%) 421 (85.9%) 0.06 1,378 (99.8%) 1,361 (98.6%) 0.14 N/A N/A #VALUE! 1,808 (96.6%) 1,782 (95.2%) 0.07
+Lab result number- Triglyceride level 
+(mg/dl) mean (only =<5000 included) v2 60 68 4 19 N/A N/A 64 87 
+...mean (sd) 139.10 (84.71) 141.70 (80.32) -0.03 248.00 (206.07) 124.68 (70.13) 0.80 N/A N/A #VALUE! 145.91 (95.02) 137.98 (78.74) 0.09
+...Missing; n (%) 430 (87.8%) 422 (86.1%) 0.05 1,377 (99.7%) 1,362 (98.6%) 0.12 N/A N/A #VALUE! 1,807 (96.6%) 1,784 (95.4%) 0.06
+Lab result number- Hemoglobin mean 
+(only >0 included) 83 97 6 17 N/A N/A 89 114 
+...mean (sd) 13.73 (1.94) 13.73 (1.83) 0.00 40,008.30 (62,283.25) 14.48 (1.45) 0.91 N/A N/A #VALUE! 2709.99 ([ZIP_CODE].83) 13.84 (1.79) 0.25
+...Missing; n (%) 407 (83.1%) 393 (80.2%) 0.07 1,375 (99.6%) 1,364 (98.8%) 0.09 N/A N/A #VALUE! 1,782 (95.2%) 1,757 (93.9%) 0.06
+Lab result number- Serum sodium mean 
+(only > 90 and < 190 included) 103 102 9 22 N/A N/A 112 124 
+...mean (sd) 140.36 (2.80) 140.11 (2.59) 0.09 137.64 (4.57) 140.09 (1.89) -0.70 N/A N/A #VALUE! 140.14 (2.98) 140.11 (2.49) 0.01
+...Missing; n (%) 387 (79.0%) 388 (79.2%) 0.00 1,372 (99.3%) 1,359 (98.4%) 0.08 N/A N/A #VALUE! 1,759 (94.0%) 1,747 (93.4%) 0.02
+Lab result number- Albumin mean (only 
+>0 and <=10 included) 95 100 8 16 N/A N/A 103 116 
+...mean (sd) 4.08 (0.41) 4.08 (0.40) 0.00 4.00 (0.32) 4.16 (0.48) -0.39 N/A N/A #VALUE! 4.07 (0.41) 4.09 (0.41) -0.05
+...Missing; n (%) 395 (80.6%) 390 (79.6%) 0.03 1,373 (99.4%) 1,365 (98.8%) 0.06 N/A N/A #VALUE! 1,768 (94.5%) 1,755 (93.8%) 0.03
+Lab result number- Glucose (fasting or 
+random) mean (only 10-1000 included) 103 103 9 23 N/A N/A 112 126 
+...mean (sd) 112.05 (46.57) 108.13 (37.41) 0.09 166.42 (108.75) 131.56 (58.94) 0.40 N/A N/A #VALUE! 116.42 (53.83) 112.41 (42.21) 0.08
+...Missing; n (%) 387 (79.0%) 387 (79.0%) 0.00 1,372 (99.3%) 1,358 (98.3%) 0.09 N/A N/A #VALUE! 1,759 (94.0%) 1,745 (93.3%) 0.03
+Lab result number- Potassium mean 
+(only 1-7 included) 107 112 9 20 N/A N/A 116 132 
+...mean (sd) 4.34 (0.42) 4.34 (0.40) 0.00 4.37 (0.55) 4.37 (0.40) 0.00 N/A N/A #VALUE! 4.34 (0.43) 4.34 (0.40) 0.00
+...Missing; n (%) 383 (78.2%) 378 (77.1%) 0.03 1,372 (99.3%) 1,361 (98.6%) 0.07 N/A N/A #VALUE! 1,755 (93.8%) 1,739 (92.9%) 0.04
+Comorbidity Scores
+CCI (180 days)- ICD9 and ICD10 v2
+...mean (sd) 3.51 (2.21) 3.71 (2.52) -0.08 2.89 (2.11) 2.83 (2.17) 0.03 3.97 (2.69) 4.05 (2.67) -0.03 3.49 (2.42) 3.53 (2.47) -0.02Appendix B 
+Non-Frailty; n (%) 206 (42.0%) 210 (42.9%) -0.02 581 (42.1%) 583 (42.2%) 0.00 57 (3.4%) 47 (2.8%) 0.03 844 (23.6%) 840 (23.5%) 0.00
+Frailty Score (mean): Empi[INVESTIGATOR_8409] 
+365 days, v2
+...mean (sd) 0.18 (0.06) 0.18 (0.06) 0.00 0.15 (0.05) 0.15 (0.05) 0.00 0.10 (0.07) 0.10 (0.08) 0.00 0.13 (0.06) 0.13 (0.07) 0.00
+Healthcare Utilization
+Any hospi[INVESTIGATOR_059]; n (%) 438 (89.4%) 453 (92.4%) -0.10 1,379 (99.9%) 1,380 (99.9%) 0.00 1,564 (92.1%) 1,555 (91.5%) 0.02 3,381 (94.7%) 3,388 (94.9%) -0.01
+Any hospi[INVESTIGATOR_8410] 30 
+days; n (%) 374 (76.3%) 364 (74.3%) 0.05 1,287 (93.2%) 1,302 (94.3%) -0.05 1,204 (70.9%) 1,229 (72.3%) -0.03 2865 (80.3%) 2895 (81.1%) -0.02
+Any hospi[INVESTIGATOR_8411] 31-180 
+days; n (%) 101 (20.6%) 121 (24.7%) -0.10 185 (13.4%) 166 (12.0%) 0.04 565 (33.3%) 546 (32.1%) 0.03 851 (23.8%) 833 (23.3%) 0.01
+Internal medicine/family medicine 
+visits; n (%) 427 (87.1%) 427 (87.1%) 0.00 1,079 (78.1%) 1,090 (78.9%) -0.02 1,606 (94.5%) 1,626 (95.7%) -0.06 3112 (87.2%) 3143 (88.0%) -0.02
+Internal medicine/family medicine visits 
+(30 days prior) v2; n (%) 361 (73.7%) 360 (73.5%) 0.00 753 (54.5%) 821 (59.4%) -0.10 1,399 (82.3%) 1,402 (82.5%) -0.01 2513 (70.4%) 2583 (72.4%) -0.04
+Internal medicine/family medicine visits 
+(31 to 180 days prior) v2; n (%) 294 (60.0%) 294 (60.0%) 0.00 855 (61.9%) 817 (59.2%) 0.06 1,184 (69.7%) 1,140 (67.1%) 0.06 2333 (65.4%) 2251 (63.1%) 0.[ADDRESS_912596] visit; n (%) 352 (71.8%) 365 (74.5%) -0.06 393 (28.5%) 375 (27.2%) 0.03 1,203 (70.8%) 1,213 (71.4%) -0.01 1948 (54.6%) 1953 (54.7%) 0.[ADDRESS_912597] visits (30 days 
+prior); n (%) 297 (60.6%) 308 (62.9%) -0.05 271 (19.6%) 270 (19.6%) 0.00 880 (51.8%) 902 (53.1%) -0.03 1448 (40.6%) 1480 (41.5%) -0.[ADDRESS_912598] visits (31 to 180 
+days prior); n (%) 111 (22.7%) 123 (25.1%) -0.06 173 (12.5%) 165 (11.9%) 0.02 558 (32.8%) 563 (33.1%) -0.01 842 (23.6%) 851 (23.8%) 0.00
+Electrocardiogram v2; n (%) 401 (81.8%) 415 (84.7%) -0.08 694 (50.3%) 691 (50.0%) 0.01 1,449 (85.3%) 1,442 (84.9%) 0.01 2544 (71.3%) 2548 (71.4%) 0.[ADDRESS_912599] strips; n (%) ** (1.2%) ** (1.4%) -0.02 19 (1.4%) ** (0.8%) 0.06 31 (1.8%) 29 (1.7%) 0.01 #VALUE! #VALUE! #VALUE!
+Dialysis; n (%) 0 (0.0%) ** (0.2%) -0.06 0 (0.0%) ** (0.1%) -0.04 ** (0.1%) ** (0.1%) 0.00 #VALUE! #VALUE! #VALUE!
+number of different/distinct medication 
+prescriptions
+...mean (sd) 7.88 (5.51) 8.00 (5.83) -0.02 7.89 (4.81) 8.01 (5.76) -0.02 9.33 (6.22) 9.31 (6.22) 0.00 8.57 (5.62) 8.63 (5.99) -0.01
+Number of Hospi[INVESTIGATOR_602]
+...mean (sd) 1.11 (0.72) 1.08 (0.56) 0.05 1.17 (0.48) 1.16 (0.49) 0.02 1.30 (0.93) 1.29 (0.93) 0.01 1.22 (0.76) 1.21 (0.74) 0.01
+Number of hospi[INVESTIGATOR_598]
+...mean (sd) 5.44 (4.46) 5.11 (7.06) 0.06 5.43 (4.09) 5.28 (6.21) 0.03 5.85 (5.04) 5.73 (7.43) 0.02 5.63 (4.61) 5.47 (6.93) 0.03
+Number of Emergency Department (ED) 
+visits v3
+...mean (sd) 1.79 (2.37) 1.82 (2.21) -0.01 3.20 (5.17) 3.17 (4.44) 0.01 2.70 (7.14) 2.73 (4.23) -0.01 2.77 (5.95) 2.78 (4.10) 0.00
+Number of Office visits
+...mean (sd) 5.01 (4.71) 5.03 (4.44) 0.00 4.72 (4.41) 4.77 (5.34) -0.01 10.37 (13.98) 10.07 (11.65) 0.02 7.45 (10.18) 7.33 (8.85) 0.01
+Number of internal medicine/family 
+medicine visits
+...mean (sd) 10.16 (13.90) 9.39 (12.98) 0.06 5.30 (7.34) 5.51 (8.85) -0.03 12.46 (13.83) 11.04 (12.11) 0.11 9.37 (11.76) 8.67 (11.10) 0.[ADDRESS_912600] visits
+...mean (sd) 2.58 (3.80) 2.62 (3.94) -0.01 0.71 (1.95) 0.70 (1.90) 0.01 2.81 (4.52) 2.89 (4.25) -0.02 1.97 (3.63) 2.01 (3.48) -0.01
+Number electrocardiograms received v2
+...mean (sd) 1.98 (2.00) 2.10 (2.02) -0.06 0.90 (1.31) 0.92 (1.37) -0.01 2.31 (2.51) 2.35 (2.54) -0.02 1.72 (2.05) 1.76 (2.09) -0.02
+Number of HbA1c tests ordered
+...mean (sd) 0.28 (0.63) 0.29 (0.64) -0.02 0.22 (0.51) 0.22 (0.55) 0.00 0.29 (0.62) 0.29 (0.60) 0.00 0.26 (0.58) 0.26 (0.59) 0.00
+Number of glucose tests ordered
+...mean (sd) 0.14 (0.62) 0.17 (0.73) -0.04 0.13 (1.17) 0.13 (0.60) 0.00 0.15 (0.60) 0.17 (0.60) -0.03 0.14 (0.87) 0.15 (0.62) -0.01
+Number of lipid tests ordered
+...mean (sd) 0.37 (0.62) 0.39 (0.74) -0.03 0.38 (0.72) 0.36 (0.66) 0.03 0.36 (0.65) 0.37 (0.64) -0.02 0.37 (0.67) 0.37 (0.66) 0.[ADDRESS_912601] ICD9/ICD10 diagnoses at 
+the 3rd digit level Copy
+...mean (sd) 12.13 (12.97) 12.28 (12.70) -0.01 10.37 (10.13) 10.29 (10.87) 0.01 17.46 (15.46) 17.28 (15.89) 0.01 13.99 (13.29) 13.89 (13.71) 0.01
+For PS
+Hemorrhagic stroke+Other 
+cerebrovascular 
+disease+Cerebrovascular procedure (for 
+PS); n (%) ** (1.4%) ** (1.2%) 0.02 11 (0.8%) 11 (0.8%) 0.00 31 (1.8%) 31 (1.8%) 0.00 #VALUE! #VALUE! #VALUE!
+Major trauma potentially causing prolonged immobilization; n (%) 19 (3.9%) 16 (3.3%) #DIV/0! 31 (2.2%) 33 (2.4%) #DIV/0! 92 (5.4%) 92 (5.4%) #DIV/0! 31 (2.2%) 33 (2.4%) -0.01
+Occurrence of creatinine tests ordered 
+(for PS); n (%) 30 (6.1%) 30 (6.1%) 0.00 80 (5.8%) 72 (5.2%) 0.03 129 (7.6%) 151 (8.9%) -0.05 239 (6.7%) 253 (7.1%) -0.02
+Occurrence of BUN tests ordered (for 
+PS); n (%) 13 (2.7%) 15 (3.1%) -0.02 36 (2.6%) 42 (3.0%) -0.02 63 (3.7%) 81 (4.8%) -0.05 112 (3.1%) 138 (3.9%) -0.04
+Occurrence of chronic renal 
+insufficiency w/o CKD (for PS) v2; n (%) ** (1.0%) ** (0.6%) 0.04 ** (0.5%) ** (0.5%) 0.00 18 (1.1%) 26 (1.5%) -0.04 #VALUE! #VALUE! #VALUE!
+Chronic kidney disease Stage 1-2 (for PS); 
+n (%) ** (1.4%) ** (1.6%) -0.02 ** (0.7%) ** (0.4%) 0.04 28 (1.6%) 27 (1.6%) 0.00 #VALUE! #VALUE! #VALUE!
+Chronic kidney disease Stage 3-6 (for PS); 
+n (%) 16 (3.3%) 15 (3.1%) 0.01 34 (2.5%) 23 (1.7%) 0.06 79 (4.6%) 92 (5.4%) -0.04 129 (3.6%) 130 (3.6%) 0.00
+Acute kidney injury; n (%) 38 (7.8%) 43 (8.8%) #DIV/0! 99 (7.2%) 98 (7.1%) #DIV/0! 168 (9.9%) 184 (10.8%) #DIV/0! 99 (7.2%) 98 (7.1%) 0.00
+Bladder stones+Kidney stones (for PS); n 
+(%) 21 (4.3%) 19 (3.9%) 0.02 39 (2.8%) 49 (3.5%) -0.04 62 (3.6%) 64 (3.8%) -0.01 122 (3.4%) 132 (3.7%) -0.02
+Alcohol abuse or dependence+Drug 
+abuse or dependence (for PS); n (%) 33 (6.7%) 36 (7.3%) -0.02 46 (3.3%) 49 (3.5%) -0.01 156 (9.2%) 145 (8.5%) 0.02 235 (6.6%) 230 (6.4%) 0.01
+Other atherosclerosis+Cardiac 
+conduction disorders+Other CVD (for 
+PS) v2 Copy; n (%) 155 (31.6%) 149 (30.4%) 0.03 394 (28.5%) 402 (29.1%) -0.01 500 (29.4%) 539 (31.7%) -0.05 1049 (29.4%) 1090 (30.5%) -0.02Appendix B 
+Previous cardiac procedure (CABG or 
+PTCA or Stent) + History of CABG or PTCA 
+(for PS) v3; n (%) 22 (4.5%) 14 (2.9%) 0.08 14 (1.0%) 13 (0.9%) 0.01 91 (5.4%) 96 (5.7%) -0.01 127 (3.6%) 123 (3.4%) 0.01
+Diabetes with complication; n (%) 35 (7.1%) 32 (6.5%) #DIV/0! 53 (3.8%) 50 (3.6%) #DIV/0! 156 (9.2%) 167 (9.8%) #DIV/0! 53 (3.8%) 50 (3.6%) 0.01
+Delirium + Psychosis (for PS); n (%) 23 (4.7%) 26 (5.3%) -0.03 30 (2.2%) 33 (2.4%) -0.01 263 (15.5%) 262 (15.4%) 0.00 316 (8.9%) 321 (9.0%) 0.00
+Any use of Meglitinides (for PS); n (%) 0 (0.0%) ** (0.2%) -0.06 ** (0.1%) ** (0.1%) 0.00 0 (0.0%) 0 (0.0%) #DIV/0! #VALUE! #VALUE! #VALUE!
+Any use of AGIs (for PS); n (%) 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.1%) 0 (0.0%) 0.04 0 (0.0%) 0 (0.0%) #DIV/0! #VALUE! 0 (0.0%) #VALUE!
+CKD stage 3-6 + dialysis (for PS); n (%) 16 (3.3%) 17 (3.5%) -0.01 34 (2.5%) 25 (1.8%) 0.05 80 (4.7%) 94 (5.5%) -0.04 130 (3.6%) 136 (3.8%) -0.01
+Use of thiazide; n (%) 22 (4.5%) 23 (4.7%) -0.01 79 (5.7%) 88 (6.4%) -0.03 79 (4.6%) 82 (4.8%) -0.01 180 (5.0%) 193 (5.4%) -0.02
+Use of beta blockers; n (%) 75 (15.3%) 66 (13.5%) 0.05 231 (16.7%) 218 (15.8%) 0.02 331 (19.5%) 328 (19.3%) 0.01 637 (17.8%) 612 (17.1%) 0.02
+Use of calcium channel blockers; n (%) 55 (11.2%) 56 (11.4%) -0.01 170 (12.3%) 169 (12.2%) 0.00 194 (11.4%) 179 (10.5%) 0.03 419 (11.7%) 404 (11.3%) 0.01
+All antidiabetic medications except Insulin; n (%) 57 (11.6%) 62 (12.7%) -0.03 149 (10.8%) 158 (11.4%) -0.02 207 (12.2%) 219 (12.9%) -0.02 413 (11.6%) 439 (12.3%) -0.02
+DM Medications - Insulin Copy; n (%) 23 (4.7%) 27 (5.5%) -0.04 59 (4.3%) 49 (3.5%) 0.04 80 (4.7%) 91 (5.4%) -0.03 162 (4.5%) 167 (4.7%) -0.01
+Use of Low Intensity Statins; n (%) 61 (12.4%) 63 (12.9%) -0.02 136 (9.8%) 132 (9.6%) 0.01 283 (16.7%) 277 (16.3%) 0.01 480 (13.4%) 472 (13.2%) 0.01
+Use of High Intensity Statins; n (%) 51 (10.4%) 51 (10.4%) 0.00 127 (9.2%) 132 (9.6%) -0.01 195 (11.5%) 204 (12.0%) -0.02 373 (10.4%) 387 (10.8%) -0.01
+Malignant hypertension; n (%) ** (0.2%) ** (0.2%) 0.00 76 (5.5%) 85 (6.2%) -0.03 82 (4.8%) 73 (4.3%) 0.02 #VALUE! #VALUE! #VALUE!
+Cardiovascular stress test; n (%) ** (1.0%) ** (0.4%) 0.07 ** (0.6%) ** (0.7%) -0.01 21 (1.2%) 26 (1.5%) -0.03 #VALUE! #VALUE! #VALUE!
+Echocardiogram; n (%) 298 (60.8%) 349 (71.2%) -0.22 910 (65.9%) 960 (69.5%) -0.08 1,040 (61.2%) 1,058 (62.3%) -0.02 2248 (63.0%) 2367 (66.3%) -0.07
+Number of BNP tests
+...mean (sd) 0.17 (0.51) 0.22 (0.59) -0.09 0.15 (0.47) 0.17 (0.49) -0.04 0.17 (0.51) 0.22 (0.53) -0.10 0.16 (0.49) 0.20 (0.52) 0.00
+Number of Cardiac biomarkers tests (tropnin, CK-MBs, Myoglobin, CPK)
+...mean (sd) 0.46 (1.22) 0.73 (1.68) -0.18 0.44 (1.13) 0.54 (1.46) -0.08 0.39 (0.80) 0.46 (0.96) -0.08 0.42 (1.00) 0.53 (1.28) 0.00
+Number of Ambulatory Blood pressure monitoring tests
+...mean (sd) 0.00 (0.00) 0.00 (0.06) 0.00 0.00 (0.04) 0.00 (0.03) 0.00 0.00 (0.00) 0.00 (0.00) #DIV/0! 0.00 (0.02) 0.00 (0.03) 0.00
+N of days on antihypertensive medications during baseline
+...mean (sd) 41.64 (66.76) 40.37 (67.11) 0.02 45.23 (70.39) 45.62 (70.62) -0.01 41.49 (66.16) 43.81 (67.50) -0.03 42.96 (67.91) 44.04 (68.67) 0.00
+N of days in database anytime prior
+...mean (sd) 1,631.36 (1,356.14) 1,568.20 (1,247.77) 0.05 2,203.52 (1,550.45) 2,092.63 (1,508.64) 0.07 720.02 (502.47) 681.78 (392.54) 0.08 1418.98 (1141.20) 1349.21 (1080.43) 0.[ADDRESS_912602] (charges in U.S. $) (180-1 day prior)
+...mean (sd) 22.31 (49.02) 22.88 (47.07) -0.01 11.22 (16.38) 10.92 (16.98) 0.02 111.13 (120.49) 117.56 (187.51) -0.04 60.29 (85.70) 63.31 (130.97) 0.00
+...Missing; n (%) 57 (11.6%) 59 (12.0%) -0.01 156 (11.3%) 155 (11.2%) 0.00 182 (10.7%) 179 (10.5%) 0.01 395 (11.1%) 393 (11.0%) 0.00
+Colonoscopy; n (%) 17 (3.5%) 20 (4.1%) -0.03 55 (4.0%) 50 (3.6%) 0.02 47 (2.8%) 47 (2.8%) 0.00 119 (3.3%) 117 (3.3%) 0.00
+Fecal occult blood (FOB) test; n (%) 14 (2.9%) 14 (2.9%) 0.00 47 (3.4%) 45 (3.3%) 0.01 33 (1.9%) 43 (2.5%) -0.04 94 (2.6%) 102 (2.9%) -0.02
+Flu vaccine; n (%) 62 (12.7%) 57 (11.6%) 0.03 142 (10.3%) 144 (10.4%) 0.00 440 (25.9%) 432 (25.4%) 0.01 644 (18.0%) 633 (17.7%) 0.01
+Mammogram; n (%) 43 (8.8%) 49 (10.0%) -0.04 138 (10.0%) 152 (11.0%) -0.03 152 (8.9%) 138 (8.1%) 0.03 333 (9.3%) 339 (9.5%) -0.01
+Pap smear; n (%) 26 (5.3%) 23 (4.7%) 0.03 98 (7.1%) 106 (7.7%) -0.02 48 (2.8%) 54 (3.2%) -0.02 172 (4.8%) 183 (5.1%) -0.01
+Pneumonia vaccine; n (%) 94 (19.2%) 85 (17.3%) 0.05 179 (13.0%) 178 (12.9%) 0.00 506 (29.8%) 501 (29.5%) 0.01 779 (21.8%) 764 (21.4%) 0.[ADDRESS_912603] or Prostate exam for DRE; n (%) 42 (8.6%) 39 (8.0%) 0.02 132 (9.6%) 132 (9.6%) 0.00 134 (7.9%) 122 (7.2%) 0.03 308 (8.6%) 293 (8.2%) 0.01
+Bone mineral density; n (%) ** (1.8%) 15 (3.1%) -0.08 20 (1.4%) 21 (1.5%) -0.01 39 (2.3%) 42 (2.5%) -0.01 #VALUE! 78 (2.2%) #VALUE!
+Use of CNS stimulants; n (%) ** (1.6%) ** (1.8%) -0.02 ** (0.5%) 26 (1.9%) -0.13 ** (0.6%) ** (0.6%) 0.00 #VALUE! #VALUE! #VALUE!
+Use of estrogens, progestins, androgens; n (%) 48 (9.8%) 42 (8.6%) 0.04 175 (12.7%) 176 (12.7%) 0.00 62 (3.6%) 65 (3.8%) -0.01 285 (8.0%) 283 (7.9%) 0.00
+Use of Angiogenesis inhibitors; n (%) 0 (0.0%) ** (0.2%) -0.06 ** (0.1%) ** (0.1%) 0.00 ** (0.1%) ** (0.2%) -0.03 #VALUE! #VALUE! #VALUE!
+Use of Oral Immunosuppressants; n (%) ** (0.2%) ** (0.2%) 0.00 ** (0.4%) ** (0.2%) 0.04 ** (0.2%) ** (0.2%) 0.00 #VALUE! #VALUE! #VALUE!
+Use of fondaparinux or Bivalirudin; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.1%) ** (0.1%) 0.00 ** (0.2%) ** (0.1%) 0.03 #VALUE! #VALUE! #VALUE!
+Use of other direct thrombin inhibitors (lepi[INVESTIGATOR_8412], desirudin, argatroban); n (%) 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0!
+Use of Ticagrelor ON CED; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.1%) 0 (0.0%) 0.04 0 (0.0%) ** (0.1%) -0.04 #VALUE! #VALUE! #VALUE!
+Use of Ticagrelor; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.1%) ** (0.1%) 0.00 0 (0.0%) ** (0.2%) -0.06 #VALUE! #VALUE! #VALUE!
+Number of D-dimer tests
+...mean (sd) 0.19 (0.44) 0.19 (0.45) 0.00 0.17 (0.44) 0.18 (0.45) -0.02 0.19 (0.45) 0.18 (0.43) 0.02 0.18 (0.44) 0.18 (0.44) 0.00
+Numbe of CRP, high-sensitivity CRP tests
+...mean (sd) 0.13 (0.58) 0.14 (0.77) -0.01 0.10 (0.45) 0.09 (0.49) 0.02 0.13 (0.59) 0.13 (0.57) 0.00 0.12 (0.54) 0.12 (0.57) 0.00
+Number of PT or aPTTt tests
+...mean (sd) 1.03 (2.16) 1.03 (2.17) 0.00 0.85 (2.00) 0.81 (1.96) 0.02 0.53 (1.12) 0.52 (1.10) 0.01 0.72 (1.67) 0.70 (1.65) 0.00
+Number of Bleeding time tests
+...mean (sd) 0.00 (0.00) 0.00 (0.00) #DIV/0! 0.00 (0.00) 0.00 (0.00) #DIV/0! 0.00 (0.00) 0.00 (0.00) #DIV/0! 0.00 (0.00) 0.00 (0.00) #DIV/0!
+HAS-BLED Score (ICD-9 and ICD-10), 180 days
+...mean (sd) 2.06 (0.69) 2.07 (0.63) -0.02 1.90 (0.70) 1.90 (0.68) 0.00 2.38 (0.81) 2.39 (0.78) -0.01 2.15 (0.75) 2.16 (0.72) 0.00
+N of Generic name [CONTACT_8422]
+...mean (sd) 14.39 (14.69) 14.42 (16.73) 0.00 11.78 (10.46) 12.02 (13.21) -0.02 19.11 (18.82) 19.05 (19.03) 0.00 15.63 (15.51) 15.70 (16.68) 0.00
+N of Brand name [CONTACT_8422]
+...mean (sd) 2.59 (4.40) 2.63 (2.88) -0.01 2.47 (3.76) 2.53 (2.57) -0.02 3.47 (5.81) 3.51 (3.78) -0.01 2.96 (4.92) 3.01 (3.24) 0.00
+Use of clopi[INVESTIGATOR_7745] ; n (%) ** (0.6%) ** (0.8%) -0.02 ** (0.5%) ** (0.5%) 0.00 68 (4.0%) 62 (3.6%) 0.02 #VALUE! #VALUE! #VALUE!
+Systemic embolism; n (%) ** (1.8%) 12 (2.4%) -0.04 26 (1.9%) 28 (2.0%) -0.01 29 (1.7%) 29 (1.7%) 0.00 #VALUE! 69 (1.9%) #VALUE!
+DVT; n (%) 257 (52.4%) 248 (50.6%) 0.04 757 (54.8%) 739 (53.5%) 0.03 824 (48.5%) 849 (50.0%) -0.03 1838 (51.5%) 1836 (51.4%) 0.[ADDRESS_912604]-thrombotic syndrome; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.1%) ** (0.1%) #DIV/0! ** (0.2%) ** (0.1%) #DIV/0! ** (0.1%) ** (0.1%) 0.00
+PE; n (%) 490 (100.0%) 490 (100.0%) #DIV/0! 1,381 (100.0%) 1,381 (100.0%) #DIV/0! 1,692 (99.6%) 1,695 (99.8%) -0.04 3563 (99.8%) 3566 (99.9%) -0.03
+Coagulation defects; n (%) ** (1.6%) ** (2.2%) #DIV/0! 35 (2.5%) 40 (2.9%) #DIV/0! 28 (1.6%) 32 (1.9%) 35 (2.5%) 40 (2.9%) -0.02
+Diabetes: 1 inpatient or 2 outpatient claims within 183 days ; n (%) 86 (17.6%) 90 (18.4%) -0.02 212 (15.4%) 210 (15.2%) 0.01 371 (21.8%) 407 (24.0%) -0.05 669 (18.7%) 707 (19.8%) -0.03Appendix B 
+Intracranial or retroperitoneal hemorrhage: 1 inpatient or 2 outpatient claims within 183 days ; n (%) ** (0.4%) ** (0.4%) 0.00 ** (0.1%) ** (0.1%) 0.00 ** (0.3%) ** (0.2%) 0.02 #VALUE! #VALUE! #VALUE!
+Peptic Ulcer Disease; n (%) 134 (27.3%) 140 (28.6%) -0.03 257 (18.6%) 268 (19.4%) -0.02 534 (31.4%) 545 (32.1%) -0.02 925 (25.9%) 953 (26.7%) -0.02
+Upper GI bleed; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.1%) ** (0.1%) 0.00 ** (0.2%) ** (0.1%) 0.03 #VALUE! #VALUE! #VALUE!
+Lower/ unspecified GI bleed; n (%) ** (1.6%) ** (1.4%) 0.02 22 (1.6%) 20 (1.4%) 0.02 19 (1.1%) 20 (1.2%) -0.01 #VALUE! #VALUE! #VALUE!
+Urogenital bleed; n (%) ** (1.8%) 12 (2.4%) -0.04 48 (3.5%) 41 (3.0%) 0.03 37 (2.2%) 48 (2.8%) -0.04 #VALUE! 101 (2.8%) #VALUE!
+Other bleeds; n (%) 18 (3.7%) 18 (3.7%) 0.00 55 (4.0%) 53 (3.8%) 0.01 70 (4.1%) 63 (3.7%) 0.02 143 (4.0%) 134 (3.8%) 0.01
+Prior cancer; n (%) 78 (15.9%) 79 (16.1%) -0.01 174 (12.6%) 176 (12.7%) 0.00 349 (20.5%) 334 (19.7%) 0.02 601 (16.8%) 589 (16.5%) 0.01
+Antibiotics; n (%) 234 (47.8%) 235 (48.0%) #DIV/0! 664 (48.1%) 671 (48.6%) #DIV/0! 857 (50.4%) 853 (50.2%) #DIV/0! 664 (48.1%) 671 (48.6%) -0.01
+Aspi[INVESTIGATOR_248]; n (%) ** (0.4%) ** (0.6%) -0.03 14 (1.0%) 19 (1.4%) -0.04 ** (0.2%) ** (0.1%) 0.03 #VALUE! #VALUE! #VALUE!
+Aspi[INVESTIGATOR_248]/dipyridamole; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0! ** (0.1%) ** (0.1%) 0.00 #VALUE! #VALUE! #VALUE!
+Other antiplatelet agents; n (%) ** (0.2%) 0 (0.0%) 0.06 ** (0.1%) ** (0.1%) 0.00 ** (0.4%) ** (0.3%) 0.02 #VALUE! #VALUE! #VALUE!
+PGP inhibitors; n (%) 103 (21.0%) 92 (18.8%) 0.06 306 (22.2%) 316 (22.9%) -0.02 410 (24.1%) 404 (23.8%) 0.01 819 (22.9%) 812 (22.7%) 0.00
+Other gastroprotective agents; n (%) ** (1.0%) ** (0.6%) 0.04 14 (1.0%) 13 (0.9%) 0.01 35 (2.1%) 26 (1.5%) 0.05 #VALUE! #VALUE! #VALUE!
+Number of lipid tests ordered
+...mean (sd) 0.37 (0.62) 0.39 (0.74) -0.03 0.38 (0.72) 0.36 (0.66) 0.03 0.37 (0.69) 0.38 (0.68) -0.01 0.37 (0.69) 0.37 (0.68) 0.00
+Proton pump inhibitor; n (%) 94 (19.2%) 105 (21.4%) -0.05 232 (16.8%) 225 (16.3%) 0.01 494 (29.1%) 490 (28.8%) 0.01 820 (23.0%) 820 (23.0%) 0.[ADDRESS_912605]; n (%) 15 (3.1%) 21 (4.3%) -0.06 47 (3.4%) 49 (3.5%) -0.01 128 (7.5%) 139 (8.2%) -0.03 190 (5.3%) 209 (5.9%) -0.03
+Vitamin K therapy; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0!
+Number of INR (prothrombin) tests ordered
+...mean (sd) 0.80 (1.89) 0.53 (1.24) 0.17 0.68 (1.73) 0.50 (1.11) 0.12 0.51 (1.10) 0.49 (1.06) 0.02 0.62 (1.49) 0.50 (1.11) 0.[ADDRESS_912606]; n (%) 299 (61.0%) 313 (63.9%) -0.06 871 (63.1%) 868 (62.9%) 0.00 880 (51.8%) 902 (53.1%) -0.03 2050 (57.4%) 2083 (58.3%) -0.02
+Treating prescriber - Primary Care Physician; n (%) 415 (84.7%) 407 (83.1%) 0.04 600 (43.4%) 636 (46.1%) -0.05 642 (37.8%) 637 (37.5%) 0.01 1657 (46.4%) 1680 (47.1%) -0.01
+Treating prescriber - Other; n (%) 474 (96.7%) 476 (97.1%) -0.02 1,287 (93.2%) 1,288 (93.3%) 0.00 1,613 (94.9%) 1,617 (95.2%) -0.01 3374 (94.5%) 3381 (94.7%) -0.01
+Alpha blockers; n (%) 30 (6.1%) 21 (4.3%) 0.08 54 (3.9%) 56 (4.1%) -0.01 123 (7.2%) 125 (7.4%) -0.01 207 (5.8%) 202 (5.7%) 0.00
+CHA2DS2 VASc score, 180 days, V
+...mean (sd) 1.49 (1.21) 1.52 (1.17) -0.03 1.24 (1.16) 1.25 (1.21) -0.01 1.55 (1.37) 1.56 (1.36) -0.01 1.42 (1.27) 1.43 (1.28) 0.00
+Use of Prasugrel; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0! 0 (0.0%) 0 (0.0%) #DIV/0!
+Use of Loop Diuretics+other diuretics+other hypertension drugs; n (%) 66 (13.5%) 66 (13.5%) 0.00 138 (10.0%) 139 (10.1%) 0.00 312 (18.4%) 334 (19.7%) -0.03 516 (14.5%) 539 (15.1%) -0.[ADDRESS_912607] ONE - OPTUM 0 0
+...Commercial; n (%) 260 (53.1%) 249 (50.8%) 0.05 #VALUE! #VALUE! #VALUE! - - #VALUE! #VALUE! #VALUE! #VALUE!
+...Medicare Advantage; n (%) 0,230 (46.9%) 241 (49.2%) -0.05 1287 (93.2%) 1285 (93.0%) 0.01 - - #VALUE! #VALUE! 1,526 (81.6%) #VALUE!
+Commercial vs Medicare Advantage- Business Type Code
+...COM = COMMERCIAL; n (%) 260 (53.1%) 249 (50.8%) 0.05 - - #VALUE! - - #VALUE! 260 (53.1%) 249 (50.8%) 0.05
+...MCR = MEDICARE; n (%) 230 (46.9%) 241 (49.2%) -0.05 - - #VALUE! - - #VALUE! 230 (46.9%) 241 (49.2%) -0.05
+...MCD = MEDICAID; n (%) 0 (0.0%) 0 (0.0%) #DIV/0! - - #VALUE! - - #VALUE! 0 (0.0%) 0 (0.0%) #DIV/0!
+...NONE = NO BUSINESS LINE CODE (added in 2015); n (%) 0 (0.0%) 0 (0.0%) #DIV/0! - - #VALUE! - - #VALUE! 0 (0.0%) 0 (0.0%) #DIV/0!
+...UNK = UNKNOWN (added in 2015); n (%) 0 (0.0%) 0 (0.0%) #DIV/0! - - #VALUE! - - #VALUE! 0 (0.0%) 0 (0.0%) #DIV/0!
+Commercial vs Medicare Advantage- Data Type - - 0 0 - -
+...1 - Fee For Service; n (%) - - 1,156 (83.7%) 1,158 (83.9%) - - 1,156 (83.7%) 1,158 (83.9%) 0.00
+...2 - Encounter; n (%) - - 131 (9.5%) 127 (9.2%) - - 131 (9.5%) 127 (9.2%) 0.00
+...3 - Medicare; n (%) - - 85 (6.2%) 86 (6.2%) - - 85 (6.2%) 86 (6.2%) 0.00
+...4 - Medicare Encounter; n (%) - - ** (0.7%) ** (0.7%) - - ** (0.7%) ** (0.7%) 0.00
+Metropolitan Statistical Area - Urban (any MSA) vs Rural (non-MSA) 0 0 0.00
+...Urban; n (%) - - 998 (72.3%) 993 (71.9%) - - 998 (72.3%) 993 (71.9%) 0.00
+...Rural; n (%) - - 151 (10.9%) 153 (11.1%) - - 151 (10.9%) 153 (11.1%) 0.00
+...Unknown/Missing; n (%) - - 232 (16.8%) 235 (17.0%) - - 232 (16.8%) 235 (17.0%) 0.00Appendix B 

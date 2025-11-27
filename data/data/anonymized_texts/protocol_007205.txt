@@ -1,0 +1,589 @@
+Official Tittle:  Value -based Formulary -Essentials: Testing and Expanding on Value in Prescription 
+Drug Benefit Design   
+NCT Number: [NCT ID not yet assigned]   
+Unique Protocol ID:  218066  
+Document Date:  5/14/21  
+  
+Aim 1 Statistical Analysis Plan  
+ 
+Aim 1: Assess  impact of VBF -e on the use of medications .  
+ 
+Study Design:  Difference in Differences  
+ 
+Study Period:  Jan 1st, 201 5 – December  31st, 2019 
+ 
+Unit of Analysis:  per member month  
+ 
+Analytic Sample:  Premera  Blue Cross beneficiaries less than 65 years of age  
+ 
+Censoring Events:   
+ 
+Month at which an i ndividual:  
+• disenroll ed for more than 1 month  during study period  
+• turn ed 65 years of age  
+Administrative censoring  at: 
+• end of study period (December 31st, 2019)  
+Administrative left truncation at:   
+• 24 months prior to index date  
+ 
+Exclusion criteri a:  
+ 
+Exclude individuals with : 
+• missing gender information   
+• missing zip code level demographics  at all member months  
+ 
+Inclusion criteria:   
+ 
+Individuals : 
+• aged 0 -64 
+• Continuously enrolled in an employer -sponsored health plan for at least 12 months (with one -
+month allowable gap) prior to the index date  
+o For individuals in the exposed group, the index date is defined as the start date of value -
+based formulary implementati on at the employer group level  
+o For individuals in the control group, the index date is defined as the index date of the 
+matched exposed individual  
+Employer groups :  
+• that transition to the value -based formulary if they transitioned  all enrollees in that employer 
+group (no individual selection)  
+ 
+Outcomes:   
+ 
+Primary outcome (s): change in area under the curve one year after index date  for all outcomes  
+Secondary outcome (s): change in area under the curve 2 and 3 years after index date for all outcomes  
+Actual outcome list :  
+  Days supply of medications.  
+ 
+Exposure: VBF-E4 and non -VBF-E4 
+ 
+Covariates:  
+ 
+Adjustment variables:   
+ 
+Covariates  Time of 
+Measurement  Notes  Specification  
+Gender  Month before E4 
+transition = index 
+time   Indicator  
+Age Index time  Centered  Continuous  
+Relationship to contract 
+holder  Index time   Categorical  
+• Contract Holder ,  
+• Dependent ,  
+• Spouse/Domestic 
+Partner)  
+ACS  Index time (or 
+closest to this)  For individuals with 
+missing ACS variables at 
+index time, set to 
+closest observed value .  Quintile  
+   Percent 25 years old 
+or older with     
+   a bachelor’s degree    Quintile  
+   Median household 
+income    Quintile  
+   Population size    Quintile  
+   Percent White    Quintile  
+Funding Type  Index time   Categorical   
+(self, full)  
+Elixhauser  12 months prior to 
+transition time   Categorical variable  
+• 0 
+• 1 
+• >=2 
+Time from index date  At all observations  0 = index time, 1 = E4 
+transition month  Continuous  
+(-23 to 36)  
+Post  At all observations  Indicator for post 
+period  indicator  
+Seasonality  At all observations  Adjust for calendar year 
+and separately adjust 
+for calendar month  Categorical (1 through 12 
+for elig_mth) and (2015 
+through 2019 for elig_yr)   
+ 
+  
+Effect Modifiers:  None .  
+  
+Exploratory Data Analysis:    
+▪ Plot outcomes across time across all index times  
+▪ 12-month enrollment for patient member months  
+▪ Histogram of age  
+▪ Univariate statistics, bivariate  
+▪ Conduct a Table 1  
+▪ Loss to follow -up 
+ 
+Statistical Analyses:  
+ 
+We will use a DID approach1,2 to study the impact of the E4 transition  and generalized linear models to 
+model the impact of the E4 transition via changes in outcomes.  Time will be anchored at the month 
+prior to the transition  (e.g., index time is set to the month prior to the transition) for the E4 group. Each 
+of the E4 transition members will be matched to two controls via propensity score methods. Non -E4 
+transition members will be  assigned to an index date corresponding to their E4 transition match. We will 
+not adjust for the matching in  our models3.   
+To match controls to E4 members, we will mode l the propensity score based on covariates we believe 
+may be related to exposure: Gender, ACS Population Size, ACS Household Income in past 12 months, 
+ACS Percent 25 years and older with a Bachel or's degree, ACS Percent White, and Year of birth. Then, we 
+will obtain the log odds (logit) of the fitted values (e.g., estimates) of the propensity score for everyone 
+(both E4 and possible controls) and order the log odds of the treatment (E4) group from  largest to 
+smallest (in decreasing order). For each E4 member, we will find  the two nearest neighbor controls, e.g., 
+the controls with the closest propensity score to that of the E4 individual with 12 months of continuous 
+prior enrollment at the E4 individual's index date. After completing matching, we  will check for covariate 
+balance across groups based on the standardized mean differences and Kolmogorov –Smirnov statistic .  
+ 
+To address the zero -inflated and right skewed nature of the outcomes, we will use a two part -model. In 
+the first stage of the two -part model, we will estimat e the probability of the response being greater than 
+zero and in the second stage we will model the non -zero portion. We will choose the most appropriate 
+mean -variance relationship by performing goodness -of-fit tests (Pearson’s correlation, Pregibon link, 
+modified Park, and modified Hosmer -Lemeshow tests)4,5 on the outcome s. We will assume  
+independence in the mean modeling to estimate the area under the curve change at 1 (primary), 2 and 3 
+years after index, and use the cluster bootstrap to obtain standard errors that account for repeated 
+measurements within an individual (clustering on the individual level) . We will adjust for individual -level 
+(age, gender, and Elixhauser comorbidity score) and census ZIP -code level characteristics (educational 
+attainment, median household income, race/ethnicity and urban residence) in all models.  
+ 
+Model:  
+ 
+Denote spending for member i at time t as 𝑦𝑖𝑡, with 𝑖∈{1,…,𝑁}, 𝑡∈{− 23,…,0,…,36}, and N the 
+number of members . Let M be the number of covariates included in the model  and 𝑥𝑚,𝑖𝑡 denote the 
+𝑚thcovariate for member i at m onth  t. 
+ 
+Then the two -stage model is:  
+𝑝𝑖𝑡∼𝐵𝑒𝑟𝑛𝑜𝑢𝑙𝑙𝑖  (𝜃𝑖𝑡), 
+logit (𝜃𝑖𝑡)=𝛼0+ ∑ 𝛼𝑚𝑀
+𝑚=1𝑥𝑚,𝑖𝑡,  
+(𝑦𝑖𝑡 | 𝑦𝑖𝑡>0)∼𝑃𝑜𝑖𝑠𝑠𝑜𝑛  (𝜇𝑖𝑡), and 
+𝜇𝑖𝑡= 𝐸(𝑦𝑖𝑡 | 𝑦𝑖𝑡>0,𝑋𝑖), 
+where  𝑋𝑖 is the matrix for all observed covariates for member i. We model the mean, 𝜇𝑖𝑡, as 
+log (𝜇𝑖𝑡)=𝛽0+ ∑ 𝛽𝑚𝑀
+𝑚=1𝑥𝑚,𝑖𝑡. 
+We suppose,  
+∑𝛼𝑚𝑀
+𝑚=1𝑥𝑚,𝑖𝑡=𝛼1𝐸4𝑖+𝛼2𝑝𝑜𝑠𝑡 𝑖𝑡+𝛼3𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛼4𝐸4𝑖∗𝑝𝑜𝑠𝑡 𝑖𝑡+𝛼5𝐸4𝑖∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+ 
+         𝛼6𝑝𝑜𝑠𝑡 𝑖𝑡∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛼7𝐸4𝑖∗𝑝𝑜𝑠𝑡 𝑖𝑡∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛼8𝐴𝑔𝑒 𝑖+ 
+                 𝛼9𝐺𝑒𝑛𝑑𝑒𝑟 𝑖+𝛼10𝐸𝑙𝑖𝑥 ℎ𝑎𝑢𝑠𝑒𝑟 𝑖+𝛼11𝑅𝑒𝑙𝑎𝑡𝑖𝑜𝑛𝑠 ℎ𝑖𝑝𝑖+                
+  𝛼12𝐹𝑢𝑛𝑑𝑖𝑛𝑔𝑇𝑦𝑝𝑒 𝑖+𝛼13𝐴𝐶𝑆𝑃𝑜𝑝𝑢𝑙𝑎𝑡𝑖𝑜𝑛 𝑖+𝛼14𝐴𝐶𝑆 𝐼𝑛𝑐𝑜𝑚𝑒 𝑖+ 
+  𝛼15𝐴𝐶𝑆𝑃𝑒𝑟𝑐𝑒𝑛𝑡𝑊 ℎ𝑖𝑡𝑒𝑖+𝛼16𝐴𝐶𝑆𝐸𝑑𝑢𝑐𝑎𝑡𝑖𝑜𝑛 𝑖 ,                  
+and 
+∑ 𝛽𝑚𝑀
+𝑚=1𝑥𝑚,𝑖𝑗𝑡=𝛽1𝐸4𝑖+𝛽2𝑝𝑜𝑠𝑡 𝑖𝑡+𝛽3𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛽4𝐸4𝑖∗𝑝𝑜𝑠𝑡𝑖𝑡+𝛽5𝐸4𝑖∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+ 
+         𝛽6𝑝𝑜𝑠𝑡 𝑖𝑡∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛽7𝐸4𝑖∗𝑝𝑜𝑠𝑡 𝑖𝑡∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛽8𝐴𝑔𝑒 𝑖+ 
+                 𝛽9𝐺𝑒𝑛𝑑𝑒𝑟 𝑖+𝛽10𝐸𝑙𝑖𝑥 ℎ𝑎𝑢𝑠𝑒𝑟 𝑖+𝛽11𝑅𝑒𝑙𝑎𝑡𝑖𝑜𝑛𝑠 ℎ𝑖𝑝𝑖+                
+  𝛽12𝐹𝑢𝑛𝑑𝑖𝑛𝑔𝑇𝑦𝑝𝑒 𝑖+𝛽13𝐴𝐶𝑆𝑃𝑜𝑝𝑢𝑙𝑎𝑡𝑖𝑜𝑛 𝑖+𝛽14𝐴𝐶𝑆 𝐼𝑛𝑐𝑜𝑚𝑒 𝑖+ 
+  𝛽15𝐴𝐶𝑆𝑃𝑒𝑟𝑐𝑒𝑛𝑡𝑊 ℎ𝑖𝑡𝑒𝑖+𝛽16𝐴𝐶𝑆𝐸𝑑𝑢𝑐𝑎𝑡𝑖𝑜𝑛 𝑖 ,                   
+for member i where:  
+• 𝐸4𝑖 = indicator of whether  the 𝑖𝑡ℎ  member  is enrolled in VBF -E4  
+• 𝑝𝑜𝑠𝑡 𝑖𝑡 = indicator of whether the 𝑖𝑡ℎ  member is in the post  index period , 𝑡≥1 
+• 𝑚𝑜𝑛𝑡 ℎ𝑖𝑡 = time in months from the 𝑖𝑡ℎ  members index date  
+• 𝐴𝑔𝑒 𝑖 = centered age for the 𝑖𝑡ℎ  member at index  
+• 𝐺𝑒𝑛𝑑𝑒𝑟 𝑖 = 𝑖𝑡ℎ members gender at index  
+• 𝐸𝑙𝑖𝑥 ℎ𝑎𝑢𝑠𝑒𝑟 𝑖 = Elixhauser comorbidity score for member i at index  
+• 𝑅𝑒𝑙𝑎𝑡𝑖𝑜𝑛𝑠 ℎ𝑖𝑝𝑖= 𝑖𝑡ℎ  members r elationship to contract holder at index  
+• 𝐹𝑢𝑛𝑑𝑖𝑛𝑔𝑇𝑦𝑝𝑒 𝑖= 𝑖𝑡ℎ  members funding type at index  
+• 𝐴𝐶𝑆𝑃𝑜𝑝𝑢𝑙𝑎𝑡𝑖𝑜𝑛 𝑖 = ACS population at the zip code level for member i at index  
+• 𝐴𝐶𝑆𝐼𝑛𝑐𝑜𝑚𝑒 𝑖 = ACS median household income in the prior 12 months at  zip code level for 
+member i at index  
+• 𝐴𝐶𝑆𝑃𝑒𝑟𝑐𝑒𝑛𝑡 𝑊ℎ𝑖𝑡𝑒𝑖 = ACS  percent of white people at  the zip code level for member i at index  
+• 𝐴𝐶𝑆𝐸𝑑𝑢𝑐𝑎𝑡𝑖𝑜𝑛 𝑖 = ACS percent of people 25 years or older with a Bachelor’s degree in the prior 
+12 months at the zip code level for member i at index  
+ 
+Missing Data:  
+ 
+Complete -case analyses.  
+  
+Aim 2 Statistical Analysis Plan  
+ 
+Aim 2:  Assess impact of VBF -e on patient out -of-pocket spending and health plan spending for 
+prescription drugs and non -drug medical care.  
+ 
+Study Design:  Difference in Differences  
+ 
+Study Period:  Jan 1st, 201 5 – December 31st, 2019  
+ 
+Unit of Analysis:  per member month  
+ 
+Analytic Sample:  Premera Blue Cross beneficiaries less than 65 years of age   
+ 
+Censoring Events:   
+ 
+Month at which an individual:  
+• disenrolled for more than 1 month during study period  
+• turned 65 years of age  
+Administrative censoring at:  
+• end of study period (December 31st, 2019)  
+Administrative left truncation at:   
+• 24 months prior to index date  
+ 
+Exclusion criteria:   
+ 
+Exclude individuals with:  
+• missing gender information   
+• missing zip code level demographics at all member months  
+ 
+Inclusion criteria:   
+ 
+Individuals:  
+• aged 0 -64 
+• Continuously enrolled in an employer -sponsored health plan for at least 12 months (with one -
+month allowable gap) prior to the index date  
+o For individuals in the exposed group, the index date is defined as the start date of value -
+based formulary implementation at the employer group level  
+o For individuals in the control group, the index date is defined as the index date of the 
+matched exposed i ndividual  
+Employer groups:   
+• that transition to the value -based formulary if they transitioned  all enrollees in that employer 
+group (no individual selection)  
+ 
+Outcomes:   
+ 
+Primary outcome(s):  change in area under the curve one year after index date for all o utcomes  
+Secondary outcome(s): change in area under the curve 2 and 3 years after index date for all outcomes  
+Actual outcome list:  
+Total spending for prescription drugs  
+Patient out -of-pocket spending for prescription drugs  
+Health plan spending for prescription drugs  
+Total healthcare spending   
+Total health plan and patient spending for vision  
+ 
+Exposure: VBF-E4 and non -VBF-E4 
+ 
+Covariates:  
+ 
+Adjustment variables:  
+ 
+Covariates  Time of 
+Measurement  Notes  Specification  
+Gender  Month before E4 
+transition = index 
+time   Indicator  
+Age Index time  Centered  Continuous  
+Relationship to contract 
+holder  Index time   Categorical  
+• Contract Holder,  
+• Dependent,  
+• Spouse/Domestic 
+Partner)  
+ACS  Index time (or 
+closest to this)  For individuals with 
+missing ACS variables at 
+index time, set to 
+closest observed value.  Quintile  
+   Percent 25 years old 
+or older with     
+   a bachelor’s degree    Quintile  
+   Median household 
+income    Quintile  
+   Population size    Quintile  
+   Percent White    Quintile  
+Funding Type  Index time   Categorical  
+(self, full)  
+Elixhauser  12 months prior to 
+transition time   Categorical variable  
+• 0 
+• 1 
+• >=2 
+Time from index date  At all observations  0 = index time, 1 = E4 
+transition month  Continuous  
+(-23 to 36)  
+Post  At all observations  Indicator for post 
+period  indicator  
+Seasonality  At all observations  Adjust for calendar year 
+and separately adjust 
+for calendar month  Categorical (1 through 12 
+for elig_mth) and (2015 
+through 2019 for elig_yr)  
+ 
+  
+Effect Modifiers:  None.  
+  
+Exploratory Data Analysis:    
+▪ Plot outcomes across time across all index times  
+▪ 12-month enrollment for patient member months  
+▪ Histogram of age  
+▪ Univariate statistics, bivariate  
+▪ Conduct a Table 1  
+▪ Loss to follow -up 
+ 
+Statistical Analyses:  
+ 
+We will use a DID approach1,2 to study the impact of the E4 transition and generalized linear models to 
+model the impact of the E4 transition via changes in outcomes. Time will be anchored at the month 
+prior to the transition (e.g., index time is set to the month prior to the transiti on) for the E4 group. Each 
+of the E4 transition members will be matched to two controls via propensity score methods. Non -E4 
+transition members will be assigned to an index date corresponding to their E4 transition match. We will 
+not adjust for the matchin g in our models3.  
+To match controls to E4 members, we will model the propensity score based on covariates we believe 
+may be related to exposure: Gender, ACS Population Size, ACS Household Income in past 12 months, 
+ACS Percent 25 years and older with a Bac helor's degree, ACS Percent White, and Year of birth. Then, we 
+will obtain the log odds (logit) of the fitted values (e.g., estimates) of the propensity score for everyone 
+(both E4 and possible controls) and order the log odds of the treatment (E4) group f rom largest to 
+smallest (in decreasing order). For each E4 member, we will find the two nearest neighbor controls, e.g., 
+the controls with the closest propensity score to that of the E4 individual with 12 months of continuous 
+prior enrollment at the E4 ind ividual's index date. After completing matching, we will check for covariate 
+balance across groups based on the standardized mean differences and Kolmogorov –Smirnov statistic.  
+ 
+To address the zero -inflated and right skewed nature of the cost outcomes, we will use a two part -
+model. In the first stage of the two -part model, we will estimate the probability of the response being 
+greater than zero and in the second stage we will model the non -zero portion. We will choose the most 
+appropriate mean -variance rela tionship by performing goodness -of-fit tests (Pearson’s correlation, 
+Pregibon link, modified Park, and modified Hosmer -Lemeshow tests) 4,5 on the primary cost outcome. 
+We will assume independence in the mean modeling to estimate the area under the curve ch ange at 1 
+(primary), 2 and 3 years after index, and use the cluster bootstrap to obtain standard errors that account 
+for repeated measurements within an individual (clustering on the individual level). We will adjust for 
+individual -level (age, gender, and Elixhauser comorbidity score) and census ZIP -code level characteristics 
+(educational attainment, median household income, race/ethnicity and urban residence) in all models.  
+ 
+Model:  
+ 
+Denote spending for member i at time t as 𝑦𝑖𝑡, with 𝑖∈{1,…,𝑁}, 𝑡∈{− 23,…,0,…,36}, and N the 
+number of members. Let M be the number of covariates included in the model and 𝑥𝑚,𝑖𝑡 denote the 
+𝑚thcovariate for member i at month t. 
+ 
+Then the two -stage model is:  
+𝑝𝑖𝑡∼𝐵𝑒𝑟𝑛𝑜𝑢𝑙𝑙𝑖  (𝜃𝑖𝑡), 
+𝑙𝑜𝑔𝑖𝑡 (𝜃𝑖𝑡)=𝛼0+ ∑ 𝛼𝑚𝑀
+𝑚=1𝑥𝑚,𝑖,  
+(𝑦𝑖𝑡 | 𝑦𝑖𝑡>0)∼𝐺𝑎𝑚𝑚𝑎  (𝑎,𝑏𝑖𝑡), 
+with 𝑎 as the shape parameter and 𝑏 as the rate parameter of the Gamma distribution, and  
+𝜇𝑖𝑡= 𝐸(𝑦𝑖𝑡 | 𝑦𝑖𝑡>0,𝑋𝑖)= 𝑎
+𝑏𝑖𝑡,  
+where 𝑋𝑖 is the matrix for all observed covariates  for member i. We model the mean, 𝜇𝑖𝑡, as 
+log (𝜇𝑖𝑡)=𝛽0+ ∑ 𝛽𝑚𝑀
+𝑚=1𝑥𝑚,𝑖𝑡. 
+We suppose,  
+∑𝛼𝑚𝑀
+𝑚=1𝑥𝑚,𝑖𝑡=𝛼1𝐸4𝑖+𝛼2𝑝𝑜𝑠𝑡 𝑖𝑡+𝛼3𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛼4𝐸4𝑖∗𝑝𝑜𝑠𝑡 𝑖𝑡+𝛼5𝐸4𝑖∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+ 
+         𝛼6𝑝𝑜𝑠𝑡 𝑖𝑡∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛼7𝐸4𝑖∗𝑝𝑜𝑠𝑡𝑖𝑡∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛼8𝐴𝑔𝑒 𝑖+ 
+                 𝛼9𝐺𝑒𝑛𝑑𝑒𝑟 𝑖+𝛼10𝐸𝑙𝑖𝑥 ℎ𝑎𝑢𝑠𝑒𝑟 𝑖+𝛼11𝑅𝑒𝑙𝑎𝑡𝑖𝑜𝑛𝑠 ℎ𝑖𝑝𝑖+                
+  𝛼12𝐹𝑢𝑛𝑑𝑖𝑛𝑔𝑇𝑦𝑝𝑒 𝑖+𝛼13𝐴𝐶𝑆𝑃𝑜𝑝𝑢𝑙𝑎𝑡𝑖𝑜𝑛 𝑖+𝛼14𝐴𝐶𝑆 𝐼𝑛𝑐𝑜𝑚𝑒 𝑖+ 
+  𝛼15𝐴𝐶𝑆𝑃𝑒𝑟𝑐𝑒𝑛𝑡𝑊 ℎ𝑖𝑡𝑒𝑖+𝛼16𝐴𝐶𝑆𝐸𝑑𝑢𝑐𝑎𝑡𝑖𝑜𝑛 𝑖 ,                  
+and 
+∑ 𝛽𝑚𝑀
+𝑚=1𝑥𝑚,𝑖𝑡=𝛽1𝐸4𝑖+𝛽2𝑝𝑜𝑠𝑡 𝑖𝑡+𝛽3𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛽4𝐸4𝑖∗𝑝𝑜𝑠𝑡 𝑖𝑡+𝛽5𝐸4𝑖∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+ 
+         𝛽6𝑝𝑜𝑠𝑡 𝑖𝑡∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛽7𝐸4𝑖∗𝑝𝑜𝑠𝑡 𝑖𝑡∗𝑚𝑜𝑛𝑡ℎ𝑖𝑡+𝛽8𝐴𝑔𝑒 𝑖+ 
+                 𝛽9𝐺𝑒𝑛𝑑𝑒𝑟 𝑖+𝛽10𝐸𝑙𝑖𝑥 ℎ𝑎𝑢𝑠𝑒𝑟 𝑖+𝛽11𝑅𝑒𝑙𝑎𝑡𝑖𝑜𝑛𝑠 ℎ𝑖𝑝𝑖+                
+  𝛽12𝐹𝑢𝑛𝑑𝑖𝑛𝑔𝑇𝑦𝑝𝑒 𝑖+𝛽13𝐴𝐶𝑆𝑃𝑜𝑝𝑢𝑙𝑎𝑡𝑖𝑜𝑛 𝑖+𝛽14𝐴𝐶𝑆 𝐼𝑛𝑐𝑜𝑚𝑒 𝑖+ 
+  𝛽15𝐴𝐶𝑆𝑃𝑒𝑟𝑐𝑒𝑛𝑡𝑊 ℎ𝑖𝑡𝑒𝑖+𝛽16𝐴𝐶𝑆𝐸𝑑𝑢𝑐𝑎𝑡𝑖𝑜𝑛 𝑖 ,                   
+for member i where:  
+• 𝐸4𝑖 = indicator of whether the 𝑖𝑡ℎ  member is enrolled in VBF -E4  
+• 𝑝𝑜𝑠𝑡 𝑖𝑡 = indicator of whether the 𝑖𝑡ℎ  member is in the post index period, 𝑡≥1 
+• 𝑚𝑜𝑛𝑡 ℎ𝑖𝑡 = time in months from the 𝑖𝑡ℎ  members index date  
+• 𝐴𝑔𝑒 𝑖 = centered age for the 𝑖𝑡ℎ  member at index  
+• 𝐺𝑒𝑛𝑑𝑒𝑟 𝑖 = 𝑖𝑡ℎ members gender at index  
+• 𝐸𝑙𝑖𝑥 ℎ𝑎𝑢𝑠𝑒𝑟 𝑖 = Elixhauser comorbidity score for member i at index  
+• 𝑅𝑒𝑙𝑎𝑡𝑖𝑜𝑛𝑠 ℎ𝑖𝑝𝑖= 𝑖𝑡ℎ  members r elationship to contract holder at index  
+• 𝐹𝑢𝑛𝑑𝑖𝑛𝑔𝑇𝑦𝑝𝑒 𝑖= 𝑖𝑡ℎ  members funding type at index  
+• 𝐴𝐶𝑆𝑃𝑜𝑝𝑢𝑙𝑎𝑡𝑖𝑜𝑛 𝑖 = ACS population at the zip  code level for member i at index  
+• 𝐴𝐶𝑆𝐼𝑛𝑐𝑜𝑚𝑒 𝑖 = ACS median household income in the prior 12 months at zip code level for 
+member i at index  
+• 𝐴𝐶𝑆𝑃𝑒𝑟𝑐𝑒𝑛𝑡𝑊 ℎ𝑖𝑡𝑒𝑖 = ACS percent of white people at the zip code level for member i at index  
+• 𝐴𝐶𝑆𝐸𝑑𝑢𝑐𝑎𝑡𝑖𝑜𝑛 𝑖 = ACS percent of people 25 years or older with a Bachelor’s degree in the prior 
+12 months at the zip code level for member i at index  
+ 
+Missing Data:  
+ 
+Complete -case analyses.  
+  
+Aim 3 Statistical Analysis Plan  
+ 
+Aim 3:  Assess impact of VBF -e on the number of emergency department visits, number of outpatient 
+visits, and number of days in hospital .  
+ 
+Study Design:  Difference in Differences  
+ 
+Study Period:  Jan 1st, 201 5 – December 31st, 2019  
+ 
+Unit of Analysis:  per member month   
+ 
+Analytic Sample:  Premera Blue Cross beneficiaries less than 65 years of age  
+ 
+Censoring Events:   
+ 
+Month at which an individual:  
+• disenrolled for more than 1 month during study period  
+• turned 65 years of age  
+Administrative censoring at:  
+• end of study period (December 31st, 2019)  
+Administrative left truncation at:   
+• 24 months prior to index date  
+ 
+Exclusion criteria:   
+ 
+Exclude individuals with:  
+• missing gender information  
+• missing zip code level demographics at all member months  
+ 
+Inclusion criteria:   
+ 
+Individuals:  
+• aged 0 -64 
+• Continuously enrolled in an employer -sponsored health plan for at least 12 months (with one -
+month allowable gap) prior to the index date  
+o For individuals in the exposed group, the index date is defined as the start date of value -
+based formulary implementati on at the employer group level  
+o For individuals in the control group, the index date is defined as the index date of the 
+matched exposed individual  
+Employer groups:   
+• that transition to the value -based formulary if they transitioned  all enrollees in that emp loyer 
+group (no individual selection)  
+ 
+Outcomes:   
+ 
+Primary outcome(s):  change in area under the curve one year after index date for all outcomes  
+Secondary outcome(s): change in area under the curve 2 and 3 years after index date for all outcomes  
+Actual ou tcome list:  
+Number of emergency department visits  
+Number of days in hospital  
+Number of outpatient visits  
+ 
+Exposure: VBF-E4 and non -VBF-E4 
+ 
+Covariates:  
+ 
+Adjustment variables:  
+ 
+Covariates  Time of 
+Measurement  Notes  Specification  
+Gender  Month before E4 
+transition = index 
+time   Indicator  
+Age Index time  Will be centered.  Continuous  
+Relationship to contract 
+holder  Index time   Categorical  
+• Contract Holder,  
+• Dependent,  
+• Spouse/Domestic 
+Partner)  
+ACS  Index time (or 
+closest to this)  For individuals with 
+missing ACS variables at 
+index time, set to 
+closest observed value.  Quintile  
+   Percent 25 years old 
+or older with     
+   a bachelor’s degree    Quintile  
+   Median household 
+income    Quintile  
+   Population size    Quintile  
+   Percent White    Quintile  
+Funding Type  Index time   Categorical  
+(self, full)  
+Elixhauser  12 months prior to 
+transition time   Categorical variable  
+• 0 
+• 1 
+• >=2 
+Time from index date  At all observations  0 = index time, 1 = E4 
+transition month  Continuous  
+(-23 to 36)  
+Post  At all observations  Indicator for post 
+period  indicator  
+Seasonality  At all observations  Adjust for calendar year 
+and separately adjust 
+for calendar month  Categorical (1 through 12 
+for elig_mth) and (2015 
+through 2019 for elig _yr) 
+ 
+  
+Effect Modifiers:  None.  
+  
+Exploratory Data Analysis:    
+▪ Plot outcomes across time across all index times  
+▪ 12-month enrollment for patient member months  
+▪ Histogram of age  
+▪ Univariate statistics, bivariate  
+▪ Conduct a Table 1  
+▪ Loss to follow -up 
+ 
+Statistical Analyses:  
+ 
+We will use a DID approach1,2 to study the impact of the E4 transition and generalized l inear models to 
+model the impact of the E4 transition via changes in outcomes. Time will be anchored at the month 
+prior to the transition (e.g., index time is set to the month prior to the transition) for the E4 group. Each 
+of the E4 transition members wil l be matched to two controls via propensity score methods. Non -E4 
+transition members will be assigned to an index date corresponding to their E4 transition match. We will 
+not adjust for the matching in our models3.  
+To match controls to E4 members, we will model the propensity score based on covariates we believe 
+may be related to exposure: Gender, ACS Population Size, ACS Household Income in past 12 months, 
+ACS Percent 25 years and older with a Bachelor's degree, ACS  Percent White, and Year of birth. Then, we 
+will obtain the log odds (logit) of the fitted values (e.g., estimates) of the propensity score for everyone 
+(both E4 and possible controls) and order the log odds of the treatment (E4) group from largest to 
+smal lest (in decreasing order). For each E4 member, we will find the two nearest neighbor controls, e.g., 
+the controls with the closest propensity score to that of the E4 individual with 12 months of continuous 
+prior enrollment at the E4 individual's index dat e. After completing matching, we will check for covariate 
+balance across groups based on the standardized mean differences and Kolmogorov –Smirnov statistic.  
+ 
+To address the zero -inflated and right skewed nature of the outcomes, we will use a two part -mode l. In 
+the first stage of the two -part model, we will estimate the probability of the response being greater than 
+zero and in the second stage we will model the non -zero portion. We will choose the most appropriate 
+mean -variance relationship by performing g oodness -of-fit tests ( Pearson’s correlation, Pregibon link, 
+modified Park, and modified Hosmer -Lemeshow tests) 4,5 on the outcomes. We will assume 
+independence in the mean modeling to estimate the area under the curve change at 1 (primary), 2 and 3 
+years after index, and use the cluster bootstrap to obtain standard errors that account for repeated 
+measurements within an individual (clustering on the individual level). We will adjust for individual -level 
+(age, gender, and Elixhauser comorbidity score) and c ensus ZIP -code level characteristics (educational 
+attainment, median household income, race/ethnicity and urban residence) in all models.  
+ 
+Model:  
+ 
+Denote spending for member i at time t as 𝑦𝑖𝑡, with 𝑖∈{1,…,𝑁}, 𝑡∈{− 23,…,0,…,36}, and N the 
+number of members. Let M be the number of covariates included in the model and 𝑥𝑚,𝑖𝑡 denote the 
+𝑚thcovariate for member i at month t. 
+ 
+Then the two -stage model is:  
+𝑝𝑖𝑡∼𝐵𝑒𝑟𝑛𝑜𝑢𝑙𝑙𝑖  (𝜃𝑖𝑡), 
+logit (𝜃𝑖𝑡)=𝛼0+ ∑ 𝛼𝑚𝑀
+𝑚=1𝑥𝑚,𝑖𝑡,  
+(𝑦𝑖𝑡 | 𝑦𝑖𝑡>0)∼𝑃𝑜𝑖𝑠𝑠𝑜𝑛  (𝜇𝑖𝑡), and 
+𝜇𝑖𝑡= 𝐸(𝑦𝑖𝑡 | 𝑦𝑖𝑡>0,𝑋𝑖), 
+where  𝑋𝑖 is the matrix for all observed covariates for member i. We model the mean, 𝜇𝑖𝑡, as 
+log (𝜇𝑖𝑡)=𝛽0+ ∑ 𝛽𝑚𝑀
+𝑚=1𝑥𝑚,𝑖𝑡. 
+We suppose,  
+∑𝛼𝑚𝑀
+𝑚=1𝑥𝑚,𝑖𝑡=𝛼1𝐸4𝑖+𝛼2𝑝𝑜𝑠𝑡𝑖𝑡+𝛼3𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛼4𝐸4𝑖∗𝑝𝑜𝑠𝑡 𝑖𝑡+𝛼5𝐸4𝑖∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+ 
+         𝛼6𝑝𝑜𝑠𝑡 𝑖𝑡∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛼7𝐸4𝑖∗𝑝𝑜𝑠𝑡 𝑖𝑡∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛼8𝐴𝑔𝑒 𝑖+ 
+                 𝛼9𝐺𝑒𝑛𝑑𝑒𝑟 𝑖+𝛼10𝐸𝑙𝑖𝑥 ℎ𝑎𝑢𝑠𝑒𝑟 𝑖+𝛼11𝑅𝑒𝑙𝑎𝑡𝑖𝑜𝑛𝑠 ℎ𝑖𝑝𝑖+                
+  𝛼12𝐹𝑢𝑛𝑑𝑖𝑛𝑔𝑇𝑦𝑝𝑒 𝑖+𝛼13𝐴𝐶𝑆𝑃𝑜𝑝𝑢𝑙𝑎𝑡𝑖𝑜𝑛 𝑖+𝛼14𝐴𝐶𝑆 𝐼𝑛𝑐𝑜𝑚𝑒 𝑖+ 
+  𝛼15𝐴𝐶𝑆𝑃𝑒𝑟𝑐𝑒𝑛𝑡𝑊 ℎ𝑖𝑡𝑒𝑖+𝛼16𝐴𝐶𝑆𝐸𝑑𝑢𝑐𝑎𝑡𝑖𝑜𝑛 𝑖 ,                  
+and 
+∑ 𝛽𝑚𝑀
+𝑚=1𝑥𝑚,𝑖𝑡=𝛽1𝐸4𝑖+𝛽2𝑝𝑜𝑠𝑡 𝑖𝑡+𝛽3𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛽4𝐸4𝑖∗𝑝𝑜𝑠𝑡 𝑖𝑡+𝛽5𝐸4𝑖∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+ 
+         𝛽6𝑝𝑜𝑠𝑡 𝑖𝑡∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛽7𝐸4𝑖∗𝑝𝑜𝑠𝑡 𝑖𝑡∗𝑚𝑜𝑛𝑡 ℎ𝑖𝑡+𝛽8𝐴𝑔𝑒 𝑖+ 
+                 𝛽9𝐺𝑒𝑛𝑑𝑒𝑟 𝑖+𝛽10𝐸𝑙𝑖𝑥 ℎ𝑎𝑢𝑠𝑒𝑟 𝑖+𝛽11𝑅𝑒𝑙𝑎𝑡𝑖𝑜𝑛𝑠 ℎ𝑖𝑝𝑖+                
+  𝛽12𝐹𝑢𝑛𝑑𝑖𝑛𝑔𝑇𝑦𝑝𝑒 𝑖+𝛽13𝐴𝐶𝑆𝑃𝑜𝑝𝑢𝑙𝑎𝑡𝑖𝑜𝑛 𝑖+𝛽14𝐴𝐶𝑆 𝐼𝑛𝑐𝑜𝑚𝑒 𝑖+ 
+  𝛽15𝐴𝐶𝑆𝑃𝑒𝑟𝑐𝑒𝑛𝑡𝑊 ℎ𝑖𝑡𝑒𝑖+𝛽16𝐴𝐶𝑆𝐸𝑑𝑢𝑐𝑎𝑡𝑖𝑜𝑛 𝑖 ,                   
+for member i where:  
+• 𝐸4𝑖 = indicator of whether the 𝑖𝑡ℎ  member is enrolled in VBF -E4  
+• 𝑝𝑜𝑠𝑡 𝑖𝑡 = indicator of whether the 𝑖𝑡ℎ  member is in the post index period, 𝑡≥1 
+• 𝑚𝑜𝑛𝑡 ℎ𝑖𝑡 = time in months from the 𝑖𝑡ℎ  members index date  
+• 𝐴𝑔𝑒 𝑖 = centered age for the 𝑖𝑡ℎ  member at index  
+• 𝐺𝑒𝑛𝑑𝑒𝑟 𝑖 = 𝑖𝑡ℎ members gender at index  
+• 𝐸𝑙𝑖𝑥 ℎ𝑎𝑢𝑠𝑒𝑟 𝑖 = Elixhauser comorbidity score for member i at index  
+• 𝑅𝑒𝑙𝑎𝑡𝑖𝑜𝑛𝑠 ℎ𝑖𝑝𝑖= 𝑖𝑡ℎ  members r elationship to contract holder at index  
+• 𝐹𝑢𝑛𝑑𝑖𝑛𝑔𝑇𝑦𝑝𝑒 𝑖= 𝑖𝑡ℎ  members funding type at index  
+• 𝐴𝐶𝑆𝑃𝑜𝑝𝑢𝑙𝑎𝑡𝑖𝑜𝑛 𝑖 = ACS population at the zip code level for member i at index  
+• 𝐴𝐶𝑆𝐼𝑛𝑐𝑜𝑚𝑒 𝑖 = ACS median household income in the prior 12 months at zip code level for 
+member i at index  
+• 𝐴𝐶𝑆𝑃𝑒𝑟𝑐𝑒𝑛𝑡 𝑊ℎ𝑖𝑡𝑒𝑖 = ACS percent of white people at the zip code level for member i at index  
+• 𝐴𝐶𝑆𝐸𝑑𝑢𝑐𝑎𝑡𝑖𝑜𝑛 𝑖 = ACS percent of people 25 years or older with a Bachelor’s degree in the prior 
+12 months at the zip code level for member i at index  
+ 
+Missing Data:  
+ 
+Complete -case analyses.  
+ 
+ 
+ 
+References  
+1.  Dimick JB, Ryan AM. Methods for evaluating changes in health care policy: the 
+difference -in-differences approach. JAMA. 2014;312(22):2401 -2402.  
+2. Wing C, Simon K, Bello -Gomez RA. Designing difference in difference studies: best 
+practices for public health  policy research. Annu Rev Public Health. 2018;39.  
+3. Schafer JL, Kang J. Average causal effects from nonrandomized studies: a practical 
+guide and simulated example. Psychol Methods.  2008 Dec;13(4):279 -313. doi: 
+10.1037/a0014268. PMID: 19071996.  
+4.  Hosmer DW, Lemeshow S. Applied logistic regression.  2nd ed. New York: Wiley; 2000.  
+5.  Pregibon D. Goodness of Link Tests for Generalized Linear Models. J Appl Stat. 
+1980;29(1):15.  
+ 
+ 

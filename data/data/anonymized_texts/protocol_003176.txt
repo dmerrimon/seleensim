@@ -1,0 +1,1774 @@
+ 
+Statistical Analysis Plan  
+ 
+Protocol Title: A Randomized Double Blind Active Comparator 
+Controlled Phase  III Study to Assess the Safety and Efficacy of RHB -
+105 in the  Treatment of Confirmed Helicobacter pylori  (H. pylori ) 
+Infection  
+ 
+ 
+Study ID: [REMOVED]  
+ 
+ 
+Protocol Number: RHB -105-02  
+ 
+ 
+Protocol Version, Date Protocol Amendment 3, 22 Mar 2018 
+ 
+ 
+SAP Document Version, Date:  
+Final 2.0, 20 Nov 2018 
+Addendum 1.0, 06 Feb 2019  
+ 
+ Statistical Analysis Plan (SAP)  
+RedHill Biopharma Ltd .  
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02                                        Version: Final 2.0 , Date: 20 Nov 2018  
+                                                                                    Page 1 of 36 
+ 
+Protocol Title : A Randomized Double Blind Active Comparator Controlled Phase 
+III Study to Assess the Safety and Efficacy  of RHB -105 in the 
+Treatment of Confirmed Helicobacter pylori ( H. pylori ) Infection  
+Protocol  Number : RHB -105-02 
+Protocol Version, Date  Protocol Amendment 3 , 22 Mar 2018 
+ICON ID:  3101/0005  
+Document  Version , Date : Final  2.0, 20 Nov 2018  
+ 
+ 
+ 
+ 
+ 
+Prepared by:  
+ICON Clinical Research Services  
+ 
+On behalf of : 
+RedHill Biopharma Ltd.  
+ 
+ 
+ 
+ 
+ Confidentiality statement:  
+ The information provided in this document is strictly confidential.  
+ The recipients of the SAP must not disclose the confidential information contained 
+within this document or any related information to other persons  without the 
+permission of the sponsor . 
+ In addition,  the recipients of the SAP  must keep this confidential document in a 
+controlled environment which prevents unauthorized access to the document.   
+  
+
+ Statistical Analysis Plan (SAP)   
+RedHill Biopharma Ltd . 
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final 2.0, Date: 20 Nov 2018  
+Page 3 of 36   
+ 
+REVISION HISTORY  
+ 
+ Version/Date  Version name  Section  Changes implemented  
+Version Draft 1.0/ 
+24 Apr 2017  Initial version  N/A N/A 
+Version Draft 2.0/  
+12 Apr 2018  2nd Draft  N/A Update after RedHill Review and release of Protocol Amendment 
+3 
+Version Draft 3.0/ 
+25 Jun 2018  3rd Draft  N/A Update of compliance c alculation  
+Clarification of summary of concomitant medications  
+Addition of p re-final analysis  
+Version Final 1.0/ 
+06 Sep 2018  Final 1.0  N/A Minor updates regarding the handling of repeated test of cure visits  
+Addition of subgroup analyse s by pharmacokinetics   
+Addition of subgroup analyses by SOC therapy categories for H. 
+pylori eradication in the SOC phase  
+Addition of summary of susceptibility by US A regions  
+Update of secondary efficacy endpoint: eradication of H.pylori  
+instead of failure of eradication  
+Version Final 2.0/ 
+20 Nov  2018  Final 2 .0 N/A Update of the analysis of patient disposition  
+Addition of primary efficacy by site  
+Addition of a listing for physical examination after screening  
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 4 of 36 
+ 
+TABLE OF CONTENTS  
+ 
+SIGNATURE PAGE  ................................ ................................ ................................ .............  2 
+REVISION HISTORY ................................ ................................ ................................ ...........  3 
+TABLE OF CON TENTS  ................................ ................................ ................................ ....... 4 
+LIST OF ABBREVIATIONS  ................................ ................................ ................................  6 
+1 INTRODUCTION  ................................ ................................ ................................ ...........  7 
+2 STUDY OBJECTIVES  ................................ ................................ ................................ .... 8 
+2.1 Primary objective(s)  ................................ ................................ ................................  8 
+2.2 Secondary objective(s)  ................................ ................................ ............................  8 
+2.3 Safety objective(s)  ................................ ................................ ................................ .. 8 
+3 STUDY DESIGN  ................................ ................................ ................................ .............  9 
+3.1 General study design  ................................ ................................ ...............................  9 
+3.2 Randomization and blinding  ................................ ................................ ...................  9 
+3.3 Study treatments and assessments  ................................ ................................ ........  10 
+3.4 Post-treatment Standard of Care  ................................ ................................ ...........  10 
+4 STUDY ENDPOINTS  ................................ ................................ ................................ ... 13 
+4.1 Primar y efficacy endpoint(s)  ................................ ................................ .................  13 
+4.2 Secondary efficacy endpoint(s)  ................................ ................................ .............  13 
+4.3 Safety endpoint(s)  ................................ ................................ ................................ . 13 
+4.4 Exploratory endpoint(s)  ................................ ................................ ........................  13 
+4.5 Pharmacokinetic endpoint(s)  ................................ ................................ ................  13 
+5 SAMPLE SIZE AND POWER  ................................ ................................ ......................  14 
+6 ANALYSIS POPULATIONS  ................................ ................................ .......................  15 
+6.1 Full Analysis Set (FAS) / Safety population ................................ .........................  15 
+6.2 Modified Intent -to-treat (mITT) population  ................................ .........................  15 
+6.3 Per-Protocol population (PP)  ................................ ................................ ................  15 
+6.4 PK Population (PKP)  ................................ ................................ ............................  15 
+6.5 Protocol deviations/violations and exclusions from analysis sets  ........................  15 
+7 STATISTICAL CONSIDERATIONS AND ANALYSIS  ................................ ............  17 
+7.1 Derived variables  ................................ ................................ ................................ .. 17 
+7.2 Handling of missing or incomplete data  ................................ ...............................  17 
+8 STATISTICAL METHODS  ................................ ................................ ..........................  19 
+8.1 General statistical conventions  ................................ ................................ .............  19 
+8.1.1  Model structure or SAS codes  ................................ ................................ .. 20 
+8.2 Subject disposition  ................................ ................................ ................................  20 
+8.3 Protocol deviations ................................ ................................ ................................  21 
+8.4 Demographics and baseline characteristics  ................................ ..........................  21 
+8.4.1  Demographics  ................................ ................................ ...........................  21 
+8.4.2  Baseline and disease characteristics  ................................ ..........................  22 
+8.4.3  Medical history  ................................ ................................ .........................  22 
+8.4.4  Prior and concomitant medications  ................................ ...........................  23 
+
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 5 of 36 
+ 
+8.5 Extent of exposure  ................................ ................................ ................................  23 
+8.5.1  Treatment duration  ................................ ................................ ....................  23 
+8.5.2 Treatment compliance  ................................ ................................ ...............  24 
+8.6 Efficacy analyses  ................................ ................................ ................................ .. 24 
+8.6.1  Analysis of primary efficacy endpoint(s)  ................................ .................  24 
+8.6.2  Analysis of secondary efficacy endpoint(s)  ................................ ..............  26 
+8.6.3  Analysis of exploratory endpoint(s) ................................ ..........................  26 
+8.7 Safety analyses  ................................ ................................ ................................ ...... 26 
+8.7.1  Adverse events  ................................ ................................ ..........................  27 
+8.7.2  Serious adverse events  ................................ ................................ ..............  28 
+8.7.3  Clinical laboratory evaluations  ................................ ................................ . 28 
+8.7.4  Vital signs  ................................ ................................ ................................ . 31 
+8.7.5  Physical examinations  ................................ ................................ ...............  31 
+8.7.6  Electrocardiograms  ................................ ................................ ...................  31 
+8.8 Pharmacokinetic (PK) analyses  ................................ ................................ ............  31 
+8.9 Subgroup analyses  ................................ ................................ ................................  32 
+8.10  Interim analysis  ................................ ................................ ................................ ..... 32 
+8.11  Analysis after the double -blind phase of the study  ................................ ...............  32 
+9 CHANGES TO PLANNED ANALYSIS FROM STUDY PROTOCOL  .....................  33 
+10 REFERENCES  ................................ ................................ ................................ ..............  34 
+11 APPENDICES  ................................ ................................ ................................ ...............  35 
+  
+
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 6 of 36 
+ 
+LIST OF ABBREVIATION S 
+Abbreviation  or 
+special term  Explanation  
+AE Adverse Event  
+ALT  Alanine  aminotransferase  
+AST  Aspartate aminotransferase  
+ATC  Anatomical Therapeutic Chemical  
+BMI  Body mass index  
+BUN  Blood urea nitrogen  
+CI Confidence Interval   
+CLO  Campylobacter -like organism  
+CSR  Clinical Study Report  
+FAS Full Analysis set 
+GCP  Good clinical practice  
+H. pylori  Helicobacter pylori  
+ICH International Conference on Harmonisation  
+IRB/EC  Institutional Review Board/ Independent Ethics Committee  
+LDH  Lactate Dehydrogenase  
+MedDRA  Medical Dictionary for Regulatory Affairs®  
+MIC  Minimum  inhibitory concentration  
+mITT  Modified Intent -to-treat  
+PK Pharmacokinetic  
+PP Per Protocol  
+PT Preferred term  
+RBC  Red blood cell  
+SAE  Serious Adverse Events  
+SAF Safety Analysis population  
+SAP Statistical Analysis Plan  
+SD Standard deviation  
+SGOT  Serum glutamic -oxaloacetic transaminase  
+SGPT  Serum glutamic -pyruvic transaminase  
+SOC  System organ class  (in context of adverse events or  medical history)  
+SOC  Standard of care (in context of study phase)  
+TEAE  Treatment emergent adverse event  
+TFL Table , Figure and Listings   
+UBT  Urea Breath Test  
+USA  United States of America  
+WBC  White blood cell  
+WHO  World Health Organization  
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 7 of 36 
+ 
+1 INTRODUCTION  
+The purpose of th is Statistical A nalysis Plan (SAP) is to provide detailed description s of the statistical 
+methods, data derivations and data displays for study protocol RHB -105-02 “A Randomized Double 
+Blind Active Comparator Controlled Phase III Study to Assess the Safety and Efficacy  of RHB -105 
+in the Treatment of Confirmed Helicobacter pylori ( H. pylori ) Infection ”, Amendment 3  dated 22 Mar  
+2018 for final analysis . The table of contents and templates for the Table, Figure, Listings ( TFL)s will 
+be produced in a separate document.  
+Any deviations from this SAP will be described and justified in the Clinical Study Report (CSR).  The 
+preparation of this SAP has been based on International Conference on Harmonisation  (ICH) E9 
+guidelines . 
+The SAP is finalized and signed prior to any of the following: study unblinding  and database hard 
+lock. For operational efficiency,  an earlier time is usually targeted. If needed, revisions to the approved 
+SAP may be made prior to dat abase hard lock. Revisions will be version controlled.  
+All data analyses and generation of TFLs will be performed using SAS 9.3® or higher.  
+  
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 8 of 36 
+ 
+2 STUDY OBJECTIVES  
+2.1 Primary objective(s)  
+The primary objective of this study is to assess the effectiveness of  RHB -105 to eradicate H. pylori  as 
+indicated by 13C Urea Breath Test ( UBT ) for H. pylori . 
+ 
+2.2 Secondary objective(s)  
+The secondary objective of this study is the examination of the primary endpoint, the occurrence of H. 
+pylori  eradication, within subgroups of subjects formed by the occurrence of antibiotic resistance and 
+susceptibility prior to therapy.  
+  
+2.3 Safety objective(s)  
+The safety objective is to assess the safety profile of RHB -105.  
+ 
+  
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 9 of 36 
+ 
+3 STUDY DESIGN  
+3.1 General study design  
+This is a randomized, double -blind, active comparator controlled study of RHB -105 in adult subjects 
+complaining of epigastric discomfort that have been screened and found to be positive for H. pylori  
+infection via 13C UBT and follow up upper endoscopy (cul ture, histology or urease test) . All subjects 
+who meet inclusion and exclusion criteria and have positive  13C UBT will undergo upper endoscopy 
+with three biopsies taken from each of the antrum and corpus of the stomach. One biopsy from both 
+the corpus and antrum will be combined and tested for H. pylori  via a rapid urease test at the point of 
+care. One biopsy from both the corpus and antrum will be combined and sent for H. pylori  testing at 
+the central histology laboratory. One biopsy from both the corpus a nd antrum will be combined and 
+sent to the central laboratory for H. pylori  culture with susceptibility testing assessing amoxicillin,  
+clarithromyci n, metronidazole and rifabutin. Subject specific pretreatment culture susceptibility and 
+resistance results will be provided to the investigator in those subjects who fail to eradicate H. pylori  
+upon post treatment 13C UBT analysis. All other susceptibility data will remain blinded until  study 
+completion. The active comparator arm is expected to demonstrate an approximate 70%  efficacy rate 
+and RHB -105 is being investigated for superiority with an expected approximate 83% efficacy rate.  
+The study will be conducted at up to 65 sites in the United States of America  (USA ). Once informed 
+consent has been obtained and upon positive screening and enrollment into the study, eligible subjects 
+will be randomized in a ratio of 1:1 between active comparator arm (n=222 ) and the active 
+investigational a rm (RHB -105) (n=222). Subjects will receive RHB -105 or active comparator (RHB -
+105-LT) for 14 days.  Eradication of H. pylori  infection will be determined based on 13C UBT testing 
+conducted between 43 and 71 days after initiation of therapy.  In the event a f emale subject becomes 
+pregnant during the course of the double -blind phase of the study and refuses to undergo the 13C UBT 
+assessment, then a fecal antigen test may be performed at the local lab. Results of the fecal antigen test 
+will substitute for the 13C UBT test of cure for this subject in all efficacy analyses.  
+Subjects who fail to eradicate H. pylori  upon post treatment 13C UBT analysis will receive investigator 
+prescribed susceptibility directed therapy based on culture and sensitivity results from b iopsy samples 
+prior to therapy. The investigator may prescribe local standard of care therapy if susceptibility results 
+are not contributory or are unavailable. These subjects will also undergo repeat endoscopy to assess 
+changes in susceptibility and resis tance. All information related to therapy including drugs, doses and 
+duration administered will be collected, and subjects will be reassessed for eradication of H. pylori  28 
+- 60 days following completion of therapy, ideally between 43 and 71 days after in itiation of therapy. 
+Susceptibility data will only be provided for those subjects who fail to eradicate H. pylori . 
+3.2 Randomization  and blinding  
+Subjects will be assigned to treatment using permuted block randomization without additional 
+stratification.  
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 10 of 36 
+ 
+3.3 Study  treatments and assessments  
+A list of subjects screened but  deemed ineligible will be maintained indicating reason(s) for exclusion.  
+Treatment assignments will be based on a centralized computer -generated randomization scheme 
+using permuted block randomiz ation without additional stratification.  
+Each subject will have a randomization code assigned that corresponds to treatment assignment and a 
+unique identifier for drug packaging purposes. Once a subject number and treatment have been 
+assigned to a subject, the subject identification number cannot  be reused even if the subject 
+discontinues the study early or withdraws prior to receiving any study medication. Subjects who 
+discontinue from the study or who have previously participated in the study will not be permitted to 
+re-enroll. Subjects may be r escreened if endoscopic results for H. pylori  are unavailable during the 
+screening window. Subjects will be randomized to one of the following groups:  
+ 
+Treatment Arms:   
+ 
+ 
+444 
+Subjects  
+Randomized   
+Arm 1   
+222 Subjects   
+RHB -105 
+ 
+Arm 2   
+222 Subjects   
+Active Comparator  
+ 
+3.4 Post-treatment Standard of Care   
+Subjects who fail to eradicate H. pylori  will receive susceptibility directed standard of care therapy as 
+prescribed by the treating investigator based on initial pretreatment results, and  will undergo upper 
+endoscopy with culture to assess changes in sus ceptibi lity and resistance. The investig ator may 
+prescribe local standard of care therapy if susceptibility results are not contributory or are unavailable.  
+Susceptibility data will only be provided for those subjects who fail to eradicate H. pylori.  
+A detailed description of procedures and  assessments to be conducted during this study is summarized 
+in the Scheduled of Study Assessments  in Table 1 below.  
+
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 11 of 36 
+ 
+Table 1: Schedule of Study Assessments  - Double -Blind Phase of Study  
+Assessments and Recordings  Visit 0  
+Screening  
+Day -42 
+to -2 Visit 1  
+Baselin e 
+Day 1  Visit 2  
+Phone 
+follow -up 
+Day 8  
+(+1 day)  Visit 3  
+Safety 
+Visit  
+Day 13  
+(+2 days)  Visit 4  
+Phone  
+follow -up 
+Day 28 -60 
+(+2 days)  Visit 5  
+Test of 
+Cure Day 
+43-71 
+(+7 days)  
+Subject Information and Demographics  X      
+Informed Consent  X      
+Inclusion/Exclusion Criteria  X X     
+Urine Pregnancy Test on Females of 
+Child Bearing Potential  X X  X  X 
+Medical History  X X     
+Physical Examination with Vital Signs  X X  X  X 
+Concomitant Medications  X X  X  X 
+Laboratory Studies        
+ Hematology, Chemistry, Urinalysis  X   X  Xb 
+ 13C UBTa Xa     Xa 
+ HBs Ag, HCV Ab, HIV 1 /HIV 2 Abs X      
+Upper Endoscopy to determine H 
+pylori  status)  
+ Biopsy for CLO  
+ Biopsy for histology  
+ Biopsy for culture and 
+susceptibility   
+ 
+X 
+X 
+X 
+      
+ CYP2C19 Genotyping   X     
+Blood Sample for PK Assessment of 
+amoxicillin, omeprazole, rifabutin, and 
+25-O-desacetyl -rifabutin – TO BE 
+PERFORMED ON SUBJECTS WHO 
+EARLY TERMINATE DURING 14 
+DAY COURSE OF TREATMENT IF 
+POSSIBLE    
+Xc  
+  
+Xc   
+Electrocardiogram  X      
+Diary Dispensed   X     
+Randomization   X     
+Study Drug Dispensed   X     
+Critical Review of Diary for:        
+ Missed Doses     X   
+ Concomitant Medications     X   
+Drug Accountability/Compliance     X  X 
+Adverse Event Assessment (SAEs 
+through Visit 5/43 -71 days post 
+initiation of study drug).  
+(Reminder at Visits 2 and 4)    
+X  
+X  
+X  
+X  
+X 
+Stress Compliance and Follow -up   X    
+Stress 13C UBT Testing and Reminder 
+of Upcoming Appointment      X  
+a Subject is to fast from solid food for at least one hour for 13C UBT prior to blood draw. 
+b For subjects with abnormal results at Visit 3.  
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 12 of 36 
+ 
+c Blood samples taken prior to first dose at visit 1, and prior to AM dose at visit 3 to assess plasma levels of amoxicillin, 
+omeprazole, rifabutin, and 25 -O-desacetyl -rifabutin.  
+Table 1: Schedule of Study Assessments  - Standard of Care (SOC) Phase o f Study  
+a Subject is to fast from solid food for at least one hour for 13C UBT prior to blood draw.  
+ Assessments and Recordings  Visit 5A 
+13C UBT  
+Follow -up  
+Day 44 -72  
+(+7 days)  Visit 6  
+SOC Baseline 
+and Endoscopy 
+After Day 44 -
+72  
+(+ 14 days)   
+Visit 7  
+Phone follow -up 
+Day 50 - 79 
+(+2 days)  Visit 8  
+SOC  
+Test of Cure  
+Day 85 – 140 
+(+14 days)  
+Urine Pregnancy Test on Females of Child 
+Bearing Potential   X   
+Vital Signs   X   
+Concomitant Medications   X   
+Unblinded 13C UBT Results:  
+ Subjects with positive result – 
+schedule upper endoscopy  
+ Subjects with negative result – Visit 
+5 is their end -of-study visit  X    
+Susceptibility Directed (initial endoscopy 
+samples) or Standard of Care Therapy to 
+Eradication Failure Subjects with Positive 
+13C UBT   X   
+Endoscopy with Biopsy (x2) for Culture 
+and Susceptibility in Subjects with Positive 
+13C UBT   X   
+Stress Compliance Follow -up and Schedule 
+13C UBT    X  
+13C UBTa    X 
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 13 of 36 
+ 
+4 STUDY ENDPOINTS  
+4.1 Primary efficacy endpoint(s)  
+The primary eff icacy endpoint of this study is:  
+ The occurrence of H. pylori  eradication as confirmed via 13C UBT testing 43 -71 days after 
+initiation of treatment.  In the event a female subject becomes pregnant during the course of 
+the double -blind phase of the study and refuses to undergo the 13C UBT assessment, results of  
+a fecal antigen test may be performed at the local lab  as a substitute.  
+4.2 Secondary efficacy endpoint(s)  
+The secondary efficacy endpoints of this study are:  
+ Antibiotic Resistance and Susceptibility Subgroup Analyses  - 
+The primary endpo int will be summarized within subgroups formed by the presence of H. 
+pylori  susceptibility and resistance to amoxicillin, clarithromycin, metronidazole and rifabutin 
+determined based upon samples obtained prior to initiating study treatment.  The proportio n 
+of subjects with eradicat ion of H. pylori  and the treatment effect (difference in the proportions) 
+will be estimated within each subgroup along with 95% 2 -sided confidence intervals where 
+there are an adequate number of subjects in the subgroup (e.g., at least 20 subjects per 
+subgroup).  
+ Assess th e difference in antibiotic resistance and susceptibility of H. pylori  after treatment 
+with study drug in treatment failure subjects . 
+4.3 Safety endpoint(s)  
+The safety endpoints of this study are:  
+ The occurrence and severity of treatment emergent adverse events  during the study.  
+ Changes from baseline in hematology and chemistry laboratory values.  
+4.4 Exploratory endpoint(s)  
+The exploratory endpoints of this study are:  
+ Upon study completion and unblinding of all subjects, CYP2C19 status will also be 
+summarized and su bgroup analyses of efficacy based on CYP2C19 status and 
+pharmacokinetics will be performed using descriptive methods.   
+ Eradication rates in failure to eradicate subjects who receive susceptibility directed standard 
+of care will be analyzed descriptively.  
+4.5 Pharmacokinetic endpoint(s)  
+The pharmacokinetic endpoint of this study is:  
+ The plasma concentrations of amoxicillin, omeprazole, rifabutin, and the rifabutin metabolite 
+25-O-desacetyl -rifabutin on Day 13 will be summarized by time following most recent dose. 
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 14 of 36 
+ 
+5 SAMPLE SIZE AND POWE R 
+Sample size for this study has been calculated based on a superiority comparison assuming 83% 
+effectiveness for the new treatment, and 70% effectiveness for the control, with 90% power and a 2 -
+sided alpha of 5%. Using these spec ifications, 222 subjects per arm will be required.  
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 15 of 36 
+ 
+6 ANALYSIS POPULATIONS  
+6.1 Full Analysis Set (FAS) / Safety population  
+The FAS (based upon the intention -to-treat principle as described in ICH -E9) will consist of all 
+subjects  who received  at least one dose of  randomized study treatment and will be identical with the 
+safety population  (SAF) . In the FAS subje cts will be analyz ed as randomized, in the SAF subjects will 
+be analyz ed as treated.  If after unblinding it is detected that at least one subject did not re ceive the 
+randomized study treatment summaries specified for the FAS may also be repeated for the SAF.  
+6.2 Modified Intent -to-treat (mITT)  population  
+The mITT  population is a subset of the FAS and will consist of all subjects  who received  at least one 
+dose of  randomized study treatment and undergo a 13C UBT test at Visit 5  (with the allowed exception 
+for female women becoming pregnant outlined in Section 4.1). In the mITT population subjects will 
+be analyzed as randomized.  
+6.3 Per-Protocol population  (PP)  
+The PP  population is a subset of the mITT and will consist of all subjects  who consume at least 75% 
+of planned study treatment received , have no major protocol violations  leading to exclusion from the 
+PP population as determined during the Population Classification meeting (see Section 6.5) and 
+undergo a 13C UBT test at Visit 5  (with the allowed exception for female s becoming pregnant as 
+outlined in Section 4.1). In the PP population subjects will be analyzed as randomized.  
+6.4 PK Population (PKP)  
+The PKP will include those subjects in t he FAS  that have demonstrable presence of any component of 
+investigational drug at Visit 3.  
+6.5 Protocol deviations/violations  and exclusions from analysis sets  
+All violations and exclusions of subjects  from analysis sets will be identified at the Classification  
+Meeting just prior to study unblinding , through clinical review input provided by RedHill.  
+Protocol deviations will be classified as major (key) or minor  (non-key) as outlined in Protocol 
+Deviation Criteria Form Version 2.0, 08 December 2017 . According to the definition in this document 
+a major (key) protocol deviation is any change, divergence or departure from th e study design or 
+procedures  defined in the protocol that might significantly affect a subject's rights, safety or welfare  
+or the completeness, accuracy and/or reliability of the study data. A major protocol  deviation in this 
+sense does not necessarily lea d to exclusion from the PP population . Examples of major protocol 
+deviations that might be exclusive are : 
+ Subject or caregiver did not provide informed consent prior to participation in any study 
+procedures as required and in compliance with ICH/ Good Clinical Practice ( GCP ) 
+
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 16 of 36 
+ 
+ Subject randomized in the study and does not meet inclusion/exclusion criteria  
+ Subject did not complete the final study visit of the double -blind phase (Visit 5) 
+ Subject is not fasting from food and drink 1 hour before  13C UBT test at Visit 5  
+ Subject is a ssigned or provided wrong study medication  kit/ Errors in treatment assignment  
+ Compliance less than 75% with double -blind study drug per pill count  
+ Subject taking a prohibited medication  
+ Subject/ investigator were unblinded to treatme nt 
+ Visit 5 performed earlier than 42 days from V isit l 
+Major protocol deviations leading to exclusion from the PP population will be defined at the 
+Classification Meeting.  
+Major p rotocol deviations leading to exclusion from the PP population will be summarized with 
+descriptive statistics by category. A listing of all deviations (minor and major , also including major 
+deviations not leading to exclusion from PP ) with date of deviation and specifics of events will also 
+be included.  
+   
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 17 of 36 
+ 
+7 STATISTICAL CONSIDE RATIONS AND ANALYSIS  
+7.1 Derived v ariables  
+The below table provide s the list of derived variables for Demographic and baseline characteristics, 
+various duration derivations, drug compliance, baseline derivations and other important derivations 
+applicable for this study.  
+Variables  Formula  
+Demographic and Baseline characteristics  
+Body mass index (BMI) (kg/m2)   weight (kg)/[height (m)] ^2 
+Derivation of Duration  
+Study day at any vis it Date of interest – date of first dose of study drug . One day is 
+added if this difference is ≥ 0  
+Extent of Exposure (Days)  Date of last randomized  study medication intake – Date of first 
+randomized  study medication intake + 1  
+Baseline Derivations  
+Baseline  Visit 1 Day 1   
+Laboratory or vital signs 
+baseline  The baseline value is defined as the last observation prior to the 
+first dose of study drug . 
+Change from baseline  Post baseline value – Baseline  value  
+ 
+7.2 Handling of missing or incomplete data  
+Imputation rules for missing or partial Adverse Event ( AE) start date  for the purpose of identifying 
+treatment -emergent AE s (TEAE) are defined below . These imputed dates are only created for the 
+purpose of identifying TEAE programmatically;  they will not be used in any data displays  
+If only Day of AE start date is missing:  
+If the AE start year and month are the same as that fo r the first dose date, then:  
+ If the full (or partial) AE end date is NOT before the first dose date or AE end date is missing, 
+then impute the AE start day as the day of first dose date; otherwise, impute the AE start day 
+as 1. 
+ Otherwise, impute the AE start day as 1.  
+Compare the imputed AE start date with treatment exposure period to determine whether the AE is 
+pre-treatment AE, TEAE or post -treatment AE.  
+If Day and Month of AE start date are missing:  
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 18 of 36 
+ 
+If AE start year  = first dose year, then:  
+ If the full (or partial) AE end date is NOT before the first dose date or AE end date is missing, 
+then impute the AE start Month and Day as the Month and Day of first dose date; otherwise, 
+impute the AE start Month as January and the Day as 1.  
+ Otherwise, i mpute the AE start Month as January and the D ay as 1. 
+Compare the imputed AE start date with treatment exposure  period to determine whether the AE is 
+pre-treatment AE, TEAE or post -treatment AE.  
+If Year of AE start date is missing:  
+If the year of AE start is missing or AE start date is completely missing then compare the full (or 
+partial) AE end date to the first dose date. If the AE end date is before the first dose date then the AE 
+should be considered as a pre -treatment AE. Otherwise, the AE will be cons idered as TEAE.   
+Imputation rules for missing or partial medication start/stop dates  are defined below:  
+Missing or partial medication start date:  
+ If only D ay is missing, use the first day of the month.  
+ If Day and Month are both missing  and Year is not miss ing, use the first day of the year.  
+ If Day, Month and Year are all missing, use a date before the first dose date.  
+Missing or partial medication stop date:  
+ If only D ay is missing, use the last day of the month.  
+ If Day and Month are both missing, use the last day of the year.  
+ If Day, Month and year are all missing, assign ‘continuing’ status to stop date  
+Date imputation will only be used for computational purposes , e.g., determination of  treatment -
+emergent  status. Actua l date values as they appear in the original CRFs will be shown in the data 
+listings.  
+Non-date Values : 
+There will be no imputation for missing data  for non -date values . 
+   
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 19 of 36 
+ 
+8 STATISTICAL METHODS  
+8.1 General statistical conventions  
+All statistical procedures will be completed using SAS version 9.3® or higher . Specifications for table, 
+figure, and data listing formats can be found in the TFLs specifications for this study.  
+Unless otherwise stated, all statistical testing will be two -sided and will be performed using a 
+significance (alpha) level of 0.05. Two-sided 95%  confidence intervals (CI) will be provided when 
+relevant . P-values will be presented with 4 decimal places . P-values  less than 0.0 001 will be presented 
+as <0.0001 and p -values greater than 0.9999 will be presented as >0.9999 . 
+Continuous variables  will be summarized using descriptive statistics, including number of subjects (n), 
+mean, median , standard deviation ( SD), minimum and maximum.  
+For categorical variables, summaries will include counts of subjects and percentages. Percentages will 
+be rounded to one decimal place.  
+For summary purposes, baseline will be defined as the last available pre -dose value; all  summaries 
+will be presented by treatment grou p, unless otherwise specified.  
+All subject data, including those derived, will be presented in individual subject data listings. Unless 
+otherwise stated, unscheduled visit results will be included in date/time chronological order, within 
+subject listings only. All listings will be sorted by investigational site, subject  number, date/time and 
+visit. The treatment group ( Investigation  Arm, Active compar ator) as well as subject ’s sex and age 
+will be stated on each listing. Unless otherwise stated, data listings will be based on All Subjects 
+Randomized.  
+All analyses and summary tables will be displayed by treatment group. Primary and few  key secondary 
+endpoints will be analyzed by sub -groups. For the definition of subgrou ps of interest please refer  to 
+Section  8.9. 
+  
+
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 20 of 36 
+ 
+8.1.1 Model structure or SAS codes  
+Chi-Square test without  continuity correction   
+The following SAS statements will be used for the primary and secondary endpoint analyses:  
+PROC  FREQ  data=<dataset name>;  
+TABLES  response variable *treatment group  /CHISQ OUT =< output dataset nam e> 
+ OUTPUT  OUT =stats;  
+RUN;  
+8.2 Subject disposition  
+Subject disposition information will be presented for all subjects and summarized by treatment group 
+and overall. The number and percent of subjects who are randomized, who received at least one dose 
+of randomized study treatment , who were ra ndomized and not treated, and who w ere treated and not 
+randomized  will be presented. Further, the number and percent of subjects  who had a test of cure at 
+the end of the double -blind phase , who had a test of cure and a (calculated) compliance ≥ 75%, who 
+had a test of cure and a (calculated) compliance < 75%, who  had no test -of cure after the double -blind 
+phase, who were eligible for the standard of care (SOC) phase, who were eligible for and entered the 
+SOC phase , and who were eligible for but did not enter the SOC phase  will be presented.  For the 
+calculation of compliance see Section 8.5.2 . In addition the number of subjects who discontinued their 
+double -blind treatment but who completed the double -blind phase and vice versa will be shown .  For 
+the subjects who had  a test of cu re at the end of the double blind phase but with (calculated) compliance 
+less than 75% , the reason for treatment discontinuation will be summarized by treatment group and 
+overall with the following categories:  
+ Adverse event  
+ Death  
+ Lost to follow -up 
+ Physician d ecision  
+ Withdrawal by s ubject  
+ Protocol d eviation  
+ Randomized in e rror 
+ Other . 
+The number of subjects randomized will be used as the denominator for the percentage calculation.  
+For the subjects who entered the SOC phase of the trial the number and percentage of subjects who 
+completed the SOC treatment, who discontinued SOC treatment, who completed the SOC phase at 
+Visit 8 and who discontinued  the SOC phase prematurely will be presented. Primary reason for 
+discontinuation of the SOC ph ase and for  discontinuation of SOC treatment will be summarized with 
+the following categories:  
+ Adverse event  
+
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 21 of 36 
+ 
+ Death  
+ Lost to follow -up 
+ Non-compliance with standard of care  
+ Physician d ecision  
+ Withdrawal by s ubject  
+ Protocol d eviation  
+ Other . 
+The number of subjects who entered the SOC phase of the trial will be used as the denominator for the 
+percentage calculation.  
+Subject disposition will be listed.  
+The number and percent of subjects in each analysis set will also be tabulated.  
+The number and percentage of subject s excluded from the mITT and PP population by reason for 
+exclusion will be summarized by treatment group for the FAS . 
+8.3 Protocol deviations  
+The number of subject s with major protocol deviations  leading to exclusion from th e PP population 
+will be summarized by treatment group and overall.  Subject s deviating from a major criterion more 
+than once will be counted once for the corresponding criterion. Any subject s who have more than one 
+major protocol deviation will be counted once in the overall summary.  
+A data listing will be provided by site and subject  for all the major and minor protocol deviations.  
+The protocol deviation s criteria will be uniquely identifie d in the summary table and listing. The 
+unique identifiers will include but are not limited to the following : 
+ < 75% of planned study treatment received  
+ Developed withdrawal criteria during the trial and was not withdrawn  
+ Received wrong treatment or incorre ct dose  
+ Received excluded concomitant medications  
+ Other  
+8.4 Demographics and baseline characteristics  
+Demographic and baseline characteristics, including upper endoscopy to determine H. pylori  status, 
+will be summarized with descriptive statistics by treatment group.  
+8.4.1 Demographics  
+Age (in years), baseline weight (in kg), BMI  (kg/m2) and height (in cm) and other continuous 
+demographic variables at baseline will be summarized descriptively  for the  FAS.  Age category  (< 65, 
+≥ 65 years), sex, primary race, ethnicity and other categorical variables will be summarized using 
+frequency counts for  the FAS. 
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 22 of 36 
+ 
+8.4.2 Baseline and disease characteristics  
+The categorical baseline characteristics such as baseline ECG  overall assessment , Biopsy for 
+Campylobacter -Like Organism ( CLO ), CYP2C19 status, Biopsy for histology and Biopsy for culture 
+and susceptibility  (categorized)  will be summarized using frequency counts for the FAS. Categorized 
+susceptibility will also be summarized by region (sub -regions of the United States),  where a 
+classification of the study sites to region will be done according to the following table.  
+Region  States  
+West  California, Nevada, Utah, Colorado, Ariz ona 
+South  Texas, Oklahoma, Arkansas, Louisiana , Tennessee  
+Southeast  Florida, Alabama, Georgia, South Carolina, North Carolina , Virginia  
+Northeast  Maryland, Connecticut, New York  
+Central  South Dakota, Wisconsin, Michigan   
+Categorized susceptibility may also be summarized by state or study site as a post -hoc analysis.  
+Minimum inhibitory concentration (MIC) values at baseline will be summarized together with the MIC 
+values from Visit 6 for subjects entering the SOC phase. Continuous baseline variables such as vital 
+signs: temperature (°C), systolic blood pressure (mmHg), diastolic blood pressure (mmHg), pulse rate 
+(beats/min) and respiratory rate (breaths/min)  will be summari zed by descriptive statistics in the same 
+way as continuous demographic variables for the FA S.  
+Categorization for Susceptibility of Amoxicillin, Clarithromycin, Metronidazole and Rifabutin will be 
+derived according to the following rules:  
+MIC Values (u g/mL)  
+Antibiotic  Susceptible  Intermediate  Resistant  
+Amoxicillin  ≤ 0.125  - > 0.125  
+Clarithromycin  ≤ 0.25 0.5 > 0.5 
+Metronidazole  ≤ 8 - > 8 
+Rifabutin  ≤ 1 - > 1 
+Source  (except for Clarithromycin) : "The European Committee on Antimicrobial Susceptibility Testing. 
+Breakpoint tables for interpretation of MICs  and zone diameters. Version 8.1, 2 018. http://www.eucast.org .". 
+For Clarithromycin:  “CLSI (Clinical and Laboratory Standards Institute), Methods for Antimicrobial Dilution 
+and Disk Susceptibility Testing of Infrequently Isolated or Fastidious Bacteria, M45, 3rd Edition, 2016 .” 
+8.4.3 Medical history  
+A summary of medical history will be presented by treatment group , system organ class (SOC) and 
+preferred term (PT) using Medical Dictionary for Regulatory Affairs® (Med DRA) Version 19.0 or 
+higher.  
+
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 23 of 36 
+ 
+A comprehensive data listing will also be included.  
+8.4.4 Prior and concomitant medications  
+A prior medication is defined as medication that stopped before the date of the first dose of 
+randomized treatment (i.e. last medication intake is prior to first dose of treatment date (exclusive)).  
+A concomitant medication is defined as a medication with either  
+ a recorded medication start date falling within the double -blind or SOC phase of the trial , or 
+ a recorded medication start date prior to the first day of study medication during the 
+randomized treatment period without any recorded medication stop date prior to the start of 
+the randomized treatment period.  
+Medications with incomplete start or stop date s will be considered concomitant medications if it is 
+possible that they could have been concomitant medications.  
+Concomitant medications will be coded with the World Health Organization (WHO) drug  dictionary 
+(Enhanced – Format C, 03MAR201 5 or later versio n). Concomitant medications will be  summarized 
+for each treatment group by Anatomical Therapeutic Chemical  (ATC ) 3rd level  and preferred  name  for 
+the following two categories  (not exclusive) : 
+ concomitant medications given during the double -blind phase (ie concomitant medications 
+with a start date before or during the double blind phase of the study) , and  
+ concomitant medications (excluding prescribed standard of care (SOC) medications ) given 
+during the SOC phase for subjects entering the SOC phase of the tri al (ie concomitant 
+medications either ongoing on the first day of  SOC medication or with a start date on or 
+after the first day of SOC medication).  
+A data listing will be  included that shows all medications by preferred  name and verbatim name. Prior 
+medications  will be excluded from the summar ies but will be included in the listing.  
+Prescribed SOC medications will be summarized by ATC 3rd level and preferred name for those 
+subjects who entered the SOC phase of the study.  The summary will be done by treatment group of 
+the double -blind phase and overall.  
+8.5 Extent of exposure  
+The following information on drug exposure will be presented for each treatment group for the SA F: 
+ Descriptive statistics for number of days treatment was received and number of capsules 
+taken will be presented by treatment group  
+8.5.1 Treatment duration  
+Duration of double -blinded study drug (in days) will be calculated as: last dose date  – first dose 
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 24 of 36 
+ 
+date + 1 day, regardl ess of study drug interruption.  
+Treatment duration  will be summari zed by treatment group on the SAF using descriptive statistics.  
+Duration of SOC treatment for subjects entering the SOC phase of the trial will be calculated as last 
+dose date  of SOC treatment  – first dose date  of SOC treatment  + 1 day and summarized in the 
+pertaining group of subjects.  The summary will be done by treatment group of the double -blind phase 
+and overall.  
+8.5.2 Treatment compliance  
+Subjects will be instructed to bring t heir study medication and all empty packaging to each  clinic visit. 
+Compliance with double -blinded study drug will be assessed by capsule counts, and details will be 
+recorded and reconciled  against expected medication use. Compliance will be calculated as a 
+percentage of expected usage at each study visit as follows:  
+For all subjects (including those who do not complete the treatment with study medication ) compliance 
+(%) will be calculated as  
+100  x [(total  number  of capsules  dispensed ) – (total  number  of capsules  returned )]
+168 
+Subject s taking too many capsules will have a resulting compliance of over 100%.  
+Study drug compliance will be summarized by treatment group with descriptive statistics . They will 
+also be summarized in categories “< =75% compliant” , “>75% – 90% compliant” , “>90% – 100% 
+compliant”, and “> 100% compliant”  using frequency tables.  
+Compliance with SOC treatment will not be considered.  
+All exposure and compliance data will be provided in data listings.  
+8.6 Efficacy  analys es 
+All efficacy analyses will be conducted on the FAS  as primary analyses and repeated on the  mITT and 
+PP populations as sensitivity analyses . 
+8.6.1 Analysis of p rimary efficacy endpoint (s) 
+The primary endpoint is this study is eradication of H. pylori  as confirmed via 13C UBT test results at 
+the test of cure Visit 5 (Day 43 -71) or fecal antigen test . Subjects with negative test results will be 
+considered treatment successes. Subjects who test positive for H. pylori  infection  will be considered 
+treatmen t failures , those subjects with indeterminate, not assessable, or missing results from actual test 
+of cure visits will undergo a repeat 13C UBT testing. Persistent indeterminate results and subjects 
+without any 13C UBT test after baseline will be considere d as treatment failures  and will be included 
+as additional (sub -)category in the pertaining summary tables . 
+Subjects who have their test of cure visit  prior to 28 days after their last dose of study medication will 
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 25 of 36 
+ 
+have a re -test within the protocol define d visit window  of Visit 5 . In this case the result of the re -test 
+will be used in the primary analysis . In case this happens in more than 5 cases, a  sensitivity analysis 
+will be done in the FAS where the results from the first 13C UBT test will be used instead of the results 
+from the re -test. 
+ 
+Hypotheses:  
+Let p O denote the response rate under RHB -105 and p P denote the response rate under the active 
+compar ator then the primary two -sided hypothesis to be tested is  
+H0: pO - pP = 0  
+vs the alternative  
+H1: pO - pP ≠ 0 
+This hypothesis will be evaluated usi ng the FAS as the primary analysis population.  
+ 
+Proportion of subjects with eradication of H. pylori will be tested between two treatment  groups  using 
+the chi -square test at the 5% level of significance ; in addition the e stimated treatment difference along 
+with the corresponding 95% CI  will be presented.    
+As s ensitivity analyses the analysis of the primary endpoint will be repeated in the mITT and PP 
+populations (where those subjects lost to follow -up or not completing Visit 5 will be excluded from 
+the analys is). Further, the following sensitivity analyses to investigate the impact of imputation rules 
+for subjects wh o did not provide a result of the 13C UBT test  at Visit 5 will be added in the FAS:  
+1. Eradication rates by treatment will be calculated in subjects with observed data (mITT 
+population), and the same eradication rates will be assumed for subjects with unobser ved 
+(missing) data. For this purpose, multiple imputations will be used where for a subject 
+with missing data the event of eradication/non -eradication will be randomly assigned 
+according to a Bernoulli -distribution with rate as estimated from the subjects with 
+observed data. The results of this multiple imputation will be combined over the iterations 
+according to the method of Rubin (1987) to generate an estimator for the treatment 
+difference with corresponding 95% CI and a p -value for the associated chi -square test.  
+2. All active -controlled subjects with missing data will be assumed as treatment successes  
+while all subjects treated with the investigational regimen will be assumed as  treatment 
+failures . Thi s method is used only to give a lower  bound on the upper limit of the 
+confidence interval for the difference in eradication rates because such a scenario would 
+be unlikely to actually occur.  
+3. All subjects  with missing data will be assumed as treatment successes.  
+Sensitivity analyses   2. and 3 . will be conducted  in a similar manner to the primary analysis.   
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 26 of 36 
+ 
+A further analysis of the primary efficacy parameter will be performed by study site. For this analysis, 
+sites which have randomized less than 5 subjects  will be pooled by region of the United States (see 
+table in Section 8.4.2 ) to form clusters of sites by region. If  after this step there is still a (pooled) site 
+with less than 5 subjects , this site will be pooled with the smallest pooled site from the other regions.  
+8.6.2 Analysis of secondary efficacy endpoint (s) 
+Antibiotic Resistance and Susceptibility Subgroup Analyses  -  
+The primary endpoint will be summarized within subgroups formed by the presence of H. pylori  
+susceptibility and resistance to amoxicillin, clarithromycin, metronidazole and rifabutin determined 
+based upon samples obtained prior to initiating study treatmen t. 
+Proportion of subjects with eradicat ion of  H. pylori will be tested between two treatment  groups  using 
+the chi -square test at the 5% level of significance ; in addition estimated differences within  each 
+subgroup along with 95% CIs will be presented.  
+Assess the difference in antibiotic resistance : 
+The difference in antibiotic resistance and susceptibility of H. pylori  after treatment with study drug 
+in treatment failure subjects will be summarized by treatment group. No formal statistical tests will be  
+performed for group comparison . 
+8.6.3 Analysis of exploratory  endpoint (s) 
+Upon study completion and unblinding of all subjects, CYP2C19 status (performed at  baseline) will 
+be summarized by treatment arm. CYP2C19 status is classified as ultra rapid  metabolizers, extensive 
+metabolizers, intermediate metabolizers and poor metabolizers . A summary table of CYP2C19 status 
+and H. pylori  infection eradication success will be presented, and a chi -square test will be performed 
+to test if CYP2C19 status is associated with treatment success.  
+Further subgroup analyse s of efficacy  will be done by subgroups based on pharmacokinetic measures . 
+Definition of these measures will be provided after finalization of the double -blind study phase.    
+Subjects who have a positive 13C UBT test at Visit 5  will receive SOC  therapy for a certain time and 
+then have a further test -of cure visit (Visit 8) . Eradicat ion rates for H. pylori  at V8 will be summarized  
+overall and by treatment group in the double -blind study phase . 
+8.7 Safety analys es 
+Safety analyses will be conducted on the SAF and will be performed for all safety variables specified 
+below.  
+All safety data will be summarized by treatment group.  
+No statistical test s will be performed.  
+
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 27 of 36 
+ 
+8.7.1 Adverse events  
+A treatment emergent adverse event (TEAE) is defined as any unfavorable and unintended sign, 
+symptom, physical finding or disease, whether or not  believed to be related to the investigational 
+product that arises after the first dose of study drug was administered  and not later than 28 days 
+following the last dose of study drug . This includes any occurrence that was new in onset or aggravated 
+in sev erity or frequency from the time the first dose of study drug was administered. Abnormal results 
+of diagnostic procedures, or laboratory test abnormalities, should also be considered as TEAEs, ONLY 
+if they result in any of the following:   
+ Discontinuation of study drug  
+ Require treatment or any other therapeutic intervention and/or  
+ Require further diagnostic evaluation (excluding a repetition of the same procedure to confirm 
+the abnormality)  
+All events, TEAEs and Serious adverse events ( SAE)s, regardless of severity or causality, that occur 
+between the time of first study drug administration  and within 28 days following the last dose of 
+blinded study drug are to be documented on the adverse event case report form with indications of 
+onset, duration, severity (mild, moderate, and severe), seriousness, relationship to study drug 
+(unrelated, unlikely, possible, probable, definite), remedial actions taken, and outcome.  
+All SAEs occurring during the administration of standard of care (SOC) drug are to be documented as 
+SAEs on serious adve rse event case report form (for SOC) with indications of onset, duration, severity 
+(mild, moderate, and severe), relationship to SOC drug (unrelated, unlikely, possible, probably, 
+definite), remedi al actions take n, and outcome. If the SAE is deemed to be related to any of the standard 
+of care drugs, it is the responsibility of the investigator to report the event to the manufacturer of the 
+related drug, through the manufacturer’s post -marketing surveillance system . Determination of 
+eradication of H. Pylori  infection will be based on 13C UBT testing done between 43 and 71 days after 
+initiation of blinded therapy. Due to this delay in time of 28 -60 days, any SAE s that occur during the 
+SOC dosing period will NOT be considered related to the study treatment regimen of RHB -105 or 
+active comparator . 
+All Adverse events (AEs) will be classified by Primary System Organ Class (SOC) and Preferred Term 
+(PT) according to the  Medical Dictionary for Regulatory Activities (MedDRA) Version 19.0 or higher . 
+In summaries by SOC and PT, adverse events will be sorted by decreasing frequency in the overall 
+total of SOC and of PT within each SOC . Events of the same frequency within clas sification level  are 
+sorted alphabetically.  
+AE summary tables will be presented for TEAEs only and will include the following:  
+ All TEAEs  
+ Related TEAEs (AE will be defined as related if causality is definite or probable or possible)  
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 28 of 36 
+ 
+ TEAE’s by closest related  
+ TEAEs by action taken  
+ TEAEs by maximum severity  
+ TEAEs leading to treatment discontinuation  
+All TEAEs will be summarized by SOC, PT and treatment group using frequency counts and 
+percentages (i.e.,  number and percentage of subjects with an event). In addition an overall summary 
+for the categories above will be prepared by treatment group and overall.  
+Where a subject has multiple adverse events within the same system organ class /with the same 
+preferred term  in the treatment period, the subject will o nly be counted once at the system organ class 
+level /for this preferred term  in adverse event frequency tables.  
+Events without recorded intensity /causality taken are summarized as severe /related.  
+All AEs will be included in comprehensive data listings. A separate listing will be included for AEs 
+leading to discontinuation from study.  
+8.7.2 Serious a dverse events  
+A serious adverse event (SAE) or reaction is any untoward medical occurrence that at any dose:   
+ Results in death  
+ Is life -threatening, NOTE: The term "life -threatening" in the definition of "serious" refers to 
+an event in which the subject was at risk of death at the time of the event; it does not refer to 
+an event which hypothetically might have caused death if it wer e more severe  
+ Requires inpatient hospitalization or prolongation of existing hospitalization  
+ Results in persistent or significant disability/incapacity  
+ Results in a congenital anomaly/birth defect  
+ Is considered medically significant . 
+Separate data list ings and summaries will be presented for all SAEs and deaths.  
+ Serious TEAEs  
+ Serious related TEAEs  
+Individual subject data listings will be provided for all deaths  and discontinuation of study 
+medication due to TEA Es. 
+8.7.3 Clinical laboratory evaluations  
+Key laboratory data ( Chemistry  and hematology , see Table 2 Table 2 ) will be subjected to both a 
+quantitative analysis and qualitative analysis where frequencies of normal, abnormal low, and 
+abnormal high values will be computed. Additionally, abnormal results will be summarized with 
+frequencies and percentages by clinica l significance, panel, test,  treatment group, and time point . 
+
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 29 of 36 
+ 
+Urinalysis results and viral serology results at baseline  will not be summarized but only presented in 
+data listings . Pregnancy test results will also be summar ized.  
+Shift tables demonstrating t he changes (low/normal/ abnormal ) from baseline to worst post -baseline 
+value will be displayed in cross -tabulations by panel, test and treatment group.  
+Other  laboratory assessments and change from baseline , where applicable,  will be summarized with 
+descriptive  statistics by panel, test, treatment group, and time point.  For these quantitative analyses US 
+conventional units will be used for all summaries.  
+Data listing s will display all laboratory test results  along with findin gs. 
+  
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 30 of 36 
+ 
+Table 2: Laboratory assessments in the RHB -105-20 study  
+Hematology  Clinical Chemistry  Special Testing  Urinalysis  
+Hematocrit   
+Hemoglobin   
+Red blood cell 
+(RBC) count   
+White blood cell 
+(WBC) count  
+Neutrophils   
+Bands  
+Lymphocytes   
+Monocytes  
+Basophils   
+Eosinophils   
+Platelet count 
+(estimate not  
+acceptable)   Blood urea nitrogen (BUN)   
+Creatinine   
+Creatinine Clearance  
+Total bilirubin  (Direct and 
+indirect fractionated)  
+Lactate Dehydrogenase 
+(LDH)  
+Serum glutamic -pyruvic   
+transaminase 
+(SGPT)/alanine  
+aminotransferase (ALT)  
+Serum glutamic -oxaloacetic  
+transaminase 
+(SGOT)/aspartate  
+aminotransferase (AST)   
+Creatine phosphokinase   
+Alkaline phosphatase   
+Sodium   
+Potassium   
+Chloride   
+Gamma -glutamyltransferase 
+(GGT)   
+Bicarbonate   
+Calcium  
+Magnesium   
+Inorganic phosphorus  
+Amylase  
+Uric acid   
+Total cholesterol   
+Total protein   
+Glucose   
+Albumin  CYP 2C19 genotyping  
+HBs Ag  
+HCV Ab  
+HIV1 antibody  
+HIV2 antibody  
+ 
+Pharmacokinetic  
+testing for:  
+amoxicillin, 
+omeprazole, 
+rifabutin, and 25 -
+O-desacetylrifabutin  
+ 
+Urine pregnancy  
+ 
+13C Urea Breath Test  
+ 
+Culture and 
+Resistance/ 
+Susceptibility for H. 
+pylori  
+ 
+CLO – Campylobacter  
+Like Organism 
+(Rapid Urease Test)  
+ 
+Histology for H. 
+pylori  
+  
+ Leucocytes  
+Nitrite  
+Protein  
+pH  
+Blood  
+Specific gravity   
+Ketones   
+Glucose  
+Sediment 
+microscopy, If 
+indicated by 
+the dipstick  
+  
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 31 of 36 
+ 
+8.7.4 Vital signs  
+The results and change s from baseline of vital signs (pulse, respiratory rate, supine systolic and supine 
+diastolic blood pressure, oral temperature, and weight) will be summarized with descriptive statistics 
+by treatment group and time point. A data listing of all vital signs data (including height  at screening ) 
+will also be included.  
+8.7.5 Physical examination s 
+The physical examination listing will include date of exam, result (normal, abnormal, not examined ), 
+and description of  abnormality for each major body system (general appearance, 
+head/eyes/ears/nose/throat,  neck, lungs, heart, abdomen, genitourinary, extremities, neurological, skin, 
+and lymphatics).  Detailed results of the general physical examination are only provided for the 
+screening visit, otherwise it will only be denoted whether any clinically significant changes since the 
+last study visit have been observed.   
+The results of physical examinations at screening will be summarized with frequencies and 
+percentages  by body system  and treatment group.   
+All physical examination data will be displayed in data listings, one for the screening results and one 
+for the subsequent changes.  
+8.7.6 Electrocardiograms  
+ECG measurements (heart rate, PR, QRS, QT, QTcF) as well as ECG results (normal,  abnormal not 
+clinically significant, abnormal clinically significant) are measured at screening  only. ECG 
+measurements will be summarized by descriptive statistics and ECG results  with frequencies and 
+percentages by treatment group. All  ECG data will be displayed in a data listing.   
+8.8 Pharmacok inetic (PK) analys es  
+All PK analyses will be performed in the PK population.  
+Blood samples will be collected to assay the plasma concentrations of amoxicillin, omeprazole, 
+rifabutin, and the rifabutin metabolite 25 -O-desacetyl -rifabutin at baseline Visit 1 (Day 1) before the 
+first dose of double -blinded study medication and Visit 3  (Day 13).  
+Plasma samples will be analyzed using validated methodology.  Plasma concentration data for each 
+analyte by time and treatment will be summarized through data tabulations and using descriptive 
+statistics ( n, mean, standard deviation, coefficient of variation [CV%], geometric mean, geometric 
+CV%, median, minimum, and maximum). Comprehensive data listings will also be included.  
+Plasma concentration data will also be summarized by the primary efficacy endpoint . 
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 32 of 36 
+ 
+8.9 Subgroup  analyse s 
+The primary efficacy endpoint will be analyzed within subgroups formed by the presence of H. pylori  
+susceptibility and resistance to amoxicillin, clarithromycin, metronidazole and rifabutin determined 
+based upon samples obtained prior to initiating study t reatment . Further subgroup analyses or the 
+primary efficacy endpoint will be performed by CYP2C19 status and by subgroups based on 
+pharmacokinetic measures.  
+8.10 Interim analysis  
+No interim analysis is planned for this study.  
+8.11 Analysis after the double -blind  phase of the study  
+To allow for early availability of the primary efficacy and most important safety results there will be 
+a primary lock of the databases after all patients have finalized the double -blind study phase and only 
+the patients evaluable for t he SOC phase continue their participation. Unblinding of the study and also 
+the Population Classification meeting (see section 6.5) will be done at this stage.  
+The following analyses will be part of the primary study results:  
+ Subject disposition and location to analysis populations  
+ Demography  
+ Treatment exposure and compliance  
+ Responder analysis of eradication of H. pylori  
+ Responder analys is by resistance/susceptibility to an tibiotics  
+ Eradication of  H. pylori by CYP2C19 Status  
+ Treatment emergent AEs and SAEs.  
+ 
+
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 33 of 36 
+ 
+9 CHANGES TO PLANNED A NALYSIS FROM STUDY 
+PROTOCOL  
+For the secondary endpoints the protocol states that “ The proportion of subjects with failure to 
+eradicat e H. pylori  and the treatment effect (difference in the proportions) will be estimated 
+within each subgroup along with 95% 2 -sided confidence intervals …” F or the primary 
+endpoint the proportion of subjects with treatment success (eradication of H. pylori ) is 
+evaluated, this proportion will now also be used for all  secondary endpoints  to ensure 
+comparable results.   
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 34 of 36 
+ 
+10 REFERENCES  
+1. ICH Topic E3: Structure and Conte nt of Clinical Study Reports (CPMP/ICH/137/95 - adopted 
+December 1995).  
+2. ICH Topic E9: Statistical Principles for Clinical Trials (CPMP/ICH/363/96 – adopted March 
+1998).  
+3. Rubin, D. B. (1987). Multiple Imputation for Nonresponse in Surveys. New York: John Wiley 
+& Sons.  
+  
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 35 of 36 
+ 
+11 APPENDICES  
+Appendix A - Definitions for Clinical and Laboratory Adverse Events  
+  
+All adverse events (clinical and laboratory) will be rated as follows:  
+  
+Severity (Clinical Events Only)  
+  
+ 
+Severity of clinical events are to be graded  as follows:  
+ 1 = Mild:  Event Is noticeable to the subject, does not interfere with the subject’s 
+daily activities and usually does not require additional therapy or dose 
+adjustment.  
+ 2 = Moderate:  Event may interfere with the subject’s daily activities and may require 
+additional therapy  
+ 3 = Severe:  Event may severely limit the subject’s daily activities and typically requires 
+therapy or intervention.  
+  
+ 
+Causal Relationship  
+The investigators are to assess the causal relationship  of all AEs using the following five categories:  
+Relationship  Causality  Description  
+Not related to 
+investigational 
+agent  Unrelated  The AE is clearly not related to the investigational agent.  
+Unlikely  The AE is doubtfully related to the investigational agent.  
+Related to 
+investigational 
+agent  Possible  The AE may be related to the investigational agent.  
+Probable  The AE is likely to be related to the investigational 
+agent.  
+Definite  The AE is clearly related to the investigational agent.  
+ Statistical Analysis Plan (SAP)   
+ 
+ 
+RedHill Biopharma Ltd .  
+ 
+ 
+ 
+Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: Final  2.0, Date: 20 Nov 2018  
+                                                                                 Page 36 of 36 
+ 
+Appendix B - Visit Window  
+Day 1 for the treatment period is the start date of double -blinded study  medication.  
+Table  3: Visit windows for treatment period (up to  Visit 8 )  
+Visit  Period  Day range  
+Visit 0  Screening  Day -42 to -2 
+Visit 1  Baseline  Day 1  
+Visit 2  Phone  Day 8 + /- 1 
+Visit 3  Safety  Day 13 +/ - 2 
+Visit 4  Phone  Day 28 – 60 +/ - 2 
+Visit 5  Test of Cure  Day 43 – 71 + 7  
+Visit 5a  13C UBT Follow -up Day 44 – 72 +7  
+Visit 6  SOC Baseline  After Day 44 – 72 +14  
+Visit 7  Phone  Day 50 – 79 +/ - 2 
+Visit 8  Test of Cure  Day 85 – 140 + 14 
+ 
+ Addendum to the Statistical 
+Analysis Plan (SAP)  
+RedHill Biopharma Ltd .  
+ 
+ 
+Addendum to the Statistical Analysis Plan  
+Protocol Number:  RHB -105-02                                        Version: Final 1.0 , Date: 06 Feb 2019  
+                                                                                    Page 1 of 11 
+ 
+Protocol Title : A Randomized Double Blind Active Comparator Controlled Phase 
+III Study to Assess the Safety and Efficacy  of RHB -105 in the 
+Treatment of Confirmed Helicobacter pylori ( H. pylori ) Infection  
+Protocol  Number : RHB -105-02 
+Protocol Version, Date  Protocol Amendment 3 , 22 Mar 2018 
+ICON ID:  3101/0005  
+Document  Version , Date : Version 1 .0,  06 Feb 2019  
+ 
+ 
+ 
+ 
+ 
+Prepared by:  
+ICON Clinical Research Services  
+ 
+On behalf of : 
+RedHill Biopharma Ltd.  
+ 
+ 
+ 
+ 
+ Confidentiality statement:  
+ The information provided in this document is strictly confidential.  
+ The recipients of the SAP must not disclose the confidential information contained 
+within this document or any related information to other persons  without the 
+permission of the sponsor . 
+ In addition,  the recipients of the SAP  must keep this confidential document in a 
+controlled environment which prevents unauthorized access to the document.   
+  
+ Addendum to the Statistical Analysis Plan (SAP)   
+RedHill Biopharma Ltd . 
+ 
+ 
+ 
+Addendum to the Statistical Analysis Plan  
+Protocol Number:  RHB -105-02 Version: 1.0, Date: 06 Feb 2019  
+Page 3 of 11   
+ 
+REVISION HISTORY  
+ 
+ Version/Date  Version name  Section  Changes implemented  
+Version 1.0/  06 
+Feb 2019 Initial version  N/A N/A 
+ Addendum to the Statistical Analysis 
+Plan (SAP)   
+RedHill Biopharma 
+Ltd. 
+ 
+ 
+ 
+Addendum to the Statistical Analysis Plan  
+Protocol Number:  RHB -105-02                                                        Version: Final 1.0 , Date: 06 Feb 2019                                     
+                                                                                                Page 4 of 11 
+ 
+TABLE OF CONTENTS  
+ 
+SIGNATURE PAGE  ................................ ................................ ................................ .............  2 
+REVISION HISTORY ................................ ................................ ................................ ...........  3 
+TABLE OF CONTENTS  ................................ ................................ ................................ ....... 4 
+1 INTRODUCTION  ................................ ................................ ................................ ...........  5 
+2 Specification Of additionaL Analyses  ................................ ................................ .............  6 
+2.1 Additional Analyses of Efficacy  ................................ ................................ .............  6 
+2.2 Additional Analyses of Safety  ................................ ................................ ................  6 
+  
+ Addendum to the Statistical Analysis 
+Plan (SAP)   
+RedHill Biopharma 
+Ltd. 
+ 
+ 
+ 
+Addendum to the Statistical Analysis Plan  
+Protocol Number:  RHB -105-02                                                        Version: Final 1.0 , Date: 06 Feb 2019                                     
+                                                                                                Page 5 of 11 
+ 
+1 INTRODUCTION  
+The purpose of th is Addendum to the Statistical A nalysis Plan (SAP) is to provide a description of 
+additional ad-hoc analyses performed after the final statistical analysis for study protocol RHB -105-
+02 “A Randomized Double Blind Active Comparator Controlled Phase III Study to Assess the Safety 
+and Efficacy  of RHB -105 in the Treatment of Confirmed Helicobacter pylori ( H. pylori ) Infection ”, 
+Amendment 3  dated 22 Mar  2018.  
+  
+ Addendum to the Statistical Analysis 
+Plan (SAP)   
+RedHill Biopharma 
+Ltd. 
+ 
+ 
+ 
+Addendum to the Statistical Analysis Plan  
+Protocol Number:  RHB -105-02                                                        Version: Final 1.0 , Date: 06 Feb 2019                                     
+                                                                                                Page 6 of 11 
+ 
+2 SPECIFICATION OF  ADDITIONAL  ANALYSES  
+2.1 Additional Analyses of Efficacy  
+To investigate the primary efficacy outcome in relation to pharmacokinetic results three  sensitivity 
+analyses will be performed:  
+1. A sensitivity analyses performed in the Full Analysis Set (FAS) excluding patients from the 
+active comparator group that have a measurable rifabutin concentration at Visit 3.  
+2. A sensitivity analysis performed in the Pharmacokinetic (PK) population, defined as s ubjects 
+in the FAS that have demonstrable presence of any component of investigational drug at 
+Visit 3  or for whom the PK assessment at Visit 3 was performed more than 250 hours after 
+the last dose of randomized study drug before this assessment.  
+3. A sensitivity analysis perf ormed in the PK population where i n addition, as in the first 
+sensitivity analysis , patients from the active comparator group that have a measurable 
+rifabutin concentration at Visit 3 will be excluded from the analysis.  
+ 
+2.2 Additional Analyses of Safety  
+To investigate the comparability of tolerance and sa fety of RHB -105 over the different phenotypes 
+according to CYP2C19 genotyping results the number of treatment -emergent adverse event s 
+(TEAE)/n umber of subjects with any TEAE  and the n umber of serious adve rse events (SAE)/n umber 
+of subjects with any SAE will be provided by phenotype.  
+ Addendum to the Statistical Analysis Plan (SAP)   
+RedHill Biopharma Ltd . 
+ 
+ 
+ 
+Addendum to the Statistical Analysis Plan  
+Protocol Number:  RHB -105-02                                                                                                                                                                                                         Version: Final 1.0 , Date: 06 Feb 2019                                     
+                                                                                                                                                                                                                                               Page 7 of 11 
+ 
+3 TABLE MOCKS  
+ 
+Ad-hoc Table 1  
+Responder Analysis of Eradication of H. pylori : Sensitivity Analysis Excluding Subjects in the Active Comparator Group with Nonnegative C oncentrations of 
+Rifabutin at Visit 3  
+Full Analysis Set  
+ 
+ 
+Eradication of H. pylori  RHB-105 
+(N=xxx) Active Comparator  
+ (N=xxx) Treatment Difference  
+          
+n xx xx  
+Responder  xx (xx.x)  xx (xx.x)   
+95% CI for proportion of responder  (xx.x, xx.x)  (xx.x, xx.x)   
+Non-responder  xx (xx.x)  xx (xx.x)   
+   Positive test result  xx (xx.x)  xx (xx.x)   
+   Missing post -baseline test result   xx (xx.x)  xx (xx.x)   
+    
+Difference of Response rates (RHB -105 – Active Comparator)  xx.x 
+95% CI    (xx.x, xx.x)  
+p-value[a]    0.xxx 
+    
+    
+CI = Confidence Interval.  
+RHB-105 – all-in-one' combination oral capsule containing 12.5 mg rifabutin, 250 mg amoxicillin, and 10 mg omeprazole.  
+Active Comparator - all-in-one' combination oral capsule containing 250 mg amoxicillin, and 10 mg omeprazole.  
+n is the number o f subjects in FAS population excluding subjects in the Active Comparator Group wit h nonnegative c oncentrations of Rifabutin at Visit 3 . 
+Percentages are based on n . 
+Eradication of H. pylori as confirmed via 13C UBT test results at the test of cure Visit 5 ( Day 43-71) or fecal antigen test. Subjects with negative test 
+results are considered as treatment successes (responder). Subjects who test positive for H. pylori infection are considered as treatment failures (non -
+responder). Subjects with indeterminate, n ot assessable, or missing results from actual test of cure visits should undergo a repeat 13C UBT testing.  
+Subjects with persistent indeterminate results and subjects without any 13C UBT test after baseline will be considered as treatment failures.  
+95% CI for the proportion of responder are based on Wilson’s method.  
+[a] P-value based on Chi -square test.  
+ 
+          
+Source: Listing 16.2.6.1  
+Program Name: xxxxxx.SAS                                            DB Snapshot/Lock Date: DDMMMYYYY                             Runtime: DDMMMYYYY HH:MM  
+ Addendum to the Statistical Analysis Plan (SAP)   
+RedHill Biopharma Ltd . 
+ 
+ 
+ 
+Addendum to the Statistical Analysis Plan  
+Protocol Number:  RHB -105-02                                                                                                                                                                                                         Version: Final 1.0 , Date: 06 Feb 2019                                     
+                                                                                                                                                                                                                                               Page 8 of 11 
+ 
+ 
+Ad-hoc Table 2 
+Responder Analysis of Eradication of H. pylori  
+PK Analysis Set  
+ 
+ 
+ 
+Eradication of H. pylori  RHB-105 
+(N=xxx) Active Comparator  
+ (N=xxx) Treatment Difference  
+          
+Responder  xx (xx.x)  xx (xx.x)   
+95% CI for proportion of responder  (xx.x, xx.x)  (xx.x, xx.x)   
+Non-responder  xx (xx.x)  xx (xx.x)   
+   Positive test result  xx (xx.x)  xx (xx.x)   
+   Missing post -baseline test result   xx (xx.x)  xx (xx.x)   
+    
+Difference of Response rates (RHB -105 – Active Comparator)  xx.x 
+95% CI    (xx.x, xx.x)  
+p-value[a]    0.xxx 
+    
+    
+CI = Confidence Interval.  
+RHB-105 – all-in-one' combination oral capsule containing 12.5 mg rifabutin, 250 mg amoxicillin, and 10 mg omeprazole.  
+Active Comparator - all-in-one' combination oral capsule containing 250 mg amoxicillin, and 10 mg omeprazole.  
+N is the number of subjects in PK analysis set.  Percentages are based on N . 
+Eradication of H. pylori as confirmed via 13C UBT test results at the test of cure Visit 5 (Day 43 -71) or fecal antigen test. Subjects with negative test 
+results are considered as treatment successes (responder). Subjects who test positive for H. pylori infection are considered as treatment failures (non -
+responder). Subjects with indeterminate, not assessa ble, or missing results from actual test of cure visits should undergo a repeat 13C UBT testing.  
+Subjects with persistent indeterminate results and subjects without any 13C UBT test after baseline will be considered as treatment failures.  
+95% CI for the p roportion of responder are based on Wilson’s method.  
+[a] P-value based on Chi -square test.  
+ 
+          
+Source: Listing 16.2.6.1  
+Program Name: xxxxxx.SAS                                            DB Snapshot/Lock Date: DDMMMYYYY                             Runtime: DDMMMYYYY HH:MM  
+ 
+ 
+ 
+ 
+ 
+ 
+ Addendum to the Statistical Analysis Plan (SAP)   
+RedHill Biopharma Ltd . 
+ 
+ 
+ 
+Addendum to the Statistical Analysis Plan  
+Protocol Number:  RHB -105-02                                                                                                                                                                                                         Version: Final 1.0 , Date: 06 Feb 2019                                     
+                                                                                                                                                                                                                                               Page 9 of 11 
+ 
+Repeat Ad -hoc table 1 for : 
+ 
+Ad-hoc Table 3 
+Responder Analysis of Eradication of H. pylori: Sensitivity Analysis Excluding Subjects in the Active Comparator Group with N onnegative C oncentrations of 
+Rifabutin at Visit 3  
+PK Analysis Set  
+  
+ Addendum to the Statistical Analysis Plan (SAP)   
+RedHill Biopharma Ltd . 
+ 
+ 
+ 
+Addendum to the Statistical Analysis Plan  
+Protocol Number:  RHB -105-02                                                                                                                                                                                                         Version: Final 1.0 , Date: 06 Feb 2019                                     
+                                                                                                                                                                                                                                               Page 10 of 11 
+ 
+Ad-hoc Table 4 
+Overall Summary of Treatment Emergent Adverse Events (TEAEs)  by CYP2C19 Status  
+Safety Analysis Set  
+ 
+             
+CYP2C19 Status at Baseline  
+       Overall Incidence  RHB-105 
+(N=xxx) 
+n (%) Active 
+Comparator  
+ (N=xxx) 
+n (%) Overall 
+(N=xxx) 
+n (%) 
+    
+    
+Ultrarapid metabolizers     
+       n xx xxx xxx 
+       Number of TEAEs  in the double blind phase  xxx xxx xxx 
+       Number of Subjects with any TEAE  in the double blind phase   xx (xx.x)  xx (xx.x)  xx (xx.x)  
+    
+       Number of Serious Adverse Events (SAEs) in the double blind phase  xxx xxx xxx 
+       Number of Subjects with any SAE in the double blind phase  xx (xx.x)  xx (xx.x)  xx (xx.x)  
+    
+Rapid metabolizers     
+       …    
+    
+Normal metabolizers     
+       …     
+    
+Intermediate metabolizers     
+       …    
+    
+Poor metabolizers     
+       …    
+    
+AE=Adverse Events; SAE=Serious Adverse Events; TEAE=Treatment Emergent Adverse Events  
+N=number of subjects in the treatment group analysis set.  
+RHB-105 – all-in-one' combination oral capsule containing 12.5 mg rifabutin, 250 mg amoxicillin, and 10 mg omeprazole.  
+Active Comparator - all-in-one' combination oral capsule containing 250 mg amoxicillin, and 10 mg omeprazole.  
+n is the number of subjects  in the Safety Analysis Set  in each treatment group by CYP2C19 status at baseline. Percentages are based on n.  
+Treatment emergent adverse event is defined as any event that occurs on or after the first dose of study drug administration and not later than 28 days 
+following the last dose of study drug or any pre -existing event which worsened in severity after dosing.  
+ 
+Source: Listing 16.2.7.1.1  
+ Addendum to the Statistical Analysis Plan (SAP)   
+RedHill Biopharma Ltd . 
+ 
+ 
+ 
+Addendum to the Statistical Analysis Plan  
+Protocol Number:  RHB -105-02                                                                                                                                                                                                         Version: Final 1.0 , Date: 06 Feb 2019                                     
+                                                                                                                                                                                                                                               Page 11 of 11 
+ 
+Program Name: xxxxxx.SAS                                            DB Snapshot/Lock Date: DDMMMYYYY                             Runtime: DDMMMYYYY HH:MM  

@@ -1,0 +1,76 @@
+Smartphone  Training  for Attention  Regulation  for IBS 
+[STUDY_ID_REMOVED]  
+February 11, [ADDRESS_241274]. Creswell and our team biostatistician (co -I [CONTACT_202192]) will 
+coordinate the data analytic aspects of the project, and carry out the proposed mixed effect linear models 
+(MLMs). A secure de -identified database will be maintained by [CONTACT_978] [INVESTIGATOR_187081] (see Budget 
+Justification). A CONSORT flowchart will be generated in Year [ADDRESS_241275] . To help  explain  study  attrition,  chi-square  and independent -sample  t-tests will compare  dropouts  to 
+non-dropouts . We are defining successful treatment completion as having completed 11 out of the 14 
+available lessons.  While our primary analyses follow intention -to-treat principles, w e will also assess how 
+sensitive results are to excluding subjects who do not successfully complete their respective treatment.  
+Treatment  groups  will be dummy  coded  with CC (copi[INVESTIGATOR_202190])  used as the reference  group. We  will 
+test for treatment condition effects on the stress and symptom outcome measures using MLMs as we did in 
+our publications  in the R21 feasibility  trial18. MLMs  provide  an optimal  analytic  strategy  because  they 
+model  all available data (following intent -to-treat principles in RCTs) and allow us to flexibly evaluate the 
+nested nature of this data structure. Specifically, we will create (for EMA) 3 -level MLMs (levels: individual 
+participants; day;  within -day time) using restricted maximum likelihood estimation. The 3 -level EMA 
+MLM s testing each aim will compare the 3 treatment intervention groups on each dependent variable (e.g., 
+daily stress) from the pre, post, and follow -up training measurement occasion. The 3 -level models will 
+include a random intercept  for day nested within participant . Measurement occasion (pre, post intervention, 
+follow -up), group condition, day -specific factors (e.g., day -of-week or weekday versus weekend),  and 
+within -day time will be modeled as fixed effects. All models will be fit with compound symmetric v ariance -
+covariance data structure but other structures (e.g., autoregressive covariance structure, ARH(1), spectral 
+power) will be evaluated using Akaike's Information Criterion (AIC). We have specified this initial 
+approach for modeling random and fixed e ffects, but we  will evaluate  whether  this approach best fits  the 
+data using likelihood ratio tests and AIC. In testing each aim, each measurement occasion × treatment 
+interaction will be evaluated with a decision rule that a significant effect is observed when the measurement 
+occasion × treatment interaction statistic and corresponding p -value is less than .05 (two -tailed). When a 
+significant interaction is observed, follow -up planned contrasts in each MLM will compare specific groups 
+at post -training. To help with benchmarking we will provide effect size statistics corresponding to the 
+magnitude of change over time, and between groups  at each post -treatment time  point. One  strength of our 
+approach here is that it extends an established MLM data ana lytic pi[INVESTIGATOR_202191] -arm EMA 
+R21 trial publications with success18,76, along with MLM mediation analyses in other MBSR RCT 
+publications98. 
+ 
+Testing our Hypotheses. We are specifying a priori predictions about the effects of MA -MBSR 
+intervention,  relative  to MO-MBSR  and CC. Thus  no statistical  corrections  for multiple  comparisons  will be 
+made for our primary study hypotheses or specified pair -wise comparisons. When additional exploratory 
+analyses are conducted, a Holm’s correction will be made for multiple comparisons. We have previously 
+published our MLM approach evaluating MA -MBSR eff ects relative to these two control groups (see Chin 
+et al., 2019 or Lindsay et al., 2018 publications )—so here we highlight our equations and approach. In 
+previous work we have focused on stress, so below we apply this approach to evaluating hypothesis #2, 
+specifying that MA -MBSR will reduce symptoms relative to MO -MBSR and CC. This hypothesis will be 
+tested  separately  for clinician  assessed,  physician  assessed  or patient  self-reported  symptoms  (using  the IBS- 
+SS). The general form of the model to be tested, exclusive of covariates, is as follows, in mixed model 
+notation:  
+ 
+IBS symptoms it = γ00 + γ01*(txgroup i) + γ10*(time it) + γ11*(txgroup i)*(time it) + u0i + eit where IBS 
+symptoms it is the composite symptoms  score  for individual i at time -point t, time it is the  measurement 
+occasion (pre, post intervention, or follow -up) assessment  time of  year,  txgroup i is the treatment group  a 
+participant  is assigned  to. In  multilevel notation :
+ 
+  Level 1:  Symptoms it = β0i + β1i*(time it) + eit  
+  Level 2:  β0i = γ00 + γ01*(txgroup i) + u 0i 
+β1i = γ10 + γ11*(txgroup i) 
+The primary test of hypothesis is the F -test of the null hypothesis H 0: γ11= 0. Note that this general model will 
+be used, with different outcomes (e.g., stress) and for subsequent aims below but will not be repeated.  
+For hypothesis #3, we will use EMA -sampled IBS symptom severity to test whether EMA -sampled stress 
+reduction will statistically mediate symptom improvements. We will test for concurrent relations between 
+EMA -sampled stress and IBS symptom severity (within the same moment) and also test lagged relations 
+(stress at time t predicting IBS symptom severity  at time t+1). To conduct this mediation analysis, we will 
+compare two MLMs that use IBS symptom severity as the outcome and group condition as a fixed effect:  one 
+MLM will include stress as an additional fixed effect, and another will not. If the fixed effect for group 
+condition is statistically significant in the latter but not the former, stress reduction will be declared to act as a 
+mediator for symptom impr ovements.  
+For hypothesis testing, we will first run unadjusted models without covariates, as described above. Then, as a 
+sensitivity analysis, we will run adjusted models that incorporate baseline characteristics related to 
+sociodemographic covariates (sex, gender, age, race), clinical covariates (IBS subtype, baseline IBS 
+symptom severity, baseline perceived stress), and other time -related covariates such as day -of-week when 
+appropriate (e.g., for analyses involving EMA samples where we observe repeated measures acr oss and 
+within days).  
+Attrition  and Missing  Data.  We expect  minimal  participant  attrition  (<15%)  during  the study  period  across 
+conditions. Dropouts are not expected to be a function of the missing outcome data given the observed.  
+Our unadjusted analyses assume data are missing completely at random, while our adjusted analyses loosen 
+this assumption to allow for data to be missing at random. We will also assess the sensitivity of our results to 
+violations of the missing -at-random as sumption (e.g., via pattern -mixture models).  Additionally, we will 
+evaluate whether adherence to the program and EMA vary across groups. To evaluate attrition, we will 
+compare study dropouts to study completers based on observed participant characteristics . 

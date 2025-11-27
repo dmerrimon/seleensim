@@ -1,0 +1,826 @@
+Replication of the POET-COPD 
+Trial
+ in Healthcare Claims Data 
+DUPLICATE POET-COPD 
+August 10, 2021 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ [ADDRESS_696624] that the described real-world evidence study is trying to replicate as closely 
+as possible given the remaining limitations inherent in the healthcare databases.  1.1 Title 
+Tiotropi[INVESTIGATOR_535445]  (POET -COPD  trial ) 
+ 1.2 Intended aim(s) 
+ The objective of the study is to assess the efficacy and safety of tiotropi[INVESTIGATOR_1890], a long -acting anticholinergic (muscarinic 
+antagonist) drug (LAMA) compared to salmeterol, a long-acting beta agonist (LABA) in patients with chronic obstructive pulmonary disease (COPD) 
+ 
+1.[ADDRESS_696625] COPD exacerbation 
+ 
+1.4 Required power for primary endpoint and noninferiority margin (if applicable) 
+With a sample size of approximately 6800 patients (3400 in each arm), the trial will have 80% power to detect a 10% 
+reduction in the risk of first exacerbation with tiotropi[INVESTIGATOR_535446], with a two-sided test for the null hypothesis of a hazard ratio of 1 at a significance level of 0.05 
+ 
+1.5 Trial estimate 
+HR = 0.83 (95% CI 0.77–0.90) comparing tiotropi[INVESTIGATOR_535447] (Vogelmeier  et al., 2011, NEJM ) 
+ 
+2. Person responsible for implementation of replication in Aetion Helen Tesfaye, Pharm.D, ScM implemented the study design in the Aetion Evidence Platform. She is not responsible for the validity of design and analytic choices. All implementation steps are recorded, and implementation history is archived in the platform. 
+  3. Data Source(s) Optum Cliniformatics Data Mart, IBM MarketScan 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+2 4.Study Design Diagram
+The study design diagram visualizes key aspects of the longitudinal study design for expediated review
+
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+[ADDRESS_696626] continuous enrollment during baseline period of 180 days before 
+initiation of tiotropi[INVESTIGATOR_535448] (cohort entry date ).  
+5.2 Important steps for cohort formation 
+New users (defined as no use in 180 days prior to index date) of an exposure and a comparator drug will be identified. 
+5.2.[ADDRESS_696627] approved by [CONTACT_535463] 30, 2004, and salmete rol on September 15, 1998  
+§Optum: January 30, 2004 – March 31, 2020 ( end of data availability is December 31, 2020 but excluded data
+generated during COVID-19 pandemic)
+§Marketscan: January 30, 2004 – December 31, 201 8 (end of data availability)
+5.2.2  Specify inclusion/exclusion  criteria for cohort entry and define the index date 
+Inclusion and exclusion criteria were adapted from the trial as closely as possible. Definitions for all inclusion/exclusion are 
+provided in Appendix A and are summarized in the flowcharts below. 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+4 5.3 Flowchart of the study cohort assembly 
+OPTUM  MARKETSCAN 
+Less Excluded 
+Patients  Remaining 
+Patients  Less Excluded 
+Patients  Remaining 
+Patients  
+All patients  79,335,559 200,203,908  
+Did not meet cohort entry criteria  -78,723,324 612,235 -199,335,696 868,212 
+Excluded due to insufficient enrollment  -87,210 525,025 -98,266 769,946 
+Excluded due to prior use of referent  -22,073 502,952 -52,587 717,359 
+Excluded due to prior use of exposure  -298,940 204,012 -406,646 310,713 
+Excluded because patient qualified in >1 exposure category  -164 203,848 -292 310,421 
+Excluded based on Missing/Unknown Age  0 203,848 0 310,421 
+Excluded based on Missing/Unknown Gender  -37 203,811 0 310,421 
+Excluded based on Inclusion #1 - Age >=40 years old -9,129 194,682 -19,097 291,324 
+Excluded based on Inclusion #2 - Diagnosis of COPD  -35,444 159,238 -78,651 212,673 
+Excluded based on Inclusion #[ADDRESS_696628] 
+year -75,207 84,031 -105,442 107,231 
+Excluded based on Exclusion #2a - Asthma -10,054 73,977 -8,159 99,072 
+Excluded based on Exclusion #2b - Severe cardiovascular or pulmonary disorders_V2  -8,122 65,855 -8,509 90,563 
+Excluded based on Exclusion #3 - Patients with any respi[INVESTIGATOR_535449] 4 weeks prior to visit 1  -12,040 53,815 -14,085 76,478 
+Excluded based on Exclusion #5 - Salmeterol, Tiotropi[INVESTIGATOR_535450] 180 
+days* -4,157 49,658 -7,817 68,661 
+Final cohort  49,658 68,661 
+* Additional exclusion criteria applied for replication  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 5 6 Variables  
+6.1 Exposure-related variables: 
+Study drug:  
+The study exposure of interest is initiation of tiotropi[INVESTIGATOR_1890] (LAMA). Initiation will be defined by [CONTACT_535464][INVESTIGATOR_535451] 180 days before treatment initiation (washout period). Patients are required to be incident users with respect both exposure group s.  
+ Comparator agents: 
+Initiators of salmeterol inhaler defined as no use of inhaled salmeterol during the 180 days prior to index date 
+ 
+6.2 Preliminary Covariates: 
+§ Age 
+§ Sex 
+§ Combined Comorbidity Index (CCI), measured over the default baseline covariate assessment period of 180 days 
+prior to and including the index prescription date 
+Covariates listed above are a small subset of covariates that will ultimately be controlled in the design and analysis phase 
+of the study. They are included in the preliminary assessment to determine the presence of adequate overlap between the two population of patients to proceed to the next phase of the study. Remaining covariates are defined only after the study has passed the initial feasibility analysis and initial power assessment and are listed in Table 1 (Appendix B ).  
+ 
+6.3 Outcome variables and study follow-up: 
+ 
+6.3.[ADDRESS_696629] (definitions provided in Appendix A):  
+§ Primary outcome : Time to first COPD exacerbation   
+§ Secondary outcome:  
+o All-cause death 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ [ADDRESS_696630] (control outcome s only serve to assess aspects of study validity but are not further 
+interpreted):  Pneumonia 
+ 
+6.3.2  Study follow-up 
+Both as-treated (AT) and intention-to -treat (ITT) analysis will be conducted with treatment defined as the index drug 
+on the day of cohort entry. Because adherence in the real-world databases is expected to be much worse than in 
+the trial, the AT analysis is the primary analysis, as it targets the relative hazard of outcomes on treatment.   For the AT analysis, the follow-up will start the day after the initiation of tiotropi[INVESTIGATOR_535452]: § The first occurrence of the outcome of interest, 
+§ The date of end of continue registration in the database, 
+§ End of the study period, 
+§ Death, 
+§ Nursing home admission 
+o Nursing home admissions are considered a censoring event because the data sources utilized typi[INVESTIGATOR_355491] a patient, particularly on drug utilization, after admission. We will utilize this as an exclusion reason for cohorts for the same reason. 
+§ The date of drug discontinuation, defined as the date of the last continuous treatment epi[INVESTIGATOR_8372] (tiotropi[INVESTIGATOR_4037]) + a 60-day grace period, 
+§ The date of switching from an exposure to comparator and vice versa, 
+§ The date of switching  to or initiation of other LAMA (excluding tiotropi[INVESTIGATOR_1890]) and other LABA (excluding 
+salmeterol), LAMA/LABA, LABA/ICS, and LAMA/LABA/ICS combination inhalers. 
+ 
+For the ITT analyses, the censoring based on the switching and treatment discontinuation will be replaced with a 
+maximum allowed follow-up time of 365 days. 
+ 
+7 Initial Feasibility Analysis  Aetion report name: 
+[CONTACT_8419]- https://bwh-dope.aetion.com/projects/details/1730/rwrs/[ZIP_CODE]  
+Marketscan- https://bwh-dope.aetion.com/projects/details/1732/rwrs/[ZIP_CODE]   
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 7  
+Date conducted:  5/6/2021 (old version), 6/17/2021 (current) – In the current version, we removed the additional exclusion 
+criteria “LABA, LAMA, or any combinations containing those (except study drugs) - 14 days washout period,” which was applied in 
+defining the cohort used in the old version.  Complete Aetion feasibility analysis using age, sex, and CCI as the only covariates and the primary endpoint (Section 6.3.1) as the outcome.  
+§ Complete study flowchart from Section 5.3 
+§ Report patient characteristics by [CONTACT_535465] - 
+Salmeterol  Exposure - 
+Tiotropi[INVESTIGATOR_535453] - 
+Salmeterol  Exposure - 
+Tiotropi[INVESTIGATOR_535454]  1,077 48,581 - (-, -) 3,397 65,264 - (-, -) 
+Age             
+...mean (sd)  69.31 (10.79) 69.64 (9.85) -0.34 ( -0.99, 
+0.31)  70.81 (10.79)  68.26 (11.06)  2.55 (2.18, 
+2.92)  
+...median [IQR]  70.00 [62.00, 
+77.50]  70.00 [63.00, 
+77.00]  - (-, -) 72.00 [63.00, 
+79.00]  68.00 [60.00, 
+77.00]  - (-, -) 
+Gender              
+...Male; n (%)  511 (47.4%) 21,601 (44.5%)  3.0% ( -0.1%, 
+6.0%)  1,566 (46.1%)  31,139 (47.7%)  -1.6% ( -3.3%, 
+0.1%)  
+...Female; n (%) 566 (52.6%)  26,980 (55.5%)  -3.0% ( -6.0%, 
+0.1%)  1,831 (53.9%)  34,125 (52.3%)  1.6% ( -0.1%, 
+3.3%)  
+Combined comorbidity 
+score, 180 days             
+...mean (sd)  2.37 (2.54)  2.59 (2.56)  -0.22 ( -0.37, -
+0.06)  1.75 (1.88)  2.05 (2.14)  -0.31 ( -0.37, -
+0.24)  
+...median [IQR]  2.00 [1.00, 3.00]  2.00 [1.00, 4.00]  - (-, -) 1.00 [1.00, 3.00]  1.00 [1.00, 3.00]  - (-, -) 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 8  
+§ Report summary parameters of study population 
+FEASIBILITY FOR STUDY OUTCOME  
+  Optum  Marketscan 
+Variable  Value  Value  
+Number of patients in full cohort  49,658 68,661 
+Number of patients dropped as incomplete cases  0 0 
+Number of patients that did not begin follow -up 57 72 
+Number of patients in analytic cohort 49,601 68,589 
+Number of events  11,400 15,086 
+Number of person -years  16,485.60 27,150.40 
+Number of patients in group: Referent - Salmeterol 1,073 3,389 
+Number of patients in group: Exposure - Tiotropi[INVESTIGATOR_1890]  48,528 65,200 
+Risk per 1,000 patients 229.83 219.95 
+Rate per 1,000 person- years  691.51 555.65 
+ 
+§ Report median follow-up time by [CONTACT_535466]- UP TIME FOR STUDY OUTCOME 
+Median Follow -Up Time (Days) [IQR]  
+  Optum  Marketscan 
+Patient Group Median 
+Follow- Up Time 
+(Days) [IQR]  Median 
+Follow- Up 
+Time (Days) 
+[IQR] 
+Overall Patient Population 88 [45, 140] 88 [57, 148] 
+Referent - Salmeterol 88 [56, 148] 88 [73, 148] 
+Exposure - Tiotropi[INVESTIGATOR_1890]  88 [45, 140] 88 [56, 148] 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 9  
+ § Report reasons for censoring in the overall study population 
+CENSORING REASONS FOR STUDY OUTCOME  
+  Optum  Marketscan 
+Overall  49,601 68,589 
+Death 911 (1.8%) 299 (0.4%) 
+Start of an additional exposure  137 (0.3%) 325 (0.5%) 
+End of index exposure  19,798 (39.9%) 29,908 (43.6%) 
+Specified date reached  1,539 (3.1%) 712 (1.0%) 
+End of patient data  0 (0.0%) 0 (0.0%) 
+End of patient enrollment 3,174 (6.4%) 7,894 (11.5%) 
+Switch to other LABA, LAMA + LABA/LAMA combo + 
+LAMA/LABA/ICS combo + NH admissions Occurred  12,687 (25.6%) 14,442 (21.1%) 
+ 
+ 
+8 Initial Power Assessment 
+ 
+Aetion report name: 
+[CONTACT_8419] - https://bwh -dope.aetion.com/projects/details/1730/rwrs/[ZIP_CODE]   
+Marketscan - https://bwh -dope.aetion.com/projects/details/1732/rwrs/[ZIP_CODE]   
+ 
+Date conducted:  5/4/2021  (old version), 6/17/2021 (current version) – In the current version, we removed the additional 
+exclusion criteria “LABA, LAMA, or any combinations containing those (except study drugs) - 14 days washout period,” which was applied in defining the cohort used in the old version. 
+ In order to complete the initial power analysis, the dummy outcome of a 90-day gap in database enrollment will be used. Complete a 1:1 PS -matched comparative analysis using this outcome. PS should include only 3 covariates: age, sex, and combined comorbidity 
+index . 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 10  
+  Optum  Marketscan Pooled  
+Number of people matched       
+Reference  1073.0  3389.0  4462.0  
+Exposure  1073.0  3389.0  4462.0  
+        
+Risk per 1,000 patients  229.8 220.0  -- 
+Rate per 1,000 person- years  691.5  555.7    
+        
+N of events  11,400  15,086  26,486  
+N of patients (both groups) at Step 1  49,658  68,661  118,319  
+Risk per 1,000 patients  229.57  219.72  223.85  
+ 
+ 
+ Superiority Analysis ( Pooled )
+Number of patients matched
+Reference 4,[ADDRESS_696631] 0.83
+Alpha (2-sided) 0.05
+Number of events expected 1997.6374
+Power0.986238897
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 11  
+ 
+ 
+ Superiority Analysis ( Optum )
+Number of patients matched
+Reference 1,[ADDRESS_696632] 0.83
+Alpha (2-sided) 0.05
+Number of events expected 492.[ZIP_CODE]
+Power0.542994909
+Superiority Analysis ( Marketscan )
+Number of patients matched
+Reference 3,[ADDRESS_696633] 0.83
+Alpha (2-sided) 0.05
+Number of events expected 1489.[ZIP_CODE]
+Power0.949012649
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+12 •Stop analyses until feasibility and power are reviewed by [CONTACT_61337], FDA, and assigned members of advisory board.
+Reviewed by [CONTACT_976]: [INVESTIGATOR_126083]:  
+Reviewed by [CONTACT_8415]:  Date reviewed:  
+Reasons for stoppi[INVESTIGATOR_8375] (if required): 
+9.Balance Assessment
+Optum - https://bwh -dope.aetion.com/projects/details/1730/rwrs/[ZIP_CODE]
+Marketscan - https://bwh-dope.aetion.com/projects/details/1732/rwrs/[ZIP_CODE]
+Date conducted : 7/6/2021  
+After review of initial feasibility and power analyses, complete creation of the remaining covariates from Section 6.2. Again, using the 
+dummy outcome of a 90-day gap in database enrollment, complete a 1:[ADDRESS_696634] of covariates. 
+•Provide plot of PS distributions stratified by [CONTACT_1570].
+Note- Please refer to Appendix B .
+•Report covariate balance after matching.
+Note- For Table 1, please refer to Appendix B .
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 13 • Report reasons for censoring by [CONTACT_1570]. 
+ 
+ Overall  Referent  Exposure  
+Dummy outcome  0 (0%)  0 (0%)  0 (0%)  
+Death 104 (1. 19%) 44 (1.01%)  60 (1.38%)  
+Start of an additional exposure  347 (3.98%)  317 (7.27%)  30 (0.69%)  
+End of Index Exposure  5,180 (59.43%)  2,735 (62.76%)  2,445 (56.1%) 
+Specified date reached  111 (1.27%) 56 (1.28%)  55 (1.26%) 
+End of patient enrollment  1,133 (13%) 485 (11.1 3%) 648 (14.87%)  
+Switch to other LABA, LAMA + LABA/LAMA combo + 
+LAMA/LABA/ICS combo + NH admissions Occurred  1,841 (21.12%)  721 (16.5 4%) 1,120 (25.7%) 
+ 
+• Report follow-up time by [CONTACT_1570]. 
+Patient Group Optum   
+Median 
+Follow- Up Time 
+(Days) [IQR]  Marketscan 
+Median 
+Follow- Up Time 
+(Days) [IQR]  
+Overall Patient Population  88 [83 , 159] 123 [88, 21 4] 
+Referent - Salmeterol  88 [85, 154] 125 [88, 195] 
+Exposure - Tiotropi[INVESTIGATOR_1890]  88 [83, 1 69] 122 [88, 2 26] 
+ 
+ 
+• Report overall risk of the primary outcome. 
+  Optum  MarketScan  Pooled 
+Risk per 1,000 patients  229.57  219.72  223.85  
+ 
+    
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 14 10. Final Power Assessment 
+ 
+Date conducted : 7/9/2021  
+ 
+• Re-calculate power in the appropriate excel table, using the revised number of matched patients from the PS-match in Section 9. 
+All other parameters in the table should be the same as in Section 8. 
+ 
+ 
+ Superiority Analysis ( Pooled )
+Number of patients matched
+Reference 4,[ADDRESS_696635] 0.83
+Alpha (2-sided) 0.05
+Number of events expected 1951.0766
+Power0.984427581
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 15  
+ 
+ Superiority Analysis ( Optum )
+Number of patients matched
+Reference 1,[ADDRESS_696636] 0.83
+Alpha (2-sided) 0.05
+Number of events expected 492.[ZIP_CODE]
+Power0.542994909
+Superiority Analysis ( Marketscan )
+Number of patients matched
+Reference 3,[ADDRESS_696637] 0.83
+Alpha (2-sided) 0.05
+Number of events expected 1443.5604
+Power0.942918994
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 16  
+• Stop analyses until balance and final power assessment are reviewed by [CONTACT_61337], FDA, and assigned members of 
+advisory board. 
+Reviewed by [CONTACT_976]: [INVESTIGATOR_126083]:   
+Reviewed by [CONTACT_8415]:   Date reviewed:   
+Reasons for stoppi[INVESTIGATOR_8375] (if required):  
+ 
+  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+17 Appendix A: COPD Exacerbation (primary  outcome), All-cause mortality  (secondary  outcome) 
+COPD Exacerbation  
+Measured 1 day after drug initiation in primary diagnosis position specified below and inpatient care setting - 
+COPD (Inpatient, Primary) 
+ICD-9 Diagnosis : 491.x, 492.x, 496 
+ICD-10 Diagnosis : J41.x, J42, J43.x, J44.x 
+OR 
+Measured 1 day after drug initiation in any diagnosis  position specified below and inpatient and outpatient care setting AND steroid use within 14 days - 
+COPD (Any care setting, Any position) 
+ICD-9 Diagnosis : 491.x, 492.x, 496 
+ICD-10 Diagnosis : J41.x, J42, J43.x, J44.x 
+AND  
+Corticosteroid systemic administration and/or oral prescription of -- 
+-Prednisone
+-Prednisolone
+-Methylprednisolone
+-Dexamethasone
+-Hydrocortisone
+-------------------------------------------------------------------------------  
+All-Cause Mortality  
+Identified using the discharge status codes - 
+Optum- Inpatient/Outpatient  
+• 20 = EXPI[INVESTIGATOR_337712]• 21 = EXPI[INVESTIGATOR_337713]
+• 22 = EXPI[INVESTIGATOR_337713]
+• 23 = EXPI[INVESTIGATOR_337713]• 24 = EXPI[INVESTIGATOR_355493]’s regulatory decision making  
+ 
+ 18  • 25 = EXPI[INVESTIGATOR_337713]  
+• 26 = EXPI[INVESTIGATOR_337713]  
+• 27 = EXPI[INVESTIGATOR_337713]  
+• 28 = EXPI[INVESTIGATOR_337713]  
+• 29 = EXPI[INVESTIGATOR_337713]  
+• 40 = EXPI[INVESTIGATOR_337714] (HOSPI[INVESTIGATOR_21785])  
+• 41 = EXPI[INVESTIGATOR_337715] A MEDICAL FACILITY (HOSPI[INVESTIGATOR_21785])  
+• 42 = EXPI[INVESTIGATOR_337712] - PLACE UNKNOWN (HOSPI[INVESTIGATOR_21785]) 
+ 
+Marketscan - Inpatient 
+• 20 - Died  
+• 22 - Died  
+• 23 - Died  
+• 24 - Died  
+• 25 - Died  
+• 26 - Died  
+• 27 - Died  
+• 28 - Died  
+• 29 - Died  
+• 40 - Other died status or Expi[INVESTIGATOR_257182] (Ho spi[INVESTIGATOR_337716]) (depends on year)  
+• 41 - Other died status or Expi[INVESTIGATOR_337717] (Hospi[INVESTIGATOR_337716]) (depends on year)  
+• [ADDRESS_696638] unknown (Hospi[INVESTIGATOR_337716]) (depends on year) 
+• 21 - Died or Disch./Transf. t o court/law enforcement (depends on year)  
+# POET-COPD trial definitions Implementation in routine care References/Rationale Color coding
+Please see the following Google drive for 
+further details or any missing information 
+https://drive.google.com/drive/folders/1W
+D618wrywYjEaXzfLTcuK-VCcnb6b-gV Criteria
+Adequate mappi[INVESTIGATOR_355495] 18 mcg once daily vs. Salmeterol hydrofluoroalkane 50 mcg twice daily
+Aim: To evaluate the effect of tiotropi[INVESTIGATOR_535455] (Spi[INVESTIGATOR_35444]) vs. Salmeterol (Serevent)
+Exposure : Tiotropi[INVESTIGATOR_535456] : SalmeterolIntermediate mappi[INVESTIGATOR_535457] : Time to first COPD exacerbation within 1 yearMeasured  1 day after drug initiation  in primary diagnosis position and inpatient care 
+setting:
+COPD
+ICD-9 Diagnosis: 491.x, 492.x, 496
+ICD-10 Diagnosis: J41.x, J42, J43.x, J44.x
+OR
+Measured  1 day after drug initiation  in any diagnosis position and inpatient and outpatient 
+care setting AND steriod use within 14 days:
+COPD
+ICD-9 Diagnosis: 491.x, 492.x, 496
+ICD-10 Diagnosis: J41.x, J42, J43.x, J44.x
+AND
+Corticosteriod systemic administration and/or oral prescription of:
+- Prednisone
+- Prednisolone
+- Methylprednisolone
+- Dexamethasone
+- HydrocortisoneCan't be measured in claims but 
+not important for the analysis
+1 40 years of age or olderMeasured on the day of drug initiation
+Age >= 40
+2 Diagnosis of COPDMeasured from the start of all available data to the day  of drug initiation in any diagnosis 
+position and in the inpatient and outpatient care setting:
+COPD 
+ICD-9 Diagnosis: 491.x, 492.x, 496
+ICD-10 Diagnosis: J41.x, J42, J43.x, J44.x
+[ADDRESS_696639]-bronchodilator FEV1 ≤ 70% of predicted normal and FEV1 ≤ 70% of FVC and a smoking history of ≥ [ADDRESS_696640] year requiring treatment with antibiotics and/or systemic steriods and/or 
+requiring hospi[INVESTIGATOR_535458]  365 days prior to 28 days prior to drug initiation  in primary diagnosis position 
+and inpatient care setting:
+COPD
+ICD-9 Diagnosis: 491..x, 492.x, 496.0
+ICD-10 Diagnosis: J41, J42.x, J43.x, J44.x
+OR
+Measured 365 days prior to 28 days prior to drug initiation  in any diagnosis position  and 
+inpatient and outpatient care setting AND steriod use within 14 days:
+COPD
+ICD-9 Diagnosis: 491.x, 492.x, 496.0
+ICD-10 Diagnosis: J41.x, J42, J43.x, J44.x
+AND
+Corticosteriod systemic administration and/or prescription
+- Prednisone
+- Prednisolone
+- Methylprednisolone
+- Dexamethasone
+- Hydrocortisone
+1Patients with significant diseases other than COPD that would preclude participation in the trial or interpretation of the results 
+are excluded
+2Patients with a current diagnosis of asthma, severe cardiovascular disorders and use of systemic corticosteroid medication at 
+unstable dosesMeasured  180 days prior to and including the day of drug initiation  in any diagnosis
+position and in the inpatient and outpatient care setting:
+Asthma (3 Diagnosis within 180 days)
+ICD-9 Diagnosis: 493.x
+ICD-10 Diagnosis: J45.x
+Measured 365 days prior to and including the day of drug initiation  in any diagnosis 
+position and in the inpatient and outpatient care setting:
+Heart Transplantation
+ICD-9 Diagnosis: V42.1, V49.83, 996.83 
+ICD-10 Diagnosis: Z94.1, Z76.82, T86.20, T86.21, T86.22
+ICD-9 Procedure: 33.6, 37.51
+ICD-10 Procedure: 02YA0Z0, 02YA0Z1, 02YA0Z2
+CPT-4 Code: [ZIP_CODE], [ZIP_CODE]
+LVAD/Implantable Heart
+ICD-9 Diagnosis: V43.2x 
+ICD-10 Diagnosis: Z95.811, Z95.812
+ICD-9 Procedure: 37.60, 37.66 
+ICD-10 Procedure: 02HA0RS, 02HA3RS, 02HA4RS, 5A02116, 5A02216, 02HA0QZ, 02HA3QZ, 
+02HA4QZ
+CPT-4 Code: [ZIP_CODE], [ZIP_CODE], [ZIP_CODE], [ZIP_CODE] - [ZIP_CODE], [ZIP_CODE], [ZIP_CODE], [ZIP_CODE]
+3Patients with any respi[INVESTIGATOR_535459]* in the 4 weeks prior to the screening Visit (Visit 1) or during the 
+run-in period 
+* - Measurement included in Inclusion # 4Measured 28 days prior to and including the day of drug initiation  in prescription claims:
+Acute Resiratory Infections
+ICD-9 Diagnosis: 460 - 466.x
+ICD10 Diagnosis: J00 - J06.x, J20.x  - J22.x
+Pneumonia and Influenza
+ICD-9 Diagnosis: 480.x - 488.x
+ICD-10 Diagnosis: J09.x  - J18.x
+COPD (Inpatient, Primary)
+ICD-9 Diagnosis: 491.x, 492.x, 496.0
+ICD-10 Diagnosis: J41.x, J42, J43.x, J44.x
+OR
+COPD (Any care setting, Any position)
+ICD-9 Diagnosis: 491.x, 492.x, 496.0
+ICD-10 Diagnosis: J41.x, J42, J43.x, J44.x
+AND
+Corticosteroid systemic administration and/or prescription
+- Prednisone
+- Prednisolone
+4 Exclude use of Salmeterol, tiotropi[INVESTIGATOR_535450] 180 days prior to CEDMeasured  180 days prior to and including the day of drug initiation  in prescription claims:
+Brand names
+STIOLTO RESPI[INVESTIGATOR_535460]/OLODATEROL HCL
+FLUTICASONE PROPI[INVESTIGATOR_229747]/SALMETEROL XINAFOATETrial details - Intended S with label change - 2 weeks run-in
+EXPOSURE vs. COMPARISON
+PRIMARY OUTCOME
+Tiotropi[INVESTIGATOR_1890] 18 mcg once daily vs. Salmeterol hydroflouroalkane 50 mcg twice daily
+EXCLUSION CRITERIAAppendix A
+AFTER PS MATCHINGOptum MarketScan
+BEFORE PS MATCHING
+The c-statistics for the propensity score model, pre-matching was 0.783
+The postmatching c-statistic was 0.581 .The c-statistics for the propensity score model, pre-matching was 0.833.
+The postmatching c-statistic was 0.547.
+Appendix B
+Referent - Salmeterol Exposure - Tiotropi[INVESTIGATOR_535461] - Salmeterol Exposure - Tiotropi[INVESTIGATOR_535461] - Salmeterol Exposure - Tiotropi[INVESTIGATOR_535462] 1,077 48,581 3,397 65,264 4,474 113,845
+Calendar Time - Year of Initiation (2004 - 2020)
+...2004-2006; n (%) 298 (27.7%) 2,777 (5.7%) 0.6173 1,955 (57.6%) 9,783 (15.0%) 0.9881 2,253 (50.4%) 12,560 (11.0%) 0.945
+...2007-2008; n (%) 104 (9.7%) 3,944 (8.1%) 0.0562 404 (11.9%) 9,109 (14.0%) -0.0626 508 (11.4%) 13,053 (11.5%) -0.003
+...2009-2011; n (%) 172 (16.0%) 8,025 (16.5%) -0.0136 545 (16.0%) 17,106 (26.2%) -0.2520 717 (16.0%) 25,131 (22.1%) -0.156
+...2012-2015; n (%) 157 (14.6%) 13,877 (28.6%) -0.3452 316 (9.3%) 20,917 (32.0%) -0.5842 473 (10.6%) 34,794 (30.6%) -0.510
+...2016-2018; n (%) 251 (23.3%) 13,687 (28.2%) -0.1122 177 (5.2%) 8,349 (12.8%) -0.2679 428 (9.6%) 22,036 (19.4%) -0.281
+...2019-Mar. 2020; n (%) 95 (8.8%) 6,271 (12.9%) -0.1321 95 (8.8%) 6,271 (12.9%) -0.132
+DMG - Age
+...mean (sd) 69.31 (10.79) 69.64 (9.85) -0.0319 70.81 (10.79) 68.26 (11.06) 0.2334 70.45 (10.79) 68.85 (10.56) 0.150
+...median [IQR] 70.00 [62.00, 77.50] 70.00 [63.00, 77.00] 0.0000 72.00 [63.00, 79.00] 68.00 [60.00, 77.00] 0.3661 71.52 (10.79) 68.85 (10.56) 0.250
+DMG - Gender
+...Male; n (%) 511 (47.4%) 21,601 (44.5%) 0.0582 1,566 (46.1%) 31,139 (47.7%) -0.0321 2,077 (46.4%) 52,740 (46.3%) 0.002
+...Female; n (%) 566 (52.6%) 26,980 (55.5%) -0.0582 1,831 (53.9%) 34,125 (52.3%) 0.0321 2,397 (53.6%) 61,105 (53.7%) -0.[ADDRESS_696641]; n (%) 100 (9.3%) 5,118 (10.5%) -0.0402 351 (10.3%) 10,691 (16.4%) -0.1801 451 (10.1%) 15,809 (13.9%) -0.117
+...South; n (%) 385 (35.7%) 22,458 (46.2%) -0.2148 845 (24.9%) 23,650 (36.2%) -0.2472 1,230 (27.5%) 46,108 (40.5%) -0.277
+...North Central; n (%) 278 (25.8%) 10,162 (20.9%) 0.1160 1,108 (32.6%) 23,003 (35.2%) -0.0549 1,386 (31.0%) 33,165 (29.1%) 0.[ADDRESS_696642]; n (%) 314 (29.2%) 10,843 (22.3%) 0.1583 1,093 (32.2%) 7,920 (12.1%) 0.4989 1,407 (31.4%) 18,763 (16.5%) 0.355
+DRS - Combined comorbidity score, 180 days 
+...mean (sd) 2.37 (2.54) 2.59 (2.56) -0.0863 1.75 (1.88) 2.05 (2.14) -0.1489 1.90 (2.06) 2.28 (2.33) -0.173
+...median [IQR] 2.00 [1.00, 3.00] 2.00 [1.00, 4.00] 0.0000 1.00 [1.00, 3.00] 1.00 [1.00, 3.00] 0.0000 1.24 (2.06) 1.43 (2.33) -0.086
+DRS - Frailty Score: Empi[INVESTIGATOR_8409] (mean)
+...mean (sd) 0.21 (0.07) 0.22 (0.07) -0.1429 0.19 (0.06) 0.20 (0.07) -0.1534 0.19 (0.06) 0.21 (0.07) -0.307
+...median [IQR] 0.19 [0.16, 0.24] 0.20 [0.16, 0.25] -0.1429 0.18 [0.14, 0.22] 0.19 [0.15, 0.23] -0.1534 0.18 (0.06) 0.19 (0.07) -0.153
+PLM - Smoking ; n (%) 304 (28.2%) 20,039 (41.2%) -0.2757 328 (9.7%) 14,153 (21.7%) -0.3344 632 (14.1%) 34,192 (30.0%) -0.391
+PLM - Pneumonia ; n (%) 121 (11.2%) 6,244 (12.9%) -0.0522 361 (10.6%) 8,855 (13.6%) -0.0921 482 (10.8%) 15,099 (13.3%) -0.077
+PLM - Alpha-1 antitrypsin def/Pneumoconioses & other lung disease/Pul fibrosis; n (%) 79 (7.3%) 3,040 (6.3%) 0.0397 153 (4.5%) 3,648 (5.6%) -0.0503 232 (5.2%) 6,688 (5.9%) -0.031
+PLM - Oxygen usage; n (%) 155 (14.4%) 7,652 (15.8%) -0.0391 588 (17.3%) 10,345 (15.9%) 0.0376 743 (16.6%) 17,997 (15.8%) 0.[ADDRESS_696643]/dependence on oxygen ; n (%) 129 (12.0%) 7,778 (16.0%) -0.1155 227 (6.7%) 7,027 (10.8%) -0.1455 356 (8.0%) 14,805 (13.0%) -0.164
+PLM - CiPAP/BiPAP use; n (%) 63 (5.8%) 3,294 (6.8%) -0.0412 132 (3.9%) 5,015 (7.7%) -0.1631 195 (4.4%) 8,309 (7.3%) -0.124
+PLM - Pulmonary rehabilitation ; n (%)* 7 (0.6%) 341 (0.7%) -0.0124 9 (0.3%) 470 (0.7%) -0.0567 016 (0.4%) 811 (0.7%) -0.041
+PLM - Moderate COPD exacerbation - [Count with 365 to 181 days before CED]*
+...mean (sd) 1.67 (4.35) 2.72 (6.59) -0.1881 1.53 (3.65) 1.65 (3.78) -0.0323 1.56 (3.83) 2.11 (5.17) -0.121
+...median [IQR] 0.00 [0.00, 1.14] 0.42 [0.00, 2.57] -0.0752 0.08 [0.00, 1.23] 0.15 [0.00, 1.62] -0.0188 0.06 (3.83) 0.27 (5.17) -0.046
+PLM - Moderate COPD exacerbation - [Count 180 to 31 days before CED]*
+...mean (sd) 1.72 (3.96) 2.27 (4.41) -0.1312 1.29 (2.41) 1.40 (2.48) -0.0450 1.39 (2.86) 1.77 (3.44) -0.120
+...median [IQR] 0.64 [0.01, 1.82] 0.88 [0.13, 2.45] -0.0573 0.53 [0.00, 1.35] 0.61 [0.00, 1.66] -0.0327 0.56 (2.86) 0.73 (3.44) -0.054
+PLM - Moderate COPD exacerbation - [Count with 30 days to CED]*
+...mean (sd) 0.29 (1.12) 0.30 (1.11) -0.0090 0.16 (0.53) 0.21 (0.65) -0.0843 0.19 (0.72) 0.25 (0.88) -0.075
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (0.72) 0.00 (0.88) 0.000
+PLM - Moderate exacerbations >=1 in 365 days before CED; n (%) 864 (80.2%) 40,971 (84.3%) -0.1075 2,520 (74.2%) 51,102 (78.3%) -0.0965 3,384 (75.6%) 92,073 (80.9%) -0.129
+PLM - Moderate exacerbations >=2 in 365 days before CED ; n (%) 576 (53.5%) 31,738 (65.3%) -0.2420 1,612 (47.5%) 35,919 (55.0%) -0.1505 2,188 (48.9%) 67,657 (59.4%) -0.212
+PLM - Severe COPD exacerbation - [Count with 365 to 181 days before CED] *
+...mean (sd) 0.04 (0.20) 0.07 (0.29) -0.1204 0.06 (0.25) 0.07 (0.26) -0.0392 0.06 (0.24) 0.07 (0.27) -0.039
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (0.24) 0.00 (0.27) 0.000
+PLM - Severe COPD exacerbation - [Count with 180 to 31 days before CED] *
+...mean (sd) 0.06 (0.26) 0.06 (0.24) 0.0000 0.06 (0.22) 0.06 (0.21) 0.0000 0.06 (0.23) 0.06 (0.22) 0.000
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (0.23) 0.00 (0.22) 0.000
+PLM - Severe COPD exacerbation - [Count with 30 days lookback]  *
+...mean (sd) 0.01 (0.09) 0.01 (0.10) 0.0000 0.01 (0.06) 0.01 (0.08) 0.0000 0.01 (0.07) 0.01 (0.09) 0.000
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (0.07) 0.00 (0.09) 0.000
+PLM - Severe exacerbations >=1 in 365 days before CED; n (%) 106 (9.8%) 6,395 (13.2%) -0.1067 428 (12.6%) 9,050 (13.9%) -0.0384 534 (11.9%) 15,445 (13.6%) -0.051
+PLM - Severe exacerbations >=2 in 365 days before CED ; n (%) 15 (1.4%) 1,226 (2.5%) -0.0796 66 (1.9%) 1,138 (1.7%) 0.0150 081 (1.8%) 2,364 (2.1%) -0.022
+PLM - GOLD C/D Status ; n (%) 437 (40.6%) 26,005 (53.5%) -0.2606 1,613 (47.5%) 35,581 (54.5%) -0.1404 2,050 (45.8%) 61,586 (54.1%) -0.167
+PRX - LABA (except salmeterol) inhalers; n (%) 62 (5.8%) 847 (1.7%) 0.2171 195 (5.7%) 2,276 (3.5%) 0.1052 257 (5.7%) 3,123 (2.7%) 0.150
+PRX - LAMA (except tiotropi[INVESTIGATOR_1890]) inhalers; n (%) * 14 (1.3%) 440 (0.9%) 0.0384 14 (0.4%) 520 (0.8%) -0.0518 028 (0.6%) 960 (0.8%) -0.024
+PRX - ICS only inhalers; n (%) 416 (38.6%) 8,938 (18.4%) 0.4591 1,638 (48.2%) 14,424 (22.1%) 0.5683 2,054 (45.9%) 23,362 (20.5%) 0.560
+PRX - LABA/LAMA inhaler use; n (%) * 17 (1.6%) 503 (1.0%) 0.0530 2 (0.1%) 206 (0.3%) -0.0448 019 (0.4%) 709 (0.6%) -0.028
+PRX - LABA/ICS inhaler use; n (%) 45 (4.2%) 11,055 (22.8%) -0.5657 107 (3.1%) 14,588 (22.4%) -0.6045 152 (3.4%) 25,643 (22.5%) -0.593
+PRX - COPD Maintenance therapy inhalers; n (%) 126 (11.7%) 12,434 (25.6%) -0.3627 236 (6.9%) 13,496 (20.7%) -0.4084 362 (8.1%) 25,930 (22.8%) -0.415
+PRX - SAMA inhaler use; n (%) 108 (10.0%) 2,469 (5.1%) 0.1863 624 (18.4%) 3,835 (5.9%) 0.3898 732 (16.4%) 6,304 (5.5%) 0.355
+PRX - SABA use; n (%) 523 (48.6%) 25,017 (51.5%) -0.0580 1,562 (46.0%) 31,659 (48.5%) -0.0501 2,085 (46.6%) 56,676 (49.8%) -0.064
+PRX - SABA/SAMA use; n (%) 243 (22.6%) 7,839 (16.1%) 0.1651 839 (24.7%) 10,570 (16.2%) 0.2119 1,082 (24.2%) 18,409 (16.2%) 0.200
+PRX - Antibiotics treatment (180 days to 31 days before CED); n (%) 512 (47.5%) 24,200 (49.8%) -0.0460 1,697 (50.0%) 34,160 (52.3%) -0.0460 2,209 (49.4%) 58,360 (51.3%) -0.038
+PRX - Antibiotics treatment (30 days to CED); n (%) 152 (14.1%) 5,931 (12.2%) 0.0562 458 (13.5%) 9,458 (14.5%) -0.0288 610 (13.6%) 15,389 (13.5%) 0.003
+PRX - Systemic Corticosteroids (with CPT) use (180 to 31 days before CED); n (%) 539 (50.0%) 25,127 (51.7%) -0.0340 1,638 (48.2%) 32,585 (49.9%) -0.0340 2,177 (48.7%) 57,712 (50.7%) -0.040
+PRX - Systemic Corticosteroids (with CPT) use (30 days to CED); n (%) 102 (9.5%) 3,369 (6.9%) 0.0949 384 (11.3%) 5,550 (8.5%) 0.0939 486 (10.9%) 8,919 (7.8%) 0.[ADDRESS_696644]; n (%) * 7 (0.6%) 378 (0.8%) -0.0240 5 (0.1%) 487 (0.7%) -0.0952 012 (0.3%) 865 (0.8%) -0.068
+CVD - Unstable angina/MI; n (%) 86 (8.0%) 4,729 (9.7%) -0.0599 223 (6.6%) 4,791 (7.3%) -0.0275 309 (6.9%) 9,520 (8.4%) -0.056
+CVD - Stable Angina  ; n (%) 46 (4.3%) 2,338 (4.8%) -0.0240 95 (2.8%) 2,405 (3.7%) -0.0508 141 (3.2%) 4,743 (4.2%) -0.053
+CVD - Any Heart failure (HF) ; n (%) 183 (17.0%) 9,631 (19.8%) -0.0723 518 (15.2%) 11,652 (17.9%) -0.0727 701 (15.7%) 21,283 (18.7%) -0.080
+CVD - Atrial fibrillation; n (%) 144 (13.4%) 6,877 (14.2%) -0.0232 393 (11.6%) 8,538 (13.1%) -0.0456 537 (12.0%) 15,415 (13.5%) -0.045
+CVD - Other dysrythmias   ; n (%)* 191 (17.7%) 8,444 (17.4%) 0.0079 352 (10.4%) 9,481 (14.5%) -0.1244 543 (12.1%) 17,925 (15.7%) -0.104
+CVD - Valve disorder   ; n (%) 34 (3.2%) 1,741 (3.6%) -0.0221 74 (2.2%) 1,841 (2.8%) -0.0384 108 (2.4%) 3,582 (3.1%) -0.043
+CVD - Implantable cardioverter defibrillator  ; n (%)* 14 (1.3%) 951 (2.0%) -0.0550 32 (0.9%) 961 (1.5%) -0.0551 046 (1.0%) 1,912 (1.7%) -0.061
+CVD - CABG/PCI; n (%) 74 (6.9%) 4,336 (8.9%) -0.0742 139 (4.1%) 3,428 (5.3%) -0.0567 213 (4.8%) 7,764 (6.8%) -0.086
+CVD - Coronary atherosclerosis and other forms of chronic ischemic heart disease; n (%) 270 (25.1%) 13,906 (28.6%) -0.0790 704 (20.7%) 17,219 (26.4%) -0.1346 974 (21.8%) 31,125 (27.3%) -0.128
+CVD - Stroke/TIA  ; n (%) 60 (5.6%) 2,727 (5.6%) 0.0000 169 (5.0%) 3,400 (5.2%) -0.0091 229 (5.1%) 6,127 (5.4%) -0.013
+CVD - Peripheral Vascular Disease (PVD) or PVD Surgery; n (%) 112 (10.4%) 6,337 (13.0%) -0.0810 218 (6.4%) 5,918 (9.1%) -0.1011 330 (7.4%) 12,255 (10.8%) -0.118
+CVD - Hyperlipi[INVESTIGATOR_035]  ; n (%) 516 (47.9%) 26,282 (54.1%) -0.1243 703 (20.7%) 22,385 (34.3%) -0.3082 1,219 (27.2%) 48,667 (42.7%) -0.329
+CVD - Hypertension; n (%) 695 (64.5%) 33,432 (68.8%) -0.0913 1,384 (40.7%) 33,730 (51.7%) -0.2220 2,079 (46.5%) 67,162 (59.0%) -0.252
+CRX - ACEi or ARB; n (%) 457 (42.4%) 22,139 (45.6%) -0.0645 1,444 (42.5%) 29,179 (44.7%) -0.0444 1,901 (42.5%) 51,318 (45.1%) -0.[ADDRESS_696645]  ; n (%) 44 (4.1%) 2,041 (4.2%) -0.0050 161 (4.7%) 3,176 (4.9%) -0.0094 205 (4.6%) 5,217 (4.6%) 0.000
+CRX - Loop or Thiazide diuretics; n (%) 374 (34.7%) 16,506 (34.0%) 0.0147 1,379 (40.6%) 23,473 (36.0%) 0.0947 1,753 (39.2%) 39,979 (35.1%) 0.085
+CRX - Statins and other lipid lowering agents; n (%) 487 (45.2%) 25,485 (52.5%) -0.1464 1,511 (44.5%) 32,717 (50.1%) -0.1123 1,998 (44.7%) 58,202 (51.1%) -0.128
+CRX - Beta blockers ; n (%) 342 (31.8%) 17,833 (36.7%) -0.1034 957 (28.2%) 23,987 (36.8%) -0.1844 1,299 (29.0%) 41,820 (36.7%) -0.164
+CRX - CCB and other antihypertensives; n (%) 336 (31.2%) 14,658 (30.2%) 0.0217 1,148 (33.8%) 19,244 (29.5%) 0.0926 1,484 (33.2%) 33,902 (29.8%) 0.073
+CRX - Digoxin   ; n (%)* 52 (4.8%) 1,689 (3.5%) 0.0652 307 (9.0%) 3,742 (5.7%) 0.1267 359 (8.0%) 5,431 (4.8%) 0.131
+CRX - Nitrates; n (%)* 100 (9.3%) 4,486 (9.2%) 0.0035 431 (12.7%) 7,249 (11.1%) 0.0494 531 (11.9%) 11,735 (10.3%) 0.051
+OCM - Type 1 or 2 DM; n (%) 290 (26.9%) 13,869 (28.5%) -0.0358 681 (20.0%) 15,497 (23.7%) -0.0896 971 (21.7%) 29,366 (25.8%) -0.096
+OCM - Occurrence of Diabetic retinopathy/nephropathy/neuropathy; n (%)* 91 (8.4%) 5,084 (10.5%) -0.0718 127 (3.7%) 3,524 (5.4%) -0.0816 218 (4.9%) 8,608 (7.6%) -0.112
+OCM - Hypertensive nephropathy; n (%)* 82 (7.6%) 4,127 (8.5%) -0.0331 100 (2.9%) 2,758 (4.2%) -0.0703 182 (4.1%) 6,885 (6.0%) -0.087
+OCM - Hypotension  ; n (%)* 42 (3.9%) 2,601 (5.4%) -0.0713 77 (2.3%) 2,518 (3.9%) -0.0924 119 (2.7%) 5,119 (4.5%) -0.097
+OCM - Hyperkalemia ; n (%)* 29 (2.7%) 1,448 (3.0%) -0.0180 59 (1.7%) 1,128 (1.7%) 0.0000 088 (2.0%) 2,576 (2.3%) -0.021
+OCM - CKD II, III, or IV; n (%) 94 (8.7%) 5,205 (10.7%) -0.0676 80 (2.4%) 3,244 (5.0%) -0.1381 174 (3.9%) 8,449 (7.4%) -0.152
+OCM - HD/PD/ESRD; n (%)* 16 (1.5%) 510 (1.0%) 0.0450 35 (1.0%) 849 (1.3%) -0.0281 051 (1.1%) 1,359 (1.2%) -0.009
+OCM - Osteoporosis; n (%) 135 (12.5%) 6,026 (12.4%) 0.0030 473 (13.9%) 6,609 (10.1%) 0.1171 608 (13.6%) 12,635 (11.1%) 0.076
+OCM - Sleep apnea ; n (%) 139 (12.9%) 7,636 (15.7%) -0.0800 236 (6.9%) 8,922 (13.7%) -0.2251 375 (8.4%) 16,558 (14.5%) -0.192
+OCM - Fractures  ; n (%) 68 (6.3%) 3,465 (7.1%) -0.0320 218 (6.4%) 4,379 (6.7%) -0.0121 286 (6.4%) 7,844 (6.9%) -0.020
+OCM - Other Arthritis, Arthropathies and Musculoskeletal Pain ; n (%) 463 (43.0%) 22,638 (46.6%) -0.0724 1,073 (31.6%) 25,228 (38.7%) -0.1491 1,536 (34.3%) 47,866 (42.0%) -0.159
+OCM - Dorsopathies; n (%) 308 (28.6%) 16,451 (33.9%) -0.1145 671 (19.8%) 16,991 (26.0%) -0.1480 979 (21.9%) 33,442 (29.4%) -0.172
+OCM - Gout (acute/chronic) ; n (%)* 7 (0.6%) 562 (1.2%) -0.0636 45 (1.3%) 799 (1.2%) 0.0090 052 (1.2%) 1,361 (1.2%) 0.000
+OCM - Hyperthyroidism  ; n (%)* 3 (0.3%) 420 (0.9%) -0.0778 18 (0.5%) 417 (0.6%) -0.0135 021 (0.5%) 837 (0.7%) -0.026
+OCM - Hypothyroidism ; n (%)* 99 (9.2%) 4,864 (10.0%) -0.0272 217 (6.4%) 5,362 (8.2%) -0.0692 316 (7.1%) 10,226 (9.0%) -0.070
+OCM - VTE ; n (%)* 40 (3.7%) 1,870 (3.8%) -0.0053 113 (3.3%) 2,558 (3.9%) -0.0322 153 (3.4%) 4,428 (3.9%) -0.[ADDRESS_696646] ; n (%) 203 (18.8%) 10,528 (21.7%) -0.0722 244 (7.2%) 6,858 (10.5%) -0.1164 447 (10.0%) 17,386 (15.3%) -0.160
+OCM - Cancer   ; n (%) 150 (13.9%) 6,452 (13.3%) 0.0175 369 (10.9%) 7,334 (11.2%) -0.0096 519 (11.6%) 13,786 (12.1%) -0.015
+OCM - Hypovolemia/volume depletion ; n (%)* 59 (5.5%) 2,625 (5.4%) 0.0044 106 (3.1%) 2,580 (4.0%) -0.0487 165 (3.7%) 5,205 (4.6%) -0.045
+OCM - Anemia   ; n (%) 190 (17.6%) 9,353 (19.3%) -0.0438 387 (11.4%) 9,554 (14.6%) -0.0953 577 (12.9%) 18,907 (16.6%) -0.104
+OCM - Dementia  ; n (%)* 73 (6.8%) 3,560 (7.3%) -0.0195 133 (3.9%) 3,059 (4.7%) -0.0394 206 (4.6%) 6,619 (5.8%) -0.054
+OCM - Depression ; n (%) 204 (18.9%) 10,201 (21.0%) -0.0526 301 (8.9%) 8,006 (12.3%) -0.1106 505 (11.3%) 18,207 (16.0%) -0.137
+ORX - Metformin; n (%)* 129 (12.0%) 5,947 (12.2%) -0.0061 312 (9.2%) 6,884 (10.5%) -0.0436 441 (9.9%) 12,831 (11.3%) -0.[ADDRESS_696647] and 2nd Generation SUs   ; n (%) 96 (8.9%) 3,353 (6.9%) 0.0742 298 (8.8%) 4,753 (7.3%) 0.0552 394 (8.8%) 8,106 (7.1%) 0.063
+ORX - Insulins ; n (%) 92 (8.5%) 3,588 (7.4%) 0.0407 198 (5.8%) 4,670 (7.2%) -0.0568 290 (6.5%) 8,258 (7.3%) -0.032
+ORX - Other antidiabetic medications use; n (%) 49 (4.5%) 2,328 (4.8%) -0.0142 169 (5.0%) 3,897 (6.0%) -0.0439 218 (4.9%) 6,225 (5.5%) -0.027
+ORX - PPIs or H2RAs use; n (%)* 299 (27.8%) 15,836 (32.6%) -0.1047 1,088 (32.0%) 18,374 (28.2%) 0.0829 1,387 (31.0%) 34,210 (30.0%) 0.022
+ORX - NSAIDs ; n (%)* 151 (14.0%) 7,708 (15.9%) -0.0533 640 (18.8%) 10,402 (15.9%) 0.0766 791 (17.7%) 18,110 (15.9%) 0.048
+ORX - Use of opi[INVESTIGATOR_2438]  ; n (%)* 418 (38.8%) 20,336 (41.9%) -0.0632 1,337 (39.4%) 28,226 (43.2%) -0.0772 1,755 (39.2%) 48,562 (42.7%) -0.071
+ORX - Use of antipsychotics   ; n (%)* 70 (6.5%) 2,908 (6.0%) 0.0207 139 (4.1%) 3,128 (4.8%) -0.0340 209 (4.7%) 6,036 (5.3%) -0.028
+ORX - Use of antidepressants  ; n (%) 409 (38.0%) 19,790 (40.7%) -0.0553 1,183 (34.8%) 24,738 (37.9%) -0.0645 1,592 (35.6%) 44,528 (39.1%) -0.072
+ORX - Use of anxiolytics/hypnotics ; n (%) 116 (10.8%) 5,649 (11.6%) -0.0254 388 (11.4%) 8,447 (12.9%) -0.0459 504 (11.3%) 14,096 (12.4%) -0.034
+ORX - Use of anticonvulsants  ; n (%)* 207 (19.2%) 10,715 (22.1%) -0.0717 474 (14.0%) 10,973 (16.8%) -0.0776 681 (15.2%) 21,688 (19.1%) -0.104
+ORX - Use of Benzodiazepi[INVESTIGATOR_1651] ; n (%)* 215 (20.0%) 9,605 (19.8%) 0.0050 875 (25.8%) 16,742 (25.7%) 0.0023 1,090 (24.4%) 26,347 (23.1%) 0.031
+ORX - Use of dementia meds  ; n (%)* 37 (3.4%) 1,668 (3.4%) 0.0000 100 (2.9%) 2,021 (3.1%) -0.0117 137 (3.1%) 3,689 (3.2%) -0.006
+ORX - Use of antiparkinsonian meds  ; n (%)* 47 (4.4%) 2,335 (4.8%) -0.0191 108 (3.2%) 2,814 (4.3%) -0.0579 155 (3.5%) 5,149 (4.5%) -0.051
+ORX - Use of oral anticoagulants   ; n (%)* 122 (11.3%) 5,383 (11.1%) 0.0063 423 (12.5%) 8,094 (12.4%) 0.0030 545 (12.2%) 13,477 (11.8%) 0.012
+ORX - Use of antiplatelet agents ; n (%)* 123 (11.4%) 6,436 (13.2%) -0.0548 515 (15.2%) 11,431 (17.5%) -0.0622 638 (14.3%) 17,867 (15.7%) -0.039
+LFS - Obesity; n (%) 96 (8.9%) 5,778 (11.9%) -0.0984 130 (3.8%) 4,329 (6.6%) -0.1264 226 (5.1%) 10,107 (8.9%) -0.149
+LFS - Alcohol/Drug Abuse or Dependence ; n (%) 71 (6.6%) 3,750 (7.7%) -0.0427 66 (1.9%) 2,540 (3.9%) -0.1194 137 (3.1%) 6,290 (5.5%) -0.[ADDRESS_696648] only; n (%) 213 (19.8%) 12,956 (26.7%) -0.1639 676 (19.9%) 20,587 (31.5%) -0.2678 889 (19.9%) 33,543 (29.5%) -0.[ADDRESS_696649] only (Count - 180 days to 31 days before CED) *
+...mean (sd) 0.24 (0.71) 0.34 (0.92) -0.1217 0.22 (0.67) 0.35 (0.87) -0.1674 0.22 (0.68) 0.35 (0.89) -0.164
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (0.68) 0.00 (0.89) 0.[ADDRESS_696650] only (Count - 30 days to CED) *
+...mean (sd) 0.15 (0.63) 0.21 (0.70) -0.0901 0.11 (0.44) 0.23 (0.66) -0.2139 0.12 (0.49) 0.22 (0.68) -0.169
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (0.49) 0.00 (0.68) 0.000
+PFT - Lung volume, Diffuse capacity, pulmonary stress testing (any); n (%) 151 (14.0%) 9,997 (20.6%) -0.1752 249 (7.3%) 10,616 (16.3%) -0.2817 400 (8.9%) 20,613 (18.1%) -0.[ADDRESS_696651] visit (180 to 1 day before CED); n (%) 30 (2.8%) 1,080 (2.2%) 0.0384 787 (23.2%) 20,540 (31.5%) -0.1870 817 (18.3%) 21,620 (19.0%) -0.[ADDRESS_696652] visit on CED; n (%) 2 (0.2%) 150 (0.3%) -0.0200 84 (2.5%) 3,729 (5.7%) -0.1619 086 (1.9%) 3,879 (3.4%) -0.[ADDRESS_696653] visit (Number of during CAP) *
+...mean (sd) 0.25 (2.12) 0.17 (1.85) 0.0402 0.90 (2.40) 1.43 (3.17) -0.1885 0.74 (2.34) 0.89 (2.69) -0.059
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 1.00] 0.0000 0.00 (2.34) 0.00 (2.69) 0.000
+HCU - Number of Internal Medicine/Family Medicine Visits  
+...mean (sd) 9.76 (13.79) 12.05 (16.93) -0.1483 7.86 (13.60) 9.00 (13.56) -0.0839 8.32 (13.65) 10.30 (15.09) -0.138
+...median [IQR] 5.00 [1.00, 12.00] 7.00 [3.00, 15.00] -0.1295 4.00 [0.00, 9.00] 5.00 [2.00, 11.00] -0.0736 4.24 (13.65) 5.85 (15.09) -0.[ADDRESS_696654] visits  
+...mean (sd) 2.40 (6.18) 2.46 (5.82) -0.0100 1.27 (3.79) 1.74 (4.57) -0.1120 1.54 (4.48) 2.05 (5.14) -0.106
+...median [IQR] 0.00 [0.00, 2.00] 0.00 [0.00, 2.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 1.00] 0.0000 0.00 (4.48) 0.00 (5.14) 0.000
+HCU - Number of Emergency Department (ED) visits v3 
+...mean (sd) 0.87 (1.95) 0.99 (2.07) -0.0597 0.69 (3.14) 0.60 (2.44) 0.0320 0.73 (2.90) 0.77 (2.29) -0.015
+...median [IQR] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (2.90) 0.00 (2.29) 0.000OPTUM MARKETSCAN POOLEDUNMATCHEDAppendix B
+HCU - Old hospi[INVESTIGATOR_059] (-180 days to -31 days before CED)  ; n (%) 251 (23.3%) 11,887 (24.5%) -0.0281 1,027 (30.2%) 20,572 (31.5%) -0.0281 1,278 (28.6%) 32,459 (28.5%) 0.002
+HCU - Recent hospi[INVESTIGATOR_059] (-30 days to CED date)  ; n (%) 28 (2.6%) 2,193 (4.5%) -0.1028 152 (4.5%) 3,447 (5.3%) -0.0371 180 (4.0%) 5,640 (5.0%) -0.048
+HCU - Number of hospi[INVESTIGATOR_355502]  
+...mean (sd) 0.35 (0.79) 0.38 (0.78) -0.0382 0.42 (0.73) 0.44 (0.73) -0.0274 0.40 (0.74) 0.41 (0.75) -0.013
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 1.00] 0.0000 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.0000 0.00 (0.74) 0.00 (0.75) 0.[ADDRESS_696655] order; n (%)* 10 (0.9%) 418 (0.9%) 0.0000 21 (0.6%) 461 (0.7%) -0.0124 031 (0.7%) 879 (0.8%) -0.012
+HCU - Pneumococcal vaccine; n (%) 133 (12.3%) 7,651 (15.7%) -0.0981 118 (3.5%) 4,286 (6.6%) -0.1419 251 (5.6%) 11,937 (10.5%) -0.181
+HCU - Flu vaccine  ; n (%) 192 (17.8%) 10,097 (20.8%) -0.0761 368 (10.8%) 8,600 (13.2%) -0.0739 560 (12.5%) 18,697 (16.4%) -0.111
+HCU - Bone mineral density  ; n (%) 31 (2.9%) 2,136 (4.4%) -0.0801 59 (1.7%) 1,728 (2.6%) -0.0621 090 (2.0%) 3,864 (3.4%) -0.086
+HCU - Pap smear ; n (%) 40 (3.7%) 1,243 (2.6%) 0.0630 113 (3.3%) 2,079 (3.2%) 0.0056 153 (3.4%) 3,322 (2.9%) 0.029
+HCU - Mammogram  ; n (%) 120 (11.1%) 4,993 (10.3%) 0.0259 350 (10.3%) 5,340 (8.2%) 0.0725 470 (10.5%) 10,333 (9.1%) 0.047
+HCU - Prostate exam for DRE  ; n (%) 35 (3.2%) 1,790 (3.7%) -0.0274 28 (0.8%) 1,170 (1.8%) -0.0884 063 (1.4%) 2,960 (2.6%) -0.086
+HCU - Number of Echocardiogram  *
+...mean (sd) 0.64 (3.49) 0.61 (2.97) 0.0093 0.43 (1.23) 0.47 (1.13) -0.0339 0.48 (2.02) 0.53 (2.12) -0.024
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (2.02) 0.00 (2.12) 0.[ADDRESS_696656] virtual colonoscopy  ; n (%) 60 (5.6%) 2,516 (5.2%) 0.0177 201 (5.9%) 4,071 (6.2%) -0.0126 261 (5.8%) 6,587 (5.8%) 0.[ADDRESS_696657] Medication Prescriptions (not generalized to generics)  
+...mean (sd) 29.01 (22.72) 28.46 (20.95) 0.0252 26.91 (17.53) 25.81 (17.21) 0.0633 27.42 (18.91) 26.94 (18.90) 0.025
+...median [IQR] 23.00 [14.00, 37.00] 24.00 [14.00, 37.00] -0.0458 23.00 [15.00, 34.50] 22.00 [14.00, 34.00] 0.0576 23.00 (18.91) 22.85 (18.90) 0.[ADDRESS_696658] (charges in U.S. $)  
+...mean (sd) 33.09 (30.71) 29.56 (35.50) 0.1064 26.74 (27.26) 24.27 (23.93) 0.0963 28.27 (28.13) 26.53 (29.43) 0.060
+...median [IQR] 27.02 [12.96, 42.81] 21.96 [7.85, 38.52] 0.1524 21.25 [9.33, 35.86] 19.90 [9.93, 32.60] 0.0526 22.64 (28.13) 20.78 (29.43) 0.065
+SES - Business type   
+...Commercial; n (%) 394 (36.6%) 11,001 (22.6%) 0.3104 394 (36.6%) 11,001 (22.6%) 0.310
+...Medicare; n (%) 683 (63.4%) 37,580 (77.4%) -0.3104 683 (63.4%) 37,580 (77.4%) -0.310
+SES - Low income indicator  ; n (%) 184 (17.1%) 12,414 (25.6%) -0.2086 184 (17.1%) 12,414 (25.6%) -0.209
+SES - Insurance Plan type   
+...Comprehensive; n (%) 1,232 (36.3%) 21,355 (32.7%) 0.0758 1,232 (36.3%) 21,355 (32.7%) 0.076
+...HMO; n (%) 959 (28.2%) 7,748 (11.9%) 0.4158 959 (28.2%) 7,748 (11.9%) 0.416
+...PPO; n (%) 961 (28.3%) 28,886 (44.3%) -0.3374 961 (28.3%) 28,886 (44.3%) -0.337
+...Others; n (%) 245 (7.2%) 7,275 (11.1%) -0.1356 245 (7.2%) 7,275 (11.1%) -0.136___________
+* Not included in PS modelAppendix B
+Referent - Salmeterol Exposure - Tiotropi[INVESTIGATOR_535461] - Salmeterol Exposure - Tiotropi[INVESTIGATOR_535461] - Salmeterol Exposure - Tiotropi[INVESTIGATOR_535462] 1,073 1,073 3,285 3,285 4,358 4,358
+Calendar Time - Year of Initiation (2004 - 2020)
+...2004-2006; n (%) 298 (27.8%) 303 (28.2%) -0.0089 1,849 (56.3%) 1,872 (57.0%) -0.0141 2,147 (49.3%) 2,175 (49.9%) -0.012
+...2007-2008; n (%) 103 (9.6%) 87 (8.1%) 0.0528 403 (12.3%) 376 (11.4%) 0.0278 506 (11.6%) 463 (10.6%) 0.032
+...2009-2011; n (%) 171 (15.9%) 185 (17.2%) -0.0350 543 (16.5%) 537 (16.3%) 0.0054 714 (16.4%) 722 (16.6%) -0.005
+...2012-2015; n (%) 157 (14.6%) 152 (14.2%) 0.0114 315 (9.6%) 348 (10.6%) -0.0332 472 (10.8%) 500 (11.5%) -0.022
+...2016-2018; n (%) 250 (23.3%) 254 (23.7%) -0.0094 175 (5.3%) 152 (4.6%) 0.0323 425 (9.8%) 406 (9.3%) 0.017
+...2019-Mar. 2020; n (%) 94 (8.8%) 92 (8.6%) 0.0071 94 (8.8%) 92 (8.6%) 0.007
+DMG - Age
+...mean (sd) 69.32 (10.77) 69.31 (10.55) 0.0009 70.76 (10.81) 70.58 (10.61) 0.0168 70.41 (10.80) 70.27 (10.60) 0.013
+...median [IQR] 70.00 [62.00, 77.00] 70.00 [62.00, 78.00] 0.0000 72.00 [63.00, 79.00] 71.00 [63.00, 79.00] 0.0934 71.51 (10.80) 70.75 (10.60) 0.071
+DMG - Gender
+...Male; n (%) 509 (47.4%) 496 (46.2%) 0.0241 1,517 (46.2%) 1,528 (46.5%) -0.0060 2,026 (46.5%) 2,024 (46.4%) 0.002
+...Female; n (%) 564 (52.6%) 577 (53.8%) -0.0241 1,768 (53.8%) 1,757 (53.5%) 0.0060 2,332 (53.5%) 2,334 (53.6%) -0.[ADDRESS_696659]; n (%) 100 (9.3%) 99 (9.2%) 0.0035 348 (10.6%) 331 (10.1%) 0.0164 448 (10.3%) 430 (9.9%) 0.013
+...South; n (%) 384 (35.8%) 379 (35.3%) 0.0104 845 (25.7%) 859 (26.1%) -0.0091 1,229 (28.2%) 1,238 (28.4%) -0.004
+...North Central; n (%) 276 (25.7%) 265 (24.7%) 0.0230 1,107 (33.7%) 1,095 (33.3%) 0.0085 1,383 (31.7%) 1,360 (31.2%) 0.[ADDRESS_696660]; n (%) 313 (29.2%) 330 (30.8%) -0.0349 985 (30.0%) 1,000 (30.4%) -0.0087 1,298 (29.8%) 1,330 (30.5%) -0.015
+DRS - Combined comorbidity score, 180 days 
+...mean (sd) 2.37 (2.54) 2.30 (2.47) 0.0279 1.75 (1.88) 1.74 (1.84) 0.0054 1.90 (2.06) 1.88 (2.01) 0.010
+...median [IQR] 2.00 [1.00, 3.00] 1.00 [1.00, 3.00] 0.3992 1.00 [1.00, 3.00] 1.00 [1.00, 2.00] 0.0000 1.25 (2.06) 1.00 (2.01) 0.123
+DRS - Frailty Score: Empi[INVESTIGATOR_8409] (mean)
+...mean (sd) 0.21 (0.07) 0.21 (0.07) 0.0000 0.19 (0.06) 0.19 (0.06) 0.0000 0.19 (0.06) 0.19 (0.06) 0.000
+...median [IQR] 0.19 [0.16, 0.24] 0.19 [0.16, 0.24] 0.0000 0.18 [0.14, 0.22] 0.18 [0.14, 0.22] 0.0000 0.18 (0.06) 0.18 (0.06) 0.000
+PLM - Smoking ; n (%) 302 (28.1%) 287 (26.7%) 0.0314 319 (9.7%) 329 (10.0%) -0.0101 621 (14.2%) 616 (14.1%) 0.003
+PLM - Pneumonia ; n (%) 120 (11.2%) 123 (11.5%) -0.0095 350 (10.7%) 372 (11.3%) -0.0192 470 (10.8%) 495 (11.4%) -0.019
+PLM - Alpha-1 antitrypsin def/Pneumoconioses & other lung disease/Pul fibrosis; n (%) 78 (7.3%) 93 (8.7%) -0.0516 152 (4.6%) 144 (4.4%) 0.0096 230 (5.3%) 237 (5.4%) -0.004
+PLM - Oxygen usage; n (%) 155 (14.4%) 161 (15.0%) -0.0169 575 (17.5%) 623 (19.0%) -0.0388 730 (16.8%) 784 (18.0%) -0.[ADDRESS_696661]/dependence on oxygen ; n (%) 129 (12.0%) 123 (11.5%) 0.0155 223 (6.8%) 228 (6.9%) -0.0040 352 (8.1%) 351 (8.1%) 0.000
+PLM - CiPAP/BiPAP use; n (%) 63 (5.9%) 57 (5.3%) 0.0261 129 (3.9%) 144 (4.4%) -0.0251 192 (4.4%) 201 (4.6%) -0.010
+PLM - Pulmonary rehabilitation ; n (%)* 7 (0.7%) 2 (0.2%) 0.0748 8 (0.2%) 13 (0.4%) -0.0366 015 (0.3%) 015 (0.3%) 0.000
+PLM - Moderate COPD exacerbation - [Count with 365 to 181 days before CED]*
+...mean (sd) 1.67 (4.35) 2.13 (9.04) -0.0648 1.55 (3.69) 1.48 (3.49) 0.0195 1.58 (3.86) 1.64 (5.41) -0.013
+...median [IQR] 0.00 [0.00, 1.11] 0.06 [0.00, 1.57] -0.0085 0.10 [0.00, 1.28] 0.05 [0.00, 1.22] 0.0139 0.08 (3.86) 0.05 (5.41) 0.006
+PLM - Moderate COPD exacerbation - [Count 180 to 31 days before CED]*
+...mean (sd) 1.73 (3.97) 1.77 (6.49) -0.0074 1.29 (2.41) 1.31 (2.33) -0.0084 1.40 (2.87) 1.42 (3.80) -0.006
+...median [IQR] 0.64 [0.01, 1.83] 0.62 [0.02, 1.60] 0.0037 0.54 [0.00, 1.36] 0.54 [0.00, 1.52] 0.0000 0.56 (2.87) 0.56 (3.80) 0.000
+PLM - Moderate COPD exacerbation - [Count with 30 days to CED]*
+...mean (sd) 0.29 (1.12) 0.29 (1.32) 0.0000 0.16 (0.54) 0.18 (0.55) -0.0367 0.19 (0.73) 0.21 (0.81) -0.026
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (0.73) 0.00 (0.81) 0.000
+PLM - Moderate exacerbations >=1 in 365 days before CED; n (%) 861 (80.2%) 872 (81.3%) -0.0279 2,449 (74.6%) 2,496 (76.0%) -0.0325 3,310 (76.0%) 3,368 (77.3%) -0.031
+PLM - Moderate exacerbations >=2 in 365 days before CED ; n (%) 574 (53.5%) 565 (52.7%) 0.0160 1,570 (47.8%) 1,617 (49.2%) -0.0280 2,144 (49.2%) 2,182 (50.1%) -0.018
+PLM - Severe COPD exacerbation - [Count with 365 to 181 days before CED] *
+...mean (sd) 0.04 (0.20) 0.05 (0.25) -0.0442 0.06 (0.25) 0.07 (0.27) -0.0384 0.06 (0.24) 0.07 (0.27) -0.039
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (0.24) 0.00 (0.27) 0.000
+PLM - Severe COPD exacerbation - [Count with 180 to 31 days before CED] *
+...mean (sd) 0.06 (0.26) 0.04 (0.18) 0.0894 0.06 (0.22) 0.06 (0.23) 0.0000 0.06 (0.23) 0.06 (0.22) 0.000
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (0.23) 0.00 (0.22) 0.000
+PLM - Severe COPD exacerbation - [Count with 30 days lookback]  *
+...mean (sd) 0.01 (0.09) 0.01 (0.09) 0.0000 0.01 (0.06) 0.01 (0.09) 0.0000 0.01 (0.07) 0.01 (0.09) 0.000
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (0.07) 0.00 (0.09) 0.000
+PLM - Severe exacerbations >=1 in 365 days before CED; n (%) 106 (9.9%) 106 (9.9%) 0.0000 419 (12.8%) 431 (13.1%) -0.0089 525 (12.0%) 537 (12.3%) -0.009
+PLM - Severe exacerbations >=2 in 365 days before CED ; n (%) 15 (1.4%) 14 (1.3%) 0.0087 63 (1.9%) 75 (2.3%) -0.0279 078 (1.8%) 089 (2.0%) -0.015
+PLM - GOLD C/D Status ; n (%) 435 (40.5%) 424 (39.5%) 0.0204 1,569 (47.8%) 1,636 (49.8%) -0.0400 2,004 (46.0%) 2,060 (47.3%) -0.026
+PRX - LABA (except salmeterol) inhalers; n (%) 62 (5.8%) 61 (5.7%) 0.0043 194 (5.9%) 221 (6.7%) -0.0329 256 (5.9%) 282 (6.5%) -0.025
+PRX - LAMA (except tiotropi[INVESTIGATOR_1890]) inhalers; n (%) * 14 (1.3%) 9 (0.8%) 0.0491 14 (0.4%) 2 (0.1%) 0.0601 028 (0.6%) 011 (0.3%) 0.045
+PRX - ICS only inhalers; n (%) 415 (38.7%) 401 (37.4%) 0.0268 1,534 (46.7%) 1,558 (47.4%) -0.0140 1,949 (44.7%) 1,959 (45.0%) -0.006
+PRX - LABA/LAMA inhaler use; n (%) * 17 (1.6%) 8 (0.7%) 0.0845 2 (0.1%) 3 (0.1%) 0.0000 019 (0.4%) 011 (0.3%) 0.017
+PRX - LABA/ICS inhaler use; n (%) 45 (4.2%) 51 (4.8%) -0.0289 107 (3.3%) 110 (3.3%) 0.0000 152 (3.5%) 161 (3.7%) -0.011
+PRX - COPD Maintenance therapy inhalers; n (%) 126 (11.7%) 127 (11.8%) -0.0031 235 (7.2%) 265 (8.1%) -0.0339 361 (8.3%) 392 (9.0%) -0.025
+PRX - SAMA inhaler use; n (%) 108 (10.1%) 115 (10.7%) -0.0197 565 (17.2%) 610 (18.6%) -0.0365 673 (15.4%) 725 (16.6%) -0.033
+PRX - SABA use; n (%) 521 (48.6%) 510 (47.5%) 0.0220 1,486 (45.2%) 1,530 (46.6%) -0.0281 2,007 (46.1%) 2,040 (46.8%) -0.014
+PRX - SABA/SAMA use; n (%) 242 (22.6%) 241 (22.5%) 0.0024 817 (24.9%) 880 (26.8%) -0.0434 1,059 (24.3%) 1,121 (25.7%) -0.032
+PRX - Antibiotics treatment (180 days to 31 days before CED); n (%) 509 (47.4%) 517 (48.2%) -0.0160 1,646 (50.1%) 1,659 (50.5%) -0.0080 2,155 (49.4%) 2,176 (49.9%) -0.010
+PRX - Antibiotics treatment (30 days to CED); n (%) 150 (14.0%) 157 (14.6%) -0.0171 450 (13.7%) 454 (13.8%) -0.0029 600 (13.8%) 611 (14.0%) -0.006
+PRX - Systemic Corticosteroids (with CPT) use (180 to 31 days before CED); n (%) 537 (50.0%) 540 (50.3%) -0.0060 1,582 (48.2%) 1,592 (48.5%) -0.0060 2,119 (48.6%) 2,132 (48.9%) -0.006
+PRX - Systemic Corticosteroids (with CPT) use (30 days to CED); n (%) 100 (9.3%) 91 (8.5%) 0.0281 365 (11.1%) 352 (10.7%) 0.0128 465 (10.7%) 443 (10.2%) 0.[ADDRESS_696662]; n (%) * 7 (0.7%) 1 (0.1%) 0.0952 5 (0.2%) 6 (0.2%) 0.0000 012 (0.3%) 007 (0.2%) 0.020
+CVD - Unstable angina/MI; n (%) 86 (8.0%) 78 (7.3%) 0.0263 216 (6.6%) 205 (6.2%) 0.0163 302 (6.9%) 283 (6.5%) 0.016
+CVD - Stable Angina  ; n (%) 46 (4.3%) 45 (4.2%) 0.0050 92 (2.8%) 71 (2.2%) 0.0384 138 (3.2%) 116 (2.7%) 0.030
+CVD - Any Heart failure (HF) ; n (%) 182 (17.0%) 180 (16.8%) 0.0053 501 (15.3%) 489 (14.9%) 0.0112 683 (15.7%) 669 (15.4%) 0.008
+CVD - Atrial fibrillation; n (%) 143 (13.3%) 140 (13.0%) 0.0089 381 (11.6%) 361 (11.0%) 0.0190 524 (12.0%) 501 (11.5%) 0.016
+CVD - Other dysrythmias   ; n (%)* 189 (17.6%) 155 (14.4%) 0.0874 344 (10.5%) 368 (11.2%) -0.0225 533 (12.2%) 523 (12.0%) 0.006
+CVD - Valve disorder   ; n (%) 34 (3.2%) 30 (2.8%) 0.0235 71 (2.2%) 76 (2.3%) -0.0067 105 (2.4%) 106 (2.4%) 0.000
+CVD - Implantable cardioverter defibrillator  ; n (%)* 14 (1.3%) 22 (2.1%) -0.0619 32 (1.0%) 36 (1.1%) -0.0098 046 (1.1%) 058 (1.3%) -0.018
+CVD - CABG/PCI; n (%) 74 (6.9%) 59 (5.5%) 0.0581 136 (4.1%) 127 (3.9%) 0.0102 210 (4.8%) 186 (4.3%) 0.024
+CVD - Coronary atherosclerosis and other forms of chronic ischemic heart disease; n (%) 268 (25.0%) 247 (23.0%) 0.0468 693 (21.1%) 657 (20.0%) 0.0272 961 (22.1%) 904 (20.7%) 0.034
+CVD - Stroke/TIA  ; n (%) 60 (5.6%) 66 (6.2%) -0.0255 163 (5.0%) 159 (4.8%) 0.0093 223 (5.1%) 225 (5.2%) -0.005
+CVD - Peripheral Vascular Disease (PVD) or PVD Surgery; n (%) 112 (10.4%) 105 (9.8%) 0.0199 209 (6.4%) 218 (6.6%) -0.0081 321 (7.4%) 323 (7.4%) 0.000
+CVD - Hyperlipi[INVESTIGATOR_035]  ; n (%) 514 (47.9%) 511 (47.6%) 0.0060 690 (21.0%) 681 (20.7%) 0.0074 1,204 (27.6%) 1,192 (27.4%) 0.004
+CVD - Hypertension; n (%) 692 (64.5%) 704 (65.6%) -0.0231 1,347 (41.0%) 1,335 (40.6%) 0.0081 2,039 (46.8%) 2,039 (46.8%) 0.000
+CRX - ACEi or ARB; n (%) 456 (42.5%) 471 (43.9%) -0.0283 1,404 (42.7%) 1,370 (41.7%) 0.0202 1,860 (42.7%) 1,841 (42.2%) 0.[ADDRESS_696663]  ; n (%) 43 (4.0%) 39 (3.6%) 0.0209 156 (4.7%) 153 (4.7%) 0.0000 199 (4.6%) 192 (4.4%) 0.010
+CRX - Loop or Thiazide diuretics; n (%) 373 (34.8%) 389 (36.3%) -0.0313 1,326 (40.4%) 1,310 (39.9%) 0.0102 1,699 (39.0%) 1,699 (39.0%) 0.000
+CRX - Statins and other lipid lowering agents; n (%) 486 (45.3%) 473 (44.1%) 0.0241 1,462 (44.5%) 1,412 (43.0%) 0.0302 1,948 (44.7%) 1,885 (43.3%) 0.028
+CRX - Beta blockers ; n (%) 341 (31.8%) 324 (30.2%) 0.0346 937 (28.5%) 909 (27.7%) 0.0178 1,278 (29.3%) 1,233 (28.3%) 0.022
+CRX - CCB and other antihypertensives; n (%) 334 (31.1%) 338 (31.5%) -0.0086 1,107 (33.7%) 1,123 (34.2%) -0.0106 1,441 (33.1%) 1,461 (33.5%) -0.008
+CRX - Digoxin   ; n (%)* 52 (4.8%) 51 (4.8%) 0.0000 297 (9.0%) 283 (8.6%) 0.0141 349 (8.0%) 334 (7.7%) 0.011
+CRX - Nitrates; n (%)* 100 (9.3%) 90 (8.4%) 0.0317 421 (12.8%) 386 (11.8%) 0.0305 521 (12.0%) 476 (10.9%) 0.035
+OCM - Type 1 or 2 DM; n (%) 288 (26.8%) 277 (25.8%) 0.0227 660 (20.1%) 665 (20.2%) -0.0025 948 (21.8%) 942 (21.6%) 0.005
+OCM - Occurrence of Diabetic retinopathy/nephropathy/neuropathy; n (%)* 91 (8.5%) 104 (9.7%) -0.0417 123 (3.7%) 115 (3.5%) 0.0107 214 (4.9%) 219 (5.0%) -0.005
+OCM - Hypertensive nephropathy; n (%)* 81 (7.5%) 79 (7.4%) 0.0038 100 (3.0%) 86 (2.6%) 0.0242 181 (4.2%) 165 (3.8%) 0.020
+OCM - Hypotension  ; n (%)* 42 (3.9%) 39 (3.6%) 0.0158 75 (2.3%) 88 (2.7%) -0.0256 117 (2.7%) 127 (2.9%) -0.012
+OCM - Hyperkalemia ; n (%)* 29 (2.7%) 32 (3.0%) -0.0180 56 (1.7%) 27 (0.8%) 0.0811 085 (2.0%) 059 (1.4%) 0.046
+OCM - CKD II, III, or IV; n (%) 93 (8.7%) 99 (9.2%) -0.0175 80 (2.4%) 92 (2.8%) -0.0251 173 (4.0%) 191 (4.4%) -0.020
+OCM - HD/PD/ESRD; n (%)* 16 (1.5%) 7 (0.7%) 0.0768 35 (1.1%) 22 (0.7%) 0.0424 051 (1.2%) 029 (0.7%) 0.052
+OCM - Osteoporosis; n (%) 134 (12.5%) 142 (13.2%) -0.0209 457 (13.9%) 458 (13.9%) 0.0000 591 (13.6%) 600 (13.8%) -0.006
+OCM - Sleep apnea ; n (%) 139 (13.0%) 132 (12.3%) 0.0211 232 (7.1%) 258 (7.9%) -0.0304 371 (8.5%) 390 (8.9%) -0.014
+OCM - Fractures  ; n (%) 68 (6.3%) 67 (6.2%) 0.0041 212 (6.5%) 195 (5.9%) 0.0249 280 (6.4%) 262 (6.0%) 0.017
+OCM - Other Arthritis, Arthropathies and Musculoskeletal Pain ; n (%) 461 (43.0%) 449 (41.8%) 0.0243 1,056 (32.1%) 1,004 (30.6%) 0.0323 1,517 (34.8%) 1,453 (33.3%) 0.032
+OCM - Dorsopathies; n (%) 308 (28.7%) 300 (28.0%) 0.0155 662 (20.2%) 639 (19.5%) 0.0176 970 (22.3%) 939 (21.5%) 0.019
+OCM - Gout (acute/chronic) ; n (%)* 7 (0.7%) 13 (1.2%) -0.0516 45 (1.4%) 32 (1.0%) 0.0367 052 (1.2%) 045 (1.0%) 0.019
+OCM - Hyperthyroidism  ; n (%)* 3 (0.3%) 14 (1.3%) -0.1124 18 (0.5%) 17 (0.5%) 0.0000 021 (0.5%) 031 (0.7%) -0.026
+OCM - Hypothyroidism ; n (%)* 98 (9.1%) 104 (9.7%) -0.0206 208 (6.3%) 205 (6.2%) 0.0041 306 (7.0%) 309 (7.1%) -0.004
+OCM - VTE ; n (%)* 39 (3.6%) 46 (4.3%) -0.0359 111 (3.4%) 99 (3.0%) 0.0227 150 (3.4%) 145 (3.3%) 0.[ADDRESS_696664] ; n (%) 202 (18.8%) 186 (17.3%) 0.0390 233 (7.1%) 255 (7.8%) -0.0267 435 (10.0%) 441 (10.1%) -0.003
+OCM - Cancer   ; n (%) 150 (14.0%) 166 (15.5%) -0.0423 359 (10.9%) 349 (10.6%) 0.0097 509 (11.7%) 515 (11.8%) -0.003
+OCM - Hypovolemia/volume depletion ; n (%)* 59 (5.5%) 54 (5.0%) 0.0224 105 (3.2%) 115 (3.5%) -0.0167 164 (3.8%) 169 (3.9%) -0.005
+OCM - Anemia   ; n (%) 190 (17.7%) 161 (15.0%) 0.0731 376 (11.4%) 356 (10.8%) 0.0191 566 (13.0%) 517 (11.9%) 0.033
+OCM - Dementia  ; n (%)* 73 (6.8%) 93 (8.7%) -0.0711 128 (3.9%) 148 (4.5%) -0.0299 201 (4.6%) 241 (5.5%) -0.041
+OCM - Depression ; n (%) 204 (19.0%) 182 (17.0%) 0.0521 291 (8.9%) 280 (8.5%) 0.0142 495 (11.4%) 462 (10.6%) 0.026
+ORX - Metformin; n (%)* 129 (12.0%) 117 (10.9%) 0.0346 300 (9.1%) 304 (9.3%) -0.0069 429 (9.8%) 421 (9.7%) 0.[ADDRESS_696665] and 2nd Generation SUs   ; n (%) 96 (8.9%) 88 (8.2%) 0.0250 284 (8.6%) 279 (8.5%) 0.0036 380 (8.7%) 367 (8.4%) 0.011
+ORX - Insulins ; n (%) 92 (8.6%) 102 (9.5%) -0.0314 190 (5.8%) 199 (6.1%) -0.0127 282 (6.5%) 301 (6.9%) -0.016
+ORX - Other antidiabetic medications use; n (%) 49 (4.6%) 63 (5.9%) -0.0583 164 (5.0%) 169 (5.1%) -0.0046 213 (4.9%) 232 (5.3%) -0.018
+ORX - PPIs or H2RAs use; n (%)* 299 (27.9%) 286 (26.7%) 0.0269 1,054 (32.1%) 976 (29.7%) 0.0520 1,353 (31.0%) 1,262 (29.0%) 0.044
+ORX - NSAIDs ; n (%)* 150 (14.0%) 172 (16.0%) -0.0560 619 (18.8%) 557 (17.0%) 0.0470 769 (17.6%) 729 (16.7%) 0.024
+ORX - Use of opi[INVESTIGATOR_2438]  ; n (%)* 418 (39.0%) 408 (38.0%) 0.0206 1,302 (39.6%) 1,273 (38.8%) 0.0164 1,720 (39.5%) 1,681 (38.6%) 0.018
+ORX - Use of antipsychotics   ; n (%)* 69 (6.4%) 60 (5.6%) 0.0337 137 (4.2%) 143 (4.4%) -0.0099 206 (4.7%) 203 (4.7%) 0.000
+ORX - Use of antidepressants  ; n (%) 408 (38.0%) 393 (36.6%) 0.0290 1,150 (35.0%) 1,152 (35.1%) -0.0021 1,558 (35.8%) 1,545 (35.5%) 0.006
+ORX - Use of anxiolytics/hypnotics ; n (%) 116 (10.8%) 106 (9.9%) 0.0295 383 (11.7%) 380 (11.6%) 0.0031 499 (11.5%) 486 (11.2%) 0.009
+ORX - Use of anticonvulsants  ; n (%)* 207 (19.3%) 215 (20.0%) -0.0176 462 (14.1%) 422 (12.8%) 0.0381 669 (15.4%) 637 (14.6%) 0.022
+ORX - Use of Benzodiazepi[INVESTIGATOR_1651] ; n (%)* 214 (19.9%) 184 (17.1%) 0.0722 847 (25.8%) 863 (26.3%) -0.0114 1,061 (24.3%) 1,047 (24.0%) 0.007
+ORX - Use of dementia meds  ; n (%)* 37 (3.4%) 45 (4.2%) -0.0419 97 (3.0%) 125 (3.8%) -0.0442 134 (3.1%) 170 (3.9%) -0.044
+ORX - Use of antiparkinsonian meds  ; n (%)* 46 (4.3%) 43 (4.0%) 0.0150 104 (3.2%) 115 (3.5%) -0.0167 150 (3.4%) 158 (3.6%) -0.011
+ORX - Use of oral anticoagulants   ; n (%)* 121 (11.3%) 125 (11.6%) -0.0094 416 (12.7%) 400 (12.2%) 0.0151 537 (12.3%) 525 (12.0%) 0.009
+ORX - Use of antiplatelet agents ; n (%)* 123 (11.5%) 108 (10.1%) 0.0451 506 (15.4%) 482 (14.7%) 0.0196 629 (14.4%) 590 (13.5%) 0.026
+LFS - Obesity; n (%) 95 (8.9%) 115 (10.7%) -0.0606 126 (3.8%) 121 (3.7%) 0.0053 221 (5.1%) 236 (5.4%) -0.013
+LFS - Alcohol/Drug Abuse or Dependence ; n (%) 71 (6.6%) 62 (5.8%) 0.0332 64 (1.9%) 59 (1.8%) 0.0074 135 (3.1%) 121 (2.8%) 0.[ADDRESS_696666] only; n (%) 213 (19.9%) 220 (20.5%) -0.0149 672 (20.5%) 683 (20.8%) -0.0074 885 (20.3%) 903 (20.7%) -0.[ADDRESS_696667] only (Count - 180 days to 31 days before CED) *
+...mean (sd) 0.24 (0.71) 0.28 (0.85) -0.0511 0.23 (0.68) 0.20 (0.65) 0.0451 0.23 (0.69) 0.22 (0.70) 0.014
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (0.69) 0.00 (0.70) 0.[ADDRESS_696668] only (Count - 30 days to CED) *
+...mean (sd) 0.15 (0.63) 0.13 (0.53) 0.0344 0.11 (0.45) 0.13 (0.47) -0.0435 0.12 (0.50) 0.13 (0.49) -0.020
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (0.50) 0.00 (0.49) 0.000
+PFT - Lung volume, Diffuse capacity, pulmonary stress testing (any); n (%) 149 (13.9%) 155 (14.4%) -0.0143 242 (7.4%) 260 (7.9%) -0.0188 391 (9.0%) 415 (9.5%) -0.[ADDRESS_696669] visit (180 to 1 day before CED); n (%) 30 (2.8%) 26 (2.4%) 0.0251 781 (23.8%) 794 (24.2%) -0.0094 811 (18.6%) 820 (18.8%) -0.[ADDRESS_696670] visit on CED; n (%) 2 (0.2%) 1 (0.1%) 0.0258 84 (2.6%) 87 (2.6%) 0.0000 086 (2.0%) 088 (2.0%) 0.[ADDRESS_696671] visit (Number of during CAP) *
+...mean (sd) 0.26 (2.12) 0.23 (2.09) 0.0143 0.92 (2.44) 0.95 (2.51) -0.0121 0.76 (2.37) 0.77 (2.41) -0.004
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 1.00] 0.0000 0.00 (2.37) 0.00 (2.41) 0.000
+HCU - Number of Internal Medicine/Family Medicine Visits  
+...mean (sd) 9.78 (13.81) 10.82 (17.37) -0.0663 7.74 (13.40) 7.87 (13.19) -0.0098 8.24 (13.50) 8.60 (14.33) -0.026
+...median [IQR] 5.00 [1.00, 12.00] 6.00 [1.00, 13.00] -0.0637 4.00 [0.00, 9.00] 4.00 [1.00, 9.00] 0.0000 4.25 (13.50) 4.49 (14.33) -0.[ADDRESS_696672] visits  
+...mean (sd) 2.39 (6.16) 2.06 (5.10) 0.0584 1.31 (3.84) 1.29 (4.06) 0.0051 1.58 (4.52) 1.48 (4.34) 0.023
+...median [IQR] 0.00 [0.00, 2.00] 0.00 [0.00, 1.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 1.00] 0.0000 0.00 (4.52) 0.00 (4.34) 0.000
+HCU - Number of Emergency Department (ED) visits v3 
+...mean (sd) 0.87 (1.95) 0.82 (1.93) 0.0258 0.65 (2.71) 0.65 (3.32) 0.0000 0.70 (2.54) 0.69 (3.04) 0.004OPTUM MARKETSCAN POOLEDMATCHEDAppendix B
+...median [IQR] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (2.54) 0.00 (3.04) 0.000
+HCU - Old hospi[INVESTIGATOR_059] (-180 days to -31 days before CED)  ; n (%) 251 (23.4%) 224 (20.9%) 0.0602 999 (30.4%) 969 (29.5%) 0.0196 1,250 (28.7%) 1,193 (27.4%) 0.029
+HCU - Recent hospi[INVESTIGATOR_059] (-30 days to CED date)  ; n (%) 28 (2.6%) 23 (2.1%) 0.0330 147 (4.5%) 131 (4.0%) 0.0248 175 (4.0%) 154 (3.5%) 0.026
+HCU - Number of hospi[INVESTIGATOR_355502]  
+...mean (sd) 0.35 (0.79) 0.32 (0.76) 0.0387 0.42 (0.72) 0.41 (0.72) 0.0139 0.40 (0.74) 0.39 (0.73) 0.014
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.0000 0.00 (0.74) 0.00 (0.73) 0.[ADDRESS_696673] order; n (%)* 10 (0.9%) 11 (1.0%) -0.0103 20 (0.6%) 25 (0.8%) -0.0240 030 (0.7%) 036 (0.8%) -0.012
+HCU - Pneumococcal vaccine; n (%) 133 (12.4%) 140 (13.0%) -0.0180 115 (3.5%) 112 (3.4%) 0.0055 248 (5.7%) 252 (5.8%) -0.004
+HCU - Flu vaccine  ; n (%) 192 (17.9%) 178 (16.6%) 0.0344 351 (10.7%) 334 (10.2%) 0.0163 543 (12.5%) 512 (11.7%) 0.025
+HCU - Bone mineral density  ; n (%) 31 (2.9%) 34 (3.2%) -0.0174 58 (1.8%) 66 (2.0%) -0.0146 089 (2.0%) 100 (2.3%) -0.021
+HCU - Pap smear ; n (%) 40 (3.7%) 49 (4.6%) -0.0451 111 (3.4%) 124 (3.8%) -0.0215 151 (3.5%) 173 (4.0%) -0.026
+HCU - Mammogram  ; n (%) 120 (11.2%) 137 (12.8%) -0.0493 334 (10.2%) 338 (10.3%) -0.0033 454 (10.4%) 475 (10.9%) -0.016
+HCU - Prostate exam for DRE  ; n (%) 35 (3.3%) 43 (4.0%) -0.0373 27 (0.8%) 27 (0.8%) 0.0000 062 (1.4%) 070 (1.6%) -0.016
+HCU - Number of Echocardiogram  *
+...mean (sd) 0.64 (3.50) 0.46 (1.79) 0.0648 0.44 (1.24) 0.44 (1.13) 0.0000 0.49 (2.04) 0.44 (1.32) 0.029
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.0000 0.00 (2.04) 0.00 (1.32) 0.[ADDRESS_696674] virtual colonoscopy  ; n (%) 60 (5.6%) 62 (5.8%) -0.0086 194 (5.9%) 190 (5.8%) 0.0043 254 (5.8%) 252 (5.8%) 0.[ADDRESS_696675] Medication Prescriptions (not generalized to generics)  
+...mean (sd) 28.97 (22.63) 29.22 (22.55) -0.0111 26.87 (17.54) 27.20 (17.32) -0.0189 27.39 (18.92) 27.70 (18.74) -0.016
+...median [IQR] 23.00 [14.00, 37.00] 24.00 [14.00, 38.00] -0.0443 23.00 [15.00, 35.00] 24.00 [15.00, 36.00] -0.0574 23.00 (18.92) 24.00 (18.74) -0.[ADDRESS_696676] (charges in U.S. $)  
+...mean (sd) 33.13 (30.75) 34.27 (37.75) -0.0331 26.28 (26.21) 26.79 (30.17) -0.0180 27.97 (27.40) 28.63 (32.20) -0.022
+...median [IQR] 27.07 [12.96, 42.81] 24.89 [11.22, 44.04] 0.0633 21.02 [9.00, 35.43] 21.11 [10.00, 36.00] -0.0032 22.51 (27.40) 22.04 (32.20) 0.016
+SES - Business type   
+...Commercial; n (%) 392 (36.5%) 404 (37.7%) -0.0248 392 (36.5%) 404 (37.7%) -0.025
+...Medicare; n (%) 681 (63.5%) 669 (62.3%) 0.0248 681 (63.5%) 669 (62.3%) 0.025
+SES - Low income indicator  ; n (%) 183 (17.1%) 201 (18.7%) -0.0417 183 (17.1%) 201 (18.7%) -0.042
+SES - Insurance Plan type   
+...Comprehensive; n (%) 1,230 (37.4%) 1,231 (37.5%) -0.0021 1,230 (37.4%) 1,231 (37.5%) -0.002
+...HMO; n (%) 854 (26.0%) 819 (24.9%) 0.0253 854 (26.0%) 819 (24.9%) 0.025
+...PPO; n (%) 956 (29.1%) 987 (30.0%) -0.0197 956 (29.1%) 987 (30.0%) -0.020
+...Others; n (%) 245 (7.5%) 248 (7.5%) 0.0000 245 (7.5%) 248 (7.5%) 0.000___________
+* Not included in PS modelAppendix B

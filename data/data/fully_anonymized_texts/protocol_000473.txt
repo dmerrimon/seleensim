@@ -1,0 +1,1528 @@
+ 
+Page 1 of 36 The Monitoring Study: Evaluating the Effect of Remote Monitoring For Hypoglycemia on Bionic Pancreas 
+Safety and Efficacy  
+ 
+ 
+Principal Investigator:  
+[CONTACT_1525] J. Russell, M.D., Ph.D.1 
+ 
+Co-Investigators:  
+Courtney Balliro BS, RN, CDE1 
+Rabab Jafri M.D.[ADDRESS_1121287], [LOCATION_011], MA [ZIP_CODE], email: [EMAIL_15406], phone: 61 7-726-1848, fax: 643 -0697, page: [ADDRESS_1121288] Compensation  
+XI. References  
+XII. Appendices  
+a. Map of Study Boundaries  
+b. Senseonics Investigator Brochure  
+ 
+Page 3 of 36 I. Background and Significance  
+1.a. Background  
+Maintaining near -normal blood glucose (BG) levels (70 --120 mg/dl) is a challenging and critically important 
+task for people with diabetes. The Diabetes Control and Complications Trial (DCCT) Research Group 
+definitively demonst rated that tight BG control can reduce long -term complications  in patients with type 1 
+diabetes  (1, 2). The likelihood and severity of nephropathy, retinopathy, neuropathy, macrovascular disease, and 
+skin disorders is reduced in proportion to reductions in  glycated hemoglobin (HbA1c), which is closely 
+correlated with long -term average BG levels. Risks for such complications are elevated by [CONTACT_14774] - to five -fold 
+with diabetes. On the other hand, tight BG control through conventional intensive insulin therapy i ncreases the 
+likelihood of epi[INVESTIGATOR_179264], which carries acute risks, including convulsions, seizures, coma, and 
+death. Conventional therapy also requires a relentless daily effort to count carbohydrates, frequently monitor 
+BG throughout the day and  night, and administer a daily insulin regimen.  
+ 
+A more reliable method for achieving consistent BG control consists of an integrated artificial or bionic 
+pancreas (BP) system, consisting of a continuous glucose monitor (CGM), an infusion pump, and a contr ol 
+algorithm that actuates the pump based on CGM glucose data. Such a system can automate and ease the burden 
+of diabetes  management and vastly improve glycemic control relative to the current standard of care.  
+ 
+I.b. Bionic Pancreas System  
+We have develope d an autonomous, self -learning BP that requires only the subject's weight for initialization, 
+and then autonomously adapts, modestly or dramatically, as needed, to cope with the wide range of insulin 
+requirements of adults, adolescents, and pre -adolescents  with T1D , and potentially for patients with  insulin 
+dependent type 2 diabetes .  The BP obviates the need for the patient to know, or even appreciate, their insulin 
+requirements, and renders obsolete any need for patients or caregivers to know carbohydrate -to-insulin ratios, 
+basal rates, or insulin correction factors.  
+ 
+Our core technology is the insulin controller, which orchestrates all subcutaneous (SC) insulin dosing. At its 
+centerpi[INVESTIGATOR_148062] a model -predictive control algorithm, which bases insulin doses  on the glucose data and insulin 
+absorption kinetics. We were the first to incorporate insulin pharmacokinetics (PK) into the algorithm, by 
+[CONTACT_583508] a mathematical formulation for estimating the concentration of insulin in the blood and 
+predicting  its future concentration. It is essential to compensate for the slow absorption rate of SC insulin 
+analogs (peak time in blood of 30 --90 min, clearance in 4 --8 hr), and to enable the algorithm to refrain from 
+stacking and overdosing insulin.  Furthermore,  the MPC algorithm automatically adjusts its insulin -dosing 
+aggressiveness continuously and in realtime to different insulin needs between individuals and variable needs 
+within the same individual.  Running in parallel with the MPC algorithm is an algorith m that automatically 
+modulates basal insulin delivery over multiple time scales, and another algorithm that automatically adapts 
+insulin doses in response to optional meal announcements.  Unlike current insulin pumps, and all of the insulin -
+only control al gorithms of which we are aware, the adaptive basal insulin algorithm obviates the need for the 
+user to set, or even know, his or her “ basal -rate profile''.  Instead, it is capable of automatically adapting to, and 
+compensating for, changes in an individual 's basal insulin need, such as might occur over a period of hours, 
+days, or weeks (e.g. circadian hormonal fluctuations, intercurrent illness, physical activity, or emotional state) or 
+as might occur over a period of months or years due to developmental ch anges (e.g. hormonal changes that 
+occur during puberty or menopause). Our adaptive meal dose controller obviates the need for the user to set, or 
+even know, his or her “ carbohydrate -to-insulin ratios'', as it makes automatic adjustments based on dosing 
+history for similar meal announcements made on previous days, and customizes the dose for each individual 
+and for time of day.   Our BP also includes a proportional -derivative algorithm governing SC micro -doses of 
+glucagon to help prevent impending hypoglycem ia. Glucagon dosing is based on the glucose level and rate of 
+descent. It could occur preemptively even if glucose is above range and it includes a feedback term to account 
+for the pending effects of recent glucagon doses.  
+ 
+ 
+Page 4 of 36 Taken together, these mathemati cal algorithms provide a universal framework for a glycemic control strategy 
+that requires no quantitative input from, or participation by, the user (besides entering body weight to initialize 
+the system), but which automatically adapts insulin and glucago n dosing to meet the individual needs of each 
+user.  Another challenge we have met is enabling the technology to remain completely autonomous in managing 
+insulin and glucagon delivery even when the Dexcom CGM is offline. Specifically, when the Dexcom CGM i s 
+offline, the B P invokes the high -resolution “ basal rate profile'' that it had recently learned and stored when the 
+Dexcom CGM was online.  On the basis of what the system learned and stored about meal announcements 
+when the Dexcom CGM was online, it is a ble to respond to meal announcements in the same manner when the 
+Dexcom CGM is offline.  Finally, it automatically responds to user -entered BG values when the Dexcom CGM 
+is offline by [CONTACT_179296] a correction dose of insulin or glucagon based on what it learne d about the user's insulin 
+and glucagon needs when the Dexcom CGM was online. Thus, the BP never relies on, or burdens the user with, 
+the determination of subjective dosing decisions, which inevitably vary in quality and reliability among 
+different users. The BP provides a turnkey solution for people with diabetes  that comprehensively manages 
+glycemia across a broad range of individual needs and a across a large spectrum of circumstances and 
+challenges to glycemic control.  
+ 
+I.c. Preliminary Studies  
+Our BP hardware platform has evolved over the years from a laptop -driven system, which we used in all of our 
+inpatient studies (between 2008 --2012), to the first truly mobile wearable iPhone -driven platform, which we 
+have used in all of our outpatient studies thus far (between 2013 --2016).  Using the iPhone -driven BP system,  
+we have conducted >[ADDRESS_1121289] (> 800 patient days or 
+> 2 patient years of data), and across subjects ranging in age between [ADDRESS_1121290] that the average total 
+daily dose of insulin among these subjects varied by [CONTACT_46431] 13 -fold (from 11 to 145 units/day).   
+ 
+The preclinical studies at BU testing the BP in a diabetic swine model of T1D (3 -4), and all of the inpatient 
+clinical trials in the Clinical Research Center at MGH testing the BP in adults and adolescents with T1D (5 -7) 
+set the stage for the outpatient st udies that followed.  In November [ADDRESS_1121291] outpatient study testing our BP in adults 21 years or older with T1D. This study, which we referred to 
+as the Beacon Hill Study, followed a random -order cross -over design in which 20 adults with T1D participated 
+in 5 days on our iPhone -based BP and 5 days of usual care in which they wore a Dexcom CGM with blinded 
+display and muted alarms.  In the BP arm, subjects kept to a three -square -mile geographic area centered around 
+the Beacon Hill neighborhood in [LOCATION_011].  They ate as they chose at local restaurants, and exercised at will with 
+access to two gyms.  Analysis was pre -specified to focus on Days 2 --5, since glycemic control is more 
+representative of BP performance after mos t of the adaptation by [CONTACT_179334] 1 (8). Results are 
+summarized in the plots and table of Figure 1.  
+ 
+ 
+ 
+Page [ADDRESS_1121292] under usual care (shown as a red circle on the 
+left) is connected with the subject's mean CGM glucose level on the BP (shown as a black circle on the right). 
+For each subject, the circle diameter is proportional to the percen tage of CGM glucose values < 60 mg/dl, and 
+the size of the triangle is proportional to the percentage of CGM glucose values > 180 mg/dl.  The horizontal 
+red dashed line refers to the glucose level corresponding to the ADA therapy goal for each age group te sted, 
+which corresponds to 154 mg/dl (HbA1c <7%) for adults and 169 mg/dl (HbA1c <7.5%) for children.  Results 
+are summarized in the table below, where the co -primary outcomes (mean CGM glucose level and percentage 
+of CGM glucose values < 60 mg/dl) for the  BP are highlighted in red for each of the four studies.  
+ 
+In April 2013, we obtained FDA approval to conduct our first outpatient study testing the BP in adolescents 12 --
+20 years old with T1D. This study, which we referred to as the 2013 Summer Camp Study,  followed a random -
+order cross -over design in which 32 adolescents with T1D participated in 5 days on the BP and 5 days of 
+supervised camp care in which they wore a Dexcom CGM with blinded display and muted alarms.  Subjects 
+were fully integrated into norm al camp activities without restrictions on diet or exercise. The study used the 
+Mean CGMG (mg/dl)
+901201541802102401% <60 mg/dl
+5% <60 mg/dl
+10% >180 mg/dl
+50% >180 mg/dl
+Bionic
+PancreasControlBeacon Hill Study
+Mean CGMG (mg/dl)
+901201691802102401% <60 mg/dl
+5% <60 mg/dl
+10% >180 mg/dl
+50% >180 mg/dl
+Bionic
+PancreasControl2013 S ummer C amp S tudy
+Mean CGMG (mg/dl)
+901201501691802102401% <60 mg/dl
+5% <60 mg/dl
+10% >180 mg/dl
+50% >180 mg/dl
+Bionic
+PancreasControl2014 S ummer C amp S tudy
+Mean CGMG (mg/dl)
+901201541802102401% <60 mg/dl
+5% <60 mg/dl
+10% >180 mg/dl
+50% >180 mg/dl
+Bionic
+PancreasControlBP M ulti-Center Study
+Study Age Mean CGM Mean CGM Mean CGM
+(years) glucose level <"60"mg/dl70–180"mg/dlglucose level <"60"mg/dl70–180"mg/dlglucose level <"60"mg/dl70–180"mg/dl
+(mg/dl) (%) (%) (mg/dl) (%) (%)
+Beacon Hill  (n=20, 5-day experiments) ≥*21 133 1.5 80 159 3.7 59 <*0.001 0.020 <*0.001
+2013 Summer Camp (n=32, 5-day experiments) 12–20 142 1.3 76 158 2.2 65 0.004 0.192 <*0.001
+2014 Summer Camp (n=19, 5-day experiments) 6–11 137 1.2 81 168 2.8 58 0.004 0.001 <*0.001
+BP Multi-Center (n=29, 11-day experiments) ≥*21 142 0.6 78 165 1.6 61 <*0.001 <*0.001 <*0.001Bionic Pancreas (BP) Control p-value (BP versus Control) for:
+% of CGM glucose levels % of CGM goucose values % of CGM glucose values
+Figure 1:Outpatient results summar izing thedistribution ofmean CGM glucose levelsandhypoglycemia intheBPandcontrol arms.Mean CGM glucose
+levelsforeach subjectunder usual care (shownasaredcircle ontheleft)isconnected withthesubject’ smean CGM glucose levelontheBP(shownas
+ablackcircle ontheright). Foreach subject, thecircle diameter ispropor tional tothepercentage ofCGM glucose values <60mg/dl, andthesizeofthe
+triangle ispropor tional tothepercent ageofCGM glucose values >180mg/dl.Thehorizontal reddashed linereferstotheglucose levelcorresponding
+totheADAtherapygoal foreach agegroup tested, which corresponds to154mg/dl (HbA1c <7%) foradults and168mg/dl (HbA1c <7.5%) forchildren.
+Results aresummar izedinthetablebelow,where theco-pr imaryoutcomes (mean CGM glucose levelandpercentage ofCGM glucose values <60mg/dl)
+fortheBParehighlighted inredforeach ofthefourstudies .
+theplots andtableofFigure 1.InApril2014, weobtained appro valforasupplement (S003) toIDE#G130065 to
+conduct ourﬁrstoutpatient study testing ourBPi[INVESTIGATOR_810782]-adolescents 6–[ADDRESS_1121293] 2014andwassimilar indesign toour2013 Summer Camp Study .Results are
+summar izedintheplots andtableofFigure 1.InApril2014, weobtained IDEappro val(#G140045) toconduct
+ourﬁrstmulti-center study ,which wasalso ourﬁrsthome study ,totestourBPi[INVESTIGATOR_810783] 18years orolder with
+T1D.Appro valsfrom theIRBs atMGH andBUfollowedinMay2014. This study ,which wereferred toasthe
+Bionic Pancreas Multi-Center (BPMC) Study ,wascompleted inApril2015 andfollowedarandom-order cross-
+ 
+Page 6 of 36 same iPhone -based BP that was used in the Beacon Hill Study.  The mean HbA1c of the entire all 32 subjects at 
+baseline (pre -study) was 8.2%, which corresponds to a mean BG of 1 89 mg/dl.  Results are summarized in the 
+plots and table of Figure 1 (8).   
+ 
+In April [ADDRESS_1121294] the BP in adults 18 years or older with T1D. This study, which we referred to as the Bionic Pancreas Multi -
+Center (BPMC) Study, followed a random -order cross -over design in which 39 adults participated in 11 days on 
+the BP and 11 days of usual care. P articipants went to work as usual, and lived and slept at home, all without 
+clinical supervision.  There were no restrictions placed on diet or exercise. The study included four medical 
+centers (10 subjects per center), which included MGH, the University o f [LOCATION_005] Medical School, 
+Stanford University, and the University of North Carolina at Chapel Hill.  
+ 
+Preliminary results from an interim analysis of a subset of the data from the BPMC Study are summarized in the 
+plots and table of Figure 1 (unpublis hed data).  
+ 
+The mean CGM glucose levels obtained by [CONTACT_810806] 2013 and 2014 Summer Camp Studies 
+and the Bionic Pancreas Multicenter Study, were 141 ±  10 mg/dl in adults, 142 ± 12 mg/d l in adolescents, and 
+137 ± 11 mg/dl in pre -adolescents.   Based on these mean CGM glucose levels, we projected what the 
+bihormonal BP would achieve in terms of HbA1c in the three populations we studied.  In adults, we expect an 
+HbA1c of 6.5 ± 0.4%, in adolescents we expect an HbA1c of 6.6 ± 0.4%, and in pre -adolescents we expect an 
+HbA1c of 6.4 ± 0.4%.  It is important to note that the BP was able to achieve mean CGM glucose levels below 
+the American Diabetes Association (ADA) goal for therapy in all three populations in nearly all subjects tested 
+while simultan eously eliminating almost all hypoglycemia.  On the BP, CGM glucose levels fell below 60 mg/dl 
+only 0.6% of the time in adults, 1.3% of the time in adolescents, and 1.2% of the time in pre -adolescents.  A 
+summary of results from each of these studies is in cluded in Figure 2.  
+ 
+The BP can also operate in an insulin -only configuration. During operation in this mode, all other features of the 
+BP operate as usual except that glucagon is not given. In the insulin -only configuration, the quantity of 
+glucagon that would have been given (virtual glucagon) is also tracked and feeds back to reduce the 
+aggressiveness of the insulin controller. This effect is typi[INVESTIGATOR_810784] -only configuration, since, 
+in the absence of a prompt anti -hypoglycemic respons e, more virtual glucagon is given. In addition, the lowest 
+glucose target that can be chosen by [CONTACT_179297] 100 mg/dl in the bihormonal system to 110 mg/dl 
+in the insulin -only system. These two mechanisms combine to significantly reduce the aggressiveness of insulin 
+dosing in the insulin -only system, with the aim of keepi[INVESTIGATOR_810785] -only system.  
+  
+In addition to conducting four outpatient studies te sting our BP in the bihormonal configuration, we have also 
+conducted two home -use outpatient studies testing our iPhone -based BP system in the insulin -only 
+configuration and targeting different glycemic set -points.  These studies were conducted by [CONTACT_810807].  In the study conducted by [CONTACT_810808], 16 adults with T1D 
+compared our BP in the insulin -only configuration with insulin pump therapy in one -week experiments at work 
+and at home (with a glucose target of ~ 130 mg/dl).  In the study conducted by [CONTACT_810809], 20 adults with 
+T1D compared our BP in the insulin -only configuration at a set -point of 130 mg/dl, with our BP in the 
+bihormonal configuration at glucose set -points of 100, 115, and 130 mg/dl, and with in sulin pump therapy in 3 -
+day experiments at work and at home.  (Note, the glycemic set -point that was used in the Beacon Hill Study, the 
+2013 and 2014 Summer Camp Studies and the Bionic Pancreas Multi -Center Study shown in Figure 2 targeted 
+100 mg/dl.)   
+ 
+Page 7 of 36  
+The mean CGM glucose levels obtained by [CONTACT_263222] -only BP with a glycemic set -point of 130 mg/dl was 161 
+± 9 mg/dl in our Stanford Insulin -only Study and 160 ± 17 mg/dl in our MGH Set -Point Study, with CGM 
+glucose levels falling b elow 60 mg/dl only 0.9% a nd 0.8 % of the time, respectively.  Based on these mean CGM 
+glucose levels, we project that our insulin -only BP would achieve an HbA1c in adults of ~ 7.2 ± 0.5%, while 
+simultaneously limiting CGM glucose levels below 60 mg/dl to less than 1% of the time.  Thus, we project that 
+the insulin -only configuration of our BP would result in HbA1c levels that are ~ 0.7% higher than would be 
+expected from our BP in the bihormonal configuration.  A summary of results from these two studies is included 
+in Figure 2. 
+ 
+ 
+ 
+Figure 2. Outpatient results summarizing the distribution of mean CGM glucose levels and hypoglycemia in the 
+bihormonal, insulin -only, and control arms from the BP studies at MGH and Stanford.   Left:  Mean CGM 
+glucose levels for each subject under usual care (red circles) is connected with the subject's mean CGM glucose 
+level using the insulin -only configuration of the BP (black circles). Right :  Mean CGM glucose levels for each 
+subject under usual c are (red circles) is connected with the subject's mean CGM glucose levels (black circles) 
+using (1) the insulin -only configuration of the BP with a set -point of 130 mg/dl, (2), the bihormonal 
+configuration of the BP with a set -point of 130 mg/dl, (3) the b ihormonal configuration of the BP with a set -
+point of 115 mg/dl, and (4) the bihormonal configuration of the BP with a set -point of 100 mg/dl.  As in Figure 
+2, the diameters of the circles shown are proportional to the percentage of CGM glucose values < 60  mg/dl that 
+were experienced by [CONTACT_810810], and the horizontal red dashed line 
+refers to the glucose level corresponding to the ADA therapy goal, which corresponds to 154 mg/dl (HbA1c of 
+7%) for adults.  Summary r esults showing the co -primary outcomes (mean CGM glucose level and percentage 
+of CGM glucose values < 60 mg/dl) for the control and intervention arms are superimposed on the plots.  
+ 
+In all of our previous outpatient studies using the bihormonal bionic panc reas, we have done remote monitoring 
+for severe biochemical hypoglycemia. Data was sent from the device to the cloud every 5 minutes and if the 
+CGM glucose was <50 mg/dl for more than 3 consecutive measurements (a minimum of 15 minutes) then a 
+study staff member was notified and they call ed the subject  to ensure their wellbeing . If study staff were unable 
+to contact [CONTACT_810811], someone who lives with the subject and has 
+agreed to be contact[CONTACT_810812] a situation.  Subjects were instructed that if they were aware of a hypoglycemic 
+event or received an alarm from the bionic pancreas they were to enter a BG measurement into the bionic 
+pancreas. Any such entered measurements were transmitted to the cloud; this  would rese t the [ADDRESS_1121295] of the bionic 
+pancreas itself.  
+ 
+Mean CGMG (mg/dl)
+901201541802102401% <60 mg/dl
+5% <60 mg/dl
+B ih o rm o n al
+(100 m g /d l)B ih o rm o n al
+(115 m g /d l)B ih o rm o n al
+(130 m g /d l)In su lin  O n ly
+(130 m g /d l)C o n tro l(n =20)
+M ean : 158 +/- 31 m g /d l
+1.4%  <60,     34%  >180M ean : 161 +/- 17 m g /d l
+0.8%  <60,     31%  >180
+I: 0.57 U /kgM ean : 156 +/- 12 m g /d l
+0.5%  <60,     28%  >180
+I: 0.53 U /kg,  G : 2.2 m cg/kgM ean : 146 +/- 15 m g /d l
+0.9%  <60,     22%  >180
+I: 0.55 U /kg,  G : 5.3 m cg/kgM ean : 136 +/- 14 m g /d l
+0.8%  <60,     17%  >180
+I: 0.58 U /kg,  G : 8.3 m cg/kg
+Mean CGMG (mg/dl)
+901201541802102401% <60 mg/dl
+5% <60 mg/dl
+C o n tro l In su lin  O n ly(n =16)
+M ean : 151 +/- 26 m g /d l
+1.9%  <60,     26%  >180M ean : 160 +/-  9 m g /d l
+0.9%  <60,     30%  >180
+I: 0.57 U /kgStanford Insulin-Only Study
+Adults with T1D (≥ 18 years old)MGH Set-Point Study
+Adults with T1D (≥ 18 years old)
+ 
+Page [ADDRESS_1121296] an insulin -only configuration of the bi onic pancreas.  We found in the 
+Multicenter Study that the percentage of time <60 mg/dl was substantially lower in the bihormonal bionic 
+pancreas arm than in the  usual care  comparator arm ( 0.6±0.6%  vs. 1.9±1.7, p<0.0001 ) and the difference was 
+even larger at the lower threshold of <50 mg/dl ( 0.1±0.2 versus 0.6±0.6%, p<0.0001 ). In the Set -point Study we 
+found that the percentage of time <60 mg/dl was nominally lower in all three set -points using the insulin -only 
+bionic pancreas arm (145 mg/dl: 0.96±1.5%, 130  mg/dl: 0.79±1.4%, 110 mg/dl: 1.34±1.3%) than in t he usual 
+care comparator arm  (1.38±2.6)  although the difference were not statistically  significant . Therefore, our data 
+support the safety of allowing subjects to use the bionic pancreas without monitoring because the risk appears to 
+be lower than in usual care  with the bihormonal bionic pancreas and equivalent to usual care with the insulin -
+only bionic pancreas.  However, we don’t know how much remote monitoring for severe hypoglycemia affected 
+the outcomes of these studies. Although calls to subjects for severe hypoglycemia were rare, they did occur. 
+Each call that resulted in a subject taking action sooner than they otherwise would have reduced the amount of 
+hypoglycemia . We don’t know how much hypoglycemia  was reduced, nor do we know whether the amount of 
+hypoglycemia reduction due to monitoring was similar in the two arms. Since hypoglycemia was more common 
+in the comparator usual care arm  than in the bihormonal bionic pancreas arms , it seems likely that m onitoring 
+reduced hypoglycemia more in the usual care arm and therefore reduced the effect size associated with use of 
+the bionic pancreas.   
+ 
+We have done only one study without remote monitoring for severe hypoglycemia , the Glucagon -only Study . 
+This study  assessed the effectiveness of a glucagon -only bionic pancreas for reducing hypoglycemia when 
+subjects controlled their own insulin delivery via an insulin pump. In this study subjects wore the glucagon -only 
+bionic pancreas for two continuous weeks during which time they used their insulin pump as usual. Each day 
+they filled the bionic pancreas with glucagon or placebo from a vial -blinding device. They did not know 
+whether they would receive glucagon on any given day and therefore could not rely on it to pr event 
+hypoglycemia. We asked subjects to complete a brief questionnaire each day and found that blinding was 
+effective; subjects correctly guessed whether they were receiving glucagon or placebo only 42% of the time. 
+Since they were managing their insulin dosing as usual, and since we told them to take all of their usual 
+precautions to prevent hypoglycemia and to treat hypoglycemia as they usual would, their risk of hypoglycemia 
+was not increased by [CONTACT_810813]. We found that 
+the percentage of time <60 mg/dl was dramatically reduced on glucagon days vs. placebo days (1.27±0.91% vs. 
+5.80±4.81%, p=0.0001). However, the notable finding in this context is how high the hypoglycemia was in the 
+usual c are arm without monitoring for severe hypoglycemia . The time <60 mg/dl in the usual care arm of this 
+unmonitored trial (5.8%) was much higher than that in the usual care arms of our trials with remote monitoring 
+for severe biochemical hypoglycemia (1.9% in  the Multicenter Study and 1.4% in the Set -point Study ). This 
+difference could be due to the fact that inclusion criteria for the Glucagon -only Study required that participants 
+have at least partial hypoglycemia unawareness (at least sometime  finding their BG <50 mg/dl without 
+symptoms) and report at least two epi[INVESTIGATOR_17221] a week. However, these criteria are commonly met 
+by [CONTACT_810814] 1 diabetes, and we don’t know that they wouldn’t have been met by [CONTACT_810815] -point Studies. Therefore, there remains uncertainly regarding how much hypoglycemia 
+to expect in both the usual care and bionic pancreas arms of unmonitored studies. This information is important 
+for powering studies to detect differen ces in hypoglycemia between bionic pancreas and usual care.  
+ 
+In addition to gaining important information about the role of remote monitoring in affecting the outcomes of 
+bionic pancreas studies, we can have additional questions that can be answered in the  context of a new study. 
+First, it is important to know if and how bionic pancreas technology  affects food intake,  activity , weight, and 
+body composition . There is very little information available regarding any of these issues. As we go forward 
+into longe r trial we will need to know how to power sub -studies to gain this information. Second, new 
+ 
+Page [ADDRESS_1121297] difficulties with the only currently validated CGM for this purpose, the 
+Dexcom G4 AP / G5 platform.  
+ 
+II. Hypothesis an d Specific Aims  
+We hypothesize that  the amount of hypoglycemia  (% time <60 mg/dl)  on the bionic pancreas will be less than or 
+equal  to the amount of hypoglycemia during  the usual care  arm both with and without monitoring  for severe 
+biochemical hypoglycemi a (<50 mg/dl for >15 minutes) . Furthermore, we hypothesize that the difference in 
+hypoglycemia between the bionic pancreas and usual care arms in the absence of remote monitoring for 
+hypoglycemia will be equal to or larger than the difference in the presen ce of such monitoring.  The specific 
+aims of this study are:  
+ 
+Aim 1.  To conduct an outpatient study testing two configurations of the bionic pancreas (bi -hormonal and 
+insulin -only)  with and without remote monitoring  of hypoglycemia in 24 adult (≥ 18 years of age) subjects with 
+type [ADDRESS_1121298] of six 7-day study arms in random order: two usual care  arms , two bi-hormonal bionic 
+panc reas arms , and two insulin only bionic pancreas  arms .  Each BP arm and the usual care arm will be 
+completed twice  in random order , once with 24 hour remote monitoring for device connectivity and severe 
+biochemical hypoglycemia, and o nce with 24 hour remote monitoring solely for device connectivity  with no 
+monitoring for hypoglycemia . The primary outcome will be the time <60 mg/dl . 
+ 
+Aim 2. To document the satisfaction of subjects with the bionic pancreas device at different set -points with the 
+goal of optimizing the glucose target level and ascertaining the value of glucagon from the subject point of 
+view.  
+ 
+Questionnaires will be administered at the beginning of the study and the end of each arm to gather data on 
+attitudes towards bioni c pancreas BG control, quality of life and treatment satisfaction. This information will be 
+used to make the best choices about how the final version of the bionic pancreas should be configured.  
+ 
+Aim 3. To test the accuracy of the Senseonics implantable C GM vs. the Dexcom G5 
+CGM vs. the Freestyle Libre Pro factory calibrated CGM.  
+ 
+
+ 
+Page 10 of 36 Subjects will wear two blinded CGMs in addition to the Dexcom G 5 CGM that runs the bionic pancreas. The 
+Senseonics implantable CGM  is a tiny device (see figure) that is implanted in the subcutaneous tissue. It is 
+powered externally from the transmitter, which is  attached with adhesive or with use of an elastic arm band. It 
+requires twice daily calibration and performs CGM glucose measurements every 5 minutes for up to 90 days. 
+The Freestyle Libre Pro uses a subcutaneous sensor and an external plastic transmitter connected to the sensor 
+base, similar to the design of the Dexcom . It is factory calibrated and therefore does not require calibration, and 
+performs and stores CGM  glucose measurements every 15 minutes for up to 14 days.  The data from the 
+Senseonics sensor and the Freestyle sensor will be collected in blinded fashion and will later be compared with 
+reference point -of-care capi[INVESTIGATOR_810786] . Data from the Dexc om G5 CGM  will be collected in an 
+unblinded fashion and will later be compared with reference point -of-care capi[INVESTIGATOR_810786] .  The 
+primary outcome for this aim will be the mean absolute relative difference (MARD) of the three CGM systems. 
+Because t he Freestyle CGM only takes a reading every fifteen minutes, for every reference glucose meter 
+reading we will compare it with the Freestyle CGM reading  that is nearest in time, as long as it is within [ADDRESS_1121299] to the Freestyle reading  
+(as long as there is a reading with 5 minutes) , and compare all three to the same meter glucose.  
+ 
+Aim 4. To test the feasibility of determining whether there are differences in activity, caloric intake, types of 
+foods consumed, and weight  associated with use of the bionic pancreas, either in the insulin -only or bihormonal 
+configurations, as compared to conventional insulin pump therapy.  
+ 
+Subjects  will wear an Actigraph activity monitor daily during  each arm  of the study . They will also participate 
+in a [ADDRESS_1121300] Selection  
+III. a. Inclusion Criteria  
+ Age ≥ [ADDRESS_1121301] one year  managed using an insulin 
+pump for ≥ 6 months  
+ Prescription medication regimen stable for > 1 month (except for medications that will not affect the 
+safety of the study and are not expected to affect any outcome of the study, in the judgment of the 
+principal investigator)  
+ Live within a [ADDRESS_1121302] -time radius of the central monitoring location  
+ Willing to remain within a 250 mile  radius of the central mo nitoring location throughout the study .  No 
+air travel will be allowed due to the inability to remotely monitor patients while they are flying.  
+ Have someone over [ADDRESS_1121303] does not answer their telephone (up to two 
+individuals can share this role, but they must be willing to carefully coordinate with each other and the 
+subject so that one of them is clearly designated as having this responsibility at any given time)  
+ Willing to wear  one or  two infusion sets and one Dexcom  CGM sensor and change sets frequently (at 
+least one new glucagon infusion set daily during bi -hormonal arms, and insulin infusion set every other 
+day throughout the study)  
+ Willing to wear two additional CGM sensors  that must be placed in the upper arm  
+ Have a mobile phone they will have access to at all times throughout the study for making contact [CONTACT_810816] 11 of 36 study staff  
+ Have used a CGM for at least one cumulative month over the last 12 months  
+ 
+No subjects will be excluded  on the basis of gender or race. The requirement that subjects manage their diabetes 
+using subcutaneous insulin infusion pump therapy is imposed because multiple daily injection therapy involves 
+the use of long -acting basal insulin that would require an ex tended washout period.  
+ 
+III. b. Exclusion Criteria  
+ Unable to provide informed consent (e.g. impaired cognition or judgment)  
+ Unable to safely comply with study procedures and reporting requirements (e.g. impairment of vision or 
+dexterity that prevents safe  operation of the bionic pancreas, impaired memory, unable to speak and read 
+English)  
+ Current participation in another diabetes -related clinical trial that, in the judgment of the principal 
+investigator, will compromise the results of this study or the saf ety of the subject  
+ Pregnancy (positive urine HCG), breast feeding, plan to become pregnant in the immediate future, or 
+sexually active without use of contraception  
+o Subjects must use acceptable contraception for the two weeks prior to the study, throughout the 
+study and for the two weeks following the study.  
+o Acceptable contraception methods include:  
+ Oral contraceptive pi[INVESTIGATOR_4382] (OCP)  
+ Intrauterine Device (IUD, hormonal or copper)  
+ Male condoms  
+ Female condoms  
+ Diaphragm or cervical cap with spermicide  
+ Contraceptive patch (such as OrthoEvra)  
+ Contraceptive implant (such as Implanon, Nexplanon)  
+ Vaginal ring (such as NuvaRing)  
+ Progestin shot (such as Depo -Provera)  
+ Male partner with a vasectomy proven to be effective by [CONTACT_19668]  
+ Need to go outside of t he designated geographic boundaries during the study  
+ Current alcohol abuse (intake averaging > [ADDRESS_1121304] 30 days), use of marijuana within 1 
+month of enrollment, or other substance abuse (use within the last 6 months of controlled substances 
+other than marijuana without a prescription)  
+ Unwilling or unable to refrain from drinking more than 2 drinks in an hour or more than 4 drinks in a 
+day or use of marijuana during the trial  
+ Unwilling or unable or to avoid use of drugs that may dull the senso rium, reduce sensitivity to 
+symptoms of hypoglycemia, or hinder decision making during the period of participation in the study 
+(use of beta blockers will be allowed as long as the dose is stable and the subject does not meet the 
+criteria for hypoglycemia unawareness while taking that stable dose, but use of benzodiazepi[INVESTIGATOR_810787], even if by [CONTACT_50246], may be excluded according to the judgment of the principal 
+investigator)  
+ History of liver disease that is expected to interfere with the anti -hypog lycemia action of glucagon (e.g. 
+liver failure or cirrhosis). Other liver disease (i.e. active hepatitis, steatosis, active biliary disease, any 
+tumor of the liver, hemochromatosis, glycogen storage disease) may exclude the subject if it causes 
+significant  compromise to liver function or may do so in an unpredictable fashion.  
+ Renal failure on dialysis  
+ Personal history of cystic fibrosis, pancreatitis, pancreatic tumor, or any other pancreatic disease  
+ Any known history of coronary artery disease including, but not limited to, history of myocardial 
+infarction, stress test showing ischemia, history of angina, or history of intervention such as coronary 
+ 
+Page 12 of 36 artery by[CONTACT_15806], percutaneous coronary intervention, or enzymatic lysis of a presumed coronary 
+occlusi on) 
+ Abnormal EKG consistent with coronary artery disease or increased risk of malignant arrhythmia 
+including, but not limited to, evidence of active ischemia, prior myocardial infarction, proximal LAD 
+critical stenosis (Wellen’s sign), prolonged QT interva l (> 440 ms). Non -specific ST segment and T 
+wave changes are not grounds for exclusion in the absence of symptoms or history of heart disease. A 
+reassuring evaluation by a cardiologist after an abnormal EKG finding may allow participation.  
+ Congestive heart  failure (established history of CHF, lower extremity edema, paroxysmal nocturnal 
+dyspnea, or orthopnea)  
+ History of TIA or stroke  
+ Seizure disorder, history of any non -hypoglycemic seizure within the last two years, or ongoing 
+treatment with anticonvulsants  
+ History of hypoglycemic seizures (grand -mal) or coma in the last year  
+ History of pheochromocytoma: fractionated metanephrines will be tested in patients with history 
+increasing the risk for a catecholamine secreting tumor:  
+o Epi[INVESTIGATOR_583490]  (requiring 4 or more medications to achieve normotension) 
+hypertension  
+o Paroxysms of tachycardia, pallor, or headache  
+o Personal or family history of MEN 2A, MEN 2B, neurofibromatosis, or von Hippel -Lindau 
+disease  
+ History of adrenal disease or tumor  
+ Hypertension with systolic BP ≥160 mm Hg or diastolic BP ≥100 despi[INVESTIGATOR_2391]  
+ Untreated or inadequately treated mental illness (indicators would include symptoms such as psychosis, 
+hallucinations, mania, and any psychiatric hospi[INVESTIGATOR_810788]), or treatment with anti -
+psychotic medications that are known to affect glucose regulation.  
+ Electrically powered implants (e.g. cochlear implants, neurostimulators) that might be susceptible to RF 
+interference  
+ The presence of any other active implanted device  
+ Unable to completely avoid acetaminophen for duration of study  
+ Unable to completely avoid ascorbic acid (Vitamin C) for duration of study  
+ Unable to completely avoid salicylic acid (used in some pain relievers such as Aspi[INVESTIGATOR_810789])  
+ History of adverse reaction to glucagon (including allergy) besides nausea and vomiting  
+ Established history of allergy or severe reaction to adhesive or tape that must be used in the study  
+ History of eating disorder within the last 2 years, such as anorexia, bulimia, or diabulemia or omission 
+of insulin to manipulate weight  
+ History of intentional, inappropriate administration of insulin leading to severe hypoglycemia requiring 
+treatment  
+ Use of oral (e.g. thiazolidinediones, biguanides, sulfonylure as, glitinides, DPP -4 inhibitors, SGLT -2 
+inhibitors)  or non -insulin injectable (GLP -1 agonists, amylin)  anti-diabetic medications  
+ Lives in or frequents areas with poor Verizon wireless network coverage (which would prevent remote 
+monitoring)  
+ Any factors th at, in the opi[INVESTIGATOR_810790]  
+ A condition preventing or complicating the placement, operation or removal of the Senseonics sensor or 
+wearing of transmitter, including upper extremity  deformities or skin condition  
+ Currently receiving (or likely to need during the study period): immunosuppressant therapy, 
+chemotherapy, anticoagulant/antithrombotic therapy (excluding aspi[INVESTIGATOR_248]), glucocorticoids (excluding 
+ 
+Page 13 of 36 ophthalmic or nasal). This does in clude the use of inhaled and topi[INVESTIGATOR_810791]  
+ A condition requiring or likely requiring magnetic resonance imaging (MRI), Computed Tomography 
+(CT) scan, or high -frequency electrical heat (diathermy)  
+ A known topi [INVESTIGATOR_620682]  
+ A known glucocorticoids allergy  
+ The presence of any other CGM sensor or transmitter located in the upper arm (other location is 
+acceptable)  
+ Hemoglobin < 11 g/dl 
+ 
+III. c. Source of Subjects  
+V olunteers who fit the selection c riteria will be considered as candidates for this study. We will contact 
+[CONTACT_719767]. In addition, advertisements for the study  may be posted at the MGH Diabetes 
+Center and other places, and may be distributed in the weekly broadcast email of research studies seeking 
+volunteers. A letter may be sent to adult endocrinologists in the [LOCATION_011] metropolitan as well as selected nearby 
+[CONTACT_810817]. We will post information about the trial along with contact [CONTACT_810818] .bionicpancreas.org  and on www.clinicaltrials.gov.  
+ 
+IV . Subject Enrollment  
+IV . a. Number of Subjects  
+It is expected that we will have  [ADDRESS_1121305] to be discontinued b efore completion (due to, for instance, 
+intercurrent illness or subject withdrawal).  
+ 
+For each subject there will be an adult who lives with them who will also be considered a participant in the 
+study, because they will receive some training regarding trea tment of hypoglycemia and will consent to be a 
+designated contact [CONTACT_810819]. Up to two individuals may share this role, but they must be willing 
+to carefully coordinate with each other and the subject so that one of them is clearly designat ed as having this 
+responsibility at any given time, both must consent, and both must complete the required training. These 
+designated contacts are also enrolled in the study, bringing the total enrollment to as many as [ADDRESS_1121306] had time to review the consent document, they will meet with a study provider 
+(MD or NP) that will explain the study, answer any questions, and administer informed consent. In the ev ent 
+that a volunteer is a patient of one of the study MDs or NPs, another staff MD or NP will answer questions and 
+administer consent. Their  designated contact [CONTACT_810820] a study provider to hear what will be 
+required of them if the subjec t participates in the study. Designated contact [CONTACT_810821].   Designated contact [CONTACT_810822] -either a 
+personal cell phone or a household phone. If the designated contact’s consent is obtained over the phone, two 
+copi[INVESTIGATOR_810792] (one to keep and 
+one to return) and he/she will have the form in front of him/her during t he phone consent process. The 
+ 
+Page [ADDRESS_1121307]'s 
+willingness to continue participating in the trial. The subjects or designated contact [CONTACT_810823] t o discontinue 
+their participation at any time. If the designated contact [CONTACT_810824], another 
+contact [CONTACT_810825].  
+ 
+V . Study Procedures  
+V . a. Screening data  
+ Age 
+ Sex 
+ Race and ethnicity  
+ Date of last menstrual period in female volunteers  
+ Date of diabetes diagnosis  
+ Medical, surgical, and social history, allergies, and review of systems relevant to inclusion and exclusion 
+criteria  
+ Medications (prescription and non -prescription) and date of last change in medication regimen  
+ Duration of insulin pump use  
+ Type of insulin used in pump  
+ Average total daily dose of insulin in the last 30 days (from pump history  in type 1 diabetes subjects)  – 
+for comparison with insulin dosing during the usual care and bi onic pancreas arms of the study  
+ Usage of CGM, if any (type of CGM, days per month worn, usage of data, whether insulin is dosed 
+based on CGM alone, alarm settings)  
+ Height and weight  
+ Blood p ressure  
+ EKG  (if applicable)  
+ Urine HCG (pre -menopausal females)  
+ Hemoglobin A1c  
+ Fractionated plasma metanephrines (if testing is indicated by [CONTACT_969])  
+ Stimulated glucose, insulin, and C -peptide [ADDRESS_1121308] has been previously administered and the results are available and were 
+negative (no detectable c -peptide), then it does not need to be repeated.  
+ Hemoglobin  
+ 
+V . b. Drug s 
+The study involves subcutaneous administration of insulin lispro (Humalog, Lilly), insulin aspart (Novolog, 
+Novo Nordisk), or insulin glulisine (Api[INVESTIGATOR_27976], [COMPANY_011] Aventis). All are commercially available by [CONTACT_810826], but not for use in a bionic pancreas. Subjects will be provided with and 
+use whichever analog of rapid acting insulin they usually use during all arms of the study. The study also 
+involves subcutaneous administration of glucagon for injection (Eli L illy) which is indicated for the treatment 
+of severe hypoglycemia, but not for use in a bionic pancreas.   
+ 
+The control system can administer bolus doses of each drug up to every five minutes. A single automated bolus 
+of insulin will not exceed 3 units per  5-minute dose [30 µl] and a single meal -priming dose, which is triggered 
+ 
+Page 15 of 36 by [CONTACT_28024], will not exceed 12 units [120 µl]. A single bolus of glucagon will not exceed 80 µg [80 µl]. The 
+insulin pumps can administer as little as 0.5 µl (0.05 units of U -100 in sulin or 0.5 µg of 1 mg/ml glucagon) in 
+single programmable bolus doses.  
+ 
+It is expected that the total daily dose of glucagon will be < 1.0 mg daily as in previous studies. The mean daily 
+glucagon dose in our previous 11 day outpatient study was 0.51 mg/ day ( range 0.20 -0.90 mg/day). The 
+recommended dose of glucagon for adult patients suffering from severe hypoglycemia is [ADDRESS_1121309] been above the normal fasting range for 
+glucagon  only 1% of the time. Therefore, the glucagon exposure of subjects is expected to be modest.  
+ 
+V . c. Devices  
+Infusion sets: Subjects will wear up to two FDA approved commercially available infusion sets, one for insulin 
+infusion and one for glucagon infusi on, when applicable. Infusion sets that are compatible with the Tandem 
+t:slim insulin pump (leur lock connection) will be provided during all bionic pancreas arms that are similar to 
+the infusion sets they use during usual care. If an infusion set falls of f or is clinically suspected of failing, it will 
+be replaced with a new one. The insulin infusion set will be changed at least every 72 hours; the glucagon 
+infusion set will be changed every 24 hours.  
+ 
+Continuous glucose monitors: Subjects will wear three continuous glucose monitors throughout the study: the 
+Dexcom G5 CGM, the Senseonics CGM, and the Freestyle Libre Pro CGM.   
+ 
+One transcutaneous glucose sensor for the DexCom G5 (9) will be inserted in the subcutaneous tissue and wil l 
+provide input to the controller. The sensor is powered by [CONTACT_810827] . The whole assembly is held to the skin with an adhesive patch and communicates wirelessly  via 
+Bluetooth Low Energy  with the G5 applicat ion running on a mobile device . If the G5 sensor fails for any reason 
+during the experiment it will be replaced promptly.  
+ 
+One subcutaneous glucose sensor for the Senseonics Continuous Glucose Monitor System will be inserted in 
+the subcutaneous tissue of the upper arm. The insertion is an office procedure that takes approximately [ADDRESS_1121310] 
+measurements to allow the insertion site to heal. The sensor is currently approved in Europe for use up to 90 
+days after which is removed in a brief office procedure under local anesthesia.  The senso r is approximately 3.3 
+mm in diameter and 15.7 mm long. It contains a ring that elutes the steroid dexamethasone and core electronics 
+that are potted in epoxy within a poly -methylmethacrylate (PMMA) encasement. The glucose indicating 
+copolymer, which is gr afted onto the PMMA surface, is fluorescent and changes in intensity in response to 
+changes in glucose concentrations. That intensity d ata is transmitted to a battery -powered transmitter that is 
+worn on the upper arm over the insertion site of the sensor. The transmitter is a reusable device that powers the 
+sensor and collects information about glucose levels. It is secured over the sensor insertion site with a 
+transmitter strap or adhesive patch.  The transmitter communicates via Bluetooth Low Energy (BTLE ) to a 
+Mobile Medical Application (MMA) installed on a smartphone or other handheld device. This MMA can 
+display glucose information and allows for calibration of the sensor. The glucose information will be blinded 
+during this study, but subjects will use the MMA to calibrate the sensor  twice a day at the same time and with 
+the same glucose value as they calibrate the Dexcom CGM . The MMA will be installed on an iPod touch or 
+iPhone.  It will not interact with the Bionic Pancreas  in any way.  
+ 
+One transcutaneo us glucose sensor for the FreeStyle Libre Pro Flash  Glucose Monitor ing System will be 
+inserted in the subcutaneous tissue of the upper arm. The sensor measures and store s glucose readings when 
+worn on the body and automatically records glucose level every [ADDRESS_1121311].  
+  
+Bionic Pancreas Control Unit: . The Beta B ionics mobile application that runs the control algorithm and the 
+Dexcom G5 app are both installed on a stock iPhone 6s running iOS 10. The Betabionics app receives the CGM 
+glucose values that are captured by [CONTACT_540451] G5 app.  
+  
+ 
+The control algorithm app has a graphical user interface (GUI) that displays the current Dexcom CGM glucose, 
+a graphical history of the Dexcom CGM glucose, and doses of insulin and glucagon delivered by [CONTACT_810828]. The GUI can also be used to input meal announcements, designating the size of the meal as larger 
+than typi[INVESTIGATOR_2855], typi[INVESTIGATOR_810793], smaller than typi[INVESTIGATOR_2855], or just a bite, and the type of meal  as breakfast, lunch, or 
+dinner. This will trigger a partial meal -priming bolus the size of which will adapt during the course of the trial to 
+meet a target of 75% of the insulin needs for that size and type of meal.  
+ 
+The target glucose level in the bioni c pancreas will be programmed by [CONTACT_810829]. This will be locked for each arm of the study; the subject will be unable to accidentally change or 
+tamper with this setting. Subjects will be aware of what their gluco se target is each week.  
+ 
+The user will have the option during the bi -hormonal bionic pancreas arms to trigger the administration of a 
+glucagon dose, intended to be used prior to device disconnection (e.g. for a shower or swimming). The size of 
+the glucago n dose will be automatically determined by [CONTACT_810830]’s body mass 
+and will be between [ADDRESS_1121312]'s weig ht early in the course of the 
+experiment, or on the average of adaptively determined basal rates for that time of day once sufficient 
+experience has been accumulated (i.e. 24 hours or more) by [CONTACT_179311]. The controller will also 
+administer insu lin and/or glucagon as appropriate in response to any entered BG values, just as if they were 
+Dexcom CGM values.  
+ 
+The GUI also displays local  audio and  visual alarms if communication is dropped between the Dexcom CGM 
+transmitter and the bionic pancreas control unit or between the control unit and the two insulin pumps. The 
+Dexcom CGM also has its own hard -coded alarm distinct from the bionic pancreas when the CGM glucose 
+crosses below 55 mg/dl.  These alarms may be configured so that they require the entry of a code to dismiss.    
+  
+The iPhone communicates wirelessly via the Bluetooth Low Energy (BTLE) protocol with up to two Tandem 
+t:slim insulin pumps to deliver insulin and glucagon.  
+ 
+The bionic pancreas control uni t can be used with two Tandem pumps, one for insulin and the other for 
+glucagon, to make up the bi -hormonal bionic pancreas. It can also be used with one Tandem pump to deliver 
+insulin, as in the insulin -only bionic pancreas arms.  
+ 
+In all configurations, if communication failures between the Dexcom CGM and the bionic pancreas or the 
+bionic pancreas and the cloud are not resolved within [ADDRESS_1121313] with the wearer. Also in both configurations, if the Dexcom CGM glucose drops below 50 mg/dl and the 
+user does not enter a BG into the bionic pancreas GUI within [ADDRESS_1121314] with the wearer according to the 
+study protocol. Monitoring will be  the same in all study  arms with the exception of the hypoglycemia alarm, 
+which will only be monitored in the hypoglycemia monitoring study arms.  
+ 
+Tandem t:slim Pumps: These pumps are FDA approved insulin pumps with reservoirs capable of holding 300 
+units (3 ml) of insulin or [ADDRESS_1121315] a mechanical dosing resolution of 1/120 
+(0.[ZIP_CODE]) unit and can deliver liquids at a maximal rate of ~ 3 3 µl per minute (2 ml per hour). They are slave to 
+the bionic pancreas control unit and are controlled wirelessly via the BTLE protocol by [CONTACT_8100] 4S.  
+ 
+Nova Biomedical StatStrip Xpress Glucose Meter: The StatStrip Xpress glucose meter is an FDA approve d 
+glucose meter that is commercially available. Blood glucose measurements for CGM calibration will be 
+obtained via fingerstick with the StatStrip Xpress in both study arms.  This meter will be used to calibrate both 
+the Dexcom sensor and the Senseonics sen sor. 
+ 
+Actigraph Activity Tracker:  Study subjects will be provided with an activity monitor that is FDA approved 
+and designed for use in research studies. The Actigraph uses a validated, solid state [ADDRESS_1121316] high resolution physical activity and sleep/wake 
+information. It can be worn on the subject’s right hip or wrist  and requires no input from the user. The battery 
+can last up to 25 days, and it can store data for up to 180 days.   
+ 
+V. d. Experimental Procedures and Data Collection  
+V . d. i . Screening Visit  
+ All subjects will have a screening visit to confirm eligibility. Subjects will arrive at this vis it having 
+fasted since 10:[ADDRESS_1121317] . 
+ The subject will be interviewed and the case report form will be completed by [CONTACT_810831].   
+ A urine pregnancy test will be performed in female volunteers. If the test is positiv e the volunteer will be 
+informed of the result and the visit will be ended.  
+ Height, weight and blood pressure will be measured. An EKG will be performed in subjects who are 
+either ≥[ADDRESS_1121318] had diabetes for ≥20 years.  
+ If the volunteer is  not excluded based on historical criteria, blood pressure, EKG or urine pregnancy test, 
+a mixed meal tolerance test (MMTT) component will be performed. The volunteers will drink an 
+amount of a liquid meal replacement product (Boost High Protein or similar  equivalent to Sustical) 
+sufficient to provide 30% of their caloric requirement (30% of 30 kcal/kg for males and 25 kcal/kg for 
+females) or 8 fluid ounces (237 ml) providing [ADDRESS_1121319] and was negative 
+(no detectable C -peptide) then it does not need to be repeated.  
+ Once all of the laboratory results have been returned, a study MD or NP will review the case report form 
+to determine subject eligibility. If subjects are not eligib le to continue in the study the results of 
+abnormal tests will be reported to the subjects and to a health care provider of their choosing.  
+ Subjects who have been screened and are eligible can participate without having to be re -screened for a 
+period of o ne year. The study staff should verbally confirm that there have been no health events that 
+would make them ineligible if the interval between screening and participation is longer than 3 months.  
+ 
+Page 18 of 36  
+V . d. ii. Randomization of  Study  Visit Order: Once the sub ject has been enrolled and eligibility of subjects 
+has been established, subjects will be randomized to one of the possible 6 visit -order schedules  that randomize 
+the visit orders while at the same time arranging the schedule so distribution across the arm s is even each week 
+(pseudo -randomized visit order) .  
+ 
+V . d. iii. General Study Policies for all Study Arms:  
+ Subjects will remain at all times within a geographic boundary established on the basis of 250 miles 
+from the designated base for study personnel  and will avoid any air travel.   
+ If the subject is sleepi[INVESTIGATOR_158739], the designated contact (or one of the designated contacts, if two 
+individuals are sharing the job) must also be at home.  If the subject is traveling within the geographic 
+boundary, the des ignated contact [CONTACT_810832].  
+ Subjects and their designated contact [INVESTIGATOR_11247] a charged mobile phone on their person (or at their 
+bedside) at all times and will answer calls from the study staff.   
+ Study subjects will keep a StatStrip Xpress glucometer easily accessible at all times in case a calibration 
+is needed, and they will do all calibrations with this meter. They will keep a glucometer, fast -acting 
+carbohydrates, and a glucagon emergency kit easily accessible at home in case their desig nated contact 
+[CONTACT_810833].  
+ Subjects are encouraged to check their BG at least four times a day, before meals and before bedtime. 
+They will also be encouraged to check before exercise and at intervals during exercise, and for any 
+symptoms of hypoglycem ia. There are no restrictions on additional checks and subjects should check as 
+often as they wish to maintain adequate control of glycemia and safety in the usual care arm, and to 
+confirm the accuracy of the Dexcom  CGM and for safety in the bionic pancrea s arms. However, they 
+should use the study provided glucose meter for all checks.  
+ Subjects who normally wear a CGM are encouraged to use their own CGM  during their usual care 
+period.  
+ Subjects will test their blood glucose with the Stat Strip Xpress meter before driving and treat their 
+glucose with appropriate carbohydrates as they woul d do normally before driving.   If they are in a 
+hypoglycemia monitored arm, t hey will text or call the study monitor on call before they begin driving 
+and the alert glucose threshold on the realtime data monitoring dashboard will be raised to 60 mg/dl for 
+[ADDRESS_1121320] the provider on call if the Dexco m CGM glucose is <60 
+mg/dl rather than <50 mg/dl. If the subject is driving for more than [ADDRESS_1121321] and the alert glucose threshold will be raised to 60 mg/dl for an additional 
+hour. When a provider calls  the subject regarding an event with Dexcom CGM glucose <60 mg/dl the 
+on-call provider will inquire whether the subject is driving. If they have finished their trip and are no 
+longer driving the provider will inform the monitor to lower the threshold back to 50 mg/dl.   
+ Subject s and their designated contact [CONTACT_810834]. This policy is in place because excessive alcohol consumption may dull the 
+sensorium, reduce sensitivity to s ymptoms of hypoglycemia, and hinder appropriate decision -making. It 
+may also reduce the effectiveness of glucagon in preventing or treating hypoglycemia  (a study is 
+currently ongoing to determine if this is the case) .  
+ Subjects and their designated contact  [CONTACT_810835], other than 
+alcohol. The need to take prescription drugs that dull the sensorium, reduce sensitivity to symptoms of 
+hypoglycemia, or hinder appropriate decision -making may be grounds for exclusion from  the trial or 
+discontinuation of participation, a decision that will be made by [CONTACT_458].  
+ Subjects may not take acetaminophen , ascorbic acid, salicylic acid  or aspi[INVESTIGATOR_248]  (acetylsalicylic acid)  
+during all study arm s due to potential interfer ence with CGM sensing.  Acetaminophen is known to 
+interfere with the accuracy of the Dexcom CGM. Very high doses of s alicylic  acid and aspi[INVESTIGATOR_248]  (doses of 
+greater than 2 grams per day ) are known to interfere with the accuracy of the Senseonics CGM. Very 
+ 
+Page 19 of 36 high doses of salicylic acid and aspi[INVESTIGATOR_248] (doses of greater than 2 grams per day) and high doses of 
+acetaminophen may interfere with the Abbott CGM  although it is much more resistant to interference 
+from acetaminophen than the Dexcom CGM.  
+ Subjects will not tamp er with the bionic pancreas device in any way, including changing any settings. 
+Subjects will not use the bionic pancreas iPhone for anything beyond its intended purpose in this study.  
+ During the experiment the bionic pancreas will be worn by [CONTACT_810836] (such as when 
+sleepi[INVESTIGATOR_007]) at all times to ensure good radio -frequency signal reception.  
+ Subject s will keep their bionic pancreas charged, which will require charging at least once per day.  
+ The bionic pancreas is not water resistant and therefore must be removed for showering. Subjects are 
+urged to take appropriate precautions when they are disconnected from the bionic pancreas, including 
+frequent BG checks and having carbohydrate readily available. Subject s may give a glucagon bolus 
+prior to disconnecting  in bihormonal bionic pancreas arms . 
+ The Dexcom CGM transmitter is  water resistant and can be left on for bathing and swimming. The 
+Senseonics transmitter should be removed prior to bathing or swimming. The Senseonics transmitter 
+contains  a rechargeable battery that should be recharged during bathing.  
+ Subjects may not remove the bionic pancreas for more than 1 hour at a time (e.g. for bathing) and may 
+not remove it for more than 2 hours total in any 24 hour period.   
+ Any medical advice ne eded by [CONTACT_583526], which is not directly related to BG 
+control during the experiment, should be obtained by [CONTACT_810837].  
+o If a subject develops an illness durin g the experiment, they can seek medical care as usual. As 
+long as the subject is not hospi[INVESTIGATOR_057], the study can be continued. If the subject is unable to eat 
+for a period exceeding one day, they must notify study staff so that the medical staff can assess  
+the safety of continuing in the study.  
+ Subjects may participate in any activities that they wish, as long as they abide by [CONTACT_583528].  
+ There are no restrictions of any kind on diet or exercise, although subjects should attempt to maintain 
+similar  dietary habits and exercise habits during each arm of the study. The bionic pancreas must be kept 
+dry during exercise. We will use an accelerometer to accurately compare activity level in each arm of the 
+study.  
+ Subjects may choose to withdraw from the stu dy at any time. If they withdraw from the  study, they 
+should contact a provider immediately.  If they are wearing the bionic pancreas, a provider will help 
+them transition to their own insulin regimen  safely.  
+ While wearing the Senseonics sensor, subjects m ust abide by [CONTACT_810838]:  
+o No massage therapy near the sensor  placement site  
+o Do not use a damaged or cracked transmitter  
+o Do not exchange a transmitter with another person wearing a Senseonic sensor  
+o Use only the provided power supply with the transmitter  
+o Do not immerse the transmitter in water, as this may result in electric shock. Remove the 
+transmitter before bathing or swimming.  
+o Carry a Senseonic sensor identification card  
+o Remove the transmitter if  the sensor feels warm and contact [CONTACT_5989]  
+o Avoid close contact [CONTACT_810839] (theft detectors, CB radio antennae, 
+electric arc welding equipment, linear power amplifiers, and industrial equipment that generates 
+high levels o f electromagnetic interference)  
+o Avoid the following medical therapi[INVESTIGATOR_014]:  
+ Lithotripsy or High -output Ultrasound  
+ Diathermy  
+ Electrocautery  
+ Radiation therapy  
+ 
+Page 20 of 36  Steroid use  
+ MRI, CT or x -ray 
+ 
+V . d. iv . Remote Monitoring  
+Local Alarms  
+ The system will generate  the fol lowing  local alarm s to the subject : 
+o Low threshold audio alarm of 50 mg/dl  Dexcom  CGM glucose values on the bionic pancreas  
+o The Dexcom CGM app also has a low threshold audio and vibrating alarm of 55 mg/dl  
+o Audio and visual alarms on the bionic pancreas for pump disconnections after 10 minutes, and 
+then every 5 minutes following that until the disconnection is resolved  
+o Audio and visual alarms on the bionic pancreas for Dexcom G5 disconnections after 10 minutes, 
+and then every hour following that until the disconnection is resolved  
+ Subjects will be trained in recognizing and re sponding to all of these alarms. They will also be told if 
+they are randomized to monitoring or no monitoring that week, but we will explain that they need to 
+keep their behavior and v igilance to local alarms the same in all study arms.  
+ The Senseonics and Freestyle CGMs have no alarms.  
+Remote Monitoring  
+ A central monitoring station will be staffed [ADDRESS_1121322] one provider (MD or 
+NP) on call at all times in ad dition to the staff member monitoring for alarms. Additional study staff 
+members may assist with on -call duties. A study staff member will make contact [CONTACT_810840], leaving the monitor fre e to focus on 
+identifying alarms and communicating them to the study staff .  
+ Only half of the study arms will be monitored  for hypoglycemia . The subjects will be randomized so 
+that they participate in their usual care arm and each bionic pancreas arm  both with and without 
+hypoglycemia monitoring. All subjects will be monitored for device connectivity in each arm.   
+ All remote monitoring is of the Dexcom G5 CGM and the Bionic Pancreas function . There is no remote 
+monitoring of the Senseonics  or Freestyle  CGM  in any arm . 
+ The system generates the following alarms to the monitoring center : 
+o if the Dexcom  CGM has been disconnected and  has not spontaneously reconnected (after  15 
+minutes, all study arms)  
+o if the wireless connection between the bionic pancreas control unit and a Tandem pump has been 
+lost and has not spontaneously reconnected within 15 minutes (bionic pancreas arms)  
+o CGMG less than 50 mg/dl for 15 minutes  for half of the study arms  
+o No internet  connectivity  (either through cellular or WiFi) , and therefore unable to monitor, for 15 
+minutes  
+ When an alert comes to the monitoring station, a study staff member will contact [CONTACT_810841] . If staff remains unable to  contact [CONTACT_810842] .  
+o In the case of a low CGMG  alarm , in a monitored arm , with no response from the subject  or their 
+contact  [CONTACT_810843], the site principal investigator [INVESTIGATOR_810794].  
+ Remote monitoring is only possible when the subject has Verizon network coverage and data can be 
+transmitted to the cloud service.  There may be times when a s ubject enters an area where Verizon 
+coverage is not available.  We may provide subjects with WiFi boosters for their homes or WiFi hot 
+spots to carry with them in order to improve dat a throughput.  We may also encourage subjects to 
+connect to public but se cure wireless networks if they are having trouble connecting to cellular service.  
+o In the monitoring arms, i f we are unable to monitor a subject remotely for greater than [ADDRESS_1121323] regardless of what study arm they are in.  
+ If there is a technical problem with the bionic pancreas that cannot be resolved over the phon e, a 
+member of study staff may be dispatched to the location of the subject to provide in -person assistance. 
+The subject may be asked to come to the Diabetes Research Center or study staff may meet them in 
+another public place. If this is not possible or w ould be too disruptive (i.e. in the middle of the night) the 
+subject will be asked to take over their own glycemic control using their insulin pump until such time as 
+a meeting can be arranged for in -person inspection of the device. This should occur in mo st cases within 
+12 hours. Staff will not go into subjects’ houses or other non -public places, nor will they go to any place 
+to meet the subject that is not public or where they do not feel safe.  
+ 
+V . d. v. Visit Procedures  
+Visit 0:  Senseonics sensor insertion  
+All Study Arms   
+ The Senseonic sensor insertion will take place before the first study arm is scheduled to start to allow the 
+sensor insertion site to heal and the sensor to acclimate to the surrounding tissue.  
+ A urine pregnancy test will be performed in female volunteers prior to the sensor insertion. If the test is 
+positive, the volunteer  will be informed of the result, the visit will be ended  and the sensor will not be 
+inserted .  
+ The temperature of the subject will be  documented. Study staff will ask about any recent fever or 
+vomiting, in addition to other adverse events or changes to medications. If the subject has a temperature 
+greater than 100.4 degrees F, or has had one in the previous 24 hours, the visit will be e nded and the 
+sensor will not be inserted.  
+ The subject’s skin will be numbed using a local anesthetic (i.e. lidocaine without epi[INVESTIGATOR_238]). The 
+study physician will make a small incision in the skin between the shoulder and the elbow  using the 
+Insertion Te mplates provided by [CONTACT_810844].   
+ Senseonics  will provide sterile, one -time use tools for placing the sensor. The Blunt Dissector is used to 
+create the subcutaneous pocket for insertion of the sensor, and has guide marks to assi st in determining 
+the correct pocket length. The Insertion Tool is used in combination with the Sensor Holder to transfer 
+the sensor, and has guide marks on the cannula to assist in proper placement in the subcutaneous pocket. 
+See the I nvestigator Brochure  (Appendix B ) for details on sensor insertion.  
+ The sensor will be inserted at least three inches away from any infusion or injection sites.  
+ Once the sensor is inserted, the incision will be closed using surgical tapes or a suture and a bandage. 
+Blood los s during the procedure is expected to be minimal ( less than 3 ml)  
+ During this visit, subjects will be trained on how to use the Senseonics Transmitter and when to call the 
+study physician for any issues at the sensor insertion site.  
+Visit 1: First Day 1 V isit 
+All Study Arms  
+ Prior to starting their first study arm, subjects will complete a structured phone interview with 
+collaborators about their baseline dietary habits.    To optimize the accuracy of the assessment of dietary 
+intake data, we will conduct [ADDRESS_1121324] 20 -30 minutes.  Dietary data will be entered and analyzed using 
+NDS -R software (Nutrient Data System for Research, St. Paul, MN).   Study participants will also be 
+asked to complete Previous Day Activity Re call as part of the [ADDRESS_1121325] information about physical activity from the previous 24 -hour period.   The physical 
+activity recalls will take 5 -10 min, added onto the dietary recalls.   To increase precision of short -term 
+usual dietary intake and physical activity, interviews will be conducted twice to cover two days within a 
+four day period leading up and including the baseline visit day (one day per interview).  
+o Telephone recalls will be completed by [CONTACT_810845], Physical Activity, and Body Composition 
+Team in the NIH/NIDDK funded UNC Nutrition Obesity Research Center.  Study site staff will 
+provide UNC with participant contact [CONTACT_332451], contact [CONTACT_31308], as 
+well as best times to contact  [CONTACT_776540]/physical activity recalls via telephone.  
+ The body weight of the subject will be documented .  
+ A urine pregnancy test will be performed in female volunteers. If the test is positive the volunteer will be 
+informed of the result and the visit will be ended. The date of the last menstrual period will also be 
+documented, along with usual cycle length, for female subjects.  
+ The subjects will place a Dexcom G5 sensor and study staff will confirm they are doing it properly.  
+ The subject will complete the beginning questionnaire s regarding their general health and well being, 
+quality of life, diabetes management and dietary habits.   
+o We will administer two questionnaires to understand impulsivity and eating behavior, including 
+the short version of the Barratt Impulsivity Scale (BIS -15) will be used to assess trait impulsivity 
+(15 items, 2 -3 minutes)  (10) and the full Dutch Eating Behavior Scale (33 items, 10 minutes)  
+(11) to measure three different eating behaviors: emotional eating (eating in response to 
+emotional arousal states such as fear, anger or anxiety), externality (eating in response to external 
+food cues such as sight an d smell of food), and restrained eating behavior/cognitive restraint 
+(conscious efforts to li mit and control dietary intake) ( 11). 
+ General Impulsivity (BIS -15; 15 items 2 -3 minutes)  (10). The short version of the 
+Barratt Impulsivity Scale (BIS -15) will be used to assess trait impulsivity. Subjects report 
+the extent to which various descriptions regarding impulsivity apply to them using a 
+response format ranging from 1 = rarely/never to 4 = almost always/always  (10). This 
+scale has shown internal consistency  (α = .79 - .83), [ADDRESS_1121326] reliability (r = 
+.88), and discriminates between psychiatric patients and controls  (10). The Barratt 
+Impulsiveness Scale ( 10) has been described as a gold -standard measure that has been 
+influential in shapi[INVESTIGATOR_810795], and has played a key role in 
+studies of impulsivity and its biological, psychological, and behavioral correlates  (12). 
+The15 -item short form of the BIS (BIS 15) has been shown to retain the 3 -factor structure 
+(nonplanning, motor impulsivity, and attention impulsivity), as well as maintain good 
+reliability and validity  (13).  
+ Dutch Eating Behavior Scale (33 items, 10 minutes)  (11). The Dutch Eating Behavior 
+Questionnaire (DEBQ) was developed to measure eating styles that may contri bute to or 
+attenuate the development of overweight. It comprises three scales that measure three 
+different eating behaviors: emotional eating (eating in response to emotional arousal 
+states such as fear, anger or anxiety), externality (eating in response t o external food cues 
+such as sight and smell of food), and restrained eating behavior/cognitive restraint 
+(conscious efforts to limit and control dietary intake)  (11). The norms and Cronbach's 
+alpha coefficients of the scales and also the Pearson's correla tion coefficients to assess 
+interrelationships between scales indicate that the scales have a high internal consistency 
+and factorial validity  (11). 
+ Low Blood Sugar Survey (33 items, 10 minutes).  Fear of hypoglycemia  is a common 
+deterrent to physical activity  in Type [ADDRESS_1121327] of  33 questions on behavior and worry.  
+ Study staff will place an accelerometer in a belt on the sub ject’s right hip  or on the subject’s wrist, 
+ 
+Page [ADDRESS_1121328] activity data during each week.  
+ Study staff will place a FreeStyle Libre Pro sensor and activate it.  Study staff will assess the Senseonic 
+sensor insertion site and will  assist with calibrating the Senseonics sensor.  
+ Study staff will provide supplies and review the study procedures . For all bionic pancreas arms, study 
+staff will supervise the setup  of the insulin and/or glucagon pumps and infusion sets.  
+ The control algor ithm will be initialized only with the subject’s weight. Diagnostics will be performed to 
+ensure that the Dexcom  CGM device is appropriately calibrated and that all of the components of the 
+bionic pancreas are in good communication with each other.  
+ In the bionic pancreas arms, the subject's own insulin infusion pump will be stopped and disconnected, 
+and its infusion set will be removed.  
+ The staff will start the bionic pancreas as close as possible to a minute divisible by 5 minutes (i.e. on a 5 -
+minute mark) . Study staff will verify that data streaming is working prior to the subject leaving the 
+Diabetes Research Center.  
+Days 1 -7: 
+All Study Arms  
+ The subjects will calibrate the Dexcom CGM  and the Senseonics CGM  twice daily, preferably before 
+breakfast and supper, using the StatStrip Xpress.  Ideally the Dexcom and Senseonics CGMs will be 
+calibrated at the same time with the same glucose value. The calibrations must be completed within 5 
+minutes from the time the g lucose measurement is taken.  The Freestyle Libre Pro sensor does not need 
+to be calibrated.  
+o Subjects will be advised to delay calibration if there is a steep rise or fall in the blood glucose 
+(>2 mg/dl/min), there has been carbohydrate intake in the last [ADDRESS_1121329] 15 minutes. In the immediate aftermath of carbohydrate intake or 
+glucagon dosing it is possible for the BG to be rising without a change in interstitial fluid 
+glucose. If a calibration is delayed for  any of these reasons, it will be performed at the next 
+opportunity.  
+o Subjects may perform additional calibrations if the Dexcom  CGM is inaccurate relative to a BG 
+measurement as long as they do not calibrate within 30 minutes of food intake or 15 minutes o f 
+glucagon dosing. Subjects will be discouraged from performing extra calibrations if the Dexcom  
+CGM is within 15 mg/dl when the BG is ≤ 75 mg/dl and within 20% if the BG is >75 mg/dl at 
+times when the rate of change is low. They will also be trained to un derstand that the apparent 
+error can be higher than this when the BG is changing rapi[INVESTIGATOR_375], and that it is typi[INVESTIGATOR_810796] a result of physiologic la g. Errors in these directions should typi[INVESTIGATOR_810797] (≥ 50%).  
+o Subjects will be instructed to calibrate the Senseonics sensor every time they calibrate the 
+Dexcom G5 sensor using the same blood glucose from  the StatStrip Xpress meter.  All 
+calibrations must be completed within [ADDRESS_1121330] be performed.   
+ The Senseonics sensor will be blinded to the subjects in all st udy arms. Study staff will download the 
+transmitter at the end of each of the study arms .  
+ The FreeStyle Libre Pro sensor will be blinded to the subjects in all study arms.  Study staff will 
+download the transmitter at the end of each of the study arms.  
+ Subjects will be contact[CONTACT_810846] [ADDRESS_1121331] wi th troubleshooting. This meeting may be delayed until morning 
+if the problem occurs overnight. If necessary, the bionic pancreas control unit may be replaced.  
+o When meeting subjects in an off -site location, the principal investigator [INVESTIGATOR_810798] . 
+ 
+Page 24 of 36 A member of the clinical team (MD, NP or RN) will be dispatched if the problem is clinical in 
+nature. If the principal investigator [INVESTIGATOR_810799], a trained 
+engineer will be dispatched to assist the subject with troublesho oting their device.  
+ If the subject cannot be reached at night, then the designated contact [CONTACT_810847].  
+ Alarms will sound and a visual alert will appear on the iPhone screen of the bionic pancreas control unit 
+if the Dexcom  CGM glucose is less than 50 mg/dl. Subjects will test their BG and enter the results into 
+the bionic pancreas in response to such an ala rm. If they do not enter a BG within [ADDRESS_1121332] and no success in locating them, the  site principle 
+investigator will be immediately informed.  
+ Subjects will be trained on troubleshooting for various scenarios that could lead to a low threshold 
+alarms. For instance, a threshold alarm could be due to true hypoglycemia, poor Dexcom  CGM 
+calibration, or a compression artifact at the site of the sensor.  
+o The first step for all low glucose -related alarms will be to perform a fingerstick BG 
+measurement.  
+o If the BG measurement is not consistent with the fact that a threshold alarm has occurred: th e 
+subject will assess the possibility of a compression artifact (they will be trained in the causes 
+and recognition of these events). If a compression artifact is suspected, they will take steps to 
+relieve the pressure on the transmitter. If compression is  not suspected, they will calibrate the 
+Dexcom  CGM as long as there has been no food or carbohydrate intake in the last [ADDRESS_1121333] ent with a low threshold alarm: the subject will treat 
+hypoglycemia with carbohydrate ingestion according to their usual practice.  
+ Subjects will be asked to change their insulin infusion set and reservoir at least every other day  during 
+every arm in the s tudy.  
+ Subjects will remove the Senseonics transmitter before bathing or swimming, and will replace the 
+adhesive patch used to secure it daily.  
+ Subjects will be asked to report all hypoglycemia, carbohydrate interventions, any nausea and/or 
+vomiting, any ot her adverse events, time spent exercising, and any unscheduled infusion set changes, 
+alcohol use, and other questions through a daily email survey.  Subjects will also be asked to report any 
+irritation at the Senseonics sensor insertion site.  
+ Subjects will  complete  structured phone interview s about their dietary and physical activity habits 
+during this arm.  In addition to assessment at baseline, t his includes 24 hour Dietary Recall and Activity 
+Recall on the 6th and 7th day of each arm , as outlined previou sly. 
+Usual Care Arm  
+ In the usual care arm, subjects will continue to manage their own BG according to their usual practice. If 
+they routinely use a CGM, they will be encouraged to continue to use it during the usual care period. 
+They will be asked not to modify their insulin regimen based on the CGM readings over these two 
+weeks without consulting their own endocrinologist.  
+ Subjects will be trained to respond to hypoglycemia and hyperglycemia according to their usual practice 
+and best practice recommendations.  
+Bionic Pancreas Study Arms  
+ Subjects will be able to tell whether BG data is streaming based on the bionic pancreas displ ay and 
+subjects will be contact[CONTACT_810848](s) is 
+interrupted for more than [ADDRESS_1121334] 
+will use their own pump until a meeting is possible. If necessary, the bionic pancreas devic e may be 
+replaced.  
+ Subjects will be trained on troubleshooting for various scenarios that could lead to hyperglycemia. For 
+instance, hyperglycemia could be due to true hyperglycemia or poor Dexcom  CGM calibration.  
+o The first step in responding to hyperglyc emia according to the CGM will be to perform a 
+fingerstick BG measurement.  
+o If the BG measurement is not consistent with the CGMG: the subject will calibrate the Dexcom  
+CGM as long as there has been no carbohydrate intake in the last 30 minutes and there i s no 
+steep rise or fall in glucose (>2 mg/dl/min). If a calibration is delayed for this reason, it will be 
+performed at the next opportunity.  
+o If the BG measurement is consistent with the CGMG: the subject will investigate their insulin 
+infusion site and c onsider replacing it.  
+ If there is a complete failure of bionic pancreas operation and it is anticipated that restarting it will take 
+more than an hour, subjects may take over their own BG control using their own insulin pump or with 
+insulin injections unt il the bionic pancreas can be brought back online with the help of study staff. 
+During the day, this should be rare. If the failure occurs at night, every effort should be made to correct 
+the problem as soon as possible, which should almost always be possi ble within 12 hours.  
+ If a Dexcom  CGM sensor fails during the course of an experiment the system will provide basal insulin 
+based on past requirements and will allow announcement of meals and entry of fingerstick BG 
+measurements, which will be treated as Dexcom  CGM data and may result in administration of insulin 
+and/or glucagon. The Dexcom  CGM sensor will be replaced as soon as possible and normal bionic 
+pancreas control will resume when the new sensor is calibrated.  
+ Subjects will be asked to announce the t hree major meals of the day, but not snacks, to the bionic 
+pancreas. The meal announcement will consist of choosing the type of meal (breakfast, lunch, dinner) 
+and the size of the meal relative to typi[INVESTIGATOR_810800] (snack, smaller than typi[INVESTIGATOR_2855] , typi[INVESTIGATOR_2855], 
+larger than typi[INVESTIGATOR_2855]).  
+Bi-hormonal Bionic Pancreas Arms Only  
+ The glucagon reservoir will be replaced every day during bi -hormonal arms. Each reservoir will be filled 
+with two vials of freshly reconstituted Lilly glucagon. The glucagon infusion set will be changed daily 
+with the reservoir change. We have received an IND exemption from the FDA for use of glucagon in this 
+application for up to 27 hours.  
+ On days when both the insulin and glucagon reservoirs will be changed, subjects will be asked to  change 
+them at different times in the day, separated by [CONTACT_338974]. They will label the infusion sets and 
+tubing with supplied labels to avoid confusion or cross connection.  
+ When investigating suspected or persistent hypoglycemia, subjects will al so be trained to investigate the 
+glucagon infusion set and consider replacing it.  
+ 
+Visits 2, 3, 4 , 5 and 6 : Day 7/Day 1  
+All Study Arms  
+ At the end of the [ADDRESS_1121335] questionnaire s for 
+the study arm.  
+ The body weight of the subject will be documented  
+ The bionic pancreas, g lucose meters , personal CGM if applicable , and the insulin pump in the usual care 
+arm will be downloaded.  The Senseonics transmitter will be downloaded . The FreeStyle Libre  Pro 
+sensor will be read. The accelerometer will be downloaded,  and saved with the participant ID and 
+monitor number so that data can be linked for analysis.  
+ If the Freestyle sensor has been in  place  for two study arms, it will be removed and a new sensor will be 
+placed and activated . The Freestyle Libre sensor will never be worn by a subject for more than 14 days.  
+ 
+Page 26 of 36  Study staff will assess the Senseonic sensor insertion site and will assist with calibrating the Senseonics 
+sensor.  
+ A new Dexcom sensor will be  placed and calibrated.  
+ Study staff will place an accelerometer in a belt on the subject’s right hip or on the subject’s wrist, 
+according to their preference, to collect activity data during each week.  
+ The memory of the bionic pancreas will be wiped and it will be re -initialized with the subject ’s current 
+weight. Diagnostics will be performed to ensure that the Dexcom  CGM device is appropriately 
+calibrated and that all of the components of the bionic pancreas are in good communication with each 
+other.  
+ Study staff will provide supplies and review the study procedures .  
+ For all bionic pancreas arms, study staff will supervise the setup of the insulin and/or glucagon pumps 
+and infusion sets. Participants will need to fill pumps with new reservoirs and plac e new infusion sets if 
+they are switching from a bionic pancreas arm to another bionic pancreas arm.  
+ If the participant is switching from usual care to bionic pancreas,  the subject's own insulin infusion 
+pump will be stopped and disconnected, and its infus ion set will be removed.  
+ If the participant is switching from bionic pancreas to usual care, a provider (MD or NP) will review the 
+last several hours of insulin and/ or glucagon dosing for subjects in the bionic pancreas arms and assist 
+the subject in resum ing their usual care .  
+ The staff will start the bionic pancreas as close as possible to a minute divisible by 5 minutes (i.e. on a 5 -
+minute mark) . Study staff will verify that data streaming is working prior to the subject leaving the 
+Diabetes Research Center.  
+ 
+Visit 7: Final Day 7 Visit  
+All Study Arms  
+ At the end of the [ADDRESS_1121336] questionnaires for 
+the study arm.  
+ The body weight of the subject will be documented  
+ The bionic pancreas, g lucose meter s, personal CGM if applicable , and the insulin pump in the usual care 
+arm will be downloaded.  The Senseonics transmitter will be downloaded . The FreeStyle Libre Pro 
+sensor will be read. The accelerometer will be downloaded,  and saved with the participant I D and 
+monitor number so that data can be linked for analysis.  
+ The Freestyle and Dexcom CGMs and all bionic pancreas infusion sites will be removed.  
+ A provider (MD or NP) will review the last several hours of insulin and or glucagon dosing for subjects 
+in the bionic pancreas arms and assist the subject in resuming their usual care .  
+ The Senseonics sensor will be removed. The Senseonic sensor will never be worn by a subject for more 
+than 90 days. This procedure is similar to the sensor insertion. The skin near the sensor is numbed using 
+a local anesthetic, a small incision is made in the skin using the Removal Template provided by [CONTACT_103], and the sen sor is removed. The incision will be closed using surgical tape or a suture, and 
+covered with a bandage.  
+ 
+Visit 8: Final visit  - Senseonic sensor site assessment  
+All Study Arms   
+ Approximately 10 days after the Senseonic sensor has been removed, the subjec t will return to the 
+Diabetes Research Center. Study staff will assess the sensor insertion site for proper heal ing and any 
+signs of infection or other adverse events.  
+ This visit will be repeated  approximately every 10 days  if any complications are noted a t the sensor 
+insertion site until the study physician determines the site is properly healed.  
+ These follow up visits are mandatory for every subject . 
+ 
+ 
+Page 27 of 36 V . d. vi . Response to Hypoglycemia  
+ Subjects in all study arms are encouraged to check their BG for any symptoms of hypoglycemia.  
+ Subjects are encouraged to treat hypoglycemia according their usual practice or according to the rule of 
+15s: take 15 grams of rapid acting carbohydrate and rech eck in 15 minutes, then repeat as needed.  
+ During bi -hormonal bionic pancreas arms, subjects will be instructed to check their glucagon infusion 
+site and their bionic pancreas for normal operation any time hypoglycemia occurs. If there is any 
+suspi[INVESTIGATOR_1884] g lucagon infusion set malfunction, the site should be replaced.   
+ The designated contact [CONTACT_810849]. They will also be trained in the use of the glucagon rescue kit. If they should find the subject 
+unresponsive they are to use the glucagon rescue kit and call 911.  
+ If a subject experiences a seizure or unconsciousness associated with hypoglycemia in a bionic pancreas 
+arm, his or her participation in the study will be discontinu ed. If a subject experiences a seizure or 
+unconsciousness associated with hypoglycemia in the usual care arm, the PI [INVESTIGATOR_18148] a determination 
+regarding whether it will be safe to allow them to continue in the study.  
+ 
+V . d. vii . Response to Hyperglycemia  
+ Subjects will be instructed to check their insulin infusion site and their pump or bionic pancreas for 
+normal operation any time BG is greater than 300 mg/dl. If there is any suspi[INVESTIGATOR_810801], the site should be replaced.  
+ Subjects may contact a study provider (MD or NP) for advice at any time, and may contact [CONTACT_583534], as they wish. During the bionic pancreas arms they will be assisted in 
+checking the bionic pancreas for any malfunction and correcting an d problems that are found.   
+ If no correctable fault is found, but there is doubt regarding the correct function of the bionic pancreas 
+system, an entirely new backup bionic pancreas system may be brought to the subject’s location by 
+[CONTACT_464].  
+ If a subj ect experiences diabetic ketoacidosis requiring hospi[INVESTIGATOR_316671] a bionic pancreas arm of 
+the study, his or her participation in the study will be discontinued. If a subject experiences a diabetic 
+ketoacidosis requiring hospi[INVESTIGATOR_810802] c are arm, the PI [INVESTIGATOR_18148] a determination regarding 
+whether it will be safe to allow them to continue in the study.  
+ 
+V . d. viii . Response to Nausea/Vomiting  
+If significant nausea, nausea that prevents the subject from eating normally, or any vomiting occ urs during 
+either arm of the study subjects will be encouraged to contact a study provider (MD or NP). They will document 
+the report of nausea or vomiting. If this occurs during the bi -hormonal bionic pancreas arms, they may assist the 
+subject in troublesh ooting, such as checking the BG and the calibration of the Dexcom CGM (excessive 
+glucagon dosing may occur if the Dexcom CGM is reading lower than the true BG).  If a subject experiences 
+persistent nausea and vomiting thought to be related to glucagon dosi ng, his or her participation in the study 
+will be discontinued . 
+ 
+V . d ix . Response to Other Medical Needs  
+If the subject experiences any non -emergent medical concerns outside the scope of diabetes care, he or she will 
+see their personal physician. If the s ubject experiences urgent or emergent medical concerns outside the scope 
+of diabetes care and their primary care physicians, they should visit a walk -in clinic or emergency room, or if 
+necessary call 911.  
+ 
+V . d. x . Monitoring of Bionic Pancreas Performanc e 
+Engineer s familiar with the operation of the bionic pancreas will be readily available by [CONTACT_810850], the functioning of the 
+ 
+Page [ADDRESS_1121337] protected, and will be set up so that only viewing of the screen is possible - no input or 
+changes to the controller can be made remotely. For privacy reasons, no audio or video connectio n will be made 
+to the iPhone.  
+ 
+V . d. xi . Supervision by [CONTACT_127009]  
+A study provider (MD or NP) will be on call at all times during the course of each experiment. All trained staff 
+will have the capability of remotely viewing diagnostic information to fac ilitate phone troubleshooting with 
+subjects and decide about whether additional assistance is needed.  
+ 
+VI. Biostatistical Analysis  
+VI. a. Data Collected  
+VI. a. i. Prior to start of experiment:  
+ Age 
+ Sex 
+ Race and ethnicity  
+ Date of last menstrual period in female subjects  
+ Date of diabetes diagnosis  
+ Medical, surgical, and social history, allergies, and review of systems relevant to inclusion and exclusion 
+criteria  
+ Medications (prescription and non -prescription) and date of la st change in medication regimen  
+ Duration of insulin pump use  
+ Type of insulin used in pump   
+ Insulin regimen  
+ Average total daily dose of insulin in the last 30 days as available  
+ Usage of CGM, if any (type of CGM, days per month worn, usage of data, wheth er insulin is dosed 
+based on CGM alone, alarm settings)  
+ Height and weight  
+ Blood pressure  
+ EKG  if applicable  
+ Hemoglobin A1c  
+ Urine HCG (pre -menopausal females)  
+ Fractionated plasma metanephrines (if indicated by [CONTACT_969])  
+ Stimulated glucose, insulin, and C -peptide [ADDRESS_1121338] and was negative (no detectable 
+C-peptide) then it does not need to be repeated.  
+ Hemoglobin  
+ 
+VI. a. ii. During Both the Usual Care and Bionic Pancreas Arms:  
+ CGMG (CGM glucose) every five minutes from the DexCom G5 CGM and Senseonics CGM  
+ CGMG every fifteen minutes from the FreeStyle Libre Pro CGM  
+ All fingerstick  BG measurements taken by [CONTACT_423] (meter download)  
+ Information collected from the daily email survey and phone calls including hypoglycemia, 
+carbohydrate interventions, any nausea and/or vomiting, diarrhea, any local skin reactions at infusion 
+sites, and other rash, any other adverse events, time spent exercising each day, exercise intensity, and 
+exercise exposure (time X intensity), any unscheduled infusion set changes or Dexcom  CGM sensor 
+changes, and alcohol intake.  
+ 
+Page 29 of 36  Insulin total daily  dose (from t he bionic pancreas or  insulin pump download ) 
+ Glucagon total daily dose (in the bi -hormonal bionic pancreas arms)  
+ Timing of meal announcements and size of meals announced (in the bionic pancreas arms)  
+ Timing and doses of glucagon boluses  (in the bi -hormonal  bionic pancreas arms)  
+ Timing and glucose values at calibrations  of Dexcom and Senseonics CGM  
+ Data from a questionnaire about attitudes and expectations regar ding the bionic pancreas at baseline and 
+on day  7 of each arm.  
+ Time subjects were not under bionic  pancreas control during the bionic pancreas arms  
+ Time without Dexcom  CGM monitoring data during the usual care arm  
+ List of technical faults associated with the bionic pancreas including cause and resolution  
+ Body weight  after each arm  
+ 24 Hour dietary and activity recall s at baseline and after each arm   
+ Actigraph activity monitor  data 
+ 
+VI. b. Study Endpoints  
+VI. b. i . Primary endpoint analyses  
+ 
+Bionic Pancreas Performance  
+The primary outcome for bionic pancreas performance will be the fraction of time spent  with Dexcom CGMG < 
+60 mg/dl . This will be generated from the DexCom G5 CGM data during the bionic pancreas and usual care 
+arms , both monitored and un -monitored . 
+ 
+CGM Comparison  
+The primary outcome for the third aim of the study, comparing the accuracy of the Dexcom, Senseonics and 
+Freestyle CGMs, will be the MARD compared to the Nova Biomedical Statstrip Xpress meter, using CGM 
+readings every fifteen minutes. Because the Freestyl e CGM only takes a reading every fifteen minutes, we will 
+chose the closest meter glucose reading that pairs with a Freestyle CGM reading. We will then chose the 
+Dexcom and Senseonics CGM readings that are closest to the Freestyle reading, and compare all three to the 
+same meter glucose.  
+ 
+VI. b. ii . Secondary endpoint analyses  
+Bionic Pancreas Performance :  
+ All of following metrics will be generated from the DexCom G5 CGM data during the bionic pancreas 
+and usual care arms , both monitored and un -monitored . Each of these measures will be calculated for the 
+entire period and separately for the daytime and nighttime ( 11 pm to 7 am ), for days 2-7, and each 
+individual day 2-7. 
+o Mean Dexcom  CGMG  
+o Fraction of time spent within each of the following glucose ranges:  
+ < 50 mg/dl  
+ < 60 mg/dl  
+ < 70 mg/dl  
+ 70-180 mg/dl  
+ >180 mg/dl  
+ >250 mg/dl  
+o Number of epi[INVESTIGATOR_810803] h ypoglycemia (reported daily by [CONTACT_1130] s) 
+ Percentage of subjects with mean Dexcom  CGMG <154 mg/dl (estimated average glucose 
+corresponding to an A1c of 7% ) 
+ 
+CGM Comparison :  
+ 
+Page 30 of 36  CGM  Reliability index, calculated as percent of possible values actually recorded by [CONTACT_28047] (for 
+Dexcom , FreeStyle,  and Senseonics CGMs)  
+ A two -way comparison of MARDs, comparing Dexcom and Senseonics CGM, using CGM readings 
+measured every 5 minutes and the meter download  
+ The same two -way comparison of MARDs, comparing Dexcom and Senseonics CGM in the following 
+ranges:  
+o Meter BG < 70 mg/dl  
+o Meter BG  70-180 mg/dl  
+o Meter BG > 180 mg/dl  
+ The three -way comparison of MARDs that is specified as the primary outcome comparing the Dexcom, 
+Senseonics and Freestyle CGM , using CGM readings measured every 15 minutes and the meter 
+download  in the following ranges:  
+o Meter BG <70 mg/dl  
+o Meter BG  70 -180 mg/dl  
+o Meter BG >180 mg/dl  
+ 
+VI. b. v. Other outcomes  
+CGM  
+ Correlation between mean Dexcom CGMG and mean number of meal announcements per day  
+ Fraction of days that CGM was used by [CONTACT_810851]  
+ All of following metrics will be generated during the bionic pancreas and usual care arms , bot h 
+monitored and un -monitored . Each of these measures will be calculated for the entire period and, as 
+appropriate, separately for the daytime and nighttime ( 11 pm to 7 am ), for days 2-7, and each individual 
+day 2-7. 
+o Glucagon total daily dose in bi -hormonal  bionic pancreas arm (TDD)  
+o Insulin total daily dose (TDD)  
+o Number of reported carbohydrate interventions for hypoglycemia (reported daily by [CONTACT_1766])  
+o Total grams of carbohydrate taken for hypoglycemia (reported daily by [CONTACT_1766])  
+o Fraction of time bionic pa ncreas off -line or not functioning properly (e.g. due to system crash, 
+communication problem between Dexcom  CGM and bionic pancreas, communication problem 
+between bionic pancreas and pumps, pump malfunction)  
+ 
+BG 
+ All of following metrics will be generated from any fingerstick data available (downloaded from the 
+subjects meter) during the bionic pancreas and usual care arms , both monitored and un -monitored .  
+o Mean number of daily BG measurements  
+o Number of hypoglycemic measurements  < 70  mg/dl < 60 mg/dl, and < 50 mg/dl  
+ Number of severe hypoglycemic events (subject unable to self -treat, requiring the assistance of another 
+person)  
+ 
+Non-glycemic  
+ Mean nausea severity from V AS  
+ All of following metrics will be generated during the bionic pancreas and usual care arms , both 
+monitored and un -monitored . Each of these measures will be calculated for the entire period and, as 
+appropriate, separately for the daytime and nighttime ( 11 pm to 7 am ), for days 2-7, and each individual 
+day 2-7. 
+o Mean daily basal insulin dose  
+o Mean daily bolus insulin dose  
+ Fraction of time bionic pancreas disconnected by [CONTACT_810852] (self -report on 
+ 
+Page 31 of 36 daily questionnaire)  
+ Number of unscheduled infusion set replacem ents  
+ Number of unscheduled Dexcom  CGM sensor changes  
+ Alcohol intake (mean drinks per day)  
+ Exercise duration  
+ Exercise exposure (duration X intensity)  
+ Complications at Senseonic sensor insertion site including but not limited to infection, bruising, 
+swellin g, excessive bleeding, poor wound healing, prolonged pain or discomfort, nerve damage, skin 
+irritation, redness, discoloration or erosion, device migration, allergic reaction to device  components, 
+difficulty in removing the device  or other adverse events.  
+ Number of Senseonic device failures, requiring premature removal of the sensor  
+ Systemic reactions to the Senseonic sensor including but not limited to infection, allergic reaction, and 
+other systemic adverse events.  
+ Change in weight and body composition after each arm  
+ Dietary data from 24 hr dietary recalls will be entered and analyzed using NDS -R software (Nutrient 
+Data System for Research, St. Paul, MN). We will obtain detailed data on foods and nutrients to evaluate 
+whether, and to what extent dietary behaviors change in relation to use of the BP, particularly intake of 
+carbohydrate and calories, and overall dietary quality.  We will assess whether baseline eating behaviors 
+and impulsivity ascertained at baseline predict dietary response to use of the B P. 
+ Mean daily caloric intake  
+ Collection of raw acceleration data will allow outcomes to be computed and summarized at multiple 
+epoch (example minute by [CONTACT_761905], hourly, daily). Accelerometer data will be used to calculate minutes 
+of moderate and vigorous ac tivity, as well as sedentary time, using appropriate analytic techniques and 
+cut points  (16).  Physical activity recall data will be paired with accelerometry data to determine 
+behavioral patterns for type of activities in which the participants engage.  
+ Mean daily c alories expended  
+ 
+The primary analysis of the designated endpoints will be calculated on an intention -to-treat basis, including data 
+from periods  when the bionic pancreas was not in use, if available ( Dexcom CGM data may not be available in 
+some failure modes). In cases where an arm was not completed we will use the available data from that arm in 
+the data analysis. We will calculate percentages, means, standard deviations, and ranges in descriptive  analyses. 
+We will use paired t -test for compar ison of means. In a secondary analysis we may look for any period effect 
+and any interaction between treatment and period. We may, in exploratory analyses, also stratify subjects for 
+secondary analyses of the pre -specified endpoints by [CONTACT_810853] : sex, age, use of CGM in 
+usual care , baseline C -peptide in the context of a mixed meal stimulation test, baseline A1c , usual care insulin 
+total daily dose, body mass index, phase of menstrual cycle (follicular vs. luteal).  
+ 
+VI. c. Power Anal ysis 
+ In Aim [ADDRESS_1121339] the hypothesis that the amount of hypoglycemia  (% time <60 mg/dl)  
+on the bionic pancreas will be less than or equal to the amount of hypoglycemia during the usual care arm both 
+with and without monitoring fo r severe biochemical hypoglycemia (<50 mg/dl for >15 minutes).  A secondary 
+hypothesis is that the difference between the bionic pancreas and usual care arms in % time <60 mg/dl in the 
+unmonitored arms will be greater than or equal to the difference in the monitored arms.  In order to adequately 
+power the study, we need a sample size that is sufficient to detect a clinically meaningful increase in 
+hypoglycemia. In our previous outpatient studies less than 1% of the time was spent with CGM glucose <60 
+mg/dl. I n the study most comparable to this design, the Set -point Study, the mean time <60 mg/dl was 0.88 ± 
+1.32%  in the bionic pancreas groups. A clinically meaningful increase in hypoglycemia would be an absolute 
+increase of time <60 mg/dl of 1%, which would represent more than doubling of the predicted amount of 
+hypoglycemia in the bionic pancreas group , and an in crease of time <60 mg/dl of 14.[ADDRESS_1121340] deviation of both groups would be the same (1.32%) t he following table 
+shows the sample size needed to detect a difference of 1%  with an alpha of 0.[ADDRESS_1121341] size  SD of each arm  r SD of differ ence Sample size 1 -=0.8) 
+     1 1.32  0.001  1.87  23 
+1 1.32  0.01  1.86  23 
+1 1.32  0.05  1.82  22 
+1 1.32  0.1 1.77  21 
+1 1.32  0.2 1.67  19 
+1 1.32  0.3 1.56  17 
+1 1.32  0.4 1.45  15 
+1 1.32  0.5 1.32  13 
+ 
+In previous outpatient studies there  has been very little correlation between the amount of hypoglycemia in the 
+usual care group and the bionic pancreas group; the r value varied from 0.012 to 0.15. Therefore, a sample size 
+of 23 subjects is predicted to gi ve an 80% power to detect an in crease of 1% in the time <60 mg/dl in the group 
+without monitoring for hypoglycemia relative to the group with monitoring for hypoglycemia. Therefore, we 
+will target an enrolment of 24 subjects to provide a margin of safety in the even t that some subjects are unable 
+to complete the study.  
+ 
+VII. Risks and Discomforts  
+Subjects may experience mild discomfort associated with the insertion of the infusion sets ,  the Dexcom sensor 
+and the Freestyle sensor into the SC tissues. The risk of discomfort due to insertion of infusion sets and sensors 
+may to be greater than in their lives outside the trial because more infusion sets and sensors than are used  in 
+usual care.  
+ 
+There are additional risks associated with the Senseonics sensor insertion, removal and/or use of the CGM 
+system. The risks are greater than in the lives of people with diabetes outside this trial, as the Senseonics system 
+is not approved for consumer use.  In studies using the Senseonics CGM system to date, no device related 
+serious adverse events have been reported, and only a few device related averse events have been reported. Of 
+those, most were predominately expected local skin reactions to the inserti on and/or the local anesthesia 
+provided during this procedure, which all recovered without residual damage after short time periods. In our 
+own experience with the Senseonics sensor, [ADDRESS_1121342] study staff immediately upon any 
+sign of extreme irritation or discomf ort.  
+ 
+There is a risk of hypoglycemia . In the usual care arm, this risk is expected to be of the same nature and 
+magnitude as during the subjects’ lives outside of the trial. In the bionic pancreas arms, this risk is expected to 
+be less than the risk duri ng the subjects’ lives outside of the trial based on data from earlier trials.  All of our 
+previous studies have shown, albeit with monitoring, that hypoglycemia is significantly reduced in all 
+configurations of the bionic pancreas when compared with usual  care. Based on our experience, we believe that 
+the risk of hypoglycemia in study arms without remote monitoring  for severe biochemical hypoglycemia will be 
+less than or equal to the risks that they are exposed to on a daily basis while living  with type 1 diabetes  outside 
+ 
+Page 33 of 36 of the trial . 
+ 
+There is a risk of hyperglycemia. In the usual care arm, this risk is expected to be of the same nature and 
+magnitude as during the subjects’ lives outside of the trial. In the bionic pancreas arms, this risk is expected to 
+be less than the risk during the subjects’ lives outside of the trial based on data from  earlier trials .   
+ 
+There is a risk of headache, nausea, or vomiting in subjects due to the administration of exogenous glucagon. 
+There is a possible risk of skin rash due to administration of exogenous glucagon. There may be risks of daily, 
+low-level glucagon administration that have not become apparent during trials lasting up to [ADDRESS_1121343] does not respond.  
+ 
+The data derived f rom this study will allow us to evaluate the robustness and effectiveness of the bionic 
+pancreas control system. The data obtained may be used to further improve the bi onic pancreas by [CONTACT_810854] a more ou tpatient device without monitoring.  
+ 
+The anticipated use of the Senseonics sensor as a CGM could ultimately provide a major improvement in 
+overall safety and convenience for patients with diabetes by [CONTACT_4205][INVESTIGATOR_810804] -
+threatening hypoglycemic and hyperglycemic e vents while reducing the burden of CGM use on the wearer. 
+Both t he Senseonics and Freestyle sensor s could be an alternative to the Dexcom sensor as the source of CGM 
+data for the bionic pancreas.  
+ 
+This study is a necessary step in preparing the bionic panc reas to become available to people with type 1  
+diabetes. Wide availability of the bionic pancreas could improve the care adults and children with diabetes.  
+ 
+Subjects will be financially compensated for participating in the study.  
+ 
+IX. Data and Safety Moni toring  
+IX. a. Monitoring of Source Data  
+During the experiment, Dexcom CGM data will be collected in various ways. Dexcom CGM data, calibration 
+data, insulin dosing data, and glucagon dosing data will be automatically stored in the bionic pancreas device 
+(from which it will be downloaded at intervals) and wirelessly streamed to the cloud where it will be stored to 
+provide redundancy in data storage and mitigate the risk of data loss. Daily emails will be sent to the subject to 
+document contemporaneously hypo glycemia, adverse events, and estimated exercise duration. All of the data 
+will be combined in a single database that will be compared against the primary data files for integrity. The 
+computer database will be backed up at least monthly and the backup med ia stored in a secure location. 
+Senseonics  and Freestyle  sensor data will be blinded throughout the study and downloaded that the completion 
+of the study arms. Sensor data and analysis will be shared with the sponsor Senseonics and stored in the same 
+ 
+Page [ADDRESS_1121344] with the numeric 
+code, along with case report forms, and all information that is perso nally identifiable, will be kept in a locked 
+filing cabinet in an investigator’s locked office. All electronic records will be kept in a password protected 
+computer database.  All printed computer data will be disposed of confidentially when no longer need ed. Only 
+the study staff will have access to the study database. Subjects may not withdraw from the de -identified 
+database, but they may elect to have the key linking their medical record to the de -identified database destroyed.  
+ 
+24 Hour dietary and activi ty recall information  will be stored in the Sheps Integrated Research System (SIRS), a 
+secure online database, developed and maintained by [CONTACT_810855].  Access to the participant information within the online dat abase will only be available to approved 
+study site staff and trained UNC interviewers.  All system login procedures and data submissions will be 
+encrypted via the Secure Sockets Layer (SSL).  Sheps Center programmers and research staff who work with 
+sensi tive data are required to complete appropriate HIPAA training with periodic updates, complete Sheps 
+Center internal training, comply with the UNC IT Security Policies, and agree to the provisions of the Sheps 
+Center’s Rules of Behavior and Sanction Policy.  The Sheps Center strives to implement reasonable security 
+controls guided by [CONTACT_104350], HIPAA, and OMB Circular A -130. The Actigraph saves timestamped acceleration. 
+During data collection no identifying informati on is stored or collected with the activity monitor.  
+ 
+The study data may be shared with collaborators at [LOCATION_011] University  and at Senseonics, Inc. but only in a form 
+in which all personally identifiable information has been removed (e.g. combined database including BG 
+values, record of insulin and g lucagon delivered by [CONTACT_8121], and blood insulin and glucagon levels). Shared 
+data will be in the form of a database in which only a number identifies subjects.  
+ 
+Subjects may not withdraw their data, as it will be stored in non -personally identifiable f orm.  
+ 
+IX. b. Safety Monitoring  
+This study is considered moderate risk. An external Data and Safety Monitoring Board will oversee the conduct 
+of the study and review its results on a regular basis. Additionally, the DSMB will be informed in the event of 
+any severe or unexpected adverse events. The DSMB will be informed if there are any changes to the study 
+protocol that could significantly impact the safety or scientific validity of the study. A final DSMB meeting will 
+convene after the completion of the st udy.  Safety and efficacy data will also be reported to the FDA in 
+compliance with applicable regulations.  
+ 
+As noted above, the participation of individual subjects in the bionic pancreas arm of the study will be 
+discontinued if they experience:  
+ Diabetic k etoacidosis requiring hospi[INVESTIGATOR_316671] a bionic pancreas arm  
+ Seizure or unconsciousness associated with hypoglycemia in a bionic pancreas arm  
+ 
+Page 35 of 36  Persistent nausea and vomiting thought to be related to glucagon dosing in a bi -hormonal bionic 
+pancreas arm  
+ Infection at the Senseonics sensor insertion site that does not resolve in three days. The sensor wi ll be 
+removed and not replaced.  
+ A serious adverse event related to the Senseonics device or procedures. The sensor will be removed and 
+not replaced.   
+If more than [ADDRESS_1121345] be withdrawn from the Senseonics CGM portion of the study for either of 
+the above reasons, no more Senseonics sensors will be placed. Participation in the bionic pancreas visits will not 
+be stopped.  
+Note that subjects may discontinue participation at any t ime and subjects may be removed from the trial for 
+other reasons, for instance failure to comply with study procedures or intercurrent illness that is unrelated to the 
+bionic pancreas but that precludes safe participation. Discontinuation of participation for these reasons will not 
+contribute to a decision to discontinue the trial.  
+ 
+IX. c. Adverse Event Reporting Guidelines  
+The PI [INVESTIGATOR_6254] -investigators will review any adverse events after each experiment. Any serious or unexpected 
+but possibly related adverse events will be communicated to the PI [INVESTIGATOR_583506] 48 hours of 
+the time they are detected.  Adverse events will be reported promptly to the Partner’s IRB  and to the BU IRB. 
+Collaborator  Ed Damiano is the sponsor of the Investigati onal Device Exception (IDE) for the bionic pancreas 
+to be used in this trial. Reports of adverse events will be made to the FDA in compliance with the terms of IDE. 
+Adverse events will also be promptly reported to the sponsor Senseonics, Inc as related to the use of their 
+investigational device.  
+ 
+X.  Subject Compensation  
+Financial compensation will be provided to all subjects who complete the screening visit. Subjects will be paid 
+$50 for completing the screening visit whether or not they are eligible to pa rticipate in the study.  
+ 
+Study participants with type 1 d iabetes will be compensated $[ADDRESS_1121346] who completed the screening visit , Senseonics sensor insertion visit, the additional 7 
+scheduled  study visits  (1 initial day 1 visit, 5 day 7/day 1 visits, and 1 final day 7 visits) , and the Senseonics 
+sensor removal  site follow -up visit  would be $ 500.  
+ 
+Designated contacts for subjects with type 1 diabetes will be compensated $50 to complet e the 
+screening/consent visit. They will be compensated $[ADDRESS_1121347] would be $ 150. 
+ 
+ 
+XI. References  
+1. The Diabetes Control and Complications Trial research Group (DCCT) (1993) The effec t of intensive 
+treatment of diabetes on the development and progression of long -term complications in insulin 
+dependent diabetes mellitus. N. Engl. J. Med. 329, 977 –986. 
+2. The Diabetes Control and Complications Trial/Epi[INVESTIGATOR_810805] d 
+Complications (DCCT/EDIC) Study Research Group (2005) Intensive Diabetes Treatment and 
+Cardiovascular Disease in Patients with Type 1 Diabetes. N. Engl. J. Med. 353, 2643 –2653.  
+3. El-Khatib, F. H., Jiang, J., Gerrity, R. G. & Damiano, E. R. (2007) Pharmacod ynamics and stability of 
+subcutaneously infused glucagon in a type 1 diabetic swine model in vivo. Diabetes Technol. & Ther. 9, 
+135-144 
+ 
+Page 36 of 36 4. El-Khatib, F. H., Jiang, J. & Damiano, E. R. (2007) Adaptive closed -loop control provides  blood -
+glucose regulation in v ivo using dual subcutaneous of insulin and glucagon infusion Diabetes Sci. & 
+Technol. 2, 181 -192.  
+5. El-Khatib, F. H., Russell, S. J., Nathan, D. M., Sutherlin, R. G., Damiano, E.R. (2010) A Bi -Hormonal 
+Closed -Loop Blood Glucose Control Device for Type 1 Dia betes. Science Translational Medicine 2, 
+27ra27.  
+6. Russell, S.J., El -Khatib, F.H.,  Nathan, D. M., Magyar, K. L., Jiang, J., Damiano, E.R. (2012) Blood 
+glucose control in type 1 diabetes with a bi -hormonal bionic endocrine pancreas. Diabetes Care 35, 
+2148 -55. 
+7. El-Khatib, F.H., Russell, S.J., Magyar, K.L., Sinha, M., McKeon, K., Nathan, D.M., Damiano, E.R. 
+(2014) Autonomous and continuous adaptation of a bi -hormonal bionic pancreas in adults and 
+adolescents with type 1 diabetes. J. Clin. Endocrin. Metab. Early Release, 
+http://dx.doi.org/10.1210/jc.[ADDRESS_1121348] M, Nathan 
+DM, Damiano ER. Outpatient Glycemic Control with a Bion ic Pancreas in Type 1 Diabetes. New 
+England Journal of Medicine 2014; 371 (4), 313 -325. 
+9. Garcia, A ., Rack -Gomer, A.L ., Bhava raju, N.C ., Hampapuram, H ., Kamath, A ., Peyser, T ., Facchinetti, 
+A., Zecchin, C ., Sparacino, G ., Cobelli, C . (2013) Dexcom G4AP: an advanced continuous glucose 
+monitor for the artificial pancreas.  Journal of Diabetes Sc ience and Technololgy   7, [ADDRESS_1121349] MS, Barratt ES. Factor structure of the Barratt impulsiveness scale. J Clin Psychol. 
+1995;51(6):768 -774. 
+11. van Strien T, Frijters, J. E. R., Bergers, G. P. A. and Defares , P. B. . The Dutch Eating Behavior 
+Questionnaire (DEBQ) for assessment of restrained, emotional, and external eating behavior. Int. J. Eat. 
+Disord. 1986;5:295 -315. 
+12. Reise SP, Moore TM, Sabb  FW, Brown AK, London ED. The Barratt Impulsiveness Scale -11: 
+reassessment of its structure in a communit y sample. Psychol Assess. 2013;25(2):631 -642. 
+13. Spi[INVESTIGATOR_23058] M. Normative data and a short form of the Barratt Impulsiveness Scale. Int J Neurosci. 
+2007;117( 3):359 -368. 
+14. Troiano RP, Berrigan D, Dodd KW, Masse LC, Tilert T, McDowell M. Physical activity in the United 
+States measured by [CONTACT_6317]. Medicine and Science in Sports and Exercise. Jan 2008;40(1):181 -
+188. 
+ 

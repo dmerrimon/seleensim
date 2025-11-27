@@ -1,0 +1,624 @@
+TITLE PAGE
+Trial Statistical Analysis Plan
+c08764221-02
+BI Trial No.: 1270.15
+Title: A phase Ib, Open label, Single Arm, Multi -center , Dose Escalation 
+Trial of Intravenous BI 836826 in Combination with ibrutinib in 
+Patients with Relapsed/Refractory  Chronic Ly mphocy tic Leukemia
+Including protocol amendment 1 ( c03032933-02)
+Investigational
+Product(s) :BI 836826
+Responsible trial 
+statistician (s):
+Phone: 
+Fax: 
+Date of statistical 
+analysis plan:30JUL 2018 SIGNED
+Version: FINAL
+Page 1of 34
+Proprietary confidential information
+2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies. All rights reserved.
+This document may not -in full or in part -be passed on, reproduced, published or otherwise used without prior written permission.
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 2of 34
+Proprietary confidential information © [ADDRESS_737003] OF ABBREVIATIONS ..............................................................................5
+3. INTRODUCTION .................................................................................................7
+4. CHANGES IN THE PLANNED ANALYSIS
+OF THE STUDY ......................8
+5. ENDPOINTS .........................................................................................................9
+5.1
+PRIMARY ENDPOINTS.....................................................................................9
+5.2 SECONDARY ENDPOINTS ...............................................................................9
+5.2.1 Key secondary endpoints ......................................................................................9
+5.2.2 Other secondary endpoints ..................................................................................9
+6. GENERAL A NALYSIS DEFINITIONS ..........................................................18
+6.1 TREATMENTS ...................................................................................................18
+6.2 IMPORTANT PROTOCOL V IOLATIONS ...................................................18
+6.3 PATIENT SETS ANALYSE D
+...........................................................................19
+6.5
+POOLING OF CENTRES .................................................................................20
+6.6 HANDLING OF MISSING 
+DATA AND OUTLIERS ....................................20
+6.7 BASELINE, TIME WINDO WS AND CALCULATED VI SITS ...................
+21
+7. PLANNED ANALYSIS ......................................................................................22
+7.1 DEMOGRAPHIC AND OTHE R BASELINE CHARACTER ISTICS .........
+22
+7.1.1 Disposition of patients .........................................................................................22
+7.1.2 Important protocol violations ................................ ................................ ............22
+7.1.3 Demographic and other baseline characteristics ................................ .............23
+7.2 CONCOMITANT DISEASES AND MEDICATION ................................ .....23
+7.3 TREATMENT COMPLIANCE ........................................................................23
+7.4
+PRIMARY ENDPOINTS................................ ................................ ...................23
+7.5 SECONDARY ENDPOINTS ................................ ................................ .............24
+7.5.1 Key secondary endpoints ................................ ................................ ....................24
+7.5.2 Other Secondary endpoints ................................ ................................ ................24
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 3of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+7.7 EXTENT OF EXPOSURE.................................................................................25
+7.8 SAFETY ANALYSIS ..........................................................................................25
+7.8.1 Adverse events .....................................................................................................25
+[IP_ADDRESS] Maximum tolerated dose / RP2D and dose limiting toxicity ................................
+25
+[IP_ADDRESS] Adverse events ......................................................................................................25
+7.8.2 Laboratory data ................................ ................................ ................................ ..28
+7.8.3 Vital signs .............................................................................................................30
+7.8.4 ECG ......................................................................................................................30
+8. REFERENCES ....................................................................................................31
+10. HISTORY TABLE ..............................................................................................34
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 4of 34
+Proprietary confidential information © [ADDRESS_737004] OF TABLES
+Table 6.2 : 1 Important protocol violations ...........................................................................18
+Table 10: 1 History  table
+.....................................................................................................34
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 5of 34
+Proprietary confidential information © [ADDRESS_737005] OF ABBREVIATION S
+Term Definition / description
+ADS Analy sis Dataset
+AE Adverse Event
+AESI Adverse Event of Special I nterest
+ALKP Alkaline Phosphatase
+ALT Alanine Amino Transferase
+AST Aspartate Amino Transferase
+ATC Anatomic Therapeutic Classification
+BI Boehringer Ingelheim
+BLRM Bayesian Logistic Regression Model
+BMI Body Mass Index
+BSA Body Surface Area
+CLL Chronic Ly mphocy tic Leukemia
+CTCAE Common Terminology  Criteria for Adverse Events
+CTh Concomitant T herapi[INVESTIGATOR_560812] -Induced Liver Injury
+DLT Dose L imiting Toxicity
+ECOG Eastern Cooperative Oncology  Group
+eCRF Electronic Case Report Form
+EOT End Of Treatment
+EWOC Escalation With Overdose Control
+ICH International Conference on Harmonisation
+IPV Important Protocol Violation
+IRR Infusion Related Reaction
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 6of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+Term Definition / description
+LDH Lactate Deh ydrogenase
+MedDRA Medical Dictionary  for Regulatory  Activities
+MTD Maximum Tolerated Dose
+PT Preferred Term
+REP Residual Effect Period
+RIS Run-in Set
+RNA Ribonucleic Acid
+RP2D Recommended Phase [ADDRESS_737006] Upper Limit of Normal
+WHO -DD World Health Organisation Drug Dictionary
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 7of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+3. INTRODUCTION
+As per Internatio nal Conference on Harmonisation E9 (ICH E9 )the purpose of this document 
+is to provide a more technical and detailed elaboration of the principal features of the anal ysis 
+described in the protocol, and to include detailed procedures for executing the statistical 
+analysis of the primary  and secondar y variables and other data.
+This Trial Statistical Analy sis Plan ( TSAP )assumes familiarity  with the Clinical Trial 
+Protocol (CTP), including Protocol Amendments. In particular, the TSAP is based on the 
+planned anal ysis specification as written in CTP Sec tion 7 “Statistical Methods and 
+Determination of Sample Size”. Therefore, TSAP readers may consult the CTP for more 
+background information on the study , e.g. on study  objectives, study  design and population, 
+treatments and definition of measurements and va riables.
+The study  was initially planned to be a single arm, open label trial consisting of two parts: a 
+Phase Ib do se escalation partand a P hase II part investigating one expansion cohort . 
+Approximately  60 chronic ly mphocy tic leuk aemia ( CLL )patients who qualify  for treatment 
+with ibrutinib were to be treated with a combination of BI 836826 and ibrutinib in this trial. 
+Approximately  20 patients were intended to be enrolled in Phase Ib and 40 patients were
+intended to be enrolled in the Phase II part of this study .
+Dose -escalation of BI 836826 is guided b y a Ba yesian L ogistic Regression Model (BLRM) 
+with overdose control. The BLRM estimates the maximum tolerated dose ( MTD) by [CONTACT_560817] a dose limiting toxicity  (DLT ) in the MTD 
+evaluation period for each dose level in the study  as patient information becomes available. At 
+any time in the trial, it isnot permitted to escalate to a dose which does not fulfil the 
+escalation with overdose c ontrol (EWOC) criterion . Dose -increments are≤100% of the 
+previous dose level tested in the previous cohort.
+Due to the strategical decision to stop the project, the Phase II part of the trial will not be 
+conducted. Therefore, this TSAP only  describes the anal ysis of t he Phase Ib part of the trial , 
+based on CTP amendment 1 which reflects this change in the study  set-up. The decision was 
+made that an abbreviated clinical trial report (CTR) will be written for this trial instead of a 
+full CTR. Therefore, only anal yses mandatory  to be reported and additional analy ses deemed 
+necessary  by [CONTACT_560818]. 
+In the following , study  medication alway s refers to either BI 836826 or ibrutinib.
+SAS® Version 9.4 or hi gher will be used for all analy ses.
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 8of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+4. CHANGES IN THE PLANN ED ANALYSIS OF THE S TUDY
+Clarifications :
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+Changes :
+ 
+ 
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 9of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+5. ENDPOINTS
+5.1 PRIMARY ENDPOINTS
+The primary  endpoints of the trial are: 
+Recommended Phase II dose ( RP2D)of BI 836826 in combination with ibrutinib. I f a 
+MTD can be determined based on the criteria as described in Section 7 of the CTP, the 
+RP2D will be either the MTD or a lower dose. The RP2D will be determined by [CONTACT_560819] y review committee ( SRC) based on safet y and efficacy  considerations .
+Number of patients with DL Ts during the 
+MTD evaluation period (starting at the day  
+of first administration of BI 836826, la sting until [ADDRESS_737007] cy cle)
+For definition of DLT, refer to CTP Section [IP_ADDRESS].
+5.2 SECONDARY ENDPOINTS
+5.2.1 Key secondary endpoints
+Not applicable.
+5.2.2 Other s econdary endpoints
+The secondary  endpoint is the MTD. T he MTD may  be considered reached if the posterior 
+probability  that the true DL T rate is in the target in terval [0.16, 0.33) is large r than 0.[ADDRESS_737008] been replaced are not considered evaluable for MTD determination. Only  
+DLTs occurring in the MTD evaluation period will be considered for the determination of the 
+MTD
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 10of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 11of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 12of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 13of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 14of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 15of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 16of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 17of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 18of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+6. GENERAL ANALYSIS DEF INITIONS
+6.1 TREATMENTS
+In this trial, treatments are not randomized (open -label , dose -escalation ). Different dose levels 
+of BI 836826 in combination with ibrutinib are being administered. All planned anal yses will 
+be presented b y initial treatment group , i.e. for all dose cohorts separatel
+yand in total over all 
+dose cohorts .
+To justify  the RP2D / MTD determination, DLTs occurring during the MTD evaluation 
+period will be presented separately  from those occurring during the whole on -treatment 
+period. Patients w here treatment group assignment has not been followed will be han dled on a 
+case-by-case basis 
+and will be agreed upon latest atthereport planning meeting before 
+database lock.
+For safet y summaries events that start from firstadministration of BI [ADDRESS_737009] until 30 
+days (residual effect period (REP)) after the last administration of BI 836826 will be 
+considered as having occurred “on treatment”. If not specified otherwise, all safet y tables will 
+be based on the on -treatment period. AEs that have an onset date during the screening , run-in,
+or post -study  period will be display ed in separate listings from those occurred during the on -
+treatment period (refer to Section [IP_ADDRESS] for details) . 
+Labels of each anal ysis treatment period, anal ysis numbers, the labels used for display s in the 
+tables and listings in the CTR, as well as codes, decodes, sort order and labels for each trial 
+medication are provided in the TSAP technical document analysis dataset ( ADS )plan. 
+6.2 IMPORTANT PROTOCOL V IOLATIONS
+No per protocol set analysis will be performed for this study , hence no patient will be 
+excluded from the anal yses. However, patients with important protocol violations (I PVs) will 
+be documented. The following table defines the different categories of IPVs.
+Table 6.2 : 1 Important protocol violations
+Category / 
+CodeDescription Example/Comment Excluded 
+from
+A Entrance criteria not m et
+A1aPatient has condition that may 
+cause additional risk from study
+medicationCheck Inclusion/Exclusion criteria:
+In6, In8
+Ex4, Ex9, Ex10, Ex11, Ex12, Ex13, Ex16, 
+Ex17, Ex18, Ex19None
+A2aPatient has laboratory assessments 
+that may cause additional riskCheck whether baseline laboratory data 
+comply with thresholds as defined by [CONTACT_46670]7 and 
+check that In7 = “Yes”None
+A3aPatient is unable to comply with 
+the protocolCheck Ex20 None
+A4a+mPatient does not have trial 
+diagnosis or is not part of the 
+target populationCheck Inclusion/Exclusion criteria:
+In1, In2, In3, In4, In9, In10
+Ex1, Ex3, Ex5, Ex6, Ex7None
+B Informed consent
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 19of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+Table 6.2 : 1 Important protocol violations (cont.)
+B1aInformed consent not given or too 
+lateCheck In12
+Check date of IC against date of Screening 
+visitAll
+C Trial medication and 
+randomisation
+C1a+mDrug not administered according 
+to protocolInfusion schedule followed = “No” and 
+medical review of associated commentsNone
+C2aDrug administration not according 
+to scheduleIbrutinib not administered continuously from 
+start of Run -in period 
+Cycle 1: pre -dose of 10 mg of BI836826 not 
+administered on Day 1 and 50% of target dose 
+on Day2 and Day 8 and 100% of target dose 
+on Day 15.
+Cycles 2 -4: 100% of target dose of BI836826 
+not adminis tered on days 1 and 15 of each 
+cycle
+Cycles 5 -24: 100% of target dose of BI836826  
+not administered on day [ADDRESS_737010] treatment taken Study drugs dispensing error leading to 
+change in actual treatmentNone
+D Concom itant medication
+D1a+mProhibited medication anti-neoplastic therapy
+long-term use (>7 days)of strong 
+CYP3A inhibitor (check also Ex15)
+Oral anti -coagulants (check also 
+Ex14)
+ongoing systemic immunosuppressive therapy 
+other than corticosteroids (check also Ex8)None
+D2a+mPre-medication not administered 
+according to protocolDid the subject receive standard pre -
+medication = “No” to any standard pre -
+medication and medical review of associated 
+comments –only until cycle 6, afterw ards pre -
+medication accordin g to investigator 
+judgementNone
+a = a utomated IPV; m = manual IPV; In = Inclusion criterion; Ex = Exclusion criterion
+6.3 PATIENT SETS ANALYSE D
+The Screened Set (SCR) includes all patients who signed the informed consent form and will 
+be used to summarize patient disposition.
+The Run- In Set (RIS) includes all patients who received at least one dose of ibrutinib . The 
+RIS will be used for the analysis of exposure to ibrutinib. 
+The Treated Set (TS): consists of all patients who received at least one administration ofBI 
+836826 . The TS will be used for all planned safet y and efficacy anal yses.
+The MTD evaluation set: This patient set includes all patients who were documented to have 
+received at least one dose of BI 836826 and were not replaced for the MTD evaluation. The 
+MTD evaluation set will be used for the primary  analy ses of DLTs and MTD determination.
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 20of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+Rules for replacement of patients are defined in Section [IP_ADDRESS] of the CTP. The list of 
+replaced patients will be provided by  [CONTACT_560820] (TCM) no later than the last 
+blinded report planning meeting ( BRPM) and will be stored in the TMF .
+ 
+6.5 POOLING OF CENTRES
+This section is n ot applicable since there will not be an y inferential statistical anal ysis. Thus, 
+no statistical model in which centre o r country  is included as factor is applied.
+6.6 HANDLING OF MISSING DATA AND OUTLIERS
+Missing or incomplete AE dates are imputed according t o BI standards ( 3).
+In general, missing data not discussed in ( 3) will not be imputed unless required for the 
+following analy ses and definitions. Then the rules as described below apply .
+1)Change of laboratory values from baseline
+Laboratory  values at baseline: For missing laboratory  data at visit 1 (before the first 
+administration of BI 836826) the data of preceding visits will be used. 
+2)Definition of on -treatment period and actual treatment 
+Date of permanent discontinuation of last study  medication: All reasonable efforts 
+should be undertaken during the stud y to obtain the dates of permanent 
+discontinuation of last study medication. However, if the date of the very  last 
+administration is missing this will be i mputed with:
+If only  month and y ear are given, the last day  of the month will be used for 
+imputation
+If only  the y ear is given, the 31stof December of this y ear will be used for 
+imputation
+If the imputed date leads to a date that is later than the date of theend of treatment
+(EOT) visit, then the imputed date is the date of the EOT visit. If the imputed date 
+leads to a date that is later than the death date, then the imputed date is the date of 
+death.
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 21of 34
+Proprietary confidential information © [ADDRESS_737011]
+administration date, then it will still be considered baseline if not specified otherwise.
+Laboratory  values: Baseline is defined as the latest time -point before the very  first 
+administration of BI 836826. For laboratories where not onl y the examination date but also 
+time are re corded, examination time has to be taken into account when defining baseline. That 
+is, a laboratory  value on the same date as the first administration of BI 836826 is considered 
+as baseline value if and only
+ if the time of laborato ry value is before or the same as the time 
+of BI 836826 administration.
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 22of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+7. PLANNED ANALYSIS
+For End -Of-Text tables, the set of summary  statistics is: N / Mean / standard deviation (StD) / 
+Min / Median / Max. For tables that are provided for endpoints with som e extreme data, 
+median, quartiles and percentiles should be preferred to mean, StD, min ,and max. Efficacy  
+data are presented b y dose cohort. Display s of safety  data will be presented by  [CONTACT_560821]. 
+For time -to-event anal ysis tables, the set of statistics is: number of patients [N(%)], Number 
+of patients with event [N(%)], <Time to event> [months] followed by  P25 (25thpercentile), 
+median, P75 (75thpercentile), Number of patients censored [N(%)]. If not specified otherwise, 
+the duration as w ell as the time to event will be display ed in day s.
+If not otherwise specified, the abbreviation Pxx should be used for display ing the xxth
+percentile. 
+Tabulations of frequencies for categorical data will include all possible categories and will 
+display  the number of observations in a category  as well as the percentage (%) relative to the 
+respective treatment group (unless otherwise specified, all patients in the respective patient set 
+whether they  have non
+-missing values or not). Percentages will be roun ded to one decimal 
+place. The category  missing will be display ed onl y if there are actuall y missing values. The 
+denominator of the main categories is defined b y the number of patients in the used patient 
+set. The main categories define the denominators of the subcategories. Subcategories should 
+be intended and “[N(%)]” will be display ed only  for the main category . If a table includes 
+only categorical data, “[N(%)]” is to be display ed in the column header.
+Abbreviations (e.g. Wors.) should not be display ed w ithout any  explanations. They  will be 
+either spelled out in the table or explained in footnotes (whatever is more reasonable from the 
+programming point of view).
+If applicable, conversion from day s to weeks, months and y ears will be as follows:
+Weeks = Day s/7
+Months = (Day s ×12)/365.25
+Years = Day s/365.[ADDRESS_737012] to analy sis sets (as defined in Section 6.3) will be provided.
+7.1.2 Important protocol violations
+The number of p atients with important protocol violations will be display ed.
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 23of 34
+Proprietary confidential information © [ADDRESS_737013] descriptive analy sis and summary  tables for all patients treated by [CONTACT_560822] y, oncology  history, virology , phy sical examination (including 
+constitutional sy mptoms), eastern cooperative oncology  group ( ECOG
+) performance score ,
+tumour size, previous therapi[INVESTIGATOR_560813]
+.
+7.[ADDRESS_737014] current 
+MedDRA version. Concomitant therapi[INVESTIGATOR_014] (CTh) will be coded according to the World Health 
+Organisation Drug Dictionary  (WHO DD). They  will be classified according to the 
+Anatomical, Therapeutic, Chemical (ATC) classification sy stem . The third ATC level will be 
+used to categorise CThs by  [CONTACT_560823]. In situations where a medical product may be used 
+for more than one equally important indication, there are often several classification 
+alternatives. As appropriate, patients receiving CThs with more than one possible ATC level-
+three category  will be counted more than once; footnotes will clarify  this possible double 
+counting in tables.
+Summaries will be presented for previous and concomitant medications started at baseline and 
+for conc omitant therapi[INVESTIGATOR_560814] 836826 . Transfusions will be 
+display ed separatel y.
+7.3 TREATMENT COMPLIANCE
+Compliance will be evaluated b y whether or not the medication was always administered 
+according to protocol for BI 836826.
+For patients where the infusion schedule was not followed a listing with comments will be 
+presented.
+Furthermore, a listing will show all administrations of BI 836826 including also the 
+administration of premedicati on Analgesic/Antip yretic, Glucoc orticoid and Antihistamine as 
+well as the dose changes and interruptions of ibrutinib .
+7.4
+PRIMARY ENDPOINTS
+The primary  endpoint sarethe RP2D and the number of patients with DLTs in the MTD 
+evaluation period . The number of patients with DLTs at each dose level will b e presented for 
+the MTD evaluation period for the MTD evaluation set and for the whole on -treatment period 
+forthe treated set separately .
+The RP2D will either be the MTD or a nylower dose, examined based on safet y and efficacy 
+criteria. The anal ysis of t he MTD is based on a BLRM guided b y the EWOC principle. 
+Estimation of the MTD during the dose escalation phase of the stud y will be based upon the 
+estimation of the posterior probability  of the incidence of DLT in toxicity  categories during 
+the MTD evaluation period for all evaluable patients. The model to be used is specified in 
+CTP Section 7.
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 24of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+The posterior probabilities that the toxicity  rates of each dose level fall into the categories 
+specified in CTP Section 7 estimated from the BLRM will be display edgraphically  as well as 
+in a table . This will be done for the MTD evaluation period as well as for the complete on -
+treatment period.
+7.5
+SECONDARY ENDPOINTS
+7.5.1 Key secondary endpoints
+Not applicable.
+7.5.2 Other Secondary endpoints
+The secondary  endpoint is the MTD. This will analy sed analogously  to the primary  endpoint 
+RP2D. Only  patients evaluable for MTD determination will be used for the anal ysisof the 
+MTD , i.e. p atients, if an y, who were replaced during the MTD evaluation period will be 
+excluded from the anal ysis of the MTD. 
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 25of 34
+Proprietary confidential information © [ADDRESS_737015] descriptive analy ses over all treatment courses will be performed. This will include a 
+summary  of the variables already  described in Section 5.4.2 . This descriptive anal ysis will
+comprise a mixture of frequencies and percentages, as well as summary  statistics.
+7.8 SAFETY ANALYSIS
+If not specified otherwise, all safety analyses will be performed on the treated set.
+7.8.1 Adverse events
+[IP_ADDRESS] Maximum tolerated dose / RP2D and dose limiting toxicity
+A summary  of the number of patients with DLT s within the MTD evaluation period will be 
+display ed for the MTD evaluation set. This table will also be created for all treatment courses 
+of the on- treatment period by  [CONTACT_560824] t .
+Patients who were replaced within the MTD evaluation period will be excluded from the 
+determination of the MTD but will be considered for all other safet y evaluations. A listing of 
+replace d patients will be provided . 
+Refer to Section 7.4 for more details on the analysis of the MTD and the RP2D.
+[IP_ADDRESS] Adverse events
+Unless otherwise s pecified, adverse events analy ses will be performed for theon-treatment 
+period. Select ed anal yses will be repeated for the MTD evaluation period and for the run -in 
+period. 
+The anal yses of AEs will be descriptive in nature and will follow the standard procedure laid 
+down in ( 4). All anal yses of AEs will be based on the number of patients with AEs and NOT 
+on the number of AEs.
+AEs will be coded with the most recent version of MedDRA .The version number will be 
+display ed as a footnote in the respective tables and listings. The severit y of AEs will be scaled 
+accordi ng to CTCAE version 4.0.
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 26of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+The sy stem organ classes (SOCs) will be sorted alphabeticall y. In tables displaying AEs b y 
+dose cohort ,preferred terms (PTs) will be sorted by [CONTACT_560825] “Total” BI [ADDRESS_737016] administration o f any trial medication will be assigned to “Screening” , all AEs 
+occurring after the first administration of ibrutinib and before the first administration of BI 
+836826 will be assigned to “Run- in”and all AEs occurring after last administration of BI 
+836826 + 30 day swill be assigned to “P ost-study ”(for listings onl y). The actual planned 
+dosage of BI [ADDRESS_737017] level term and multiple epi[INVESTIGATOR_560815]. CTCAE grade will be an additional criterion for collapsing and condensing AEs. The 
+maximum CTCAE grade will be assigned to epi[INVESTIGATOR_560816]. CTCAE grade and DLT 
+information will be display ed in AE listings. MedDRA levels for condensing will be SOC and 
+PT.
+An overall summary  of adverse events will be presented.
+Reporting of CTCAE grades : 
+CTCAE grading within AE tables in Section 15 of the CTR is display ed as “all Grades”, 
+“missing Grade”, “Grade 1”, “Grade 2”, “Gr ade 3”, “Grade 4” and “Grade 5” , but the 
+“missing grade” column should only  be display ed in case AEs with a missing CTCAE grade 
+occurred. A separate table wil l show AEs leading to death. In this table no CTCAE grades 
+will be shown. 
+Frequencies of patients with AEs will be summarised by [CONTACT_3148], highest CTCAE grade, 
+primary  SOC and PT. Tables will be provided for patients with drug -related AEs, with serious 
+AEs (SAEs), with drug -related SAEs, with AEs leading to discontinuation of last study  
+medication (i.e. leading to discontinuation of the last administered study  medication) , with 
+AEs leading to discontinuation of BI 836826, with AEs leading to discontinuati on of 
+ibrutinib , with AEs leading to dose reduction of BI 836826, with AEs leading to dose 
+reduction of inbrutinib, with protocol -specified AEs of special interest (AESI) , and with AEs 
+leading to death .
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 27of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 28of 34
+Proprietary confidential information © [ADDRESS_737018] 
+procedure laid down in (2).  Patients will be counted under the initial treatment. The anal ysis 
+of laboratory  data will use the same ‘anal ysing treatments’ as described for the AEs, except 
+for that the baseline laboratory  value (as defined in Section 6.7) will be included in the ‘on 
+treatment’ period. Patients having at least one post -baseline laboratory  value will be display ed 
+in the descriptive analy ses. Patients with missing CTCAE grade at baseline or no baseline 
+value but with post- baseline laboratory values will be display ed in the category  “Missing 
+CTCAE grade at baseline” .
+Single time courses by [CONTACT_560826] t will be used to display  normalized laboratory  values 
+over time by  [CONTACT_42376]. The graphs may  be truncated if sufficient data is not available. 
+These graphs will be display ed in Section [IP_ADDRESS] of the CTR for the following parameters, 
+using the BI norm alised values for haematology  and differentials, and the multiples of the 
+ULN for enzy mes.
+Haematology : haemoglobin, white blood cell count 
+Differentials: absolute lymphocy te count
+Enzy mes: LDH
+Descriptive statistics, including change from baseline, frequ ency  of patients with transitions 
+relative to the references range, will be provided. No post -study  laboratory values will be 
+considered. CTCAE grade for applicable laboratory  parameters will be calculated according 
+to CTCAE v4.0. The following outputs wil
+l be presented:
+Worst CTCAE grade experienced during the on -treatment period
+Transitions of the CTCAE grade from baseline to the worst lab values, from baseline to 
+the last lab values, and from the worst to last values during the on -treatment period
+Possib le clinically  significant laboratory  values
+Note: For calculating the change in CTCAE grade from baseline, patients with a CTCAE 
+grade of -9 (no CTCAE grade defined) will be treated as a CTCAE grade [ADDRESS_737019] the same laboratory  
+constellation, but are distinguished b y additional clinical parameter. In this case a CTCAE 
+grade of -1 will be assigned initi ally. Patients with a CTCAE grade of -1 will be treated as
+Grade 1 for Uric Acid
+Grade 1 for Hy pokalemia
+for all anal yses. In laboratory  listings, the CTCAE grade will be display ed as -1.
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 29of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+The prioritized laboratory values (see Section 5.4.5 ) will be display ed in Sec tion 15 of the 
+final CTR while all other laboratory  parameters will be display ed in the Appendix of the 
+CTR.
+Patients with hepatic enzyme elevation will be tabulated ( drug-induced liver injury  (DILI )
+supporting table). In addition, a separate listing will be presented giving patients with missing 
+parameter in the given time frame. 
+For potential Hy ’s law cases, possible clinically  significant abnormal laboratory  values and 
+cases of TLS frequency  tables will be provided. 
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 30of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+7.8.3 Vital signs
+A summary  table and a listing of vital signs at each planned time will be provided for the 
+treated set.
+7.8.4 ECG
+No separate analy ses are planned. Newl y emergent abnormalities will be recorded and 
+analysed as AEs.
+7.8.5 Others
+Not applicable
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 31of 34
+Proprietary confidential information © [ADDRESS_737020] - 01 : “Noncompartmental Pharmacokinetic / 
+Pharmacod ynamic Anal yses of Clinical Studies”, current version; IDEA for 
+CON.
+2 001-MCG-157: “Handling, Display  and Anal ysis of Laboratory  Data”, current 
+version; IDEA for CON.
+[ADDRESS_737021] -01:“Handling of missing and incomplete AE dates”, current 
+version; IDEA for CON .
+4 001-MCG-156: “Handling and summarization of adverse event data for clinical 
+trial reports and integrated summaries” , current version; I DEA for CON.
+R10-4429 Hallek M., Cheson BD, Catovsky  D, Caligaris- Cappio F, Dighiero G, Doehner H, 
+Hillmen P, Keating MJ, Montserrat E, Rai KR, Kipps TJ. Guidelines for the 
+diagnosis and treatment of chronic l ymphocy tic leukemia : a report from the 
+International Workshop on Chronic Ly mphocy tic Leukemia updating the 
+National Cancer Institute-Working Group 1996 guidelines. Blood 111 (12), 5446 
+-5456 (2008)
+R10-4848 Common terminology  criteria for adverse events (CTCAE): version 4. 0 (NIH 
+publication no.09- 5410, published: May  28, 2009 (v4.03: June 14, 2010), revised 
+June 2010, reprinted June 2010). 
+htts://evs.nci.nih.gov/ftp1/CTCAE/CTCAE_4.03_2010
+-06-
+14_QuickReference_8.5x11.pdf2010
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 32of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 33of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+
+Boehringer Ingelheim
+TSAP for BI Trial No: 1270.15 Page 34of 34
+Proprietary confidential information © 2018 Boehringer Ingelheim International GmbH or one or more of its affiliated companies
+10. HISTORY TABLE
+Table 10: 1 History  table
+Version Date
+(DD-MMM- YY)Author Sections 
+changedBrief description of change
+Initial 
+version19-JUL -[ADDRESS_737022]
+Final 30-JUL -18 1 -9 This is the final TSAP

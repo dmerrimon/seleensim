@@ -1,0 +1,499 @@
+CSP #2030: Observational Study of Convalescent Plasma for Treatment of Veterans with 
+COVID -19 
+ 
+Principal Investigators:  
+J Michael Gaziano, MD, MPH,  Director, Cooperative Studies Program  Epidemiology Center , 
+VA Boston Healthcare System, Bo ston, MA  
+Nicholas L. Smith, PhD, Director, Seattle Cooperative Studies Program Epidemiology Center, 
+VA Puget Sound Health Care System; Professor of Epidemiology, University of Washington, 
+Seattle, WA  
+ 
+Protocol Version Number:  V 1.3 
+Protocol Version Date:   May 25, 2 021 
+Funding Mechanism:   Unfunded  
+NCT:  [STUDY_ID_REMOVED]  
+ 
+Co-Investigators:  
+Kelly Cho, PhD, MPH , Director of Data Science and Analytics, Division of Population Health 
+and Data Science, C ooperative Studies Program  Epidemiology Center , VA Boston Healthcare 
+System, Boston MA; Assistant Professor of Medicine, Harvard Medical School, Boston, MA  
+Juan P. Casas , MD, PhD, Executive Director Million Veteran Program and Senior Scientist ,  
+Cooperative Studies Program  Epidemiology Center , VA Boston Healthcar e System, Bo ston, MA  
+David Gagnon, MD, MPH, PhD , Senior Biostatistician, VA Cooperative Studies Program  
+Epidemiology Center,  VA Boston Healthcare System ; Research Professor of Biostatistics, 
+Boston University School of Public Health , Boston, MA  
+Sarah C. Ke ithly, MPH,  Program Manager, Seattle Cooperative Studies Program Epidemiology 
+Center, VA Puget Sound Health Care System, Seattle, WA  
+Katherine Kurgansky,  MPH , Senior Data Analyst, Cooperative Studies Program  Epidemiology 
+Center , VA Boston Healthcare System, Boston MA  
+Jonathan D. Sugimoto, PhD , MHS , Epidemiologist, Seattle Cooperative Studies Program 
+Epidemiology Center, VA Puget Sound Health Care System, Seattle, WA  
+Version: 1. 3, 05/25/2021   VA Central IRB Protocol  Page 2 of 13 
+ Abstract  
+Objectives:  To determine if early treatment with convalescent plasma (CP) therapy reduces 30 -
+day mortality among Veterans  hospitalized at a Department of Veterans Affairs (VA) facility with 
+non-severe COVID -19. 
+Research Design : This is a non-interventional, retrospective data collection study , designed to 
+emulate a (hypothetical) target randomized trial using observational data from the VA electronic 
+health record (EHR) database.  Eligible patients  will include Veterans  admitted to a VA Medical 
+Center with a SARS -CoV-2 positive test within 7 days of admission, had no prior plasma 
+treatment , and non-severe disease. The inter vention is CP  administered within 2 days of 
+hospitalization and SARS -CoV-2 positive test. The outcome is 30 -day all -cause mortality.   
+Methodology:   This project will access VA healthcare data in the EHR  on a national basis . Data 
+will be identified and captured usin g Computerized Patient Record System ( CPRS ), on VHA 
+servers and the Corporate Data Warehouse (CDW) using the VA Informatics and Computing 
+Infrastructure (VINCI) servers and non -identifiable data will be captured using the VA REDCap 
+system.  This will also i nclude data from the VA Pathology & Laboratory Medicine Service.  
+Additional data will be provided from the Mayo Clinic CP Registry  to identify VA patients who 
+have received CP . Death and morbidity , including  intensive care unit (ICU)  transition, intubation , 
+extubation, and discharge , will be assessed using VHA data. We will fit inverse probability 
+weighted pooled logistic models to estimate the observational analogue of the per -protocol 
+effect of CP on 30 -day mortality with cumulative incidence curves, risk differences, and hazard 
+ratios.  
+Clinical Implications:  This project will allow a comprehensive assessment  of the impact of 
+convalescent plasma on morbidity and mortality  among Veterans with COVID -19. This study 
+aims to produce early evidence on the  effectiveness of CP therapy, a promising approach to 
+treating COVID -19. This evidence will help clini cians deliver better clinical care to critically -ill 
+Veterans. In addition, it will set the stage for further research that informs the use of CP in 
+patients with COVID -19.  
+ 
+ 
+Version: 1. 3, 05/25/2021   VA Central IRB Protocol  Page 3 of 13 
+ Acronyms and Abbreviations  
+CDW   Corporate Data Warehouse  
+COVID -19 Coronavirus disease 2019  
+CP  Convalescent plasma  
+CSP  Cooperative Studies Program  
+CPRS   Computerized Patient Record System  
+CSPCO  Cooperative Studies Program Central Office  
+CSPEC  Cooperative Studies Program Epidemiology Center  
+EHR   Electronic health record  
+ICU   Intensive Care Unit  
+III  Individually -Identifiable Information  
+PHI  Protected Health Information  
+R&D   Research and Development  
+SARS -CoV-2  Severe Acute Respiratory Syndrome Coronavirus 2  
+SSN  Social Security Number  
+VA  Department of Veterans Affairs  
+VHA  Veterans Health Administration  
+VINCI   VA Informatics and Computing Infrastructure  
+VistA    Veterans Health Information Systems and Technology Architecture  
+ 
+  
+Version: 1. 3, 05/25/2021   VA Central IRB Protocol  Page 4 of 13 
+  
+Contents  
+Protocol Title:  ................................ ................................ ................................ ................................ .. 5 
+1.0 Study Personnel ................................ ................................ ................................ ...................  5 
+1.1 Principal Investigators  ................................ ................................ ................................ ...... 5 
+1.2 Co-Investigators  ................................ ................................ ................................ ...............  5 
+2.0 Introducti on ................................ ................................ ................................ ..........................  5 
+2.1 Background  ................................ ................................ ................................ ......................  5 
+2.2 Rationale  ................................ ................................ ................................ ..........................  5 
+2.3  Relevance to Veterans  Health  ................................ ................................ .........................  6 
+3.0 Aims  ................................ ................................ ................................ ................................ ..... 6 
+4.0 Resources  and Personnel  ................................ ................................ ................................ ... 6 
+4.1 Organizational  Structure  ................................ ................................ ................................ .. 6 
+4.2 Personnel , Location, VA Affiliation, and Role in Study ................................ ....................  6 
+5.0 Study Procedures  ................................ ................................ ................................ ................  7 
+5.1 Study  Design  ................................ ................................ ................................ ....................  7 
+5.2 Recruitment  Methods  ................................ ................................ ................................ ....... 8 
+5.3 Inform ed Consent  Procedures  ................................ ................................ .........................  8 
+5.4 Inclusion /Exclusion Criteria  ................................ ................................ ..............................  8 
+5.5 Study  Evaluations ................................ ................................ ................................ .............  8 
+5.6 Data Analysis  ................................ ................................ ................................ ...................  8 
+5.7 Withdrawal  of Subjects ................................ ................................ ................................ ... 11 
+6.0 Reporting ................................ ................................ ................................ ............................  11 
+7.0 Privacy  and Confidentiality  ................................ ................................ ................................  11 
+8.0 Communication  Plan ................................ ................................ ................................ ..........  12 
+9.0 References  ................................ ................................ ................................ .........................  12 
+ 
+  
+Version: 1. 3, 05/25/2021   VA Central IRB Protocol  Page 5 of 13 
+ Protocol Title:   
+Observational Study of Convalescent Plasma for treatment of Veterans with COVID -19 
+1.0 Study Personnel  
+1.1 Principal Investigators  
+J. Michael Gaziano, MD, MPH, Director, Cooperative Studies Program  Epidemiology Center , 
+VA Boston Healthcare System, Bo ston, MA  
+Nicholas L. Smith, PhD, Director, Seattle Cooperative Studies Program Epidemiology Center  , 
+VA Puget Sound Health Care System; Professor of  Epidemiology, University of Washington, 
+Seattle, WA  
+1.2 Co-Investigators  
+Kelly Cho, PhD, MPH, Director of Data Science and Analytics, Division of Population Health and 
+Data Science, CSP Epidemiology Center , VA Boston Healthcare System, Boston MA; Assistant 
+Professor of Medicine, Harvard Medical School, Boston, MA  
+Juan P. Casas,  MD, PhD, Executive Director Million Veteran Program and Senior Scientist 
+Boston  CSP Epidemiology Center , Boston, MA  
+David Gagnon, MD, MPH, PhD , Senior Biostatistician, VA CSP Epidemiology Center ; Research 
+Professor of Biostatistics, Boston University Scho ol of Public Health , Boston, MA  
+Sarah C. Keithly, MPH,  Program Manager, Seattle Cooperative Studies Program Epidemiology 
+Center, VA Puget Sound Health Care System, Seattle, WA  
+Katherine Kurgansky, MPH, Senior Data Analyst, Cooperative Studies Program Epide miology 
+Center, VA Boston Healthcare System, Boston MA  
+Jonathan D. Sugimoto, PhD,  MHS,  Epidemiologist, Seattle Cooperative Studies Program 
+Epidemiology Center , VA Puget Sound Health Care System, Seattle, WA  
+2.0 Introduction  
+2.1 Background  
+The epidemic  of coronavirus disease 2019 (COVID -19) in Wuhan, China disproportionately 
+infected persons who were older, male, and infirm. 1 Mortality  risk and adverse outcomes 
+followed the same pattern.2 Reports from United States have described a similar pattern of 
+affected individuals.3 Many Veterans fit the vulnerable profile. As of June 15, 2020, 13,984 
+Veterans  have been tested or treated for known or probable COVID -19 at a Department of 
+Veterans Affairs ( VA) facility.4  
+2.2 Rationale  
+The convalescent plasma (CP)  collected from individuals who have recovered from a viral 
+infection contain neutralizing antibodies. Administering CP to individuals who are infected by the 
+virus may reduce symptoms and mortality. There is some evidence of benefit of CP treatment 
+against  respiratory illnesses during previous outbreaks, such as severe acute respiratory 
+syndrome (SARS),5 novel influenza A subtype H1N1 ,6 and a vian influenza virus subtype H5N1 .7 
+Recent data suggest that CP may improve outcomes in  patients wit h COVID -19.8-12 Based on 
+preliminary evidence of possible efficacy, this study will identify early signals of efficacy and 
+Version: 1. 3, 05/25/2021   VA Central IRB Protocol  Page 6 of 13 
+ harm by evaluating key outcomes for Veterans with COVID -19 who have received  and have not 
+received CP treatment  within the Veterans H ealth Administration ( VHA) health care system.  
+2.3  Relevance to Veterans  Health  
+Preliminary studies on the COVID -19 epidemic show that being male, of increased age, and 
+those who are infirm are disproportionately infected with the disease.1-3 This population is also 
+thought to have increased risk of mortality and adverse outcomes. Many Veterans fit this profile, 
+and the electronic health record (EHR) used to care for Veterans provides a unique opportunity 
+to assess the morbidity and mortality for Veterans with COVID -19. CP is one of several novel 
+therapies being used in the VHA. Veterans being treated  with CP  in VHA are tracked by the VA 
+Pathology & Laboratory Medicine Service  and the  Mayo  Clinic CP R egistry. This study will 
+provide the opportu nity to  observationally  assess the impact of CP for all Veterans with COVID -
+19 using robust VHA data sources . 
+3.0 Aims  
+We will assess the effect of CP therapy on  30-day mortality in COVID -19 patients early 
+in the hospital course. We will emu late a hypothetical  randomized  trial (target trial) using 
+observational data from a large  national sample of patients who received care within the   
+VA. We will create a VA-based cohort using VA Corporate Data Warehouse ( CDW ) data 
+and other V HA healthcare data sources , such as the  VA Pathology & Laboratory 
+Medicine Service , combined with Mayo  Clinic  CP Registry data to evaluate the impact of 
+CP among Veterans with COVID -19 on mortality and morbidity.  
+4.0 Resources  and Personnel  
+4.1 Organizational  Structure  
+The pro ject is a collaboration between the CSP Epidemiology Centers (CSPEC) in Boston, MA 
+and Seattle, WA. The organizational and administrative structure of this study will include the 
+following components: (1) CSP Central Office; and (2) the CSP ECs, represent ed by Boston and 
+Seattle.  
+The Boston and Seattle CSPECs  will share in the overall administrative coordination and 
+oversight of the study. The Study Chairs, Drs. Gaziano and Smith, will perform the scientific 
+coordination of the study in conjunction with the Co -Investigators and CSP EC leadership.  
+4.2 Personnel , Location, VA Affiliation, and Role in Study  
+The effort is led by researchers with multidisciplinary expertise in medicine, population -based 
+epidemiology, and biostatistics. All research activities are performed by VA employees or  VA 
+affiliates.  
+● Kelly Cho, PhD, MPH, Director of Data Science and Analytics, VA Boston CSPEC: Co -
+Investigator -  Dr. Cho has experience in advanced phenotyping methods and has been 
+leading the development of the VA Phenomics Library in partnership with the  VA 
+research community. She will coordinate all phenotyping efforts using the VA  CDW  for 
+the collection and classification of clinical data from the EHR.  Dr. Cho will have access 
+to individually -identifiable information ( III) and protected health informati on (PHI).  
+● Juan P Casas, MD, PhD , VA Boston CSPEC : Co-Investigator – Dr. Casas -Romero  is a 
+physician and epidemiologist with extensive experience on cohort studies using 
+electronic medical records, genetics and other omics and innovative analytics. He has 
+knowledge in the use of laboratory values from the EHR and the research laboratory.  He 
+Version: 1. 3, 05/25/2021   VA Central IRB Protocol  Page 7 of 13 
+ will work  closely with the Co -Chairs and Co -Investigators on the data analyses for this 
+study.  Dr. Casas -Romero will have access to III and PHI.  
+● David Gagnon, MD, PhD, MPH , VA Boston CSPEC: Co-Investigator – Dr. Gagnon has 
+extensive experience in clinica l research, beginning with his involvement in the 
+Framingham Heart Study. His expertise extends to categorical data analysis, statistical 
+computing, survival analysis, longitudinal analysis, clinical trials, and research study 
+design.  He will work  closely with the Co -Chairs and Co -Investigators on the data 
+analyses for this study.  Dr. Gagnon will have access to III and PHI.  
+● J. Michael Gaziano, MD, MPH, Director, VA Boston CSPEC: Chair – Dr. Gaziano is 
+clinician and epidemiologist with extensive research exp erience working nationally and 
+internationally on large data studies and biorepositories. He will work closely with his Co -
+Chair, his team in Boston, and the CSPEC program to achieve the goals of this study.  
+Dr. Gaziano will have access to III and PHI.  
+● Sarah C. Keithly, MPH, Program Manager, Seattle CSPEC: Co-Investigator  – Ms. 
+Keithly is trained in epidemiology and biostatistics and has over 10 years of experience 
+supporting  a wide range of epidemiologic research projects, including large -scale 
+surveys, pr ogram evaluations, and multi -site studies.  She will work closely with the Co -
+Chairs and Co -Investigators to achieve the goals of this study . She will have access to III 
+and PHI.  
+● Katherine Kurgansky, MPH, Senior Data Analyst, VA Boston CSPEC – Ms. Kurgansky  
+has over 10 years of experience  conducting innovative epidemiology, clinical, and 
+laboratory  research, with focus on study design, data analysis,  and data interpretation.  
+She will work closely with the Co -Chairs and Co -Investigators on the data analyses for 
+this study. She will have access to III and PHI.  
+● Nicholas L. Smith, PhD, Director, VA Seattle CSPEC: Chair - Dr. Smith is an 
+experienced and collaborative epidemiologis t who has successfully coordinated national 
+and international observational studies among VA and non -VA researchers. He will work 
+closely with his Co -Chair, his team in Seattle, and the CSPEC program to achieve the 
+goals of this study.  Dr. Smith  will have access to III and PHI.  
+● Jonathan D. Sugimoto, PhD,  MHS,  Epidemiologist, VA Seattle CSPEC: Co -Investigator - 
+Dr. Sugimoto is a quantitative epidemiologist with expertise in the design, analysis, and 
+implementation of vaccine trials and a wide range of infect ious disease epidemiologic 
+studies. He will work closely with the Chair on the scientific leadership of the study. Dr. 
+Sugimoto will have access to III and PHI.  
+Only individuals listed as study members on the sites’ approved Research and Development 
+(R&D) Committee study staff forms  will have access to identifiable data. No identifiable data will 
+be transported or shared outside of the VA  for the duration of the study . Analyses conducted on 
+the study will receive internal quality control checks by an approv ed data analyst that was not 
+involved in the data analysis.  
+5.0 Study Procedures  
+5.1 Study  Design  
+This study  is an observational study which  emulates a hypothetical randomized trial  (target 
+trial)13,14 using observational data from the VHA EHR  database . VA data will be used to emulate 
+the eligibility criteria, treatment  strategies, outcome, and follow -up of the target trial .  
+Version: 1. 3, 05/25/2021   VA Central IRB Protocol  Page 8 of 13 
+ The specifications of the hypothetical trial are as follows. Patients would include  Veterans 
+hospitalized at a VA facility with a first-ever SARS -CoV-2 positive test within 7 days of 
+admission, oxygen saturation of ≥90% within the past day, and  non-severe COVID -19. Patients 
+previously treated with convalescent plasma or residing  in long -term care in the past 90 days 
+would not  be eligible. The patient would become eligible at the first SARS -CoV-2–positive test 
+date (if the positive test occurred dur ing hospitalization) or at the hospital admission date (if the 
+positive  test occurred before hospitalization).  Eligible patients would be randomly assigned to 
+either receive  or not receive CP within 2 days of assignment.  The primary outcome is 30-day 
+mortality.  
+This retrospective data collection study will be conducted at the  CSPECs within the VA  Boston 
+and VA Puget Sound  health care systems . This project will access VA healthcare data in the 
+EHR  at a national level. Data will be identified and captured using CPRS, on VHA servers and 
+the CDW using VINCI servers. Approved study staff will have access to the VINCI data mart to 
+identify Veterans with positive SARS -CoV-2 testing.  
+If necessary,  data can be extracted from medical records. In this case, data from VINCI/CDW 
+will be reviewed by study staff and entered into a VA REDCap database. Each subject will be 
+assigned a unique  study ID and no PHI will be captured within VA REDCap. A crosswalk will be 
+used to link the study ID to the Patient ICN. This document will be the only document to link 
+study data and will be kept secure within the study’s  VINCI workspace and will only be  
+accessible to a limited number of study staff conducting data review.  
+5.2 Recruitment  Methods  
+This is non -interventional  study that do es not require contact with study subjects. All subjects 
+will be identified from the Mayo Clinic CP Registry , the VA Patholog y & Laboratory Medicine 
+Service , and from the VA CDW.   
+5.3 Informed  Consent  Procedures  
+There will not be any contact with subjects in the study and s tudy subjects will not be consented 
+into the study. We are requesting an Exemption  Category  4.iii for secondary research use of 
+identifiable private information or identifiable biospecimens.  
+5.4 Inclusion /Exclusion Criteria  
+The population to study will includ e all Veterans who have  tested positive for SARS -CoV-2 and 
+treated for COVID -19 within the VHA healthcare system. Data available in the VA CDW will be 
+utilized. Data analyses will assess multiple domains at the inpatient and outpatient level and 
+obtained t hrough the central VA COVID -19 Shared Data Resource . Domains for Data Analysis 
+will include, but not limited to, Initial Present ation, Prior Medical Diagnoses, Health Limitations 
+and Habits, Current Medications, Hospital Admission and Lab, Hospital Course,  and Post 
+Discharge Course. Data review will begin from date of diagnosis, short - and long -term outcomes 
+will be assessed up to 1 -year following diagnosis . There are no exclusion criteria for this study.  
+5.5 Study  Evaluations  
+This is non-interventional, retrospective data study, and therefore we will be using VA CDW 
+data within the VA healthcare system.  
+5.6 Data Analysis   
+Data Collection/Study Measures  
+Data will be identified and captured using CPRS, on VHA servers and the C DW u sing the  VINCI 
+servers. Data captured will come from several VHA healthcare data sources and National 
+Patient Care Databases (NPCDs), including: VA Pathology & Laboratory Medicine Service , 
+Version: 1. 3, 05/25/2021   VA Central IRB Protocol  Page 9 of 13 
+ Veterans Health Information Systems and Technology Architecture (VistA) Medica l SAS 
+Outpatient Clinic  and Patient Treatment File (PTF)  datasets, Vital status crosswalk File with 
+Real SSNs, Vital Status File with Scrambled SSNs, the Decision Support System (DSS) 
+National Data Extract (NDE), Beneficiary Identification Records Locator (BIRLS) death file, 
+Pharmacy files, and Pharmacy Benefit  Management (PBM) system database. Data contain 
+information on clinic visits, inpatient hospitalizations within VA, diagnosis , and procedure  codes. 
+Pharmacy data and laboratory data are available as well . All electronic databases related to the 
+study will be stored on double password protected servers behind the VA firewall . Data 
+accessed remotely via VINCI or in CDW  will be accessible only by approved study personnel 
+using strong IDs and passwords.  
+As needed , data from VINCI/CDW will be reviewed by study staff and entered into a VA 
+REDCap datab ase. Each Veteran identified will be assigned a unique study ID. A crosswalk 
+document will be kept within VINCI that will link the study ID to the Patient ICN. This document 
+will be the only document to link study data and will be kept secure within on the  study’s  VINCI  
+workspace  and will only be accessible to a limited number of study staff conducting data review. 
+The variables below re present  a desirable list of information that will be captured using 
+REDCap. We recognize that some of the information will  not be available. Where feasible, we 
+will make imputation for some information items.  
+Analyses conducted on the study will receive internal quality control checks by an approved 
+data analyst that was not involved in the data analysis.  Below we describe the primary data and 
+variables we will use to accomplish the aims of the proposal. The list of data and variables is not 
+exhaustive but provides a detailed summary of the types of data will be using . 
+Exposure: CP Treatment  
+The primary exposure of interest is the use  or the non -use of CP. These data are derived from 
+multiple sources, including  the VA Pathology and Laboratory Medicine Service , CDW,  and the 
+Mayo Clinic CP Registry . Data on CP recipients from the Mayo Clinic and VA Patholog y and 
+Laboratory Medicine Service will be matched  to EHR data  with unique identifiers , which include 
+name, date of birth,  VA patient identifiers  (e.g., Patient ICN) , date of hospitalization, and VA 
+medical center  or hospital. Other identifying information to match records may also be available , 
+such as Social Security Numbers from the VA Pathology and Laboratory Medicine Service . 
+Mayo Clinic data will not include Social Security numbers.  
+Outcome variables  
+The primary outcome is 30 -day all-cause mortality.  
+ 
+Other Covariates of Interest  
+Initial Present ation:  date of encounter, date of birth, sex, race, ethnicity, zip code of residence, 
+date symptoms started . 
+Prior Medical Diagnoses : chronic obstr uctive pulmonary disease, coronary heart disease, 
+cardiac failure, diabetes mellitus, hypertension, cerebrovascular disease, chronic liver disease, 
+cancer of solid organ, estimated glomerular filtration rate , immunodeficiency , autoimmune 
+disorder [RA, IBD,  lupus, etc.]  
+Health Limitations and Habits:  smoking (never, former, current).  
+Current medications:  diabetes oral medication, diabetes insulin used, immunosuppression 
+therapy, blood pressure therapy, angiotensin converting enzyme angiotensin converting enzyme 
+Version: 1. 3, 05/25/2021   VA Central IRB Protocol  Page 10 of 13 
+ (ACE) inhibitors , angiotensin -receptor blockers (ARBs ), beta blockers, human 
+immunodeficiency virus therapy.  
+Outpatient Management Course: including symptoms at home, VA physici an management, 
+“progression of symptoms” and re -evaluation at the medical center, viral lab testing, and short - 
+and long -term outcomes.  
+Hospital Admission and Lab:  VA Facility, admission date, Initial Admission to (ward, isolation, 
+ICU, ICU on ventilator, other), chest x-ray lung findings at admission, PaO2,  admission and 
+hospital course laboratory extremes ( white blood cell count , lymphocyte count, platelet count, 
+hemoglobin, CRP, procalcitonin, serum sodium, serum potassium, serum chloride) , and 
+admissi on and hospital abnormal values ( lactate d ehydrogenase  (LDH) , aspartate transaminase  
+(AST), alanine aminotransaminase (ALT), bilirubin total, creatine kinase (CK), dDimer), 
+influenza vaccine in EHR over past 12 months, assay used to diagnose SARS -CoV-2 infection, 
+and co -infection with other respiratory viruses.  
+Hospital Course:  ICU (start date and end date) complications (sepsis, acute kidney injury, 
+rhabdomyolysis, ARDS, disseminated intravascular coagulation, pneumonia diagnosed by MD, 
+hours to pneumonia  from admission, hospital treatment (IV antibiotics, IV antifungal, IV antiviral 
+(+name of antiviral), kidney dialysis, glucocorticoids, extra corporeal membrane oxygenation, IV 
+immunoglobulin, IV hyperimmunoglobulin ), other COVID -19 treatments, hospital discharge 
+(date) and discharge facility or outcome (residence, nursing facility, death)   
+Post Discharge:  COVID -19 antibody assay results and titer if available. Post discharge 
+general medicine, cardiovascular care, and infectious disease follow up notes to estimate ability 
+to perform activities of daily living. Use of VA medical care facilities and diagnoses in the 
+recovery phase of the epidemic with focus on chronic disease complications with abstraction of 
+informat ion in outpatient encounters and communications with VA providers .  
+Statistical Analysis Plan  
+The target trial to emulate would include US Veterans  hospitalized at a VA medical center 
+where CP was a current practice. The patient would become eligible at the first SARS -CoV-2-
+positive test date (if the positive test occurred during hospitalization)  or at the hospital admission 
+date (if the positive test occurred before hospitalization).  
+Eligible patients would be randomly assigned to either receive or not receive CP. The exact 
+timing of transfusion and determination of suitability for use (based on antibody levels or donor 
+characteristics of the plasma units) would be left to the discretion of treating physicians. The 
+primary outcome would be 30 -day mortality. The caus al contrasts of interest are the intention -to-
+treat effect and the per -protocol effect. To estimate the intention -to-treat effect (the effect of 
+assignment to CP on outcomes),  estimate the risk difference and hazard ratio comparing 
+patients in the CP and n on-CP group . The risk (cumulative incidence) of outcomes could be 
+estimated nonparametrically using the Kaplan -Meier method or under parametric smoothing 
+assumptions via a pooled logistic regression model including a time -varying intercept, an 
+indicator fo r treatment group, and a product (“interaction”) term between time and treatment 
+group. The hazard ratio could be estimated from the pooled logistic regression model without 
+the product term. In the case of a prespecified imbalance in baseline characterist ics between 
+intervention arms, relevant covariates could be added to the model.  
+To estimate the per -protocol effect (the effect of treatment with CP on outcomes  if all patients 
+had adhered to the protocol), we would restrict the above intention -to-treat a nalysis to patients 
+who adhered to their assigned treatment ( CP or no CP) and adjust for the a priori baseline 
+prognostic factors, as well as trial start day relative to first eligibility . The adjustment for these 
+covariates would be carried out via invers e probability weighting, with all continuous variables 
+Version: 1. 3, 05/25/2021   VA Central IRB Protocol  Page 11 of 13 
+ flexibly modeled using restricted cubic splines and estimated weights truncated at the 99.9th 
+percentile to prevent extreme weights from affecting the analyses. In a secondary analysis, the 
+adjustment for these covariates will instead be carried out via standardization. In all analyses, 
+we use nonparametric bootstrapping, which yields unbiased estimates of standard error, to 
+calculate percentile -based confidence intervals (CI) for survival difference and hazard ratio 
+estimates.  
+Combined analysis with other cohorts in the Mayo  Clinic CP  Registry : Other health systems in 
+the registry will be performing similarly data analyses. Research groups are encouraged to 
+share the same data analysis plan. Some will contribute summary statistics to a research 
+collaboration.  
+Sample Size/Power  
+We present  power  calculations here for the mortality outcome. It is assumed that approximately 
+500 subjects will receive CP in the course of this study, extrapolating from the 250 known 
+recipients to date . We would then have 500 exposed and 2,500 unexposed subjects assumi ng a 
+5:1 match. A s of June 2020 , nearly 4,000 COVID -19 patients have been admitted, making our 
+sample viable . Current data shows an approximately 25% mortality rate, among  those admitted 
+who either have died or were discharged . Assuming independent observa tions, we would be 
+able to detect a hazard ratio of 1.3 with 80% power and 1.35 with 90% power . Given the 
+matched design, it is necessary to estimate a design effect due to the matching . A design effect 
+of 2.0 would be considered extreme, assuming an intra class correlation of 0.20 and cluster size 
+of 6 [5:1] . This would result in an effective sample size of 1500 subj ects. This would result in a 
+detectable hazard ratio of 1.43 with 80% power and 1.50 with 90% power . These calculations 
+assume alpha=0.05.  
+5.7 With drawal  of Subjects  
+We will not have contact with study subjects. We do not anticipate that Veterans will contact the  
+study if they know that they received CP. If a study subject contacts the study and requests a 
+withdrawal, we will not collect additional data from the subject. We will, however, continue to 
+use data previously collected.  
+6.0 Reporting  
+The Co -Chair s will be jointly  responsible for ensuring that the study adheres to the reporting 
+requirements of the VA C entral IRB, local R&D Committee(s), and VA/VHA requirements (e.g., 
+VHA Handbook 1200.12 and VHA Handbook 1058.01).  
+7.0 Privacy  and Confidentiality  
+All data will be stored  in compliance with applicable VA policies. This study does not involve 
+patient recruitment. All electronic databases related to the study will be stored on double -
+password protected servers behind the VA firewall. Once uploaded to networked data servers, 
+the data are maintained in a separate network system dedicated to databases containing PHI or 
+sensitive data. There are multiple levels of security to ensure the integrity and confidentiality of 
+all data stored on the system. The desktop computers and the data servers require 
+authentication for access and these computers and servers are assigned to authorized staff 
+only.  
+Only personnel approved to be on the study by the R&D Committees will be allowed access to 
+these files. Personnel that are removed from t he study will have their access removed. To de -
+identify and protect PHI, scrambled social security numbers and dates will be used in the 
+Version: 1. 3, 05/25/2021   VA Central IRB Protocol  Page 12 of 13 
+ intermediate databases. De -identified information is provided to the PI s by the study team 
+inclusive of the Biostatisti cian, and database programmer. The final analytic database will not 
+have any PHI and will include aggregated data only. Since the data used is aggregate, this 
+cannot be used to uniquely identify any patient. A crosswalk document link ing the study ID to 
+the Patient ICN will be kept within a VINCI workspace . No outside sources can access these 
+data.  
+Where applicable, we use encryption, physical security measures, restricted access, and locked 
+file cabinets for paper records for data protection. VA study site s will utilize technologies that 
+meet VA standards for data transfer to protect study data during transmission. For example, VA 
+sensitive information will be transmitted using Federal Information Processing Standards (FIPS) 
+140-2 compliant encryption tools  or Secure File Transfer Protocol (SFTP) . In accordance with 
+VA policy, incident reporting of theft, loss of data, loss of storage media, unauthorized access to 
+sensitive data or storage media and non -compliance with security controls will be reported 
+promptly to the study PI s, Privacy Officer and Information Security Officer . 
+Upon study completion, all research data will be maintained and/or destroyed,  in accordance 
+with the V HA Records Control Schedule  (RCS 10 -1) and VA Directive 6500 . The st udy team will  
+implement approved records dispositions, while ensuring that no records are destroyed without 
+proper authorization. Decisions regarding disposal or disposition of the data, if necessitated, will 
+be made with the approval of the appropriate ov ersight committees and VA regulations.  
+8.0 Communication  Plan  
+This is an analysis -only protocol involving 2 CSPEC programs, Boston and Seattle. The Chairs 
+and Co -investigators communicate on a regular basis. For this analysis, due to the urgency, we 
+will have  weekly analyses to produce results of the associations of interest. As follow -up of 
+Veterans continues for 1 year, we will continue to meet regularly to complete the objectives of 
+the study.  
+The regulatory documents, including CIRB communications, will be  maintained by Seattle and 
+the protocol will be maintained by Boston. Seattle will also be monitoring serious adverse events 
+related to study participation, which is limited to data security .  
+9.0 References  
+ 
+1. Guan WJ, Ni ZY, Hu Y, et al. Clinical Characteristics of Coronavirus Disease 2019 in 
+China. The New England journal of medicine. 2020.  
+2. Zhou F, Yu T, Du R, et al. Clinical course and risk factors for mortality of adult inpatients 
+with COVID -19 in Wuhan, China: a retrospective cohort study. Lanc et. 
+2020;395(10229):1054 -1062.  
+3. Team CC -R. Severe outcomes among patients with coronavirus disease 2019 (COVID -
+19)--United States, February 12 -March 16, 2020. Morbi dity and Mortality Weekly Report. 
+2020;69  (March 18, 2020).  
+4. Department of Veterans Affairs (V A). VA COVID -19 National Summary. 
+https://www.accesstocare.va.gov/Healthcare/COVID19NationalSummary. Accessed 
+June 15, 2020.  
+5. Y O Y Soo, Y Cheng, R Wong, et al. Retrospective Comparison of Convalescent Plasma 
+With Continuing High -Dose Methylprednisolone Tre atment in SARS Patients . Clin 
+Microbiol Infect. 2004 Jul;10(7):676 -8.  
+Version: 1. 3, 05/25/2021   VA Central IRB Protocol  Page 13 of 13 
+ 6. Ivan Fn Hung, Kelvin Kw To, Cheuk -Kwong Lee , et al. Convalescent Plasma Treatment 
+Reduced Mortality in Patients With Severe Pandemic Influenza A (H1N1) 2009 Virus 
+Infection . Clin Infect  Dis. 2011 Feb 15;52(4):447 -56.  
+7. Boping Zhou, Nanshan Zhong, Yi Guan Treatment With Convalescent Plasma for 
+Influenza A (H5N1) Infection . N Engl J Med. 2007 Oct 4;357(14):1450 -1.  
+8. Convalescent Plasma Transfusion for the Treatment of COVID -19: Systematic Re view. J 
+Med Virol. 2020 May 1;10.1002/jmv.25961  
+9. Roback JD, Guarner J. Convalescent Plasma to Treat COVID -19: Possibilities and 
+Challenges [published online ahead of print, 2020 Mar 27]. JAMA. 
+2020;10.1001/jama.2020.4940. doi:10.1001/jama.2020.4940  
+10. Shen C, Wang Z, Zhao F, et al. Treatment of 5 Critically Ill Patients With COVID -19 With 
+Convalescent Plasma [published online ahead of print, 2020 Mar 27]. JAMA. 
+2020;323(16):1582 -1589. doi:10.1001/jama.2020.4783  
+11. Mair-Jenkins J, Saavedra -Campos M, Baillie JK, et al. The effectiveness of convalescent 
+plasma and hyperimmune immunoglobulin for the treatment of severe acute respiratory 
+infections of viral etiology: a systematic review and exploratory meta -analysis. J Infect 
+Dis. 2015;211(1):80 -90. doi:10.1093/infdis/j iu396  
+12. Ko JH, Seok H, Cho SY, et al. Challenges of convalescent plasma infusion therapy in 
+Middle East respiratory coronavirus infection: a single centre experience.  Antivir Ther . 
+2018;23(7):617 -622. doi:10.3851/IMP3243  
+13. Hernán MA, Alonso A, Logan R, et al. Observational studies analyzed like randomized 
+experiments: an application  to postmenopausal hormone therapy and coronary  heart 
+disease. Epidemiology 2008; 19:766 –79. 
+14. Hernán MA, Robins JM. Using big data to emulate a target trial when a randomized trial 
+is not available. Am J Epidemiol 2016; 183:758 –64. 
+ 
+ 
+ 
+ 

@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-10-15T22:17:54.059085",
+  "anonymization_complete": true,
+  "input_directory": "/Users/donmerriman/Ilana/ilana-addin/anonymized_texts",
+  "output_directory": "/Users/donmerriman/Ilana/ilana-addin/fully_anonymized_texts",
+  "statistics": {
+    "files_processed": 16730,
+    "pii_instances_removed": 3871165,
+    "emails_removed": 30039,
+    "phones_removed": 39621,
+    "names_removed": 2251168,
+    "addresses_removed": 1286781,
+    "companies_removed": 6238,
+    "locations_removed": 29449,
+    "ip_addresses_removed": 227869
+  },
+  "summary": {
+    "total_files_processed": 16730,
+    "total_pii_instances_removed": 3871165,
+    "anonymization_categories": {
+      "emails": 30039,
+      "phone_numbers": 39621,
+      "personal_names": 2251168,
+      "addresses": 1286781,
+      "companies": 6238,
+      "locations": 29449,
+      "ip_addresses": 227869
+    }
+  },
+  "safety_status": "SAFE_FOR_ML_TRAINING",
+  "recommendations": [
+    "Review sample of anonymized files before ML training",
+    "Keep anonymization mappings secure and separate from training data",
+    "Validate that clinical content remains intact",
+    "Consider additional domain-specific anonymization if needed"
+  ]
+}

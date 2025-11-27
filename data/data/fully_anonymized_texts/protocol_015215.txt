@@ -1,0 +1,67 @@
+Assessing Neuroinflammation in Gulf War Illness with Whole - 
+Brain Magnetic Resonance Spectroscopy  
+ 
+ 
+Study Protocol & Statisti cal Analysis Plan  
+ 
+[STUDY_ID_REMOVED] 
+ 
+December 20, 2023 
+  
+Jarred Younger , PhD, Principal Investigator  
+[INVESTIGATOR_155270], AL [ZIP_CODE]  
+  
+Study Protocol:  
+Overall design  
+This observational neuroimaging study uses a 3D MRSI sequence to measure several 
+neuroinflammatory markers across the entire brain. A cross -sectional approach is used to 
+contrast 20 veterans with GWI from 20 veterans who were deployed to the Persian Gulf but never presented with symptoms of GWI. Participants will attend a single neuroimaging session.  
+Participants  
+GWI group: GWI participants will be men who meet the Kansas GWI diagnostic criteria. CDC criteria will also be assessed, but not used for inclusion purposes. Our primary pool of 
+participants will come from our existing database of individuals who have completed our 
+online, phone, and in -person screening package for GWI eligibility.  
+Healthy control group: We have a database of individuals who served in Operation Desert Storm and do not present with symptoms of GWI. Individuals will be within the same age and 
+body mass index  range  as the GWI group.  
+Screening  
+Individuals (GWI or healthy) will be excluded for any of the following reasons: Participants 
+cannot be taking experimental medications, opi[INVESTIGATOR_2467], psychostimulants (except 
+caffeine), or benzodiazepi[INVESTIGATOR_1651]. Participants cannot have major cardiovascular illness, cancer, or 
+have any contraindications for MRI (including metallic implants or claustrophobia).  
+Laboratory visits  
+Participants will undergo venous blood draw at the UAB Clinical Research Unit. The 
+neuroimaging visit  will occur at the University of Alabama at Birmingham (UAB) Civitan 
+International Neuroimaging Laboratory, in Highlands Hospi[INVESTIGATOR_307]. Body temperature 
+measurements will be taken using a Braun Pro [ADDRESS_387263], participants will be debriefed and paid.  Neuroimaging sequences  
+T1-weighted high- resolution structural scan (5 minutes): For spatial registration, we will use a 
+magnetization -prepared rapid gradient echo (MPRAGE) sequence with 224mm FOV, [ADDRESS_387264] settings recommended for multi -
+site projects.  Whole -brain MRSI scan (20 min with shimming): The MRSI acquisition will use a whole brain 3D 
+spectroscopic sequence, which acquires the metabolite and water signals in one TR using echo -
+planar readout. The acquisition will use the following parameters: FOV of 280mm in -plane and  
+180mm in the inferior -superior direction to yield 5.6x5.6x10mm voxels, 1710ms TR1, 591ms 
+TR2, 17.6ms TE. Signals from subcutaneous lipi[INVESTIGATOR_314733] -recovery 
+preparation with inversion time (TI) of 198ms and a  saturation band placed across the lipid 
+region behind the eyes to suppress movement aliasing. A double echo steady state (DESS) pulse 
+sequence will be applied prior to the scan in order to estimate the field. A dynamic shim using 
+higher order coils will optimize the homogeneity of the B0 field a nd improve spectral 
+resolution;  data will be acquired using a full width at half maximum (FWHM) of the water peak 
+at <25Hz.  
+Arterial spin labeling cerebral perfusion scan ( 7 min): This scan will be used to rule out the 
+hypo -perfusion contribution to metabolite concentrations and temperature. A 2D ASL scan will 
+be acquired using a Proximal Inversion with Control of Off -Resonance Effects (PI[CONTACT_94648]) labeling 
+scheme for background  suppression. 60 pairs of label/control ASL images will be collected in 
+the axial direction at a single inversion time of 1800 ms, TR=2500 ms, TE=16.18 ms, 12 slices, 4×4×10 mm voxels. Data will be processed using ASLtbx, which works on the basis of SPM12 
+within MATLAB. Images will be motion -corrected then co -registered to the T1 image and 
+smoothed with a 6mm full -width- at-half-maximum (FWHM) kernel to decrease noise. Each 
+tag/control pair will be subtracted t o create 60 perfusion -weighted images used to calculate 
+cerebral blood flow (ml/100g/min).  
+  
+Statistical Analysis Plan:  
+Univariate, independent samples t -tests will be used to test for group differences for  each brain 
+marker × ROI combination. The dependent variable will be each of the five neuroinflammatory 
+outcomes and the main predictor of interest is group (GWI vs healthy).  A total of 47 brain  areas 
+will be tested . Cortical and cerebellum averages will also be computed as a ‘whole brain 
+average’ .  To compute power, we used the preliminary results from the CFS versus healthy 
+control data. The average significant differences between groups in that study had an effect 
+size (Cohen’s d) of 0.922. Power calculations were performed using G*Power [IP_ADDRESS]. Using the means and standard deviations from that study, we would expect to have a power of 0.[ADDRESS_387265] for multiple comparisons. We will report differences that are significant at p < 0.05; however, we will use a false -discovery -rate (FDR) 
+adjusted p -value of < 0.[ADDRESS_387266] likely to be replicable. This 
+process should provide an acceptable balance between false positives and negatives in an exploratory study.  

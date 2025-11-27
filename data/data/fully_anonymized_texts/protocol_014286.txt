@@ -1,0 +1,807 @@
+Page  1 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Internet -based  Conversational  Engagement  Clinical  Trial 
+NCT0287192  
+July 14 2020  
+Page  2 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015   IRB#  [ZIP_CODE]  
+ 
+OREGON  HEALTH  & SCIENCE  UNIVERSITY  
+Minimal  Risk Research  Protocol  
+ 
+I. Protocol  Title:  Internet -based  conversational  engagement  clinical  trial (I-CONECT) 
+in socially isolated adults 75+ years old: A multi -center, assessor -blinded, 
+randomized, 12 -month, parallel group, efficacy study  
+ 
+Remote  Protocol  for subjects enrolled  after  March  2020,  or whose  study 
+participation timeline was significantly im pacted by [CONTACT_4113] -19. 
+Aims for additional analyses proposed in the NIA -funded secondary data analysis 
+(RF1AG072449;  Funding  period:  04/15/21 -03/31/24.  Title:  Identification  of Mild  Cognitive 
+Impairment using Machine Learning from Language and Behavior Markers).  
+ 
+Short  Title:  I-CONECT  
+ 
+II. Objectives  
+We hypothesize  that increasing  social  interaction  in older  adults  with normal  cognition  or mild cognitive 
+impairment (MCI) could improve or sustain cognitive function. Increasing daily social contact [CONTACT_469145] a cost -effective home -based prevention program that could 
+slow cognitive decline and delay the onset of dementia.  
+ 
+Aim 1: To examine  the efficacy  of our intervention  using  cognitive  test scores.  
+ 
+We wi ll examine changes in subject  performance from baseline  to six months to test the efficacy of a 
+high engagement  dose of the intervention  on the following  primary  and secondary  outcome  measures.  
+ 
+Primary  outcome  measure  from  the National  Alzheimer’s  Coordinating  Center  (NACC)  Uniform  Data 
+Set (UDS) Version 3 In-Person and Telephone  Administered Cognitive Battery:  
+ 
+1. In-person  Montreal  Cognitive  Assessment  (MoCA)  score using only pre -pandemic cohort, with a 
+sensitivity analysis  using all t he randomized subjects by [CONTACT_469146]  (pre and post -pandemic cohorts combined) .  
+ 
+Secondary  outcome  measures : 
+1. Language -based  executive  function  score:  Category  Fluency  Animals  from  the UDS  V3  
+2. Learning and e pi[INVESTIGATOR_58589]:  Craft  Story  Immediate  and Delayed  Recall  (verbal  epi[INVESTIGATOR_469127]) from the UDS V3   
+For the above secondary outcomes, test scores based on in-person and telephone version s are 
+combined (pre and post -pandemic cohorts are combined ) due to the proximity of assessment 
+protocol via two modalities .  
+ 
+We hypothesize  the intervention  group  will show either  improvement  or less decline  in these  
+global and domain -specific  cognitive  functions  compared  to the control  group.  
+ 
+Page  3 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015   Aim 2: Exploratory  analysis:  To examine  the efficacy  of our intervention  on emotional well -being, 
+resting -state fMRI (5 large networks), and functional measures . 
+ 
+Changes from baseline to Month 6 in  the p sychological well -being assessed by [CONTACT_469147] (emotion items total score) , resting -state functional MRI (5 large networks) and 
+IADL using OTDL -R (the Revised Observed Tasks of Daily Living ) will be examined .  
+ 
+Aim 3: Exploratory  analy sis: To examine  whether  the intervention  could  lead to changes  in speech 
+and language characteristics over time.  
+ 
+There is a need to develop ecologically valid outcome measures sensitive to trial effects. Previous 
+studies  from  our group  showed  that speech  and language  characteristics  (e.g.,  word  counts,  sentence 
+complexity) differentiated participants with MCI from those  with intact  cognition cross -sectionally.  
+ 
+We will record and analyze subjects’ conversational sessions during the trial to examine whether  
+algorithms used for the cross -sectional analyses can detect changes in speech and language 
+characteristics induced by [CONTACT_452594]. We hypothesize that speech and language 
+characteristics  among  participants  with MCI  will increasingly  resemble  those  observed  among  the 
+subjects with intact cognition over time.  
+ 
+Aim 4: Exploratory  Analysis:  Early  identification  of MCI  using  I-CONECT  and CART  data 
+(IRB# [ZIP_CODE]) (secondary data analyses).  
+ 
+We hypothesize  that the integration  of language  markers  from  all available  video  chat audio  recordings 
+can improve MCI screening accuracy. Specifically, we will:  
+ 
+1. Identify  MCI  by [CONTACT_469148] I-CONECT  language  markers. We  will 
+develop predictive models characterizing MCI using natural language processing (NLP) and 
+machine  learning  (ML)  algorithms  to extract  linguistic  variables  from  the transcribed  dialogues 
+and acoustic variables. We will then link the variables with the cognitive status (MCI/normal 
+cognition) and use the language markers to develop ML algorithms that fuse the information 
+from the two modalities (linguistic and audio) to carry out early identification of MCI.  
+2. Identify MCI by [CONTACT_469149] (IRB [ZIP_CODE]).  The 
+similar machine learning methods will be applied to this data set which includes highly 
+frequently  in-home  monitored  data  such  as computer  usage,  walking  speed  and variability, 
+time out of the house. .  
+3. Fuse  CART  digital  biomarker  data and I -CONECT  language  markers  to further  boost  the model 
+screening performance.  
+ 
+ 
+ 
+III. Background  
+In recognition  of the COVID -19 public  health  threat,  Oregon  Health  & Science  University  suspended  all 
+in-person, n onessential research  on human subjects on March 15th, 2020. T he governor of Oregon went 
+on to issue  a stay-at-home  order  shortly  thereafter.  These  restrictions  lifted  enough  to permit  remote  trial 
+Page  4 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.[ADDRESS_601507]  population  (adults  age 75 and older),  it became  necessary  to adapt  the protocol  for remote 
+conduct.  
+IV. Study  Design  
+ 
+This study  is a two-arm randomized  controlled  trial. 
+Participants  will be randomized  in a 1:1 ratio to the experimental  or control  conditions  balancing  the 
+following factors:  
+• Cognitive  status  (healthy  normal  vs. MCI)  
+• Age (age 75-79 vs. age 80-84 vs. over 85+) 
+• Education  (high  school  completion  vs. below  high school  education)  
+• Sex (male  vs. female)  
+• Mean  Montreal  Cognitive  Assessment  (MoCA)  
+Subjects will complete in -home assessments at the [ADDRESS_601508] approximately seven  months including the screening and  follow -up 
+period.  In total,  there  are approximately  four scheduled  assessment  calls (if assessment  time points  are 
+split into multiple calls), plus additional technology troubleshooting calls, depending on group 
+allocation.  
+ 
+A. Intervention  Group  
+ 
+Half of participants will be randomized to the experimental group, the study intervention group. These  
+subjects will engage in video chat conversations with study staff using an online video communication 
+platform.  Each  video  chat session  will be [ADDRESS_601509]  24 weeks.  Subjects  in the  intervention  group  will receive four  chats  per 
+week  (a high dose of the video  chat intervention)  for [ADDRESS_601510] group assignment, conversation frequency should not be assessed at the Month 6 time  
+Page  5 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.[ADDRESS_601511]  cognitive  status  (normal  vs. 
+MCI).  
+ 
+3. Investigator  Blinding  
+ 
+Investigators will not be blinded to subject allocation, however when making ongoing eligibility or 
+subject  termination  decisions,  investigators  should  attempt  to discuss  the situation  and make  ongoing 
+participation determinations without awareness of subject group assignment to the degree possible 
+(i.e. by [CONTACT_469150]’s ID number or identity while assessing the situation with staff).  
+ 
+V. Study  Population  
+A. Number  of Subjects  
+ 
+The targeted  study  population  remains  as described  in the main  I-CONECT study  protocol.  We 
+anticipate enrolling approximately 40 subjects across study sites under this Remote Protoc ol. 
+ 
+B. Inclusion  and Exclusion  Criteria 
+Inclusion Criteria:  
+1) Age 75 or older  
+2) Consent  to participate  in the study  
+3) Socially  isolated,  defined  by [CONTACT_469151]:  
+i. Score  ≤12 on the 6-item Lubben  Social  Network  Scale  (LSNS -6) 
+ii. Engages  in conversations  lasting  [ADDRESS_601512] self -report  
+iii. Answers  “Often”  to at least  one question  on the Hughes  et al. Three -Item Loneliness  Scale  
+4) Adequate  vision  to use study  technology  and complete  all neuropsychological  tests throughout 
+the study, defined by [CONTACT_716]:  
+i. Able  to see well enough  to read a newspaper,  wearing  glasses  if needed  but not using  a 
+magnifying glass  
+5) Adequate  hearing  to use study  technology  and complete  all neuropsychological  tests throughout 
+the study, defined as:  
+i. Able  to hear well enough  to complete  the telephone  screening  
+6) Sufficient  ability  to understand  English  in order  to complete  protocol -required  testing  
+7) Normal  cognition  or mild cognitive  impairment  (MCI),  as assessed  by [CONTACT_469152]  
+8) Sufficiently  able to comply  with protocol  assessments  and procedures,  in the opi[INVESTIGATOR_469128]:  
+Page  6 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015   1) Identified  as having  dementia  based  on either  of the following  criteria:  
+i. Self-reported  diseases  associated  with dementia,  such as Alzheimer’s  disease,  vascular 
+dementia, Lewy body dementia, frontotemporal dementia, normal pressure 
+hydrocephalus, or Parkinson’s disease  
+ii. Diagnosis  of dementia  by [CONTACT_469153]  
+2) Anticipating  major  change  in living  arrangement  within  the upcoming  year 
+3) Severely  depress ed, operationally  defined  as a 15-item GDS  score  > 7 
+4) Significant  disease  of the central  nervous  system,  such as brain  tumor,  seizure  disorder,  subdural 
+hematoma, or significant stroke, per subject report  
+5) Current  (within  2 years  of screening)  alcohol  or substance  abuse  
+6) Unstable  or significantly  symptomatic  psychiatric  disorder,  such as major  depression, 
+schizophrenia, posttraumatic stress disorder, or bipolar disorder  
+7) Unstable  or significantly  symptomatic  cardiovascular  disease,  such as coronary  artery  disease 
+with frequent angina, or congestive heart failure with shortness of breath at rest  
+8) Unstable  insulin -dependent  diabetes  mellitus,  defined  as meeting  any of the following  criteria:  
+i. Received  a diagnosis  of Type  1 Diabetes  
+ii. Started  taking  insulin  within  3 months  of the screening  visit 
+iii. Been  hospi[INVESTIGATOR_469129]  
+9) Active systemic cancer within 5 years of the screening visit (Gleason Grade < 3 prostate cancer 
+and non -metastatic skin cancers are acceptable)  
+10) Surgery  that required  full sedation  with intubation  within  6 months  of screening  (sedation  for 
+minor procedures is acceptable)  
+11) More  than one overnight  hospi[INVESTIGATOR_469130]  3 months  of the screening  visit 
+12) Any other  condition  that, in the opi[INVESTIGATOR_1072],  is severe  enough  to cause  study 
+participation to have a negative impact on participant or study team rights or wellbeing.  
+ 
+Due to COIVD -19 risk, research personnel (including internet vendors) may be prohibited from entering the 
+home to install new internet connections. In addition to the above criteria, subjects may be required to have a 
+pre-existing  internet  connection  and be willing  to allow  the use of this connection  for study  purposes  (e.g. video 
+chat).  
+ 
+C. Vulnerable  Populations  
+ 
+Decisionally impaired adults will not be included in this study. Eligibility criteria require that 
+participants  have  normal  cognition  or MCI,  based  on neuropsychologist  diagnosis.  Subjects  with MCI 
+have no more than minimal cognitive impairmen t and are still able to provide informed consent.  
+ 
+Study  staff conducting  the informed  consent  process  will thoroughly  review  the consent  form  at 
+screening and will assess comprehension in the following areas:  
+ 
+• The nature  of the research  
+• Consequences  of participation  for the subject’s  own situation  and health  condition  
+• The difference  between  research  and clinical  care 
+• Alternatives  to participation  
+• Potential  risks  involved  in the study  
+Page  7 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015   • Procedures  to follow  if the subject  experiences  discomfort  or wishes  to withdraw  
+• The voluntary  nature  of participation  
+If potential  participants  cannot  sufficiently  answer  related  questions  (indicating  risk of decisional 
+impairment), they will not be consented or enrolled into the trial. 
+Cognitive status will be reassessed by [CONTACT_469154] 6 -month time point. If it is 
+determined  that the participant  has developed  dementia,  study  activities  and assessments  will cease  and 
+study equipment will be returned.  
+ 
+Other  vulnerable  populations,  such as prisoners,  will not be included  in this trial. 
+ 
+D. Setting  
+ 
+This is a multi -center trial involving Oregon Health & Science University (OHSU), University of 
+Michigan  (UM),  and Emory  University.  OHSU  will function  as both a resea rch site and the coordinating 
+center  for the trial;  sites may conduct  the study  under  OHSU  Institutional  Review  Board  (IRB)  oversight 
+or local IRB oversight. [LOCATION_005] General Hospi[INVESTIGATOR_469131] r. 
+Subject recruitment will occur for the Oregon site primarily in the Portland area and nearby 
+[CONTACT_181662], for the Michigan site primarily in Detroit and nearby [CONTACT_181662], and for the Georgia site 
+in the Atlanta metro area and nearby [CONTACT_181662]. Study staff will conduct research activities (i.e. 
+telephone pre -screenings, data management, data analysis) at the OHSU Layton Aging & 
+Alzheimer’s Disease Center, the UM Michigan Alzheimer’s Disease Center and School of 
+Nursing, and Emory’s Goizueta Alzheimer’s Disease Re search Center, or working remotely in 
+accordance with those institutions’ policies. Video Chats will be conducted by [CONTACT_469155].  Screening  calls,  assessment calls,  and technology - 
+related calls for installation  and repairs will be completed remotely via phone or video chat.  
+E. Recruitment  Methods  
+ 
+Recruitment  methods  will remain  as described  in the main  I-CONECT  study  protocol.  
+ 
+This study  will not recruit  in any way that requires  in-person  contact  [CONTACT_469156] -19-related physical distancing mandates remain in effect.  
+ 
+F. Compensation  
+ 
+All participants who consent to participate will receive $[ADDRESS_601513] 
+formally consented will still receive this compensation. Participants will receive $[ADDRESS_601514]  discontinues 
+the study early for any reason.  
+ 
+If it is necessary for the study to use a participant’s existing personal internet connection for the study 
+video chat device, the study may reimburse the participant for the cost of their internet up to $[ADDRESS_601515]  receives  this reimbursement  and completes  the study,  their total study compensation 
+will be $520.  
+G. Consent  Process  
+Prior  to obtaining  full informed  consent,  subjects  will undergo  a telephone  pre-screening  during  which  
+Page  8 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015   basic  eligibility  will be assessed.  Data  may also be collected  and used prior  to consent  as described  in 
+the Recruitment section of this protocol. Collection of protected health information (PHI) prior to 
+consent for this study will be covered by [CONTACT_2717] -approved waiver as required by [CONTACT_3488].  
+ 
+Subjects will be consented at Sc reening. Study staff will explain the consent process and study 
+procedures in lay terms, and will administer a series of questions to confirm comprehension. Subjects 
+will be given  ample  time to review  the consent  form  and have  any questions  answered  prior  to providing 
+consent. Consent will be obtained prior to any other study procedures at Screening.  
+ 
+Consent will be collected remotely over the phone due to COVID -[ADDRESS_601516]  their risks  or trial participation, 
+and will be formally re -consented as required by [CONTACT_1201].  
+ 
+Study  staff conducting  the video  chat interventions  will be asked  to provide  characterizing  information 
+and complete a personality questionnaire. Staff will be provided with a Consent Information Sheet; 
+documentation of study staff consent will not be obtained.  
+VI. Procedures  
+A. Subject  Characterization  
+ 
+1. Demographics  (NACC  Form  A1) Screening  
+Subject  demographic  information  will be collected.  
+ 
+2. Social  Isolation  Assessment  Screening,  Month  6, Follow -Up 
+To assess  level  of social  isolation,  subjects  will be asked  about  their conversation  frequency,  and 
+the Lubben Social Network Scale (LSNS -6) and Hughes  et al. Three -Item Loneliness Scale will 
+be administered. The LSNS -[ADDRESS_601517] group assignment.  
+ 
+3. The Neuroticism -Extraversion -Openness  Five-Factor  Inventory  (NEO -FFI)  Baseline, 
+Month 6  
+ 
+1 Hughes,  M. E., Waite,  L. J., Hawkley,  L. C., & Cacioppo,  J. T. (2004).  A Short Scale for  Measuring  Loneliness  in Large  Surveys:  Results  From  Two Population - 
+Based Studies. Research on aging , 26(6), 655–672. doi:10.1177/0164027504268574  
+Page  9 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.[ADDRESS_601518]  does 
+not successful ly complete the questionnaire on his or her own, the questionnaire will be 
+completed with staff assistance.  
+ 
+4. Genotypi[INVESTIGATOR_469132]  
+A single saliva sample will be self -collected to measure APOE4, a genetic risk factor for 
+Alzheimer’s disease. Participants will be permitted to opt out of sample collection and genetic 
+testing.  Participants  will not be given  the results  of their genetic  test. If  it is not possible  to obtain 
+a saliva sample at the designated time point, collection may be re -attempt ed at a future time 
+point. If a saliva sample is determined inadequate, an additional sample may be requested at a 
+future time point.  
+ 
+B. Administrative  Procedures  
+ 
+1. Pre-Visit  Stability  Screening  Screening,  Month  6 
+At the beginning  of every  assessment  call, study  staff will compete  the Pre-Visit  Stability 
+Screening. Subjects will be asked about their health, routines, and substance use.  
+ 
+Based  on the participant’s  responses,  study  staff will assess  whether  reasonably  reliable  data can 
+be collected, and determ ine if the call be rescheduled and/or if data collected should be flagged 
+during  analysis  for any reason.  This screening  facilitates  consistency  of testing  conditions  across 
+all assessment calls.  
+ 
+If time point  assessments  are split into multiple  visits  (e.g. multiple  visits  for screening,  or 
+multiple visits for Month 6), this screening should be administered at each visit.  
+ 
+2. Subject  Contacts  Screening  
+Subjects  may choose  to provide  contact  [CONTACT_287608] a contact  [CONTACT_469157]. Subjects may choose to 
+provide  contact  [CONTACT_469158],  if they would  like their physician  to 
+be notified in the event that clinically relevant information is note d in the course of the study 
+(e.g. the subject is assessed as developi[INVESTIGATOR_6124]).  
+ 
+3. Resource  Provision  Month  6, Failed  Screening,  Early  Termination/Withdrawal  
+At the Month [ADDRESS_601519] -study resources for 
+social engagement, and will encourage participants to utilize the resources. Subjects will also 
+receive this information if they fail screening, or  if their  participation is terminated early or they 
+withdraw from the study. If participants become depressed, as evidenced by [CONTACT_469159] (GDS), staff will provide information about mental health resources 
+and may refer  the subject  to the subject’s  primary  care physician.  Subjects should  be encouraged 
+to utilize the provided resources again at the final follow -up call.  
+ 
+C. Cognitive  & Functional  Assessments  
+ 
+1. Neuropsychological  Battery  Screening,  Month  6 
+Subjects  will receive  the Uniform  Data  Set (UDS)  Version  3 Telephone  Administered  Cognitive 
+Battery, or T -Cog, after the COVID -19 pandemic started . This battery is the telephone version 
+of the National Alzheimer’s Coordinating Center (NACC) UDS Version 3, used by [CONTACT_469160]’s Di sease Centers (ADC) program of the National Institute on Aging (NIA).  
+Page  10 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015   The battery consists of brief measures of attention, processing speed, executive function, 
+epi[INVESTIGATOR_10682], and language. Tests include: Craft Story Immediate Recall, Bl ind/Telephone 
+MoCA,  Number  Span  Forward,  Number  Span  Backward,  Category  Fluency  (Animals),  Category 
+Fluency  (Vegetables),  Oral Trail  Making  Test Part A,  Oral Trail  Making  Test Part B, Craft  Story 
+Delayed Recall, Verbal Fluency (F), and Verbal Fluency (L).  
+ 
+Administration  of the battery  will be audio  recorded.  Due to the need  to ensure  appropriate  delay 
+timing for memory assessments, the neuropsychological battery assessments must be completed 
+in the order presented above.  
+ 
+The battery  data measured  at the Screening  time point  will be used as the subject’s  baseline  for 
+data analysis.  
+ 
+2. Clinical  Dementia  Rating  (CDR)  (NACC  Form  B4, Adapted) Screening,  Month  [ADDRESS_601520]. No informant will be used. It will be used in 
+conjunction with the neuropsychological battery to identify participants as h aving normal 
+cognition, MCI, or dementia, and to determine participant eligibility.  
+ 
+3. The NIH  Toolbox  Emotional  Domain  Baseline,  Month  6 
+The NIH Toolbox is a proctored (i.e., requires active administrator participation) assessment 
+program  administered  via electronic  tablet.  To adapt  this assessment  to be conducted  remotely, 
+subjects will complete only the emotional domain of the Toolbox as questionnaires.  
+ 
+The toolbox  measure  of emotion  includes  four general  domains:  negative  affect  (anger,  fear, and 
+sadness), psychological well -being (positive affect, general life satisfaction, and meaning & 
+purpose), stress & self -efficacy (perceived stress and self -efficacy), and social relationships 
+(social support, companionship, and social distress).  
+ 
+D. Subject  Health  Assessments  
+1. Subject  Health  History  (NACC  Form  A5, Adapted)  Screening  
+Subject  medical  history  will be collected,  including  substance  use history.  
+ 
+2. Medication  Assessment  Screening,  Month  [ADDRESS_601521]’s  current  medications  and general  information  about  medication  habits  will 
+be collected.  
+ 
+3. Geriatric  Depression  Scale  (GDS)  (NACC  Form  B6) Screening,  Month  6, Follow -Up 
+The GDS is a self -report assessment of depression. If the subject scores  [ADDRESS_601522]  will be assessed  for possible  suicidal  ideation  using  a 
+depression  safety  tool, and staff will take appropriate  follow -up actions  per the tool’s  guidance.  
+The GDS will be  used to assess subject eligibility at screening. If  subjects are  excluded  due to 
+high GDS  score,  depression  resources  will be provided  and the subject  may be referred  to their 
+primary care provider.  
+Page  11 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.[ADDRESS_601523]  family  history  of dementia  will be collected.  
+ 
+5. Physical  Evaluation  Form  (NACC  Form  B1) Baseline  
+The subject  will self-report  on height,  weight,  vision  and hearing.  
+ 
+E. Eligibility  Following  clinician  diagnosis  
+A telephone  pre-screening  will be conducted  to assess  preliminary  subject eligibility.  If successful, a  full 
+Screening visit will be conducted to further assess eligibility.  
+If the subject is determined to be ineligible during Screening, the visit will be ended at that point. 
+Otherwise,  final study eligibility will be determined  upon clinician diagnosis of subject cognitive status 
+following  the screening  assessments.  If a subject  is found  ineligible,  staff will provide  the subject with  a 
+list of resources for social engagement.  
+ 
+Previously ineligible subjects may be  rescreened fo r participation in the study if their eligibility status is 
+believed  to have  changed.  Their  subject  identification  code  will be kept the same;  a new code  will not be 
+assigned. If fewer than [ADDRESS_601524] elapsed since the original administration of the Screening 
+cognitive assessments, the neuropsychological battery will not be repeated due to possible learning 
+effects. The original scores will be used. Subjects will not receive additional compensation for 
+rescreening. Other Screenin g procedures will be repeated per the Schedule of Events, including 
+collection of informed consent.  
+F. Clinician  Diagnosis  (NACC  Form  D1) Within  [ADDRESS_601525] results 
+should be evaluated by [CONTACT_3452]’s designated neuropsychologist within approximately one week. 
+The clinician will complete a clinician diagnosis, which identifies participants as having normal 
+cognition,  MCI,  or dementia.  Subjects  must  have normal  cognition  or MCI  to be eligible  to participate  in 
+the study. Subject MCI will be further characterized as amnestic or non -amnestic. If the site 
+neuropsychologist is uncertain about the diagnosis, (s)he may consult with the designated trial 
+neuropsychologist at other study site(s). The clinician diagnosis will be reconfirmed within 
+approximately one week after the Month [ADDRESS_601526]’s cognitive status, as this 
+study will not include subjects with dementia.  
+ 
+G. Randomizati on Following  eligibility  determination  
+Subjects with normal cognition or MCI per clinician diagnosis will be randomized to the intervention 
+group  or to the control  group  once  the clinician  diagnosis  is available  to confirm  subject  eligibility.  This 
+should be completed as soon as possible once the required eligibility confirmation is available.  
+ 
+Randomization to the control group or intervention group will occur prior to the Baseline visit, but 
+subjects  should  not be notified  of their group  assignment  until after the Baseline  visit to help prevent  the 
+subjects from inadvertently unblinding the assessment staff.  
+ 
+If subjects are randomized but then withdraw and do not complete the Baseline visit, they will be 
+removed  from  the randomization  program  to ensure  study  arms  remain  balanced.  These  subjects  will be 
+classified as drop -outs prior to randomization, as they are not informed of their group assignment.  
+ 
+If cohabitating  subjects  enroll  in the trial,  forced  randomized  will be used to assign  the subjects  to the 
+Page  12 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.[ADDRESS_601527] 
+Baseline -period procedure (the Baseline assessment or the technology installation, as applicable).  
+ 
+If a subject’s Week [ADDRESS_601528]’s  home.  The video  chats 
+will b e audio and video recorded.  
+ 
+Novel  conversation  stimuli  are provided  for each chat,  focusing  on a theme  with three  possible 
+topi[INVESTIGATOR_469133], to be visually presented to the participant during the chat via 
+the video  chat device.  Stimuli include  questions  targeting  three  domains  of cognition:  epi[INVESTIGATOR_6368], semantic memory, and executive function. Stimuli will be used to initiate each chat, 
+however subjects may direct the conversation as they find interesting or engaging. Study s taff 
+will attempt to maintain a neutral or positive chat tone.  
+The full chat intervention  will last for [ADDRESS_601529]’s participation in the study. 
+Chats ma y be rescheduled as needed. If a given day’s chat cannot be successfully rescheduled, 
+the chat will be considered missed. Chats missed due to planned holiday office closures will not 
+be considered  protocol  deviations.  If a technical  issue  renders  a video  chat impossible  for a given 
+day, the chat may be conducted via telephone.  
+ 
+After  every  chat,  study  staff will complete  a questionnaire  assessing  qualitative  aspects  of the 
+chat such as perceived subject engagement level. Adverse events incidentally noted during 
+intervention delivery will be handled as described in the Data & Safety Monitoring Plan 
+(DSMP).  
+ 
+2. Positive  and Negative  Affect  Schedule  (PANAS) Weekly  During  Inter vention  Period  & Dose 
+Tapering  
+The PANAS  is a self-report  mood  questionnaire  which  will be administered  to subjects  in 
+the intervention group only. It will be administered at both the beginning and the end of 
+the subject’s first video chat session each week.  
+ 
+3. I-CONECT  Weekly  Questionnaire  Weekly  During  Intervention  Period  & Dose  Tapering  
+Health and social activities will be monitored with a brief survey, the I -CONECT Weekly 
+Questionnaire,  administered  verbally  during  a weekly  phone  call lasting  approxima tely 10-15 
+Page  13 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.[ADDRESS_601530] cannot be reached after 
+reasonable attempts, the weekly call will be considered missed.  
+ 
+Adverse  events  will be noted  in the course  of conducting  the weekly  health  questionnaire. 
+Adverse events will be documented, assessed and reported per DSMP and OHSU IRB 
+requirements.  
+ 
+4. Medication  Adherence  Intervention  Period  Weeks  1-4, Follow -Up Period  Weeks  25-27 
+At the OHSU study site, daily vitamin -taking adherence will be tracked as a real -world measure 
+of cognitive  function.  Subjects  will be provided  with electronic  pi[INVESTIGATOR_469134]-dose (250 mg) 
+vitamin C tablets. Please refer to the Risks and Benefits section for additional information.  
+ 
+A pi[INVESTIGATOR_469135]  [ADDRESS_601531]  feedback  about  the intervention  and study 
+experience.  The questionnaire  will be  administered  immediately  following  the final video  chat 
+session of Week 24. Administration and responses will be audio and video recorded.  
+6. Intervention  Staff  Characteristics  Prior  to Interventions  
+Intervention staff will document their age at study start, gender, and previous experience 
+conversing  with elders.  They  will also complete  the NEO -FFI personality  inventory.  No personal 
+health information will be collected from staff.  
+I. In-Home  Technology  
+ 
+1. Installation  (~1-2 hours;  variable  depending  on technology)  
+Following  the Baseline  visit,  study  technology  will be installed  for all subjects  in the intervention 
+group.  
+Study  equipment  will be provided  to subjects  for self-install,  guided  by [CONTACT_317263],  unblinded  
+Page  14 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.[ADDRESS_601532] of study expectations. The video chat device will be on loan for the 
+duration of subjects’ participation, and subjects will be instructed to use it for study purposes 
+only.  
+ 
+2. Troubleshooting  
+Study  technolo gy troubleshooting  will be done  remotely.  As-needed  technology  troubleshooting 
+calls will be scheduled at the subject’s convenience. Study staff may replace malfunctioning 
+devices as needed, either by [CONTACT_469161].  
+ 
+3. Uninstallation  (~30  minutes;  variable  depending  on technology)  
+At the conclusion  of the intervention  period,  the video  chat technology  (and vitamin  C pi[INVESTIGATOR_61194],  if 
+applicable) and any accompanying study equipment will be returned, either via prepaid mail or 
+contact[CONTACT_469162][INVESTIGATOR_469136]. Subjects will self -uninstall equipment for return to the study.  
+J. Follow -Up 
+1. Dose  Tapering  Weeks  25-[ADDRESS_601533] protocol.  
+ 
+ 
+2. Follow -Up Call Week  28 
+Subjects will receive a follow -up call approximately one month after the conclusion of the 
+intervention  period  (refer  to Schedule  of Events).  If participants  become  depressed,  as evidenced  by 
+[CONTACT_469163] (GDS), staff will provide information about mental 
+health resources and may refer the subject to the subject’s primary care physician. Subjects will be 
+encouraged to utilize the post -study social engagement resources.  
+K. Subject  Discontinuation  
+ 
+1. Early  Termination  
+If at any point  during  the study  it is determined  that the subject  no longer  fulfills  study  eligibility 
+criteria, the  investigator will assess whether  the subject should be  withdrawn and may choose to 
+terminate the subject’s participation. To the degree possible, the investigators should avoid 
+referencing  or considering  study  group  assignment  when  assessing  potential  discontinuation.  If a 
+subject is terminated for any reason, study staff w ill arrange for the uninstallation of study 
+equipment from the subject home, and subjects will be provided with post -study resources for  
+Page  15 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.[ADDRESS_601534] participation in ongoing study 
+activities (e.g., weekly calls, pi[INVESTIGATOR_469137], intervention) will be terminated immediately, and 
+study staff will arrange for the uninstallation of study equipment from the participant home.  
+ 
+If participation is discontinued due to low cognitive test scores, study staff will inform subjects 
+that their scores  on memory  and thinking  tests indicate  they should  follow  up with their primary 
+care physician for further testing and evaluation.  
+ 
+2. Subject  Withdrawal  
+Subjects  may discontinue  the study  at any point  in time without  any penalty.  The subject  will be 
+reminded that if he or she chooses not to participate at any time, the decision will not affect his 
+or her relationship  with the study  staff,  community  recruitment  partners,  or study  sites.  Subjects 
+who choose  to discontinue  during  the intervention period  will be asked  to remain  in the study  to 
+complete remaining study assessment visits, rather than withdrawing from the study entirely.  
+Subjects  will be asked  to provide  their reason  for withdrawing  from  the study.  
+ 
+In all instances of subject withdrawal, study staff will arrange for the uninstallation of study 
+equipment from the subject home. Subjects will be provided with post -study resources for social 
+engagement. Subjects may be asked to complete the [ADDRESS_601535] drives and/or recording devices used.  
+Encrypted,  password -protected  computers will  be used to transfer  audio  data from  study  sites.  Audio 
+files will be stored  for processing  on servers  at OHSU’s  Advanced  Computing  Center  (ACC),  which 
+is behind OHSU’s main firewall. Staff will access ACC servers using a Virtual Machine.  
+Page  16 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015   3. Video  Recordings  
+Video chats will be conduc ted using Cisco Meeting or Cisco Webex software. Sessions will be 
+recorded  on a limited -access  server  behind  OHSU’s  main  firewall.  The server  can only be accessed 
+by [CONTACT_469164]. Videos will be moved from the server to  
+OHSU Box at regular intervals.  
+ 
+4. Electronic  Data  Capture  
+Whenever possible, data will be collected using real -time electronic data capture, and this method 
+will be consistent  across  staff and study  sites.  This study  is using  OHSU  REDCap  for electronic  data 
+capture. Electronic data capture may include subject -completed REDCap surveys. Subject -specific 
+survey links may be provided to individual subjects via the subject’s email.  Staff will use wireless 
+hotspots and encrypted laptops to access RE DCap in the field. Paper downtime forms may be used 
+in case of technical difficulties, in which case the paper data handling process will be followed.  
+ 
+5. Electronic  Pi[INVESTIGATOR_469138] C  pi[INVESTIGATOR_469139] a 
+wireless hub in the participant’s home. From there, it will be sent directly to servers stored at 
+OHSU’s  ACC.  If self-install  is required  due to COVID -[ADDRESS_601536] ID code, and their screening data 
+will be entered into the main REDCap study database.  
+7. Saliva  Specimens  
+Study staff will ship saliva samples via U.S. mail to the National Centralized Repository for 
+Alzheimer’s Disease and Related Dementias (NCRAD) at Indiana University, per the NCRAD 
+Specimen Collection, Processing and Shipment Manual. Samples will be submit ted with the 
+following  information:  collection  date,  Subject ID,  and the  subject’s  sex, year of birth, ethnicity,  and 
+race.  In the event  that visits  must  be conducted  remotely  due to COVID -[ADDRESS_601537] saliva samples and mail samples directly to NCRAD, using provided kits and mailing 
+materials.  
+ 
+B. Sharing  of Results  with  Subjects  
+ 
+Data  or results  will not be shared  with subjects.  
+ 
+C. Data  and Specimen  Banking  
+ 
+Saliva  samples  will be shipped  to the National  Centralized  Repository  for Alzheimer’s  Disease  and 
+Related Dementias  (NCRAD) at Indiana  University. Samples will be  submitted with the following 
+information: collection date, Subject ID, and the subject’s sex, year of birth, ethnicity, and rac e. 
+NCRAD will provide the study team with APOE genetic results, and will store the saliva samples 
+indefinitely.  Upon  completion  of the I-CONECT  study,  NCRAD  will make  the saliva  samples  available 
+for future research in accordance with NCRAD policy.  
+Page  17 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.[ADDRESS_601538] - 
+protected OHSU servers, OHSU Box, and/or OHSU REDCap. All data will be coded prior to sharing. 
+De-identified datasets are easily exported from OHSU R EDCap though the recordings contain 
+voiceprints, images  of participants, and content that may identify the participant and therefore cannot be 
+deidentified. Paper -based data collection forms will be destroyed after they have been digitized per the 
+paper da ta handling process described in this protocol. Upon study closure, sites will send the signed 
+consent forms, compensation paperwork, and other remaining paper source documents to OHSU via a 
+courier  service  with tracking  number  and signature  [CONTACT_469170].  All signed  paper -based  consent 
+forms will be stored in locked locations at OHSU for at least three years after study closure.  
+ 
+Separate IRB approval will be required for each human subject research project using identifiable data 
+from the reposito ry. Investigators wishing to obtain data from the repository for research beyond the 
+specific aims of the original study may contact [CONTACT_469165], 
+Hiroko Dodge, PhD. [CONTACT_469172] will ensure that data are released accordi ng to OHSU policy and this 
+protocol.  A repository  sharing  agreement  will be used each time data are released  for research  purposes. 
+All signed agreements will be electronically kept on file indefinitely on a secure storage server. [CONTACT_469173] will ensure the  security and confidentiality of data and specimens during both storage and 
+transfer.  She will maintain  a secure  list of participants  who withdraw  their consent,  and she will ensure 
+no future use or sharing of their data. [CONTACT_469172] will track data releases to be reported at annual IRB 
+Continuing Review.  
+VIII.  Data  Analysis  
+The data analysis approach for this Remote Protocol remains as described in the main I -CONECT study 
+protocol. Data for the subset of subjects anticipated to enroll under  this protocol ( N=40) will be included in 
+analyses  as appropriate;  this subset  of subjects  will not have  data required  for certain  planned  analyses,  such 
+as MRI data, and will therefore be excluded where necessary.  
+ 
+Psychological  well-being and  person -specific levels  of social  interaction  (i.e., changes  in social  engagement 
+measured  with the I-CONECT  Weekly  Questionnaire  administered  weekly  via telephone)  will be monitored 
+and controlled in the analyses along with other relevant variables, including APOE [ADDRESS_601539] scores  (global  cognitive  function)  are our primary  outcome.   
+Secondary  outcomes  include:  neuropsychological  test results  in the area of language -based  executive 
+function,  measured  by [CONTACT_941] T-Cog category  fluency  test (animals),  and memory  domains  measured  by 
+[CONTACT_3490]  18 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015   two T-Cog epi[INVESTIGATOR_469140] (Craft  Story  Immediate  and Delayed  Reca ll). We will allocate  a type I 
+error rate of 0.05 for our primary outcome. The results will be cross -validated with NIH Toolbox 
+cognitive batteries as exploratory analyses for those who had NIH Toolbox cognitive assessments.  
+Potential mediation variables i nclude the Psychological Well -Being portion of the NIH Toolbox. If 
+Psychological Well -Being shows significant improvement in the experimental group compared to the 
+control group over 6 months (in univariate analysis using p <0.05), the measurement(s) will be 
+examined  as potential  mediation  factors  in statistical  models  as secondary  analyses.  The Psychological 
+Well -Being  portion  of the NIH Toolbox  consists  of 3 measurements:  Positive  Affect,  Life Satisfaction, 
+and Meaning and Purpose. The questionnaire and references for these scales are detailed in: 
+http://www.nihtoolbox.org/WhatAndWhy/Emotio n/PsychologicalWell -Being/Pages/default.aspx . 
+ 
+B. Sample  Size Estimate  
+ 
+Our previous pi[INVESTIGATOR_799] (based on a six -week intervention) showed Cohen’s d=0.[ADDRESS_601540] changes in language -based executive functions (Clinical Dementia Rating 0 and 0.5  groups 
+combined)  in the  control and  experimental  arms.  The sample size  (n=72  completers  for each group) in 
+this trial provides  80% power  to detect  this difference  at alpha=0.025,  using  a two-tailed  test (i.e., total 
+type I error rate=0.025), based on simulation results using non -pooled standard deviation (SD).  
+ 
+Two separate hypotheses are proposed. Stage I examines the efficacy of the high dose and Stage II 
+examines  the efficacy  of the maintenance  dose.  Participants  covered  under  the current  protocol  will be 
+included into the high dose analysis  
+ 
+Changes in primary and secondary outcomes between the control and experimental groups will be 
+examined  for the efficacy of high dose  (month 0 – month 6, Stage I) and maintenance  dose (month 6 – 
+month 12, Stage  II) using the Mixed -Effect Model Repeated Measure (MMRM) model under ITT. We 
+will conduct per protocol analysis using those who completed at least 80% of targeted conversational 
+sessions (experimental group) and the number of telephone check -ins (control gr oup).  The subjects 
+recruited  or in trial under  the current  remote  trial protocol  will be included  where appropriate  (i.e., high 
+dose analysis).  
+ 
+Changes in primary and secondary outcomes between the control and experimental groups will be 
+examined  for the efficacy  of high dose (month  0 – month  6, Stage I)  and maintenance  dose (month  6 – 
+month  12, Stage  II) using  the Mixed -Effect  Model  Repeated  Measure  (MMRM)  model  under  ITT. We 
+will conduct per protocol analysis using those who completed at least 80% of  targeted conversational 
+sessions (experimental group) and the number of telephone check -ins (control group).  
+Changes in primary and secondary outcomes between the control and experimental groups will be 
+examined  for the efficacy  of high dose (month  0 – month 6, Stage I)  and maintenance  dose (month  6 – 
+month  12, Stage  II) using  the Mixed -Effect  Model  Repeated  Measure  (MMRM)  model  under  ITT. We 
+will conduct per protocol analysis using those who completed at least 80% of targeted conversational 
+sessions (experimental group) and the number of telephone check -ins (control group).  
+Page  19 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015    
+ 
+Figure  1. Trial  Dose  Stages:  Sample  size for one group  (MCI  or normal  cognition;  both groups 
+have the same planned sample size)  
+ 
+Changes in primary and secondary outcomes between the control and experimental groups will be 
+examined for the efficacy of the high dose (Baseline -Month 6, Stage I) and the maintenance dose 
+(Month  6-Month  12, Stage  II) using  the Mixed -Effect  Model  Repeated  Measure  (MMRM)  model  under 
+intention -to-treat (ITT). We  will conduct  per-protocol  analysis using  those  who completed  at least 80% 
+of the targeted conversational sessions (experimental group) and telephone check -ins (control group).  
+ 
+C. Analyses  proposed  for the New  Aim 4 
+ 
+The analysis  of the New  Aim 4 investigated  the effectiveness  of language  markers  from  conversation  in 
+detecting early MCI subjects, where the key hypotheses are that 1) data -driven language and acoustic 
+markers are predictive of early MCI subjects, 2) behavior markers from CART study are predictive of 
+early MCI subjects, and 3) fuse both data to further  improve the ability of identifying MCI  
+Aim 4 (1): To validate the first hypothesis of effectiveness of language and acoustic markers, we will 
+first pre -process the data and extract acoustic markers and linguistic markers. We will apply automatic 
+speech re cognition (ASR) models to convert the collected conversations to machine -readable text in 
+computer. We will then use OpenSMILE to extract Mel -frequency cepstral coefficients (MFCC) from 
+the raw acoustic recordings as acoustic features in our analysis.  For each recording, we will compute 
+various  types  of feature  representations  (hand -crafted,  statistical,  and deep)  from  the MFCC  features  and 
+compare them using their quality as evaluated in downstream analysis.  Next, we will investigate one 
+conventional bag -of-words feature representation using linguistic Inquiry and Word Count (LIWC) and 
+deep -learning based embeddings.  
+We will first investigate the correlation of the two linguistic feature representations and their 
+effect on classification performance on MCI detection. We will then compare the inclusion of 
+MFCC features and investigate the effects on the classification performance. For classification 
+models,  we will use  the de-identified  interview  data from I -CONECT to  assess  the performance 
+of the multi -modal  predictive models using standard performance measures such as the area 
+under the ROC curve (AUC), sensitivity, specificity, etc. We will randomly divide the data into 
+three sets (80% for training, 10% for validation, and 10% for test), and perform [ADDRESS_601541] -order gradient descent will be used for non -deep 
+learners. To compare the performance of different algorithms, we will compute the p -value to 
+measure the significance of improvements over the 10 -fold evaluations.  
+
+Page  20 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015   Aim 4 (2): To validate the hypothesis of the effectiveness of behavior markers, we will first 
+perform missing value  evaluation to estimate the missing values in the sensor -based monitoring 
+data CART.  We will use the  missing  rate as a metric  of the uncertainty  of the estimation  and take 
+the factor into account when making predictions. For modeling with long -term sequenc es, we 
+will investigate the effectiveness of various imputation strategies, including commonly used 
+smoothing -based imputation techniques (e.g., carrying next forward, carrying last backward, 
+multiple imputation with chained equations, etc.), as well as mo del-based imputation using 
+matrix completion and deep learning -based imputation methods. After we are done with the 
+imputation, we will then develop a two -level multi -granularity feature extraction process with 
+fine-granularity features describing short -term behavior patterns, and coarse -granularity features 
+describing long -term ones. We will use a denoising autoencorder (DAE) model to extract a low - 
+dimensional latent feature vector, a recurrent neural network to learn the temporal patterns over 
+the fine-granularity features  extracted  from DAEs. We  will then  build  classification  models  from 
+the multi -granularity features extracted and study its effectiveness, using the same training - 
+testing scheme (training and testing procedures, evaluation metrics) menti oned above.  
+Aim 4 (3): By [CONTACT_469166] (NACC UDS V3), we 
+will examine whether combining linguistic/acoustic features (coming from I -CONECT) and 
+behavioral markers (coming from CART)  can further improve the ident ification of MCI. We 
+will conduct a joint analysis of language and behavior markers using a novel information fusion 
+framework. In this analysis, we will conduct patient similarity evaluation using NACC UDS 
+data, by [CONTACT_2329] a generalized Mahalanobis distance  derived from UDS data. Once the patient 
+similarities are measured, we will use  behavior feature vectors from similar  patients to construct 
+auxiliary  variables. Once  done,  we will investigate  two ways  of constructing  the enriched  feature 
+representations:  1) simple  concatenation:  the original  patient  vector  representation  and the vector 
+representations for similar  patients will be  simply concatenated to form a long vector  which will 
+be feed into the MCI classifiers. 2) hierarchical concaten ation: the representations of the similar 
+patients will be aggregated first, and then the aggregated vector will be concatenated with the 
+original patient representation vector. For the classification model, we plan to investigate both 
+conventional models such as logistic regression and decision tree, as well as advanced models 
+such as gradient boosted decision tree and multi -layer perceptron. We will use the same 
+evaluation metrics as done in last hypothesis.  
+ 
+ 
+IX. Privacy,  Confidentiality  and Data  Security  
+Privacy,  confidentiality,  and data security  approaches  for this Remote  Protocol  remain  the same  as those 
+utilized in the main I -CONECT study protocol.  
+X. Risks  and Benefits  
+A. Potential  Risks  to Subjects  
+1. Privacy  
+There  is a risk of loss of confidentiality.  All study  personnel  will receive  training  about  HIPAA 
+and the  responsibilities  that accompany the  conduct of research. Subject confidentiality will be 
+protected in compliance with OHSU, research site, and HIPAA guidelines.  
+ 
+2. Emotional  Risk  
+Page  21 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.[ADDRESS_601542]-study  resources  for 
+social connection, and will encourage participants to utilize the resources. Subjects will also 
+receive  this information  if they fail scree ning.  If participants  become  depressed,  as evidenced  by 
+[CONTACT_469163] (GDS), staff may provide information about 
+mental health resources and may refer the subject to the subject’s primary care physician.  
+ 
+3. Cognitive  Impairme nt 
+There is a risk that subjects will develop dementia, becoming decisionally impaired during the 
+course  of the study.  Should  the investigators  or staff become  aware  of a clinically  relevant  issue 
+in a subject, such as the development of dementia, the investigator or qualified designee will 
+discuss the issue with the subject and refer  the subject  to follow  up with his or her  primary  care 
+physician. Subjects who develop dementia with be withdrawn from the study.  
+ 
+4. Vitamin  C 
+This study uses vitamin C (asco rbic acid) to assess medication adherence in some subjects. 
+Though generally well tolerated, ascorbic acid may cause gastrointestinal side effects such as 
+nausea, vomiting, heartburn, diarrhea, or abdominal cramps/pain. These effects are primarily 
+observed  at high doses. Though this study uses a dose of vitamin C below the tolerable upper 
+intake  level  of 2,000  mg/day,  there  may be a risk of these  effects,  especially  if subjects  are taking 
+additional vitamin C supplements. High doses of vitamin C may also wo rsen medical conditions 
+such as gout, cirrhosis or kidney stones. If it is noted that a subject is using additional vitamin C 
+supplementation and/or has a medical condition for which high -dose vitamin C may be 
+contraindicated, the subject may be asked to f orgo ingesting the vitamin C pi[INVESTIGATOR_469141].  
+ 
+B. Potential  Benefits  to Subjects  
+ 
+Participants may or may not directly benefit from participating in the study. However, their 
+contribution  to research  may help further  the development  of user-friendly,  in-home  sustainable 
+approaches to improving neurophysiological, cognitive, and emotional health into old age.  
+Ultimately,  this research  may contribute  to the larger  goal of delaying  the onset  of Alzheimer’s 
+disease.  
+XI. Schedule  of Events  
+ 
+A. Procedure  Timing  Guidelines:  
+• All visits  from  Screening  through  the Technology  Installation  should  be completed  
+Page  22 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015   approximately  within  a ten-week  window . 
+• Screening  Time  Point:  Screening  procedures  should  all be completed  approximately within  
+a two -week window . Events may be split across multiple days/visits at site discretion to 
+accommodate  practical  concerns  such as  participant  fatigue,  scheduling,  or distance  from  the 
+study center . 
+• Clinician  Diagnosis:  Within  approximately  one week  of completing  final Screening 
+procedures.  
+• Baseline  Visit:  Within  approximately  one week  following  the clinician  diagnosis.  
+• 24-Week  Intervention  Period:  starts  after the final Baseline  Period  visit.  Week  1 of the 
+intervention period will always begin on a Monday.  
+ 
+Baseline  Period  visits  include  the Baseline  assessment  visit,  the technology  installation  visit 
+(as applicable),  and the Baseline  MRI  (as applicable).  For all subjects, Week  [ADDRESS_601543] Baseline Period procedure.  
+• Month  6 Time  Point:  Procedures  should all  be completed within a  two-week  window , 
+during  intervention  period  weeks  25-26. Events  may be split across  multiple  days/home 
+visits at site discretion.  
+Page 23 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015   B. Table:  Schedule  of Events  
+ 
+ Screening  Period  Baseline  Period   
+Intervention 
+Period  Follow -Up Period  
+Time Point Name  [CONTACT_469171]- 
+Screening  Screening  Baseline  Tech  Install  Dose 
+Tapering  Month  [ADDRESS_601544]  PCP/Contact  [CONTACT_469167]  X        
+Demographics  (Form A1)  X        
+Social Isolation  Assessment  X X     Xt  X 
+GDS  (Form B6)p  X     X  X 
+T-Cog Neuropsychological  Batteryq  X     X   
+CDR  (Form  B4)  X     X   
+Subject  Health  History  (Form A5)  X        
+Medication  Assessment   X     X   
+Subject  Compensation   Xb,s X    Xc   
+NEO -FFI and NIH Toolbox 
+Emotional  Domain  Questionnairesd   X    X   
+Clinician  Diagnosiso  X     X   
+Trial  Eligibility  Assessmentf X X        
+Post-Study Resources   Xe     X  X 
+Randomization   Xg       
+Family  History of  Dementia    X       
+Physical  Evaluation  (Form  B1)   X       
+Saliva  Collection for  APOE4    Xl       
+Vitamin  C Pi[INVESTIGATOR_469142]    X Xu  Xu X  
+Video Chat Devicej    X    X  
+PANASh, j     X X    
+Video Chat Interventionj     X X    
+I-CONECT  Weekly  Questionnairek     X X    
+Vitamin  C Medication Adherencei     Xm Xm 
+Qualitative  Evaluation (Subject)j     Xn     
+Page 24 of 24 Remote  Protocol  Version  14.July.20  Template  Revised:  6.15.2015   a) Subjects  may choose  to provide  emergency  contact  [CONTACT_469168];  this is optional.  
+b) Compensation  will be provided  to all subjects  who consent  to participate,  including  screen  failures.  
+c) Compensation  to be provided  once  all procedures  are completed.  
+d) Questionnaires  will be provided for subjects  to complete independently. If the  subject  does not successfully complete the questionnaires  on his  or her  own,  the 
+questionnaires will be completed with staff assistance.  
+e) Resources  to be provided  at this time point  only if subject  is a screen  failure.  
+f) Final  eligibility  assessment  to be completed  upon  clinician  diagnosis.  
+g) Randomization  to intervention/control  occurs  once  eligibility  is determined,  prior  to the Baseline  visit.  Subjects  should  not be notified  of group  assignment  until after 
+Baseline to prevent them from unblinding the assessment staff.  
+h) The PANAS  will be administered  at the beginning  and the end of the subject’s  first video  chat session  each week.  
+i) OHSU  subjects  only.  
+j) Intervention  group  only.  Control  group  does not receive.  
+k) Administered  weekly  via telephone.  
+l) This procedure  is optional  for subjects.  If sample  cannot  be obtained,  collection  will be re-attempted  at a future  time point.  
+m) Occurs  daily in weeks  1-[ADDRESS_601545] the vitamin in t he pi[INVESTIGATOR_61194].  
+n) To be completed  at the conclusion  of the Week  24 video  chats.  Administration  and responses  will be audio  and video  recorded.  
+o) The clinician  diagnosis  should  be completed  within  [ADDRESS_601546]  be 
+withdrawn from the trial immediately.  
+p) If subject  scores  2 or more  in response  to questions  3, 7, 11, 12, or 14 (the suicide  ideation  subscale),  the Depression  Safety  Assessment  will be conducted.  
+q) Administration  will be audio  recorded.  Battery  assessments  must  be completed  in the required  order  to ensure  appropriate  timing  for memory  assessments.  
+r) If time point  assessments  are split into multiple  calls,  this form  should  be administered  at each assessment  call. 
+s) Subjects  will not receive  additional  compensation  for rescreening.  
+t) To preserve  assessor  blinding,  conversation  frequency  should  be assessed  at this time point  by [CONTACT_469169].  
+u) Pi[INVESTIGATOR_469143],  used at Weeks  1-4, and returned.  A pi[INVESTIGATOR_469144]  25-27, and then returned.  

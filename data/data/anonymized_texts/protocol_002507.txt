@@ -1,0 +1,274 @@
+Study Title: 4DCT Imaging for Improved Diagnosis and Treatment of Wrist Ligament Injuries  
+NCT#: [STUDY_ID_REMOVED] 
+Document Date: 13 September 2022  
+Minimal Risk Protocol Template [IRB 10429.00 9]  Effective: 10/10/2016  
+ 
+W:\R01_4DCT \Protocol \IRB_Protocol_4DCT_09- 12-2022.docx   Page 1 of 8 
+  
+General Study Information  
+ 
+Principal Investigator:       Kristin Zhao, PhD           Study Title :    4DCT Imaging for improved diagnosis and treatment of wrist ligament injuries 
+ 
+Protocol version number and date:     5.0, 09/13/2022 
+ 
+Research Question and Aims  
+ 
+Specifi c Aim #1: Establi sh the relationship betwe en SLIL inj ury and 4DCT metrics in vitro. C adaveri c 
+specimens will be scanned using our 4 DCT approach  and location o f scapholunate g apping determined 
+during simulat ed wrist movements , following the int act condition and  each of the seq uential cuts to the 
+palmar, membranous, dor sal SLIL, and secon dary li gament st abilizers. The scientific premise  for this aim is 
+our pilot cadaveric and patient imaging17 using 4DCT, as well as supporting literature2, 22-29. 
+Hypothesis  1: The size and location of gapping ( palmar or dorsal) at the scapholunate joint during wri st 
+motion is relat ed to location of li gament injur y. 
+ 
+Specifi c Aim #2: A ssess the locati on of SLIL inj ury in pa tients us ing 4DCT metrics. Pati ents with 
+unilater al SLIL injury will be scanned pre- surgically using 4DCT  during wrist movement to characterize 
+scapho lunate g apping and predict injury location. Patients w ill have a rthroscopic co nfirmation o f location of 
+ligam ent injury . The scientific premis e for this aim is our pilot work that established a relationship between 
+unilateral SLIL injury and 4DCT metrics17. 
+Hypothesis  2: The location of ligament injury can  be pr edicted by the size and location of palmar or 
+dorsal gapping at the scapholunate joint.  
+ 
+Specifi c Aim #3: Determi ne the effect of  targeted treatment of SLIL  injury on post-su rgical ou tcomes, as 
+assessed  using 4DCT metrics. Surg eons will assess  scapholunate gapping and  docu ment a tr eatment pl an to 
+address the specific injury . Then, 4DCT imaging findings w ill be co mpared with arthroscopic evaluation. 
+4DC T will also be perform ed at 1 year pos toperatively, and r adioscaphoid cont act patterns w ill be assessed  
+during wrist movement to dete rmine if no rmal patterns o f motion are r estored. The scientific premise  for this 
+aim is reports of unsuccessful treatment resulting in OA at the radioscaphoid joint5-9, 20.  
+Hypothesis  3a: Pre-operati ve treatment planning using 4DC T will provide equivalent findings as art hroscopic 
+obser vations. 
+Hypothesis  3b: At one year p ost surger y, radioscaphoid me trics for the injur ed wrist will mirror the 
+contralateral wr ist. 
+ 
+        
+Minimal Risk Protocol Template [IRB 10429.00 9]  Effective: 10/10/2016  
+ 
+W:\R01_4DCT \Protocol \IRB_Protocol_4DCT_09- 12-2022.docx   Page 2 of 8 
+ Study Design and Methods  
+ 
+Methods :   
+ 
+4DCT Imaging 
+A non-FDA approved research CT scanner (Siemens NAEOTOM Alpha syngo CT VA40) or a  dual source CT 
+scanner will be used for imaging. Two independent but identical x-ray tubes are mounted on a rotating gantry at a 
+94 degree offset, with respective detector arrays  opposing them. 4D (3D + time) CT imaging acquires high-
+temporal resolution , continuous or intermittent images over the width of the detector array in the superior- inferior 
+direction. A bilateral static CT scan of the wrist will be first performed. Aft er that, two dynamic CT scans (4DCT) 
+will be performed while patients are performing flexion-extension and radial-ulna deviation. For the dynamic scans , sequential , dual-source scanning mode is used which is similar to CT perfusion  imaging . In this mode, 
+imaging data of a moving joint are continuously acquired without table translation. Tw o seconds of data will be 
+acquired for each movement (f ull cycles of flexion -extension and radial -ulnar deviation). 
+ Eighteen image volumes will be reconstructed over the 2 second cycle using the commercially implemented dual-source cardiac reconstruction algorithm, resulting in a voxel dimension of 0.234 x 0.234 x 0.600 mm. 3D images of each of  the 18 volumes, which are evenly distributed (temporally) across the motion cycle, will be generated 
+using volume rendering techniques (VRT) and 4D movies will be made using the scanner’s image processing workstation. All images will be stored  in DICOM format for determination of metrics and biomarkers. All of the 
+DICOM volumes will be processed using Analyze and  existing software previously developed by our study team 
+in Matlab (Mathworks, Inc.) platforms.   Deidentified image datasets will be uploaded for public use to a publicly accessible server. The image datasets will be utilized in the development of the open- source code SlicerAutoscoper
+M (SAM) to simplify and improve 
+image -based skeletal tracking, facilitate the sharing of novel analysis algorithms, methodologies, and data, and 
+hasten the translation to clinical implementation. The datasets will be further used to refine the software and valid ate its performance, and to train new users of this open-source software.  
+ 
+Aim 1:  
+40 cadaveric forearm/hand specimens will be obtained from the Mayo Clinic Anatomical Bequest program. 10 will be used to refine the ligament injury model and 30 will be used as follows. The specimens will undergo radiographic screening and will be excluded from the study if they have evidence of fracture, bony trauma, significant arthritic changes, or previous surgeries. The tendons will be loaded. The remaining soft tissues will be dissected from the proximal ulna and radius. Polymethylmethacrylate (PMMA) resin will be used to affix  the 
+proximal radius and ulna in a circular acrylic fixture.  The custom wrist motion  simulator was designed to 
+generate muscle- assisted flexion -extension and radial-ulnar deviation movements and is CT -compatible. Each 
+tendon will be  dynamically loaded with a constant 10 N, maintained throughout the movement in the following 
+conditions: wrist flexion -extension and radial-ulnar deviation. The hand will be  fixed in a grip that is  connected 
+to a programmable linear actuator . The linear actuator drives the grip back -and-forth along the x- axis with free-
+motion along the z- axis. The linear actuator  will be  programmed to allow the wrist to perform a full radial -ulnar 
+Minimal Risk Protocol Template [IRB 10429.00 9]  Effective: 10/10/2016  
+ 
+W:\R01_4DCT \Protocol \IRB_Protocol_4DCT_09- 12-2022.docx   Page 3 of 8 
+ or flexion-extension motion at 30 deg/sec w hich simulates  in vivo wrist 
+motion speeds. A motion cycle is approximately 2 seconds. The wrist 
+will be cycled 100 times in flexion -extension prior to each testing 
+condition. A static CT image will be acquired in the neutral posture. Then, e ach wrist will be imaged using 4DCT during flexion-extension 
+and radial -ulnar deviation, in the following conditions: intact (control), 
+volar SLIL  cut, membranous SLIL cut , dorsal SLIL  cut, 
+radioscaphocapitate ligament cut, and long radiolunate ligament cut (Table 1).    
+ 
+ 
+  
+Aim 2:  
+4DC T scann ing will be perform ed bilaterally on 60 patients (30 males, 30 females) with unilater al SLIL injury 
+who are scheduled to undergo a surgical interv ention. In addition, patients will have pre -surgical volar and 
+dorsal art hroscopic confirmation of ligament inj ury, categorized by Geissler and European Wrist Arthroscopy 
+Society (EWAS) classifications ; video recording of the arthroscopy will be obtained for later analysis. PRWE 
+and VAS questionnaires will be completed at the 4DCT visit for the injured wrist an d the Total PRWE Score 
+(sum of pain and function subscales) and composite change in VAS score used in the analysis. 4DCT wrist data will be obtained while the subjects perform flexion -extension and radial-ulnar deviation. The dynamic image 
+sequence will be processed with existing s oftware tools to obtain metrics  describing the interosseous distances 
+between the articular surfaces of the scaphoid, lunate, and radius, during the movement cycles. Given the difficulty of diagnosing SLIL  injury, the uninjured contralateral wrist is often used as a “control” for 
+comparison by physicians; therefore, the difference in right/left metrics  will be used in the study.  
+ 
+ 
+Aim 3:  
+The same 60 patients (  see Aim 2) will be evaluated. Surg eons will assess pre- surgical scapholunate interosseus 
+distances (quantified using 4DCT in Aim 2) and  docum ent a tr eatm ent p lan to address the pa rticular injury . 
+Subsequently, 4DCT- based t reatment p lans will be  compared with arthroscopic evaluation (obtained in Aim 2) ; 
+any existing wrist x-rays (e.g. AP, lateral, stress views) and MRIs may be used in this comparison as well. The 
+surgeon will then select and perform the targeted surgical intervention based on both 4DCT and 
+arthroscopic findings. 4 DCT will be perform ed, and the PRWE and VAS completed by patients at 1 y ear 
+postoperatively; qu antification of r adioscaphoid cont act patterns w ill be assessed  during bilater al wri st flexion-
+extension and  radial-ulnar deviation to dete rmine if no rmal patterns o f motion are r estored.  
+  
+  (1a)  This i s a multisite study  involving Mayo Clinic and non Mayo Clinic sites . When checked, describe in 
+detail the research procedures or activities that will be conducted by Mayo Clinic study staff.  
+ 
+  (1b)  Mayo Clinic study staff will be engaged in research activity at a non  Mayo Clinic site .  When checked, 
+provide a detailed description of the activity that will be conducted by Mayo Clinic study staff. 
+ 
+Subject Information  
+ Table 1 . In vitro testing conditions.  
+All ligaments intact (15M, 15F)  
+Volar SLIL cut  
+Membranous SLIL cut  
+Dorsal SLIL cut  
+Radioscaphocapitate cut  
+Long radiolunate cut  
+ 
+Minimal Risk Protocol Template [IRB 10429.00 9]  Effective: 10/10/2016  
+ 
+W:\R01_4DCT \Protocol \IRB_Protocol_4DCT_09- 12-2022.docx   Page 4 of 8 
+ Target accrual:  60 subjects 
+ 
+Subject population (children, adults, groups):   Subjects with diagnosed symptomatic unilateral scapholunate instability for whom surgery is indicated, will be recruited.  
+ Inclusion Criteria :  
+The following Inclusion criteria will apply to the patients with unilateral sc apholunate instability.  In the 
+symptomatic wrist, they will have: 1) point tenderness over the dorsal aspect of the scapholunate joint, and one or more of the following: 2) positive Watson shift sign (Watson et al., J Hand Surg Am, 1988; 13:657-60); 3) suspected pathology on previous fluoroscopy or MRI  In the contralateral wrist, they will have an absence of scapholunate symptoms on physical exam.  Exclusion Criteria:   Exclusion criteria which will be applied to both wrists are as follows:  
+1) previously-diagnosed rheumatological conditions or connective tissue diseases;  2) inability to be appropriately positioned in the scanner for the imaging;  3) congenital malformations of the wrist or forearm; 4) diagnosed wrist  osteoarthritis  
+5) age under 18 or over 60.  
+Research Activity  
+ Check all that apply  and complete the appropriate sections as instructed.  
+  
+1.   Drug & Device:  Drugs for which an investigational new drug application is not required. Device for 
+which (i) an investigational device exemption application is not required; or the medical device is cleared/approved for marketing and being used in accordance with its cleared/approved labeling. (Specify in the Methods section) 
+ 
+2.   Blood :  Collection of blood samples by finger stick, heel stick, ear stick, or venipuncture.  
+ 
+3.   Bio logical specimens  other than blood:  Prospective collection of human biological specimens by 
+noninvasive means that may include: urine, sweat, saliva, buccal scraping, oral/anal/vaginal swab, sputum, hair and nail clippings, etc. 
+ 
+4.   Tests & Procedures:   Collection of data through noninvasive tests and procedures routinely employed 
+in clinical practice that may include: MRI, surface E EG, echo, ultrasound, moderate exercise, muscular 
+strength & flexibility  testing, biometrics, cognition testing, eye exam, etc.  (Specify in the Methods section) 
+ 
+5.   Data  (medical record, images, or specimens) :  Research involving use of existing and/or prospective ly 
+collected data.  
+Minimal Risk Protocol Template [IRB 10429.00 9]  Effective: 10/10/2016  
+ 
+W:\R01_4DCT \Protocol \IRB_Protocol_4DCT_09- 12-2022.docx   Page 5 of 8 
+  
+6.   Digital Record :  Collection of electronic data from voice, video, digital, or image recording. (Specify in 
+the Methods section) 
+ 
+7.   Survey, Interview, Focus  Group :  Research on individual or group characteristics or behavior, survey, 
+interview, oral history, focus group, program evaluation, etc.  (Specify in the Methods section) 
+ 
+ 
+ NIH has issued a Certificate of Confidentiality  (COC).  When checked, provide the institution and 
+investigator named on the COC and explain why one was requested . ________________________ 
+ 
+Review of medical records, images, specimens  – Category 5  
+ 
+For review of existing data: provide a date range or an end date for when the data was generated. The end date 
+can be the date this application was submitted to the IRB.  Example:  01/01/1999 to 12/31/2015 or all records 
+through mm/dd/yyyy.  
+Date Range: 
+ 
+Check all that apply  (data includes medical records, images, specimens ).  
+ 
+  (5a)  Only  data that exists be fore the IRB submission date will be collected .   
+  
+  (5b)  The study involves data that exist at the time of IRB submission and  data that will be generated after 
+IRB submission. Include this activity in the Methods section.  
+Examples  
+• The study plans to conduct a retrospective chart review and ask subjects to complete a questionnaire.  
+• The study plans to include subjects previously diagnosed with a specific disease and add newly diagnosed subjects in the future.  
+ 
+  (5c)  The study will use data that have been collected under another IRB protocol. Include in the Methods 
+section and enter the IRB number from which the research material will be obtained. When appropriate, note when s ubjects have provided consent for future use of their data and/or specimens  as described in this protocol .  
+ Enter one IRB number per line, add more lines as needed  
+ Data     Specimens    Data & S pecimens  ______________________________________ 
+ 
+ Data     Specimens   Data & Specimens  ______________________________________ 
+ 
+ Data     Specimens   Data & Specimens  ______________________________________ 
+  
+Minimal Risk Protocol Template [IRB 10429.00 9]  Effective: 10/10/2016  
+ 
+W:\R01_4DCT \Protocol \IRB_Protocol_4DCT_09- 12-2022.docx   Page 6 of 8 
+   (5d)  This study will obtain  data generated from other sources. Examples may include receiving data from 
+participating  sites or an external collaborator, accessing an external database or registry, etc.  Explain the source 
+and how the data will be used in the Methods section .  
+ 
+  (6)  Video audio recording: Describe the plan to maintain subject privacy and data confidentiality, 
+transcri ption, store or destroy, etc.  
+ 
+     
+HIPAA Identifiers and Protected Health Information (PHI)  
+ Protected health information is medical data that can be linked to the subject directly or through a combination of indirect identifiers.  
+ 
+Recording i dentifiers (including a code) during the conduct of the study allows you to return to the medical 
+record or data source to  delete duplicate subjects, check a missing or questionable entry, add new data points, 
+etc. De -identified data is medical information that has been stripped of all  HIPAA identifier s so that it cannot be 
+linked back to the subject. De- identified data is rarely  used in the conduct of a research study involving a chart 
+review.   
+ Review the list of subject identifiers below and, if applicable, check the box next to each HIPAA identifier being recorded at the time of data  collect ion or abstraction.  Identifiers apply to any subject enrolled in the 
+study including Mayo Clinic staff, patients and their relatives and household members.   Internal  refers to the subject ’s identifier  that will be recorded at Mayo Clinic  by the study staff . 
+External  refers to  the subject ’s identifier  that will be shared outside of Mayo Clinic.
+ 
+ 
+Check all that apply : INTERNAL  EXTERNAL  
+Name  x  
+Mayo Clinic m edical record  or patient registration number, lab accession, 
+specimen or radiologic image number  x  
+Subject ID, subject c ode or any other person -specific unique identifying 
+number,  characteristic or code that can link the subject to the ir medical  data   x x 
+Dates: All elements of dates [month, day, and year] directly related to an 
+individual, their birth date, date of death, date of diagnosis, etc.   
+Note: Recording a year only is not a unique identifier.  x  
+Social Security number  x  
+Medical d evice identifiers and serial numbers    
+Biometric identifiers, including finger and voice prints , full face photographic 
+images and any comparable images    
+Minimal Risk Protocol Template [IRB 10429.00 9]  Effective: 10/10/2016  
+ 
+W:\R01_4DCT \Protocol \IRB_Protocol_4DCT_09- 12-2022.docx   Page 7 of 8 
+ Web Universal Resource Locators (URLs) , Internet Protocol (IP) address 
+numbers , email address  x  
+Street address, city, county, precinct, zip code, and their equivalent geocodes  x  
+Phone  or fax  numbers  x  
+Account, member, certificate or professional license numbers, health 
+beneficiary numbers    
+Vehicle identifiers and serial numbers, including license plate numbers    
+Check ‘ None ’ when none of the identifiers  listed above  will be recorded , 
+maintained , or shared during the conduct of this study.  (exempt category 4)   None   None 
+ 
+  
+Data Analysis  
+ Data Analysis Plan:  
+Aim 1:  
+Data from 15 male and 15 female cadaveric specimens will include the gap size across the normalized lunate surface in the volar/dorsal direction (with 0 = volar aspect and 1 = dorsal aspect of lunate articular surface) at the scapholunate joint. These values will be obtained for the intact condition and following each of the 5 ligament cuts for each of the 18 time steps (positions of the wrist) for both the radial- ulnar and flexion-
+extension motions. Spline curves will be fit to describe the gap size as a f unction of the normalized volar/dorsal 
+position along the lunate surface, for each of the 18 time steps in all conditions (intact and ligament cut), for the male and female specimens. We will compare the gap size and location between the intact and ligamen t cut 
+conditions to establish a relationship between the 5 ligament cut conditions and the size and location of gapping at the scapholunate joint for males and females. We will also fit spline curves to collapsed data such as the maximum gap size from all of the 18 time steps, average gap size, root mean square error of gap size, maximum minus minimum of gap size, and explore their ability to identify ligament injury. In this aim, each subject will serve as their own control and emphasis will be on the diff erences in gap sizes between the cut and intact 
+conditions. In patients (Aims 2 and 3) the emphasis will expectedly be on the differences between the injured and contralateral wrist. We will use resampling methods such as cross -validation and bootstrap to assess 
+accuracy of the derived diagnostic algorithms. Analysis will be based on all data from both male and female specimens, including a main effect to distinguish between the sexes, if indicated by the data. Secondary analyses will include analyzing male and female data separately, and examining for potenti al differences 
+(interactions).   
+Aim 2:  
+Normalized volar/dorsal location of the gapping at the scapholunate joint for the 30 male and 30 female subjects obtained pre-surgically will be analyzed using the algorithm developed in Aim 1 to infer if and where any ligament injuries have occurred. Additionally, we will have findings on presence or absence of ligament injuries 
+from volar and dorsal arthroscopy on each subject pre- surgically. Finally we will have PRWE and VAS data for 
+each patient.  The primary assessment will be of the percent of patient s for whom the 4DCT and arthroscopic 
+findings agree. Secondarily, we will fit models including PRWE and VAS to inform of thresholds for injury to 
+see if this may improve prediction. These analyses will be repeated by sex, and other subgroups that may alter the relation between size and location of any gapping, and ligament injury, e.g. height, weight. In an exploratory manner, we will repeat analyses similar to Aim 1 to determine if the diagnostic model derived in Aim 1 might 
+Minimal Risk Protocol Template [IRB 10429.00 9]  Effective: 10/10/2016  
+ 
+W:\R01_4DCT \Protocol \IRB_Protocol_4DCT_09- 12-2022.docx   Page 8 of 8 
+ be improved upon. With our sample of 60 patients, and the hypothesized agreement between the 4DCT of 95%, 
+we will have 83% power to identify an agreement of 0.85 or less, using a chi- square test.  
+Aim 3:  
+Magnitude and direction of radioscaphoid contact center migration, bilaterally, will be analyzed during the 18 time steps during both radial-ulnar deviation and flexion-extension pre-surgically and 1-year post-surgically. Additionally, pre- and post-surgic al PRWE and VAS will be analyzed. The change from pre- to post- surgical 
+migration of the contact center in the injured limb as a percent normalization relative to the pre -surgical 
+contralateral limb values will be determined and described using the t- distribution. Similarly, the change in pre- 
+to post- surgical PRWE and VAS values will be compared. These analyses will be repeated by sex, and other 
+subgroups that become apparent during the study. With our sample of 60 patients, and the hypothesized agreement between the 4DCT of 95%, we will have 83% power to identify an agreement of 0.85 or less, using a chi-square test. With a sample size of 60, using a two-sided size 0.05 t- test, we will have 80% power to detect 
+an effect size of 0.37 for the analysis of qua ntitative outcomes.     
+ 
+   

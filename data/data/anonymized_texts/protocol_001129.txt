@@ -1,0 +1,1248 @@
+Clinical Development 
+AMN107 (Nilotinib, Tasigna®) 
+Protocol CAMN107AUS37  / [STUDY_ID_REMOVED]  
+A phase II randomized, multicenter study of treatment-free 
+remission in chronic myeloid leukemia in chronic phase 
+(CML-CP) patients who achieve and sustain MR4.5 after 
+switching to nilotinib 
+Statistical Analysis Plan (SAP) 
+Author:  Trial Statistician ,  
+Document type:  SAP Documentation  
+Document status:  Final  Version 1.0 
+Release date:  21-June -2018
+Number of pages:  34 
+Property of Novartis 
+Confidential 
+May not be used, divulged, published or otherwise disclosed 
+without the consent of Novartis 
+
+Novartis Confidential  Page 2 
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+Template Document History – Changes compared to previous version 
+ 
+Date  Version 
+number  Summary of changes  
+18-May-
+2017  0.1 First draft version  
+05-April -
+2018  0.2 v0.1 comments updated by  
+18-Jun-2018  0.3 Some text formatting updated in section 1.1  
+21-Jun-2018  1.0 Final version  
+Document History – Changes compared to previous final version of SAP 
+Date  Time 
+point  Reason for 
+update  Outcome for update  Section and title 
+impacted 
+(Current)  
+     
+     
+ 
+
+Novartis Confidential  Page 3 
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+Table of contents  
+Table of contents ................................................................................................................. 3 
+1 I ntroduction ......................................................................................................................... 7 
+1.1 S tudy Design ............................................................................................................ 7 
+1.2 Ope n Study and Blinded Data ................................................................................. 8 
+1.3 I nterim and Final Analysis....................................................................................... 8 
+1.4 S tudy Objectives and Endpoints .............................................................................. 9 
+2 S tatistical Methods ............................................................................................................ 10 
+2.1 Da ta Analysis General Information ....................................................................... 10 
+2.1.1 Da ta Included in the Analysis ............................................................... 10 
+2.1.2 Ge neral Analysis Conventions .............................................................. 10 
+2.1.3 Ge neral Definitions ............................................................................... 11 
+2.2 Ana lysis Sets .......................................................................................................... 14 
+2.3 P atient Disposition, Demographics and Other Baseline Characteristics ............... 14 
+2.3.1 P atient Disposition ................................................................................ 14 
+2.3.2 P rotocol Deviations ............................................................................... 15 
+2.3.3 B ackground and Demographic Characteristics ..................................... 15 
+2.3.4 Me dical History ..................................................................................... 16 
+2.3.5 Hist ory of Tobacco ................................................................................ 16 
+2.4 Tr eatments (study treatment, concomitant therapies, compliance) ....................... 16 
+2.4.1 S tudy Treatment .................................................................................... 16 
+2.4.2 P rior,  Concomitant and Post Therapies ................................................ 18 
+2.5 Ef ficacy Evaluation ............................................................................................... 19 
+2.5.1 De finition of Efficacy Variables ........................................................... 19 
+2.5.2 P rimary Efficacy Endpoint .................................................................... 21 
+2.5.3  Secondary Endpoints ............................................................................. 23 
+  
+ 24 
+2.6 Safety Evaluation ................................................................................................... 25 
+2.6.1 Adve rse Events ...................................................................................... 25 
+2.6.2 L aboratory Values ................................................................................. 27 
+2.6.3 S erum and urine pregnancy test results will be listed.ECG Analysis ... 31 
+2.6.4 Vital S igns ............................................................................................. 31 
+2.6.5 P hysical Examination ............................................................................ 32 
+2.6.6 Ex tramedullary Involvement ................................................................. 32 
+2.6.7 ECO G Performance Status .................................................................... 32 
+
+Novartis Confidential  Page 4 
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+2.6.8  Patient-reported outcomes ..................................................................... 32 
+3 R eferences ......................................................................................................................... 33 
+ 
+ 
+Novartis Confidential  Page 5 
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+List of Abbreviations 
+ABL Abelson proto -oncogene  
+AE Adverse event  
+ATC Anatomical Therapeutic Classification  
+AUC  Area Under the Curve  
+BCR  Breakpoint Cluster Region gene/BCR gene product  
+BCR -ABL Fusion gene from BCR and ABL  
+bid bis in diem/twice a day  
+  
+CML  Chronic myeloid leukemia  
+CSR  Clinical Study report  
+CTC Common Toxicity Criteria  
+CTCAE  Common Terminology Criteria for Adverse Events  
+  
+DMC  Data Monitoring Committee  
+ECG  Electrocardiogram  
+eCRF  Electronic Case Report Form  
+ECOG  Eastern Cooperative Oncology Group  
+EOC  End of cycle  
+FAS Full Analysis Set  
+  
+HBV Hepatitis B Virus  
+HBcAb  Hepatitis B Core Antibody  
+HBSAb  Antibodies to Hepatitis B Surface Antigen  
+HBSAg  Hepatitis B Surface Antigen  
+IVR Interactive Voice Response  
+IWR Interactive Web Response  
+MDASI -CML  M.D. Anderson Symptom Inventory – Chronic Myeloid Leukemia  
+MedDRA  Medical Dictionary for Regulatory Activities  
+MMR  Major molecular response  
+NCI National Cancer Institute  
+NTRI  Nilotinib Treatment Reinitiation  
+o.d. Once Daily  
+OS Overall Survival  
+PFS Progression -Free Survival  
+PK Pharmacokinetics  
+PPS Per-Protocol Set  
+PRO  Patient -reported Outcomes  
+qd Qua’que di’e / once a day  
+QoL Quality of Life  
+QTcF  Frederica corrected QT interval  
+RAP Report and Analysis P rocess  
+RECIST  Response Evaluation Criteria in Solid Tumors  
+
+Novartis Confidential  Page 6 
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+RR Relative Risk (Sokal score)  
+RR Respiratory Rate  
+SAP Statistical Analysis Plan  
+SOC  System Organ Class  
+TFLs  Tables, Figures, Listings  
+WHO  World Health Organization  
+Novartis Confidential  Page 7 
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+1 Introduction 
+The purpose of this statistical analysis plan (SAP) is to describe the statistical methods for all 
+safety and efficacy analyses planned to be included for the clinical study report (CSR) of 
+study CAMN107AUS37 (A phase II randomized, multicenter study of treatment-free 
+remission in chronic myeloid leukemia in chronic phase (CML-CP) patients who achieve and 
+sustain MR4.5 after switching to nilotinib). 
+The
+ content of this SAP is based on protocol CAMN107AUS37  Amendment Version 04. All  
+decisions regarding final analysis, as defined in the SAP document, have been made prior to 
+database lock of the study data. 
+ 
+The
+ planned analysis identified in this SAP may be included in clinical study reports (CSRs), 
+regulatory submissions, conference submissions or future manuscripts.  
+ 
+ 
+I
+n addition to the study protocol, the following documents were reviewed in preparation of 
+this SAP: 
+• Electronic case report form (eCRF) for Protocol CAMN107AUS37 
+• ICH Guidance on Statistical Principles for Clinical Trials (E9) 
+1.1 Study D esign  
+This is an open-label study of imatinib treated patients who are switched to nilotinib and their 
+ability to discontinue TKI treatment once a confirmed MR4.5 is achieved and sustained 
+MR4.0 or better for 2 years. 
+ 
+ 
+Monitoring Phase (Years 1 and 2) 
+Fifty-nine patients have been enrolled and were switched from imatinib to nilotinib 300 mg 
+b.i.d. upon study entry. Patients will be monitored every 3 months for molecular response for 
+up to 2 years. 
+If during the Monitoring Phase, a patient has a PCR result demonstrating a loss of MR3.0, a 
+subsequent unscheduled visit peripheral blood sample for PCR must be collected within 4 
+weeks of the most recent sample. If loss of MR3.0 is confirmed, the patient will not be 
+eligible for subsequent phases and will early terminate from the study. Patients who achieve a 
+
+Novartis Confidential  Page 8 
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+MR4.5 will have the result confirmed by another sample drawn 4-6 weeks later. Once MR4.5 
+is conf
+irmed, patients will then enter the Consolidation Phase. 
+Consolidation Phase 
+Patients can enter the Consolidation Phase anytime during and up to the first 2 years on study, 
+as soon as MR4.5 is confirmed. After confirmation of MR4.5, the date of the initial MR4.5 
+results will be counted as the start of the Consolidation Phase. Patients will continue to be 
+treated with nilotinib for 2 years during the Consolidation Phase. 
+If during the Consolidation Phase, a patient has one PCR result above MR4.0 or a sample is 
+missing, a subsequent unscheduled visit peripheral blood sample for PCR must be collected 
+within 4 weeks of the most recent sample. If loss of MR4.0 is confirmed by the subsequent 
+sample, the patient will not be eligible for nilotinib discontinuation and will early terminate 
+from the study. 
+Treatment-Free Remission (TFR) Phase 
+The Treatment-Free Remission Phase will begin after the last scheduled PCR sample 
+collected in the Consolidation Phase confirms the patient remains in MR4.0 or better.  
+During the TFR phase patients will be monitored for two years. Once nilotinib treatment is 
+stopped in the TFR Phase, patients will be followed by PCR every month for the first 6 
+months, then every 2 months for the next 18 months. Confirmed loss of MMR (BCR-
+ABL>0.1%IS) will trigger restarting nilotinib. 
+Nilotinib Treatment Reinitiation (NTRI) Phase 
+Patients who re-initiate nilotinib during the TFR Phase will be monitored by PCR once a 
+month for the first 3 months, and then every 3 months until they reach 2 years from the start 
+date of their TFR Phase. For patients who need to re-initiate nilotinib with less than a year left 
+of their TFR Phase, they will be followed for one year in the Nilotinib Treatment Re-initiation 
+Phase. 
+1.2 Open Study and Blinded Data 
+This study is an open label, single arm study where investigators, patients and Novartis 
+employees involved in the analyses have full knowledge of the treatment allocation. 
+1.3 Interim 
+and Final Analysis  
+No interim analysis will be performed for this study. 
+The primary analyses of all efficacy and safety variables will be performed when all patients 
+enrolled have completed 6 months of the TFR Phase, follow-up or discontinued from the 
+study
+. All analyses will include patients who entered the TFR Phase following a 12 month 
+Consolidation Phase (Arm A) prior to protocol amendment 2 and a 24 month Consolidation 
+Phase (formerly Arm B). 
+ 
+After all patients enrolled have completed 12 and 24 months of follow-up, analyses of all 
+efficacy and safety will be performed including the same patients as in the primary analyses. 
+These analyses performed after the primary analyses will be considered secondary. No formal 
+Novartis Confidential  Page 9 
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+testing of any kind will be performed at these analyses. 
+1.4 Study Objectives and Endpoints 
+Objective  Endpoint  
+Primary   
+To evaluate molecular relapse free rates 6 
+months after discontinuation from nilotinib  
+therapy in patients who have achieved a MR4.5  Molecular relapse free rate at 6 months after discontinuation from 
+nilotinib therapy in patients with MR4.5. Molecular relapse is defined as 
+having a confirmed BCR -ABL ratio above MMR  
+(2 consecutive BCR -ABL l evels >0.1%IS taken approximately 4 weeks 
+apart)  
+ 
+Key secondary   
+Estimated Relapse -Free Survival  Relapse -free survival  
+ 
+Other secondary   
+To evaluate molecular relapse free rates at 12 
+and 24 months after nilotinib treatment 
+discontinuation  Molecular relapse free rates at 12,  and 24 months after nilotinib 
+treatment discontinuation  
+To evaluate proportion of patients who regain 
+MR4.5 after restarting nilotinib after molecular 
+relapse  Proportion of patients who achieve MR4.5 after restarting n ilotinib after 
+relapse  
+Describe impact of discontinuation of nilotinib 
+attempts on progression to AP/BC and CML -
+related deaths  Proportion of patients who progress to CML -AP/BC and number of 
+CML -related deaths  
+To estimate overall survival (OS)  Time from d ate of discontinuation of nilotinib therapy to the date of 
+death from any cause  
+To assess the impact of nilotinib 
+discontinuation on patient symptom burden  Change in symptom burden from baseline to the time when MR4.5 is 
+confirmed, and also from the end  of the Consolidation Phase to 6 and 12 
+months into the TFR Phase.  
+To assess the impact of nilotinib 
+discontinuation on patient health utility  Change in health utility from baseline to the time when MR4.5 is 
+confirmed, and also from the end of the Consoli dation Phase to 6 and 12 
+months into the TFR Phase.  
+To assess the impact of nilotinib 
+discontinuation on patient quality of life  Change in patient quality of life from baseline to the time when MR4.5 is 
+confirmed, and also from the end of the Consolidation Phase to 6 and 12 
+months into the TFR Phase.  
+  
+
+Novartis Confidential  Page 10  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+2 Statistical Methods 
+2.1 Data Analysis General Information 
+The final analysis will be performed .  No interim analysis will be 
+performed for this study.  SAS version 9.3 or later software will be used to perform all data 
+analyses and to generated tables, figures, and listings. 
+2.1.1 Data Included in the Analysis 
+The analysis cut-off date for the primary analysis of all study data will be established after all 
+enrolled patients have completed 6 months of the TFR Phase, follow-up or discontinued 
+from the study. A ll statistical analy ses will be performed using all da ta collec ted  in the 
+da
+tabase up to  the data cutoff date. All data with an assessment date or event start date (e.g. 
+vital sign assessment date or start date of an adverse event) prior to or on the cut-off date 
+will
+ be included in the analysis. Any data collected bey ond the cut-off date will not be 
+included in the analysis and will not be used for any derivations. 
+All eve
+nts with start date before or on the cut-off date and end date after the cut-off date will 
+be reported as ‘ongoing. The same rule will be applied to events starting before or on the cut-
+off date and not having documented end date. This approach applies, in particular, to adverse 
+event and concomitant medication reports. For these events, the end date will not be imputed 
+a
+nd therefore will not appear in the listings. 
+The analysis cut-off date for the secondary final analysis will be established after all enrolled 
+patients have completed 12 and 24 months of follow-up, all efficacy and safety analyses will 
+be performed. All analyses will be performed using all data collected in the database up to the 
+data cutoff date for this secondary set of analyses. The same above rules regarding assessment 
+dates will apply for this analysis. 
+2.1.2 General Analysis Conventions 
+Qualitative data (e.g., gender, race, etc.) will be summarized by means of contingency tables 
+b
+y overall patients; a missing category will be included as applicable. Percentages will be 
+c
+alculated using the number of patients in the relevant population or subgroup as the 
+denominator. Percentages will be rounded to 1 decimal place 
+Quantit
+ative data (e.g., age, body weight, etc.) will be summarized by appropriate 
+descriptiv
+e statistics (i.e. mean, standard deviation, median, 25th percentile, 75th percentile, 
+minimum, and maximum) by overall patients. The number of decimal places for the minimum 
+a
+nd maximum will be based on the maximum number of decimal places of the data.  One 
+additional decimal place will be used to summarize the mean, median, 25th percentile, and 75th 
+percentile.  Two additional decimal places will be used to summarize the standard deviation.  
+A maximum of 2 decimal places for the mean and 3 decimal places for the standard deviation 
+will be used. 
+All data
+ collected on the CRF will be listed.  In general, there will be one listing per CRF 
+page, but additional listings could be produced if necessary. 
+
+Novartis Confidential  Page 11  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+2.1.3 General Definitions  
+2.1.3.1 Investigational Drug and Study Treatment 
+Investigational drug , and stu dy treatment will refer to nilotinib (AMN107, Tasigna)  only.  
+No control treatment is administered in this study.  
+2.1.3.2 Date of First Administration of Investigational Drug 
+The date of first administration of investigational drug is defined as the first date when a non-
+zero dose of investigational drug is administered and recorded on the Dosage Administration 
+Record (DAR) (e)CRF. The date of first administration of study drug will also be referred as 
+start of investigational drug. 
+2
+.1.3.3 Date of Last Administration of Investigational Drug 
+The date of last administration of investigational drug is defined as is the last date when a 
+nonzero dose of investigational drug is administered and recorded on DAR eCRF. The date of 
+last administration of investigational drug will also be referred as end of investigational drug. 
+2
+.1.3.4 Date of First Administration of Study Treatment  
+The date of first administration of study treatment is the same as the date of first 
+administration of investigational drug.  
+2.1.3.5 Date of Last Administration of Study Treatment  
+The date of last administration of study treatment is the same as the date of last administration 
+of investigational drug. 
+2.1.3.6 Study D ay 
+The study day, describes the day of the event or assessment date, relative to the reference start 
+da
+te.  
+The study day is defined as: 
+ The date of the event (visit date, onset date of an event, assessment date etc.) − 
+refe
+rence start date + 1 if event is on or after the reference start date; 
+ The date of the event (visit date, onset date of an event, assessment date etc.) − 
+re
+ference start date if event precedes the reference start date. 
+The reference date for all assessments (safety, efficacy, pk, QoL/PRO, etc) is the start of 
+study treatment.  
+2.1.3.7 Time unit 
+A year length is defined as 365.25 days. A month length is 30.5 days. If duration is reported in 
+mont
+hs, duration in days will be divided by 30.5.  If duration is  reported in years, duration in 
+da
+ys will be divided by 365.25. 
+Novartis Confidential  Page 12  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+2.1.3.8 Baseline 
+This study has multiple baselines for different phases of the study. 
+For safety and efficacy evaluations, the last available assessment on or before the date of start 
+of study treatment is defined as “baseline” assessment.  In the rare case that time of 
+assessment and time of treatment start is captured, the last available assessment before the 
+treatment start date/time is used for baseline. 
+In addition to the above baseline for the monitoring phase at the start of the study, three 
+additional baselines will be used for analyses regarding reporting a change from baseline in 
+phase (e.g. shift tables): 
+ M onitoring Phase baseline : is defined above. 
+ Cons olidation Phase baseline:  last available assessment before the first dose date of 
+the consolidation phase. 
+ T reatment-Free Remission phase (TFR) baseline:  last available assessment before 
+the first day of the TFR phase. 
+ Nilotinib Treatment Reinitiation phase (NTRI) baseline:   last available assessment 
+before the first dose date of the NTRI phase. 
+If patients have no value as defined above for the baseline within a given study phase, the 
+baseline result will be missing. 
+2.1.3.9 On-treatment assessment/event and observation periods  
+For adverse event (AE) reporting,  the overall observation period will be divided into mutually 
+exclusive segments:  
+ P re-treatment period : any day prior to a patient’s first dose of study drug during the 
+monitoring phase 
+ Monitoring phase : from date of first administration of study treatment until the day a 
+patient enters the consolidation phase. Patients enter the consolidation phase after two 
+consecutive BCR-ABL levels ≤ 0.0032%.  The day of the first measurement is the 
+start of the consolidation phase. 
+ Cons olidation phase : from date of first administration of study treatment during the 
+consolidation phase to the date the last scheduled PCR sample collected in the 
+consolidation phase confirms the patient remains in MR4.0 or better. 
+ T reatment-Free Remission (TFR) phase:  from the day after the date the last 
+scheduled PCR sample in the consolidation phase confirms a patient remains in 
+MR4.0 or better to one of the following: 
+o the day of the last scheduled visit during the TFR phase for patients that 
+maintain MMR throughout the TFR phase 
+o the day a scheduled PCR sample shows a confirmed loss of MMR for patients 
+who re-start study treatment 
+Novartis Confidential  Page 13  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+ Nilotinib Treatment Reinitiation (NTRI) phase:  from the day after a scheduled 
+PCR sample shows a confirmed loss of MMR during the TFR phase until the last 
+scheduled  visit during the NTRI phase. 
+ F ollow-up period:  The follow-up period can have three possible start dates. 
+o F or patients who maintain MMR throughout the TFR phase, the follow-up 
+period begins the day after the last scheduled visit in the TFR phase. 
+o F or patients who enter into the NTRI phase, the follow-up period begins the 
+day after the last scheduled visit in the NTRI phas e. 
+o F or patients who discontinue from the study early, the follow-up period begins 
+the day after discontinuation. 
+The follow-up period lasts until the last follow-up visit in the study.  If a subject does not 
+ha
+ve any follow-up visits, the follow-up period ends 30 days after the start of the follow-
+up period. 
+2.1.3.10 Last contact date  
+The last contact date will be derived for patients not known to have died at the analysis cut-off 
+using the last complete date among the following: 
+ 
+Table 2-1 Last contact date data sources  
+Source data  Conditions  
+Last contact date/last date patient was known to 
+be alive from Survival Follow -up page  
+ Patient status is reported to be alive, lost to 
+follow -up or unknown.  
+Start/End* dates from drug administration record  
+ Non-missing dose. Doses of 0 are allowed.  
+End of treatment date from end of treatment page  
+ No condition.  
+Any efficacy assessment date if available  Evaluation is marked as ‘done’.  
+Laboratory/PK collection dates  
+ Sample collection marked as ‘done’.  
+Vital signs date  
+ At least one non -missing parameter value  
+ECOG Performance Status date  
+ Non-missing performance status  
+Start/End dates of AE  Non-missing verbatim term  
+The last contact date is defined as the latest complete date from the above list on or before 
+the data cut-off date . The cut-off date will not be used for last contact date, unless the patient 
+was seen or contacted on  that date. No date post cut-off date will be used. Completely 
+im
+puted dates (e.g. the analy sis cut- off date programmatically imputed to replace the 
+missing end date of a dose administration record) will not be used to derive the last contact 
+Novartis Confidential  Page 14  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+date. Partial date imputation is allowed for event (death)/censoring is coming from ‘Survival 
+information’ eCRF.  
+The last contact date will be used for censoring of patients in the analysis of overall survival. 
+2.1.3.11 Withdrawal of Informed Consent 
+Any data collected in the clinical database after a subject withdraws informed consent from all 
+further participation in the trial will not be included in the analysis.  The date on which a 
+patient withdraws full consent or completes the study is recorded in the eCRF. 
+2.2 
+Analysis Sets 
+2.2.1.1 Full Analysis Set (FAS) 
+The Full Analysis Set for the primary analysis comprises all patients who entered the TFR 
+Phase. 
+The FAS will be the primary set for all efficacy analyses and safety analyses in the TFR Phase 
+only. 
+2.2.1.2 Safety Set (SS)  
+The safety set consists of all patients who receive at least one dose of study drug and had at 
+least one post-baseline safety assessment after enrollment. 
+The statement that a patient had no adverse events (on the Adverse Event eCRF) constitutes a 
+safety assessment.   
+Safety analyses will be presented by phase and visit within phase where applicable. 
+The safety set will be used for all safety and patient reported outcomes in the monitoring and 
+consolidation phase. 
+2.2.1.3 Per-Protocol Set 
+No per-protocol set is defined for this study. 
+2.3 Patient Dispo
+sition, Demographics and Other Baseline 
+Characteristics 
+The FAS and SS will be used for these all disposition, demographics, and baseline 
+characteristics analyses.  Separate tables will be produced for the two analysis sets. 
+All 
+demographic and baseline disease characteristics data will be summarized and listed by 
+overall patients.  Categorical data will be summarized by frequency counts and percentages;.  
+Continuous data will be summarized by descriptive statistics (N, mean, standard deviation, 
+media
+n, 25th percentile, 75th percentile, minimum, and maximum). 
+2.3.1 Patient Disposition 
+The number of patients enrolled, randomized,  and in the safety set will be summarized. 
+Novartis Confidential  Page 15  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+The number and percentage of patients who entered in the different phases of the study, 
+discontinued treatment, discontinued the study, and the study phase in which discontinuation 
+occurred will be summarized.   
+Patient disposition information will be summarized for the SS and FAS. 
+2
+.3.2 Protocol Deviations 
+The number of patients with major and minor protocol deviations will be summarized using 
+frequencies and percentages by type of deviation for the SS and FAS. 
+2.3.3 Background and Demographic Characteristics 
+The following demographic and other baseline data will be summarized for the SS and FAS: 
+ Age  (years) 
+ Ge nder 
+ R ace 
+ S creening ECOG Status 
+ P rior therapy types 
+Sokal risk score at time of CML diagnosis will be summarized categorically using low, 
+intermediate, and high categories.   If a subject does not have a classification collected on the 
+Sokal risk score relative risk will be derived using the below formula (Sokal, et al 1984).   
+Relative 
+risk = exp{0.0116*(age(yrs) – 43.4) + 0.0345*(spleen(cm) – 7.51) + 
+0.188*[
+(platelets(x10^9L)/700)^2 – 0.563] + 0.0887*(myeloblasts(%) – 2.10) 
+ Age  is the age in years collected on the demography eCRF page at screening 
+ Spleen is the distance in cm between the spleen and costal margin at screening 
+ P latelates are collected in the laboratory data at screening 
+ M yeloblasts are collected in the laboratory data at screening 
+High, intermediate, and low Sokal risk scores are defined as follows: 
+ Low risk patients have a relative risk < 0.8 
+ Intermediate riks patients have relative risk ≥ 0.8 and ≤ 1.2 
+ High risk patients have relative risk > 1.2 
+Prior Imatinib Treatment duration will be summarized. Prior Imatinib treatment information 
+will be obtained from the prior antineoplastic therapy data collected. Medications identified as 
+Imatinib or Gleevac will be used for this summary. Partial date imputation rules will be used 
+as specified in section 2.4.2.  
+   
+ 
+ 
+
+Novartis Confidential  Page 16  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+2.3.4 Medical History 
+Relevant medical history and current medical conditions, including condition and symptoms 
+related to CML will be collected until the start of the study drug will be listed. 
+2
+.3.5 History of Tobacco 
+Information related to history of tobacco use will be listed. 
+2.4 Treatments (study treatment, concomitant therapies, 
+compliance) 
+2.4.1 Study Treatment 
+Duration of exposure, actual cumulative dose, dose intensity (DI) and relative dose intensity 
+(RDI) will be summarized. Summaries will be performed for overall study duration and for 
+moni
+toring, consolidation, and NTRI Phases (If Applicable).   
+S
+ubject level listing of all doses administered on treatment along with dose change reasons 
+will be produced.   
+The safety set will be used for all summaries and listings of study treatment.  
+2
+.4.1.1 Duration of Exposure to Study Treatment 
+Duration of exposure to study treatment is considered by taking into account the duration of 
+exposure to the study treatment: 
+Dur
+ation of exposure to study treatment ( months ) = (date of last administration to study 
+treatment ) – (date of first administration of study treatment) + 1/ 30.5.  
+Dur
+ation of exposure to study treatment ( days) = (date of last administration to study 
+treatment ) – (date of first administration of study treatment) + 1.  
+S
+ummary of duration of exposure of study treatment in months will include continuous 
+summaries. 
+Duration of exposure will also be summarized for Overall study, Monitoring, Consolidation 
+and Nilotinib Reinitaition Phases (if applicable). The duration of exposure to study treatment 
+for each phase will use the same above formula with the exception of using last date of 
+exposure to study treatment within the specified phase and date of first administration of study 
+tre
+atment within the specified phase. 
+Date of last administration to study treatment  is defined as follows within each study phase: 
+ F or non-last study phases and for patients still ongoing on treatment when entering the 
+next phase before the data cut-off date, the date of last administration to study 
+treatment  is defined as the last date in the study phase. 
+ F or the last study phase (in database at data cutoff date) and for patients ongoing on 
+treatment, the date of last administration to study treatment  is defined as the earlier 
+date of the following two dates: 
+Novartis Confidential  Page 17  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+o Da ta cut-off date 
+o The  last date of the last available dates reported on the dose administration 
+record.  
+o F or the last study phase (in database at data cut-off date) and for patients who 
+entered post-treatment follow up phase before the data cut-off date, the date of 
+last dose is defined as the date of the last non-zero dose of study drug reported 
+in the dose administration record CRF page. 
+2.4.1.2 Cumulative Dose 
+Cumulative dose of a study treatment is defined as the total dose given during the study 
+treatment exposure and will be summarized for overall study, Monitoring, Consolidation and 
+Nilotinib Reinitaition Phases (if applicable). 
+The planned cumulative dose  for a study treatment component refers to the total planned 
+dose as per the protocol up to the last date of drug administration.  
+The actual  cumulative dose  refers to the total actual dose administered, over the duration for 
+which the subject is on the study treatment as documented in the Dose Administration eCRF.  
+F
+or patients who did not take any drug the cumulative dose is by definition equal to zero. 
+F
+or continuous dosing, the actual cumulative dose is the sum of the non-zero doses recorded 
+over the dosing period and the planned cumulative dose is the planned starting dose summed 
+over the same dosing period. 
+2.4.1.3 Average Daily Dose 
+Average daily dose will be summarized for overall study, Monitoring, Consolidation and 
+Nilotinib Reinitaition Phases (if applicable). 
+Average daily dose = actual cumulative dose/ Duration of exposure to study treatment ( days). 
+2.4.1.4 Dose Intensity and Relative Dose Intensity 
+Dose intensity (DI) for patients with non-zero duration of exposure is  defined as follows:  
+DI (mg / months) = Actual Cumulative dose ( mg) / Duration of exposure to study treatment 
+(months ). 
+For patients who did not take any drug the DI is by definition equal to zero.  
+Planned dose intensity (PDI)  is defined as follows:  
+P
+DI (mg / months) = Planned Cumulative dose ( mg) / Duration of exposure (months ) 
+Re
+lative dose intensity  (RDI)  is defined as follows:  
+RDI = DI (mg / months))  / PDI (mg / months) 
+DI and RDI  will be summarized for Overall study, Monitoring, Consolidation and Nilotinib 
+Reinitaition Phases (if applicable).  
+Novartis Confidential  Page 18  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+2.4.1.5 Dose Reductions, Interruptions or Permanent Discontinuations 
+The number of patients who have dose reductions, permanent discontinuations or 
+interruptions, and the reasons, will be summarized.  
+‘Dose interrupted’, and ‘Dose permanently discontinued’ fields from the Dosage 
+Administration CRF  pages (DAR) will be used to determine the dose reductions, dose 
+interruptions, and permanent discontinuations, respectively. 
+The corresponding fields ‘Reason for dose changes’ will be used to summarize the reasons. 
+F
+or the purpose of summarizing interruptions and reasons, in case multiple entries for 
+interruption that are entered on consecutive days with different reasons will be counted as 
+separate interruptions. However, if the reason is the same in this mentioned multiple entries 
+on consecutive days, then it will be counted as one interruption.  
+Reduction : A dose change where the prescribed dose level is lower than the previous 
+prescribed dose level or where the actual dose administered/total daily dose is lower than the 
+planned dose . Only dose change is collected in the CRF, number of reductions will be derived 
+programmatically  based on the change and the  direction of the change. 
+Missing data:  If dose is recorded but regimen is missing or entered as ‘none’, it is assumed 
+that the study treatment was taken as per-protocol. 
+2.4.2 Prior,  Concomitant and Post Therapies 
+2.4
+.2.1 Data Handling 
+If partial dates occur, the convention for replacing missing dates for the purposes of 
+calculating derived variables is as follows: 
+For partial start dates: 
+ I f the year is unknown, then do not impute the date but assign as missing value. 
+ I f the year is known, but month or month and day are unknown, then: 
+o I f the year matches the year of of first administration of study treatment, then 
+impute the month and day of the of first administration of study treatment. 
+o Othe rwise, assign 01 January 
+ I f the year and month are known, but day is unknown, then: 
+o I f the month and year match the month and year of the of first administration 
+of study treatment, then impute the day of the of first administration of study 
+treatment. 
+o O therwise, assign 01 
+For end dates: 
+ I f the year is unknown, then do not impute the date but assign a missing value. 
+Novartis Confidential  Page 19  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+ If the month is unknown, then assign the last day of the year, 31 December. If this 
+results in a date after the of last administration of study treatment, assign the day and 
+month of the last administration of study treatment.  
+ If the day is unknown, then assign the last day of the month. 
+2.4.2.2 Prior Antineoplastic Therapy 
+The number and percentage of patients who received any prior anti-neoplastic radiotherapy 
+will be summarized. Prior anti-neoplastic therapies will be summarized by therapy type (e.g. 
+c
+hemotherapy, hormonal therapy etc.), and also by lowest ATC class and preferred term. 
+Summaries will also include total number of regimens.  
+All 
+prior antineoplastic therapy data will be listed. 
+Anti-neoplastictherapies will be coded using the WHO Drug Dictionary (WHO-DD);  Details 
+regarding WHO-DD version will be included in the footnote in the tables/listings.  
+The above analyses will be performed using the safety set. 
+2
+.4.2.3 Prior and Concomitant Medications 
+Prior and concomitant medications/significant non-drug therapies will be listed and 
+summarized for the safety set. 
+Me
+dications will be classified as prior or concomitant based on the following rules: 
+ Prior medications are medications that started before the first dose of study drug 
+regardless of whether the medication ended before or after the first dose of study drug 
+ Concomitant medications are medications that started on or after the first dose of study 
+drug, or started before the first dose of study drug and continued after the first dose of 
+study drug. 
+o Me dications starting on or after the start of study treatment but no later than 30 
+days after start of last dose of study treatment and 
+o Me dications starting prior to start of study treatment and continuing after the 
+start of study treatment 
+The number and percentage of patients with prior and concomitant medication will be 
+presented separately by ATC class and preferred term according to the WHO DRL dictionary. 
+Any concomitant medication starting and ending prior to the start of study treatment or 
+star
+ting more than 30 days after the  last date of study treatment will be flagged in the listing.  
+2.5 Efficacy Evaluation 
+2.5.1 Definition of Efficacy Variables 
+2.5.1.1 Molecular Response 
+Molecular response will be assessed in all patients. Levels of BCR-ABL transcripts will be 
+determined by real-time quantitative PCR (RQ-PCR) testing of peripheral blood. The samples 
+Novartis Confidential  Page 20  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+will be sent to a Novartis designated central laboratory with validated PCR technology that 
+has a sensitivity of at least 4.5 logs to evaluate BCR-ABL transcript levels by RQ-PCR. The 
+percent ratio of BCR-ABL transcripts versus control gene transcripts converted to IS will be 
+calculated for each sample. 
+Molecular response and related variables are defined as the following: 
+ M ajor molecular response (MMR) 
+Major molecular response is defined as a value of ≤ 0.1% of BCR-ABL ratio on the 
+International Scale (IS). For statistical comparison purpose, MMR will be considered 
+as a binary variable with patients achieving MMR grouped as ‘responders’ and 
+patients not achieving MMR, patients with missing PCR evaluations grouped as ‘non-
+responders’. 
+ L oss of a major molecular response (MMR) is defined as a BCR-ABL ratio > 0.1%  
+ M olecular response 4.0  (MR4.0) 
+MR
+4 is defined as a value of ≤ 0.01% of BCR-ABL ratio on the International Scale 
+(IS).  
+ L oss of MR4 .0 is defined as a BCR-ABL ratio > 0.01% (on international scale ). 
+ Conf irm ed Loss of MR4.0  is defined as is two consecutive BCR-ABL > 0.01% IS 
+after the achievement of MR4.0. 
+ M olecular response 4.5 (MR4.5) 
+MR4.5 is defined as a value of ≤ 0.0032% of BCR-ABL ratio on the International 
+Scale (IS).  
+ L oss of MR4.5 is defined as a BCR-ABL ratio > 0.0032% (on international scale) 
+ Conf irm ed Loss of MR4.5  is defined as two consecutive BCR-ABL > 0.0032% IS 
+after the achievement of MR4.5. 
+ M olecular Relapse  is defined as having two consecutive BCR-ABL levels >0.1%. 
+2.5.1.2 Relapse- Free Survival (RFS) 
+Relapse-free survival is defined as time in months from date of cessation of nilotinib therapy 
+(date of entering TFR phase) to the first documented molecular relapse.  The duration will be 
+c
+alculated by (date of first document molecular relapse – date of nilotinib treatment 
+disconti
+nuation + 1)/30.5.  Molecular relapse is defined as having a confirmed BCR-ABL 
+ratio above MMR (2 consecutive BCR-ABL levels >0.1%IS taken approximately 4 weeks 
+apart) variable 
+If a patient does not experience molecular relapse after nilotinib treatment discontinuation the 
+relapse-free survival time will be considered censored at the following duration: (date of last 
+RQ-PCR sample prior to treatment discontinuation – date of nilotinib treatment 
+disconti
+nuation + 1)/30.5. 
+This analysis will be performed on the FAS. 
+Novartis Confidential  Page 21  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+2.5.1.3 Overall Survival (OS) 
+Overall survival  is defined as the time in months from the date of cessation of nilotinib 
+therapy (date of entering TFR phase) to the date of death from any cause at any time during 
+the study, including the follow-up period after discontinuation of study up to cut-off date. 
+For patients who do not have events on or before the cut-off date, the time will be censored at 
+the 
+date of last assessment (from the list of sources specified below) for patients who are still 
+in study before the follow-up period and at the date of last contact for patients who are in the 
+follow-up period after early discontinuation of study (from the End of Treatment CRF page). 
+Specific last assessment date sources for this study are: 
+ P CR (RQ-PCR) testing of peripheral blood sample dates  
+ S tart/End dates from drug administration record with non-missing total daily dose 
+ L aboratory/PK collection dates  
+ Vital si gns date with at least one non-missing measurement 
+ ECOG pe rformance status date 
+ S tart/End dates of AE with non-missing AE name 
+This analysis will be performed on the FAS. 
+2.5.1.4 Progression Free Survival (PFS) 
+Progression free survival is defined as the time in months from the date of cessation of 
+nilotinib therapy (date of entering TFR phase) to the date of progression at any time after the 
+start of the TFR phase.  Progression is defined as the first reported progression to accelerated 
+phase (AP) or blast crisis (BC) as reported on the disease response eCRF after the start of the 
+TFR phase.  The duration will be calculated by (date of first documented progression – date of 
+nil
+otinib treatment discontinuation + 1)/30.5.  If a subject does not experience progression 
+after the start of the TFR phase, they will be censored at their last AP or BC assessment. 
+2.5.1.5 Treatment Free Survival (TFS) 
+Treatment free survival is defined as the time in months from the cessation of nilotinib 
+therapy (date of entering TFR phase) to the date of treatment reinitiation at the start of the 
+NTRI phase.  The duration will be calculated by (NTRI start date – TFR start date + 1)/30.5.  
+S
+ubjects who do not reinitiate nilotinib will be censored at their study completion date. 
+2.5.2 Primary Efficacy Endpoint 
+The primary efficacy endpoint is the molecular relapse free rate (RFR) at 6 months after 
+discontinuation from nilotinib therapy in patients with MR4.5.   
+2.5.2.1 Data Handling 
+Patients with confirmed MR4.5 and without confirmed loss of MR4.5 prior to the start of the 
+TFR phase will be included in this analysis.  Patients without consecutive confirmed BCR-
+ABL >0.1%IS measurements within 6 months after entering the TFR phase will be considered 
+responders.   
+Novartis Confidential  Page 22  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+Unscheduled visits falling between the start of the TFR phase and the scheduled 6 month TFR 
+visit will be considered when determining if a subject is not a responder.  If a subject is 
+missing the 6 month TFR visit, any unscheduled visit during the TFR phase occurring ≤ 185 
+days after the TFR start date will be considered when determining of a subject is not a 
+responder. 
+2.5.2.2 Statistical Hypothesis, Model, and Method of Analysis 
+The proportion of patients without molecular relapse within 6 months of starting the TFR 
+phase will be summarized using frequencies and percentages.  The demoninator for this 
+proportion will be the number of patients who enter the TFR phase with confirmed MR4.5 
+and without confirmed loss of MR4.5 prior to the start of the TFR phase.  A 95% confidence 
+interval calculated using the exact Clopper-Pearson method will be provided.  
+No statistical hypothesis will be tested on the primary efficacy variable. 
+The analysis will be performed on the FAS. 
+2.5.2.3 Supportive Analyses 
+An exploratory analysis of the relapse free rate after starting the TFR phase will be performed 
+using a logistic regression model to evaluate the dependence of relapse (Yes or No) on 
+important prognostic variables.  The following parameters will be included in the model as 
+covariates: 
+ Age  
+ Ge nder 
+ S okal risk score classification (high/medium/low) 
+ Duration of nilotinib in months defined as (date of last dose of study drug prior to start 
+of consolidation phase – date of first dose of study drug + 1)/30.5. 
+ Ma intenance of MR4.5 in the TFR phase defined as (date of confirmed loss of MR4.5 
+– start date of MR4.5 + 1)/30.5. If a subject loses MR4.5 after the start of the TFR 
+pha
+se and regains it, only the longest interval of sustained MR4.5 will be considered.  
+The start date of sustained MR4.5 is the date of confirmed MR4.5 at the beginning of a 
+sustained MR4.5 interval.  If confirmed MR4.5 for an interval occurs prior to the start 
+of 
+the TFR phase, the start of the TFR phase will be considered the start of the 
+interval.  Only patients who achieved MR4.5 when entering the TFR phase will be 
+included in this anlaysis. 
+o I f the subject does not have confirmed MR4.5 loss throughout the duration of 
+the study, the end date will be taken as the last BCR-ABL assessment 
+collected.  This includes patients that early terminate from the study. 
+o If the patient has a confirmed loss of MR4.5 after the start of the TFR phase 
+the first of the consecutive BCR-ABL > 0.0032%IS measurements will be 
+considered the end date of MR4.5 maintenance. 
+Novartis Confidential  Page 23  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+Stepwise selection of the covariates will be used.  Signficance level is 0.05 for a covariate to 
+remain in the model.  Parameter estimates of the covariates as well as odds ratio estimates and 
+95% confidence intervals will be provided. 
+This analysis will be performed on the FAS. 
+2.5.3 Secondary Endpoints 
+The key secondary objective of the study is to evaluate relapse-free survival. 
+The other secondary objectives of the study are: 
+ To evaluate molecular relapse free rates at 12 and 24 months after nilotinib treatment 
+discontinuation 
+ To evaluate the proportion of patients who regain MR4.5 after restarting nilotinib 
+following molecular relapse 
+ To describe the impact of nilotinib treatment discontinuation on progression to AP/BC 
+and CML-related deaths 
+ Ove rall survival 
+2.5.3.1 Statistical Analysis Methods for the Secondary Efficacy Endpoints 
+ Relapse-free survival (as described in Section 2.5.1.2) after the start of the TFR phase 
+will be summarized and graphed using the product-limit (Kaplan-Meier) estimates of 
+the 25th, median, 75th percentiles for the relapse-free survival and its 95% confidence 
+intervals will be provided, if applicable.  This analysis will be performed on the FAS. 
+ Ove rall survival (as described in Section 2.5.1.3) after the start of the TFR phase will 
+be summarized and graphed using the product-limit (Kaplan-Meier) method as 
+described above.  Patients who are alive at the date of last contact will be treated as 
+censored observations.  This analysis will be performed on the FAS. 
+ P rogression free survival (as described in section 2.5.1.4) after the start of the TFR 
+phase will be summarized and graphed using the product-limit (Kaplan-Meier) method 
+as described above.  Progression is defined as the first reported progression to 
+accelerated phase (AP) or blast crisis (BC) as reported on the disease response eCRF 
+after the start of the TFR phase.  This analysis will be performed on the FAS. 
+ Treatment free survival (as described in section 2.5.1.5) after the start of the TFR 
+phase will be summarized and graphed using the product-limit (Kaplan-Meier) method 
+as described above.  This analysis will be performed on the FAS. 
+ The  molecular relapse free rates at 12 and 24 months after the start of the TFR phase  
+will be summarized and analyzed using the same multivariate logistic regression 
+model as the primary efficacy endpoint. 
+ The rate of patients who confirm MR4.5 after restarting nilotinib treatment following a 
+mol
+ecular relapse will be presented with an exact 95% Clopper-Pearson method.  The 
+time to regain MR4.5 (months) will be summarized and graphed using the product-
+Novartis Confidential  Page 24  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+limit (Kaplan -Meier) method as described above.  The time to regain MR4.5 is defined 
+as (date of confirmed MR4.5 – start date of NTRI phase + 1)/30.5.  If a patient does 
+not 
+regain MR4.5 prior to the end of the NTRI phase, the patient will be censored at 
+the last BCR-ABL ratio assessment prior to treatment discontinuation.  The time to 
+regain MR4.5 will also be graphed with cumulative curves to depict current MR4.5 
+rates over time in the NTRI phase by considering censored patients as non-responders.  
+I
+n addition, the time by which 50% of retreated patients have regained MR4.5 will be 
+calculated. 
+ The  rate of patients who confirm MR4.0 and MMR after restarting nilotinib will be 
+summarized using the same method as described above for the rate of patients who 
+confirm MR4.5. 
+ The  number of patients with stable molecular response (MR4.5, MR4.0, or MMR) 
+during the NTRI phase will be summarized using frequencies and percentages.  Each 
+response will be summarized separately.  Stable molecular response is defined as 
+achievement of confirmed molecular response in the NTRI phase if again the same 
+response is confirmed after 6 months of the original confirmation irrespective of 
+whether there is loss of response in between achievement and 6 months.   This analysis 
+will be performed on the FAS only for subjects who have entered the NTRI phase. 
+ The  number of CML related deaths will be summarized using frequencies and 
+percentages. 
+The FAS for the primary analysis as described above will be used for these analyses.  
+2.5.3.2 BCR-ABL Ratio (%) 
+Tables summarizing BCR-ABL Ratio (%) over time by phase and visit within phase for the 
+consolidation and TFR phases will be provided.  The frequency and percentage of subjects 
+with BCR-ABL at the following levels will be provided: ≤ 0.1% (MMR), ≤ 0.01% (MR4.0), 
+≤ 0.001%, ≤ 0.0032% (MR4.5) 
+The BCR-ABL Ratio over time will be summarized using a box-plot. 
+
+Novartis Confidential  Page 25  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+2.6 Safety Evaluation 
+For all safety analyses, the safety set will be used.  Safety analyses will be presented overall, 
+by study phase and visit within phase. 
+2
+.6.1 Adverse Events 
+Summary tables for AEs will include only AEs that started or worsened during the on-
+treatment period (all 4 study phases including treatment-free remission phases), the 
+treatment-emergent  AEs (TEAEs). The start day used to define the TEAEs in the entire 
+study is the first day of dosing of the Monitoring Phase. 
+
+Novartis Confidential  Page 26  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+The incidence of TEAEs will be summarized by system organ class and preferred term using 
+the latest MedDRA version available. Grading will be based on CTCAE Version 4.03. 
+Adverse events will be summarized by presenting the number and percentage of patients 
+having any adverse event, having an adverse event in each primary system organ class, and 
+having an adverse event with a particular preferred term within a system organ class. 
+The following selection of AEs will be listed and summarized separately. All summaries will 
+be by system organ class (SOC), preferred term (PT), and severity grade unless otherwise 
+specified.  Summaries will include a total column. 
+ AE s by system organ class (SOC) and preferred term (PT) 
+ AE s by PT 
+ AE s by relationship to study drug 
+ AE s occurring in >= %5 of all patients 
+ AEs by severity grade group (Grade 1 or 2 and Grade 3 or 4) 
+ AE s that are dose-limiting 
+ AEs re ported as serious (SAEs) 
+ AE s excluding the serious AEs 
+ AE s associated with discontinuation of study drug 
+ AE s associated with death 
+ Adverse events of special interest 
+o I schemic Heart Disease (IHD): angina pectoris, coronary artery disease, acute 
+m
+yocardial infarction and coronary artery stenosis 
+o I schemic Cerebrovascular Events (ICVE): ischemic cerebrovascular accident, and 
+transient ischemic attack 
+o Peripheral Artery Occlusive Disease (PAOD): intermittent claudication, arterial 
+stenosis of a limb 
+o Musculoske letal Pain 
+All summaries, except for AEs by relationship to study drug will be repeated using only AEs 
+suspected to be related to study drug. 
+Summaries will be repeated for the safety set, safety set by phase, full analysis set, and full 
+a
+nalysis set by phase.  Full anlaysis set by phase tables will only include the TFR and NTRI 
+pha
+ses. 
+Figures for incidences of AEs occurring in the consolidation and TFR phases and for 
+incidences of AEs occurring in the TFR and NTRI phases will be provided for both the SS 
+and FAS. The incidence rate will be calculated by dividing the number of patients with any 
+AE at a particular time by the number of patients in the safety set who are continuing in the 
+study at that time. 
+If partial dates occur, the convention for replacing missing dates for the purposes of 
+calculating derived using the same method as described in section 2.4.2. 
+Novartis Confidential  Page 27  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+If an AE has a missing severity, it will be imputed as “Grade 4”; any missing relationship to 
+study drug of an AE will be imputed as related.  No other missing data will be imputed unless 
+otherwise specified. 
+2.6.2 Laboratory Values 
+2.6.2.1 Hematology 
+Hematology tests will include hemoglobin, total white blood cell count, platelet count, and a 
+differential count (neutrophils, bands, lymphocytes, monocytes, eosinophils, basophils, 
+promyelocytes, myelocytes, metamyelocytes, blasts, and atypical cells. 
+2.6.2.2 Blood Chemistry 
+Chemistry tests will include creatinine, uric acid, albumin, total protein, total bilirubin, direct 
+bilirubin and/or indirect bilirubin, alkaline phosphatase, aspartate aminotransferase, alanine 
+aminotransferase, lactate dehydrogenase, sodium chloride, fasting glucose, HbA1c, calcium, 
+lipase, potassium, magnesium, phosphorus, total cholesterol, triglycerides, low density 
+lipoprotein, and high density lipoprotein.  
+2.6.2.3 Hepatitis B Serology 
+Patients will be tested once for the following hepatitis B serologic markers: hepatitis B surface 
+antigen (HBsAg), antibodies to hepatitis B surface antigen (HBsAb) and antibodies to 
+hepatitis B core antigen (HBcAb).  The results will be listed and summarized by phase. 
+2.6.2.4 Analysis 
+Laboratory values will be converted to SI units and analyzed using the Common Terminology 
+Criteria for Adverse Events (CTCAE) version 4.03.   For laboratory tests covered by CTCAE, 
+a Grade 0 will be assigned for all non -missing values not graded as 1 or higher. Grade 5 will 
+not be used.   A table of CTCAE grades for the parame ters of interest  in the study is given 
+below (U.S. HHS Dept., 2010).  
+  
+Novartis Confidential  Page 28 
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+ 
+Parameter  Event  Grade 1  Grade 2  Grade 3  Grade 4  
+Hemoglobin (g/L)  Anemia  <LLN – 100 <100 – 80 <80 Life-threatening 
+consequences; 
+urgent 
+intervention 
+indicated  
+Hemoglobin (g/L)  Hemoglobin increased  Increase in >0 – 20  above 
+ULN or above BL if BL is 
+above ULN  Increase in >2 0 – 40  
+above ULN or above BL 
+if BL is above ULN  Increase in >4 0 above ULN 
+or above baseline if baseline 
+is above ULN  N/A 
+White blood cells (10^9/L)  White blood cell 
+decreased  <LLN – 3x10^9/L  <3 – 2x10^9/L  <2 – 1x10^9/L  <1x10^9/L  
+Lymphocytes (10^9/L)  Lymphocyte  count 
+decreased  <LLN – 0.8x10^9/L  <0.8 – 0.5x10^9/L  <0.5 – 0.2x10^9/L  <0.2x10^9/L  
+Lymphocytes (10^9/L)  Lymphocyte count 
+increased  N/A >4 - 20 >20 N/A 
+Neutrophils (10^9/L)  Neutrophil count 
+decreased  <LLN – 1.5x10^9/L  <1.5 – 1.0x10^9/L  <1.0 – 0.5x10^9/L  <0.5x10^9/L  
+Platelets (10^9/L)  Platelet count 
+decreased  <LLN – 75.0x10^9/L  <75.0 – 50.0x10^9/L  <50.0 – 25.0x10^9/L  <25.0x10^9/L  
+Albumin (g/L)  Hypoalbuminemia  <LLN – 30 <30 – 20 <20 Life-threatening 
+consequences; 
+urgent 
+intervention 
+indicated  
+Alkaline phosphatase (IU/L)  Alkaline phosphatase 
+increased  >ULN – 2.5xULN  >2.5 – 5.0xULN  >5.0 – 20.0xULN  >20.0xULN  
+Alanine aminotransferase 
+(IU/L)  Alanine 
+aminotransferase 
+increased  >ULN – 3.0xULN  >3.0 – 5.0xULN  >5.0 – 20.0xULN  >20.0xULN  
+Aspartate aminotransferase 
+(IU/L)  Aspartate 
+aminotransferase 
+increased  >ULN – 3.0xULN  >3.0 – 5.0xULN  >5.0 – 20.0xULN  >20.0xULN  
+Bilirubin (umol/L)  Blood bilirubin 
+increased  >ULN – 1.5xULN  >1.5 – 3.0xULN  >3.0 – 10.0xULN  >10.0ULN  
+Novartis Confidential  Page 29 
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+Parameter  Event  Grade 1  Grade 2  Grade 3  Grade 4  
+Calcium (mmol/L)  Hypocalcemia  Corrected serum calcium 
+<LLN – 2.0; Iodized 
+calcium <LLN – 1.0 Corrected serum calcium 
+<2.0 - 1.75; Ionized 
+calcium <1.0 - 0.9 Corrected serum 
+calcium<1.75 - 1.5; Ionized 
+calcium <0.9 -0.8; 
+hospitalization indicated  Corrected serum 
+calcium <1.5; 
+Ionized calc ium 
+<0.8; life-
+threatening 
+consequences  
+Calcium (mmol/L)  Hypercalcemia  Corrected serum calcium 
+of >ULN -2.9; Ionized 
+calcium >ULN - 1.5 Corrected serum calcium 
+of >2.9 - 3.1; Ionized 
+calcium >1.5 - 1.6; 
+symptomatic  Corrected serum calcium 
+of >3.1 - 3.4; Io nized 
+calcium >1.6 -1.8; 
+hospitalization indicated  Corrected serum 
+calcium of >3.4; 
+Ionized 
+calcium >1.8 ; 
+life-threatening 
+consequences  
+Cholesterol (mmol/L)  Cholesterol high  >ULN – 7.75 >7.75 – 10.34  >10.34 – 12.92  >12.92  
+Creatinine  Creatinine increased  >1 - 1.5 x baseline; >ULN -
+1.5 x ULN  >1.5 - 3.0 x 
+baseline; >1.5 -3.0 x 
+ULN >3.0 baseline; >3.0 - 6.0 
+xULN  >6.0 x ULN  
+Glucose (mmol/L)  Hypoglycemia  <LLN – 3.0 <3.0 – 2.2 <2.2 – 1.7 <1.7; life-
+threatening 
+consequences; 
+seizures  
+Glucose (mmol/L)  Hyper glycemia  >ULN – 8.9 >8.9 – 13.9 >13.9 – 27.8; hospitalization 
+indicated  >27.8 ; life-
+threatening 
+consequences  
+Lipase  Lipase increased  >ULN – 1.5xULN  >1.5 – 2.0xULN  >2.0 – 5.0xULN  >5.0xULN  
+Magnesium (mmol/L)  Hypomagnesemia  <LLN – 0.5 <0.5 – 0.4 <0.4 – 0.3 <0.3; life-
+threatning 
+consequences  
+Magnesium (mmol/L)  Hypermagnesemia  >ULN – 1.23 N/A >1.23 – 3.30 >3.30 ; life-
+threatening 
+consequences  
+Phosphate (mmol/L)  Hypophosphatemia  <LLN – 0.8 <0.8 – 0.6 <0.6 – 0.3 <0.3; life-
+threatening 
+consequences  
+Potassium ( mmol/L)  Hypokalemia  <LLN – 3.0 <LLN – 3.0; 
+symptomatic; <3.0 – 2.5; hospitalization 
+indicated  <2.5; life-
+threatening 
+Novartis Confidential  Page 30 
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+Parameter  Event  Grade 1  Grade 2  Grade 3  Grade 4  
+intervention indicated   consequences  
+Potassium (mmol/L)  Hyperkalemia  >ULN – 5.5 >5.5 – 6.0 >6.0 – 7.0; hospitalization 
+indciated  >7.0; life-
+threatening 
+consequences  
+Sodium (mmol/L)  Hyponatremia  <LLN - 130 N/A <130 - 120 <120 ; life-
+threatening 
+consequences  
+Sodium (mmol/L)  Hypernatremia  >ULN - 150 >150 - 155 >155 – 160; hospitalization 
+indicated  >160 ; life-
+threatening 
+consequences  
+Triglycerides (mmol/L)  Hypertriglyceridemia  1.71 – 3.42 >3.42 – 5.7 >5.7 – 11.4 >11.4 ; life-
+threatening 
+consequences  
+ 
+  
+Novartis Confidential  Page 31  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+For laboratory tests where grades are not defined by CTCAE, results will be graded by the 
+low/normal/high classifications based on laboratory normal ranges . 
+The following by-safety subset summaries will be generated separately for hematology, and 
+biochemistry laboratory tests: 
+ S hift tables using CTCAE grades to compare baseline to the worst on-phase value.  Four 
+different baseline definitions for the different study phases, as defined in section 2.1.3.8, 
+will
+ be used. 
+ F or laboratory tests where CTCAE grades are not defined, shift tables using the 
+low/normal/high/(low and high). Four different baseline definitions for the different study 
+pha
+ses, as defined in section 2.1.3.8, will be used. 
+ S ummary statistics of raw values and change from baseline by time point and by study 
+pha
+se 
+ L isting of all laboratory data with values flagged to show the corresponding CTCAE 
+grades and the classifications relative to the laboratory normal ranges. 
+2.6.3 Serum and urine pregnancy test results will be listed.ECG Analysis 
+A standard 12 lead ECG will be performed at screening, Day 1, and Day 8.  After a dose 
+interruption or after any dose changes, additional (unscheduled) ECGs are required. 
+Summary statistics for raw values and change from baseline of heart rate, PR interval, QRS 
+dura
+tion, QT interval, QTcF, QTcB, and frequencies and percentages of investigator 
+interpretation will be presented by phase and visit within phase. 
+A 
+shift table for QTinterval and QTc values by phase will be provided using the following 
+categories: 
+ < = 450 ms 
+ > 450 to 480 
+ > 480 to 500 
+ > 500  
+The largest post-baseline result in each phase will be included in the shift table. 
+F
+our different baseline definitions for the different study phases, as defined in section 2.1.3.8, 
+will
+ be used. 
+2.6.4 Vital Signs 
+Vital signs raw values and change from baseline (weight, pulse rate, systolic blood pressure, 
+diastolic blood pressure) will be summarized by phase and visit within phase   
+Vital si
+gns data will be summarized by shift table based on notable values by phase. 
+The criteria for clinically notable abnormalities are defined as follows: 
+Clinically notable values above normal 
+ S ystolic BP: ≥ 140 mmHg 
+Novartis Confidential  Page 32  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+ Diastolic BP: ≥ 90 mmHg 
+ B ody Temperature (C): ≥ 37.5◦C 
+ W eight: Baseline ≥ 110kg; Post-baseline: increase from baseline of ≥ 10% 
+ He art rate: Baseline: ≥ 120 beats per minute (bpm); Post-baseline: ≥ 120 beats per 
+minute (bpm) with increase from baseline of ≥ 15 bpm 
+Clinically notable values below normal 
+ S ystolic BP: ≤ 90 mmHg 
+ Dia stolic BP: ≤ 40 mmHg 
+ B ody Temperature (C): ≤ 35◦C 
+ W eight: Baseline ≤ 60kg; Post-baseline: decrease from baseline of ≥ 10% 
+ He art rate: Baseline: ≤ 50 bpm; Post-baseline: ≤ 50 bpm with decrease from baseline 
+of ≥ 15 bpm 
+F
+our different baseline definitions for different study phases, as defined in section 2.1.3.8, will 
+be used. 
+Vital signs data will be listed. 
+2.6.5 Physical Examination 
+Significant physical examination findings that are present prior to the start of study drug must 
+be summarized with the medical history data.  Significant findings made after the start of 
+study drug, which meets the definition of an adverse event, will be summarized with the 
+adverse event data. 
+2.6.6 Extramedullary Involvement 
+Extramedullary involvement data such as presence and location will be listed. 
+2.6.7 ECOG Performance Status 
+Eastern Cooperative Oncology Group (ECOG) performance status will be summarized using 
+frequencies and percentages by phase and visit within phase. 
+2
+.6.8 Patient-reported outcomes 
+2.6.8.1 MDASI-CML 
+The M.D. Anderson Symptom Inventory for CML patients (MDASI-CML) will be used to 
+assess the nature and impact of symptom burden on life.  The MDASI-CML consists of 20 
+validated symptom items and 6 validated core interference items.  Each item is assessed on an 
+11 point scale with responses from 0-10, = being “not present” and 10 being “as bad as you 
+c
+an imagine”. 
+Novartis Confidential  Page 33  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+The interference score will be calculated when a patient scores at least 4 items out of the 6 
+interference items using the formula: (sum of scores for the items answered) / number of 
+items answered.   If a subject responds to less than 4 interference items, the interference score 
+will be considered missing. 
+The symptom score will be calculated when a patient scores at least 8 items out of the 14 
+symptom items using the formula: (sum of scores for the items answered) / number of items 
+answered.   If a subject responds to less than 8 symptom items, the symptom score will be 
+considered missing (Ceeland, 2009). 
+The symptom and interference subscale total scores with their change from baseline will be 
+summ
+arized descriptively at all post-baseline time points by phase and visit within phase. 
+This analysis will be performed on the SS. 
+2.6.8.2 EQ-5D-3L 
+The EQ-5D-3L will be used to assess the impact of nilotinib treatment discontinuation in 
+patient utility.  The questionnaire comprises 5 items: mobility, self-care, usual activities, 
+pain/discomfort and anxiety/depression and the EQ visual analog scale.  Each item has 3 
+levels (no problems, some problems, and extreme problems) and visual analog has a scale of 0 
+to 100 (0=works imaginable health state, 100=best imaginable health state). 
+The percentages of patients at each level of the five items of the EQ-5D-3L will be 
+summarized overall as appropriate at baseline and all post-baseline time points by phase and 
+visit within phase. 
+The visual analog scale raw values and change from baseline will be summarized using 
+numeric summary statistics by visit and phase. 
+This analysis will be performed on the SS. 
+2.6.8.3 SF-8 Questionnaire 
+The SF-8 Questionnaire consists of 8 items (general health, physical functioning, role-
+physical, bodily pain, vitality, social functioning, role-emotional, and mental health) will be 
+used to assess the impact of nilotinib treatment discontinuation on the quality of life.  Each 
+item has a 5 or 6 point response range.  Physical and mental component summary measures 
+(calculated using Optum’s norm-based scoring method) will be summarized at baseline and 
+all post-baseline time points using numeric summary statistics.  I ndividual item scores will be 
+listed. 
+This analysis will be performed on the SS. 
+3 References 
+Ceeland CS., (2009) The M.D. Anderson Symptom Inventory User Guide, Version 1. 
+Retrieved from https://www.mdanderson.org. 
+Sokal JE, Cox EB, Baccarani M, et al (1984) Prognostic discrimination in “Good-Risk” 
+chronic granulocytic leukemia. Blood: 63: 789-99. 
+Novartis Confidential  Page 34  
+SAP V1.0 21-Jun-2018 (1:53) CAMN107AUS37 
+ 
+U.S. Department of Health and Human Services, (2010) Common Terminology Criteria for 
+Adve
+rse Events (CTCAE) Version 4.03. Retrieved from https://evs.nci.nih.gov. 

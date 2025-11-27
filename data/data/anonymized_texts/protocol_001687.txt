@@ -1,0 +1,1854 @@
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 1  
+1. RCT Details  
+This section provides a high -level overview of the RCT that the described real- world evidence study is trying to replicate as closely 
+as possible given the remaining limitations inherent in  the healthcare data bases.  
+ 1.1 Title 
+Effect of Sitagliptin on Cardiovascular Outcomes in Type 2 Diabetes ( TECOS  trial)  
+ 1.2 Intended aim(s)  
+ TECOS primarily tested the hypothesis that sitagliptin, when used as part of usual diabetes care, is non -inferior to usual care 
+without sitagliptin with regard to the risk of  significant confirmed cardiovascular outcomes.  
+ 1.3 Primary endpoint for replication and RCT finding  
+ Composite of cardiovascular death, nonfatal myocardial infarction, nonfatal strok e, or hospitalization for unstable angina  
+ 
+1.4 Required power for primary endpoint and noninferiority margin (if applicable ) 
+ Power of 90% for the test  of noninferiority (hazard ratio, 1.00). For superiority,  1,300 patients with a  primary composite 
+cardiovascular outcome  would provide a power of approximately 81% to  determine the superiority of sitagliptin over 
+placebo  (hazard ratio, 0.85).  
+ 1.5 Primary t rial estimate  targeted for replication  
+ HR = 0.98 (95% CI, 0.88 - 1.09) comparing sitagliptin to placebo  (Green et al., 2015)  
+ 
+2. Person responsible for implementation of replication in Aetion  
+Ajinkya Pawar, Ph.D.  implemented the study design in the Aetion Evidence Platform. S/he is not responsible for the validity of the 
+design and analytic choices. All imp lementation steps are recorded and the implementation history is archived in the platform.   
+ 
+ 3. Data Source (s) 
+United/Optum, MarketScan , Medicare  
+ 
+!""#$%&'#(#))*+#)#,+$-*.&%-*/#,0*12+03*4,%,*%2*)5662+%*7489)*+#:50,%2+;*3#$&)&2(*<,=&(:]*L+2%2$20*?#<60,%# *
+DD#!2)97<!'(-+35!'+*36*; !
+?-#*)%53;*3#)&:(*3&,:+,<*'&)5,0&M# )*=#;*,)6#$%)*2"*%-#*02(:&%53&(,0*)%53;*3#)&:(* "2+*#S6#3&%#3*+#'&#.C *
+*!"#$%%&'"()*++'++&'"(),-".$,
+/*0+)123456)57
+8$9*#-*('):++'++&'"();-".$,
+/*0+)123456)57
+;*+<$=();-".$,
+>?$)@-"*A%-B(-")$#)C".D'")EFG
+/*0+)123456)237
+!HI%=+-$")*++'++&'"(),-".$,)
+>!J8@GK)@-9'#)8-##<$+-+6)88L) M356)
+N#'A"*"I0
+/*0+)123456)57L?8@
+/*0+)12O36)578$<$#()!"(#0)/*(')>/*0)5G
+1/-+B'"+*(-$")$P)E-(*A%-B(-")QR
+C".D'"'#*(-$")E=%P$"0%=#'*)>EFG7
+S-&'!"#$%&'!$(%)(*' +,-./0',1234'1-542.3,2/6
+T$%%$,)FB);-".$,
+/*0+)136)I'"+$#*7L?8@FELQ?)I#-('#-*),-".$,)>L?8@G
+/-*A"$+-+)$P)SC/U
+/*0+)123456)57
+!J8@K/U)S0B'236)V'($*I-.$+-+6)E'9'#')W0B$A%0I'&-*
+/*0+)12XYZ6)57
+/*0)55127318'/9,./7-:0;<
+!!"#$%&'"%()*+%$,&%-
+!)!
+!.%+*/'
+!01.2(3"4%$5,'(0"6&"$!J8@K)"##$%&'()*#$+'(
+,-".(/01234(1256(
+#&078&159063:
+/*0+)12X36)57
+L?8@KRH)P$#)U'(P$#&-"6)
+N-$A%-(*[$"'6)EF)$#)
+L"+=%-"
+L?8@KMC)Q=(B*(-'"()9-+-(+6):A') MZ5)0#+)\)1UL6)NS8:6)8:]D6)
+E('"(-"A6)L+I<'&-I)E(#$^'6)QII%=+-$")_)E('"$+-+)$P)8*#$(-.)
+:#('#06)N'#-B<'#*%):#('#-*%)+('"(-"A)$#)#'9*+I=%*#-[*(-$"6)@$,'#)
+'H(#'&-(0)*&B=(*(-$"7
+/*0+)12XYZ6)57
+('."&#=)$&%'>)$?")$(
+!7889++'"8'(*:(*9%8*;'
+!<'$%=
+!.%$+%(*:($>>&%&*"$,(?@#*49+'
+!?">(*:(&">'@('@#*49+'
+!<&4'"+*,,;'"%!.#'8&:&'>(<$%'(+'$8='>
+!.A&%8=(BA&%=&"(8*;#$+&4*"(6+#C
+!D9+4&"6(=*;'($>;&44&*"
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 3  
+5. Cohort Identification  
+ 
+5.1 Cohort Summary 
+This study will involve a new user, parallel group, cohort study design comparing sitagliptin  to the 2nd generation sulfonylurea 
+(SU) antidiabetic class as a proxy for placebo . 2nd generation  SUs are  not known to have an impact on the outcome of interest . In 
+addition, SUs were the most frequent background treatment in TECOS  (after metformin), and both DPP4i and SUs are 
+preferentially prescribed to similarly older patients in the real world  (Patorno et al., 2019).  The patients will be  required to have 
+continuous enrollment during the baseline period of 180 days before initiation of sitagliptin  or a comparator drug ( cohort entry  
+date) . Follow -up for the outcome (4P -MACE), begins the day after drug initiation. As in the trial, patients are allowed to take 
+other antidiabetic medications during the study.  
+ 
+5.2 Important steps for cohort formation  
+ New users (defined as no use in 180 days prior to index date) of an exposure and a comparator drug  will be identified.  
+ 
+5.2.1 Eligible c ohort entry dates  
+Market availability of sitagliptin  in the U .S. started on October 17, 2006 .       
+• For Marketscan: October 17 , 2006- Dec 201 7 (end of data availability ).  
+• For Medicare: Jan 1, 2012 -Dec 31, 2017 (start - end of data availability).  
+• For Optum : October 17, 2006 -March 31, 2019 (end of data availability).  
+ 
+5.2.2 Specify inclusion /exclusion  criteria for cohort entry and define  the index date  
+ 
+Inclusion and exclusion crite ria were adapted from the trial as closely as possible. Definitions for all inclusion/exclusion are provided 
+in Appendix A and are summarized in the flowcharts below.   
+ 
+5.3 Flowchart of the study cohort assembly  
+ 
+ Optum  Marketscan  Medicare * 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making : Protocol Template  
+ 4   Less 
+Excluded 
+Patients  Remaining 
+Patients  Less 
+Excluded 
+Patients  Remaining 
+Patients  Less 
+Excluded 
+Patients  Remaining 
+Patients  
+All patients    74,864,884   191,990,035   23,466,175 
+Patients who used exposure or a reference between 17  Oct 2006  to Dec 
+2017 (for Marketscan )/March 2019 (for Optum) and 01 January 2012 -
+December 2017 for Medicare  -72908924  1,955,960 -
+188954110  3,035,925 -19512001  3,954,174 
+Excluded due to insufficient enrollment  -260546 1,695,414 -374862 2,661,063 -1094721  2,859,453 
+Excluded due to prior use of referent  -1135398  560,016 -1658570  1,002,493 -1745525  1,113,928 
+Excluded due to prior use of exposure  -237943 322,073 -531814 470,679 -511933 601,995 
+Excluded because patient qualified in >1 exposure category  -1,240 320,833 -3,027 467,652 -1,510 600,485 
+Excluded based on Age  -14 320,819 0 467,652 0 600,485 
+Excluded based on Gender  -32 320,787 0 467,652 0 600,485 
+Excluded based on Inclusion 1 - DM Type 2 with ICD -10 -31605 289,182 -73914 393,738 -11767 588,718 
+Excluded based on Inclusion 1 - Continuous use of Metformin, 
+pioglitazone, or a sulfonylurea, or stable dose of insulin for past 3 
+months  -31597 257,585 -50189 343,549 -61901 526,817 
+Excluded based on Inclusion 2 - At least 2 outpatient visits in prior 
+year -533 257,052 -1,385 342,164 -412 526,405 
+Excluded based on Inclusion 3 - Age >=50 AND History of a major 
+clinical manifestation of coronary artery disease/Ischemic 
+cerebrovascular disease  -101729 155,323 -167085 175,079 -88675 437,730 
+Excluded based on Exclusion 1 - history of type 1  diabetes mellitus 
+or a history of ketoacidosis  -3282 152,041 -3487 171,592 -9452 428,278 
+Excluded based on Exclusion 2 - ≥2 hospitalizations for severe 
+Hypoglycemia in prior year  -21 152,020 -39 171,553 -318 427,960 
+Excluded based on Exclusion 3 - DPP-4 i, GLP -1, or a 
+thiazolidinedione other than pioglitazone within past 3 months  -1711 150,309 -1979 169,574 -4416 423,544 
+Excluded based on Exclusion 4 - Cirrhosis of liver  -506 149,803 -316 169,258 -1,388 422,156 
+Excluded based on Exclusion 7 -Pregnancy  -8 149,795 -7 169,251 -13 422,143 
+Excluded based on Exclusion 8 - CCI 180days >=10  -2092 147,703 -1029 168,222 -10402 411,741 
+Final cohort    147,703   168,222   411,741 
+* Medicare database includes only patients ³65 years of age with at least one diagnosis for diabetes, heart failure, or stroke . 
+ 
+6. Variables  
+ 
+6.1 Exposure -related variables :  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 5  
+Study drug:  
+The study exposure of interest is initiation of sitagliptin . Initiation will be defined by no use of sitagliptin  or a comparator in the prior 
+6 months before treatment initiation (washout period).  
+ Comparator agents : 
+• Initiators of sitagliptin  will be compared to initiators of - 
+o 2nd generation sulfonylureas  
+ Because sitagliptin  and comparators are frequently used as second or third line treatments of T2DM, we ex pect it  to be unlikely that 
+sitagliptin  and comparators are initiated in patients with substantially different baseline risk for proposed outcomes.  
+ 
+6.2 Preliminary c ovariate s: 
+• Age 
+• Sex 
+• Combined Comorbidity Index (CCI), measured over the default baseline covariate assessment period , defined as  180 days 
+prior to and including index date  
+ Covariates listed above represent only a small subset of covariates that will ultimately be controlled for in the design and analysis. 
+We use the covariates above only for initial feasibility analyses to judge whether there is likely to be sufficient overlap between 
+treatment groups to proceed with the study. Remaining covariates are defined only after the study has passed the initial feasibility 
+analysis and the initial pow er assessment  and are listed in Table 1 ( Appendix B ). These covariates are based on those used by 
+Patorno et al. (201 9). 
+ 6.3 Outcome variables  and study follow -up:  
+ 6.3.1 Outcome variables  
+ Primary Effectiveness outcomes of interest  (definitions provided in  Appendix A ):  
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making : Protocol Template  
+ 6 • Primary outcome : 4-point major adverse cardiovascular events (MACE), i.e., non- fatal myocardial infarction, non -fatal stroke, 
+or CV mortality; as well as each individual component:  
+• Secondary outcomes:  Individual MACE component s: 
+o Hospital adm ission for MI (for purposes of this individual component, fatal MI is included)  
+o Hospital admission for stroke (for purposes of this individual component, fatal stroke is included)  
+o Hospital admission for ACS/unstable angina  
+o All-cause mortality/CV mortality:  
+§ All-cause inpatient mortality identified using discharge status codes will be used as a proxy for “CV mortality” 
+in commercial databases  
+§ Information on CV mortality through data linkage with the National Death Index (NDI) will only be come  
+available  at a later date  for Medicare and will be used in secondary analyses . 
+ 
+Control outcomes of interest  (control outcomes only serve to assess aspects of study validity but are not further interpreted) :  
+1. Severe hypoglycemia (we expect to see protective effect ; American Diabetes Association, 2018 ) 
+Control  outcome definitions  
+ 
+ 
+     
+ 
+ 
+6.3.2 Study follow -up 
+Both as -treated (AT) and intention -to-treat (ITT) analyses will be conducted with treatment defined as the index drug on the day of 
+cohort entry. Because adherence in the real world  databases is expected to be much worse than in the trial, the AT analysis is the 
+primary  analysis, as it targets the relative hazard of outcomes on treatment.  
+ Outcome  Hospital Discharge Code(s)  Comments  
+Severe hypoglycemia  Severe hypoglycemia  
+Any-position ED or primary inpatient ICD -9 diagnosis: 251.0, 251.1x, 251.2x, or 250.8x.  
+Outcomes identified by 250.8x are not included if they co -occur with one of the 
+following diagnoses: 259.8, 272.7, 681.xx, 682.xx, 686.9, 707.1x, 707.2x, 707.8, 707.9, 
+709.3, 730.0x, 730.1x, 730.2x, 731.8  Note - The  corresponding ICD -10 
+codes will  be used   also 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 7 For the AT analyses, the follow -up will start the day after initiation of liraglutide  and comp arator and will continue until the earliest 
+date of the following events:  
+• The first occurrence of the outcome of interest, unless otherwise specified for selected outcomes ,  
+• The date of end of continuous registration in the database , 
+• End of the study perio d, 
+• Measured death event occurs,  
+• Nursing home admission  
+o Nursing home admissions are considered a censoring event because the data sources utilized typically provide little to 
+no data on a patient, particularly on drug utilization, after admission. We will utilize this as an exclusion reason for 
+cohorts for the same reason.  
+• The date of drug discontinuation, defined as the date of the last continuous treatment episode of the index drug ( sitagliptin  
+and comparator) plus a defined grace period (i.e., 30 days after the end of the last prescription’s days’ supply in main analyses).  
+•  The date of augmentation or switching from an exposure to a comparator or any other agent in the comparator class and 
+vice versa (e.g. switching from glimepiride to glipizide would be a censoring event);  
+o A dosage change on the index treatment does not fulfill this criterion  
+o An added treatment that is not part of the exposure or comparator group does not fulfill this criterion  (e.g. if a 
+sitagliptin  user adds insulin, he or she does not get censored at the time of insulin augmentation)  
+ 
+For the ITT analyses, the censoring based on the augmentation/switching  and treatment discontinuation will be replaced with a 
+maximum allowed follow -up time of 365 days .  
+ 
+7. Initial Feasibility Analysis   
+ Aetion report links:  
+Optum:  https://bwh- dope.aetion.com/#/projects/details/640/results/26047/result/0   
+Marketscan : https://bwh -dope.aetion.com/#/projects/details/638/results/26040/result/0  
+Medicare:  https://bwh -dope.aetion.com/#/projects/details/639/results/26043/result/0  
+ Date condu cted:  Sep 30, 2018  
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making : Protocol Template  
+ 8 Complete Aetion feasibility analysis  using age, sex, and CCI as the only covariates and the primary endpoint (Section 6.3.1) as the 
+outcome . No measures of association will be computed nor will incidence rates stratified  by treatment group.  
+• Report patient characteristics by treatment group  
+• Report summary parameters of study population  
+• Report median f ollow -up time  by treatment group 
+• Report reasons for censoring in the overall study population  
+ 
+ 8. Initial Power Assessment  
+ 
+Aetion report links:  
+Optum:  https://bwh- dope.aetion.com/#/projects/details/640/results/26049/result/0  
+Marketscan : https://bwh -dope.aetion.com/#/projects/details/638/results/26050/result/0  
+Medicare:  https://bwh -dope.aetion.com/#/projects/details/639/results /26051/result/0  
+ Date conducted:  Sep 30, 2018  
+ In order to complete the initial power analysis, the dummy outcome of a 90 -day gap in database enrollment  will be used . This 
+outcome is used to ensure that no information on the comparative risks of the outcomes of interest are available at this stag e. 
+Complete a 1:1 PS -matched comparative analysis using this outcome.  PS should include only 3 covariates: age, sex, and combi ned 
+comorbidity index . Power calculations are based on the formulas from Chow et al. (2008).  
+ 
+• Stop analyses until feasibility and power are reviewed by primary investigators  and FDA.  Reviewers evaluate the results of the 
+analyses described above in Section s 7 and 8, including numbers of patients, patient characteristics, follow -up time, and reasons 
+for censoring by treatment group, as well as overall rates of outcomes and study power.  These parameters are re -evaluated in the 
+subsequent sections, after incor porating feedback and refining the protocol.  
+Reviewed by PI:  Jessica M. Franklin  Date reviewed:  10/26/18  
+Reviewed by FDA:  Ken Quinto  Date reviewed:  12/11/18  
+Reasons for stopping 
+analysis (if required):   
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 9  
+9. Balance Assessment  after PS matching  
+ Aetion report links ( Sitagliptin vs. 2
+nd generation S Us): 
+Optum:  https://bwh- dope.aetion.com/projects/details/640/results/44780/result/0  
+Marketscan : https://bwh- dope.aetion.com/projects/details/638/results/44781/result/0  
+Medicare:  https://bwh- dope.aetion. com/projects/details/639/results/45413/result/0  
+ Date conducted:  11/18/2019 (Medicare 11/30/2019)  
+ After review of initial feasibility and power analyses, complete creation of the remaining covariates (see Table 1 below for list of 
+covariates) . Again , using the dummy outcome of a 90-day gap in database enrollment , complete a 1:1 PS -matched analysis. The PS 
+should include the complete list of covariates (excluding laboratory values, which are missing in some patients).  
+ 
+• Provide plot of PS distributions stratified by treatment group.  
+ 
+Note - Please refer to Appendix B .  
+ 
+• Report  covariate balance  after matching . 
+ 
+Note - For Table 1, please refer to Appendix B.   
+ • Report reasons for censoring by treatment group.  
+  Overall  Referent  Exposure  
+Dummy Outcome  0 (0.00%)  0 (0.00%)  0 (0.00%)  
+Death  7,596 (2.17%)  4,072 (2.33%)  3,524 (2.02%)  
+Start of an additional exposure  22,929 (6.56%)  6,881 (3.94%)  16,048 (9.18%)  
+End of index exposure  210,496 (60.23%)  104,902 (60.03%)  105,594 (60.43%)  
+Specified date reached  36,338 (10.40%)  19,668 (11.26%)  16,670 (9.54%)  
+End of patient enrollment  33,356 (9.54%)  17,150 (9.81%)  16,206 (9.27%)  
+Switch to other SUs (for censoring) + nursing home admission  38,761 (11.09%)  22,065 (12.63%)  16,696 (9.55%)  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making : Protocol Template  
+ 10  
+• Report follow -up time by treatment group.  
+ Median Follow -Up Time (Days) [IQR]   
+Patient Group  Optum  Marketscan  Medicare  
+Overall Patient Population  118 [58- 270]  120 [58- 300]  118 [58- 297]  
+Referent  118 [58- 295]  121 [58- 316]  121 [58- 316]  
+Exposure  118 [58- 246]  118 [58- 279]  118 [58-279]  
+ 
+• Report  overall risk of the primary outcome.  
+  Optum  Marketscan  Medicare  
+Risk per 1,000 patients  29.17 37.73 62.67 
+ 
+10. Final Power Assessment  
+ Date conducted:  
+ 
+• Re-calculate power in the appropriate excel table, using the revised number of matched patients from the PS -match in  Section 9 . 
+All other parameters in the table should be the same as in Section 8.  If the study is to be implemented in more than one 
+database, copy and paste excel sheet to report power for each database separately and for the pooled analysis that uses data 
+from all databases together.  Power calculations are based on the formulas from Chow et al. (2008).  
+ 
+o Pooled  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 11  
+ 
+o Optum  
+ 
+ 
+o Marketscan  Non-inferiority Analysis
+Number of patients matched
+Reference 174,738
+Exposed 174,738
+Risk per 1,000 patients 43.19
+Assumed HR from RCT 1
+Alpha (2-sided) 0.05
+Non-inferiority margin 1.3
+Number of events expected 15093.86844
+Power 1Superiority Analysis
+Number of patients matched
+Reference 174,738
+Exposed 174,738
+Risk per 1,000 patients 43.19
+Desired HR from RCT 0.85
+Alpha (2-sided) 0.05
+Number of events expected 15093.86844
+Power 1
+Non-inferiority Analysis
+Number of patients matched
+Reference 29,727
+Exposed 29,727
+Risk per 1,000 patients 29.17
+Assumed HR from RCT 1
+Alpha (2-sided) 0.05
+Non-inferiority margin 1.3
+Number of events expected 1734.27318
+Power 0.999770031Superiority Analysis
+Number of patients matched
+Reference 29,727
+Exposed 29,727
+Risk per 1,000 patients 29.17
+Desired HR from RCT 0.85
+Alpha (2-sided) 0.05
+Number of events expected 1734.27318
+Power 0.92278468
+Effectiveness research with Real World Data to support FDA’s regulatory decision making : Protocol Template  
+ 12  
+ 
+o Medicare  
+ 
+ 
+• Stop analyses until balance and final power assessment are reviewed by primary investigators , FDA, and assigned members of Non-inferiority Analysis
+Number of patients matched
+Reference 42,600
+Exposed 42,600
+Risk per 1,000 patients 37.73
+Assumed HR from RCT 1
+Alpha (2-sided) 0.05
+Non-inferiority margin 1.3
+Number of events expected 3214.596
+Power 0.999999978Superiority Analysis
+Number of patients matched
+Reference 42,600
+Exposed 42,600
+Risk per 1,000 patients 37.73
+Desired HR from RCT 0.85
+Alpha (2-sided) 0.05
+Number of events expected 3214.596
+Power 0.995942377
+Non-inferiority Analysis
+Number of patients matched
+Reference 102,411
+Exposed 102,411
+Risk per 1,000 patients 62.67
+Assumed HR from RCT 1
+Alpha (2-sided) 0.05
+Non-inferiority margin 1.3
+Number of events expected 12836.19474
+Power 1Superiority Analysis
+Number of patients matched
+Reference 102,411
+Exposed 102,411
+Risk per 1,000 patients 62.67
+Desired HR from RCT 0.85
+Alpha (2-sided) 0.05
+Number of events expected 12836.19474
+Power 1
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 13 advisory board . Reviewers evaluate the results of the analyses described above in Sections 9 and 10, including numbers of 
+patients, balance in patient characteristics, follow -up time, and reasons for censoring by treatment group, as well as overall rates 
+of outcomes and study power.  
+Reviewed by PI:  Jessica Franklin  Date reviewed:  12/9/19  
+Reviewed by FDA:  Ken Quinto  Date reviewed:  12/20/19 
+Reasons for stopping 
+analysis (if required):   
+ 
+11. Study Confidence and Concerns  
+ Deadline for voting on study confidence  and listing concerns : 12/20/19 
+ 
+• If final feasibility and power analyses are reviewed and approved, proceed to the remaining protocol steps. 
+• All study team and advisory board members that review this protocol should at this stage provide their level of con fidence for the 
+success of the RWD study in the Google Form . This form also provides space for reviewers to list any concerns that they feel  may 
+contribute to a failure to replicate the findings of the RCT, including differences in study populations, poor measurement of  study 
+variables, or residual confounding. All responses will be kept confidential and individual -level results will only be s hared with the 
+individual respondent.  
+ 
+12. Register study protocol on clinicalTrials.gov  
+ 
+Date conducted:    
+ 
+• Register the study on clinicalTrials.gov  and upload this document.  
+ 
+13. Comparative  Analyse s 
+ 
+Aetion report name:  
+Date conducted:    
+ 13.1 For primary analys is:  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making : Protocol Template  
+ 14  
+• In the PS -matched cohort from Section 9, calculate the HR for each outcome for sitagliptin versus 2nd generation SU  patients 
+using a Cox proportional hazards model.  
+ 
+13.2 For secondary  analyses:  
+• In both pre-matched cohort s, perform asymmetrical trimming to remove patients with PS values below the 2.5th percentile of 
+treated patients and above the 97.5th percentile of untreated patients. In the trimmed cohort, calculate the HR for canagliflozin 
+versus ref erent patients using a Cox proportional hazards model, adjusting for deciles of the PS.  
+  14.  Requested Results   
+ 
+14.1 Results from primary and secondary analyses ; 
+ 
+Analysis  No. exposed events  No. referent events  Exposed rate  Referent rate  HR (95% CI)  
+Crude       
+Primary analysis       
+Analysis 2       
+...      
+HR, Hazard Ratio; CI, Confidence Interval.  
+ 
+15. References  
+ 
+American Diabetes Association. 8. Pharmacologic Approaches to Glycemic Treatment: Standards of Medical Care in Diabetes -2018. 
+Diabetes Care . 2018;41(Suppl 1):S73 -S85. doi:10.2337/dc18 -S008.  
+ Chow S, Shao J, Wang H. 2008.   Sample Size Calculations in Clinical Research . 2nd Ed. Chapman & Hall/CRC Biostatistics Series. page 
+177 
+ Green JB, Bethel MA, Armstrong PW, Buse JB, Engel SS, Garg J, Josse R, Kaufman KD, Koglin J, Korn S, Lachin JM. Effect of sitagliptin on 
+cardiovascular outcomes in type 2 diabetes. New England Journal of Medicine. 2015;  373(3):232 -42. 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 15  
+Patorno E, Pawar A, Franklin JM, et al. Empagliflozin and the Risk of Heart Failure Hospitalization in Routine Clinical Care: A First 
+Analysis  from  the Empagliflozin Comparative Effectiveness and Safety (EMPRISE) Study . Circulation. 2019; in press. 
+(https://www.ahajournals.org/doi/pdf/10.1161/CIRCULATIONAHA.118.039177 )  
+  
+ 
+#  TECOS trial definitions Implementation in routine care
+Reference/Rationale Color coding
+Sitagliptin versus placebo Sitagliptin vs. 2nd generation sulfonylureas Criteria
+Adequate mapping in claims
+The primary cardiovascular outcome was a composite of cardiovascular death, nonfatal myocardial infarction, 
+nonfatal stroke, or hospitalization for unstable angina. HR  0.98; 95% CI, 0.88 to 1.09; P<0.001Measured 1 days after drug initiation in diagnosis position specified below and inpatient care 
+setting:
+Inpatient mortality/MI/Stroke/Angina --
+For ACS/unstable angina
+Any diagnosis position in inpatient care setting
+Discharge diagnosis ICD-9 411.xx
+For MI
+Any diagnosis position in inpatient care setting
+ICD-9 Dx 410.X (acute myocardial infarction) excluding 410.x2 (subsequent episode of care)
+For stroke
+Primary diagnosis position in inpatient care setting 
+ICD-9 discharge diagnosis:
+430.xx  Subarachnoid hemorrhage (SAH)
+431.xx  Intracerebral hemorrhage (ICH)
+433.x1  Occlusion and stenosis of precerebral arteries with cerebral infarction
+434.xx (excluding 434.x0)  Occlusion and stenosis of cerebral arteries with cerebral infarction
+436.x  Acute, but ill-defined cerebrovascular events
+Mortality- See Mortality Sheet.For MI: 
+PPV 94% in Medicare claims data [Kiyota Y, Schneeweiss S, Glynn RJ, Cannuscio 
+CC, Avorn J, Solomon DH. Accuracy of Medicare claims-based diagnosis of acute 
+myocardial infarction: estimating positive predictive value on the basis of review 
+of hospital records. American heart journal 2004;148:99-104.]
+PPV 88.4% in commercially-insured population [Wahl PM, Rodgers K, 
+Schneeweiss S, et al. Validation of claims-based diagnostic and procedure codes 
+for cardiovascular and gastrointestinal serious adverse events in a commercially-
+insured population. Pharmacoepidemiology and Drug Safety 2010;19:596-603.]
+For stroke:
+PPV of 85% or higher for ischemic stroke
+PPV ranging from 80% to 98% for hemorrhagic stroke
+[Andrade SE, Harrold LR, Tjia J, et al. A systematic review of validated methods 
+for identifying cerebrovascular accident or transient ischemic attack using 
+administrative data. Pharmacoepidemiology and Drug Safety 2012;21 Suppl 
+1:100-28.]
+[Tirschwell DL, Longstreth WT, Jr. Validating administrative data in stroke 
+research. Stroke; a journal of cerebral circulation 2002;33:2465-70.]
+[Roumie CL, Mitchel E, Gideon PS, Varas-Lorenzo C, Castellsague J, Griffin MR. 
+Validation of ICD-9 codes with a high positive predictive value for incident 
+strokes resulting in hospitalization using Medicaid health data. 
+Pharmacoepidemiology and drug safety 2008;17:20-6.]Intermediate mapping in claims
+Poor mapping or cannot be measured in claims 
+Patient has T2DM with HbA1c of ≥6.5% (48 mmol/mol) and ≤8.0% (64 mmol/mol). HbA1c must be documented 
+within 3 months prior to study enrollment, while receiving either:Measured 180 days prior to drug initiation any diagnosis position in inpatient or outpatient 
+care settings:
+Patients with a diagnosis of T2DM (ICD-9 Dx code of 250.x0 or 250.x2; ICD-10 Dx code of E11.x) 
+in the 180 days prior to drug initiation in any diagnosis position and inpatient or outpatient 
+care setting Patorno, Elisabetta et al. "Cardiovascular outcomes associated with canagliflozin 
+versus other non-gliflozin antidiabetic drugs: population based cohort study." 
+BMJ 2018;360:k119 http://dx.doi.org/10.1136/bmj.k119
+Patorno, Elisabetta et al. "Empagliflozin and the Risk of Heart Failure 
+Hospitalization in Routine Clinical Care: A First Analysis from the Empagliflozin 
+Comparative Effectiveness and Safety (EMPRISE) Study."  Circulation. 2019 Apr 8. 
+doi: 10.1161/CIRCULATIONAHA.118.039177Can't be measured in claims but not important for the 
+analysis
+• Metformin, pioglitazone, or a sulfonylurea as monotherapy or any dual combination of metformin, pioglitazone, 
+or a sulfonylurea continuously without alteration in dose for at least 3 months. Note: patients who have received 
+insulin for only a short period (i.e. less than 14 days) during a hospitalization or for the management of acute illness 
+will not be excluded for that reason.Measured 91 days prior to drug initiation as any dispensing  of one of the following drugs:
+Metformin, pioglitazone, or a sulfonylurea (monotherapy or any dual combination)   
+• A stable dose of insulin (±20% of the scheduled total daily insulin dose) either alone or in combination with a 
+stable  dose of metformin for at least 3 months. The use of supplemental/sliding scale insulin during the prior 3 
+months is permissible, as long as the total daily insulin dose is within ±20% of the scheduled total daily insulin 
+dose. Note: Patients who have required modification of their usual daily insulin dose for a short period (b14 days) 
+during a hospitalization or  for the management of acute illness will not be excluded for that reason.Measured 91 days prior to drug initiation as any dispensing  of insulin (Please see AHA therapies 
+sheet for full definition).
+2 Patient is able to see a usual care provider at least twice per year. Measured 365 days prior to drug initiation as any 2 claims in outpatient care setting
+3Patient is ≥50 years of age with pre-existing vascular disease, defined as having any one of the following: Patient is ≥50 years of age measured on day of drug initiationPlease see the following Google Drive for further details or any missing information: 
+https://drive.google.com/open?id=1WD618wrywYjEaXzfLTcuK-VCcnb6b-gV
+ICD-10 codes are not listed in this document because of excel cell size limitations and excessive number of ICD-10 codes. Full ICD-10 
+code lists will be available in the above Google Drive Folder (link above). ICD-9 to ICD-10 code conversions were completed using a SAS 
+macro that implements forward/ backward mapping based on the CMS ICD-9 to ICD-10 mapping:
+ https://www.nber.org/data/icd9-icd-10-cm-and-pcs-crosswalk-general-equivalence-mapping.html
+1PRIMARY OUTCOMETrial details- 2b- Failed S with NI- No label change
+EXPOSURE vs. COMPARISON
+INCLUSION CRITERIA
+3a• History of a major clinical manifestation of coronary artery disease (i.e., MI, surgical or percutaneous [balloon 
+and/or stent] coronary revascularization procedure, or coronary angiography showing at least one stenosis ≥50% in 
+a major  epicardial artery or branch vessel);Measured 365 days prior to drug initiation in  any diagnosis/procedure position and care 
+setting defined below:
+Inpatient or outpatient Acute MI: 410.xx , Inpatient or outpatient Old MI: 412.xx
+Also include 414.xx (Inpatient or outpatient)
+PTCA:
+Inpatient CPT-4: 92973, 92982, 92984, 92995, 92996, 92920 – 92921, 92924 – 92925, 
+92937, 92938, 92941, 92943, 92944
+OR –
+Inpatient or outpatient ICD-9 procedure: 00.66, 36.01, 36.02, 36.03, 36.05, 36.09
+Stenting:
+Inpatient CPT-4:  92980, 92981, 92928 – 92929, 92933 - 92934
+OR –
+Inpatient or outpatient  ICD-9 procedure: 36.06, 36.07
+CABG:
+Inpatient CPT-4: 33510 – 33536, 33545, 33572. 
+       OR – 
+Inpatient or outpatient ICD-9 procedure: 36.1x, 36.2xPatorno, Elisabetta et al. "Cardiovascular outcomes associated with canagliflozin 
+versus other non-gliflozin antidiabetic drugs: population based cohort study." 
+BMJ 2018;360:k119 http://dx.doi.org/10.1136/bmj.k119
+Patorno, Elisabetta et al. "Empagliflozin and the Risk of Heart Failure 
+Hospitalization in Routine Clinical Care: A First Analysis from the Empagliflozin 
+Comparative Effectiveness and Safety (EMPRISE) Study."  Circulation. 2019 Apr 8. 
+doi: 10.1161/CIRCULATIONAHA.118.039177
+3b • Ischemic cerebrovascular disease, including:
+◦ History of ischemic stroke. Strokes not known to be hemorrhagic will be allowed as part of this criterion;Measured 365 days prior to drug initiation in any diagnosis position and inpatient or 
+outpatient care setting:
+Ischemic stroke (w and w/o mention of cerebral infarction)- 433.xx, 434.xx, 436.xxPatorno, Elisabetta et al. "Cardiovascular outcomes associated with canagliflozin 
+versus other non-gliflozin antidiabetic drugs: population based cohort study." 
+BMJ 2018;360:k119 http://dx.doi.org/10.1136/bmj.k119
+Patorno, Elisabetta et al. "Empagliflozin and the Risk of Heart Failure 
+Hospitalization in Routine Clinical Care: A First Analysis from the Empagliflozin 
+Comparative Effectiveness and Safety (EMPRISE) Study."  Circulation. 2019 Apr 8. 
+doi: 10.1161/CIRCULATIONAHA.118.039177
+◦ History of carotid arterial disease as documented by ≥50% stenosis documented by carotid ultrasound, magnetic 
+resonance imaging (MRI), or angiography, with or without symptoms of neurologic deficit.Measured 365 days prior to drug initiation in any diagnosis position and inpatient or 
+outpatient care setting:
+Occlusion and stenosis of carotid artery without mention of cerebral infarction
+433.10Patorno, Elisabetta et al. "Cardiovascular outcomes associated with canagliflozin 
+versus other non-gliflozin antidiabetic drugs: population based cohort study." 
+BMJ 2018;360:k119 http://dx.doi.org/10.1136/bmj.k119
+Patorno, Elisabetta et al. "Empagliflozin and the Risk of Heart Failure 
+Hospitalization in Routine Clinical Care: A First Analysis from the Empagliflozin 
+Comparative Effectiveness and Safety (EMPRISE) Study."  Circulation. 2019 Apr 8. 
+doi: 10.1161/CIRCULATIONAHA.118.039177
+• Atherosclerotic peripheral arterial disease, as documented by objective evidence such as amputation due to 
+vascular  disease, current symptoms of intermittent claudication confirmed by an ankle brachial pressure index or 
+toe brachial  pressure index less than 0.9, or history of surgical or percutaneous revascularization procedure.Measured 365 days prior to drug initiation in any diagnosis/procedure position and inpatient 
+or outpatient care setting:
+Peripheral arterial stenting or surgical revascularization 
+ICD-9 39.25, 39.50, 39.99. 
+Lower extremity amputation  
+ICD-9 diagnosis: V49.7x 
+ICD-9 procedure: 84.10-84.18
+CPT: 27590, 27591, 27592, 27880, 27881, 27882, 27884, 27886, 27888, 27889, 28800, 
+28805, 28810, 28820, 28825
+Ankle brachial pressure index <0.9
+ICD-9 440.21Patorno, Elisabetta et al. "Cardiovascular outcomes associated with canagliflozin 
+versus other non-gliflozin antidiabetic drugs: population based cohort study." 
+BMJ 2018;360:k119 http://dx.doi.org/10.1136/bmj.k119
+Patorno, Elisabetta et al. "Empagliflozin and the Risk of Heart Failure 
+Hospitalization in Routine Clinical Care: A First Analysis from the Empagliflozin 
+Comparative Effectiveness and Safety (EMPRISE) Study."  Circulation. 2019 Apr 8. 
+doi: 10.1161/CIRCULATIONAHA.118.039177
+4Female patients agree to use an effective method of contraception or must not otherwise be at risk of becoming 
+pregnant.Since this is an inclusion criteria, it's difficult to implement the contraceptive use requirement 
+here, but we have pregnancy as an exclusion criteria later, so this requirement is implemented 
+then.
+5Patient understands the study procedures, alternative treatments available, and the risks involved with the study, 
+and voluntarily agrees to participate by providing written informed consent.N/A
+6Patient agrees to provide permission to obtain all medical records necessary for complete data ascertainment 
+during the follow-up period.N/A
+1Patient has a history of type 1 diabetes mellitus or a history of ketoacidosis.Measured 180 days prior to drug initiation in any diagnosis position and inpatient or 
+outpatient care setting:
+DM type 1- At least 1 inpatient or outpatient ICD-9 Dx code of 250.x1 or 250.x3 or ICD-10 Dx 
+code of E10.x in the 6 months prior to drug initiation. 
+Ketoacidosis
+250.1xPatorno, Elisabetta et al. "Cardiovascular outcomes associated with canagliflozin 
+versus other non-gliflozin antidiabetic drugs: population based cohort study." 
+BMJ 2018;360:k119 http://dx.doi.org/10.1136/bmj.k119
+Patorno, Elisabetta et al. "Empagliflozin and the Risk of Heart Failure 
+Hospitalization in Routine Clinical Care: A First Analysis from the Empagliflozin 
+Comparative Effectiveness and Safety (EMPRISE) Study."  Circulation. 2019 Apr 8. 
+doi: 10.1161/CIRCULATIONAHA.118.039177EXCLUSION CRITERIA
+2Patient has a history of  ≥2 episodes of severe hypoglycemia during the 12 months  prior to enrollment. Severe 
+hypoglycemia (hypoglycemia requiring assistance) refers to instances in which the patient was sufficiently 
+disoriented or incapacitated as to require help from another individual or from medical personnel (whether or not 
+this assistance was actually provided).Measured 365 days prior to drug initiation in any diagnosis position and inpatient care setting:   
+251.1x, 251.20, 962.30 
+Also, 250.8x as long as none of the following codes are co-occurring diagnoses (i.e. same day):  
+259.8, 272.7,681.xx, 682.xx, 686.9x , 707.xx , 709.3, 730.0-730.2, 731.8 Patorno, Elisabetta et al. "Cardiovascular outcomes associated with canagliflozin 
+versus other non-gliflozin antidiabetic drugs: population based cohort study." 
+BMJ 2018;360:k119 http://dx.doi.org/10.1136/bmj.k119
+Patorno, Elisabetta et al. "Empagliflozin and the Risk of Heart Failure 
+Hospitalization in Routine Clinical Care: A First Analysis from the Empagliflozin 
+Comparative Effectiveness and Safety (EMPRISE) Study."  Circulation. 2019 Apr 8. 
+doi: 10.1161/CIRCULATIONAHA.118.039177
+3Patient has taken an approved or investigational DPP-4 inhibitor agent (eg, sitagliptin, alogliptin, saxagliptin, or 
+vildagliptin), GLP-1 analogues (eg, exenatide, exenatide LAR, or liraglutide), or a thiazolidinedione other than 
+pioglitazone  within the past 3 months.Measured 91 days prior to drug initiation as a dispensing of one of the following drugs:  DDP-4, 
+GLP-1, or a thiazolidinedione (other than pioglitazone). Please see full definition in the AHA 
+therapies sheet.
+4Patient has cirrhosis of the liver, as assessed by medical history.Measured 180 days prior to drug initiation in any diagnosis position and inpatient or 
+outpatient care setting: 
+Liver cirrhosis- 571.2, 571.5, 571.6Karagozian R et al. "Obesity paradox in advanced liver disease: obesity is 
+associated with lower mortality in hospitalized patients with cirrhosis." Liver int. 
+2016 Oct; 1450-6. doi: 10.1111/liv.13137. Epub 2016 May 4.
+5Patient is enrolled in another experimental protocol which involves the use of an investigational drug or device, or 
+an intervention that would interfere with the conduct of the trial.N/A
+6Patient has a planned or anticipated  revascularization procedure. N/A
+7Pregnancy or planned pregnancy during the trial period.Measured 180 days prior to drug initiation in any diagnosis/procedure position and inpatient 
+or outpatient care setting:
+Refer to Pregnancy sheet.Patorno, Elisabetta et al. "Cardiovascular outcomes associated with canagliflozin 
+versus other non-gliflozin antidiabetic drugs: population based cohort study." 
+BMJ 2018;360:k119 http://dx.doi.org/10.1136/bmj.k119
+Patorno, Elisabetta et al. "Empagliflozin and the Risk of Heart Failure 
+Hospitalization in Routine Clinical Care: A First Analysis from the Empagliflozin 
+Comparative Effectiveness and Safety (EMPRISE) Study."  Circulation. 2019 Apr 8. 
+doi: 10.1161/CIRCULATIONAHA.118.039177
+8Patient has medical history that indicates a life expectancy of <2 years or might limit the individual’s ability to take 
+trial treatments for the duration of the study.Measured 180 days prior to drug initiation:
+Exclude patients with a combined comorbidity score >=10Gagne, Josh J et. al. "A combined comorbidity score predicted mortality in 
+elderly patients better than existing scores." J Clin Epidemiol. 2011 Jul;64(7):749-
+59. doi: 10.1016/j.jclinepi.2010.10.004.
+Sun, Jenny W et. al. "Validation of the Combined Comorbidity Index of Charlson 
+and Elixhauser to Predict 30-Day Mortality Across ICD-9 and ICD-10." Med Care. 
+2018 Sep;56(9):812. doi: 10.1097/MLR.0000000000000954.
+9Patient has a history or current evidence of any condition, therapy, lab abnormality, or other circumstance which, 
+in the opinion of the investigator or coordinator, might pose a risk to the patient, make participation not in the 
+patient’s best interest, confound the results of the study (eg, if patient cannot comply with requirements of the 
+study), or interfere with the patient’s participation for the full duration of the study.N/A
+10Patient has an estimated GFR (calculated based on serum creatinine via the MDRD formula) of b30 mL/ min per 
+1.73 m2.N/A
+11Patient has a known allergy or intolerance to sitagliptin. N/A
+12Patient has previously been enrolled in the trial. N/A
+Trial ID 
+Trial Name (with web links) TECOS
+Trial Name (with pdf links)
+NCT [STUDY_ID_REMOVED]
+Trial category
+Therapeutic Area Endocrinology
+RCT Category  2b- Failed S with NI- No label change
+Brand Name
+Generic Name Sitagliptin
+Sponsor Merck Sharp & Dohme Corp.
+Year 2015
+Measurable endpointComposite of cardiovascular death, nonfatal myocardial 
+infarction, nonfatal stroke, or hospitalization for unstable 
+angina
+Exposure Sitagliptin
+Comparator Placebo
+Population
+Trial finding HR  0.98; 95% CI, 0.88 to 1.09; P<0.001
+Notes
+No. of Patients
+Non-inferiority margin HR = 1.30
+Assay Sens. Endpoint
+Assay Sens. Finding
+Ajinkya comments
+Powerpower of approximately 81% to determine the 
+superiority of sitagliptin over placebo (hazard ratio, 0.85)
+Blinding
+Statistical Method
+Approval indication
+Mortality- Dependent on data source. 
+1. All-cause mortality / inpatient mortality
+Identified using the vital status file-
+Medicare
+Identified using the discharge status codes-
+Optum-
+• 20 = EXPIRED
+• 21 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 22 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 23 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 24 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 25 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 26 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 27 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 28 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 29 = EXPIRED TO BE DEFINED AT STATE LEVEL       
+• 40 = EXPIRED AT HOME (HOSPICE)
+• 41 = EXPIRED IN A MEDICAL FACILITY (HOSPICE)
+• 42 = EXPIRED - PLACE UNKNOWN (HOSPICE)
+Truven-       
+• 20 - Died
+• 22 - Died
+• 23 - Died
+• 24 - Died
+• 25 - Died
+• 26 - Died
+• 27 - Died
+• 28 - Died
+• 29 - Died
+• 40 - Other died status or Expired at home (Hospice claims only) (depends on year)
+• 41 - Other died status or Expired in medical facility (Hospice claims only) (depends on year)
+• 42 - Other died status or Expired - place unknown (Hospice claims only) (depends on year)
+• 21 - Died or Disch./Transf. to court/law enforcement (depends on year)
+2. CV mortality
+Information on CV mortality through data linkage with the National Death Index (NDI) will be 
+available for Medicare and Optum Clinformatics at a later date. We will conduct secondary analyses 
+using CV mortality at that time.
+1. All-cause mortality / inpatient mortality
+Identified using the vital status file-
+Medicare
+Identified using the discharge status codes-
+Optum-
+• 20 = EXPIRED
+• 21 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 22 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 23 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 24 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 25 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 26 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 27 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 28 = EXPIRED TO BE DEFINED AT STATE LEVEL
+• 29 = EXPIRED TO BE DEFINED AT STATE LEVEL       
+• 40 = EXPIRED AT HOME (HOSPICE)
+• 41 = EXPIRED IN A MEDICAL FACILITY (HOSPICE)
+• 42 = EXPIRED - PLACE UNKNOWN (HOSPICE)
+Truven-       
+• 20 - Died
+• 22 - Died
+• 23 - Died
+• 24 - Died
+• 25 - Died
+• 26 - Died
+• 27 - Died
+• 28 - Died
+• 29 - Died
+• 40 - Other died status or Expired at home (Hospice claims only) (depends on year)
+• 41 - Other died status or Expired in medical facility (Hospice claims only) (depends on year)
+• 42 - Other died status or Expired - place unknown (Hospice claims only) (depends on year)
+• 21 - Died or Disch./Transf. to court/law enforcement (depends on year)
+2. CV mortality
+Information on CV mortality through data linkage with the National Death Index (NDI) will be 
+available for Medicare and Optum Clinformatics at a later date. We will conduct secondary analyses 
+using CV mortality at that time.
+Antidiabetic class Specific agent Notes
+Canagliflozin Approved 3/29/2013
+Dapagliflozin
+Empagliflozin
+Ertugliflozin Approved Dec 21, 2017
+Glimepiride
+Glipizide
+Glyburide 
+Alogliptin
+Linagliptin
+Saxagliptin
+Sitagliptin
+Exenatide
+Liraglutide
+AlbiglutideApproved April 15, 2014 and 
+discontinued July 26, 2017
+Dulaglutide Approved Sep 18, 2014
+Lixisenatide Approved July 28, 2016
+Semaglutide Approved Dec 5, 2017
+Insulin Aspart
+Insulin Aspart/Insulin Aspart Protamine
+Insulin Degludec
+Insulin Detemir
+Insulin Glargine
+Insulin Glulisine
+Insulin human isophane (NPH)
+Insulin human regular (search with NPH, 
+don't want bf-pk)
+Insulin human regular/ Insulin human 
+isophane (NPH)
+Insulin Lispro
+Insulin Lispro/Insulin Lispro Protamine
+PioglitazoneSGLT2-inhibitors
+2nd generation sulfonylureas
+DPP-4 inhibitors
+GLP-1 receptor agonist (GLP1-RA)
+Insulin
+Glitazones
+Rosiglitazone
+Nateglinide
+Repaglinide
+Acarbose
+Miglitol
+Pramlintide Pramlintide
+Acetohexamide
+Chlorpropamide
+Tolazamide 
+TolbutamideMeglitinides
+Alpha-glucosidase inhibitors
+1st generation sulfonylureasGlitazones
+Pregnancy 
+Dx codes 
+650   NORMAL DELIVERY
+660   OBSTRUCTED LABOR
+661   ABNORMALITY OF FORCES OF LABOR
+662   LONG LABOR
+663   UMBILICAL CORD COMPLICATIONS DURING LABOR AND DELIVERY
+664   TRAUMA TO PERINEUM AND VULVA DURING DELIVERY
+665   OTHER OBSTETRICAL TRAUMA
+667   RETAINED PLACENTA OR MEMBRANES WITHOUT HEMORRHAGE
+668   COMPLICATIONS OF THE ADMINISTRATION OF ANESTHETIC OR OTHER SEDATION IN LABOR AND DELIVERY
+669.94   UNSPECIFIED COMPLICATION OF LABOR AND DELIVERY POSTPARTUM CONDITION OR COMPLICATION
+V24   POSTPARTUM CARE AND EXAMINATION
+V24.0   POSTPARTUM CARE AND EXAMINATION IMMEDIATELY AFTER DELIVERY
+V24.1   POSTPARTUM CARE AND EXAMINATION OF LACTATING MOTHER
+V24.2   ROUTINE POSTPARTUM FOLLOW
+V27   OUTCOME OF DELIVERY
+V27.0   MOTHER WITH SINGLE LIVEBORN
+V27.1   MOTHER WITH SINGLE STILLBORN
+V27.2   MOTHER WITH TWINS BOTH LIVEBORN
+V27.3   MOTHER WITH TWINS ONE LIVEBORN AND ONE STILLBORN
+V27.4   MOTHER WITH TWINS BOTH STILLBORN
+V27.5   MOTHER WITH OTHER MULTIPLE BIRTH ALL LIVEBORN
+V27.6   MOTHER WITH OTHER MULTIPLE BIRTH SOME LIVEBORN
+V27.7   MOTHER WITH OTHER MULTIPLE BIRTH ALL STILLBORN
+V27.9   MOTHER WITH UNSPECIFIED OUTCOME OF DELIVERY
+Procedure codes 
+72.0   LOW FORCEPS OPERATION
+72.1   LOW FORCEPS OPERATION WITH EPISIOTOMY
+72.2   MID FORCEPS OPERATION
+72.21   MID FORCEPS OPERATION WITH EPISIOTOMY
+72.29   OTHER MID FORCEPS OPERATION
+72.3   HIGH FORCEPS OPERATION
+72.31   HIGH FORCEPS OPERATION WITH EPISIOTOMY
+72.39   OTHER HIGH FORCEPS OPERATION
+72.4   FORCEPS ROTATION OF FETAL HEAD
+72.5   BREECH EXTRACTION
+72.51   PARTIAL BREECH EXTRACTION WITH FORCEPS TO AFTERCOMING HEAD
+72.52   OTHER PARTIAL BREECH EXTRACTION
+72.53   TOTAL BREECH EXTRACTION WITH FORCEPS TO AFTERCOMING HEAD
+72.54   OTHER TOTAL BREECH EXTRACTION
+72.6   FORCEPS APPLICATION TO AFTERCOMING HEAD
+72.7   VACUUM EXTRACTION
+72.71   VACUUM EXTRACTION WITH EPISIOTOMY
+72.79   OTHER VACUUM EXTRACTION
+72.8   OTHER SPECIFIED INSTRUMENTAL DELIVERY
+72.9   UNSPECIFIED INSTRUMENTAL DELIVERY
+73.0   ARTIFICIAL RUPTURE OF MEMBRANES
+73.01   INDUCTION OF LABOR BY ARTIFICIAL RUPTURE OF MEMBRANES
+73.09   OTHER ARTIFICIAL RUPTURE OF MEMBRANES
+73.1   OTHER SURGICAL INDUCTION OF LABOR
+73.2   INTERNAL AND COMBINED VERSION AND EXTRACTION
+73.21   INTERNAL AND COMBINED VERSION WITHOUT EXTRACTION
+73.22   INTERNAL AND COMBINED VERSION WITH EXTRACTION
+73.3   FAILED FORCEPS
+73.4   MEDICAL INDUCTION OF LABOR
+73.5   MANUALLY ASSISTED DELIVERY
+73.51   MANUAL ROTATION OF FETAL HEAD
+73.59   OTHER MANUALLY ASSISTED DELIVERY
+73.6   EPISIOTOMY
+73.8   OPERATIONS ON FETUS TO FACILITATE DELIVERY
+73.9   OTHER OPERATIONS ASSISTING DELIVERY
+73.91   EXTERNAL VERSION ASSISTING DELIVERY
+73.92   REPLACEMENT OF PROLAPSED UMBILICAL CORD
+73.93   INCISION OF CERVIX TO ASSIST DELIVERY
+73.94   PUBIOTOMY TO ASSIST DELIVERY
+73.99   OTHER OPERATIONS ASSISTING DELIVERY
+74.0   CLASSICAL CESAREAN SECTION
+74.1   LOW CERVICAL CESAREAN SECTION
+74.2   EXTRAPERITONEAL CESAREAN SECTION
+74.3   REMOVAL OF EXTRATUBAL ECTOPIC PREGNANCY
+74.4   CESAREAN SECTION OF OTHER SPECIFIED TYPE
+74.9   CESAREAN SECTION OF UNSPECIFIED TYPE
+74.91   HYSTEROTOMY TO TERMINATE PREGNANCY
+74.99   OTHER CESAREAN SECTION OF UNSPECIFIED TYPE
+75.4   MANUAL REMOVAL OF RETAINED PLACENTA
+75.5   REPAIR OF CURRENT OBSTETRIC LACERATION OF UTERUS
+75.6   REPAIR OF OTHER CURRENT OBSTETRIC LACERATION
+75.7   MANUAL EXPLORATION OF UTERINE CAVITY, POSTPARTUM
+75.9   OTHER OBSTETRIC OPERATIONS
+Dx codes 
+650   NORMAL DELIVERY
+660   OBSTRUCTED LABOR
+661   ABNORMALITY OF FORCES OF LABOR
+662   LONG LABOR
+663   UMBILICAL CORD COMPLICATIONS DURING LABOR AND DELIVERY
+664   TRAUMA TO PERINEUM AND VULVA DURING DELIVERY
+665   OTHER OBSTETRICAL TRAUMA
+667   RETAINED PLACENTA OR MEMBRANES WITHOUT HEMORRHAGE
+668   COMPLICATIONS OF THE ADMINISTRATION OF ANESTHETIC OR OTHER SEDATION IN LABOR AND DELIVERY
+669.94   UNSPECIFIED COMPLICATION OF LABOR AND DELIVERY POSTPARTUM CONDITION OR COMPLICATION
+V24   POSTPARTUM CARE AND EXAMINATION
+V24.0   POSTPARTUM CARE AND EXAMINATION IMMEDIATELY AFTER DELIVERY
+V24.1   POSTPARTUM CARE AND EXAMINATION OF LACTATING MOTHER
+V24.2   ROUTINE POSTPARTUM FOLLOW
+V27   OUTCOME OF DELIVERY
+V27.0   MOTHER WITH SINGLE LIVEBORN
+V27.1   MOTHER WITH SINGLE STILLBORN
+V27.2   MOTHER WITH TWINS BOTH LIVEBORN
+V27.3   MOTHER WITH TWINS ONE LIVEBORN AND ONE STILLBORN
+V27.4   MOTHER WITH TWINS BOTH STILLBORN
+V27.5   MOTHER WITH OTHER MULTIPLE BIRTH ALL LIVEBORN
+V27.6   MOTHER WITH OTHER MULTIPLE BIRTH SOME LIVEBORN
+V27.7   MOTHER WITH OTHER MULTIPLE BIRTH ALL STILLBORN
+V27.9   MOTHER WITH UNSPECIFIED OUTCOME OF DELIVERY
+Procedure codes 
+72.0   LOW FORCEPS OPERATION
+72.1   LOW FORCEPS OPERATION WITH EPISIOTOMY
+72.2   MID FORCEPS OPERATION
+72.21   MID FORCEPS OPERATION WITH EPISIOTOMY
+72.29   OTHER MID FORCEPS OPERATION
+72.3   HIGH FORCEPS OPERATION
+72.31   HIGH FORCEPS OPERATION WITH EPISIOTOMY
+72.39   OTHER HIGH FORCEPS OPERATION
+72.4   FORCEPS ROTATION OF FETAL HEAD
+72.5   BREECH EXTRACTION
+72.51   PARTIAL BREECH EXTRACTION WITH FORCEPS TO AFTERCOMING HEAD
+72.52   OTHER PARTIAL BREECH EXTRACTION
+72.53   TOTAL BREECH EXTRACTION WITH FORCEPS TO AFTERCOMING HEAD
+72.54   OTHER TOTAL BREECH EXTRACTION
+72.6   FORCEPS APPLICATION TO AFTERCOMING HEAD
+72.7   VACUUM EXTRACTION
+72.71   VACUUM EXTRACTION WITH EPISIOTOMY
+72.79   OTHER VACUUM EXTRACTION
+72.8   OTHER SPECIFIED INSTRUMENTAL DELIVERY
+72.9   UNSPECIFIED INSTRUMENTAL DELIVERY
+73.0   ARTIFICIAL RUPTURE OF MEMBRANES
+73.01   INDUCTION OF LABOR BY ARTIFICIAL RUPTURE OF MEMBRANES
+73.09   OTHER ARTIFICIAL RUPTURE OF MEMBRANES
+73.1   OTHER SURGICAL INDUCTION OF LABOR
+73.2   INTERNAL AND COMBINED VERSION AND EXTRACTION
+73.21   INTERNAL AND COMBINED VERSION WITHOUT EXTRACTION
+73.22   INTERNAL AND COMBINED VERSION WITH EXTRACTION
+73.3   FAILED FORCEPS
+73.4   MEDICAL INDUCTION OF LABOR
+73.5   MANUALLY ASSISTED DELIVERY
+73.51   MANUAL ROTATION OF FETAL HEAD
+73.59   OTHER MANUALLY ASSISTED DELIVERY
+73.6   EPISIOTOMY
+73.8   OPERATIONS ON FETUS TO FACILITATE DELIVERY
+73.9   OTHER OPERATIONS ASSISTING DELIVERY
+73.91   EXTERNAL VERSION ASSISTING DELIVERY
+73.92   REPLACEMENT OF PROLAPSED UMBILICAL CORD
+73.93   INCISION OF CERVIX TO ASSIST DELIVERY
+73.94   PUBIOTOMY TO ASSIST DELIVERY
+73.99   OTHER OPERATIONS ASSISTING DELIVERY
+74.0   CLASSICAL CESAREAN SECTION
+74.1   LOW CERVICAL CESAREAN SECTION
+74.2   EXTRAPERITONEAL CESAREAN SECTION
+74.3   REMOVAL OF EXTRATUBAL ECTOPIC PREGNANCY
+74.4   CESAREAN SECTION OF OTHER SPECIFIED TYPE
+74.9   CESAREAN SECTION OF UNSPECIFIED TYPE
+74.91   HYSTEROTOMY TO TERMINATE PREGNANCY
+74.99   OTHER CESAREAN SECTION OF UNSPECIFIED TYPE
+75.4   MANUAL REMOVAL OF RETAINED PLACENTA
+75.5   REPAIR OF CURRENT OBSTETRIC LACERATION OF UTERUS
+75.6   REPAIR OF OTHER CURRENT OBSTETRIC LACERATION
+75.7   MANUAL EXPLORATION OF UTERINE CAVITY, POSTPARTUM
+75.9   OTHER OBSTETRIC OPERATIONS
+Dx codes 
+650   NORMAL DELIVERY
+660   OBSTRUCTED LABOR
+661   ABNORMALITY OF FORCES OF LABOR
+662   LONG LABOR
+663   UMBILICAL CORD COMPLICATIONS DURING LABOR AND DELIVERY
+664   TRAUMA TO PERINEUM AND VULVA DURING DELIVERY
+665   OTHER OBSTETRICAL TRAUMA
+667   RETAINED PLACENTA OR MEMBRANES WITHOUT HEMORRHAGE
+668   COMPLICATIONS OF THE ADMINISTRATION OF ANESTHETIC OR OTHER SEDATION IN LABOR AND DELIVERY
+669.94   UNSPECIFIED COMPLICATION OF LABOR AND DELIVERY POSTPARTUM CONDITION OR COMPLICATION
+V24   POSTPARTUM CARE AND EXAMINATION
+V24.0   POSTPARTUM CARE AND EXAMINATION IMMEDIATELY AFTER DELIVERY
+V24.1   POSTPARTUM CARE AND EXAMINATION OF LACTATING MOTHER
+V24.2   ROUTINE POSTPARTUM FOLLOW
+V27   OUTCOME OF DELIVERY
+V27.0   MOTHER WITH SINGLE LIVEBORN
+V27.1   MOTHER WITH SINGLE STILLBORN
+V27.2   MOTHER WITH TWINS BOTH LIVEBORN
+V27.3   MOTHER WITH TWINS ONE LIVEBORN AND ONE STILLBORN
+V27.4   MOTHER WITH TWINS BOTH STILLBORN
+V27.5   MOTHER WITH OTHER MULTIPLE BIRTH ALL LIVEBORN
+V27.6   MOTHER WITH OTHER MULTIPLE BIRTH SOME LIVEBORN
+V27.7   MOTHER WITH OTHER MULTIPLE BIRTH ALL STILLBORN
+V27.9   MOTHER WITH UNSPECIFIED OUTCOME OF DELIVERY
+Procedure codes 
+72.0   LOW FORCEPS OPERATION
+72.1   LOW FORCEPS OPERATION WITH EPISIOTOMY
+72.2   MID FORCEPS OPERATION
+72.21   MID FORCEPS OPERATION WITH EPISIOTOMY
+72.29   OTHER MID FORCEPS OPERATION
+72.3   HIGH FORCEPS OPERATION
+72.31   HIGH FORCEPS OPERATION WITH EPISIOTOMY
+72.39   OTHER HIGH FORCEPS OPERATION
+72.4   FORCEPS ROTATION OF FETAL HEAD
+72.5   BREECH EXTRACTION
+72.51   PARTIAL BREECH EXTRACTION WITH FORCEPS TO AFTERCOMING HEAD
+72.52   OTHER PARTIAL BREECH EXTRACTION
+72.53   TOTAL BREECH EXTRACTION WITH FORCEPS TO AFTERCOMING HEAD
+72.54   OTHER TOTAL BREECH EXTRACTION
+72.6   FORCEPS APPLICATION TO AFTERCOMING HEAD
+72.7   VACUUM EXTRACTION
+72.71   VACUUM EXTRACTION WITH EPISIOTOMY
+72.79   OTHER VACUUM EXTRACTION
+72.8   OTHER SPECIFIED INSTRUMENTAL DELIVERY
+72.9   UNSPECIFIED INSTRUMENTAL DELIVERY
+73.0   ARTIFICIAL RUPTURE OF MEMBRANES
+73.01   INDUCTION OF LABOR BY ARTIFICIAL RUPTURE OF MEMBRANES
+73.09   OTHER ARTIFICIAL RUPTURE OF MEMBRANES
+73.1   OTHER SURGICAL INDUCTION OF LABOR
+73.2   INTERNAL AND COMBINED VERSION AND EXTRACTION
+73.21   INTERNAL AND COMBINED VERSION WITHOUT EXTRACTION
+73.22   INTERNAL AND COMBINED VERSION WITH EXTRACTION
+73.3   FAILED FORCEPS
+73.4   MEDICAL INDUCTION OF LABOR
+73.5   MANUALLY ASSISTED DELIVERY
+73.51   MANUAL ROTATION OF FETAL HEAD
+73.59   OTHER MANUALLY ASSISTED DELIVERY
+73.6   EPISIOTOMY
+73.8   OPERATIONS ON FETUS TO FACILITATE DELIVERY
+73.9   OTHER OPERATIONS ASSISTING DELIVERY
+73.91   EXTERNAL VERSION ASSISTING DELIVERY
+73.92   REPLACEMENT OF PROLAPSED UMBILICAL CORD
+73.93   INCISION OF CERVIX TO ASSIST DELIVERY
+73.94   PUBIOTOMY TO ASSIST DELIVERY
+73.99   OTHER OPERATIONS ASSISTING DELIVERY
+74.0   CLASSICAL CESAREAN SECTION
+74.1   LOW CERVICAL CESAREAN SECTION
+74.2   EXTRAPERITONEAL CESAREAN SECTION
+74.3   REMOVAL OF EXTRATUBAL ECTOPIC PREGNANCY
+74.4   CESAREAN SECTION OF OTHER SPECIFIED TYPE
+74.9   CESAREAN SECTION OF UNSPECIFIED TYPE
+74.91   HYSTEROTOMY TO TERMINATE PREGNANCY
+74.99   OTHER CESAREAN SECTION OF UNSPECIFIED TYPE
+75.4   MANUAL REMOVAL OF RETAINED PLACENTA
+75.5   REPAIR OF CURRENT OBSTETRIC LACERATION OF UTERUS
+75.6   REPAIR OF OTHER CURRENT OBSTETRIC LACERATION
+75.7   MANUAL EXPLORATION OF UTERINE CAVITY, POSTPARTUM
+75.9   OTHER OBSTETRIC OPERATIONS
+AFTER PS MATCHINGOptum MarketScan Medicare
+BEFORE PS MATCHING
+The c-statistics for the propensity score model, pre-matching was 0.657. The post-matching c-statistic 
+was 0.52.The c-statistics for the propensity score model, pre-matching was 0.662. The post-matching 
+c-statistic was 0.518.The c-statistics for the propensity score model, pre-matching was 0.651. The post-matching c-statistic 
+was 0.511.
+
+Unmatched
+VariableReference- 2nd 
+Generation SUs Exposure- SitagliptinReference- 2nd 
+Generation SUs Exposure- SitagliptinReference- 2nd 
+Generation SUsExposure- 
+SitagliptinReference- 2nd 
+Generation SUs Exposure- Sitagliptin St. Diff.
+Number of patients                                        117,685                                           29,759 124,594                                       43,306                                          306,304                                     103,677                                                            548,583                                        176,742 
+Age
+...mean (sd) 69.87 (9.37) 69.12 (9.34) 67.93 (10.74) 66.24 (10.14) 75.78 (7.53) 75.65 (7.46) 72.73 (8.76) 72.24 (8.52) 0.06
+...median [IQR] 70.00 [63.00, 77.00] 69.00 [62.00, 76.00] 66.00 [59.00, 77.00] 64.00 [59.00, 74.00] 75.00 [70.00, 81.00] 75.00 [70.00, 81.00] 71.88 (8.76) 71.29 (8.52) 0.07
+Age categories
+...18 - 54; n (%) 7,614 (6.5%) 2,061 (6.9%) 12,188 (9.8%) 4,808 (11.1%) 0 (0.0%) 0 (0.0%) 19,802 (3.6%) 6,869 (3.9%) -0.02
+...55 - 64; n (%) 26,192 (22.3%) 7,381 (24.8%) 45,377 (36.4%) 18,182 (42.0%) 5,258 (1.7%) 1,675 (1.6%) 76,827 (14.0%) 27,238 (15.4%) -0.04
+...65 - 74; n (%) 43,590 (37.0%) 11,349 (38.1%) 29,690 (23.8%) 10,347 (23.9%) 143,586 (46.9%) 49,319 (47.6%) 216,866 (39.5%) 71,015 (40.2%) -0.01
+...>= 75; n (%) 40,289 (34.2%) 8,968 (30.1%) 37,339 (30.0%) 9,969 (23.0%) 157,460 (51.4%) 52,683 (50.8%) 235,088 (42.9%) 71,620 (40.5%) 0.05
+Gender- 
+...Males; n (%) 70,996 (60.3%) 16,783 (56.4%) 78,953 (63.4%) 26,549 (61.3%) 159,873 (52.2%) 49,637 (47.9%) 309,822 (56.5%) 92,969 (52.6%) 0.08
+...Females; n (%) 46,689 (39.7%) 12,976 (43.6%) 45,641 (36.6%) 16,757 (38.7%) 146,431 (47.8%) 54,040 (52.1%) 238,761 (43.5%) 83,773 (47.4%) -0.08
+Race without zero category
+...White; n (%) N/A N/A N/A N/A 243,220 (79.4%) 78,796 (76.0%) 243,220 (79.4%) 78,796 (76.0%) 0.08
+...Black; n (%) N/A N/A N/A N/A 35,871 (11.7%) 12,037 (11.6%) 35,871 (11.7%) 12,037 (11.6%) 0.00
+...Asian; n (%) N/A N/A N/A N/A 7,863 (2.6%) 4,365 (4.2%) 7,863 (2.6%) 4,365 (4.2%) -0.09
+...Hispanic; n (%) N/A N/A N/A N/A 10,197 (3.3%) 4,546 (4.4%) 10,197 (3.3%) 4,546 (4.4%) -0.06
+...North American Native; n (%) N/A N/A N/A N/A 1,936 (0.6%) 527 (0.5%) 1,936 (0.6%) 527 (0.5%) 0.01
+...Other/Unknown; n (%) N/A N/A N/A N/A 7,217 (2.4%) 3,406 (3.3%) 7,217 (2.4%) 3,406 (3.3%) -0.05
+Region-   (lumping missing&other category with West)
+...Northeast; n (%) 11,989 (10.2%) 4,227 (14.2%) 19,997 (16.0%) 9,324 (21.5%) 53,453 (17.5%) 24,496 (23.6%) 85,439 (15.6%) 38,047 (21.5%) -0.15
+...South; n (%) 57,501 (48.9%) 15,058 (50.6%) 40,843 (32.8%) 11,503 (26.6%) 136,902 (44.7%) 42,919 (41.4%) 235,246 (42.9%) 69,480 (39.3%) 0.07
+...Midwest; n (%) 24,332 (20.7%) 5,057 (17.0%) 48,364 (38.8%) 17,570 (40.6%) 72,970 (23.8%) 19,059 (18.4%) 145,666 (26.6%) 41,686 (23.6%) 0.07
+...West; n (%) 23,863 (20.3%) 5,417 (18.2%) 14,184 (11.4%) 4,488 (10.4%) 42,979 (14.0%) 17,203 (16.6%) 81,026 (14.8%) 27,108 (15.3%) -0.01
+...Unknown+missing; n (%) N/A N/A 1,206 (1.0%) 421 (1.0%) N/A N/A 1,206 (1.0%) 421 (1.0%) 0.00
+CV Covariates
+Ischemic heart disease; n (%) 78,804 (67.0%) 19,763 (66.4%) 79,177 (63.5%) 27,756 (64.1%) 208,853 (68.2%) 70,050 (67.6%) 366,834 (66.9%) 117,569 (66.5%) 0.01
+Acute MI; n (%) 7,116 (6.0%) 1,556 (5.2%) 7,950 (6.4%) 2,449 (5.7%) 14,690 (4.8%) 4,757 (4.6%) 29,756 (5.4%) 8,762 (5.0%) 0.02
+ACS/unstable angina; n (%) 6,453 (5.5%) 1,610 (5.4%) 7,089 (5.7%) 2,520 (5.8%) 12,974 (4.2%) 4,714 (4.5%) 26,516 (4.8%) 8,844 (5.0%) -0.01
+Old MI; n (%) 11,986 (10.2%) 2,817 (9.5%) 6,665 (5.3%) 2,069 (4.8%) 31,200 (10.2%) 9,830 (9.5%) 49,851 (9.1%) 14,716 (8.3%) 0.03
+Stable angina; n (%) 9,950 (8.5%) 2,606 (8.8%) 8,129 (6.5%) 3,044 (7.0%) 22,435 (7.3%) 8,273 (8.0%) 40,514 (7.4%) 13,923 (7.9%) -0.02
+Coronary atherosclerosis and other forms of chronic 
+ischemic heart disease; n (%) 74,752 (63.5%) 18,866 (63.4%) 75,286 (60.4%) 26,621 (61.5%) 201,279 (65.7%) 67,394 (65.0%) 351,317 (64.0%) 112,881 (63.9%) 0.00
+Other atherosclerosis with ICD10  ; n (%) 3,467 (2.9%) 858 (2.9%) 3,167 (2.5%) 1,108 (2.6%) 10,599 (3.5%) 3,723 (3.6%) 17,233 (3.1%) 5,689 (3.2%) -0.01
+Previous cardiac procedure (CABG or PTCA or Stent) v4; n 
+(%) 4,865 (4.1%) 1,125 (3.8%) 6,743 (5.4%) 2,291 (5.3%) 7,210 (2.4%) 2,586 (2.5%) 18,818 (3.4%) 6,002 (3.4%) 0.00
+History of CABG or PTCA; n (%) 18,909 (16.1%) 4,629 (15.6%) 9,546 (7.7%) 3,482 (8.0%) 60,080 (19.6%) 19,148 (18.5%) 88,535 (16.1%) 27,259 (15.4%) 0.02
+Any stroke; n (%) 25,490 (21.7%) 6,467 (21.7%) 26,317 (21.1%) 8,740 (20.2%) 73,052 (23.8%) 25,655 (24.7%) 124,859 (22.8%) 40,862 (23.1%) -0.01
+Ischemic stroke (w and w/o mention of cerebral 
+infarction); n (%) 25,318 (21.5%) 6,437 (21.6%) 26,168 (21.0%) 8,684 (20.1%) 72,515 (23.7%) 25,469 (24.6%) 124,001 (22.6%) 40,590 (23.0%) -0.01
+Hemorrhagic stroke; n (%) 785 (0.7%) 181 (0.6%) 821 (0.7%) 273 (0.6%) 2,062 (0.7%) 741 (0.7%) 3,668 (0.7%) 1195 (0.7%) 0.00
+TIA; n (%) 5,153 (4.4%) 1,294 (4.3%) 5,539 (4.4%) 1,696 (3.9%) 14,598 (4.8%) 5,155 (5.0%) 25,290 (4.6%) 8,145 (4.6%) 0.00
+Other cerebrovascular disease; n (%) 5,877 (5.0%) 1,522 (5.1%) 4,899 (3.9%) 1,570 (3.6%) 18,592 (6.1%) 6,646 (6.4%) 29,368 (5.4%) 9,738 (5.5%) 0.00
+Late effects of cerebrovascular disease; n (%) 6,322 (5.4%) 1,505 (5.1%) 4,660 (3.7%) 1,422 (3.3%) 19,216 (6.3%) 6,725 (6.5%) 30,198 (5.5%) 9,652 (5.5%) 0.00
+Cerebrovascular procedure; n (%) 548 (0.5%) 95 (0.3%) 658 (0.5%) 185 (0.4%) 1,139 (0.4%) 370 (0.4%) 2,345 (0.4%) 650 (0.4%) 0.00
+Heart failure (CHF); n (%) 24,633 (20.9%) 5,822 (19.6%) 20,633 (16.6%) 6,241 (14.4%) 74,334 (24.3%) 24,555 (23.7%) 119,600 (21.8%) 36,618 (20.7%) 0.03
+Peripheral Vascular Disease (PVD) or PVD Surgery ; n (%) 17,611 (15.0%) 4,589 (15.4%) 14,270 (11.5%) 4,895 (11.3%) 60,993 (19.9%) 22,399 (21.6%) 92,874 (16.9%) 31,883 (18.0%) -0.03
+Atrial fibrillation; n (%) 17,961 (15.3%) 4,302 (14.5%) 16,153 (13.0%) 5,109 (11.8%) 64,943 (21.2%) 21,134 (20.4%) 99,057 (18.1%) 30,545 (17.3%) 0.02
+Other cardiac dysrhythmia; n (%) 20,210 (17.2%) 5,107 (17.2%) 17,075 (13.7%) 5,812 (13.4%) 67,788 (22.1%) 23,313 (22.5%) 105,073 (19.2%) 34,232 (19.4%) -0.01
+Cardiac conduction disorders; n (%) 6,876 (5.8%) 1,676 (5.6%) 5,401 (4.3%) 1,770 (4.1%) 24,291 (7.9%) 7,964 (7.7%) 36,568 (6.7%) 11,410 (6.5%) 0.01
+Other CVD; n (%) 28,933 (24.6%) 7,152 (24.0%) 26,394 (21.2%) 9,187 (21.2%) 86,701 (28.3%) 29,729 (28.7%) 142,028 (25.9%) 46,068 (26.1%) 0.00
+Diabetes-related complications
+Diabetic retinopathy; n (%) 6,792 (5.8%) 1,907 (6.4%) 4,974 (4.0%) 1,711 (4.0%) 19,459 (6.4%) 7,094 (6.8%) 31,225 (5.7%) 10,712 (6.1%) -0.02
+Diabetes with other ophthalmic manifestations; n (%) 543 (0.5%) 145 (0.5%) 3,717 (3.0%) 1,300 (3.0%) 7,490 (2.4%) 2,860 (2.8%) 11,750 (2.1%) 4,305 (2.4%) -0.02Unmatched
+Optum MarketScan Medicare POOLED
+Retinal detachment, vitreous hemorrhage, vitrectomy; n 
+(%) 502 (0.4%) 149 (0.5%) 425 (0.3%) 169 (0.4%) 1,324 (0.4%) 477 (0.5%) 2,251 (0.4%) 795 (0.4%) 0.00
+Retinal laser coagulation therapy; n (%) 687 (0.6%) 173 (0.6%) 814 (0.7%) 289 (0.7%) 1,636 (0.5%) 625 (0.6%) 3,137 (0.6%) 1,087 (0.6%) 0.00
+Occurrence of Diabetic Neuropathy  ; n (%) 21,372 (18.2%) 5,846 (19.6%) 13,374 (10.7%) 4,906 (11.3%) 61,487 (20.1%) 22,354 (21.6%) 96,233 (17.5%) 33,106 (18.7%) -0.03
+Occurrence of diabetic nephropathy  with ICD10 ; n (%) 17,094 (14.5%) 4,492 (15.1%) 6,872 (5.5%) 2,490 (5.7%) 34,763 (11.3%) 11,686 (11.3%) 58,729 (10.7%) 18,668 (10.6%) 0.00
+Hypoglycemia ; n (%) 4,301 (3.7%) 1,080 (3.6%) 4,669 (3.7%) 1,322 (3.1%) 11,714 (3.8%) 4,268 (4.1%) 20,684 (3.8%) 6,670 (3.8%) 0.00
+Hyperglycemia; n (%) 6,940 (5.9%) 1,796 (6.0%) 4,682 (3.8%) 1,805 (4.2%) 20,768 (6.8%) 7,619 (7.3%) 32,390 (5.9%) 11,220 (6.3%) -0.02
+Disorders of fluid electrolyte and acid-base balance; n (%) 16,879 (14.3%) 4,101 (13.8%) 12,788 (10.3%) 3,971 (9.2%) 51,918 (16.9%) 17,299 (16.7%) 81,585 (14.9%) 25,371 (14.4%) 0.01
+Diabetic ketoacidosis; n (%) 8 (0.0%) 4 (0.0%) 4 (0.0%) 6 (0.0%) 59 (0.0%) 29 (0.0%) 071 (0.0%) 39 (0.0%) #DIV/0!
+Hyperosmolar hyperglycemic nonketotic syndrome 
+(HONK); n (%) 735 (0.6%) 186 (0.6%) 558 (0.4%) 219 (0.5%) 1,883 (0.6%) 782 (0.8%) 3,176 (0.6%) 1,187 (0.7%) -0.01
+Diabetes with peripheral circulatory disorders with ICD-
+10  ; n (%) 10,913 (9.3%) 2,930 (9.8%) 6,325 (5.1%) 2,235 (5.2%) 30,630 (10.0%) 11,331 (10.9%) 47,868 (8.7%) 16,496 (9.3%) -0.02
+Diabetic Foot; n (%) 4,737 (4.0%) 1,128 (3.8%) 4,679 (3.8%) 1,315 (3.0%) 14,480 (4.7%) 4,711 (4.5%) 23,896 (4.4%) 7,154 (4.0%) 0.02
+Gangrene ; n (%) 897 (0.8%) 213 (0.7%) 1,024 (0.8%) 259 (0.6%) 2,075 (0.7%) 645 (0.6%) 3,996 (0.7%) 1117 (0.6%) 0.01
+Lower extremity amputation; n (%) 2,269 (1.9%) 560 (1.9%) 1,606 (1.3%) 406 (0.9%) 5,709 (1.9%) 1,731 (1.7%) 9,584 (1.7%) 2,697 (1.5%) 0.02
+Osteomyelitis; n (%) 1,650 (1.4%) 400 (1.3%) 1,708 (1.4%) 464 (1.1%) 3,949 (1.3%) 1,281 (1.2%) 7,307 (1.3%) 2,145 (1.2%) 0.01
+Skin infections ; n (%) 9,367 (8.0%) 2,364 (7.9%) 9,934 (8.0%) 3,078 (7.1%) 29,857 (9.7%) 10,257 (9.9%) 49,158 (9.0%) 15,699 (8.9%) 0.00
+Erectile dysfunction; n (%) 2,941 (2.5%) 803 (2.7%) 2,179 (1.7%) 898 (2.1%) 6,731 (2.2%) 2,409 (2.3%) 11,851 (2.2%) 4,110 (2.3%) -0.01
+Diabetes with unspecified complication; n (%) 6,237 (5.3%) 1,854 (6.2%) 4,515 (3.6%) 1,863 (4.3%) 16,358 (5.3%) 6,490 (6.3%) 27,110 (4.9%) 10,207 (5.8%) -0.04
+Diabetes mellitus without mention of complications; n 
+(%) 108,490 (92.2%) 27,552 (92.6%) 118,114 (94.8%) 41,128 (95.0%) 291,495 (95.2%) 98,958 (95.4%) 518,099 (94.4%) 167,638 (94.8%) -0.02
+Hypertension: 1 inpatient or 2 outpatient claims within 
+365 days; n (%) 104,710 (89.0%) 26,803 (90.1%) 89,084 (71.5%) 31,959 (73.8%) 289,155 (94.4%) 98,398 (94.9%) 482,949 (88.0%) 157,160 (88.9%) -0.03
+Hyperlipidemia ; n (%) 88,208 (75.0%) 23,829 (80.1%) 66,037 (53.0%) 26,210 (60.5%) 241,943 (79.0%) 85,290 (82.3%) 396,188 (72.2%) 135,329 (76.6%) -0.10
+Edema; n (%) 12,166 (10.3%) 3,160 (10.6%) 8,422 (6.8%) 2,900 (6.7%) 43,638 (14.2%) 15,275 (14.7%) 64,226 (11.7%) 21,335 (12.1%) -0.01
+Renal Dysfunction (non-diabetic) ; n (%) 34,556 (29.4%) 8,697 (29.2%) 24,149 (19.4%) 7,618 (17.6%) 101,983 (33.3%) 33,219 (32.0%) 160,688 (29.3%) 49,534 (28.0%) 0.03
+Occurrence of acute renal disease ; n (%) 9,176 (7.8%) 2,303 (7.7%) 7,529 (6.0%) 2,364 (5.5%) 27,683 (9.0%) 9,014 (8.7%) 44,388 (8.1%) 13,681 (7.7%) 0.01
+Occurrence of chronic renal insufficiency; n (%) 26,299 (22.3%) 6,629 (22.3%) 15,567 (12.5%) 4,810 (11.1%) 80,327 (26.2%) 25,599 (24.7%) 122,193 (22.3%) 37,038 (21.0%) 0.03
+Chronic kidney disease ; n (%) 25,427 (21.6%) 6,414 (21.6%) 15,096 (12.1%) 4,651 (10.7%) 76,724 (25.0%) 24,322 (23.5%) 117,247 (21.4%) 35,387 (20.0%) 0.03
+CKD Stage 3-4; n (%) 16,485 (14.0%) 4,165 (14.0%) 9,049 (7.3%) 2,907 (6.7%) 50,577 (16.5%) 15,911 (15.3%) 76,111 (13.9%) 22,983 (13.0%) 0.03
+Occurrence of hypertensive nephropathy; n (%) 13,898 (11.8%) 3,469 (11.7%) 7,405 (5.9%) 2,248 (5.2%) 44,203 (14.4%) 13,558 (13.1%) 65,506 (11.9%) 19,275 (10.9%) 0.03
+Occurrence of miscellaneous renal insufficiency ; n (%) 11,417 (9.7%) 2,848 (9.6%) 8,521 (6.8%) 2,733 (6.3%) 36,288 (11.8%) 12,083 (11.7%) 56,226 (10.2%) 17,664 (10.0%) 0.01
+Glaucoma or cataracts ; n (%) 22,045 (18.7%) 6,100 (20.5%) 19,768 (15.9%) 7,152 (16.5%) 75,520 (24.7%) 28,078 (27.1%) 117,333 (21.4%) 41,330 (23.4%) -0.05
+Cellulitis or abscess of toe; n (%) 2,530 (2.1%) 580 (1.9%) 1,977 (1.6%) 612 (1.4%) 6,701 (2.2%) 2,284 (2.2%) 11,208 (2.0%) 3,476 (2.0%) 0.00
+Foot ulcer; n (%) 4,764 (4.0%) 1,126 (3.8%) 4,802 (3.9%) 1,346 (3.1%) 14,632 (4.8%) 4,749 (4.6%) 24,198 (4.4%) 7,221 (4.1%) 0.01
+Bladder stones; n (%) 222 (0.2%) 47 (0.2%) 201 (0.2%) 57 (0.1%) 754 (0.2%) 262 (0.3%) 1,177 (0.2%) 366 (0.2%) 0.00
+Kidney stones; n (%) 3,129 (2.7%) 875 (2.9%) 3,063 (2.5%) 1,111 (2.6%) 10,287 (3.4%) 3,806 (3.7%) 16,479 (3.0%) 5,792 (3.3%) -0.02
+Urinary tract infections (UTIs); n (%) 15,015 (12.8%) 3,954 (13.3%) 11,397 (9.1%) 3,910 (9.0%) 58,284 (19.0%) 22,343 (21.6%) 84,696 (15.4%) 30,207 (17.1%) -0.05
+Dipstick urinalysis; n (%) 41,828 (35.5%) 12,029 (40.4%) 36,355 (29.2%) 14,111 (32.6%) 136,259 (44.5%) 50,061 (48.3%) 214,442 (39.1%) 76,201 (43.1%) -0.08
+Non-dipstick urinalysis; n (%) 36,680 (31.2%) 10,741 (36.1%) 24,847 (19.9%) 10,552 (24.4%) 99,581 (32.5%) 36,845 (35.5%) 161,108 (29.4%) 58,138 (32.9%) -0.08
+Urine function test; n (%) 3,685 (3.1%) 966 (3.2%) 4,130 (3.3%) 1,563 (3.6%) 13,705 (4.5%) 5,353 (5.2%) 21,520 (3.9%) 7,882 (4.5%) -0.03
+Cytology; n (%) 2,085 (1.8%) 508 (1.7%) 2,891 (2.3%) 1,038 (2.4%) 6,823 (2.2%) 2,478 (2.4%) 11,799 (2.2%) 4,024 (2.3%) -0.01
+Cystos; n (%) 2,560 (2.2%) 656 (2.2%) 3,232 (2.6%) 1,103 (2.5%) 8,994 (2.9%) 3,007 (2.9%) 14,786 (2.7%) 4,766 (2.7%) 0.00
+Other Covariates
+Liver disease; n (%) 5,430 (4.6%) 1,451 (4.9%) 4,661 (3.7%) 1,750 (4.0%) 14,982 (4.9%) 5,840 (5.6%) 25,073 (4.6%) 9,041 (5.1%) -0.02
+Osteoarthritis; n (%) 21,010 (17.9%) 5,685 (19.1%) 16,332 (13.1%) 5,835 (13.5%) 81,257 (26.5%) 30,002 (28.9%) 118,599 (21.6%) 41,522 (23.5%) -0.05
+Other arthritis, arthropathies and musculoskeletal pain; n 
+(%) 49,144 (41.8%) 13,202 (44.4%) 45,060 (36.2%) 16,081 (37.1%) 161,043 (52.6%) 58,296 (56.2%) 255,247 (46.5%) 87,579 (49.6%) -0.06
+Dorsopathies; n (%) 27,972 (23.8%) 7,679 (25.8%) 24,944 (20.0%) 9,217 (21.3%) 93,330 (30.5%) 33,983 (32.8%) 146,246 (26.7%) 50,879 (28.8%) -0.05
+Fractures; n (%) 5,255 (4.5%) 1,326 (4.5%) 5,354 (4.3%) 1,717 (4.0%) 18,468 (6.0%) 6,509 (6.3%) 29,077 (5.3%) 9,552 (5.4%) 0.00
+Falls ; n (%) 6,284 (5.3%) 1,678 (5.6%) 1,959 (1.6%) 682 (1.6%) 23,069 (7.5%) 8,086 (7.8%) 31,312 (5.7%) 10,446 (5.9%) -0.01
+Osteoporosis; n (%) 6,103 (5.2%) 1,964 (6.6%) 4,918 (3.9%) 1,875 (4.3%) 24,889 (8.1%) 11,921 (11.5%) 35,910 (6.5%) 15,760 (8.9%) -0.09
+Hyperthyroidism; n (%) 847 (0.7%) 274 (0.9%) 612 (0.5%) 277 (0.6%) 3,328 (1.1%) 1,334 (1.3%) 4,787 (0.9%) 1,885 (1.1%) -0.02
+Hypothyroidism ; n (%) 17,253 (14.7%) 5,020 (16.9%) 11,089 (8.9%) 4,678 (10.8%) 50,836 (16.6%) 19,054 (18.4%) 79,178 (14.4%) 28,752 (16.3%) -0.05
+Other disorders of thyroid gland ; n (%) 3,725 (3.2%) 1,301 (4.4%) 3,046 (2.4%) 1,586 (3.7%) 12,920 (4.2%) 5,825 (5.6%) 19,691 (3.6%) 8,712 (4.9%) -0.06
+Depression; n (%) 12,117 (10.3%) 3,389 (11.4%) 9,066 (7.3%) 3,262 (7.5%) 44,576 (14.6%) 16,859 (16.3%) 65,759 (12.0%) 23,510 (13.3%) -0.04
+Anxiety; n (%) 9,087 (7.7%) 2,673 (9.0%) 5,448 (4.4%) 2,120 (4.9%) 34,453 (11.2%) 12,747 (12.3%) 48,988 (8.9%) 17,540 (9.9%) -0.03
+Sleep_Disorder; n (%) 11,137 (9.5%) 3,176 (10.7%) 12,982 (10.4%) 5,001 (11.5%) 33,719 (11.0%) 11,667 (11.3%) 57,838 (10.5%) 19,844 (11.2%) -0.02
+Dementia; n (%) 8,913 (7.6%) 2,271 (7.6%) 6,575 (5.3%) 1,940 (4.5%) 39,772 (13.0%) 14,957 (14.4%) 55,260 (10.1%) 19,168 (10.8%) -0.02
+Delirium; n (%) 3,536 (3.0%) 915 (3.1%) 3,307 (2.7%) 1,004 (2.3%) 13,751 (4.5%) 5,106 (4.9%) 20,594 (3.8%) 7,025 (4.0%) -0.01
+Psychosis; n (%) 2,382 (2.0%) 617 (2.1%) 2,097 (1.7%) 598 (1.4%) 11,025 (3.6%) 3,967 (3.8%) 15,504 (2.8%) 5,182 (2.9%) -0.01
+Obesity; n (%) 18,267 (15.5%) 5,260 (17.7%) 11,002 (8.8%) 4,542 (10.5%) 45,865 (15.0%) 16,121 (15.5%) 75,134 (13.7%) 25,923 (14.7%) -0.03
+Overweight; n (%) 4,108 (3.5%) 1,280 (4.3%) 1,273 (1.0%) 626 (1.4%) 10,394 (3.4%) 3,782 (3.6%) 15,775 (2.9%) 5,688 (3.2%) -0.02
+Smoking; n (%) 18,795 (16.0%) 4,685 (15.7%) 9,206 (7.4%) 3,169 (7.3%) 62,562 (20.4%) 19,676 (19.0%) 90,563 (16.5%) 27,530 (15.6%) 0.02
+Alcohol abuse or dependence; n (%) 1,421 (1.2%) 287 (1.0%) 966 (0.8%) 270 (0.6%) 2,989 (1.0%) 901 (0.9%) 5,376 (1.0%) 1,458 (0.8%) 0.02
+Drug abuse or dependence; n (%) 1,825 (1.6%) 474 (1.6%) 875 (0.7%) 264 (0.6%) 4,320 (1.4%) 1,453 (1.4%) 7,020 (1.3%) 2,191 (1.2%) 0.01
+COPD; n (%) 19,735 (16.8%) 4,681 (15.7%) 15,832 (12.7%) 4,907 (11.3%) 61,237 (20.0%) 20,088 (19.4%) 96,804 (17.6%) 29,676 (16.8%) 0.02
+Asthma; n (%) 7,433 (6.3%) 2,141 (7.2%) 6,080 (4.9%) 2,268 (5.2%) 23,366 (7.6%) 8,761 (8.5%) 36,879 (6.7%) 13,170 (7.5%) -0.03
+Obstructive sleep apnea; n (%) 10,664 (9.1%) 3,106 (10.4%) 10,321 (8.3%) 4,281 (9.9%) 26,855 (8.8%) 9,150 (8.8%) 47,840 (8.7%) 16,537 (9.4%) -0.02
+Pneumonia; n (%) 7,668 (6.5%) 1,657 (5.6%) 7,710 (6.2%) 2,240 (5.2%) 23,525 (7.7%) 7,763 (7.5%) 38,903 (7.1%) 11,660 (6.6%) 0.02
+Imaging; n (%) 634 (0.5%) 128 (0.4%) 394 (0.3%) 119 (0.3%) 1,614 (0.5%) 554 (0.5%) 2,642 (0.5%) 801 (0.5%) 0.00
+Diabetes Medications
+DM Medications - AGIs; n (%) 372 (0.3%) 96 (0.3%) 376 (0.3%) 139 (0.3%) 1,037 (0.3%) 431 (0.4%) 1,785 (0.3%) 666 (0.4%) -0.02
+DM Medications - Glitazones; n (%) 8,229 (7.0%) 2,709 (9.1%) 10,908 (8.8%) 4,523 (10.4%) 12,093 (3.9%) 6,087 (5.9%) 31,230 (5.7%) 13,319 (7.5%) -0.07
+DM Medications - GLP-1 RA; n (%) 509 (0.4%) 191 (0.6%) 563 (0.5%) 188 (0.4%) 850 (0.3%) 342 (0.3%) 1,922 (0.4%) #VALUE! #VALUE!
+DM Medications - Insulin; n (%) 15,960 (13.6%) 5,836 (19.6%) 15,477 (12.4%) 6,702 (15.5%) 49,256 (16.1%) 22,937 (22.1%) 80,693 (14.7%) 35,475 (20.1%) -0.14
+DM Medications - Meglitinides; n (%) 942 (0.8%) 677 (2.3%) 1,640 (1.3%) 1,574 (3.6%) 3,540 (1.2%) 3,201 (3.1%) 6,122 (1.1%) 5,452 (3.1%) -0.14
+DM Medications - Metformin; n (%) 56,560 (48.1%) 17,047 (57.3%) 58,461 (46.9%) 25,481 (58.8%) 135,361 (44.2%) 57,121 (55.1%) 250,382 (45.6%) 99,649 (56.4%) -0.22
+Concomitant initiation or current use of SGLT2i; n (%) 994 (0.8%) 436 (1.5%) 690 (0.6%) 575 (1.3%) 1,805 (0.6%) 1,291 (1.2%) 3,489 (0.6%) 2,302 (1.3%) -0.07
+Concomitant initiation or current use of AGIs; n (%) 253 (0.2%) 64 (0.2%) 280 (0.2%) 92 (0.2%) 704 (0.2%) 304 (0.3%) 1,237 (0.2%) 460 (0.3%) -0.02
+Concomitant initiation or current use of Glitazones; n (%) 5,587 (4.7%) 1,440 (4.8%) 7,210 (5.8%) 2,282 (5.3%) 7,638 (2.5%) 3,431 (3.3%) 20,435 (3.7%) 7,153 (4.0%) -0.02
+Concomitant initiation or current use of GLP-1 RA; n (%) 227 (0.2%) 68 (0.2%) 312 (0.3%) 57 (0.1%) 327 (0.1%) 113 (0.1%) #VALUE! #VALUE! #VALUE!
+Concomitant initiation or current use of Insulin; n (%) 10,116 (8.6%) 3,986 (13.4%) 9,739 (7.8%) 4,333 (10.0%) 31,424 (10.3%) 15,966 (15.4%) 51,279 (9.3%) 24,285 (13.7%) -0.14
+Concomitant initiation or current use of Meglitinides; n 
+(%) 535 (0.5%) 485 (1.6%) 950 (0.8%) 1,104 (2.5%) 2,171 (0.7%) 2,367 (2.3%) 3,656 (0.7%) 3,956 (2.2%) -0.13
+Concomitant initiation or current use of Metformin; n (%) 42,837 (36.4%) 13,655 (45.9%) 44,541 (35.7%) 20,708 (47.8%) 98,310 (32.1%) 44,919 (43.3%) 185,688 (33.8%) 79,282 (44.9%) -0.23
+Past use of SGLT2i; n (%) 445 (0.4%) 209 (0.7%) 315 (0.3%) 214 (0.5%) 1,055 (0.3%) 568 (0.5%) 1,815 (0.3%) 991 (0.6%) -0.04
+Past use of AGIs ; n (%) 119 (0.1%) 32 (0.1%) 96 (0.1%) 47 (0.1%) 333 (0.1%) 127 (0.1%) 548 (0.1%) 206 (0.1%) 0.00
+Past use of Glitazones ; n (%) 2,642 (2.2%) 1,269 (4.3%) 3,699 (3.0%) 2,241 (5.2%) 4,455 (1.5%) 2,656 (2.6%) 10,796 (2.0%) 6,166 (3.5%) -0.09
+Past use of GLP-1 RA ; n (%) 292 (0.2%) 124 (0.4%) 255 (0.2%) 134 (0.3%) 523 (0.2%) 229 (0.2%) 1,070 (0.2%) 487 (0.3%) -0.02
+Past use of Insulin ; n (%) 5,844 (5.0%) 1,850 (6.2%) 5,738 (4.6%) 2,370 (5.5%) 17,835 (5.8%) 6,974 (6.7%) 29,417 (5.4%) 11,194 (6.3%) -0.04
+Past use of Meglitinides ; n (%) 407 (0.3%) 192 (0.6%) 690 (0.6%) 470 (1.1%) 1,369 (0.4%) 834 (0.8%) 2,466 (0.4%) 1,496 (0.8%) -0.05
+Past use of metformin (final) ; n (%) 13,723 (11.7%) 3,392 (11.4%) 13,920 (11.2%) 4,773 (11.0%) 37,051 (12.1%) 12,202 (11.8%) 64,694 (11.8%) 20,367 (11.5%) 0.01
+Other Medications
+Use of ACE inhibitors; n (%) 54,239 (46.1%) 12,202 (41.0%) 56,542 (45.4%) 18,022 (41.6%) 131,273 (42.9%) 40,555 (39.1%) 242,054 (44.1%) 70,779 (40.0%) 0.08
+Use of ARBs; n (%) 25,030 (21.3%) 8,315 (27.9%) 28,565 (22.9%) 12,351 (28.5%) 76,768 (25.1%) 32,742 (31.6%) 130,363 (23.8%) 53,408 (30.2%) -0.14
+Use of Loop Diuretics - ; n (%) 28,952 (24.6%) 6,708 (22.5%) 30,314 (24.3%) 9,013 (20.8%) 93,126 (30.4%) 29,520 (28.5%) 152,392 (27.8%) 45,241 (25.6%) 0.05
+Use of other diuretics- ; n (%) 5,674 (4.8%) 1,464 (4.9%) 6,178 (5.0%) 2,066 (4.8%) 17,047 (5.6%) 5,658 (5.5%) 28,899 (5.3%) 9,188 (5.2%) 0.00
+Use of nitrates-; n (%) 17,689 (15.0%) 4,233 (14.2%) 21,232 (17.0%) 6,834 (15.8%) 52,053 (17.0%) 17,114 (16.5%) 90,974 (16.6%) 28,181 (15.9%) 0.02
+Use of other hypertension drugs; n (%) 12,758 (10.8%) 2,776 (9.3%) 12,657 (10.2%) 3,485 (8.0%) 37,331 (12.2%) 11,366 (11.0%) 62,746 (11.4%) 17,627 (10.0%) 0.05
+Use of digoxin- ; n (%) 5,809 (4.9%) 1,265 (4.3%) 7,057 (5.7%) 2,115 (4.9%) 17,623 (5.8%) 5,746 (5.5%) 30,489 (5.6%) 9,126 (5.2%) 0.02
+Use of Anti-arrhythmics; n (%) 4,023 (3.4%) 1,037 (3.5%) 5,048 (4.1%) 1,661 (3.8%) 13,423 (4.4%) 4,451 (4.3%) 22,494 (4.1%) 7,149 (4.0%) 0.01
+Use of COPD/asthma meds- ; n (%) 18,132 (15.4%) 5,349 (18.0%) 20,060 (16.1%) 7,587 (17.5%) 57,441 (18.8%) 22,852 (22.0%) 95,633 (17.4%) 35,788 (20.2%) -0.07
+Use of statins; n (%) 78,990 (67.1%) 21,287 (71.5%) 84,053 (67.5%) 31,003 (71.6%) 212,184 (69.3%) 75,861 (73.2%) 375,227 (68.4%) 128,151 (72.5%) -0.09
+Use of other lipid-lowering drugs; n (%) 14,917 (12.7%) 4,648 (15.6%) 20,396 (16.4%) 8,393 (19.4%) 36,070 (11.8%) 14,623 (14.1%) 71,383 (13.0%) 27,664 (15.7%) -0.08
+Use of antiplatelet agents; n (%) 32,387 (27.5%) 8,801 (29.6%) 40,482 (32.5%) 14,677 (33.9%) 84,313 (27.5%) 30,711 (29.6%) 157,182 (28.7%) 54,189 (30.7%) -0.04
+Use of oral anticoagulants (Dabigatran, Rivaroxaban, 
+Apixaban, Warfarin); n (%) 13,819 (11.7%) 3,377 (11.3%) 15,147 (12.2%) 4,720 (10.9%) 48,289 (15.8%) 15,695 (15.1%) 77,255 (14.1%) 23,792 (13.5%) 0.02
+Use of heparin and other low-molecular weight heparins; 
+n (%) 1,120 (1.0%) 249 (0.8%) 84 (0.1%) 31 (0.1%) 2,943 (1.0%) 937 (0.9%) 4,147 (0.8%) 1,217 (0.7%) 0.01
+Use of NSAIDs; n (%) 14,354 (12.2%) 4,038 (13.6%) 15,019 (12.1%) 5,782 (13.4%) 42,896 (14.0%) 17,195 (16.6%) 72,269 (13.2%) 27,015 (15.3%) -0.06
+Use of oral corticosteroids; n (%) 20,557 (17.5%) 5,245 (17.6%) 21,988 (17.6%) 7,546 (17.4%) 66,685 (21.8%) 22,585 (21.8%) 109,230 (19.9%) 35,376 (20.0%) 0.00
+Use of bisphosphonate (); n (%) 2,897 (2.5%) 926 (3.1%) 3,145 (2.5%) 1,139 (2.6%) 9,018 (2.9%) 4,530 (4.4%) 15,060 (2.7%) 6,595 (3.7%) -0.06
+Use of opioids- ; n (%) 35,963 (30.6%) 9,123 (30.7%) 40,525 (32.5%) 13,385 (30.9%) 100,549 (32.8%) 33,144 (32.0%) 177,037 (32.3%) 55,652 (31.5%) 0.02
+Use of antidepressants; n (%) 27,916 (23.7%) 7,888 (26.5%) 28,755 (23.1%) 10,402 (24.0%) 86,397 (28.2%) 32,027 (30.9%) 143,068 (26.1%) 50,317 (28.5%) -0.05
+Use of antipsychotics; n (%) 3,309 (2.8%) 989 (3.3%) 3,200 (2.6%) 1,004 (2.3%) 13,359 (4.4%) 5,613 (5.4%) 19,868 (3.6%) 7,606 (4.3%) -0.04
+Use of anticonvulsants; n (%) 19,086 (16.2%) 5,320 (17.9%) 17,058 (13.7%) 6,022 (13.9%) 62,576 (20.4%) 22,838 (22.0%) 98,720 (18.0%) 34,180 (19.3%) -0.03
+Use of lithium- ; n (%) 152 (0.1%) 46 (0.2%) 176 (0.1%) 63 (0.1%) 380 (0.1%) 124 (0.1%) 708 (0.1%) 233 (0.1%) 0.00
+Use of Benzos- ; n (%) 11,453 (9.7%) 3,378 (11.4%) 17,055 (13.7%) 5,882 (13.6%) 37,412 (12.2%) 13,247 (12.8%) 65,920 (12.0%) 22,507 (12.7%) -0.02
+Use of anxiolytics/hypnotics- ; n (%) 7,983 (6.8%) 2,254 (7.6%) 9,769 (7.8%) 3,688 (8.5%) 22,911 (7.5%) 9,271 (8.9%) 40,663 (7.4%) 15,213 (8.6%) -0.04
+Use of dementia meds- ; n (%) 4,036 (3.4%) 1,145 (3.8%) 4,105 (3.3%) 1,213 (2.8%) 20,223 (6.6%) 8,743 (8.4%) 28,364 (5.2%) 11,101 (6.3%) -0.05
+Use of antiparkinsonian meds- ; n (%) 3,220 (2.7%) 916 (3.1%) 3,571 (2.9%) 1,193 (2.8%) 12,914 (4.2%) 4,733 (4.6%) 19,705 (3.6%) 6,842 (3.9%) -0.02
+Any use of pramlintide; n (%) 17 (0.0%) 9 (0.0%) 49 (0.0%) 37 (0.1%) 24 (0.0%) 29 (0.0%) 090 (0.0%) 075 (0.0%) #DIV/0!
+Any use of 1st generation sulfonylureas; n (%) 80 (0.1%) 11 (0.0%) 190 (0.2%) 15 (0.0%) 210 (0.1%) 27 (0.0%) 480 (0.1%) 053 (0.0%) 0.00
+Entresto (sacubitril/valsartan); n (%) 189 (0.2%) 65 (0.2%) 44 (0.0%) 20 (0.0%) 248 (0.1%) 120 (0.1%) 481 (0.1%) 205 (0.1%) 0.00
+Initiation as monotherapy v4 ; n (%) 30,107 (25.6%) 7,242 (24.3%) 29,945 (24.0%) 10,416 (24.1%) 63,712 (20.8%) 20,833 (20.1%) 123,764 (22.6%) 38,491 (21.8%) 0.02
+Labs                                        242,279                                           73,065 
+Lab values- HbA1c (%) ; n (%) 29,636 (25.2%) 8,836 (29.7%) 4,979 (4.0%) 1,899 (4.4%) N/A N/A 34,615 (14.3%) 10,735 (14.7%) -0.01
+Lab values- HbA1c (%) (within 3 months) ; n (%) 22,154 (18.8%) 6,713 (22.6%) 3,792 (3.0%) 1,466 (3.4%) N/A N/A 25,946 (10.7%) 8,179 (11.2%) -0.02
+Lab values- HbA1c (%) (within 6 months) ; n (%) 29,636 (25.2%) 8,836 (29.7%) 4,979 (4.0%) 1,899 (4.4%) N/A N/A 34,615 (14.3%) 10,735 (14.7%) -0.01
+Lab values- BNP; n (%) 1,183 (1.0%) 355 (1.2%) 168 (0.1%) 74 (0.2%) N/A N/A 1,351 (0.6%) 429 (0.6%) 0.00
+Lab values- BNP (within 3 months); n (%) 761 (0.6%) 220 (0.7%) 112 (0.1%) 54 (0.1%) N/A N/A 873 (0.4%) 274 (0.4%) 0.00
+Lab values- BNP (within 6 months); n (%) 1,183 (1.0%) 355 (1.2%) 168 (0.1%) 74 (0.2%) N/A N/A 1,351 (0.6%) 429 (0.6%) 0.00
+Lab values- BUN (mg/dl); n (%) 32,750 (27.8%) 9,782 (32.9%) 4,699 (3.8%) 2,083 (4.8%) N/A N/A 37,449 (15.5%) 11,865 (16.2%) -0.02
+Lab values- BUN (mg/dl) (within 3 months); n (%) 24,568 (20.9%) 7,492 (25.2%) 3,526 (2.8%) 1,589 (3.7%) N/A N/A 28,094 (11.6%) 9,081 (12.4%) -0.02
+Lab values- BUN (mg/dl) (within 6 months); n (%) 32,750 (27.8%) 9,782 (32.9%) 4,699 (3.8%) 2,083 (4.8%) N/A N/A 37,449 (15.5%) 11,865 (16.2%) -0.02
+Lab values- Creatinine (mg/dl) ; n (%) 33,612 (28.6%) 10,026 (33.7%) 4,992 (4.0%) 2,214 (5.1%) N/A N/A 38,604 (15.9%) 12,240 (16.8%) -0.02
+Lab values- Creatinine (mg/dl) (within 3 months) ; n (%) 25,223 (21.4%) 7,691 (25.8%) 3,751 (3.0%) 1,680 (3.9%) N/A N/A 28,974 (12.0%) 9,371 (12.8%) -0.02
+Lab values- Creatinine (mg/dl) (within 6 months) ; n (%) 33,612 (28.6%) 10,026 (33.7%) 4,992 (4.0%) 2,214 (5.1%) N/A N/A 38,604 (15.9%) 12,240 (16.8%) -0.02
+Lab values- HDL level (mg/dl); n (%) 25,367 (21.6%) 7,868 (26.4%) 4,371 (3.5%) 1,733 (4.0%) N/A N/A 29,738 (12.3%) 9,601 (13.1%) -0.02
+Lab values- HDL level (mg/dl) (within 3 months); n (%) 17,842 (15.2%) 5,652 (19.0%) 3,126 (2.5%) 1,273 (2.9%) N/A N/A 20,968 (8.7%) 6,925 (9.5%) -0.03
+Lab values- HDL level (mg/dl) (within 6 months); n (%) 25,367 (21.6%) 7,868 (26.4%) 4,371 (3.5%) 1,733 (4.0%) N/A N/A 29,738 (12.3%) 9,601 (13.1%) -0.02
+Lab values- LDL level (mg/dl) ; n (%) 26,132 (22.2%) 8,058 (27.1%) 4,734 (3.8%) 1,843 (4.3%) N/A N/A 30,866 (12.7%) 9,901 (13.6%) -0.03
+Lab values- LDL level (mg/dl) (within 3 months) ; n (%) 18,361 (15.6%) 5,776 (19.4%) 3,399 (2.7%) 1,353 (3.1%) N/A N/A 21,760 (9.0%) 7,129 (9.8%) -0.03
+Lab values- LDL level (mg/dl) (within 6 months) ; n (%) 26,132 (22.2%) 8,058 (27.1%) 4,734 (3.8%) 1,843 (4.3%) N/A N/A 30,866 (12.7%) 9,901 (13.6%) -0.03
+Lab values- NT-proBNP; n (%) 147 (0.1%) 44 (0.1%) 13 (0.0%) 4 (0.0%) N/A N/A 160 (0.1%) 48 (0.1%) 0.00
+Lab values- NT-proBNP (within 3 months); n (%) 87 (0.1%) 20 (0.1%) 7 (0.0%) 2 (0.0%) N/A N/A 94 (0.0%) 22 (0.0%) -
+Lab values- NT-proBNP (within 6 months); n (%) 147 (0.1%) 44 (0.1%) 13 (0.0%) 4 (0.0%) N/A N/A 160 (0.1%) 48 (0.1%) -
+Lab values- Total cholesterol (mg/dl) ; n (%) 25,813 (21.9%) 7,987 (26.8%) 4,557 (3.7%) 1,811 (4.2%) N/A N/A 30,370 (12.5%) 9,798 (13.4%) -0.03
+Lab values- Total cholesterol (mg/dl) (within 3 months) ; n 
+(%) 18,137 (15.4%) 5,731 (19.3%) 3,255 (2.6%) 1,323 (3.1%) N/A N/A 21,392 (8.8%) 7,054 (9.7%) -0.03
+Lab values- Total cholesterol (mg/dl) (within 6 months) ; n 
+(%) 25,813 (21.9%) 7,987 (26.8%) 4,557 (3.7%) 1,811 (4.2%) N/A N/A 30,370 (12.5%) 9,798 (13.4%) -0.03
+Lab values- Triglyceride level (mg/dl); n (%) 25,491 (21.7%) 7,878 (26.5%) 4,465 (3.6%) 1,779 (4.1%) N/A N/A 29,956 (12.4%) 9,657 (13.2%) -0.02
+Lab values- Triglyceride level (mg/dl) (within 3 months); n 
+(%) 17,919 (15.2%) 5,649 (19.0%) 3,196 (2.6%) 1,307 (3.0%) N/A N/A 21,115 (8.7%) 6,956 (9.5%) -0.03
+Lab values- Triglyceride level (mg/dl) (within 6 months); n 
+(%) 25,491 (21.7%) 7,878 (26.5%) 4,465 (3.6%) 1,779 (4.1%) N/A N/A 29,956 (12.4%) 9,657 (13.2%) -0.02
+Lab result number- HbA1c (%) mean (only 2 to 20 
+included) v4 29,363                                          8,750                                             4,334                                             1,833                                             N/A N/A                                           33,697                                           10,583 
+...mean (sd) 7.89 (1.77) 7.78 (1.69) 8.01 (1.85) 7.92 (1.76) N/A N/A 7.91 (1.78) 7.80 (1.70) 0.06
+...median [IQR] 7.45 [6.70, 8.65] 7.40 [6.60, 8.50] 7.50 [6.70, 8.80] 7.50 [6.70, 8.70] N/A N/A 7.46 (1.78) 7.42 (1.70) 0.02
+...Missing; n (%) 88,322 (75.0%) 21,009 (70.6%) 120,260 (96.5%) 41,473 (95.8%) N/A N/A 208,582 (86.1%) 62,482 (85.5%) 0.02
+Lab result number- BNP mean 1,183                                             355                                                 168                                                 74                                                    N/A N/A                                              1,351                                                  429 
+...mean (sd) 302.70 (552.45) 212.12 (352.66) 339.91 (671.94) 210.76 (314.60) N/A N/A 307.33 (568.82) 211.89 (346.86) 0.20
+...median [IQR] 127.33 [46.80, 331.80] 106.50 [36.60, 238.00] 93.50 [37.50, 330.50] 100.50 [30.75, 261.62] N/A N/A #VALUE! 105.47 (346.86) #VALUE!
+...Missing; n (%) 116,502 (99.0%) 29,404 (98.8%) 124,426 (99.9%) 43,232 (99.8%) N/A N/A 240,928 (99.4%) 72,636 (99.4%) 0.00
+Lab result number- BUN (mg/dl) mean                                           32,750                                              9,782                                              4,699                                              2,083 N/A N/A                                           37,449                                           11,865 
+...mean (sd) 20.84 (10.09) 20.26 (9.38) 705.76 (11,062.74) 217.15 (4,979.06) N/A N/A 106.78 (3918.48) 54.83 (2085.99) 0.02
+...median [IQR] 18.33 [14.50, 24.33] 18.00 [14.00, 23.75] 18.00 [14.00, 23.00] 17.00 [14.00, 22.00] N/A N/A #VALUE! #VALUE! #VALUE!
+...Missing; n (%) 84,935 (72.2%) 19,977 (67.1%) 119,895 (96.2%) 41,223 (95.2%) N/A N/A 204,830 (84.5%) 61,200 (83.8%) 0.02
+Lab result number- Creatinine (mg/dl) mean (only 0.1 to 
+15 included)                                           33,274                                              9,917                                              4,811                                              2,079 N/A N/A                                           38,085                                           11,996 
+...mean (sd) 1.16 (0.58) 1.13 (0.55) 1.11 (0.58) 1.05 (0.51) N/A N/A 1.15 (0.58) 1.12 (0.54) 0.05
+...median [IQR] 1.04 [0.85, 1.31] 1.02 [0.84, 1.28] 1.00 [0.83, 1.22] 0.98 [0.81, 1.15] N/A N/A 1.03 (0.58) 1.01 (0.54) 0.04
+...Missing; n (%) 84,411 (71.7%) 19,842 (66.7%) 119,783 (96.1%) 41,227 (95.2%) N/A N/A 204,194 (84.3%) 61,069 (83.6%) 0.02
+Lab result number- HDL level (mg/dl) mean (only =<5000 
+included)                                           25,367                                              7,868                                              4,357                                              1,732 N/A N/A                                           29,724                                              9,600 
+...mean (sd) 44.55 (13.79) 45.39 (14.02) 44.51 (66.02) 43.66 (14.21) N/A N/A 44.54 (28.30) 45.08 (14.06) -0.02
+...median [IQR] 43.00 [35.50, 52.00] 44.00 [36.00, 53.00] 42.00 [35.00, 50.00] 42.00 [35.00, 51.00] N/A N/A 42.85 (28.30) 43.64 (14.06) -0.04
+...Missing; n (%) 92,318 (78.4%) 21,891 (73.6%) 120,237 (96.5%) 41,574 (96.0%) N/A N/A 212,555 (87.7%) 63,465 (86.9%) 0.02
+Lab result number- LDL level (mg/dl) mean (only =<5000 
+included)                                           25,614                                              7,895                                              4,389                                              1,745 N/A N/A                                           30,003                                              9,640 
+...mean (sd) 85.78 (41.18) 83.18 (39.96) 88.03 (42.48) 86.46 (42.72) N/A N/A 86.11 (41.37) 83.77 (40.48) 0.06
+...median [IQR] 82.00 [61.00, 109.00] 79.40 [59.00, 104.00] 85.00 [62.00, 111.00] 83.00 [62.00, 110.50] N/A N/A 82.44 (41.37) 80.05 (40.48) 0.06
+...Missing; n (%) 92,071 (78.2%) 21,864 (73.5%) 120,205 (96.5%) 41,561 (96.0%) N/A N/A 212,276 (87.6%) 63,425 (86.8%) 0.02
+Lab result number- Total cholesterol (mg/dl) mean (only 
+=<5000 included)                                           25,796                                              7,976                                              4,539                                              1,807 N/A N/A                                           30,335                                              9,783 
+...mean (sd) 170.43 (50.39) 167.26 (48.36) 173.43 (50.55) 171.71 (52.14) N/A N/A 170.88 (50.41) 168.08 (49.08) 0.06
+...median [IQR] 164.00 [138.00, 197.00] 161.00 [136.50, 191.50] 167.00 [141.00, 200.00] 166.00 [140.00, 198.00] N/A N/A 164.45 (50.41) 161.92 (49.08) 0.05
+...Missing; n (%) 91,889 (78.1%) 21,783 (73.2%) 120,055 (96.4%) 41,499 (95.8%) N/A N/A 211,944 (87.5%) 63,282 (86.6%) 0.03
+Lab result number- Triglyceride level (mg/dl) mean (only 
+=<5000 included)                                           25,488                                              7,878                                              4,450                                              1,778 N/A N/A                                           29,938                                              9,656 
+...mean (sd) 185.44 (156.55) 178.86 (148.70) 192.77 (168.94) 192.68 (182.22) N/A N/A 186.53 (158.46) 181.40 (155.42) 0.03
+...median [IQR] 150.00 [107.00, 217.00] 146.00 [104.00, 210.00] 152.25 [109.00, 220.62] 150.00 [106.00, 221.00] N/A N/A 150.33 (158.46) 146.74 (155.42) 0.02
+...Missing; n (%) 92,197 (78.3%) 21,881 (73.5%) 120,144 (96.4%) 41,528 (95.9%) N/A N/A 212,341 (87.6%) 63,409 (86.8%) 0.02
+Lab result number- Hemoglobin mean (only >0 included)                                           23,872                                              7,214                                              3,292                                              1,439 N/A N/A                                           27,164                                              8,653 
+...mean (sd) 13.24 (1.82) 13.26 (1.76) 5,116.60 (195,020.21) 313.03 (6,066.36) N/A N/A 631.72 (67884.51) 63.11 (2473.43) 0.01
+...median [IQR] 13.30 [12.05, 14.50] 13.30 [12.10, 14.50] 13.50 [12.20, 14.65] 13.50 [12.25, 14.70] N/A N/A #VALUE! #VALUE! #VALUE!
+...Missing; n (%) 93,813 (79.7%) 22,545 (75.8%) 121,302 (97.4%) 41,867 (96.7%) N/A N/A 215,115 (88.8%) 64,412 (88.2%) 0.02
+Lab result number- Serum sodium mean (only > 90 and < 
+190 included)                                           32,487                                              9,706                                              4,212                                              1,898 N/A N/A                                           36,699                                           11,604 
+...mean (sd) 139.35 (2.92) 139.52 (2.83) 138.95 (2.86) 139.10 (2.73) N/A N/A 139.30 (2.91) 139.45 (2.81) -0.05
+...median [IQR] 139.50 [138.00, 141.00] 140.00 [138.00, 141.33] 139.00 [137.25, 141.00] 139.00 [137.65, 141.00] N/A N/A 139.44 (2.91) 139.84 (2.81) -0.14
+...Missing; n (%) 85,198 (72.4%) 20,053 (67.4%) 120,382 (96.6%) 41,408 (95.6%) N/A N/A 205,580 (84.9%) 61,461 (84.1%) 0.02
+Lab result number- Albumin mean (only >0 and <=10 
+included)                                           29,792                                              9,021                                              3,808                                              1,707 N/A N/A                                           33,600                                           10,728 
+...mean (sd) 4.16 (0.35) 4.17 (0.35) 4.15 (0.50) 4.14 (0.59) N/A N/A 4.16 (0.37) 4.17 (0.40) -0.03
+...median [IQR] 4.20 [4.00, 4.40] 4.20 [4.00, 4.40] 4.20 [4.00, 4.40] 4.20 [4.00, 4.45] N/A N/A 4.20 (0.37) 4.20 (0.40) 0.00
+...Missing; n (%) 87,893 (74.7%) 20,738 (69.7%) 120,786 (96.9%) 41,599 (96.1%) N/A N/A 208,679 (86.1%) 62,337 (85.3%) 0.02
+Lab result number- Glucose (fasting or random) mean 
+(only 10-1000 included)                                           32,468                                              9,708                                              4,185                                              1,876 N/A N/A                                           36,653                                           11,584 
+...mean (sd) 166.92 (73.20) 161.27 (67.25) 170.78 (75.20) 164.77 (71.73) N/A N/A 167.36 (73.43) 161.84 (68.00) 0.08
+...median [IQR] 148.00 [119.00, 193.00] 144.00 [117.00, 185.00] 151.00 [121.00, 198.75] 145.00 [119.08, 189.00] N/A N/A 148.34 (73.43) 144.16 (68.00) 0.06
+...Missing; n (%) 85,217 (72.4%) 20,051 (67.4%) 120,409 (96.6%) 41,430 (95.7%) N/A N/A 205,626 (84.9%) 61,481 (84.1%) 0.02
+Lab result number- Potassium mean (only 1-7 included)                                           33,114                                              9,891                                              4,624                                              2,044 N/A N/A                                           37,738                                           11,935 
+...mean (sd) 4.45 (0.46) 4.43 (0.45) 4.38 (0.45) 4.38 (0.44) N/A N/A 4.44 (0.46) 4.42 (0.45) 0.04
+...median [IQR] 4.40 [4.15, 4.70] 4.40 [4.12, 4.70] 4.40 [4.10, 4.70] 4.40 [4.10, 4.65] N/A N/A 4.40 (0.46) 4.40 (0.45) 0.00
+...Missing; n (%) 84,571 (71.9%) 19,868 (66.8%) 119,970 (96.3%) 41,262 (95.3%) N/A N/A 204,541 (84.4%) 61,130 (83.7%) 0.02
+Comorbidity Scores
+CCI (180 days)- ICD9 and ICD10 
+...mean (sd) 3.56 (2.35) 3.54 (2.35) 2.65 (2.17) 2.56 (2.12) 4.15 (2.42) 4.19 (2.41) 3.68 (2.35) 3.68 (2.33) 0.00
+...median [IQR] 3.00 [2.00, 5.00] 3.00 [2.00, 5.00] 2.00 [1.00, 4.00] 2.00 [1.00, 4.00] 4.00 [2.00, 6.00] 4.00 [2.00, 6.00] 3.33 (2.35) 3.34 (2.33) 0.00
+Frailty Score: Qualitative Version 365 days as Categories, 
+v1
+...0; n (%) 21,406 (18.2%) 5,871 (19.7%) 6,853 (5.5%) 3,610 (8.3%) 41,807 (13.6%) 15,665 (15.1%) 70,066 (12.8%) 25,146 (14.2%) -0.04
+...1 to 2; n (%) 39,327 (33.4%) 10,519 (35.3%) 51,129 (41.0%) 18,494 (42.7%) 73,716 (24.1%) 24,561 (23.7%) 164,172 (29.9%) 53,574 (30.3%) -0.01
+...3 or more; n (%) 56,952 (48.4%) 13,369 (44.9%) 66,612 (53.5%) 21,202 (49.0%) 190,781 (62.3%) 63,451 (61.2%) 314,345 (57.3%) 98,022 (55.5%) 0.04
+Frailty Score: Empirical Version 365 days as Categories, 
+...< 0.12908; n (%) 5,864 (5.0%) 1,676 (5.6%) 6,888 (5.5%) 2,978 (6.9%) 5,981 (2.0%) 2,264 (2.2%) 18,733 (3.4%) 6,918 (3.9%) -0.03
+...0.12908 - 0.1631167; n (%) 24,734 (21.0%) 6,531 (21.9%) 27,427 (22.0%) 10,535 (24.3%) 31,035 (10.1%) 10,737 (10.4%) 83,196 (15.2%) 27,803 (15.7%) -0.01
+...>= 0.1631167; n (%) 87,087 (74.0%) 21,552 (72.4%) 90,279 (72.5%) 29,793 (68.8%) 269,288 (87.9%) 90,676 (87.5%) 446,654 (81.4%) 142,021 (80.4%) 0.03
+Non-Frailty; n (%) 62,261 (52.9%) 16,998 (57.1%) 58,216 (46.7%) 21,937 (50.7%) 11,446 (3.7%) 3,726 (3.6%) 131,923 (24.0%) 42,661 (24.1%) 0.00
+Frailty Score (mean): Qualitative Version 365 days, v1
+...mean (sd) 2.97 (2.65) 2.75 (2.55) 3.19 (2.29) 2.94 (2.24) 3.78 (2.89) 3.74 (2.95) 3.47 (2.71) 3.38 (2.73) 0.03
+...median [IQR] 2.00 [1.00, 4.00] 2.00 [1.00, 4.00] 3.00 [2.00, 4.00] 2.00 [1.00, 4.00] 3.00 [1.00, 6.00] 3.00 [1.00, 6.00] 2.79 (2.71) 2.59 (2.73) 0.07
+Frailty Score (mean): Empirical Version 365 days, 
+...mean (sd) 0.18 (0.07) 0.17 (0.07) 0.20 (0.06) 0.19 (0.06) 0.24 (0.08) 0.25 (0.08) 0.22 (0.07) 0.22 (0.07) 0.00
+...median [IQR] 0.17 [0.13, 0.22] 0.16 [0.12, 0.21] 0.18 [0.15, 0.22] 0.18 [0.15, 0.21] 0.23 [0.19, 0.29] 0.23 [0.19, 0.29] 0.21 (0.07) 0.21 (0.07) 0.00
+Healthcare Utilization
+Any hospitalization; n (%) 31,029 (26.4%) 6,773 (22.8%) 38,526 (30.9%) 11,231 (25.9%) 85,357 (27.9%) 27,777 (26.8%) 154,912 (28.2%) 45,781 (25.9%) 0.05
+Any hospitalization within prior 30 days; n (%) 14,219 (12.1%) 2,902 (9.8%) 16,906 (13.6%) 4,526 (10.5%) 33,515 (10.9%) 10,979 (10.6%) 64,640 (11.8%) 18,407 (10.4%) 0.04
+Any hospitalization during prior 31-180 days; n (%) 19,490 (16.6%) 4,538 (15.2%) 24,550 (19.7%) 7,488 (17.3%) 60,385 (19.7%) 19,677 (19.0%) 104,425 (19.0%) 31,703 (17.9%) 0.03
+Endocrinologist Visit; n (%) 7,995 (6.8%) 3,571 (12.0%) 8,438 (6.8%) 5,272 (12.2%) 25,598 (8.4%) 13,439 (13.0%) 42,031 (7.7%) 22,282 (12.6%) -0.16
+Endocrinologist Visit (30 days prior); n (%) 4,658 (4.0%) 2,186 (7.3%) 5,059 (4.1%) 3,405 (7.9%) 13,779 (4.5%) 7,806 (7.5%) 23,496 (4.3%) 13,397 (7.6%) -0.14
+Endocrinologist Visit (31 to 180 days prior); n (%) 5,356 (4.6%) 2,429 (8.2%) 5,416 (4.3%) 3,438 (7.9%) 18,906 (6.2%) 9,468 (9.1%) 29,678 (5.4%) 15,335 (8.7%) -0.13
+Internal medicine/family medicine visits; n (%) 102,084 (86.7%) 25,865 (86.9%) 102,764 (82.5%) 36,903 (85.2%) 266,343 (87.0%) 90,264 (87.1%) 471,191 (85.9%) 153,032 (86.6%) -0.02
+Internal medicine/family medicine visits (30 days prior) ; 
+n (%) 76,112 (64.7%) 19,520 (65.6%) 74,503 (59.8%) 26,903 (62.1%) 188,745 (61.6%) 65,647 (63.3%) 339,360 (61.9%) 112,070 (63.4%) -0.03
+Internal medicine/family medicine visits (31 to 180 days 
+prior) ; n (%) 89,538 (76.1%) 23,378 (78.6%) 89,891 (72.1%) 32,962 (76.1%) 237,761 (77.6%) 81,893 (79.0%) 417,190 (76.0%) 138,233 (78.2%) -0.05
+Cardiologist visit; n (%) 64,077 (54.4%) 16,806 (56.5%) 57,020 (45.8%) 21,383 (49.4%) 183,503 (59.9%) 63,025 (60.8%) 304,600 (55.5%) 101,214 (57.3%) -0.04
+Number of Cardiologist visits (30 days prior); n (%) 27,683 (23.5%) 6,944 (23.3%) 22,417 (18.0%) 8,351 (19.3%) 72,663 (23.7%) 25,568 (24.7%) 122,763 (22.4%) 40,863 (23.1%) -0.02
+Number of Cardiologist visits (31 to 180 days prior); n (%) 52,002 (44.2%) 14,115 (47.4%) 48,005 (38.5%) 18,177 (42.0%) 157,097 (51.3%) 54,253 (52.3%) 257,104 (46.9%) 86,545 (49.0%) -0.04
+Electrocardiogram ; n (%) 60,155 (51.1%) 15,717 (52.8%) 62,346 (50.0%) 22,093 (51.0%) 168,509 (55.0%) 59,129 (57.0%) 291,010 (53.0%) 96,939 (54.8%) -0.04
+Use of glucose test strips; n (%) 5,000 (4.2%) 1,539 (5.2%) 4,866 (3.9%) 2,007 (4.6%) 12,883 (4.2%) 4,655 (4.5%) 22,749 (4.1%) 8,201 (4.6%) -0.02
+Dialysis; n (%) 775 (0.7%) 122 (0.4%) 849 (0.7%) 225 (0.5%) 4,837 (1.6%) 1,196 (1.2%) 6,461 (1.2%) 1,543 (0.9%) 0.03
+Naive new user v8 ; n (%) 49,305 (41.9%) 10,730 (36.1%) 51,732 (41.5%) 15,574 (36.0%) 110,966 (36.2%) 33,036 (31.9%) 212,003 (38.6%) 59,340 (33.6%) 0.10
+N antidiabetic drugs at index date  
+...mean (sd) 1.52 (0.62) 1.68 (0.66) 1.51 (0.63) 1.67 (0.66) 1.47 (0.60) 1.66 (0.66) 1.49 (0.61) 1.67 (0.66) -0.28
+...median [IQR] 1.00 [1.00, 2.00] 2.00 [1.00, 2.00] 1.00 [1.00, 2.00] 2.00 [1.00, 2.00] 1.00 [1.00, 2.00] 2.00 [1.00, 2.00] 1.00 (0.61) 2.00 (0.66) -1.57
+number of different/distinct medication prescriptions
+...mean (sd) 10.39 (5.16) 11.20 (5.60) 10.53 (5.16) 10.84 (5.32) 10.98 (5.02) 11.85 (5.55) 10.75 (5.08) 11.49 (5.50) -0.14
+...median [IQR] 10.00 [7.00, 13.00] 10.00 [7.00, 14.00] 10.00 [7.00, 13.00] 10.00 [7.00, 14.00] 10.00 [7.00, 14.00] 11.00 [8.00, 15.00] 10.00 (5.08) 10.59 (5.50) -0.11
+Number of Hospitalizations
+...mean (sd) 0.35 (0.68) 0.30 (0.65) 0.39 (0.68) 0.32 (0.63) 0.40 (0.77) 0.39 (0.77) 0.39 (0.73) 0.36 (0.72) 0.04
+...median [IQR] 0.00 [0.00, 1.00] 0.00 [0.00, 0.00] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 (0.73) 0.00 (0.72) 0.00
+Number of hospital days
+...mean (sd) 2.18 (6.04) 1.95 (6.01) 2.59 (7.05) 2.15 (6.52) 2.67 (6.96) 2.72 (7.33) 2.55 (6.79) 2.45 (6.93) 0.01
+...median [IQR] 0.00 [0.00, 2.00] 0.00 [0.00, 0.00] 0.00 [0.00, 3.00] 0.00 [0.00, 2.00] 0.00 [0.00, 3.00] 0.00 [0.00, 3.00] 0.00 (6.79) 0.00 (6.93) 0.00
+Number of Emergency Department (ED) visits 
+...mean (sd) 0.76 (1.72) 0.74 (1.78) 0.59 (2.49) 0.49 (2.23) 1.03 (2.00) 0.98 (2.10) 0.87 (2.07) 0.82 (2.08) 0.02
+...median [IQR] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 2.00] 0.00 [0.00, 2.00] 0.00 (2.07) 0.00 (2.08) 0.00
+Number of Office visits
+...mean (sd) 5.74 (4.68) 6.30 (4.81) 6.02 (5.08) 6.41 (4.84) 6.56 (5.19) 7.04 (5.47) 6.26 (5.06) 6.76 (5.21) -0.10
+...median [IQR] 5.00 [3.00, 8.00] 5.00 [3.00, 8.00] 5.00 [3.00, 8.00] 5.00 [3.00, 8.00] 5.00 [3.00, 9.00] 6.00 [3.00, 10.00] 5.00 (5.06) 5.59 (5.21) -0.11
+Number of Endocrinologist visits
+...mean (sd) 0.31 (1.81) 0.59 (2.52) 0.31 (1.79) 0.62 (2.88) 0.46 (2.57) 0.77 (3.65) 0.39 (2.26) 0.70 (3.30) -0.11
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 (2.26) 0.00 (3.30) 0.00
+Number of internal medicine/family medicine visits
+...mean (sd) 11.67 (16.93) 11.94 (16.11) 8.17 (12.67) 8.75 (12.69) 10.19 (12.62) 10.90 (13.48) 10.05 (13.67) 10.55 (13.77) -0.04
+...median [IQR] 7.00 [2.00, 15.00] 7.00 [3.00, 15.00] 5.00 [1.00, 10.00] 5.00 [2.00, 11.00] 6.00 [2.00, 14.00] 7.00 [3.00, 15.00] 5.99 (13.67) 6.51 (13.77) -0.04
+Number of Cardiologist visits
+...mean (sd) 3.58 (6.52) 3.72 (6.54) 2.48 (4.91) 2.73 (5.15) 3.71 (6.44) 3.95 (6.94) 3.40 (6.14) 3.61 (6.48) -0.03
+...median [IQR] 1.00 [0.00, 4.00] 1.00 [0.00, 5.00] 0.00 [0.00, 3.00] 0.00 [0.00, 3.00] 1.00 [0.00, 5.00] 1.00 [0.00, 5.00] 0.77 (6.14) 0.75 (6.48) 0.00
+Number electrocardiograms received 
+...mean (sd) 1.28 (2.15) 1.32 (2.27) 1.08 (1.70) 1.08 (1.70) 1.38 (2.03) 1.43 (2.07) 1.29 (1.99) 1.33 (2.02) -0.02
+...median [IQR] 1.00 [0.00, 2.00] 1.00 [0.00, 2.00] 1.00 [0.00, 1.00] 1.00 [0.00, 1.00] 1.00 [0.00, 2.00] 1.00 [0.00, 2.00] 1.00 (1.99) 1.00 (2.02) 0.00
+Number of HbA1c tests ordered
+...mean (sd) 1.04 (0.93) 1.21 (0.97) 0.69 (0.87) 0.83 (0.92) 1.23 (0.93) 1.36 (1.00) 1.07 (0.92) 1.20 (0.98) -0.14
+...median [IQR] 1.00 [0.00, 2.00] 1.00 [1.00, 2.00] 0.00 [0.00, 1.00] 1.00 [0.00, 1.00] 1.00 [1.00, 2.00] 1.00 [1.00, 2.00] 0.77 (0.92) 1.00 (0.98) -0.24
+Number of glucose tests ordered
+...mean (sd) 0.61 (3.51) 0.82 (5.19) 0.44 (1.85) 0.49 (1.71) 0.49 (1.24) 0.56 (1.29) 0.50 (2.07) 0.59 (2.50) -0.04
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 1.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 (2.07) 0.00 (2.50) 0.00
+Number of lipid tests ordered
+...mean (sd) 0.87 (0.99) 1.04 (1.08) 0.64 (1.15) 0.78 (1.21) 0.92 (0.89) 1.06 (0.95) 0.85 (0.98) 0.99 (1.04) -0.14
+...median [IQR] 1.00 [0.00, 1.00] 1.00 [0.00, 2.00] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 1.00 [0.00, 1.00] 1.00 [0.00, 2.00] 0.77 (0.98) 0.75 (1.04) 0.02
+Number of creatinine tests ordered
+...mean (sd) 0.10 (0.50) 0.10 (0.46) 0.12 (0.57) 0.09 (0.44) 0.15 (0.62) 0.13 (0.54) 0.13 (0.58) 0.12 (0.50) 0.02
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 (0.58) 0.00 (0.50) 0.00
+Number of BUN tests ordered
+...mean (sd) 0.07 (0.56) 0.07 (0.50) 0.09 (0.57) 0.07 (0.44) 0.11 (0.57) 0.09 (0.49) 0.10 (0.57) 0.08 (0.48) 0.04
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 (0.57) 0.00 (0.48) 0.00
+Number of tests for microalbuminuria
+...mean (sd) 0.55 (1.04) 0.66 (1.15) 0.31 (0.79) 0.40 (0.92) 0.38 (0.72) 0.43 (0.77) 0.40 (0.81) 0.46 (0.88) -0.07
+...median [IQR] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 (0.81) 0.00 (0.88) 0.00
+Total N distinct ICD9/ICD10 diagnoses at the 3rd digit 
+level 
+...mean (sd) 6.83 (9.63) 7.34 (10.38) 3.54 (7.30) 3.64 (7.42) 9.10 (11.55) 9.58 (11.86) 7.35 (10.32) 7.75 (10.68) -0.04
+...median [IQR] 4.00 [0.00, 10.00] 4.00 [0.00, 11.00] 0.00 [0.00, 4.00] 0.00 [0.00, 4.00] 5.00 [0.00, 14.00] 5.00 [0.00, 15.00] 3.65 (10.32) 3.61 (10.68) 0.00
+Use of thiazide; n (%) 14,035 (11.9%) 3,360 (11.3%) 14,093 (11.3%) 4,532 (10.5%) 38,970 (12.7%) 12,451 (12.0%) 67,098 (12.2%) 20,343 (11.5%) 0.02
+Use of beta blockers; n (%) 67,251 (57.1%) 16,807 (56.5%) 73,540 (59.0%) 25,059 (57.9%) 189,722 (61.9%) 63,832 (61.6%) 330,513 (60.2%) 105,698 (59.8%) 0.01
+Use of calcium channel blockers; n (%) 36,173 (30.7%) 9,328 (31.3%) 37,784 (30.3%) 12,933 (29.9%) 108,802 (35.5%) 37,734 (36.4%) 182,759 (33.3%) 59,995 (33.9%) -0.01
+VariableReference- 2nd 
+Generation SUs Exposure- SitagliptinReference- 2nd 
+Generation SUs Exposure- SitagliptinReference- 2nd 
+Generation SUs Exposure- SitagliptinReference- 2nd 
+Generation SUs Exposure- Sitagliptin St. Diff.
+Number of patients 29727 29727 42600 42600 102411 102411                                        174,738                                        174,738 
+Age
+...mean (sd) 69.12 (9.30) 69.12 (9.34) 66.33 (10.33) 66.30 (10.16) 75.64 (7.48) 75.65 (7.46) 72.26 (8.57) 72.26 (8.52) 0.00
+...median [IQR] 69.00 [62.00, 76.00] 69.00 [62.00, 76.00] 64.00 [58.00, 74.00] 64.00 [59.00, 74.00] 75.00 [69.00, 81.00] 75.00 [70.00, 81.00] 71.30 (8.57) 71.30 (8.52) 0.00
+Age categories
+...18 - 54; n (%) 2,134 (7.2%) 2,058 (6.9%) 4,943 (11.6%) 4,689 (11.0%) 0 (0.0%) 0 (0.0%) 7,077 (4.1%) 6,747 (3.9%) 0.01
+...55 - 64; n (%) 7,091 (23.9%) 7,372 (24.8%) 17,575 (41.3%) 17,810 (41.8%) 1,639 (1.6%) 1,663 (1.6%) 26,305 (15.1%) 26,845 (15.4%) -0.01
+...65 - 74; n (%) 11,421 (38.4%) 11,335 (38.1%) 9,824 (23.1%) 10,211 (24.0%) 48,995 (47.8%) 48,760 (47.6%) 70,240 (40.2%) 70,306 (40.2%) 0.00
+...>= 75; n (%) 9,081 (30.5%) 8,962 (30.1%) 10,258 (24.1%) 9,890 (23.2%) 51,777 (50.6%) 51,988 (50.8%) 71,116 (40.7%) 70,840 (40.5%) 0.00
+Gender- 
+...Males; n (%) 16,707 (56.2%) 16,770 (56.4%) 26,043 (61.1%) 26,160 (61.4%) 48,955 (47.8%) 49,246 (48.1%) 91,705 (52.5%) 92,176 (52.8%) -0.01
+...Females; n (%) 13,020 (43.8%) 12,957 (43.6%) 16,557 (38.9%) 16,440 (38.6%) 53,456 (52.2%) 53,165 (51.9%) 83,033 (47.5%) 82,562 (47.2%) 0.01
+Race without zero category
+...White; n (%) N/A N/A N/A N/A 78,029 (76.2%) 78,110 (76.3%) 78,029 (76.2%) 78,110 (76.3%) 0.00
+...Black; n (%) N/A N/A N/A N/A 11,990 (11.7%) 11,921 (11.6%) 11,990 (11.7%) 11,921 (11.6%) 0.00
+...Asian; n (%) N/A N/A N/A N/A 4,049 (4.0%) 4,135 (4.0%) 4,049 (4.0%) 4,135 (4.0%) 0.00
+...Hispanic; n (%) N/A N/A N/A N/A 4,455 (4.4%) 4,419 (4.3%) 4,455 (4.4%) 4,419 (4.3%) 0.00
+...North American Native; n (%) N/A N/A N/A N/A 507 (0.5%) 527 (0.5%) 507 (0.5%) 527 (0.5%) 0.00
+...Other/Unknown; n (%) N/A N/A N/A N/A 3,381 (3.3%) 3,299 (3.2%) 3,381 (3.3%) 3,299 (3.2%) 0.01
+Region-   (lumping missing&other category with 
+West)
+...Northeast; n (%) 4,282 (14.4%) 4,214 (14.2%) 9,061 (21.3%) 9,017 (21.2%) 23,934 (23.4%) 23,883 (23.3%) 37,277 (21.3%) 37,114 (21.2%) 0.00
+...South; n (%) 14,991 (50.4%) 15,045 (50.6%) 11,460 (26.9%) 11,433 (26.8%) 42,802 (41.8%) 42,665 (41.7%) 69,253 (39.6%) 69,143 (39.6%) 0.00
+...Midwest; n (%) 4,983 (16.8%) 5,055 (17.0%) 17,261 (40.5%) 17,306 (40.6%) 19,090 (18.6%) 19,020 (18.6%) 41,334 (23.7%) 41,381 (23.7%) 0.00
+...West; n (%) 5,471 (18.4%) 5,413 (18.2%) 4,420 (10.4%) 4,425 (10.4%) 16,585 (16.2%) 16,843 (16.4%) 26,476 (15.2%) 26,681 (15.3%) 0.00
+...Unknown+missing; n (%) N/A N/A 398 (0.9%) 419 (1.0%) N/A N/A 398 (0.9%) 419 (1.0%) -0.01
+CV Covariates
+Ischemic heart disease; n (%) 19,747 (66.4%) 19,742 (66.4%) 27,261 (64.0%) 27,300 (64.1%) 69,177 (67.5%) 69,239 (67.6%) 116,185 (66.5%) 116,281 (66.5%) 0.00
+Acute MI; n (%) 1,484 (5.0%) 1,555 (5.2%) 2,434 (5.7%) 2,420 (5.7%) 4,732 (4.6%) 4,708 (4.6%) 8,650 (5.0%) 8,683 (5.0%) 0.00
+ACS/unstable angina; n (%) 1,542 (5.2%) 1,607 (5.4%) 2,448 (5.7%) 2,483 (5.8%) 4,573 (4.5%) 4,651 (4.5%) 8,563 (4.9%) 8,741 (5.0%) 0.00
+Old MI; n (%) 2,812 (9.5%) 2,811 (9.5%) 2,027 (4.8%) 2,046 (4.8%) 9,882 (9.6%) 9,759 (9.5%) 14,721 (8.4%) 14,616 (8.4%) 0.00
+Stable angina; n (%) 2,591 (8.7%) 2,601 (8.7%) 3,005 (7.1%) 2,982 (7.0%) 8,120 (7.9%) 8,137 (7.9%) 13,716 (7.8%) 13,720 (7.9%) 0.00
+Coronary atherosclerosis and other forms of chronic 
+ischemic heart disease; n (%) 18,771 (63.1%) 18,846 (63.4%) 26,077 (61.2%) 26,181 (61.5%) 66,512 (64.9%) 66,608 (65.0%) 111,360 (63.7%) 111,635 (63.9%) 0.00
+Other atherosclerosis with ICD10  ; n (%) 790 (2.7%) 858 (2.9%) 1,074 (2.5%) 1,092 (2.6%) 3,628 (3.5%) 3,676 (3.6%) 5,492 (3.1%) 5,626 (3.2%) -0.01
+Previous cardiac procedure (CABG or PTCA or Stent) 
+v4; n (%) 1,030 (3.5%) 1,123 (3.8%) 2,130 (5.0%) 2,269 (5.3%) 2,370 (2.3%) 2,554 (2.5%) 5,530 (3.2%) 5,946 (3.4%) -0.01
+History of CABG or PTCA; n (%) 4,453 (15.0%) 4,624 (15.6%) 3,519 (8.3%) 3,414 (8.0%) 19,111 (18.7%) 18,973 (18.5%) 27,083 (15.5%) 27,011 (15.5%) 0.00
+Any stroke; n (%) 6,435 (21.6%) 6,459 (21.7%) 8,532 (20.0%) 8,599 (20.2%) 25,540 (24.9%) 25,325 (24.7%) 40,507 (23.2%) 40,383 (23.1%) 0.00
+Ischemic stroke (w and w/o mention of cerebral 
+infarction); n (%) 6,395 (21.5%) 6,429 (21.6%) 8,476 (19.9%) 8,544 (20.1%) 25,344 (24.7%) 25,140 (24.5%) 40,215 (23.0%) 40,113 (23.0%) 0.00
+Hemorrhagic stroke; n (%) 153 (0.5%) 181 (0.6%) 267 (0.6%) 269 (0.6%) 731 (0.7%) 734 (0.7%) 1,151 (0.7%) 1,184 (0.7%) 0.00
+TIA; n (%) 1,271 (4.3%) 1,290 (4.3%) 1,638 (3.8%) 1,664 (3.9%) 5,051 (4.9%) 5,085 (5.0%) 7,960 (4.6%) 8,039 (4.6%) 0.00
+Other cerebrovascular disease; n (%) 1,504 (5.1%) 1,522 (5.1%) 1,619 (3.8%) 1,534 (3.6%) 6,569 (6.4%) 6,547 (6.4%) 9,692 (5.5%) 9,603 (5.5%) 0.00
+Late effects of cerebrovascular disease; n (%) 1,537 (5.2%) 1,504 (5.1%) 1,428 (3.4%) 1,404 (3.3%) 6,846 (6.7%) 6,639 (6.5%) 9,811 (5.6%) 9,547 (5.5%) 0.00
+Cerebrovascular procedure; n (%) 121 (0.4%) 95 (0.3%) 185 (0.4%) 183 (0.4%) 347 (0.3%) 366 (0.4%) 653 (0.4%) 644 (0.4%) 0.00
+Heart failure (CHF); n (%) 5,804 (19.5%) 5,818 (19.6%) 6,286 (14.8%) 6,163 (14.5%) 24,326 (23.8%) 24,239 (23.7%) 36,416 (20.8%) 36,220 (20.7%) 0.00
+Peripheral Vascular Disease (PVD) or PVD Surgery ; n 
+(%) 4,609 (15.5%) 4,584 (15.4%) 4,885 (11.5%) 4,787 (11.2%) 22,088 (21.6%) 22,005 (21.5%) 31,582 (18.1%) 31,376 (18.0%) 0.00
+Atrial fibrillation; n (%) 4,253 (14.3%) 4,299 (14.5%) 5,058 (11.9%) 5,049 (11.9%) 21,032 (20.5%) 20,931 (20.4%) 30,343 (17.4%) 30,279 (17.3%) 0.00
+Other cardiac dysrhythmia; n (%) 5,074 (17.1%) 5,103 (17.2%) 5,630 (13.2%) 5,736 (13.5%) 23,178 (22.6%) 23,020 (22.5%) 33,882 (19.4%) 33,859 (19.4%) 0.00
+Cardiac conduction disorders; n (%) 1,629 (5.5%) 1,675 (5.6%) 1,733 (4.1%) 1,742 (4.1%) 8,051 (7.9%) 7,876 (7.7%) 11,413 (6.5%) 11,293 (6.5%) 0.00
+Other CVD; n (%) 7,186 (24.2%) 7,142 (24.0%) 9,007 (21.1%) 9,016 (21.2%) 29,402 (28.7%) 29,351 (28.7%) 45,595 (26.1%) 45,509 (26.0%) 0.00
+Diabetes-related complications
+Diabetic retinopathy; n (%) 1,918 (6.5%) 1,899 (6.4%) 1,668 (3.9%) 1,667 (3.9%) 6,863 (6.7%) 6,927 (6.8%) 10,449 (6.0%) 10,493 (6.0%) 0.00
+Diabetes with other ophthalmic manifestations; n 
+(%) 167 (0.6%) 145 (0.5%) 1,278 (3.0%) 1,276 (3.0%) 2,810 (2.7%) 2,793 (2.7%) 4,255 (2.4%) 4,214 (2.4%) 0.00Optum PS-matched
+MarketScan Medicare POOLED
+Retinal detachment, vitreous hemorrhage, 
+vitrectomy; n (%) 135 (0.5%) 149 (0.5%) 133 (0.3%) 166 (0.4%) 425 (0.4%) 464 (0.5%) 693 (0.4%) 779 (0.4%) 0.00
+Retinal laser coagulation therapy; n (%) 182 (0.6%) 173 (0.6%) 260 (0.6%) 284 (0.7%) 580 (0.6%) 607 (0.6%) 1,022 (0.6%) 1,064 (0.6%) 0.00
+Occurrence of Diabetic Neuropathy  ; n (%) 5,913 (19.9%) 5,840 (19.6%) 4,816 (11.3%) 4,778 (11.2%) 22,008 (21.5%) 21,921 (21.4%) 32,737 (18.7%) 32,539 (18.6%) 0.00
+Occurrence of diabetic nephropathy  with ICD10 ; n 
+(%) 4,521 (15.2%) 4,484 (15.1%) 2,463 (5.8%) 2,421 (5.7%) 11,652 (11.4%) 11,510 (11.2%) 18,636 (10.7%) 18,415 (10.5%) 0.01
+Hypoglycemia ; n (%) 1,110 (3.7%) 1,077 (3.6%) 1,283 (3.0%) 1,306 (3.1%) 4,201 (4.1%) 4,170 (4.1%) 6,594 (3.8%) 6,553 (3.8%) 0.00
+Hyperglycemia; n (%) 1,789 (6.0%) 1,795 (6.0%) 1,763 (4.1%) 1,772 (4.2%) 7,494 (7.3%) 7,515 (7.3%) 11,046 (6.3%) 11,082 (6.3%) 0.00
+Disorders of fluid electrolyte and acid-base balance; n 
+(%) 3,986 (13.4%) 4,093 (13.8%) 3,893 (9.1%) 3,929 (9.2%) 17,450 (17.0%) 17,131 (16.7%) 25,329 (14.5%) 25,153 (14.4%) 0.00
+Diabetic ketoacidosis; n (%) 3 (0.0%) 4 (0.0%) 2 (0.0%) 6 (0.0%) 31 (0.0%) 29 (0.0%) 036 (0.0%) 039 (0.0%) #DIV/0!
+Hyperosmolar hyperglycemic nonketotic syndrome 
+(HONK); n (%) 180 (0.6%) 186 (0.6%) 201 (0.5%) 207 (0.5%) 751 (0.7%) 762 (0.7%) 1,132 (0.6%) 1,155 (0.7%) -0.01
+Diabetes with peripheral circulatory disorders with 
+ICD-10  ; n (%) 2,922 (9.8%) 2,927 (9.8%) 2,271 (5.3%) 2,171 (5.1%) 11,073 (10.8%) 11,106 (10.8%) 16,266 (9.3%) 16,204 (9.3%) 0.00
+Diabetic Foot; n (%) 1,120 (3.8%) 1,127 (3.8%) 1,347 (3.2%) 1,292 (3.0%) 4,785 (4.7%) 4,658 (4.5%) 7,252 (4.2%) 7,077 (4.1%) 0.01
+Gangrene ; n (%) 222 (0.7%) 213 (0.7%) 260 (0.6%) 254 (0.6%) 663 (0.6%) 639 (0.6%) 1,145 (0.7%) 1,106 (0.6%) 0.01
+Lower extremity amputation; n (%) 571 (1.9%) 560 (1.9%) 437 (1.0%) 403 (0.9%) 1,712 (1.7%) 1,718 (1.7%) 2,720 (1.6%) 2,681 (1.5%) 0.01
+Osteomyelitis; n (%) 403 (1.4%) 399 (1.3%) 519 (1.2%) 457 (1.1%) 1,273 (1.2%) 1,267 (1.2%) 2,195 (1.3%) 2,123 (1.2%) 0.01
+Skin infections ; n (%) 2,301 (7.7%) 2,363 (7.9%) 3,071 (7.2%) 3,038 (7.1%) 10,296 (10.1%) 10,122 (9.9%) 15,668 (9.0%) 15,523 (8.9%) 0.00
+Erectile dysfunction; n (%) 775 (2.6%) 802 (2.7%) 888 (2.1%) 881 (2.1%) 2,403 (2.3%) 2,380 (2.3%) 4,066 (2.3%) 4,063 (2.3%) 0.00
+Diabetes with unspecified complication; n (%) 1,863 (6.3%) 1,849 (6.2%) 1,859 (4.4%) 1,814 (4.3%) 6,426 (6.3%) 6,351 (6.2%) 10,148 (5.8%) 10,014 (5.7%) 0.00
+Diabetes mellitus without mention of complications; 
+n (%) 27,552 (92.7%) 27,521 (92.6%) 40,513 (95.1%) 40,470 (95.0%) 97,729 (95.4%) 97,734 (95.4%) 165,794 (94.9%) 165,725 (94.8%) 0.00
+Hypertension: 1 inpatient or 2 outpatient claims 
+within 365 days; n (%) 26,771 (90.1%) 26,773 (90.1%) 31,437 (73.8%) 31,407 (73.7%) 97,195 (94.9%) 97,173 (94.9%) 155,403 (88.9%) 155,353 (88.9%) 0.00
+Hyperlipidemia ; n (%) 23,855 (80.2%) 23,797 (80.1%) 25,697 (60.3%) 25,671 (60.3%) 84,137 (82.2%) 84,130 (82.1%) 133,689 (76.5%) 133,598 (76.5%) 0.00
+Edema; n (%) 3,092 (10.4%) 3,153 (10.6%) 2,925 (6.9%) 2,853 (6.7%) 15,151 (14.8%) 15,070 (14.7%) 21,168 (12.1%) 21,076 (12.1%) 0.00
+Renal Dysfunction (non-diabetic) ; n (%) 8,526 (28.7%) 8,686 (29.2%) 7,501 (17.6%) 7,507 (17.6%) 33,142 (32.4%) 32,819 (32.0%) 49,169 (28.1%) 49,012 (28.0%) 0.00
+Occurrence of acute renal disease ; n (%) 2,238 (7.5%) 2,298 (7.7%) 2,338 (5.5%) 2,329 (5.5%) 9,092 (8.9%) 8,926 (8.7%) 13,668 (7.8%) 13,553 (7.8%) 0.00
+Occurrence of chronic renal insufficiency; n (%) 6,518 (21.9%) 6,621 (22.3%) 4,835 (11.3%) 4,740 (11.1%) 25,668 (25.1%) 25,291 (24.7%) 37,021 (21.2%) 36,652 (21.0%) 0.00
+Chronic kidney disease ; n (%) 6,285 (21.1%) 6,406 (21.5%) 4,651 (10.9%) 4,584 (10.8%) 24,388 (23.8%) 24,047 (23.5%) 35,324 (20.2%) 35,037 (20.1%) 0.00
+CKD Stage 3-4; n (%) 4,145 (13.9%) 4,161 (14.0%) 2,852 (6.7%) 2,859 (6.7%) 15,873 (15.5%) 15,739 (15.4%) 22,870 (13.1%) 22,759 (13.0%) 0.00
+Occurrence of hypertensive nephropathy; n (%) 3,411 (11.5%) 3,468 (11.7%) 2,193 (5.1%) 2,217 (5.2%) 13,686 (13.4%) 13,414 (13.1%) 19,290 (11.0%) 19,099 (10.9%) 0.00
+Occurrence of miscellaneous renal insufficiency ; n 
+(%) 2,817 (9.5%) 2,845 (9.6%) 2,640 (6.2%) 2,693 (6.3%) 11,951 (11.7%) 11,930 (11.6%) 17,408 (10.0%) 17,468 (10.0%) 0.00
+Glaucoma or cataracts ; n (%) 5,943 (20.0%) 6,088 (20.5%) 7,023 (16.5%) 7,005 (16.4%) 26,942 (26.3%) 27,628 (27.0%) 39,908 (22.8%) 40,721 (23.3%) -0.01
+Cellulitis or abscess of toe; n (%) 631 (2.1%) 580 (2.0%) 586 (1.4%) 604 (1.4%) 2,291 (2.2%) 2,264 (2.2%) 3,508 (2.0%) 3,448 (2.0%) 0.00
+Foot ulcer; n (%) 1,138 (3.8%) 1,125 (3.8%) 1,380 (3.2%) 1,322 (3.1%) 4,839 (4.7%) 4,694 (4.6%) 7,357 (4.2%) 7,141 (4.1%) 0.01
+Bladder stones; n (%) 50 (0.2%) 47 (0.2%) 57 (0.1%) 57 (0.1%) 280 (0.3%) 257 (0.3%) 387 (0.2%) 361 (0.2%) 0.00
+Kidney stones; n (%) 859 (2.9%) 875 (2.9%) 1,050 (2.5%) 1,089 (2.6%) 3,806 (3.7%) 3,735 (3.6%) 5,715 (3.3%) 5,699 (3.3%) 0.00
+Urinary tract infections (UTIs); n (%) 3,935 (13.2%) 3,948 (13.3%) 3,824 (9.0%) 3,849 (9.0%) 22,033 (21.5%) 21,918 (21.4%) 29,792 (17.0%) 29,715 (17.0%) 0.00
+Dipstick urinalysis; n (%) 11,544 (38.8%) 12,011 (40.4%) 13,540 (31.8%) 13,806 (32.4%) 48,563 (47.4%) 49,255 (48.1%) 73,647 (42.1%) 75,072 (43.0%) -0.02
+Non-dipstick urinalysis; n (%) 10,656 (35.8%) 10,724 (36.1%) 10,365 (24.3%) 10,251 (24.1%) 36,142 (35.3%) 36,237 (35.4%) 57,163 (32.7%) 57,212 (32.7%) 0.00
+Urine function test; n (%) 1,027 (3.5%) 963 (3.2%) 1,439 (3.4%) 1,533 (3.6%) 4,908 (4.8%) 5,253 (5.1%) 7,374 (4.2%) 7,749 (4.4%) -0.01
+Cytology; n (%) 512 (1.7%) 506 (1.7%) 942 (2.2%) 1,019 (2.4%) 2,366 (2.3%) 2,440 (2.4%) 3,820 (2.2%) 3,965 (2.3%) -0.01
+Cystos; n (%) 649 (2.2%) 654 (2.2%) 1,037 (2.4%) 1,086 (2.5%) 3,050 (3.0%) 2,976 (2.9%) 4,736 (2.7%) 4,716 (2.7%) 0.00
+Other Covariates
+Liver disease; n (%) 1,450 (4.9%) 1,449 (4.9%) 1,712 (4.0%) 1,706 (4.0%) 5,633 (5.5%) 5,716 (5.6%) 8,795 (5.0%) 8,871 (5.1%) 0.00
+Osteoarthritis; n (%) 5,746 (19.3%) 5,678 (19.1%) 5,761 (13.5%) 5,728 (13.4%) 29,354 (28.7%) 29,454 (28.8%) 40,861 (23.4%) 40,860 (23.4%) 0.00
+Other arthritis, arthropathies and musculoskeletal 
+pain; n (%) 13,225 (44.5%) 13,184 (44.4%) 15,938 (37.4%) 15,775 (37.0%) 57,375 (56.0%) 57,366 (56.0%) 86,538 (49.5%) 86,325 (49.4%) 0.00
+Dorsopathies; n (%) 7,645 (25.7%) 7,663 (25.8%) 8,975 (21.1%) 9,034 (21.2%) 33,337 (32.6%) 33,387 (32.6%) 49,957 (28.6%) 50,084 (28.7%) 0.00
+Fractures; n (%) 1,335 (4.5%) 1,325 (4.5%) 1,729 (4.1%) 1,680 (3.9%) 6,526 (6.4%) 6,427 (6.3%) 9,590 (5.5%) 9,432 (5.4%) 0.00
+Falls ; n (%) 1,648 (5.5%) 1,676 (5.6%) 671 (1.6%) 669 (1.6%) 7,999 (7.8%) 7,998 (7.8%) 10,318 (5.9%) 10,343 (5.9%) 0.00
+Osteoporosis; n (%) 2,026 (6.8%) 1,959 (6.6%) 1,826 (4.3%) 1,829 (4.3%) 11,401 (11.1%) 11,491 (11.2%) 15,253 (8.7%) 15,279 (8.7%) 0.00
+Hyperthyroidism; n (%) 258 (0.9%) 273 (0.9%) 254 (0.6%) 269 (0.6%) 1,392 (1.4%) 1,291 (1.3%) 1,904 (1.1%) 1,833 (1.0%) 0.01
+Hypothyroidism ; n (%) 5,006 (16.8%) 5,007 (16.8%) 4,596 (10.8%) 4,556 (10.7%) 18,859 (18.4%) 18,715 (18.3%) 28,461 (16.3%) 28,278 (16.2%) 0.00
+Other disorders of thyroid gland ; n (%) 1,304 (4.4%) 1,297 (4.4%) 1,405 (3.3%) 1,511 (3.5%) 5,386 (5.3%) 5,644 (5.5%) 8,095 (4.6%) 8,452 (4.8%) -0.01
+Depression; n (%) 3,342 (11.2%) 3,384 (11.4%) 3,165 (7.4%) 3,203 (7.5%) 16,712 (16.3%) 16,568 (16.2%) 23,219 (13.3%) 23,155 (13.3%) 0.00
+Anxiety; n (%) 2,701 (9.1%) 2,670 (9.0%) 2,053 (4.8%) 2,071 (4.9%) 12,712 (12.4%) 12,566 (12.3%) 17,466 (10.0%) 17,307 (9.9%) 0.00
+Sleep_Disorder; n (%) 3,198 (10.8%) 3,169 (10.7%) 4,986 (11.7%) 4,912 (11.5%) 11,466 (11.2%) 11,493 (11.2%) 19,650 (11.2%) 19,574 (11.2%) 0.00
+Dementia; n (%) 2,224 (7.5%) 2,267 (7.6%) 1,970 (4.6%) 1,919 (4.5%) 14,941 (14.6%) 14,723 (14.4%) 19,135 (11.0%) 18,909 (10.8%) 0.01
+Delirium; n (%) 884 (3.0%) 914 (3.1%) 984 (2.3%) 996 (2.3%) 5,202 (5.1%) 5,036 (4.9%) 7,070 (4.0%) 6,946 (4.0%) 0.00
+Psychosis; n (%) 582 (2.0%) 615 (2.1%) 598 (1.4%) 593 (1.4%) 4,032 (3.9%) 3,917 (3.8%) 5,212 (3.0%) 5,125 (2.9%) 0.01
+Obesity; n (%) 5,273 (17.7%) 5,251 (17.7%) 4,452 (10.5%) 4,430 (10.4%) 16,002 (15.6%) 15,920 (15.5%) 25,727 (14.7%) 25,601 (14.7%) 0.00
+Overweight; n (%) 1,301 (4.4%) 1,275 (4.3%) 597 (1.4%) 604 (1.4%) 3,724 (3.6%) 3,738 (3.6%) 5,622 (3.2%) 5,617 (3.2%) 0.00
+Smoking; n (%) 4,679 (15.7%) 4,679 (15.7%) 3,092 (7.3%) 3,132 (7.4%) 19,687 (19.2%) 19,521 (19.1%) 27,458 (15.7%) 27,332 (15.6%) 0.00
+Alcohol abuse or dependence; n (%) 287 (1.0%) 287 (1.0%) 264 (0.6%) 266 (0.6%) 887 (0.9%) 899 (0.9%) 1,438 (0.8%) 1,452 (0.8%) 0.00
+Drug abuse or dependence; n (%) 453 (1.5%) 473 (1.6%) 281 (0.7%) 259 (0.6%) 1,406 (1.4%) 1,440 (1.4%) 2,140 (1.2%) 2,172 (1.2%) 0.00
+COPD; n (%) 4,606 (15.5%) 4,680 (15.7%) 4,833 (11.3%) 4,849 (11.4%) 19,771 (19.3%) 19,860 (19.4%) 29,210 (16.7%) 29,389 (16.8%) 0.00
+Asthma; n (%) 2,066 (6.9%) 2,129 (7.2%) 2,217 (5.2%) 2,218 (5.2%) 8,593 (8.4%) 8,606 (8.4%) 12,876 (7.4%) 12,953 (7.4%) 0.00
+Obstructive sleep apnea; n (%) 3,164 (10.6%) 3,100 (10.4%) 4,205 (9.9%) 4,193 (9.8%) 9,119 (8.9%) 9,049 (8.8%) 16,488 (9.4%) 16,342 (9.4%) 0.00
+Pneumonia; n (%) 1,627 (5.5%) 1,654 (5.6%) 2,255 (5.3%) 2,217 (5.2%) 7,732 (7.5%) 7,674 (7.5%) 11,614 (6.6%) 11,545 (6.6%) 0.00
+Imaging; n (%) 146 (0.5%) 128 (0.4%) 101 (0.2%) 114 (0.3%) 500 (0.5%) 545 (0.5%) 747 (0.4%) 787 (0.5%) -0.01
+Diabetes Medications
+DM Medications - AGIs; n (%) 96 (0.3%) 96 (0.3%) 136 (0.3%) 133 (0.3%) 411 (0.4%) 414 (0.4%) 643 (0.4%) 643 (0.4%) 0.00
+DM Medications - Glitazones; n (%) 2,692 (9.1%) 2,696 (9.1%) 4,523 (10.6%) 4,386 (10.3%) 5,892 (5.8%) 5,851 (5.7%) 13,107 (7.5%) 12,933 (7.4%) 0.00
+DM Medications - GLP-1 RA; n (%) 198 (0.7%) 190 (0.6%) 182 (0.4%) 187 (0.4%) 354 (0.3%) 332 (0.3%) #VALUE! #VALUE! #VALUE!
+DM Medications - Insulin; n (%) 5,880 (19.8%) 5,819 (19.6%) 6,527 (15.3%) 6,474 (15.2%) 22,926 (22.4%) 22,323 (21.8%) 35,333 (20.2%) 34,616 (19.8%) 0.01
+DM Medications - Meglitinides; n (%) 577 (1.9%) 659 (2.2%) 1,311 (3.1%) 1,333 (3.1%) 2,582 (2.5%) 2,736 (2.7%) 4,470 (2.6%) 4,728 (2.7%) -0.01
+DM Medications - Metformin; n (%) 17,034 (57.3%) 17,021 (57.3%) 24,802 (58.2%) 24,873 (58.4%) 56,177 (54.9%) 56,075 (54.8%) 98,013 (56.1%) 97,969 (56.1%) 0.00
+Concomitant initiation or current use of SGLT2i; n 
+(%) 429 (1.4%) 433 (1.5%) 501 (1.2%) 524 (1.2%) 1,159 (1.1%) 1,179 (1.2%) 2,089 (1.2%) 2,136 (1.2%) 0.00
+Concomitant initiation or current use of AGIs; n (%) 61 (0.2%) 64 (0.2%) 95 (0.2%) 89 (0.2%) 289 (0.3%) 289 (0.3%) 445 (0.3%) 442 (0.3%) 0.00
+Concomitant initiation or current use of Glitazones; 
+n (%) 1,457 (4.9%) 1,440 (4.8%) 2,368 (5.6%) 2,260 (5.3%) 3,357 (3.3%) 3,309 (3.2%) 7,182 (4.1%) 7,009 (4.0%) 0.01
+Concomitant initiation or current use of GLP-1 RA; n 
+(%) 70 (0.2%) 67 (0.2%) 55 (0.1%) 57 (0.1%) 119 (0.1%) 111 (0.1%) 244 (0.1%) 235 (0.1%) 0.00
+Concomitant initiation or current use of Insulin; n 
+(%) 3,960 (13.3%) 3,969 (13.4%) 4,274 (10.0%) 4,170 (9.8%) 15,825 (15.5%) 15,444 (15.1%) 24,059 (13.8%) 23,583 (13.5%) 0.01
+Concomitant initiation or current use of 
+Meglitinides; n (%) 316 (1.1%) 475 (1.6%) 746 (1.8%) 939 (2.2%) 1,784 (1.7%) 1,940 (1.9%) 2,846 (1.6%) 3,354 (1.9%) -0.02
+Concomitant initiation or current use of Metformin; 
+n (%) 13,532 (45.5%) 13,632 (45.9%) 20,013 (47.0%) 20,149 (47.3%) 43,913 (42.9%) 43,951 (42.9%) 77,458 (44.3%) 77,732 (44.5%) 0.00
+Past use of SGLT2i; n (%) 215 (0.7%) 209 (0.7%) 212 (0.5%) 203 (0.5%) 582 (0.6%) 557 (0.5%) 1,009 (0.6%) 969 (0.6%) 0.00
+Past use of AGIs ; n (%) 35 (0.1%) 32 (0.1%) 41 (0.1%) 44 (0.1%) 122 (0.1%) 125 (0.1%) 198 (0.1%) 201 (0.1%) 0.00
+Past use of Glitazones ; n (%) 1,235 (4.2%) 1,256 (4.2%) 2,156 (5.1%) 2,126 (5.0%) 2,535 (2.5%) 2,542 (2.5%) 5,926 (3.4%) 5,924 (3.4%) 0.00
+Past use of GLP-1 RA ; n (%) 131 (0.4%) 124 (0.4%) 129 (0.3%) 133 (0.3%) 235 (0.2%) 221 (0.2%) 495 (0.3%) 478 (0.3%) 0.00
+Past use of Insulin ; n (%) 1,920 (6.5%) 1,850 (6.2%) 2,253 (5.3%) 2,305 (5.4%) 7,103 (6.9%) 6,882 (6.7%) 11,276 (6.5%) 11,037 (6.3%) 0.01
+Past use of Meglitinides ; n (%) 261 (0.9%) 184 (0.6%) 565 (1.3%) 394 (0.9%) 798 (0.8%) 796 (0.8%) 1,624 (0.9%) 1,374 (0.8%) 0.01
+Past use of metformin (final) ; n (%) 3,502 (11.8%) 3,389 (11.4%) 4,789 (11.2%) 4,724 (11.1%) 12,264 (12.0%) 12,124 (11.8%) 20,555 (11.8%) 20,237 (11.6%) 0.01
+Other Medications
+Use of ACE inhibitors; n (%) 12,130 (40.8%) 12,196 (41.0%) 17,833 (41.9%) 17,824 (41.8%) 40,301 (39.4%) 40,254 (39.3%) 70,264 (40.2%) 70,274 (40.2%) 0.00
+Use of ARBs; n (%) 8,377 (28.2%) 8,297 (27.9%) 12,003 (28.2%) 12,003 (28.2%) 31,904 (31.2%) 31,978 (31.2%) 52,284 (29.9%) 52,278 (29.9%) 0.00
+Use of Loop Diuretics - ; n (%) 6,654 (22.4%) 6,700 (22.5%) 8,970 (21.1%) 8,915 (20.9%) 29,451 (28.8%) 29,240 (28.6%) 45,075 (25.8%) 44,855 (25.7%) 0.00
+Use of other diuretics- ; n (%) 1,482 (5.0%) 1,460 (4.9%) 2,026 (4.8%) 2,032 (4.8%) 5,716 (5.6%) 5,595 (5.5%) 9,224 (5.3%) 9,087 (5.2%) 0.00
+Use of nitrates-; n (%) 4,156 (14.0%) 4,225 (14.2%) 6,759 (15.9%) 6,740 (15.8%) 16,769 (16.4%) 16,892 (16.5%) 27,684 (15.8%) 27,857 (15.9%) 0.00
+Use of other hypertension drugs; n (%) 2,725 (9.2%) 2,775 (9.3%) 3,435 (8.1%) 3,452 (8.1%) 11,247 (11.0%) 11,238 (11.0%) 17,407 (10.0%) 17,465 (10.0%) 0.00
+Use of digoxin- ; n (%) 1,243 (4.2%) 1,265 (4.3%) 2,096 (4.9%) 2,094 (4.9%) 5,653 (5.5%) 5,682 (5.5%) 8,992 (5.1%) 9,041 (5.2%) 0.00
+Use of Anti-arrhythmics; n (%) 1,009 (3.4%) 1,037 (3.5%) 1,646 (3.9%) 1,637 (3.8%) 4,512 (4.4%) 4,398 (4.3%) 7,167 (4.1%) 7,072 (4.0%) 0.01
+Use of COPD/asthma meds- ; n (%) 5,314 (17.9%) 5,331 (17.9%) 7,511 (17.6%) 7,445 (17.5%) 22,193 (21.7%) 22,356 (21.8%) 35,018 (20.0%) 35,132 (20.1%) 0.00
+Use of statins; n (%) 21,217 (71.4%) 21,259 (71.5%) 30,505 (71.6%) 30,420 (71.4%) 74,884 (73.1%) 74,789 (73.0%) 126,606 (72.5%) 126,468 (72.4%) 0.00
+Use of other lipid-lowering drugs; n (%) 4,653 (15.7%) 4,636 (15.6%) 8,222 (19.3%) 8,219 (19.3%) 14,426 (14.1%) 14,315 (14.0%) 27,301 (15.6%) 27,170 (15.5%) 0.00
+Use of antiplatelet agents; n (%) 8,723 (29.3%) 8,787 (29.6%) 14,464 (34.0%) 14,420 (33.8%) 29,939 (29.2%) 30,180 (29.5%) 53,126 (30.4%) 53,387 (30.6%) 0.00
+Use of oral anticoagulants (Dabigatran, Rivaroxaban, 
+Apixaban, Warfarin); n (%) 3,349 (11.3%) 3,375 (11.4%) 4,638 (10.9%) 4,669 (11.0%) 15,605 (15.2%) 15,554 (15.2%) 23,592 (13.5%) 23,598 (13.5%) 0.00
+Use of heparin and other low-molecular weight 
+heparins; n (%) 266 (0.9%) 249 (0.8%) 36 (0.1%) 31 (0.1%) 932 (0.9%) 931 (0.9%) 1,234 (0.7%) 1,211 (0.7%) 0.00
+Use of NSAIDs; n (%) 4,026 (13.5%) 4,031 (13.6%) 5,599 (13.1%) 5,656 (13.3%) 16,708 (16.3%) 16,790 (16.4%) 26,333 (15.1%) 26,477 (15.2%) 0.00
+Use of oral corticosteroids; n (%) 5,138 (17.3%) 5,237 (17.6%) 7,511 (17.6%) 7,423 (17.4%) 22,295 (21.8%) 22,282 (21.8%) 34,944 (20.0%) 34,942 (20.0%) 0.00
+Use of bisphosphonate (); n (%) 939 (3.2%) 924 (3.1%) 1,106 (2.6%) 1,119 (2.6%) 4,332 (4.2%) 4,362 (4.3%) 6,377 (3.6%) 6,405 (3.7%) -0.01
+Use of opioids- ; n (%) 9,061 (30.5%) 9,112 (30.7%) 13,177 (30.9%) 13,185 (31.0%) 32,771 (32.0%) 32,800 (32.0%) 55,009 (31.5%) 55,097 (31.5%) 0.00
+Use of antidepressants; n (%) 7,899 (26.6%) 7,878 (26.5%) 10,404 (24.4%) 10,233 (24.0%) 31,518 (30.8%) 31,530 (30.8%) 49,821 (28.5%) 49,641 (28.4%) 0.00
+Use of antipsychotics; n (%) 982 (3.3%) 988 (3.3%) 1,038 (2.4%) 994 (2.3%) 5,625 (5.5%) 5,472 (5.3%) 7,645 (4.4%) 7,454 (4.3%) 0.00
+Use of anticonvulsants; n (%) 5,309 (17.9%) 5,312 (17.9%) 6,020 (14.1%) 5,899 (13.8%) 22,554 (22.0%) 22,494 (22.0%) 33,883 (19.4%) 33,705 (19.3%) 0.00
+Use of lithium- ; n (%) 49 (0.2%) 46 (0.2%) 64 (0.2%) 62 (0.1%) 169 (0.2%) 124 (0.1%) 282 (0.2%) 232 (0.1%) 0.03
+Use of Benzos- ; n (%) 3,328 (11.2%) 3,370 (11.3%) 5,785 (13.6%) 5,788 (13.6%) 13,195 (12.9%) 13,059 (12.8%) 22,308 (12.8%) 22,217 (12.7%) 0.00
+Use of anxiolytics/hypnotics- ; n (%) 2,212 (7.4%) 2,250 (7.6%) 3,697 (8.7%) 3,609 (8.5%) 8,941 (8.7%) 9,025 (8.8%) 14,850 (8.5%) 14,884 (8.5%) 0.00
+Use of dementia meds- ; n (%) 1,145 (3.9%) 1,142 (3.8%) 1,201 (2.8%) 1,199 (2.8%) 8,554 (8.4%) 8,470 (8.3%) 10,900 (6.2%) 10,811 (6.2%) 0.00
+Use of antiparkinsonian meds- ; n (%) 875 (2.9%) 915 (3.1%) 1,237 (2.9%) 1,176 (2.8%) 4,679 (4.6%) 4,656 (4.5%) 6,791 (3.9%) 6,747 (3.9%) 0.00
+Any use of pramlintide; n (%) 8 (0.0%) 9 (0.0%) 28 (0.1%) 37 (0.1%) 12 (0.0%) 27 (0.0%) 048 (0.0%) 073 (0.0%) #DIV/0!
+Any use of 1st generation sulfonylureas; n (%) 15 (0.1%) 11 (0.0%) 41 (0.1%) 15 (0.0%) 51 (0.0%) 27 (0.0%) 107 (0.1%) 053 (0.0%) 0.00
+Entresto (sacubitril/valsartan); n (%) 56 (0.2%) 65 (0.2%) 23 (0.1%) 19 (0.0%) 93 (0.1%) 120 (0.1%) 172 (0.1%) 204 (0.1%) 0.00
+Initiation as monotherapy v4 ; n (%) 7,093 (23.9%) 7,240 (24.4%) 9,995 (23.5%) 10,304 (24.2%) 20,129 (19.7%) 20,714 (20.2%) 37,217 (21.3%) 38,258 (21.9%) -0.01
+Labs                                           72,327                                           72,327 
+Lab values- HbA1c (%) ; n (%) 8,669 (29.2%) 8,827 (29.7%) 2,042 (4.8%) 1,847 (4.3%) N/A N/A 10,711 (14.8%) 10,674 (14.8%) 0.00
+Lab values- HbA1c (%) (within 3 months) ; n (%) 6,595 (22.2%) 6,705 (22.6%) 1,575 (3.7%) 1,424 (3.3%) N/A N/A 8,170 (11.3%) 8,129 (11.2%) 0.00
+Lab values- HbA1c (%) (within 6 months) ; n (%) 8,669 (29.2%) 8,827 (29.7%) 2,042 (4.8%) 1,847 (4.3%) N/A N/A 10,711 (14.8%) 10,674 (14.8%) 0.00
+Lab values- BNP; n (%) 329 (1.1%) 354 (1.2%) 66 (0.2%) 73 (0.2%) N/A N/A 395 (0.5%) 427 (0.6%) -0.01
+Lab values- BNP (within 3 months); n (%) 201 (0.7%) 219 (0.7%) 42 (0.1%) 54 (0.1%) N/A N/A 243 (0.3%) 273 (0.4%) -0.02
+Lab values- BNP (within 6 months); n (%) 329 (1.1%) 354 (1.2%) 66 (0.2%) 73 (0.2%) N/A N/A 395 (0.5%) 427 (0.6%) -0.01
+Lab values- BUN (mg/dl); n (%) 9,465 (31.8%) 9,769 (32.9%) 1,999 (4.7%) 2,034 (4.8%) N/A N/A 11,464 (15.9%) 11,803 (16.3%) -0.01
+Lab values- BUN (mg/dl) (within 3 months); n (%) 7,205 (24.2%) 7,482 (25.2%) 1,527 (3.6%) 1,550 (3.6%) N/A N/A 8,732 (12.1%) 9,032 (12.5%) -0.01
+Lab values- BUN (mg/dl) (within 6 months); n (%) 9,465 (31.8%) 9,769 (32.9%) 1,999 (4.7%) 2,034 (4.8%) N/A N/A 11,464 (15.9%) 11,803 (16.3%) -0.01
+Lab values- Creatinine (mg/dl) ; n (%) 9,694 (32.6%) 10,013 (33.7%) 2,137 (5.0%) 2,158 (5.1%) N/A N/A 11,831 (16.4%) 12,171 (16.8%) -0.01
+Lab values- Creatinine (mg/dl) (within 3 months) ; n 
+(%) 7,384 (24.8%) 7,681 (25.8%) 1,642 (3.9%) 1,636 (3.8%) N/A N/A 9,026 (12.5%) 9,317 (12.9%) -0.01
+Lab values- Creatinine (mg/dl) (within 6 months) ; n 
+(%) 9,694 (32.6%) 10,013 (33.7%) 2,137 (5.0%) 2,158 (5.1%) N/A N/A 11,831 (16.4%) 12,171 (16.8%) -0.01
+Lab values- HDL level (mg/dl); n (%) 7,615 (25.6%) 7,857 (26.4%) 1,837 (4.3%) 1,684 (4.0%) N/A N/A 9,452 (13.1%) 9,541 (13.2%) 0.00
+Lab values- HDL level (mg/dl) (within 3 months); n (%) 5,408 (18.2%) 5,644 (19.0%) 1,322 (3.1%) 1,239 (2.9%) N/A N/A 6,730 (9.3%) 6,883 (9.5%) -0.01
+Lab values- HDL level (mg/dl) (within 6 months); n (%) 7,615 (25.6%) 7,857 (26.4%) 1,837 (4.3%) 1,684 (4.0%) N/A N/A 9,452 (13.1%) 9,541 (13.2%) 0.00
+Lab values- LDL level (mg/dl) ; n (%) 7,779 (26.2%) 8,047 (27.1%) 1,951 (4.6%) 1,792 (4.2%) N/A N/A 9,730 (13.5%) 9,839 (13.6%) 0.00
+Lab values- LDL level (mg/dl) (within 3 months) ; n (%) 5,526 (18.6%) 5,768 (19.4%) 1,406 (3.3%) 1,317 (3.1%) N/A N/A 6,932 (9.6%) 7,085 (9.8%) -0.01
+Lab values- LDL level (mg/dl) (within 6 months) ; n (%) 7,779 (26.2%) 8,047 (27.1%) 1,951 (4.6%) 1,792 (4.2%) N/A N/A 9,730 (13.5%) 9,839 (13.6%) 0.00
+Lab values- NT-proBNP; n (%) 46 (0.2%) 43 (0.1%) 3 (0.0%) 3 (0.0%) N/A N/A 49 (0.1%) 0 (0.1%) -
+Lab values- NT-proBNP (within 3 months); n (%) 28 (0.1%) 19 (0.1%) 2 (0.0%) 2 (0.0%) N/A N/A 30 (0.0%) 0 (0.0%) -
+Lab values- NT-proBNP (within 6 months); n (%) 46 (0.2%) 43 (0.1%) 3 (0.0%) 3 (0.0%) N/A N/A 49 (0.1%) 46 (0.1%) -
+Lab values- Total cholesterol (mg/dl) ; n (%) 7,723 (26.0%) 7,976 (26.8%) 1,908 (4.5%) 1,761 (4.1%) N/A N/A 9,631 (13.3%) 9,737 (13.5%) -0.01
+Lab values- Total cholesterol (mg/dl) (within 3 
+months) ; n (%) 5,490 (18.5%) 5,723 (19.3%) 1,373 (3.2%) 1,289 (3.0%) N/A N/A 6,863 (9.5%) 7,012 (9.7%) -0.01
+Lab values- Total cholesterol (mg/dl) (within 6 
+months) ; n (%) 7,723 (26.0%) 7,976 (26.8%) 1,908 (4.5%) 1,761 (4.1%) N/A N/A 9,631 (13.3%) 9,737 (13.5%) -0.01
+Lab values- Triglyceride level (mg/dl); n (%) 7,638 (25.7%) 7,867 (26.5%) 1,873 (4.4%) 1,730 (4.1%) N/A N/A 9,511 (13.1%) 9,597 (13.3%) -0.01
+Lab values- Triglyceride level (mg/dl) (within 3 
+months); n (%) 5,426 (18.3%) 5,641 (19.0%) 1,351 (3.2%) 1,273 (3.0%) N/A N/A 6,777 (9.4%) 6,914 (9.6%) -0.01
+Lab values- Triglyceride level (mg/dl) (within 6 
+months); n (%) 7,638 (25.7%) 7,867 (26.5%) 1,873 (4.4%) 1,730 (4.1%) N/A N/A 9,511 (13.1%) 9,597 (13.3%) -0.01
+Lab result number- HbA1c (%) mean (only 2 to 20 
+included) v4 8,595                                             8,741                                             1,872                                             1,782                                             N/A N/A                                           10,467                                           10,523 
+...mean (sd) 7.99 (1.78) 7.78 (1.69) 8.13 (1.88) 7.90 (1.75) N/A N/A 8.02 (1.80) 7.80 (1.70) 0.13
+...median [IQR] 7.60 [6.80, 8.80] 7.40 [6.60, 8.50] 7.70 [6.80, 9.00] 7.45 [6.70, 8.65] N/A N/A 7.62 (1.80) 7.41 (1.70) 0.12
+...Missing; n (%) 21,132 (71.1%) 20,986 (70.6%) 40,728 (95.6%) 40,818 (95.8%) N/A N/A 61,860 (85.5%) 61,804 (85.5%) 0.00
+Lab result number- BNP mean 329                                                 354                                                 66                                                    73                                                    N/A N/A                                                  395                                                  427 
+...mean (sd) 221.45 (330.00) 212.58 (353.05) 324.29 (602.41) 213.53 (315.86) N/A N/A 238.63 (388.97) 212.74 (347.44) 0.07
+...median [IQR] 97.00 [38.70, 238.45] 106.60 [36.45, 239.20] 89.50 [29.62, 339.62] 101.00 [32.00, 264.25] N/A N/A #VALUE! 105.64 (347.44) #VALUE!
+...Missing; n (%) 29,398 (98.9%) 29,373 (98.8%) 42,534 (99.8%) 42,527 (99.8%) N/A N/A 71,932 (99.5%) 71,900 (99.4%) 0.01
+Lab result number- BUN (mg/dl) mean                                              9,465                                              9,769                                              1,999                                              2,034 N/A N/A                                           11,464                                           11,803 
+...mean (sd) 20.54 (9.90) 20.26 (9.38) 844.91 (11,853.76) 221.96 (5,038.61) N/A N/A 164.29 (4949.29) 55.02 (2091.42) 0.03
+...median [IQR] 18.00 [14.00, 24.00] 18.00 [14.00, 23.77] 17.00 [14.00, 22.00] 17.00 [14.00, 22.00] N/A N/A #VALUE! #VALUE! #VALUE!
+...Missing; n (%) 20,262 (68.2%) 19,958 (67.1%) 40,601 (95.3%) 40,566 (95.2%) N/A N/A 60,863 (84.1%) 60,524 (83.7%) 0.01
+Lab result number- Creatinine (mg/dl) mean (only 0.1 
+to 15 included)                                              9,619                                              9,904                                              2,042                                              2,033 N/A N/A                                           11,661                                           11,937 
+...mean (sd) 1.13 (0.55) 1.13 (0.55) 1.07 (0.59) 1.05 (0.51) N/A N/A 1.12 (0.56) 1.12 (0.54) 0.00
+...median [IQR] 1.01 [0.83, 1.29] 1.02 [0.84, 1.28] 0.98 [0.80, 1.16] 0.98 [0.81, 1.15] N/A N/A 1.00 (0.56) 1.01 (0.54) -0.02
+...Missing; n (%) 20,108 (67.6%) 19,823 (66.7%) 40,558 (95.2%) 40,567 (95.2%) N/A N/A 60,666 (83.9%) 60,390 (83.5%) 0.01
+Lab result number- HDL level (mg/dl) mean (only 
+=<5000 included)                                              7,615                                              7,857                                              1,830                                              1,683 N/A N/A                                              9,445                                              9,540 
+...mean (sd) 44.85 (13.87) 45.38 (14.01) 43.92 (15.63) 43.57 (14.19) N/A N/A 44.67 (14.23) 45.06 (14.04) -0.03
+...median [IQR] 43.00 [36.00, 52.00] 44.00 [36.00, 53.00] 42.00 [35.00, 51.00] 42.00 [35.00, 51.00] N/A N/A 42.81 (14.23) 43.65 (14.04) -0.06
+...Missing; n (%) 22,112 (74.4%) 21,870 (73.6%) 40,770 (95.7%) 40,917 (96.0%) N/A N/A 62,882 (86.9%) 62,787 (86.8%) 0.00
+Lab result number- LDL level (mg/dl) mean (only 
+=<5000 included)                                              7,617                                              7,885                                              1,824                                              1,694 N/A N/A                                              9,441                                              9,579 
+...mean (sd) 85.26 (40.77) 83.19 (39.97) 87.55 (41.77) 86.51 (42.89) N/A N/A 85.70 (40.97) 83.78 (40.50) 0.05
+...median [IQR] 82.00 [61.00, 109.00] 79.40 [59.00, 104.00] 85.00 [62.50, 112.00] 83.00 [62.00, 111.00] N/A N/A 82.58 (40.97) 80.04 (40.50) 0.06
+...Missing; n (%) 22,110 (74.4%) 21,842 (73.5%) 40,776 (95.7%) 40,906 (96.0%) N/A N/A 62,886 (86.9%) 62,748 (86.8%) 0.00
+Lab result number- Total cholesterol (mg/dl) mean 
+(only =<5000 included)                                              7,718                                              7,965                                              1,900                                              1,757 N/A N/A                                              9,618                                              9,722 
+...mean (sd) 170.55 (48.85) 167.26 (48.37) 172.88 (50.42) 171.42 (51.31) N/A N/A 171.01 (49.17) 168.01 (48.92) 0.06
+...median [IQR] 164.00 [138.00, 197.00] 161.00 [136.50, 191.50] 167.00 [142.00, 199.00] 166.00 [140.00, 198.00] N/A N/A 164.59 (49.17) 161.90 (48.92) 0.05
+...Missing; n (%) 22,009 (74.0%) 21,762 (73.2%) 40,700 (95.5%) 40,843 (95.9%) N/A N/A 62,709 (86.7%) 62,605 (86.6%) 0.00
+Lab result number- Triglyceride level (mg/dl) mean 
+(only =<5000 included)                                              7,638                                              7,867                                              1,866                                              1,729 N/A N/A                                              9,504                                              9,596 
+...mean (sd) 187.28 (156.16) 178.93 (148.77) 189.86 (160.62) 191.36 (174.88) N/A N/A 187.79 (157.05) 181.17 (153.81) 0.04
+...median [IQR] 152.00 [109.00, 215.00] 146.00 [104.00, 210.00] 152.00 [106.38, 218.50] 149.33 [106.25, 219.00] N/A N/A 152.00 (157.05) 146.60 (153.81) 0.03
+...Missing; n (%) 22,089 (74.3%) 21,860 (73.5%) 40,734 (95.6%) 40,871 (95.9%) N/A N/A 62,823 (86.9%) 62,731 (86.7%) 0.01
+Lab result number- Hemoglobin mean (only >0 
+included)                                              7,029                                              7,205                                              1,467                                              1,399 N/A N/A                                              8,496                                              8,604 
+...mean (sd) 13.26 (1.79) 13.26 (1.76) 612.63 (9,372.79) 321.61 (6,152.32) N/A N/A 116.75 (3894.08) 63.40 (2480.38) 0.02
+...median [IQR] 13.30 [12.10, 14.50] 13.30 [12.10, 14.50] 13.50 [12.30, 14.70] 13.50 [12.30, 14.70] N/A N/A #VALUE! #VALUE! #VALUE!
+...Missing; n (%) 22,698 (76.4%) 22,522 (75.8%) 41,133 (96.6%) 41,201 (96.7%) N/A N/A 63,831 (88.3%) 63,723 (88.1%) 0.01
+Lab result number- Serum sodium mean (only > 90 
+and < 190 included)                                              9,400                                              9,693                                              1,874                                              1,847 N/A N/A                                           11,274                                           11,540 
+...mean (sd) 139.35 (2.89) 139.52 (2.83) 138.98 (2.87) 139.11 (2.74) N/A N/A 139.29 (2.89) 139.45 (2.82) -0.06
+...median [IQR] 139.50 [138.00, 141.00] 140.00 [138.00, 141.33] 139.00 [137.50, 141.00] 139.00 [137.50, 141.00] N/A N/A 139.42 (2.89) 139.84 (2.82) -0.15
+...Missing; n (%) 20,327 (68.4%) 20,034 (67.4%) 40,726 (95.6%) 40,753 (95.7%) N/A N/A 61,053 (84.4%) 60,787 (84.0%) 0.01
+Lab result number- Albumin mean (only >0 and <=10 
+included)                                              8,711                                              9,009                                              1,706                                              1,663 N/A N/A                                           10,417                                           10,672 
+...mean (sd) 4.17 (0.35) 4.17 (0.35) 4.15 (0.52) 4.14 (0.59) N/A N/A 4.17 (0.38) 4.17 (0.40) 0.00
+...median [IQR] 4.20 [4.00, 4.40] 4.20 [4.00, 4.40] 4.20 [4.00, 4.40] 4.20 [4.00, 4.43] N/A N/A 4.20 (0.38) 4.20 (0.40) 0.00
+...Missing; n (%) 21,016 (70.7%) 20,718 (69.7%) 40,894 (96.0%) 40,937 (96.1%) N/A N/A 61,910 (85.6%) 61,655 (85.2%) 0.01
+Lab result number- Glucose (fasting or random) mean 
+(only 10-1000 included)                                              9,394                                              9,695                                              1,867                                              1,826 N/A N/A                                           11,261                                           11,521 
+...mean (sd) 168.15 (72.56) 161.26 (67.24) 173.78 (76.66) 164.94 (72.28) N/A N/A 169.08 (73.26) 161.84 (68.07) 0.10
+...median [IQR] 150.00 [121.00, 195.50] 144.00 [117.00, 185.00] 153.67 [124.00, 202.50] 145.00 [119.00, 189.00] N/A N/A 150.61 (73.26) 144.16 (68.07) 0.09
+...Missing; n (%) 20,333 (68.4%) 20,032 (67.4%) 40,733 (95.6%) 40,774 (95.7%) N/A N/A 61,066 (84.4%) 60,806 (84.1%) 0.01
+Lab result number- Potassium mean (only 1-7 
+included)                                              9,573                                              9,878                                              1,980                                              1,995 N/A N/A                                           11,553                                           11,873 
+...mean (sd) 4.45 (0.45) 4.43 (0.45) 4.37 (0.44) 4.38 (0.44) N/A N/A 4.44 (0.45) 4.42 (0.45) 0.04
+...median [IQR] 4.40 [4.15, 4.70] 4.40 [4.12, 4.70] 4.35 [4.05, 4.70] 4.40 [4.10, 4.65] N/A N/A 4.39 (0.45) 4.40 (0.45) -0.02
+...Missing; n (%) 20,154 (67.8%) 19,849 (66.8%) 40,620 (95.4%) 40,605 (95.3%) N/A N/A 60,774 (84.0%) 60,454 (83.6%) 0.01
+Comorbidity Scores
+CCI (180 days)- ICD9 and ICD10 
+...mean (sd) 3.53 (2.31) 3.54 (2.35) 2.57 (2.10) 2.56 (2.12) 4.21 (2.40) 4.19 (2.41) 3.69 (2.31) 3.68 (2.33) 0.00
+...median [IQR] 3.00 [2.00, 5.00] 3.00 [2.00, 5.00] 2.00 [1.00, 4.00] 2.00 [1.00, 4.00] 4.00 [2.00, 6.00] 4.00 [2.00, 6.00] 3.34 (2.31) 3.34 (2.33) 0.00
+Frailty Score: Qualitative Version 365 days as 
+Categories, v1
+...0; n (%) 6,384 (21.5%) 5,865 (19.7%) 3,424 (8.0%) 3,464 (8.1%) 15,773 (15.4%) 15,429 (15.1%) 25,581 (14.6%) 24,758 (14.2%) 0.01
+...1 to 2; n (%) 10,115 (34.0%) 10,511 (35.4%) 18,141 (42.6%) 18,211 (42.7%) 24,197 (23.6%) 24,350 (23.8%) 52,453 (30.0%) 53,072 (30.4%) -0.01
+...3 or more; n (%) 13,228 (44.5%) 13,351 (44.9%) 21,035 (49.4%) 20,925 (49.1%) 62,441 (61.0%) 62,632 (61.2%) 96,704 (55.3%) 96,908 (55.5%) 0.00
+Frailty Score: Empirical Version 365 days as 
+Categories, 
+...< 0.12908; n (%) 1,610 (5.4%) 1,675 (5.6%) 2,733 (6.4%) 2,919 (6.9%) 1,887 (1.8%) 2,260 (2.2%) 6,230 (3.6%) 6,854 (3.9%) -0.02
+...0.12908 - 0.1631167; n (%) 6,451 (21.7%) 6,526 (22.0%) 10,144 (23.8%) 10,347 (24.3%) 10,000 (9.8%) 10,659 (10.4%) 26,595 (15.2%) 27,532 (15.8%) -0.02
+...>= 0.1631167; n (%) 21,666 (72.9%) 21,526 (72.4%) 29,723 (69.8%) 29,334 (68.9%) 90,524 (88.4%) 89,492 (87.4%) 141,913 (81.2%) 140,352 (80.3%) 0.02
+Non-Frailty; n (%) 16,772 (56.4%) 16,976 (57.1%) 21,481 (50.4%) 21,489 (50.4%) 3,954 (3.9%) 3,683 (3.6%) 42,207 (24.2%) 42,148 (24.1%) 0.00
+Frailty Score (mean): Qualitative Version 365 days, v1
+...mean (sd) 2.71 (2.55) 2.75 (2.55) 2.95 (2.22) 2.95 (2.24) 3.72 (2.94) 3.73 (2.95) 3.36 (2.72) 3.37 (2.73) 0.00
+...median [IQR] 2.00 [1.00, 4.00] 2.00 [1.00, 4.00] 2.00 [1.00, 4.00] 2.00 [1.00, 4.00] 3.00 [1.00, 6.00] 3.00 [1.00, 6.00] 2.59 (2.72) 2.59 (2.73) 0.00
+Frailty Score (mean): Empirical Version 365 days, 
+...mean (sd) 0.17 (0.07) 0.17 (0.07) 0.19 (0.06) 0.19 (0.06) 0.25 (0.08) 0.25 (0.08) 0.22 (0.07) 0.22 (0.07) 0.00
+...median [IQR] 0.16 [0.12, 0.21] 0.16 [0.12, 0.21] 0.18 [0.15, 0.22] 0.18 [0.15, 0.21] 0.23 [0.19, 0.29] 0.23 [0.19, 0.29] 0.21 (0.07) 0.21 (0.07) 0.00
+Healthcare Utilization
+Any hospitalization; n (%) 6,882 (23.2%) 6,765 (22.8%) 11,065 (26.0%) 11,100 (26.1%) 27,916 (27.3%) 27,495 (26.8%) 45,863 (26.2%) 45,360 (26.0%) 0.00
+Any hospitalization within prior 30 days; n (%) 2,859 (9.6%) 2,900 (9.8%) 4,437 (10.4%) 4,490 (10.5%) 10,985 (10.7%) 10,851 (10.6%) 18,281 (10.5%) 18,241 (10.4%) 0.00
+Any hospitalization during prior 31-180 days; n (%) 4,537 (15.3%) 4,531 (15.2%) 7,362 (17.3%) 7,387 (17.3%) 19,769 (19.3%) 19,486 (19.0%) 31,668 (18.1%) 31,404 (18.0%) 0.00
+Endocrinologist Visit; n (%) 3,404 (11.5%) 3,551 (11.9%) 4,825 (11.3%) 4,946 (11.6%) 12,520 (12.2%) 12,940 (12.6%) 20,749 (11.9%) 21,437 (12.3%) -0.01
+Endocrinologist Visit (30 days prior); n (%) 2,140 (7.2%) 2,169 (7.3%) 3,180 (7.5%) 3,140 (7.4%) 7,592 (7.4%) 7,411 (7.2%) 12,912 (7.4%) 12,720 (7.3%) 0.00
+Endocrinologist Visit (31 to 180 days prior); n (%) 2,399 (8.1%) 2,412 (8.1%) 3,183 (7.5%) 3,195 (7.5%) 9,156 (8.9%) 9,098 (8.9%) 14,738 (8.4%) 14,705 (8.4%) 0.00
+Internal medicine/family medicine visits; n (%) 26,096 (87.8%) 25,836 (86.9%) 36,484 (85.6%) 36,277 (85.2%) 89,704 (87.6%) 89,135 (87.0%) 152,284 (87.1%) 151,248 (86.6%) 0.01
+Internal medicine/family medicine visits (30 days 
+prior) ; n (%) 19,588 (65.9%) 19,501 (65.6%) 26,797 (62.9%) 26,480 (62.2%) 64,921 (63.4%) 64,807 (63.3%) 111,306 (63.7%) 110,788 (63.4%) 0.01
+Internal medicine/family medicine visits (31 to 180 
+days prior) ; n (%) 23,320 (78.4%) 23,349 (78.5%) 32,491 (76.3%) 32,370 (76.0%) 81,075 (79.2%) 80,830 (78.9%) 136,886 (78.3%) 136,549 (78.1%) 0.00
+Cardiologist visit; n (%) 16,806 (56.5%) 16,784 (56.5%) 21,071 (49.5%) 20,964 (49.2%) 62,396 (60.9%) 62,201 (60.7%) 100,273 (57.4%) 99,949 (57.2%) 0.00
+Number of Cardiologist visits (30 days prior); n (%) 6,841 (23.0%) 6,934 (23.3%) 8,260 (19.4%) 8,178 (19.2%) 25,354 (24.8%) 25,197 (24.6%) 40,455 (23.2%) 40,309 (23.1%) 0.00
+Number of Cardiologist visits (31 to 180 days prior); 
+n (%) 14,105 (47.4%) 14,093 (47.4%) 17,962 (42.2%) 17,810 (41.8%) 53,633 (52.4%) 53,527 (52.3%) 85,700 (49.0%) 85,430 (48.9%) 0.00
+Electrocardiogram ; n (%) 15,569 (52.4%) 15,698 (52.8%) 21,582 (50.7%) 21,691 (50.9%) 58,001 (56.6%) 58,332 (57.0%) 95,152 (54.5%) 95,721 (54.8%) -0.01
+Use of glucose test strips; n (%) 1,526 (5.1%) 1,536 (5.2%) 1,947 (4.6%) 1,947 (4.6%) 4,540 (4.4%) 4,587 (4.5%) 8,013 (4.6%) 8,070 (4.6%) 0.00
+Dialysis; n (%) 143 (0.5%) 122 (0.4%) 209 (0.5%) 225 (0.5%) 1,302 (1.3%) 1,191 (1.2%) 1,654 (0.9%) 1,538 (0.9%) 0.00
+Naive new user v8 ; n (%) 10,615 (35.7%) 10,728 (36.1%) 15,150 (35.6%) 15,436 (36.2%) 32,363 (31.6%) 32,876 (32.1%) 58,128 (33.3%) 59,040 (33.8%) -0.01
+N antidiabetic drugs at index date  
+...mean (sd) 1.67 (0.68) 1.68 (0.66) 1.66 (0.67) 1.66 (0.65) 1.65 (0.67) 1.65 (0.65) 1.66 (0.67) 1.66 (0.65) 0.00
+...median [IQR] 2.00 [1.00, 2.00] 2.00 [1.00, 2.00] 2.00 [1.00, 2.00] 2.00 [1.00, 2.00] 2.00 [1.00, 2.00] 2.00 [1.00, 2.00] 2.00 (0.67) 2.00 (0.65) 0.00
+number of different/distinct medication 
+prescriptions
+...mean (sd) 11.17 (5.48) 11.19 (5.59) 10.87 (5.26) 10.82 (5.31) 11.81 (5.35) 11.79 (5.49) 11.47 (5.35) 11.45 (5.46) 0.00
+...median [IQR] 10.00 [7.00, 14.00] 10.00 [7.00, 14.00] 10.00 [7.00, 14.00] 10.00 [7.00, 14.00] 11.00 [8.00, 15.00] 11.00 [8.00, 15.00] 10.59 (5.35) 10.59 (5.46) 0.00
+Number of Hospitalizations
+...mean (sd) 0.30 (0.62) 0.30 (0.65) 0.32 (0.62) 0.32 (0.63) 0.40 (0.77) 0.39 (0.77) 0.36 (0.71) 0.36 (0.72) 0.00
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 (0.71) 0.00 (0.72) 0.00
+Number of hospital days
+...mean (sd) 1.90 (5.67) 1.95 (6.01) 2.18 (6.63) 2.16 (6.53) 2.78 (7.68) 2.72 (7.30) 2.48 (7.12) 2.45 (6.91) 0.00
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 2.00] 0.00 [0.00, 2.00] 0.00 [0.00, 3.00] 0.00 [0.00, 3.00] 0.00 (7.12) 0.00 (6.91) 0.00
+Number of Emergency Department (ED) visits 
+...mean (sd) 0.73 (1.64) 0.74 (1.78) 0.49 (2.08) 0.49 (2.24) 0.99 (1.84) 0.98 (2.11) 0.82 (1.87) 0.82 (2.09) 0.00
+...median [IQR] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 2.00] 0.00 [0.00, 2.00] 0.00 (1.87) 0.00 (2.09) 0.00
+Number of Office visits
+...mean (sd) 6.28 (4.95) 6.29 (4.80) 6.42 (5.51) 6.38 (4.80) 6.99 (5.50) 6.99 (5.42) 6.73 (5.41) 6.72 (5.17) 0.00
+...median [IQR] 5.00 [3.00, 8.00] 5.00 [3.00, 8.00] 5.00 [3.00, 8.00] 5.00 [3.00, 8.00] 6.00 [3.00, 10.00] 6.00 [3.00, 10.00] 5.59 (5.41) 5.59 (5.17) 0.00
+Number of Endocrinologist visits
+...mean (sd) 0.56 (2.48) 0.58 (2.51) 0.54 (2.42) 0.58 (2.79) 0.71 (3.34) 0.74 (3.52) 0.64 (3.00) 0.67 (3.20) -0.01
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 (3.00) 0.00 (3.20) 0.00
+Number of internal medicine/family medicine visits
+...mean (sd) 12.02 (17.25) 11.94 (16.11) 8.50 (12.80) 8.74 (12.71) 10.70 (13.45) 10.86 (13.42) 10.39 (14.02) 10.53 (13.75) -0.01
+...median [IQR] 7.00 [3.00, 15.00] 7.00 [3.00, 15.00] 5.00 [2.00, 11.00] 5.00 [2.00, 11.00] 7.00 [3.00, 14.00] 7.00 [3.00, 15.00] 6.51 (14.02) 6.51 (13.75) 0.00
+Number of Cardiologist visits
+...mean (sd) 3.60 (6.45) 3.71 (6.54) 2.70 (5.12) 2.72 (5.14) 3.91 (6.81) 3.95 (6.94) 3.56 (6.38) 3.61 (6.48) -0.01
+...median [IQR] 1.00 [0.00, 5.00] 1.00 [0.00, 5.00] 0.00 [0.00, 3.00] 0.00 [0.00, 3.00] 1.00 [0.00, 5.00] 1.00 [0.00, 5.00] 0.76 (6.38) 0.76 (6.48) 0.00
+Number electrocardiograms received 
+...mean (sd) 1.29 (2.17) 1.32 (2.27) 1.08 (1.67) 1.08 (1.71) 1.44 (2.09) 1.43 (2.07) 1.33 (2.01) 1.33 (2.03) 0.00
+...median [IQR] 1.00 [0.00, 2.00] 1.00 [0.00, 2.00] 1.00 [0.00, 2.00] 1.00 [0.00, 1.00] 1.00 [0.00, 2.00] 1.00 [0.00, 2.00] 1.00 (2.01) 1.00 (2.03) 0.00
+Number of HbA1c tests ordered
+...mean (sd) 1.21 (0.99) 1.21 (0.96) 0.83 (0.94) 0.82 (0.92) 1.36 (1.00) 1.35 (0.99) 1.21 (0.98) 1.20 (0.97) 0.01
+...median [IQR] 1.00 [0.00, 2.00] 1.00 [1.00, 2.00] 1.00 [0.00, 1.00] 1.00 [0.00, 1.00] 1.00 [1.00, 2.00] 1.00 [1.00, 2.00] 1.00 (0.98) 1.00 (0.97) 0.00
+Number of glucose tests ordered
+...mean (sd) 0.79 (5.17) 0.82 (5.19) 0.50 (1.97) 0.49 (1.71) 0.55 (1.41) 0.55 (1.28) 0.58 (2.58) 0.58 (2.50) 0.00
+...median [IQR] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 (2.58) 0.00 (2.50) 0.00
+Number of lipid tests ordered
+...mean (sd) 1.04 (1.10) 1.04 (1.07) 0.79 (1.32) 0.78 (1.20) 1.05 (0.96) 1.05 (0.94) 0.98 (1.08) 0.98 (1.03) 0.00
+...median [IQR] 1.00 [0.00, 2.00] 1.00 [0.00, 2.00] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 1.00 [0.00, 2.00] 1.00 [0.00, 2.00] 0.76 (1.08) 0.76 (1.03) 0.00
+Number of creatinine tests ordered
+...mean (sd) 0.10 (0.53) 0.10 (0.46) 0.10 (0.48) 0.09 (0.44) 0.14 (0.59) 0.13 (0.54) 0.12 (0.55) 0.12 (0.50) 0.00
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 (0.55) 0.00 (0.50) 0.00
+Number of BUN tests ordered
+...mean (sd) 0.07 (0.57) 0.07 (0.50) 0.07 (0.48) 0.07 (0.44) 0.10 (0.53) 0.09 (0.49) 0.09 (0.53) 0.08 (0.48) 0.02
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 (0.53) 0.00 (0.48) 0.00
+Number of tests for microalbuminuria
+...mean (sd) 0.67 (1.16) 0.66 (1.15) 0.40 (0.90) 0.40 (0.91) 0.43 (0.78) 0.43 (0.76) 0.46 (0.88) 0.46 (0.87) 0.00
+...median [IQR] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00] 0.00 [0.00, 1.00] 0.00 [0.00, 1.00] 0.00 (0.88) 0.00 (0.87) 0.00
+Total N distinct ICD9/ICD10 diagnoses at the 3rd 
+digit level 
+...mean (sd) 7.34 (10.04) 7.34 (10.38) 3.62 (7.39) 3.63 (7.40) 9.68 (11.90) 9.57 (11.86) 7.80 (10.65) 7.74 (10.68) 0.01
+...median [IQR] 4.00 [0.00, 11.00] 4.00 [0.00, 11.00] 0.00 [0.00, 4.00] 0.00 [0.00, 4.00] 6.00 [0.00, 15.00] 5.00 [0.00, 15.00] 4.20 (10.65) 3.61 (10.68) 0.06
+Use of thiazide; n (%) 3,428 (11.5%) 3,358 (11.3%) 4,478 (10.5%) 4,470 (10.5%) 12,338 (12.0%) 12,334 (12.0%) 20,244 (11.6%) 20,162 (11.5%) 0.00
+Use of beta blockers; n (%) 16,752 (56.4%) 16,787 (56.5%) 24,718 (58.0%) 24,658 (57.9%) 63,213 (61.7%) 63,051 (61.6%) 104,683 (59.9%) 104,496 (59.8%) 0.00
+Use of calcium channel blockers; n (%) 9,269 (31.2%) 9,316 (31.3%) 12,735 (29.9%) 12,730 (29.9%) 37,118 (36.2%) 37,223 (36.3%) 59,122 (33.8%) 59,269 (33.9%) 0.00

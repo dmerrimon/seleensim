@@ -1,0 +1,804 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hybrid Ablation Plus Medical Therapy for Persistent Atrial Fibrillation  
+(HYBRID -AF) 
+ 
+ClinicalTrials.gov ID: NCT0419018 6 
+ 
+March 03 , 2025  
+Statistical Analysis Plan for the HYBRID-AF Trial  
+1. Introduction  This Statistical Analysis Plan (SAP) outlines the planned stat istical analyses for 
+the HYBRID-AF Trial, which has concluded.  
+2. Study Objectives  The HYBRID-AF Trial evaluates t he effectiveness of Biotronik I CM-
+guided intervention in reducing a trial fibrillation (AF) burden  in patients with symptomatic 
+persistent AF post-ablation. The  primary objective is to compar e AF burden between months 3 
+and 15 post-ablation between the B iotronik ICM-guided arm and t he conventional AF 
+management arm. 
+3. Study Design  
+ Randomized, controlled trial wit h 90 subjects assigned 1:1 to e ither conventional AF 
+management or Biotronik ICM-guided management. 
+ Follow-up assessments at 3, 6, 9, 12, and 15 months post-random ization. 
+ Primary and secondary endpoints will be analyzed according to t he intent-to-treat (ITT) 
+principle. 
+4. Endpoints  
+Primary Endpoint:  
+ AF burden, defined as the percenta ge of time a subject experien ces AF between months 3 
+and 15 post-ablation, measured by the Biotronik ICM. 
+Secondary Endpoints:  
+1. Composite endpoint of: 
+o Clinically significan t (>30 min) atrial arrhythmia (AF, atrial flutter, or atrial 
+tachycardia) detected by Biotr onik ICM post-i ndex ablation. 
+o Symptomatic AF recurrence (any duration). 
+o Repeat AF ablation. 
+o Cardiac hospitalization. 
+o Death. 
+o Healthcare utilization (hospita lization, ED vis its, unplanned o ffice visits). 
+2. Incidence of atrial flutter  or tachycardia post-ablation. 
+3. Incidence of repeat procedures. 
+4. Major adverse events requiring rehospitalization. 
+5. Quality of life (QOL) assessment. 
+5. Sample Size Justification  Based on prior studies and prel iminary data, AF burden is expe cted 
+to be 25% in the conventional gr oup and 16% in the intervention  group, with a standard 
+deviation of 15%. A Wilcoxon rank-su m test at a two-sided alpha  level of 0.05 and 80% power 
+determined that 90 subjects (wi th a 10% dropout rate) were requ ired. 
+6. Statistical Methods  
+Primary Analysis:  
+ AF burden comparison between gr oups using the Wilcoxon rank-sum  test. 
+ Descriptive statistics for med ian and interquartile range (IQR)  of AF burden. 
+ Sensitivity analysis for missing data using multiple imputation . 
+Secondary Analyses:  
+ Kaplan-Meier survival analysis f or time to first atrial arrhyth mia event. 
+ Cox proportional hazards regression for risk factors associated  with AF recurrence. 
+ Poisson regression for hea lthcare utilization. 
+ Mixed-effects models for QOL changes over time. 
+Subgroup Analyses:  
+ Stratification by baseline  AF burden, age, and sex. 
+ Sensitivity analysis excluding early dropout subjects. 
+7. Data Handling  
+ All analyses will follow an ITT approach. 
+ Missing data will be addressed using multiple imputation and se nsitivity analyses. 
+ Data management will be conducte d per Good Clinical Practice (G CP) guidelines. 
+8. Reporting and Interpretation  
+ All results will be reported with 95% confidence intervals and p-values. 
+ Statistical significan ce is defined as p<0.05. 
+ Study findings will be presented in accordance with CONSORT gui delines. 
+9. Conclusion  This SAP ensures rigorous and tra nsparent statistical analyses  for the HYBRID-
+AF Trial, aligning with Clinical Trials.gov reporting requiremen ts. 
+ 
+Page 1 of 19
+Version Date: 21 April 2021 Ver2.0Hybrid Ablation Plus Medical Therapy for Persistent Atrial Fibrillation
+Lead Principal Investigator: David T. Huang, MD
+1. PURPOSE OF STUDY 
+To prospectively investigate the efficacy of an insertable cardiac monitor-guided atrial 
+fibrillation (AF) management in reducing subsequent atrial arrhythmia burden in patients 
+with persistent AF undergoing ablation.  This is a Phase 4 study, and we are comparing two 
+management strategies that are currently employed in clinical practice.
+2. BACKGROUND AND RATIONALE 
+Percutaneous catheter ablation to achieve pulmonary vein electrical isolation is an effective 
+and recommended treatment for paroxysmal atrial fibrillation. Catheter ablation for persistent 
+AF is more complex, often may involve ablation of additional targets that maintain AF. 
+Nevertheless, recurrence rate after a single ablation procedure in patients with persistent AF 
+is in the range of 50%-70% at 1-year, and 70%-90% at 2-years. Accordingly, catheter 
+ablation for persistent AF has been associated with less favorable outcomes. Continued 
+antiarrhythmic drug (AAD) use, or redo AF ablation procedures often can improve outcomes 
+in persistent AF patient’s further substrate deterioration if sub-clinical AF recurrences are 
+detected by an insertable cardiac monitor.  Thereby, we propose utilizing the Biotronik ICM 
+(BioMonitor3® or future generation of Biotronik ICM) in persistent AF patients following 
+AF ablation to guide post ablation strategies of AAD treatment and/or repeat AF ablation and 
+to continuously post-AF ablation to reduce the burden of atrial arrhythmia. However, these 
+management strategies are currently limited to a subset of patients who present with 
+symptomatic AF post-AF ablation, possibly late in the clinical course, due to lack of 
+appropriate continuous monitoring tools following the procedure. With the Biotronik 
+insertable cardiac monitor (ICM) in persistent AF patient’s post-AF ablation, one may be 
+able to provide patient-specific tailored management, and to identify those who may benefit 
+from early intervention to prevent monitor AF burden. We hypothesize that early patient-
+specific intervention, guided by the Biotronik ICM, will be associated with a significant 
+reduction in AF-burden at 15 months following ablation for persistent AF.
+Of note contemporary referral for ablation among patients with persistent AF does not 
+require failure of at least one AAD. Recent clinical trials have demonstrated the utility of 
+ablation as first line therapy for patients with atrial fibrillation. Therefore, many patients with 
+persistent AF are referred for AF ablation today without being on an AAD (Calkins, et al. 
+Heart Rhythm, Vol 14, No 10, October 2017), thereby leading to higher recurrence rates in 
+this population.  
+ 
+Patients with persistent atrial fibrillation remain a challenging population in terms of 
+achieving and maintaining sinus rhythm. Recent studies (Heart Rhythm. 2018 Mar; 
+15(3):363-368) have reported pulmonary vein isolation ablation to be a "safe, effective, and 
+efficient" treatment. However, even with extensive ablation of PV isolation plus other 
+targets, the recurrence of atrial arrhythmia post ablation for persistent AF ranged from at 
+Page 2 of 19
+Version Date: 21 April 2021 Ver2.0least 41 to 54% with periodic ambulatory ECG monitors (Schreiber, et al. Circ Arrhythm 
+Electrophysiol 2015; 8:308–317.; Verma, et al. N Engl J Med 2015; 372:1812–1822.). Most 
+clinicians suspect the recurrence rates to be substantially higher if more robust surveillance is 
+obtained. We had previously reported on the efficacy of hybrid therapy combining ablation 
+of atrial flutter circuit and medical therapy for patients with atrial fibrillation who converted 
+to atrial flutter with medical antiarrhythmics (Huang, et al., JCE May 1998, 9(5):462-469), 
+and noted the importance of maintaining medical antiarrhythmic therapy to achieve long term 
+substrate modification leading to sinus rhythm. A recent study reported >90% patients who 
+experience AF events during the typical 3 months blanking period actually develop recurrent 
+atrial arrhythmia by 1 year (Willems et al. Circ Arrhythm Electrophysiol 2016;9(8). Early 
+recurrence of AF during the post ablation blanking period may be more aggressively treated 
+to help reduce risk of late recurrence of AF. Therefore, in our study, we propose to initiate 
+monitoring AF events during the blanking period, starting from the first month post-AF 
+ablation (to allow sufficient time for post ablation healing). On the other hand, it is postulated 
+that a subgroup of patients with persistent AF may respond well to repeat ablation alone, 
+similar to patients with paroxysmal AF (Kirchhof, Calkins. European Heart Journal, 2017 
+Jan; 38(1):20–2). Thus, a management strategy of uniform continued AAD post ablation for 
+persistent AF will result in unnecessary medical therapy in responders to the procedure. We 
+therefore hypothesize that a patient-specific management strategy that incorporates 
+continuous monitoring with Biotronik ICM will result in improved outcomes and resource 
+utilization compared to conventional management in this high-risk population.  
+3. ADMINISTRATIVE ORGANIZATION  
+The University of Rochester is the Coordination and Data Center (CDC) for the multisite 
+study.  The University of Rochester Medical Center, Rochester Regional Health, Michigan 
+Heart and the Cardiology Research Associates will be the participating centers in this trial.  
+Each site will obtain separate local IRB approvals.  The University of Rochester CDC will 
+provide each site with the study protocol and a model consent form, along other relevant 
+subject study materials.    As the Coordination and Data Center (CDC), the University of 
+Rochester will provide comprehensive training on the study protocol, study operations, and 
+the electronic data capture system (TrialMaster).  All training will be documented for each 
+enrolling site.
+The University of Rochester is the Study Sponsor and is receiving funding from BIOTRONIK 
+for conducting this research study.
+4. STUDY DESIGN
+This is a multi-site, randomized clinical trial of approximately 90 subjects with 45 subjects in 
+each arm randomized (1:1) to conventional AF management vs. Biotronik ICM-guided AF 
+management following ablation for persistent AF. The study subject population will include 
+subjects with history of  persistent atrial fibrillation (sustained AF episode lasting more than 
+7 days, but less than 1 year), according to current guideline indications for persistent AF 
+ablation and ICM (Biotronik ICM) implantation. Clinical and functional data will be 
+Page 3 of 19
+Version Date: 21 April 2021 Ver2.0captured related to: activity, heart rate, blood pressure, weight, quality of life status, and 
+clinical events.
+A total of 4 high-volume sites will be enrolling subjects for this study. Estimated enrollment 
+will be 1-2 subjects per study site per month. Patients will be enrolled at the time of the AF 
+ablation and will be followed for 15 months after a 3 month blanking period following AF 
+ablation. The planned study startup period is 3 months with an enrollment period of 10 
+months, a follow-up period of 15 months, and 2 months for closeout and analysis for a total 
+of 30 months (2.5 years).  
+The CDC is responsible for data management, analysis, and coordination of logistics. The 
+enrolling sites will manage all subject recruitment activity and data collection per protocol as 
+well as interact with the CDC and enrolling site study team regarding study operations.  The 
+CDC will be responsible for overall study management, data management, data reporting, 
+and center communications for the study.
+Primary Endpoint
+The primary endpoint is atrial fibrillation (AF) burden between months 3 and 15 after the 
+ablation procedure (to exclude the first 3 month blanking period) by the Biotronik ICM in the 
+conventional AF management versus the of Biotronik ICM-guided AF management arm.
+Secondary Endpoints
+1. Composite end point of: 
+clinically significant (>30 min) atrial arrhythmia (atrial fibrillation, atrial flutter or 
+atrial tachycardia) as detected and documented by Biotronik ICM after the 
+performance of the index AF ablation procedure (excluding the initial 3-month 
+blanking period), or 
+symptomatic AF recurrence (regardless of duration), or 
+repeat AF ablation, or 
+cardiac hospitalization, or 
+death
+healthcare utilization, defined as hospitalization for any cause, ED visits, and 
+unplanned office visits
+For the primary outcome, no episode of AF occurring within the initial 3-month blanking 
+period after ablation will be counted, although these will be tracked.  
+2. Incidence of atrial flutter or tachycardia after the index ablation procedure 
+3. Incidence of repeat procedures
+4. Major adverse events requiring rehospitalization during follow-up
+5. Quality of life (QOL) as assessed by Atrial Fibrillation Effect on QualiTy-of-life 
+(AFEQT) questionnaire
+Page 4 of 19
+Version Date: 21 April 2021 Ver2.0Figure 1: Study Design
+Persistent AF patients 
+referred for AF ablation
+N=90
+AF ablation + ICM
+1:1 Randomization
+Conventional Group 
+Conventional 
+management ***
+3m: 
+If on AAD: discontinue 
+(Per treating physician's 
+discretion)
+3m – 15m:    
+Clinically driven  AF 
+management
+15m: AF burden, primary 
+endpointIntervention Group 
+ICM-guided AAD management
+3m: 
+If on AAD: discontinue based 
+on ICM*
+3m – 15m: ICM-based 
+management**
+15m: AF burden, primary 
+endpoint
+* Based on Biotronik ICM data after 1st Month
+** Escalate to medical therapy or repeat AF Ablation based on current treatment (i.e. no 
+treatment will be escalated to the AAD or repeat ablation, and if on AAD will be escalated 
+to AF ablation).
+*** Biotronik ICM data on subclinical AF will not be provided to the treating physician0-3 Months 3-15 Months
+Page 5 of 19
+Version Date: 21 April 2021 Ver2.0As detailed in Figure 1 subjects who agree to participate in the study by signing the IRB-
+approved informed consent are randomized 1:1 into:
+The Intervention ICM-based AF management Arm
+In the intervention arm, the ICM obtained data will be actively used to guide and monitor 
+treatment (See Figure 2A and B).  A report of AF data (comprising the total number of 
+episodes, duration, average heart rate response, and correlation with patient-reported 
+symptoms) will be provided to the treating physician/nurse at monthly intervals, starting 
+from the first month post-AF ablation from the study team comprised of 
+electrophysiologists and cardiologists. A general recommendation for early intervention 
+with AAD continuation/resumption or redo AF ablation will be provided to the treating 
+physician if recurrent AF episodes are detected by the ICM (≥2 episodes at a duration of 
+≥ 6 minutes each), even without the presence of clinical symptoms. However, the final 
+decision regarding management will be left to the discretion of the treating physician.  
+oManagement during the blanking period: Treatment with AAD after ablation will 
+be left to the discretion of the treating physician per standard of care. If the patient 
+is on an AAD after ablation, medical therapy with AADs in the intervention arm 
+will continue for 3 months after the index CA procedure arm. Symptomatic AF 
+recurrences during the blanking period will be treated with cardioversion. If, 
+either SCAF (as defined above and in Figure 2A) is detected by the ICM or 
+symptomatic AF recurrence occurs after one-month post-ablation (i.e. during the 
+second or third months), AAD therapy will not be discontinued at 3 months per 
+protocol (or will be initiated for those not treated with an AAD after ablation). AF 
+recurrence during the blanking period will not be an indication for re-ablation.
+oManagement after the blanking period: If SCAF recurrences detected by the ICM 
+(as defined above and in Figure 2B) or if clinical recurrence occurs after the 
+blanking period, treatment will be escalated as follows:
+oIf the patient is not on an AAD after the blanking period, treatment with an 
+AAD will be resumed (to the same drug discontinued at 3 months) or initiated 
+(type of AAD will be left to the decision of the treating physician as per 
+standard of care). Alternatively, if the patient does not tolerate or does not 
+wish treatment with an AAD, the patient can be referred for repeat AF 
+ablation. 
+oIf AF recurrence occurs on AAD, the e patient will be referred for re-ablation. 
+oThe ICM-derived heart rate monitoring data will also be used for improved 
+rate control (with a target mean heart rate of <80-100 bpm) regardless of atrial 
+rhythm. 
+Page 6 of 19
+Version Date: 21 April 2021 Ver2.0oAn ad hoc adjudication committee will be formed to review and review all ICM 
+interrogations. The committee will consist of Drs. Goldenberg, Kutyifa, Zareba, 
+and Aktas.  The final adjudication of each arrhythmic event will be captured in 
+the study database for the analysis of study endpoints and will not be used to 
+guide management.  
+The ICM report of AF data (comprising the total number of episodes, duration, average 
+heart rate response, and correlation with subject-reported symptoms) will be provided to 
+the treating physician/nurse at monthly intervals, starting from the first month post-AF 
+ablation.
+In-clinic follow up visits as scheduled for subjects per standard of care and will occur at 
+3, 9, and 15 months.   These visits will include a medical assessment and subjects will be 
+questioned about clinical and unexpected medical (adverse) events. 
+Phone follow-up visits will be conducted by the study team at 6 and 12 months as part of 
+the study.  The study team will perform a medical assessment, and ask questions about 
+medication changes, along with clinical and unexpected medical (adverse) events as part 
+of these follow-up phone calls. 
+Chart reviews will be performed by the study team at each time point and include data 
+about clinical history, medications, ablation procedure, device implantation, and follow-
+up data will be collected from the medical record.  
+Quality of life questionnaire will be completed on paper by the patient at baseline and 15 
+months as part of the research study activities.
+ECGs performed as standard of care at Baseline, 3 month, 9 month, and 15 month.
+Endpoint assessment defined as AF burden, quality of life, and healthcare utilization 
+(comprising the total of unplanned clinic visits, hospitalizations, repeat ablations, or death 
+at 15 months.
+Figure 2A: Management protocol for AF recurrence at Months 2 or 3 Post Ablation in the 
+Intervention Arm*
+>2 SCAF > 5 minutes, 1 SCAF > 6h, or clinical occurrence
+No
+Monitor and discontinue AAD 
+after 3 months*Continue ADD after 3 monthsYes
+Page 7 of 19
+Version Date: 21 April 2021 Ver2.0Figure 2B: Management Protocol for AF Recurrence after 3 Post Ablation in the 
+Intervention Arm
+>2 SCAF > 5 minutes, 1 SCAF > 6h, or 
+clinical occurrence
+ICM heart rate data used for 
+improved rate control in all 
+patients
+No
+Monitor
+On AAD?
+Yes
+Initiate or Resume AAD Refer for Repeat AF ablationYes
+No
+*If the patient is not on an AAD after the ablation, AAD will be initiated during the 
+blanking period and continued post-blanking if there is >=2 SCAF, 1 SCAF >6h or clinical 
+recurrence. The type of AAD will left to the discretion of the treating physician as per 
+standard of care.  Repeat ablation can be offered if the patient does not tolerate or wish 
+treatment with an AAD.
+Conventional AF Management Control Arm
+In the control arm, ICM data on SCAF recurrence will not be used to guide management. 
+Management of clinical AF recurrence in the conventional management arm will be left to 
+the discretion of the treating physician. The treating physician has access to all ICM data 
+as standard of care and can use it per their discretion.
+oManagement during the blanking period (ER): AAD management in the 
+conventional arm, will be left to the discretion of the treating physician since 
+Page 8 of 19
+Version Date: 21 April 2021 Ver2.0current guidelines do not provide specific recommendations (ref). 
+Symptomatic AF recurrences during the blanking period will be treated with 
+cardioversion and SCAF detected by the ICM will not drive management.
+oManagement after the blanking period (LR): If the patient was on medical 
+therapy with an AAD, it will be discontinued after 3 months in the 
+conventional arm, unless considered necessary by the treating physician. 
+SCAF detected by the ICM will not drive management. 
+Patients will attend scheduled in-clinic follow up visits at month 3, 9, and 15 as part of 
+standard of care.  These visits will include a medical assessment and questions about 
+clinical and adverse events.
+Chart reviews will be performed by the study team at each time point and include data 
+about clinical history, medications, ablation procedure device implantation, and follow-
+up data will be collected from medical record.  
+Quality of life questionnaire complete on paper by the patient at baseline and 15 months 
+as part of the research study activities.
+Phone follow-up visits will be conducted by the study team at 6 and 12 months.  The 
+study team will perform a medical assessment, and ask questions about medication 
+changes, along with clinical and unexpected medical (adverse) events as part of these 
+follow-up phone calls. 
+ECGs performed as standard of care at Baseline, 3 months, 9 months, and 15 month.
+Endpoint assessment defined as AF burden, quality of life, unplanned clinic visits or 
+hospitalizations, repeat ablation, death at 15 months.
+4.1 SUBJECT POPULATION
+The study population will include subjects with persistent atrial fibrillation (sustained AF 
+episode lasting more than 7 days, but less than 1 year), according to current guideline 
+indications for persistent AF ablation. 
+Approximately 90 subjects will be enrolled in this study following a 1:1 ratio (intervention: 
+conventional). A total of 4 high-volume sites will be enrolling subjects for this study. 
+Estimated enrollment will be 1-2 subject per study site per month. Patients will be 
+randomized following AF ablation and ICM implant and will be followed for 12 months after 
+a 3 month blanking period. 
+Gender and Age
+Male and female subjects 18 years or older will be. We expect to enroll about 25% 
+women. 
+       Racial and Ethnic Origin
+There are no restrictions on race or ethnicity in this study. We expect to enroll about 25% 
+minority subjects. 
+Page 9 of 19
+Version Date: 21 April 2021 Ver2.0       Inclusion of Vulnerable Populations:
+Vulnerable populations: Women of childbearing potential are included if they are 
+currently on the medications to be optimized.
+4.2 STUDY INTERVENTIONS
+Please see section 8 entitled study procedures that includes further study interventions.
+Devices
+This study is not studying devices but will utilize data already clinically used and available 
+from the Biotronik ICM.   Before or at the time of ablation for persistent AF, all subjects will 
+be implanted with a Biotronik ICM.  The Biotronik ICM is FDA approved and will be used 
+per the current FDA indications and is used as standard of care to monitor arrhythmias 
+following AF ablation.
+5. INCLUSION AND EXCLUSION CRITERIA
+Inclusion criteria
+18 years of age or older
+History of  persistent atrial fibrillation (sustained AF episode lasting more than 7 days, 
+but less than a year) 
+Planned to undergo first AF ablation with successful Biotronik ICM implant before or at 
+time of ablation
+Exclusion criteria
+Paroxysmal atrial fibrillation
+Long persistent atrial fibrillation (continuous atrial fibrillation that lasts more than 1        
+year)
+Permanent atrial fibrillation
+Left atrial diameter of 60 mm or greater
+Patients with CHF status prohibiting EP study and ablation, but may be re-considered for 
+enrollment later after effective treatment
+Patients with metabolic derangements (e.g. renal/hepatic failure, electrolyte disturbance, 
+etc.), prohibiting EP study and ablation or antiarrhythmic medical therapy (e.g. dofetilide, 
+sotalol or amiodarone, etc.)
+Patients with an intra-cardiac thrombus, but may be re-considered for enrollment later 
+after effective treatment
+Serious known concomitant disease with a life expectancy of < 1 year
+Pregnancy or nursing
+Unwilling or unable to give informed consent
+Existing CIED such as pacemaker or ICD
+Page 10 of 19
+Version Date: 21 April 2021 Ver2.06. RECRUITMENT METHODS
+Subjects will be recruited from ongoing local referrals of patients with persistent atrial 
+fibrillation (sustained AF episode lasting more than 7 days, but less than 1 year), , according 
+to current guideline indications for persistent AF ablation.  
+Each enrolling site will follow their specific guidelines to determine patient eligibility for this 
+clinical trial.  If the patient meets inclusion/exclusion criteria, the study team will approach 
+potential subjects for participation in the study based on the policies of each enrolling site. 
+7. CONSENT PROCESS
+A model consent document as well as the study protocol will be provided to each site to 
+obtain local IRB approval.  Revisions to the model consent require approval from the 
+Coordinating Center prior to submission of the consent to the participating site IRB.  
+The informed consent process will be conducted by the Principal Investigator or individual 
+authorized to conduct the process and will follow the local applicable laws, rules, regulations 
+and guidelines.  The consent document will be used as a guide for discussion with the 
+potential subject.  The potential subject will be given sufficient time to ask questions and to 
+consider their participation. Refusal to participate or withdrawal from the study will not 
+interfere with future medical treatment.  All participants will receive a copy of their signed 
+informed consent and the original will be maintained at the enrolling site.  Subject 
+recruitment at an enrolling site may not begin until local IRB-approval is obtained related to 
+the study protocol and consent. 
+8. STUDY PROCEDURES
+After signing the informed consent and undergoing ICM implant prior to or at time of the AF 
+ablation as part of standard of care, subjects will undergo randomization and the following 
+procedures:
+12 lead ECG performed as standard of care.
+Quality of life (QOL) questionnaire will be completed by the patients as part of the 
+research study on a paper form and entered into an electronic database by the research 
+coordinator.  The questionnaire should take the patient approximately ten minutes to 
+complete.
+Chart Review:  Data regarding clinical history, medications, ablation procedure, device 
+implantation, and follow-up data will be collected from electronic medical records prior 
+to in-clinic or follow up calls with the patients. 
+   In-Clinic Visits: Per standard of care, patients will attend scheduled follow up visits at 3, 
+9, and 15 months.   The study team will perform a medical assessment, and ask questions 
+about adverse events.
+Page 11 of 19
+Version Date: 21 April 2021 Ver2.0   Follow-Up Phone Calls: Patients will receive follow-up calls from the study team at 6 
+and 12 months.  The study team will ask questions about medication changes and any 
+unexpected medical (adverse) events as part of research.  
+Method of Assigning Subjects to Treatment 
+Subjects will be randomized 1:1 to conventional AF management vs. ICM-guided AF 
+management following ablation for persistent AF. Randomization will occur electronically 
+using the electronic data collection system. TrialMaster that is available 24/7 to all study 
+personnel.
+Follow-up Schedule (See also Figure 1 and Table 1)
+Following enrollment and randomization to an intervention arm ICM-based AF management 
+vs. conventional AF management, all subjects will have scheduled follow-up visits (clinic or 
+phone) by the study team at quarterly intervals following randomization. ICM data will be 
+collected electronically at monthly intervals.
+All subjects will be followed for a time-period of 15 months.  
+The following data will be collected at these time-points:
+Randomization/Baseline: Baseline clinical characteristics, existing echocardiographic 
+measures, labs, QOL questionnaire, and NYHA class will be recorded.  
+Monthly: 
+oConventional and Interventional arm
+Obtain ICM data remotely 
+3-months ±14 days from randomization: 
+oConventional 
+Office visit for clinical assessment 
+Clinical and adverse events
+Discontinue AAD after 3 months following the AF ablation procedure 
+per treating physician discretion
+oInterventional arm 
+Office visit for clinical assessment 
+Clinical and adverse events
+Decision on discontinuation of AAD after 3 months based on AF 
+recurrences between 1-3 months detected by the ICM 
+6-months - 7 days/+21 days from randomization:
+oConventional 
+Phone follow up for medications 
+Clinical and adverse events
+Resumption of AAD  or repeat AF ablation based on clinical AF 
+recurrence
+Page 12 of 19
+Version Date: 21 April 2021 Ver2.0oInterventional arm 
+Phone follow up for medications 
+Clinical and adverse events 
+Decision on resuming AAD or repeat AF ablation based on AF 
+recurrences detected by the ICM. 
+9-months - 7 days/+21 days from randomization:
+oConventional 
+Office visit for clinical assessment 
+Clinical and adverse events
+Resumption of AAD, repeat AF ablation, or no change in management 
+based on clinical AF recurrence
+oInterventional arm 
+Office visit for clinical assessment 
+Clinical and adverse events 
+Decision on resume AAD or repeat AF ablation based on AF 
+recurrences detected by the ICM. 
+12-months - 7 days/+21 days from randomization:
+oConventional 
+Phone follow up for medications 
+Clinical and adverse events
+Resumption of AAD  or repeat AF ablation based on clinical AF 
+recurrence
+oInterventional arm 
+Phone follow up for medications 
+Clinical and adverse events 
+Decision on resume AAD or repeat AF ablation based on AF 
+recurrences detected by the ICM 
+15-months - 7 days/+21 days from randomization:
+oConventional 
+Office visit for clinical assessment 
+Clinical and adverse events
+Resumption of AAD  or repeat AF ablation based on clinical AF 
+recurrence
+QOL questionnaire 
+oInterventional arm 
+Phone follow up for medications 
+Clinical and adverse events
+Decision on resume AAD or repeat AF ablation based on AF 
+recurrences detected by the ICM 
+QOL questionnaire 
+Page 13 of 19
+Version Date: 21 April 2021 Ver2.0Table 1: Data Collection Timepoints
+Screen/
+Consent/
+Random-
+izationFOLLOW-UP 
+Timeline Monthly 
+intervals after 
+random-
+ization3
+calendar 
+months
+from 
+random-
+ization
++ 14 days6
+calendar 
+months
+from 
+random-
+ization      
+- 7/+21 
+days 9
+calendar 
+months
+from 
+random-
+ization
+- 7/+21 
+days12 
+calendar 
+months
+from 
+random-
+ization
+- 7/+21 
+days15 
+calendar 
+months
+from 
+random-
+ization
+- 7/+21 
+days
+Eligibility 
+Confirmation/ 
+Randomization
+Demographics, 
+PE, Medical 
+Hx/NYHA
+12 lead ECG 
+(SOC)   
+Echocardiogram 
+(SOC)
+Labs (SOC)
+Vitals (SOC)   
+CV Medication      
+Quality of Life 
+ICM Implant  
+(SOC)
+Ablation 
+Procedure
+In-person Visit 
+(SOC)/Clinical 
+Events  
+Phone Follow-
+Up/ Clinical 
+Events 
+ICM Remote 
+Monitoring 
+(SOC)
+Adverse Event      
+Protocol 
+Deviation       
+Page 14 of 19
+Version Date: 21 April 2021 Ver2.0Plans for return of research results:
+Research results will not be provided directly to patients, but will be presented in national 
+conferences and published in peer-reviewed papers after study completion. If requested by 
+patients, we will send the published research results to patients.
+9. RISKS TO SUBJECTS
+This is a prospective study in subjects with persistent AF undergoing ablation and ICM 
+implant prior to randomization.  The study is not evaluating any medical device. The study 
+includes the use of a currently available ICM to investigate the efficacy of an insertable 
+cardiac monitor-guided atrial fibrillation (AF) management in reducing subsequent atrial 
+arrhythmia burden. 
+There is some risk of associated with the use of any medication. It is important to note that in 
+this study, we are using standard of care and recommended guideline directed medications 
+already indicated in this population of patients; which are often associated with improved 
+outcomes.  We are not testing new medications.  Medications inherently may be associated 
+with side effects. The clinical research team is experienced in cardiovascular trials and the 
+clinical management of patients with heart disease/heart failure and will be monitoring for 
+any adverse effects and adjust medications accordingly. This is a Phase 4 study, and we are 
+comparing two management strategies that are currently employed in clinical practice.
+The risk to participating in this study may include a potential risk of a breach in 
+confidentiality.  Every effort will be made to keep the data confidential.  To protect against 
+this risk the information collected at each enrolling site will be entered by site personnel into 
+a password protected electronic data capture (EDC) system.   Subjects will be assigned a 
+unique subject identification number at the time of registration, which is completed in the 
+EDC system. The subject identification number is not connected with any PHI, such as date 
+of birth or medical record. Each enrolling site will maintain an internal key linking the 
+subject’s name with the study data and will not be shared with anyone outside of the 
+enrolling site.  
+10. POTENTIAL BENEFITS TO SUBJECTS
+There are no potential benefits to subjects. 
+11. COSTS FOR PARTICIPATION
+There are no additional costs to the subject. All office visit/procedures follows standard of 
+care guidelines.
+12. PAYMENT FOR PARTICIPATION 
+Subjects will be reimbursed per the institutional policies for each enrolling site (e.g., cash, 
+Page 15 of 19
+Version Date: 21 April 2021 Ver2.0check, gift card).  
+13. SUBJECT WITHDRAWALS
+Subjects enrolled in the study may be withdrawn prior to the study completion for a variety 
+of reasons including:
+• Subject withdraws consent for any reason;
+• Subject is lost to follow up despite best efforts to locate the subject;
+• Subject is withdrawn at study investigator discretion.
+Subjects may be considered lost to follow up after missing two consecutive follow-up visits 
+with documented efforts to contact the subject. 
+These subjects will not undergo any additional study activities after withdrawal. If a subject 
+becomes pregnant during the course of a study, they will continue to be monitored but no 
+longer be part of the interventional arm. Data collection will occur until the date of 
+withdrawal and utilized in the study analysis.
+Patients who complete fewer than 3 months of follow-up and thus will not complete the 
+blanking period will be excluded from primary end-point analysis, but will be included for all 
+secondary end-points. Withdrawn subjects who have been randomized will not be replaced. 
+14. PRIVACY AND CONFIDENTIALITY OF SUBJECTS AND RESEARCH DATA
+Data collected during this study will be obtained for research purposes and derived from 
+study procedures, study ICM device, subject records and subject visits. All study data will be 
+stored in a password-protected database located at the CCRC per Section 15 and de-
+identified. To protect confidentiality and privacy, subject data will be assigned a code using a 
+unique subject ID number at the time of randomization and linked to subject identifiers that 
+are stored separately in a study log solely maintained by the enrolling site study coordinator. 
+The electronic data will be directly entered and extracted from computer system for data 
+collection using encryption and physical controls. There is no plan to share, transmit or 
+transfer the data. 
+15. DATA/SAMPLE STORAGE FOR FUTURE USE
+Study coordination, database management and statistical analysis will be performed by the 
+Clinical Cardiovascular Research Center (CCRC) at the University of Rochester Medical 
+Center (U of R) acting as the Coordinating Center for the study.  
+Data will be captured using TrialMaster, a HIPAA compliant secure web-based electronic 
+data capture (EDC) system that is used to support the clinical research process.  Data that are 
+entered are validated against a set of rules to ensure the accuracy of the clinical data.  The 
+TrialMaster system is housed on CCRC servers that are housed behind the U of R firewall in 
+Page 16 of 19
+Version Date: 21 April 2021 Ver2.0the U of R Primary Data Center, where physical access and environmental controls are in 
+place to protect the data.  All access to the data is through an authentication process provided 
+by the system and over the encrypted, secured U of R network, which both provide the 
+necessary controls to prohibit unauthorized access to the clinical data.  Continuous 
+availability of the data is provided by mirroring the databases to servers located in a 
+physically separate Secondary Data Center. Additional details are in the Data Safety 
+Monitoring section below. 
+Only enrolling site personnel authorized by the site Principal Investigator will have access to 
+the EDC system.  Study personnel at each site delegated with EDC permission will be 
+required to complete EDC training before receiving access to the system.  Site personnel with 
+EDC permission will have access to the system 24/7 for data entry.  Study personnel will 
+initially enter all data related to the randomization and baseline data collection and will then 
+complete data entry after each identified data collection timeframe per Table 1.  
+Data collected may be used for the development of future research studies. We will maintain 
+the confidentiality of the data throughout the process. Only authorized research personnel 
+working on the project will have access to the data. 
+ 
+16. DATA AND SAFETY MONITORING PLAN
+Adverse Event Data
+An adverse event is any unexpected symptom, sign, illness, or experience that develops or 
+worsens during the course of the study and is possibly or definitely related to study procedures. 
+All protocol-defined adverse events will be collected after subject randomization at all subject 
+contacts as indicated in Table 1. Adverse event data will be captured in the electronic data 
+capture system and investigators are responsible for reporting to and following local 
+Institutional Review Board (IRB) guidelines.
+Adverse Event Reporting 
+Investigators shall report to their local IRB per local reporting guidelines, and report in the 
+electronic data collection system within five business days of PI awareness only real or 
+suspected, serious and unanticipated adverse events that are related to participation in the 
+study. Events related to standard of care such as medications side effects do not need to be 
+reported unless severe as defined below. Death of a subject must be reported as an adverse 
+event, per the serious adverse event definition below. The PI is aware that investigators are 
+responsible for reporting to and following the guidance of any other applicable oversight 
+bodies, including the Institutional Review Broad (IRB). 
+The CDC will be forwarding relevant documents to the Chair of DSMB for review and the 
+Chair will determine whether individual case will require immediate assessment by the full 
+DSMB committee or it could be assessed during electively scheduled DSMB meeting. The 
+main point of assessment by DSMB will be to judge whether given adverse event could be 
+related to ablation.
+Page 17 of 19
+Version Date: 21 April 2021 Ver2.0Serious Adverse Event Definition 
+This population is at increased risk of heart failure, death, and poor clinical outcomes. A serious 
+adverse event (SAE) is defined as any adverse medical experience that results in any of the 
+following outcomes: 
+death; 
+is life-threatening; 
+requires inpatient hospitalization or prolongation of existing hospitalization; 
+results in permanent impairment of a body structure or a body function; 
+requires medical or surgical intervention to prevent permanent impairment or damage; 
+leads to fetal distress, fetal death or a congenital abnormality or birth defect. 
+ 
+Data Safety Monitoring Board
+A data and safety monitoring board (DSMB) will be convened to independently monitor the 
+conduct and the outcomes of the trial. The DSMB will be responsible for monitoring the 
+safety and well-being of the patients participating in this study and ensuring the ethical 
+conduct of the trial.  The DSMB will be responsible for safeguarding the interests of study 
+participants, assessing the safety and efficacy of study procedures, and for monitoring the 
+overall conduct of the study. The DSMB will be an independent group advisory to the study 
+principal investigator and will be asked to provide recommendations about starting, 
+continuing, and stopping the study. In addition, the DSMB is asked to make 
+recommendations, as appropriate, about:
+Efficacy of the study intervention
+Benefit/risk ratio of procedures and participant burden
+Selection, recruitment, and retention of participants
+Adherence to protocol requirements
+Completeness, quality, and analysis of measurements
+Amendments to the study protocol and consent forms
+Performance of individual centers and core labs
+Participant safety
+Notification of and referral for abnormal findings
+Data on clinical events including procedural complications, hospitalizations, stroke, atrial 
+tachyarrhythmias, and death will also be collected by the study and provided to DSMB for 
+evaluation of risks associated with ablation in the study participants. 
+The board will be comprised of 3 independent members: (1) 1 statistician with experience in 
+clinical trials; (2) 1 cardiologist with expertise in clinical trials; and (3) 1 electrophysiologist 
+with expertise in ablation. 
+The DSMB will meet before trial commencement and 3 times after each group of 30 patients 
+Page 18 of 19
+Version Date: 21 April 2021 Ver2.0is enrolled. It is anticipated that these meetings will take place via conference call. One of the 
+clinical cardiologists will be selected to chair the committee and will serve as the principal 
+representative of the group. The Chair of the committee will be informed monthly about 
+adverse events and will monitor safety of the patients during interim time between formal 
+meetings of DSMB.
+Monthly reports will be sent by the CDC to the DSMB chair, to report data on expected and 
+unexpected adverse events. The Chair of the DSMB will have the right to convene additional 
+meetings with all DSMB members when needed.  The DSMB will carefully consider if these 
+events are consistent with anticipated clinical outcome, i.e. unrelated, or a consequence of the 
+study procedure, i.e. related. Information on all these events will be sent to DSMB Chair on 
+monthly basis and in addition, a full DSMB report will be prepared before every elective 
+DSMB meeting.
+Adverse events that will be judged by the DSMB Committee as related to repeat ablation will 
+be described and reported to CDC IRB at University of Rochester as well as local IRBs. 
+17. DATA ANALYSIS PLAN
+For the primary endpoint of AF burden, i.e. percentage of overall follow-up spent by the 
+subject experiencing atrial arrhythmias, the Wilcoxon rank-sum test will be used to 
+statistically compare the conventional group vs. the active treatment group. 
+For the secondary composite end point, we will perform longitudinal event-free survival 
+analysis, defined by survival and freedom from atrial arrhythmias, re-ablation, and cardiac 
+hospitalization. Event-free survival rates, as captured by the composite secondary endpoint, 
+will be displayed using the method of Kaplan-Meier. We will use the log-rank test to non-
+parametrically compare the overall survival curves for the two treatments. The other 
+secondary endpoints of atrial flutter/tachycardia recurrence, repeat ablation incidence, and 
+major adverse events will be compared utilizing negative binomial regression tests to 
+statistically compare the event rates in the two arms, using the natural log of follow-up time 
+as an offset. Quality of life measures will be compared between the arms using the non-
+parametric Wilcoxon rank-sum test.
+The estimate for the sample size necessary to compare AF burden at 12 months between the 
+conventional AF management arm vs. the Bio-Monitor 3-guided repeat ablation arm will 
+assume a 1:1 distribution of subjects between the two arms. Since most of the re-ablation 
+procedures will be carried out based on ICM-detected subclinical AF recurrences, we 
+conservatively expect a re-ablation rate of 50% in the intervention arm vs. 5% in the 
+conventional arm (in which only clinical episodes will be treated and resumption of 
+antiarrhythmic medical therapy is also allowed). 
+For the planned analysis of the primary end point of AF burden involving the Wilcoxon rank-
+sum test, a two-sided  = 0.05 and power of 80% was assumed. Based on our preliminary data 
+and our prior studies on AF burden (The HARMONY Trial, Circulation Arrhythmia and 
+Electrophysiology, 2015), the 12 month primary outcome of AF burden is assumed to be 
+25% vs. 16% in the conventional group, with a standard deviation of 15% (a conservative 
+estimates which allows for 10% drop-out). A reduction from 25% to 16% and 80% power, 
+Page 19 of 19
+Version Date: 21 April 2021 Ver2.0with a drop-out rate of 10%, will result in a total sample of 90 patients.
+18. COORDINATING CENTER TRACKING
+Acting as Coordinating Center for the study, in order to ensure all required information is 
+provided to the Sponsor IRB, a Coordinating Center Tracking Spreadsheet will be submitted 
+at the time of each annual progress review.  
+19. REFERENCES
+Calkins H, Hindricks G, Cappato R, et al. 2017 HRS/EHRA/ECAS/APHRS/SOLAECE 
+Expert Consensus Statement on Catheter and Surgical Ablation of Atrial Fibrillation. Heart 
+Rhythm, 2017 October;14(10):e275-e444.
+Tondo C, Iacopino S, Pieragnoli P, et al., Pulmonary vein isolation cryoablation for patients 
+with persistent and long-standing persistent atrial fibrillation: Clinical outcomes from the 
+real-world multicenter observational project. Heart Rhythm. 2018 Mar;15(3):363-368. 
+Schreiber D, Rostock T, Fröhlich M, et al., Five-year follow-up after catheter ablation of 
+persistent atrial fibrillation using the stepwise approach and prognostic factors for success. 
+Circ Arrhythm Electrophysiol. 2015 Apr;8(2):308-17. 
+Verma A, Jiang CY, Betts TR, et al., Approaches to catheter ablation for persistent atrial 
+fibrillation. N Engl J Med. 2015 May 7;372(19):1812-22. 
+Huang DT, Monahan KM, Zimetbaum P, et al., Hybrid pharmacologic and ablative therapy: 
+a novel and effective approach for the management of atrial fibrillation. J Cardiovasc 
+Electrophysiol. 1998 May;9(5):462-9.
+Willems S, Khairy P, Andrade JG, et al., Redefining the Blanking Period After Catheter 
+Ablation for Paroxysmal Atrial Fibrillation: Insights From the ADVICE (Adenosine 
+Following Pulmonary Vein Isolation to Target Dormant Conduction Elimination) Trial. Circ 
+Arrhythm Electrophysiol. 2016 Aug;9(8). pii: e003909. 
+Kirchhof P, Calkins H. Catheter ablation in patients with persistent atrial fibrillation. Eur 
+Heart J. 2017 Jan 1;38(1):20-26. 
+Reiffel JA, Camm AJ2, Belardinelli L, Zeng D, Karwatowska-Prokopczuk E, Olmsted A, 
+Zareba W, Rosero S, Kowey P; HARMONY Investigators. The HARMONY Trial: 
+Combined Ranolazine and Dronedarone in the Management of Paroxysmal Atrial 
+Fibrillation: Mechanistic and Therapeutic Synergism. Circ Arrhythm Electrophysiol. 2015; 
+8:1048-56. 

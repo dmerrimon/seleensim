@@ -1,0 +1,695 @@
+A Blinded Evaluation of the Effectiveness and Efficacy of the MyHealthyPregnancy Application Statistical 
+Analysis Plan  
+This study will evaluate the effectiveness and efficacy of the MyHealthyPregnancy App, an app designed 
+to reduce preterm birth risk. This study will use observational cohort data collected at the University of 
+Pittsburgh Medical Center between September of 2019 and Febru ary of 2022.  
+July 18, 2022  
+Emily Grayek, Baruch Fischhoff  
+1. Description of the study   
+ 
+MyHealthyPregnancy (MHP) was developed using decision science principles to help prevent  
+preterm birth. An observational cohort trial was conducted at the University of Pittsburgh  
+Medical Center starting in September  of 2019 until February 2022. This trial compare s the 
+effectiveness of MHP to usual care for pregnant people who delivered at the University of 
+Pittsburgh Medical Center (UPMC). Patients at UPMC were able to d ownload the MHP app 
+after receiving a prescription for the app , as indicated by an EHR variable . Those who  were 
+prescribed the app and downloaded it  were in the MHP cohort . Those who were prescribed the 
+app and did not download it were in the usual care co hort . Prescriptions were offered to  
+pregnant people by their care team at a n early  prenatal visit at UPMC.  
+ 
+EHR data is available for both cohorts of patients. It is the source of all measures, unless 
+otherwise noted.  
+ 
+A linear  effects model will be used to evaluate effectiveness by estimating the average 
+treatment effect for the primary endpoint , preventing preterm birth risk.  
+ 
+For each dependent measure, these models will control for primary predictors, as identified in 
+the research literature, that  are available in the EHR.  
+ 
+A dose -response model will be used to  estimate the effects of continuous measures of non -
+adherence (as opposed to dichotomous non-adherence, such as not initiating app use). 
+Multiple measures of adherence will be analyzed , inclu ding measures of daily use, weekly  
+use, time to initiation, and time from discontinuation to birth.  
+ 
+1.1. Princip al research objectives  
+ 
+1.1.1.   Primary objective  
+To compare gestational weeks at birth , for the MyHealthy Pregnancy (MHP) cohort, 
+defined as pregnant peo ple who download ed the MyHealthyPregnancy app , thereby  
+onboard ing into the study , compared to the usual care  cohort , defined as pregnant 
+people, who were invited to download  the app , but did not do so . Analyses  control for  
+predictors of preterm birth.  
+ 
+1.1.2.   Secondary objectives  
+1. To compare preterm birth , defined as delivery before 37 gestational week s, for the 
+MHP and usual care cohorts . Analyses control for predictors of preterm birth . 
+2. To compare depression  rates for the MHP  and usual care cohort s, using the clinical 
+diagnosis of depression.  Analyses control for predictors of depression.  
+3. To compare anxiety  rates  across MHP  and usual care cohorts , using ICD10 codes. 
+Analyses control for predictors of anxiety.  
+4. To compare rate s of referrals to behavioral heal th specialists  for the MHP  and usual 
+care cohorts.  Analyses control for predictors of behavioral health referrals.  
+5. To compare rates of referrals to social workers  for the MHP  and usual care cohorts . 
+Analyses control for predictors of social work referrals.  
+6. To compare rates of  preeclampsia  for the  MHP and usual care cohorts.  Analyses 
+control for predictors of preeclampsia.  
+7. To compare sufficient gestational weight gain1 for the MHP  and usual care cohorts.  
+Analyses control for predictors of gestational weight gain . 
+8. To compare the number of prenatal appointments attended  for the MHP  and usual 
+care cohorts.  Analyses control for predictors of prenatal appointment attendance.  
+9. To compare the proportion of required prenatal appointments attended  in the MHP  
+and usual care cohorts.  Analyses control for predictors of prenatal appointment 
+attendance.  
+ 
+1.1.3. Exploratory objectives  
+Exploratory outcomes are o nes that might be affected by the app , but lack a known 
+mechanism of action  or are of less interest than  the primary and secondary outcomes . 
+These outcomes will be reported as supplemental material to the study.  
+ 
+Appendix A contains the full list of each type of measure . 
+ 
+ 
+1.2. Study  design including blinding  
+ 
+Given  the nature of the observational study , patients and providers were not blinded to the 
+treatment condition (MHP, usual care) .  
+ 
+The primary statistician will remain blinded to the treatment and usual care cohorts w ith the 
+exception of using 20% of the unblinded data to evaluate confounders of the outcomes, build a 
+model for propensity score matching, and evaluate confounders of MHP app usage.  
+ 
+1.3. Method of allocation of groups  
+ 
+Participants seeking prenatal care at th e UPMC  were offe red a prescription to download the 
+MyHealthyPregnancy app during an early prenatal visit. Participants were prescribed the app  by 
+ 
+1 Gestational weight gain will be evaluated based on 2009  Institute of Medicine  guidelines  (11). Recommended 
+gestational weight gain depends on pregravid BMI and  if it is a singleton or multiple pregnancy.  
+their obstetrician  or the EHR system  and had the option of downloading the app and 
+consenting to trial partici pation. We have no direct knowledge of how obstetricians decided 
+whether to offer the prescription or  if there was encouragement to download the app in 
+addition to the automated EHR prescription . Participants who downloaded the app will be 
+categorized as t he MyHealth yPregnancy (MHP) cohort. Participants who did not download the 
+app will be categorized as the usual care cohort.  
+ 
+1.4. Data collection  
+ 
+1.4.1.   Eligibility Screening  
+Participants were included in the study if they  were offered a prescription for 
+MyHealthyPregnancy , were at least 18 years of age, pregnant,  received  care at UPMC , and 
+deliver ed at a UPMC hospital.  
+ 
+1.4.2.   Measures  
+Collected measures include demographics, baseline disease information, the primary 
+outcome measure, the secondary outcome mea sures, the exploratory outcome measures, 
+and app use information.  
+ 
+The primary outcome measure was chosen because it is the clinical measure that the app 
+is intended to affect. Secondary measure  1 was chosen because  it is the most common 
+way of assessing preterm birth risk in similar trials . The other secondary measures are 
+common clinical or operational  measures  of outcomes that components of the app intend 
+to affect.  
+ 
+1.5. Sample Size Justification  
+ 
+Due to the observational nature of the study  and recruitmen t context , it was not possible to 
+predetermine the sample size based on statistical power for estimat ing the primary and 
+secondary outcomes. Instead, all participants who met the inclusion criteria between 
+September 2019 and February 2022 were included . The final sample  has 12,344 deliveries , 
+divided between the  MHP and usual care cohort s (with 7147 in one and 5197 in the other, with 
+their identities currently blinded) . This represents about 12,287 different participants (we only 
+have information about the percent of multiple deliveries for participants who downloaded the 
+app, 0.464%). Given the sample sizes in the two cohort s, there is 80% power to detect an effect 
+size of 0.051  days . Assuming that the outcomes are normally distributed with a standard 
+deviation of 1 0 days  (1), the study has 80% power to  detect a 0. 51 day difference in gestational 
+age at birth between the cohorts.  
+ 
+1.6. Overview  of proposed analyses  
+ 
+EG will analyze the primary, secondary, and exploratory outcomes for the trial data. LH will 
+generate data and  run models  as needed so that EG remains blinded  to the identity  of each 
+cohort  (see section 2.5 ).  
+ 
+The primary analys es will be multiple linear regression  models estimat ing average treatment 
+effects of  the MHP app. Secondarily, dose -response model s will be created for the primary and 
+secondary outcomes in order to understand the moderating effects of app usage.  
+ 
+The primary and secondary outcomes for the study will come from electronic health record 
+(EHR) data for trial participants. Given the source  and the nature of care for women who 
+deliver  in the UPMC system , few outcome data are missing data. As such, imputa tion will not 
+be used to account for missing outcome data . Instead,  participants will be excluded from 
+analyses , if their  outcome data  is missing for an outcome measure .  
+ 
+As a sensitivity analysis, propensity score matching will be used to create similar cohorts of 
+participants , exclud ing participants whose propensity scores are outside the overlap in the 
+covariate distribution s for the covariates that predict downloading the MHP app  (see section 
+3.1.5) . We will calculate average treatment effects for thes e matched subset s of participants. 
+Inverse probability of treatment weighting will be used as an additional sensitivity analysis to 
+account for the potential lack of overlap in covariate distributions between the study cohorts.  
+ 
+2. Data analysis plan – data description  
+ 
+2.1. Recruitment and representativeness of recruited patients  
+ 
+A flow diagram will describe the flow of participants from prescription of the MHP app into the 
+MHP and usual care  cohorts. The final diagram will be similar to Figure 1 below.  
+ 
+ 
+ 
+Figure 1. Flow of trial participants from app prescription to cohort inclusion  
+                       
+                    
+                  
+                           
+                              
+                               
+                    
+                           
+                       
+                               
+          
+ 
+2.2. Baseline comparability of MHP versus usual care cohorts  
+ 
+Table s will be used to describe demographic and baseline measures for the MHP and usual care 
+cohorts. Means and standar d deviations will summarize continuous variables. Proportions and 
+frequencies will summarize categorical variables . Based on STROBE guidelines, the statistical 
+significance of difference s between the cohorts will not be estimated , as this is not a n 
+appropr iate method for identifying covariates that may have affected outcomes . 
+ 
+2.3. Treatment  Usage  
+ 
+At its current stage of development, the MHP app does not prescribe a set dosage , specifying  
+how often patients should interact with it in order to have desired effects . As such, this study 
+investigates app usage as a mediator of the outcome , rather than comparing users who did and 
+did not meet a predetermined dosage.  
+ 
+We will assess the following aspects of usage : how soo n after receiving the prescription 
+participants in itiated app use  (in days) ; how soon  they discontinued app use prior to de livery  (in 
+days since initiation) ; the percent age of days they used it overall  (within the usage period) ; and 
+the percent age of weeks they used it  at least once (within the usage period) . See Appendix A 
+for details  on the se use metrics . 
+ 
+2.4. Loss to follow -up and other missing data  
+ 
+Given data -sharing constraints with UPMC, outcome data is available only for participants who 
+delivered at UPMC hospitals. LH will  report how many people downloaded the app and did not 
+deliver at UPMC . This will allow us to estimate  the percent age of participants lost due to 
+delivering out of the system.  
+ 
+For included participants, there is  a very little missing data for the primary measure 
+(80/13752 =0.06% ). We  will assume that such data is missing at random and exclude 
+participants whose data is missing for a measure from analyses  involving that measure . There is 
+no missing data for the secondary measures. The same practice will be followed for the 
+exploratory outcomes . No imputation  will be done  for any outcome measures .  
+Missing categorical values for baseline covariates (baseline disease information and 
+demographics) will not be imputed , but  treated as an additional category. Continuous variables 
+missing less than 5% of the data wi ll be imputed with the median value for that variable. Two 
+continuous baseline covariates are missing more than 5% of data ADI_NATRANK 
+(1330/13752=9.7%) and PREGRAVID_WEIGHT (1318/13752=9.6%).  For these two variables, 
+                 L     ’               used to investigate if the data is missing completely at 
+random (MCAR), missing at random (MAR), or missing not at random (MNAR)  on 20% of the 
+unblinded data . If the data appears to be MCAR or MNAR, median imputation will be used. If the 
+data is MAR, mult iple imputation will be used. If multiple imputation is needed, LH will generate 
+data for the missing values so that EG remains blinded . For all missing data, we will conduct 
+sensitivity analyses , repeating analyses  of primary and secondary outcomes  using imput ed 
+values two standard deviations above and below the median. See Appendix A for the full list of 
+collected baseline covariates . 
+ 
+2.5. Development of outcome measurements  
+ 
+EG will view 20% of unblinded data to determine wh ich potential confounders to include in the 
+outcome model s, in the addition to those identified in advance , based on previous research. 
+Section 3.1.1 provides further details on how confounders will be selected.  The unblinded data 
+will be split evenly between the MHP a nd usual care cohorts in order for EG to remain blinded 
+to the treatment and control cohorts when analyzing outcomes.  
+ 
+EG will also  create a model of the confounders of  app usage to use in dose -response model s 
+and a propensity score matching model for the  groups.   
+ 
+To allow EG to remain blinded to the final data , while performing these analyses , LH will 
+generate random values of adherence , drawn from the distribution for the MHP cohort , for the 
+usual care cohort . LH will run the outcome models on the full set of data and will report the 
+results to EG for interpretation. EG will finish data analysis before being unblinded to the labels 
+of the MHP and usual care cohorts.  
+ 
+2.6. Descriptive statistics for outcome measurements  
+ 
+The primary and secondary outcome measurements will be described in the main text of the 
+manuscript. The exploratory outcomes will be described in the supplemental material. For 
+continuous variables, the me an and standard deviation will be reported for the MHP and usual 
+care cohorts. For binary variables, frequency and proportion will be reported.  
+ 
+2.7. Exploratory metric  
+ 
+As an exploratory metric, we may calculate the patient cooperativity index (PCI) (2), which 
+                    q     y                   “          y  ”  x                             
+app. The PCI is an odds ratio, where participants with a higher PCI are more likely to use the 
+app one day after using it the previous day. In equation 2, p fs is the probability that a 
+participant uses the app the day after not using the app and p ss is the probability that a 
+participant uses the app the day after using the app. These probabilities will be calculated for 
+participants who initiate use of the app, from that time until their last use.  
+ 
+(2) 
+𝑃𝐶𝐼 = 𝑝𝑓𝑠(1− 𝑝𝑓𝑠) ⁄
+𝑝𝑠𝑠(1− 𝑝𝑠𝑠 ⁄ ) 
+ 
+ 
+ 
+3. Data analysis plan – inferential analysis  
+ 
+3.1. Main analys es of treatment differences   
+ 
+The main analysis compare s the mean gestational weeks at birth between the MHP and usual 
+care  cohorts . An estimate of the average treatment  effect, 95% confidence interval, and effect 
+size will be reported. EG will remain blind to the 80% of outcome data not used to set the terms 
+of the analysis (Section 2.5) .   
+ 
+The primary and secondary outcome s will be evaluated at the 5% significance level . No 
+correction for chance will be used for the primary outcome , as there is only one test. For the 9 
+secondary outcomes, we will report both  corrected and uncorrected p -value s, using the 
+Bonferroni correction  to reduce risk of reporting a false positive result. As a sensitivity analysis, 
+the Bonferroni corrected p -values for ten outcome values will be reported in the supplemental 
+material of the report.  
+ 
+All tests will include all participants with data on th e outcome measure  involved . 
+ 
+3.1.1.   Analysis of primary outcomes  
+The difference in gestational weeks at birth will be evaluated using a linear effects model 
+accounting for confounders of preterm birth , as measured at baseline . We estimate that 
+about 57 out of 12,344 deliveries are for a second pregnancy f or participants included in 
+the sample given that 0.464% of participants who downloaded the app had two deliveries 
+in the sample. We have included these women in the sample bec ause we cannot exclude 
+similar women in the usual care cohort given limitations in our data. Likewise, we cannot 
+account for random effects  of multiple deliveries  using a mixed effects model.  
+ 
+Baseline study variables will be included as confounders in th e model if (a) the literature 
+has identified the variable as a confounder of preterm birth risk  and (b) they might 
+plausibly have                        ’                             . If, for a variable, the 
+evidence on condition (a) is inconclusive and c ondition (b) is possible , we will examine the 
+data and include  the variable  if it passes a 10% change -in-estimates threshold for the 
+outcome or for the likelihood of downloading the app . The change -in-estimate will be 
+calculated by adding each study variab le to the model from the literature individually. Only 
+baseline variables will be  evaluated as potential confounders , as they could not have been 
+affected by use of the app.   
+ 
+We will report the results of two models for each outcome, one using only confou nders 
+identified in the literature and one adding confounders identified empirically  (Appendix A). 
+Including fewer confounders will reduce the likelihood that the average treatment effect 
+applies only to an unrepresentative subset of the population. Includ ing additional 
+confounders will reduce the likelihood of statistical bias in estimating  the average 
+treatment effect.  
+ 
+The dataset contains many kn own confounders of preterm birth that could be included in 
+the model including : 
+- Previous preterm birth  (3) 
+- Race (3) 
+- Low body -mass index  (3,4)    
+- Insurance type  (5) 
+- Area deprivation index  (6) 
+- Multiple gestations  (3) 
+- Previous spontaneous abortions  (7) 
+- Hypertension  (3) 
+- Diabetes  (3) 
+- Tobacco use  (3) 
+ 
+There are also many known predictors of preterm birth that are not in the EHRs, hence not 
+available for this study . They  includ e educational attai nment , marital status, 
+interpregnancy interval, relati ves who delivered preterm, and genetic predictors of 
+preterm birth (3).  
+ 
+Some co llected covariates are specific to this dataset. One is hospital location , which may 
+capture differences in resources, practices, and patient populations . The second is the 
+date of the first visit recorded in Epic , which may capture factors like access to care  or 
+social conditions (e.g., the pandemic) . We will  include hospital location as a variable in all 
+models. We will  not include  date of first visit as  it might be correlated with ones that affect 
+the effectiveness of the app over time.  
+ 
+Residual plots will be used to evaluate the models for heteroskedasticity and the need for 
+using robust standard errors , in order to allow for violations in the assumption that 
+observations are independent and identically distributed (8).   
+ 
+Differences between the cohorts will be described using adjusted mean differences and p-
+values . Results will be considered significant at p<0.05.  
+ 
+3.1.2.   Analysis of secondary outcomes  
+Analytical procedures  for the secondary outcomes  will follow those  for the primary 
+outcome . Each outcome will have its own appropriate confounders . As with the primary 
+outcome, t hese confounders  will be based on previous research and specified a priori . As 
+needed, they will be  supplemented by empirical analysis of the 20% subset, including 
+baseline covariates specified in Appendix B , with a 10% change -in-estimate  threshold for 
+inclusion .  
+ 
+These confounders from the literature are available : 
+ 
+1. Preterm birth defined as delivery b efore 37 gestational weeks.  
+a. Same confounders as the primary outcome  
+2. Clinical diagnoses of depression.  
+a. History of anxiety and depression (9)  
+b. Smoking  (9) 
+c. Past pregnancy complications or loss (9) 
+Unavailable: Lack of partner or soci al support  or having a problematic 
+relationship , a history of abuse or child abuse, having had an unplanned or 
+unwanted pregnancy,  perceived stress, cognitive style (          “ pessimism, 
+anger and rumination; a tendency to be nervous, worried or shy; low self-
+esteem and low self -efficacy; and high levels of neuroticism or psychoticism ”) , 
+and single marital status (9).  
+3. Anxiety rates (using ICD10 codes ).  
+a. Histo ry of anxiety and depression (9)  
+b. Smoking (9) 
+c. Past pregnancy c omplications or loss (9) 
+Unavailable: Same as anxiety  (9).  
+4. Referral to behavioral health  
+a. No confounders identified  
+5. Referral to social work  
+a. No confounders identified  
+6. Preeclampsia  
+a. Prior pre -eclampsia  (10) 
+b. Chronic h ypertension (10) 
+c. Pre-gestational diabetes (10) 
+d. BMI >30 (10) 
+Unavailable: Antiphospholipid antibody syndrome (10).  
+7. Sufficient gestational weight gain  
+a. Pre-pregnancy BMI (11) 
+b. Age (11) 
+Unavailable: Family violence;  marital status; food insecurity; maternal 
+pregravid metabolic status; hyperemesis gravidarium; anorexia; past bariatric 
+surgery  (11). 
+8. Number of prenatal appointments attended  
+a. No confounders identified  
+9. Percent of required prenatal appointments attended  
+a. No confounders identified  
+  
+3.1.3.   Analysis of exploratory outcomes  
+For the exploratory outcomes , we will report only descriptive statistics specified in section 
+2.6.  
+ 
+3.1.4.   Dose -response analysis  
+A dose -response analysis will be used to test usage as a mediator of each outcome. 
+Multiple measurements of usage were col lected and are listed in Appendix A. Metrics 
+specified in section 2.3 will be created by assessing whether the participant used any app 
+activity on a given day. Logging into the app  without activity  will not count as app usage 
+because this information was not collected for the full study  period. A ctivity use is also 
+more likely to be associated with engagement with the app than is  login alone . Daily usage  
+and weekly usage will be the dependent variables for the dose -response models . As an 
+exploratory analys is, the PCI may be analyzed as a dependent variable.  The dose -response 
+relationship will be analyzed for the primary and secondary outcomes using a multiple 
+linear  effects model and the confounder adjustment method  (12). The model for 
+adherence will be created using 20% of the unblinded data. The dose -response effect s for 
+the primary outcome wil l be reported in the manuscript. The dose -response effect for the 
+secondary outcomes will be reported in the supplemental material.  
+ 
+3.1.5.   Additional statistical considerations  
+Method for handling confounding by indication  
+Because this trial is observational, there may be incomplete overlap in covariates between the 
+MHP and usual care cohorts. To account for this  possibility , inverse probability of treatment 
+weighting will be used. P ropensity score matching  of comparable sub groups  will also be used   
+and reported as a sensitivity analysis  (13).  
+Propensity score matching works by creating samples of participants who  have the same 
+likelihood of receiving treatment . Logistic regression will be used to generate prop ensity scores ; 
+nearest -neighbor matching without replacement will be used for matching. Baseline 
+confounders will be included in the propensity score model , if they a re related to  the likelihood 
+of receiving treatment and the outcome. Date of first visit  will not be included in the model  (for 
+reasons given in Section 3.1.1) . Participants without similar propensity scores, defined as greater 
+than  a caliper width, will be excluded from this sensitivity analysis. The average treatment 
+effect will be calculate d for the included subset of similar participants.  
+Austin recommends a  “caliper  width ,” defined as the difference between two propensity 
+scores,  as “ q       0.                                                         y      ” (14). To 
+balance the internal and external validi ty of this sensitivity analysis, this caliper width will be 
+used , unless it excludes more than 20% of the sample. I n that case , the caliper width will be 
+increased until 80% of the participants are included. If this is adjustment is needed, the results 
+using the smaller caliper width will be reported in the supplemental material. Following  Austin 
+(2011 ), standardized differences, QQ -plots, box plots, cumulative distribution functions, and 
+empirical nonparametric density plots will be used to check the diffe rences in baseline 
+covariates between the treated and untreated samples  (13).  
+Time -effects  
+For the primary models, we have chosen not to include  the first appointment date as it could 
+capture factors that affect the effectiveness of the app. During the study time frame, many 
+outside factors could have affected the outcomes, especially due to the COVID -19 pandemic. 
+Because of this we  will conduct a sensitivity analysis including a time effect, the date of the 
+parti      ’                                     .  
+ 
+4. Software  
+Data will be delivered to EG through a HIPAA -compliant password protected sharefile site. The data 
+will be downloaded in a csv format and R will be used for data description and analysis.  
+References  
+1.  Jukic AM, Baird DD, Weinberg CR, McConnaughey DR, Wilcox AJ. Length of human pregnancy and 
+contributors to its natural variation. Hum Reprod [Internet]. 2013 Oct 1;28(10):2848 –55. 
+Available from: https://doi.org/10.1093/humrep/det297  
+2.  Fellows K, Stoneking CJ, Ramanathan M. Bayesian population modeling of drug dosing 
+adherence. J Pharmacokinet Pharmacodyn [Internet]. 2015 [cited 2019 Jul 12];42:515 –25. 
+Available from: https://link -springer -
+com.pr oxy.library.cmu.edu/content/pdf/10.1007%2Fs10928 -015-9439 -8.pdf  
+3.  Goldenberg RL, Culhane JF, Iams JD, Romero R. Epidemiology and causes of preterm birth. Lancet 
+[Internet]. 2008;371(9606):75 –84. Available from: 
+https://www.sciencedirect.com/science/artic le/pii/S0140673608600744  
+4.  Hendler I, Goldenberg RL, Mercer BM, Iams JD, Meis PJ, Moawad AH, et al. The Preterm 
+Prediction study: Association between maternal body mass index and spontaneous and indicated 
+preterm birth. Am J Obstet Gynecol [Internet]. 20 05 Mar 1;192(3):882 –6. Available from: 
+https://doi.org/10.1016/j.ajog.2004.09.021  
+5.  Meltzer R, Markus AR. An Analysis of Payment Mix Patterns of Preterm Births in a Post -
+A               A   I               : I                                    . W    ’  Heal 
+Issues [Internet]. 2020;30(4):248 –59. Available from: 
+https://www.sciencedirect.com/science/article/pii/S1049386720300384  
+6.  Valgimigli M, Garcia Garcia HM, Vrijens B, Vranckx P, McFadden EP, Costa F, et al. Standardized 
+classification and framework  for reporting, interpreting, and analysing medication non -
+adherence in cardiovascular clinical trials: a consensus report from the Non -adherence Academic 
+Research Consortium (NARC). Eur Heart J [Internet]. 2018 Jul 9 [cited 2019 Jun 11]; Available 
+from: h ttp://www.ncbi.nlm.nih.gov/pubmed/29992264  
+7.  Jiang M, Mishu MM, Lu D, Yin X. A case control study of risk factors and neonatal outcomes of 
+preterm birth. Taiwan J Obstet Gynecol [Internet]. 2018;57(6):814 –8. Available from: 
+https://www.sciencedirect.com/ science/article/pii/S1028455918302328  
+8.  Mansournia MA, Nazemipour M, Naimi AI, Collins GS, Campbell MJ. Reflection on modern 
+methods: demystifying robust standard errors for epidemiologists. Int J Epidemiol [Internet]. 
+2021 Feb 1;50(1):346 –51. Available from: https://doi.org/10.1093/ije/dyaa260  
+9.  Biaggi A, Conroy S, Pawlby S, Pariante CM. Identifying the women at risk of antenatal anxiety and 
+depression: A systematic review. J Affect Disord [Internet]. 2016;191:62 –77. Available from: 
+https://www.science direct.com/science/article/pii/S0165032715302330  
+10.  Bartsch E, Medcalf KE, Park AL, Ray JG. Clinical risk factors for pre -eclampsia determined in early 
+pregnancy: systematic review and meta -analysis of large cohort studies. BMJ [Internet]. 2016 Apr 
+19;35 3:i1753. Available from: http://www.bmj.com/content/353/bmj.i1753.abstract  
+11.  Institute of Medicine. Weight Gain During Pregnancy: Reexamining the Guidelines [Internet]. 
+Washington, DC: The National Academies Press; 2009. Available from: 
+https://nap.nati onalacademies.org/catalog/12584/weight -gain -during -pregnancy -reexamining -
+the-guidelines  
+12.  Mazza GL. Examining Dose -Response Effects in Randomized Experiments with Partial Adherence 
+[Internet]. 2018. Available from: https://core.ac.uk/download/pdf/157755 537.pdf  
+13.  Austin PC. An Introduction to Propensity Score Methods for Reducing the Effects of Confounding 
+in Observational Studies. Multivariate Behav Res [Internet]. 2011/06/08. 2011 May;46(3):399 –
+424. Available from: https://pubmed.ncbi.nlm.nih.gov/218 18162  
+14.  Austin PC. Optimal caliper widths for propensity -score matching when estimating differences in 
+means and differences in proportions in observational studies. Pharm Stat [Internet]. 
+2011;10(2):150 –61. Available from: https://pubmed.ncbi.nlm.nih.g ov/20925139  
+ 
+  
+Appendix A  
+Covariates and Outcomes  
+Variable Name in EHR   Description  Variable type  
+PATIENT_ID  ID for each patient not related to patient information  ID 
+MOM_AGE  Mother's age at time of delivery  Baseline covariate  
+FINANCIAL_CLASS  Payor at time of delivery from Medipac (insurance level, 
+might be like coverage) (i.e. name like 'UPMC HEALTH 
+NETWORK', 'MED PLUS', 'BEST HEALTH CARE', etc)  Baseline covariate  
+HOSP_ROLLUP_GROUPING1  Payor at time of delivery from Medipac (i nsurance type) (i.e. 
+specifies type of UPMC insurance, examples include 'UPMC 
+Commercial', 'Other MA Managed', 'Other Commercial', etc)  Baseline covariate  
+HOSP_ROLLUP_GROUPING2  Medicare, Medicaid, Self -pay, or Commercial Insurance  Baseline covariate  
+HPFL AG Payor at time of delivery from Medipac (UPMC Health Plan 
+Member flag, 1= has UPMC Health Plan, 0=Doesn't have it)  Baseline covariate  
+PT_ZIP  Patient zipcode  Baseline covariate  
+AD_ZIP_4  Patient zipcode, location extension (+4)  Baseline covariate  
+ADI_NATRANK  Area deprivation index, national ranking (0 most deprived, 
+100 least deprived)  Baseline covariate  
+RACE  Race, as reported through UPMC  Baseline covariate  
+MOM_HEIGHT  mother's height at time of delivery (cm)  Baseline covariate  
+OB_GRAVIDITY  Number of pregnancies (includes current pregnancy, so if 
+it's their first pregnancy, this will be a 1)  Baseline covariate  
+OB_PARITY  Number of previous deliveries (will be 0 if it's their first 
+pregnancy)  Baseline covariate  
+OB_FULL _TERM  Number of previous full term pregnancies  Baseline covariate  
+OB_PREMATURE  Number of previous premature deliveries (prior to 37 
+gestational weeks)  Baseline covariate  
+OB_ABORTIONS  Number of previous abortions, including 
+theraputic/spontaneous abortions  Baseline covariate  
+OB_LIVING  Number of previous live deliveries  Baseline covariate  
+OB_SPONTANEOUS_AB  Number of previous miscarriage/spontaneous abortions  Baseline covariate  
+OB_THERAPEUTIC_AB  Number of previous theraputic  abortions  Baseline covariate  
+PREGRAVID_WEIGHT  mother's pre -pregnancy weight (kg)  Baseline covariate  
+GESTAGE_ATVISIT_DAYS  This is the gestational age of the pregnancy at the time of 
+prenatal visit. Calculated using the estimated delivery date 
+((280 -(EPISODE.OB_WRK_EDD_DT -pat_enc.contact_date)) 
+). Baseline covariate  
+PREGSTART_OBESE  Obese BMI at first prenatal visit (binary variable)  Baseline covariate  
+PREGSTART_MORBIDOBESE  Morbidly obese BMI at first visit (binary variable)  Baseline covariate  
+PREGSTART_HTN  Chronic hypertension at first prenatal visit (binary variable)  Baseline covariate  
+PREGSTART_CKD  Chronic kidney disease at first prenatal visit (binary variable)  Baseline covariate  
+PREGSTART_DIAB  Type I or Type II diabetes at first prenatal visit (binary 
+variable)  Baseline covariate  
+PREGSTART_ANXIETY  Diagnosed or active anxiety at first prenatal visit (binary 
+variable)  Baseline covariate  
+PREGSTART_DEPRESSION  Diagnosed or active depression at first prenatal visit (binary 
+variable)  Baseline covariate  
+PREGSTART_LIVER_DISEASE  Liver disease at first prenatal visit (binary variable)  Baseline covariate  
+PREGSTART_TOBACCOUSE  Tobacco use history, recorded at first prenatal visit (options 
+are "yes","never","quit","passive")  Baseline covariate  
+PREGSTART_O_PREEXISTING
+HTN  Pre-existing hypertension in any of these forms or 
+combinations, complicating pregnancy: essential 
+hypertension, hypertensive heart disease, hypertensive 
+chronic kidney disease,  secondary hypertension, or 
+unspecified hypertension. Diagnosed or listed as active 
+problem at first prenatal visit. (binary variable); Definition 
+came from EPIC codes  Baseline covariate  
+PREGSTART_O_PREGINDUCE
+DHTN_NOPROT  Gestational hypertension without s ignificant proteinuria, 
+could occur during any trimester, childbirth, or puerperium. 
+Diagnosed or listed as active problem at first prenatal visit 
+(binary variable);  Baseline covariate  
+PREGSTART_O_PREGINDUCE
+D_PROTEDEMA_NOHTN  Gestational edema, gestationa l proteinuria, or gestational 
+edema with proteinuria. Diagnosed or listed as active 
+problem at first prenatal visit (binary variable);  Baseline covariate  
+PREGSTART_O_PREECLAMPSI
+A Preeclampsia diagnosed or listed as active problem at first 
+prenatal visit (binary variable)  Baseline covariate  
+PREGSTART_O_SUPERIMPOS
+EDPREE  Preexisting hypertension with preeclampsia. Diagnosed or 
+listed as active problem at first prenatal visit. (binar y 
+variable); Definition came from EPIC codes  Baseline covariate  
+PREGSTART_O_ECLAMPSIA  Eclampsia diagnosed or listed as active problem at first 
+prenatal visit (binary variable)  Baseline covariate  
+PREGSTART_O_UNSPHTN  Unspecified maternal hypertension. Diag nosed or listed as 
+active problem at first prenatal visit. (binary variable);  Baseline covariate  
+PREGSTART_O_ANYHTN  Pre-existing hypertension in any of these forms or 
+combinations, complicating pregnancy: essential 
+hypertension, hypertensive heart disease, hypertensive 
+chronic kidney disease, secondary hypertension, or 
+unspecified hypertension. Diagnosed or listed as ac tive 
+problem at first prenatal visit. (binary variable);  Baseline covariate  
+PREGSTART_O_CARDIOMYOP
+ATHY  Disease of the circulatory system affecting any stage of 
+pregnancy. Diagnosed or listed as active problem at first 
+prenatal visit. (binary variable); D efinition came from EPIC 
+codes  Baseline covariate  
+PREGSTART_O_GDM  Gestational diabetes mellitus. Diagnosed or listed as active 
+problem at first prenatal visit. (binary variable)  Baseline covariate  
+PREGSTART_MEDREPORTED  Medications reported at first prena tal visit (binary variable)  Baseline covariate  
+PREVIOUS_GDM  Previous GDM in a prior pregnancy, not including this 
+current pregnancy (gestational diabetes) (binary variable)  Baseline covariate  
+PREVIOUS_OBANYHTN  Previous gestational hypertension in a prior pregnancy, not 
+including this current pregnancy (binary variable)  Baseline covariate  
+PREVIOUS_PREECLAMPSIA  Previous preeclampsia in a prior pregnancy (binary variable)  Baseline covariate  
+AUTOIMMDX_PT20WKS  Previous gestational auto immune disease prior to 20 weeks 
+(in prior pregnancy) (binary variable)  Baseline covariate  
+PRIOR_SBBTW16AND34  Prior stillborn between 16 and 34 weeks in a prior 
+pregnancy (binary variable)  Baseline covariate  
+PRIOR_LBBTW31AND36  Prior premature live birth between 31 and 36 weeks in a 
+prior pregnancy (binary variable)  Baseline covariate  
+PRIOR_SBAFTER34  Prior stillborn after 34 weeks in a prior pregnancy (binary 
+variable)  Baseline covariate  
+PRIOR_VPTBBTW222AND30  Prior very premature birth between 22 a nd 30 weeks in a 
+prior pregnancy (binary variable)  Baseline covariate  
+PRIOR_STILLBORN  Prior stillborn (time period not specified) in a prior 
+pregnancy (binary variable)  Baseline covariate  
+PRIOR_PPROM  Prior preterm premature rupture of membranes in a prio r 
+pregnancy (binary variable)  Baseline covariate  
+PRIOR_PPROMBEFORE37  Prior preterm premature rupture of membranes before 37 
+weeks in a prior pregnancy (binary variable)  Baseline covariate  
+HOSPITAL  which hospital they delivered at  Baseline covariate  
+SINGLETONS  1=singleton birth, 0=twins, triplets, etc (binary variable)  Baseline covariate  
+PREG_CONTACT_DATE  First visit in Epic while pregnant  Baseline covariate  
+EST_GEST_AGE_DAYS  gestational age at the time of birth  Primary outcome  
+MOM_DELIVERY_WT  weight of mother at time of delivery (kg)  Secondary outcome  
+PREGANY_DEPRESSION  Diagnosis of depression or active depression at some point 
+during pregnancy (would also be 1 if 
+PREGSTART_DEPRESSION is 1) (binary variable)  Secondary outcome  
+PREGANY_ANXIETY  Diagnosis of anxiety or active anxiety at some point during 
+pregnancy (would also be 1 if PREGSTART_ANXIETY is 1) 
+(binary variable)  Secondary outcome  
+PREGANY_PREE  Preeclampsia diagnosed or listed as active problem at any 
+visit while pregna nt (binary variable)  Secondary outcome  
+PNV_COUNT  Number of prenatal appointments attended  Secondary outcome  
+PNV_TOTSCHED  Number of prenatal appointments scheduled (blank if the 
+same as PNV_COUNT i.e. they didn't cancel any 
+appointments)  Secondary outcome  
+PREGANY_BEHAVIORALREF  Behavioral health referral at some point during pregnancy 
+(binary variable)  Secondary outcome  
+PREGANY_SWREF  Social work referral at some point during pregnancy (binary 
+variable)  Secondary outcome  
+BABY_DISPOSITION  baby's disposition after birth (home health agency, 
+home/self care, children's hospital, cease to breathe, etc)  Exploratory outcome  
+STILLBORN  whether this baby was stillborn (binary variable)  Exploratory outcome  
+C_SECTION  Had c -section ( binary variable)  Exploratory outcome  
+BIRTH_WEIGHT  baby's birth weight in grams  Exploratory outcome  
+NICU_DELIVERYADMISSION  whether the baby was brought to the NICU (binary variable)  Exploratory outcome  
+ASSUMED_INDUCTION  If a delivery was by c -section prior to 259 days gestation, 
+but there is no documentation of induction then we assume Exploratory outcome  
+it was indicated and this column has a 1 (binary variable). 
+Otherwise, it's 0. Definition came from Hy.  
+INDICATED_ONS ET When a delivery form documents that a delivery was 
+induced but not for PROM (binary variable). Definition came 
+from Hy.  Exploratory outcome  
+CURRENT_PPROM  premature rupture of membranes; diagnosis of O42* during 
+current delivery (binary variable).  Explo ratory outcome  
+VISITNUMBER_F2F  Number of face -to-face visits when pregnant.  Exploratory outcome  
+PREGANY_PREGINDUCEDHTN
+_NOPROT  Gestational hypertension without significant proteinuria, 
+could occur during any trimester, childbirth, or puerperium; 
+Diagnosed or listed as active problem at any visit while 
+pregnant. Definition came from EPIC codes  Exploratory outcome  
+PREGANY_SUPERIMPPREE  Superimposed Preeclampsia diagnosed or listed as active 
+problem at any visit while pregnant (binary variable)  Exploratory outcome  
+PREGANY_ECLAMPSIA  Eclampsia diagnosed or listed as active problem at any visit 
+while pregnant (binary variable)  Exploratory outcome  
+PREGANY_UNSPHTN  Unspecified hypertension diagnosed or listed as active 
+problem at an y visit while pregnant (binary variable)  Exploratory outcome  
+PREGANY_ANYHTN  Any hypertension diagnosed or listed as active problem at 
+any visit while pregnant (binary variable)  Exploratory outcome  
+PREGANY_GDM  Gestational diabetes diagnosed or listed as active problem 
+at any visit while pregnant (binary variable)  Exploratory outcome  
+CANCELEDVISIT_COUNT  Number of prenatal appointments canceled (blank if 0 
+appointments canceled)  Exploratory outcome  
+ANTEPARTUM_EDLD  Number of EDLD visits during pr egnancy (EDLD = Emergency 
+Department Labor and Delivery)  Exploratory outcome  
+ANTEPARTUM_EDTR  Number of ER visits during pregnancy  Exploratory outcome  
+ANTEPARTUM_ADMISSION  N         ‘I ’    ‘O ’                                 y 
+start date in Epic and delivery  Exploratory outcome  
+ANTEPARTUM_LOS  Sum of all antepartum admission lengths of stays for each 
+delivery.  Exploratory outcome  
+POSTPARTUM_EDTR  Number of postpartum visits to ER up to 42 days after 
+pregnancy  Exploratory outcome  
+POSTPARTUM_ADMISSION  N         ‘I ’    ‘O ’                                y      
+and 42 days postpartum.  Exploratory outcome  
+POSTPARTUM_LOS  Sum of all postpartum admission between delivery date and 
+42 days postpartum.  Exploratory outcome  
+POSTPARTUM_NICU  Provided flags for infant ICU admission within 42 days 
+postpartum.  Exploratory outcome  
+PP_LOS  postpartum length of stay in hospital in days  Exploratory outcome  
+ 
+  
+Usage metrics  
+Variable Name  Description  
+DailyCheckin  Dates of filling out the daily check -in (includes responses to 
+questions on daily mood, number of hours slept, sleep quality, SDOH 
+questions, aspirin adherence, etc)  
+ArticleReads  Dates of clicking on any article within the app (only after November 
+2020)  
+MentalHealthCheckin  Dates of filling out  mental health check -in 
+RelationshipHealthCheckin  Dates of filling out relationship health check -in 
+SleepHealthCheckin  Dates of filling out sleep health check -in 
+HelpfulResource  Dates of looking at the helpful resource section (only after November 
+2020)  
+HelpfulResourceClick  Dates of clicking on a helpful resource from the helpful resources 
+section (only after November 2020)  
+OpensApp  Dates of accessing the app at all (best after November 2020, but can 
+also seem many things before November 2020)  
+Kick Counter  Dates of logging a kick -counting session in Kick Counter section of the 
+app 
+Contraction Counter  Dates of logging contractions in the Contraction Counter section of 
+the app  
+Journaling Section (just dates)  Dates of entering a journal into the journaling section of the app  
+Adding appointment reminders  Dates of adding in an appointment into the Prenatal Visits section of 
+the app  
+ 
+ 
+ 

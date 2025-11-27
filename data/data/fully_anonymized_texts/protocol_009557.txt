@@ -1,0 +1,559 @@
+ 
+ 
+Official Title: Desaturation Validation of 
+INVSENSOR00012 
+ 
+Date of Protocol: 08 May2018 
+ 
+Study ID: [REMOVED]  
+
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision: A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 1 of 14 
+© 2021 Masimo Corporation (Unpublished) DOT-1037 Rev. E 
+All Rights Reserved CO-024597 
+ Protocol/Test Procedure Title  Desaturation Validation of INVSENSOR00012  
+Lead Investigator  Tala Harake, MS  
+Senior Manager, Clinical Research/Laboratory 
+Masimo Corporation 52 Discovery, Irvine, CA [ZIP_CODE] 
+Other Investigators  Stacy Lobato, BS  
+Assistant Clinical Lab Manager 
+Masimo Corporation 
+52 Discovery, Irvine, CA [ZIP_CODE]  
+Chelsea Frank, MS 
+Clinical Research Associate II 
+Masimo Corporation 
+52 Discovery, Irvine, CA [ZIP_CODE] 
+Expected Start Date   
+Expected End Date   
+IRB E&I West Coast Board – IRB00007807  
+Protocol Version Date  12/11/[ADDRESS_690247]: 
+This study is designed to compare the accuracy of a noninvasive  measurement of oxygen  saturation compared to 
+reference values obtained by a laboratory blood gas analyzer.  Arterial blood samples will be collected from 
+healthy adult subjects while undergoing a desaturation procedur e wherein the concentration of oxygen inhaled is 
+slowly reduced until the subject’s arterial oxygen concentratio n is approximately 70%.  During the desaturation, 
+the subject’s hand and arm without the arterial line will be su bjected to motion. After completing the 
+desaturation, the gas mixture will be returned to room air conc entrations.  
+ 
+APPROVALS 
+Author  Date  Engineering  Date  
+    
+Quality Assurance  Date  Manufacturing  Date  
+    
+ 
+ 
+  
+  
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 2 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-1037 Rev. E 
+All Rights Reserved CO-022095 
+ STATEMENT OF COMPLIANCE 
+ This document is a protocol for a clinical research study spons ored by [CONTACT_138479].  The study will be 
+conducted in compliance with all stipulations of this protocol,  the conditions of IRB approval, 21 CFR Part 50, 21 CFR 
+Part 56, 21 CFR Part 812, ISO-[ZIP_CODE], and International Conferen ce on Harmonisation E6 Good Clinical Practice (ICH 
+GCP). 
+The protocol, informed consent form(s), recruitment materials, and all participant materials will be submitted to the 
+Institutional Review Board (IRB) for review and approval.  Appr oval of both the protocol and the consent form must 
+be obtained before any participant is enrolled.  Any amendment to the protocol will require review and approval by 
+[CONTACT_3484].   
+1. PURPOSE 
+The objective of this study is to compare the noninvasive oxyge n saturation (SpO
+2) performance of the Masimo 
+noninvasive INVSENSOR00012 sensor against an arterial blood sam ple analyzed by a laboratory CO-oximeter 
+reference instrument.  Data using the noninvasive devices will be collected from healthy volunteers undergoing a 
+desaturation procedure. 
+This is a nonrandomized single arm study wherein all subjects a re enrolled into the experimental arm and receive 
+the INVSENSOR00012 sensor on one or more fingers.  Desaturation  will be conducted by [CONTACT_531610] a controlled manner to obtain noninvasive oxygen saturation readings, SpO 2, 
+at various levels.  Reference blood samples will be repeatedly collected from the subject and analyzed using a 
+standard laboratory CO-oximeter.  During the desaturation, the subject’s hand and arm without the arterial line will 
+be subjected to motion. 
+Outcome Measure:  
+Performance of the sensors will be determined by [CONTACT_531611] 
+(SpO 2) of the pulse oximeter sensors to the arterial oxygen saturati on (SaO2) value obtained from a reference blood 
+sample and calculating the A RMS value per ISO-[ZIP_CODE]-2-61. The acceptance criteria will be ARMS  ≤ 3 %SpO2 across a 
+saturation range of 70-100 %SpO2 under motion conditions. 
+2. BACKGROUND 
+Masimo Corporation develops non-invasive medical technologies.  These devices have applications in the operating 
+room, critical care unit, emergency room, emergency transport v ehicles, as well as physician’s offices. 
+ 
+An invasive blood sample analyzed by a CO-oximeter reference in strument gives the best measure of arterial oxygen 
+concentration as well as other blood solutes, but cannot  measu re these parameters continuously and requires skin 
+puncture, arterial line placement and subsequent risk of infect ion, hematoma, and other physiological damage.  
+Masimo SET and Masimo Rainbow technologies allow real-time, non -invasive monitoring of oxygen saturation (and 
+other blood solutes) and has the potential to improve clinical outcomes while reducing the cost of care and risks to 
+both patients and clinicians associated with arterial and venou s punctures. 
+2.1. Technology Background 
+ Pulse oximetry is governed by [CONTACT_371330]: 
+x Oxyhemoglobin (oxygenated blood) and deoxyhemoglobin (non-oxyge nated blood) differ in their 
+absorption of red and infrared light (spectrophotometry).  
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 3 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-1037 Rev. E 
+All Rights Reserved CO-022095 
+ x The amount of arterial blood in tissue changes with arterial pu lses (photoplethysmography).  Therefore, 
+the amount of light absorbed by [CONTACT_531612].  
+x The CO-Oximeter utilizes a sensor with various light-emitting d iodes (LEDs) that pass light through the 
+site to a photodiode (detector).  See figure below.   
+ 
+ 
+x Signal data is obtained by [CONTACT_531613] a capi[INVESTIGATOR_99996] (for example, 
+a fingertip, a hand, a foot) and measuring changes in light abs orption during the blood pulsatile cycle.  
+The maximum radiant power of the strongest light is limited to ≤ 25mW.  The detector receives the light, 
+converts it into an electronic signal and sends it to the Masim o hardware (e.g. Rad-57, Radical-7) for 
+calculation.  Once the oximeter receives the signal from the se nsor, it utilizes Masimo SET signal 
+extraction technology for calculation of the patient’s function al oxygen saturation, pulse rate and other 
+blood parameters. 
+2.2. Study Devices 
+Investigational sensor : INVSENSOR00012 
+The INVSENSOR00012 sensor is a modification to Masimo’s SpO2 Re usable line of sensors.  These sensors 
+use red and infrared LEDs to calculate SpO2 values. INVSENSOR00 [ADDRESS_690248] or sensor that utilizes the same optical 
+components as the FDA cleared sensors.  This study will validat e that the new sensor design meets the 
+accuracy requirements for SpO2 under motion conditions when com pared to laboratory reference CO-
+oximeter SaO2 values(A RMS ≤ 3 %SpO2). 
+ 
+FDA Cleared Sensors and Devices: 
+Masimo Root Patient Monitoring Platform: Root is a patient moni toring and connectivity platform that 
+offers rainbow® and Masimo SET® measurements with other parameters in an integrated platform. With 
+docking capabilities for the Radical-7® handheld monitor and multiple networking/connectivity options,  Root 
+integrates multiple streams of data into one display monitor.  
+Masimo Radical-7 Pulse Oximeter: The Masimo Radical-7 pulse oxi meter is a noninvasive monitoring 
+platform featuring Masimo SET Measure-through Motion and Low Pe rfusion™ pulse oximetry with the 
+option to measure multiple additional blood constituents and ph ysiologic parameters.  
+ 
+3. REFERENCE 
+ 
+R-FRM-[ADDRESS_690249] Desaturation Valida tion of INVSENSOR00012 
+FRM-4150 Health Assessment Questionnaire Desaturation Validatio n of INVSENSOR00012 
+FRM-4153 Desaturation Validation of INVSENSOR00012 Recruitment Script 
+FRM-4151 Desaturation Validation of INVSENSOR00012 Healthy Volu nteers Needed Advertisement 
+R-FRM-2449 Confidentiality 
+FRM-4152 Desaturation Validation of INVSENSOR00012 Case Report Form (CRF) 
+
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 4 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-[ADDRESS_690250] is over 6 feet tall.  
+x Hemoglobin value is greater than or equal to 11 g/dL. 
+x Baseline heart rate ≥ 45 bpm and ≤ 85 bpm. 
+x CO value d 2.0% FCOHb  
+x Subject has a physical status of ASA I or II (American Society of Anesthesiology Class I; Healthy 
+subjects without any systemic disease at all.  American Society  of Anesthesiology Class II; subjects 
+with mild systemic disease) as it applies to the systemic disea se portion of the classification. 
+x Systolic Blood Pressure d [ADDRESS_690251] smokes (smoking includes e-cigarette use). 
+x Subject has a BMI > [ADDRESS_690252] experiences frequent or severe headaches and/or migrain e headaches.  
+x Subject has known drug or alcohol abuse and/or use of recreatio nal drugs. 
+x Subject has experienced a concussion or head injury with loss o f consciousness within the last year. 
+x Subject has any chronic bleeding disorders (i.e. hemophilia). 
+x Subject has any history of a stroke, myocardial infarction, sei zures or heart attack. 
+x Subject has any cancer or history of cancer (not including skin  cancer). 
+x Subject has a chronic neurological disease (i.e. multiple scler osis, Huntington’s Disease). 
+x Subject has any cardiac dysrhythmia(s) (i.e. atrial fibrillatio n) and has not received clearance by [CONTACT_138484]. 
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 5 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-[ADDRESS_690253] has a known neurological and/or psychiatric disorder (i .e. schizophrenia, bipolar disorder) 
+that interferes with the subject’s level of consciousness. 
+x Subject has any medical condition which in the judgment of the investigator and/or medical staff, 
+renders them ineligible for participation in this study (Discre tion of investigator). 
+x Subject has Wolff-Parkinson-White Syndrome or Stokes-Adams Synd rome. 
+x Subject who has taken anticoagulant medication within the last [ADDRESS_690254] has either signs or history of peripheral ischemia/carp al tunnel syndrome. 
+x Subject has had invasive surgery within the past year- includin g but not limited to major dental 
+surgery, gallbladder, heart, appendix, major fracture repairs ( involving plates/ screws), jaw surgery, 
+urinary tract surgery, plastic surgery, major ENT surgery, join t replacement or gynecological 
+surgeries, heart surgery or thoracic surgery.  
+x Subject has donated blood within the past [ADDRESS_690255] has been in severe car accident(s) or a similar type of  accident(s) requiring hospi[INVESTIGATOR_138474] [ADDRESS_690256] (including 
+riding a motorcycle) or exercise (working out, riding a bike, r iding a skate board etc.), or any activity 
+that will put additional stress on the wrist within 24 hours of  the study. 
+x Discretion of investigator/study staff. 
+ 
+5.3. Withdrawal of subjects  
+Subjects must be withdrawn under the following circumstances: 5.3.[ADDRESS_690257] withdraws consent
+. 
+ 
+5.3.2 Discretion of investigator, for example:  
+x The investigator feels that the subject is too money motivated.  
+x The investigator feels that the subject does not fully comprehe nd and understand the 
+consent form. 
+x The subject is ill-mannered and/or shows aggressive behavior to wards study staff. 
+x Malfunction of the device for greater than [ADDRESS_690258] may be recruited. 
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 6 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-1037 Rev. E 
+All Rights Reserved CO-022095 
+ 6. EQUIPMENT AND MATERIALS  
+Equipment and Materials: All lab analyzers and equipment will b e maintained per manufacturer specifications and 
+all study personnel will be trained on the use of relevant equi pment.  Equivalent equipment and materials to those 
+listed below may be used.  
+Safety Equipment (FDA-Cleared) 
+x Blood pressure monitoring system 
+x Electrocardiogram (ECG) 
+x Masimo Pulse Oximeters (Radical-7) 
+x Masimo Patient Monitoring Platform (Root®) 
+x Pulse oximeter sensors and cables (Masimo SET, Masimo rainbow, or comparable)  
+x Medical-grade oxygen tank and mask 
+x Crash cart  
+ 
+Test Devices 
+x Masimo INVSENSOR00012 pulse oximeter sensor - Investigational 
+ 
+Research Equipment 
+x Passive Data Collection Research Equipment (automated data coll ection software (ADC), multi-input pulse 
+oximeter technology board)   
+x Gas Blender: electro-pneumatic system intended to assist the cl inical operator in setting and delivering a 
+prescribed concentration of O 2, CO 2 and N 2 gases.   
+x Motion Generator 
+x Warming blanket 
+x Laboratory co-oximeters/blood analyzers  
+x Laboratory hematology analyzers 
+7. PROCEDURE 
+7.1        SCHEDULE OF ACTIVITIES 
+Procedures 
+Phone  
+Pre-Screen  
+Baseline 
+Visit 1 
+Procedure  
+Visit 1 
+Brief Study Procedure Description X   
+Informed consent X  
+Demographics (including skin tone) X X  
+Medical history (subject-reported) X X  
+Concomitant medication review  X X  
+Vital Signs (ECG, Blood Pressure Cuff, Pulse Ox) X X 
+Height  X X  
+Weight  X X  
+ASA Status Assessment   X  
+Pregnancy test1  X  
+Allen’s Test  X  
+Venous sample (via needle stick or IV placement)   X 
+Local anesthetics (lidocaine, ethyl chloride spray, or pain eas e skin 
+refrigerant) as needed2  X X 
+Peripheral Venous Line (IV)2  X X 
+Intra-arterial catheter (A-line)    X 
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 7 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-[ADDRESS_690259] Care Instructions Given  X X 
+Discharge  X X 
+Adverse Event Review and Evaluation3 X X 
+1 hCG (urine) pregnancy test (all female subjects) 
+2 IV may be placed during screening/baseline to obtain qualifyi ng venous sample at discretion of medical staff.  If 
+the IV is placed during screening/baseline, medical staff will offer to use local anesthetics. 
+[ADDRESS_690260]’s weight and height are self-reported, however the subject may be weighed on 
+a scale for verification. 
+7.3.3.  Subjects will be asked to provide a copy of their valid governm ent photo ID and/or Social 
+Security Number (SSN) card to verify subject identity.  The cop ies of these forms of 
+identification will be stored along with the subject’s consent.   The confidentiality and 
+retention of these documents will be protected to the extent pr ovided and required by [CONTACT_2371].  
+7.3.4.  Subjects will be asked a brief series of health questions to en sure their eligibility for this 
+study.  Subjects who do not meet the inclusion and exclusion cr iteria will not be eligible to 
+participate in the study.   
+7.3.5.  Subject demographic information including age, sex, skin tone, ethnicity, height and weight 
+will be collected.  These may be recorded for data analysis and /or subject safety monitoring 
+purposes. 
+7.3.6.  In addition, a medical history will be recorded after the initi al screening questionnaire. 
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 8 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-[ADDRESS_690261] safety m onitoring.  Spi[INVESTIGATOR_138475], needle sticks, blood draws 
+etc. and may also be attributed to anxiety/nervousness relating  to a new environment.  Only 
+the initial recorded blood pressure and/or heart rate determine s a subject’s qualification for 
+the study. 
+7.3.8.  Female subjects will be required to take a pregnancy test.  Res ults will be noted in study 
+documentation.  If the pregnancy test is positive, the subject will be notified and removed 
+from the study.  
+7.3.9.  A venous sample will be obtained via needle stick or by [CONTACT_531614].  The 
+subject will be excluded from the study if the values from the blood draw fall outside the 
+ranges stated in the inclusion criteria. 
+7.3.10.  Subjects may have a blanket placed on them for their comfort.  
+7.3.11.  Subjects may be offered a snack (e.g., granola bar) and/or beve rage (e.g., water, juice) due 
+to the amount of time their involvement in this study may take.   
+7.4. PROCEDURES 
+7.4.1.  Standard hospi[INVESTIGATOR_307]-type monitors will be placed on the subject, including ECG, blood 
+pressure, and a reference pulse oximeter for safety monitoring by [CONTACT_131459].  
+7.4.2 Proprietary Masimo data collection software will be used to ver ify all oximeters are reading.  
+If not, proper sensor positioning will be checked and sensors m ay be repositioned, as 
+needed.  
+[IP_ADDRESS]  Pulse oximeter output values (e.g., SpO 2, Pulse rate) will be recorded using the 
+proprietary Masimo data collection software.  These values matc h the values 
+calculated by [CONTACT_138487]. 
+[IP_ADDRESS]  Raw absorbance data from the noninvasive device(s) will also be  recorded using the 
+data collection software. 
+7.4.[ADDRESS_690262]’s hand o r arm.  This line may be used 
+for the qualifying venous blood draw and for safety or clinical  intervention required during 
+the study. 
+7.4.[ADDRESS_690263] lidocaine or numbing spray be used during IV pla cement for the purpose of 
+making catheter placement more comfortable for the subjects. 
+7.4.5 After intravenous access is established, one or more intra-arte rial catheter(s) (arterial line or 
+A-line) will be placed in the radial artery of the subject’s wr ist.  The A-line is placed to 
+facilitate continuous blood pressure measurement for subject sa fety monitoring, and/or to 
+enable repeated removal of blood aliquots for reference arteria l blood gases (ABG), Hgb, 
+Hct, as well as other non-infectious blood solutes. 
+7.4.[ADDRESS_690264]’s  fingers, toes, ears, nose, 
+and/or forehead.   
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 9 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-[ADDRESS_690265]’s indi cation that they are 
+comfortable, a baseline set of blood samples will be obtained.  
+7.4.[ADDRESS_690266]’s mouth.  Upon indicat ion the subject is 
+comfortable, a gas mixture will be administered through the mou thpi[INVESTIGATOR_13959].  The proportion of 
+oxygen in this mixture will be decreased in a controlled manner  to lower the subject’s blood 
+oxygen saturation.  The lowest targeted value will be 70% oxyge n saturation.  Readings near 
+70% will be immediately verified by [CONTACT_531615]-oximeter t o ensure that levels are 
+within the targeted oxygen saturation range and to minimize tim e that the subject may drop 
+below the targeted range. Note: At any point in the study, if t he subject feels 
+uncomfortable, the subject will be given 100% oxygen through ei ther the mouthpi[INVESTIGATOR_138476] a 
+supplemental mask.  
+7.4.[ADDRESS_690267] 30 seconds before and after a blo od sample is taken. 
+7.4.14  Motion is to be done with the volunteer’s test hand; their cont rol hand (arterial line side) is 
+to remain steady. There will be several types of motion. The mo tion will be on for 
+approximately 2 minutes at a time.  
+Subjects will experience a variety of motions, for example tapp ing, rubbing, waving and/or 
+scratching random motion, or a combination of the previously li sted type motions.  
+The motion generator will be turned on to simulate motion at a rate between 3 to 4 Hz and 
+an amplitude of approximately 3 cm. 
+No motion periods should be a minimum of 60 seconds, or enough time to allow all pulse 
+oximeters to settle to their non-motion values. 
+Blood samples may be taken during motion and non-motion. 
+7.4.15  The study will end with several minutes at a FiO 2 greater than room air (>21%) to help the 
+subject re-saturate after the procedures.  
+7.4.[ADDRESS_690268] is uncomfortable with the study, th e study will be stopped. 
+7.4.17  At the conclusion of the procedure, the sensors/devices, IV(s),  and arterial line(s) will be 
+removed and the subject will be allowed to leave after medical personnel determine it is 
+safe to do so.  
+7.4.18  The total procedure time will be approximately 180 minutes. 
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 10 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-[ADDRESS_690269]; 
+subjects should feel safe and able before returning to work dir ectly after participation in the 
+study.  
+7.4.[ADDRESS_690270] validation 
+desaturation study.  However, if greater precision in the RMS e stimate is required, additional 
+subjects are needed. A previous study collected data on 35 subj ects using Red Diamond disposable 
+sensors during an observational study.  Monte Carlo analysis es tablished that the estimated RMS 
+variation reduced to below 0.25 %SpO2 when clinical trials usin g 25, or more, subjects were 
+simulated. 
+Therefore, this study will use a minimum of [ADDRESS_690271] which subjects will be able to co mplete full desaturations to 70% SpO2. 
+Therefore, the number of samples for each subject will vary dep ending on the subject’s ability to 
+reach and maintain the targeted SaO2 level.  The final analysis  will utilize statistical methods to 
+ensure accuracy statistics are calculated with comparable densi ty over the range 70-100 %SaO2. 
+9.2. Statistical Analysis 
+Accuracy will be reported as the A RMS using the following equation: 
+ݏܽ݅ܤ ൌͳ
+݊෍ሺܱ݌ܵʹെܱܽܵʹ ሻ௡
+௜ୀଵ 
+ ൌ ඨσሺሺܱ݌ܵʹെܱܽܵʹሻെݏܽ݅ܤ ሻଶ ௡
+௜ୀଵ
+݊ 
+ܣோெௌൌඨσሺܱ݌ܵʹെܱܽܵʹ ሻଶ ௡
+௜ୀଵ
+݊ 
+9.3. The A RMS and precision values will be adjusted to account for repeated measurements on each 
+subject. 
+9.4. Measures taken to minimize/avoid bias: 
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 11 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-[ADDRESS_690272] intravenous or arterial l ine placed.  Expected drop out rate for 
+this study is approximately 50% of the total number of subjects  enrolled. 
+10. ADVERSE EVENTS 
+Definitions: Adverse event:  Any untoward medical occurrence in a subjects, users or other persons, whether or not 
+related to the medical device under study. 
+Device-related adverse event:  Adverse event related to, associ ated with, or caused by, the use of a medical 
+device under study, including but not limited to events that ma y have been attributed to the device because 
+of device failure or malfunction, improper or inadequate design , manufacture or user error. 
+Device deficiency: Inadequacy of a medical device with respect to its identity, quality, durability, reliability, 
+safety or performance.  Device deficiencies include malfunction s, use errors and inadequate labeling. 
+Device deficiencies will be reported according to department pr ocedures. 
+Serious adverse event:  Adverse event that: a) led to death, b)  led to serious deterioration in the health of 
+the subject, that resulted in: (i) a life-threatening illness o r injury,  (ii) a persistent or significant impairment 
+of a body structure or a body function, (iii) in-patient or pro longed hospi[INVESTIGATOR_059], or (iv) medical or surgical 
+intervention to prevent life-threatening illness or injury or p ermanent impairment to a body structure or a 
+body function, or c) led to fetal distress, fetal death or a co ngenital abnormality or birth defect.  NOTE:  
+Planned hospi[INVESTIGATOR_272] a pre-existing condition, or a proc edure required by [CONTACT_75693], without serious deterioration in health, is not considere d a serious adverse event. 
+All adverse events, including inter-current illnesses will be r eported and documented as described below. 
+10.1. Adverse Events 
+All adverse events that occur during the study shall be recorde d on the Case Report Form even if the 
+investigator/study staff assess the adverse event as unlikely t o be causally related to the test device 
+or study procedures. 
+10.2. Serious Adverse Events 
+The investigator/study staff shall promptly report both serious  adverse events and unanticipated 
+adverse device effects to the sponsor within 48 hours.  All ser ious adverse events will also be 
+reported to the IRB per IRB reporting requirements.  
+At the time of discharge from the study, any unresolved serious  adverse event(s) will be followed up 
+by [CONTACT_093]/study staff until the event(s) are resolved , stabilized or the patient is lost to 
+follow-up or the adverse event is otherwise explained.  The inv estigator and/or study staff  will also 
+instruct the subject to report any subsequent events occurring in the next [ADDRESS_690273]’s physician believes might reasonably be  regarded as caused by [CONTACT_138492] a 
+reasonable possibility of being caused by [CONTACT_138493].  
+10.3. Unanticipated Problems 
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 12 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-[ADDRESS_690274] the Rights and Welfare of Subjects 
+11.1.1  All subjects will be monitored closely throughout the study.  T here will be an ACLS certified 
+medical doctor present in the study area throughout the study. 
+11.1.2  The following measures will be taken to ensure the confidential ity of the subjects: 
+[IP_ADDRESS]  A code (identification) number for each subject will be kept on  file. 
+[IP_ADDRESS]  Only their corresponding identification number will identify su bjects. 
+[IP_ADDRESS]  Access to identifying documents (IC, SSN, photo ID) and data wi ll only be made to 
+the principal investigators in the study and study staff. 
+[IP_ADDRESS]  The confidentiality and retention of these documents will be pr otected to the 
+extent provided and required by [CONTACT_67204]. 
+11.[ADDRESS_690275]/tested for is no 
+longer being made.  If destroyed, these documents will be shred ded and done by a certified 
+company used for destroying medical and clinical data. 
+11.3.[ADDRESS_690276] ed using a multi-faceted 
+procedure including, but not limited to the following steps: 
+x Two layers of endpoint security and one layer of DLP (Data loss  prevention) running on 
+all company machines. 
+x Premier firewalls/Network monitoring appliances and log collect ion systems (SIEM) 
+protecting the network.  
+x [ADDRESS_690277] phish ing attacks. 
+x Security policies to limit access to specific folders. 
+12. DEVICE ACCOUNTABILITY 
+12.1 Receipt of Study Device 
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 13 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-[ADDRESS_690278]. 
+12.3 Return or Destruction of Study Device 
+At the completion of the study, there will be a final reconcili ation of study devices and sensors 
+shipped, devices/sensors used, and devices/sensors remaining.  This reconciliation will be logged on 
+the device accountability log.  Any discrepancies noted will be  investigated, resolved, and 
+documented prior to return or destruction of unused study devic es.  Devices destroyed on site will 
+only be upon written instruction from the sponsor and will be d ocumented in the study files. 
+13. RISKS AND BENEFITS 
+13.1. Benefits: There will be no benefit to the subject.  Other possi ble benefits would be to society as a 
+whole.  Evaluation of the accuracy of this new device could ena ble healthcare workers to more 
+appropriately treat potentially life threatening conditions. 
+13.2. Device Risks: The noninvasive devices used in this study are si milar in technology and design to 
+some commercially available pulse oximeters and other non-invas ive devices and hence have the 
+same risks.  Pulse oximeters and other non-invasive devices are  commonly used and are considered 
+to be minimal risk.  There is an extremely small risk of damage  to the subject’s fingers, or other 
+locations where sensors are placed, from the device including t emporary skin irritation or 
+discomfort associated with exposure to the sensor as well as po tential temporary mechanical 
+irritation or discomfort.  There is a remote, yet possible, ris k of a burn from the sensor. In the case of 
+a sensor burn there is the potential for permanent skin damage (scar/discoloration). 
+13.3. Venous Cannulation Risks: swelling, infection, infiltration of fluids/ blood into area surrounding IV, 
+bruising, hematoma, lightheadedness, fainting, feeling flush/wa rm, feeling nauseated, throwing up, 
+sudden drop in blood pressure/sudden increase in blood pressure , sudden drop in heart 
+rate/sudden increa se in heart rate, tingl ing sensation of face,  arms and/or legs, sweating, mouth 
+dryness, damage to the blood  vessel and surrounding nerves or t issue. 
+13.4. Arterial Cannulation risks: decreas ed blood supply, blood clot,  embolization, infection, hematoma, 
+damage to the blood vessel and surrounding nerves, tendons or t issue; loss of feeling in hand and/or 
+arm and even the loss of hand due to rare complications of the study. 
+13.5. Blood Draw risks: discomfort is generally associated with needl e puncture.  The most common 
+complications associated with blood draws and capi[INVESTIGATOR_531608].  All blood 
+draws will be performed by [CONTACT_5944].  An ACLS certif ied physician will be in attendance 
+throughout the entire procedure, and the study will be complete d under their general supervision.  
+Other anticipated adverse events that may occur, include but ar e not limited to: vasovagal (passing 
+out/fainting), infection to the skin or area right below the sk in, lightheadedness, feeling flush/ warm, 
+feeling nauseated, throwing up, seizures, sudden drop in blood pressure/ sudden increase in blood 
+pressure, sudden drop in h eart rate/ sudden increase in heart r ate, tingling sensation of face/arms 
+and/or sweating, and mouth dryness.  These anticipated adverse events are expected to be 
+temporary. 
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 14 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-1037 Rev. E 
+All Rights Reserved CO-022095 
+ 13.6. Risk From Oxygen Administration:  There are no risks associated  with high oxygen/oxygen 
+administration for less than [ADDRESS_690279] any cardiac conditions, COPD 
+or any other lung diseases.  Subjects’ answers on the health qu estionnaire will help the medical staff 
+decide if they can safely participate in this study; subjects a re encouraged to let the study staff know 
+if they have any concerns. 
+13.7. Low Oxygen Concentration Risks: Risks associated with hypoxia i nclude dizziness, shortness of 
+breath, drowsiness, or headache. If or when this occurs, the st udy can be stopped. There is an 
+extremely small risk of loss of consciousness, damage to vital organs, or death from lack of oxygen. 
+The study shall be stopped by [CONTACT_138495] g before this could occur.  Other 
+anticipated adverse events that may occur, include but are not limited to:  vasovagal (passing 
+out/fainting), lightheadedness, feeling nauseated, throwing up,  seizures, sudden drop in blood 
+pressure/sudden increase in blood pressure, sudden drop in hear t rate/sudden increase in heart 
+rate, tingling sensation of face, arms and/or legs, sweating, m outh dryness.  These anticipated 
+adverse events are expected to be temporary. 
+13.8. Nose Clip Risks: It is expected that some people will have disc omfort/ pi[INVESTIGATOR_38633]/ scratches from 
+wearing a nose clip. If this occurs, adjustments can be made an d/or the study can be stopped. 
+13.9. Risk from Inflicted Knowledge: The risk of inflicted medical kn owledge to subjects is negligible since 
+we deidentify all associated sample information including those  relevant to our clinical and 
+engineering parameter studies.  The monitoring and test results  are not examined for diagnostic 
+purposes and do not reflect an attempt to ascertain any subject 's medical condition.  The attending 
+physician's role during this study is to ensure the safety of t he subject during the study. Subjects are 
+informed that these are not diagnostic tools, if observations a re made using FDA cleared devices we 
+will refer them to their primary care physician. 
+13.10.  Risk From Loss of Confidentiality: Masimo upholds the highest s tandards to protect hard and 
+electronic data however, a complete promise for confidentiality  cannot be guaranteed due to 
+unforeseeable events. 
+13.11.  Risk From Additional Testing: 
+13.11.1.  During the conduct of the study, it is possible, but not likely , that someone could become 
+exposed to the sample of blood drawn from the subject through a n inadvertent needle 
+stick or by [CONTACT_138496]. In such circumstances, it  will be important to the 
+exposed individual to know whether the blood to which he or she  was exposed contained 
+Hepatitis B virus (HBV), Human immunodeficiency virus (HIV), or  Hepatitis C virus (HCV) 
+and additional testing of the sample will be performed. 
+13.11.2.  Within the consent, subjects will agree to permit the company t o test the blood sample 
+(or samples) by [CONTACT_44210].  The test results will be maintained as confidential 
+and will only be used by [CONTACT_138497].  
+13.11.3.  In the case that Masimo needs to contact a subject regarding ad ditional testing they will be 
+contact[CONTACT_426] a Masimo employee and medical personnel can be ava ilable for further 
+counsel if requested.  
+13.11.4.  The cost for the initial testing and compensation for their tim e/travel to the testing facility 
+will be the only things paid for by [CONTACT_108573]. 
+ PROTOCOL/TEST PROCEDURE  R-TP-[ZIP_CODE]  
+Desaturation Validation of INVSENSOR00012 Revision:  A  
+CO-039801  
+ 
+CONFIDENTIAL AND PROPRIETARY Page 15 of 15  
+© 2021 Masimo Corporation (Unpublished) DOT-1037 Rev. E 
+All Rights Reserved CO-022095 
+ 13.12.  Lidocaine (injection) Risks:  Insertion of the Lidocaine may be  discomforting and can feel like a slight 
+pi[INVESTIGATOR_531609] a warm/burning sensation.  Other anticipated a dverse events that may occur, 
+include but are not limited to: Flushing or redness of the skin , itching skin, small red or purple spots 
+on the skin, unusually warm skin, bruising, bleeding at the app lication site, and swelling. These 
+adverse events are expected to be temporary. 
+13.13.  Although not common, it is also possible to have an allergic re action to injectable lidocaine.  
+Subjects should not take part in this study if they are allergi c to lidocaine injection or other types of 
+numbing medicine, or if they have a heart rhythm disorder such as Wolff-Parkinson-White 
+Syndrome or Stokes-Adams syndrome.  Subjects are instructed to tell the study staff right away if 
+they experience hives; difficulty breathing; swelling of your f ace, lips, tongue or throat. 
+13.14.  Ethyl Chloride (Lidocaine Spray): Ethyl Chloride is a topi[INVESTIGATOR_2855] a nesthetic which is used to prevent pain 
+by [CONTACT_138498]. Although unlikely, the anticipated adverse  events that may occur, include but 
+are not limited to: changes in skin color (i.e. Flushing or red ness of the skin), delayed wound healing, 
+rash, itching and swelling.  These adverse events are expected to be temporary. 
+14. EMERGENCY RESPONSE PLAN FOR MEDICAL EMERGENCIES  
+The physician and nurse present during the study will be ACLS c ertified and will respond to any medical 
+emergency involving a subject with the ACLS approved protocol f or intervention.  A crash cart is on site and 
+full emergency services are within [ADDRESS_690280] be reviewed and approved by [CONTACT_1201].  

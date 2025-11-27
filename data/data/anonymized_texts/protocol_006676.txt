@@ -1,0 +1,647 @@
+ 
+ 
+Official Title: Calibration and Usability 
+Validation of Patient Monitoring Device for 
+Pressure Injury Prevention and Fall Detection 
+ 
+Date of Protocol: 17 December 2018 
+ 
+Study ID: [REMOVED]  
+
+ CLINICAL INVESTIGATION PLAN 
+RAMS0006  
+Usability Validation of Patient Monitoring Device for Pressure Injury Prevention and 
+Fall Detection  Version 2.0  
+ 
+ 
+CONFIDENTIAL AND PROPRIETARY   
+© 2020 Masimo Corporation (Unpublished) 
+All Rights Reserved Page 1 of 13 
+ 
+  
+ 
+Calibration and Usability Validation of Patient Monitoring Devi ce for Pressure 
+Injury Prevention and Fall Detection  
+ 
+ 
+ 
+Sponsor: Masimo 
+52 Discovery 
+Irvine, California 92618 
+  
+Principal Investigator: 
+ 
+Sub-Investigator: Michael A.E. Ramsay, MD, FRCA  
+ 
+Susan H. Smith, DNP, APRN, ACNS-BC   
+  
+Study Device: Masimo Centroid Sensor Monitoring Device 
+Masimo Radical-7 Pulse CO-Oximeter 
+Masimo LNCS® Pulse Oximeter Sensors  
+Masimo Root Patient Monitoring System 
+Masimo SedLine Brain Function Module and Sensors  
+ 
+  
+Sponsor Protocol Number: RAMS0006  
+  
+IRB: Baylor Research Institute  Institutional Review Board  
+3310 Live Oak, Suite 501 
+Dallas, TX 75204 
+ 
+ 
+ 
+ 
+Principal Investigator 
+ 
+Michael A.E. Ramsay, 
+MD, FRCA Title 
+ 
+Chairman, Department of 
+Anesthesiology & Pain Management Signature Date 
+Sponsor 
+ 
+Vikram Ramakanth  Title 
+ 
+Director of Clinical Research  Signature Date 
+  
+RAMS0006: Calibration and Usability Validation of Patient Monit oring Device for Pressure Injury 
+Prevention and Fall Detection  Version 2.0
+ 
+ 
+CONFIDENTIAL AND PROPRIETARY   
+© 2020 Masimo Corporation (Unpublished) 
+All Rights Reserved                                                                             Page 2 of 13 
+ 
+ 
+ 1 INTRODUCTION 
+This document is a clinical investigational plan for a human re search study. The study will be conducted in accordance with 
+the ethical principles that have their origin in the Declaratio n of Helsinki. By participating in the study, the Investigator 
+agrees to adhere to all stipulations of this protocol, the cond itions of IRB approval, federal and local regulatory requiremen ts, 
+21CFR 812, ISO-14155 and International Conference on Harmonizat ion Good Clinical Practice guidance ICH GCP.  
+This protocol describes a procedure to collect a subject’s posi tion, movement and physiological data using Masimo’s 
+Centroid system. The Centroid monitoring system consists of a n oninvasive, coin-battery operated, wearable sensor that can 
+be attached to a subject’s chest or back and is intended to sen d the subject’s position, movement and activity data to the Roo t 
+monitoring station via a Bluetooth link. Device and usability d ata from the Centroid system as well as staff notes about the 
+subject’s demographics, vital signs, health condition, and acti vity will be collected. Additionally, this protocol allows for the 
+placement of Masimo’s pulse oximeter system and SedLine brain f unction monitoring system. The SedLine system will 
+collect EEG data in this patient population. The pulse oximeter  system will collect plethysmogram data. 
+1.1 Background and Rationale 
+Masimo Corporation is the developer of noninvasive technologies  for the measurement and monitoring of physiological 
+variables, such as arterial oxygen saturation (SpO 2), total hemoglobin concentration (SpHb), carboxyhemoglobin 
+concentration (SpCO), methemoglobin concentration (SpMet), acou stic respiration rate monitoring (RAM), and cerebral and 
+regional oximetry (rSO2, O3TM). These technologies are noninvasive and have a good patient s afety record.  
+Masimo has developed a new noninvasive sensor named Centroid as  a device to aid in preventing hospital-acquired pressure 
+injury or worsening of existing pressure injury by monitoring p atient movement, position, and orientation. The sensor is also 
+able to detect falls through the same monitoring features. This  type of monitoring may be effective in reducing the 
+debilitating conditions for patients and their extended stays i n hospitals, especially in the patient population who are 
+vulnerable to acquire pressure injuries and/or are prone to fal l-related injuries.  
+Each year over 2.5 million individuals in the U.S. develop a pr essure injury.1 Pressure injuries are painful, debilitating and 
+are usually avoidable. Routine repositioning relieves and redis tributes pressure over bony prominences. It is a recommended 
+procedure to help mitigate the risks for developing a pressure injury.2 The Centroid device, through detection of patient 
+position, is a modality to ensure repositioning occurs routinel y.  
+As many as 1 million Americans fall in the hospital every year.  Falls result in fractures, lacerations, bleeding and even deat h. 
+Current practices to prevent falls include assessment of patien t risk, scheduled rounding practices and patient specific 
+interventions to prevent falls.3 The Centroid device is proposed to be an additional technology  to assess risk for fall based on 
+patient position and unique modality additive to these current practices. 
+The Centroid system consists of a wearable, battery-operated, a dhesive sensor and a back-end user interface and Root 
+monitor display at the patient bedside as well as a central loc ation (e.g., nursing station). The sensor contains sensing 
+elements (accelerometer s, gyroscopes), proces sor, and a  blue-to oth communication chip (BTLE 2.4 GHz). An algorithm 
+processes three-dimensional acceleration and rotation informati on and calculates the patient’s relative position and fall as 
+parameters. These parameters are then combined over a given tim e period and computes past trend and future risk assessment 
+for pressure injury. The system can generate alarms configured for adverse events related to patient posture, pressure injury 
+risk and fall. 
+In this study, subject position data and feedback about device usability will be collected. Data collection will also be 
+conducted for Masimo’s SedLine brain function monitoring system . Secondary aims are to collect data for the pulse oximeter 
+sensor and SedLine sensor for the purpose of correlating agains t Centroid sensor’s data and further investigation. 
+1.2 Investigational Devices  
+RAMS0006: Calibration and Usability Validation of Patient Monit oring Device for Pressure Injury 
+Prevention and Fall Detection  Version 2.0
+ 
+ 
+CONFIDENTIAL AND PROPRIETARY   
+© 2020 Masimo Corporation (Unpublished) 
+All Rights Reserved                                                                             Page 3 of 13 
+ 
+ 
+ The Centroid device is a non-invasive body-worn investigational  device that is intended to detect the positional changes and 
+physical movements of a subject. The device mainly consists of an inertial sensor, Bluetooth LE radio, and a coin-cell lithium  
+battery. The Centroid device is a disposable sensor that is cap able of adhering to a subject’s skin and continuously storing 
+and transmitting positional data wirelessly, to a host instrume nts/devices to analyze the subject’s activities. The sensor’s s kin-
+contacting materials are biocompatible and are thermally non-co nductive. The device is intended to be used in hospitals, 
+hospital-type facilities, healthcare facilities, and home envir onments.  
+Investigational SedLine sensors and patient cables may be used in this study. The SedLine brain function module is non-
+invasive and uses sensors that adhere to the subject’s forehead . The SedLine brain function module uses a sophisticated 
+multivariate algorithm to assess the patient’s electroencephalo gram (EEG) data from all 4 channels of the SedLine EEG 
+sensor. The SedLine V2 sensor is intended to monitor the state of the brain by real-time data acquisition and processing of 
+EEG signals. The SedLine system includes patient cable that con nects the sensor and module to the Root multi-function 
+monitoring system, which monitors multiple physiological parame ters in healthcare environments. 
+2 STUDY DEVICES 
+2.1 Description 
+Investigational Devices: 
+Centroid monitoring device SedLine V2 sensor and V2 patient cable 
+FDA-cleared Devices: 
+SedLine brain function module  
+Root monitor*  Radical-7 Pulse CO-Oximeter LNCS
+ SpO 2 sensors 
+*NOTE: during the validation stage of the study, the FDA-cleare d Root monitor will be updated with Centroid software. The 
+Root monitor at this time will be considered an investigational  device, alth ough no new pa tient risks will be introduced by th e 
+addition of the Centroid software.  
+2.2 Device Accountability 
+2.2.1 Receipt of Study Device 
+Masimo may ship or hand-carry devices and sensors to the invest igative sites. Upon receipt of the study device supplies, an 
+inventory must be performed and the Equipment Shipment Check Fo rm (FRM-2713) and the device accountability log will 
+be completed for each device and signed by the receiver. It is important that the designated study staff counts and verifies t hat 
+the shipment contains all the items noted in the shipment inven tory. Any damaged or unusable study devices in a given 
+shipment will be documented in the study files. The investigato r must notify the study sponsor of any damaged or unusable 
+study devices that were supplied to the investigator’s site. 
+2.2.2 Use of Study Device 
+Use of devices and sensors will be documented on case report fo rms (CRF) for each subject. Any unused devices must be 
+returned to the Sponsor at the end of the study or before produ ct expiration date. 
+2.2.3 Return or Destruction of Study Device 
+At the completion of the study, there will be a final reconcili ation of study devices. This reconciliation will be logged on t he 
+device accountability log. Any discrepancies noted will be inve stigated, resolved, and documented prior to return or 
+RAMS0006: Calibration and Usability Validation of Patient Monit oring Device for Pressure Injury 
+Prevention and Fall Detection  Version 2.0
+ 
+ 
+CONFIDENTIAL AND PROPRIETARY   
+© 2020 Masimo Corporation (Unpublished) 
+All Rights Reserved                                                                             Page 4 of 13 
+ 
+ 
+ destruction of unused study devices. Devices destroyed on site will only be upon written instruction from the Sponsor and 
+will be documented in the study files. 
+2.2.4 Device Deficiencies 
+Device deficiencies are defined as the inadequacy of a medical device with respect to its identity, quality, durability, 
+reliability, safety or performance. Record all device deficienc ies on the case report form and report to the Sponsor. 
+2.3 Risk/Benefits 
+Benefits:  There will be no direct benefits to the enrolled subjects.  Fu ture benefits to subjects include effective pressure 
+injury prevention (i.e., reduction in their occurrence and/or s everity) and detection of hospital falls.  
+Centroid device risks:  As with all wearable sensors, the Centroid sensor has a risk o f thermal burn as there is a coin battery 
+in the sensor. The coin battery used in the Centroid device is widely used in other commercially available medical devices for  
+wearable monitoring applications. Masimo’s design includes safe guards against thermal burn, and this risk is believed to be 
+low. Sensors will be attached with a medical-grade, biocompatib le adhesive. Marks may appear on the skin beneath the 
+sensor due to adhesion for a long period (from several hours to  days). The risk is believed to be low. The sensor transmits 
+that data, after on-sensor processing, via a radio link to the host device. 
+SEDLine V2 sensor and V2 patient cable risks: All patient-contact materials, including the adhesive used in t he design of 
+the Masimo sensors, have been subjected to biocompatibility tes ts per ISO 10993-1 and results demonstrate that the materials 
+are non-toxic, non-irritating, and non-sensitizing. The sensors  have been evaluated for mechanical and electrical safety and 
+the risks have been determined to be minimal. The modifications  to the sensor are specifically designed so as not to introduce  
+any new risks to the subject. 
+Pulse oximeter risks:  The Radical-7 pulse CO-oximeter device and LNCS® pulse oximeter sensors used in this study are 
+FDA-cleared.  
+Root patient monitoring system risks:  The Masimo Root Monitoring System and SedLine brain function m odule used 
+during this study are FDA-cleared devices. 
+3 STUDY OBJECTIVES 
+The primary aim of this study is to collect data for calibration  and usability validation  of the new Centroid monitoring 
+system which Masimo has developed for monitoring a patient’s po sition and movement to prevent pressure injury and 
+detecting falls in the hospital. This protocol describes data c ollection from patient volunteers during their routine hospital  stay 
+lasting usually for more than one day. During the calibration p hase, positional data will be collected for the purpose of 
+evaluating the Centroid design and technology. Usability valida tion data will be collected and analyzed from a questionnaire 
+regarding the Centroid system, with regards to ease of use, sen sor application and adhesive quality, subject comfort, device 
+display and user selection, and feedback from the study staff a bout clarity of parameters display, etc. 
+Secondary aims are to collect data for the pulse oximeter senso r and SedLine sensor for the purpose of correlating against 
+Centroid sensor’s data and further investigation. 
+4 STUDY DESIGN 
+4.1 General Design 
+This is a prospective clinical study of Masimo’s Centroid senso r in patients to collect movement, position, and other 
+physiological data from a sensor placed on the subject’s chest or back. LNCS pulse oximeter sensors will be placed on 
+subjects according to their tolerance of the sensors. SedLine s ensors may be placed on subjects while they are asleep. 
+4.2 Study Endpoint 
+RAMS0006: Calibration and Usability Validation of Patient Monit oring Device for Pressure Injury 
+Prevention and Fall Detection  Version 2.0
+ 
+ 
+CONFIDENTIAL AND PROPRIETARY   
+© 2020 Masimo Corporation (Unpublished) 
+All Rights Reserved                                                                             Page 5 of 13 
+ 
+ 
+ For the data collection and calibration phase of the study, the re are no study endpoints. For the centroid usability validatio n 
+phase of the study, user feedback will be collected from a ques tionnaire and analyzed based on the variability of scores 
+aggregated from questions regarding ease of application and use  with respect to Centroid comfort and durability, Centroid 
+pairing/connection with Root monitor, and Root display.   
+5 CLINICAL SITE 
+Baylor University Medical Center 
+Webb Roberts Hospital  3500 Gaston Avenue 
+Dallas, TX 75246 
+6 SUBJECT SELECTION AND WITHDRAWAL 
+6.1 Population Base 
+Subjects will be at least 18 years of age. Subjects will be rec ruited from Baylor University Medical Center. A total enrollmen t 
+of at least 60 unique subjects is targeted. 
+6.2 Inclusion Criteria 
+x At least 18 years of age  
+x ICU patient 
+x Primarily bedbound subjects 
+x Able to be monitored for a minimum of approximately 8 hours  
+6.3 Exclusion Criteria 
+x Pregnancy 
+x Prisoner status 
+x Pressure injury stage 2, 3, or ungroupable 
+x Has a pacemaker or internal defibrillator  
+x Has a history of complications with a similar study 
+x Has any medical condition which in the judgment of the Investig ator, renders them inappropriate for participation in 
+this study 
+6.4 Study Timelines 
+Each individual subject may participate in this study from appr oximately 8 hours to 16 hours. Data collection may start only 
+after the informed consent has been signed by the participant. The subject will be considered to have completed the study 
+after at least 8 hours of Centroid data have been collected. Th e study is expected to be completed within 12 months of 
+initiation.    
+6.5 Subject Recruitment and Screening 
+Following identification of a potential subject, the patient wi ll be approached by the principal investigator or a designated 
+research staff member, who will explain the purpose and procedu res of the study. If the patient expresses interest in 
+participating in the study, they will be asked to read the writ ten Informed Consent Form in English or Spanish depending on 
+the patient’s language preference.  
+All items of the Informed Consent will be explained in a way th at is easily understandable, for either English or Spanish 
+speaking subjects. The patient will be given adequate time to r ead through the Informed Consent, and they will be given 
+adequate time and privacy to consider the decision of whether o r not to sign the Informed Consent Form. Once all of the 
+patient’s questions have been answered and the Informed Consent  Form signed, the patient is now adequately consented. 
+RAMS0006: Calibration and Usability Validation of Patient Monit oring Device for Pressure Injury 
+Prevention and Fall Detection  Version 2.0
+ 
+ 
+CONFIDENTIAL AND PROPRIETARY   
+© 2020 Masimo Corporation (Unpublished) 
+All Rights Reserved                                                                             Page 6 of 13 
+ 
+ 
+ Now the patient will be enrolled as a study subject, at which t ime the subject will be assigned a study identification number 
+or enrollment number.  
+All subjects will have their medical history reviewed at the ti me of screening by either the PI or the study staff who is 
+delegated for this task. Subjects will be evaluated based on th e inclusion and exclusion criteria to determine eligibility to be 
+enrolled into the study. If a subject is deemed ineligible afte r screening, the subject will be withdrawn from the study.  
+Information regarding the subject’s demographic (including, but  not limited to age, weight, race, ethnicity, etc.), preexistin g 
+allergies, skin abnormalities, and other preexisting diseases/c onditions that may be relevant to the study will be recorded 
+within a paper-based Case Report Form (CRF).  
+HIPAA 
+The pre-screening of patients will require the investigators to  access personal health information to identify prospective 
+subjects without HIPAA authorization prior to obtaining written  informed consent for the study. Informed consent and 
+HIPAA authorization will be obtained during recruitment and scr eening procedures as described in previous sections of this 
+clinical investigation plan; however, pre-screening process wou ld require a waiver of HIPAA authorization, as the research 
+study could not be practicably carried out without this implied  waiver of consent. The participants’ rights and welfare will n ot 
+be adversely affected by waiving consent. Patients’ protected h ealth information (PHI) will not be inappropriately reused or 
+disclosed to any other person or entity. To further safeguard a ll protected health information, the data collected during the 
+study will not be labeled with any personal identifying informa tion, or with a code that this research team can link to person al 
+identifying information. The data will not be stored with any p rotected health information identifiers.   
+6.6 Early Withdrawal of Subjects 
+6.6.1 Withdrawal of Individual Subjects 
+Subjects can leave the study at any time for any reason if they  wish to do so without any consequences or loss of benefits to 
+which they are otherwise entitled.  Subjects may be withdrawn f rom the study prior to expected completion for reasons such 
+as safety concerns, failure to adhere to protocol requirements,  subject consent withdrawal, etc.   
+Any data collected until the time of subject withdrawal may be included in the final data analysis. Information on the 
+subject’s withdrawal should be documented in the case report fo rm and should include clear documentation of the reason for 
+withdrawal to the Sponsor. 
+6.6.2 Follow-up for subjects withdrawn from study 
+None. There are no long term effects anticipated from participa ting in this study. 
+6.6.3  Replacement of individual subjects after withdrawal  
+In case a subject leaves the study prematurely, another volunte er may be recruited. 
+7 STUDY PROC EDURES 
+7.1 Subject’s demographic information, vital signs, Braden Scale sc ore, risk for fall using the Johns Hopkins Fall Risk 
+Assessment tool, Richmond Agitation and Sedation Scale (RASS) a nd all specified parameters will be noted in the 
+subject’s Case Report Form.  
+7.2 Centroid sensor placement 
+Up to two Centroid sensors may be attached to the subject’s che st and/or back. The sensors will then be turned on. Study staff  
+will note down time, subject’s current position and head-of-bed  angle information, heart rate, respiration rate, and parameter s 
+on the Root display on the case report forms approximately ever y 30 minutes. The duration of the study for each subject will 
+be at least 8 hours each day of monitoring up to 16 hours. Sens ors may be replaced after 8 hours of use on a subject. If the 
+RAMS0006: Calibration and Usability Validation of Patient Monit oring Device for Pressure Injury 
+Prevention and Fall Detection  Version 2.0
+ 
+ 
+CONFIDENTIAL AND PROPRIETARY   
+© 2020 Masimo Corporation (Unpublished) 
+All Rights Reserved                                                                             Page 7 of 13 
+ 
+ 
+ sensor is removed for a procedure, surgery, x-ray, or other rea sons, the sensor may be placed back on the subject depending 
+on the subject’s comfort or at the PI’s discretion.  
+During the calibration phase, data will be stored within the Ce ntroid device. During the validation stage, the Centroid sensor  
+will pair with the Root monitor and Centroid data will be store d and displayed on the Root. Study staff will also record the 
+Root’s displayed patient position. 
+7.3 LNCS Pulse oximeter sensor placement 
+The LNCS pulse oximeter sensor may be placed on the subject’s f inger. The data collection will be initiated on the Root 
+monitor. The sensor may be removed at any time, depending on th e subject’s tolerance of the sensor. 
+7.4 SedLine sensor placement 
+The SedLine sensor will only be placed when subjects have a RAS S of -5. The SedLine sensor will be applied to the 
+subject’s forehead and data collection will be initiated on the  Root monitor. The sensor may be removed at any time, 
+depending on the subject’s tolerance of the sensor. 
+7.5 The study will be terminated at the discretion of the PI if any  significant adverse event is observed. 
+7.6 At the conclusion of the study, devices and data recording will  be stopped and all sensors will be removed from the 
+subject.  
+7.7 The skin will be inspected for any signs of redness or irritati on. 
+8 SAMPLE SIZE AND STATISTICAL CONSIDERATIONS 
+8.1 Calibration and Validation stage 
+The calibration stage will continue until a sufficient number o f cases have been obtained with quality data (e.g. no data drop -
+outs).  Initial data sets may be considered training sets and m ay not be used for device calibration. Documentation will be 
+included in the study records of when the calibration stage has  concluded and when the validation stage commenced. 
+8.2 Usability validation 
+In the validation stage, since this is a usability validation o nly, there is no statistical justification needed for the sampl e size. 
+The study will enroll at least 30 subjects for this stage. 
+ 
+9 SAFETY AND ADVERSE EVENTS 
+9.1 Definitions 
+The definitions for adverse event, adverse device effect, serio us adverse event, serious adverse device effect, and 
+unanticipated adverse device effect ar e provided below (ISO 141 55:2011, 21 CFR 812.3(s)). 
+x Adverse Event (AE): an adverse event is any untoward medical oc currence in a subject which need not be related to the 
+device under investigation. 
+x Adverse Device Effect (ADE): an adverse device effect is any un toward or unintended response to a medical device 
+which may result from insufficiencies in the instructions for u se or deployment of the device, or from use error.  
+x Serious Adverse Event (SAE): a serious adverse event is an adve rse event that results in death, inpatient hospitalization, 
+severe or permanent disability, a life threatening illness or i njury, fetal distress, fetal death, a congenital abnormality, a  
+birth defect, or medical or surgical intervention to prevent pe rmanent impairment to body or structure. 
+x Serious Adverse Device Effect (SADE): a serious adverse device effect is an adverse device effect that results in death, 
+inpatient hospitalization, severe or permanent disability or is  life threatening. 
+x Unanticipated Adverse Device Effect (UADE): any serious adverse  effect on health or safety or any life threatening 
+problem or death cause by or associated with, a device, if the effect, problem, or death was not previously identified in 
+RAMS0006: Calibration and Usability Validation of Patient Monit oring Device for Pressure Injury 
+Prevention and Fall Detection  Version 2.0
+ 
+ 
+CONFIDENTIAL AND PROPRIETARY   
+© 2020 Masimo Corporation (Unpublished) 
+All Rights Reserved                                                                             Page 8 of 13 
+ 
+ 
+ nature, severity or degree of incidence in the investigational plan, or application (including a supplementary plan or 
+application) or any other unanticipated serious problem associa ted with a device that related to the rights, safety or 
+welfare of subjects. Refer to the Device Risk Analysis and Risk  Assessment section for details on anticipated adverse 
+device effects. 
+9.2 Anticipated Adverse Events: 
+Sensor may cause slight, temporary redness, which should fade a way shortly after sensor removal. 
+Sensor may cause thermal burn; however, the design includes saf eguards and this risk is believed to be minimal. There may 
+be mild allergic reaction to sensor material and adhesives. 
+9.3 Adverse Event Reporting: 
+x All Adverse Events, both Anticipated and Unanticipated, must be  recorded in the within the CRF and in the Adverse 
+Event Report Form. 
+x All Adverse Events must be promptly reported to the Sponsor.  
+x All Unanticipated Adverse Device Effects will be also reported to both the Sponsor and the IRB.   
+x Both Serious Adverse Events and Unanticipated Adverse Device Ef fects must be reported to the Sponsor within 48 
+hours. All other Adverse Events should be reported to the Spons or within 5 business days.  
+x All Serious Adverse Events will be also reported to the IRB per  IRB reporting requirements. These reports may include, 
+but will not be limited to: date of onset; brief description of  the events; their treatment; whether they resulted in death, 
+inpatient hospitalization, severe or permanent disability or we re life threatening; their relationship to the study device; 
+and resolution. 
+9.4 Deviations from the study protocol 
+Deviations from the protocol must receive both Sponsor and the investigator’s IRB approval before they are initiated with the 
+exception that under emergency circumstances, deviations from t he CIP to protect the rights, safety and well-being of human 
+subjects may proceed without prior approval of the sponsor or t he EC. Any protocol deviations initiated without Sponsor and 
+the investigator’s IRB approval that may affect the scientific soundness of the study, or affect the rights, safety, or welfar e of 
+study subjects, must be documented and reported to the Sponsor and to the investigator’s IRB as soon as a possible, but no 
+later than 5 working days of the protocol deviation. If protoco l deviations continue to occur frequently at a study site, a 
+corrective and preventive action (CAPA) may be opened by the Sp onsor.   
+9.5 Withdrawal of IRB approval 
+An investigator shall r eport to the sponsor  a withdrawal of app roval by the investigator’s reviewing IRB as soon as a 
+possible, but no later than 5 working days of the IRB notificat ion of withdrawal of approval. 
+10 VULNERABLE POPULATIONS 
+10.1 Definition  
+10.1.1  Vulnerable populations are defined as disadvantaged sub-segment  of the community requiring utmost care, special 
+considerations and protections in research. This study will rec ruit subjects from the following: economically 
+disadvantaged or unemployed, educationally disadvantaged, and l imited English skills and/or Non-US citizens.  
+10.2 Protection of vulnerable subjects  
+x There is no compensation provided for economically disadvantage d subje cts to elimina te pos sibility of undue 
+influence due to financial incentive. 
+x Educationally disadvantaged subjects will be provided ample tim e to ask questions and comprehend information.  
+RAMS0006: Calibration and Usability Validation of Patient Monit oring Device for Pressure Injury 
+Prevention and Fall Detection  Version 2.0
+ 
+ 
+CONFIDENTIAL AND PROPRIETARY   
+© 2020 Masimo Corporation (Unpublished) 
+All Rights Reserved                                                                             Page 9 of 13 
+ 
+ 
+ x Subjects with limited English skills and/or Non-US Citizens wil l be provided translated documents in native 
+language, staff/independent interpreter, and have ample time to  ask questions and understand information.  
+x Medical care will be provided to these subjects after the clini cal investigation has been completed if they are injured 
+as a direct result of participating in this research study. The  cost of treatment for any research related injury will be 
+covered by Masimo.  
+10.3 Responsible Parties  
+x The IRB will review research with vulnerable populations and ev aluate consent, level of risk, coercion, and the 
+reason for choosing this particular subject population. The IRB  will be responsible for determining what practices 
+will include continuing review for compliance while monitoring these studies.  
+x The Investigator holds the ultimate responsibility for protecti ng the rights, safety, and welfare of research subjects 
+by ensuring that all regulations and proper documentation of co nsent is handled in a compliant and timely manner. 
+11 DATA MANAGEMENT 
+11.1 Confidentiality of Records 
+Information about the patients will be kept confidential. The d ata will be stored on a password protected database on a secure  
+server, accessible only to the Investigators.  Study data that will be released to Masimo and other regulatory authorities wil l 
+be de-identified and will only pertain to study data collection , demographics, finger location of the sensor, and the recordin gs 
+from the pulse oximeter.  
+11.2 Source Documents 
+Source data is all information, original records of clinical fi ndings, observations, or other activities in a clinical trial 
+necessary for the reconstruction and evaluation of the trial.  Source data are contained in source documents.  Examples of 
+these original documents and data records include: hospital rec ords, clinical and office charts, laboratory notes, memoranda, 
+recorded data from automated instruments, and copies or transcr iptions certified after verification as being accurate and 
+complete. For this study, the case report forms may also be use d as source worksheets.  
+11.3 Case Report Forms 
+The Site shall capture study data in the CRFs for each subject enrolled. The CRFs will be completed and initial and dated by 
+the PI or delegated personnel. This also applies to those subje cts who fail to complete the study. If a subject withdraws from  
+the study, the reason must be noted on the CRF. Case report for ms are to be completed on an ongoing basis. CRF entries and 
+corrections will only be performed by study site staff, authori zed by the investigator. Entries and corrections to the CRF wil l 
+be made following Good Documentation Practices.  
+The CRF will include the following information, including but n ot limited to: inclusion/exclusion criteria, whether patient 
+consent obtained before start of study, demographic information , device readings, and if occurrence of any adverse event, 
+protocol deviation, and device deficiencies, etc. The CRFs will  be signed by the PI to attest that the data is complete and 
+accurate and forward a copy to Masimo.  
+CRF entries will be verified by study monitor and any errors or  inconsistencies will be queried to the site on an ongoing 
+basis. Any changes will be made directly on the paper CRFs and re-verified. Query resolution will be assessed and confirmed 
+by study monitor during site visit. The monitor or study manage r will collect original completed and signed CRFs at the end 
+of the study. A copy of the completed and signed CRFs will rema in on site 
+11.4 Data Transfer and Storage 
+Training on CRF completion will be provided to study personnel prior to data collection. Original CRFs will be stored in a 
+secure location at site. Original CRFs will be scanned and sent  to sponsor. During Calibration stage, centroid device will be 
+RAMS0006: Calibration and Usability Validation of Patient Monit oring Device for Pressure Injury 
+Prevention and Fall Detection  Version 2.0
+ 
+ 
+CONFIDENTIAL AND PROPRIETARY   
+© 2020 Masimo Corporation (Unpublished) 
+All Rights Reserved                                                                             Page 10 of 13 
+ 
+ 
+ shipped back. During validation stage, centroid device data wil l downloaded from a host device, the Root® monitoring 
+system. For the pulse oximeter and SedLine systems, device data  will be downloaded from the devices and transferred to 
+Masimo using secure file transfer protocols. 
+CRFs will be checked for accuracy and completeness of data. If there are inconsistent or missing data points, a data query lis t 
+will be generated and submitted to the PI or designee, who shal l both follow GDP practices for data correction by striking 
+through the old entry, adding in new entry with initial and dat e, and resend to Masimo the corrected CRF. Once all queries 
+have been resolved, Masimo engineers are notified that data is ready for analysis. To ensure data integrity, Masimo engineers 
+will only have read access to study data, therefore are unable to unintentionally tamper with the original data files.  
+11.5 Record Retention 
+All study information, including but not limited to study corre spondence, study logs, device accountability records, consent 
+forms, subject records, and copies of CRFs should be maintained  in the Investigator site files.   
+Study records shall be retained during the study and for a mini mum of two years after date of study closure or date when 
+records are not required to support 510(k) clearance. The Insti tution’s own retention policies and regulations may apply in 
+addition to the minimal requirement.  
+The Sponsor is responsible for verifying study data, retaining records, analyzing data, and authoring study reports. 
+12 MONITORING PLAN 
+12.1 As the Sponsor of this clinical investigation, Masimo Corporati on is required by 21 CFR, Part 812, of the Food and 
+Drug Administration regulations to monitor and oversee the prog ress of the investigation.  The monitor(s) assigned 
+by Masimo Corporation to this task will be a direct employee fr om the Clinical Research department trained on 
+departmental SOPs on conduct and monitoring of Sponsored studie s. 
+12.2 In accordance wit h good clinical practices guidelines, there wi ll be at least three scheduled monitoring visits to 
+ensure overall regulatory compliance of the study: 
+x An initiation visit, prior to any subject enrollment to confirm  site readiness, and to document training on the study 
+protocol and procedures, and use of equipment. 
+x At least one monitoring visit during enrollment, preferably whe n enrollment has reached 10-20% of subjects, and 
+then at least once every year thereafter. 
+x A final close out visit after the last patient had finished the  study.  
+12.3 The Investigator shall allow access to all source documents nee ded to verify the entries in the CRFs and other GCP-
+related documents (IRB approvals, IRB correspondences, and ICFs ) provided that subject confidentiality is 
+maintained in agreement with HIPAA regulations.  
+12.4 It will be the monitor's responsibility to inspect the CRFs at regular intervals throughout the study, to verify the 
+adherence to the CIP and the completeness, consistency and accu racy of the data being entered on them.  
+12.5 During each visit, the monitor will also verify presence of inf ormed consent, adherence to the inclusion/exclusion 
+criteria, and documentation of SAEs/SADEs and protocol deviatio ns/violations, and check CRF against medical 
+records as necessary. 
+12.6 After each visit, the monitor will provide a monitoring follow- up letter to the investigator within 4 weeks of visit 
+completion. The follow-up will detail findings and open action items observed during the visit. It is the 
+responsibility of the Principal Investigator and Study Coordina tor(s) to respond to the findings of the monitoring 
+report, and complete any open action items as soon as possible but no later than 30 days of receiving the monitoring 
+report. Any open action items not completed within the time all owed may be sufficient grounds for study site 
+RAMS0006: Calibration and Usability Validation of Patient Monit oring Device for Pressure Injury 
+Prevention and Fall Detection  Version 2.0
+ 
+ 
+CONFIDENTIAL AND PROPRIETARY   
+© 2020 Masimo Corporation (Unpublished) 
+All Rights Reserved                                                                             Page 11 of 13 
+ 
+ 
+ suspension or termination; it will be up to the sponsor to dete rmine whether any incomplete action items are 
+sufficient grounds for suspension or termination. See Section 1 3 for details on suspension and termination.  
+12.7 Depending on the quality of the data and/or changes to factors affecting patient safety, additional monitoring visits 
+may be necessary according at the sponsor’s discretion. 
+13 ADMINISTRATIVE ASPECTS 
+13.1 Protection of Human Subjects 
+Per 21 CRF 50, written consent must be obtained from each subje ct or from their legal guardian prior to any study procedures 
+in accordance with applicable federal, state, and study site re gulations. The Investigator must keep a copy of the signed 
+consent form in each subject’s record and provide a copy to the  subject as well. The Investigator shall not allow a subject to  
+participate in a study or sign consent prior to IRB approval.  
+Prior to the start of data collection or subject enrollment, th e Investigator must provide documentation of IRB approval of th e 
+study protocol and a copy of the approved informed consent form  (21 CFR 50).  
+All subjects will be monitored closely throughout the study. Th e following measures will be taken to ensure the privacy of 
+subjects: 
+x A code (unique identification) number for each subject will be kept on file. 
+x Only their correspondence identification number will identify s ubjects. 
+x Access to the documents and data will only be made to the Inves tigators and study staff in the study.  
+x The confidentiality of these documents will be protected to the  extent provided by the law.  
+13.2 Institutional Review Boards 
+The Sponsor and/or Investigator must submit the protocol to the  appropriate IRB and obtain a copy of the written and dated 
+approval letter.  
+The approval letter should state the name of the documents revi ewed, date of review, date of approval, and reference the 
+study name (protocol title , study number, a nd versi on). 
+The informed consent used by the Investigator must be reviewed and approved by the Sponsor prior to submission to the 
+IRB. The Investigator cannot enroll subjects until a copy of th e approved informed consent is obtained from the IRB.  
+Any amendments to the protocol or informed consent should be su bmitted to the IRB for review and approval per 21 CFR 56. 
+The IRB should be notified of any changes that may affect condu ct of the study or pose safety risks to the subjects. 
+13.3 Confidentiality 
+All data collected will be kept confidential and de-identified.  It can only be accessed by researchers and will be used for 
+research purposes only.  
+13.4 Protocol Amendments 
+Any changes made to the clinical investigational plan/study pro tocol will be documented by way of an amendment. Before 
+submitting protocol amendment to the IRB for approval, the prot ocol amendment must be agreed upon and signed by both 
+the Investigator and the Sponsor. The Investigator shall not ma ke any changes to the protocol without Sponsor approval and 
+documented approval from the IRB. Both PI and Sponsor will reta in the IRB approval letter and approved protocol as 
+confirmation that the protocol amendment was approved.  
+13.5 Suspension or Termination of Study Site 
+The Sponsor can suspend or prematurely terminate the PI’s and s tudy site’s participation in the study, particularly if Sponsor  
+finds serious non-compliance by the PI or site, and if such non -compliance was not resolved in a timely manner. The Sponsor 
+RAMS0006: Calibration and Usability Validation of Patient Monit oring Device for Pressure Injury 
+Prevention and Fall Detection  Version 2.0
+ 
+ 
+CONFIDENTIAL AND PROPRIETARY   
+© 2020 Masimo Corporation (Unpublished) 
+All Rights Reserved                                                                             Page 12 of 13 
+ 
+ 
+ will document the decision to suspend or terminate the investig ation in writing. A suspended study site cannot enroll new 
+subjects.  
+If the Sponsor determine that the study site’s compliance to GC P and federal regulations to be inadequate at any point during 
+the study, and Sponsor move to suspend or terminate the study s ite, the Sponsor will provide notification in writing to the 
+principal investigator and IRB as necessary. The study site is eligible for reinstatement upon correction of any findings and 
+any open action items prior to the suspension, and provides a w ritten guarantee that the same non-compliance will not 
+reoccur in the future. Site can only resume patient enrollment upon receiving written notification of reinstatement from the 
+Sponsor and/or IRB.  
+13.6 Termination of Clinical Investigation/Study due to UADE 
+The clinical investigation may be terminated if Sponsor determi nes that an unanticipated adverse device effect presents an 
+unreasonable risk to the subjects. Termination shall occur not later than 5 working days after the Sponsor makes this 
+determination, and not later than 15 working days after the Spo nsor first received notice of the effect.  
+The Sponsor may resume the terminated clinical investigation wi th prior IRB approval if the device is non-significant risk.  
+14 AGREEMENT BETWEEN INVESTIGATOR AND SPONSOR REGARDING RESPONSIBI LITIES FOR 
+GOOD CLINICAL PRACTICE 
+International Conference of Harmonization (ICH) E6 Good Clinica l Practice guidance is an international ethical and 
+scientific quality standard for designing, conducting, recordin g, and reporting trials that involve the participation of human  
+subjects. 
+It specifies general requirements intended to: 
+x Protect the rights, safety and well-being of human subjects, 
+x Ensure the scientific conduct of the clinical investigation and  the credibility of the clinical investigation results, 
+x Assist Sponsors, monitors, Investigators, ethics committees, re gulatory authorities and other bodies involved in the 
+conformity assessment of medical devices. 
+The Principal Investigator of the clinical investigation shall:  
+x Obtain and maintain IRB approval of the study. 
+x Ensure all subjects are consented prior to enrollment, per FDA Code of Federal Regulations titled 21 CFR 50. 
+x Conduct the clinical investigation in accordance with the proto col, all applicable laws and federal regulations, and 
+conditions or restrictions implemented by the governing IRB. 
+x Ensure only appropriately trained personnel will be involved in  clinical investigation. 
+x Maintain study records mentioned in the CIP. 
+x Maintain logs for study team delegation, site visit/monitoring,  equipment disposition, study team training, subject 
+recruitment and enrollment. 
+x Evaluate all adverse events and adverse device effects and dete rmining whether the study is safe to continue. 
+x Allow the Sponsor to conduct periodic monitoring of study activ ities to ensure GCP compliance. 
+x Not promote device prior to clearance by FDA for commercial dis tribution, except for academic purposes and 
+scientific presentations. 
+The Sponsor shall ensure existence and record of all necessary compliance documents, and will conduct monitoring visits to 
+ensure appropriate conduct of the study. 
+RAMS0006: Calibration and Usability Validation of Patient Monit oring Device for Pressure Injury 
+Prevention and Fall Detection  Version 2.0
+ 
+ 
+CONFIDENTIAL AND PROPRIETARY   
+© 2020 Masimo Corporation (Unpublished) 
+All Rights Reserved                                                                             Page 13 of 13 
+ 
+ 
+ 15 REVISION HISTORY: 
+Version Number Version Date Summary of Revisions Made: 
+1.0 05-Jan-2017 Original version  
+2.0 18-Jan-2018 Study Title: Amended title to specify usability validation.  
+Section 1: Changed from Centroid device to Centroid system. 
+Section 1.1: Added clarification to background rationale that 
+positional data and user feedback about device usability will b e 
+collected. 
+Section 3: Added clarification around study objectives. During 
+calibration, positional data will be collected. During validati on, 
+usability data will be collected from a questionnaire.  
+Section 4.2: Added that user feedback will be analyzed based on  
+variability of scores collected from a questionnaire for the us ability 
+validation phase o f the study. Removed s tudy endpoints for 
+validation phase as fall detection rate, error rate, and positi onal 
+accuracy of the sensor against staff notes will no longer be an alyzed.  
+Section 6.3: Removed “base d on Braden  Scale Score” from 
+exclusion #3 and added “pressure injury stage 2, 3, or ungroupa ble.” 
+Section 7.2: Added clarification around Centroid placement 
+procedures and the data points (time, subject’s current positio n, 
+head-of-bed angle, heart rate, respiration rate, and parameters  on 
+Root display) to be collected. Added clarification that Centroi d 
+sensor can be placed back on subject after procedure, x-ray, or  other 
+reasons in the procedural section.  
+Section 8.2: Removed sample size justification for position det ection 
+rates. Added statement that no sample size justification is req uired 
+for usability validation.  
+Section 8.3: Removed sample size justification for fall detecti on 
+rates.  
+ 
+ 
+16 REFERENCES 
+1. Berlowitz, et al. (2014). Preventing pressure ulcers in hospita ls: A toolkit for improving quality of care. 
+Retrieved http://www.ahrq.gov/sites/default/files/publications/files/puto olkit.pdf  
+2. National Pressure Ulcer Advisory Panel, European Pressure Ulcer  Advisory Panel and Pan Pacific Pressure 
+Ulcer Injury Alliance. Prevention and treatment of pressure ulc ers: Quick reference guide. Emily Haesler (Ed.). 
+Cambridge Media: Perth, Australia; 2014 
+3. Ganz, DA, Huang, C, Saliba D, et al. Preventing falls in hospit als: A toolkit for improving quality of care. 
+(Prepared by RAND corporation, Boston University School of Publ ic Health, and ECRI Institute under Contract 
+No. HHSA2902010000171 TO#1). Rockville, MD: Agency for Healthca re Research and Quality; January 2013. 
+AHRQ Publication No. 13-0015-EF. 
+ 

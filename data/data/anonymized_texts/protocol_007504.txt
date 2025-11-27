@@ -1,0 +1,1409 @@
+ 
+Document Type:  Study Analysis Plan  
+Official Title:  An international, multicenter, randomized, double -blind, placebo 
+controlled phase 3 trial  investigating the efficacy and safety of 
+rivaroxaban to redu ce the risk of major thrombotic vascular events in 
+patients wit h symptomatic peripheral artery disease undergoing 
+lower extremity revascularization p rocedures  
+NCT N umber:  [STUDY_ID_REMOVED]  
+Document D ate: 24-Jul-2019  
+ 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 1 of 36
+ 
+ An international, multicente r, randomized, double-blind, 
+placebo controlled phase 3 trial investigating the efficacy and 
+safety of rivaroxaban to reduce the risk of major thrombotic 
+vascular events in patients with  symptomatic peripheral artery 
+disease undergoing lower extremity revascularization procedures 
+ 
+Vascular Outcomes studY of ASA alonG with rivaroxaban in E ndovascular or surgical 
+limb Revascularization for peripheral artery disease (VOYAGER PAD) 
+ 
+Bayer study drug BAY 59-7939/rivaroxaban  
+Clinical study 
+phase: III Date: 24 JULY 2019 
+Study No.:  BAY 59-7939 /17454 Version: 3.0 
+Authors:  (Version 1.0, 2.0) 
+ (Version 1.0, 2.0) 
+ (Version 1.0) 
+ (Version 2.0) 
+ (Version 3.0) 
+ 
+ 
+Confidential 
+The information provided in this document is strictly confidential and is intended solely 
+for the guidance of the clinical investigat ion.  Reproduction or disclosure of this 
+document, whether in part or in full, to parties not associated with the clinical 
+investigation or its use for any other purpos e without the prior written consent of the 
+sponsor is not permitted. 
+Throughout this document, symbols indicating proprietary names (®, TM) are not displayed.  Hence, the 
+appearance of product names without these symbols does not imply that these names are not protected. 
+ 
+This Statistical Analysis Plan is produced on a word-processing system and bears no signatures. 
+The approval of the Statistical Analysis Plan is  documented in a separate Signature Document.
+PPD
+PPD
+PPD
+PPD
+PPD
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 2 of 36
+ 
+ Table of Contents  
+ 
+Table of Tables ............................................................................................................... ........... 3 
+Abbreviations ................................................................................................................. ........... 4 
+1. Introduction ....................................................................................................................... 6  
+2. Study Objectives ................................................................................................................ 6  
+3. Study Design ...................................................................................................................... 7  
+4. General Statistical Considerations .................................................................................. 8  
+4.1 General Principles ............................................................................................................  8 
+4.2 Handling of Non-compliance to Study Treatment or Follow up ..................................... 8  
+4.3 Handling of Missing Data ................................................................................................ 9  
+4.4 Interim Analyses and Data Monitoring .......................................................................... 10  
+4.5 Data Rules .................................................................................................................... .. 10 
+4.5.1 Analysis Dates ............................................................................................................ 10  
+4.5.2 Data Scopes ................................................................................................................ 11  
+4.5.3 Censoring rules for time-to-event variables ............................................................... 11  
+4.6 Determination of sample size ......................................................................................... 12  
+5. Analysis Sets ................................................................................................................. .... 13 
+5.1 Assignment of analysis sets ........................................................................................... 13  
+5.1.1 Intention-to-treat (I TT) analysis set ............................................................................ 13  
+5.1.2 Safety analysis set (SAF) ............................................................................................ 13  
+6. Statistical Methodology ................................................................................................... 15  
+6.1 Population characteristics .............................................................................................. 15  
+6.1.1 Disposition .................................................................................................................. 15 
+6.1.2 Demographics ............................................................................................................. 15  
+6.1.3 Medical history ........................................................................................................... 17  
+6.1.4 Protocol Deviations .................................................................................................... 17  
+6.1.5 Prior and Concomitant Medications ........................................................................... 17  
+6.1.6 Extent of Exposure and Compliance .......................................................................... 17  
+6.2 Efficacy ...................................................................................................................... .... 18 
+6.2.1 Primary efficacy variable ............................................................................................ 18  
+6.2.2 Secondary efficacy variables ...................................................................................... 18  
+6.2.3 Other efficacy variables .............................................................................................. 18  
+6.2.4 Subgroup variables ..................................................................................................... 19  
+6.2.5 Analysis of the primary efficacy variable ................................................................... 20  
+6.2.6 Analysis of secondary efficacy variables ................................................................... 21  
+6.2.7 Analysis of other efficacy variables ........................................................................... 22  
+6.2.8 Exploratory analysis ................................................................................................... 22  
+6.2.9 Subgroup analysis ....................................................................................................... 23  
+6.2.10 Sensitivity analyses ..................................................................................................... 24  
+6.3 Pharmacokinetics/pharmacodynamics ........................................................................... 26  
+6.4 Safety ............................................................................................................................. 26  
+6.4.1 Adverse events ............................................................................................................ 26  
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 3 of 36
+ 
+ 6.4.2 Primary safety variable ............................................................................................... 27  
+6.4.3 Secondary safety variables ......................................................................................... 27  
+6.4.4 Other safety variables ................................................................................................. 27  
+6.4.5 Analysis of safety variables ........................................................................................ 27  
+6.5 Other procedures and variables ...................................................................................... 28  
+6.6 Benefit/Risk Assessment ............................................................................................... 28  
+7. Document history and changes in th e planned statistical analysis ............................. 28  
+8. References .................................................................................................................... .... 31 
+Appendix A: Study Closeout Procedure and Variables used for Censoring .................... 32  
+Appendix B: Definiti on of Regions ....................................................................................... 33  
+Appendix C: Mathematical Details of th e Proposed Tipping Point Analysis ................... 33  
+Appendix D: Imputation Rules for Missing Dose Date ....................................................... 35  
+Appendix E: Components of the Primary Efficacy Outcome by the Investigators ......... 36  
+ 
+   Table of Tables 
+Table 1
+ Sketch of the planned primary and secondary efficacy and safety analyses ......... 14  
+Table 2 Classification of Countries to Regions .................................................................. 33  
+ 
+  
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 4 of 36
+ 
+ Abbreviations  
+ 
+ABI Ankle Brachial Index 
+AE Adverse Event 
+ALI Acute Limb Ischemia 
+ASA Acetylsalicylic acid; aspirin 
+BARC Bleeding Academic Research Consortium 
+bid Twice daily 
+CAD Coronary Artery Disease 
+CI Confidence Interval 
+CRF Case Report Form 
+CV Cardiovascular 
+e.g. for example 
+eGFR estimated Glomerular Filtration Rate 
+ECOD Efficacy cut-off date 
+EOT End-of-treatment 
+EQ-5D European Quality of Life-5 Dimensions questionnaire 
+HR Hazard ratio 
+ICAC Independent Clinical Adjudication Committee 
+ICH International Conference on Harmonisation 
+i.e. id est (that is) 
+IDMC Independent Data Monitoring Committee 
+ISTH International Society on Thrombosis and Haemostasis 
+ITT Intention-to-treat 
+IxRS Interactive web/vo ice response system 
+KM Kaplan Meier LCEAD Last Clinical Event Ascertainment Date 
+LDL Low-density lipoprotein 
+MACE Major adverse cardiac events 
+MALE Major adverse limb events 
+MedDRA Medical Dictionary for Regulatory Activities 
+MI Myocardial infarction 
+NYHA New York Hearth Association 
+od Once daily 
+p p-value 
+PAD Peripheral Artery Disease 
+PT Preferred Term 
+RRR Relative risk reduction 
+SAE Serious adverse event 
+SAF Safety analysis set 
+SAP Statistical analysis plan 
+SOC System Organ Class 
+TBI Toe Brachial Index 
+TE Treatment Emergent 
+TEAE Treatment Emergent Adverse Events 
+TIMI Thrombolysis in Myocardial Infarction 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 5 of 36
+ 
+ TLF Tables, listings, and figures 
+USA United States of America 
+vs. versus 
+VTE Venous thromboembolism 
+WIQ Walking Impairment Questionnaire 
+  
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 6 of 36
+ 
+ 1. Introduction 
+Peripheral artery disease (PAD) refers to the atherosclerotic obstruction of the major arteries 
+supplying the lower extremities, sometimes also re ferred to as lower extremity artery disease. 
+Atherosclerosis of the peripheral circulat ion, with underlying atheroma and chronic 
+inflammation, leads to progressive occlusion of medium and la rge arteries, with additional 
+risks of embolism or thrombus formation. Abrupt  occlusions and plaque  rupture may lead to 
+acute complications such as acute limb ischemia  (ALI), similar to an acute coronary syndrome 
+event in the coronary circulation ( Becker et al. 2011 ). 
+ 
+The hypothesis of the VOYAGER study is that riva roxaban added to stan dard of care therapy 
+of low-dose acetylsalicylic acid  (ASA), has the potential to redu ce the incidence of the major 
+cardiovascular (CV) outcomes (i.e., CV death, myocardial infarction (MI), and ischemic 
+stroke) as well as major lower limb vascular  events (i.e. ALI and major amputation) in 
+symptomatic PAD patients requiring lower extremity revascularization procedures. This core statistical analysis plan (SAP) is based on the Global Integrated Clinical Study 
+Protocol BAY 59-7939/17454 version 3.0 and contai ns definitions of analysis sets, key 
+derived variables and statistical methods fo r analysis of efficacy and safety for the 
+VOYAGER study. It provides a techni cal and detailed elaboration of  the principal features of 
+the planned analyses, e.g., censoring schemes for time-to-event variables. Amendments and/or 
+appendices to this core SAP may be used to a dd additional analysis and provide more details 
+on the coding guidelines, data-handl ing, and output tables and figures. 
+Titles, mock-ups, and programming instructions fo r all statistical output (tables, figures, and 
+listings (TLF)) are provided in a sepa rate TLF specifications document. 
+ 
+2. Study Objectives 
+The primary efficacy objective is: 
+ To evaluate whether rivaroxaban added to ASA is superior to ASA alone in reducing 
+the risk of major thrombotic vascular events  (defined as MI, isch emic stroke, CV death, 
+ALI, and major amputation of a vascular  etiology) in symptomatic PAD patients 
+undergoing lower extremity reva scularization procedure. 
+ The secondary efficacy objectives are: 
+ To evaluate whether rivaroxaban added to ASA is superior to ASA alone in reducing 
+the risk of MI, ischemic stroke, coronary  heart disease mortality, ALI, and major 
+amputation of a vascular etiology 
+ To evaluate whether rivaroxaban added to ASA is superior to ASA alone in reducing 
+the risk of an unplanned index limb revascularization for recurrent limb ischemia 
+(subsequent index leg revascular izations that were not planned or considered as part of 
+the initial treatment plan at the time of randomization) 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 7 of 36
+ 
+  To evaluate whether rivaroxaban added to ASA is superior to ASA alone in reducing 
+the risk of vascular hospitalizations for a coro nary or peripheral ev ent (either limb) of a 
+thrombotic nature 
+ To evaluate whether rivaroxaban added to ASA is superior to ASA alone in reducing 
+the risk of MI, ischemic stroke, all-cause mortality, ALI,  and major amputation of a 
+vascular etiology 
+ To evaluate whether rivaroxaban added to ASA is superior to ASA alone in reducing 
+the risk of MI, all-cause stroke, CV deat h, ALI, and major amputation of a vascular 
+etiology 
+ To evaluate whether rivaroxaban added to ASA is superior to ASA alone in reducing 
+the risk of all-cause mortality 
+ To evaluate whether rivaroxaban added to ASA is superior to ASA alone in reducing 
+the risk of venous thromboembolic (VTE) events. 
+The primary safety objective of the study is:  
+ To evaluate the overall safety and tolerabili ty of rivaroxaban added to ASA compared 
+to ASA alone. 
+ 
+3. Study Design 
+This study is an international multicenter,  randomized, placebo-controlled, double-blind, 
+event-driven phase 3 study. 
+Following provision of informed consent, subject s who fulfill all inclusion criteria and meet 
+none of the exclusion criteria will be treated with  ASA 100 mg once daily (od) and randomly 
+allocated by an interactive voice /web response system (IxRS) in a ratio of 1:1 to additional 
+treatment with either rivaroxaban 2.5 mg or placebo twice daily (bid). The randomization will 
+be stratified by type of procedure and use of clopidogrel (i.e., (i.) surgical vs. (ii) endovascular 
+with clopidogrel vs. (iii) endova scular without clopidogrel). Treatments will be balanced 
+within a country for each stratum by block randomization. Randomization and study treatment 
+should commence as soon as possible but no late r than 10 days after a successful qualifying 
+revascularization procedure and once hemostasis has been assured. All randomized subjects 
+will receive study medication (either rivaroxaba n or placebo) and study ASA in a sufficient 
+quantity until the next scheduled on-site visit an d detailed instructions for its administration. 
+ 
+The study is event-driven, and thus, all subjects  will be treated (or fo llowed-up in the case of 
+permanent discontinuation of study medication) un til the end of treatment (EOT) visit. It is 
+estimated that approximately 6,500 subjects (3,250 per treatment group) are needed to be 
+enrolled in order to have 1,015 subjects expe riencing a confirmed primary efficacy outcome 
+event. Due to the event-driven study design, no firm treatment duration can be stipulated for 
+an individual subject. The estimated maximum treatment period for an individual subject is 
+approximately 42 months, and the mean treatment duration is expected to be approximately 
+30 months. However, this duration may vary de pending on the recruitment rate as well as the 
+primary event rate. 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 8 of 36
+ 
+  
+Subjects who have discontinued study drug trea tment prematurely shou ld continue to be 
+followed according to the regul ar visit schedule, and study efficacy outcome events, bleeding 
+events and vital status must be assessed in these subjects until the end of the study via either 
+clinic visits or telephone contacts.  
+ Throughout the study and at all on-site visits, su bjects will be assessed for the occurrence of 
+study efficacy outcome events and bleeding even ts. Suspected clinical study outcomes (study 
+efficacy outcome and bleeding events) will be assessed independently by an Independent 
+Clinical Adjudication Committee (ICAC) blinded to treatment allocatio n, and the adjudicated 
+results will be the basis fo r the final study analyses.  
+There will be one formal interim analysis, wh ich will occur when approximately 67% of the 
+planned primary efficacy outcomes have accrued and adjudicated. 
+A simplified schematic of the study design is provided in the following figure: 
+ 
+ 
+4. General Statistical Considerations 
+4.1 General Principles 
+All variables will be summarized using descript ive statistical methods. The number of patients 
+with data available and missi ng, mean, standard deviation, mi nimum, quartiles, median, and 
+maximum will be provided for continuous variables,  as appropriate. Frequency tables will be 
+provided for categorical variable s. The decision rules will be based on one-sided superiority 
+testing unless otherwise specifie d, but in addition to the one-sid ed p-values from the logrank 
+test, two-sided p-values will be reported accord ing to general conventions. The statistical 
+evaluation will be performed by using the software package SAS release 9.2 or higher (SAS 
+Institute Inc., Cary, NC, USA). 
+4.2 Handling of Non-compliance to Study Treatment or Follow up 
+A randomized subject who permanently discon tinues rivaroxaban or rivaroxaban placebo 
+before their planned EOT Visit for any r eason is defined as having had a permanent 
+discontinuation of study medication (includi ng subjects who were randomized but never 
+
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 9 of 36
+ 
+ started taking any study medication). The r eason for permanent disc ontinuation of study 
+medication will be collected and summarized. 
+A subject will be considered as lost to follo w-up for analysis purposes if contact is not 
+obtained with the subject despite all possible effort s by the site, and the subject’s vital status is 
+not obtained and documented in the da tabase at the end of the study. 
+4.3 Handling of Missing Data 
+All missing or partial data will be presented in the subject data listing as they are recorded on 
+the case report form (CRF) including best estimat e dates of site investigators collected in the 
+clinical database.  Missing or incomplete post-randomization event dates All efforts will be made to collect complete data for all subjects randomized in this study 
+including visits by telephone contact. Subject s will be followed to the study end and all 
+required data will be collected, regardless of their compliance with study medications or visits. 
+When an event date is not complete, the date will be estimated according to the following 
+rules but not earlier than randomization date, 
+ If only the onset day is missing, but the month and year are available: 
+o If the month and year are the same as the efficacy cut-off date (ECOD), impute the date as mean of the first day of the onset month/year and the ECOD 
+(rounded up). 
+o Otherwise if the month and year are the same as the last contact date alive (see Appendix A ), impute the date as mean of the first day of the onset month/year 
+and the last contact date alive (rounded up). For death event,  the last contact 
+alive date +1 day will be used as the death date. 
+o Otherwise impute the event date as maxi mum of the date of randomization + 1 
+and day 15 of the onset month and year. 
+ If the onset day and month is mi ssing, but the year available: 
+o The minimum possible date is maximum of randomization date + 1 days and 
+January 1st of the onset year. 
+o The maximum possible date is the minimu m of the ECOD and last contact date 
+alive and December 31th of the onset year. 
+o Impute the event date as mean of the minimum possible date and the maximum possible date (rounded up). 
+o For subjects who experienced death in the same year as last contact alive date, the last contact alive date +1 day will be used as the death date. 
+ If the onset date is complete missing, th e onset date will be imputed with the 
+randomization date + 1 days. 
+ For subjects who experienced death during th e study and the death date is completely 
+missing, the last contact alive date + 1 day will be used to impute death date. If the last 
+contact alive date is missing, the deat h date will be imputed as ECOD. 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 10 of 36
+ 
+ 4.4 Interim Analyses and Data Monitoring 
+The Independent Data Monitoring Committee (ID MC) will monitor the st udy for greater than 
+expected efficacy and for safety. There will be  one formal pre-planned interim analysis to 
+assess greater than expected efficacy, which will be performed when approximately 67% of 
+the planned primary efficacy outcome events (~6 80) have accrued and ar e adjudicated. Based 
+on that analysis, the study may be stopped early, if there is  overwhelming superiority of 
+rivaroxaban (p<0.001, 2-sided) for the primary efficacy endpoint (following the Haybittle-
+Peto approach) ( Haybittle 1971 ]. Details on the approach to the interim analyses and 
+refinement of decision rules are sp ecified in the IDMC charter.  
+4.5 Data Rules 
+4.5.1 Analysis Dates 
+For the study, the following date and time wi ndow are of relevance for the analysis: 
+ Efficacy cut-off date:  
+The trial is designed to be terminated  when 1015 patients have experienced a 
+confirmed primary efficacy outcome event.  The ECOD is a predicted common date 
+when at least 1015 primary efficacy outcomes are expected to have occurred. It is the 
+last calendar date acceptable for counting events for the primary analysis.  
+ Trial close-out window: The time period when all subjects return to the clinic for an EOT visit. All randomized 
+subjects should return for their EOT visit after the ECOD. 
+For each subject, the following individual dates are of relevance for analysis: 
+ Randomization date:  
+The date of randomization as r ecorded in the IxRS system.  
+ EOT Visit date: 
+The date of the EOT visit. If subjects do not have an EOT visit, the date will be 
+missing. 
+ Date of last contact: 
+The date of the last documented contact w ith the subject or a third party (including 
+data on subject survival status, see Appendix A  for details). 
+ Date of first dose of study treatment:  
+The date of the first dose of rivaroxaban or rivaroxaban placebo, defined as: 
+o Date of first dose from the appropriate CRF page capturing the study 
+medication (rivaroxaban or rivaroxaban placebo) if this date is complete.  
+o Date of the earliest logically possible dose of study medication (rivaroxaban or 
+rivaroxaban placebo) administration in cases where the date of first dose is 
+missing or incomplete. See Appendix D  for details of th e imputation rules. 
+ Date of last dose of study treatment:  
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 11 of 36
+ 
+ The date of the last dose of rivaroxa ban or rivaroxaban placebo, defined as: 
+o Date of last dose from the appr opriate CRF page capturing the study 
+medication (rivaroxaban or rivaroxaban placebo) if this date is complete.  
+o Date of the latest logically possible do se of study medication (rivaroxaban or 
+rivaroxaban placebo) administration in cas es where the date of last dose is 
+missing or incomplete. See Appendix D  for details of th e imputation rules. 
+4.5.2 Data Scopes 
+All analyses are based on two elements:  
+1) analysis set , which specifies which subjects will be included in an analysis; and  
+2) data scope , which specifies the time window within which data will be included in an 
+analysis.  This section describes the coverage of the event data scopes  used for the statistical analyses. 
+Analysis sets  are described in Section 5. 
+Data scope according to intention-to-treat principle (ITT) The ITT data scope includes outcome events  observed from randomization date until the 
+ECOD. Events occurring after the ECOD will not be counted for primary analysis.  This ITT 
+data scope will be applied mainly to the analyses of efficacy variables. Data scope according to treatment (on-treatment) The on-treatment data scope will include all outcome events observed from randomization 
+until 2 days following permanent discontinuation of the study drug. This on-treatment data 
+scope will be applied mainly to the anal yses of safety variables (e.g. bleeding). 
+Data scope according to overall study duration for sensitivity analysis The overall study duration data scope will in clude all outcome events observed from 
+randomization until the last contact/visit. This data scope will be applied for sensitivity 
+analysis only. 
+4.5.3 Censoring rules for ti me-to-event variables 
+All efforts will be made to collect complete data for all subjects randomized in this study 
+including visits by te lephone contact.  
+Censoring rules for analyses according to the ITT principle The censoring rule for time to first event analys es depends on the type of endpoint, thereby 
+distinguishing between clinical events endpoints (primary efficacy composite and component, 
+secondary efficacy and bleeding events ) and CV-death / all-cause mortality. 
+  
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 12 of 36
+ 
+  Primary efficacy composite 
+and components other than 
+CV-death All-cause mortality, CV-death 
+If the subject was randomized 
+but has no post-randomization clinical event ascertainment 
+date the subject will be 
+censored : At the randomization date  + 1 day Earlier of last contact alive date or ECOD  
+If no last contact alive date, use 
+the randomization date  +1 day  
+Else, if the subject has withdrawn from the study but objected to further data 
+collection the subject will be 
+censored : At the earlier date of the last clinical event ascertainment date (LCEAD), date of 
+objection to further data 
+collection or ECOD  Earlier of last contact alive date from public sources or ECOD  
+If no last contact alive date 
+from public sources, use the earlier date objection to further 
+data collection  or ECOD  
+ 
+Otherwise, the subject will be 
+censored : At the earlier date of last clinical event ascertainment 
+date, date when patient died or 
+ECOD At the earlier date of last contact alive date or ECOD  
+Censoring rules for analyses accord ing to the on-treatment principle 
+For on-treatment analyses (primary analysis fo r time to bleeding events, sensitivity analysis 
+for primary efficacy endpoint and all secondary efficacy endpoints), patient with at least one 
+dose of study medication and without documentation of an event within the on-treatment data 
+scope will be censored similarly to the ITT data  scope except that the date of last dose of 
+study treatment + 2 days will be used as the cap for the time scope instead of ECOD. 
+Censoring rules for analyses according to the overall study duration principle 
+Above censoring rules for ITT data scope apply ex cept that the date of last clinical event 
+ascertainment or last contact alive will be used as the cap for the time scope instead of ECOD. See Appendix A  for additional details. 
+4.6 Determination of sample size 
+The study is event-driven and it is estimat ed that approximately 6,500 patients (3,250 per 
+treatment group) need to be randomized in order to have 1,015 patients experiencing a 
+confirmed primary efficacy outcome event. This number of events will allow the 
+demonstration of superiority of rivaroxaban comp ared to placebo with regard to the primary 
+outcome with a power of 90% and a one-sided level of significance α=0.025 under the 
+following assumptions: 
+ The effect size (Hazard Ratio  (HR)) for rivaroxaban plus ASA vs. ASA alone is 
+HR=0.80. 
+ The annualized event rate in the contro l arm is approximately 7.5% per year. 
+ The rate of patients with permanent discont inuation of study drug (rivaroxaban plus 
+ASA switching to ASA alone or an equa lly effective treatment regimen) is 
+approximately 5.5% 1st year, 8% 2nd year, 12% 3rd year (4% 1st half year + 8% 2nd half 
+year), and 8% every ha lf year afterwards. 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 13 of 36
+ 
+  The rate of patients lost to  follow-up or with non-CV death is approximately 1.5% per 
+year. 
+ The duration of the enrollment period is 18 months (approximately 15% 1st 6 months, 
+30% 2nd 6 months, 55% 3rd 6 months) and 2 years of follow-up from last patient-
+randomized until the ECOD. 
+The number of patients enrolled may be adjusted  and the study duration may be adapted based 
+on a blinded review of the observed overall event rate of confirmed primary efficacy 
+outcomes during the study. 
+Sample size estimation was based on PASS 11 ( Hintze 2011 ).  
+ 
+5. Analysis Sets 
+5.1 Assignment of analysis sets 
+All subjects who have been randomized in the st udy are valid for assignm ent to analysis sets. 
+5.1.1 Intention-to-treat (ITT) analysis set 
+The intention-to-treat analysis set, also termed full analysis set in the International Conference 
+on Harmonization (ICH) E9 guideline, will includ e all randomized subjects. Subjects will be 
+categorized to the treatment group to which they were assigned by the IxRS; i.e., they will be 
+analyzed as randomized. 
+5.1.2 Safety analysis set (SAF) 
+The SAF will include all randomized subjects who received at leas t one dose of study 
+medication (rivaroxaban or rivaroxaban placebo). Subjects will be categorized to the group to 
+which they were assigned by the IxRS unless the incorrect treatment was received throughout 
+the study. In this case, subjects will be an alyzed for safety as actually treated. 
+The planned analyses for the primary and s econdary efficacy and safety variables are 
+summarized in but not limited to Table 1 below 
+  
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 14 of 36
+ 
+ Table 1 Sketch of the planned primary and secondary efficacy and safety analyses 
+Endpoint  Analysis 
+Type  Analysis 
+Set 
+(population)
+1 Data 
+Scope2 Censoring 
+Rule3 Analysis 
+Method  
+Efficacy  
+Primary       
+Composite of MI, ischemic 
+stroke, CV death, Acute 
+Limb Ischemia, major 
+amputation due to a 
+vascular etiology Main ITT ITT ITT Stratified log-
+rank test, HR estimates from 
+stratified Cox PH 
+model,  KM plot 
+Sensitivity ITT ITT ITT Cox PH model 
+with no 
+stratification;  Cox PH model 
+with actual 
+stratification;  robust 
+proportional 
+hazard estimator; 
+tipping point 
+analysis 
+SAF On-
+treatment On-
+treatment Stratified log-rank test, HR 
+estimates from 
+stratified Cox PH 
+model, KM plot  
+ ITT Overall 
+study 
+duration Overall 
+study 
+duration Stratified log-
+rank test, HR 
+estimates from 
+stratified Cox PH 
+model, KM plot 
+Subgroup ITT 
+ ITT ITT HR estimates 
+from  stratified Cox PH model
+4, 
+forest plot 
+ SAF On-
+treatment On-
+treatment HR estimates from  stratified 
+Cox PH model
+4, 
+forest plot 
+Secondary      
+All secondary efficacy 
+variables. For the list of 
+secondary efficacy variables, see section 
+6.2.2. Main  ITT  ITT  ITT  Stratified log-rank test, HR 
+estimates from  stratified Cox 
+PH model,  KM  
+plot 
+Sensitivity SAF On-
+treatment On-treatment Stratified log-rank test, HR 
+estimates from  
+stratified Cox PH model,  KM  
+plot 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 15 of 36
+ 
+ Endpoint  Analysis 
+Type  Analysis 
+Set 
+(population)
+1 Data 
+Scope2 Censoring 
+Rule3 Analysis 
+Method  
+Safety 
+Primary       
+TIMI major bleeding Main SAF On-
+treatment On-
+treatment Stratified Cox PH model, KM plot 
+Supportive SAF ITT ITT Stratified Cox PH model, KM plot 
+ SAF Overall 
+study duration Overall 
+study 
+duration Stratified Cox PH 
+model, KM plot 
+Subgroup SAF On-
+treatment On-
+treatment Stratified Cox PH model
+4, forest 
+plot 
+Secondary       
+ISTH major bleeding BARC type 3b and above 
+bleeding Main SAF On-
+treatment On-
+treatment Stratified Cox PH model, KM plot 
+Note:  Details of the planned analyses are provided in section  6. 
+1. Intention-to-treat (ITT) analysis set – all randomized subjects. Treatment assigned as randomized; Safety analysis 
+set (SAF) – all randomized subjects who received at least one dose of study medication. Treatment assigned as 
+treated. See section 5.1 for details. 
+2. ITT data scope – all outcome events observed from randomization until efficacy cut-off date; On-treatment data 
+scope – all outcome events observed from randomization until 2 days following permanent discontinuation of the study drug (rivaroxaban or rivaroxaban placebo). See section 4.5.2 for details. Overall study duration scope - all 
+outcome events observed post randomization including post-study treatment follow-up. 
+3. See section 4.5.3 and Appendix A  for details regarding the censoring rules according to each data scope.  
+4. Not stratified for subgroups related to type of  procedure and clopidogrel use. See sections 6.2.4, 6.2.9 and 6.4.5 
+fordetails.  
+6. Statistical Methodology 
+6.1 Population characteristics 
+6.1.1 Disposition 
+The following will be tabulated over all and/or by treatment group: 
+ Study sample sizes (All enrolled  subjects, ITT, and SAF)  
+ Study sample sizes by region, country, and site 
+ Subject disposition 
+ Number of subjects and primary reasons  for screening failures (only overall) 
+ Number of subjects and primary reasons  for permanent discontinuation of study 
+medication (by treatment group and overall for ITT and SAF) 
+ Number of subjects and primary reasons  for discontinuation from intended study 
+treatment period (by treatment gr oup and overall for ITT and SAF) 
+6.1.2 Demographics 
+The following demographic and baseline characteristics will be summarized by treatment group and overall in ITT and SAF. Summary statistic s will be presented fo r metric variables.  
+Frequency tables will be presented for categorical variables. Subjects will be considered fragile if age >75 years or weight ≤50 kg or baseline eGFR <50 mL/min. 
+ Age (<55; ≥55 to <65; ≥65 to ≤ 75; >75 years) 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 16 of 36
+ 
+  Age (<65; ≥65 to <75; ≥75 years)  
+ Age (<65; ≥65 to <85; ≥85 years) 
+ Sex (male, female) 
+ Race (White; Black or African American; Asia n; American Indian or Alaska Native; 
+Native Hawaiian or Other Pacific Islander; Not reported; Multiple) 
+ Type of qualifying procedure and clopidogr el use, per IxRS assignment (surgical; 
+endovascular with clopidogrel; e ndovascular without  clopidogrel) 
+ Qualifying revascularization procedur e per IxRS (surgical; endovascular ) 
+ Geographic Region (North America, Western Europe, Eastern Europe, Asia Pacific, 
+South America, see Appendix B  for details) 
+ Geographic Region (US, non-US) 
+ Weight (≤60 kg; >60 kg) 
+ estimated Glomerular Filtration Rate (eGFR) (<60 ml/min/1.73m2 , ≥60 
+ml/min/1.73m2) 
+ eGFR (<15 ml/min/1.73m2, ≥15 to <30 ml/min/1.73m2, ≥30 to <60 ml/min/1.73m2, 
+≥60 ml/min/1.73m2) 
+ eGFR (<30 ml/min/1.73m2, ≥30 to ≤ 50 ml/min/1.73m2, >50 to ≤80 ml/min/1.73m2, 
+>80 ml/min/1.73m2) 
+ Fragile subjects (yes, no) 
+ Qualifying revascularization procedure, actual (surgical; en dovascular including 
+hybrid) 
+ Clopidogrel use in relation to qualifying revascularization procedure (yes, no) 
+   Time from qualifying revascularizati on procedure to randomization, actual ( ≤median, 
+>median) 
+ Type of qualifying procedure and clopidogrel use, actual (surgical; endovascular 
+including hybrid with clop idogrel; endovascular including hybrid without clopidogrel) 
+ Clopidogrel use continued af ter randomization (none, ≤30 days, >30 days) 
+ Prior coronary artery disease (CAD) (yes; no) 
+ Prior MI (yes; no) 
+ Prior limb revascularization (yes; no)  
+ Carotid artery disease history (yes; no) 
+ Critical limb ischemia (yes; no) 
+ Intermittent claudication present w ithin past 12 months (yes; no) 
+ History of heart failure (yes; no) 
+ Classification of heart failure (NYHA class I, class II, class III, class IV) 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 17 of 36
+ 
+  Diabetes mellitus (yes; no) 
+ Smoking status (former, never, current)  
+ Hypertension (yes; no) 
+ Hyperlipidemia (yes; no) 
+ Baseline Ankle Brachial Index (ABI) (at Month 1 visit) (≤ 0.80; >0.80)   
+ Baseline Toe Brachial Index (T BI) (at Month 1 visit) ( ≤0.60; >0.60)  
+In addition, age, days from actua l qualifying revascularization procedure to randomization and 
+baseline Low-density lipoprotein (LDL) will be treated as continuous variable and 
+summarized descriptively. Other baselin e characteristics may be added. 
+6.1.3 Medical history 
+Medical history will be presented by the pre-specified terms as listed in the CRF. Medical 
+history data will be evaluated by frequency tables, showing the number of subjects with medical history findings (i.e., lis ted conditions of previous dia gnoses, diseases, or surgeries 
+based on the CRF) that started before signing of the informed consent and that are considered relevant to the study. 
+6.1.4 Protocol Deviations 
+A summary of protocol deviations related to in- and excl usion criteria will be given by 
+frequency tables. The summary will be based on ITT.  
+6.1.5 Prior and Concomitant Medications  
+Prior and concomitant medications will be presented by the pre-specified terms as listed in the CRF. Frequency tables by type of  medication will be provided fo r prior medications prior to 
+randomization and for concomitant medication post-randomization. The summaries will be by 
+treatment group and overall based on ITT. 
+6.1.6 Extent of Exposure and Compliance 
+All summaries related to intake of study medicat ion (rivaroxaban or riva roxaban placebo) will 
+be by treatment group based on SAF. 
+The treatment duration (date of last study medi cation- date of first study medication+1 day) 
+will be summarized descriptively. Additionally the number of subjects by treatment duration 
+category will be given ( ≤3 months, >3- ≤6 months, >6- ≤9 months, >9- ≤12 months, >12- ≤18 
+months, >18- ≤24 months, >24 months). 
+The time on study medication (treatment duratio n excluding days off study medication) will 
+be calculated and summar ized descriptively. 
+The number of tablets taken will be summarized descriptively, as well as corresponding extent 
+of exposure (number of tablets taken*dose). Compliance (or adherence, defined as 100*numb er of tablets taken / number of tablets 
+planned) will be presented by visit as entered in the CRF a nd summarized for the whole study. 
+The number of subjects with  at least 80% complian ce will be presented.  
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 18 of 36
+ 
+ 6.2 Efficacy 
+6.2.1 Primary efficacy variable 
+The primary efficacy variable is the time from randomization to first occurrence of any of the 
+components of the composite outcome, including: 
+ MI 
+ ischemic stroke 
+ CV death 
+ ALI 
+ major amputation due to a vascular etiology   
+ 
+6.2.2 Secondary efficacy variables 
+The secondary efficacy variables of this study are: 
+ time from randomization to the first occurren ce of MI, ischemic stroke, coronary heart 
+disease mortality, ALI, and major amputation of a vascular etiology 
+ time from randomization to the first occurrence of an unplanned index limb 
+revascularization for recurrent limb ischemia  (subsequent index leg revascularization 
+that was not planned or consid ered as part of the initial treatment plan at the time of 
+randomization) 
+  time from randomization to the first occurr ence of hospitalization for a coronary or 
+peripheral cause (either lower li mb) of a thrombotic nature 
+ time from randomization to the first occurr ence of MI, ischemic  stroke, all-cause 
+mortality, ALI, and major amputa tion of a vascular etiology 
+ time from randomization to the first occurren ce of MI, all-cause stroke, CV death, ALI, 
+and major amputation of a vascular etiology 
+ time from randomization to the first occurrence of all-cause mortality 
+ time from randomization to the first occurrence of VTE events 
+6.2.3 Other efficacy variables 
+The other efficacy variables of this study are: 
+ time from randomization to the first occurrence of all subsequent limb revascularizations of the lower extremity that  were not planned or considered as part 
+of the initial treatment plan at the time of randomization. 
+ time from randomization to the first occurrence of all-cause amputations; 
+ patient reported outcomes using disease and non-disease specif ic questionnaires 
+(European Quality of Life-5 Dimensi ons questionnaire (EQ-5D) and Walking 
+Impairment Questionnaire (WIQ)). 
+ serial changes in limb hemodynamics (ABI and TBI). 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 19 of 36
+ 
+ 6.2.4 Subgroup variables 
+The following subgroup analyses based on base line and demographic characteristics are 
+planned for the treatment comparisons of the primary efficacy and safety outcomes: 
+ Age (<55; ≥55 to <65; ≥65 to ≤ 75; >75 years) 
+ Age (<65; ≥65 to <75; ≥75 years) 
+ Age (<65; ≥65 to <85; ≥85 years) 
+ Sex (male; female) 
+ Race (White; Black or African American; Asian; Other) 
+ Type of qualifying procedure and clopidogrel  use, per IxRS assignment:  (surgical; 
+endovascular with clopidogrel; e ndovascular without  clopidogrel) 
+ Qualifying revascularization procedur e per IxRS (surgical; endovascular ) 
+ Geographic Region (North America; Western Europe; Easter n Europe; Asia Pacific; 
+South America, see Appendix B  for details) 
+ Geographic Region (US, non-US) 
+ Weight (≤60 kg; >60 kg) 
+ estimated Glomerular Filtration Rate (eGFR) (<60 ml/min/1.73m2 , ≥60 
+ml/min/1.73m2) 
+ eGFR (<15 ml/min/1.73m2, ≥15 to <30 ml/min/1.73m2, ≥30 to <60 ml/min/1.73m2, ≥60 
+ml/min/1.73m2) 
+ eGFR (<30 ml/min/1.73m2, ≥30 to ≤ 50 ml/min/1.73m2, >50 to ≤80 ml/min/1.73m2, >80 
+ml/min/1.73m2) 
+ Fragile subjects (yes, no) 
+ Qualifying revascularization procedure, actual (surgical; en dovascular including 
+hybrid) 
+ Clopidogrel use in relation to qualifying revascularization procedure (yes, no) 
+ Type of qualifying procedure and clopidogrel use, actual (surgical; endovascular 
+including hybrid with clopi dogrel; endovascular including hy brid without clopidogrel )  
+ Clopidogrel use continued after rando mization (<30 days, >=30 days, none) 
+ Prior coronary artery disease (CAD) (yes; no) 
+ Prior MI (yes; no) 
+ Prior MI and age < 65 years (yes, no) 
+ Prior MI and reduced renal function,  i.e., eGFR <60 mL/min (yes, no) 
+ Carotid artery disease history (yes; no) 
+ Prior limb revascularization (yes; no) 
+ History of heart failure (yes; no) 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 20 of 36
+ 
+  Diabetes mellitus(yes; no) 
+ Smoking status (former, never, current)  
+ Hypertension (yes; no) 
+ Hyperlipidemia (yes; no) 
+ Baseline (Month 1 visit)  
+o ABI ≤0.80 or TBI ≤0.60;  
+o ABI >0.80 and TBI >0.60;  
+o TBI and ABI not done  
+6.2.5 Analysis of the primary efficacy variable 
+The primary analysis will be based on the time  from randomization to the first occurrence of 
+any of the components of the primary efficacy outcome (independently adjudicated), using the 
+ITT analysis set and ITT data scope.  
+ 
+The null hypothesis will be: 
+H0, PE: SR(t) = S A(t) for all time points t ≥0, (i.e., "there is no difference between the 
+rivaroxaban added to ASA group and the ASA alone group regarding the primary 
+efficacy outcome for all time points"), 
+and the one-sided alternative hypothesis will be: 
+H1, PE: SR(t) >S A(t) for at least one time point t ≥0, and S R(t) ≥SA(t) for all time points 
+t ≥0, (i.e., "there is a difference between the two groups in favor of rivaroxaban 
+regarding the primary efficacy outcome  for at least one time point"), 
+where SR denotes the survival function of the rivaroxaban added to ASA group and SA 
+denotes the survival func tion of the ASA alone group. 
+ 
+The rivaroxaban added to ASA group will be compared to the ASA alone group using a log-
+rank test stratified by type of procedure and clopi dogrel use ((i.) surgical  vs. (ii.) endovascular 
+with clopidogrel vs. (iii.) e ndovascular without clopidogrel per IxRS assignment) with 
+treatment as a fixed factor. Superiority of ri varoxaban over placebo will be declared, if the 
+associated one-sided null hypothesis is rejected in favor of rivaroxaban at the 2.5% 
+significance level. 
+ Kaplan-Meier (KM) estimates of cumulative risk and cumulative hazard functions will be 
+provided to evaluate the timing of event occurrence in the diffe rent treatment groups and the 
+consistency of the respective treatment effects for all time points. 
+The following SAS program code will be used  for the log-rank test and Kaplan-Meier 
+estimates:  
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 21 of 36
+ 
+  
+PROC LIFETEST DATA = <dataset > ALPHA=0.05 METHOD=KM NELSON; 
+  STRATA stratumn / GROUP=trtgrpn TEST=(LOGRANK) TREND ; 
+  TIME ttevalue * ttecnsr(0); 
+RUN; 
+ 
+/* 
+where 
+dataset  = name of dataset including all ITT subjects   
+trtgrpn  = variable coding randomized treatment group 
+ttevalue = time to first occurrence of  primary efficacy outcome event 
+ttecnsr  = censoring index (0  = right-censored, 1 = event) 
+stratumn = variable for st ratification factor */ 
+ 
+ 
+The relative risk reduction (RRR) will be es timated using a Cox proportional hazards (Cox 
+PH) model, stratified by type of  procedure and use of clopidogr el per IxRS assignment, with 
+treatment as the only covariate. The poin t estimate and corresponding 95% confidence 
+interval (CI) for the hazard ratio (HR, riva roxaban added to ASA vs . ASA alone) will be 
+reported. The plausibility of proportional haza rds assumption will be assessed by visually 
+comparing the plot of the log of cumulative hazard between treatments and by additionally 
+adding a treatment by logarithm-transformed tim e interaction into the Cox PH model.  
+ 
+The following SAS program code will be used  for the Cox proportional hazards model:  
+ 
+ 
+PROC PHREG DATA = <dataset>; 
+  MODEL ttevalue * ttecnsr(0) = trtgrpn / RL TIES=EFRON ALPHA=0.05; 
+  STRATA stratumn; 
+RUN; 
+ 
+/* 
+where 
+dataset  = name of dataset including all ITT subjects  
+trtgrpn  = variable coding randomized treatment group 
+ttevalue = time to first occurrence of  primary efficacy outcome event 
+ttecnsr  = censoring index (0  = right-censored, 1 = event) 
+stratumn = variable for stratification factor  
+*/ 
+ 
+ 
+Additional procedure options controlling the ou tput may be added to the program codes. 
+6.2.6 Analysis of secondary efficacy variables 
+If the primary efficacy outcome is statistically  significant, the secondary efficacy outcomes 
+will be tested in a sequential manner according to the order as listed in Section 6.2.2 with one-
+sided alpha of 0.025. If an individua l test during any step is not st atistically significant, further 
+treatment comparison may continue (i.e., reporti ng of p-values) but si gnificance will not be 
+claimed. This hierarchical testing procedure will control the global Type 1 error level. 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 22 of 36
+ 
+ The analysis of the secondary variables will be based on the ITT analysis set and ITT data 
+scope, including events as adjudicated by the IC AC or reported by invest igators if not being 
+adjudicated.   
+The statistical hypotheses for the secondary effi cacy outcomes are defined similarly as for the 
+primary efficacy outcome. The analysis methods will be similar to those described for the 
+primary efficacy outcome.  
+6.2.7 Analysis of other efficacy variables 
+The analysis of the other variab les will be based on the ITT an alysis set and ITT data scope, 
+including events as adjudicated by the ICAC  or reported by investigators if not being 
+adjudicated. These analyses will be considered exploratory.  
+The analysis methods will be similar to those described for the primary efficacy outcome 
+except for patient reported outcomes.  
+For EQ-5D and WIQ, the change from baseline of the mobility domain of EQ-5D and each 
+domain of WIQ (pain [PAD specific question and Q1 of differential diagnosis], distance, speed, stair climbing) will be analyzed using an ANCOVA model with baseline value as a 
+covariate and treatment as the only fixed effect. Baseline is the last measurement prior to or at 
+randomization. 
+For limb hemodynamics (ABI and TBI separate ly), the changes from baseline will be 
+analyzed using an ANCOVA model with baseline value as a covariate and treatment as the 
+only fixed effect. Since the ABI and TBI is  expected to improve after qualifying 
+revascularization and decrease gradually over time, baseline value is defined as the 
+measurement at month 1 visit. 
+Summary statistics of EQ-5D, WIQ and ABI and TBI actual and change from baseline values 
+will also be provided by visit. 
+6.2.8 Exploratory analysis 
+Exploratory analysis of the individual components of the pr imary and secondary efficacy 
+outcomes will be analyzed similarly to the primary efficacy outcome. Composite outcomes 
+major adverse cardiac events (MACE, ie.  CV death, MI and ischemic stroke) and major adverse limb events (MALE, i.e.  ALI and  ma jor amputation due to a vascular etiology) will 
+be analyzed similarly to the primary efficacy outcome. 
+To account for the multiple components of the primary efficacy endpoint, all event analysis 
+will be evaluated in ITT data scopes and on-treat ment data scopes by fitting frailty model with 
+gamma distribution of the shared frailty term s as an extension of the Cox accounting for 
+correlation of the events  within a subject (see Hougaard, 2000; Wienke, 2011; Austin, 2017), 
+with treatment as the only cova riate. In addition, model with log-normal distribution of the 
+shared frailty terms will be fitted. Another ex tension of the Cox model is the Andersen-Gill 
+model, which assumes that each recu rrence is an independent event ( Andersen, 1982 ). To 
+account for the intra-subject correlation, models with robust standard error estimator will be fitted according to Lin’s method ( Lin et al. 2000 ). 
+The primary efficacy endpoint will be explored for the following subgroups 
+Qualifying endovascul ar techniques  
+o Balloon angioplasty (drug-coated  and not coated), yes/no 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 23 of 36
+ 
+ o Angioplasty with stent (bare meta l, drug-coated, c overed) yes/no 
+o Atherectomy 
+o Thrombolysis 
+ Time from qualifying revascularizati on procedure to randomization (<median; 
+>=median) 
+ History of lower limb amputation 
+o Major ischemic amputation with or without other amputation 
+o Minor ischemic amputation with or  without non-ischemic amputation 
+o Nonischemic amputation only 
+o No amputation 
+The frequency will be presented descriptively (and  with forest plots). The hazard ratio for the 
+treatment effect will be estimat ed separately within each level of a subgroup using the Cox 
+proportional hazards model without stratification. 
+The following variable will also be explored: 
+ Time from randomization to the first occurrence of MI types  
+ Any revascularization after randomization re gardless of the side as reported by the 
+investigator  
+ Any index leg revascularization as reported by the investigator 
+In addition, ABI and TBI will be further explored  to understand the effect of natural history 
+and drug effect on hemodynamics.  Examples include: 
+ Change in ABI and TBI post randomizati on excluding values after subsequent 
+revascularization by subgroup (endo vascular versus surgical)  
+ Change in ABI and TBI post randomization in  patients with subsequent intervention 
+versus those who do not under go subsequent intervention 
+To explore the robustness of the treatment ef fect over time, landmark analyses will be 
+performed for the primary endpoint according to landmark periods of randomization to 3-
+month, 3-month to 1-year and 1-year to the end of treatment phase and randomization to 6-
+month, 6-month to 1 year and 1-ye ar to end of treatment phase ( Van Houwelingen 2007). 
+Additional time point after 1-year may be a dded depending on the actual study duration. For 
+each landmark period, the hazard ratio will be es timated using a Cox PH model stratified by 
+type of procedure and use of clopidogrel (per IxRS  assignment) with treatment as the only 
+covariate, the corresponding 95% CI will be provided, and Kaplan-Meier (KM) plot of cumulative risk will be generated, respectively.  The hazard ratio will also be calculated for 
+the two main components (MACE versus MALE) of the primary endpoint.  
+6.2.9 Subgroup analysis 
+Patients with actual qualifying revascularization procedure 
+In addition to the stratification based on the IxRS assignment, the study will be analyzed 
+based on the actual qualifying revascularizati on procedure and actual clopidogrel use in 
+relation to qualifying revascularization as follows: 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 24 of 36
+ 
+  surgical, 
+ endovascular including h ybrid with clopidogrel, 
+ endovascular including hybrid without clopidogrel. 
+Patients with hybrid procedures are classified as endovascular revascularization. We plan to 
+determine the treatment effect among patie nts in each of the above strata (actual 
+classification). Treatment groups will be compared using Cox proportional hazards model 
+with treatment as a covariate for the primary (also the individual components) and secondary 
+efficacy endpoints, using the ITT analysis set and ITT data scope. The point estimate and corresponding 95% CI for the hazard ratio (HR,  rivaroxaban added to ASA vs. ASA alone) 
+will be reported. Additional analyses on other endpoints may be performed based on both per 
+IxRS assignment and actual type of qualifying procedure and clopidogrel use. 
+Other subgroups  The analyses for the other subgroups (as defined in section 6.2.4) will be performed based on 
+the same analysis sets and data scopes as in  the main analyses for the primary efficacy 
+outcome (also the individual components). The results will be presen ted descriptively (and 
+with forest plots). The hazard ratio for the treatm ent effect will be estimated separately within 
+each level of a subgroup variable using the Cox proportional hazards model stratified by type 
+of procedure and clopidogrel use (per IxRS assignment) (except for subgroups related to 
+qualifying revascularization proced ure or clopidogrel use) with treatment as a covariate.  
+Additionally, homogeneity of trea tment effect in subgroups, both in magnitude and direction, 
+will be assessed by adding a covariate for the subgroup variable and the corresponding 
+treatment-subgroup interaction to the respective Cox proportional hazards model. This further 
+investigation includes the likelihood ratio test proposed by Gail to test for qualitative 
+interaction ( Gail et al. 1985 ). 
+As the number of subgroup analyses may be larg e, the probability of observing at least one 
+spurious interaction is high de spite the lack of a biological or pharmacological basis for 
+expecting an interaction. Thus, a ny interaction with a p-value below the 5% type I error level 
+in the analysis of primary outcome will be interp reted as “flag” to prompt further investigation 
+into the consistency of the pattern wi thin secondary and related outcomes. 
+The analyses for the subgroups as defined in section 6.2.4 will also be performed based on the 
+same analysis set and data scope as in the main analysis for the secondary efficacy outcomes (also the individual components). 
+6.2.10  Sensitivity analyses  
+To support the primary study results and to asse ss the robustness of the primary analysis, 
+several sensitivity analyses will be performed. 
+The primary efficacy variable will be analyzed  based on the ITT analysis set and ITT data 
+scope 
+ using the Cox proportional hazard model with actual stratification 
+ using the Cox proportional hazard  model without stratification 
+ Using a proportional hazards estimator that is robust to departur es from  proportional 
+hazard ( Boyd et al. 2012 ) 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 25 of 36
+ 
+ The primary efficacy outcome (also the individual components) as adjudicated by ICAC will 
+also be analyzed using the same Co x PH model as described in section 6.2.5 based on SAF 
+and on-treatment data scope. The same analysis w ill be repeated based on ITT analysis set and 
+overall study duration including post-study treatment follow-up. All subjects who are event free will be censored at the date of last clin ical event ascertainment or last contact.  
+The primary efficacy outcome as reported by in vestigator will be analyzed similarly  based on 
+the ITT analysis set and ITT data scope. 
+For the individual components of investigat or reported primary efficacy outcome see 
+Appendix E . 
+In addition, the secondary efficacy outcomes as adjudicated by ICAC (if applicable) will be 
+analyzed using the same Cox PH model as described in section 6.2.5 based on the SAF and 
+on-treatment data scope.  If the sensitivity analyses are much different from the primary analysis, additional analyses 
+may be performed to further i nvestigate the inconsistency. 
+Concordance of ICAC and investigator reports on the primary efficacy endpoint events will be 
+provided for the combined treatment group. Sensitivity analyses to address the potential impact of missing data 
+Although extensive effort will be made to redu ce the number of subjects with missing follow-
+up, it is expected that there will be missing vital status and event information in some 
+subjects. Subjects who are not followed up until  the ECOD (consent withdrawal, objection to 
+further data collection, and lost  to follow up) before the development of primary efficacy 
+events will be considered missing. Sensitivity analyses will be performed for th e primary efficacy endpoint based on the ITT 
+analysis set and ITT data scope to evaluate the potential imp act of missing data on analysis 
+results and robustness of study conclusions. To evaluate the plausibility of  informative censoring, distributi ons of baseline demographics 
+and other characteristics will be compared be tween subjects with and without missing data, 
+taking into account treatment and regardless of treatment.  Potential impact of missing data will be eval uated by imputation, where the event process will 
+be imputed in missing follow-up periods (ie. time from last clinical event ascertainment date 
+until ECOD in subjects without a primary efficacy endpoint prior to the ECOD). The 
+robustness of the treatment effect with respect to missing data will be evaluated with a tipping 
+point analysis (see Appendix C  for mathematical details). In this analysis, we will: 
+1. Estimate the hazard at time of loss to follo w-up among subjects in ITT analysis set, 
+adjusting for treatment group, stratificati on factors, and the following baseline 
+covariates: 
+ age (<65; ≥65 to <75; ≥ 75 years) 
+ diabetes mellitus (yes, no) 
+ prior coronary artery disease (yes, no) 
+2. Inflate the hazard only in the rivaroxaban gr oup by a set of inflation factors; assuming 
+non-informative censoring in the control group 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 26 of 36
+ 
+ 3. Perform simulations to impute events to th e end of the study using standard multiple 
+imputation rules, and compute the hazard ratio and two-sided 95% CI using the 
+primary Cox proportional model 
+4. Given the study results is statistically signifi cant in favor of rivaroxaban, increase the 
+inflation factor (by repeati ng steps 2 and 3) until the upper limit of the two-sided 95% 
+CI for the hazard ratio crosses 1.0; this will be the “tipping point” 
+The tipping point will show how much higher the event risk afte r drop-out would need to be 
+in the rivaroxaban group so that statistical significance is lost.   
+In addition, the extent of missing information will be described by the fraction of subjects 
+with missing data and the fraction of unobserve d rivaroxaban or rivaroxaban placebo follow-
+up subject-years. 
+6.3 Pharmacokinetics/pharmacodynamics 
+Not applicable 
+6.4 Safety 
+6.4.1 Adverse events 
+Because the safety profile of rivaroxaban has been well established in previous large and 
+extensive trials, this study will collect limited AE data. Adverse events (AEs) will be coded 
+by Medical Dictionary for Re gulatory Activities (MedDRA) .  The version number of 
+MedDRA used for the analyses will be stored in the clinical database. A listing will be provided linking the original investig ator terms and the coded terms. 
+Analyses of reported adverse events will be performed based on the SAF and on-treatment data scope.   
+In case of uncertainty (e.g., missing or incomplete dates), AEs will be classified as “treatment 
+emergent” (TE) following the worst case approach.  
+An overall summary of AEs and treatment-e mergent (TE) AEs (onl y considering study 
+medication of rivaroxaban or rivaroxaban placebo) will be generated by treatment group and 
+overall.  
+Incidences of subjects with treatment emergent  adverse events (TEAEs ), drug-related and/or 
+serious TEAEs, and TEAEs causing discontinuation of study drug will be summarized by 
+treatment grouped by MedDRA Primary System  Organ Class (SOC) and Preferred Term 
+(PT).  In addition, th e incidence of pre-treatment AEs a nd AEs during the post study treatment 
+follow up will be tabulated. 
+Serious adverse events (SAEs), AEs leading to  discontinuation and AEs of special safety 
+interest (if applicable) will be listed.  The date , relative day (to start of study medication) and 
+phase of the study (pre-treatment, during tr eatment, post-treatment) will be included. 
+Further summaries of AEs by maximum intensity and worst outcome will be provided, 
+consistent with Bayer Global Medical Standards. 
+Specific to Japan, outcome events (i.e. bleeding,  efficacy outcome events) are reported as an 
+(S)AEs as required by PMDA, thus (TE)AEs and SAEs will be further presented for Japan 
+only subjects vs. non-Japan subjects. 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 27 of 36
+ 
+ 6.4.2 Primary safety variable 
+The primary safety variable is the time from  randomization to the major bleeding events 
+according to the thrombolysis in myocardial in farction (TIMI) classification, as defined in the 
+ICAC charter. 
+6.4.3 Secondary safety variables 
+The secondary safety variables are: 
+ the time from randomization to the major bleeding events according to the International 
+Society on Thrombosis and Haemostasis (ISTH) classification 
+ the time from randomization to the type 3b and above bleeding even ts according to the 
+Bleeding Academic Research Consortium (BARC) classification 
+Bleeding definitions can be found in the ICAC charter. 
+6.4.4 Other safety variables 
+Other safety variables include vi tal signs (systolic a nd diastolic blood pressure, pulse rate).  
+6.4.5 Analysis of safety variables 
+The analysis of the primary a nd secondary safety variables wi ll be based on the SAF and on-
+treatment data scope.  
+Time to the first occurrence of the primary safe ty endpoint (i.e., TIMI major bleeding) will be 
+compared using a Cox proportional hazards model st ratified by type of procedure and use of 
+clopidogrel (per IxRS assignment)  with treatment group as a cova riate. A plot of cumulative 
+event rate derived by Kaplan-Meier estimate will be provided to show event rate and 
+treatment effect by time.  
+The secondary safety outcome variables will be analyzed similarly. As supportive analyses, the primary safety variab le will be analyzed as described above based 
+on the SAF and ITT data scope as well as  overall study duration including post-study 
+treatment follow-up. In addition, the primary safety  variable will be analyzed according to the 
+actual qualifying revascular ization procedure (section 6.2.9) and in subgroups as described in 
+section 6.2.4 . Number of subjects with multiple TIMI major bleedings will also be 
+summarized in frequency table. As exploratory analyses, landmark analysis similar to those as described in section 6.2.8 will 
+also be performed for the primary safety variable. 
+Additionally number of patient s with bleeding leading to permanent drug discontinuation will 
+be summarized by bleeding sites.  Concordance of ICAC and invest igator reports on the TIMI major bleeding events will be 
+provided for the combined treatment group. Other safety variables will be  summarized descriptively. 
+Any pregnancy occurring in a st udy subject during the subject’s pa rticipation in this study will 
+be displayed. 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 28 of 36
+ 
+ 6.5 Other procedures and variables 
+The other procedures and variables include: 
+ Health care resource  utilization data  
+ PAD symptom status 
+For these variables, additional analyses other than those spec ified in sections 6.2.7 and 6.2.8 
+may be performed and reported separately. 
+6.6 Benefit/Risk Assessment 
+The benefit-risk analyses are structured to allo w an integrated evaluation of the key benefits 
+and risks in the study. They are complementary to  the efficacy and safety analyses described 
+previously in this document and not intended for hypothesis testing. These analyses will be 
+performed in patient populations with the same follow up. Details of these analyses will be described in a separate document (supplemental statistical analysis pl an for benefit-risk). 
+The benefit-risk evaluation will be based on th e comparison of the time-to-first-event rates 
+(rivaroxaban added to ASA vs. ASA alone), for ev ents intended to be prevented (benefits) and 
+events that may be caused (risks). Individua l outcome measures balanced and weighed by 
+clinical significance and severity will be co mpared to evaluate the trade-off between 
+prevention of thrombotic vascular events versus harm (i.e. bleeding). These outcome measures include the individual component s of the primary efficacy outcome, risk 
+measurements include the hemorrhagic even ts of the efficacy endpoint and bleedings 
+according to TIMI classification. To have a co mprehensive benefit-risk evaluation, several 
+quantification methods will be used.  
+ Results of the above analysis do not preclude additional benefit/risk assessment in other 
+endpoints. The overall benefit-risk profile of the study drug will be interpreted in 
+consideration of the to tality of the data. 
+ 
+7. Document history and changes in the planned statistical analysis 
+Version Date Action 
+Draft SAP submitted to FDA 12 June 2015  
+Version 1.0 7 April 2016 Updates based on protocol amendment #4 and FDA feedback on planned sensitivity analyses to assess the impact of missing data 
+ 
+Version 2.0 14 May 2018 
+ 
+    Order of secondary efficacy endpoints were changed according to Global Integrated Clinical Study Protocol version 3.0 
+ Efficacy cut-off date and censoring rules for efficac
+y endpoints were modified in 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 29 of 36
+ 
+ Version Date Action 
+ section 4.5.1 , 4.5.3 and Appendix A  
+ Added a few more subgroup variables in 
+section 6.2.4  
+ Added more exploratory analyses (e.g. MACE/MALE endpoints,  landmark analysis for primary efficacy endpoint) in section 6.2.8  
+ Added more sensitivity analyses of 
+primary and secondary efficacy endpoints 
+in section 6.2.10 
+ Added AEs analyses for Japan vs. non-Japan patients in section 6.4.1, and 
+supportive analyses in section 6.4.5.  
+ Updated benefit/risk analysis in section 6.6 
+ Added Appendix B  for the definition of 
+regions 
+ Added Appendix C  to describe the 
+mathematical details of the tipping point analysis 
+  
+Version 3.0 24 July 2019 None of the edits in this SAP version is considered to change the primary efficacy analysis and other analyses as described in the SAP version 2.0, but includes further clarifications and additional analyses.  
+Editorial, administrativ e, and typographical 
+corrections were made that do not affect the 
+overall SAP. These changes are not described in this section. 
+The following changes are introduced in SAP 
+version 3.0: 
+ Added information on imputation rules for 
+the missing or incomplete post-randomization event dates in section 4.3 
+ Added information on derivation of the 
+first dose and last dose date of study 
+treatment in section 4.5.1 .  
+ Added analysis in data  scopes with overall 
+study duration for sensitivity analysis in section 4.5.2  
+ Added information on censoring rules for efficac
+y endpoints in section 4.5.3 and 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 30 of 36
+ 
+ Version Date Action 
+Appendix A  
+ Added analysis on SAF with on-treatment 
+data scope for secondary efficacy endpoints, subgroup variables, and changed sensitivity analysis for primary efficacy endpoints with on-treatment data scope from ITT to SAF in Table 1  
+ Updated some demographic variables in section 6.1.2  
+ Updated other efficacy variables in section 
+6.2.3 
+ Updated some subgroup variables in 
+section 6.2.4  
+ Updated SAS code to display both one-sided and two-sided p values in section 6.2.5 
+ Updated exploratory analysis with detailed 
+statistical model information in the 
+multiple occurrences of the primary efficacy endpoints analysis and references in section 6.2.8 
+ Updated exploratory analysis in the 
+subgroup variables in section 6.2.8  
+ Added additional landmark analysis on the 
+time period from randomization to 6-month, 6-month to 1 year and 1-year to end of treatment phase in section 6.2.8 
+ Added likelihood ratio test analysis to test for interaction terms in the subgroup analysis in section 6.2.9  
+ Added sensitivity analyses on individual 
+components of primary efficacy endpoints 
+on SAF and on-treatment data scope in section 6.2.10  
+ Updated sensitivity analyses on the missing data tipping point analysis by including the additional baseline covariates in the Cox model in section 6.2.10  
+ Removed European quality of life 5 dimensions questionnaire and walking impairment questionnaire variables in section 6.5. Those variables were  
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 31 of 36
+ 
+ Version Date Action 
+mentioned in section  6.2.3  
+ Updated Efficacy cut-off date, timelines, 
+and censoring variables in Appendix A  
+ Added Appendix D  for the detailed 
+information on imputation rules for missing dose date  
+ Added Appendix E  for the definition on 
+the components of the primary efficacy outcome by the investigators 
+  
+8. References 
+Andersen, PK and Gill, RD: Cox’s Regr ession Model for Counting Processes: A 
+Large Sample Study. Annals of  Statistics, 1982; 10:1100-1120. 
+Austin PC. A Tutorial on Multilevel Su rvival Analysis: Me thods, Models and 
+Applications. Int Stat Re v. 2017;85(2):185–203. doi:10.1111/insr.12214. 
+Becker F, Robert-Ebadi H, Ricco JB, et  al. Chapter I: Definitions, epidemiology, 
+clinical presentation and prognosis. Eu ropean journal of vascular and 
+endovascular surgery: the official journal of the European Society for Vascular Surgery. 2011; 42 Suppl 2:S4-12 
+Boyd, AP, Kittelson, JM, Gillen, DL. Estim ation of treatment effect under 
+nonproportional hazards and covariate de pendent censoring. Statistics in 
+Medicine. (2012) 31(28):3504-15 
+Gail M., Simon R. Testing for qualitative in teractions between treatment effects and 
+patient subsets. Biometrics 1985, 41:361-372. 
+Haybittle JL. Repeated assessment of results in clinical trials of cancer treatment. 
+Brit J Radiology 1971, 44:793-7 
+Hintze, J. PASS 2011. NCSS, LLC Kaysville, Utah. 2011. 
+Hougaard, P. Analysis of Multivariate Survival Data. New York: Springer-Verlag; 
+2000. 
+Lin DY, Wei LJ, Yang I, Ying Z. Semiparame tric regression for the mean and rate 
+functions of recurrent even ts. J R Stat Soc B 2000;62:711–30. 
+Van Houwelingen HC. Dynamic predicti on by landmarking in event history 
+analysis. Scandinavian Journal of Statistics. 2007 Ma r 1;34(1):70-85. 
+Wienke, A. Frailty Models in Surviv al Analysis. Boca Raton, FL: Chapman & 
+Hall/CRC; 2011. 
+ 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 32 of 36
+ 
+ Appendix A: Study Closeout Procedure and Variables used for Censoring 
+ 
+ 
+        
+ 
+Note: The dates and timeline shown are for illustration purpose only. ECOD= Efficacy cut-off date, EOT Visit=end of treatment 
+visit, PS-FU Visit=Post-study treatment fo llow-up visit (phone call), DBL=database lock 
+The executive committee will monitor the accrual of the number of primary events, and when 
+appropriate predict and define  an ECOD at which time the pre-defined target number of 
+events for the primary composite endpoint ar e expected to have occurred. All randomized 
+patients should return for their End of Treatment (EOT) visit after the ECOD.  
+Events that occur after the ECOD will also be co llected and adjudicated. These events will be 
+included in sensitivity analyses but not the primary analysis.  For the implementation of the censoring rules below variables are defined to distinguish 
+between a patient’s last contact with informati on relating to clinical ev ents versus CV-death / 
+all-cause mortality. 
+ Date of objection to further data collection 
+This date will be given only for those subj ects who expressed object ion to further data 
+collection after withdrawal of informed consent.  
+ Last clinical event ascertainment date 
+The latest date from regular or unscheduled post-randomization visits  or contacts with 
+assessment of clinical events or latest adjudicated clinical event start date.  
+ Date of last contact alive  The date of the last documented contact w ith the subject or a third party (including 
+data on subject survival status) derived from the maximum (last clinical event 
+ascertainment date, SAEs date, vital status date, consent withdraw n date or date of 
+objection to further data collection). The resulting maximum date is capped by the 
+death date if the patient died or by the date of clean databa se. In addition, the date of 
+last contact alive will be the day before th e death date, if available, for subjects who 
+die. PS-FU 
+visit 
+(30 d)  Regular visit schedule  
+Patient on study drug  2019  
+ DBL  
+Aug Nov Feb Jul Sep Oct Dec Jan Mar Apr Jun ECOD  
+Site communications Monthly alerts as the 
+ECOD estimates 
+become refined 2020  
+May 
+EOT 
+visit  
+(30 d)  
+ECOD will be 
+before the 
+EOT visit CDB  
+(30 d)  
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 33 of 36
+ 
+ Appendix B: Definition of Regions 
+Countries will be assigned to regions as shown in Table 2 below. If additional countries 
+participate in the trial, their assignment to a re gion will be specified in the table/listing/figure 
+specification document before unblinding. 
+Table 2 Classification of Countries to Regions  
+Region  Countries  
+North America  Canada, US A 
+Western Europe  Austria, Belgium, Denm ark, Finland, France, Germany, Italy, 
+Netherlands, Portu gal, Spain, Sweden, Switzerland, United Kin gdom 
+Eastern Europe  Bulgaria, Czech Republic, Es tonia, Hungary, Latvia, Lithuania, Poland, 
+Romania, Russia, Serbia, Slovakia, Ukraine 
+Asia Pacific China, Japan, South Korea, Taiwan, Thailand 
+South America Argentina, Brazil  
+Appendix C: Mathematical Details of the Proposed Tipping Point Analysis 
+The robustness of the treatment effect with resp ect to missing data will be evaluated with a 
+tipping point analysis for the primary efficacy  variable. A methodology similar to pattern-
+mixture-models will be employed, where a Wei bull survival model will be fitted to impute 
+outcome for subjects who are lost-to-follo w-up (or withdrawn consent with no further 
+information) (Little 2016 ).  
+ 
+1. Estimate the hazard at time of loss to follow-up, adjusting for treatment group, covariates and stra tification factors  
+ 
+a. The log survival time w=log(t) is m odeled using SAS LIFEREG procedure by 
+fitting a Weibull distribution to all su bjects, adjusting for treatment group, 
+covariates and stratificat ion factors. The  survival function has the form 
+
+
+ ww S exp exp ) (0
+, 
+where µ (differs for treatment, covariates, and stratum) and σ (scale) are estimated 
+from the SAS output. 
+ 
+b. Re-parametrize the Weibull distribu tion with survival function  
+S (t) = exp (– (t/ λ) β), 
+where λ is the scale parameter and β is the shape parameter. Obtain the estimates 
+of λ and β  as 
+      λ  = exp (µ) 
+β = 1/σ. 
+c. Obtain the observed hazard rate for individual subjects using th e hazard function  
+h (t|λ, β) = (β/λ) (t/λ ) β-1. 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 34 of 36
+ 
+ 2. Inflate the hazard only in the rivaroxaban gr oup by a set of inflation factors; assuming 
+non-informative censoring in the control group  
+ 
+Let k be the inflation factor, the inflated hazard rate in the rivaroxaban group is 
+h* (t|λ, β)  = k×(β/λ) (t/λ) β-1 
+and the new scale parameter is  
+λ* = λ/ (k1/β) 
+by solving λ* from k×(β/λ) (t/λ) β-1 = (β/ λ*) (t/ λ*) β-1, while fixing the shape parameter 
+β. 
+The hazard rate in the control group remains unchanged. 
+3. Perform simulations to impute events to th e end of the study using standard multiple 
+imputation rules (Rubin 1987), and compute the hazard ra tio and two-sided 95% CI 
+using the primary Cox proportional model 
+ 
+For subjects who are lost-to-follow up (or w ithdrawn consent with no further information), 
+and who did not experience a primary efficacy endpoint prior to the ECOD, random variables 
+will be simulated using the conditional time to event distribution after the last contact date 
+(LC) (defined as earlier date of last clinical ev ent ascertainment date, date of the objection to 
+further data collection) given that no event was observed before.  
+ 
+Let x be the time from the last contact date ( LC) to the event date, the conditional probability 
+of having an event given no event observed before LC is  
+.) () (1) () Pr(1) | Pr( 1 ) | Pr(
+LC SLC x S
+LC t PLC x tLC t LC xt LC t LC xt y
+           
+ 
+Using the estimated scale parameter λ* and shape parameter β from Weibull distribution in 
+step 2, the above becomes 
+y = 1– exp (– ((x+LC)/ λ*) β) / exp (– (LC/ λ*) β), 
+    log (1–y) = – ((x+LC)/ λ*) β + (LC/λ*) β 
+ x = λ*((LC/λ*) β – log (1–y)) 1/β – LC .  
+If y is generated as a random variable with uniform distribution between 0 and 1, the random 
+variable x can be generated using the inverse tr ansformation technique from the formula 
+above. 
+ 
+If this randomly generated variable has a valu e less than the elapsed time between the last 
+contact date and the efficacy cu t of date, the subject will be counted as having observed an 
+event at the last contact date pl us the random variable. Otherwise,  the subject is re-adjusted to 
+be censored at the ECOD. 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 35 of 36
+ 
+  
+These imputed events will be added to the obs erved events in the study for both treatments 
+and the primary efficacy variable will be re-analyzed. This process will be repeated 1000 
+times. The hazard ratio with 95% CI will be es timated for each imputed data set and then 
+combined using standard multiple imputation combining rules. 
+ 
+4. Given the study results is statistically signifi cant in favor of rivaroxaban, increase the 
+inflation factor (by repeati ng steps 2 and 3) until the upper limit of the two-sided 95% 
+CI for the hazard ratio crosses 1.0; this will be the “tipping point”. 
+ Reference: Little, RL, Wang, J., Sun, X. et. al. The treatmen t of missing data in a large cardiovascular 
+clinical outcomes study. Clinic al Trials, 2016 vol. 13 no. 3 344-351 
+Rubin DB. Multiple imputation for nonrespons e in surveys. New York: John Wiley, 1987 
+Appendix D: Imputation Rules for Missing Dose Date 
+First dose date is missin g or incomplete  Action  
+Only day of first dose date is missing Impute the first dose date as maximum (date of 
+randomization+1 day, 01.month.year) 
+Month and day of first dose date is missing Impute the first dose date as randomization 
++ 1 day. 
+First dose date is complete missing but last 
+dose date is available Impute the first dose date as randomization 
++ 1 day. 
+First dose date and last dose date is missin g The patient never took the study medicine 
+Last dose date is missin g or incomplete Action 
+Only day of last dose date is missing  Impute the last dose date using last day of 
+the month  
+ Derive last dose date as minimum of (the 
+date of last contact, imputed last dose date, the date of death, or the maximum of 
+(ECOD, EOT visit date)) but no earlier 
+than the date of first dose. 
+Month and day of last dose date is missing  Impute the last dose date using last day of 
+the year 
+ Derive last dose date as minimum of (the 
+date of last contact, imputed last dose date, the date of death, or the maximum of 
+(ECOD, EOT visit date)) but no earlier 
+than the date of first dose. 
+Last dose date is complete missing but first 
+dose date is available Impute last dose date as minimum of (the date of last contact, the date of death, or the 
+maximum of (ECOD, EOT visit date)) but no earlier than the date of first dose. 
+ Statistical Analysis Plan   
+ Protocol No.: BAY 59-7939 / 17454  Page: 36 of 36
+ 
+ Appendix E: Components of the Pr imary Efficacy Outcome by the 
+Investigators 
+ CV death: Either any death in the main ca tegory “Cardiovascular cause” or within the 
+“Other cause” main category including any deat h indicated by the i nvestigator that the 
+cause was unknown.  
+ MI: coronary ischemic event diagnosis in 
+o Non-stemi 
+o Stemi 
+ Ischemia stroke: stroke type in 
+o Primary ischemic stroke 
+o Primary ischemic stroke with hemorrhagic conversion 
+o Unknown stroke type 
+ Acute limb ischemia 
+ Amputation: reason for amputation in primary acute limb ischemia and primary 
+vascular disease progression with site of leg in 
+o Above the knee 
+o Below the knee, ankle disarticulation 
+o Below the knee, transtibial 
+ 

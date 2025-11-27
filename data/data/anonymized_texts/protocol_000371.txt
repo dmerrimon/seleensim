@@ -1,0 +1,229 @@
+ Reducing Emergency Department Utilization With an After Visit Summary Nudge Toward 
+Alternative Care Options  
+ 
+Study Protocol with Statistical Analysis Plan  
+ 
+[STUDY_ID_REMOVED]  
+ 
+2/22/2024   
+  
+ 
+Study Protocol  
+ 
+Background  
+ 
+Decreasing inappropriate utilization of the Emergency Department (ED) is a priority for the 
+Geisinger health system. ED visits may be avoided if patients first call the system to get 
+appropriate guidance  for their concern s or are otherwise better informed about reasons to visit 
+the ED vs. other, potentially more appropriate resources such as urgent care and primary care 
+facilities. The study team is working to reduce ED utilization by including additional information 
+in adult outpatient After Visit Summaries (AVSs).  
+ 
+Objectives  
+ 
+The study will involve  A/B testing different AVS versions, including a version that encourages 
+patients to contact Geisinger via different contact methods, a version that includes a map to the 
+patient's closest urgent care  location and accompanying information about urgent care , and a 
+version that includes a self -triage guide. A standard -practice control group will receive the 
+current standard AVS. Analysis results will be assessed to determine which version is most 
+effective at reducing ED use.  
+ 
+Design  
+ 
+This study is a randomized controlled trial with 4 study arms. Patients will be randomized to 
+receive or not receive a modified AVS after outpatient in -person or telehealth visits.  
+ 
+Methods  
+ 
+At the time of a patient’s first qualifying appointment  during the study period , patients  will be  
+randomized  into the following study arms : 
+ 
+1. Standard  practice : Patients in this arm will receive the current standard  practice  AVS.  
+2. Contact us first:  Patients in this arm will receive the standard AVS, plus information on 
+how to contact Geisinger if they need medical attention.  
+3. Contact us first + urgent care map: Patients in this arm will receive the standard AVS, 
+plus information on how to contact Geisinger if they need medical attention, plus a map 
+of their nearest Geisinger urgent care location and additional information about urgent 
+care.  
+4. Contact us first + urgent care map + self -triage:  Patients in this arm will receive the 
+standard AVS, plus information on how to contact Geisinger if they need medical 
+attention, plus a map of their nearest Geisinger urgent care location and additional 
+information about urgent care. This arm will also receive a self -triage chart, with common 
+reasons patients go to the ED and situations where seeking alternative care might be 
+appropriate.  
+ 
+Sequential Design  
+ 
+We will use a group sequential design  with O’Brien -Flemming alpha spending and beta  
+spending (Lakens et al., 2021) , with optional stopping for futility . We will perform one interim 
+look after collecting data from 109,346 patients (50% of the sample) and the final look after 
+ completing data collection with 218,692 patients.  We will stop after the interim look if p < 
+.005575 (i.e., a much larger effect than expected) for the contrast between any of the 3 
+experimental arms and control in Analysis 1  below. We may also stop for futility if z > -0.192 
+(i.e., an effect in the opposite direction to our expectations) for all 3 contrasts between 
+experimental arms and control in Analysis 1  below. All tests will be  1-sided tests with  an overall 
+alpha of .05.  
+ 
+Power Analysis  
+ 
+With a traditional RCT  design and 215,000 patients, we would have 95% power to detect a  
+reduction in avoidable ED use in the 30 days following the appointment from 3. 88% to 3.50% 
+(9.80% relative reduction) with one-tailed alpha of .05.  The target effect size and number of 
+patients are largely informed by practical considerations regarding the acceptable duration of 
+the intervention (approximately 6 months), with an effect deemed useful if achieved.  
+ 
+We next determined that the  inflation factor based on the sequential design described above 
+was 1.017 17. We multiplied the inflation factor by the fixed design sample size (215,000 * 
+1.017 17) for a sample size of 218,692.  
+ 
+Project Status  
+ 
+All patients have been enrolled , but we have not extracted the final outcome data.  
+ 
+We ran an interim analysis  on preliminary  outcome data,  as described  above. Although effect 
+sizes met our optional stopping for futility criteria ( zs < -0.192), we decided to keep running the 
+study to be able to run all final analyses at full power . 
+ 
+We were unable to turn off the intervention immediately once reaching our target sample size, 
+so we exceeded our preregistered sample size. Our fin al analyses will be based on the full list of 
+patients enrolled until the intervention stopped. We will also run the primary outcome analyses 
+on the subset of patients enrolled through the day we reached the preregistered sample size.  
+ 
+Process for Determining a Patient’s Nearest Urgent Care  
+ 
+A patient’s nearest urgent care will be determined by their zip code in Geisinger’s Electronic 
+Health Record.  Zip code locations will be defined as population -weighted centroids (obtained 
+from https://hudgis -hud.opendata.arcgis.com/datasets/HUD::zip -code -population -weighted -
+centroids/ ) where available. For some zip codes (P.O. Box zip codes in particular), population -
+weighted centroids are not available. In those cases, we will use the zip code’s approximate 
+centroid obtained from the USPS Zip Code Database ( https://www.unitedstateszipcodes.org/zip -
+code -database/ ). 
+ 
+Distance to the nearest Geisinger urgent care location for each zip code will be calculated using 
+the following process:  
+ 
+1. For each zip  code in PA, NY, and NJ (states that are within or sufficiently close to the 
+Geisinger service area), we will compute the Haversine distance to each urgent care 
+location  
+2. For each zip code, we will determine if at least one urgent care location is within 40 
+miles of the zip code centroid  
+ 3. If more than one location is within 40 miles and under a 10 mile difference in distance 
+between zip code centroid and each of those two clinic locations  (e.g., if one clinic is 10 
+miles away and another is 15 miles away, a 5 mile difference) , we will use  the Google 
+Maps API to determine  which clinic  is the closest driving distance in minutes  
+ 
+For patients assigned to one of the arms that includes an urgent care map, we will show a map 
+to the closest clinic if  the Haversine distance  is under 40 miles from the centroid  of the patient’s 
+zip code.  For patients with zip codes farther than 40 miles from a Geisinger urgent care location, 
+we will show a map that includes all urgent care locations with information on how to find their 
+nearest urgent care.   
+ 
+ 
+Statistical Analysis Plan  
+ 
+Planned Analyses  
+ 
+Primary Outcome : Inappropriate  ED visits  (y/n) [Time Frame: In the 30 days following the 
+appointment]  
+ 
+We will apply the NYU algorithm (Ballard et al., 2010) to determine whether an ED visit is 
+inappropriate.   
+ 
+We will use one of the following two methods:  
+ 
+1. Epic tool: Geisinger is working to implement a tool in Epic that can automatically run the 
+NYU algorithm and identify inappropriate (or “non -emergent”) ED visits. If this tool is 
+running prior to data analysis, we will use it to identify inappropriate ED visits for our 
+primary outcome.  
+2. Custom code: If the Epic tool is not yet implemented prior to our data analysis, we will 
+pull, for each ED visit, the primary ICD code for the visit and use custom code to 
+determine whether the visit was inappropriate, following the methods described in 
+Ballard et al. (2010)  or the most up -to-date version of the algorithm we have access to at 
+the time of data analysis.  
+ 
+Question 1: Do AVSs decrease inappropriate ED visits  when including  information about how 
+to contact Geisinger if patients need care?  
+ 
+Analysis 1 (Confirmatory):  We will test the hypothesis that each of the individual modified AVS 
+versions  decrease s the likelihood patients will visit the ED  in the 30 days following their visit. We 
+will run an OLS regression including  a categorical  predictor variable coding for experimental arm  
+(0 = standard  practice  arm, 1 = contact us first  arm, 2 = c ontact us first + urgent care  arm, 3 = 
+contact us first + urgent care map  + self -triage arm ).  
+ 
+Question 2:  Do AVSs decrease ED visits when including  an urgent care map , beyond  modified 
+AVS version without an urgent care map?  
+ 
+Analysis 2 (Exploratory):  We will run an OLS regression including only experimental arms with 
+modified AVSs. We will include a predictor variable indic ating whether each patient’s AVS 
+version includes a map (0 = no map, contact us first  arm; 1 = map, contact us first + urgent care 
+map arm and contact us first + urgent care map  + self -triage  arm). 
+ 
+ Question 3:  Do AVSs decrease ED visits when including  a self -triage tool , beyond  modified 
+AVS versions without a self -triage tool?  
+ 
+Analysis 3 (Exploratory):  We will run an OLS regression including only experimental arms with 
+modified AVSs. We will include a predictor variable indic ating whether each patient’s AVS 
+version includes a self-triage  chart (0 = no self-triage chart – contact us first  arm and contact us 
+first + urgent care map  arm; 1 = self-triage chart  – contact us first + urgent care map  + self -
+triage arm).  
+ 
+ 
+ 
+ 
+Covariates  
+ 
+Because the ultimate call to action (seeking care outside the ED) is likely to depend on proximity 
+to the ED and alternate care options, all the regressions described above  will include as 
+covariates the driving distance in miles to the closest Geisinger ED and the driving distance in 
+miles to the closest Geisinger urgent care location.  Specifically, covariates will reflect the 
+distance from the closest Geisinger ED and closest Geisinger urgent care location of the 
+patient’s zip code in the Geisinger electr onic health records. Distances between each enrolled 
+patient’s zip code centroid and ED/urgent care locations will be computed using the same 
+process described above in the section Process for Determining a Patient’s Nearest Urgent 
+Care , with the added step of computing the driving distance in miles  for each zip code.   
+ 
+Prim ary Analysis Sample  
+ 
+Analysis will be limited to patients who , at the time of enrollment,  lived close enough to an 
+urgent care location to be shown a map to a specific Geisinger urgent care location (i.e., those 
+who lived within 40 miles , using the Haversine method , of a Geisinger  urgent care clinic ). We 
+estimate that over 98% of patients will  be included in this primary analysis.  We will  also run a 
+sensitivity analysis that includes  all patients.  
+ 
+Other  Pre-specified Outcomes  
+ 
+We will run the analyses described above on the following additional outcomes:  
+ 
+1. Urgent care visits  
+ 
+Visited urgent care (y/n)  
+ 
+[Time Frame: In the 30 days following the appointment]  
+ 
+2. Calls  
+ 
+Called Geisinger  (y/n) 
+ 
+[Time Frame: In the 30 days following the appointment]  
+ 
+3. Patient portal messages  
+ 
+Sent a patient portal message  (y/n) 
+  
+[Time Frame: In the 30 days following the appointment]  
+ 
+ 
+ 
+Analysis Notes  
+ 
+Recent work suggests that OLS regressions are appropriate in randomized experiments with 
+binary outcome variables such as ours (Gomila, 2021).  
+ 
+In addition to the analyses described above, we may run sensitivity analyses such as using 
+count or continuous variables instead of dichotomized variables.  
+ 
+An exploratory analysis will test whether any of the experimental arms perform better than 
+baseline, using a dichotomous predictor variable (0 = standard  practice , 1 = any modified AVS).  
+ 
+Finally, we plan to run exploratory analyses to understand heterogeneity in observed effects 
+(e.g., in covariates such as age, sex, race , or frequency of exposure to the AVS ).  

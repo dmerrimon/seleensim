@@ -1,0 +1,2116 @@
+Clinical Development  
+AIN457/ Secukinumab/Cosentyx® 
+CAIN457A2323 
+/ [STUDY_ID_REMOVED]
+A multicenter, r andomized, do uble-blind, placebo-
+controlled, 5 2-weeks st udy to demonstrate the efficacy, 
+safet y and tolerabilit y of subcutaneous secukimumAb 
+injections with 2 mL pre -fiLLed s yringes (3 00 mg) in adUlt 
+subjects with moderate t o seveRE pl aque psoriasis 
+(ALLURE) 
+Statistical Analys is Plan (SAP) 
+Author:  Statistician,   
+Document type:  SAP Documentation  
+Document status:  Addendum 1.0  
+Release date:  11 Sep 2018  
+Number of pages:  58 
+Property of Novartis  
+For business use only 
+May not be used, divulged, published or otherwise disclosed  
+without the consent of Novartis  
+
+Novartis  For business use only  Page 2 
+SAP  CAIN457A23 23 
+ 
+
+Novartis  For business use only  Page 3 
+SAP  CAIN457A23 23 
+ 
+Table of contents 
+Table of contents ................................................................................................................. 3 
+List of abbreviations ............................................................................................................ 5 
+1 Introduction ......................................................................................................................... 7 
+1.1 Study design............................................................................................................. 7 
+1.2 Study objectives and endpoints ............................................................................... 8 
+2 Statistical methods  ............................................................................................................... 9 
+2.1 Data analysis general information  ........................................................................... 9 
+2.1.1  General definitions ................................................................................ 10 
+2.2 Analysis sets  .......................................................................................................... 11 
+2.2.1  Subgroup of interest .............................................................................. 12 
+2.3 Patient disposition, demographics and other baseline characteristics ................... 12 
+2.3.1  Patient disposition  ................................................................................. 13 
+2.4 Treatments (study treatment, concomitant therapies, compliance)  ....................... 13 
+2.4.1  Study treatment / compliance  ................................................................ 13 
+2.4.2  Prior, concomitant and post therapies ................................................... 16 
+2.5 Analysis of the primary objective  .......................................................................... 18 
+2.5.1  Primary endpoint  ................................................................................... 18 
+2.5.2  Statistical hypothesis, model, and method of analysis  .......................... 22 
+2.5.3  Handling of missing values/censoring/discontinuations ....................... 23 
+2.5.4  Supportive analyses ............................................................................... 24 
+2.6 Analysis of the key secondary objective ............................................................... 24 
+2.6.1  Key secondary endpoint ........................................................................ 24 
+2.6.2  Statistical hypothesis, model, and method of analysis  .......................... 24 
+2.6.3  Handling of missing values/censoring/discontinuations ....................... 25 
+2.7 Analysis of secondary efficacy objective(s)  .......................................................... 25 
+2.7.1  Secondary endpoints ............................................................................. 25 
+2.7.2  Statistical hypothesis, model, and method of analysis  .......................... 26 
+2.7.3  Handling of missing values/censoring/discontinuations ....................... 26 
+2.8 Safety an alyses  ....................................................................................................... 26 
+2.8.1  Adverse events (AEs)  ............................................................................ 27 
+2.8.2  Deaths  .................................................................................................... 29 
+2.8.3  Laboratory data  ..................................................................................... 29 
+2.8.4  Other safety data  ................................................................................... 32 
+2.9 Pharmacokinetics  ................................................................................................... 32 
+  33 
+
+Novartis  For business use only  Page 4 
+SAP  CAIN457A23 23 
+ 
+2.11  Clinician -reported outcomes .................................................................................. 33 
+2.11.1  Usability and hazard assessment of the 2 mL pre- filled syringe  .......... 33 
+2.12  Patient -reported outcomes ..................................................................................... 34 
+  35 
+  35 
+  36 
+3 Sample size calculation  ..................................................................................................... 36 
+3.1 Primary endpoint (co- primary endpoint) ............................................................... 37 
+3.1.1  Secondary endpoints ............................................................................. 37 
+4 Change to protocol specif ied analyses  .............................................................................. 37 
+5 Appendix ........................................................................................................................... 37 
+5.1 Imputation rules ..................................................................................................... 37 
+5.1.1  Study drug  ............................................................................................. 37 
+5.1.2  AE date imputation  ............................................................................... 38 
+5.1.3  Concomitant medication date imputation  ............................................. 39 
+5.1.4  First diagnosis date (PsO, PsA) imputation  .......................................... 40 
+5.1.5  Other imputations  .................................................................................. 41 
+5.2 AEs coding/grading ............................................................................................... 41 
+5.3 Laboratory parameters derivations  ........................................................................ 41 
+5.4 Statistical models  ................................................................................................... 41 
+5.4.1  Analysis of continuous data .................................................................. 41 
+5.4.2  Analysis of binary (and categorical) data  .............................................. 42 
+5.4.3  Logistic regression  ................................................................................ 42 
+5.4.4  Multiple imputations for response variables ......................................... 43 
+5.4.5  Crude incidence and related risk estimates  ........................................... 46 
+5.4.6  Exposure adjusted incidence rate and related risk estimates  ................ 48 
+5.5 Rule of exclusion criteria of analysis sets .............................................................. 49 
+5.6 Clinician reported outcomes .................................................................................. 49 
+5.6.1  Usability and hazard assessment of the 2 mL pre- filled syringe  .......... 49 
+5.7 Patient reported outcomes ...................................................................................... 51 
+5.7.1  Dermatology Life Quality Index (DLQI)  .............................................. 51 
+  52 
+5.7.3  Self-injection Assessment Questionnaire (SIAQ)  ................................. 54 
+6 Reference  ........................................................................................................................... 56 
+
+Novartis  For business use only  Page 5 
+SAP  CAIN457A23 23 
+ 
+List of abbreviations 
+AE Adverse event  
+ALP Alkaline phosphatase  
+ALT Alanine aminotransferase/glutamic pyruvic transaminase/GPT  
+AST Aspartate aminotransferase/glutamic oxaloacetic transaminase/GOT  
+ATC Anatomical Therapeutic Chemical  
+BMI Body Mass Index  
+BSA Body surface area  
+CHMP  Committee for medicinal products for human use  
+CSR  Clinical study report  
+CTCAE  Common Terminology Criteria for Adverse Events  
+DAR  Dosage Administration Record  
+DLQI  Dermatology Life Quality Index  
+ECG  Electrocardiogram  
+eCRF  Electronic case report/record form  
+FAS Full analysis set  
+FDA United States Food and Drug Administration  
+GGT  Gamma -glutamyl transferase  
+HGB Hemoglobin  
+IFU 
+IGA Instructions For use  
+Investigator’s global assessment  
+IGA mod 2011  Novartis Investigator’s Global Assessment modified 2011  
+IRT Interactive response technology  
+LLN Lower Limit of Normal  
+LPLV  Last patient’s last visit  
+MACE  Major Adverse Cardiovascular Event  
+MCMC  Markov Chain Monte Carlo  
+MedDRA  Medical Dictionary for Regulatory Activities  
+NMQ  Novartis MedDRA Query  
+NovDTD  Novartis Drug and Therapy Dictionary  
+PASI  Psoriasis Area and Severity Index  
+PD 
+PFS Protocol deviation  
+Pre-filled syringe  
+PT Preferred Term  
+RMP  Risk Management Plan  
+S.C. 
+SAS Subcutan eous 
+Statistical analysis software  
+SAE Serious adverse event  
+SIAQ  
+SPP Self-Injection A ssessment Questionnaire  
+Safety Profiling Plan  
+SOC  System Organ Class  
+TBL Total bilirubin  
+TEAE  Treatment Emergent Adverse Event  
+ULN Upper Limit of Normal  
+Novartis  For business use only  Page 6 
+SAP  CAIN457A23 23 
+ 
+WBC  White blood cell  
+Novartis  For business use only  Page 7 
+SAP  CAIN457A23 23 
+ 
+1 Introduction  
+Data will be  analyzed by  Novartis according to the data analysis section 9 of the study protocol 
+which is available in Appendix 16.1.1 of the CSR . Important information is given in the 
+following sections and details are provided, as applicable,  in Appendix 16.1.9 of the CSR . 
+This document  covers statistical and analytical plans for CAIN457A2323 ( ALLURE ) study 
+with reference to the study protocol and the project standard analysis plans ( AIN457A Master 
+Analysis Plan ). 
+1.1 Study design 
+This is a multicenter, randomized, double -blind, placebo -cont rolled, parallel -group trial in 
+approximately 210 subjects with moderate to severe chronic plaque- type psoriasis.  
+Randomization : Eligible s ubjects  will be randomized using a 1:1:1  ratio into one of the three 
+treatment groups below. Randomization will not be stratified.  
+• Secukinumab 300 mg  (2mL PFS): will receive one 2 mL secukinumab 300 mg plus two 
+1 mL matching  secukinumab placebo s.c. injections once weekly for four weeks (at 
+Randomization, Weeks 1, 2 and 3), followed by dosing ever y four weeks, starting at Week 
+4 up to Week 48. Subjects will receive three placebo injections at Weeks 13, 14 and 15. 
+• Secukinumab 300 mg (2 x1mL PFS ): will receive two  1 mL secukinumab 150 mg plus 
+one 2 mL matching secukinumab placebo s.c. injections once weekly for four weeks (at 
+Randomization, Weeks 1, 2 and 3), followed by dosing every four weeks, starting at Week 4 up to Week 48. Subjects will receive three placebo injections at Weeks 13, 14 and 15. 
+• Placebo : will receive secukinumab placebo (two 1 mL and one 2 mL s.c. injections ) once 
+weekly for four weeks (at Randomization, Weeks 1, 2 and 3), followed by dosing every four weeks, starting at Week 4 up to Week 12 (pre-dose). 
+Prior to receiving the Week 12 dose, all subjects from the placebo group will be assigned  
+to the following treatment groups based on their PASI 90 response status as Week 12. 
+• PASI 90 non- responders : will receive either one 2 mL 300 mg secukinumab s.c. plus 
+two 1 mL matching placebo OR  two 1  mL 150 mg secukinumab s.c. injections plus 
+one 2 mL matching placebo, according  to the pre- assignment at the Randomization 
+visit using 1:1 ratio, at Weeks 12, 13, 14, 15 and then every four weeks starting at 
+Week 16 up to Week 48; 
+• PASI 90 responders : will continue on placebo (one 2 mL plus two 1 mL s.c. 
+injections) and will receive their placebo injections at Weeks 12, 13, 14, 15 and then every four weeks starting at Week 16 up to Week 48. 
+ 
+Of note: For PASI 90 non- respo nders in placebo group , pre -assigned treatment group s at 
+Randomization visit  will be used instead of re -randomization at Week 12, therefore eligible 
+subjects will be randomized using pre -assigned 2:2:1:1 ratio into one of the four treatment 
+groups at Randomization visit (similar to 1:1:1 for all subjects at Randomization visit with 1:1 
+for PASI 90 non-responders in placebo group at Week 12). 
+• Secukinumab 300 mg (2mL PFS)  
+Novartis  For business use only  Page 8 
+SAP  CAIN457A23 23 
+ 
+• Secukinumab 300 mg (2x1mL PFS)  
+• Placebo - Secukinumab 300 mg (2mL PFS)  
+• Placebo - Secukinumab 300 mg (2x1mL PFS)  
+ 
+The following study periods will be considered for analysis: 
+• Screening  period  (before Randomization)  
+• Treatment period 1 (Randomization to Week 12 pre-dose), including follow- up period  
+(F4 and F8 visits) for prematurely discontinued subjects before Week 12 completion.  
+• Treatment period 2 (Week 12 dose  to Week 52), including follow- up period (F4 and 
+F8 visits) for prematurely discontinued subjects before Week 52 completion. 
+• Entire treatment period  (Randomization to Week 52, last dose at Week 48), including 
+follow-up period (F4 and F8 visits) for prematurely discontinued subjects. 
+Of note: data from follow -up period (i.e., treatment free follow -up period after EOT visit, which 
+includes F4 and F8 visit s) for prematurely discontinued subjects  will be included in the analysis 
+of treatment period. 
+ 
+ 
+1.2 Study objectives and endpoints 
+The primary objective of this study is to demonstrate the efficacy  of secukinumab 300 mg when 
+administered as 2 mL pre -filled syringes in subjects with plaque -type psoriasis with respect to 
+both PASI 75 and IGA mod 2011 0 or 1 response rates at Week 12, compared to placebo. 
+The key secondary objectives are  
+1) to demonstrate the efficacy  of secukinumab 300 mg when administered  as 2 mL pre -
+filled syringes  versus placebo  with respect to: 
+• PASI 90 response at Week 12 
+• PASI 100 response at Week 12 
+2) to demonstrate the efficacy  of secukinumab 300 mg when administered  as two 1 mL 
+pre-filled syringe s versus placebo  with respect to:  
+• PASI 100 response at Week 12 
+Furthermore, additional aspects of efficacy , safety and tolerability of secukinumab 300 mg as 
+2 mL pre -filled syringes compared to secukinumab 300 mg as two 1 mL pre -filled syringes over 
+a peri od of 52 weeks will be  investigated.  
+This study will provide efficacy and safety data to support a product labeling updates for the 
+indication  of moderate to severe plaque psoriasis. 
+
+Novartis  For business use only  Page 9 
+SAP  CAIN457A23 23 
+ 
+Table 1-1 Primary,  key secondary,  secondary and exploratory variables 
+Variable  Type  
+PASI 75 response @  Week 12  primary  
+IGA 0/1  response @  Week 12  primary  
+PASI 90 response @ Week  12  key secondary  
+PASI 100 response @ Week 12 key secondary  
+PASI 50/75/90/100 and IGA 0/1 response over time   secondary  
+PASI score and IGA mod 2011 categories over time  secondary  
+Device usability (IFU and use -related hazards)  secondary  
+SIAQ  secondary  
+DLQI  score  secondary  
+DLQI  0 or 1 achievement  secondary  
+2 Statistical methods  
+2.1 Data analysis general information 
+Novartis will be performing  final analysis. Statistical 
+software SAS version 9.4 or later will be used . 
+ 
+ 
+Summary statistics for continuous variables will include N, mean, standard deviation, minimum, 
+lower quartile, median, upper quartile, maximum. Summary statistics for discrete variables will be presented in contingency tables and will include absolute and relative frequencies. 
+The p-values will be presented as one- sided for hypothesis testings and as two -sided for other 
+analysis. T wo-sided 95% confidence intervals will be displayed. If not otherwise specified, 
+hypothesis testings will be based on one -sided p- values that the treatment effect is in favor of 
+Secukinumab. The level of significance will be set to 2.5% (one- sided, family -wise type -I-error).  
+The 95% confidence intervals will not be used for decision making; they will only be used for 
+estimation and will therefore always be two -sided.  
+All listings will be  presented by treatment sequence. 
+Footnotes on outputs will be kept to a minimum also for outputs not covered in [ MAP T FL 
+shells ].  
+Footnotes will generally be provided for 
+• abbreviations used in the output; abbreviations used on several outputs, e.g. for listings in 
+Appendix 16.2 can be presented on a separate page and do not have to be repeated as footnotes on each listing 
+
+Novartis  For business use only  Page 10  
+SAP  CAIN457A23 23 
+ 
+• sorting order of categories, e.g. for sorting within MedDRA ( Medical Dictionary for 
+Regulatory Activities ) hierarchy levels  
+• MedDRA version used for reporting of MedDRA coded data 
+Footnotes will generally NOT be given for 
+• units displayed on the output 
+• interpretation of results (e.g. “odds ratio larger than 1 favors active treatment”)  
+• information that can be retrieved from the statistical section of the clinical study report 
+(CSR) unless it is not identifiable from the output, e.g. 
+• explanation of analysis model used unless results of more than one model are displayed on an output 
+• derivations of variables (e.g. BMI will not be explained on a footnote) 
+• information that will be provided in the clinical study protocol and/or methods section of the CSR (e.g. baseli ne definition if this is specified in the statistical section of the CSR)  
+2.1.1  General d efinition s  
+2.1.1.1  Study treatment 
+The following study drugs will be used: 
+• Investigational treatment  
+o Secukinumab 300 mg, 2 mL liquid formulation  in a pre- filled syringe  
+• Control treatment 
+o Secukinumab 150 mg, 1 mL liquid formulation  in a pre- filled syringe  
+o Secukinumab placebo, 2 mL liquid formulation in a pre- filled syringe  
+o Secukinumab placebo, 1 mL liquid formulation in a pre- filled syringe  
+2.1.1.2  Study Day 1 and other study days  
+The first day of administration of randomized study treatment (first dose) is defined as Study Day 1 or Day 1 .  
+All other study days will be labeled relative to Day 1. For event dates on or after Day 1, study day for a part icular event date is calculated as [Date of event] – [Date of first dose]+1, i.e., Day 
+2, Day 3, etc., will be one day, two days, etc., after Day 1, respectively. For the dates before Day 1, study day for an event date is calculated as [Date of event] – [Date of first dose], i.e., 
+Day -1, Day -2, etc., will be one day, two days, etc., before Day 1, respectively. Duration of an event will be calculated as (Event end date – Event start date + 1).  
+The descriptor “ Day 0 ” will not be used. 
+2.1.1.3  Screening, baseline an d post -baseline definitions  
+Screening  refers to any procedures (e.g. , checking inclusion and exclusion criteria) performed 
+prior to the date of first dose of study treatment  (for safety analysis) or prior to the randomization 
+Novartis  For business use only  Page 11  
+SAP  CAIN457A23 23 
+ 
+date (for efficacy analysis) . Per protocol, subject informed consent must be  obtained prior to 
+performing any study related activity . The date of signing informed consent is the start date of 
+screening period. Any assessment obtained during the screening period will be labeled  
+screenin g assessment . Assessments made on Day 1 may occur before or after the randomization 
+or the first dose.  
+For efficacy  analyses, b aseline is the last assessment (including unscheduled visits) obtained 
+(on or) before the randomization  (day) . All assessments obtained after randomization  (day)  are 
+considered as post- baseline unless otherwise specified.  
+For safety  analyses, b aseline is the last assessment (including unscheduled visits) obtained (on 
+or) before the first dose  (day)  of study treatment. A ll assessments obtained after the first dose 
+(day) of study treatment  are considered as post -baseline unless otherwise specified.  
+In general , a baseline value refers to the last measurement made prior to administration of the 
+first dose of study treatment. However, for PROs , LAB assessments  and ECG if no pre -
+treatment value exists, value s obtained after first dose  of treatment  can be used as b aseline only 
+if it was collected on the same day as first dose.  
+2.1.1.4  Day of last dose of randomized study treatment  
+The date of last dose will be collected via the CRF.  
+Duration of exposure is defined in Section 2.4.1. On-treatment  is defined as assessments within last dose plus 84 days. 
+2.2 Analysis sets  
+The following analysis sets will be used for the data analysis.  Randomized set:  The randomized set will be  defined as all subjects who were randomized  at 
+baseline visit. Unless otherw ise specified, mis -randomized subjects will be excluded from the 
+randomized set. Misrandomized subjects are subjects who are screen -failures, but have been randomized by the 
+investigator before eligibility was finally assessed, however have not been treated. If previously 
+mis-randomized subjects were re- screened and successfully randomized, they will be included 
+in the randomized set according to the treatment assigned in the last randomization.  Full analysis set (FAS) : The FAS will be comprised of  all subjects from the randomized set to 
+whom study treatment has been assigned. Following the intent -to-treat principle, subjects will 
+be analyzed according to the treatment  assigned to at randomization. If the actual randomization 
+stratum is different to  the assigned stratum in IRT, the actual stratum will be used in analyses .  
+Of note, subjects excluded from the randomized set will be excluded from the FAS. Safety set : The safety set includes all subjects who took at least one dose of study treatment  
+during the treatment period. Subjects will be analyzed according to treatment received .  
+The treatment received will be set to the treatment randomized. But if a subject has  received the 
+wrong treatment during the entire study, the treatment received will be set to this wrong 
+treatment.  
+
+Novartis  For business use only  Page 12  
+SAP  CAIN457A23 23 
+ 
+For those subjects who received erroneously the wrong treatment at least once, an additional 
+listing will be prepared displaying adverse events occurred after the treatment errors.  
+2.2.1  Subgroup of interest  
+Not applicable.  
+2.3 Patient disposition, demographics and other baseline 
+characteristics  
+The summaries will be shown for the following treatment groups , 
+before or at Week 12:  
+• AIN457 300 mg (2mL  PFS ), AIN457 300 mg (2x1mL PFS ), Placebo, Total  
+after Week 12:  
+• AIN457 300 mg (2mL  PFS ), AIN457 300 mg (2x1mL PFS ), Placebo, Placebo - 
+AIN457 300 mg (2mL  PFS ), Placebo - AIN457 300 mg (2x1mL PFS ), Total  
+No summaries for entire treatment period will be provided. 
+The following common background and demographic variables w ill be analyzed:  
+Continuous variables: 
+o Age (which is derived from year of birth and the Informed consent date, 
+assuming date is July 1st since only year of birth is collected ) 
+o Height  
+o Weight 
+o Body mass index (BMI) 
+Categorical variables: 
+o Age categories (<65 years, 65 years and older, 75 years and older) 
+o Sex 
+o Race  
+o Ethnicity  
+o Smoking status at baseline  
+Psoriasis specific baseline characteristics  and history of disease will be summarized  as well: 
+baseline PASI, baseline PASI (≤20, >20), baseline total BSA, baseline IGA mod 2011 score  (at 
+least mild, moder ate, severe) , severit y of psoriasis (CHMP guidelines , mild (total BSA <10% 
+and PASI < 10), moderate ((PASI ≥10 or total BSA≥10%) and PASI ≤20 and total BSA ≤20%), severe (total BSA >20% or PASI > 20)) , psoriatic arthritis (yes, no) , time since diagnosis of 
+psoriasis, time since diagnosis of psoriatic arthritis , previous exposure to biolo gic systemic 
+psoriasis therapy, previous exposure to systemic psoriasis therapy, previous exposure to non-biolo gic systemic psoriasis therapy, previous failure  to biolo gic systemic psoriasis therapy, 
+previous failure to systemic psoriasis therapy, previous failure to non-biolo gic systemic 
+psoriasis therapy  (including phototherapy and photo- chemotherapy)  
+Body M ass Index  (BMI) will be calculated using the following formula: 
+BMI = (body weight in kilograms) / (height in meters)
+2 
+Novartis  For business use only  Page 13  
+SAP  CAIN457A23 23 
+ 
+For BMI, height and body weight the last value prior to randomization is used . If there is no 
+weight recorded prior to taking of study treatment , BMI will be missing.  
+Of note: subject’s height will not be remapped according to the analysis visit window. 
+Time since diagnosis of psoriasis (PsO) and time since diagnosis of psoriatic arthritis (PsA) will 
+be calculated using the following formula: 
+Time since diagnosis = (inform consent date –first diagnosis date + 1)/365.25 
+The first diagnosis date of PsO or PsA will be imputed according to the imputation rules in Section 5.1. 
+Unless otherwise specified, summary statistics  will be presented for continuous variables for 
+each treatment group and for all subjects  (total) in the randomized set. The number and 
+percentage of subjects in each category will be presented for categorical variables for each 
+treatment group and all subjects (total)  in the randomized set. 
+Any condition entered on the relevant  medical history / current medical conditions  CRF 
+(including family  history) will be c oded using the MedDRA dictionary. They  will be 
+summarized by S ystem Organ C lass (SOC) and Preferred Term (PT) of the MedDRA dictionary.  
+Summaries for cardiovascular medical history will be summarized  by categories.  
+Smoking history will be summarized by tr eatment group. 
+Unless otherwise specified, analyses will be based on the randomized set . 
+2.3.1  Patient disposition 
+The number of subjects screened will be presented. In addition, the reasons for screen failures will be provided. The number and percentage of subj ects in the randomized set who completed 
+study periods and who discontinued the study prematurely (including the reason for 
+discontinuation) will be presented for each treatment group and all subjects.  
+For each protocol deviation, the number and percentage of subjects for whom the  deviation 
+applies  will be tabulated.  
+2.4 Treatments (study treatment, concomitant therapies, 
+compliance) 
+2.4.1  Study treatment / compliance  
+The analysis of study treatment data will be based on the safety set.  
+The number of secukinumab  2mL syringes , 1mL secukinumab syringe , secukinumab placebo  
+injections will be summarized by treatment group by means of contingency tables . 
+The duration of exposure to study treatment will be summarized by treatment group. In addi tion, 
+the number of subjects with exposure of at least certain time thresholds will be displayed. The 
+following categories will be presented : “any exposure”, “≥1 week”, “≥2 week” , “≥3 week”, “≥4 
+weeks”, “≥8 week”, “≥ 12 weeks”, “≥ 16 weeks”, “≥ 28 weeks”,  “≥40 weeks” and “≥ 52 weeks”. 
+Novartis  For business use only  Page 14  
+SAP  CAIN457A23 23 
+ 
+Duration of exposure will be defined as the time from first  dose of study medication to the last 
+dose plus 84 days  or last visit  (including follow -up visits)  whichever occurs earlier . i.e., for 
+subjects  who discontinue d or have their last visit earlier than 84 days, the end of study treatment 
+exposure will be the date of the last study visit in the follow- up period or in the corresponding 
+treatment period.  
+Duration of exposure (days) = min ( last study visit (including follow -up) date, last dose date 
++84) – first dose date +1  
+Duration of exposure (years) = duration of exposure (days) / 365.25 
+Duration of exposure (100  subject  years) = duration of exposure (years) / 100  
+ 
+ 
+2.4.1.1  Visit window 
+Visit-windows  will be used for the data that is summarized by visit; they are based on the study 
+evaluation schedule and comprise a set of days around the nominal visit day. For any assessment, 
+there are the protocol defined scheduled visits around which visit windows were created to 
+cover the complete range of days within the study. The visit windows are shown in Table 2-1. 
+In this table, the days are counted since the first dose of study treatment (  Day 1 ) for safety 
+assessments, and the days are counted since the date of randomization for efficacy assessments. These visit windows apply to measurements taken at every vi sit.  
+When visit windows are used, all visits will be re-aligned, i.e., they will be mapped into one of the visit windows. E.g., if the Week 4  visit of a subject is delayed and occurs on Day 60 instead 
+of on Day 29, it will be re -aligned to visit window Week 8. In the case of major deviations from 
+the visit schedule, or due to unscheduled visits, several assessments of a subject may fall in a particular visit window (either scheduled or unscheduled). Statistical approaches to handle 
+multiple assessments in a given visit window are specified below. 
+For parameters which are not collected at every visit (e.g., DLQI), visit windows will be 
+combined. For example, if a parameter is measured at Week 12 and Week 28 only, Week 12 visit window will extend from Day 2 to Day 99 (combining Week 1 to Week 12 visit windows), and Week 28 will be extend from Day 100 to Day 239. 
+Assessments from treatment period 2 will not be considered for treatment period 1, and 
+treatment period 1 visits will not be mapped into treatment per iod 2. 
+Of note: for subjects who prematurely discontinued, efficacy measurements taken in follow -up 
+period will be remapped to  treatment periods.  
+
+Novartis  For business use only  Page 15  
+SAP  CAIN457A23 23 
+ 
+Table 2-1 Assessment windows for scheduled visits  
+Analysis Visit  Week  Scheduled Day  Visit Window  
+Baseline  BSL 1 -28 days to Day 1* 
+Week 1  1 8 Day 2 -11 
+Week 2  2 15 Day 12 -18 
+Week 3  3 22 Day 19 -25 
+Week 4  4 29 Day 2 6-43 
+Week 8  8 57 Day 44 -71 
+Week 12  12 85 Day 72 -99 
+Week 16  16 113 Day 100-155 
+Week 28  28 197 Day 156-239 
+Week 40  40 281 Day 2 40-323 
+Week 52  52 365 Day 324-421 
+* Baseline measurement before the first drug administration for safety assessments and before the randomization 
+for efficacy assessments.  
+Of note: subject’s height will not be remapped according to the analysis visit window. 
+The analysis visit will be used for listing of visit and period for safety data. If a visit falls after 
+the last visit window (after Day  421) it is not assigned an analysis visit and will be listed under 
+label “After Week 52”.  
+2.4.1.2  Multiple assessments within visit windows  
+When there are multiple assessments  in a particular visit window, the following rules are applied 
+to select one value “representing” the subject in summary statistics in a visit window (See Table 
+2-2). 
+For baseline assessment definition see Section  2.1.1.3. For post -baseline visit windows the 
+following applies (unless otherwise specified): 
+• for quantitative variables , the closest  to the actual visit is chosen (if two assessments have 
+the same distance, th en the earlier one will be chosen);  
+• for qualitative variables , the worst  record is selected. It is noted that in the analyses 
+performed, worst  case is always well defined  (e.g., for urine protein values “+” and “++”, 
+the worst case  is defined as “++”),  
+• in case qualitative variables are based on quantitative variables, e.g. PASI 90  response, the 
+visit will be assigned to the quantitative variable, and this visit will be used for the derived 
+qualitative variable.   
+Novartis  For business use only  Page 16  
+SAP  CAIN457A23 23 
+ 
+Table 2-2 Rules for selecting values for analysis within a given visit window  
+Timing of measurement  Type of data  Rule 
+Baseline  All data  See Section  2.1.1.3 . 
+Post-baseline efficacy  All data  except for PRO , e.g., 
+PASI, IGA  The measurement closest to the target 
+day will be used. In the event two 
+measurements are taken equally apart 
+(e.g., 1 day before target date and 1 day 
+after), the earlier one will be used. 
+If two measurement s are taken on the 
+same day then select the first one using 
+eCRF visit number.  
+If two measurement s have been taken on 
+the same day and same visit then select 
+the worst.  
+Post-baseline efficacy  PRO data The measurement closest to the target day will be used. In the event two measurements are taken equally apart (e.g., 1 day before target date and 1 day after), the earlier one will be used.  
+If two measurement s have been taken on 
+the same day, select the worst.  
+If two measurement s have the same 
+value, select the first one using eCRF visit 
+number.  
+Post-baseline safety  Summary visit information 
+(e.g. laboratory  values , vital 
+signs , etc.)  The (non- missing) measurement closest 
+to the target day will be used. In the event 
+two measurements are taken equally 
+apart (e.g., 1 day before target date and 1 
+day after ), the earlier  one will be used. 
+If two measurements are taken on the 
+same day  then select the first one (using 
+the time) . 
+If two measurements are taken on the same date/time then use the first eCRF 
+visit number (assuming this is the planned 
+visit). If two  measurements are taken on 
+the same date/time/eCRF visit number  
+then take the average value of these two 
+results . 
+Post-baseline safety  Notable abnormalities (e.g. vitals signs) and CTCAE grades for laboratory  values  The most extreme measurement in the window will be used. Note this means a subject  can have a notably high and 
+notably low measurement within a n 
+analysis period.  
+2.4.2  Prior , concomitant  and post  therap ies 
+Medications will be identified using Novartis Drug and Therapy Dictionary  (NovDTD) 
+including Anatomical Therapeutic Chemical (ATC) code. Prior and concomitant treatments will 
+be summarized by treatment group for the sa fety set  unless otherwise specified.  Concomitant 
+treatments will be displayed for the treatment period  1 and entire treatment period . 
+Novartis  For business use only  Page 17  
+SAP  CAIN457A23 23 
+ 
+Prior and concomitant medications will be summarized by treatment group in separate tables . 
+Medications will be presented in alphabetical order, by ATC codes and grouped by anatomical 
+main group (the 1st level of the ATC codes). Tables will also show the overall number and 
+percentage of subjects receiving at least one drug of a particular ATC code and at least one drug in a particular anatomical main group.  
+Prior medications are defined as drugs taken and stopped prior to the first dose of study 
+treatment . Any medication given at least once between the day of first dose of randomized study 
+treatment , and last dose plus 84 days or last visit (including follow-up visits) whichever occurs 
+earlier will be a concomitant medication, including those which were started pre -baseline and 
+continued into the treatment period.  Summaries of prior and/or concom itant psoriasis specific  medication will be presented as in 
+Table 2-3, but as well for topical, phototherapy and photochemotherapy (yes/no) using the 
+randomized set. In addition, medical procedures and significant non- drug therapies as coded in MedDRA will  
+be summarized.  
+Prior or concomitant medication will be identified based on recorded or imputed start and end 
+dates of medication tak en. Further rules will be given in Section  5. 
+Novartis  For business use only  Page 18  
+SAP  CAIN457A23 23 
+ 
+Table 2-3 Subgroups based on the previous psoriasis therapy  
+Level 1  
+description  Level 1 
+outcome  Level 2 description  Level 2 outcome  Level 3  
+description  Level 3 outcome  Level 4 description  Level 4 outcome  
+previous 
+therapy  yes/no 
+systemic  no 
+yes number  1 
+2 
+>=3 
+failure*  no 
+yes 
+biologic  no 
+yes failure*  no 
+yes 
+type of previous biologic  
+anti-p40 no 
+yes failure*  no 
+yes 
+anti-TNF no 
+yes failure*  no 
+yes lack of primary efficacy  no 
+yes 
+lack of secondary efficacy  no 
+yes 
+lack of primary or secondary efficacy  no 
+yes 
+lack of tolerability  no 
+yes 
+non-biologic 
+systemic  no 
+yes failure*  no 
+yes 
+failure* to at least 2  no 
+yes 
+only selected subgroups will be used for reporting  
+*: at least one therapy with lack of primary efficacy or lack of secondary efficacy or lack of tolerability  
+2.5 Analysis of the primary objective 
+2.5.1  Primary endpoint  
+The co -primary endpoints are PASI  75 response and IGA 0 or 1 response at Week 12. The 
+analysis of the primary variables will be based on the FAS. 
+2.5.1.1  Definition of PASI and related variables  
+The investigator or trained qualified designee will complete the PASI assessments. Whenever 
+possible, the same evaluator should perform this assessment at all visits.  
+The total BSA affected by plaque- type psoriasis will be  estimated from the percentages of areas 
+affected, including head, trunk, upper limbs and lower limbs  (see below for PASI assessment) . 
+The following calculations will be  done: e ach reported percentage will be multiplied by its 
+respective body region corresponding factor (head = 0.1, trunk = 0.3, upper limbs = 0.2, lower 
+Novartis  For business use only  Page 19  
+SAP  CAIN457A23 23 
+ 
+limbs = 0.4) . The resulting 4 percentages will be added up to estimate the total BSA affected 
+by plaque-type psoriasis. The PASI scoring sy stem is further described in  Table 2-4. 
+A PASI score  (Fredriksson and Pettersson 1978, Weisman et al 2003, Gottlieb et al 2005)  will 
+be derived as indicated in Table 2-4. The head, trunk, upper limbs and lower limbs are assessed 
+separately for erythema, thickening (plaque elevation, induration), and scaling (desquamation) . 
+The average degree of severity of each sign in each of the four body regions is assigned a score 
+of 0-4. The area covered by lesions on each body region is estimated as a perc entage of the total 
+area of that particular body region . Further practical details help the assessment: 
+1. The neck is assessed as part of the head.  
+2. The axillae and groin are assessed as part of the trunk.  
+3. The buttocks are assessed as part of the lower limbs.  
+4. When scoring the severity of erythema, scales should not be removed. 
+Because the head and neck, upper limbs, trunk and lower limbs correspond to approximately 10%, 20%, 30% and 40% of the body surface area, respectively, the PASI score will be  
+calcu lated using the formula: 
+PASI = 0.1 (E
+h + I h + D h)Ah + 0.2 (E u + I u + D u)Au + 0.3 (E t + I t + D t)At + 0.4  (El + I l + D l)Al, 
+where E, I, D, and A denote erythema, induration, desquamation, and area, respectively, and h, 
+u, t, and l  denote head, upper extremities, trunk, and lower extremities, respectively  (see Table 
+2-4). 
+PASI scores can range from a lower value of 0, corresponding to no signs of psoriasis, up to a 
+theoretic maximum of 72.0. 
+The investigator is  responsible for collecting the components or scoring signs and total regional 
+area for all visits. Total PASI and total BSA calculations  will be done by investigator at 
+screening and randomization only; The total PASI and BSA scores will be calculated by 
+Novartis and will be used in the analysis and for derivation of PASI response values (see below).  
+Novartis  For business use only  Page 20  
+SAP  CAIN457A23 23 
+ 
+Table 2-4 The PASI scoring system  
+Body  
+region  Erythema (E)  
+ Thickening  
+(plaque elevation,  
+induration, I)  Scaling  
+(desquamation, 
+D) Area score  
+(based on true 
+area %, A)*  
+Head (H)† 0=none  
+1=slight  
+2=moderate  
+3=severe  
+4=very severe  0=none  
+1=slight  
+2=moderate  
+3=severe  
+4=very severe  0=none  
+1=slight  
+2=moderate  
+3=severe  
+4=very severe  0 = no involvement  
+1 = >0-<10%  
+2 = 10- <30% 
+3 = 30- <50% 
+4 = 50- <70% 
+5 = 70- <90% 
+6 = 90 -100%  
+Trunk (T)‡ 0=none  
+1=slight  
+2=moderate  
+3=severe  
+4=very severe  0=none  
+1=slight  
+2=moderate  
+3=severe  
+4=very severe  0=none  
+1=slight  
+2=moderate  
+3=severe  
+4=very severe  0 = no involvement  
+1 = >0-<10%  
+2 = 10- <30% 
+3 = 30- <50% 
+4 = 50- <70% 
+5 = 70- <90% 
+6 = 90 -100%  
+Upper  
+limbs (U)  0=none  
+1=slight  
+2=moderate  
+3=severe  
+4=very severe  0=none  
+1=slight  
+2=moderate  
+3=severe  
+4=very severe  0=none  
+1=slight  
+2=moderate  
+3=severe  
+4=very severe  0 = no involvement  
+1 = >0-<10%  
+2 = 10- <30% 
+3 = 30- <50% 
+4 = 50- <70% 
+5 = 70- <90% 
+6 = 90 -100%  
+Lower  limbs (L)
+§ 0=none  
+1=slight  
+2=moderate  
+3=severe  
+4=very severe  0=none  
+1=slight  
+2=moderate  
+3=severe  
+4=very severe  0=none  
+1=slight  
+2=moderate  
+3=severe  
+4=very severe  0 = no involvement  
+1 = >0-<10%  
+2 = 10- <30% 
+3 = 30- <50% 
+4 = 50- <70% 
+5 = 70- <90% 
+6 = 90 -100%  
+* Percentage (not score) of body region (not whole body) affected will be entered in the eCRF . 
+† Neck is assessed as part of the Head (H) body region.  
+‡ Axillae and groin are assessed as part of the Trunk (T) body region.  
+§ Buttocks are assessed as part of the Lower limbs (L) body region.  
+ 
+The following definitions are possible efficacy evaluations that can be used in clinical trials in 
+psoriasis ( CHMP/EWP/2454/02, 2004) :  
+• PASI 50  response : subjects achieving ≥ 50% improvement (reduction) in PASI score 
+compared to baseline are defined as PASI 50  responders 
+• PASI 75  response : subject s achieving ≥ 75% improvement (reduct ion) in PASI score 
+compared to baseline are defined as PASI 75  responders 
+• PASI 90  response : subject s achieving ≥ 90% impr ovement (reduction) in PASI score 
+compared to baseline are defined as PASI 90  responders 
+• PASI 100 response  / remission : complete clear ing of psoriasis  (PASI=0)  
+•  
+  
+
+Novartis  For business use only  Page 21  
+SAP  CAIN457A23 23 
+ 
+ 
+2.5.
+1.2 Definition of IGA mod 2011 score and IGA mod 2011 0 or 1 response  
+The IGA mod 2011 rating scale for overall psoriatic disease ( shown in Table 2-5) has been 
+developed based on a previous version of the scale used in secukinumab phase II studies , and 
+has been updated in collaboration with health author ities (in particular the FDA ). The 
+explanations/descriptions of the points on the scale have been improved to ensure appropriate 
+differentiation between the points. It is recommended that the same evaluator conducts the 
+assessments throughout the study whenever possible. 
+The IGA mod 2011 used in this study is static, i.e., it refers exclusively to the subject’s disease 
+state at the time of the assessments, and does not attempt a comparison with any of the subject’s previous disease states, whether at baseli ne or at a previous visit. 
+Table 2-5 The IGA mod 2011 rating scale  
+Score  Short Description  Detailed Description  
+0 Clear  No signs of psoriasis. Post -inflammatory hyperpigmentation may 
+be present.  
+1 Almost clear  Normal to pink coloration of lesions; no thickening; no to minimal 
+focal scaling.  
+2 Mild Pink to light red coloration; just detectable to mild thickening; 
+predominantly fine scaling.  
+3 Moderate  Dull bright red, clearly distinguishable erythema; clearly 
+distinguishable to moderate thickening; moderate scaling.  
+4 Severe  Bright to deep dark red coloration; severe thickening with hard 
+edges; severe / coarse scaling covering almost all or all lesions.  
+Note:  Involvement of nails is not part of the assessment.  
+Subjects require  an IGA mod 2011 score at randomization of 3 or 4 in order to participate in 
+the study. Based on this scale, subject s will be considered as IGA mod 2011 0 or 1  responder  
+if the y achieve a score of 0 or 1 and improve by at least 2 points on the IGA mod 2011 scale 
+compared to baseline.  
+2.5.1.3  Overview of analysis methods of efficacy variables  
+An overview of statistical analyses and methods applied to psoriasis efficacy variables is given in Table 2-6. 
+
+Novartis  For business use only  Page 22  
+SAP  CAIN457A23 23 
+ 
+Table 2-6 Overview of analysis methods for efficacy variables  
+Variable(s)  Summary 
+statistics for binary/  
+categorical data  Logistic 
+regression  Summary 
+statistics for 
+continuous 
+data Time -to-
+event analysis  Graphs  
+PASI 75 response @ Week 12 X X   X* 
+IGA 0/1 response  @ Week  12 X X   X* 
+PASI 90 response @ Week 12  X X   X* 
+PASI 100 response @ Week 12 X X   X* 
+PASI 50/75/90/100 and IGA 0/1 response 
+over time  X X   X** 
+PASI score over time    X  X** 
+IGA mod 2011 categories  over time  X     
+Device usability (IFU and use- related 
+hazards)  X     
+SIAQ    X   
+DLQI score  over time    X   
+DLQI 0/1 over time  X     
+* dot plot; ** time course plot  
+2.5.2  Statistical hypothesis, model, and method of analysis  
+The statistical hypotheses are that secukinumab 300 mg (2mL PFS) is not superior to placebo  
+in the proportion of subjects with PASI 75 response and IGA 0 or 1 response at Week 12. 
+Let p j denote the proportion of PASI  75 responders at Week 12 for treatment group j and r j 
+denote the proportion of IGA  0 or 1 responders at Week 12 for treatment group j ;  
+j=0, 1, where  
+• 0 corresponds to placebo , 
+• 1 corresponds to secukinumab 300 mg (2mL PFS) . 
+The following hypotheses will be tested : 
+    H: H 1∪H2 versus H A: H A1∩HA2 
+H1: p1 – p 0 ≤ 0 versus H A1: p1 – p 0 > 0, 
+    H2: r1 – r 0 ≤ 0 versus H A2: r1 – r 0 > 0 
+In other words: H: secukinumab 300 mg (2mL PFS) is not superior  to placebo  with respect to either PASI  75 
+response at Week  12 or IGA 0 or 1 response at Week 12 or both 
+H
+1: secukinumab 300 mg (2mL PFS) is not superior  to placebo  with respect to PASI  75 
+response at Week  12 
+H2: secukinumab 300 mg (2mL PFS) is not superior  to placebo  with respect to IGA 0 or 1  
+response at Week  12 
+The primary analysis method f or PASI 75 and IGA 0 or 1 response at Week 12 will be evaluated  
+using logistic regression model with  treatment group, baseline body weight and baseline PASI 
+score as explanatory  variables (see Section  5 Appendix ). Odds ratios will be computed for 
+
+Novartis  For business use only  Page 23  
+SAP  CAIN457A23 23 
+ 
+comparisons of secukinumab dose regimen versus placebo  utilizing the logistic regression 
+model fitted.  In case of the logistic regression does not converge due to low re sponse rates in 
+the placebo group, an exact logistic regression wi ll be performed. In case of response rates of 
+0% or 100% in one of the treatment groups, for analyses with multiple imputation, confidence 
+intervals for risk difference and p -values from the t -test for the risk difference comparing to 0 
+will be provided; for analyses with non- responder imputation, Fisher ’s exact test will be 
+performed and confidence intervals for risk difference will be provided. 
+The hypotheses H1 and H2 will both be tested at α  level = 2.5% (one -sided) and significant 
+results will only be achieved if both hypotheses are rejected (i.e., if only one hypothesis is rejected and the other hypothesis is not rejected, superiority of secukinumab 300 mg 2mL PFS cannot be demonstrated ). 
+The primary analysis set will be the FAS.  
+Summary statistics and figures will be provided as described in Section 5.4.2. Details in 
+sensitivity analysis are provided in Section 2.5.4. 
+2.5.3  Handling of missing values/censoring/discontinuations  
+Response variables based on PASI score and IGA mod 2011 categories  will be imputed with 
+multiple imputation (MI)  as primary imputation method for the missing values.  
+Multiple imputation (MI) is a simulation based approach where missing values are replaced by 
+multiple Bayesia n draws from the conditional distribution of missing data given the observed 
+data and covariates, creating multiple completed data sets. These completed data sets can then be analyzed using standard methods. Within this analysis the PASI score or IGA mod 2011 categories will be imputed and response variables will be derived based on the imputed scores. In the multiple imputation analysis the response status will be imputed based on the individual treatment arm information.  
+(Modified) Non-responder imputation will be used as a sensitivity method: Missing values with 
+respect to response variables based on PASI score and IGA 2011 categories will be imputed with non- response regardless to the reason for missing data (e.g. premature study 
+discontinuation, missed visit, administrative issues), exceptions will apply to the following:  
+• If a subject dropped out of the study prior to last scheduled visit and being responder 
+consecutively  at least for two preceding visits  before drop -off, the subje ct will be 
+imputed as responder for all the later visits till last scheduled visit.  
+• If a subject who was responder at visit x -1 and visit x +1 but has missing data at visit x, 
+then the subject will be imputed as responder for visit x  as long as the distance  between 
+the scheduled visits x -1 and x  is 4 weeks or less, and the distance between the scheduled 
+visits x and x+1 is 4 weeks or less. Otherwise missing data will be imputed with non -
+response. 
+Summary tables for PASI scores and IGA mod 2011 categories will be imputed using MI. The mean for PASI score and the number (%) for IGA mod 2011 categories as well as their 95% confidence intervals will be given. In addition, PASI scores and IGA mod 2011 categories based on LOCF imputation will be provided in summary tables and listings.  
+Novartis  For business use only  Page 24  
+SAP  CAIN457A23 23 
+ 
+ 
+Note: Only PASI and IGA mod 2011 based response variables are imputed with multiple 
+imputation or non-response, other response variables (e.g. D LQI 0 or 1 achievement ) will be 
+imputed with LOCF.  
+2.5.4  Supportive analyses  
+Sensitivity analyses will be performed as follows : 
+(A)  Co-primary endpoints ( PASI  75 and IGA 0 or 1 response at Week 12) and key secondary 
+endpoints will be evaluated using the  logistic regression as described  in primary  analysis 
+method with non-responder imputations instead of multiple  imputation for missing values.  
+2.6 Analysis of the key secondary objective  
+2.6.1  Key secondary endpoint  
+The key secondary endpoints of this study are planned as follow: 
+• PASI 90 response at Week 12 
+• PASI 100 response at Week 12  
+The null hypotheses for secondary objectives are as follows: 
+o H3: secukinumab 300 mg (2mL PFS) is not superior to placebo  with respect to PASI 
+90 response at Week 12  
+o H4: secukinumab 300 mg (2mL PFS) is not superior to placebo  with respect to PASI 
+100 response a t Week 12  
+o H5: secukinumab 300 mg (2x1mL PFS) is not superior to placebo  with respect to PASI 
+100 response at Week 12  
+2.6.2  Statistical hypothesis, model, and method of analysis  
+The following hypotheses will be tested sequentially and are included in the hierarchical testing 
+strategy and type -I-error will be set such that a family -wise type -I-error of α = 2.5% (one -sided) 
+is kept . The graphical approach of ( Bretz et al. 2009) for sequentially rejective testing 
+procedures is used to illustrate the testing strategy: 
+Novartis  For business use only  Page 25  
+SAP  CAIN457A23 23 
+ 
+Figure 1-1 Testing strategy  
+ 
+The secondary efficacy variables involved in the above testing strategy will be analyzed  
+analogously to the primary endpoints. i.e., logistic regression model with treatment group, 
+baseline bodyweight, and baseline PASI score as explanatory  variables . Odds ratios will be 
+computed for comparisons of secukinumab regimen versus placebo  utilizing  the logistic 
+regression model fitted.  
+The testing sequence will continue to H 3 at α (one- sided) only if both H 1 and H 2 have been 
+rejected at α (one- sided). Similarly, the testing sequence will continue to H 4 at α (one-sided) 
+only if H 3 testing has been rejected. In case, H4 has been rejected at α  (one- sided), the 
+corresponding alpha ( α) will be passed to the next hypotheses corresponding H 5. 
+2.6.3  Handling of missing values/censoring/discontinuations  
+See Section 2.5.3. 
+2.7 Analysis of secondary efficacy objective (s) 
+2.7.1  S econdary endpoints  
+PASI  50, PASI  75, PASI  90, PASI  100, and IGA mod 2011 0 or 1 response over 
+time 
+Summary statistics for PASI  50, PASI  75, PASI  90, PASI  100, and IGA mod 2011 0 or 1  
+response by visit will be presented in contingency tables and will include absolute and relative frequencies. Confidence intervals for response rates will be derived as well based on the score method including continuity correction ( Newcombe 1998).   
+For PASI  50, PASI  75, PASI  90, PASI  100, and IGA mod 2011 0 or 1 response at each visit , 
+up to Week 12, secukinumab dose regimen will be compared  to placebo by means of logistic 
+regression model with treatment group, baseline bodyweight  and baseline PASI as effects . 
+For PASI  50, PASI  75, PASI  90, PASI  100, and IGA mod 2011 0 or 1 response, the placebo  
+adjusted response rates  (i.e., risk difference) including 95% confidence interval (based on 
+normal approximation) will be derived by visit, up to Week 12. In addition, Fisher’s exact test 
+
+Novartis  For business use only  Page 26  
+SAP  CAIN457A23 23 
+ 
+will be applied to the treatment group comparisons between secukinumab dose regimens  versus 
+placebo . 
+Figures will be provided for PASI  50, PASI  75, PASI  90, PASI  100, and IGA mod 2011 0 or 1  
+response over time , by displaying estimates for respon se rates by treatment including 95% 
+confidence intervals. 
+PASI score and IGA mod 2011 categories over time 
+Summary statistics will be provided for absolute PASI scores and IGA mod 2011 categories, as 
+well as for percentage change from baseline for PASI scores by visit and treatment group. Figure will be provided for percentage changes in PASI scores over time.  
+2.7.2  Statistical hypothesis, model, and method of analysis  
+Not applicable.  
+2.7.3  Handling of missing values/censoring/discontinuations  
+See Section 2.5.3. 
+2.8 Safety analyses  
+All safety analyses will be based on the safety set . Only those scheduled visits which were pre-
+planned in the protocol will be reported in tables and figures for safety variables. 
+Treatment groups for evaluation of entire treatment  
+The summaries of evaluation will be reported for treatment period 1 and entire treatment period, 
+respectively.  
+ 
+The following groups will be used for treatment period 1: 
+• AIN457 300 mg (2mL PFS) : all subje cts who are randomized to 300 mg 2mL PFS  
+group at Rando mization visit  
+• AIN457 300 mg (2x1mL PFS) : all subjects who are randomized to 300 mg 2x1mL 
+PFS group at Randomization visit  
+• Placebo : all subjects who are randomized placebo  group at Randomization visit  
+• Any AIN457 300 mg: Any AIN457 300 mg  of (2mL PFS) or  (2x1mL PFS) as above.  
+The following groups will be used for entire treatment period : 
+• AIN457 300 mg (2mL PFS) : all subjects who are randomized to 300 mg 2mL PFS  
+group at Randomizat ion visit 
+• AIN457 300 mg (2x1mL PFS) : all subjects who are randomized to 300 mg 2x1mL 
+PFS group at Randomization visit  
+• Any AIN457 300 mg (2mL PFS) : all subjects who are randomized to 300 mg 2mL 
+PFS group at Randomization visit and all placebo subjects who are re-assigned to 300 
+mg 2mL PFS at Week 12, but they are only considered after the treatment re-
+assignment  (Week 12 treatment injection). 
+
+Novartis  For business use only  Page 27  
+SAP  CAIN457A23 23 
+ 
+• Any AIN457 300 mg (2 x1mL PFS) : all subjects who are randomized to 300 mg 
+2x1mL PFS  group at Randomization visit and all placebo subjects who are re- assigned 
+to 300 mg 2x1 mL PFS at Week 12, but they are only considered after the treatment re-
+assignment  (Week 12 treatment injection). 
+• Placebo : all subjects who are re -assigned will only be considered until the re-
+assignment point (Week 12 treatment injection) . 
+• Any AIN457  300 mg: Any AIN457 300 mg  of (2mL PFS) or  (2x1mL PFS) as above.  
+2.8.1  Adverse events (AEs)  
+For adverse events and other binary safety variables crude incidence and exposure time -
+adjusted incidence will be derived as described below and summarized in Table 2-7.  
+All adverse events are summarized based on treatment emergent only. The definition for 
+“treatment emergent” is as below:  
+• events started after the first dose of study medication or events present prior to the first dose of study medication but increased in severity based on preferred term  
+• and started prior to the last dose plus 84 days (inclusive)   
+All adverse events will be listed with “ treatment emergent ” flag displayed. 
+Table 2-7 Overview of analyses on some safety endpoints 
+Analysis period  AEs & 
+SPP/RMP 
+risks 
+(special AE 
+interest)  SAEs AEs-SMQ  AEs by severity  study treatment  
+related AEs, 
+death & other 
+significant AEs  notables 
+(lab/vita ls) 
+treatment 
+period 1 
+(up to  
+week 12) • crude incidence  • crude 
+incidence  • crude 
+incidence  • crude 
+incidence  • crude 
+incidence  • crude 
+incidence  
+Entire treatment 
+period  
+(including all 
+data) • crude 
+incidence  
+• exp.time adjusted 
+incidence*  • crude 
+incidence  
+• exp.time adjusted 
+incidence*  • crude 
+incidence  
+• exp.time 
+adjusted 
+incidence*  • crude 
+incidence  • crude 
+incidence  • crude 
+incidence  
+*Note, Exposure a djusted incidence rates will be provided and follow the guideline as below: 
+• Primary SOC level for AE and SAE  
+• Level 1 for risks and SMQ 
+• PT level for SAE  
+• PT level for AE  ≥  2% or incidence rate per 100 subject years ≥  5.0 in any treatment 
+group 
+• Other selected AEs of special  interest on lower levels (e.g. PT or SMQ level 2), if 
+appropriate 
+Novartis  For business use only  Page 28  
+SAP  CAIN457A23 23 
+ 
+The crude incidence of treatment emergent adverse events  will be presented for the  
+ treatment period  including all data  
+for final analysis . The crude incidence of treatment emergent adverse events will be summarized 
+by primary S ystem Organ Class (SOC) and P referred Term (PT). Confidence intervals for the 
+crude rate will be derive d using the score method including continuity correction ( Newcombe 
+1998) as described in Section  5.4.5. In addition, exposure time- adjusted incidence rates will be 
+provided for the treatment period including all data (see Section 5.4.6).  
+Adverse events  will be summarized by presenting, for each treatment group, the number and 
+percentage of subjects having at least one AE, having an AE in each primary system organ class 
+and having each individual AE (preferred term). Summaries will also be presented for AEs by severity and  for study treatment related AEs . If a particular AE ‘severity’ is missing, this 
+variable will be listed as missing and treated as missing in summaries.  If a subject  reported more 
+than one adverse event with the same preferred term, the adverse event with the greatest severity will be presented . If a subject  reported more than one adverse event within the same primary 
+system organ class, the subject  will be counted only once with the greatest severity at the system 
+organ class level, where applicable.  
+Adverse events will also be summarized by standardized or customized MEdDRA queries 
+(SMQ or CMQ/NMQ).  The MedDRA version used for reporting the adverse events  will be 
+described in a footnote. 
+The most common adverse events reported ( ≥ z % in any group for each preferred term in the 
+table  by SOC and  PT or ≥ z % in any group for each grouping term  table) will be presented in 
+descending frequency according to its incidence in secukinumab group starting from the most 
+common event. Here threshold value z is set to 2 (%) but it may be updated following re view 
+of the dry run outputs. 
+A graphical  display of the crude rates or exposure adjusted incidence rates  within system organ 
+classes will be  presented as follows: For all AEs regardless of severity and seriousness, the 
+point estimate within system organ cl asses will be presented graphically with system organ 
+class on the y -axis. This figure will consist of two  panels: i) point estimate of AEs, ii) point 
+estimate of serious AEs. For the exposure adjusted incidences a linear -scale will be used on the 
+x-axes.  
+Separate summaries will be provided for death s, serious adverse event s, other significant 
+adverse events leading to discontinuation and adverse events leading to dose adjustment  or 
+interruption. Algorithms for date imputations will be provided in S ection 5 . 
+For SAEs occurred during screening a listi ng will be prepared for all subjects screened including 
+screening f ailures.  
+The adverse events occurred after the treatment errors  in those subjects who received 
+erroneously the wrong treatment at least o nce, will be listed . 
+Other s afety topics of interest, such as risks defined in the Safety Profiling Plan, Risk 
+Management Plan or topics of interest regarding signal detection or routine analysis are defined 
+
+Novartis  For business use only  Page 29  
+SAP  CAIN457A23 23 
+ 
+in the Program Case Retrieval Sheet  
+ 
+Crude rate of important identified and potential risks from Case Retrieval Sheet will be provided 
+for all (non -serious and serious) cases and for all serious cases. Exposure -time adjusted rates 
+will be provided for treatment period including all data  for all (non -serious and serious) cases  
+and for all serious cases . In addition, listings will be provided for the related AE risks. 
+Risk measures and confidence intervals will be derived according to Section 5. 
+The version of the Case Retrieval Sheet used for the analyses will be described in a footnote. 
+This includes MedDRA version and Novartis MedDRA Query  (NMQ) dictionary date.  
+Important note: For the evaluation of risks primary and secondary system organ classes of the 
+MedDRA dictionary will be considered. 
+For the legal requirements of ClinicalTrials.gov and EudraCT, two required tables  on adverse 
+events which are not serious adverse events with an incidence greater than 2% and on serious 
+adverse events and SAE suspected to be related to study treatment will be provided by system organ class and preferred term on the safety set populatio n. 
+If for a same patient, several consecutive AEs (irrespective of study treatment causality, seriousness and severity) occurred with the same SOC and PT:  
+• a single occurrence will be counted if there is  ≤ 1 day gap between the end date of the preceding AE  and the start date of the consecutive AE 
+• more than one occurrence will be counted if there is > 1 day gap between the end date of the preceding AE and the start date of the consecutive AE 
+For occurrence, the presence of at least one SAE / SAE suspected to  be related to study 
+treatment / non SAE has to be checked in a block e.g., among AE ’s in a ≤ 1 day gap block, if at 
+least one SAE is occurring, then one occurrence is calculated for that SAE.  
+The number of deaths resulting from SAEs suspected to be related to study treatment and SAEs irrespective of study treatment relationship will be provided by SOC and PT. 
+2.8.2  Deaths  
+Separate summary and listing will be provided for deaths. 2.8.3  Laboratory data  
+The summary of laboratory evaluations will be presented for two  groups of laboratory tests 
+(hematology and serum chemistry ).  
+Descriptive summary statistics for the change from baseline to each study visit will be presented 
+by laboratory test and treatment group. Change from baseline will only be summarized for subjects with both baseline and post baseline values and will be calculated as: 
+change from baseline = post baseline value – baseline value  
+Only “on-treatment ” laboratory data will be summar ized (i.e. assessments within last dose plus 
+84 days). All laboratory data will be listed with “on -treatment” flag displayed. If two 
+
+Novartis  For business use only  Page 30  
+SAP  CAIN457A23 23 
+ 
+measurements are taken on the same date/time/CRF visit then use the average of two 
+assessments. 
+For laboratory test values below Lower Level of Quantification (LLQ) or above Upper Level 
+of Quantification (ULQ) will be imputed as LLQ or ULQ value, respectively. The numerical part of the reported result will be treated as the actual LLQ or ULQ . These laboratory values 
+will be displayed in listings using the standard unit with  the reported sign (“<” or “>”).” For 
+example, the actual lab result  is “<5” and LLQ = 10, it will be reported  for the numerical part 
+as 5 and listed as “<5”, LLQ will be imputed as 5. 
+In addition, shift tables may be provided as required at ad -hoc basis  for all parameters to 
+compare a subject’s baseline laboratory evaluation relative to the most extreme laboratory test 
+value within a treatment period . For the shift tables, the normal laboratory ranges will be used 
+to evaluate whether a particular laboratory test value is  normal, low, or high (including category 
+“high and low”). These summaries will be presented by laboratory test and treatment group.  
+Subjects with abnormal laboratory values will be listed and values outside the normal ranges will be flagged . 
+The following laboratory parameters will be analyzed with respect to numerical Common Terminology Criteria for Adverse Event s (CTCAE) grades, given in Table 2-8: hemoglobin, 
+platelets , white blood cell count, neutrophils, lymphocytes, creatinine, total bilirubin (TBL), 
+gamma -glutamyl transferase (GGT ), alanine aminotransferase (ALT), a spartate 
+aminotransferase (AST), a lkaline phosphatase ( ALP) . 
+The number and percentage of subjects with CTCAE grade newly occurring or worsening after 
+baseline will be presented . These summaries will be split into hematology and chemistry.  
+Table 2-8 CTCAE grades for laboratory parameters to be analyzed  
+CTCAE v4.0 Te rm Grade 1    Grade 2    Grade 3    Grade 4    
+HGB decreased 
+(Anemia)  <LLN – 100 g/L  <100 – 80 g/L  <80 g/L   Life-threatening 
+consequences;  urgent  
+intervention  
+Platelet count  
+decreased  <LLN – 75.0 x10e9 /L  <75.0 - 50.0 x10e9 /L  <50.0 – 25.0 x10e9 /L  <25.0 x 10e9 /L  
+White blood cell 
+decreased  <LLN - 3.0 x 10e9 /L  <3.0 - 2.0 x 10e9 /L  <2.0 - 1.0 x 10e9 /L   
+<1.0 x 10e9 /L  
+Neutrophil count 
+decreased  <LLN - 1.5 x 10e9 /L  <1.5 - 1.0 x 10e9 /L  <1.0 - 0.5 x 10e9 /L  <0.5 x 10e9 /L  
+Lymphocyte count 
+decreased  <LLN - 0.8 x 10e9/L  <0.8 - 0.5 x 10e9 /L  <0.5 - 0.2 x 10e9 /L  <0.2 x 10e9 /L  
+Creatinine increased  >ULN - 1.5 x ULN  >1.5 - 3.0 x ULN  >3.0 - 6.0 x ULN  >6.0 x ULN  
+TBL increased  >ULN - 1.5 x ULN  >1.5 - 3.0 x ULN  >3.0 - 10.0 x ULN  >10.0 x ULN  
+GGT increased  >ULN - 2.5 x ULN  >2.5 - 5.0 x ULN  >5.0 - 20.0 x ULN  >20.0 x ULN  
+ALT increased  >ULN - 3.0 x ULN  >3.0 - 5.0 x ULN  >5.0 - 20.0 x ULN  >20.0 x ULN  
+AST increased  >ULN - 3.0 x ULN  >3.0 - 5.0 x ULN  >5.0 - 20.0 x ULN  >20.0 x ULN  
+ALP increased  >ULN - 2.5 x ULN  >2.5 - 5.0 x ULN  >5.0 - 20.0 x ULN  >20.0 x ULN  
+Shift tables will be presented comparing baseline laboratory result (CTCAE grade) with the worst results (expressed in CTCAE grade) during the treatment phase analyzed. Of note, baseline will be defined as last assessment prior to first dosing in initial treatment phase. If no 
+Novartis  For business use only  Page 31  
+SAP  CAIN457A23 23 
+ 
+pre-treatment value exists, also a value recorded after first dose can be used as baseline  if it was 
+collected on the same day as first dose, see Section 2.1.1.3. 
+Exposure time adjusted incidence for subjects with newly occurring  neutropenia of CTCAE 
+grade >=2 will be summarized and listed in the listing. The number and percentage of subjects with newly occurring liver enzyme abnormalities will 
+also be summarized based on the event criteria given in Table 2-9. 
+Table 2-9 Liver -related events  
+Parameter  Criterion  
+ALT >3xULN; >5xULN; >8xULN; >10xULN , >20xULN  
+AST >3xULN; >5xULN; >8xULN;  >10xULN;  >20xULN  
+ALT or AST  >3xULN; >5xULN; >8xULN;  >10xULN; >20xULN  
+ALT or AST >3xULN & (nausea or vomiting or fatigue or general malaise or 
+abdominal pain or (rash and eosinophilia))  
+TBL >1xULN;>1.5xULN; >2xULN ; >3xULN , 
+ALP >1.5xULN;>2xULN; >3xULN; >5xULN  
+ALT or AST  & 
+TBL ALT or AST>3xULN & TBL >1.5xULN ; 
+ALT or AST >3xULN & TBL >2xULN ; 
+ALT or AST >5 xULN & TBL >2xULN; 
+ALT or AST >8 xULN & TBL >2xULN; 
+ALT or AST > 10xULN & TBL >2xULN ; 
+ALT or AST >20xULN & TBL >2xULN ; 
+ALP & TBL  ALP >3xULN & TBL >2xULN  
+ALP >5xULN & TBL >2xULN  
+ALT or AST & 
+TBL & ALP  ALT or AST >3xULN & TBL >2xULN & ALP <2xULN  ( Potential Hy’s Law ) 
+Note: elevated ALP may suggest obstruction as a consequence of gall bladder or 
+bile duct disease; ALP may also be increased in malignancy. FDA therefore terms 
+Hy’s Law cases as indicators of pure hepat ocellular injury . This does not mean 
+that cases of A LT or AST  >3xULN & TBL >2xULN & ALP ≥2xULN may not result 
+in severe DILI.  
+ALT or AST >3xULN & TBL >2xULN & ALP <2xULN  ( Potential Hy’s Law ) or 
+reported Hy’s Law case  
+Note: “Hy’s Law case” is a lower level term in MedDRA (10070546) and may be 
+reported as AE.  
+For a combined criterion to be fulfilled, all conditions have to be fulfilled on the same visit. The 
+criteria are not mutually exclusive, e.g., a subject with ALT = 6.42xULN is counted for ALT >3x ULN and ALT>5xULN.  
+Individual subject data listings will be provided for subjects with newly occurring  or worsening 
+abnormal laboratory data. Data of subjects with n ewly occurring liver enzyme abnormalities  
+will be listed in an additional listing.  
+Fasting laboratory tests including fasting plasma glucose and fasting lipids will be evaluated 
+only at screening. No analysis will be done for these measurements.  
+Novartis  For business use only  Page 32  
+SAP  CAIN457A23 23 
+ 
+For urinalysis, standard dipstick measurements for specific gravity, protein, glucose, pH, blood, 
+urine blood (non- hemolyzed), urine blood (hemolyzed), bilirubin, ketones, WBC will be done 
+at screening . No analysis will be done for these measurements.  
+2.8.4  Other safety data 
+2.8.4.1  ECG and cardiac imaging data  
+A standard 12- lead ECG will be performed at scre ening to assess  the eligibility of subjects. No 
+analysis will be done for ECG measurements.  
+2.8.4.2  Vital signs  
+Analysis in vital sign measurement using descriptive summary statistics for the change from baseline for each post -baseline visit will be performed  by v ital sign and treatment group. 
+Change from baseline will only be summarized for subjects with both baseline and post -baseline 
+values and will be calculated as:  
+change from baseline = post -baseline value – baseline value  
+Only “on- treatment” vital signs  will be summarized (i.e. assessments within last dose plus 84 
+days). All vital signs  will be listed with “on- treatment ” flag displayed. 
+The number and percentage of subjects with newly occurring notable vital signs abnormalities 
+will be presented. Criteria for notable vital sign abnormalities  are provided in Table 2-10 below.  
+A listing of subjects with newly occurring notably abnormal vital signs will be provided. 
+Table 2-10 Criteria for notable vital sign abnormalities  
+Vital sign (unit)  Notable abnormalities  
+Systolic blood pressure (mmHg)  >= 140 mmHg or < 90 mmHg  
+Diastolic blood pressure (mmHg)  >=90 mmHg or <60 mmHg  
+Pulse (bpm)  > 100 bpm or <60 bpm  
+2.9 Pharmacokinetics 
+All completed subjects with quantifiable secukinumab serum concentration will be included in the pharmacokinetic data analysis.  
+Serum concentrations will be expressed in mass per volume units. All concentrations below the limit of quantification as well as missing data will be labeled as such in the concentration data listings .  
+Secukinumab serum concentrations will be summarized by visit and treatment group. In 
+addition to mean, standard deviation (SD), coefficient of variation (CV), median and quartiles, the geometric mean and geometric coefficient of variation (CV) and n(log) will be presented. The formula for deriving the geometric mean and CV (%) is as fol lowing:  
+• CV (%) = (SD/mean)*100,  
+• geometric mean=exp( (sum of log transformed data) / number of non-missing data points after log transformation),  
+• geometric CV = sqrt( exp( variance of log -transformed data) -1)*100. 
+Novartis  For business use only  Page 33  
+SAP  CAIN457A23 23 
+ 
+Secukinumab serum concentration in the AIN457 300mg (2mL PFS) group will also be 
+summarized by injection s locations at previous 3 visits (i.e., though only, abdomen only, and 
+though and abdomen) at Weeks 28 and 52. For Week 28, the previous injections locations at 
+Weeks 16, 20 and 24 will be considered. Likewise for Week 52, the previous injections locations will be at Weeks 40, 44 and 48. 
+In addition, concentration, sample date, sample time at pre -dose and minutes pre -dose , elapse 
+time since day of first secukinumab dose , reason excluding from ana lysis will be listed by 
+treatment sequence. Placebo subjects will also be listed.   
+Values below lower limit of quantification/below detection limit will be imputed by 0.  
+The analysis visit will refer to the visit as per the CRF.   Pharmacokinetic parameter s will be summarized by treatment group (AIN457 300mg 2mL PFS 
+and AIN457 300 mg 2×1mL PFS). Descriptive summary statistics for Cmax and AUC 84-112d 
+include mean (arithmetic and geometric), SD, and CV (arithmetic and geometric), median, 
+minimum and maximum. Tmax in days will be summarized as median, minimum and maximum. In addition, pharmacokinetic parameters will be listed by treatment sequence.  
+The log -transformed parameters Cmax and AUC 84-112d will be analyzed by a linear model, 
+with treatment group (AIN457 300mg 2mL PFS and AIN457 300 mg 2×1mL PFS) as a fixed factor and body weight at baseline as covariate. For each of Cmax and AUC84-112d, the mean estimate and 90% confidence interval for the PK parameter ratio of “AIN457 300mg 2mL PFS” vs “AIN457 300 mg 2×1mL PFS” will be reported to represent the relative bioavailability for comparison.The log -transformed AUC84 -112d at Week 12 in the AIN457 300mg (2mL PFS) 
+group will be analyzed by a linear model, with injection location, laterality and body weight at baseline. The mean estimate and 90% confidence interval for the ratio of thigh vs abdomen and 
+that of left vs right will be reported.  
+In addition, a linear model with previous injections location s and body weight at baseline will 
+be fitted for the log -transformed AUC84- 112d at Week 12 in the AIN457 300mg (2mL PFS) 
+group. The mean estimate and 90% confidence interval for the ratio of “thigh only” vs 
+“abdomen only”, and that of “thigh and abdomen” vs  “abdomen only”  will be reported. For 
+Week 12, the previous injections locations at randomization, Weeks 1, 2, 3, 4 and 8 will be 
+considered. 
+2.11 Clinician-reported outcomes 
+2.11.1  Usability and hazard assessment of the 2 mL pre -filled syringe  
+This analysis will be based on the Safety Set.  
+The number and percentage of subjects who successfully completed each and ALL of the indicated steps as per the IFU will be summarized by visit and treatment group, including total. 
+
+Novartis  For business use only  Page 34  
+SAP  CAIN457A23 23 
+ 
+The num ber and percentage of subjects who experienced each and ANY  of the defined possible 
+hazards will be summarized by visit and treatment gr oup, including total. 
+Successful self -injection will be positively defined for a subject when the subject performs the 
+six critical steps as per the IFU ( i.e. P8, P10, P11, P12, P13, P14) . Number and percentage of 
+subjects who passed the self -injection successfully as well as a two -sided 95% exact confidence 
+interval at Week 1 visit will be summarized by visit and treatment  group, including total. The 
+following statistical hypothesis will be tested by an exact binomial test at one -sided 2.5% level 
+of significance at Week 1 visit:  
+H0: successful pre -filled syringe  use rate < 90%  
+H1: successful pre -filled syringe  use rate ≥  90%  
+Missing values with respect to the self -assessment checklist and possible hazard assessment 
+checklist will not be imputed while summarizing the answers of each question with frequencies.  
+Subjects with one or more of the critical steps missing will be  considered as unsuccessful 
+(imputation with non- response) with regard to the self -injection success. Subjects who 
+discontinued or who missed a visit and have the full self -injection checklist missing will not be 
+evaluated with regard to the self -injection  success at the corresponding visit.  
+Visit windows will not be applied to self -injection assessment and possible hazard assessment. 
+The analysis visit will refer to the visit as per the CRF.  
+Of note: only data in the self -assessment checklist with self -injection checked in e CRF Dosage 
+Administration Record ( DAR ) page  are included in the analyses.  
+2.12 Patient-reported outcomes 
+Summaries will be based on the FAS and will be presented separately  for each treatment 
+group. 
+For DL QI  missing values will be replaced by LOCF. Baseline values will not be 
+carried forward . If no pre -treatment value exists, value s obtained after first dose  of treatment  
+can be used as baseline only if it was collected on the same day as first dose.  In addition, m issing 
+baseline (PROs) values will be replaced by the means or modes of non- missing baseline values 
+stratified by age group ( <65 years, 65 years and older) and sex , for continuous scale or 
+categorical/ordinal scale, respectively.  
+Dermatology Life Quality Index  
+The DLQI measures functional disability of subjects with dermatological disorders that are 
+greater than 18 years of age and had been utilized as a relevant clinical measure in atopic dermatitis, as well as other dermatitis clinical trials. The DLQI is a simple, validated, self -
+administered 10- item questionnaire. The instrument contains six functional scales (i.e., 
+symptoms and feeling, daily activities, leisure, work and school, personal relationships, treatment) . For the DLQI, each question will be answered with the following response: “not at 
+all”, “a little” , “a lot”, or “very much”. “ Not relevant” is also a valid response . Seven scores 
+will be derived from the DLQI: the total score of each of the six dimensions as well as the total score over all items. The higher the score, the more quality of life is impaired.  
+
+Novartis  For business use only  Page 35  
+SAP  CAIN457A23 23 
+ 
+For each of the seven scores , the percentage change from basel ine will be derived. Summary 
+statistics will be provided for absolute values as well as for the percentage change by visit and 
+treatment group.  
+In addition, summary statistics will be provided for number of subjects achieving DLQI 0 or 1. Treatment groups will be compared by Fisher’s exact test.  
+S
+elf-Injection Assessment Questionnaire (SIAQ)  
+All SIAQ analyses will be based on the Safety Set.  
+Summary statistics for the absolute values of the domain scores at Randomization (baseline) 
+will be provided by treatment group including total for the PRE -module and the POST -module. 
+The number and percentage of subjects in each of the 5 categories (likert scale) for each item will be presented by visit and treatment group including total.  
+Item and domain scores from the PRE module taken before the first self -injection at 
+Randomization (baseline) will be compared with the corresponding item and domain scores (feeling about injections, self -confidence domains, and overall satisfaction of self -injection item) 
+from the POST modules. Change in domain scores from PRE module will be summarized by visit and treatment group including total. 
+Domain scores will be calculated only if 50% or more items of the domain are completed. 
+Missing items will not be imputed. Subjects who discontinued or who missed a visit and have the SIAQ questionnaire not completed will not be considered in the analyses at the corresponding visit. 
+Of note: only SIAQ scores for those with self -injection checked in e CRF DAR  page are 
+included in the analyses. 
+
+Novartis  For business use only  Page 36  
+SAP  CAIN457A23 23 
+ 
+3 Sample size calculation  
+A response rate of 8% for PASI  75 response and IGA mod 2011 0 or 1 response in the placebo 
+group is expected, whereas a  response rate of 62% for PASI 75 response and 55% for IGA mod 
+2011 0 or 1 is the anticipated response in the secukinumab 300 mg 2 mL pre -filled syringe 
+group. 
+Placebo -response rates between 3% and 7% have been reported in Papp et al 2005, Menter et 
+al 2008, Leonardi et al 2008, and Papp et al 2008. 
+
+Novartis  For business use only  Page 37  
+SAP  CAIN457A23 23 
+ 
+3.1 Primary endpoint (co-primary endpoint)  
+With respect to the co -primary endpoint (PASI  75 response and IGA  mod 2011 0 or 1 response 
+at Week  12), the type -I-error will be 2.5% one -sided for comparison. With 70 subjects per group 
+and assuming a response rate of 10% for PASI  75 response and IGA  mod 2011 0 or  1 response 
+in the placebo group, the power to show a response rate of 62% for PASI 75 response and 55% 
+for IGA mod 2011 0 or 1 response in the secukinumab 300 mg 2 mL pre -filled group based on 
+Fisher’s exact test (nQuery Advisor 6.01, two group Fisher’s -exact test of equal proportions) is 
+above 99% for PASI 75 response and IGA  mod 2011 0 or 1 response. 
+3.1.1  Secondary endpoints  
+A power of 90% to show a response rate of 30% for PASI 100 in the secukinumab 300 mg 2 mL 
+pre-filled group and 8% in the placebo group based on Fisher’s exact test results in a sample 
+size of 70 subjects per group. Same power can be achieved if we apply the same assumption of PASI 100 response rate for secukinumab 300 mg 1 mL pre- filled group. 
+A power of above 99% to show a response rate of 46% for PASI 90 in the secukinumab 300 mg 2 mL pre -filled group and 8% in the placebo group based on Fisher’s exact test results in a 
+sample size of 70 subjects per group. 
+4 Change to protocol specified analyses  
+The primary and secondary efficacy endpoints will be analyzed using logistic regression model. Exact logistic regression will be performed i n case of low response rates in the placebo group. 
+T
+he following analyses have been removed: 
+• The maximum change (maximum decrease and maximum increase) from baseline 
+within treatment period for each laboratory parameter  
+• The stratified Van-Eltern testing and Hodges -Lehmann estimates for the absolute value 
+and the percentage change from baseline of DLQI total score. 
+5 Appendix  
+5.1 Imputation rules 
+5.1.1  Study drug  
+Any partial dates will be imputed as follows: 
+We take the earlier day of  
+• The last day in the month and  
+• The calculated end day of the corresponding epoch 
+
+Novartis  For business use only  Page 38  
+SAP  CAIN457A23 23 
+ 
+5.1.2  AE date imputation 
+Impute AE end  date: 
+1. If the AE end date ‘ month ’ is missing, the imputed end date should be set to the earliest of 
+the (min (last visit date, last dose date + 84 days) , 31DECYYYY, date of death).  
+2. If the AE end date ‘ day’ is missing, the imputed end date should be set to the earliest of the 
+(min (las t visit date, last dose date + 84 days), last day of the month, date of death).  
+3. If AE ‘ year’ is missing or AE is ongoing, the end date will not be imputed.  
+ 
+Impute AE start date :  
+Before imputing AE start date, find the AE start reference date.  
+1. If the (imputed) AE end date is complete and the (imputed) AE end date < treatment start 
+date then AE start reference date = min(informed consent date, earliest visit date).  
+2. Else AE start reference date = treatment start date  
+ 
+1. If the AE start date ‘y ear’ value is missing, the date uncertainty is too high to impute a 
+rational date. Therefore, if the AE year value is missing, the imputed AE start date is set to 
+NULL.  
+2. If the AE start date ‘ year’ value is less than the treatment start date year value,  the AE 
+started before treatment. Therefore:  
+a. If AE ‘month’ is missing, the imputed AE start date is set to the mid -year point 
+(01JulYYYY).  
+b. Else if AE ‘month’ is not missing, the imputed AE start date is set to the mid -month 
+point (15MONYYYY).  
+3. If the AE start date year value is greater than the treatment start date year value, the AE 
+started after treatment. Therefore:  
+a. If the AE month is missing, the imputed AE start date is set to the year start point (01JanYYYY).  
+Novartis  For business use only  Page 39  
+SAP  CAIN457A23 23 
+ 
+b. Else if the AE mont h is not missing, the imputed AE start date is set to the later of 
+(month start point (01MONYYYY), AE start reference date + 1 day).  
+4. If the AE start date year value is equal to the treatment start date year value:  
+a. And the AE month is missing the im puted AE start date is set to the AE reference 
+start date + 1 day.  
+b. Else if the AE month is less than the treatment start month, the imputed AE start 
+date is set to the mid -month point (15MONYYYY).  
+c. Else if the AE month is equal to the treatment star t date month or greater than the 
+treatment start date month, the imputed AE start date is set to the later of (month start point (01MONYYYY), AE start reference date + 1 day).  
+If complete (imputed) AE end date is available and the imputed AE start date is  greater than 
+the (imputed) AE end date, then imputed AE start date should be set to the (imputed) AE end date.  
+5.1.3  Concomitant medication date imputation  
+Impute CM  end date:  
+1. If CM end day is missing and CM month/year are non- missing then impute CM day as the 
+minimum of treatment end date and the last day of the month.  
+2. If CM end day/month are missing and CM year is non- missing then impute CM day as the 
+minimum of treatme nt end date and the end of the year (31DECYYYY).  
+3. If imputed CM end date is less than the CM start date, use the CM start date as the imputed 
+CM end date.  
+Impute CM  start  date:  
+1. If the CM start date year value is missing, the imputed CM start date is set to one day prior 
+to treatment start date.  
+2. If the CM start date year value is less than the treatment start date year value, the CM started before treatment. Therefore:  
+a. If the CM month is missing, the imputed CM start date is set to the mid -year point 
+(01JulYYYY).  
+b. Else if the CM month is not missing, the imputed CM start date is set to the mid -
+month point (15MONYYYY).  
+Novartis  For business use only  Page 40  
+SAP  CAIN457A23 23 
+ 
+3. If the CM start date year value is greater than the treatment start date year value, the CM 
+started after treatment. The refore:  
+a. If the CM month is missing, the imputed CM start date is set to the year start point (01JanYYYY).  
+b. Else if the CM month is not missing, the imputed CM start date is set to the month start point (01MONYYYY).  
+4. If the CM start date year valu e is equal to the treatment start date year value:  
+a. And the CM month is missing or the CM month is equal to the treatment start date month, then the imputed CM start date is set to one day prior treatment start date.  
+b. Else if the CM month is less than the treatment start date month, the imputed CM 
+start date is set to the mid -month point (15MONYYYY).  
+c. Else if the CM month is greater than the treatment start date month, the imputed CM start date is set to the month start point (01MONYYYY).  
+If complete (imputed) CM end date is available and the imput ed CM start date is greater than 
+the (imputed) CM end date, then imputed CM start date should be set to the (imputed) CM end date.  
+5.1.3.1  Prior therapies  date imputation  
+See Section 5.1.3. 
+5.1.3.2  Post therapies  date imputation 
+See Section 5.1.3. 5.1.4  First diagnosis date (P sO, PsA) imputation  
+1. If the first diagnosis day/ month are missing and the year is non- missing : 
+a. If the year part of the first diagnosis date is equal to the year part of the inform 
+consent date, then the imputed first diagnosis date is set to  the year start point 
+(01JanYYYY) . 
+b. Otherwise the imputed first diagnosis date  is set to  the mid -year point 
+(01JulYYYY) . 
+2. If the first diagnosis day is missing and  the month/ year are  non- missing:  
+Novartis  For business use only  Page 41  
+SAP  CAIN457A23 23 
+ 
+a. If the month and year part of the first diagnosis date is equal to the month and year 
+part of the inform consent date, then  the imputed first diagnosis date is set to  the 
+month start point (01MONYYYY). 
+b. Otherwise the imputed first diagnosis date is set to the mid -month point 
+(15MONYYYY) . 
+5.1.5  Other imputations  
+Only PASI and IGA mod 2011 based response variables are imputed with multiple imputation 
+or non-response, other response variables (e.g. D LQI 0 or 1 achievement ) will be imputed with 
+LOCF.  
+For DLQI ,  missing values will be replaced by LOCF. Baseline values will not 
+be carried forward . If no pre -treatment value exists, value s obtained after first dose  of treatment  
+can be used as baseline only if it was collected on the same day as first dose.  In addition, m issing 
+baseline (PROs) values will be replaced by the means or modes of non- missing baseline values 
+stratified by age group ( <65 years, 65 years and older) and sex , for continuous scale or 
+categorical/ordinal scale, respectively.  
+For laboratory test values below Lower Level of Quantification (LLQ) or above Upper Level 
+of Quantification (ULQ) will be imputed as LLQ or ULQ value, respectively. The numerical 
+part of the reported result will be tre ated as the actual LLQ or ULQ . These laboratory values 
+will be displayed in listings using the standard unit with  the reported sign (“<” or “>”).”  
+5.2 AEs coding/grading 
+Adverse events will also be coded according to MedDRA  dictionary , using a narrow search. 
+The MedDRA version used for reporting the adverse events  will be described in a footnote. 
+Safety topics of interest, such as risks defined in the Safety Profiling Plan, Risk Management 
+Plan or topics of interest regarding signal detection or routine analys is are defined in the 
+Program Case Retrieval Sheet  
+ 
+5.3 Laboratory parameters derivations 
+See Section 2.8.3. 
+5.4 Statistical models 
+5.4.1  Analysis of continuous  data 
+Summar y statistics ( including N, mean, standard deviation, minimum, lower quartile, median, 
+upper quartile, maximum) will be provided for continuous data by visit and treatment group. 
+For PASI score, DLQI total scores,  summary statistics will be derived for absolute and 
+percentage changes from baseline.  
+
+Novartis  For business use only  Page 42  
+SAP  CAIN457A23 23 
+ 
+5.4.2  Analysis of binary (and categorical) data  
+Summary statistics for discrete variables will be presented in contingency tables and will 
+include absolute and relative frequencies. If applicable, confidence interva ls will be derived as 
+well based on the score method including continuity correction [Newcombe (1998)] : 
+With zas (1-alpha/2)- quantile of the standard normal distribution (SAS: z=PROBIT(1 -alpha/2) , 
+n as total number  of subjects (i.e. number of subjects in the denominator), and pas estimated 
+crude incidence (number of subjects  with event / n) it is  
+Then the lower limit is  for  
+( )
+( )
+
+
+
+++ + − − − − +
+=22 2
+21 4 12 1 2
+, 0 max
+z nnq pnz z z np
+L  
+and the upper limit is  for  
+( )
+( )
+
+
+
++− + − + + + +
+=22 2
+21 4 12 1 2
+, 1 min
+z nnq pnz z z np
+U . 
+For response variables (e.g. for IGA mod 2011 0 or 1, PASI 75, PASI 50, PASI 90 and PASI 
+100 response) the placebo  adjusted response rates  (risk difference) including 95% confidence 
+interval will be derived  by visit. 
+Figures will be provided for PASI 75 response (upper left) PASI 90 response (upper right), 
+PASI 100 response (lower left) and IGA mod 2011 0 or 1 response (lower right) at Week 12 as 
+dot plots displaying treatments on the x -axis and point estimates including 95% confidence 
+intervals on the y- axis.  
+For time courses of response variables, the point estimate at each time point including 95% confidence interval will be plotted. 
+5.4.3  Logisti c regression  
+Binary outcome variables, including PASI 50 / 75 / 90 / 100 response and IGA mod 2011 0 or 
+1 response, will be evaluated using a logistic regression model with  treatment  regimen,  baseline 
+body weight and baseline PASI score. Odds ratios will be  computed for comparisons of 
+secukinumab dose regimen  versus placebo  utilizing the logistic regression model fitted.   
+If response rates are 0% or 100% in one of the treatment groups odds ratio estimate and p-values 
+will not be displayed in outputs, but “-” will be shown. 
+The odds ratio will be calculated such that an odds ratio > 1 is favorable for secukinumab. Using 
+PROC GENMOD to calculate the confidence interval  for the odds ratios  assumes asymptotic 
+normality of the Wald estimate for the regression coefficient . The 95% confidence interval  for 
+the regression parameter of the active treatment effect relative to control(s) will be calculated 
+using an exponential transform ation to create the confidence interval for the odds ratio. p q− =1
+( ), 0 for 0 , 0= = >p L p
+( ), 1 for 1 , 1= = <p U p
+Novartis  For business use only  Page 43  
+SAP  CAIN457A23 23 
+ 
+All p -values reported on linear hypotheses about regression coefficients will be based on the 
+Wald tests from Type III analyses.  In the SAS procedure PROC GENMOD, a Type III analysis 
+will be performed by adding the model options: TYPE3, DIST=BIN, and LINK=LOGIT. 
+Logistic regression will be applied to response variables at each visit.  
+If logistic regression model does not converge, the following steps will be performed:  
+1. Run the PROC GENMOD procedure with EXACT statement;  
+2. If convergence not reached, remove the covariates from the model one by one until 
+convergence is reached; start with continuous covariates (i.e., baseline bodyweig ht by 
+replacing with body weight stratum, and then baseline PASI  score), followed by removing 
+categorical covariates (i.e., weight stratum);  
+3. If convergence not reached, perform Fisher’s exact test.  
+It should be noted that this model might not converge if response rates are too low. 
+5.4.4  Multiple imputations for response variables  
+Primary and secondary endpoints  will be evaluated by Logistic regression  and odds ratio 
+estimate as described in  the primary analysis method  with multiple imputations for m issing 
+values.  In addition, logistic regression analysis for PASI 50, PASI 75, PASI 90, PASI 100 and 
+IGA mod 2011 0 or 1 response by visits will be analyzed using multiple imputation method. 
+In the multiple imputation s analysis the response status will be imputed based on the individual 
+treatment arm information.  
+Multiple imputation (MI) is a simulation based approach where missing values are replaced by 
+multiple Bayesian draws from the conditional distribution of missing data given the observed data and covariates, creating multiple completed data sets. These completed data sets can then be analyzed using standard methods. Rubin (1987)  presented rules how to combine the multiple 
+sets of estimates to produce overall estimates and confidence intervals that ad equately 
+incorporate missing data uncertainty .  
+Missing values for the ‘change from baseline PASI score’ and ‘IGA mod 2011 score’ will be 
+imputed simultaneously based on an underlying joint normal distribution and using a Markov Chain Monte Carlo (MCMC) method. The change from baseline in PASI score appears to follow closer to a normal distribution than the actual PASI score. Assuming normality for the 
+‘IGA mod 2011 score’ is motivated by Schaefer (1997) , where it was shown that the 
+multivariate normal approximation for the imputation of incomplete categorical and binary data is robust.  
+The imputations will be done separately for each treatment group including baseline weight, 
+failure to at least one previous biologic (yes/no), and number of previous system ic therapies as 
+additional covariates.  
+Summary statistics for PASI  50, PASI  75, PASI  90, PASI  100, and IGA mod 2011 0 or 1  
+response by visit will be presented in contingency tables with multiple imputations  method. 
+The number of imputations will be set to  100, the seed for the random function will be set to 
+4572323 for this study . To generate the multiple imputed data sets, the SAS procedure MI can 
+be used as follows: 
+Novartis  For business use only  Page 44  
+SAP  CAIN457A23 23 
+ 
+The input data set <pasi_iga> should have one record per subject with baseline PASI score and 
+IGA mod 2011 score as well as all changes from baseline PASI and post -baseline IGA mod 
+2011 score.  
+ 
+ODS LISTING CLOSE;  
+ODS OUTPUT MissPattern=msgpat VarianceInfo= varinfo ParameterEstimates=param ; 
+PROC MI DATA=<pasi_i ga> OUT=<impdata> SEED=457<studycode> NIMPUTE=1 00; 
+ VAR <baselin e weight> <failure to at least one biologic>  
+     <number of previous systemic therapies>  
+     <baseline PASI> <baseline IGA>  
+     <change from baseline PASI week 1> - <change from baseline PASI week primary endpoint>  
+     <IGA week1> - <IGA week primary endpoint>; 
+  BY <treatment group>;  
+RUN; 
+ODS LISTING;  
+ 
+Programming notes: 
+• The SAS procedure MIANALYZE expects a variable called “_IMPUTATION_ which 
+is generated by the MI procedure. It might be needed to set the SAS option “VALIDVARNAME=UPCASE” temporarily in the program before the MI call, this option should be reset after the MIANALYZE call to VALIDVARNAME=V6.  
+• In case there are no missing s in one treatment group, the MI procedure does not 
+impute any values. In this case the corresponding data need to be imputed manually outside PROC MI and added to the dataset <impdata>.  
+ 
+The imputed data are saved in data set <impdata>. The outcomes of interest, i.e. the PASI  
+50/75/90/100 response and IGA mod 2011 0 or 1 response will be calculated, e.g. as follows: 
+ 
+DATA <impdata2>;  
+ SET <impdata>;  
+IF <change from baseline PASI week primary endpoint>/<baseline PASI>=0.75  THEN <PASI 75 response> =1;  
+ELSE <PASI 75  response>=0;  
+<…repeat for all PASI response…>  
+ 
+IF <baseline IGA> >=3 THEN DO;  
+      IF <IGA week primary endpoint> < 1.5 THEN <IGA 0/1 response> =1;  
+ ELSE IF <IGA week primary endpoint> >=1.5 THEN <IGA 0/1 response> =0;  
+ ELSE PUT "E" "RROR:" stysid1a=;  
+END; 
+ELSE IF <baseline IGA>=2 THEN DO;  
+      IF <IGA week primary endpoint> < 0.5 THEN <IGA 0/1 response> =1;  
+ ELSE IF <IGA week primary endpoint> >=0.5 THEN <IGA 0/1 response> =0; 
+ ELSE PUT "E" "RROR:" stysid1a=;  
+END; 
+ELSE <IGA 0/1 response> =0;  
+RUN; 
+ 
+The treatment differences for each imputed data set will then be evaluated by Logistic 
+regression and ODDS ratio as described in Section 5.4.6.2. This analysis will be done by 
+Novartis  For business use only  Page 45  
+SAP  CAIN457A23 23 
+ 
+_IMPUTATION_ for the comparison to the placebo  treatment group. The model should be 
+estimating response probability = 1 by using DESECENDING option. Using the ESTIMATE  
+option in the GENMOD procedure and the ODS OUTPUT data s et “Estimates ” provides the 
+estimate for the odds ratio and confidence intervals . 
+ 
+PROC GENMOD <option>;  
+CLASS <stratum> <treatment>; MODEL <response> = <explanatory  variables> / link=logit dist=bin type3;  
+BY <by-variables);  
+ESTIMATE “OR. AIN 300 mg  2mL PFS VS. Placebo” <treatment> 1 0 -1/exp;  
+ESTIMATE “OR. AIN 300 mg  2x1mL PFS VS. Placebo” <treatment> 0 1 -1/exp;  
+ODS OUTPUT Estimates=Estimates;  
+RUN; 
+The MIANALYZE procedure expects the parameter estimate in the variables ESTIMATE, and 
+the corresponding standard error in the variable STDERR. Measurements can be obtained from “Estimates ” dataset by selecting the row with ODDS ratio estimates.  
+ 
+Data <modified dataset>;  
+  set Estimates;  
+  if substr(label,1,3)= “ Exp”; 
+  ESTIMATE=LBetaEstimate;  
+  STDERR=StdErr;  
+  effect= “ OR”; 
+  if missing(ESTIMATE) or missing(STDERR) then delete;  
+RUN;  
+ 
+The estimates and standard errors based on the 100 imputed data are then combined by applying 
+Rubin’s rules for multiple imputed data sets, see Little  and Rubin (2002) .  
+Programming notes:  
+• The variables ESTIMATE and STDERR in the input data set for the MIANALYZE 
+procedure may not be missing. Records with missing values need to be deleted and the variable _IMPUTATION_ needs to be renumbered and regenerated since for each by -
+group the procedure expects consecutive numbers starting at 1. 
+• The ESTIMATE and STDERR in terms of odds ratios from logistic regressions will be transformed to follow a normal distribution before MIANALYZE procedure . They will 
+be transformed back to Odds Ratio to get the corrected ESTIMATE and corresponding 
+CIs.   
+The SAS procedure MIANALYZE will be applied as follows: 
+DATA <modified dataset_t>; 
+ SET <modified dataset >; 
+ estimate=log(ESTIMATE);  
+ stderr=(log(LBETAUPPERCL)- log(LBETALOWERCL))/(2*1.96);  
+RUN ; 
+ 
+ODS LISTING CLOSE;  
+ODS OUTPUT ParameterEstimates=<results> VarianceInfo=< varinfo> ModelInfo=<modelinfo>;  
+PROC MIANALYZE PARMS=<modified dataset>;  
+  BY <by-variables>;  
+  MODELEFFECTS ESTIMATE; 
+Novartis  For business use only  Page 46  
+SAP  CAIN457A23 23 
+ 
+  SETDERR stderr;  
+RUN; 
+ODS LISTING;  
+ 
+data <results_back> ; 
+ set <results> ; 
+ estimate=exp(ESTIMATE);  
+ LCLMEAN=estimate*exp( -1.96*stderr);  
+ UCLMEAN=estimate*exp(+1.96*stderr);  
+RUN ; 
+ 
+In case if logistic regression does not converge, risk difference estimates will be provided. The 
+SAS procedure PROC FREQ for risk difference estimates will be applied as follows:  
+ODS LISTING CLOSE;  
+PROC FREQ DATA=<Imputed dataset> ORDER=DATA;  
+     TABLES <treatment group>*<response variable>/riskdiff alpha=0.05;  
+     BY <By -variables>;  
+     ODS OUTPUT RiskDiffCol1=RiskDiffCol1;  
+RUN; 
+ODS LISTING;  
+DATA DRISK; SET RiskDiffCol1;  
+     WHERE control= “1”; 
+     ESTIMATE=risk;  
+     STDERR=ase;  
+     effect=”Riskdiff”;  
+     IF missing(ESTIMATE) OR missing(STDERR) THEN DELETE;  
+RUN; 
+PROC SORT DATA=DRISK; BY <By- variables>; RUN;  
+ODS LISTING CLOSE;  
+ODS OUTPUT ParameterEstimates=results VarianceInfo=varinfo ModelInfo=Modelinfo;  
+PROC MIANALYZE PARAMS=drisk; 
+     by <By -variables>;  
+     modeleffects Riskdiff;  
+     stderr ase;  
+RUN; 
+ODS LISTING;  
+DATA results2;  
+     set results;  
+     or=estimate*100;  
+     lowercl=(LCLmean)*100;  
+     uppercl=(UCLmean)*100;  
+     KEEP <response variable> <By- variables> or lowercl uppercl probt;  
+RUN; 
+ 
+5.4.5  Crude incidence and related risk estimates  
+5.4.5.1  Crude incidence and 100*(1- α)% confidence interval  
+For n subjects, each at risk to experience a certain event with probability π, the crude incidence 
+is estimated as p=x/n, where x is the number of subjects with the event. 
+Novartis  For business use only  Page 47  
+SAP  CAIN457A23 23 
+ 
+Absolute and relative frequencies will be displayed as well as 95% confidence interval for the 
+relative frequency  based on the score method including continuity correction ( Newcombe  1998).  
+With z as (1-α/2)-quantile of the standard normal distribution (SAS: z=PROBIT(1 -alpha/2), n 
+as total number of subjects (i.e. number of subjects in the denominator), and pas estimated 
+crude incidence (number of subjects  with event / n) it is . 
+Then the lower limit is  
+( )
+( ) 
+
+
+
+++ + − − − − +
+=22 2
+21 4 12 1 2
+, 0 max
+z nnq pnz z z np
+L  
+and the upper limit is  
+( )
+( ) 
+
+
+
++− + − + + + +
+=22 2
+21 4 12 1 2
+, 1 min
+z nnq pnz z z np
+U . 
+Note: if p = 0 then L = 0 and if p = 1 then U = 1. 
+If appropriate, an exact 100*(1- α)% confidence interval ( Clopper- Pearson 1934) will be 
+obtained by using the SAS procedure PROC FREQ with the EXACT BINOMIAL statement. 
+However, the confidence interval derived via the score method including continuity correction 
+will be the default in safety analyses.  
+5.4.5.2  Relative risk and 100*(1- α)% confidence interval  
+For an investigational drug group with n 1 subjects at risk, independent from the control group 
+(e.g., placebo or comparator) with n 0 subjects at risk , of whom x 1 and x 0 experience a certain 
+event with probability π 1 and π 0 respectively, the relative risk is estimated as p 1/p0 with p 1=x1/n1 
+and p 0=x0/n0. 
+An asymptotic 100*(1- α)% confidence interval on the relative risk will be based on the back-
+transformed large sample confidence limits on the log -transformed relative risk estimate which 
+are obtained by application of the delta -method and Slutzky’s theorem ( Lachin 2000). The SAS 
+procedure PROC FREQ with option RELRISK in the TABLES statement will be used to provide the asymptotic 100*(1- α)% confidence interval on the relative risk. The estimate is not 
+computed if either x
+1 or x 0 equals 0. In this case, or if the crude incidences are low in both 
+groups, the relative risk will be approximated by the odds ratio for which an exact confidence interval will be obtained as specified in Section 5.4.6.3. If the relative risk is not well 
+approximated by the odd s ratio but asymptotic normality is questionable, STATXACT will be 
+used. 
+5.4.5.3  Odds ratio and 100*(1 -α)% confidence interval  
+For an investigational drug group with n
+1 subjects at risk, independent from the control group 
+(e.g. placebo ) with n0 subjects at risk , of whom x 1 and x 0 experience a certain event with 
+probability π 1 and π 0 respectively, the odds ratio is estimated as  p q− =1
+Novartis  For business use only  Page 48  
+SAP  CAIN457A23 23 
+ 
+) 1 /() 1 /(
+0 01 1
+p pp p
+−− with p 1= x 1/n1 and p 0=x0/n0. A conditional exact 100*(1- α)% confidence interval 
+will be obtained by using the SAS procedure PROC FREQ with statement EXACT OR. 
+5.4.5.4  Risk difference and 100*(1- α)% confidence interval  
+For an investigational drug group with n 1 subjects at risk, independent from the control group 
+(e.g., placebo or comparator) with n 0 subjects at risk , of whom x 1 and x 0 experience a certain 
+event, the risk difference is estimated as p 1-p0 with p 1= x 1/n1 and p 0=x0/n0.  
+Exact unconditional confidence limits for the risk difference  will be obtained with SAS 
+procedure PROC FREQ and option RISKDIFF in the TABLES statement, specifying t he 
+RISKDIFF option also in the EXACT statement.  5.4.6  Exposure adjusted incidence rate and related risk estimates  
+5.4.6.1  Exposure adjusted incidence rate and 100*(1- α)% confidence interval  
+It will be assumed that for each of n subjects in a clinical trial the time t
+j (j=1,...,n) to the first 
+occurrence of a certain treatment emergent event is observed, or if the event was not 
+experienced, the (censored) time to the end of the observation period or last dose plus 84 days 
+whicheve r occur earlier . The sequence of first occurrences of an event will be modeled to follow 
+approximately a Poisson process with constant intensity θ. The rate parameter θ will be 
+estimated as λ=D/T, where ∑
+==n
+jjt T
+1and D is the number of subjects  with at least one event. 
+Conditionally on T, an exact 100*(1- α)% confidence interval for a Poisson variable with 
+parameter θT and observed value D can be obtained based on (Garwood, 1936), from which an 
+exact 100*(1- α)% confidence interval for D/T will be  derived as follows (Sahai, 1993; Ulm, 
+1990): 
+Lower confidence limit    for D>0, 0 otherwise,  
+Upper confidence limit  
+where
+kc,α is the αth quantile of the Chi -square distribution with k degrees of freedom. 
+5.4.6.2  Exposure -adjusted event  rate and 100*(1 -α)% confidence interval  
+For each of n subjects t j (j=1,...,n) specifies the exposure time. The number of occurrences of a 
+treatment emergent event will be modeled to follow approximately a Poisson process with 
+constant intensity θ. The rate param eter θ will be estimated as λ=D/T, where ∑
+==n
+jjt T
+1 and D 
+is the number of events (episodes). Conditionally on T, an exact 100*(1- α)% confidence interval 
+for a Poisson variable with parameter θT and observed value D can be obtained based on TcLD2 , 2 / 5 . 0α=
+TcUD2 2 , 2 / 1 5 . 0+ −=α
+Novartis  For business use only  Page 49  
+SAP  CAIN457A23 23 
+ 
+(Garwood, 1936), from which an exact 100*(1- α)% confidence interval for D/T will be derived 
+as follows ( Sahai, 1993; Ulm, 1990):  
+Lower confidence limit    for D>0, 0 otherwise,  
+Upper confidence limit  
+where
+kc,α is the α  th quantile of the Chi-square distribution with k degrees of freedom. 
+5.5 Rule of exclusion criteria of analysis sets  
+Protocol deviations for exclusion from analysis sets are defined in Table 5-1.  
+Table 5-1 Subject classification rules  
+Analysis set  PD Categories Codes that 
+cause subject to be excluded  Non-PD criteria that cause a 
+subject to be excluded  
+Randomization set  NA Misrandomized subject  
+FAS (Full Analysis Set)  DVSPID: INC L02; OTH 30 Misrandomized subject  
+Safety  DVSPID: INCL02 ; OTH 30 Subjects who did not take any 
+study treatment  
+INCL0 2: ICF missing or not signed prior to initiating study procedure 
+OTH30: Severe ICH -GCP non- compliance of study  site 
+5.6 Clinician reported outcomes 
+5.6.1  Usability  and hazard assessment of the 2 mL pre- filled syringe  
+The goal is to measure and evaluate the usability of the 2mL pre-filled syringe  during observed 
+use. During the first 2mL self -injection at the respective visits (Randomization and Week 1), 
+site staff will observe and complete the self -injection assessment  checklist ( Table 5-2) to assess 
+the ability to follow the instructions for use (IFU). The possible hazard checklist ( Table 5-3) 
+will be assessed for the 2mL self -injection at each of the two visits.  
+Primary usability assessment: 
+• Assessment of successful self -administration by the subject  at Week 1. Successful self -
+injection is achieved when the subject performs all required steps effectively and safely to 
+deliver the correct dose from the device at the correct injection site. The sequence of user steps (as  per IFU) that are minimally required are P8, P10, P11, P12, P13, P14 ( Table 5-2), 
+these 6 critical steps will be used to define successful administration. The general passing usability goal for ‘successful use’ task completion will be defined as ≥ 90% pas s rate 
+following these steps. 
+Secondary usability assessment:  TcLD2 , 2 / 5 . 0α=
+TcUD2 2 , 2 / 1 5 . 0+ −=α
+Novartis  For business use only  Page 50  
+SAP  CAIN457A23 23 
+ 
+• Assessment of subject use errors that occur during the First Use at Randomization (after 
+initial training) and repeated self -injection at Week 1 (without retraining).  
+• Assessment of successful Fi rst Use by subject after initial training (at Randomization), for 
+subjects who successfully perform the self -injection as defined above for the primary 
+usability assessment (i.e. P8, P10, P11, P12, P13, P14). 
+Table 5-2 Self injection assessment checklist ( pre-filled syringe)  
+No. Instruction for use (IFU) indicated steps  Required for 
+successful 
+administration  
+P1 Washed hands with soap and water  No 
+P2 Cleaned the injection site  No 
+P3 Removed the safety syringe from the outer box  No 
+P4 Took syringe out of the tray  No 
+P5 Checked expiration date on syringe label  No 
+P6 Inspected the safety syringe for damage  No 
+P7 Inspected liquid for brown discoloration or particles  No 
+P8 Removed needle cap from safety syringe  Yes 
+P9 Discarded needle cap  No 
+P10 Pinched the skin at injection site  Yes 
+P11 Inserted the needle into skin  Yes 
+P12 Held onto the finger flange  Yes 
+P13 Fully depressed plunger until end point  Yes 
+P14 Held plunger pressed fully down and syringe in place for 5 
+seconds  Yes 
+P15 Kept plunger fully depressed while lifting the needle straight from  
+injection site  No 
+P16 Released the plunger  No 
+P17 Allowed syringe guard to automatically activate and cover the 
+needle  No 
+P18 Disposed used safety syringe in a sharps container  No 
+Table 5-3 Possible hazard assessment checklist  
+No. Possible hazard assessment checklist  
+H1 Was there a needle stick in a critical area (e.g. eye, carotid artery)?  
+H2 Was there a needle stick in a non -critical area?1 
+H3 Was any part of the device swallowed? If yes, please specify.  
+H4 Was an immediate -type allergic reaction noticed to device material?  
+H5 Was increased pain noticed by the patient due to a bent needle?  
+H6 Was the breakage of the device observed?2 
+H7 Was swallowing of material debris observed?3 
+H8 Was any other problem observed?3  
+H9 Was less than the full dose administered?4 
+Novartis  For business use only  Page 51  
+SAP  CAIN457A23 23 
+ 
+ 
+ 
+ 
+1 Excluding the actual injection into the appropriate injection site of the body  
+2 If yes, then it is to be specified under which circumstances breakage occurred and which parts were 
+affected, as well any additional problems (e.g. injuries) due to the breakage are to be described.  
+3 If yes, then it is to be specified. Possible events might include: irritated skin; drug too cold when injected; 
+the drug or device upon visual inspection appeared unsuitable for injection; intradermal instead of 
+subcutaneous injection; and other events.  
+4 If yes, then it is to be specified why, e.g. leakage from injection site, early removal.  
+5.7 Patient reported outcomes 
+The im pact of psoriasis on various aspects of subjects’  health -related  quality of life will be 
+assessed by the following instruments in this trial: 
+• DLQI  
+•  
+5.7.1  Dermatology Life Quality  Index (DLQI)  
+The DLQI is a 10 -item general dermatology disability index designed to assess Health -related 
+quality of life in adult subjects with skin diseases (e.g. psoriasis). The measure is self -
+administered and includes six domains of symptoms and feelings , daily activities,  leisure, work 
+and school, personal relationships and treatment. 
+The scoring of each question is as follows: 
+• Very much  : Scored 3  
+• A lot : Scored 2  
+• A little: Scored 1  
+• Not at all: Scored 0  
+• Not relevant : Scored 0  
+• Question unanswered: Scored 0 
+• Question 7: "prevented work or studying" : Scored 3  
+The DLQI total score will be calculated by summing the score of each question resulting in a 
+maximum of 30 and a minimum of 0. The higher the score, the more Quality of Life is impaired .  
+Meaning of DLQI Scores : 
+• 0-1= no effect at all on subject's life  
+• 2-5= small effect on subject's life  
+• 6-10= moderate effect on subject's life  
+• 11-20= very large effect on subject's life  
+• 21-30= extremely large effect on subject's life  
+
+Novartis  For business use only  Page 52  
+SAP  CAIN457A23 23 
+ 
+The DLQI will be analyzed under six headings as follow s: 
+• Symptoms and feelings : questions 1 and 2, s core maximum 6  
+• Daily activities : questions 3 and 4, s core maximum 6  
+• Leisure : questions 5 and 6, s core maximum 6  
+• Work and school : question 7, s core maximum 3  
+• Personal relationships : questions 8 and 9: s core maximum 6  
+• Treatment : question 10, s core maximum 3  
+Interpretation of incorrectly completed questionnaires: 
+There is a very high success rate of accurate completion of the DLQI . However, sometimes 
+subjects do make mistakes.  
+1. If one question is left unanswered this is scored 0. 
+2. If two or more questions are left unanswered the questionnaire will not be scored. 
+3. If question 7 is answered 'yes' this will be scored 3. If question 7 will be answered 'no' or 
+'not relevant' but then either 'a lot' or 'a little' is tick ed this will then be scored 2 or 1 , 
+respectively . 
+4. If two or more response options are ticked, the response option with the highest score will 
+be recorded.  
+5. If there is a response between two tick boxes, the lower of the two score options will be 
+recorded.  
+6. If one item is missing from a two - item subscale that subscale will not be scored.  
+Handling of missing values: 
+• If there is only one missing score per visit, it will be imputed with 0, and then the subscale 
+including this item and the total score are derive d accordingly.  
+• If there are two or more missing scores per visit, LOCF will be applied to the individual question scores, subscale scores, and total score, separately (i.e. LOCF is NOT applied to the 10 individual question scores for further derivation of the 6 subscale scores and 1 total score).  
+Of note, in situations where subjects responded to more questions than what was expected or required, the “most severe” answer was entered into the WriteResult (vendor for PRO data) database. In most cases the Self -Evident Corrections (SECs) were defined correctly, however, 
+the SEC regarding question 7A/7B was not designed to select the “most severe” answer. This was confirmed with Novartis HEOR and communicated to the AIN team.  
+
+Novartis  For business use only  Page 53  
+SAP  CAIN457A23 23 
+ 
+
+Novartis  For business use only  Page 54  
+SAP  CAIN457A23 23 
+ 
+5.7.3  Self-injection Assessment Questionnaire (SIAQ)  
+The Self -Injection Assessment Questionnaire (SIAQ) is a questionnaire to measure overall 
+subject experience with subcutaneous self -injection, and to investigate its psychometric 
+properties. The SIAQ is composed of two modules: the PRE -module and the POST -module. 
+The PRE -module, which is completed at Randomization before the first self -injection (baseline), 
+includes 7 items grouped into three domains: feelings about injections, self -confidence and 
+satisfaction with self -injection. The POST-module, which is completed following the two self-
+injections, includes several items addressing five principal domains: feelings about injections, 
+self-confidence, injection -site reactions, ease of use, satisfaction plus a sing le item assessing 
+self-image. Subjects will rate each item of the SIAQ on a 5 -point semantic Likert -type scale 
+ranging from 1 (worst experience) to 5 (best experience). Item score will be transformed to obtain a score ranging from 0 (worst experience) to 10 (best experience). The domain score will then be calculated as the mean of the item scores included in the domain.  
+Respondent rates each item of the PRE SIAQ and items 1- 9 and 15- 21 of the POST SIAQ on a 
+5-point semantic Likert- type scale, and items 10 -14 of the POST SIAQ on a 6- point semantic 
+Likert -type scale. For all items, a score of 1 corresponds to the subject’s worst experience and 
+a score of 5 or 6 corresponds to the subject’s best experience.  
+The scoring of domains is performed in 2 steps: 
+1. The raw item scores ranging from 1 to 5 are transformed into scores ranging from 0 (worst 
+experience) to 10 (best experience).  
+2. The transformed scores for items contributing to a domain are then averaged into a domain score ( Table 5 -5). 
+Table 5-5 Scoring of domains from raw item scores  
+ Items  Transformed item score Domain score 
+calculation  Domain score 
+range  
+PRE-module domain  
+FL 1-3 ((raw score) -1)*2.5  Average of 
+transformed item scores  0-10 
+CO 4-6 ((raw score) -1)*2.5  
+SA 7 ((raw score) -1)*2.5  
+POST - module domain  
+
+Novartis  For business use only  Page 55  
+SAP  CAIN457A23 23 
+ 
+FL=Feeling about injection, IM=Self -Image, CO=Self -Confidence, RE=Pain and skin reaction during or 
+after the injection, EU=Ease of use of the self -injection device, SA=Satisfaction with Self -injection  
+PRE- module:  
+Item 1= In general, how afraid are you of needles?;  
+Item 2= In general, how afraid are you of having an injection?;  
+Item 3= How anxious do you feel about giving yourself an injection?;  
+Item 4= How confident are you about giving yourself an injection in the right way?;  
+Item 5= How confident are you about giving yourself an injection in a clean and sterile way?;  
+Item 6= How confident are you about giving yourself an injection safely?;  
+Item 7= Overall, how satisfied are you with your current way of taking your medication (self -injection)?  
+POST -module: 
+Item 1= In general, how afraid are you of needles?;  
+Item 2= In general, how afraid are you of having an injection?;  
+Item 3= How anxious do you feel about giving yourself an injection?;  
+Item 4= How embarrassed would you feel if someone saw you with the self -injection dev ice?;  
+Item 5= How confident are you about giving yourself an injection in the right way?;  
+Item 6= How confident are you about giving yourself an injection in a clean and sterile way?;  
+Item 7= How confident are you about giving yourself an injection safely? ; 
+Item 8a= During and/or after the injection, how bothered were you by: pain”;  
+Item 8b= During and/or after the injection, how bothered were you by: burning sensation”;  
+Item 8c= During and/or after the injection, how bothered were you by: cold sensation”;  
+Item 9a= During and/or after the injection, how bothered were you by: itching at the injection site?”; 
+Item 9b= During and/or after the injection, how bothered were you by: redness at the injection site?”; 
+Item 9c= During and/or after the injection, how bothered were you by: swelling at the injection site?”; Item 9d= During and/or after the injection, how bothered were you by: bruising at the injection site?”; Item 9e=  During and/or after the injection, how bothered were you by: hardening at the injection s ite?”; 
+Item 10= How difficult or easy was it to remove the cap?;  
+Item 11= How difficult or easy was it to depress the device?;  
+Item 12= How difficult or easy was it to administer the injection without any help?;  
+Item 13= How difficult or easy was it to use the self -injection device?;  
+Item 14= How does the device fit in your hand?;  
+Item 15= How easy was it to give yourself an injection?;  
+Item 16= How satisfied are you with how often you give yourself an injection?;  
+Item 17= How satisfied are you with the time it takes to inject the medication?;  
+Item 18= Overall, how satisfied are you with your current way of taking your medication (self-injection)?;  
+Item 19= Overall, how convenient is the self -injection device?;  
+Item 20= After this study, would you choose to continue self -injecting your medication?;  
+Item 21= After this study, how confident would you be to give yourself injections at home? 
+ 
+   FL 1-3 ((raw score) -1)*2.5  
+Average of 
+transformed item scores  0-10 IM 4 ((raw score) -1)*2.5  
+CO 5-7 ((raw score) -1)*2.5  
+RE 8-9 ((raw score) -1)*2.5  
+EU 10-14 ((raw score) -1)*2 
+SA 15-21 ((raw score) -1)*2.5  
+Novartis  For business use only  Page 56  
+SAP  CAIN457A23 23 
+ 
+6 Reference  
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+  
+ 
+ 
+ 
+A
+lberti KGMM, Eckel RH, Grundy SM, et al (2009) Harmonizing the metabolic syndrome: a 
+joint interim statement of the international diabetes federation task force on epidemiology and 
+prevention; national heart, lung, and blood institute; american heart association; world heart federation; international atherosclerosis society; an d international association for the study of 
+obesity. Circulation; 120: 1640-1645. 
+ 
+ 
+Bishop YMM, Fienberg SE, Holland PW (1991) Discrete multivariate analysis. Cambridge MA, 11
+th ed. The MIT Press  
+Bretz F, Maurer W, Brannath W, Posch M (2009) A graphical approach to sequentially rejective multiple test procedures. Statistics in Medicine; 28: 586 -604. 
+‘CIS liver safety’ guidance, available in Cabinets/CREDI TABULU/B&SR/CIS Process Documentation/Guidances (outside of ESOPS)/Others 
+Clopper CJ, Pearson ES (1934). The use of confidence or fiducial limits illustrated in the case 
+of the binomial. Biometrika , 26; 404–413. 
+ 
+ 
+ 
+
+Novartis  For business use only  Page 57  
+SAP  CAIN457A23 23 
+ 
+Fredriksson T, Pettersson U (1978) Severe psoriasis—oral therapy with a new retinoid. 
+Dermatologica; 157:238–44. 
+Garwood, F (1936). Fiducial limits for the Poisson distribution. Biometrika , 46; 441–453. 
+Gottlieb A, Griffiths CEM, Ho VC, et al (2005) Efficacy and tolerability of oral pimecrolimus 
+in the treatment of moderate to severe chronic plaque type psoriasis: a double-blind, multicentre, randomized dose- finding trial. Br J Dermatol; 152:1219-27. 
+  
+Kenward, M. and Roger, J. (1997). Small Sample Inference for Fixed Effects from Restricted Maximum Likelihood. Biometrics; 53: 983-997.  
+Lachin JM (2000) The assessment of relative risks . New York: Wiley Little, R.J.A and Rubin, D.B. (2002). Statistical A nalysis with Missing Data. Wiley Series in 
+Probabiliy and Statistics, Chapter 10. Menter A, Gottlieb A, Feldman S, et al (2008) Guidelines of care for the management of 
+psoriasis and psoriatic arthritis – Section 1. Overview of psoriasis and guidelines of care for the 
+treatment of psoriasis with biologics. J Am Acad Dermatol; 58:826 -850. 
+Newcombe RG (1998) Two-sided confidence intervals for the single proportion: comparison 
+of seven methods. Statistics in Medicine ; 17: 857-872. 
+Papp KA, Tyring S, Lahfa M et  al (2005) A global phase II randomized controlled trial of 
+etanercept in psoriasis: safety, efficacy, and effect of dose reduction. Br J Dermatol; 152:1304-12. 
+ 
+Rubin, D.B. (1987). Multiple Imputation for Nonresponse in Surveys. New York: Wiley. 
+ 
+ 
+Sahai H, Khurshid Anwer (1993). Confidence intervals for the mean of a poisson distribution: a review. Biom J, 35 (7); 857-867 
+Sampson HA, Muñoz -Furlong A, Bock SA, et al (2005) Symposium on the Definition and 
+Management of Anaphylaxis: Summary report. J Allergy Clin Immunol 2005;115:584-91. Sampson HA, Muñoz -Furlong A, Campbell RL, et al (2006) Second Symposium on the 
+Definition and Management of Anaphylaxis: Summary Report - Second National Institute of 
+Allergy and Infectious Disease/Food Allergy and Anaphylaxis Network Symposium. Ann 
+Emerg Med;47(4):373-80. 
+Schaefer , J.L. (1997). Analysis of Incomplete Multivariate Data, Chapman&Hall . 
+Ulm K (1990). A simple method to calculate the confidence interval of a standard mortality 
+ratio. American Journal of Epidemiology, 131(2); 373-375 
+
+Novartis  For business use only  Page 58  
+SAP  CAIN457A23 23 
+ 
+Weisman S, Pollack CR, Gottschalk RW ( 2003) Psoriasis disease severity measures: 
+comparing efficacy of treatments for severe psoriasis . J Dermatology Treat; 14: 158-165. 

@@ -1,0 +1,756 @@
+Analysis of electrocorticographic signals  
+PI: [INVESTIGATOR_21177] R. Postle, PhD, Departments of Psychology and Psychiatry, University of Wisconsin–
+Madison 
+Protocol version 1, 05/ 25/17 
+Co Investigators:  
+ Rama Maganti, MD, Dept. of Neurology, Director of University of Wisconsin Comprehensive 
+Epi[INVESTIGATOR_540650], PhD, Dept. of Neurology, Director of the Charles Matthew Neuropsychology 
+Section 
+ Yuri Saalmann, PhD, Dept. of Psychology  
+Study Coordinators: Jacqueline Fulvio, Jason Samaha, Qing Yu (Postle laboratory)  
+Funding: NIH R01 MH095984- 03S1 
+[STUDY_ID_REMOVED]  
+  
+ 
+Project Summary  
+Working memory refers to the active mental retention of information, to its manipulation, and to its use in guiding behavior. Its role in many types of high level cognition, as a factor underlying individual 
+differences across a broad spectrum of experimental and “real world” measures, and as a factor in 
+many psychiatric and neurological diseases, makes it important to many branches of cognitive and clinical neuroscience. The motivation for the experiments described in this protocol comes from 
+previous findings from the PI’s group suggesting that an active neural representation of a stimulus may 
+result from its attentional  selection, rather than from its storage, per se, in working memory. More 
+specifically, multivariate pattern analyses (MVPA) of data from three types of experiment –  functional 
+magnetic resonance imaging (fMRI), electroencephalograohy (EEG), and combined EE G and 
+transcranial magnetic stimulation (TMS) –  have failed to find evidence for the active retention of 
+information that is in working m emory, but outside the focus of attention. These are intriguing results, 
+which suggest that the brain may use a “passive”, structural trace to hold information in working 
+memory. If true, this fact would require a reconsideration of over 50 years of dogma about how working 
+memory “works”. However, caution is warranted, because these recent findings are subject to two 
+important qualifications: First, they comprise a set of null results; Second, each was acquired with a 
+noninvasive method that is inherently l imited in spatial and temporal resolution. The motivation for the 
+experiment s proposed in this protocol, therefore, is to overcome the inherent limitations of the studies 
+summarized above by [CONTACT_18120] a physiological method, electrocorticographic (ECoG) recording from 
+neurosurgical patients, that features spatial and temporal resol ution that are far superior to those of 
+fMRI or EEG. Specifically, adoption of ECoG for the se new studies  will enable a test of the hypothesis 
+that a mechanism of phase- encoded selection among multiple active represent ations may underlie the 
+attentional prioritization of one among many items held in working memory. A  similar mechanism has 
+recently been discovered, from ECoG data r ecorded during performance of a hierarchical cognitive 
+control task, by a group working at the University of [LOCATION_004].  Addressing this question will require two 
+sub-studies. First, a study of attentional selection with a well -characterized behavior that have 
+previously been studied with both extracranial EEG and with ECoG. The specific question that this 
+study will address  is how the dynamics of oscillations in the alpha band differ when a location in space 
+is being actively attended vs actively ignored vs not relevant for the task. Understanding this 
+fundamental question will be important for interpreting the results from the second sub- study: working 
+memory with attentional prioritization cues. These newly proposed experiment s fit with the Aims of the 
+parent project and thus their  findings may also have translational relevance for the diagnosis and 
+treatment of psychiatric disorders that are associated with  abnormal neural oscillations.  
+ 
+Background and Significance 
+Since at least the time of Hebb [26]  it has widely been assumed that the short -term retention of 
+information (a.k.a. “working memory storage”) is accomplished via maintenance of an active memory 
+trace. This view has been reinforced by [CONTACT_540677] -period activity in extracellular [22], 
+electroencephalographic [68], and hemodynamic [9, 11]  recordings of animals and humans. 
+Consequently, the loss of sustained activity is thought to indicate a disruption of the memory trace [15, 
+40, 56] . However, to date, virtually all studies of the short -term retention of information (regardless of 
+species, procedure, concurrent physiological measurement, etc.) have confounded memory with attention. That is, the information to be remembered is the most  task-relevant information throughout 
+the memory interval, and therefore is likely to be continuously attended to. In a recently published study 
+using functional magnetic resonance imaging (fMRI), the PI’s group unconfounded attention and 
+memory by [CONTACT_540678] a brief memory delay [33] . The results of the MVPA indicated that only items 
+within the focus of attention elicited an active neural trace. Activity corresponding to the representation 
+of items outside the focus of attention (i.e., UMIs) quickly dropped to baseline. Nevertheless, thi s 
+unattended information remained in working memory, because it could support near -perfect recognition 
+at the end of the trial. (This finding was replicated conceptually with a different task, and different 
+subjects, reported in the same paper [33].) In follow -up analyses with the same dataset, the PI’s group 
+has shown that this finding holds even if analyses are restricted to putatively “category specific” regions 
+of interest (ROIs) identified with standard univariate methods (i.e., a GLM) [37]. Notably, head -to-head 
+comparison of BOLD signal intensity levels vs. the information contained in this signal (as inferred from 
+MVPA)  indicates that direct interpretation of the former can be misleading: 1) activity levels are not 
+always sensitive to which items are in vs. out of the focus of attention (nor, indeed, to which are in vs. 
+out of a trial’s stimulus set); and, 2) activity lev els in a “category -specific” ROI can remain elevated 
+above baseline even when the MVPA indicates the absence of informat ion related to this category (Fig. 
+2). This second finding has been extended to the level of item representation in two other fMRI studies from the PI’s group, in which frontal and parietal regions show sustained delay -period activity, but 
+MVPA indicates t hat this activity does not represent which of 3 or 4 directions of motion is in memory 
+[17, 58] . Reminiscent of previous findings [24, 62] , however, trial -specific stimulus information was 
+found to be represented during the delay period in early visual areas whose activity was not above 
+baseline levels [17, 58] .  
+ 
+The results presented up to this point lead to  a hypothesis of considerable significance for theoretical 
+and mechanistic accounts of working memory: Sustained delay -period activity may correspond to the 
+focus of attention, rather than to working memory storage. At the theoretical level, confirmation of this 
+hypothesis would require revision of models of working memory as the temporary activation of long-
+term memory (LTM) representations (e.g., [10, 44] ). Importantly, formal implementations of this 
+cognitive model in computational simulations do not treat “activation” as only a metaphor, but rely on it 
+as a central explanatory factor (e.g., [46 -48]). At the level of systems and cognitive neuroscience, 
+confirmation of this hypothesis would call into question the near -universal assumption that working 
+memory storage is supported by [CONTACT_540679]. Evidence for this hypothesis comes not 
+only from the PI’s laboratory, but also from event -related potential (ERP) [52]  and behavioral studies 
+[49] of the control of attentional search with information in working memory. Based on these studies it 
+has been theorized that a (active) “search template” and (passive) “accessory memory items” exist in 
+two different states within working memory [49] . Independently, the PI’s group and this “attentional 
+search” group [49]  have each suggested that unattended information within working memory might be 
+represented in a short -lived pattern of synaptic weights –  i.e., a structural code analogous to that used 
+for LTM. Such a scheme has precedence in several computational models (e.g., of short -term recall of 
+serial order [6, 8, 21]  and retrieved context models [27, 61] ). Unlike LTM, however, the physiological 
+basis of this encoding scheme would not be long- term potentiation and -depression. Instead, it would 
+be supported by a short -lived phenomenon, such as GluR -1-dependent short -term potentiation [20], or 
+a transient increase in the presynaptic concentration of calcium ions [41] . Either of these mechanisms 
+represents a neurobiologically plausible way that the brain could temporarily retain information for 
+subsequent translation back into neural activity (i.e., for reinstatement into the focus of attention) by 
+[CONTACT_540680] a retrieval cue [42] . Increasingly, this idea is moving out of the realm of the 
+hypothetical and into the empi[INVESTIGATOR_10477]. For example, evidence for a role for so -called “silent synapses” in 
+the transient storage of information has been reported from recordings in the PFC of monkey s 
+performing a visual working- memory task [63], and short -term synaptic plasticity is a central feature of 
+many neurobiologically oriented computational models of working memory [reviewed in 3] . Further, a 
+transient, network -based mechanism exploiting the principles of matched -filter processing has also 
+been proposed to support the short -term retention of visual information in inferotemporal cortex [64] , 
+one implication being that this general mechanism need not be assumed to be a PFC -specific 
+phenomenon. (Relatedly, the PI’s group has recently published behavioral data consistent with the idea 
+that UMIs may not be held in LTM [30] .)  
+ 
+To be able to fully interpret the results from a study addressing the questions summarized in the 
+previous experiment, however, it will first be important to improve our understanding the 
+neurophysiological correlates of attentional selection, per se. In t he extracranial EEG, the allocation of 
+spatial attention to one region of the visual field is associated with a decrease in alpha- band activity in 
+the cortical region representing the attended location, and an increase in alpha- band activity in the 
+opposit e hemisphere [71]. What’s less clear, however,  is whether alpha -band oscillations are elevated 
+for all cortical regions that aren’t representing the selected region of space, or, alternatively, only in regions that are implicated in the task, because they were potential targets prior to the onset of the 
+attentional cue. This is, formally, equivalent to the distinction between attended memory items, 
+unattended memory items, and trial -irrelevant items [31, 35] . 
+ Specific Aims/Study Objectives:  
+Working memory refers to the active mental retention of information, to its manipulation, and to its use 
+in guiding behavior. Its role in many types of high level cognition [e.g., 1, 18, 28] , as a factor underlying 
+individual differences across a broad spectrum of experimental and “real world” measures [e.g., 13, 23, 
+57], and as a factor in many psychiatric and neurological diseases [e.g., 2, 4, 19], makes it important to 
+many branches of cognitive and clinical neuroscience. Since the mid 1990s, a popular and productive 
+method for studying human working memory has been functional neuroimaging, including functional 
+magnetic resonance imaging (fMRI). R [ADDRESS_704632] was the growing 
+evidence, from human and nonhuman electrophysiological studies, that oscillations in field- level 
+electr ical potentials play a critical functional role in the short -term retention of information in working 
+memory [50, 65] . fMRI is inherently unable to measure such oscillatory activity. The second 
+development was work from the PI’s laboratory indicating that, under some conditions, fMRI signal 
+does not carry stimulus -related information across the delay -period of working me mory tasks [33]. This 
+finding, derived from highly sensitive multivariate pattern analyses (MVPA), challenged the widely held 
+assumption that the short -term retention of information is necessarily based on a rate code (detected by 
+[CONTACT_540681]),  and provides further motivation for investigating the role of 
+neural oscillations in working memory. It also led to Specific Aim 1 of R01 MH095984: To test the 
+hypothesis that delay -period oscillatory activity carries stimulus -specific information. Five experiments 
+were proposed under this Aim and, to date, Experiment 1 has been completed and published [31] , and 
+preliminary results that address Experiment 2 [60]  and Experiment 3 [32]  have been obtained. Each of 
+these studies (to be detailed in the Significance section) addressed a special case of Specific Aim 1, 
+which is the retention of information in working memory when that information is not in the focus of attention (“unattended memory items”, UMI).  
+The present protocol is motivated by [CONTACT_540682]: a) It may truly be the case that UMIs are not represented 
+by [CONTACT_540683]; or, alternatively, b) UMI s are represented by [CONTACT_540684]- grained a scale to be detected with noninvasive imaging methods. Adjudicating between 
+these two possibilities will require an invasive technique that allows for recording neural signals that 
+relate directly to the “elevated activity” that is at the heart of this question. Thus, to continue to make 
+progress on the core question of the neural bases of stimulus representation in working memory, this 
+Revision Application has been prepared to propose pursuing the following “supplement to Aim 1”:  
+The Specific Aim of this project is t o test the hypothesis, with electrocorticography (ECoG) recorded 
+from neurosurgical patients, that unattended memory items (UMIs) are represented in phase angle-
+segregated patterns of activity in the high- gamma band (80- 150 Hz), and that attentional priori tization 
+within working memory is implemented via a mechanism of phase -encoded selection.  
+This novel hypothesis derives from a recent discovery, with ECoG, from patients performing a task that required the simultaneous maintenance of multiple stimulus -response (S -R) mappi[INVESTIGATOR_004]: Different 
+rules were found to be represented in prefrontal cortex (PFC) in patterns of high- gamma activity 
+centered on different phase angles of the underlying theta oscillation, and selection among these rules 
+was implemented by [CONTACT_540685] -band coherence between the PFC 
+(where the rules  were stored) and M1 (where they were implemented) [70] . Here, we are proposing that 
+analogous mechanisms of phase -segregated representation and phase- encoded selection may also 
+govern the attentional prioritization of one from among multiple items held in working memory.  
+ Research Design and Methods:  
+General design considerations: Recruitment.  
+Subjects will consist of patients between the ages of [ADDRESS_704633] undergone surgical implantation of subdural electrode arrays to better 
+define their seizure focus. Inclusion Criteria: All patients with implanted electrode arrays who are willing 
+to participate and able to cooperate and follow research instructions will be recruited. Exclusion criteria 
+include: IQ < 85; impairment of reading, naming, or articulation (determined by [CONTACT_540686]’s medical record);  no cerebral pathology 
+affecting the cortical regions from which recordings are made  (determined by [CONTACT_540687], and/or by [CONTACT_45092][INVESTIGATOR_540651] .  
+ 
+Recruitment will be carried by [CONTACT_978]’s tudy team personnel: Jason Samaha, Qing Yu or Jacqueline 
+Fulvio.  They  will routinely come to Epi[INVESTIGATOR_540652]. Maganti or the Epi[INVESTIGATOR_427785] . Jason Samaha, Qing Yu 
+and Jacqueline Fulvio will have valid access to patient medical records, granted by [CONTACT_344322] . Once 
+identified, a member of the PI’s research team  will approach the patient for participation, explaining the 
+study procedures.  
+ 
+Informed consent will be obtained on the day of the consult during which the patient and physician 
+decide whether the patient will undergo invasive EEG monitoring. A member of the study team will be 
+present at that time to answer any questions the patient may have.  
+ General design considerations:  
+Sub-study A:   
+This task will proceed in two phases: receptive field mappi[INVESTIGATOR_540653]. For both, the 
+display consists of four light gray  circular apertures arranged in a square, one in each quadrant of the 
+screen, and all equidistant from a central fixation point  (a black “x”, with one arm pointing to each 
+aperture); the background is a uniform gray field. For R eceptive Field M appi[INVESTIGATOR_007], the subject will be 
+asked to fixate the fixation point while black and white checkerboards are presented sequentially, for 
+500 mesc each  with a 500 msec inter -stimulus interval, in randomly determined order , in each of the 
+four apertures . Independent of the checkerboards, the fixation symbol will unpredictably change from 
+an “x” to a “+” on average once ever 5 sec (range 4- 6 sec), and subjects will be asked to report each 
+changed with a button press. This will be carried out in three 1- min blocks , each featuring  15 
+presentations in each of the locations during  each block, for a total of 3 min of task. (Length of pauses 
+between blocks will be determined by [CONTACT_102].) Immediately upon the conclusion of the Receptive Field Mappi[INVESTIGATOR_007] (when the patient is ready) t he Attention Task  will be explained to the patient. Each trial 
+begins with two arms of the fixation “x” changing color  for 300 msec , with green indicating the aperture 
+in which it is 75% likely that a target will appear, and white the aperture in  which it is 25% likely to 
+appear. After a variable cue- target interval (CTI) of 800 -1200 msec, t he target, a grating of parallel lines  
+that will either be tilted slightly to the left or to the right of vertical , will appear for 33 msec, followed by a 
+screen asking “L or R tilt?”, to which the subject responds with a left - or right -handed button press. The 
+intertrial interval will last for [ADDRESS_704634] 
+of 48 trials (approximately 2min 24 sec), and w ithin a given block, only two opposing locations of the 
+four possible locations will be cued, the other two positions serving as task -irrelevant locations, at which 
+a target will never appear within that block. The two cued positions will be  changed every block. To 
+maximize sensitivity for data analyses, we’ll hope to acquire a total of 8 blocks worth of data (384 trials), 
+which, without rests, would come to 19 min 12 sec. With rests between blocks, the entire session is 
+expected to take between 25- 30 min. (Note t hat whereas the [ADDRESS_704635] collected a 
+sufficient amount of data within approximately 15 min of data collection. )  
+ 
+Sub-study B: Behavioral task, ECoG recording, and data processing.  
+Experimental procedure. The study consists of two sessions on different days. The generic task design 
+will be as follows : In the first session, each trial begins with a fixation cross and serial presentation of 
+two sample items, followed by a brief delay (Delay1pre- cue), followed by a cue (Cue1) indicating which 
+item will be tested first, followed by [CONTACT_540688] (Delay1post -cue), followed by a memory probe 
+requiring a “same/different” response (Probe1) followed by [CONTACT_540689]2pre- cue, Cue2, Delay2post -cue, and 
+Probe2. The timing will be as follows : Fixation (.5 sec); Sample1 (.5 sec); ISI (.1 sec), Sample2 (.5 sec); 
+Delay1pre- cue (.5  sec), Cue1 (.5 sec), Delay1post -cue (2.5 sec), Probe1 (2 sec); Delay2pre -cue (.5 
+sec); Cue2 (.5 sec); Delay2post -cue (2.5 sec); and Probe2 (2 sec). Thus, total time per trial =  12.6 sec. 
+(Note that the duration of the Delaypost -cue epochs is necessitated by [CONTACT_540690] [31, 45]  
+and EEG data [31]  indicate that it takes between 1 -2 sec for an item to transition from AMI to UMI.) . 
+This timing will allow for the collection  of 96- 106 trials within a span of 30 min, a block that can be 
+interrupted and restarted as needed to suit the comfort of the patient. (Previous experience from ECoG 
+studies performed by [CONTACT_540691] [INVESTIGATOR_540654] “20- min mark” is a conservative estimate of the duration of a testing session that a patient can be 
+expected to t olerate; many patients can tolerate either longer sessions, or multiple sessions separated 
+in time.) Critically, the ECoG study that discovered and characterized the phase- encoded selection 
+mechanism that we will investigate in the present study  [70] made this discovery  in data from four 
+patients, with a design that yielded 40 -50 trials/condition/patient; thus our design, intended to collect a 
+minimum of [ADDRESS_704636] level. 
+(SNR of ECoG signals will be considered further along in this section.)  
+In the second session, e ach trial begins with a fixation cross  and the presentation of one sample item, 
+followed by a delay, followed by a rating test from [ADDRESS_704637] session. The timing will be as follows: Fixation (.5 sec); Sample (.5  sec); Delay 
+(2.5 sec); Test (2 sec). Thus, total time per trial =  5.[ADDRESS_704638] two days postoperatively, and only if the attending physician indicates that the patient is lucid and sufficiently comfortable that s/he could 
+participate in two roughly [ADDRESS_704639] c omfortable. 
+Testing will occur at a time of day of the patient’s choosing, so long as this time conforms with the 
+treatment schedule in the inpatient ward, and it is at minimum of one hour after the time that the subject 
+would routinely wake up in the morning and a minimum of one hour prior to the time that the subject 
+would routinely go to sleep.  
+ We will be prepared to test patients wit h stimuli drawn from any of three  domains: scenes ; faces; and 
+words . Note that, because we have observed the phenomenon of the absence of MVPA evidence for 
+UMIs across many stimulus domains –  direction of motion, phonology, semantics, faces, line 
+orientations – we assume that principles governing the interaction of attent ion with working memory 
+representations will be comparable across these domains. It is important to note that our assumption 
+about where in the brain we will find neural correlates of the short -term retention of stimulus 
+representations in working memory is grounded in the sensorimotor -recruitment model of working 
+memory storage. This model posits that the short -term retention of stimulus information i n working 
+memory is supported by [CONTACT_540692]/perceptual 
+and/or motoric representation of this information in tasks that make no overt mnemonic demands. The 
+growing body of evidence for, and theoretical imp lications of, this model have recently been reviewed 
+by [CONTACT_978] [INVESTIGATOR_2993] [12, 53- 55]. 
+ For each stimulus domain, each sample stimulus will only appear once in the experiment. The stimuli 
+were  determined from previous studies using similar tasks  to yield 75 -90% correct performance in an 
+independent set of healthy young adults. On each trial, two stimuli from the three categories  will be 
+presented, and cuing will be randomly determined, such that on each trial one item serves as the AMI, 
+one as the UMI, and one as the “ irrelevant” category (i.e., the category  that was not presented on that 
+trial).  
+ 
+• Face stimuli will be photographs of highly discriminable faces with different genders and races . The 
+probe stimuli will either be a same face, or a difference face with the same gender and race.  
+• Scene stimuli will be photographs of highly discriminable natural scenes. The probe stimuli will either 
+be a same scene, or a difference scene from the same scene category.  
+• Word stimuli will be words that have homonyms. The probe stimuli will either be the homonym of the 
+sample word, or a different word.  
+ 
+Sub-study C: Behavioral task, ECoG recording, and data processing. 
+The procedure and general design considerations will be similar to those of sub- study B. Experimental 
+procedure: In a first task , subjects will be shown different images i.e., textures, objects, faces, bodies, 
+letters, places, tools, and animals in rapid succession (1 second between images). The subjects will be 
+asked to detect with a button press whether two images repeated consec utively. A block last 
+approximately [ADDRESS_704640] one will present the images as cut outs 
+while the second block will present the images in their context, as well as famous faces and places. In a 
+second task, we will present to the subjects five times 2 minutes of rapid presentation of syllables forming 
+non-words. In one series, the syllables will be presented in a random order. In the second series, the 
+syllables will be presented in a structured order with groups of 3 syllables systematically following each other (although different groups of 3 syllables will still be presented in different orders). After the second 
+session, subjects will be tested for their recall of linked order between different syllables. After this test 
+session, the subjects will be explained that the sequence in fact contains words made of [ADDRESS_704641] will be asked to report perception of the sound and identify a characteristic of the sound (e.g., the 
+perceived location, perceived pi[INVESTIGATOR_23025], etc.). Between each block of trials, the subject will fixate on a cross 
+on the computer screen. Subjects are shown their cumulative accuracy regarding the location of the stimuli after each block. The behavioural  sessions will last [ADDRESS_704642] is feeling.
+ 
+ 
+ 
+ 
+Data collection and processing. Clinical monitoring  of the “invasive EEG” (the common clinical term for 
+ECoG ) is implemented around the clock by [CONTACT_540693][INVESTIGATOR_540655] a 128- channel Natus NicoletOne clinical monitoring system . Signals from the invasive 
+EEG  electrodes are fed simultaneously to two amplifiers, one for the clinical system and one for the 
+research system  via splitter connectors. The research system is a 128 -channel Blackrock Microsystems 
+NeuroPort System. To ensure that the clinical and research systems do not interfere with each other, 
+the two systems typi[INVESTIGATOR_540656] . In the context of EEG,  the “ground” electrode 
+can be any electrode, or set of electrodes, that is part of the recording array, but that is not recording 
+from the region of interest. It is typi[INVESTIGATOR_540657] a portion of the body that is 
+away from the brain, such as the mastoid bone of the skull, or the ear. Additionally, there is a 
+“reference” electrode, which is located on the scalp. In a differential amplifier, t he EEG signal  is the 
+result of a subtraction of the voltage between the active electrodes and the ground, and the voltage 
+between the active electrodes and the reference . This has the effect of removing spurious 
+environmental electrical fluctuations from the EEG. In every patient’s montage of electrodes there will 
+be several candidate channels from which to select the ground (redundancy being an important 
+precaution for clinical EEG), and so selecting a channel to serve as the ground for the experimental 
+recordings will not in any way interfere with the clinical recordings, nor does it require the placement of 
+electrodes that would not otherwise have been used for the clinical procedure. Note that, to get to this 
+point, the patient was determined to have met inclusion and exclusion criteria prior to the surgical 
+procedure, and so no demographic data are linked to the invasive EEG data. Knowledge of the 
+placement of the invasive EEG electrodes in the brain, however, is of critical importance to both the 
+clinician and the researcher, and so information about the precise location in the brain of every invasive 
+EEG electrode is merged into to the EEG data set at an early stage of preprocessing, after the data 
+have been collected.  
+ 
+The research system only exists “downstream” of the splitter connectors, and so doesn’t interfere with 
+the clinical recordings in any way. Furthermore, because the system is safety -rated and FDA -approved 
+for invasive recordings, it does not pose any potential risk to the patient. It will have a very low noise-
+floor in the high -frequency range in which the signals of interest are found, and come s with an SDK that 
+allows the  signals  to be integrated with custom -written research software. In order to capture the high-
+gamma signal  accurately, we will acquire signals at 1200Hz sampling rate , which is considerably higher 
+than that of the typi[INVESTIGATOR_540658]. A built -in low-pass 
+filter automatically prevents aliasing of signals higher than the digitizer can capture.  The raw data will 
+be stored on a computer server dedicated to the PI’s research project, that is housed in the Department 
+of Neurological Surgery. All post -acquisition data processing will be performed in the PI’s laboratory 
+facilities in the Dept. of Psychology and the Dept. of Psychiatry. Prior to transfer to the PI’s lab, all data 
+files will be renamed with a code that does not contain any identifying information (e.g., name, sex, age, 
+date of acquision).  
+ 
+Data analyses and predicted outcomes.  
+ Data and Safety Monitoring Plan:  
+The DSMP that follows (in 5 sections) was submitted to the NIMH on 05/06/16, and the PI [INVESTIGATOR_540659] 06/10/16.  
+ 
+1. Summary of the Protocol  
+The Specific Aim  of this study is to test the hypothesis, with electrocorticography (ECoG) recorded from 
+neurosurgical patients, that unattended memory items (UMIs) are represented in phase angle-
+segregated patterns of activity in the high- gamma band (80- 150 Hz), and that attentional pr ioritization 
+within working memory is implemented via a mechanism of phase -encoded selection.   
+ 
+The Study Design entails the collection of ECoG signals, and of button -press responses (accuracy and 
+reaction time, hereafter “behavioral data”) from patients while they perform a cognitive task. The 
+cognitive task consists of viewing test stimuli being presented on a lapt op computer, and responding to 
+these stimuli via button presses on a response box that is connected to the laptop computer. Details 
+about the cognitive task are presented in the IRB protocol and in the grant proposal. The cognitive task 
+will consist  of 40 trials (i.e., 40 responses) that will last for  a span of [ADDRESS_704643], and of the patient. The cognitive task will 
+be administered in the patient’s room in the in- patient facility of the University of Wisconsin –Madison 
+Video- EEG Telemetry (VET) Unit . Testing will occur at a time of day of the patient’s choosing, so long 
+as this time conforms with the treatment schedule in the inpatient ward, and it is at minimum of one 
+hour after the time that the subject would routinely wake up in the morning and a minimum of one hour 
+prior to the time that the subject would routinely go to sleep.  
+ 
+The Primary Outcome Measures  will be the results of analyses of the ECoG signals in relation to the 
+behavioral data. The outcome measures have relevance to basic -science questions about the neural 
+bases of cognitive functions, and have no relation to or significance for the clinical care of the patients 
+enrolled in the study.  
+ 
+The Sample Size  is four (4) patients. Subjects will consist of patients between the ages of [ADDRESS_704644] undergone surgical implantation of 
+subdural electrode arrays to better define their seizure focus. 
+ 
+Inclusion Criteria :  
+All patients with implanted electrode arrays who are willing to participate and able to cooperate and 
+follow research instructions will be recruited.  
+Exclusion criteria include:  
+ IQ < 85; impairment of reading, naming, or articulation (determined by [CONTACT_540694]’s medical record);  no cerebral pathology affecting the cortical regions 
+from which recordings are made  (determined by [CONTACT_540695], 
+and/or by [CONTACT_45092][INVESTIGATOR_540660] . Additionally, women 
+who are pregnant, or who think that there is a possibility that they may be pregnant, will be excluded from participation in the study. (See “Informed Consent”, below, for more detail.) 
+ 
+2. Roles and Responsibilities  
+PI: [INVESTIGATOR_21177] R. Postle, PhD, Departments of Psychology and Psychiatry, University of Wisconsin–
+Madison Co Investigators:  
+ Rama Maganti, MD, Dept. of Neurology, Director of University of Wisconsin Comprehensive 
+Epi[INVESTIGATOR_540650], PhD, Dept. of Neurology, Director of the Charles Matthew Neuropsychology 
+Section  Yuri Saalmann, PhD, Dept. of Psychology  
+Key Personnel:   
+Jacqueline Fulvio PhD, Research Specialist  
+Jason Samaha, BA, Graduate Student 
+Qing Yu PhD, Postdoctoral Researcher  
+ 
+- Recruitment will be carried by [CONTACT_978]’s lab manager, Jacqueline Fulvio, his postdoctoral researcher, 
+Qing Yu, or his graduate student, Jason Samaha, each of whom  will routinely come to Epi[INVESTIGATOR_540661]. 
+Maganti and [CONTACT_540707]. Yu, Fulvio and Samaha will have valid access to patient medical records, 
+granted by [CONTACT_344322] .  
+- Informed consent will be obtained by [CONTACT_540696], Samaha or Yu.  
+- Data collection (instructing patient on performance of the cognitive task, administering the cognitive 
+task) will be carried out by [CONTACT_540696], Samaha or Yu.  
+- Data analysis will be performed by [CONTACT_540696], Samaha, Yu, Saalmann, and Postle, in consultation with 
+Maganti and Hermann.  
+- There are no COIs within the study team and/or monitoring entities. 
+ 
+3. Trial Safety  
+Invasive monitoring EEG (a.k.a. ECoG ) is indicated clinically when presurgical extracranial EEG and 
+video EEG monitoring are inconclusive with regard to the source of seizure activity. ECoG uses 
+subdural and depth electrodes to record electrical activity directly from the brain and clarify any 
+inconsistencies presented by [CONTACT_540697]. Placement of subdural electrode grids and/or 
+depth electrodes are determined solely on clinical grounds. There is no additional imaging (EEG, MRI, 
+TMS) and/or ECoG electrode placement that are above and beyond the standard of care that the 
+patient would receive if not participating in the research.  
+ 
+Peri- operative considerations related to the clinical procedures (i.e., not related to the research 
+protocol) include:  
+- All patients admitted for invasive monitoring EEG stay in the ICU at the UW Hospi[INVESTIGATOR_307].  
+- Patients receive postoperative CT scans to make sure there is no bleeding.   
+- Patients are on antibiotics to prevent infection 
+- All patients monitored closely by [CONTACT_540698].   
+- All patients are routinely seen by [CONTACT_540699].   
+- Nursing staff and EMU technologists are present 24/[ADDRESS_704645] 
+within the hospi[INVESTIGATOR_307]’s ICU, medical staff will be called immediately, per hospi[INVESTIGATOR_272079], should 
+emergency clinical care be needed. 
+ 
+- There are two types of specific event that would preclude a participant from continuing in the study . 
+The first is the subject’s own volition. P articipation in this study is completely voluntary, and subjects 
+will be able to withdraw from participation at any time, for any reason. It is possible, for example, that 
+the subject might find participation in the task unpleasant, or that the subject might find it mentally 
+fatiguing. The second type of event could be the occurrence of one or more epi[INVESTIGATOR_540662]. 
+If the clinical ECoG information obtained from the seizure(s) is sufficient to inform the decisions 
+regarding resective surgery , then there will be no clinical need for continued invasive monitoring of the 
+patient, and research data will not be collected from that patient.  
+ - There are no  medication- related issues  that pertain to this research project.  
+ 
+- Potential risks  associated with the study are limited to potential loss of privacy, were individually 
+identifiable health information to become available outside the study team. The following mechanisms 
+are in place to protect subject privacy . First, the raw data will be stored on a computer server 
+dedicated to the PI’s research project, that is housed in the Department of Neurological Surgery. This 
+computer server will be on a local area network that is physically located at the Dept. of Neurologica l 
+Surgery, in a secure, restricted area, and that sits behind a password- protected firewall. Second , 
+because all post -acquisition data processing will be performed in the PI’s laboratory facilities in the 
+Dept. of Psychology and the Dept. of Psychiatry, prior to transfer to the PI’s lab, all data files will be renamed with a code that does not contain any identifying information (e.g., name, sex, age, date of 
+acquisition). This code will also be used for all records of the behavioral data that are removed from the 
+Department of Neurological Surgery. Third, t he key linking this identifying information to the coded EEG 
+data will be kept as a computer text file that is stored on the aforementioned computer server dedicated 
+to the PI’s research project, that is housed in the Department of Neurological Surgery.  Fourth , a paper 
+copy of this key will be kept in a file cabinet inside a locked room in the PI’s laboratory at the Dept. of 
+Psychology.  
+ 
+- Informed consent  will be obtained during the consultation visit with the neurologist at which the 
+patient has decided to undergo surgery and the clinician has determined that ECoG will be used for 
+surgical planning. At the end of the clinical consultation, the neurologist will introduce the patient to one 
+of the key personnel (Fulvio, Yu or Samaha) and will then leave the room. If the patient is female, the 
+key personnel will first ask if the patient is, or may possibly be, pregnant (a procedure approved by [CONTACT_1600]’s IRB, in approval of submission ID # 2015 -0282- CP003). For all patients, the key personnel will then 
+explain the rationale for and procedures involved in the research study. It  will be emphasized at this 
+time that the patient’s choice regarding whether or not to participate in the research study will not 
+impact the patient’s clinical care. (Because this conversation will only occur with individuals with an IQ 
+greater than 85, we do not anticipate that the patient will have any difficulty understanding this 
+information.) If the patient expresses an interest in participating in the research study, he or she will be 
+left alone in a private exam room to read over the consent form, and will summon the key personnel  
+after having decided whether or not to sign it. This consenting process will occur at least one day prior 
+to the surgery, the s urgery typi[INVESTIGATOR_540663], often within a few days.    
+ 
+- There are no trial -stoppi[INVESTIGATOR_540664].  
+ 
+- A plan for incidental findings does not apply to this research study, because there is no additional 
+imaging (EEG, MRI, TMS) and/or ECoG  electrode placement that is above and beyond the clinical 
+monitoring that the patient is undergoing. 
+ 
+- The possibility of any conflicts of interest  among the study team will be evaluated by [CONTACT_978] [INVESTIGATOR_540665]. Should a conflict of interest be 
+identified, a management plan will be developed and included as part of a modified IRB protocol.  
+ 
+4. The occurrence of Adverse Events (AEs), Serious Adverse Events (SAEs), and Unanticipated Problems 
+Involving Risks to Subjects or Others  (UPI[INVESTIGATOR_20865]) will be reported to the PI [INVESTIGATOR_217524], by [CONTACT_756], or 
+by [CONTACT_6968], within one day of their detection by a study team member. The PI [INVESTIGATOR_360526] a report in 
+writing to the NIMH PO according to the following schedule: Death related to study participation, 5 
+business days; study -related SAE or UPI[INVESTIGATOR_9961], 10 business days; AE, with the annual progress report. Any 
+IRB actions will be reported with the annual progress report.  
+ 
+5. Data M anagement , Analysis, and Quality Assurance.  
+ 
+- The data sources  are ECoG  signals recorded while patents perform the cognitive task, and the 
+behavioral data associated with task performance.  
+  
+- ECoG s ignals from the i nvasive EEG electrodes are fed simultaneously to two amplifiers, one 
+for the clinical system and one for the research system  via splitter connectors.  
+- To ensure that the clinical and research systems do not interfere with each other, the two 
+systems typi[INVESTIGATOR_540666] .  
+- Because knowledge of the placement of the invasive EEG electrodes in the brain is of critical 
+importance to both the clinician and the researcher, information about the precise location in the 
+brain of every invasive EEG electrode is merged into to the EEG data set at an early stage of 
+preprocessing, after the data have been collected.  
+- Because the amplifier for the research data is “downstream” of the splitter connectors, it 
+doesn’t interfere with the clinical recordings in any way. Furthermore, because the research 
+system is safety -rated and FDA -approved for invasive recordings, and does not pose any 
+potential risk to the patient. It will consist  of eight synchronized 16 -channel amplifier/digitizer 
+units that  have a very low noise- floor in the high- frequency range in which the signals of interest 
+are found, and that  come with an SDK that allows them to be integrated with custom -written 
+research softwar e.  
+- In order to capture the high- gamma signal accurately, we will acquire signals at 1200Hz 
+sampling rate, which is considerably higher than that of the typi[INVESTIGATOR_540667]. A built -in low- pass filter automatically prevents aliasing of 
+signals higher than the digitizer can capture.  
+ 
+- Security measures in place to protect these data sources are described above, in Section 3, 
+Potential Risks. 
+ 
+- Quality assurance measures will include the following:  
+- Careful adherence to inclusion and exclusion criteria for subject recruitment;  
+- Careful adherence to the data collection and analysis procedures described in the research protocol 
+and in the NIH -approved grant application.  
+ 
+Data Analysis. 
+Data will be re -referenced to the average potential of all electrodes (common average reference) to 
+avoid spatial bias due to the choice of intracranial reference electrode [5] , high -pass filtered above 1.0 
+Hz with a symmetrical (phase true) finite impulse response (FIR) filter (~35 dB/octave roll -off). 
+Channels with low signal- to-noise ratio (SNR) will be identified and removed from analyses (e.g., 60 Hz 
+line interference, electromagnetic noise from hospi[INVESTIGATOR_140325], amplifier saturation, and/or poor 
+contact [CONTACT_540700]). Furthermore, a neurologist or epi[INVESTIGATOR_540668], along with any channels ove r sites that were later surgically 
+resected, will be excluded from analyses in order to reduce artifacts.  Statistical Considerations:  
+Sub-study A: The analyses will proceed in two stages. The first will be to  determine the spatial 
+selectivity of each ECoG electrode by [CONTACT_540701], in high- frequency (70 -250 Hz ) 
+broadband power  to each of the four locations stimulated during the Receptive Field Mappi[INVESTIGATOR_91989]. Also 
+of interest will be fluctuations in alpha- band power (8 -13 Hz), and in phase -amplitude coupling (PAC) 
+between alpha- band oscillations in the ECoG signal and high- frequency broadband power.  
+ Data analysis from the Attention Task will focus on electrodes identified in the Receptive Field Mappi[INVESTIGATOR_540669], or a subset, of the four critical locations. For each of these 
+electrodes, values of alpha- band power and PAC will be analyzed as a function of attentional condition: 
+attended (i.e., cued with 75% likelihood); ignored (i.e., cued with 25% likelihood); or irrelevant.  Although 
+a recent study has looked at alpha- band power as a function of attended vs. ignored [14], the proposed 
+study will differ from this is two important ways. First, our critical comparison is between ignored vs. 
+irrelevant; second, all conditions in our task will be within the same informational domain and sensory 
+modality (i.e., visuospatial per cetiion), whereas that of [14] spanned both (i.e., it used switches between 
+an auditory and a motor task.  Because this previous study collected [ADDRESS_704646] [14], we 
+believe that our design, which will collect a total of [ADDRESS_704647].  
+ As indicated earlier in this protocol, the ECoG study that discovered and characterized the phase -
+encoded selection mechanism that originally motivated our decision carry out these ECoG experiments  
+[70] made this discovery  in data from four patients, with a design that yielded 20- 30 
+trials/condition/patient; thus our design, intended to collect a minimum of [ADDRESS_704648] level.  We note, however, that during his 
+sabbatical year (spent in the lab that published [70] ) the PI [INVESTIGATOR_540670] (or 
+more) the final number of subjects desired for an experiment need to be recruited and to participate in 
+it. This is due to several reasons, among them that the ECoG recordings can be contaminated with some m uch noise that the data are not interpretable, or because a patient’s behavioral performance is 
+too poor. Thus, for this sub- study, we plan to enroll 10 patients, with the intent of needing interpretable 
+data from 4.   
+ Sub-study B: The analyses will proceed in two stages. The first will be to identify stimulus -selective 
+electrodes, the second, to test the phase- encoded selection hypothesis. That is, although the 
+overarching motivation for this research  is to test the idea that the mechanism of phase -encoded 
+selection governs the attentional prioritization of one among multiple items held in working memory, we 
+will first need to determine the physiological code, carried by [CONTACT_540702], with which items are 
+represented in working memory.  
+Stage 1. Because we do not know, a priori, the characteristics of the neural code underlying the representation of stimulus information in working memory, Stage [ADDRESS_704649] applying MVPA 
+to the ECoG data, and, second, as a back -up plan, applying ROC -based analyses of electrode 
+selectivity. The rationale for starting with MVPA is twofold: first, the novel insights derived from [31-33, 
+60] were made possible by [CONTACT_540703]; second, MVPA is quite simply more compatible 
+than are univariate methods with the near -universally accepted idea that the brain represents 
+information via distributed patterns of neural activity [e.g., 25, 29, 43] . The first step with MVPA will be 
+to train classifiers to discriminate each stimulus with high- gamma values measured at each electrode in 
+the array during the sample presentation epochs, then to feed data from the delay periods to the sample- trained class ifiers. Although this train- on-sample- test-on-delay approach has been successful 
+for decoding stimulus information from fMRI and EEG datasets [e.g., 17, 31, 33, 34, 36, 37, 58, 60] , it 
+does assume that the neural representation of information being held in working memory will be the 
+same as it is when that information is being perceived and encoded. Therefore, we will also be 
+prepared to employ a hold- one-trial-out cross validation approach, in which MVPA classifiers will be 
+iteratively trained and tested on data from the Delaypost -cue epochs. The duration of an analysis 
+“epoch” and, indeed, the very data that will be used to train MVPA classifiers, cannot be known until we 
+begin wor king with these data. For example, with fMRI, MVPA cross validation can be performed on a 
+TR-by-TR basis, the highest temporal resolution possible with fMRI [e.g., 17, 33, 34, 36, 37, 58] . With 
+EEG, however, MVPA performance varies with the width of the sliding window within which spectral 
+power is computed [31, 60] , presenting a tradeoff of temporal resolution for classifier performance. 
+Furthermore, because ECoG presents such a rich array of measures, we can’t know a priori whether 
+MVPA might be most effective when applied to, e.g., broadband power [39], PAC [66] , an event -related 
+potential (ERP), or some other measure.  
+If we are successful, with MVPA, at decoding the identity of each of the three stimuli in the stimulus set, 
+we will use the top 10% of electrodes contributing to the discrimination of each stimulus for Stage 2 of 
+the analysis. (I.e., we will use the electr odes with the highest loadings in the importance map of the 
+trained classifier corresponding to each stimulus.) Should the MVPA analyses not yield stable results, 
+however, our back -up plan for Stage 1 will be to quantify each electrode’s selectivity for each item in 
+the stimulus set with receiver operating characteristic (ROC) -based analyses. Such analyses have long 
+been used to quantify the selectivity of single neurons recorded with extracellular electrodes, and a very 
+similar approach has been used successfully in studies carried out by [CONTACT_540704]. For example, Parvizi and colleagues 
+[51] indexed the selectivity of electrodes located in mid- fusiform gyrus, for faces vs. non -face stimuli, 
+with a “signal -to-noise ratio” analysis of broadband oscillatory signals in the 40- 160 Hz range. Voytek et 
+al. [70] found that condition- specific fluctuations in the magnitude of PAC indexed selectivity of PFC 
+electrodes for specific S -R mappi[INVESTIGATOR_004]. Therefore, we also expect that oscillatory power in the 40-
+[ADDRESS_704650] that the (pattern of) 
+electrodes representing the AMI will exhibit higher interregional PAC than will the UMI. Because Voytek 
+and colleagues [69]  have shown that PAC in posterior regions tends to be anchored in the alpha band 
+(as contrasted with a bias toward theta -paced PAC in frontal cortex), we expect that the attention-
+related changes in interregional PAC in ITS, mid fusiform gyrus, VO1, and/or  STS, may also be 
+concentrated in the alpha band. Assuming that we do find evidence for a phase- encoded selection 
+mechanism in our working memory task, an important question will be to determine the source of the low-frequency oscillation clocking the predicted selection- related increase in interregional PAC. Our a 
+priori working hypothesis is that this will be the “posterior alpha” that is prominent in EEG electrodes 
+over parietal cortex, strongly associated with visual attention (e.g., [50, 59, 67]), and widely assumed to 
+be generated by [CONTACT_540705].  
+One important point highlighted in our research plan is the  fact that study [70] , on which the data 
+analysis plan of the present protocol  was based, is “limited” to four patients, and to 20- 30 
+trials/condition/patient, it nonetheless featured sufficient power to support, for example, trial -by-trial 
+prediction of behavioral RT, and msec -level resolution of the onset of event -related phase -encoding 
+(i.e., o f phase- encoded selection).  
+ As indicated earlier in this protocol, the ECoG study that discovered and characterized the phase -
+encoded selection mechanism that we will investigate in the present study  [70] made this discovery  in 
+data from four patients, with a design that yielded 20- 30 trials/condition/patient; thus our design, 
+intended to collect a minimum of [ADDRESS_704651] level. As noted above, however, during his sabbatical year (spent in the lab that 
+published [70] ) the PI [INVESTIGATOR_540670] (or more) the final number of subjects 
+desired for an experiment need to be recruited and to participate in it. This is due to several reasons, 
+among them that the ECoG recordings can be contaminated with some much noise that the data are 
+not interpretable, or because a patient’s behavioral performance is too poor. Thus, for this sub-study, 
+we plan to enroll [ADDRESS_704652] Keepi[INVESTIGATOR_007]: C linical monitoring  of ECoG signals  is implemented around the clock using 
+a 192- channel Nihon- Kohden Neurofax monitoring system. Signals from the ECoG electrodes are fed 
+simultaneously to two amplifiers, one for the clinical system and one for the research system via splitter 
+connectors. To ensure that the clinical and research systems do not interfere with each other, the two 
+systems typi[INVESTIGATOR_540671]. Whether research or clinical recording system, the grounding 
+electr ode is chosen to be distant from the predicted epi[INVESTIGATOR_540672]. The  research system will consist  of eight synchronized 16 -channel g.USBamp 
+amplifier/digitizer units (g.tec, Graz, Austria). These were chosen because they are safety -rated and 
+FDA-approved for invasive recordings, they have a very low noise -floor in the high- frequency range in 
+which the signals of interest are found, and they come with an SDK that allows them to be integrated 
+with custom -written research software. In order to capture the high -gamma signal accurately, we 
+acquire signals at 1200Hz sampling rate -considerably higher than that of the typi[INVESTIGATOR_540673]. A built -in low- pass filter aut omatically prevents aliasing of 
+signals higher than the digitizer can capture. The raw data will be stored on a computer server 
+dedicated to the PI’s research project, that is housed in the Department of Neurological Surgery. All 
+post-acquisition data processing will be performed in the PI’s laboratory facilities in the Dept. of 
+Psychology and the Dept. of Psychiatry. Prior to transfer to the PI’s lab, all data files will be renamed 
+with a code that does not contain any identifying information (e.g., name, sex, age, date of acquision).  
+The PI’s lab manager, Jacqueline Fulvio,  will be responsible for the deidentification of these data, and 
+their transfers to computer servers in the PI’s laboratory.  
+ 
+Once the results from data analyses have been published, the data whose analysis went into the 
+publication will be transferred onto tape for archival storage in the PI’s laboratory, and deleted from the 
+computer drives.  
+ Bibliography & References Cited: Allows the reviewers to better understand the context of the study in light of other research available  
+ 
+1. Baddeley, A.D., Working Memory . 1986, London: Oxford University Press.  
+2. Baker, S., S. Hooper, M. Skinner, D. Hatton, J. Schaaf, P. Ornstein, and D. Bailey (2011).  
+Working memory subsystems and task complexity in young boys with Fragile X syndrome.  
+Journal of Intellectual Disability Research, 55:19- 29.  
+3. Barak, O. and M. Tsodyks (2014).  Working models of working memory.  Current Opi[INVESTIGATOR_128531], 25 :20- 24.  PMCID: 3622800  
+4. Barch, D.M., M.G. Berman, R. Engle, J.H. Jones, J. Jonides, A. MacDonald III, D.E. Nee, T.S. 
+Redick, and S.R. Sponheim (2009).  CNTRICS Final Task Selection: Working Memory.  
+Schizophrenia Bulletin, 35:136- 152.  
+5. Boatman- Reich, D., P.J. Franaszczuk, A. Korzeniewska, B. Caffo, E.K. Ritzl, S. Colwell, and N.E. 
+Crone (2010).  Quantifying auditory event- related responses in multichannel human 
+intracranial recordings.  Frontiers in Computational Neuroscience:doi: 
+10.3389/fncom.2010.[ZIP_CODE].  
+6. Botvinick, M.M. and D.C. Plaut (2006).  Short -Term memory for serial order: A recurrent 
+neural network model.  Psychological Review, 113:201- 233.  
+7. Brouwer, G.J. and D.J. Heeger (2009).  Decoding and reconstructing color from responses in human visual cortex.  The Journal of Neuroscience, 29:[ZIP_CODE]- [ZIP_CODE].  
+8. Burgess, N. and G. Hitch (1999).  Memory for serial order: a network model of the phonological loop and its timing.  Psychological Review, 106:551- 581.  
+9. Courtney, S.M., L.G. Ungerleider, K. Keil, and J.V. Haxby (1997).  Transient and sustained activity in a distributed neural system for human working memory.  Nature, 386:608- 611.  
+10. Cowan, N., Attention and Memory: An Integrated Framework . 1995, [LOCATION_001]: Oxford 
+University Press.  
+11. Curtis, C.E. and M. D'Esposito (2003).  Persistent activity in the prefrontal cortex during working memory.  Trends in Cognitive Sciences, 7:415- 423.  
+12. D'Esposito, M. and B.R. Postle (2015).  The cognitive neuroscience of working memory.  
+Annual Review of Psychology, 66:115 -142.  PMCID: PMC4374359  
+13. Daneman, M. and P.A. Carpenter (1980).  Individual differences in working memory and reading.  Journal of Verbal Learning and Verbal Behavior, 19:450- 466.  
+14. de Pesters, A., et al. (2016).  Alpha power indexes task- related networks on large and small 
+scales: A multimodal ECoG study in humans and a non- human primate.  NeuroImage,  
+134:122- 131.  
+15. di Pellegrino, G. and S.P. Wise (1993).  Visuospatial versus visuomotor activity in the premotor and prefrontal cortex of a primate.  Journal of Neuroscience, 13:1227- 1243.  
+16. Dumoulin, S.O., R.C. Bittar, N.J. Kabani, C.L. Baker Jr., G. Le Goualher, B. Pi[INVESTIGATOR_2531], and A.C. Evans (2000).  A new anatomical landmark for reliable identification of human area V5/MT: a quantitative analysis of sulcal patterning.  Cerebral Cortex, 10:454 -463.  
+17. Emrich, S.M., A.C. Riggall, J.J. Larocque, and B.R. Postle (2013).  Distributed patterns of 
+activity in sensory cortex reflect the precision of multiple items maintained in visual short -
+term memory.  The Journal of Neuroscience, 33(15):6516- 23.  PMCID: 3664518  
+18. Engle, R.W., M.J. Kane, and S.W. Tuholski (1999) Individual differences in working memory 
+capacity and what they tell us about controlled attention, general fluid intelligence, and 
+functions of the prefrontal cortex , in Models of Working Memory , A. Miyake and P. Shah, 
+Editors., Cambridge University Press: Cambridge, U.K. pp. 102 -134.  
+19. Engle, R.W., G. Sedek, U. von Hecker, and D. McIntosh, eds. Cognitive Limitations in Aging 
+and Psychopathology: Attention, Working Memory, and Executive Functions . 2005, 
+Cambridge University Press: London.  
+20. Erickson, M.A., L.A. Maramara, and J. Lisman (2010).  A single brief burst induces glur1 -
+dependent associative short -term potentiation: A potential mechanism for short -term 
+memory.  Journal of Cognitive Neuroscience, 22 :2530- 2540.  
+21. Farrell, S. and S. Lewandowsky (2002).  An endogenous distributed model of ordering in 
+serial recall.  Psychonomic Bulletin & Review, 9 :59-79.  
+22. Fuster, J.M. and G.E. Alexander (1971).  Neuron activity related to short -term memory.  
+Science, 173:652- 654.  
+23. Gathercole, S.E. and S.J. Pi[INVESTIGATOR_11721] (2000).  Working memory deficits in children with low 
+achievements in the national curriculum at 7 years of age.  British Journal of Educational 
+Psychology, 70:177- 194.  
+24. Harrison, S.A. and F. Tong (2009).  Decoding reveals the contents of visual working memory in early visual areas.  Nature, 458:632- 635.  
+25. Haynes, J. -D. and G. Rees (2006).  Decoding mental states from brain activity in humans.  
+Nature Reviews Neuroscience, 7 :523- 534.  
+26. Hebb, D.O., The Organization of Behavior: A Neuropsychological Theory . 1949, [LOCATION_001], NY: 
+John Wiley & Sons, Inc.  
+27. Howard, M.W. and M.J. Kahana (2002).  A distributed representation of temporal context.  
+Journal of Mathematical Psychology, 46:269- 299.  
+28. Jonides, J. (1995) Working memory and thinking , in An Invitation to Cognitive Science , E.E. 
+Smith and D.N. Osherson, Editors., MIT Press: Cambridge, MA. pp. 215 -265.  
+29. Kriegeskorte, N., R. Goebel, and P.A. Bandettini (2006).  Information -based functional brain 
+mappi[INVESTIGATOR_007].  Proceedings of the National Academy of Science ([LOCATION_003]), 103:3863- 3868.  
+30. LaRocque, J.J., A.S. Eichenbaum, M.J. Starrett, N.S. Rose, S.M. Emrich, and B.R. Postle (2015).  The short -  and long -term fate of memory items retained outside the focus of attention.  
+Memory & Cognition, 23:453- 468.  PMCID: 25472902  
+31. LaRocque, J.J., J.A. Lewis -Peacock, A. Drysdale, K. Oberauer, and B.R. Postle (2013).  
+Decoding attended information in short- term memory: An EEG study.  Journal of Cognitive 
+Neuroscience, 25:127 -142.  PMCID: 3775605  
+32. LaRocque, J.J., A.C. Riggall, S.M. Emrich, and B.R. Postle (2013).  Active representations of individual items in short -term memory: A matter of attention, not retention.  Annual Meeting 
+of the Society for Neuroscience:507.06.  
+33. Lewis -Peacock, J.A., A. Drysdale, K. Oberauer, and B.R. Postle (2012).  Neural evidence for a 
+distinction between short- term memory and the focus of attention.  Journal of Cognitive 
+Neuroscience, 23:61- 79.  
+34. Lewis -Peacock, J.A., A. Drysdale, and B.R. Postle (2015).  Neural evidence for the flexible 
+control of mental representations.  Cerebral Cortex, 25:3303- 3313.  PMCID: PMC Journal -  In 
+Process  
+35. Lewis -Peacock, J.A., A.T. Drysdale, K. Oberauer, and B.R. Postle (2012).  Neural evidence for 
+a distinction between short -term memory and the focus of attention.  Journal of Cognitive 
+Neuroscience, 24:61- 79.  PMCID: 3222712  
+36. Lewis -Peacock, J.A. and B.R. Postle (2008).  Temporary activation of long -term memory 
+supports working memory.  The Journal of Neuroscience, 28:8765- 8771.  PMCID: 2699183  
+37. Lewis -Peacock, J.A. and B.R. Postle (2012).  Decoding the internal focus of attention.  
+Neuropsychologia, 50:470- 478.  PMCID: 3288445  
+38. Linke, A.C., A. Vicente- Grabovetsky, and R. Cusack (2011).  Stimulus -specific suppression 
+preserves information in auditory short -term memory. Proceedings of the National Academy 
+of Science ([LOCATION_003]), 108 [ZIP_CODE]–[ZIP_CODE].  
+39. Manning, J., J. Jacobs, I. Fried, and M.J. Kahana (2009).  Broadband shifts in LFP power 
+spectra are correlated with single- neuron spi[INVESTIGATOR_540674].  The Journal of Neuroscience, 
+29:[ZIP_CODE]- [ZIP_CODE].  
+40. Miller, E.K. and R. Desimone (1994).  Parallel neuronal mechanisms for short -term memory.  
+Science, 263:520- 522.  
+41. Mongillo, G., O. Barak, and M. Tsodyks (2008).  Synaptic theory of working memory.  Science, 
+319:1543- 1546.  
+42. Nairne, J.S. (2002).  Remembering over the short -term: the case against the standard model.  
+Annual Review of Psychology, 53:53- 81.  
+43. Norman, K.A., S.M. Polyn, G.J. Detre, and J.V. Haxby (2006).  Beyond mind -reading: multi -
+voxel pattern analysis of fMRI data.  Trends in Cognitive Sciences, 10:424- 430.  
+44. Oberauer, K. (2002).  Access to information in working memory: Exploring the focus of 
+attention.  Journal of Experimental Psychology: Learning, Memory, and Cognition, 28:411 -
+421.  
+45. Oberauer, K. (2005).  Control of the contents of working memory —A comparison of two 
+paradigms and two age groups.  Journal of Experimental Psychology: Learning, Memory, & 
+Cognition, 31:714 -728.  
+46. Oberauer, K. (2013).  The focus of attention in working memory --from metaphors to 
+mechanisms.  Frontiers in Human Neuroscience, 7 :doi:10.3389/fnhum.2013.[ZIP_CODE].,  
+47. Oberauer, K., S. Lewandowsky, S. Farrell, C. Jarrold, and M. Greaves (2012).  Modeling working memory: an interference model of complex span.  Psychonomic Bulletin & Review, 
+19:779–819.  
+48. Oberauer, K., A.S. Souza, M. Druey, and M. Gade (2013).  Analogous mechanisms of selection and updating in declarative and procedural working memory: experiments and a computational model.  Cognitive Psychology, 66 :157– 211.  
+49. Olivers, C.N.L., J. Peters, R. Houtkamp, and P.R. Roelfsema (2011).  Different states in visual working memory: when it guides attention and when it does not.  Trends in Cognitive 
+Sciences, 15:327 -334.  
+50. Palva, S. and J.M. Palva (2011).  Functional roles of alpha -band phase synchronization in local 
+and large- scale cortical networks.  Frontiers in Psychology, 2 :doi: 
+10.3389/fpsyg.2011.[ZIP_CODE].  
+51. Parvizi, J., C. Jacques, B.L. Foster, N. Withoft, V. Rangarajan, K.S. Weiner, and K. Grill -Spector 
+(2012).  Electrical stimulation of human fusiform face- selective regions distorts face 
+perception.  The Journal of Neuroscience, 32:[ZIP_CODE]- [ZIP_CODE].  
+52. Peters, J.C., R. Goebel, and P.R. Roelfsema (2009).  Remembered but unused: The accessory 
+items in working memory that do not guide attention.  Journal of Cognitive Neuroscience, 
+21:1081 -1091.  
+53. Postle, B.R. (2015) Activation and information in working memory research , in The Wiley -
+Blackwell Handbook on the Cognitive Neuroscience of Memory , A. Duarte, M. Barense, and 
+D.R. Addis, Editors., Wiley -Blackwell: Oxford, U.K. pp. 21- 43.  
+54. Postle, B.R. (2015).  The cognitive neuroscience of visual short -term memory.  Current 
+Opi[INVESTIGATOR_142411], 1 :40- 46; doi:10.1016/j.cobeha.2014.08.004. 623730  
+55. Postle, B.R. (2015) Neural bases of the short -term retention of visual information , in 
+Mechanisms of Sensory Working Memory: Attention & Performance XXV , P. Jolicoeur, C. 
+LeFebvre, and J. Martinez -Trujillo, Editors., Academic Press: London, U.K. pp. 43 -58.  
+56. Postle, B.R., T.J. Druzgal, and M. D'Esposito (2003).  Seeking the neural substrates of working 
+memory storage.  Cortex, 39:927 -946.  
+57. Ree, M.J. and T.R. Carretta (2002).  g2K.  Human Performance, 15:3- 23.  
+58. Riggall, A.C. and B.R. Postle (2012).  The relationship between working memory storage and elevated activity as measured with funtional magnetic resonance imaging.  The Journal of 
+Neuroscience, 32:[ZIP_CODE]- [ZIP_CODE].  PMCID: 3470886  
+59. Rihs, T.A., C.M. Michel, and G. Thut (2009).  A bias for posterior alpha -band power 
+suppression versus enhancement during shifting versus maintenance of spatial attention.  
+NeuroImage, 44 :190- 199.  
+60. Rose, N., J.J. Larocque, A.C. Riggall, O. Gosseries, and B.R. Postle (2014).  What are the 
+neurophysiological bases of attended and unattended items in short -term memory? An 
+fMRI/EEG/TMS study.  Poster presented at the [ADDRESS_704653], and M.J. Kahana (2008).  A context -based theory of recency 
+and contiguity in free recall.  Psychological Review, 115:893- 912.  
+62. Serences, J.T., E.F. Ester., E.K. Vogel, and E. Awh (2009).  Stimulus -specific delay activity in 
+human primary visual cortex.  Psychological Science, 20:207- 214.  
+63. Stokes, M.G., M. Kusunoki, N. Sigala, H. Nili, D. Gaffan, and J. Duncan (2013).  Dynamic coding 
+for cognitive control in prefrontal cortex.  Neuron, 78(2):364- 75.  
+64. Sugase -Miyamoto, Y., Z. Liu, M.C. Wiener, L.M. Optican, and B.J. Richmond (2008).  Short -
+term memory trace in rapi[INVESTIGATOR_540675].  PLoS 
+Computational Biology, 4 (5):e1000073.  PMCID: 2366068  
+65. Uhlhaas, P.J., G. Pi[CONTACT_31195], B. Lima, L. Melloni, S. Neuenschwander, D. Nikolic, and W. Singer 
+(2009).  Neural synchrony in cortical networks: history, concept and current status.  Frontiers 
+in Integrative Neuroscience, 3 :doi: 10.3389/neuro.07.017.2009.  
+66. van der Meij, R., M.J. Kahana, and E. Maris (2012).  Phase -amplitude coupling in human ECoG 
+is spatially distributed and phase diverse.  The Journal of Neuroscience, 32:111- 123.  
+67. van Dijk, H., J. van der Werf, A. Mazaheri, W.P. Medendorp, and O. Jensen (2010).  Modulations of oscillatory activity with amplitude asymmetry can produce cognitively 
+relevant event -related responses.  Proceedings of the National Academy of Science ([LOCATION_003]), 
+107:900- 905.  
+68. Vogel, E.K. and M.G. Machizawa (2004).  Neural activity predicts individual differences in 
+visual working memory capacity.  Nature, 428:748- 751.  
+69. Voytek, B., R.T. Canolty, A. Shestyuk, N. Crone, J. Parvizi, and R.T. Knight (2010).  Shifts in 
+gamma phase -amplitude coupling frequency from theta to alpha over posterior cortex during 
+visual tasks.  Frontiers in Human Neurosciences 4 :1-9.  
+70. Voytek, B., A.S. Kayser, D. Badre, D. Fegen, E.F. Chang, N.E. Crone, J. Parvizi, R.T. Knight, and 
+M. D'Esposito (2015).  Oscillatory dynamics coordinating human frontal networks in support 
+of goal maintenance.  Nature Neuroscience, 18:1318- 1324.  
+71. Worden, M.S., J.J. Foxe, N. Wang, and G.V. Simpson (2000).  Anticipatory biasing of visuospatial attention indexed by [CONTACT_540706][INVESTIGATOR_540676] -band electroencephalography 
+increases over occipi[INVESTIGATOR_96067].  Journal of Neuroscience, 20:RC:63.  
+ 

@@ -1,0 +1,1435 @@
+ 
+ 
+ 
+Prediction of Long Term Comparative Effectiveness of Once 
+Weekly Semaglutide Versus Standard of Care in a Real World 
+Adult US Population With Type 2 Diabetes - a Randomized 
+Pragmatic Trial (SEPRA trial)  
+ 
+DUPLICATE – SEPRA  
+ 
+October 7, 2022  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 11. RCT Details 
+This section provides a high-level overview of an ongoing RCT that the described real-world evidence study is trying to replicate 
+as closely as possible given the remaining limitations inherent in the healthcare databases. 
+ 
+1.1 Title 
+Long Term Comparative Effectiveness of Once Weekly Semaglutide Versus Standard of Care in a Real World Adult US 
+Population With Type 2 Diabetes - a Randomized Pragmatic Trial (SEPRA trial) -  [STUDY_ID_REMOVED]   
+ 
+1.2 Intended aim(s) 
+To evaluate the effects of semaglutide injection (Ozempic®) on hemoglobin A1c (HbA1c) compared to the standard of care 
+in patients with type 2 diabetes on metformin who are treated in a practice setting. 
+ 
+1.3 Primary endpoint for replication  
+Long-term glycemic control defined as proportion of patients who will achieve an HbA1c of less than 7.0% (53.0 mmol/mol) 
+at 365 days after drug initiation. 
+ 
+1.4 Required power for primary endpoint and noninferiority margin (if applicable) 
+The trial is estimated to enroll 1,387 patients. 
+ 
+1.5 Secondary endpoint for replication and RCT finding 
+Change in HbA1c from baseline at 365 days after drug initiation. 
+Number of hypoglycemic episodes leading to an inpatient admission or emergency room encounter. 
+ 
+1.6 Trial estimate 
+The trial is ongoing and scheduled to finalize the data collection for the primary outcome on June 9, 2023 (estimated 
+primary completion date updated on 28 September 2022). 
+ 
+2. Person responsible for implementation of replication in Aetion 
+Elvira D’Andrea, MD, PhD, implemented the study design in the Aetion Evidence Platform and SAS 9.4. She is not responsible for 
+the validity of the design and analytic choices. All implementation steps are recorded, and the implementation history is archived 
+in the platform. 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 2 
+3. Data Source(s) 
+Optum® Clinformatics® Data Mart Database 
+ 
+4. Study Design Diagram 
+The study design diagram visualizes key aspects of the longitudinal study design for expedited review. 
+ 
+Figure 1. Design Diagram – SEPRA (SEMAGLUTIDE pRCT) TRIAL REPLICATION 
+ 
+
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 3 
+ 
+5. Cohort Identification  
+ 
+Note. The feasibility counts were run on Optum® Clinformatics® version of Dec 23, 2021, for the study period between Dec 6, 2017, 
+to Jun 30, 2021. The primary analysis will be run by implementing the protocol on refreshed data that includes data up to March 
+30, 2022. Therefore, the cohorts for the primary analyses are expected to be larger than those of the initial feasibility analyses 
+presented in this protocol. 
+ 
+5.1 Cohort Summary 
+This study will involve a new user, parallel group, propensity score-matched, retrospective cohort design comparing injectable 
+subcutaneous semaglutide (once weekly) to standard of care, i.e., dipeptidyl peptidase 4 inhibitors (DPP-4i), sodium-glucose 
+cotransporter 2 inhibitors (SGLT2i), other glucagon-like peptide-1 receptor agonists (GLP-1 RA) - except for semaglutide oral and 
+injection -, or 2nd generation sulfonylureas (SU). Treatments in both arms are administered in combination with metformin. 
+Patients will be required to have continuous enrollment during a baseline period of 180 days before initiation of semaglutide or 
+standard of care. The analyses will be restricted to individuals with type 2 diabetes mellitus who are on treatment with 
+metformin, defined as the presence of at least 1 prescription for metformin within 120 days (90 days + 30 days of grace period) 
+before and including cohort entry.  The information for emulating the trial implementation is collected from clinicaltrial.gov, 
+version submitted on September 7, 2022 ( [STUDY_ID_REMOVED] ), and questions to the trialists (responses received on September 26, 
+2022). 
+ 
+5.2 Important steps for cohort formation 
+New use of semaglutide injection (exposure) is defined as no use of the exposure drug within 180 days prior to index date. New 
+use of standard of care (comparator) is defined as no use of the DPP-4i, SGLT2i, GLP-1 RA (except semaglutide) or 2nd generation 
+SU within 180 days prior to index date. Eligible patients are required to be new users with respect to both exposure and 
+comparator groups, defined as no use of both exposure and comparator drugs within at least 180 days prior to index date.  
+ 
+5.2.1 Data Source 
+Optum® Clinformatics® Data Mart Database (CDM): Dec 6, 2017 – Jun 30, 2021  
+The study will be conducted in the de-identified Optum® CDM because this database is linked with national lab test 
+provider chains. Thus, the results for outpatient laboratory tests (including test results of HbA1c) are available for a subset 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 4of approximately 45% beneficiaries. 
+ 
+5.2.2 Eligible cohort entry dates 
+Semaglutide injection, for subcutaneous use, was first approved by FDA to improve glycemic control in adults with type 2 
+diabetes mellitus on Dec 5, 2017 (the approval of the comparator drugs for the same indication was antecedent to 2017). 
+Thus, the initial eligible cohort entry date is the first date after the FDA approval available in the data.  
+Although the primary analysis of the trial used an “intention-to-treat” (ITT) approach - as implied on clinicaltrial.gov and 
+confirmed by the trialists -, we conducted a secondary analysis using an “as-treated” (AT) approach because of the nature 
+of the real-world data (please refer to paragraph 6.3.2 for further details). Based on this decision we created two study 
+cohorts which differ by the last eligible date of cohort entry: 
+- COHORT ITT  - The last eligible date for the cohort that will be analyzed with an “intent to treat” approach is Aug 31, 
+2020, ten months before the end of all available data in Optum® CDM. Since the effects of semaglutide, DPP-4i, 
+SGLT2i, GLP-1 RA (except semaglutide) and 2nd generation SU on the outcome will be estimated between 275 and 455 
+days after cohort entry, this will allow all eligible patients to contribute to the outcome (see Section 6.3). 
+- COHORT AT  - The last eligible date for the cohort that will be analyzed with an “as-treated” approach is Feb 28, 2021, 
+four months before the end of all available data in Optum® CDM. Since the effects of semaglutide, DPP-4i, SGLT2i, 
+GLP-1 RA (except semaglutide) and 2nd generation SU on the outcome will be estimated between 91 and 212 days 
+after cohort entry, this will allow all eligible patients to contribute to the outcome (see Section 6.3). 
+-  
+ 
+5.2.3 Specify inclusion/exclusion criteria for cohort entry and define the index date 
+Inclusion and exclusion criteria were adapted from the trial as closely as possible. Definitions for all inclusion/exclusion 
+are provided in Appendix A and are summarized in the flowcharts below. 
+ 
+Note. Patients who do not start the follow up or are censored between cohort entry and the beginning of the outcome 
+assessment window (i.e., COHORT AT : 0-90 days after cohort entry,  COHORT ITT : 0-274 days after cohort entry) for the 
+reasons reported in the Section 6.3.2 will not contribute to the baseline characteristics of the unmatched or matched 
+cohorts. Further details on the number of patients who are excluded from the study cohort are reported in Section 7. 
+ 
+5.3 Flowchart of the study cohort assembly 
+Aetion link to the cohort creation of semaglutide vs. standard of care 
+COHORT AT: https://bwh-dope.aetion.com/cohorts/details/34150/1673/86399/basics  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 5COHORT ITT: https://bwh-dope.aetion.com/cohorts/details/34149/1673/86398/basics  
+  
+Optum® 
+COHORT AT Optum® 
+COHORT ITT  
+Excluded 
+Patients Remaining 
+Patients Excluded 
+Patients Remaining 
+Patients 
+Patients in dataset  
+81,796,156  81,796,156 
+Patients meeting cohort entry criteria  
+1,391,063  1,267,388 
+Excluded due to insufficient enrollment -185,893 (13%) 1,205,170 -157,177 (12%) 1,110,211 
+Excluded due to prior use of referent -1,006,363 (84%) 198,807 -943,160 (85%) 167,051 
+Excluded due to prior use of exposure -46,187 (23%) 152,620 -35,553 (21%) 131,498 
+Excluded because patient qualified in >1 exposure category -164 (<1%) 152,456 -101 (<1%) 131,397 
+Excluded based on Inclusion Age ≥ 18 -34 (<1%) 152,422 -27 (<1%) 131,370 
+Excluded based on Exclusion for Age missing -10 (<1%) 152,412 -6 (<1%) 131,364 
+Excluded based on Exclusion for Gender unknown/missing -54 (<1%) 152,358 -44 (<1%) 131,320 
+Excluded based on Inclusion Type 2 diabetes mellitus -8,127 (5%) 144,231 -6,929 (5%) 124,391 
+Excluded based on Inclusion Use of Metformin  -49,397 (34%) 94,834 -41,708 (34%) 82,683 
+Excluded based on Inclusion At least 2 HbA1c records within the prior 280 days -48,281 (51%) 46,553 -42,342 (51%) 40,341 
+Excluded based on Inclusion At least 1 HbA1c record ≥ 7% within the prior 90 days -5,365 (12%) 41,188 -4,644 (12%) 35,697 
+Excluded based on Exclusion Use of any other anti-diabetes medications -893 (2%) 40,295 -857 (2%) 34,840 
+Excluded based on Exclusion Any insulin use -2,114 (5%) 38,181 -1,881 (5%) 32,959 
+Excluded based on Exclusion Pregnancy -3 (<1%) 38,178 -2 (<1%) 32,957 
+Excluded based on Exclusion Multiple Endocrine Neoplasia syndrome type 2 -0 (<1%) 38,178 -0 (<1%) 32,957 
+Excluded based on Exclusion CKD stage 5, ESRD, dialysis or renal transplant -6 (<1%) 38,172 -5 (<1%) 32,952 
+Excluded based on Exclusion Nursing home admission -129 (<1%) 38,043 -112 (<1%) 32,840 
+Patients in Exposure Group (Semaglutide injectable)  
+1,083  796 
+Patients in Referent Group (DPP-4i, SGLT2i, GLP-1 RA except semag., 2nd gen SU)  
+36,960  32,044 
+Final cohort  
+38,043  32,840 
+ 
+6. Variables  
+ 
+6.1 Exposure-related variables:  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 6 
+Study drug:  
+New initiation of injectable subcutaneous semaglutide (once weekly), a glucagon-like peptide-1 receptor agonist. New initiation 
+is defined as no use of semaglutide within 180 days before treatment initiation (washout period). New users of semaglutide are 
+not allowed to receive DPP-4i, SGLT2i, GLP-1 RA (except semaglutide) or 2nd generation SU within 180 days prior to treatment 
+initiation. Concurrent use of metformin is required. 
+ 
+Comparator agent: 
+New initiation of “standard of care” (oral). New initiation is defined as no use of DPP-4i, SGLT2i, GLP-1 RA (except semaglutide) 
+or 2nd generation SU within 180 days before treatment initiation (washout period).  New users of DPP-4i, SGLT2i, GLP-1 RA 
+(except semaglutide) or 2nd generation SU are not allowed to receive semaglutide within 180 days prior to treatment initiation. 
+Concurrent use of metformin is required. In the pragmatic trial, “standard of care” was defined as commercially available 
+antidiabetic medication other than semaglutide. In sensitivity analyses we will compare semaglutide with each of the drug 
+classes included in the standard of care separately. 
+ 
+6.2 Preliminary Covariates: 
+ Age 
+ Gender 
+ Combined Comorbidity Index (CCI), measured over the baseline covariate assessment period, defined as 180 days prior to 
+and including index date. 
+ 
+Covariates listed above represent only a small subset of covariates that will ultimately be controlled for in the design and 
+analysis. We use the covariates above only for initial feasibility analyses to judge whether there is likely to be sufficient overlap 
+between treatment groups to proceed with the study. Remaining covariates are defined only after the study has passed the 
+initial feasibility analysis and the initial power assessment and are listed in Table 1 ( Appendix B ).  
+ 
+6.3 Outcome variables and study follow-up:  
+ 
+6.3.1 Outcome variables 
+ 
+Effectiveness outcome variables of interest (definitions provided in Appendix A ): 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 7 
+ Primary outcome:  
+o Proportion of patients who achieve an HbA1c of less than 7.0% (53.0 mmol/mol) at the HbA1c test closest to 365 
+days (allowable range: 275 to 455 days) after treatment initiation (ITT analysis, see paragraph 6.3.2.2). 
+ Secondary outcome :  
+o Proportion of participants who will achieve an HbA1c of less than 7.0% (53.0 mmol/mol) at the HbA1c test closest 
+to 26 weeks (allowable range: 12 weeks to 30 weeks) after treatment initiation (AT analysis, see paragraph 6.3.2.1)  
+o Changes in HbA1c from baseline to 26 weeks (AT analysis, see paragraph 6.3.2.1) or to 52 weeks (ITT analysis, see 
+paragraph 6.3.2.2) after treatment initiation. 
+o Number of hypoglycemic episodes leading to an inpatient admission or emergency room encounter (AT analysis, 
+see paragraph 6.3.2.1) 
+ 
+Note. In the emulation, as well as in the pragmatic trial, the HbA1c at baseline  is defined as the last recorded HbA1c value measured 
+within 91 days before and including cohort entry date. The HbA1c at the end of follow-up  is defined as the recorded HbA1c value 
+closest to 365 days and measured between 275 and 455 days (1 year +/- 90 days) after cohort entry for the ITT analysis and the 
+recorded HbA1c value closest to 182 days (26 weeks) and measured between 91 and 212 days (12-30 weeks) after cohort entry for 
+the AT analysis.  
+ 
+ 
+6.3.2 Primary analysis and study follow-up 
+Based on the information reported on clinicaltrial.gov and the answers received after contacting the SEPRA trialists, we learnt 
+that dedicated study visits are programmed at randomization, at year 1, and at year 2 post-randomization. The study will also 
+capture data collected at the sites during routine diabetic care visits, i.e., office visits and other patient contacts that occur as 
+part of routine clinical practice. Routine diabetic care visits will occur per study physician’s routine clinical practice, therefore the 
+number of visits and data available may differ from site to site and patient to patient. The outcome (HbA1c value) at baseline is 
+defined as an HbA1c value recorded ≤ 90 days prior to randomization visit (week 0). The dedicated visit at 1 year is performed by 
+the trialists at 52 (± 10) weeks) after randomization. If endpoint data at year 1 is missing or outside of 52 ± 10 weeks, then the 
+routine diabetic care data closest to 52 weeks post-randomization ±10 weeks will be used. If no routine diabetic care data are 
+available 52 (± 10) weeks post-randomization, then year 1 endpoint data will be considered missing and imputed, if applicable. 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 8Because of anticipated shorter follow-up time in our data, we will not replicate the results of the trial at 2 years post-
+randomization. 
+Our RWE study will use an ITT analysis that disregards changes in treatment over the course of 1 year follow up as the primary 
+analysis. However, to address potential differences in adherence due to measures or initiatives applied by the researchers of the 
+SEPRA trial (e.g., routine calls, incentives etc.) and the high discontinuation rates in clinical practice, our emulation will include a 
+secondary analysis focused on “as-treated” (AT) analysis which censors patients when they discontinue or switch treatments. In 
+both ITT and AT analyses, the treatment drug will be defined as the index drug assigned on the day of cohort entry. Both 
+analyses will use 1:1 nearest-neighbor matching on the propensity score to adjust for confounding with a matching caliper of 
+0.01. 
+6.3.2.1 ITT analysis 
+In the ITT analysis patients will be followed between 275 and 455 days after cohort entry (1 year +/- 3 months). The outcome 
+assessment window will start 275 days after cohort entry date and will continue until the earliest date of the following events:  
+ Occurrence of the outcome of interest (HbA1c value measured closest to 365 days after cohort entry), 
+ End of continuous registration in the database (disenrollment or end of available data), 
+ End of the study period, 
+ Death, 
+ Nursing home admission. 
+ 
+6.3.2.2 AT analysis 
+In the AT analysis patients will be followed between 91 and 212 days after cohort entry. The outcome assessment window will 
+start 91 days after cohort entry date and will continue until the earliest date of the following events:  
+ Occurrence of the outcome of interest (HbA1c value closest to 182 days, measured between 91 and 212 days after cohort 
+entry), 
+ End of continuous registration in the database (disenrollment or end of available data), 
+ End of the study period, 
+ Death, 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 9 Index drug discontinuation (discontinuation is defined by a gap of more than 60 days following the last days supply, episodes 
+of treatment less than 60 days apart are bridged and treated as continuously exposed during the gap), 
+ Crossover or addition of drug from the other treatment group, 
+ Switching between the drug classes of the comparator group (i.e., DPP-4i to SGLT2i or SU or GLP-1 RA except semaglutide, 
+SGLT2i to DPP-4i or SU or GLP-1 RA except semaglutide, SU to DPP-4i or SGLT2i or GLP-1 RA except semaglutide) 
+ Addition of any other anti-diabetic medications, 
+ Nursing home admission (nursing home admissions are considered a censoring event because the data sources utilized 
+typically provide little to no data on drug utilization after admission. For the same reason we will exclude nursing home 
+residents from our cohorts). 
+ 
+6.3.2.3 ITT analysis 
+In the ITT analysis patients will be followed between 275 and 455 days after cohort entry (1 year +/- 3 months). The outcome 
+assessment window will start 275 days after cohort entry date and will continue until the earliest date of the following events:  
+ Occurrence of the outcome of interest (HbA1c value measured closest to 365 days after cohort entry), 
+ End of continuous registration in the database (disenrollment or end of available data), 
+ End of the study period, 
+ Death, 
+ Nursing home admission. 
+ 
+6.3.3 Sensitivity analyses:  
+ Evaluate primary and secondary outcomes using fine stratification on the propensity score instead of 1:1 matching to 
+boost power 
+ Evaluate primary and secondary outcomes using each of the 3 drug classes included in the standard of care definition as 
+the comparator (DPP-4i, SGLT2i, GLP-1 RA except semaglutide, or 2nd generation SU) to better understand class effects 
+ 
+Note. To decrease the incidence of missing values of the outcome, we required that the eligible patients had at least 2 HbA1c 
+measurements recorded within 280 days before and including cohort entry. This increases the probability of including in the final 
+cohort patients who are adherent to a routinely HbA1c testing and, consequently, will decrease the frequency of missing values of the 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 10 outcome. After assessing the diagnostics for different techniques to handle missing values (i.e., complete case analysis, multiple 
+imputation, and IPCW) of the outcome, we decided to apply the multiple imputation technique to the primary analysis and test the 
+robustness of the results with a sensitivity analysis applying the complete case analysis technique.  
+ 
+7. Initial Feasibility Analysis  
+Aetion report name: 
+For semaglutide vs. standard of care 
+Optum® CDM [AT analysis: proper outcome assessed within 91-212 days after cohort entry]: https://bwh-
+dope.aetion.com/projects/details/1673/rwrs/86429  
+Optum® CDM [ITT analysis: proper outcome assessed within 275-455 days after cohort entry]: https://bwh-
+dope.aetion.com/projects/details/1673/rwrs/86428  
+Optum® CDM [AT analysis: dummy outcome assessed within 91-212 days after cohort entry]: https://bwh-
+dope.aetion.com/projects/details/1673/rwrs/86431  
+Optum® CDM [ITT analysis: dummy outcome assessed within 275-455 days after cohort entry]: https://bwh-
+dope.aetion.com/projects/details/1673/rwrs/86430  
+ 
+Date conducted: 09/29/2022 
+ 
+Complete Aetion feasibility analysis using age and CCI as the only covariates and the primary outcome (Section 6.3). No measures of 
+association will be computed nor will mean and standard deviation of the HbA1c outcome stratified by treatment group. 
+ 
+ Report patient characteristics by treatment group 
+For semaglutide vs. standard of care  
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 11   BEFORE 1:1 PS MATCHING on AGE, CCI 
+ Optum CDM – COHORT AT Optum CDM – COHORT ITT 
+ Standard of care- 
+Comparator Semaglutide inj. - 
+Exposure Difference Standard of care- 
+Comparator Semaglutide inj. - 
+Exposure Difference 
+Number of patients * 18,706 682 - (-, -) 26,541 635 - (-, -) 
+Age    
+   
+...mean (sd) 65.27 (11.34) 56.87 (11.91) 8.40 (7.49, 9.31) 64.75 (11.55) 56.80 (11.95) 7.94 (7.00, 8.89) 
+...median [IQR] 67.00 [59.00, 73.00] 57.00 [48.00, 66.00] - (-, -) 67.00 [58.00, 73.00] 57.00 [48.00, 67.00] - (-, -) 
+Gender       
+...M = MALE; n (%) 10,545 (56.4%) 331 (48.5%) 7.8% (3.9%, 11.7%) 14,310 (53.9%) 302 (47.6%) 6.4% (2.3%, 10.4%) 
+...F = FEMALE; n (%) 8,161 (43.6%) 351 (51.5%) -7.8% (-11.7%, -3.9%) 12,231 (46.1%) 333 (52.4%) -6.4% (-10.4%, -2.3%) 
+Combined Comorbidity Score - 
+CCI (180 days)    
+   
+...mean (sd) 1.31 (1.97) 1.11 (1.68) 0.20 (0.07, 0.33) 1.37 (1.98) 1.06 (1.60) 0.31 (0.19, 0.44) 
+...median [IQR] 1.00 [0.00, 2.00] 1.00 [0.00, 2.00] - (-, -) 1.00 [0.00, 2.00] 1.00 [0.00, 2.00] - (-, -) 
+* Patients who were censored between cohort entry and the beginning of the outcome assessment window are excluded and will not contribute to the 
+unmatched or matched cohorts. 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 12  
+  AFTER 1:1 PS MATCHING on AGE, CCI 
+ Optum CDM – COHORT AT Optum CDM – COHORT ITT 
+ Standard of care- 
+Comparator** Semaglutide inj. - 
+Exposure Difference Standard of care- 
+Comparator** Semaglutide inj. - 
+Exposure Difference 
+Number of patients * 682 682 - (-, -) 635 635 - (-, -) 
+Age    
+   
+...mean (sd) 56.87 (11.91) 56.87 (11.91) 0.00 (-1.26, 1.26) 56.80 (11.95) 56.80 (11.95) 0.00 (-1.32, 1.32) 
+...median [IQR] 57.00 [48.00, 66.00] 57.00 [48.00, 66.00] - (-, -) 57.00 [48.00, 67.00] 57.00 [48.00, 67.00] - (-, -) 
+Gender       
+...M = MALE; n (%) 402 (58.9%) 331 (48.5%) 10.4% (5.0%, 15.8%) 366 (57.6%) 302 (47.6%) 10.1% (4.5%, 15.7%) 
+...F = FEMALE; n (%) 280 (41.1%) 351 (51.5%) -10.4% (-15.8%, -
+5.0%) 269 (42.4%) 333 (52.4%) -10.1% (-15.7%, -
+4.5%) 
+Combined Comorbidity Score - 
+CCI (180 days)    
+   
+...mean (sd) 0.97 (1.72) 1.11 (1.68) -0.14 (-0.32, 0.04) 1.02 (1.81) 1.06 (1.60) -0.05 (-0.23, 0.14) 
+...median [IQR] 1.00 [0.00, 2.00] 1.00 [0.00, 2.00] - (-, -) 1.00 [0.00, 2.00] 1.00 [0.00, 2.00] - (-, -) 
+* Patients who were censored between cohort entry and the beginning of the outcome assessment window are excluded and will not contribute to the 
+unmatched or matched cohorts. 
+ 
+ 
+ Report summary parameters of study population FEASIBILITY- FOR STUDY OUTCOME  
+For semaglutide vs. standard of care 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 13  Optum CDM 
+COHORT AT Optum CDM 
+COHORT ITT 
+Number of patients in full cohort 38,043 32,840 
+Number of patients who did not begin follow-up * 18,655 5,664 
+Number of patients in the analytic cohort 19,388 27,176 
+Number of events** 4,203 6,481 
+Number of patients with an HbA1c value recorded during follow-up 9,671 16,965 
+Number of patients in group (before matching): Standard of care 18,706 26,541 
+Number of patients in group (before matching): Semaglutide 682 635 
+Number of patients in group (after matching): Standard of care 682 635 
+Number of patients in group (after matching): Semaglutide 682 635 
+Risk per 1,000 patients 216.78 238.48 
+* Patients who were censored between cohort entry and the beginning of the outcome assessment window. 
+** Patients with HbA1c < 7% recorded between 91-212 days after cohort entry in the cohort AT and between 275-455 days after cohort entry in the cohort ITT.  
+ 
+ 
+ 
+ Report median follow-up time by treatment group 
+For semaglutide vs. standard of care 
+ 
+ Median Follow-Up Time (Days) [IQR] – AT analysis* Median Follow-Up Time (Days) [IQR] – ITT analysis* 
+Patient Group Optum CDM – COHORT AT Optum CDM - COHORT ITT 
+Overall Patient Population 70 [37, 121] 165 [66, 180] 
+Referent 86 [51, 121] 180 [82, 180] 
+Exposure 58 [28, 116] 122 [54, 180] 
+* The median follow-up time is defined as the median number of days that a patient is followed within the outcome assessment window, which begins 91 days 
+and ends 212 days after the cohort entry date for the COHORT AT, and it begins 275 days and ends 455 days after the cohort entry date for the COHORT ITT 
+ 
+ 
+ Report reasons for censoring in the overall study population after matching 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 14 For semaglutide vs. standard of care – COHORT AT 
+  
+Overall 
+N = 1,364 Standard care (DPP-4i, 
+SGLT-2ra, SU) 
+N = 682 Semaglutide 
+N = 682 
+Dummy outcome* 0 (0.0%) 0 (0.0%) 0 (0.0%) 
+Death 1 (0.1%) 1 (0.1%) 0 (0.0%) 
+Maximum follow-up time 667 (48.9%) 349 (51.2%) 318 (46.6%) 
+End of patient data 58 (4.3%) 22 (3.2%) 36 (5.3%) 
+End of patient enrollment 96 (7.0%) 48 (7.0%) 48 (7.0%) 
+Augmentation or Switching to other antidiabetic drugs; switching 
+between comparator classes; nursing home admission; 
+discontinuation of metformin, semaglutide or standard of care 
+(with 60 days of grace period) 542 (39.7%) 262 (38.4%) 280 (41.1%) 
+* dummy outcome of a 90-day gap in database enrollment 
+ 
+For semaglutide vs. standard of care – COHORT ITT 
+  
+Overall 
+N = 1,270 Standard care (DPP-4i, 
+SGLT-2ra, SU) 
+N = 635 Semaglutide 
+N = 635 
+Dummy outcome* 0 (0.0%) 0 (0.0%) 0 (0.0%) 
+Death 6 (0.5%) 4 (0.6%) 2 (0.3%) 
+Maximum follow-up time 861 (67.8%) 472 (74.3%) 389 (61.3%) 
+End of patient data 267 (21.0%) 80 (12.6%) 187 (29.4%) 
+End of patient enrollment 123 (9.7%) 73 (11.5%) 50 (7.9%) 
+Nursing home admission 13 (1.0%) 6 (0.9%) 7 (1.1%) 
+* dummy outcome of a 90-day gap in database enrollment 
+ 
+ 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 15  Report the overall risk of the primary outcome 
+For semaglutide vs. standard of care   
+  
+COHORT AT 
+Semaglutide vs Standard of care COHORT ITT 
+Semaglutide vs Standard of care 
+Outcome 216.78 238.48 
+ 
+ 
+8. Initial Power Assessment 
+ 
+Analysis report name: 
+For semaglutide vs. standard of care 
+Optum® CDM [AT analysis – outcome window within 91-212 days after cohort entry]: https://bwh-
+dope.aetion.com/projects/details/1673/rwrs/86429  
+Optum® CDM [ITT analysis – outcome window within 275-455 days after cohort entry]:  https://bwh-
+dope.aetion.com/projects/details/1673/rwrs/86428  
+ 
+ 
+Without the SEPRA protocol, we were unable to ascertain the assumptions of the trial’s power calculation. However, we assume that 
+our power is similar to the power in the trial because we anticipate that the refreshed Optum Clinformatics data on which we will run 
+our primary analysis will result in cohorts that exceed the target number of participants in each arm of the trial (see Table below).” 
+ 
+ N. patients in the trial  N. of patients in the matched 
+COHORT AT*  N. of patients in the matched 
+COHORT ITT*  
+All patients  1,378 1,364 1,270 
+Reference  689 682 635 
+Exposed 689 682 635 
+* The feasibility counts were run on Optum® Clinformatics® version released on Dec 23, 2021, for the study period of Dec 6, 2017, to Jun 30, 2021. 
+The primary analysis will be run by implementing the protocol on refreshed data that includes data up to March 30, 2022. Therefore, the cohorts 
+for the primary analyses are expected to be larger than those of the initial feasibility analyses presented in this protocol.  
+ 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 16 Date conducted: 09/29/2022 
+ 
+In order to complete the initial power analysis, the dummy outcome of a 90-day gap in database enrollment will be used. This 
+outcome is used to ensure that no information on the comparative risks of the outcomes of interest are available at this stage. 
+Complete a 1:1 PS-matched comparative analysis using this outcome. PS should include only 3 covariates: age, gender and combined 
+comorbidity index.  
+ 
+ Stop analyses until feasibility and power are reviewed by primary investigators and FDA. Reviewers evaluate the results of the 
+analyses described above in Sections 7 and 8, including numbers of patients, patient characteristics, follow-up time, and reasons 
+for censoring by treatment group, as well as overall rates of outcomes and study power. These parameters are re-evaluated and 
+reported in the subsequent sections, after incorporating feedback and refining the protocol.  
+ 
+Reviewed by PI: Shirley Wang Date reviewed:  
+Reviewed by FDA: Ken Quinto Date reviewed:  
+Reasons for stopping 
+analysis (if required):  
+ 
+ 
+9. Balance Assessment 
+For semaglutide vs. standard of care 
+Optum® CDM [AT analysis – outcome window within 91-212 days after cohort entry]: https://bwh-
+dope.aetion.com/projects/details/1673/rwrs/86487 
+Optum® CDM [ITT analysis – outcome window within 275-455 days after cohort entry]: https://bwh-
+dope.aetion.com/projects/details/1673/rwrs/86486  
+ 
+Date conducted:  
+ 
+After review of initial feasibility and power analyses, complete creation of the remaining covariates from Section 6.2. Again, using the 
+dummy outcome of a 90-day gap in database enrollment, complete a 1:1 PS-matched analysis. The PS should include the complete 
+list of covariates. In the feasibility analysis, calendar time is included in the PS model as continuous variable, using quarters as unit of 
+measurement, while in the primary analysis the unit measurement for calendar time will be days. 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 17  Provide plot of PS distributions stratified by treatment group. 
+ 
+Note- Please refer to Appendix B .  
+ 
+ 
+ Report covariate balance after matching. 
+ 
+Note- For Table 1, please refer to Appendix B .  
+ 
+ Report follow-up time by treatment group after matching. 
+For semaglutide vs. standard of care 
+ 
+ Median Follow-Up Time (Days) [IQR] – AT analysis* Median Follow-Up Time (Days) [IQR] – ITT analysis* 
+Patient Group Optum CDM – COHORT AT Optum CDM - COHORT ITT 
+Overall Patient Population 80 [42, 121] 129 [60, 180] 
+Referent 81 [43, 121] 136 [66, 180] 
+Exposure 58 [28, 116] 122 [54, 180] 
+* The median follow-up time is defined as the median number of days that a patient is followed within the outcome assessment window, which begins 91 days 
+and ends 212 days after the cohort entry date for the COHORT AT, and it begins 275 days and ends 455 days after the cohort entry date for the COHORT ITT 
+ 
+ Report reasons for censoring by treatment group after matching. 
+For semaglutide vs. standard of care – COHORT AT 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 18  
+Overall 
+N = 1,352 Standard care (DPP-4i, 
+SGLT-2ra, SU) 
+N = 678 Semaglutide 
+N = 678 
+Dummy outcome* 0 (0.0%) 0 (0.0%) 0 (0.0%) 
+Death 1 (0.1%) 1 (0.1%) 0 (0.0%) 
+Maximum follow-up time 667 (49.2%) 351 (51.8%) 316 (46.6%) 
+End of patient data 75 (5.5%) 39 (5.8%) 36 (5.3%) 
+End of patient enrollment 95 (7.0%) 48 (7.1%) 47 (6.9%) 
+Augmentation or Switching to other antidiabetic drugs; switching 
+between comparator classes; nursing home admission; 
+discontinuation of metformin, semaglutide or standard of care 
+(with 60 days of grace period) 518 (38.2%) 239 (35.3%) 279 (41.2%) 
+* dummy outcome of a 90-day gap in database enrollment 
+ 
+For semaglutide vs. standard of care – COHORT ITT  
+Overall 
+N = 1266 Standard care (DPP-4i, 
+SGLT-2ra, SU) 
+N = 633 Semaglutide 
+N = 633 
+Dummy outcome* 0 (0.0%) 0 (0.0%) 0 (0.0%) 
+Death 5 (0.4%) 3 (0.5%) 2 (0.3%) 
+Maximum follow-up time 743 (58.7%) 355 (56.1%) 388 (61.3%) 
+End of patient data 406 (32.1%) 219 (34.6%) 187 (29.5%) 
+End of patient enrollment 102 (8.1%) 53 (8.4%) 49 (7.7%) 
+Nursing home admission 10 (0.8%) 3 (0.5%) 7 (1.1%) 
+* dummy outcome of a 90-day gap in database enrollment 
+ 
+ 
+ 
+ 
+ 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 19  Report the overall risk of the primary outcome 
+  
+COHORT AT 
+Semaglutide vs Standard of care COHORT ITT 
+Semaglutide vs Standard of care 
+Outcome 214.57 232.60 
+ 
+ 
+10. Final Power Assessment 
+ 
+Date conducted: 9/30/2022 
+ 
+Analysis report name: 
+For semaglutide vs. standard of care 
+Optum® CDM [AT analysis – outcome window within 91-212 days after cohort entry]: https://bwh-
+dope.aetion.com/projects/details/1673/rwrs/86433  
+Optum® CDM [ITT analysis – outcome window within 275-455 days after cohort entry]: https://bwh-
+dope.aetion.com/projects/details/1673/rwrs/86432  
+ 
+Without the SEPRA protocol, we were unable to ascertain the assumptions of the trial’s power calculation. However, we assume that 
+our power is similar to the power in the trial because we anticipate that the refreshed Optum Clinformatics data on which we will run 
+our primary analysis will result in cohorts that exceed the target number of participants in each arm of the trial (see Table below).” 
+ 
+ N. patients in the trial  N. of patients in the matched 
+COHORT AT*  N. of patients in the matched 
+COHORT ITT*  
+All patients  1,378 1,352 1,266 
+Reference  689 678 633 
+Exposed 689 678 633 
+* The feasibility counts were run on Optum® Clinformatics® version released on Dec 23, 2021, for the study period of Dec 6, 2017, to Jun 30, 2021. 
+The primary analysis will be run by implementing the protocol on refreshed data that includes data up to March 30, 2022. Therefore, the cohorts 
+for the primary analyses are expected to be larger than those of the initial feasibility analyses presented in this protocol.  
+ 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 20  Stop analyses until balance and final power assessment are reviewed by primary investigators, FDA, and assigned members of 
+advisory board.  
+Reviewed by PI:  Date reviewed:  
+Reviewed by FDA:  Date reviewed:  
+Reasons for stopping 
+analysis (if required):  
+ 
+11. Study Confidence and Concerns 
+ 
+Deadline for voting on study confidence and listing concerns: 
+Date votes and concerns are summarized:    
+ 
+ If final feasibility and power analyses are reviewed and approved, proceed to the remaining protocol steps. 
+ All study team and advisory board members that review this protocol should at this stage provide their level of confidence for the 
+success of the RWD study in the Google Form . This form also provides space for reviewers to list any concerns that they feel may 
+contribute to a failure to replicate the findings of the RCT, including differences in study populations, poor measurement of study 
+variables, or residual confounding. All responses will be kept confidential and individual-level results will only be shared with the 
+individual respondent. 
+ After the deadline for voting has passed, provide the distribution of responses and summarize all concerns here. 
+ 
+12. Register study protocol on clinicalTrials.gov 
+ 
+Date conducted:    
+ 
+ Register the study on clinicalTrials.gov  and upload this document. 
+ 
+ 
+ 
+ 
+ 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 21 13. Comparative Analyses 
+ 
+Aetion report name: 
+Date conducted:    
+ 
+13.1 For primary analysis:  
+ 
+13.2 For sensitivity analyses:  
+ 
+ 
+14.  Requested Results  
+ 
+14.1 Table 1: Baseline characteristics before and after adjustment 
+ 
+Variable 
+ Before adjustment After adjustment 
+Referent Exposure Std. diff. Referent Exposure Std. diff. 
+Number of patients   -   - 
+Age categories       
+…       
+ 
+ 
+14.2 Table 2: Follow-up time 
+ 
+Patient Group Median Follow-Up Time (Days) [IQR] 
+Overall Patient Population  
+Referent  
+Exposure  
+ 
+ 
+ 
+ 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making 
+ 
+ 22  
+14.3 Table 3: Censoring events 
+ 
+ Overall Referent Exposure 
+Outcome    
+Death    
+Start of an additional exposure    
+End of index exposure    
+Specified date reached    
+End of patient data    
+End of patient enrollment    
+…    
+ 
+14.4 Table 4: Results from primary analyses. 
+ 
+Analysis No. exposed events No. referent events Exposed rate Referent rate HR (95% CI) 
+Crude      
+Analysis 1      
+Analysis 2      
+...      
+HR, Hazard Ratio; CI, Confidence Interval. 
+ 
+14.5 Table 5: Results from secondary analyses. 
+ 
+15. References 
+Study Registry ID: [REMOVED]. Long Term Comparative Effectiveness of Once Weekly Semaglutide Versus Standard of 
+Care in a Real World Adult US Population With Type 2 Diabetes - a Randomized Pragmatic Trial. Available at: 
+https://clinicaltrials.gov/ct2/show/[STUDY_ID_REMOVED]  Accessed 9/28/2022. 
+# References/Rationale Color coding
+Please see the following Google Drive for further details or any missing information: 
+https://drive.google.com/drive/folders/1WD618wrywYjEaXzfLTcuK-VCcnb6b-gV?usp=sharingCriteria
+ICD-10 codes are not listed in this document because of excel cell size limitations and excessive number of ICD-
+10 codes. Full ICD-10 code lists will be available in the above Google Drive Folder (link above). ICD-9 to ICD-10 
+code conversions were completed using a SAS macro that implements forward/ backward mapping based on 
+the CMS ICD-9 to ICD-10 mapping:
+ https://www.nber.org/data/icd9-icd-10-cm-and-pcs-crosswalk-general-equivalence-mapping.htmlAdequate mapping in claims
+Intermediate mapping in claims
+Arm Intervention/TreatmentPoor mapping or cannot be measured in claims 
+Exposure: Semaglutide  injection (Ozempic®) in addition to metformin monotherapy 
+as treatment intensification in the course of routine clinical practice. 
+Reference : Standard of care  (oral or injectable) in addition to metformin 
+monotherapy  as treatment intensification in the course of routine clinical practice. 
+Standard of care is defined as commercially available oral or injectable antidiabetic 
+medication other than semaglutide.
+Aim: To evaluate the effects of semaglutide injection (Ozempic®) compared to other 
+treatments on HbA1c reduction in patients with type 2 diabetes in a practice 
+setting.Exposure: new use of Semaglutide injection (washout 180 days) in combination with 
+metformin 
+NDC Generic Name:
+SEMAGLUTIDE [route of administration: injection, subcutaneous]
+NDC Brand name:
+OZEMPIC
+Reference : new use of GLP-1ra (except for semaglutide oral or inj.), DPP-4i, SGLT-2i, 2nd 
+generation sulfonylureas (washout 180 days) 
+NDC Name:
+please refer to "Reference name list"Cannot be measured in claims but not important for the analysis
+Not reported in the list of eligibility criteria but included in the emulation for specific reasons
+Hemoglobin A1c (HbA1c) less than 7.0% (53 mmol/mol) (yes/no)
+[Time frame 1 year]Measured as recorded HbA1c value [binary: <7% or ≥7%] between 275 and 455 days and 
+closest to 365 days after drug initiation (ITT ANALYSIS) or closest to 182 days between 91 
+and 212 days after cohort initiation (AT ANALYSIS): 
+Loinc codes:
+17855-8, 17856-6, 41995-2, 43150-2, 4548-4, 4549-2, 55454-3, 71875-9, 74246-0The Loinc codes have been selected based on an evaluation of all available Loinc codes for HbA1c in the claims
+#Informed consent obtained before any study-related activities. Study-related 
+activities are any procedures that are carried out as part of the study.N/A
+1Male or female, age 18 years or older at the time of signing informed consent. Female and male, ≥ 18 years at the time of drug initiation
+2Type 2 diabetes mellitus diagnosisMeasured from the time of enrollment to the day of drug initiation in inpatient (any 
+position) or outpatient (any position) settings:
+Type 2 diabetes:
+ICD 9 diagnosis: 250.00, 250.02, 250.10, 250.12, 250.20, 250.22, 250.30, 250.32, 250.40, 
+250.42, 250.50, 250.52, 250.60, 250.62, 250.70, 250.72, 250.80, 250.82, 250.90, 250.92
+ICD 10 diagnosis: E11.x
+3Treatment with either 1 or 2 oral antidiabetic medications.3.1 At least  one prescription of metformin within 90 days (+30 days) before cohort entry in 
+both treatment groups
+Generic name:
+Metformin Hcl
+(see also exclusion criterion #1)
+4Recorded HbAlc value within last 90 days prior to randomization.4.1 Selection of all patients with 2 measurements of HbA1c values (between 2-20%) 
+recorded within 280 days prior to and including cohort entry:
+Loinc codes:
+17855-8, 17856-6, 41995-2, 43150-2, 4548-4, 4549-2, 55454-3, 71875-9, 74246-0 
+4.2 Selection of patients with at least one measurement of HbA1c ≥7% value recorded 
+within the last 91 days prior to and including cohort entry:
+Loinc codes:
+17855-8, 17856-6, 41995-2, 43150-2, 4548-4, 4549-2, 55454-3, 71875-9, 74246-0 
+#Further intensification with an additional antidiabetic oral or injectable medication 
+is indicated to achieve glycemic target at the discretion of the study physician 
+according to approved labellingN/A
+#Current member of a commercial or Medicare health plan with pharmacy benefits.Optum (The database has been selected due to the information on the laboratory 
+results/values of HbA1c)SEPRA Trial
+Trial details - clinicaltrial.gov [STUDY_ID_REMOVED]
+EXPOSURE FROM Trial 
+EXCLUSION CRITERIAPRIMARY OUTCOME
+INCLUSION CRITERIA
+#Previous randomization in this study N/A
+#Participation in another clinical trial N/A
+1Treatment with any medication for the indication of diabetes other than metformin 
+in a period of 30 days before the day of eligibility assessment.Measured 180 days prior to and including the day of drug initiation inpatient (any position), 
+outpatient (any position):
+The list of drugs (generic names) is reported under "Other anti-diabetic treatments (other 
+than insulin)" in the tab "Other anti-diabetic treatments"NB. Washout period extended to 180 days consistently with the washout period of the ther 2nd line thrapy 
+agents (comparator group: standard of care) and insulin
+2Treatment with insulin (Temporary/emergency use of any type of insulin is allowed, 
+as is prior insulin treatment for gestational diabetes)Measured 180 days prior to and including day of drug initiation:
+NDC Generic Name:
+The definition of insulin (generic names) is reported under "Insulin" in the tab "Other anti-
+diabetic treatments"NB. Washout period extended to 180 days to exclude prevalent users (i.e. patients on active insulin therapy) 
+from the cohort.
+3Female who is pregnant, breastfeeding or intends to become pregnantMeasured 180 days prior to and including day of drug initiation in any diagnosis position and 
+inpatient or outpatient care setting:
+Please refer to "Pregnancy definition"
+4Contraindications to semaglutide according to the Food and Drug Administration 
+approved labelMeasured 1825 days prior to and including day of drug initiation in any diagnosis position 
+and inpatient or outpatient care setting:
+Contraindications to Semaglutide as reported on the FDA approved label:
+Personal or family history of medullary thyroid carcinoma:
+n/a
+Multiple Endocrine Neoplasia syndrome type 2:
+ICD-9 diagnosis: 258.02, 258.03
+ICD-10 diagnosis: E31.22, E31.23
+5CKD stage 5, End-stage renal disease, dialysis or renal transplant Measured 180 days prior to and including day of drug initiation in any diagnosis position and 
+inpatient or outpatient care setting:
+CKD stage 5, End-stage renal disease, dialysis or renal transplant:
+ICD-9 diagnosis: 585.5, 585.6, 996.81, V42.0, V45.1x, V56.xx
+ICD-9 procedure: 39.95, 54.98, 55.6x
+ICD-10 diagnosis: N18.5, N18.6, R88.0, T82.41, T82.42, T82.49, T85.611, T85.621, T85.631, 
+T86.1x, Y84.1, Z48.22, Z49.xx, Z91.15, Z94.0, Z99.2
+ICD-10 procedure: 0TY00Zx, 0TY10Zx, 3E1M39Z, 5A1Dx0Z
+CPT: 50360, 50365, 90920, 90921, 90924, 90925, 90935, 90937, 90939, 90940, 90945, 90947, 
+90957, 90958, 90959, 90960, 90961, 90962, 90965, 90966, 90969, 90970, 90989, 90993, 
+90999, 90997, 99512, 99559, 99512, G0257, G0314, G0315, G0316, G0317, G0318, G0319, 
+G0322, G0323, G0326, G0327, S9335, S9339N.B. criterion added to address potential residual confounding for the comparisons Semaglutide vs SGLT2i as a 
+control reference 
+N.B.2 Metformin - required by the study design in both exposure and comparator group - is contraindicated in 
+patients with chronic kidney disease (CKD) with a glomerular filtration rate (GFR) < 30 mL/min.
+6Nursing home admissionMeasured 180 days prior to and including day of drug initiation in any diagnosis position and 
+inpatient or outpatient care setting:
+Place of Service Code:
+31 = SKILLED NURSING FACILITY
+32 = NURSING FACILITY
+33 = CUSTODIAL CARE FACILITY
+34 = HOSPICE
+Discharge Status Code is any of:
+03 = DISCHARGED/TRANSFERRED TO SKILLED NURSING FACILITY (SNF)WITH MEDICARE
+64 = DISCHARGED/TRANSFERRED TO A NURSING FACILITY CERT UND MEDICARE
+83 = RESERVED FOR NATIONAL ASSIGNMENT
+92 = RESERVED FOR NATIONAL ASSIGNMENTN.B. criterion added to address in real-world data potential outcome misclassification bias due to the lack of 
+available information in most patients admitted in nursing home facilities
+OPTUM 
+Semaglutide vs standard of care  
+ 
+Optum® 
+COHORT AT Optum® 
+COHORT ITT 
+ Less Excluded 
+Patients Less Excluded 
+Patients 
+Patients in dataset  
+ 
+Patients meeting cohort entry criteria  
+ 
+Excluded due to insufficient enrollment -185,893 (13%) -157,177 (12%) 
+Excluded due to prior use of referent -1,006,363 (84%) -943,160 (85%) 
+Excluded due to prior use of exposure -46,187 (23%) -35,553 (21%) 
+Excluded because patient qualified in >1 exposure category -164 (<1%) -101 (<1%) 
+Excluded based on Inclusion Age ≥ 18 -34 (<1%) -27 (<1%) 
+Excluded based on Exclusion for Age missing -10 (<1%) -6 (<1%) 
+Excluded based on Exclusion for Gender unknown/missing -54 (<1%) -44 (<1%) 
+Excluded based on Inclusion Type 2 diabetes mellitus -8,127 (5%) -6,929 (5%) 
+Excluded based on Inclusion Use of Metformin  -49,397 (34%) -41,708 (34%) 
+Excluded based on Inclusion At least 2 HbA1c records within the prior 
+280 days -48,281 (51%) -42,342 (51%) 
+Excluded based on Inclusion At least 1 HbA1c record ≥ 7% within the 
+prior 90 days -5,365 (12%) -4,644 (12%) 
+Excluded based on Exclusion Use of any other anti-diabetes medications -893 (2%) -857 (2%) 
+Excluded based on Exclusion Any insulin use -2,114 (5%) -1,881 (5%) 
+Excluded based on Exclusion Pregnancy -3 (<1%) -2 (<1%) 
+Excluded based on Exclusion Multiple Endocrine Neoplasia syndrome 
+type 2 -0 (<1%) -0 (<1%) 
+Excluded based on Exclusion CKD stage 5, ESRD, dialysis or renal 
+transplant -6 (<1%) -5 (<1%) 
+Excluded based on Exclusion Nursing home admission -129 (<1%) -112 (<1%) 
+Final cohort  
+ 
+ 
+Information from Trial  
+ 
+Trial Name : SEPRA  
+https://clinicaltrials.gov/ct2/show/[STUDY_ID_REMOVED]  
+ 
+NCT: [STUDY_ID_REMOVED] 
+ 
+Therapeutic Area : Diabetes  
+ 
+RCT Category :  
+ 
+Sponsors and Collaborators :  
+Novo Nordisk A/S 
+ 
+Year: July 13, 2018 – June 9, 2023 
+ 
+Measurable Endpoint : The primary outcome is Hemoglobin A1c (HbA1c) less than 7.0% (53 
+mmol/mol).  
+ 
+Active Comparators :  
+Semaglutide 
+Standard of care  
+ 
+Population : Patients with type 2 diabetes who have previously been treated with metformin. 
+ 
+No. of Patients : 1,387 
+ 
+Power:  Without the SEPRA protocol, we were unable to ascertain the assumptions of the trial’s 
+power calculation.  
+ 
+Reference - NDC Generic name:
+DPP-4 Inhibitors 
+ALOGLIPTIN BENZOATE
+DAPAGLIFLOZIN PROPANEDIOL/SAXAGLIPTIN HCL
+ERTUGLIFLOZIN PIDOLATE/SITAGLIPTIN PHOSPHATE
+SAXAGLIPTIN HCL/METFORMIN HCL
+LINAGLIPTIN
+ALOGLIPTIN BENZOATE/METFORMIN HCL
+ALOGLIPTIN BENZOATE/PIOGLITAZONE HCL
+EMPAGLIFLOZIN/LINAGLIPTIN
+SAXAGLIPTIN HCL
+SITAGLIPTIN PHOSPHATE/METFORMIN HCL
+SITAGLIPTIN PHOSPHATE/SIMVASTATIN
+SITAGLIPTIN PHOSPHATE
+SGLT-2 Inhibitors
+CANAGLIFLOZIN
+CANAGLIFLOZIN/METFORMIN HCL
+DAPAGLIFLOZIN PROPANEDIOL/SAXAGLIPTIN HCL
+ERTUGLIFLOZIN PIDOLATE
+ERTUGLIFLOZIN PIDOLATE/SITAGLIPTIN PHOSPHATE
+DAPAGLIFLOZIN PROPANEDIOL/METFORMIN HCL
+EMPAGLIFLOZIN/LINAGLIPTIN
+EMPAGLIFLOZIN
+DAPAGLIFLOZIN PROPANEDIOL
+ERTUGLIFLOZIN PIDOLATE/METFORMIN HCL
+EMPAGLIFLOZIN/METFORMIN HCL
+2nd Generation Sus
+GLIPIZIDE/METFORMIN HCL
+GLYBURIDE,MICRONIZED
+GLYBURIDE/METFORMIN HCL
+GLYBURIDE
+GLIPIZIDE
+GLIMEPIRIDE
+PIOGLITAZONE HCL/GLIMEPIRIDE
+ROSIGLITAZONE MALEATE/GLIMEPIRIDE
+GLP-1 RA (excluding semaglutide injection/subcutaneous)
+ALBIGLUTIDE
+DULAGLUTIDE
+EXENATIDE
+EXENATIDE MICROSPHERES
+INSULIN GLARGINE,HUMAN RECOMBINANT ANALOG/LIXISENATIDE
+LIXISENATIDE
+LIRAGLUTIDE
+INSULIN DEGLUDEC/LIRAGLUTIDE
+SEMAGLUTIDE (route of adminitration: oral)
+1. Delivery Codes
+Procedure Codes Description
+CPT-4 codes
+1960 Anesthesia for vaginal delivery only
+1961 Anesthesia for cesarean delivery only
+1962 Anesthesia for urgent hysterectomy following delivery
+1963 Anesthesia for cesarean hysterectomy w/o any labor analgesia/anesthesia care
+1967 Neuraxial labor analgesia/anesthesia, planned vaginal delivery
+1968 Anesthesia for cesarean delivery following neuraxial labor analgesia/anesthesia
+1969 Anes for cesarean hysterectomy following neuraxial labor analgesia/anesthesia
+59050 Fetal monitoring in labor, physician w/written report; s & i
+59051 Fetal monitoring in labor, physician w/written report; intrepretation only
+59400 ROUTINE TOTAL OBSTETRIC CARE including antepartum care, vaginal delivery (with or without episiotomy, and/or forceps) and postpartum care.
+59409 Vaginal delivery only (w/wo episiotomy &/or forceps)
+59410 Vaginal delivery only (w/wo episiotomy &/or forceps); w/postpartum care
+59412 Ext cephalic version, w/wo tocolysis
+59414 Delivery of placenta (separate  proc)
+59430 Postpartum care only
+59510 Routine obstetric care w/antepartum care, cesarean delivery, & postpartum care
+59514 Cesarean delivery only
+59515 Cesarean delivery only; w/postpartum care
+59525 Subtotal/total hysterectomy after cesarean delivery
+59610 Routine obstetric care including antepartum care, vaginal delivery (with or without episiotomy, and/or forceps) and postpartum care, after previous cesarean delivery
+59612 Vaginal delivery only, after previous cesarean delivery (with or without episiotomy and/or forceps)
+59614 Vaginal delivery only, previous cesarean delivery w/postpartum care
+59618 Routine obstetric care including antepartum care, cesarean delivery, and postpartum care, following attempted vaginal delivery after previous cesarean delivery
+59620 Cesarean delivery after failed vaginal delivery, previous cesarean delivery
+59622 Cesarean delivery after failed vaginal delivery, previous cesarean delivery; w/postpartum care
+99436 Attendance at delivery, at request of delivering physician, & stabilization of newborn
+99440 Newborn resuscitation
+ICD-9 procedure codes
+72.xx Forceps, vacuum, & breech
+73.xx Other including manual delivery
+74xx Cesarean section
+75.4x Manual removal of placenta
+ICD-10 procedure codes
+Normal Delivery
+10E0XZZ Delivery of Products of Conception, External Approach
+C-Section
+ 10D00Z0 Extraction of Products of Conception, High, Open Approach
+ 10D00Z1 Extraction of Products of Conception, Low, Open Approach
+ 10D00Z2 Extraction of Products of Conception, Extraperitoneal, Open Approach
+Other assisted delivery (forceps, vacuum, internal version, other)
+10D07Z3 Extraction of Products of Conception, Low Forceps, Via Natural or Artificial Opening
+10D07Z4 Extraction of Products of Conception, Mid Forceps, Via Natural or Artificial Opening
+10D07Z5 Extraction of Products of Conception, High Forceps, Via Natural or Artificial Opening
+10D07Z6 Extraction of Products of Conception, Vacuum, Via Natural or Artificial Opening
+10D07Z7 Extraction of Products of Conception, Internal Version, Via Natural or Artificial Opening
+10D07Z8 Extraction of Products of Conception, Other, Via Natural or Artificial Opening
+2.      Identify preterm births
+a.       Codes that have a specific gestational age mentioned
+ICD-9 code Definition
+765.21 Less than 24 completed weeks of gestation
+765.22 24 completed weeks of gestation
+765.23 25-26 completed weeks of gestation
+765.24 27-28 completed weeks of gestation
+765.25 29-30 completed weeks of gestation
+765.26 31-32 completed weeks of gestation
+765.27 33-34 completed weeks of gestation
+765.28 35-36 completed weeks of gestation
+ICD-10 code Definition
+P07.21 Extreme immaturity of newborn, gestational age less than 23 completed weeks
+P07.22 Extreme immaturity of newborn, gestational age 23 completed weeks
+P07.23 Extreme immaturity of newborn, gestational age 24 completed weeks
+P07.24 Extreme immaturity of newborn, gestational age 25 completed weeks
+P07.25 Extreme immaturity of newborn, gestational age 26 completed weeks
+P07.26 Extreme immaturity of newborn, gestational age 27 completed weeks
+P07.31 Preterm newborn, gestational age 28 completed weeks
+P07.32 Preterm newborn, gestational age 29 completed weeks
+P07.33 Preterm newborn, gestational age 30 completed weeks
+P07.34 Preterm newborn, gestational age 31 completed weeks
+P07.35 Preterm newborn, gestational age 32 completed weeks
+P07.36 Preterm newborn, gestational age 33 completed weeks
+P07.37 Preterm newborn, gestational age 34 completed weeks
+P07.38 Preterm newborn, gestational age 35 completed weeks
+P07.39 Preterm newborn, gestational age 36 completed weeks
+ICD-9 code Definition
+765 Disorders relating to extreme immaturity of infant
+765.00 Extreme immaturity, unspecified [weight]
+765.01 Extreme immaturity, less than 500 grams
+765.02 Extreme immaturity, 500-749 gramsPREGNANCY DEFINITION
+b.       Codes indicating extreme prematurity
+765.03 Extreme immaturity, 750-999 grams
+765.04 Extreme immaturity, 1,000-1,249 grams
+765.05 Extreme immaturity, 1,250-1,499 grams
+765.06 Extreme immaturity, 1,500-1,749 grams
+765.07 Extreme immaturity, 1,750-1,999 grams
+765.08 Extreme immaturity, 2,000-2,499 grams
+ICD-10 code Definition
+P07.2 Extreme immaturity of newborn
+P07.20 Extreme immaturity of newborn, unspecified weeks of gestation
+O42.012 Preterm premature rupture of membranes, onset of labor within 24 hours of rupture, second trimester
+ICD-9 code Definition
+765.1 Disorders relating to other preterm infants
+765.10 Other preterm infants, unspecified [weight]
+765.11 Other preterm infants, less than 500 grams
+765.12 Other preterm infants, 500-749 grams
+765.13 Other preterm infants, 750-999 grams
+765.14 Other preterm infants, 1,000-1,249 grams
+765.15 Other preterm infants, 1,250-1,499 grams
+765.16 Other preterm infants, 1,500-1,749 grams
+765.17 Other preterm infants, 1,750-1,999 grams
+765.18 Other preterm infants, 2,000-2,499 grams
+644.21 Onset of delivery before 37 completed weeks of gestation
+ICD-10 code Definition
+P05.01 Disorders of newborn related to slow fetal growth and fetal malnutrition less than 500 grams
+P05.02 Disorders of newborn related to slow fetal growth and fetal malnutrition, 500-749 grams
+P05.03 Disorders of newborn related to slow fetal growth and fetal malnutrition, 750-999 grams
+P05.04 Disorders of newborn related to slow fetal growth and fetal malnutrition, 1000-1249 grams
+P05.05 Disorders of newborn related to slow fetal growth and fetal malnutrition, 1250-1499 grams
+P05.06 Disorders of newborn related to slow fetal growth and fetal malnutrition, 1500-1749 grams
+P05.11 Newborn small for gestational age, less than 500 grams
+P05.12 Newborn small for gestational age, 500-749 grams
+P05.13 Newborn small for gestational age, 750-999 grams
+P05.14 Newborn small for gestational age, 1000-1249 grams
+P05.15 Newborn small for gestational age, 1250-1499 grams
+P05.16 Newborn small for gestational age, 1500-1749 grams
+P07.01 Extremely low birth weight newborn, less than 500 grams
+P07.02 Extremely low birth weight newborn, 500-749 grams
+P07.03 Extremely low birth weight newborn, 750-999 grams
+P07.14 Other low birth weight newborn,1000-1249 grams
+P07.15 Other low birth weight newborn,1250-1499 grams
+P07.16 Other low birth weight newborn,1500-1749 grams
+P07.3 Preterm [premature] newborn [other]
+P07.30 Preterm newborn, unspecified weeks of gestation
+O60.1 Preterm labor with preterm delivery
+O42.01  Preterm premature rupture of membranes, onset of labor within 24 hours of rupture
+O42.019  Preterm premature rupture of membranes, onset of labor within 24 hours of rupture, unspecified trimester
+O42.013 Preterm premature rupture of membranes, onset of labor within 24 hours of rupture, third trimester
+Other Codes Description
+ICD-9
+644.2 early onset of delivery
+644.2 Early onset of delivery, unspecified as to episode of care or not applicable
+644.21 Early onset of delivery, delivered, with or without mention of antepartum condition
+776.6 anemia of prematurity
+362.2 retinopathy of prematurity, unspecified
+362.22 retinopathy of prematurity, stage 0
+362.23 retinopathy of prematurity, stage 1
+362.24 retinopathy of prematurity, stage 2
+362.25 retinopathy of prematurity, stage 3
+362.26 retinopathy of prematurity, stage 4
+362.27 retinopathy of prematurity, stage 5
+CPT
+49491 repair, initial inguinal hernia, preterm infant (younger than 37 weeks gestation at birth), performed from birth up to 50 weeks postconception
+49492 repair, initial inguinal hernia, preterm infant (younger than 37 weeks gestation at birth), performed from birth up to 50 weeks postconception
+67229 treatment of extensive or progressive retinopathy, 1 or more sessions; preterm infant (less than 37 weeks gestation at birth), performed from
+836 anesthesia for hernia repairs in the lower abdomen not otherwise specified, infants younger than 37 weeks gestational age at birth
+ICD-10 code Definition
+H35.1 Retinopathy of prematurity
+P61.2 Anemia of prematurity
+2.      Multiple Gestation (V for ICD-9 and Z for ICD-10 codes excluded)
+ICD9 Code Description
+V27.2 Twins both liveborn
+V27.3 Mother with twins one liveborn and one stillborn 
+V27.4 Mother with twins both stillborn
+V27.5 Other multiple birth, all liveborn
+V27.6 Other multiple birth, some liveborn
+V31 Twin, mate liveborn
+V32 Twin birth mate stillborn 
+V33 Twin, unspecified
+V34 Other multiple, mates all liveborn
+V35 Other multiple birth (three or more) mates all stillborn 
+V36 Other multiple, mates live- and stillborn
+V37 Other multiple, unspecifiedc.       Other preterm codes
+651 Multiple gestation
+651.0x Twin Pregnancy
+651.1x Triplet pregnancy
+651.2x Quadruplet pregnancy
+651.3x Twin pregnancy with fetal loss and retention of one fetus 
+651.4x Triplet pregnancy with fetal loss and retention of one or more fetus(es)
+651.5x Quadruplet pregnancy with fetal loss and retention of one or more fetus(es)
+651.6x Other multiple pregnancy with fetal loss and retention of one or more fetus(es)
+651.7x Multiple gestation following (elective) fetal reduction
+651.8x Other specified multiple gestation
+651.9x Unspecified multiple gestation
+652.6x Multiple gestation with malpresentation of one fetus or more
+660.5x Locked Twins
+662.3x Delayed delivery of second twin, triplet, etc.
+761.5x Multiple pregnancy
+ICD10 Code Description
+ O30xxxx Multiple gestation
+ O31xxxx Complications specific to multiple gestation
+ O43.02 Fetus-to-fetus placental transfusion syndrome
+ O63.2 Delayed delivery of second twin, triplet, etc.
+ Z37.2 Twins, both liveborn
+ Z37.3 Twins, one liveborn and one stillborn
+ Z37.5 Other multiple births, all liveborn
+ Z37.50 Multiple births, unspecified, all liveborn
+ Z37.51 Triplets, all liveborn
+ Z37.52 Quadruplets, all liveborn
+ Z37.53 Quintuplets, all liveborn
+ Z37.54 Sextuplets, all liveborn
+ Z37.59 Other multiple births, all liveborn
+ Z37.6 Other multiple births, some liveborn
+ Z37.60 Multiple births, unspecified, some liveborn
+ Z37.61 Triplets, some liveborn
+ Z37.62 Quadruplets, some liveborn
+ Z37.63 Quintuplets, some liveborn
+ Z37.64 Sextuplets, some liveborn
+ Z37.69 Other multiple births, some liveborn
+ Z38.3 Twin liveborn infant, born in hospital
+ Z38.30 Twin liveborn infant, delivered vaginally
+ Z38.31 Twin liveborn infant, delivered by cesarean
+ Z38.4 Twin liveborn infant, born outside hospital
+ Z38.5 Twin liveborn infant, unspecified as to place of birth
+ Z38.6 Other multiple liveborn infant, born in hospital
+ Z38.61 Triplet liveborn infant, delivered vaginally
+ Z38.62 Triplet liveborn infant, delivered by cesarean
+ Z38.63 Quadruplet liveborn infant, delivered vaginally
+ Z38.64 Quadruplet liveborn infant, delivered by cesarean
+ Z38.65 Quintuplet liveborn infant, delivered vaginally
+ Z38.66 Quintuplet liveborn infant, delivered by cesarean
+ Z38.68 Other multiple liveborn infant, delivered vaginally
+ Z38.69 Other multiple liveborn infant, delivered by cesarean
+ Z38.7 Other multiple liveborn infant, born outside hospital
+ Z38.8 Other multiple liveborn infant, unspecified as to place of birth
+ P01.5 Newborn affected by multiple pregnancy
+3.      Post-Term Codes
+ICD-9 code Definition
+645 Late Pregnancy
+645.1 Post term pregnancy
+645.1 Post term pregnancy, unspecified as to episode of care or not applicable
+645.11 Post term pregnancy, delivered, with or without mention of antepartum condition
+645.13 Post term pregnancy, antepartum condition or complication
+645.2 Prolonged pregnancy
+645.2 Prolonged pregnancy, unspecified as to episode of care or not applicable
+645.21 Prolonged pregnancy, delivered, with or without mention of antepartum condition
+645.23 Prolonged pregnancy, antepartum condition or complication
+766.2 Late infant, not 'heavy-for-dates'
+766.21 Post-term infant
+766.22 Prolonged gestation of infant
+ICD-10 code Definition
+ O48 Late pregnancy
+ O48.0 Post-term pregnancy
+ O48.1 Prolonged pregnancy
+ P08.2 Late newborn, not heavy for gestational age
+ P08.21 Post-term newborn
+ P08.22 Prolonged gestation of newborn
+ Z3A.41 41 weeks gestation of pregnancy
+ Z3A.42 42 weeks gestation of pregnancy
+ Z3A.49 Greater than 42 weeks gestation of pregnancy
+4.      Codes indicating a prenatal care visit:
+ICD-9: V220x, V221x, V23xx
+ICD-10: O0900, O0901, O0902, O0903, O0910, O0911, O0912, O0913, O09211, O09212, O09213, O09219, O09291, O09292, O09293, O09299, O0930, O0931, O0932, O0933, O0940, O0941, O0942, 
+O0943, O09511, O09512, O09513, O09519, O09521, O09522, O09523, O09529, O09611, O09612, O09613, O09619, O09621, O09622, O09623, O09629, O0970, O0971, O0972, O0973, O09811, O09812, 
+O09813, O09819, O09821, O09822, O09823, O09829, O09891, O09892, O09893, O09899, O0990, O0991, O0992, O0993, O09A0, O09A1, O09A2, O09A3, O3680X0, O3680X1, O3680X2, O3680X3, 
+O3680X4, O3680X5, O3680X9, Z3400, Z3401, Z3402, Z3403, Z3480, Z3481, Z3482, Z3483, Z3490, Z3491, Z3492, Z3493, Z362
+Other anti-diabetic treatments (other than insulin)
+1st Generation SUs
+ACETOHEXAMIDE
+TOLBUTAMIDE
+TOLAZAMIDE
+CHLORPROPAMIDE
+AGIs
+ACARBOSE
+MIGLITOL
+Glitazones
+ALOGLIPTIN BENZOATE/PIOGLITAZONE HCL
+PIOGLITAZONE HCL
+PIOGLITAZONE HCL/GLIMEPIRIDE
+PIOGLITAZONE HCL/METFORMIN HCL
+ROSIGLITAZONE MALEATE
+ROSIGLITAZONE MALEATE/GLIMEPIRIDE
+ROSIGLITAZONE MALEATE/METFORMIN HCL
+Meglitinides
+NATEGLINIDE
+REPAGLINIDE
+REPAGLINIDE/METFORMIN HCL
+GLP-1 RA
+SEMAGLUTIDE (admin.: oral)
+Insulin
+Bolus insulins
+INSULIN GLULISINE
+INSULIN REGULAR,BEEF-PORK
+INSULIN ASPART (NIACINAMIDE)
+INSULIN REGULAR, HUMAN/INSULIN RELEASE UNIT
+INSULIN REGULAR,HUMAN BUFFERED
+INSULIN REGULAR, HUMAN/INSULIN RELEASE UNIT/CHAMBER/INHALER
+INSULIN ASPART
+INSULIN ASPART PROTAMINE HUMAN/INSULIN ASPART
+INSULIN LISPRO PROTAMINE AND INSULIN LISPRO
+INSULIN LISPRO
+INSULIN REGULAR, HUMAN
+Intermediate and Long-acting Insulins
+INSULIN DEGLUDEC
+INSULIN DETEMIR
+INSULIN DEGLUDEC/LIRAGLUTIDE
+INSULIN NPH HUMAN AND INSULIN REGULAR HUMAN SEMI-SYNTHETIC
+INSULIN NPH HUMAN SEMI-SYNTHETIC
+INSULIN ISOPHANE NPH,BF-PK
+INSULIN GLARGINE,HUMAN RECOMBINANT ANALOG/LIXISENATIDE
+INSULIN GLARGINE,HUMAN RECOMBINANT ANALOG
+INSULIN NPH HUMAN ISOPHANE
+INSULIN NPH HUMAN ISOPHANE/INSULIN REGULAR, HUMAN
+Baseline characteristics Standard care (DPP-4i, 
+SGLT-2i, SU)Semaglutide St. Diff Standard care (DPP-4i, 
+SGLT-2i, SU)Semaglutide St. Diff Standard care (DPP-4i, 
+SGLT-2i, SU)Semaglutide St. Diff Standard care (DPP-4i, 
+SGLT-2i, SU)Semaglutide St. Diff
+Number of patients 26,541 635 633 633 18,706 682 678 678
+Demographics
+Year of Cohort Entry Date
+...5 Dec 2017 - 31 Dec 2018; n (%) 10,159 (38.3%) 8 (1.3%) 1.05 36 (5.7%) 8 (1.3%) 0.00 6,145 (32.9%) 5 (0.7%) 0.95 4 (0.6%) 5 (0.7%) 0.00
+...1 Jan 2019 - 31 Dec 2019; n (%) 9,948 (37.5%) 307 (48.3%) -0.22 228 (36.0%) 306 (48.3%) -0.25 6,058 (32.4%) 253 (37.1%) -0.10 262 (38.6%) 252 (37.2%) 0.03
+...1 Jan 2020 - 31 Dec 2020; n (%) 6,434 (24.2%) 320 (50.4%) -0.56 369 (58.3%) 319 (50.4%) 0.16 5,978 (32.0%) 384 (56.3%) -0.50 382 (56.3%) 382 (56.3%) 0.00
+…1 Jan 2021 -30  Jun 2021; n (%) 0 (0.0%) 0 (0.0%) 0.00 0 (0.0%) 0 (0.0%) 0.00 525 (2.8%) 40 (5.9%) -0.15 30 (4.4%) 39 (5.8%) -0.06
+Quarter Calendar Time Score
+...mean (sd) 4.39 (2.32) 6.35 (1.36) -1.03 6.41 (1.66) 6.34 (1.36) 0.05 4.34 (2.67) 6.30 (1.70) -0.88 6.16 (1.77) 6.30 (1.70) -0.08
+...median [IQR] 4.00 [2.00, 6.00] 7.00 [5.00, 7.00]  -- 7.00 [5.00, 8.00] 7.00 [5.00, 7.00]  -- 4.35 [1.86, 6.62] 6.46 [5.00, 7.66]  -- 6.33 [4.63, 7.62] 6.45 [5.00, 7.66]  --
+Age*
+...mean (sd) 64.75 (11.55) 56.80 (11.95) 0.68 56.59 (11.98) 56.85 (11.94) -0.02 65.27 (11.34) 56.87 (11.91) 0.72 56.40 (11.71) 56.95 (11.87) -0.05
+...median [IQR] 67.00 [58.00, 73.00] 57.00 [48.00, 67.00]  -- 57.00 [48.00, 66.00] 57.00 [48.00, 
+67.00] -- 67.00 [59.00, 73.00] 57.00 [48.00, 66.00]  -- 57.00 [48.00, 66.00] 57.00 [48.00, 
+66.00] --
+Age squared*
+...mean (sd) 777,625.01 (255,648.88) 603,932.18 
+(240,773.04)0.70595,923.84 (245,993.22) 604,345.50 
+(240,737.59)-0.03 788,645.31 
+(252,226.56)605,313.19 
+(240,904.21)0.74 595,304.40 
+(232,661.95)606,900.52 
+(240,515.39)-0.05
+...median [IQR] 812,509.00 [591,116.50, 
+938,739.00]588,069.00 
+[407,524.00, 
+794,155.00] -- 579,198.50 [401,895.25, 
+788,436.00]588,069.00 
+[414,649.00, 
+794,254.75] -- 812,509.00 
+[617,776.00, 
+951,934.00]587,165.00 
+[417,024.00, 
+788,436.00] -- 586,035.00 
+[417,024.00, 
+771,045.75]588,069.00 
+[417,024.00, 
+788,436.00] --
+Age Categories
+...18 - 40; n (%) 931 (3.5%) 66 (10.4%) -0.27 62 (9.8%) 65 (10.3%) -0.02 624 (3.3%) 66 (9.7%) -0.26 73 (10.8%) 64 (9.4%) 0.05
+...41 - 50; n (%) 2,528 (9.5%) 131 (20.6%) -0.31 143 (22.6%) 130 (20.5%) 0.05 1,618 (8.6%) 138 (20.2%) -0.34 134 (19.8%) 138 (20.4%) -0.01
+...51 - 60; n (%) 4,784 (18.0%) 192 (30.2%) -0.29 174 (27.5%) 192 (30.3%) -0.06 3,113 (16.6%) 207 (30.4%) -0.33 191 (28.2%) 205 (30.2%) -0.04
+...61 - 70; n (%) 9,434 (35.5%) 159 (25.0%) 0.23 169 (26.7%) 159 (25.1%) 0.04 6,907 (36.9%) 180 (26.4%) 0.23 205 (30.2%) 180 (26.5%) 0.08
+...71 - 80; n (%) 8,864 (33.4%) 87 (13.7%) 0.48 85 (13.4%) 87 (13.7%) -0.01 6,444 (34.4%) 91 (13.3%) 0.51 75 (11.1%) 91 (13.4%) -0.07
+Sex*
+...Male; n (%) 14,310 (53.9%) 302 (47.6%) 0.13 305 (48.2%) 301 (47.6%) 0.01 10,545 (56.4%) 331 (48.5%) 0.16 316 (46.6%) 330 (48.7%) -0.04
+...Female; n (%) 12,231 (46.1%) 333 (52.4%) -0.13 328 (51.8%) 332 (52.4%) -0.01 8,161 (43.6%) 351 (51.5%) -0.16 362 (53.4%) 348 (51.3%) 0.04
+Race categories*
+...White; n (%) 13,684 (51.6%) 384 (60.5%) -0.18 381 (60.2%) 382 (60.3%) 0.00 9,817 (52.5%) 437 (64.1%) -0.24 435 (64.2%) 433 (63.9%) 0.01
+…Not White; n (%) 12,857 (48.4%) 251 (39.5%) 0.18 252 (39.8%) 251 (39.7%) 0.00 8,889 (47.5%) 245 (35.9%) 0.24 243 (35.8%) 245 (36.1%) -0.01
+Combined comorbidity score, 180 days*
+...mean (sd) 2.64 (1.89) 2.30 (1.59) 0.19 2.25 (1.63) 2.29 (1.59) -0.02 2.59 (1.88) 2.28 (1.62) 0.18 2.30 (1.76) 2.26 (1.62) 0.02
+...median [IQR] 2.00 [1.00, 4.00] 2.00 [1.00, 3.00]  -- 2.00 [1.00, 3.00] 2.00 [1.00, 3.00]  -- 2.00 [1.00, 4.00] 2.00 [1.00, 3.00]  -- 2.00 [1.00, 3.00] 2.00 [1.00, 3.00]  --
+Frailty score*
+…Robust; n (%) 6,605 (24.9%) 195 (30.7%) -0.13 205 (32.4%) 195 (30.8%) 0.03 4,934 (26.4%) 191 (28.0%) -0.04 184 (27.1%) 190 (28.0%) -0.02
+…Pre-frail; n (%) 9,985 (37.6%) 233 (36.7%) 0.02 235 (37.1%) 232 (36.7%) 0.01 7,092 (37.9%) 260 (38.1%) 0.00 246 (36.3%) 258 (38.1%) -0.04
+…Frail; n (%) 9,951 (37.5%) 207 (32.6%) 0.10 193 (30.5%) 206 (32.5%) -0.04 6,680 (35.7%) 231 (33.9%) 0.04 248 (36.6%) 230 (33.9%) 0.06
+HbA1c test order (Number of tests)*Semaglutide vs Standard - Cohort ITT (12m +/- 90 days) Semaglutide vs Standard - Cohort AT 12-30w
+UNMATCHED MATCHED UNMATCHED MATCHED
+...mean (sd) 8.61 (1.49) 8.67 (1.59) -0.04 8.77 (1.60) 8.67 (1.59) 0.06 8.53 (1.43) 8.62 (1.51) -0.06 8.63 (1.46) 8.63 (1.51) 0.00
+...median [IQR] 8.20 [7.50, 9.30] 8.10 [7.50, 9.50]  -- 8.30 [7.60, 9.60] 8.10 [7.50, 9.50]  -- 8.10 [7.50, 9.10] 8.20 [7.50, 9.40]  -- 8.20 [7.60, 9.20] 8.20 [7.50, 9.40]  --
+Smoking; n (%)* 3,381 (12.7%) 80 (12.6%) 0.00 73 (11.5%) 78 (12.3%) -0.02 2,379 (12.7%) 89 (13.0%) -0.01 99 (14.6%) 88 (13.0%) 0.05
+Obesity or overweight; n (%)* 10,389 (39.1%) 325 (51.2%) -0.24 309 (48.8%) 323 (51.0%) -0.04 7,030 (37.6%) 334 (49.0%) -0.23 323 (47.6%) 331 (48.8%) -0.02
+Overweight; n (%) 8,087 (30.5%) 279 (43.9%) -0.28 256 (40.4%) 277 (43.8%) -0.07 5,420 (29.0%) 294 (43.1%) -0.30 264 (38.9%) 291 (42.9%) -0.08
+Obesity; n (%) 2,798 (10.5%) 55 (8.7%) 0.06 64 (10.1%) 55 (8.7%) 0.05 1,930 (10.3%) 53 (7.8%) 0.09 67 (9.9%) 53 (7.8%) 0.07
+Cardiovascular Comorbidities
+Hypertension; n (%)* 5,002 (18.8%) 153 (24.1%) -0.13 138 (21.8%) 151 (23.9%) -0.05 3,743 (20.0%) 159 (23.3%) -0.08 154 (22.7%) 158 (23.3%) -0.01
+Hyperlipidemia; n (%)* 18,366 (69.2%) 451 (71.0%) -0.04 435 (68.7%) 450 (71.1%) -0.05 12,913 (69.0%) 467 (68.5%) 0.01 450 (66.4%) 465 (68.6%) -0.05
+Atherosclerosis Cardiovascular Disease; n (%)* 5,336 (20.1%) 93 (14.6%) 0.15 82 (13.0%) 92 (14.5%) -0.04 3,696 (19.8%) 95 (13.9%) 0.16 90 (13.3%) 94 (13.9%) -0.02
+    Old MI; n (%) 608 (2.3%) 8 (1.3%) 0.08 13 (2.1%) 8 (1.3%) 0.06 432 (2.3%) 13 (1.9%) 0.03 11 (1.6%) 13 (1.9%) -0.02
+    Acute MI ; n (%) 195 (0.7%) 8 (1.3%) -0.06 5 (0.8%) 8 (1.3%) -0.05 126 (0.7%) 5 (0.7%) 0.00 2 (0.3%) 5 (0.7%) -0.06
+    ACS/unstable angina; n (%) 269 (1.0%) 7 (1.1%) -0.01 6 (0.9%) 7 (1.1%) -0.02 172 (0.9%) 5 (0.7%) 0.02 6 (0.9%) 5 (0.7%) 0.02
+    Stable angina; n (%) 934 (3.5%) 24 (3.8%) -0.02 18 (2.8%) 24 (3.8%) -0.06 611 (3.3%) 22 (3.2%) 0.01 22 (3.2%) 22 (3.2%) 0.00
+    CAD and other forms of chronic ischemic 
+heart disease; n (%)3,768 (14.2%) 61 (9.6%) 0.14 57 (9.0%) 61 (9.6%) -0.02 2,628 (14.0%) 68 (10.0%) 0.12 67 (9.9%) 68 (10.0%) 0.00
+    History of CABG or PTCA ; n (%) 1,086 (4.1%) 18 (2.8%) 0.07 16 (2.5%) 18 (2.8%) -0.02 746 (4.0%) 21 (3.1%) 0.05 18 (2.7%) 21 (3.1%) -0.02
+    PAD or PAD surgery; n (%) 1,792 (6.8%) 33 (5.2%) 0.07 21 (3.3%) 32 (5.1%) -0.09 1,200 (6.4%) 29 (4.3%) 0.09 23 (3.4%) 28 (4.1%) -0.04
+Cerebrovascular disease; n (%)* 723 (2.7%) 11 (1.7%) 0.07 6 (0.9%) 11 (1.7%) -0.07 517 (2.8%) 15 (2.2%) 0.04 12 (1.8%) 15 (2.2%) -0.03
+    Stroke (Ischemic or hemorrhagic); n (%) 433 (1.6%) 8 (1.3%) 0.03 2 (0.3%) 8 (1.19%) -0.10 300 (1.6%) 9 (1.3%) 0.03 9 (1.3%) 9 (1.3%) 0.00
+    TIA; n (%) 255 (1.0%) 3 (0.5%) 0.06 2 (0.3%) 3 (0.5%) -0.03 171 (0.9%) 7 (1.0%) -0.01 3 (0.4%) 7 (1.0%) -0.07
+    Late effects of cerebrovascular disease; n 
+(%)252 (0.9%) 4 (0.6%) 0.03 3 (0.5%) 4 (0.6%) -0.01 175 (0.9%) 5 (0.7%) 0.02 3 (0.4%) 5 (0.7%) -0.04
+Heart Failure; n (%)* 1,508 (5.7%) 21 (3.3%) 0.12 14 (2.2%) 20 (3.2%) -0.06 1,033 (5.5%) 24 (3.5%) 0.10 24 (3.5%) 22 (3.2%) 0.02
+Atrial fibrillation; n (%)* 1,541 (5.8%) 22 (3.5%) 0.11 24 (3.8%) 21 (3.3%) 0.03 1,132 (6.1%) 27 (4.0%) 0.10 26 (3.8%) 25 (3.7%) 0.01
+Other cardiac dysrhythmia; n (%) 2,486 (9.4%) 38 (6.0%) 0.13 39 (6.2%) 37 (5.8%) 0.02 1,760 (9.4%) 48 (7.0%) 0.09 48 (7.1%) 46 (6.8%) 0.01
+Diabetes Mellitus Comorbidities
+Diabetic nephropathy; n (%)* 4,503 (17.0%) 68 (10.7%) 0.18 60 (9.5%) 68 (10.7%) -0.04 2,999 (16.0%) 78 (11.4%) 0.13 74 (10.9%) 78 (11.5%) -0.02
+Diabetic neuropathy; n (%)* 5,402 (20.4%) 95 (15.0%) 0.14 86 (13.6%) 95 (15.0%) -0.04 3,492 (18.7%) 107 (15.7%) 0.08 103 (15.2%) 107 (15.8%) -0.02
+Diabetic retinopathy ; n (%)* 1,550 (5.8%) 38 (6.0%) -0.01 44 (7.0%) 38 (6.0%) 0.04 949 (5.1%) 33 (4.8%) 0.01 30 (4.4%) 33 (4.9%) -0.02
+Diabetes with unspecified complications; n 
+(%)*1,628 (6.1%) 41 (6.5%) -0.02 45 (7.1%) 40 (6.3%) 0.03 1,088 (5.8%) 46 (6.7%) -0.04 39 (5.8%) 46 (6.8%) -0.04
+Diabetes with peripheral circulatory disorders, 
+amputations, and diabetic foot; n (%)*413 (1.6%) 10 (1.6%) 0.00 10 (1.6%) 9 (1.4%) 0.02 303 (1.6%) 10 (1.5%) 0.01 11 (1.6%) 10 (1.5%) 0.01
+    Diabetes with peripheral circulatory 
+disorders; n (%)47 (0.2%) 1 (0.2%) 0.00 2 (0.3%) 1 (0.2%) 0.02 34 (0.2%) 1 (0.1%) 0.03 1 (0.1%) 1 (0.1%) 0.00
+    Lower-limb amputations; n (%) 106 (0.4%) 1 (0.2%) 0.04 2 (0.3%) 1 (0.2%) 0.02 71 (0.4%) 1 (0.1%) 0.06 0 (0.0%) 1 (0.1%) -0.04
+    Diabetic Foot; n (%) 303 (1.1%) 9 (1.4%) -0.03 7 (1.1%) 8 (1.3%) -0.02 224 (1.2%) 9 (1.3%) -0.01 10 (1.5%) 9 (1.3%) 0.02
+Renal Comorbidities
+Chronic kidney disease (CKD); n (%) 3,910 (14.7%) 64 (10.1%) 0.14 62 (9.8%) 64 (10.1%) -0.01 2,581 (13.8%) 64 (9.4%) 0.14 57 (8.4%) 64 (9.4%) -0.04
+    CKD Stage 1-2; n (%)* 1,558 (5.9%) 20 (3.1%) 0.14 13 (2.1%) 20 (3.2%) -0.07 1,040 (5.6%) 18 (2.6%) 0.15 18 (2.7%) 18 (2.7%) 0.00
+    CKD Stage 3-4; n (%)* 2,363 (8.9%) 46 (7.2%) 0.06 49 (7.7%) 46 (7.3%) 0.02 1,560 (8.3%) 47 (6.9%) 0.05 41 (6.0%) 47 (6.9%) -0.04
+    CKD unspecified ; n (%)* 484 (1.8%) 7 (1.1%) 0.06 10 (1.6%) 7 (1.1%) 0.04 311 (1.7%) 8 (1.2%) 0.04 9 (1.3%) 8 (1.2%) 0.01
+Miscellaneous renal disease; n (%) 1,100 (4.1%) 22 (3.5%) 0.03 21 (3.3%) 22 (3.5%) -0.01 764 (4.1%) 25 (3.7%) 0.02 17 (2.5%) 25 (3.7%) -0.07
+Other Comorbidities
+Mood disorders; n (%)* 3,392 (12.8%) 90 (14.2%) -0.04 79 (12.5%) 90 (14.2%) -0.05 2,272 (12.1%) 105 (15.4%) -0.10 107 (15.8%) 105 (15.5%) 0.01
+    Anxiety; n (%) 2,497 (9.4%) 68 (10.7%) -0.04 61 (9.6%) 68 (10.7%) -0.04 1,681 (9.0%) 74 (10.9%) -0.06 85 (12.5%) 74 (10.9%) 0.05
+    Depression; n (%) 1,505 (5.7%) 41 (6.5%) -0.03 35 (5.5%) 41 (6.5%) -0.04 1,002 (5.4%) 54 (7.9%) -0.10 50 (7.4%) 54 (8.0%) -0.02
+Obstructive sleep apnea; n (%)* 3,293 (12.4%) 125 (19.7%) -0.20 116 (18.3%) 124 (19.6%) -0.03 2,238 (12.0%) 138 (20.2%) -0.22 139 (20.5%) 137 (20.2%) 0.01
+COPD; n (%)* 2,166 (8.2%) 38 (6.0%) 0.09 39 (6.2%) 38 (6.0%) 0.01 1,525 (8.2%) 39 (5.7%) 0.10 44 (6.5%) 39 (5.8%) 0.03
+Asthma; n (%)* 1,496 (5.6%) 48 (7.6%) -0.08 47 (7.4%) 48 (7.6%) -0.01 1,018 (5.4%) 58 (8.5%) -0.12 58 (8.6%) 57 (8.4%) 0.01
+Osteoarthrosis; n (%)* 3,851 (14.5%) 100 (15.7%) -0.03 102 (16.1%) 99 (15.6%) 0.01 2,674 (14.3%) 109 (16.0%) -0.05 106 (15.6%) 109 (16.1%) -0.01
+NASH/NAFLD; n (%)* 1,418 (5.3%) 48 (7.6%) -0.09 49 (7.7%) 48 (7.6%) 0.00 952 (5.1%) 50 (7.3%) -0.09 58 (8.6%) 50 (7.4%) 0.04
+Medications use
+Antihypertensive medications; n (%)* 21,939 (82.7%) 491 (77.3%) 0.14 471 (74.4%) 489 (77.3%) -0.07 15,621 (83.5%) 532 (78.0%) 0.14 519 (76.5%) 529 (78.0%) -0.04
+    ACEi/ARBs; n (%) 18,865 (71.1%) 421 (66.3%) 0.10 407 (64.3%) 420 (66.4%) -0.04 13,406 (71.7%) 454 (66.6%) 0.11 450 (66.4%) 451 (66.5%) 0.00
+    Beta blockers; n (%) 8,403 (31.7%) 168 (26.5%) 0.11 168 (26.5%) 167 (26.4%) 0.00 6,077 (32.5%) 197 (28.9%) 0.08 177 (26.1%) 195 (28.8%) -0.06
+    Calcium channel blockers; n (%) 7,033 (26.5%) 149 (23.5%) 0.07 143 (22.6%) 147 (23.2%) -0.01 5,063 (27.1%) 165 (24.2%) 0.07 128 (18.9%) 164 (24.2%) -0.13
+    Thiazide; n (%) 3,407 (12.8%) 79 (12.4%) 0.01 76 (12.0%) 79 (12.5%) -0.02 2,554 (13.7%) 90 (13.2%) 0.01 102 (15.0%) 90 (13.3%) 0.05
+    Diuretics; n (%) 9,567 (36.0%) 213 (33.5%) 0.05 203 (32.1%) 212 (33.5%) -0.03 6,838 (36.6%) 241 (35.3%) 0.03 234 (34.5%) 240 (35.4%) -0.02
+Statins Other lipid-lowering drugs; n (%)* 20,202 (76.1%) 467 (73.5%) 0.06 460 (72.7%) 466 (73.6%) -0.02 14,641 (78.3%) 487 (71.4%) 0.16 466 (68.7%) 485 (71.5%) -0.06
+    Statins; n (%) 19,449 (73.3%) 454 (71.5%) 0.04 445 (70.3%) 453 (71.6%) -0.03 14,094 (75.3%) 473 (69.4%) 0.13 453 (66.8%) 471 (69.5%) -0.06
+    Other lipid-lowering drugs; n (%) 2,441 (9.2%) 56 (8.8%) 0.01 60 (9.5%) 56 (8.8%) 0.02 1,749 (9.3%) 54 (7.9%) 0.05 68 (10.0%) 54 (8.0%) 0.07
+Opioids; n (%)* 4,279 (16.1%) 104 (16.4%) -0.01 110 (17.4%) 104 (16.4%) 0.03 2,813 (15.0%) 110 (16.1%) -0.03 119 (17.6%) 109 (16.1%) 0.04
+Mood Stabilizing Medications; n (%)* 7,564 (28.5%) 232 (36.5%) -0.17 219 (34.6%) 231 (36.5%) -0.04 5,192 (27.8%) 258 (37.8%) -0.21 257 (37.9%) 258 (38.1%) 0.00
+    Antidepressants; n (%) 6,079 (22.9%) 202 (31.8%) -0.20 181 (28.6%) 201 (31.8%) -0.07 4,180 (22.3%) 219 (32.1%) -0.22 211 (31.1%) 219 (32.3%) -0.03
+    Anxiolytics/hypnotics; n (%) 1,244 (4.7%) 26 (4.1%) 0.03 34 (5.4%) 26 (4.1%) 0.06 848 (4.5%) 39 (5.7%) -0.05 54 (8.0%) 39 (5.8%) 0.09
+    Benzodiazepine; n (%) 2,202 (8.3%) 49 (7.7%) 0.02 54 (8.5%) 49 (7.7%) 0.03 1,487 (7.9%) 59 (8.7%) -0.03 76 (11.2%) 59 (8.7%) 0.08
+Gabapentinoids; n (%)* 3,592 (13.5%) 74 (11.7%) 0.05 73 (11.5%) 73 (11.5%) 0.00 2,426 (13.0%) 89 (13.0%) 0.00 80 (11.8%) 89 (13.1%) -0.04
+Health care utilization indicators
+Number of medication claims*
+...mean (sd) 11.01 (7.05) 12.03 (7.40) -0.14 11.54 (7.20) 12.00 (7.38) -0.06 10.98 (6.96) 12.34 (7.31) -0.19 12.70 (8.53) 12.32 (7.31) 0.05
+...median [IQR] 9.00 [6.00, 14.00] 10.00 [7.00, 15.00]  --10.00 [6.00, 15.00] 10.00 [7.00, 15.00]  -- 9.00 [6.00, 14.00] 11.00 [7.00, 16.00]  --11.00 [7.00, 16.00] 11.00 [7.00, 16.00]  --
+Number of office visits*
+...mean (sd) 5.63 (4.61) 5.78 (4.53) -0.03 5.76 (4.81) 5.76 (4.51) 0.00 5.47 (4.67) 5.75 (4.25) -0.06 5.89 (5.06) 5.71 (4.24) 0.04
+...median [IQR] 4.00 [3.00, 7.00] 5.00 [3.00, 7.00]  --5.00 [3.00, 7.00] 5.00 [3.00, 7.00]  -- 4.00 [3.00, 7.00] 5.00 [3.00, 7.00]  --4.00 [3.00, 7.00] 5.00 [3.00, 7.00]  --
+Number of hospitalizations/ED visit (binary)*
+...mean (sd) 0.39 (1.24) 0.35 (1.00) 0.04 0.36 (1.11) 0.35 (1.00) 0.01 0.36 (1.35) 0.34 (1.00) 0.02 0.40 (1.16) 0.34 (1.00) 0.06
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00]  --0.00 [0.00, 0.00] 0.00 [0.00, 0.00]  -- 0.00 [0.00, 0.00] 0.00 [0.00, 0.00]  --0.00 [0.00, 0.00] 0.00 [0.00, 0.00]  --
+Brand name prescription - unique value*
+...mean (sd) 9.19 (4.36) 9.62 (4.70) -0.09 9.41 (4.69) 9.60 (4.69) -0.04 9.11 (4.31) 9.53 (4.67) -0.09 9.53 (5.13) 9.50 (4.65) 0.01
+...median [IQR] 8.00 [6.00, 11.00] 9.00 [6.00, 12.00]  --8.00 [6.00, 12.00] 9.00 [6.00, 12.00]  -- 8.00 [6.00, 11.00] 9.00 [6.00, 12.00]  --9.00 [6.00, 12.00] 9.00 [6.00, 12.00]  --
+Generic name prescription - unique value*
+...mean (sd) 0.99 (0.03) 0.99 (0.04) 0.00 9.30 (4.64) 9.49 (4.61) -0.04 9.04 (4.25) 9.41 (4.56) -0.08 9.41 (5.03) 9.39 (4.55) 0.00
+...median [IQR] 1.00 [1.00, 1.00] 1.00 [1.00, 1.00]  --8.00 [6.00, 11.00] 9.00 [6.00, 12.00]  -- 8.00 [6.00, 11.00] 8.00 [6.00, 12.00]  --8.00 [6.00, 12.00] 8.00 [6.00, 12.00]  --
+Generic/Brand unique prescriptions
+...mean (sd) 0.99 (0.03) 0.99 (0.04) 0.00 0.99 (0.04) 0.99 (0.04) 0.00 0.99 (0.03) 0.99 (0.04) 0.00 0.99 (0.03) 0.99 (0.04) 0.00
+...median [IQR] 1.00 [1.00, 1.00] 1.00 [1.00, 1.00]  --1.00 [1.00, 1.00] 1.00 [1.00, 1.00]  -- 1.00 [1.00, 1.00] 1.00 [1.00, 1.00]  --1.00 [1.00, 1.00] 1.00 [1.00, 1.00]  --
+Number of Endocrinologist visits*
+...mean (sd) 0.12 (0.50) 0.28 (0.74) -0.25 0.26 (0.77) 0.27 (0.72) -0.01 0.08 (0.42) 0.27 (0.74) -0.32 0.23 (0.77) 0.24 (0.62) -0.01
+...median [IQR] 0.00 [0.00, 0.00] 0.00 [0.00, 0.00]  --0.00 [0.00, 0.00] 0.00 [0.00, 0.00]  -- 0.00 [0.00, 0.00] 0.00 [0.00, 0.00]  --0.00 [0.00, 0.00] 0.00 [0.00, 0.00]  --
+Number of HbA1c*
+...mean (sd) 1.58 (0.72) 1.62 (0.72) -0.06 1.64 (0.67) 1.61 (0.72) 0.04 1.57 (0.70) 1.59 (0.69) -0.03 1.55 (0.69) 1.59 (0.69) -0.06
+...median [IQR] 2.00 [1.00, 2.00] 2.00 [1.00, 2.00]  --2.00 [1.00, 2.00] 2.00 [1.00, 2.00]  -- 2.00 [1.00, 2.00] 2.00 [1.00, 2.00]  --2.00 [1.00, 2.00] 2.00 [1.00, 2.00]  --
+Basic or comprehensive metabolic blood 
+chemistry test; n (%)*22,174 (83.5%) 500 (78.7%) 0.12 499 (78.8%) 498 (78.7%) 0.00 15,699 (83.9%) 546 (80.1%) 0.10 537 (79.2%) 542 (79.9%) -0.02
+Number of bone density tests; n (%)* 1,038 (3.9%) 24 (3.8%) 0.01 17 (2.7%) 24 (3.8%) -0.06 716 (3.8%) 24 (3.5%) 0.02 28 (4.1%) 23 (3.4%) 0.04
+PSA test or Prostate exam for DRE; n (%)* 5,109 (19.2%) 117 (18.4%) 0.02 113 (17.9%) 117 (18.5%) -0.02 3,755 (20.1%) 124 (18.2%) 0.05 111 (16.4%) 124 (18.3%) -0.05
+Flexible Sigmoidoscopy or colonoscopy or CT 
+virtual colonoscopy; n (%)1,245 (4.7%) 36 (5.7%) -0.05 36 (5.7%) 36 (5.7%) 0.00 887 (4.7%) 43 (6.3%) -0.07 40 (5.9%) 43 (6.3%) -0.02
+Number of Mammograms (Breast cancer 
+screening); n (%)3,308 (12.5%) 99 (15.6%) -0.09 94 (14.8%) 99 (15.6%) -0.02 2,180 (11.7%) 100 (14.7%) -0.09 96 (14.2%) 99 (14.6%) -0.01
+Number of Pap smear (Cervical cancer 
+screening); n (%)*856 (3.2%) 38 (6.0%) -0.13 37 (5.8%) 37 (5.8%) 0.00 533 (2.8%) 36 (5.3%) -0.13 38 (5.6%) 35 (5.2%) 0.02
+Flu vaccine; n (%) 4,932 (18.6%) 110 (17.3%) 0.03 90 (14.2%) 110 (17.4%) -0.09 3,625 (19.4%) 136 (19.9%) -0.01 124 (18.3%) 136 (20.1%) -0.05
+Pneumococcal vaccine; n (%) 6,982 (26.3%) 155 (24.4%) 0.04 150 (23.7%) 155 (24.5%) -0.02 5,093 (27.2%) 189 (27.7%) -0.01 191 (28.2%) 189 (27.9%) 0.01
+Copay for pharmacy cost (charges in U.S. $)*
+...mean (sd) 200.93 (403.50) 296.02 (350.92) -0.25 227.65 (399.41) 295.75 (351.08) -0.18 189.00 (322.50) 280.00 (299.36) -0.29 244.73 (382.68) 280.00 (299.65) -0.10
+...median [IQR] 119.08 [44.36, 256.47] 207.17 [101.87, 
+381.05] --134.85 [47.08, 298.01] 207.17 [101.91, 
+379.84] -- 107.26 [37.51, 239.55] 204.83 [99.90, 
+371.72] --141.41 [54.32, 289.05] 204.83 [99.90, 
+371.72] --
+Business type*
+...Commercial; n (%) 8,101 (30.5%) 374 (58.9%) -0.60 372 (58.8%) 373 (58.9%) 0.00 5,441 (29.1%) 408 (59.8%) -0.65 419 (61.8%) 404 (59.6%) 0.05
+...Medicare; n (%) 18,440 (69.5%) 261 (41.1%) 0.60 261 (41.2%) 260 (41.1%) 0.00 13,265 (70.9%) 274 (40.2%) 0.65 259 (38.2%) 274 (40.4%) -0.05
+Low income indicator; n (%)* 3,690 (13.9%) 54 (8.5%) 0.17 64 (10.1%) 53 (8.4%) 0.06 2,769 (14.3%) 70 (9.4%) 0.15 58 (8.6%) 61 (9.0%) -0.01
+*variables included in the PS model
+OPTUM 
+Semaglutide vs Standard - Cohort ITT (12m +/- 90 days) 
+BEFORE PS  MATCHING  
+ 
+ 
+AFTER PS MATCHING  
+ 
+ 
+ 
+ 
+
+Semaglutide vs Standard - Cohort AT 12-30w 
+BEFORE PS  MATCHING  
+ 
+ 
+AFTER PS MATCHING  
+ 
+ 
+ 
+ 

@@ -1,0 +1,163 @@
+ 
+Real-time Decision Support for  
+Postoperative Nausea and Vomiting (PONV) Prophylaxis  
+ 
+ 
+ 
+Version: October 28th, 2018  
+[STUDY_ID_REMOVED]  
+ 
+PI: Jonathan Wanderer, MD, MPhil  
+Associate Professor, Departments of Anesthesiology and Biomedical Informatics  
+Vanderbilt University Medical Center  
+615-936-5194  
+Jon.wanderer@vanderbilt.edu  
+  
+Background  
+Nausea and vomiting after surgery (PONV) is a common side effect of the surgical procedure, general 
+anesthesia and opioid use occurring in about one th ird of patients. In addition to being very unpleasant 
+for patients, it is associated with longer recovery room stays and increased costs. [1] Specific 
+prophylactic interventions may be applied during general anesthesia with the aim to prevent PONV in 
+individual patients. These interventions mainly consist of administering one or more prophylactic drugs 
+either at the start or the end of the procedure, and/or selecting a different type of anesthetic - i.e. total 
+intravenous anesthesia rather than inhalational anesthesia. The  efficacy of these interventions have 
+been extensively studied in several clinical trials and meta- analyses. [2,3]   
+Current national guidelines as well as departmental guidelines recommend that patients receive 
+prophylactic interventions for PONV according to their risk of PONV as predicted by a formal risk 
+score. [1] A risk score predicts the PONV risk for each individual patient  (Tables 1 and 2) , based on 
+specific characteristics of that patient and the scheduled procedure . However, in a busy operating room 
+where the anesthesia provider performs multiple patient care tasks, closely following the 
+recommendations to minimize the risk of PONV is often difficult. [4,5]  
+A clinical decision support system (CDSS) may help anesthesia providers to adhere to best 
+practices for PONV prevention. Such a CDSS automatically calculates the risk of PONV for an individual 
+patient and presents this predicted risk to the anesthesia provider on the computer screen that is being 
+used by the anesthesia team for record keeping. In recent s tudies, such decision support systems have 
+been demonstrated to improve adherence to PONV guidelines, especially when a recommendation on 
+the number of interventions is added to the predicted risk. [6–8] Despite that improvement, there was 
+still quite some room for improvement of the adherence to PONV guidelines in these studies.  
+Current literature on decisions support systems suggests that the design may have a great 
+influence on what impact a  CDSS has on medical decision making. [9] However, we are still only 
+beginning to understand which CDSS design features will have the largest impact on the behavior of 
+healthcare providers. The context of the clinical problem may be an important factor in what design for 
+a decision support tool is the most appropriate. [5] The proposed study aims to improve the adhere nce 
+to PONV guidelines by implementing multiple decision support elements with different design features.  
+Research question and hypotheses  
+Research question  
+Does the adherence to the recommendations of a clinical decision support system for postoperative 
+nausea and vomiting depend on the proximity of the advice to specific decisions?  
+Hypotheses  
+The research question will be addressed in this study by testing the following hypotheses:  
+1. An automated recommendation on PONV prophylaxis that is based on a patient -specific PONV 
+risk that is sent by email to individual anesthesia providers the day before the scheduled 
+procedure increases the adherence to PONV guidelines.  
+2. An automated recommendation on PONV prophylaxis that is based on a patient -specific PONV 
+risk that is presented at the start of anesthesia increases the adherence to PONV guidelines (and 
+has an added value to the automated email recommendation).  
+Study Design and Participants  
+Study design  
+The time series consists of three phases. The first phas e is the preintervention phase –  i.e. before the 
+decision support has been implemented. The second phase is the first intervention phase in which the 
+email with recommendations is being sent (Figure 1). The third phase is the second intervention phase 
+in w hich the real time decision support guidance (Figure 2) is being displayed along with the email 
+intervention.  
+Study population  
+All adult patients (18 years and older) that are scheduled for an elective surgical procedure under 
+general anesthesia within the  study period will be considered eligible. We will exclude patients 
+undergoing emergency surgery , and patients who will not go to the PACU to recover (i.e. patients that 
+are transferred directly to the Intensive Care Unit  or die intraoperatively ). Procedures that only require a 
+sedative level of anesthesia will be excluded from the analysis.  
+ 
+ 
+Figure 1. Screenshot example of email recommendations.  
+
+ 
+Figure 2. A screenshot mockup of the real -time decision support within our perioperative informatio n 
+management system.  
+ 
+Table 1 - Apfel's simplified risk score  
+Factor  Risk Score  
+Gender – Female  1 
+History of PONV/Motion sickness  1 
+Expected postoperative use of opioids  1 
+Non -smoker  1 
+ 
+ 
+Table 2 - Relation between predicted risks and recommendations  
+Number of  
+PONV risk factors  Predicted  
+PONV risk  Recommended  
+number  of interventions  
+0 0% 0 
+1 20%  1 
+2 40%  2 
+3 60%  3 
+4 80%  4 
+ 
+
+Outcome  
+Primary outcome 
+The adherence to PONV guidelines will be used as the primary outcome. This is defined as an exact 
+match between the recommended and applied numbers of interventions. Either a lower or a higher 
+number of interventions will be considered as noncompliant to the guidelines. For the primary analysis 
+the ov erall change in adherence as well as the added values of the different decision support elements 
+to that adherence will be quantified. Medications with antiemetic properties will be considered 
+prophylactic administrations, if they occur before the document ed anesthesia stop time. We will 
+consider scopolamine, dexamethasone, ondansetron, haloperidol, droperidol as prophylactic 
+medications.  
+Secondary outcomes  
+The occurrence of PONV within the patient’s PACU admission. PONV will be defined as the 
+administratio n of rescue antiemetics. The list of rescue antiemetics is similar to the list of prophylactic 
+interventions, excluding the pre -anesthesia interventions, but complemented by the use of 
+promethazine and compazine. Other secondary process outcome variables a re: the absolute number of 
+prophylactic interventions applied and time to discharge readiness at the PACU.  
+Data collection  
+We plan to use the Perioperative Data Warehouse (PDW), an IRB- approved data repository, as the data 
+source to study the effects of the decision support on the application of prophylactic interventions for 
+PONV and the occurrence of PONV within the PACU.  
+Data safety monitoring  
+The principal investigator (PI) will be responsible for data safety and monitoring within the VUMC. 
+Quality control will include regular data verification and protocol compliance checks. Protocol 
+adherence at the VUMC will be monitored by the PI throughout the study. Events determined by the PI 
+to be unanticipated problems involving risks to subjects will be rep orted by the PI to the VUMC IRB 
+within 10 working days of the Investigator's knowledge of the problem.  
+Statistical analysis plan  
+A two -sided alpha of 0.05 will be considered to be statistically significant. Continuous variables will be 
+visually assessed fo r a normal distribution using histograms and QQ -plots. In descriptive statistics, 
+parametric variables will be expressed as means with standard deviations, nonparametric variables will 
+be expressed as medians with interquartile ranges, and discrete variabl es will be expressed as numbers 
+with percentages. The primary analysis will be performed under the intention -to-treat principle. We will 
+compare the incidence of the primary and secondary outcomes between the study groups utilizing 
+analysis of variances to  compare the means of multiple groups.  
+ 
+References  
+[1] Gan TJ, Diemunsch P, Habib AS, Kovac A, Kranke P, Meyer T a, et al. Consensus guidelines for the 
+management of postoperative nausea and vomiting. Anesth Analg 2014;118:85– 113. 
+doi:10.1213/ANE.0000000000000002.  
+[2] Apfel CC, Korttila K, Abdalla M, Kerger H, Turan A, Vedder I, et al. A factorial trial of six 
+interventions for the prevention of postoperative nausea and vomiting. N Engl J Med 
+2004;350:2441 –51. doi:10.1056/NEJMoa032196.  
+[3] Carlisle JB, Stevenson CA. Drugs for preventing postoperative nausea and vomiting. Cochrane 
+Database Syst Rev 2006;3:CD004125. doi:10.1002/14651858.CD004125.pub2.  
+[4] Kappen TH, Moons KGM, van Wolfswinkel L, Kalkman CJ, Vergo uwe Y, van Klei WA. Impact of risk 
+assessments on prophylactic antiemetic prescription and the incidence of postoperative nausea 
+and vomiting: a cluster- randomized trial. Anesthesiology 2014;120:343 –54. 
+doi:10.1097/ALN.0000000000000009.  
+[5] Kappen TH, van Loon K, Kappen MAM, van Wolfswinkel L, Vergouwe Y, van Klei WA, et al. 
+Barriers and facilitators perceived by physicians when using prediction models in practice. J Clin 
+Epidemiol 2015:(in press). doi:10.1016/j.jclinepi.2015.09.008.  
+[6] Kooij FO, Klok T, H ollmann MW, Kal JE. Automated reminders increase adherence to guidelines 
+for administration of prophylaxis for postoperative nausea and vomiting. Eur J Anaesthesiol 
+2010;27:187 –91. doi:10.1097/EJA.0b013e32832d6a76.  
+[7] Kooij FO, Vos N, Siebenga P, Klok T, Hollmann MW, Kal JE. Automated reminders decrease 
+postoperative nausea and vomiting incidence in a general surgical population. Br J Anaesth 
+2012;108:961 –5. doi:10.1093/bja/aes024.  
+[8] Kappen TH, Vergouwe Y, Wolfswinkel L Van, Kalkman CJ, Moons KGM, Klei W A Van. Impact of 
+adding therapeutic recommendations to risk assessments from a prediction model for 
+postoperative nausea and vomiting. Br J Anaesth 2015;114:252 –60. doi:10.1093/bja/aeu321.  
+[9] Lobach D, Sanders GD, Bright TJ, Wong A, Dhurjati R, Bristow E,  et al. Enabling health care 
+decisionmaking through clinical decision support and knowledge management. Evid Rep Technol 
+Assess (Full Rep) 2012:1 –784.  
+[10] Apfel CC, Läärä E, Koivuranta M, Greim CA, Roewer N. A simplified risk score for predicting 
+postoper ative nausea and vomiting: conclusions from cross -validations between two centers. 
+Anesthesiology 1999;91:693 –700. doi:10.1097/00000542- 199909000 -00022.  
+ 

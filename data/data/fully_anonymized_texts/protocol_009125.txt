@@ -1,0 +1,314 @@
+COVER PAGE 
+Document Type: 
+STUDY PROTOCOL
+Official stutuay title:
+ Computational Design, Fabrication, and Evaluation of Optimized 
+Patient-Specifc Transtibial Prosthetic Sockets
+NCT number: 
+not yet assigned
+Document Date: 
+02/15/2018
+Principal investutigator: 
+[CONTACT_729702]: 
+NIH
+Participating stuitestu: 
+[LOCATION_005] Institute of Technology (MIT), Cambridge, MA, [LOCATION_003]
+McGovern Institute for Brain Research, MIT, Cambridge, MA, [LOCATION_003]
+STUDY PROTOCOL
+I.BACKGROUND AND RATIONALE
+The overall goal of this study is to further develop, and clinically assess, a computational and data-
+driven design and manufacturing framework for mechanical interfaces that quantitatively produces 
+transtibial prosthetic sockets in a faster and more cost-efective way compared with conventional 
+processes.
+In the [LOCATION_002], 623,000 people live with major lower extremity loss, with that population 
+expected to double by 2050 [1]. The U.S. Department of Veterans Afairs estimates lower extremity 
+amputation (LEA) to account for more than $[ADDRESS_996658] expenditures each year, not 
+including civilian cases [2]. Complications of prosthetic leg use in persons with LEA often occur at the 
+prosthetic socket, and includes delayed wound healing, recurrent skin ulcerations, and pressure 
+damage to soft tissues [3]–[6]. Such complications can result in limited mobility, which further 
+contributes to conditions such as obesity, musculoskeletal pathologies, and cardiovascular disease 
+[7]–[9]. Conventional prosthetic socket fabrication is an artisanal process requiring substantial human  
+hours, fnancial cost and patient involvement for evaluation. Computer aided design (CAD) (e.g.[10]–
+[13]) and computer aided manufacturing (CAM) (e.g.[14]–[24]) methods have been explored as an 
+alternative. However, these tools have not reached full clinical efcacy and do not inform the design 
+in a data-driven sense since the actual design process remains a manual and experience-based 
+procedure [25]. The long-term goal of our research is to develop a fully-quantitative process for 
+prosthetic socket design and production that requires minimal patient involvement and can be 
+delivered at afordable price points.
+In pursuit of our long-term goal, our team has recently developed a framework for prosthetic socket 
+design and fabrication [26] that involves: 1) non-invasive imaging to record patient geometry, 2) 
+indentation to assess tissue mechanical properties, 3) data-driven and automated creation of patient-
+specifc designs, 4) patient-specifc fnite element analysis (FEA) and design evaluation, and 5) 3D 
+printing of the end design for clinical evaluation. 
+II.OBJECTIVES
+The overall goal of this study is to further develop and clinically assess a computational and data-
+driven design and manufacturing framework for mechanical interfaces that quantitatively produces 
+transtibial prosthetic sockets in a faster and more cost-efective way than conventional processes. 
+Traditionally, prosthetic socket production has been a craft activity, based primarily on the 
+experience of the prosthetist. Even with advances in computer-aided design and computer-aided 
+manufacturing (CAD/CAM), the design process remains manual. The manual nature of the process 
+means it is non-repeatable and currently largely non-data-driven, and quantitative data is either not 
+obtained or insufciently employed. Furthermore, discomfort, skin problems and pressure ulcer 
+formation remain prevalent. Through the proposed computational modeling framework, a 
+repeatable, data-driven and patient-specifc design process is made available which is based on 
+scientifc rationale. 
+Objective/hypothesis:  The main hypothesis of this proposal is that a socket, designed using the novel 
+computational design framework, is equivalent to, or better than, a conventional socket (designed by  
+a prosthetist) in terms of: 1) skin contact [CONTACT_729684], 2) gait symmetry, 3) walking metabolic cost, 4) 
+skin irritation levels as assessed by [CONTACT_108094], and 5) comfort as evaluated from a 
+questionnaire. Our hypothesis is supported by [CONTACT_729685][INVESTIGATOR_729681]. 
+Specifc Aims: 1) Subject-specifc biomechanical modeling for N=18 subjects, 2) Computational design  
+and fabrication of sockets fo r N=18 subjects, and 3)  Clinical evaluation  of novel sockets for N=[ADDRESS_996659] a 10% diference with respect to this  
+mean, with a signifcance level of 0.05 and a power of 90%, the theoretically required number of test 
+subjects is 12 (power analysis based on the MATLAB sampsizepwr function). However, to increase the 
+chances of signifcant statistics for all measures (with varying signal to noise ratios), while also 
+anticipating potential candidate drop-out, inclusion of N=18 subjects is proposed here. 
+Statistical  analysis  of  the  socket  clinical  evaluation  data  will  focus  on  the  following  
+measurements: 1) local skin contact [CONTACT_729684], 2) metabolic power, 3) gait parameters (symmetry  
+indices  for  joint  angles,  positions,  torques,  and  also  ground  reaction  forces),  and  4)  the  socket  
+evaluation questionnaire. For scalar comparisons a paired t-test, with the level of signifcance set at  
+0.05, will be used to test for diferences between the novel and conventional sockets. For time-series  
+analysis of variance (ANOVA) will be used. 
+Inclusion and exclusion criteria
+[ADDRESS_996660] no other musculoskeletal problems or any known cardiovascular, pulmonary or  
+neurological  disorders.  This  study  will  consider  subjects  of  all  sex/gender,  race,  and/or  ethnic  
+orientation, provided that they conform to the inclusion criteria summarized below. We focus on  
+healthy subjects who are unilateral or bilateral transtibial amputees, who are between 18-[ADDRESS_996661] K3 (a person with the ability or potential for ambulation with  
+variable cadence, and to traverse most environmental barriers and may have vocational, therapeutic  
+or  exercise  activity  that  demands  prosthetic  use  beyond  simple  locomotion.)  and  that  their  
+amputation took place more than [ADDRESS_996662]’s prosthetic sockets. In this study a comparison is made  
+between a subject’s conventional sockets (designed by [CONTACT_729686]) and our novel  
+(computational  modeling derived) sockets.  Since we aim to match or improve upon comfortable  
+prosthetic sockets, we will only include subjects whose current conventional sockets are deemed  
+comfortable and of high quality. The quality of a subject’s conventional sockets will be judged by [CONTACT_729687] (Bob Emerson, A Step Ahead Prosthetics).  
+One further inclusion criterion relates the subject’s ability to undergo MRI. If subjects are unable to  
+undergo MRI (e.g. due to claustrophobia or the presence of objects their body that are not MRI Safe)  
+they are excluded from this study. 
+The American lower limb amputee population consists of subjects with varying etiology, sex,  
+age, and ethnicity. Since clinical evaluation for only N=[ADDRESS_996663] recruitment (N=18) will be done via fyers, word of mouth, and by [CONTACT_729688], or who are currently being seen by [CONTACT_729689].  Furthermore,  we  will  actively  recruit  veterans  by  
+[CONTACT_729690] U.S. Department of Veteran Afairs. In order to  
+participate  in  the  study,  eligible  subjects  will  sign  a  consent  form  where  pertinent  information  
+regarding the study will be provided to them.
+IV.STUDY DESIGN 
+A cohort of 18 subjects will be recruited for this study. MRI data will be recorded for all subjects. 
+Through image segmentation geometrically accurate 3D fnite element analysis (FEA) models will be 
+constructed. Further, non-invasive indentation testing will be performed which, through combination  
+with inverse FEA, provides accurate subject-specifc mechanical properties for all subjects. The 
+resulting predictive FEA models will then be used in a  novel, data-driven, and automated 
+computational design framework for prosthetic sockets, to design prosthetic sockets for all subjects. 
+The framework optimizes the socket designs, as assessed by [CONTACT_729691], through iterative adjustment of the virtual tests sockets. Final designs are subsequently  
+3D printed. To evaluate the prosthetic sockets with each of the subjects each subject will do a 
+standing and walking exercise using their conventional sockets or the novel sockets. Meanwhile skin 
+contact [CONTACT_434210], walking metabolic cost, and gait symmetry are recorded. After the exercises, skin 
+irritation will be assessed by a dermatologist, and socket comfort is assessed using a questionnaire. 
+Together this data provides a quantitative and qualitative evaluation and comparison of the novel 
+and conventional sockets. 
+V.Methoastu 
+The overall goal of this study is to further develop, and clinically assess, a computational and data-
+driven design and manufacturing framework for mechanical interfaces that quantitatively produces  
+transtibial prosthetic sockets in a faster and more cost-efective way compared with conventional  
+processes.
+In pursuit of our long-term goal, our team has recently developed a framework for prosthetic  
+socket design and fabrication that involves: 1) non-invasive imaging to record patient geometry, 2)  
+indentation to assess tissue mechanical properties, 3) data-driven and automated creation of patient-
+specifc designs, 4) patient-specifc fnite element analysis and design evaluation, and 5) 3D printing  
+of the end design for clinical evaluation. This study aims to advance these approaches, and clinically  
+assess the overall design process for N=[ADDRESS_996664] calorimetry using an open circuit respi[INVESTIGATOR_260368]. These experiments are repeated for  
+each patient’s conventional socket for comparison. In addition to these quantitative evaluations,  
+each study participant completes a socket evaluation questionnaire, and a certifed dermatologist  
+writes a report documenting skin conditions subsequent to each socket test. 
+The main hypothesis  of this proposal is that the novel quantitative socket is equivalent to, or  
+better than, a conventional socket in terms of: 1) skin contact [CONTACT_729684], 2) gait symmetry, 3) walking  
+metabolic cost, 4) skin irritation levels as assessed by [CONTACT_108094], and 5) comfort as evaluated  
+from  a  questionnaire.  Furthermore,  we  hypothesize  that  equivalence  or  improved  socket  
+performance can be achieved for all N=[ADDRESS_996665] to the next. 
+In order to address the hypothesis that the novel sockets can perform equivalently to, or  
+better than, conventional sockets (designed by a qualifed prosthetist) we propose an experimental  
+evaluation using N=[ADDRESS_996666]. 
+This study consists of three phases: 
+1) Data collection 
+2) Socket design 
+3) Socket evaluation
+Participant involvement is required for phase 1 and 3 which occur in two separate sessions.
+Session 1 (phase 1): Data collection
+In the frst session, each amputee participant will be scheduled to visit the Biomechatronics Group in  
+The MIT Media Laboratory and our imaging center (the MIT McGovern Institute). The main purpose of  
+this session is to quantitatively measure the stifness of the residual limb and map out the anatomy  
+of the residual limb,  for N=18 subjects,  by [CONTACT_729692] (MRI) , 3D scanner, 
+ultrasound  scanner,  and  a  stifness-measuring  device  on  the  amputee.  Mechanical  property  
+investigation may also take place during imaging, e.g. during MRI by [CONTACT_729693]. Subjects are scanned using a 3T MRI system (Siemens Magnetom 3 Tesla, Siemens Medical  
+Systems,  Erlangen,  [LOCATION_013]).  The  structural  and  geometrical  data  derived  from  MRI  (e.g.  using  
+segmentation) provides the input for computational model development (used in the socket design  
+process).  Morphological  data  (such  as  height,  weight,  limb  length  and  circumference)  of  the  
+participant will also be recorded.  
+Session 2 (phase 3): Socket evaluation. 
+During a second session the sockets (designed based on the image and mechanical property data) are  
+evaluated  (at  the  MIT  Media  Lab’s  Biomechatronics  department).  In  this  session  both  the  
+conventional  and  novel  socket  systems  will  be  tested.  For  all  subjects  the  order  of  testing  
+(conventional or novel frst) is randomized. Subjects are frst asked to sit on a chair and expose their  
+residual limb surface for force sensor placement. Recently we established a new inter-socket skin  
+contact  [CONTACT_729694]  (A201,  111N,  
+FlexiForce®, TekScan, [LOCATION_011], MA, [LOCATION_003], and also F-Socket, TekScan, [LOCATION_011], MA, [LOCATION_003]). Data for an  
+array of force sensors can be simultaneously recorded during static standing or dynamic walking  
+exercises. Evaluating loads at select anatomical regions are of interest, these sites include: 1) the  
+medial crest, 2) the fbular head, 3) the tibial crest, and 4) the Mid posterior wall. Sensors are secured  
+to the skin using a thin adhesive tape (12.7 mm wide, 0.0625 mm thick, Scotch Magic®, 3M, [LOCATION_003])  
+which can be removed with minimal discomfort. After sensor placement a liner is rolled over the skin  
+and sensors. The conventional sockets are evaluated with the subject’s own liner and suspension  
+system. For evaluation with the novel socket, subjects are ftted with a custom liner (e.g. through  
+Ottobock Healthcare Gmbh) or standard commercially available liners (such as the Silosheath Double  
+cushion 3-mm liner, Silipos Holding LLC, Niagara Falls, N.Y, [LOCATION_003]). A commercially available sleeve is  
+used for suspension (such as BK Suspension sleeve, Silipos Holding LLC, Niagara Falls, N.Y, [LOCATION_003]). Next  
+the compliant socket and rigid outer socket are donned on. For the novel sockets the outer socket is  
+frst  attached  to  the  subject’s  conventional  foot-ankle  system,  and  alignment  is  optimized  by  a  
+certifed prosthetists (present during all socket ftting and evaluation procedures) consulted for this  
+study (Bob Emerson, A Step Ahead Prosthetics). Once subjects have been ftted with the sockets the  
+standing, followed by [CONTACT_729695]. For the walking exercise not only force but  
+also metabolic cost and motion capture data are recorded. The metabolic analysis will provide an  
+assessment  of  the  energy  expenditure  while  wearing  either  a conventional  or the novel  socket  
+(discomfort  may result  in  a less  efcient  or asymmetric  gait causing  increased  energy  use).  For  
+metabolic cost analysis, subjects are equipped with a breath-by-breath portable telemetric system  
+(Model K4b2, COSMED, Rome, Italy). Subjects are also equipped with 46 refective markers (15 mm  
+diameter) for motion capture (following the Helen Hayes marker model). For the standing evaluation  
+subjects are asked to stand still in an upright position for [ADDRESS_996667] force (or  
+pressure) data and resting state metabolic data is acquired. 
+For  the  walking  evaluation  subjects  are  asked  to  walk  at  1.4  m/s  for  10  minutes  on  an  
+instrumented treadmill (Bertec, Columbus, OH) while ground reaction forces are recorded, as well as  
+3D marker locations and the metabolic data. The marker locations are recorded at a sampling rate of  
+100 Hz by a 12 infrared camera motion capture system (model: T40s, Vicon Motion Systems Ltd,  
+Oxford, [LOCATION_006]). The locations of these markers is chosen to track joint motion. 
+The treadmill system used for the walking exercise is equipped with p arallel bars to prevent  
+any injury to the subject if he were to lose balance and fall. A safely harness attached to the ceiling  
+will also be utilized if the subject makes that request.  In addition, a member of the laboratory staf  
+will also accompany the study participant to catch him/her in the event of a fall, if necessary. The  
+participant may ask to rest or to terminate their participation in the study at any time. The socket  
+evaluation session (walking and standing evaluations)  should take no more than 4 hours to complete.  
+The  kinematic  and  force  plate  data  can  be  combined  with  inverse  dynamics  analysis  to  
+compute joint angles and moment profles. Furthermore, analysis between data for the left and right  
+limb  and  for  the  conventional  and  novel  socket  allows  for  comparison  of  symmetry  measures.  
+Symmetry  indices  will  be  derived  for:  1)  ankle,  knee,  and  hip  joint  angle,  position,  torque  time  
+profles, and 2) the vertical ground reaction forces. The metabolic measurements for standing will be  
+subtracted from the metabolic rate of walking trials in order to obtain the net metabolic cost of  
+walking. 
+After the standing and walking exercises subjects will be requested to take of the socket and  
+liner to expose their residual limb skin surface. The consultant dermatologist ([CONTACT_729703]) will then  
+inspect the skin and report on skin irritation. The dermatologist will also talk to the subjects on  
+comfort and instruct them to fll out the developed socket evaluation questionnaire. Questions will  
+also  relate  to  points  where  contact  [CONTACT_729696],  thus  enabling  direct  
+comparison  of local  comfort  assessment  to  pressure  fndings.  Subjects  fll  out their  answers  by  
+[CONTACT_740] a line at a desired level for each of the questions. This method allows for post-processing  
+based  conversion  of the  input to  numerical  data (i.e.  0-100  %) and  lacks  biases  associated  with  
+constrained integer number input (e.g. favoring of even/odd numbers). 
+Data & Safety Monitoring Plan
+All sensor (e.g. force/pressure) data is recorded using data acquisition units (e.g. Arduino Uno, Arduino  
+LLC) connected to dedicated laptop computers. The motion capture data (VICON system) and treadmill  
+data (speed and force plates) are recorded using a dedicated desktop computer. The metabolic cost  
+analysis are recorded on a dedicated data acquisition unit (COSMED) and are subsequently uploaded to  
+a laptop computer.  
+We  will  record  video  (in  digital  format)  for  each  subject  walking  for  analysis  and  development  
+purposes. Videos in digital format will be archived in a password protected secure server located at the  
+MIT Media Laboratory. Access to video material will be limited to authorized investigators associated  
+with  this  study.  Video  will  remain  archived  in  the  data  server  for  future  reference.  Upon  subject  
+request, videos can be deleted from server once study is completed.
+Benefits
+There are no immediate benefts for participating in this study. The prosthetic sockets produced will  
+be prototypes and would not be immediately available. 
+It is expected that knowledge generated in this study will beneft society. The processes developed  
+for producing  3D printed  sockets  during this research  will  be used  to understand  how to most  
+efectively attach (mechanical) devices to humans. This understanding will aid the development of  
+advanced prostheses, orthoses and other augmentation/rehabilitation technologies.
+Risks 
+Following the inclusion criteria (which include MRI safety) there should be no elevated risk associated  
+with  the MRI  acquisitions.  Other  risks  and  discomforts  are  minimal  as  they  are  those incurred  by  
+[CONTACT_729697] 5 minutes,  and walking on a treadmill for 10 minutes,  both while using either a  
+conventional socket and the 3D printed socket. 
+There will be a "spotter" standing next to the treadmill and close to the amputee while standing or 
+walking in our facilities. We will give subjects periodic rest/water breaks. Any other necessary 
+assistance to make the subjects comfortable will be provided. If during the standing or walking 
+exercise the subject experiences discomfort such that he/she wishes to terminate the test he/she can  
+decide to do so at any time. To minimize these uncomfortable situations, we will have a certifed 
+prosthetist and a dermatologist around during the ftting process during the socket evaluation.  
+The dermatologist ([CONTACT_729703]) involved in the study will be present during socket evaluation and will  
+judge skin irritation as a function of socket discomfort. Actual harm is unlikely but the researchers,  
+dermatologist, and prosthetist are present to judge any potential harm. Feedback from the subject  
+can be obtained promptly by [CONTACT_729698], prosthetist, and/or the dermatologist present. The  
+MIT ethical board (COUHES) will be informed of any adverse circumstances. No follow-up will be  
+made as the procedure poses minimal risk of injury.   
+Informed Consent
+Informed consent will be obtained.  The informed consent process will be conducted prior to the  
+initial visit by [CONTACT_729699]. Retention is based upon the decision of each  
+participant to continue with research enrollment. Participants may discontinue at any time without  
+consequence.
+VI.DATA ANALYSIS 
+Perstuonal iaentifierstu
+All data and fles particular to a subject will be anonymized (subjects will be assigned a code for naming  
+fles e.g. subject1mmonthmdaymyear) and stored on password protected computers to which only the  
+members of the research group have access. 
+Data stutorage
+The data will be stored on a password protected computer server in the MIT   Biomechatronics Group,  
+Media Laboratory, E-[ADDRESS_996668], digital videos can deleted from the data server once study is completed.
+VII.REFERENCES
+[1]K.  Ziegler-Graham,  E.  J.  MacKenzie,  P.  L.  Ephraim,  T.  G.  Travison,  and  R.  Brookmeyer,  
+“Estimating  the Prevalence  of Limb  Loss  in  the United  States:  2005  to  2050,”  Arch.  Phys.  Med.  
+Rehabil., vol. 89, no. 3, pp. 422–429, Mar. 2008.
+[2]J.  E.  Kurichi,  W.  B.  Vogel,  P.  L.  Kwong,  D.  Xie,  B.  E.  Bates,  and  M.  G.  Stineman,  “Factors  
+associated  with  total  inpatient  costs  and  length  of  stay  during  surgical  hospi[INVESTIGATOR_729682].,” Am. J. Phys. Med. Rehabil., vol. 92, no. 3, pp.  
+203–14, Mar. 2013.
+[3]H. E. J. Meulenbelt, P. U. Dijkstra, M. F. Jonkman, and J. H. B. Geertzen, “Skin problems in  
+lower limb amputees: a systematic review.,” Disabil. Rehabil., vol. 28, no. 10, pp. 603–608, May 2006.
+[4]C. C. Lyon, J. Kulkarni, E. Zimerson, E. Van Ross, and M. H. Beck, “Skin disorders in amputees,”  
+J. Am. Acad. Dermatol., vol. 42, no. 3, pp. 501–507, Mar. 2000.
+[5]M. B. Silver-Thorn, J. W. Steege, and D. S. Childress, “A review of prosthetic interface stress  
+investigations.,” J. Rehabil. Res. Dev., vol. 33, no. 3, pp. 253–266, Jul. 1996.
+[6]K.  E.  S.  Buikema  and  J.  H.  Meyerle,  “Amputation  stump:  Privileged  harbor  for  infections,  
+tumors, and immune disorders,” Clin. Dermatol., vol. 32, no. 5, pp. 670–677, Jan. 2014.
+[7]V. Y. Ma, L. Chan, and K. J. Carruthers, “Incidence, prevalence, costs, and impact on disability  
+of  common  conditions  requiring  rehabilitation  in  the  United  States:  stroke,  spi[INVESTIGATOR_593996],  
+traumatic brain injury, multiple sclerosis, osteoarthritis, rheumatoid arthritis, limb loss, and back pa,”  
+Arch. Phys. Med. Rehabil., vol. 95, no. 5, p. 986–995.e1, May 2014.
+[8]R.  Gailey,  K.  Allen,  J.  Castles,  J.  Kucharik,  and  M.  Roeder,  “Review  of  secondary  physical  
+conditions associated with lower-limb amputation and long-term prosthesis use.,” J. Rehabil. Res.  
+Dev., vol. 45, no. 1, pp. 15–29, Jan. 2008.
+[9]S. M. Tintle, J. J. Keeling, S. B. Shawen, J. A. Forsberg, and B. K. Potter, “Traumatic and trauma-
+related amputations: part I: general principles and lower-extremity amputations.,” J. Bone Joint Surg.  
+Am., vol. 92, no. 17, pp. 2852–68, Dec. 2010.
+[10]“BioSculptor  Orthotic  and  Prosthetic  CAD  CAM  Systems.”  [Online].  Available:  
+http://www.biosculptor.com/. [Accessed: 06-May-2015].
+[11]“Prosthetic CAD/CAM Systems by [CONTACT_729700] - Cost-efective, reliable and efcient  
+system.” [Online]. Available: http://www.infnitycadsystems.com/. [Accessed: 06-May-2015].
+[12]“Vorum: Suppliers of CAD/CAM systems for P&O and Footware, and the creators of CanftTM  
+Design software.” [Online]. Available: http://www.vorum.com/english/. [Accessed: 06-May-2015].
+[13]“Orten - Accueil.” [Online]. Available: http://www.orten.fr/. [Accessed: 06-May-2015].
+[14]D. G. Smith and E. M. Burgess, “The use of CAD/CAM technology in prosthetics and orthotics--
+current clinical models and a view to the future.,” J. Rehabil. Res. Dev., vol. 38, no. 3, pp. 327–334,  
+2001.
+[15]M. C. Faustini, R. H. Crawford, R. R. Neptune, W. E. Rogers, and G. Bosker, “Design and analysis  
+of orthogonally compliant features for local contact [CONTACT_729701].,” J.  
+Biomech. Eng., vol. 127, no. 6, pp. 946–951, 2005.
+[16]G. Facoetti,  S. Gabbiadini, G. Colombo, and C.  Rizzi, “Knowledge-based system for guided  
+modeling of sockets for lower limb prostheses,” Comput. Aided. Des. Appl., vol. 7, no. 5, pp. 723–737,  
+Aug. 2010.
+[17]E. K. Moo, N. a. Abu Osman, B. Pi[INVESTIGATOR_382480]-Murphy, W. a B. Wan Abas, W. D. Spence, and S. E.  
+Solomonidis, “Interface pressure profle analysis for patellar tendon-bearing socket and hydrostatic  
+socket,” Acta Bioeng. Biomech., vol. 11, no. 4, pp. 37–43, Jan. 2009.
+[18] a K. Topper and G. R. Fernie, “Computer-aided design and computer-aided manufacturing  
+(CAD/CAM) in prosthetics.,” Clin. Orthop. Relat. Res., no. 256, pp. 39–43, Jul. 1990.
+[19]B. Rogers, G. W. Bosker, R. H. Crawford, M. C. Faustini, R. R. Neptune, G. Walden, and A. J.  
+Gitter, “Advanced trans-tibial socket fabrication using selective laser sintering.,” Prosthet. Orthot.  
+Int., vol. 31, no. 1, pp. 88–100, 2007.
+[20]R. Torres-Moreno, J. B. Morrison, D. Cooper, C. G. Saunders, and J. Foort, “A computer-aided  
+socket design procedure for above-knee prostheses.,” J. Rehabil. Res. Dev., vol. 29, no. 3, pp. 35–44,  
+1992.
+[21]F.  E.  H.  Tay,  M.  a.  Manna,  and  L.  X.  Liu,  “A  CASD/CASM  method  for  prosthetic  socket  
+fabrication using the FDM technology,” Rapid Prototyp. J., vol. 8, no. 4, pp. 258–262, 2002.
+[22]R. Torres-Moreno, C. G. Saunders, J. Foort, and J. B. Morrison, “Computer-aided design and  
+manufacture of an above-knee amputee socket,” J. Biomed. Eng., vol. 13, no. 1, pp. 3–9, Jan. 1991.
+[23]P. Ng, P. S. V. Lee, and J. C. H. Goh, “Prosthetic sockets fabrication using rapid prototypi[INVESTIGATOR_729683],” Rapid Prototyp. J., vol. 8, no. 1, pp. 53–59, 2002.
+[24]D. M. Sengeh and H. Herr, “A Variable-Impedance Prosthetic Socket for a Transtibial Amputee  
+Designed from Magnetic Resonance Imaging Data,” JPO J. Prosthetics Orthot., vol. 25, no. 3, pp. 129–
+137, Jul. 2013.
+[25]Y.  P.  Zheng,   a  F.  Mak,  and   a  K.  Leung,  “State-of-the-art  methods  for  geometric  and  
+biomechanical assessments of residual limbs: a review.,” J. Rehabil. Res. Dev., vol. 38, no. 5, pp. 487–
+504, 2001.
+[26]K. M. Moerman, H. M. Herr, and D. M. Sengeh, “Automated and Data-driven Computational  
+Design of Patient-Specifc Biomechanical Interfaces,” Open Sci. Framew., 2016.

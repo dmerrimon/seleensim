@@ -1,0 +1,76 @@
+ 
+    
+A pilot randomized trial of oral magnesium supplementation 
+on supraventricular arrhythmias  
+ 
+ 
+ 
+ 
+NCT 02837328  
+ 
+ 
+ 
+July 5th, 2018  
+Materials and  Methods  
+The study was registered at Clinicaltrials.gov  (# [STUDY_ID_REMOVED] ). The study protocol was 
+approved by the University of Minnesota  Institutional Review Board, and a ll participants 
+provided written informed consent .  
+ 
+Study participants  
+Participants 55 years of age or older were recruited using fliers, the University of Minnesota 
+StudyFinder website, invitations to individuals enrolled in the ResearchMatch research volunteer 
+database, and invitations to University of Minnesota School of P ublic Health employees. 
+Exclusion criteria included a prior history of heart disease (coronary heart disease, heart failure, 
+AF), stroke, known kidney disease; use of type I or III antiarrhythmic drugs or digoxin; current 
+use of magnesium supplements; any prior history of allergy or intolerance to magnesium; lactose 
+intolerance; prior history of inflammatory bowel disease or any severe gastrointestinal disorder.  
+Use of multivitamins was allowable, since these typically contain relatively low dosages of Mg 
+(e.g. 50 mg).  
+ Eligible participants attended a baseline visit where measurements were conducted and a 
+Zio® XT Patch (ZioPatch; iRhythm Technologies, Inc., San Francisco, California) heart rhythm 
+monitor was applied by trained staff. After wearing the ZioP atch for 2 weeks, participants were 
+randomized 1:1 to either 400 mg magnesium oxide or placebo using block randomization within 
+two strata of age (younger than 65 and 65 and older). The randomization was carried out 
+separately for the two randomization str ata, age younger than 65 and 65 and older . In each group, 
+a randomization schedule was generated using randomly permuted blocks of random sizes. 
+Block sizes of 2, 4 or 6 were permitted. The randomization was implemented using the 
+blockrand package in R.   
+ Following randomization, participants were mailed the study intervention, which they took 
+for a total of 12 weeks. Ten weeks after beginning the study intervention, participants took part 
+in a follow -up clinic visit, and a second ZioPatch was applied. Part icipants continued the study 
+intervention until the second ZioPatch was removed (2 weeks after the follow -up clinic visit) 
+(Figure 1). 
+ 
+Study intervention a nd blinding  
+The University of Minnesota Institute for Therapeutics Discovery and Drug Development 
+produced the active study intervention (400 mg magnesium oxide) and matched placebo (lactose) 
+according to Good Manufacturing Practices. The University of Minnesota Investigational Drug 
+Service managed bottling per the randomization scheme. Study participant s and all study staff 
+were blinded to the treatment given.  
+ 
+Measurements  
+At the baseline and follow -up clinic visits, participants completed questionnaires and trained 
+study staff conducted physiological measurements (i.e., anthropometry, blood pressure), 
+phlebotomy, and applied the ZioPatch device. Treatment compliance was assessed by a pill 
+count at the follow -up visit. At intervention days 21, 42 and 80 participants were also emailed 
+unique links to online questionnaires, administered via REDCap  [15], which queried compliance 
+and asked the following open -ended question about adverse effects: “Since starting the study, 
+have you experienced anything out of the ordinary?” Participant blinding was also assessed on 
+intervention day 80, the last day of the study.  
+ The ZioPatch was used to identify premature atrial contractions (PACs). PACs are 
+supraventricular arrhythmias ass ociated with the future risk of AF  [16-18] and are considered an  
+intermediate phenotype of the arrhythmia, reflecting the underlying cardiac substrate that 
+facilitates the development of AF  [19]. Participants were asked to wear the ZioPatches for 2 
+weeks after each clinic visit. Information obtained from the ZioPatch  devices was processed by 
+the ZEUS algorithm, a comprehensive system that analyzes electrocardiographic data received 
+from the device  [20]. We counted as PACs isolated supraventricular ectopic beats, 
+supraventricular ectopic couplet total count, and supraventricular ectopic trip let total count. Total 
+PACs were then divided by number of hours the ZioPatch recorded analyzable data, which 
+yielded PACS per hour.  
+ Participants were asked to fast for 8 hours prior to blood draws. Serum magnesium and 
+glucose were measured using the Roch e Cobas 6000 at the University of Minnesota Advanced 
+Research and Diagnostic Laboratory. Blood pressure was measured with the participant sitting, 
+after a 5 minute rest, with a random zero sphygmomanometer (Omron Digital Blood Pressure 
+Monitor HEM -907XL). Three measurements were taken; all three measurements were averaged 
+for use in analyses. Height and weight were measured with participants in light clothing, and 
+shoes removed. Height was measured with a research stadi ometer and weight with a scale.  

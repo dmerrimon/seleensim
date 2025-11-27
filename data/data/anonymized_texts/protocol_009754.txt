@@ -1,0 +1,275 @@
+ 
+Study Protocol and Statistical Analysis Plan  
+ 
+ 
+ 
+ 
+ 
+Evaluation o f Hearing Aid Benefit  
+ 
+ 
+ 
+ 
+ 
+Version  2.0 
+ 
+02/04/2022  
+ 
+ 
+ 
+ 
+ 
+[STUDY_ID_REMOVED]  
+ 
+ 
+ 
+ 
+Evaluation of Hearing Aid Benefit  
+ 
+ 
+1 Background    
+In autumn 2020, Phonak released the first iteration of the Paradise line of hearing instruments with Audeo 
+P.  In the intervening time, Paradise has been extended to include Naida P, CROS P, and Audeo  
+Life.   Beginning in 2022, the Paradise line will be extended once again to include custom devices with 
+Virto P.  Performance of this feature set has been tested and validated in other form factors, and relevant 
+claims have been substantiated during those studies, as well.   Virto P has been determined to be 
+technically and biologically equivalent to Audeo P; it is, therefore, not necessary to re -validate all 
+functional ity and re -substantiate all claims.  
+ 
+Despite the determination that Audeo P clinical data is generally applicable to Virto P, it is nevertheless 
+advisable to collect clinical and usability data with Virto P to demonstra te that our devices provide a 
+clinical benefit to the user relative to no device.  
+ 
+2 Objectives  
+Primary objective:  
+• To evaluate whether adults with moderate to severe hearing loss (N3/N4) can achieve speech 
+understanding equivalent to  their individual dB -opt at a typical conversational input level while 
+using Virto P devices in quiet.  
+Secondary objectives:  
+• To evaluate w hether Virto P hearing instruments provide improved speech intelligibility in noise 
+compared to the unaided condition in a group of adults with moderate to severe hearing loss (i.e., 
+N3/N4).  
+ 
+3 Description of the investigational device  
+The Virto P is a hearing aid on the Paradise platform and is worn in the ear canal . The microphone(s) 
+pick(s) up sound waves, convert(s) them into an electrical signal which is sent to the Digital Signal 
+Processor (DSP), which is part of the h ybrid. The DSP applies the amplification to the electrical signal, 
+which means that the amplitude of the signal gets modified. The modified electrical signal is forwarded 
+to the external receiver, which is hold in the ear canal with the aid of an earpiece.  The external receiver 
+converts the electrical signal into an acoustic signal and submits it to the ear drum. An integrated 
+Bluetooth antenna enables the hearing aid to also receive digital signals (e.g. streamed music), which 
+will be processed in the same  way.  
+The overall intended purpose of the devic e is to amplify and transmit sound ot the ear and thereby 
+compensate for impaired hearing.  
+ 
+4 Design of the clinical investigation  
+This investigation is a single -center, single -group,  open -label clinical investigation.  The primary aim of 
+the present investigation is to produce evidence of the clinical benefit of Virto P devices relative to the 
+unaided condition.  Because it is unethical to knowingly deprive a group of individuals with  a sensory 
+disability (hearing loss) from a well -established treatment (hearing instruments), this trial will rely on 
+laboratory testing in the aided and unaided conditions rather than treatment and control groups to 
+evaluate benefit.  
+ 
+ 
+ 
+ 
+5 Risks and benefits of the investigational device and clinical investigation  
+Virto P hearing instruments carry only minimal risks under normal use conditions and are intended to 
+give the user auditory access to speech communication.  There are no risks associated with the 
+investigation procedures that are not associated with the use of the device.  Participants in this 
+investigation will benefit from the ability to hear and communicate in their daily lives, while 
+experiencing only minimal risk associated with the use of the device.  
+ 
+ 
+6 Endpoints  
+Primary objective:  
+The NU -6 word lists are used extensively in the United States for clinical and research assessments of 
+speech understanding  and has been in use for over 50 years  (Tillman, Carhart, Wilber, 1963).  This test 
+material was selected due to its long history of use in the United States as a measure of monosyllabic 
+word recognition.  
+Performance on speech recognition tasks varies as a function of hearing loss (Guthrie and  Mackersie, 
+2009).  Not all patients will be able to reach 100% correct performance, regardless of the presentation 
+level.  Due to this variation, ‘excellent’ has been defined for this investigation as each individual 
+participant’s own maximum performance (PB-max).  This investigation will aim to demonstrate 
+equivalency on NU6 word recognition between aided performance at a typical level (65 dB(A)) and the 
+participant’s unaided PB -max.  
+ 
+Secondary objective:  
+The American English Matrix test was selected beca use it is an externally developed and validated 
+speech test with a steep psychometric function.  Because the test estimates an SNR -50, the steep 
+psychometric function makes it a sensitive measure for comparing across multiple conditions.  In this 
+case, the  test will be administered both with and without hearing aids. These results will be used to 
+support the notion that hearing aids provide a clinical benefit (i.e., hearing speech in noise).  
+ 
+7 Inclusion and Exclusion Criteria  
+Subjects fulfilling all of the following inclusion  criteria are eligible for the investigation:  
+• N3/N4 sensorineural hearing loss  
+• Willingness to travel to on -site appointments  
+• 18-100 years old  
+• Willingness to use custom hearing instruments  
+• Fluent in English  
+The presence of any one of the following exclusion  criteria will lead to the exclusion of the subject:  
+• Cognitive impairment  
+ 
+8 Measurements and procedures  
+This investigation will evaluate the clinical benefit of the Virto P hearing instruments, and it will generate 
+data to substantiate the claim that Virto P hearing instruments provide the end user with “excellent 
+speech understanding.”  Virto P hearing inst ruments are custom, in -the-ear (ITE) devices produced by 
+Sonova AG under its flagship brand, Phonak.  Virto P devices are intended to compensate for mild to 
+profound hearing loss by amplifying speech and other acoustic input to a level that is audible, yet  
+comfortable, for the patient.  
+One of the most important clinical benefits of any hearing instrument is to provide improved speech 
+intelligibility in difficult listening situations.  To evaluate this benefit, participants in this investigation will 
+complet e speech -in-noise testing in both an aided and unaided condition.  If Virto P is providing the 
+intended benefit, participants should, as a group, perform better in the aided condition than in the 
+unaided condition.   
+For the purposes of generating data to substantiate the claim that Virto P provides “excellent speech 
+understanding,” ‘excellent’ has been defined as the best possible speech understanding score a user is 
+able to achieve when asked to listen to and repeat words in quiet.  This maximum level of understanding 
+will be established for each participant in the unaided condition, and testing will be repeated at a 
+conversational level in the aided condition.  Equivalence (defined as +/ - 10 % -age points) between these 
+two measures will show that users ca n understand as much speech as their auditory system will permit 
+when using Virto P and listening to speech at a typical intensity level.  
+ 
+9 Statistical design and analysis  
+The sample size for this investigation was determined based on t he planned analysis for the primary 
+objective.  Sample size calculation was conducted in R using the TOSTER package .  The code used to 
+generate the sample size calculation is reproduced below.  
+TOSTER::powerTOSTpaired.raw(alpha = .05,  
+ statistical_power = .8,   
+ sdif = 12,  
+ low_eqbound = -10,  
+ high_eqbound = 10)  
+ 
+The calculation above assumes an equivalence margin of +/ - 10 percentage points and a standard 
+deviation of differences of 12.  The power analysis described above yielded a sample size of 13 
+participants  at a power of 0.8 and alpha of 0.05 .  An additional 3 participants will be recruited to account 
+for potential attrition and/or missing data.  
+ 
+Speech intelligibility data for the primary and secondary objectiv es from all subjects will be analyzed.  A 
+separate analysis will be conducted for the speech intelligibility in quiet measure (primary objective) and 
+the speech intelligibility in noise measure (secondary objective).  Participants will not be grouped as a 
+part of these analyses.   
+ 
+The principal investigator will conduct the analysis of the primary endpoint after data has been collected 
+from all participants for all test conditions.  This analysis will be conducted in the R statisti cal computing 
+environment.  The analysis will follow a two one -sample t -test procedure to test for equivalency 
+between the aided NU6 performance in quiet and the unaided PB -max performance level.  In this 
+procedure, the two one -sample tests will compare th e mean difference between the two test conditions 
+to the equivalence margin of 10 percentage points.  The two tests will differ only in their alternative 
+hypothesis; one test have an alternative hypothesis that the mean difference is greater than the 
+equiv alence margin, the other that the mean difference is less.  Rejection of both tests will be 
+interpreted to indicate that the true mean difference is within the equivalence margin above/below 
+zero.  
+ 
+The principal investigator will  conduct the analysis of the secondary endpoint related to speech 
+intelligibility in noise after all data has been collected from all participants in all test conditions.  The 
+analysis will be conducted in the R statistical computing environment.  The anal ysis will use a paired t -
+test to compare the aided speech in noise performance to the unaided speech in noise performance.   
+ 
+ 
+10 Investigation Duration  
+The expected duration for each participant is ~2-3 weeks.  
+ 
+ 
+11 Data handling and management  
+This investigation will utilize electronic CRFs, including Microsoft Excel and Word files.  For all CRFs, the 
+participants will be identified only by an anony mous code, which will not include their real names, 
+initials, birthdates, or other identifying information.  The code list will be stored separately on a 
+restricted access server maintained by Sonova USA.  All investigators and study staff will have access  to 
+CRFs during the course of the investigation.  Following the completion of this investigation, CRFs will be 
+locked and maintained in the TMF.  
+Any paper -based data will be stored in a locked filing cabinet at the investiga tion site.  All electronic data 
+will be stored on an access -restricted server owned, operated, and maintained by Sonova USA.  Servers 
+used to store data in this investigation are physically located in the US.  
+The identifiable data kept at PARC will be destroyed as soon as the final analyses have been completed. 
+The de -identified data will be kept for seven years after the publication of results. When the d ata are 
+destroyed, paper records will be shredded by services provided at PARC. Electronic data will be 
+encrypted as de -identified NOAH packages, where applicable, to be shared with Sonova Switzerland.  
+ 
+ 
+12 Amendments to the CIP  
+If it is necessary to make an amendment to this CIP, the changes to the CIP will be clearly identified with 
+the date the change was made, and the version number will be incremented.  Non-substantial 
+amendments (e.g., correcting a typographical error) will be recorded as a minor version incrementation, 
+whereas substantial amendments (e.g., a change to the study procedure or statistical plan) will be 
+recorded as a major version incremen tation.  In an emergency situation, this CIP will be amended and 
+updated only after participant health and safety have been assured and FDA/WIRB have been notified 
+(as applicable).  
+ 
+13 Deviations from clinical investigation plan  
+Deviations from the CIP to protect the rights, safety and well -being of human participants under 
+emergency circumstances may proceed without prior approval of the sponsor and the EC – such 
+deviations will be documented and reported to the sponsor representative (Study Manager) and the EC 
+as soon as possible. Apart from that the investigator is not allowed to deviate from this CIP unless that 
+deviatio n does not influence the investigation data.  
+ 
+14 Device accountability  
+Copy from chapter 12.1(Accountability for investigational device)  
+ 
+The PI or authorized designee keep records documenting the following in a written process:  
+• Names of participants who received, used, returned, or disposed of device  
+• Date of receipt, identification, and quantity of each investigational device (batch/serial number 
+or unique code)  
+• Expiry date (if applicable)  
+• Date(s) of use  
+The PI or authorized designee keep records documenting the following in a written process:  
+• Date on which the device was returned (if applicable)  
+• Date of return of unus ed, expired, or malfunctioning investigational devices (if applicable)  
+• Date and documentation of disposal of devices as per sponsor instructions (if applicable)  
+ 
+15 Informed consent process  
+Prior to the beginning of the investigation, all participants will be provided with a written copy of an IRB -
+approved consent statement.  The investigator will explain the consent document to the participant and 
+answer any questions.  Participa nts will be told explicitly that agreement to the consent document and 
+their participation in the investigation is entirely voluntary and may be revoked at any time for any 
+reason or no reason.   
+ 
+16 Adverse events, adverse device effects and device deficiencies  
+Device deficiencies and all adverse events (AE) including  all serious adverse events (SAE) are collected, 
+fully investigated and documented in the source document and appropriate case report form (CRF) 
+during the entire investigation period, i.e. from participant’s informed con -sent until the last protocol -
+speci fic procedure, including a safety follow -up period (ISO -14155, 2020). Documentation includes dates 
+of event, treatment, resolution, assessment of serious -ness and causal relationship to device and/or 
+investigation procedure.  
+Information on AEs is systemat ically collected during the regular investigation visits, and phone calls (if 
+applicable).  
+The investigator(s) will follow -up on a biweekly basis with any participant experiencing an AE until either 
+a) the participant reports resolution of the AE or b) 8 weeks have passed since the participant’s final 
+visit. If, however, the participant’s condition worsens throughout the 8 week follow -up period, the 
+investigator will continue to follow -up biweekly until the AE is resolved or the participant’s condition 
+stabilizes over an 8 week period.  
+The reporting of Serious Adverse Events and Device Deficiencies follows the Regulation (EU) 2017/745 
+and the MDCG 2020 -10/1 Safety Reporting in Clinical Investigations of Medical Devices under Regulation 
+(EU) 2017/745.  
+The c ausality assessment of the SAE will be conducted according to MDCG 2020 -10/1 Safety Reporting 
+in Clinical Investigations of Medical Devices under Regulation (EU) 2017/745.  
+ 
+17 Vulnerable populations  
+This investigation will not include any vulnerable populations.  
+ 
+18  Suspension or premature termination of the clinical investigation  
+The clinical investigation will be suspended or prematurely terminated if the feature and/or 
+investigative device malfunctions or if the participants or researchers are exposed to safety risks other 
+than those outlined in this doc ument. These events may include but are not limited to – natural disaster, 
+widespread outbreak of illness, compromised structure of the investigation site, etc.  
+ 
+In accordance with the FDA, the investigation will be terminated within 5 days if there is any  reason to 
+believe the participants are exposed to an unreasonable  degree of  risk. 
+ 
+19 Publication policy  
+The clinical investigation will be registered in clinicaltrials.gov, a publicly accessible database, as required 
+by U.S. regulations.  
+The results of the clinical investigation will be published on clinicaltrials.gov no later than one calendar 
+year followi ng the final participant appointment.  
+An internal report of the results of this investigation will be completed and uploaded to eQMS.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

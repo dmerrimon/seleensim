@@ -1,0 +1,2829 @@
+RSV-MVA-002 
+Modified Vaccinia Ankara Vaccine 
+Bavarian Nordic Restricted Business ProprietaryStatistical Analysis Plan 
+RSV-MVA-002 
+A randomized, single-blind, placebo controlled, dose-ranging Phase 
+II trial in ≥ 55 year old adults to evaluate the safety and 
+immunogenicity of the recombinant MVA-BN-RSV vaccine 
+Main Study and Booster Substudy 
+01-May-2018
+[STUDY_ID_REMOVED]
+RSV-MVA-002 Statistical Analysis Plan
+Modified Vaccinia Ankara Vaccine RSV-MVA-002
+Bavarian Nordic Restric ted Business ProprietaryTable of Contents 
+Main Study SAP 
+Booster Substudy SAP
+Study specific version: 1.0
+Study specific version Date: 31 -May-17
+Page 1of 49STATISTICAL ANALYSIS PLAN 
+PROTOCOL TITLE: A randomized, single-blind, placebo controlled, 
+dose-ranging Phase II trial in ≥ 55 year old adults 
+to evaluate the safety and immunogenicity of the 
+recombinant MVA -BN-RSV vaccine
+PROTOCOL:   RSV -MVA -002
+STUDY DRUG:  MVA -BN-RSV Vaccine
+STUDY PHASE: Phase II
+IND/EUDRACT 
+NUMBER: IND 016511
+SPONSOR: Bavarian Nordic
+Draft 0.1 Date: 17-FEB-17 (  Internal Team Review) 
+Draft 0.2 Date: 07-MAR-17 (First Draft to BN) 
+Draft 0.3 Date: 17-APR-17 (Second Draft to BN) 
+Draft 0.4 Date: 08-MAY-17 (Third Draft to BN) 
+Draft 0.5 Date: 19-MAY-17 (Fourth Draft to BN) 
+Draft 0.6 Date: 22-MAY-17 (Fifth Draft to BN) 
+Final 1.0 Date: 31-MAY-17 (Final) 
+
+Study specific version: 1.0
+Study specific version Date: 31 -May-17
+Page 2of 49Signature [CONTACT_243698]. 
+Approved by: [CONTACT_243627]: 1.0
+Study specific version Date: 31 -May-17
+Page 3of 49TABLE of CONTENTS 
+STATISTICAL ANALYSIS PLAN ...................................................................................................5
+GENERAL DEFINITIONS  ..............................................................................................................5
+TABLE 1: DETECTION LIMITS (DL)  ............................................................................................8
+1. TRIAL OVERVIEW  .............................................................................................................. 12
+1.1 T RIAL DESCRIPTION  ................................................................................................................................ 12
+1.2 O BJECTIVES  ............................................................................................................................................ 13
+1.2.1 Primary Objective  .............................................................................................................................. 13
+1.2.2 Secondary Objectives  ......................................................................................................................... 13
+1.3 T RIAL POPULATION  .................................................................................................................................... 13
+1.4 E NDPOINTS .............................................................................................................................................. 13
+1.4.1 Primary Endpoint  ............................................................................................................................... 13
+1.4.2 Secondary Endpoints  .......................................................................................................................... 13
+1.5 I NTERIM ANALYSIS  ................................................................................................................................. 15
+1.6 S AFETY MONITORING TEAM  ................................................................................................................... 15
+2. TRIAL DESIGN  ......................................................................................................................... 16
+3. STATISTICAL METHODS  ........................................................................................................ 20
+3.1. P LANNED SAMPLE SIZE ............................................................................................................................. 20
+3.2. A NALYSIS POPULATIONS  ........................................................................................................................... 20
+3.2.1 Full Analysis Set (FAS)  ...................................................................................................................... 20
+3.2.2 Per-Protocol Set (PPS)  ...................................................................................................................... 20
+3.2.3 Immunogenicity Analysis Set (IAS) .................................................................................................... 21
+3.3. D ATA DEFINITIONS , DATA CONVENTIONS AND HANDLING OF MISSING DATA ......................................... 21
+3.3.1 Missing Immunogenicity Data  ........................................................................................................... 21
+3.3.2 Missing Adverse Event and Concomitant Medication Data  ............................................................... 22
+3.3.3 Assignment of AEs to Vaccination Period  .......................................................................................... 23
+3.3.4 General Considerations for AEs  ........................................................................................................ 23
+3.4. A NALYSIS VARIABLES  ............................................................................................................................... 24
+3.4.1 Demographic and other Baseline Characteristics  ............................................................................. 24
+3.4.2 Safety Variables  ................................................................................................................................. 25
+3.4.3 Immunogenicity Variables .................................................................................................................. 28
+3.4.4 Pharmacokinetic Variables  ................................................................................................................ 29
+3.4.5 Pharmacodynamic Variables  ............................................................................................................. 29
+3.5. A NALYSIS AND PRESENTATION OF METHODS  ............................................................................................ 29
+3.5.1 Listings and Descriptive Statistics  ..................................................................................................... 29
+3.5.2 Software ............................................................................................................................................. 30
+3.5.3 Disposition of Subjects  ....................................................................................................................... 30
+3.5.4 Demographic and Other Baseline Data  ............................................................................................. 32
+3.5.5 Prior and Concomitant Medications  .................................................................................................. 32
+3.5.6 Compliance  ........................................................................................................................................ 33
+3.5.7 Immunogenicity Analysis .................................................................................................................... 33
+3.5.8 Adverse Events  ................................................................................................................................... 35
+3.5.9 Clinical Laboratory Exams (Hematology, Chemistry)  ....................................................................... 37
+3.5.10 Vital Signs  ........................................................................................................................................ 38
+Study specific version: 1.0
+Study specific version Date: [ADDRESS_295556] OF TABLES  ........................................................................................................................................... 41
+Study specific version: 1.0
+Study specific version Date: 31 -May-17
+Page 5of 49STATISTICAL ANALYSIS PLAN 
+This Statistical Analysis Plan (SAP) details the statistical methodology to be used in analyzing 
+trial data and outlines the statistical programming specifications, tables, figures, and listings for 
+clinical trial RSV-MVA-002. It describes the variables and populations, anticipated data 
+transformations and manipulations, and other details of the analyses not provided in the Clinical 
+Trial Protocol (CTP). 
+The analyses defined in the SAP will be followed completely. It may be necessary to define 
+some additional explorative analyses, and/or additional analysis populations. If any unforeseen 
+additional analysis is included in the clinical study report (CSR) it will be clearly flagged as an 
+additional unplanned explorative analysis. 
+The analyses described are based on the final clinical trial protocol RSV-MVA-002 Edition 2.0 
+dated 27 Jan 2017. 
+GENERAL DEFINITIONS 
+Vaccinations 
+For this trial a vaccination means an intramuscular administration of active MVA-BN-RSV 
+vaccine or Tris-buffered saline (TBS). 
+Placebo 
+Tris-buffered saline (TBS) 
+Dose 1 
+Represents the nominal titer of 1 x 108 Infectious Unit (Inf.U) per 0.[ADDRESS_295557] (IMP) doses and schedules.  
+Age groups: Subjects will be stratified by [CONTACT_243628]: ≥ 55 to < 70, and ≥ 70 years of 
+age. A minimum of 20 subjects per treatment group in the age stratum ≥ 70 years is required. 
+Subgroups 
+The subgroup consists of 20 subjects per treatment group (a total of 100 subjects) who will have 
+peripheral blood mononuclear cells (PBMC) collection as well as an additional serum and nasal 
+swab sample collection time point one week post each vaccination. 
+Study specific version: 1.0
+Study specific version Date: [ADDRESS_295558] vaccination. Note that it is possible for Visit 1 (V1) to be performed, for example, on trial 
+Day -1. 
+Baseline 
+Baseline refers to the last measurement before first vaccination of trial vaccine. This is either at 
+Visit 1 or at Screening (SCR) Visit (or latest re-screening) as applicable. For example, if there 
+are missing vital sign data at Visit 1, the SCR or latest re-screening data will be used to impute 
+the missing vital sign data as the baseline measurement. Partial rescreen is possible for certain 
+isolated entry criteria. In such case the last measurement before first vaccination of trial drug will 
+be used as the baseline value. This means that a subject’s baseline date may differ across screen 
+and rescreen records. This data will be summarized as Baseline data without a direct 
+specification of which visit was used. However, in all other visits no imputation will be used and 
+the actual visit used will be specified in tables or listings. 
+Staggering visit (VS) 
+A visit only required by [CONTACT_243629]. The staggering 
+process will be performed at one clinical site only. 
+Vaccination Period 
+A vaccination period is defined as the period starting at a given vaccination and ending [ADDRESS_295559] receives another vaccination or discontinues the trial 
+with the following hierarchy:  
+If subject receives both vaccinations, the second vaccination represents the end of 
+vaccination period 1. 
+The end of vaccination period [ADDRESS_295560] discontinues earlier. In this case, the discontinuation date represents the end of 
+vaccination period 2. 
+If subject discontinues before second vaccination, the discontinuation date represents the 
+end of vaccination period 1. 
+As the intention is that all subjects will receive two vaccinations, two vaccination periods will be 
+recorded per subject. The overall vaccination period starts from the beginning of period 1 and 
+ends at the end of period 2. 
+Screening Phase 
+The Screening Phase is defined from the Screening Visit up to, but not including Visit 1. This 
+includes any Re-screening Visits that are conducted. 
+Study specific version: 1.0
+Study specific version Date: 31 -May-17
+Page 7of 49Active Trial Phase 
+The active trial phase is defined as the trial phase starting with and including Visit 1 and ending 
+with and including EAP (End of active trial phase) (V3 + 28-35 days). 
+End of Active Trial Phase (EAP) 
+EAP is defined as the last visit of the active trial phase.
+Follow-Up Trial Phase 
+The Follow-Up trial phase is defined as the phase starting after EAP visit and includes the 
+Follow-up visits (FU1 and FU2). 
+Eligible Subjects 
+A subject is eligible if the screening question “Is subject eligible and willing to continue?” is 
+answered with “Yes” and there are no subsequent substantial protocol deviations that affect the 
+eligibility of the subject at Visit [ADDRESS_295561] is considered as having received both doses of trial vaccination per the randomized 
+group assignment if a date of drug administration is given for the vaccination at Visit 1 and for 
+the vaccination at Visit 3, and no major vaccine preparation or administration deviation is 
+recorded. 
+Treatment-Emergent Adverse Events (TEAE) 
+An Adverse Event (AE) with onset either on the day of a vaccination, but after the vaccination or 
+within the 28 days following a vaccination. Note that serious AEs are also considered treatment-
+emergent after 28 days (see below). 
+Serious Adverse Events 
+All Serious Adverse Events (SAEs) from first vaccination to last follow-up visit are considered 
+as treatment-emergent regardless of the day of onset. 
+AEs related to respi[INVESTIGATOR_243616], 
+including the FU Visits and are considered as treatment-emergent regardless of the day of onset. 
+Adverse Drug Reaction 
+An AE with either a ‘possible’, ‘probable’, ‘definite’ ‘unknown’ or ‘missing’ relationship to the 
+vaccine (which means: “causally related”). 
+Nominal Titer 
+The MVA-BN-RSV (Respi[INVESTIGATOR_14250]) vaccine is formulated at a nominal titer of 
+5 x 108 Inf.U per dose (0.5 mL). The actual titer will be determined in stability testing. 
+Study specific version: 1.0
+Study specific version Date: 31 -May-17
+Page 8of 49Table 1: Detection Limits (DL) 
+TestDetection
+Limit (DL)Negative values reported
+PBMC RSV-specific IFN-γ
+ELISPOT (pool F, G(A), G(B), M2, N or
+RSV virus)
+PBMC RSV-specific IL-4 ELISPOT (pool F, 
+G(A), G(B), M2, N or RSV virus)50 25 (half of the DL) 
+Serum RSV-specific PRNT Strain A
+Serum RSV-specific PRNT Strain B20 10 (half of the DL)
+Serum RSV-specific IgG ELISA 63 31.5 (half of the DL)
+Serum RSV-specific IgA ELISA 100 50 (half of the DL)
+Mucosal RSV-specific IgA ELISA (nasal 
+swabs)2 1 (half of the DL)
+Serum RSV (strain A) G protein -
+specific IgG ELISA
+Serum RSV (strain B) G protein- specific 
+IgG ELISAno detection 
+limit appliesnegative reported as 50
+RSV-specific B cell ELISPOT
+IgG and IgAno detection 
+limit appliesa measured percentage is 
+considered a positive result
+Geometric Mean Titer and Geometric Mean Spot Forming Units 
+The Geometric Mean Titer (GMT) and Geometric Mean Spot Forming Units (GMSFU) are 
+calculated by [CONTACT_243630] 10 transformed titers, and Spot 
+Forming Units, respectively.  
+(Sero)Negative and (Sero)Positive Results 
+For each immunogenicity assay a negative result is defined as a titer below the DL, while a 
+positive result is a titer equal to or above the DL. 
+Response 
+For each immunogenicity assay, a response to the vaccine (applicable only for post baseline 
+visits) is defined as either the appearance of a positive result for subjects with a negative result at 
+baseline (Visit 1), or an increase by a factor of at least 2 compared to the Visit 1 for subjects with 
+a positive result at Visit 1. Response status is applicable only for V1b, V2, V3, V3b, V4, EAP 
+Visit, and FU1 and FU2 Visits and is not calculated for subjects with missing Visit 1 titer. 
+Study specific version: 1.0
+Study specific version Date: [ADDRESS_295562] a positive 
+response status out of the number of subjects with a non-missing response status (positive or 
+negative) at that visit. 
+Responder 
+A subject is an ELISPOT Responder to the vaccine in a particular test agent (F pool, G(A) pool, 
+G(B) pool, N pool, M2 pool, RSV Virus) if the subject has a response for at least two post 
+baseline visits (V1b to V 4) within the same test agent. The responder evaluation applies only to 
+subjects with at least two post baseline results available. 
+The responder rate for each test agent F pool, G(A) pool, G(B) pool, N pool, M2 pool, RSV 
+Virus) is the percentage of subjects who are responders to the relevant test agent out of the 
+number of subjects with a non-missing responder status (positive or negative). 
+Individual peak titer 
+The individual peak titer is the maximum of titers recorded on V1b, V2, V3, V3b, V4, EAP 
+Visit.
+Fold Increase 
+The fold increase is defined as a subject’s post-Baseline titer at Visit X, divided by [CONTACT_243631].
+Study specific version: 1.0
+Study specific version Date: [ADDRESS_295563] OF ABBREVIATIONS AND DEFINITIONS OF TERMS 
+AE  Adverse Event 
+ATC   Anatomical-Therapeutic-Chemical 
+ATP  Active Trial Phase 
+BMI   Body Mass Index 
+BN   Bavarian Nordic 
+CI   Confidence Interval 
+CSR   Clinical Study Report 
+CTP   Clinical Trial Protocol 
+DL   Detection Limit 
+DRM   Data Review Meeting 
+ECG   Electrocardiogram 
+eCRF   electronic Case Report Form 
+ELISA  Enzyme-Linked Immunosorbent Assay 
+ELISPOT  Enzyme-Linked Immuno Spot Technique 
+FAS   Full Analysis Set 
+FU   Follow-up 
+FU1   Follow-up Visit 1 
+FU2   Follow-up Visit 2 
+GMFI  Geometric Mean Fold Increase 
+GMSFU  Geometric Mean Spot Forming Units 
+GMT   Geometric Mean Titer 
+HCG   Human Choriogonadotropin 
+HIV  Human Immunodeficiency Virus 
+IAS  Immunogenicity Analysis Set 
+IFN-γ   Interferon-gamma 
+IgA  Immunoglobulin A 
+IgG  Immunoglobulin G  
+IL-4  Interleukin 4 
+Inf.U  Infectious Unit 
+Log 10 Logarithm base 10 
+Max   Maximum 
+MCH   Mean Corpuscular Hemoglobin 
+MCHC  Mean Corpuscular Hemoglobin Concentration 
+MCV   Mean Corpuscular Volume 
+MedDRA  Medical Dictionary for Regulatory Activities 
+Min   Minimum 
+MVA-BN®  Modified Vaccinia Ankara – Bavarian Nordic 
+n  Number of Observations 
+PBMC  Peripheral Blood Mononuclear Cells 
+PI [INVESTIGATOR_243617]: 1.0
+Study specific version Date: [ADDRESS_295564] Deviation 
+SFU   Spot Forming Units 
+SMT   Safety Monitoring Team 
+SOC   System Organ Class 
+TEAE  Treatment-Emergent Adverse Event 
+WBC   White Blood Cells 
+WHO-DD  World Health Organization Drug Dictionary 
+WOCBP  Women of child bearing potential 
+Study specific version: 1.0
+Study specific version Date: 31 -May-17
+Page 12of 491. Trial Overview 
+1.1 Trial Description 
+This trial is a randomized, single-blind, placebo-controlled, dose-ranging Phase II trial in ≥ 55 
+year old adults to evaluate the safety and immunogenicity of the recombinant MVA-BN-RSV 
+vaccine. A total of 400 subjects will be recruited into five treatment groups in this trial (see Table 
+2). 
+Table 2 Treatment Groups  
+Group N Age 
+[years]Volume per dose 
+[mL] 1st vaccination 
+Day 0 
+[Inf.U] 2nd vaccination 
+Day 28 
+[Inf.U] Route
+1 80 ≥55 0.5 1x108 Placebo IM
+2 80 ≥55 0.5 1x1081x108IM
+3 80 ≥55 0.5 5x108 Placebo IM
+4 80 ≥55 0.5 5x1085x108IM
+5 80 ≥55 0.5 Placebo Placebo IM
+Total 400 
+In general, subjects are stratified by [CONTACT_243628]: ≥ 55 to < 70 and ≥ 70 years. However, 
+during the staggering phase performed by [CONTACT_243632] (sentinel cohort and safety cohort) 
+only the younger age group is recruited. In order to have the best power to detect differences 
+between the strata the aim is to achieve equally distributed recruitment across the age strata but 
+at least 20 subjects per treatment group are required in the age stratum ≥ [ADDRESS_295565] into Group 4 (i.e. 1:1 subjects receiving Dose 1 
+and Dose 2). Following a positive safety assessment for the subjects in the sentinel cohort, 
+recruitment in the safety cohort starts. The safety cohort includes a total of 10 subjects, 5 subjects 
+each into Groups 2 and 4 (i.e. 5:5 subjects receiving Dose 1 and Dose 2). Following a positive 
+safety assessment for the subjects in the safety cohort, recruitment in all groups for the remaining 
+subjects is opened. The open recruitment phase includes all treatment groups. The open 
+recruitment phase randomization is stratified by [CONTACT_243633]. 
+Study specific version: 1.0
+Study specific version Date: 31 -May-17
+Page 13of 49PBMC collection is performed in a subgroup of 20 subjects in each treatment group (total of 100 
+subjects). This subgroup also has an additional serum and nasal swab sample collection time 
+point one week post each vaccination in addition to the serum and nasal swab sample collection 
+time points scheduled for all subjects. 
+1.2 Objectives 
+1.2.1 Primary Objective 
+The primary objective of the study is to assess the optimal dose and schedule of the MVA-BN-
+RSV vaccine in ≥ 55 year old subjects in terms of immunogenicity. 
+1.2.2 Secondary Objectives 
+The secondary objectives are: 
+To assess safety and reactogenicity of the MVA-BN-RSV vaccine in adult/elderly 
+subjects. 
+To assess the RSV-specific humoral immune responses (in all subjects) and cellular 
+immune responses (in a subgroup population of each group) against the MVA-BN-RSV 
+vaccine in adult/elderly subjects. 
+To explore a potential correlation of the RSV-specific immune response to RSV related respi[INVESTIGATOR_243618]. 
+1.3 Trial Population 
+A total of 400 subjects ≥ 55 years old will be recruited into five treatment groups (80 subjects per 
+treatment group). 
+1.4 Endpoints 
+1.4.1 Primary Endpoint 
+The primary endpoint is Geometric Mean Titers (GMTs) after one or two MVA-BN-RSV 
+vaccinations or placebo measured by [CONTACT_243634] (PRNT; against 
+strain A) [ADDRESS_295566] vaccination. 
+1.4.2 Secondary Endpoints 
+The secondary endpoints are classified as safety and immunogenicity. 
+The safety endpoints are: 
+Occurrence, relationship to the trial vaccine and intensity of any serious adverse event 
+(SAE).  
+Study specific version: 1.0
+Study specific version Date: 31 -May-17
+Page 14of 49Occurrence of any Grade 3 or higher adverse events (AE) possibly, probably or definitely 
+related to the trial vaccine within 4 weeks after each vaccination.  
+Occurrence, intensity and duration of solicited local AEs during the 8-day period (day of 
+vaccination and the following 7 days) after each vaccination. 
+Occurrence, relationship to the trial vaccine, intensity and duration of solicited general 
+AEs during the 8-day period (day of vaccination and the following 7 days) after each 
+vaccination.  
+Occurrence, relationship to the trial vaccine and intensity of unsolicited non-serious AEs 
+within 4 weeks after each vaccination. 
+The immunogenicity endpoints are: 
+RSV-specific antibody response rate measured by [CONTACT_243635] G (IgG) Enzyme-
+linked Immunosorbent Assay (ELISA) at all post vaccination immunogenicity serum 
+sampling time points and based on the individual peak titers. 
+RSV-specific GMT measured by [CONTACT_243636].  
+RSV-specific antibody response rate measured by [CONTACT_243635] A (IgA) ELISA at all 
+post vaccination immunogenicity serum sampling time points and based on the individual 
+peak titers. 
+RSV-specific GMT measured by [CONTACT_243637]. 
+RSV-specific antibody response rate measured by [CONTACT_185670] (RSV strain A) at all post 
+vaccination immunogenicity serum sampling time points and based on the individual 
+peak titers. 
+RSV-specific GMT measured by [CONTACT_185670] (RSV strain A) at all immunogenicity serum 
+sampling time points and based on the individual peak titers. 
+RSV-specific antibody response rate measured by [CONTACT_185670] (RSV strain B) at all post 
+vaccination immunogenicity serum sampling time points and based on the individual 
+peak titers.  
+RSV-specific GMT measured by [CONTACT_185670] (RSV strain B) at all immunogenicity serum 
+sampling time points and based on the individual peak titers. 
+RSV-specific antibody response rate measured by [CONTACT_243638] (mucosal IgA) and based on the individual peak titers. 
+RSV-specific GMT measured by [CONTACT_243639] 
+(mucosal IgA) and based on the individual peak titers. 
+RSV-specific response and responder rates measured by [CONTACT_243640] (IFN-ɣ) and 
+Interleukin 4 (IL-4) Enzyme-linked Immuno Spot Technique (ELISPOT) at all PBMC 
+post vaccination sampling time points. 
+RSV-specific median and geometric mean Spot Forming Units (SFU) measured by [CONTACT_20129]-ɣ 
+/ IL-4 ELISPOT at all PBMC sampling time points until EAP. 
+RSV-specific memory B cells measured at FU1 and FU2. 
+Study specific version: 1.0
+Study specific version Date: 31 -May-17
+Page 15of 49Incidence of RSV-specific disease and correlation with immunogenicity readouts. 
+1.[ADDRESS_295567] that oversees the safety of subjects participating in the trial during the 
+staggering phase only. The members of the SMT are the national coordinating investigator, 
+principal investigator (of the staggering site) and the medical monitors (BN and CRO) of the 
+clinical trial. The primary responsibility of the SMT is to review and evaluate the accumulated 
+trial data for safety after each staggering step and to make the decision to proceed to the next 
+staggering step.  
+1.7 Safety Monitoring Committee 
+The Safety Monitoring Committee (SMC) is an independent board that oversees the safety of 
+subjects participating in the trial. The primary responsibilities of the SMC are to periodically 
+review and evaluate the accumulated trial data for participant safety, trial conduct and progress, 
+and make recommendations to BN and the Coordinating Investigator [INVESTIGATOR_243619] 
+(PI) concerning the continuation, modification, or termination of the trial. A separate charter 
+describes in detail relevant operational procedures, communication pathways  and roles and 
+responsibilities of the SMC. 
+If an event occurs which fulfills the trial halting rules, the SMC will review the event in a timely 
+manner and will give a recommendation to BN and the Coordinating Investigator [INVESTIGATOR_243620], 
+resume or terminate the trial participation of the affected subject and/or the trial as a whole. 
+Study specif ic version: 1.0
+Study specific version Date: 31 -May-17
+Page 16of 492. Trial Design 
+Visit (V) SCR V1 VS 13 V1b 9V2 V3  V3b 9 V4  EAP  FU1  FU2  
+3m FU 6m FU 
+Day/Visit +… Day  -28 - -1 0 V1  
++ 3-4 V1  
++ 7-9 V1  
++ 12-16 V1  
++ 28-35 V3  
++ 7-9 V3  
++ 12-16 V3  
++ 28-35 V3  
++ 84-98 V3 
++ 182-210 
+Target week -4 0 0S 131 2 4 5 6 8 16  30  
+Procedures
+Informed consent & 
+HIPAA
+Check incl. / excl. 
+criteria 
+Check eligibility for 
+second vaccination
+Medical History 
+Complete physical 
+examination incl. 
+auscultation of heart & 
+lungs; measurement of 
+body height & w eight
+Targeted physical exam 
+incl. auscultation of the 
+heart and lung    
+Vital signs          
+ECG4 4444
+Recording of prior / 
+concomitant medication  
+ 
+   
+Counseling on avoidance of pregnancy 
+for WOCBP 1  
+AE/SAE recording          22
+Study specif ic version: 1.0
+Study specific version Date: 31 -May-17
+Page 17of 49Visit (V) SCR V1 VS 13 V1b 9V2 V3  V3b 9 V4  EAP  FU1  FU2  
+3m FU 6m FU
+Day/Visit +… Day -28 --1 0 V1 
++ 3-4 V1 
++ 7-9 V1 
++ 12-16 V1 
++ 28-35 V3 
++ 7-9 V3 
++ 12-16 V3 
++ 28-35 V3 
++ 84-98 V3
++ 182-[ADDRESS_295568] for 
+WOCBP3   
+Obtaining blood for 
+safety lab4, 5   4 4
+Troponin I testing 4
+ 4 444
+Nasal swab collection 
+for RVP PCR 
+(Polymerase Chain 
+Reaction )8 888888888
+Blood draw for serum 
+collection5     
+Nasal swab collection 
+for mucosal immune 
+response11    
+Blood draw for PBMC 
+collection5, 9       
+Study specif ic version: 1.0
+Study specific version Date: 31 -May-17
+Page 18of 49Visit (V) SCR V1 VS 13 V1b 9V2 V3  V3b 9 V4  EAP  FU1  FU2  
+3m FU 6m FU
+Day/Visit +… Day -28 --1 0 V1 
++ 3-4 V1 
++ 7-9 V1 
++ 12-16 V1 
++ 28-35 V3 
++ 7-9 V3 
++ 12-16 V3 
++ 28-35 V3 
++ 84-98 V3
++ 182-210 
+Target week -4 0 0S 131 2 4 5 6 8 16  30  
+Vaccination 
+Randomization 
+Vaccine/TBS 
+administration and ≥ [ADDRESS_295569] 
+observation 
+Recording of immediate AEs/ SAEs after 
+vaccination10 
+Handout of memory 
+aid6 
+Review/ of memory aid 
+7, 12
+Collection of memory 
+aid7   
+Examination of injection 
+site 
+ = mandatory;  = in case of medical need or any underlying condition that requires further examinations;  = Subgroup only 
+[ADDRESS_295570] infection and changes to AEs/SAEs ongoing at the previous visit only. 
+[ADDRESS_295571] is to be performed.  
+4 Additional safety measures can be taken at any other trial visit or at unscheduled visits, if clinically indicated. 
+5 Approximate amounts of single blood draws: Safety lab: 19 mL (at V2, V4, FU1 and FU2; if applicable), including Haematology (3 mL), serum 
+chemistry (including pregnancy test; 8 mL), virology (Hepatitis B and C, HIV; 5 mL); Safety lab 22 mL (at SCR), including all above plus HbA1c (3 mL; 
+if applicable); Troponin I: 3 mL; serum collection (antibody testing): 9 mL; PBMC collection (T cell collection): 64 mL. Maximal total amount of blood 
+taken/subject: up to 176 mL (642 mL for subjects in the subgroup). 
+Study specif ic version: 1.0
+Study specific version Date: 31 -May-17
+Page 19of 496 The memory aid should be completed daily for an 8-day period (Day 0 to Day 7), starting with the day of vaccination. If symptoms are ongoing after 
+Day 7, temperature/symptom measurements should continue each day until resolved and the last day of the symptom and maximum intensity will be 
+recorded on the memory aid. 
+[ADDRESS_295572] vaccination, defined by [CONTACT_243641], nasal 
+congestion, pharyngitis, cough, wheezing (or increase in baseline wheezing), sputum production (or increase / change in nature of baseline sputum 
+production) or new (or worsening of) shortness of breath. Subjects need to be instructed to return to the site within 3 days after start of symptoms.  
+9 Subgroup only.  
+10 Refer to Protocol Section 8.2.9 for Cardiac Assessment 
+11 Nasal swabs will be taken from both nostrils.  
+12 During the staggering phase, data from the memory aid need to be transferred to the Electronic Case Report Form (eCRF) immediately for SMT (Safety 
+Monitoring Team) review and the memory aid card will be returned to the subject to complete entries for the remaining days.  
+13 Visit VS (Staggering Visit) is only required for the subjects in the staggering phase, i.e. sentinel cohort and safety cohort; the target week is named as 0S. 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 20of 493. Statistical Methods 
+3.1. Planned Sample Size  
+A group sample size of 70 per group (recruiting 80 per group to account for a 12% dropout rate), 
+and an assumed SD of 0.46 for the log 10 PRNT titers (A strain) will give 80% power to detect a 
+relative change in titers from the Group 1 of a 66% increase.  
+Assumptions used to determine the sample size of the trial are below. 
+Testing of the primary objective will be performed by [CONTACT_243642] 10 of the titers 
+are normally distributed.  
+No adjustment for multiple comparison is considered. 
+Testing will be conducted in a descriptive manner and no adjustment for multiple testing 
+will be performed. 
+The upper 95% confidence limit of the standard deviation (SD) of the log 10 titers from the 
+Phase I trial RSV-MVA-001 at Visit 6 ([ADDRESS_295573] second vaccination) was calculated as 0.46 (the SD was very similar in all groups). The SD is assumed to be similar to that 
+observed in the RSV Phase I trial (RSV-MVA-001). 
+3.2. Analysis Populations 
+3.2.1 Full Analysis Set (FAS) 
+This is the subset of subjects who will have received at least one vaccination and for whom any 
+post-baseline data are available. The primary analysis of safety and efficacy will be performed 
+on this analysis set. 
+In the case where a subject might receive the wrong randomized treatment, safety summaries for 
+this subject will be based on actual treatment received. However, for a subject randomized to 
+Group [ADDRESS_295574] will be based on their randomized treatment group. 
+3.2.2 Per-Protocol Set (PPS) 
+This is the subset of subjects in the FAS who have received all vaccinations, completed all visits 
+of the active trial phase (Visit 1 to EAP) and adhered to all protocol conditions. Subjects with 
+major protocol violations will not be included in this dataset. However, subjects with only minor 
+(not relevant) protocol deviations are included into this dataset.  
+The decision whether a protocol deviation is major or not for the classification of subjects into 
+the various datasets will be made on a case-by-case basis at the data review meeting (DRM) prior 
+to database lock. 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 21of 49Potential major protocol violations are (but are not restricted to): 
+1. Premature discontinuation of the trial during the active trial phase (the question “did the 
+subject prematurely discontinue the trial?” is answered with “yes” even where no other 
+reason exists to exclude the subject from further participation in accordance with the 
+protocol). 
+2. Subject did not meet all of the inclusion criteria. 
+3. Subject met one or more of the exclusion criteria. 
+4. Withdrawal from the second vaccination. 5. Major vaccine preparation and administration deviation from specification as given in the 
+protocol including cases where the subject fulfils at least one of the criteria specified in 
+the protocol for withdrawal from vaccination. 
+6. Major deviations of the visit window as determined during the DRM(s). 
+7. Prohibited Prior or Concomitant Medication use. 
+8. Missing immunogenicity data at any critical visits (the decision on what is a critical visit 
+will be made at the DRM). 
+9. Respi[INVESTIGATOR_243621] A or RSV B. 
+The main analysis of humoral and mucosal immunogenicity endpoints will be performed on the 
+FAS. The same statistical procedures will also be applied to the PPS. If there is no substantial 
+difference in FAS and PPS then only the FAS will be presented in the main part of the CSR. 
+3.2.3 Immunogenicity Analysis Set (IAS) 
+This is the subset of subjects in the FAS which was assigned to the PBMC subgroup. The main 
+analysis of the cellular immunogenicity endpoints will be performed on the IAS. Additional 
+subgroups may need to be defined during the DRM before database lock and would be described 
+in the CSR. 
+3.3. Data Definitions, Data Conventions and Handling of Missing Data 
+3.3.1 Missing Immunogenicity Data 
+Analysis of immunogenicity variables will be done on a valid case basis, i.e. for missing 
+observations no imputation technique such as “Last observation carried forward” will be applied, 
+since this could introduce an optimistic bias into the analysis. 
+For assay results that are below the detection limit, refer to Table 1 : Detection Limits (DL) in the 
+general definition section. 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 22of 493.3.2 Missing Adverse Event and Concomitant Medication Data 
+In the case of incomplete AE and/or medication start and end dates, the following rules will be 
+used to assign AEs to the correct vaccination period, and medications as prior/concomitant: 
+For analysis purposes of any Prior and Concomitant Medication or any AE, imputation of partial 
+start and end dates will be performed based on the following rules: 
+† It is assumed that a missing month implies a missing day as well, and that a missing year implies a missing month and day. 
+Partial/Missing Start Date 
+If day is missing, then impute the 1st of the month as in the table above, but if the month 
+is the same as the month of the first vaccination date then assign the imputed start date as the first vaccination date. 
+If month and day are missing, then impute as above to January [ADDRESS_295575] vaccination 
+date. 
+If the date is completely missing, then impute the first vaccination date unless the end date indicates that the AE/medication could have started/been taken prior to this in which 
+case the date is imputed to 1st January of the same year as the start date. 
+Partial/Missing End Date 
+If day is missing, then impute the last day of the month as in the table above unless the 
+month is the same as the month of the first vaccination date then impute the end date as 
+the last vaccination date. 
+If month and day are missing, then impute as above to December [ADDRESS_295576] vaccination 
+date. 
+If the date is completely missing, check if AE/medication is ongoing before imputing a 
+date and when the AE/medication started in relation to vaccination date. If the ongoing 
+flag is missing, then assume that the AE/medication is still ongoing/medication is still 
+being taken. In this case, do not impute the date. If the AE/medication stopped and the 
+start date is prior to the first vaccination date, then impute the first vaccination date. If the 
+AE/medication started on or after first vaccination date, then impute an end date which is 
+one day after the last vaccination date. 
+These imputation methods will be used for the table summaries. However, all listings will display the original dates as captured in the eCRF. 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 23of 493.3.3 Assignment of AEs to Vaccination Period  
+Each AE will be assigned to a vaccination period using date/time of vaccination and date/time of 
+onset of the AE: 
+All AEs starting at or after the first vaccination but before vaccination 2 (Visit 3) will be assigned to vaccination period 1.  
+All AEs starting on or after the second vaccination but before or at EAP will be assigned 
+to vaccination period 2. If the subject missed the second vaccination for any reason, the 
+AEs will be assigned to the overall vaccination period. 
+Any AEs starting after EAP up to the FU2 Visit belong to the FU period. 
+If onset time is missing and start date of AE coincides with the date of a vaccination, the AE will be assigned to the vaccination period corresponding to the vaccination on this date. 
+Each AE starting on or after first vaccination not matching the definition of a solicited AE is 
+defined as an unsolicited AE. If a solicited AE begins outside of the 8-day period following the 
+last vaccination it will be considered an unsolicited AE regardless of the preferred term (PT). If 
+start time of the AE is missing and start date coincides with date of the vaccination, it will be 
+regarded as a treatment-emergent AE. If the start date is (partially) missing the AE will be 
+regarded as a treatment-emergent AE following the worst-case principle. 
+Worst-case principle: 
+To avoid a potential misclassification of an AE to a vaccination period or to the overall 
+vaccination period, if an imputed start date corresponds to the first of the month or to the first of 
+the year, and matches the month and year of the first or second vaccination date, then the AE will 
+be assigned to the vaccination period with matching month and year. If the AE cannot be 
+assigned to a vaccination period because of a (partially) missing start date then it will be only 
+assigned to the overall vaccination period. 
+3.3.4 General Considerations for AEs  
+Medical Dictionary for Regulatory Activities (MedDRA) Version 19.1 will be used for coding of 
+AEs. 
+Duration of an AE will be calculated as follows: 
+For Unsolicited AEs: expressed in [days] 
+End date – start date of AE + 1 day. Note that duration can be calculated even if time of 
+day is missing for either start or end dates, or if time is missing for both. 
+In case of partially missing start date (month and/or day missing) or partially missing end 
+date (month and/or day missing), duration will not be calculated. 
+In case of an ongoing AE, the duration will not be calculated. 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 24of 49For Solicited AEs: expressed in [days] 
+End date of AE – start date of AE + 1, where end date is the last day the symptom is 
+defined as an AE and start date is the first day symptom is defined as an AE (no matter if 
+the AE occurred at every day between first day and last day). In case of an ongoing AE, 
+the duration will not be calculated. 
+Relative day of onset between vaccination and start of AE will be calculated as follows: 
+For Unsolicited AEs: expressed in [days] 
+Start date of AE – corresponding vaccination date. 
+In case of (partially) missing start date no calculation will be done. 
+For Solicited AEs: expressed in [days] 
+The relative day is calculated as the day of first symptom intensity recording > 0. 
+Start date of AE – corresponding vaccination date, where start date is the first day a 
+symptom is defined as an AE; vaccination day corresponds to Day 0. 
+3.4. Analysis Variables 
+3.4.1 Demographic and other Baseline Characteristics 
+Demographics 
+Age (years) 
+Age Group (≥ 55 to < 70 ≥ 70) 
+Gender (male, female) 
+Race (White/Caucasian, Black or African American, Asian, American Indian or Alaskan 
+Native, Native Hawaiian or Other Pacific Islander, Other, Missing) 
+Ethnicity (Hispanic or Latino, or Not Hispanic or Latino, Missing) 
+Height [cm] 
+Body weight [kg] 
+Body Mass Index (BMI) 
+Other baseline characteristics 
+Medical history 
+Prior and concomitant medications 
+Pre-vaccination AEs pre-existing to vaccination 
+Demographics tables will be presented by [CONTACT_64207], PPS, and IAS 
+populations. Other baseline characteristics will be summarized by [CONTACT_243643]. Demographics and other baseline characteristics will be presented in separate subject 
+listings. 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 25of 493.4.2 Safety Variables 
+Physical examination (complete examination at Screening Visit and targeted physical 
+examination at V1, V2, V3, V4, EAP, FU1 and FU2 Visits) 
+(A targeted physical examination, guided by [CONTACT_243644], is required at all visits starting 
+at Visit 1 except VS.) 
+A subgroup of subjects who will provide additional PBMC samples also will have 
+physical examination reported at V1b and V3b.  
+Only abnormal physical examinations will be listed. 
+Vital signs (at Screening, V1, V2, V3, V4, EAP, FU1 and FU2 Visits) 
+Heart rate [beats per minute] 
+Systolic and diastolic blood pressure [mmHg] 
+Oral body temperature [°C] 
+The PBMC subgroup also has vital signs reported at V1b and V3b.  
+Baseline, actual and change from baseline vital sign parameters will be summarized and 
+individual subject listings will be presented. 
+12-lead electrocardiogram (ECG) (at Screening and if clinically indicated at V2, V4, FU1 and 
+FU2 Visits) 
+(Additional ECGs will be performed and reported if clinically indicated, or in case any clinically 
+significant cardiac events are present). 
+Assessment of ECG (categorized as normal, normal variant, abnormal) 
+Interpretation of ECGs assessed as abnormal (categorized as abnormal not clinically 
+significant or abnormal clinically significant) 
+Screening ECG parameters and overall interpretation will be summarized. Individual subject 
+listings will also be presented. 
+Safety laboratory data (at Screening Visit, V2 and V4 and if clinically indicated at FU1 or FU2 
+Visits)
+The safety laboratory measurements are performed at a central laboratory. Laboratory normal 
+ranges are provided by [CONTACT_2237].  
+Serum chemistry:  
+Total Bilirubin (mg/dL) 
+Alkaline Phosphatase (AP) (U/L) 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 26of 49Aspartate Aminotransferase (AST) (U/L) 
+Alanine Aminotransferase (ALT) (U/L) 
+Creatinine (mg/dL) 
+Sodium (mmol/L) 
+Potassium (mmol/L) 
+Calcium (mg/dL) 
+Troponin I (ng/mL) (at Screening Visit and if clinically indicated at V2, V4, FU1 or FU2 
+Visits).  
+For subjects with type II diabetes mellitus HbA1c is assessed at the SCR visit only in case 
+documented HbA1c result within three months prior to SCR is not available. 
+Hematology: 
+Red blood cell count (x 106/µL) 
+Hemoglobin (g/dL) 
+Total and differential White Blood Cell count (WBC) (x 103/µL) 
+Platelet count (x 103/µL)  
+Hematocrit (%) 
+Mean corpuscular/cell volume (MCV) (fL) 
+Mean corpuscular/cellular hemoglobin (MCH) (pg) 
+Mean corpuscular hemoglobin concentration (MCHC) (g/dL) 
+Red blood cell distribution width (RDW) (%)  
+Baseline, actual values at each visit, and change from baseline safety laboratory parameters 
+(serum chemistry and hematology) will be summarized and individual subject listings will be 
+presented. 
+Shift tables will also be presented for serum chemistry and hematology using the categories 
+of Missing, Below Lower Limit of Normal, Normal, and Above Upper Limit of Normal. 
+Pregnancy Test (Screening, V1, V3 and EAP) 
+A β-human choriogonadotropin (HCG) pregnancy test will be conducted for all WOCBP at 
+SCR Visit, prior to each vaccination and at the individual last active trial phase visit (Visits 1, 
+3 and EAP). At SCR Visit a serum β-HCG pregnancy test will be performed; all other 
+pregnancy tests will be conducted as urine β-HCG tests. 
+Pregnancy test results will be presented as individual subject listings for all WOCBP in the 
+study. 
+Virology (Screening) 
+The following viruses are only evaluated during the screening period for assessment of inclusion/ 
+exclusion criteria and at subsequent visits only if clinically indicated: 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 27of 49HIV antibody test (anti HIV) 
+HBsAG 
+Hepatitis C antibody test 
+If appropriate, virology results will be presented as individual subject listings. 
+Respi[INVESTIGATOR_243622] a respi[INVESTIGATOR_243623] a nasal swab will be obtained at scheduled or unscheduled visits to assess if 
+a current RSV infection is underlying. Subjects are instructed to return to the site within [ADDRESS_295577] memory aid (at each vaccination, on day of 
+vaccination and during the following 7 days) 
+Injection Site Erythema (0 = 0, 1 denotes < 30 mm, 2 denotes ≥ 30 - < 100 mm, 3 denotes 
+≥ 100 mm)  
+Injection Site Swelling (0 = 0, 1 denotes < 30 mm, 2 denotes ≥ 30 - < 100 mm, 3 denotes 
+≥ 100 mm)  
+Injection Site Induration (0 = 0, 1 denotes < 30 mm, 2 denotes ≥ 30 - < 100 mm, 3 
+denotes ≥ 100 mm)  
+Injection Site Pruritus (0 = Absent, 1 = Mild, 2 = Moderate, 3 = Severe) 
+Injection Site Pain (0 = Absent, 1 = Painful to Touch, 2 = Painful when limb is moved, 3 
+= Spontaneously painful / prevents normal activity) 
+Solicited local AEs will be summarized by [CONTACT_243645] (and overall). Individual subject listings for solicited local AEs will also be presented. 
+Solicited general AEs reported in the subject memory aid (at each vaccination, on day of 
+vaccination and during the following 7 days) 
+Study specific version: 1.0
+Study specific vers ion Date: [ADDRESS_295578]’s Memory Aid 
+MedDRA coded Preferred Term 
+General AEs Grade Maximum Severity 
+Body temperature* 0 <99.5°F (< 37.5°C)
+1 ≥99.5 –<100.4°F ( ≥37.5 –<38.0°C)
+2 ≥100.4 –<102.2°F ( ≥38.0 –<39.0°C)
+3 ≥102.2 –<104.0°F ( ≥39.0 –<40.0°C)
+4 ≥104.0°F ( ≥40.0°C) 
+Headache, Myalgia, Nausea, Chills and 
+Fatigue 0 None
+1 Mild: easily tolerated, minimal discomfort and no 
+interference with daily activity
+2 Moderate: Some interference with daily activity
+3 Severe: Prevents daily activity
+*Pyrexia is defined as oral temperature ≥ 100.4°F (≥ 38.0°C). 
+Solicited general AEs will be summarized by [CONTACT_243645] (and 
+overall). Individual subject listings for solicited general AEs will also be presented. 
+Other safety variables include: 
+SAEs 
+3.4.3 Immunogenicity Variables  
+Antibody titers (at V1, V1b, V2, V3, V3b, V4, EAP, FU1, FU2) 
+Serum RSV-specific antibodies (IgG ELISA)
+Serum RSV-specific antibodies (IgA ELISA) 
+Serum RSV-strain A  –  G protein specific antibodies (IgG ELISA) 
+Serum RSV-strain B  –  G protein specific antibodies (IgG ELISA) 
+Serum RSV-strain A specific neutralizing antibodies (PRNT) 
+Serum RSV-strain B specific neutralizing antibodies (PRNT) 
+Mucosal RSV-specific antibodies ELISA (IgA ELISA) 
+ELISPOT SFU/1x106 PBMC (at V1, V1b, V2, V3b, V4 for PBMC subgroup only) 
+IFN-γ RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus) 
+IL-4 RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus) 
+(Sero)positivity ELISA and PRNT (yes/no) (at V1, V1b, V2, V3, V3b, V4, EAP, FU1, FU2)
+Serum RSV-specific antibodies (IgG ELISA) 
+Serum RSV-specific antibodies (IgA ELISA) 
+Serum RSV- strain A  –  G protein specific antibodies (IgG ELISA) 
+Serum RSV-strain B  –  G protein specific antibodies (IgG ELISA) 
+Serum RSV-strain A specific neutralizing antibodies (PRNT) 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 29of 49Serum RSV-strain B specific neutralizing antibodies (PRNT) 
+Mucosal RSV-specific antibodies ELISA (IgA ELISA) 
+Positivity ELISPOT (yes/no) (at V1, V1b, V2, V3b, V4 for PBMC subgroup only) 
+IFN-γ RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus) 
+IL-4 RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus) 
+Response ELISA and PRNT (yes/no) (at V1b, V2, V3, V3b, V4, EAP, FU1, FU2) 
+Serum RSV-specific antibodies (IgG ELISA)
+Serum RSV-specific antibodies (IgA ELISA)
+Serum RSV-strain A  –  G protein specific ELISA (IgG ELISA) 
+Serum RSV-strain B  –  G protein specific ELISA (IgG ELISA) 
+Serum RSV-strain A specific neutralizing antibodies (PRNT)
+Serum RSV-strain B specific neutralizing antibodies (PRNT)
+Mucosal RSV-specific antibodies ELISA (IgA ELISA) 
+Response ELISPOT (yes/no) (at V1b, V2, V3b, V4 for PBMC subgroup only) 
+IFN-γ RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus) 
+IL-4 RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus) 
+ELISPOT RSV-specific Responder Status (yes/no) (per subject V1b through V4 for PBMC 
+subgroup only) 
+IFN-γ RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus) 
+IL-4 RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus) 
+Refer to Section 3.5.[ADDRESS_295579] Data Listing. 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 30of 49For all ELISA and PRNT titers descriptive statistics will be based on number of observations (n), 
+Geometric Means, confidence intervals (CI), minimum (Min), median, maximum (Max). Other 
+continuous measurements will be summarized using descriptive statistics (i.e., number of 
+observations (n), arithmetic mean, standard deviation (SD), Min, median, Max and categorical 
+data will be summarized by [CONTACT_99864] (i.e., count and percentages), if not stated 
+otherwise. Unless otherwise stated, the Min and Max will be reported with the same number of 
+decimal places as the individual values are recorded. CIs, Means, Medians, and SD will be 
+reported to one additional decimal place. 
+Descriptive statistics for the SFU values will be based on both the GMSFU and the median (with 
+associated CI) and Min and Max. 
+A non-parametric percentile based CI ( Hahn  G and Meeker W (1991) Statistical Intervals: A 
+Guide for Practitioners, [LOCATION_001]: John , 1991) will be placed around the median for each 
+group, using the SAS UNIVARIATE Procedure, i.e.: 
+PROC UNIVARIATE DATA=<dataset_name> CIPCTLDF; VAR SFU; BY [CONTACT_243646]; RUN; 
+Repeated assessments/measurements and unscheduled assessments/measurements will be 
+included in the Individual Subject Data Listing. All tables and listings will be sorted by 
+[CONTACT_243647]-between scheduled visits (and by [CONTACT_1130], if 
+appropriate). 
+All tables will be presented by [CONTACT_6660]. Solicited AEs will be presented by [CONTACT_243648] (≥55 to <70 and ≥70 years). For immunogenicity analysis, only PRNT strain A 
+and ELISA IgA will be presented by [CONTACT_18667] (≥55 to <70 and ≥70 years). The 
+remaining ELISA immunogenicity analyses will be presented by [CONTACT_243649]. 
+Summary by [CONTACT_243650], e.g., the overall vaccination period, 
+or the ATP.  An event will only be counted once during the period. 
+3.5.2 Software 
+All statistical summaries and analyses of safety and immunogenicity data will be performed 
+using SAS® 9.4 or higher (Statistical Analysis System, SAS-Institute, Cary, NC, [LOCATION_003]) on a 
+Windows 2016 server.  
+3.5.3 Disposition of Subjects 
+All subjects screened will be accounted for.  
+A summary table will be presented specifying: 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 31of 49The number of subjects screened (i.e., signed informed consent) 
+The number of subjects randomized 
+The number of subjects vaccinated (i.e., receiving at least 1 of 2 vaccinations) 
+The number and percentage of subjects eligible for the full analysis set (FAS) 
+The number and percentage of subjects eligible for the per-protocol analysis set (PPS) 
+The number and percentage of subjects eligible for the immunogenicity analysis set (IAS) 
+An additional summary table will be presented specifying: 
+The number of subjects vaccinated (i.e., receiving at least 1 of 2 vaccinations) 
+The number of subjects who never received any vaccination 
+The number of subjects who received only the first vaccination 
+The number and percentage of subjects who received both vaccinations.  
+The number and percentage of subjects who completed the active trial phase (i.e., have a 
+disposition event in the database designated as “ACTIVE COMPLETED”)  
+The number and percentage of subjects withdrawn from the second vaccination before 
+Visit 3 as well as the frequency and percentage of the reason for withdrawal from second 
+vaccination 
+The number and percentage of subjects prematurely discontinuing from the trial before 
+EAP as well as the frequency and percentage of the reason for withdrawal from the trial 
+The number and percentage of subjects attending FU1 
+The number and percentage of subjects attending FU2 
+The number and percentage of subjects who discontinued from the Follow Up Phase as 
+well as the frequency and percentage of the reason for withdrawal from the Follow Up 
+Phase 
+The percentages will be based on the number of subjects who received at least one vaccination. 
+A listing will present for all subjects in FAS the following: 
+Completion Status for the Active Trial Phase (Yes/No) 
+If completion status is No, then the listing will present the Trial Premature 
+Discontinuation Date, Day and Reason  
+Receipt (Yes/No) and date of first and second vaccination 
+If the second vaccination was not received, then the listing will present the reason  
+Completion of FU1 and FU2 (Yes/No) 
+A listing will present all violations of the inclusion criteria for the FAS. Similarly, a listing will 
+present all exclusion criteria fulfilled for the FAS. 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 32of 493.5.4 Demographic and Other Baseline Data 
+Demographics 
+Descriptive statistics for the demographics will be produced for the FAS, PPS, and IAS. 
+Continuous variables include: age at screening (years), height at screening (cm), weight at 
+screening (kg) and BMI at screening (kg/m2). If there is a full rescreening then the information 
+from the rescreening visit will be used. 
+Age is presented as captured in the SDTM Subject Characteristics (SC) domain. Age is auto-
+calculated from the eCRF where age is calculated as the difference between informed consent 
+date and date of birth converted to years using the Joda-Time Java API [INVESTIGATOR_243624]8601 calendar 
+system.   
+Frequencies and percentages of subjects will be tabulated for the categorical variables gender, 
+race and ethnicity in the same table by [CONTACT_6654]. Percentages will be based on 
+the total number of subjects in each table pertaining to the FAS, PPS, or IAS. 
+The demographic listing will be presented for the FAS. 
+Medical History 
+A summary of medical history by [CONTACT_243651] 19.1 will be produced by [CONTACT_243652].  
+A medical history listing will be presented for the FAS. 
+Vaccine Assessment at Screening 
+A listing of vaccine history and planned vaccination at screening will be presented for all 
+subjects. 
+3.5.5 Prior and Concomitant Medications 
+All prior medication will be listed by [CONTACT_243653]-Therapeutic-Chemical (ATC) class Level 2, 
+Level 3, PT and Generic name [CONTACT_243699] 2016 version of World Health Organization 
+Drug Dictionary (WHO-DD) for the FAS population. The listing “Prior medication” includes the 
+medication data where end date is before date of first administration of trial vaccine. 
+All Concomitant Medication will be summarized by [CONTACT_243654] 2 and Level 3 for all 
+subjects in the FAS. A concomitant medication listing will also be presented for the FAS. The 
+table and listing “Concomitant Medication” includes ongoing medication or medication with 
+missing end date or with end date after date of first administration of trial vaccine, as well as 
+medication starting after first administration. 
+All listings will display the original dates as captured in the eCRF. 
+Study specific version: 1.0
+Study specific vers ion Date: [ADDRESS_295580] to: 
+Number of subjects who received at least one vaccination 
+Number and percentage of subjects who received vaccination 1 
+Number and percentage of subjects with memory aid returned at vaccination 1 
+Number and percentage of subjects who received vaccination 2 
+Number and percentage of subjects with memory aid returned at vaccination 2 
+Number and percentage of subjects who received both vaccinations 
+Separate listings for vaccine administration and memory aid will also be presented. 
+3.5.7 Immunogenicity Analysis ELISA, PRNT and ELISPOT 
+All serum and nasal swab immunogenicity results will be listed for the FAS. Tables will be 
+prepared for the FAS and the PPS. Immunogenicity results from PBMC samples will be 
+summarized for the IAS population. 
+Primary immunogenicity endpoint: PRNT (A strain) titers 
+The primary analysis of the primary endpoint is Geometric Mean Titers (GMTs) after one or two 
+MVA-BN-RSV vaccinations or placebo measured by [CONTACT_243634] 
+(PRNT; against strain A) [ADDRESS_295581] vaccination. 
+The primary immunogenicity endpoint will also be summarized descriptively using the 
+geometric mean of fold increase, positivity rates (including associated 95% CI’s), and response 
+rates (including associated 95% CI’s) for each treatment group, and by [CONTACT_243655]. 
+In addition, the following descriptive comparison of the ratios of the GMTs and GMFI’s between 
+treatment groups by [CONTACT_243656] 95% CI by [CONTACT_243657]10 PRNT (A strain) titers and log10 PRNT (A strain) Fold Increases are normally 
+distributed: 
+1. Group 2 / Group 1 – Two vaccinations compared to one vaccination using Dose 1 
+2. Group 4 / Group 3 – Two vaccinations compared to one vaccination using Dose 2 
+3. Group 3 / Group 1 – Dose 2 compared to Dose 1 using one vaccination 
+4. Group 4 / Group 2 – Dose 2 compared to Dose 1 using two vaccinations  
+5. Group 2 / Group 5 – Two vaccinations using Dose 1 compared to Placebo 
+6. Group 4 / Group 5 – Two vaccinations using Dose 2 compared to Placebo 
+As a secondary descriptive analysis for the primary immunogenicity endpoint, an ANOVA 
+model (with dose and age group as independent variables) of the log 10 titers for the three doses 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 34of 49using Group 2, Group 4, and Group 5 will be performed. For Group 5 (2 vaccinations of 
+Placebo), a dose value of [ADDRESS_295582] (i.e. slope) of the regression fit is significant at the standard 
+significance level of 0.[ADDRESS_295583] in 
+terms of responses for higher dose. This dose response ANOVA will be performed a second time 
+without age group in the model.  
+As an exploratory analysis, an ANOVA will be conducted on the log 10 titers using dose (2 
+levels), the number of vaccinations (2 levels), and age group (2 levels) as main effects, and dose-
+by-number of vaccinations as an interaction term. The main effect of dose (2 levels) will not 
+include the placebo treatment group. To further explore whether baseline titers have an effect on 
+dose, a similar ANOVA will be performed where the dependent variable of log 10 titers will be 
+replaced with log 10 Fold Increase. 
+All ANOVAs will be performed on the FAS only. 
+Secondary immunogenicity endpoints 
+All other immunogenicity results (PRNT strain B, ELISPOT, ELISA IgG/IgA) will be 
+considered as secondary descriptive analyses and will be analyzed similarly to the primary 
+endpoint analysis (by [CONTACT_243658]). Note that for 
+secondary immunogenicity endpoints, ANOVAs will be performed only for PRNT strain B, IgA 
+ELISA and IgG ELISA Total. The dose-response ANOVAs will be performed without age group 
+in the model. 
+Geometric Mean Titers (GMTs)
+For all ELISA and PRNT results the GMTs will be calculated by [CONTACT_243659] 10 titer transformations.  
+Descriptive statistics will be derived by [CONTACT_243660], Min, median, 
+Max, GMT, with 95% CI (derived by [CONTACT_243661] 95% CI of the log 10 titer 
+transformations based on the percentiles of the t-distribution). 
+Geometric Mean Spot Forming Units (ELISPOT) 
+SFU/[ADDRESS_295584].  
+A non-parametric percentile based CI ( Hahn  G and Meeker W (1991) Statistical Intervals: A 
+Guide for Practitioners, [LOCATION_001]: John , 1991) will be placed around the median for each 
+treatment group, using the SAS 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 35of 49UNIVARIATE Procedure, i.e.: 
+PROC UNIVARIATE DATA=<dataset_name> CIPCTLDF; 
+VAR <SFU Variable>; 
+BY <Treatment Group variable>; 
+RUN; 
+The calculation of the 95% CI for the Geometric Means will be based upon the assumption that 
+the logarithm of the SFU has a normal distribution. 
+Seropositivity rates 
+RSV-specific ELISA and PRNT seropositivity rates will be presented by [CONTACT_243662]-Pearson 95% CIs. 
+Positivity rates (ELISPOT) 
+Positivity rates will be presented by [CONTACT_243663]-
+Pearson 95% CIs. 
+Response rates 
+Response rates for RSV-specific ELISA and PRNT titers will be presented by [CONTACT_243664]-Pearson 95% CIs. Response status is only 
+applicable for subjects with a V1 (baseline) titer available. 
+The same type of analysis of response rates will be conducted for the ELISPOT results and for 
+IFN-γ and IL-4 results. 
+Responder rates (ELISPOT) 
+The responder rates (based on the total number of subjects with responder status available) will 
+also be presented by [CONTACT_243665]-Pearson 95% CI. 
+3.5.[ADDRESS_295585] one event in each period as well as the corresponding 
+total number of events for: 
+At least one AE documented 
+Any TEAE 
+Non-serious TEAEs 
+SAEs 
+Related TEAEs 
+TEAEs Graded ≥ 2 
+TEAEs Graded ≥ 3 
+Related TEAEs Graded ≥ 3 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 36of 49Related SAEs 
+AEs leading to withdrawal from the trial 
+AEs leading to withdrawal from second vaccination 
+Deaths 
+The Overall summary is the sum of Period [ADDRESS_295586] infections, but if any are reported then they will 
+be listed but considered non-treatment-emergent and no statistical testing or summaries will be 
+presented for them. 
+Serious Adverse Events 
+All SAEs (solicited and unsolicited) with onset from first vaccination up to and including EAP 
+will be summarized by [CONTACT_243666]. Related SAEs will be presented in 
+similar fashion. SAEs which occurred during the FU Phase will be listed. 
+Related Grade [ADDRESS_295587] listings for Grade 3 or higher 
+AEs will be presented. 
+Solicited Local Adverse Events 
+Solicited local AEs will be summarized by [CONTACT_243667], and broken down by 
+[CONTACT_11196]. The incidence (i.e., the number of subjects developi[INVESTIGATOR_007] a specified solicited 
+local AE on the day of vaccination or over the seven days after each vaccination divided by [CONTACT_243668]) will be calculated. The incidence will also 
+be calculated for any solicited local AE for each vaccination period, the overall vaccination 
+period, by [CONTACT_243669]. The incidence of Grade 2 or higher AEs will also be 
+calculated as well as the incidence of Grade 3 or higher AEs. 
+The duration (in days) of the solicited local AEs will be summarized and presented in a listing. A 
+similar table and listing will be presented for relative day of onset for solicited local AEs. 
+Study specific version: 1.0
+Study specific vers ion Date: [ADDRESS_295588] listing. 
+Unsolicited AEs 
+Treatment-emergent unsolicited AEs in the active trial phase will be summarized by [CONTACT_86104] (SOC) and PT, and by [CONTACT_243670], and for overall. A similar table will be 
+produced per subject. 
+Separate tables for related treatment-emergent unsolicited AEs, graded ≥3 treatment-emergent 
+unsolicited AEs, and related graded ≥3 treatment-emergent AEs will be presented by [CONTACT_243671].   
+The total number events and percentages of all treatment-emergent unsolicited AEs will be 
+presented by [CONTACT_2236], relationship, and for related AE intensity. 
+Non-treatment-emergent AEs will be flagged and included in the listing only, but will not be 
+included in the summary tables. 
+3.5.9 Clinical Laboratory Exams (Hematology, Chemistry) 
+All measured hematology and chemistry values (and changes from baseline for continuous 
+parameters) will be listed and summarized at each sampling visit using descriptive statistics 
+(mean, SD, median, Min and Max). 
+Summary tables will be produced for the number of high and low laboratory values at Screening 
+Visit, Visit 2 and Visit 4 by [CONTACT_243672]. Note that Hepatitis B and C 
+testing, HIV testing, and Troponin I testing are only summarized at the Screening Visit. 
+Study specific version: 1.0
+Study specific vers ion Date: [ADDRESS_295589], 
+gender, age and flagging of abnormal values (LN=Below normal range, HN=Above normal 
+range) with their clinical significance. 
+Shift tables will be used to evaluate categorical changes from Screening Visit to Visit [ADDRESS_295590] to normal ranges (below LLN, Normal, above ULN) in 
+hematology and biochemistry parameters. 
+3.5.10 Vital Signs 
+Measured vital sign values and changes from Baseline will be summarized at each applicable 
+time point using descriptive statistics. All measured values will be listed. 
+Study specific version: 1.0
+Study specific vers ion Date: [ADDRESS_295591] listing. 
+3.5.13 Physical Examination 
+Subjects with abnormal physical examinations will be listed. 
+3.6. Alterations in SAP from the Clinical Trial Protocol  
+The following analysis items are deviations from the trial protocol: 
+Section 7.1.1, RSV-specific ELISA, of the protocol states that “The GMT is calculated per 
+visit as well as based on individual peak titers by [CONTACT_243673] 10 titer transformations. The Geometric Mean Ratio (GMR) is calculated as (GMT at Visit 
+X / GMT at Visit 1).” Per Bavarian Nordic instruction, this statistic will be deleted from the analysis, and replaced by [CONTACT_243674]. 
+Section 9.2, Sample Size Calculation, of the protocol states that “A secondary descriptive 
+quadratic orthogonal regression of the log
+10 titers for the three doses using Group 2, Group 4 
+and Group 5 will also be performed.” and “In addition, an explorative two way ANOVA will 
+be conducted on the log 10 titers using dose (2 levels) and number of vaccinations (2 levels) 
+fitting both main effects and the interaction term.” In both regression analyses, age group will 
+be added to the model per direction from Bavarian Nordic.  
+RSV-specific memory B cells analyses are not covered in this SAP, but will be addressed in 
+detail in an SAP amendment after further assay development. 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 40of 494. References 
+Hahn G and Meeker W (1991) Statistical Intervals: A Guide for Practitioners, [LOCATION_001]: John 
+Wiley & Sons. 
+Study specific version: 1.0
+Study specific vers ion Date: [ADDRESS_295592] and Analysis Sets – All Subjects 
+14.1.2 Overall Assessment: Reason for Withdrawal from 2nd Vaccination/Premature 
+Discontinuation – All Subjects 
+[IP_ADDRESS] Demographic Data – FAS 
+[IP_ADDRESS] Demographic Data – PPS 
+[IP_ADDRESS] Demographic Data – IAS 
+14.1.4 Medical History by [CONTACT_39960] – FAS 
+14.1.5 Concomitant Medication by [CONTACT_243675] – FAS 
+14.1.6 Compliance: Number of Subjects Who Received Vaccinations – FAS 
+14.2 Immunogenicity 
+14.2.1 Serum RSV-specific PRNT Strain A 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Geometric Mean Titer – FAS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Geometric Mean Titer – PPS 
+14.2. 1.3 Serum RSV-specific PRNT Strain A: Geometric Mean Titer by [CONTACT_70566] – FAS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Geometric Mean Titer by [CONTACT_70566] – PPS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Fold Increase – FAS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Fold Increase – PPS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Fold Increase by [CONTACT_70566] – FAS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Fold Increase by [CONTACT_70566] – PPS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Positivity Rates – FAS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Positivity Rates – PPS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Response Rates – FAS 
+14.2. 1.12 Serum RSV-specific PRNT Strain A: Response Rates – PPS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Group Geometric Mean Titer Ratios – FAS  
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Group Geometric Mean Titer Ratios – PPS
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Group Geometric Mean Fold Increase Ratios – FAS  
+14.2 .1.16 Serum RSV-specific PRNT Strain A: Group Geometric Mean Fold Increase Ratios – PPS
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Dose-Response ANOVA Results With Age Group in 
+Model – FAS  
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Dose-Response ANOVA Results Without Age Group in 
+Model – FAS  
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Exploratory Titer ANOVA Results – FAS  
+[IP_ADDRESS] Serum RSV-specific PRNT Strain A: Exploratory Fold Increase ANOVA Results – FAS  
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 42of 4914.2.2 Serum RSV-specific PRNT Strain B 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain B: Geometric Mean Titer – FAS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain B: Geometric Mean Titer – PPS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain B: Fold Increase – FAS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain B: Fold Increase – PPS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain B: Positivity Rates – FAS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain B: Positivity Rates – PPS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain B: Response Rates – FAS 
+14.2. 2.8 Serum RSV-specific PRNT Strain B: Response Rates – PPS 
+[IP_ADDRESS] Serum RSV-specific PRNT Strain B: Group Geometric Mean Titer Ratios – FAS  
+[IP_ADDRESS] Serum RSV-specific PRNT Strain B: Group Geometric Mean Titer Ratios – PPS
+[IP_ADDRESS] Serum RSV-specific PRNT Strain B: Dose-Response ANOVA Results – FAS  
+[IP_ADDRESS] Serum RSV-specific PRNT Strain B: Exploratory Titer ANOVA Results – FAS  
+[IP_ADDRESS] Serum RSV-specific PRNT Strain B: Exploratory Fold Increase ANOVA Results – FAS  
+14.2.3 RSV-specific IgA ELISA (serum) 
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Geometric Mean Titer – FAS 
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Geometric Mean Titer – PPS 
+14.2. 3.3 Serum RSV-specific IgA ELISA: Geometric Mean Titer by [CONTACT_70566] – FAS 
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Geometric Mean Titer by [CONTACT_70566] – PPS 
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Fold Increase – FAS 
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Fold Increase – PPS 
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Fold Increase by [CONTACT_70566] – FAS 
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Fold Increase by [CONTACT_70566] – PPS 
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Positivity Rates – FAS 
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Positivity Rates – PPS 
+14.2. 3.11 Serum RSV-specific IgA ELISA: Response Rates – FAS 
+14.2. 3.12 Serum RSV-specific IgA ELISA: Response Rates – PPS 
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Group Geometric Mean Titer Ratios – FAS  
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Group Geometric Mean Titer Ratios – PPS
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Dose-Response ANOVA Results – FAS  
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Exploratory Titer ANOVA Results – FAS  
+[IP_ADDRESS] Serum RSV-specific IgA ELISA: Exploratory Fold Increase ANOVA Results – FAS  
+14.2.4 RSV-specific IgG ELISA (serum) 
+[IP_ADDRESS] Serum RSV-specific IgG ELISA: Geometric Mean Titer – FAS 
+[IP_ADDRESS] Serum RSV-specific IgG ELISA: Geometric Mean Titer – PPS 
+14.2.4 .3 Serum RSV-specific IgG ELISA: Fold Increase – FAS 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 43of 4914.2.4.4 Serum RSV-specific IgG ELISA: Fold Increase – PPS 
+[IP_ADDRESS] Serum RSV-specific IgG ELISA: Positivity Rates – FAS 
+[IP_ADDRESS] Serum RSV-specific IgG ELISA: Positivity Rates – PPS 
+14.2. 4.7 Serum RSV-specific IgG ELISA: Response Rates – FAS 
+[IP_ADDRESS] Serum RSV-specific IgG ELISA: Response Rates – PPS 
+[IP_ADDRESS] Serum RSV-specific IgG ELISA: Group Geometric Mean Titer Ratios – FAS  
+14.2 .4.10 Serum RSV-specific IgG ELISA: Group Geometric Mean Titer Ratios – PPS
+[IP_ADDRESS] Serum RSV-specific IgG ELISA: Dose-Response ANOVA Results – FAS  
+[IP_ADDRESS] Serum RSV-specific IgG ELISA: Exploratory Titer ANOVA Results – FAS  
+[IP_ADDRESS] Serum RSV-specific IgG ELISA: Exploratory Fold Increase ANOVA Results – FAS  
+14.2.5 RSV-strain A – G protein specific IgG ELISA (serum) 
+14.2. 5.1 Serum RSV-strain A – G protein specific IgG ELISA: Geometric Mean Titer – FAS 
+[IP_ADDRESS] Serum RSV-strain A – G protein specific IgG ELISA: Geometric Mean Titer – PPS 
+[IP_ADDRESS] Serum RSV-strain A – G protein specific IgG ELISA: Fold Increase – FAS 
+[IP_ADDRESS] Serum RSV-strain A – G protein specific IgG ELISA: Fold Increase – PPS 
+[IP_ADDRESS] Serum RSV-strain A – G protein specific IgG ELISA: Positivity Rates – FAS 
+[IP_ADDRESS] Serum RSV-strain A – G protein specific IgG ELISA: Positivity Rates – PPS 
+[IP_ADDRESS] Serum RSV-strain A – G protein specific IgG ELISA: Response Rates – FAS 
+14.2. 5.8 Serum RSV-strain A – G protein specific IgG ELISA: Response Rates – PPS 
+[IP_ADDRESS] Serum RSV-strain A – G protein specific IgG ELISA: Group Geometric Mean Titer Ratios – 
+FAS  
+[IP_ADDRESS] Serum RSV-strain A – G protein specific IgG ELISA: Group Geometric Mean Titer Ratios – 
+PPS 
+14.2.6 RSV-strain B – G protein specific IgG ELISA (serum) 
+[IP_ADDRESS] Serum RSV-strain B – G protein specific IgG ELISA: Geometric Mean Titer – FAS 
+[IP_ADDRESS] Serum RSV-strain B – G protein specific IgG ELISA: Geometric Mean Titer – PPS 
+[IP_ADDRESS] Serum RSV-strain B – G protein specific IgG ELISA: Fold Increase – FAS 
+[IP_ADDRESS] Serum RSV-strain B – G protein specific IgG ELISA: Fold Increase – PPS 
+[IP_ADDRESS] Serum RSV-strain B – G protein specific IgG ELISA: Positivity Rates – FAS 
+[IP_ADDRESS] Serum RSV-strain B – G protein specific IgG ELISA: Positivity Rates – PPS 
+14.2. 6.7 Serum RSV-strain B – G protein specific IgG ELISA: Response Rates – FAS 
+[IP_ADDRESS] Serum RSV-strain B – G protein specific IgG ELISA: Response Rates – PPS 
+[IP_ADDRESS] Serum RSV-strain B – G protein specific IgG ELISA: Group Geometric Mean Titer Ratios – 
+FAS  
+[IP_ADDRESS] Serum RSV-strain B – G protein specific IgG ELISA: Group Geometric Mean Titer Ratios – 
+PPS
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 44of 4914.2.7 RSV-specific IgA ELISA (mucosal) 
+[IP_ADDRESS] Mucosal RSV-specific IgA ELISA: Geometric Mean Titer – FAS 
+[IP_ADDRESS] Mucosal RSV-specific IgA ELISA: Geometric Mean Titer – PPS 
+[IP_ADDRESS] Mucosal RSV-specific IgA ELISA: Fold Increase – FAS 
+[IP_ADDRESS] Mucosal RSV-specific IgA ELISA: Fold Increase – PPS 
+[IP_ADDRESS] Mucosal RSV-specific IgA ELISA: Positivity Rates – FAS 
+[IP_ADDRESS] Mucosal RSV-specific IgA ELISA: Positivity Rates – PPS 
+[IP_ADDRESS] Mucosal RSV-specific IgA ELISA: Response Rates – FAS 
+[IP_ADDRESS] Mucosal RSV-specific IgA ELISA: Response Rates – PPS 
+14.2 .7.9 Mucosal RSV-specific IgA ELISA: Group Geometric Mean Titer Ratios – FAS  
+[IP_ADDRESS] Mucosal RSV-specific IgA ELISA: Group Geometric Mean Titer Ratios – PPS
+14.2.8 PBMC RSV-specific IFN-γ ELISPOT Peptide Pools 
+[IP_ADDRESS] PBMC RSV-specific IFN-γ (ELISPOT Peptide Pools/RSV): Positivity rates – IAS 
+[IP_ADDRESS] PBMC RSV-specific IFN-γ (ELISPOT Peptide Pools/RSV): Response rates – IAS 
+14.2. 8.3 PBMC RSV -specific IFN -γ (ELISPOT Peptide Pools /RSV ): Median and Geometric Mean SFU –
+IAS 
+[IP_ADDRESS] PBMC RSV-specific IFN-γ (ELISPOT Peptide Pools/RSV): Responder Rates – IAS 
+14.2.9 PBMC RSV-specific IL-4 ELISPOT Peptide Pools 
+[IP_ADDRESS] PBMC RSV-specific IL-4 (ELISPOT Peptide Pools/RSV): Positivity rates – IAS 
+[IP_ADDRESS] PBMC RSV-specific IL-4 (ELISPOT Peptide Pools/RSV): Response rates – IAS 
+[IP_ADDRESS] PBMC RSV-specific IL-4 (ELISPOT Peptide Pools/RSV): Median and Geometric Mean SFU – 
+IAS 
+[IP_ADDRESS] PBMC RSV-specific IL-4 (ELISPOT Peptide Pools/RSV): Responder Rates – IAS 
+14.3 14.3 Safety 
+14.3.1 14.3.1 Adverse Events 
+[IP_ADDRESS] Overview of Solicited and Unsolicited Adverse Events (Per Vaccination Period) – FAS 
+[IP_ADDRESS].1 Overview of Solicited and Unsolicited Adverse Events (Per Subject) – FAS 
+[IP_ADDRESS] Solicited Local Adverse Events 
+[IP_ADDRESS].1 Solicited Local Adverse Events (Per Vaccination Period): Incidence by [CONTACT_243676] –
+FAS  
+[IP_ADDRESS].2 Solicited Local Adverse Events (Per Subject): Incidence by [CONTACT_243676] – FAS  
+[IP_ADDRESS].3 Solicited Local Adverse Events (Per Vaccination Period): Incidence of Maximum Intensity by [CONTACT_70566] – FAS 
+[IP_ADDRESS].4 Solicited Local Adverse Events (Per Subject): Incidence of Maximum Intensity by [CONTACT_70566] – FAS 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 45of 4914.[IP_ADDRESS] Solicited Local Adverse Events (Per Vaccination Period): Grade ≥ 2 and Grade≥3 TEAEs – FAS 
+[IP_ADDRESS].6 Solicited Local Adverse Events (Per Subject): Grade ≥ 2 and Grade≥3 TEAEs – FAS  
+[IP_ADDRESS].7 Solicited Local Adverse Events (Per Vaccination Period): Summary of Duration – FAS 
+[IP_ADDRESS].8 Solicited Local Adverse Events (Per Subject): Summary of Duration – FAS 
+[IP_ADDRESS].9  Solicited Local Adverse Events (Per Vaccination Period): Summary of Relative Day of Onset 
+– FAS
+[IP_ADDRESS].10 Solicited Local Adverse Events (Per Subject): Summary of Relative Day of Onset – FAS
+[IP_ADDRESS] Solicited General Adverse Events 
+[IP_ADDRESS].1 Solicited General Adverse Events (Per Vaccination Period): Incidence by [CONTACT_243676] 
+– FAS 
+[IP_ADDRESS].2 Solicited General Adverse Events (Per Subject): Incidence by [CONTACT_243676] – FAS 
+[IP_ADDRESS].3 Solicited General Adverse Events (Per Vaccination Period): Incidence of Maximum Intensity 
+by [CONTACT_70566] – FAS 
+[IP_ADDRESS].4 Solicited General Adverse Eve nts (Per Subject): Incidence of Maximum Intensity by [CONTACT_243677] – FAS 
+[IP_ADDRESS]. 5 Solicited General Adverse Event Related to Vaccine (Per Vaccination Period): Incidence by 
+[CONTACT_243676] – FAS 
+[IP_ADDRESS]. 6 Solicited General Adverse Event Related to Vaccin e (Per Subject ): Incidence by [CONTACT_243678] – FAS 
+[IP_ADDRESS].7 Solicited General Adverse Events (Per Vaccination Period): Summary of Duration – FAS 
+[IP_ADDRESS].8 Solicited General Adverse Events (Per Subject): Summary of Duration – FAS 
+[IP_ADDRESS]. 9 Solici ted General Adverse Events (Per Vaccination Period): Summary of Relative Day of 
+Onset – FAS
+[IP_ADDRESS]. 10Solicited General Adverse Events (Per Subject ): Summary of Relative Day of Onset –FAS
+[IP_ADDRESS] Unsolicited Adverse Events 
+[IP_ADDRESS].1 Treatment-Emergent Unsolicited Adverse Events (Per Vaccination Period): Incidence by [CONTACT_39960] – FAS 
+[IP_ADDRESS].2 Treatment -Emergent Unsolicited Adverse Events (Per Subject ): Incidence by [CONTACT_52140] – FAS 
+[IP_ADDRESS].3 Related Treatment -Emergent Unsolicited Adverse Events (Per Vaccination Period): 
+Incidence by [CONTACT_39960] – FAS 
+[IP_ADDRESS]. 4 Related Treatment -Emergent Unsolicited Adverse Events (Per Subject ): Incidence by 
+[CONTACT_39960] – FAS 
+[IP_ADDRESS].5 Grade ≥3 Treatment -Emergent Unsolicited Adverse Events (Per Vaccination Period): 
+Incidence by [CONTACT_39960] – FAS 
+[IP_ADDRESS].6 Grade ≥3 Treatment-Emergent Unsolicited Adverse Events (Per Subject): Incidence by 
+[CONTACT_39960] – FAS 
+[IP_ADDRESS].7 Related Grade ≥3 Treatment-Emergent Unsolicited Adverse Events (Per Vaccination 
+Period): Incidence by [CONTACT_39960] – FAS 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 46of 4914.[IP_ADDRESS] Related Grade ≥3 Treatment-Emergent Unsolicited Adverse Events (Per Subject): Incidence 
+by [CONTACT_39960] – FAS 
+[IP_ADDRESS].9 Treatment-Emergent Unsolicited Adverse Events (Per Vaccination Period): Summary of 
+Intensity and Relationship to Trial Medication – FAS 
+[IP_ADDRESS].10 Treatment-Emergent Unsolicited Adverse Events (Per Subject): Summary of Intensity and 
+Relationship to Trial Medication – FAS 
+14.3.2 Serious Adverse Events 
+[IP_ADDRESS] Serious Adverse Events (Per Vaccination Period): Incidence by [CONTACT_11875] m Organ Class and 
+Preferred Term – FAS 
+[IP_ADDRESS] Serious Adverse Events (Per Subject ): Incidence by [CONTACT_39960] 
+– FAS 
+[IP_ADDRESS] Related Serious Adverse Events (Per Vaccination Period): Incidence by [CONTACT_39960] – FAS 
+[IP_ADDRESS] Related Serious Adverse Events (Per Subject): Incidence by [CONTACT_177346] – FAS 
+14.3.3 Laboratory, Vital Signs, and ECG Safety Data 
+[IP_ADDRESS] Laboratory Data (Mean Values): Hematology – FAS 
+[IP_ADDRESS] Laboratory Data (Mean Values): Biochemistry – FAS 
+[IP_ADDRESS] Laboratory Abnormalities: Hematology – FAS 
+[IP_ADDRESS] Laboratory Abnormalities: Biochemistry – FAS 
+[IP_ADDRESS] Laboratory Data (Shift Table): Hematology – FAS 
+[IP_ADDRESS] Laboratory Data (Shift Tables): Biochemistry – FAS 
+[IP_ADDRESS] Vital Signs – FAS 
+[IP_ADDRESS] ECG Assessment Data – FAS 
+[IP_ADDRESS] ECG Interpretation Data – FAS 
+Study specific version: 1.0
+Study specific vers ion Date: [ADDRESS_295593] OF LISTINGS 
+Number Title 
+16.2.1  Discontinued Subjects 
+[IP_ADDRESS]  Violation of Inclusion Criteria – FAS 
+[IP_ADDRESS]  Exclusion Criteria Fulfilled – FAS 
+[IP_ADDRESS]  Informed Consent – FAS 
+[IP_ADDRESS]  Overall Assessment – FAS 
+[IP_ADDRESS]  Disposition – FAS 
+16.2.2  Protocol Deviations 
+[IP_ADDRESS]  Protocol Deviations – FAS 
+[IP_ADDRESS]  Sample Handling Deviations – FAS 
+16.2.3  Subjects not Eligible for the Trial 
+[IP_ADDRESS]  Eligibility for Trial Participation – Subjects not Eligible for the Trial 
+16.2.4  Demographic Data and Other Baseline Characteristics 
+[IP_ADDRESS].1  Demographic Data – FAS 
+[IP_ADDRESS].2  Medical History – FAS 
+[IP_ADDRESS].3  Pre-treatment Adverse Events – FAS 
+[IP_ADDRESS].4  Abnormal Physical Examinations at Screening – FAS 
+[IP_ADDRESS].5  Vaccine Assessment at Screening – FAS 
+[IP_ADDRESS]  Prior and Concomitant Medication 
+[IP_ADDRESS].1  Prior Medication – FAS 
+[IP_ADDRESS].2  Concomitant Medication – FAS 
+16.2.5  Compliance and/or Drug Concentration Data 
+[IP_ADDRESS]  Dates of Visits and Blood and Mucosal Sampling – FAS 
+[IP_ADDRESS]  Investigational Product Administration – FAS 
+[IP_ADDRESS]  Memory Aid – FAS 
+16.2.6  Individual Immune Response Data 
+[IP_ADDRESS]  RSV-specific Serum IgG, Serum IgA, Serum G protein (A), Serum G protein (B) and Mucosal 
+IgA ELISA Antibody Analysis: Titer, Positivity, Response Status, and Fold Increase per Subject 
+by [CONTACT_4838] – FAS 
+[IP_ADDRESS]  RSV-specific PRNT (Strain A and B): Titer, Positivity, Response Status, and Fold Increase per 
+Subject by [CONTACT_4838] – FAS 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 48of 4916.2.6.3  ELISPOT IFN-γ: SFU per Subject by [CONTACT_4838] – FAS 
+[IP_ADDRESS]  ELISPOT IFN-γ: Positivity per Subject by [CONTACT_4838] – FAS 
+[IP_ADDRESS]  ELISPOT IFN-γ: Response Status per Subject by [CONTACT_4838] – FAS 
+[IP_ADDRESS] ELISPOT IFN-γ: Responder Status per Subject – FAS 
+[IP_ADDRESS]  ELISPOT IL-4: SFU per Subject by [CONTACT_4838] – FAS 
+[IP_ADDRESS] ELISPOT IL-4: Positivity per Subject by [CONTACT_4838] – FAS 
+[IP_ADDRESS]  ELISPOT IL-4: Response Status per Subject by [CONTACT_4838] – FAS 
+[IP_ADDRESS] ELISPOT IL-4: Responder Status per Subject – FAS 
+16.2.7  Adverse Event Listings 
+[IP_ADDRESS].1  Unsolicited Adverse Events – FAS 
+[IP_ADDRESS].2  Related Unsolicited Adverse Events – FAS 
+[IP_ADDRESS].3  Grade ≥3 Unsolicited Adverse Events – FAS 
+[IP_ADDRESS].4  Grade ≥3 Related Unsolicited Adverse Events – FAS 
+[IP_ADDRESS].5  Adverse Events Leading to Discontinuation from the Trial – FAS 
+[IP_ADDRESS].6  Adverse Events Leading to Withdrawal from Second Vaccination – FAS 
+[IP_ADDRESS].7 Solicited Local Adverse Events: Injection Site Pain – FAS 
+[IP_ADDRESS].8  Solicited Local Adverse Events: Injection Site Erythema – FAS 
+[IP_ADDRESS].9  Solicited Local Adverse Events: Injection Site Swelling – FAS 
+[IP_ADDRESS].10 Solicited Local Adverse Events: Injection Site Induration – FAS 
+[IP_ADDRESS].11 Solicited Local Adverse Events: Injection Site Pruritus – FAS 
+[IP_ADDRESS].12 Solicited General Adverse Events: Body Temperature Increased – FAS 
+[IP_ADDRESS].13 Solicited General Adverse Events: Headache – FAS 
+[IP_ADDRESS].14 Solicited General Adverse Events: Myalgia – FAS 
+[IP_ADDRESS].15 Solicited General Adverse Events: Chills – FAS 
+[IP_ADDRESS].16 Solicited General Adverse Events: Nausea – FAS 
+[IP_ADDRESS].17 Solicited General Adverse Events: Fatigue – FAS 
+[IP_ADDRESS].18 Examination of Injection Site – FAS 
+[IP_ADDRESS]  Serious Adverse Events 
+[IP_ADDRESS].1  Serious Adverse Events – FAS 
+[IP_ADDRESS].2  Related Serious Adverse Events – FAS 
+16.2.[ADDRESS_295594] 
+[IP_ADDRESS].1  Laboratory Data: Hematology – FAS 
+[IP_ADDRESS].2  Laboratory Data: Hematology – Abnormal Values – FAS 
+[IP_ADDRESS].3  Laboratory Data: Biochemistry – FAS 
+[IP_ADDRESS].4  Laboratory Data: Biochemistry – Abnormal Values – FAS 
+[IP_ADDRESS].5  Laboratory Data: Pregnancy Test Results (Female Subjects Only) – FAS 
+Study specific version: 1.0
+Study specific vers ion Date: 31 -May-17
+Page 49of 4916.[IP_ADDRESS]  Laboratory Data: Laboratory Normal Ranges 
+[IP_ADDRESS].7 Laboratory Data: Biochemistry (Troponin I) – Abnormal High Values – FAS 
+[IP_ADDRESS].8  Laboratory Data: Serology – FAS 
+[IP_ADDRESS].9  RSV-Specific Symptoms and RVP-PCR – FAS
+[IP_ADDRESS]  Other Safety Data 
+[IP_ADDRESS].1  Vital Signs – FAS 
+[IP_ADDRESS].2  ECG Assessment and Interpretation Data – FAS 
+[IP_ADDRESS].3 ECG Parameter Data – FAS  
+[IP_ADDRESS].4 Abnormal Targeted Physical Examination – FAS 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 1 of 43 
+ Statistical Analysis Plan  
+ 
+RSV -MVA -002 Booster  
+ 
+A randomized, single -blind, placebo controlled, dose -ranging Phase II 
+trial in ≥ 55 year old adults to evaluate the safety and immunogenicity of 
+the recombinant MVA -BN-RSV vaccine  
+ 
+Booster Sub -study  
+ 
+ 
+ 
+  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 3 of 43 
+ Table of Contents  
+Signature [CONTACT_3490]  ................................ ................................ ................................ ............  2 
+Abbreviations  ................................ ................................ ................................ .............  5 
+General Definiti ons ................................ ................................ ................................ .... 7 
+1 Introduction  ................................ ................................ ................................ ...... 10 
+2 Trial Overview  ................................ ................................ ................................ . 10 
+2.1 Trial Description  ................................ ................................ ...............................  10 
+2.2 Design Techniques to Avoid Bias  ................................ ................................ .... 11 
+2.2.1  Methods of Assigning Subjects to Treatment Groups  ................................ .. 11 
+2.2.2  Blinding  ................................ ................................ ................................ .........  11 
+2.3 Objectives  ................................ ................................ ................................ .........  11 
+2.3.1  Primary Objective  ................................ ................................ ..........................  11 
+2.3.2  Secondary Objectives  ................................ ................................ ....................  11 
+2.4 Study Population  ................................ ................................ ...............................  12 
+2.5 Inclusion Exclusion Criteria  ................................ ................................ .............  12 
+2.6 Endpoints  ................................ ................................ ................................ ..........  12 
+2.6.1  Immunogenicity Endpoints  ................................ ................................ ...........  12 
+2.6.2  Safety Endpoints  ................................ ................................ ............................  13 
+2.7 Interim Analysis  ................................ ................................ ................................  14 
+3 Study Design  ................................ ................................ ................................ .... 14 
+4 Statistical Methods  ................................ ................................ ...........................  14 
+4.1 Planned Sample Size ................................ ................................ .........................  14 
+4.2 Analysis Populations  ................................ ................................ ........................  15 
+4.2.1  Booster Full Analysis Set (BFAS)  ................................ ................................  15 
+4.2.2  Booster Immunogenicity Analysis Set (BIAS)  ................................ .............  15 
+4.3 Data Handling Conventions  ................................ ................................ ..............  15 
+4.3.1  Missing Immunogenicity Data  ................................ ................................ ...... 15 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 4 of 43 
+ 4.3.2  Missing or Partial Dates in Adverse Event and Concomitant Medication 
+Data  ................................ ................................ ................................ ...............  15 
+4.3.3  Assignment of AEs to Trial Phase  ................................ ................................  16 
+4.3.4  General Considerations for AEs  ................................ ................................ .... 17 
+4.4 Analysis Variables  ................................ ................................ ............................  18 
+4.4.1  Demographic and other Baseline Characteristics ................................ ..........  18 
+4.4.2  Safety Variables  ................................ ................................ ............................  18 
+4.4.3  Immunogenicity Variables  ................................ ................................ ............  21 
+4.5 Analysis and Presentation of Methods  ................................ .............................  22 
+4.5.1  Listings and Descriptive Statistics  ................................ ................................  22 
+4.5.2  Software  ................................ ................................ ................................ .........  23 
+4.5.3  Disposit ion of Subjects  ................................ ................................ ..................  23 
+4.5.4  Demographic and Other Baseline Data  ................................ .........................  24 
+4.5.5  Prior and Concomitant Medications  ................................ ..............................  25 
+4.5.6  Compliance  ................................ ................................ ................................ .... 25 
+4.5.7  Immunogenicity Analysis ................................ ................................ ..............  25 
+4.5.8  Adverse Events  ................................ ................................ ..............................  27 
+4.5.9  Clinical Laboratory Exams (Hematology, Chemistry)  ................................ . [ADDRESS_295595]  ................................ ................................ ..............................  29 
+4.5.12  Physical Examination  ................................ ................................ ....................  30 
+4.6 Alterations in SAP from the Clinical Trial Protocol  ................................ ........  30 
+5 References  ................................ ................................ ................................ ........  30 
+6 Appendix  ................................ ................................ ................................ ..........  31 
+6.1 Detection Limits (DL)  ................................ ................................ ......................  31 
+6.2 Trial Schedule Booster Sub -study  ................................ ................................ .... 32 
+6.3 Tables and Listings  ................................ ................................ ...........................  35 
+ 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 5 of 43 
+ Abbreviations   
+Table 1: Abbreviations and Definitions  
+ADR   Adverse Drug Reaction  
+AE  Adverse Event  
+AESI   Adverse Event of Special Interest  
+ATC   Anatomical -Therapeutic -Chemical  
+BATP   Booster Active Trial Phase  
+BEAP   Booster End of Active Phase  
+BFAS   Booster Full Analysis Set  
+BFU   Booster Follow -up visit 
+BIAS   Booster Immunogenicity Analysis Set  
+BMI   Body Mass Index  
+BN   Bavarian Nordic  
+BV  Booster Visit  
+CI   Confidence Interval  
+CSR   Clinical Study Report  
+DL   Detection Limit  
+EAP   End of Active Phase  
+ECG   Electrocardiogram  
+eCRF   electronic Case Report Form  
+ELISA  Enzyme -Linked Immunosorbent Assay  
+ELISPOT  Enzyme -Linked Immuno Spot Technique  
+FU  Follow -up visit  
+GMFI   Geometric Mean Fold Increase  
+GMSFU  Geometric Mean Spot Forming Units  
+GMT    Geometric Mean Titer  
+HCG   Human Choriogonadotropin  
+HN  Above normal range  
+IFN-γ   Interferon -gamma  
+IgA  Immu noglobulin A  
+IgG  Immunoglobulin G    
+IL-[ADDRESS_295596]  Below normal range  
+Inf.U   Infectious Unit  
+Log 10   Logarithm base 10  
+Max   Maximum  
+MCH   Mean Corpuscular Hemoglobin  
+MCHC  Mean Corpuscular Hemoglobin Concentration  
+MCV   Mean Corpuscular Volume  
+MedDRA  Medical Dictionary for Regulatory Activities  
+Min   Minimum  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 6 of 43 
+ MVA -BN  Modified Vaccinia Ankara – Bavarian Nordic  
+n   Number of Observations  
+PBMC  Peripheral Blood Mononuclear Cells  
+PRNT   Plaque Reduction Neutralization Test  
+PT   Preferred Term  
+RSV   Respi[INVESTIGATOR_243625] -Emergent Adverse Event  
+V  Visit  
+WBC   White Blood Cells  
+WHO -DD  World Health Organization Drug Dictionary  
+  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 7 of 43 
+ General Definitions  
+Booster Vaccinated /Treated  Subjects  
+A subject is considered vaccinated or treated once they have received any dose of the booster  
+vaccination.  
+Booster Study Day  
+For this sub -study, t he day of the booster vaccination is defined as Day 0, the following as  Day 1, 
+and so on. Equally, the day before the booster vaccination in the screening period is defined as 
+Day -1, and so on. A new study day begins always at midnight regardless of the time of the 
+booster  vaccination.  
+Booster Baseline  
+If not otherwise specified, “ booster baseline”  refers to the last measurement prior to  the booster 
+vaccination , which is performed on booster visit ( BV) 1 (approximately [ADDRESS_295597] 
+vaccination in the main study) .  In case of missing vital event data at the first treatment visit, the 
+booster screening  vital event  data may be used to impute baseline values . These  data will be 
+summarized as baseline data without specif ying the visit from which the data were derived . 
+However, in cases where no pre -treatment values exist for a baseline parameter, the subject will 
+be considered as having no baseline, and post-baseline changes will not be able to be calculated  
+and will be excluded from analyses . 
+Main Baseline  
+The main study baseline (described as “main baseline” in this document) refers to the last 
+measurement before first vaccination with trial vaccine in the main study. This is either at Visit 1 
+or at Screening Visit (or latest re -screening) as applicable.  
+Booster Screening Phase  
+Time period  from the booster screening  visit (BV0) until the booster vaccination visit  (BV1) .  
+This could include any unschedule d visit s during the screening period up to the booster 
+vaccination . 
+Booster Active Trial Phase  (BATP)  
+Time period covering from BV1 until the visit approximately 4 weeks later (Booster End of 
+Active Phase ( BEAP )); whether this occurs at the final study visit or at an early termination visit ). 
+This could include any unscheduled visits up until final visit of the booster active trial phase .  
+This is also the vaccination period  of the booster sub -study . 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 8 of 43 
+ Booster Follow -Up Trial Phase   
+Time period between th e BEAP and the final study v isit.  Note that for subjects who do not return 
+for booster sub -study follow -up visits ( BFU), there may be no BFU phase data available.  
+Treatment Emergent Adverse Event  (TEAE)  
+A TEAE is an adverse event with an onset either on or after the day of the booster vaccination , or 
+within the 28 days following the booster  vaccination.   Note that serious AEs are also considered 
+treatment -emergent after 28 days (see below).  
+Serious Adverse Events  
+All Serious Adverse Events (SAEs) from BV1 to the last follow -up visit are considered as 
+treatment -emergent , regardless of the day of onset.  
+Related AE or Adverse Drug Reaction  (ADR)  
+Treatment -related AEs are defined as TEAE s determined  by [CONTACT_243679] y, 
+probabl y, or definite ly caused by [CONTACT_243680] -BN-RSV . TEAEs with an unknown or missing caus ality 
+also constitute treatment -related AEs .  In case of missing causality assessments, a TEAE will be 
+considered as related for the summaries.  
+Nominal Titer  
+The MVA -BN-RSV (Respi[INVESTIGATOR_243626] l Virus) vaccine is formulated at a nominal titer of 
+5 x 108 Inf.U per dose (0.5 mL). The actual titer will be determined in stability testing.  
+Geometric Mean Titer and Geometric Mean Spot Forming Units  
+The Geometric Mean Titer (GMT) and Geometric Mean Spo t Forming Units (GMSFU) are 
+calculated by [CONTACT_243630] 10 transformed titers, and Spot 
+Forming Units, respectively.  
+Detection Limit (DL)  
+The limit from where a positive signal can be measured in immunogenicity assays.   Refer to 
+Appendix 6.1 for DLs of the planned tests.  
+(Sero)Negative and (Sero)Positive Results  
+For each immunogenicity assay , a negative result is defined as a titer below the DL, while a 
+positive result is a titer equal to or above the DL.  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 9 of 43 
+ Response  
+For each immunogenicity assay, a response to the vaccine (applicable only for post baseline 
+visits) is defined as either the appearance of a positive result for subjects wit h a negative result at 
+baseline , or an increase by a factor of at least [ADDRESS_295598] baseline 
+visits include Visit (V) 1b, V2, V3, V3b, V4, end o f active phase (EAP) visit, follow -up visit 
+(FU) 1, and FU2 from the main study; BV1b, BV2, BEAP visit, BFU1 , BFU2  and BFU [ADDRESS_295599] agent (F pool, G(A) pool, 
+G(B) pool, N pool, M2 pool, RSV Virus) if the subject has a re sponse for at least two post 
+baseline visits ( V1b, V2, V3, V3b, V4 from the main study; BV1b, BV2  from the booster sub -
+study ) within the same test agent. The responder evaluation applies only to subjects with at least 
+two post  baseline results available.  
+The responder rate for each test agent F pool, G(A) pool, G(B) pool, N pool, M2 pool, RSV 
+Virus) is the percentage of subjects who are responders to the relevant test agent out of the 
+number of subjects with a non -missing responder status.  
+Individual peak t iter 
+The individual peak titer is the maximum of titers recorded on V1, V2, V3, V4, and EAP visit 
+from the main study, BV2 and BEAP visit from the booster sub -study .  Since V1b, V3b, and 
+BV1b samples are only collected for the PBMC subgroup, they will  be excluded from the peak 
+titer selection.  
+Fold Increase  
+The fold increase is defined as a subject’s post  Baseline titer at Visit X, divided by [CONTACT_243631].   
+Main study fold increase is defined based on the main baseline.  Booster sub -study f old in crease 
+can be  defined based on the booster baseline or the main baseline . 
+ 
+  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 10 of 43 
+ 1 Introduction  
+This Statistical Analysis Plan (SAP) details the statistical methodology to be used in analyzing 
+study data and outlines the key statistical programming specification s for the booster sub -study of 
+clinical trial RSV -MVA -002.  It describes the variables and populations, anticipated data 
+transformations and manipulations, and other details of the analyses not provided in the study 
+protocol.  The SAP is written based on r ecommendations from ICH E3: Structure and Content of 
+Clinical Study Reports , and ICH E9: Statistical Principles for Clinical Trials .  Table, figure and 
+listing shells are described in a separate document.  
+The analyses described here are based on the final clinical trial protocol  RSV -MVA -002 Edition 
+4.0 dated  April  26, 201 8.  Details for the analyses of the main study data are described in the final 
+SAP dated May 31, 2017 and the SAP Addendum dated October 11, 2017.  This plan covers 
+analysis details of data collected for the booster sub -study.  It will be followed completely for the 
+analysis  of data derived from the sub -study .  If any unforeseen additional analyses are included in 
+the clinical study report (CSR) they will be clearly described as additional, unplanned analyses.   
+2 Trial Overview  
+2.1 Trial Description  
+This is a randomized, single -blind, placebo -controlled, dose -ranging Phase II trial in ≥ 55 year 
+old adults to evaluate the safety and immunogenicity of the recombinant MVA -BN-RSV vaccine. 
+A total of 4 20 subjects were recruited into five treatment groups and were vaccinated in the main 
+study (see Table 2 ). 
+Table 2  Treatment Groups  in the Main Study   
+Group  N Age 
+[years]  Volume per dose 
+[mL]  1st vaccination  
+Day 0  
+[Inf.U]  2nd vaccination  
+Day 28  
+[Inf.U]  Route  
+1 78 ≥ 55 0.5 1 x 108   Placebo  IM 
+2 89 ≥ 55 0.5  1 x 108 1 x 108 IM 
+3 80 ≥ 55 0.5  5 x 108   Placebo  IM 
+4 90 ≥ 55 0.5  5 x 108 5 x 108 IM 
+5 83 ≥ [ADDRESS_295600] vaccination in th e main study, 86 subjects in two  selected 
+treatment groups of the main study (Group 1 and Group 3) are planned to  be recruited to 
+participate in the booster sub-study . They will receive a single booster vaccination  using the same 
+MVA -BN-RSV dose they received during the main study.  Subjects will be followed up for 12 
+months after their booster vaccination.   Out of these 86 subjects, approximately 26 will be 
+recruited from the PBMC subgroup (approximately 13 subjects for each of the two selected dose 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 11 of 43 
+ groups ).  The selection of the treatment groups to be included in the booster sub -study is based on 
+the results of the main study.  
+2.[ADDRESS_295601] consented to participate in the booster sub -study will be enrolled until 
+a total of 86 is reached .  PBMC sites will begin recruitment 1 -2 weeks prior to the remaining  sites 
+to ensure 1 3 PBMC subjects  per treatment group .  Once 46 subjects are enrolled into one 
+treatment group, enrolment for that group will stop to assure an approximately equal number of 
+enrolled subjects in both treatment groups.  
+2.2.1 Methods of Assigning Subjects to Treatment Groups  
+Subjects in this booster sub -study will not be randomized.  They will get the same dose received 
+during the main study.  
+2.2.2 Blinding  
+Subjects in the booster sub -study will not be blinded because they will get the same dose received 
+in the main study , which has already been unblinded . 
+2.3 Objectives  
+2.3.1 Primary Objective  
+The primary objective of the main study is  to assess the optimal dose and schedule of the 
+MVA -BN-RSV vaccine in adult and elderly subjects in terms of immunogenicity.  
+The objective of the booster sub -study is to demonstrate that the immune response of subjects 
+previously vaccinated with MVA -BN-RSV vaccine can be boosted one year later with a single 
+MVA -BN-RSV vaccination.  
+2.3.2 Secondary Objectives  
+The secondary objectives of the main study are: 
+• To assess safety and re actogenicity of the MVA -BN-RSV vaccine in adult/elderly subjects  
+• To assess the RSV -specific humoral immune responses (in all subjects) and cellular immune 
+responses (in a subgroup population of each group) against the MVA -BN-RSV vaccine in 
+adult/elderly su bjects.  
+• To explore a potential correlation of the RSV -specific immune response to RSV related 
+respi[INVESTIGATOR_243618].  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 12 of 43 
+ The secondary objectives of the booster sub -study are:  
+• To assess the RSV -specific immune responses elicited by  [CONTACT_243681] -BN-RSV vaccin e (in 
+subjects of the selected treatment groups) one year after the last vaccination in the main trial 
+in adult/elderly subjects.  
+• To assess the RSV -specific humoral immune responses (in subjects of the selected treatment 
+groups) and cellular immune respons es (in the respective subgroup population of the selected 
+treatment groups) of the MVA -BN-RSV vaccine following a one year booster vaccination in 
+adult/elderly subjects.  
+• To identify further potential differences in durability and/or boostability  of immune responses 
+in the two chosen MVA -BN-RSV dose regimens.  
+• To assess safety and reactogenicity of the MVA -BN-RSV vaccine following the booster 
+vaccination in adult/elderly subjects  
+2.4 Study Population  
+In the main study, subjects were stratified by [CONTACT_654] i nto two groups: ≥ 55 to < 70 , and ≥ [ADDRESS_295602] 20 subjects per treatment group were  required in the age stratum ≥ [ADDRESS_295603]  of exclusion criteria  for the booster sub -study is provided in the study 
+protocol.  Subjects are required to meet none of the exclusion criteria to enter the sub-study.  
+2.6 Endpoints  
+Primary and secondary endpoints for the main study are provided in the study  protocol and in the 
+main study SAP and SAP Addendum.  Endpoints described in this section are relevant to the 
+booster sub -study  only. 
+2.6.1 Immunogenicity Endpoints  
+The immunogenicity endpoints for the booster sub -study are: 
+• RSV -specific antibody response rate measured by  [CONTACT_243635] G (IgG) Enzyme -
+linked Immunosorbent Assay (ELISA) (total RSV, G protein A strain, G protein B  strain) 
+at all post booster vaccination immunogenicity serum sampling  time points and based on 
+the individual peak titers.  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 13 of 43 
+ • RSV -specific  GMT measured by [CONTACT_243682].  
+• RSV -specific antibody response rate measured by  [CONTACT_243635] A (IgA) ELISA at all 
+post booster vaccination  immunogenicity serum sampling time points and based on the  
+individual peak titers.  
+• RSV -specific GMT measured by [CONTACT_243683].   
+• RSV -specific antibody response rate measured by [CONTACT_185670] (RS V strain A) at all post  
+booster  vaccination immunogenicity serum  sampling time points and based on the 
+individual peak titers.  
+• RSV -specific GMT measured by [CONTACT_185670] (RSV strain A) at all  immunogenicity serum  
+booster  sampling time points and based on the  indivi dual peak titers  
+• RSV -specific antibody response rate measured by [CONTACT_185670] (RSV  strain B) at all post 
+booster vaccination immunogenicity serum  sampling time points and based on the 
+individual peak titers.  
+• RSV -specific GMT measured by [CONTACT_185670] (RSV strain B) at all  immunogenicity serum 
+booster sampling time points and based on the  individual peak titers.  
+• RSV -specific antibody response rate measured by [CONTACT_243684]  (mucosal IgA) and based on the individual 
+peak titers.  
+• RSV -specific GMT measured by [CONTACT_243685] (mucosal IgA) and based on the  individual peak titers.  
+• RSV -specific response and responder rates measured by  [CONTACT_243640] (IFN -γ) and 
+Interleukin 4 (IL -4) Enzyme  linked  Immuno Spot Technique (ELISPOT) at all post  
+booster vaccination PBMC sampling time points until BEAP.  
+• RSV -specific median and geometric mean Spot Forming Units  (SFU) measured by [CONTACT_20129] -γ 
+/ IL-4 ELISPOT at all PBMC  booster sampling time points until BEAP.   
+• RSV -specific memory B cells measured at Booster Follow Up Visit 1 (BFU1) and 
+Booster Follow  Up Visit 2 (BFU2).  
+2.6.2 Safety Endpoints  
+The safety endpoints are:  
+• Occurrence, relationship to the trial vaccine and intensity of any serious adverse event 
+(SAE).  
+• Occurrence of any Grade 3 or higher adverse events (AE) possibly, probably or definitely 
+related to the trial vaccine within 4 weeks after the booster vaccination.  
+• Occurrence, intensity and duration of solicited local AEs during the 8 -day period ( day of 
+vaccination and the following 7 days) after the booster vaccination.  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 14 of 43 
+ • Occurrence, relationship to the trial vaccine, intensity and duration of solicited general 
+AEs during the 8 -day period (day of vaccination and the following 7 days) after the 
+boost er vaccination.  
+• Occurrence, relationship to the trial vaccine and intensity of unsolicited non -serious AEs 
+within [ADDRESS_295604] 
+completed the BFU1 visit .  Refer to Appendix  6.3 for the tables that will be provided for the 
+interim topline analysis.  
+3 Study Desig n  
+Refer to the schedule of events in Appendix 6.2. 
+4 Statistical Methods  
+4.1 Planned Sample Size  
+From two treatment groups selected based on immunogenicity/safety parame ters following 
+primary vaccination, approximately 43 subjects will be recruited into the booster sub -study (86 
+subjects in total).  Out of these 86 subjects, approximately 26 subjects (13 subjects for each dose 
+group) will be recruited from the PBMC subgroup.  
+Based on the variability observed in the log 10 titers for PRNT (A strain) [ADDRESS_295605] deviation (SD) is estimated to be 0.335 for the log 10 
+titers 2 weeks after the booster vaccination . A total of 40 evaluable subjects per group will 
+provide 80% power to detect a difference of 0.213 (log10 -scale) at a significance level of 5% 
+(two-sided), which corresponds to a ratio of 1.63 in GMTs.  Considering  a drop -out rate of 5% , 
+[ADDRESS_295606] >80% power to reject the null hypothesis that the difference in 
+immune response (log 10 titers)  after the initial vaccination and that after the booster vaccination is 
+0.[ADDRESS_295607] deviation 
+of the differences is 0.168  (log10 -scale) .  This comparison is also considered descrip tive. 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 15 of 43 
+ 4.2 Analysis Populations  
+Two analysis sets are defined for the booster sub -study.  
+4.2.1 Booster Full Analysis  Set (BFAS)  
+This is the subset of subjects who received a booster dose of MVA -BN-RSV vaccine and for 
+whom any post -booster data are available . 
+4.2.2 Booster Immunogenicity Analysis Set (BIAS)  
+This is the subset of subjects in the BFAS who were from the PBMC subgroup.  
+Additional analysis sets may need to be defined during the d ata review meeting and would be  
+described in the clinical study report.  
+4.3 Data Handling Conventions  
+4.3.1 Missing Immunogenicity Data  
+Analysis of immunogenicity variables will be done on a valid case basis, i.e. for missing 
+observations , no imputation technique such as “l ast observation carried forward” will be applied, 
+since this could in troduce an optimistic bias into the analysis.  
+For assay results that are below the detection limit, refer to Appendix 6.1.  
+4.3.2 Missing or Partial Dates in Adverse Eve nt and Concomitant Medication Data  
+In the case of incomplete AE and/or medication start and end dates, the following rules will be 
+used to assign AEs to the vaccination  period and medications as prior/concomitant:  
+For analysis purposes of any Prior and Con comitant Medication or any AE, imputation of partial 
+start and end dates will be performed based on the following rules:  
+Missing  Rule for start date  Rule for end date  Flag for imputation  
+Day First day of month  Last day of month  D 
+Month† January 1  December 31  M 
+Year† Vaccination date  Last BATP visit date  Y 
+† It is assumed that a missing month implies a missing day as well, and that a missing year implies a missing month and day.  
+ Partial/Missing Start Date  
+• If day is missing, then impute the 1st of the month as in the table above, but if the month is 
+the same as the month of the booster  vaccination date then assign the imputed start date as 
+the vaccination date.  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 16 of 43 
+ • If month and day are missing, then impute as above to January 1 unless the year is th e 
+same as for the vaccination date then assign imputed start date as the vaccination date.  
+• If the date is completely missing, then impute the vaccination date unless the end date 
+indicates that the AE/medication could have started/been taken prior to this in which case 
+the date is imputed to January 1 of the same year as the start date.  
+Partial/Missing End Date  
+• If day is missing, then impute the last day of the month as in the table above unless the 
+month is the same as the month of the last BATP visit date then impute the end date as the 
+last BATP visit  date.  
+• If month and day are missing, then impute as above to December [ADDRESS_295608] BATP visit  date.  
+• If the date is comple tely missing, check if AE/medication is ongoing before imputing a 
+date and when the AE/medication started in relation to vaccination date. If the ongoing 
+flag is missing, then assume that the AE/medication is still ongoing/medication is still 
+being taken. In this case, do not impute the date. If the AE/medication stopped and the 
+start date is prior to the last BATP visit  date, then impute with the last BATP visit  date. If 
+the AE/medication started on or after the last BATP visit  date, then impute an end dat e 
+which is one day after the last BATP visit  date.  
+These imputation methods will be used for assigning AEs to the vaccination period, and 
+medications as prior/concomitant .  Listings will display the original dates as captured in the 
+eCRF.  
+4.3.3 Assignment of AEs  to Trial Phase   
+Each AE will be assigned to the booster active trial phase  (BATP)  or booster follow -up (BFU) 
+phase  using date/time of vaccination and date/time of onset of the AE:  
+• All AEs starting at or after the booster  vaccination but before the BEAP visit will be 
+assigned to the booster active trial phase.  For subjects who missed the BEAP visit, AEs 
+within the booster vaccination + 28 day will also be assigned to the BATP .   
+• Any AEs starting after the booster vaccination but are not assigned  to the BATP  belong to 
+the BFU period.  
+If onset time is missing and start date of AE coincides with the date of vaccination, the AE will 
+be assigned to the BATP . 
+Each AE starting on  or after the booster  vaccination not matching the definition of a solicite d AE 
+is defined as an unsolicited AE. If a solicited AE begins outside of  the 8 -day period following the 
+booster  vaccination it will be considered an unsolicited AE regardless  of the preferred term (PT). 
+If start time of the AE is missing and start date co incides with date  of vaccination, it will be  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 17 of 43 
+ regarded as a treatment -emergent AE. If the start date is (pa rtially) missing the AE will be 
+regarded as a treatment -emergent AE following the worst -case principle.  
+Worst -case principle:  
+To avoid a potential mis classification of an AE to the BATP , if an imputed start date corresponds 
+to the first of the month or to the first of the year, and matches the month and year of the booster  
+vaccination date, then the AE will be assigned to the BATP . If the AE cannot be a ssigned to  
+either phase because of a (partially) missing start date then it will be assigned to the BATP . 
+4.3.4 General Considerations for AEs  
+Medical Dictionary for Regulatory Activities (MedDRA) Version 19.1 will be used for coding of  
+AEs.  
+Duration of an AE w ill be calculated as follows:  
+For Unsolicited AEs: expressed in [days]  
+• End date – start date of AE + 1 day. Note that duration can be calculated even if time of 
+day is missing for either start or end dates, or if time is missing for both.  
+• In case of partially missing start date (month and/or day missing) or partially missing end 
+date (month and/or day missing), duration will not be calculated.  
+• In case of an ongoing AE, the duration will not be calculated.  
+For Solicited AEs: expressed in [days]  
+• End date of AE – start date of AE + 1, where end date is the last day  in which  the 
+symptom is defined as an AE , and start date is the first day in which the symptom is 
+defined as an AE ( disregarding if the AE occurred continuously between first and last 
+day).  
+• In case of an ongoing AE, the duration will not be calculated.  
+Relative day of onset between vaccination and start of AE will be calculated as follows:  
+For Unsolicited AEs: expressed in [days]  
+• Start date of AE – booster  vaccination date.  
+• In case of (parti ally) missing start date no calculation will be done.  
+For Solicited AEs: expressed in [days]  
+• The relative day is calculated as the day of first symptom intensity recording > 0.  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 18 of 43 
+ • Start date of AE – booster  vaccination date, where start date is the first day a 
+symptom is defined as an AE; booster vaccination day corresponds to booster 
+sub-study Day 0.  
+4.4 Analysis Variables  
+4.4.1 Demographic and other Baseline Characteristics  
+Demographics  
+• Age (years)  
+• Age Group (≥ 55 to < 70 , ≥ 70)  
+• Gender (male, female)  
+• Race (White/Caucasian, Black or African American, Asian, American Indian or Alaskan 
+Native, Native Hawaiian or Other Pacific Islander, Other, Missing)  
+• Ethnicity (Hispanic or Latino, Not Hispanic or Latino, Missing)  
+• Height [cm]  
+• Body weight [kg]  
+• Body Mass Index ( BMI)  
+Other baseline characteristics  
+• Medical history  
+• Prior and concomitant medications  
+• Pre-vaccination AEs  
+Age will be calculated based on date of informed consent for the booster sub -study.  For weight 
+and BMI , updated data will be obtained from the boost er screening visit .  Additional 
+demographics and baseline characteristics will be obtained from the main study.  
+Demographics tables will be presented by [CONTACT_243686]. Other 
+baseline characteristics will be summarized by [CONTACT_3148] g roup for the BFAS only. 
+Demographics and other baseline characteristics will be presented in separate subject listings.  
+4.4.2 Safety Variables  
+Physical examination (complete examination at Booster Screening  Visit and targeted physical 
+examination at BV1, BV2, BEAP, BFU1 and BFU2 Visits) .   
+A targeted physical examination  is guided by [CONTACT_243644] .  A subgroup of subjects who 
+are from the PBMC subset  will have  targeted physical examination at BV1b.  
+Only abnormal physical examinations will be listed.  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 19 of 43 
+ Vital signs (at Booster Screening , BV1, BV2, BEAP, BFU1 and BFU2 Visits)  
+• Heart rate [beats per minute]  
+• Systolic and diastolic blood pressure [mmHg]  
+• Oral body tempe rature [°C]  
+The PBMC subgroup also has vital signs reported at BV1b.  
+Booster b aseline, actual and change from booster baseline vital sign parameters will be 
+summarized and individual subject listings will be presented.  
+12-lead electrocardiogram (ECG) data will not be collected for the booster sub -study.   
+Safety laboratory data (at Booster Screening  Visit, BV2 and if clinically indicated at BFU1 or 
+BFU2 Visits)   
+The safety laboratory measurements are performed at a central laboratory. Laboratory normal  
+ranges are provided by [CONTACT_2237].  
+Serum chemistry:  
+• Total Bilirubin (mg/dL)  
+• Alkaline Phosphatase (AP) (U/L)  
+• Aspartate Aminotransferase (AST) (U/L)  
+• Alanine Aminotransferase (ALT) (U/L)  
+• Creatinine (mg/dL)  
+• Sodium (mmol/L)  
+• Potassium (mmol/L)  
+• Calcium (mg/dL)  
+Hematology:  
+• Red blood cell count (x 106/µL) 
+• Hemoglobin (g/dL)  
+• Total and differential White Blood Cell count (WBC) (x 103/µL) 
+• Platelet count (x 103/µL)  
+• Hematocrit (%)  
+• Mean corpuscular volume (MCV) (fL)  
+• Mean corpuscular hemoglobin (MCH) (pg)  
+• Mean corpuscular hemoglobin concentration (MCHC) (g/dL)  
+• Red blood cell distribution width (RDW) (%)  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 20 of 43 
+ Booster b aseline, actual values at each visit, and change from booster baseline safety laboratory 
+parameters (serum chemistry and hematology) will be summa rized and individual subject listings 
+will be presented.  
+Shift tables will also be presented for serum chemistry and hematology using the categories of 
+Missing, Below Lower Limit of Normal, Normal, and Above Upper Limit of Normal.  
+Pregnancy Test ( BV1) 
+A urine  β-human choriogonadotropin (HCG) pregnancy test will be conducted for all women of 
+childbearing potential at BV1  prior to the booster vaccination .  Pregnancy test results will be 
+presented as individua l subject listings . 
+Solicited local AEs reported  in the subject memory aid (on day of booster vaccination and during 
+the following 7 days)  
+• Injection Site Erythema (0 = 0, 1 denotes < 30 mm, 2 denotes ≥ 30 - < 100 mm, 3 denotes 
+≥ 100 mm)  
+• Injection Site Swelling (0 = 0, 1 denotes < 30 mm, 2 denotes ≥ 30 - < 100 mm, 3 denotes 
+≥ 100 mm)  
+• Injection Site Induration (0 = 0, 1 denotes < 30 mm, 2 denotes ≥ 30 - < 100 mm, 3 
+denotes ≥ 100 mm)  
+• Injection Site Pruritus (0 = Absent, 1 = Mild, 2 = Moderate, 3 = Severe)  
+• Injection Site Pain (0 = Absent, 1 = Painful to T ouch, 2 = Painful when limb is moved, 3 
+= Spontaneously painful / prevents normal activity)  
+Solicited local AEs will be summarized by [CONTACT_11196].  Individual subject listings for 
+solicited local AEs will also be presented.  
+Solicited general AEs repo rted in the subject memory aid (on day of booster vaccination and 
+during the following 7 days)  
+Grading of General Symptoms from the Subject’s Memory Aid  
+MedDRA coded Preferred Term  
+General AEs  Grade  Maximum Severity  
+Body temperature*  0 < 99.5°F (<  37.5°C)  
+1 ≥ 99.5 – < 100.4°F (≥  37.5 – < 38.0°C)  
+2 ≥ 100.4  – < 102.2°F (≥  38.0 – < 39.0°C)  
+3 ≥ 102.2  – < 104.0°F (≥  39.0 – < 40.0°C)  
+4 ≥ 104.0°F (≥  40.0°C)  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 21 of 43 
+ MedDRA coded Preferred Term  
+General AEs  Grade  Maximum Severity  
+Headache, Myalgia, Nausea, Chills and 
+Fatigue  0 None  
+1 Mild: easily tolerated, minimal discomfort and no 
+interference with daily activity  
+2 Moderate: Some interference with daily activity  
+3 Severe: Prevents daily activity  
+*Pyrexia is defined as oral temperature ≥ 100.4°F ( ≥ 38.0°C).  
+Solicited general AEs will be summarized by [CONTACT_11196].   Individual subject listings for 
+solicited general AEs will also be presented.  
+Other safety variables include : 
+• Unsolicited  TEAE  
+• Unsolicited SAEs  
+• Unsolicited Related TEAEs  
+• Unsolicited TEAEs Graded ≥ 3  
+• Unsolicited Related TEAEs Graded ≥ 3  
+• Unsolicited Related SAEs  
+• Unsolicited AEs leading to withdrawal from the trial  
+4.4.3 Immunogenicity Variables  
+Antibody titers (at BV1, BV1b [PBMC subgroup only] , BV2, BEAP, BFU1, BFU2, BFU3  
+[serum samples only] ) 
+• Serum RSV -specific antibodies (IgG ELISA)  
+• Serum RSV -specific antibodies (IgA ELISA)  
+• Serum RSV -strain A  G protein specific antibodies (IgG ELISA)  
+• Serum RSV -strain B  G protein specific antibodies (IgG ELISA)  
+• Serum RSV -strain A specific neutralizing antibodies (PRNT)  
+• Serum RSV -strain B specific neutraliz ing antibodies (PRNT)  
+• Mucosal RSV -specific antibodies ELISA (IgA ELISA)  
+ELISPOT SFU/1x106 PBMC (at BV1, BV1b, BV2 for PBMC subgroup only)  
+• IFN-γ RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus)  
+• IL-4 RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV vi rus) 
+(Sero)positivity ELISA and PRNT (yes/no) (at BV1, BV1b [PBMC subgroup only], BV2, BEAP, 
+BFU1, BFU2 , BFU3  [serum samples only] ) 
+• Serum RSV -specific antibodies (IgG ELISA)  
+• Serum RSV -specific antibodies (IgA ELISA)  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 22 of 43 
+ • Serum RSV - strain A  G protein specific antibodies (IgG ELISA)  
+• Serum RSV -strain B  G protein specific antibodies (IgG ELISA)  
+• Serum RSV -strain A specific neutralizing antibodies (PRNT)  
+• Serum RSV -strain B specific neutralizing antibodies (PRNT)  
+• Mucosal RSV -specific antibodies ELISA (IgA ELISA)  
+Positivity ELISPOT (yes/no) ( at BV1, BV1b, BV2  for PBMC subgroup only)  
+• IFN-γ RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus)  
+• IL-4 RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus)  
+Response ELISA and PRNT (yes/no) ( at BV1b [PBMC subgroup only], B V2, BEAP, BFU1, 
+BFU2 , BFU3  [serum samples only] ) 
+• Serum RSV -specific antibodies (IgG ELISA)  
+• Serum RSV -specific antibodies (IgA ELISA)  
+• Serum RSV -strain A  G protein specific ELISA (IgG ELISA)  
+• Serum RSV -strain B  G protein specific ELISA (IgG ELISA)  
+• Serum RSV -strain A specific neutralizing antibodies (PRNT)  
+• Serum RSV -strain B specific neutralizing antibodies (PRNT)  
+• Mucosal RSV -specific antibodies ELISA (IgA ELISA)  
+Response ELISPOT (yes/no) ( at BV1b, BV2  for PBMC subgroup only)  
+• IFN-γ RSV Peptide pool (pool F , G(A), G(B), N, M2, RSV virus)  
+• IL-4 RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus)  
+ELISPOT RSV -specific Responder Status (yes/no) (per subject , BV1b and BV2 for PBMC 
+subgroup only)  
+• IFN-γ RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus)  
+• IL-4 RSV Peptide pool (pool F, G(A), G(B), N, M2, RSV virus)  
+Refer to Section 4.5.[ADDRESS_295609] Data Listing.  
+For all ELISA and PRNT titers descriptive statistics will be based on number of observations (n), 
+Geometric Means, confidence intervals (CI), minimum (Min), median, and maximum (Max). 
+Other continuous measurements will be summarized using descriptive statisti cs (i.e., number of 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 23 of 43 
+ observations (n), arithmetic mean, standard dev iation (SD), Min, median, and Max. Categorical 
+data will be summarized by [CONTACT_99864] (i.e., count and percentages), if not stated 
+otherwise. Unless otherwise stated, the Min and Max will be reported with the same number of 
+decimal places as the individual values are recorded. CIs, Means, Medians, and SD will be 
+reported to one additional decimal place.  
+Descriptive statistics for the SFU values will be based on both the GMSFU and the median (with 
+associated CI) and Min and Max.  
+Titers  will be reported as whole numbers. Min and Max will be reported as whole numbers. 
+Medians, GM Ts, and CI will be reported to one decimal place.  
+A non -parametric percentile based CI ( Hahn , 1991)  will be presented for  the median using the 
+SAS UNIVARIATE Procedure, i.e.:  
+PROC UNIVARIATE DATA=<dataset_name> CIPCTLDF; VAR SFU; BY [CONTACT_243646]; RUN;  
+Repeated assessments/measurements and unscheduled assessments/measurements will be 
+included in the Individual Subject Data Listing. All tables and listings will be sorted by [CONTACT_243687] -between scheduled visits (and by [CONTACT_1130], if appropriate).  
+All tables will be presented by [CONTACT_6660]. Solicited AEs will be presented b y treatment 
+group . For immunogenicity analysis, only PRNT strain A and ELISA IgA will be presented by 
+[CONTACT_18667] (≥55 to <70 and ≥70 years)  for GMT and fold increase analyses  by 
+[CONTACT_6660] . The remaining ELISA immunogenicity analyses wil l be presented by [CONTACT_243688].  
+4.5.2 Software  
+All statistical summaries and analyses of safety and immunogenicity data will be performed using 
+SAS® 9.4 or higher (Statistical Analysis System, SAS -Institute, Cary, NC, [LOCATION_003]) on a Windows 
+2016 server.  
+4.5.3 Disp osition of Subjects  
+All subjects screened for the booster sub -study will be accounted for.  
+A summary table will be presented specifying:  
+• The number of subjects screened (i.e., signed informed consent)  
+• The number of subjects who received the booster vaccination  
+• The number and percentage of subjects eligible for the BFAS  
+• The number and percentage of subjects eligible for the BIAS 
+• The number and percentage of subjects who completed the BATP   
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 24 of 43 
+ • The number and percentage of subjects prematurely discontinuing from the trial before 
+BEAP as well as the frequency and percentage of the reason for withdrawal from the trial  
+• The number and percentage of subjects attending BFU1, BFU2, BFU3  
+• The number and p ercentage of subjects who discontinued from the BFU  Phase as well as 
+the frequency and percentage of the reason for withdrawal from the BFU  Phase  
+Other than the number of subjects screened, t he percentages will be based on the number of 
+subjects who receiv ed the booster  vaccination.  
+A listing for all subjects in the BFAS will present the following:  
+• Completion Status for the BATP  (Yes/No)  
+• If completion status is No, then the listing will present the Sub-study Premature 
+Discontinuation Date, relative d ay and Reason  
+• Receipt (Yes/No) and date of booster  vaccination  
+• Completion of BFU1, BFU2  and BFU3 (Yes/No)  
+A listing will present all violations of the inclusion criteria for the BFAS. Similarly, a listing will 
+present all exclusion criteria fulfilled for the BFA S. 
+4.5.4 Demographic an d Other Baseline Data  
+Demographics  
+Descriptive statistics for the demographics will be produced for the BFAS and BIAS. Continuous 
+variables include: age at booster screening  (years), height at main study  screening  (cm), weight at 
+booster screening  (kg) and BMI at booster screening  (kg/m2).  If there is a full rescreening then 
+the information from the rescreening visit will be used.  
+Frequencies and percentages of subjects will be tabulated for the categorical variables gender, 
+race and ethn icity in the same table by [CONTACT_6654]. Percentages will be based on 
+the total number of subjects in each table pertaining to the BFAS or BIAS. 
+The demographic listing will be presented for the BFAS.  
+Medical History  
+A summary of medical his tory by [CONTACT_1196] ( SOC ) and PT per MedDRA 19.[ADDRESS_295610] follow -up visit in the main study will be listed 
+separately.  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 25 of 43 
+ 4.5.5 Prior and Concomitant Medications  
+All prior medication will be listed by [CONTACT_243653] -Therapeutic -Chemical (ATC) class Level 2, 
+Level 3, PT and Generic name [CONTACT_243699] 2016 version of World Health Organization 
+Drug Dictionary (WHO -DD) for the BFAS population .  Prior medication is defi ned as  
+medications with end date that is before date of first administration of trial vaccine  in the main 
+study .  Medications taken since the last follow -up visit in the main study and have ended prior to 
+the booster sub -study are only to be captured in ca se the concomitant medication is related to a 
+SAE . 
+All Concomitant Medication s taken during the booster sub -study will be summarized by [CONTACT_243689] 2 and Level 3 for all subjects in the BFAS. A concomitant medication listing will also 
+be presented for the BFAS. The table and listing “Concomitant Medication” includes ongoing 
+medication or medication with missing end date or with end date after date of administration of 
+the booster vaccine, as well as medication starting after administration  of the booster vaccine . 
+All listings will display the original dates as captured in the eCRF.  
+4.5.[ADDRESS_295611] to  number and 
+percent age of subjects with memory aid completed . 
+4.5.7 Immunogenicity Analysis  
+ELISA, PRNT and ELISPOT  
+All serum and nasal swab immunogenicity results will be listed for the BFAS.  Immunogenicity 
+results from PBMC samples will be summarized for the BIAS population.  
+PRNT (A strain) titers  
+The primary analysis of the endpoint is Geometric Mean Titers (GMTs) after a single booster 
+MVA -BN-RSV vaccination  measured by [CONTACT_243634] (PRNT; against 
+strain A) 2 weeks pos t vaccination.  
+PRNT (A strain) tite rs will also be summarized descriptively using the geometric mean of fold 
+increase, positivity rates (including associated 95% CI’s), and response rates (including 
+associated 95% CI’s) for each treatment group, and by [CONTACT_243690] .  In 
+order to compare immune responses after initial vaccination in the main study and after booster 
+vaccination in the booster sub -study, the summary will include data from all sampling points in 
+the main study as well as thos e in the booster sub -study  for the  BFAS .  Fold increase  and 
+respon se rates  in the main study visits will be based on the main baseline; fold increase and 
+MVA -BN-RSV  Final Version 1.[ADDRESS_295612] booster baseline time points will also be summarized based on main baseline .  
+Descriptive comparison of the ratios of the GMTs and GMFI’s between  the two  treatment groups 
+(Group 3 / Group 1) by [CONTACT_243656] 95% CI by [CONTACT_243691] g10 PRNT (A strain) titers and log10 PRNT (A strain) Fold Increases are normally 
+distributed:  
+Pair differences in log 10 titer (main study log 10 titer - booster sub -study log 10 titer) and fold 
+increase from booster sub -study at similar post -vaccination time  points will be calculated, as well 
+as their 95% CI .  This will be presented as ratio and the corresponding 95% CI in the original 
+scale .  Fold increase in the main study visits will be based on the main baseline; fold increase in 
+the booster visits will b e based on the booster baseline .  
+Other  immunogenicity endpoints  
+All other immunogenicity results (PRNT strain B, ELISPOT, ELISA IgG/IgA) will be considered 
+as secondary descriptive analyses and will be analyzed similarly to PRNT (A strain) titers .  Fold 
+increases will not be calculated or analyzed for ELISPOT assays.  
+Geometric Mean Titers (GMTs)  
+For all ELISA and PRNT results the GMTs will be calculated by [CONTACT_243659] 10 titer transformations.  
+Descriptive statistics will  be derived by [CONTACT_243660], Min, median, 
+Max, GMT, with 95% CI (derived by [CONTACT_243661] 95% CI of the log 10 titer 
+transformations based on the percentiles of the t -distribution).  
+Geometric Mean Spot Forming Units (ELISPOT ) 
+SFU/[ADDRESS_295613].  
+A non -parametric percentile based CI ( Hahn , 1991) will be placed around the median for each 
+treatment group . 
+The calculation of the 95% CI for the Geometric Means will be based upon the assumption that 
+the logarithm of the  SFU has a normal distribution.  
+Seropositivity rates  
+RSV -specific ELISA and PRNT seropositivity rates will be presented by [CONTACT_243662] -Pearson 95% CIs.  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 27 of 43 
+ Positivity rates (ELISPOT)  
+Positivity rates will be presented by [CONTACT_243663] -
+Pearson 95% CIs.  
+Response rates  
+Response rates for RSV -specific ELISA and PRNT titers will be presented by [CONTACT_243692] -study visit along with the Clopper -
+Pearson 95% CIs. Response status is only applicable for subjects with a baseline titer available.   
+Response rates in the main study visits will be based on the main baseline; response rates in the 
+booster visits will be based on the booster baseline.   The same type of analysis of r esponse rates 
+will be conducted for the ELISPOT results (IFN-γ and IL -4 results ). 
+Responder rates (ELISPOT)  
+The responder rates (based on the total number of subjects with responder status available) will 
+also be presented by [CONTACT_243665] -Pears on 95% CI.  
+4.5.[ADDRESS_295614] one event as well as the corresponding total number of events for:  
+• At least one AE documented  
+• Any TEAE  
+• Non-serious TEAEs  
+• SAEs  
+• Related TEAEs  
+• TEAEs Graded ≥ 2  
+• TEAEs Graded ≥ 3  
+• Related TEAEs Graded ≥ 3  
+• Related SAEs  
+• AEs leading to withdrawal from the trial  
+• Deaths  
+For the BATP and BFU Phase, all AEs will be listed by [CONTACT_1130], including SOC and PT for the 
+BFAS. Any non-serious AE with onset later than 28 days after the booster  vaccination will not be 
+included in summary tables but will be included in the listing and will be flagged a ccordingly as 
+non-treatment -emergent.  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 28 of 43 
+ According to the clinical trial protocol no new AEs should be reported during the BFU Phase, 
+except SAEs, but if any are reported then they will be listed but considered non -treatment -
+emergent and no summary  will be presented . 
+Serious Adverse Events  
+All SAEs (solicited and unsolicited) with onset from booster vaccination  up to and including 
+BEAP will be summarized by [CONTACT_3592]. Related SAEs and SAEs which occurred during the 
+BFU Phase will be presented in a similar fas hion.  
+Related Grade [ADDRESS_295615] listings for Grade 3 or higher AEs 
+will be presented.  
+Solicited Local Adverse Events  
+Solicited local AEs will be summarized by [CONTACT_243693], and broken down by [CONTACT_77275]. The incidence (i.e., the number of subjects developi[INVESTIGATOR_007] a specified solicited local AE on 
+the day of vaccination or over the seven day s after vaccination divided by [CONTACT_243694] ) will be calculated. The incidence will also be calculated for any 
+solicited local AE by [CONTACT_1570]. The incidence of Grade 2 or higher AEs will also be 
+calculated as well  as the incidence of Grade 3 or higher AEs.  
+The duration (in days) of the solicited local AEs will be summarized and presented in a listing. A 
+similar table and listing will be presented for relative day of onset for solicited local AEs.  
+Solicited General Adverse Events  
+Solicited general AEs will be summarized in the same manner as solicited local AEs. In addition, 
+a summary table will be produced for general AEs with reasonable possibility of relationship to 
+trial vaccine, where relationship is defined as either possible, probable, definite, or missing.  
+Also, the number of general AE s by [CONTACT_243695].  
+Pre-treatment Adverse Events  
+AEs recorded after signing the informed consent form , but before administra tion of the booster 
+vaccine , are considered pre -treatment AEs. These pre -treatment AEs will be presented in a 
+subject listing.  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 29 of 43 
+ Unsolicited AEs  
+Treatment -emergent unsolicited AEs in the BATP  will be summarized by [CONTACT_3592].  
+Separate tables for related trea tment -emergent unsolicited AEs, Grade ≥3 treatment -emergent 
+unsolicited AEs, and related Grade ≥3 treatment -emergent AEs will be presented.   
+The total number of events and percentages of all treatment -emergent unsolicited AEs will be 
+presented by [CONTACT_243696] y, relationship, and for related AE intensity.  
+Non-treatment -emergent AEs will be flagged and included in the listing only, but will not be 
+included in the summary tables.  
+4.5.9 Clinical Laboratory Exams (Hematology, Chemistry)  
+All measured hematology and chemis try values (and changes from booster baseline for 
+continuous parameters) will be listed and summarized at each sampling visit using descriptive 
+statistics (mean, SD, median, Min and Max).  
+Summary tables will be produced for the number of high and low labor atory values at BV0 , 
+booster baseline, BV2 and BEAP  by [CONTACT_243672].  
+In addition, all clinical laboratory values outside the normal range will be listed by [CONTACT_1130], 
+gender, age and flagging of abnormal values (LN=Below normal range, HN=Above normal 
+range) with their clinical significance.  
+Shift tables will be used to evaluate categorical changes from booster baseline  to BV2  with 
+respect to normal ranges ( LN, Normal, HN) in hematology and biochemistry parameters.  
+Booster baseline is de fined as last available measurements prior to the booster vaccination.  This 
+will be different from the booster screening measurement when the subject has missing screening 
+value or has multiple screening values.  
+4.5.[ADDRESS_295616] listing.  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 30 of 43 
+ 4.5.12  Physical Examination  
+Subjects with abnormal physical examinations will be listed.  
+4.6 Alterations in SAP from the Clinical Trial Protocol  
+RSV -specific memory B cells analyses are not covered in this SAP, but will be addressed in  
+detail in an SAP  amendment after further assay development.  
+ 
+5 References  
+1. International Conference on Harmonisation (July 1996). E3 Structure and Content of Clinical Study 
+Reports.  
+2. International Conference on Harmonisation (September 1998). E9 Statistical Principals for Cli nical 
+Trials.  
+3. Hahn G and Meeker W (1991) Statistical Intervals: A Guide for Practitioners, [LOCATION_001]: John Wiley 
+& Sons.  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 31 of 43 
+ 6 Appendix  
+6.1 Detection Limits (DL)  
+ 
+Test Detection 
+Limit (DL)  
+Negative values reported 
+PBMC RSV-specific IFN-γ 
+ELISPOT (pool F, G(A) , G(B), N, M2 or 
+RSV virus) 
+PBMC RSV-specific IL-4 ELISPO T (pool F, 
+G(A) , G(B), N, M2  or RSV virus) 50 25 (half of the DL)  
+ 
+Serum RSV-specific PRNT Strain A 
+ 
+ 
+Serum RSV-specific PRNT Strain B  
+ 
+20  
+ 
+10 (half of the DL)  
+ 
+Serum RSV-specific IgG ELISA  
+63  
+31.5 (half of the DL)  
+ 
+Serum RSV-specific IgA ELISA  
+100  
+50 (half of the DL) 
+Mucosal RSV-specific IgA ELISA (nasal 
+swabs)  
+2  
+1 (half of the DL) 
+Serum RSV (strain A) G protein - 
+specific IgG ELISA 
+Serum RSV (strain B) G protein- specific 
+IgG ELISA  
+ 
+no detection 
+limit applies  
+ 
+negative reported as 50 
+RSV-specific B cell Fluorospot  
+IgG and IgA no detection 
+limit applies a measured percentage is 
+considered a positive result 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 32 of 43 
+ 6.2 Trial Schedule Booster Sub -study  
+ 
+ 
+Visit (V)  
+ BV0 BV1  11 BV1b  8 BV2  B 
+EAP  BFU1  BFU2  BFU315 
+3m FU  6m FU  12m FU  
+Day/Visit +… Day  -28 - -1 0 BV1  
++ 7-9 BV1  
++ 12-16 BV1  
++ 28-35 BV1  
++ 84-98 BV1  
++ 182 -210 BV1  
++364 -392 
+Target week  -4 0 1 2 4 12  26  52 
+Procedures          
+Informed consent & 
+HIPAA          
+Check inclusion / 
+exclusion criteria for 
+booster substudy          
+Check eligibility for 
+booster vaccination 
+criteria          
+Recording of SAEs 
+since last FU visit in 
+main trial          
+Complete physical 
+examination incl. 
+auscultation of heart & 
+lungs; measurement of 
+body weight          
+Targeted physical exam 
+incl. auscultation of the 
+heart and lung  12  12 12 12 12 12 12  
+ 
+Vital signs          
+Recording of 
+concomitant medication  14     13 13  
+ 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 33 of 43 
+  
+Visit (V)  
+ BV0 BV1  11 BV1b  8 BV2  B 
+EAP  BFU1  BFU2  BFU315 
+3m FU  6m FU  12m FU  
+Day/Visit +… Day  -28 - -1 0 BV1  
++ 7-9 BV1  
++ 12-16 BV1  
++ 28-35 BV1  
++ 84-98 BV1  
++ 182 -210 BV1  
++364 -392 
+Target week  -4 0 1 2 4 12  26  52 
+Counseling on 
+avoidance of pregnancy 
+for WOCBP 1         
+AE/SAE recording       2 [ADDRESS_295617] for 
+WOCBP  3         
+Obtaining blood for 
+safety lab  4, 5      4 4  
+ 
+Blood draw for serum 
+collection  5    
+      
+Nasal swab collection 
+for mucosal immune 
+response  10         
+Blood draw for P BMC  
+collection  5, 8      
+ 
+    
+ 
+Vaccination          
+Vaccine administration 
+and ≥  [ADDRESS_295618] 
+observation          
+Recording of immediate 
+AEs/  SAEs after 
+vaccination  9         
+Handout of memory 
+aid 6         
+Review/ of memory aid  7         
+Collection of memory 
+aid 7         
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 34 of 43 
+  
+Visit (V)  
+ BV0 BV1  11 BV1b  8 BV2  B 
+EAP  BFU1  BFU2  BFU315 
+3m FU  6m FU  12m FU  
+Day/Visit +… Day  -28 - -1 0 BV1  
++ 7-9 BV1  
++ 12-16 BV1  
++ 28-35 BV1  
++ 84-98 BV1  
++ 182 -210 BV1  
++364 -392 
+Target week  -4 0 1 2 4 12  26  52 
+Examination of injection 
+site         
+ = mandatory;  = in case of medical need or any underlying condition that requires further examinations;  = PBMC Subgroup only  
+1 Review of acceptable contraceptive methods and recent menstrual history with WOCBP.  
+2 New SAEs  and changes to AEs/ SAEs ongoing at the previous visit only.  
+[ADDRESS_295619]  
+4 Additional safety measures can be taken at any other trial visit or at unscheduled visits, if clinically indicated.  
+5 Approximate amounts of single blood draws: Safety lab: 11  mL (at B V0 and BV2; BFU1 and BFU2  if applicable), including Haematology (3  mL), serum 
+chemistry (including pregnancy test; 8  mL);  serum collection (antibody testing): 9  mL; PBMC collection (T  cell collection): 64  mL.   
+6 The memory aid should be completed daily for an 8 -day period (Day  0 to Day  7), starting with the day of vaccination. If symptoms  are ongoing after Day  7, 
+temperature/symptom measurements should continue each day until resolved and the last day of the symptom and maximum intensit y will be recorded on 
+the memory aid.  
+[ADDRESS_295620] visit  
+13 Concomitant medication at BFU visits are only to be captured in case the concomitant medication is related to a new SAE  and changes to AEs/ SAEs 
+ongoing at the previous visit  
+14 Concomitant medication between FU2 and BV0 are only to be captured in case the  concomitant medication is related to a SAE.  
+15 At BFU3 only blood draw for immunogenicity serum collection will be performed (9  mL) 
+ 
+ 
+MVA -BN-RSV  Final Version 1.[ADDRESS_295621] s and Analysis Sets – All Subjects   
+15.1.2 Overall Assessment: Reason for Premature Discontinuation – All 
+Subjects   
+[IP_ADDRESS]  Demographic Data – BFAS  ✓ 
+[IP_ADDRESS]  Demographic Data – BIAS   
+15.1.4 Medical History by [CONTACT_39960] – BFAS   
+15.1.5 Concomitant Medication During the Booster Phase by [CONTACT_243675] – 
+BFAS   
+15.1.6 Compliance: Number of Subjects Who Completed Memory Aids  – 
+BFAS   
+   
+15.2 Immunogenicity   
+15.2.1 Serum RSV -specific PRNT Strain A   
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain A: Geometric Mean Titer – BFAS  ✓ 
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain A: Geometric Mean Titer by [CONTACT_243677] – BFAS   
+[IP_ADDRESS] .1 Serum RSV -specific PRNT Strain A: Fold Increase – BFAS  ✓ 
+[IP_ADDRESS].2  Serum RSV -specific PRNT Strain A: Fold Increase from Main Baseline 
+- BFAS   
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain A: Fold Increase  by [CONTACT_70566] – 
+BFAS   
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain A: Positivity Rates – BFAS   
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain A: Response Rates – BFAS  ✓ 
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain A: Geometric Mean Titer Ratios 
+Between Dose Groups – BFAS  ✓ 
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain A: Geometric Mean Titer Ratios 
+Between Booster Sub -study and Main Study – BFAS  ✓ 
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain A: Geometric Mean Fold Increase 
+Ratios Between Dose Groups – BFAS  ✓ 
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain A: Geometric Mean Fold Increase 
+Ratios Between Booster Sub -study and Main Study – BFAS  ✓ 
+   
+15.2.2 Serum RSV -specific PRNT Strain B   
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain B: Geometric Mean Titer – BFAS ✓ 
+[IP_ADDRESS] .1 Serum RSV -specific PRNT Strain B: Fold Increase – BFAS ✓ 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 36 of 43 
+ Number  Title  Topline  
+[IP_ADDRESS].2  Serum RSV -specific PRNT Strain B: Fold Increase from Main Baseline 
+– BFAS   
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain B: Positivity Rates – BFAS  
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain B: Response Rates – BFAS ✓ 
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain B: Geometric Mean Titer Ratios 
+Between Dose Groups – BFAS  ✓ 
+[IP_ADDRESS]  Serum  RSV -specific PRNT Strain B: Geometric Mean Titer Ratios 
+Between Booster Sub -study and Main Study – BFAS  ✓ 
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain B : Geometric Mean Fold Increase 
+Ratios Between Dose Groups – BFAS  ✓ 
+[IP_ADDRESS]  Serum RSV -specific PRNT Strain B : Geometric Mean Fold Increase 
+Ratios Between Booster Sub -study and Main Study – BFAS  ✓ 
+   
+15.2.3 RSV -specific IgA ELISA (serum)   
+[IP_ADDRESS]  Serum RSV -specific IgA ELISA: Geometric Mean Titer – BFAS ✓ 
+[IP_ADDRESS]  Serum RSV -specific IgA ELISA: Geometric Mean Titer by [CONTACT_70566] 
+– BFAS  
+[IP_ADDRESS].1  Serum RSV -specific IgA ELISA: Fold Increase – BFAS ✓ 
+[IP_ADDRESS].2  Serum RSV -specific IgA ELISA: Fold Increase from Main Baseline – 
+BFAS   
+[IP_ADDRESS]  Serum RSV -specific IgA ELI SA: Fold Increase by [CONTACT_70566] – BFAS  
+[IP_ADDRESS]  Serum RSV -specific IgA ELISA: Positivity Rates – BFAS  
+[IP_ADDRESS]  Serum RSV -specific IgA ELISA: Response Rates – BFAS ✓ 
+[IP_ADDRESS]  Serum RSV -specific IgA ELISA : Geometric Mean Titer Ratios Between 
+Dose Groups – BFAS  ✓ 
+[IP_ADDRESS]  Serum RSV -specific IgA ELISA : Geometric Mean Titer Ratios Between 
+Booster Sub -study and Main Study – BFAS  ✓ 
+[IP_ADDRESS]  Serum RSV -specific IgA ELISA : Geometric Mean Fold Increase Ratios 
+Between Dose Groups – BFAS  ✓ 
+[IP_ADDRESS]  Serum RSV -specific IgA ELISA : Geometric Mean Fold Increase Ratios 
+Between Booster Sub -study and Main Study – BFAS  ✓ 
+   
+15.2.4 RSV -specific IgG ELISA (serum)   
+[IP_ADDRESS]  Serum RSV -specific IgG  ELISA: Geometric Mean Titer – BFAS ✓ 
+[IP_ADDRESS] .1 Serum RSV -specific IgG  ELISA: Fold Increase – BFAS ✓ 
+[IP_ADDRESS].2  Serum RSV -specific IgG ELISA: Fold Increase from Main Baseline – 
+BFAS   
+[IP_ADDRESS]  Serum RSV -specific Ig G ELISA: Positivity Rates – BFAS  
+[IP_ADDRESS]  Serum RSV -specific IgG  ELISA: Response Rates – BFAS ✓ 
+[IP_ADDRESS]  Serum RSV -specific IgG ELISA : Geometric Mean Titer Ratios Between 
+Dose Groups – BFAS  ✓ 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 37 of 43 
+ Number  Title  Topline  
+[IP_ADDRESS]  Serum RSV -specific IgG ELISA : Geometric Mean Titer Ratios Between 
+Booster Sub -study and Main Study – BFAS  ✓ 
+[IP_ADDRESS] Serum RSV -specific IgG ELISA : Geometric Mean Fold Increase Ratios 
+Between Dose Groups – BFAS  ✓ 
+[IP_ADDRESS]  Serum RSV -specific IgG ELISA : Geometric Mean Fold Increase Ratios 
+Between Booster Sub-study and Main Study – BFAS  ✓ 
+   
+15.2.5 RSV -strain A G protein -specific IgG ELISA (serum)   
+[IP_ADDRESS]  Serum RSV -strain A G protein -specific IgG ELISA: Geometric Mean 
+Titer – BFAS ✓ 
+[IP_ADDRESS] .1 Serum RSV -strain A G protein -specific IgG ELISA: Fold Increase – 
+BFAS ✓ 
+[IP_ADDRESS].2  Serum RSV -strain A G protein -specific IgG ELISA: Fold Increase from 
+Main Baseline – BFAS   
+[IP_ADDRESS]  Serum RSV -strain A G protein -specific IgG ELISA: Positivity Rates – 
+BFAS  
+[IP_ADDRESS]  Serum RSV -strain  A G protein -specific IgG ELISA: Response Rates – 
+BFAS ✓ 
+[IP_ADDRESS]  Serum RSV -strain A G protein -specific IgG ELISA : Geometric Mean 
+Titer Ratios Between Dose Groups – BFAS  ✓ 
+[IP_ADDRESS]  Serum RSV -strain A G protein -specific IgG ELISA : Geometric Mean 
+Titer Ratios Between Booster Sub -study and Main Study – BFAS  ✓ 
+[IP_ADDRESS].7  Serum RSV Strain A  G protein -specific IgG ELISA : Geometric Mean 
+Fold Increase Ratios Between Dose Groups – BFAS  ✓ 
+[IP_ADDRESS].8  Serum RSV Strain A  G protein -specific IgG ELISA : Geometric Mean 
+Fold Increase Ratios Between Booster Sub -study and Main Study – 
+BFAS  ✓ 
+ 
+  
+15.2.6 RSV -strain B G protein specific IgG ELISA (serum)   
+[IP_ADDRESS]  Serum RSV -strain B  G protein -specific IgG ELISA: Geometric Mean 
+Titer – BFAS ✓ 
+[IP_ADDRESS] .1 Serum RSV -strain B  G protein -specific IgG ELISA: Fold Increase – 
+BFAS ✓ 
+[IP_ADDRESS].2  Serum RSV -strain B G protein -specific IgG ELISA: Fold Increase from 
+Main Baseline – BFAS   
+[IP_ADDRESS]  Serum RSV -strain B  G protein -specific IgG ELISA: Positivity Rates – 
+BFAS  
+[IP_ADDRESS]  Serum RSV -strain B  G protein -specific IgG ELISA: Response Rates – 
+BFAS ✓ 
+[IP_ADDRESS]  Serum RSV -strain B  G protein -specific IgG ELISA : Geometric Mean 
+Titer Ratios Between Dose Groups – BFAS  ✓ 
+[IP_ADDRESS]  Serum RSV -strain B  G protein -specific IgG ELISA : Geometric Mean 
+Titer Ratios Between Booster Sub -study and Main Study – BFAS  ✓ 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 38 of 43 
+ Number  Title  Topline  
+[IP_ADDRESS].7  Serum RSV Strain B G protein -specific IgG ELISA : Geometric Mean 
+Fold Increase Ratios Between Dose Groups – BFAS  ✓ 
+[IP_ADDRESS].8  Serum RSV Strain B G protein -specific IgG ELISA : Geometric Mean 
+Fold Increase Ratios Between Booster Sub -study and Main Study – 
+BFAS  ✓ 
+   
+15.2.7 RSV -specific IgA ELISA (mucosal)   
+[IP_ADDRESS]  Mucosal RSV -specific IgA ELISA: Geometric Mean Titer – BFAS ✓ 
+[IP_ADDRESS] .1 Mucosal RSV -specific IgA ELISA: Fold Increase – BFAS ✓ 
+[IP_ADDRESS].2  Mucosal RSV -specific IgA ELISA: Fold Increase from Main Baseline – 
+BFAS   
+[IP_ADDRESS]  Mucosal RSV -specific IgA ELISA: Positivity Rates – BFAS  
+[IP_ADDRESS]  Mucosal RSV -specific IgA ELISA: Response Rates – BFAS ✓ 
+[IP_ADDRESS]  Mucosal RSV -specific IgA ELISA: Response Rates by [CONTACT_243697] – BFAS  ✓ 
+[IP_ADDRESS] Mucosal RSV -specific IgA ELISA : Geometric Mean Titer Ratios 
+Between Dose Groups – BFAS  ✓ 
+[IP_ADDRESS] Mucosal RSV -specific IgA ELISA : Geometric Mean Titer Ratios 
+Between Booster Sub -study and Main Study – BFAS  ✓ 
+[IP_ADDRESS]  Mucosal RSV -specific IgA ELISA : Geometric Mean Fold Increase  
+Ratios Between Dose Groups – BFAS  ✓ 
+[IP_ADDRESS]  Mucosal RSV -specific IgA ELISA : Geometric Mean Fold Increase  
+Ratios Between Booster Sub -study and Main Study – BFAS  ✓ 
+   
+15.2.8 PBMC RSV -specific IFN -γ ELISPOT Peptide Pools   
+[IP_ADDRESS]  PBMC RSV -specific IFN -γ (ELISPOT Peptide Pools/RSV): Positivity 
+rates – BIAS  
+[IP_ADDRESS]  PBMC RSV -specific IFN -γ (ELISPOT Peptide Pools/RSV): Response 
+rates – BIAS ✓ 
+[IP_ADDRESS]  PBMC RSV -specific IFN -γ (ELISPOT Peptide Pools/RSV): Median and 
+Geometric Mean SFU – BIAS ✓ 
+[IP_ADDRESS]  PBMC RSV -specific IFN -γ (ELISPOT Peptide Pools/RSV): Responder 
+Rates – BIAS ✓ 
+[IP_ADDRESS]  PBMC RSV -specific IFN -γ (ELISPOT Peptide Pools/RSV): Responders 
+to 1, 2, 3, 4 or 5 Peptide Pools – BIAS  ✓ 
+   
+15.2.9 PBMC RSV -specific IL -4 ELISPOT Peptide Pools   
+[IP_ADDRESS]  PBMC RSV -specific IL -4 (ELISPOT Peptide Pools/RSV): Positivity 
+rates – BIAS  
+[IP_ADDRESS]  PBMC RSV -specific IL -4 (ELISPOT Peptide Pools/RSV): Response 
+rates – BIAS  
+[IP_ADDRESS]  PBMC RSV -specific IL -4 (ELISPOT Peptide Pools/RSV): Median and 
+Geometric Mean SFU – BIAS ✓ 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 39 of 43 
+ Number  Title  Topline  
+[IP_ADDRESS]  PBMC RSV -specific IL -4 (ELISPOT Peptide Pools/RSV): Responder 
+Rates – BIAS  
+   
+15.3 14.3 Safety   
+15.3.1 14.3.1 Adverse Events   
+[IP_ADDRESS]  Overview of Solicited and Unsolicited Adverse Events During the 
+Booster Sub -study Active Trial Phase – BFAS ✓ 
+   
+[IP_ADDRESS]  Solicited Local Adverse Events   
+[IP_ADDRESS].1  Solicited Local Adverse Events During the Booster Sub -study Active 
+Trial Phase : Incidence by [CONTACT_243676] – BFAS   
+[IP_ADDRESS].2  Solicited Local Adverse Events During the Booster Sub -study Active 
+Trial Phase : Any Grade, Grade ≥ 2 and Grade ≥ 3 TEAEs – BFAS   
+[IP_ADDRESS].3  Solicited Local Adverse Events During the Booster Sub -study Active 
+Trial Phase : Summary of Duration – BFAS  
+[IP_ADDRESS].4   Solicited Local Adverse Events During the Booster Sub -study Active 
+Trial Phase : Summary of Relative Day of Onset – BFAS  
+   
+[IP_ADDRESS]  Solicited General Adverse Events   
+[IP_ADDRESS].1  
+ Solicited General Adverse Events During the Booster Sub -study Active 
+Trial Phase : Incidence by [CONTACT_243676] – BFAS  
+[IP_ADDRESS].2  Solicited General Adverse Event Related to Vaccin ation  during the 
+Booster Sub -study Active Trial Phase : Incidence by [CONTACT_193010] m Intensity 
+– BFAS  
+[IP_ADDRESS].3  Solicited General Adverse Events During the Booster Sub -study Active 
+Trial Phase : Summary of Duration – BFAS  
+[IP_ADDRESS].4   Solicited General Adverse Events During the Booster Sub -study Active 
+Trial Phase : Summary of Relative Day of Onset – BFAS  
+   
+[IP_ADDRESS]  Unsolicited Adverse Events   
+[IP_ADDRESS].1  
+ Treatment -Emergent Unsolicited Adverse Events During the Booster 
+Sub-study Active Trial Phase : Incidence by [CONTACT_177346] – BFAS ✓ 
+[IP_ADDRESS].2  
+ Related Treatment -Emergent Unsolicited Adverse Events During the 
+Booster Sub -study Active Trial Phase : Incidence by [CONTACT_174380] – BFAS  
+[IP_ADDRESS].3  
+ Grade ≥ 3 Treatment -Emergent Unsolicited Adverse Events During the 
+Booster Sub -study Active Trial Phase : Incidence by [CONTACT_174380] – BFAS  
+[IP_ADDRESS].4  
+ Related Grade ≥ 3 Treatment -Emergent Unsolicited Adverse Events 
+During the Booster Sub -study Active Trial Phase : Incidence by [CONTACT_136492] – BFAS  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 40 of 43 
+ Number  Title  Topline  
+[IP_ADDRESS].5  
+ Treatment -Emergent Unsolicited Adverse Events During the Booster 
+Sub-study Active Trial Phase : Summary of Intensity and Relationship to 
+Trial Medication – BFAS  
+   
+15.3.2 Serious Adverse Events   
+[IP_ADDRESS]  
+ Serious Adverse Events During the Booster Sub -study Active Trial 
+Phase : Incidence by [CONTACT_39960] – BFAS  
+[IP_ADDRESS]  
+ Related Serious Adverse Events During the Booster Sub -study Active 
+Trial Phase : Incidence by [CONTACT_39960] – 
+BFAS  
+   
+15.3.3 Laboratory, Vital Signs, and ECG Safety Data   
+[IP_ADDRESS]  Laboratory Data (Mean Values): Hematology – BFAS  
+[IP_ADDRESS]  Laboratory Data (Mean Values): Biochemistry – BFAS  
+[IP_ADDRESS]  Laboratory Abnormalities: Hematology – BFAS  
+[IP_ADDRESS]  Laboratory Abnormalities: Biochemistry – BFAS  
+[IP_ADDRESS]  Laboratory Data (Shift Table): Hematology – BFAS  
+[IP_ADDRESS]  Laboratory Data (Shift Tables): Biochemistry – BFAS  
+[IP_ADDRESS]  Vital Signs – BFAS  
+ 
+MVA -BN-RSV  Final Version 1.[ADDRESS_295622] OF LISTINGS  
+Number  Title  
+16.2.1  Discontinued Subjects  
+[IP_ADDRESS]  Violation of Inclusion Criteria – BFAS 
+[IP_ADDRESS]  Exclusion Criteria Fulfilled – BFAS 
+[IP_ADDRESS]  Informed Consent – BFAS 
+[IP_ADDRESS]  Overall Assessment – BFAS 
+[IP_ADDRESS]  Disposition – BFAS 
+  16.2.2  Protocol Deviations  
+[IP_ADDRESS]  Protocol Deviations – BFAS 
+[IP_ADDRESS]  Sample Handling Deviations – BFAS 
+  
+16.2.3  Subjects not Eligible for the Trial  
+[IP_ADDRESS]  Eligibility for Trial Participation – Subjects not Eligible for  the Trial  
+  16.2.4  Demographic Data and Other Baseline Characteristics  
+[IP_ADDRESS].1  Demographic Data – BFAS 
+[IP_ADDRESS].2  Medical History – BFAS 
+[IP_ADDRESS].[ADDRESS_295623] 
+Follow -up Visit in the Main Study – BFAS 
+[IP_ADDRESS].4  Abnormal Physical Examinations at Booster Screening – BFAS 
+  [IP_ADDRESS]  Prior and Concomitant Medication  
+[IP_ADDRESS].1  Concomitant Medication – BFAS 
+[IP_ADDRESS].2  Prior Medication - BFAS  
+  
+16.2.5  Compliance and/or Drug Concentration Data  
+[IP_ADDRESS]  Dates of Visits and Blood and Mucosal Sampling – BFAS 
+[IP_ADDRESS]  Investigational Product Administration – BFAS 
+[IP_ADDRESS]  Memory Aid – BFAS 
+  
+16.2.6  Individual Immune Response Data  
+[IP_ADDRESS]  RSV -specific Serum IgG, Serum IgA Analysis: Titer, Positivity, 
+Response Status, and Fold Increase per Subject by [CONTACT_4838] – BFAS 
+[IP_ADDRESS]  RSV -specific PRNT (Strain A and B): Titer, Positivity, Response Status, 
+and Fold Increase per Subject by [CONTACT_4838] – BFAS 
+[IP_ADDRESS]  ELISPOT IFN -γ: SFU per Subject by [CONTACT_4838] – BIAS 
+[IP_ADDRESS]  ELISPOT IFN -γ: Positivity per Subject by [CONTACT_4838] – BIAS 
+[IP_ADDRESS]  ELIS POT IFN -γ: Response Status per Subject by [CONTACT_4838] – BIAS 
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 42 of 43 
+ [IP_ADDRESS]  ELISPOT IFN -γ: Responder Status per Subject – BIAS 
+[IP_ADDRESS]  ELISPOT IL -4: SFU per Subject by [CONTACT_4838] – BIAS 
+[IP_ADDRESS]  ELISPOT IL -4: Positivity per Subject by [CONTACT_4838] – BIAS 
+[IP_ADDRESS]  ELISPOT IL -4: Response Status per Subject by [CONTACT_4838] – BIAS 
+[IP_ADDRESS]  ELISPOT IL -4: Responder Status per Subject – BIAS 
+[IP_ADDRESS] 1  RSV -specific Mucosal  IgA Analysis: Titer, Positivity, Response Status, 
+and Fold Increase per Subject by [CONTACT_4838] – BFAS 
+  
+16.2.7  Adverse Event Listings  
+[IP_ADDRESS].1  Unsolicited Adverse Events – BFAS 
+[IP_ADDRESS].2  Related Unsolicited Adverse Events – BFAS 
+[IP_ADDRESS].3  Grade ≥ 3 Unsolicited Adverse Events – BFAS 
+[IP_ADDRESS].4  Grade ≥ 3 Related Unsolicited Adverse Events – BFAS 
+[IP_ADDRESS].5  Adverse Events Leading t o Discontinuation from the Sub -study  – BFAS 
+[IP_ADDRESS].6  Solicited Local Adverse Events: Injection Site Pain – BFAS 
+[IP_ADDRESS].7   Solicited Local Adverse Events: Injection Site Erythema – BFAS 
+[IP_ADDRESS].8   Solicited Local Adverse Events: Injection Site Swelling – BFAS 
+[IP_ADDRESS].9   Solicited Local Adverse Events: Injection Site Induration – FAS 
+[IP_ADDRESS].10   Solicited Local Adverse Events: Injection Site Pruritus – BFAS 
+[IP_ADDRESS].11   Solicited General Adverse Events: Body Temperature Increased – BFAS 
+[IP_ADDRESS].12   Solicited General Adverse Events: Headache – BFAS 
+[IP_ADDRESS].13  Solicited General Adverse Events: Myalgia – BFAS 
+[IP_ADDRESS].14   Solicited General Adverse Events: Chills – BFAS 
+[IP_ADDRESS].15   Solicited General Adverse Events: Nausea – BFAS 
+[IP_ADDRESS].16   Solicited General Adverse Events: Fatigue – BFAS 
+[IP_ADDRESS].17   Examination of Injection Site – BFAS 
+  
+  
+[IP_ADDRESS]  Serious Adverse Events  
+[IP_ADDRESS].1  Serious Adverse Events – BFAS 
+[IP_ADDRESS].2  Related Serious Adverse Events – BFAS 
+  
+16.2.[ADDRESS_295624]  
+[IP_ADDRESS].1  Laboratory Data: Hematology – BFAS 
+[IP_ADDRESS].2  Laboratory Data: Hematology – Abnormal Values – BFAS 
+[IP_ADDRESS].3  Laboratory Data: Biochemistry – BFAS 
+[IP_ADDRESS].4  Laboratory Data: Biochemistry – Abnormal Values – BFAS 
+[IP_ADDRESS].5  Laboratory Data: Pregnancy Test Results (Female Subjects Only) – 
+BFAS 
+[IP_ADDRESS].6  Laboratory Data: Laboratory Normal Ranges  
+MVA -BN-RSV  Final Version 1.0  Statistical Analysis Plan  
+Modified Vaccinia Ankara Vaccine  1-May-2018  RSV -MVA -002 Booster  
+    
+Bavarian Nordic  Restricted Business Proprietary  Page 43 of 43 
+   
+[IP_ADDRESS]  Other Safety Data  
+[IP_ADDRESS].1  Vital Signs – BFAS 
+[IP_ADDRESS].2  Abnormal Physical Examination – BFAS 
+ 

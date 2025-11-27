@@ -1,0 +1,234 @@
+[ADDRESS_1182029]: HM2001850 5 
+Document date: May 20, [ADDRESS_1182030] of brain 
+anatomy on the efficacy of iTBS is beneficial for two primary reasons: 1)  imaging techniques pr ovide the 
+opportunity to identify the best  patients for iTBS therapy based on their brain anatomy, and 2) stimulation 
+therapy could be  optimize d based on the patient’s  brain anatomy. Thus, the effect of brain anatom y on 
+iTBS efficacy is important to tailor rehabilitation  appropriately .  
+ 
+In order to determine the effect of brain anatomy on the induced electric fields acting on cortical neural 
+fiber tracts projecting to upper limb muscles from single pulse TMS we will  create anatomically accurate 
+computational brain models using MR images from  ten nonimpaired individuals. The brain models we 
+develop will incorporate anatomical features, including fiber tracts, from magnetic resonance imaging 
+(MRI) data we record from these ten nonimpaired participants.  We will record neurophysiologic data 
+from the same ten nonimpaired participants in order to t est for correlations between biceps and FDI 
+motor evoked potentials before and following iTBS with modeled induced electric fields acting on their 
+corresponding cortical fiber tracts.  
+ 
+Human Subjects  
+Ten nonimpaired individuals will be recruited for participation. All subjects will complete and sign a safety 
+questionnaire to verify that they are fre e of contraindications for MRI and TMS. All subjects will provide 
+informe d written consent . We will seek study approval from the VCU Institutional Review Board.  
+ 
+Magnetic Resonance Image Acquisition  (Session 2 or 3)  
+T1-weighted images will be acquired using a 3D MPRAGE sequence (time echo (TE)/time repetition 
+(TR)=3.2/6.8 ms acquired sagittally with a 1.0x1.0x1.2 mm resolution at a flip angle of 9 , echo train 
+length (ETL) = 240, matrix=256x240).  T2 -weighted images will be acquired using a 3D multishot turbo  
+spin echo sequence (TE/TR=245/2500 ms acquired sagittally with a matchin g resolution of the T1 -W 
+images, two  averages, flip angle=90 , ETL=133, matrix=256x256).  DTI images will be acquired using a 
+high resolution single -shot spin echo EPI [INVESTIGATOR_79714] (TE/TR =89/5700 ms acquired axially with a 1.7 mm 
+isotropic resolution at a flip angle of 78 , ETL=141, matrix=140x140, max b -value=2000 s/mm2, 96 
+directions).   
+ 
+Computational Brain Modeling  and Simulation of TMS  
+We will use MRI data from ten nonimpaired individ uals to create 3D head and brain models of each 
+individual. Using the software Freesurfer, along with high -resolution T1 and T2 weighted images, we will 
+create high -resolution anatomically accurate models with differentiated skin, bones, cerebrospi[INVESTIGATOR_656927] d, 
+grey matter, white matter, and ventricles within the brain. The Freesurfer software we will use is open -
+source and developed for analyzing MRI images for development of 3D models. We will input MRI slices 
+and uses contrast information to estimate anatom ical boundaries, such as that between the skin and 
+skull, or between grey matter and white matter. A 3D mesh is then created using these estimated 
+boundaries and other geometrical information taken directly from the input MRI data.  
+We will use high resolut ion DTI data and extract fiber tracts using a graphic al toolbox 
+ExploreDTI .[ADDRESS_1182031], such as M1 , with seed fractional anisotr opy threshold of 0.2, minimum fiber length 
+of 50 mm and angle threshold of 30 degrees. Coordinates of tracts are imported into SolidWorks and 
+9 
+ extruded to a solid, 3D line. These 3D fiber models are exported as .STL files for finite el ement analysis 
+in Sim4 Life. Figure  3 shows on the left the fiber tracts originating from M1 , and on the ri ght fibers being 
+stimulated by a figure -of-eight  TMS coil.  The fiber models will be embedded into our 3D head models to 
+calculate  the induced electric field during TMS in different regions of the brain.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Using  finite  element analysis, we will  determine the induced electric fields acting on isolated 
+fiber tracts by [CONTACT_850182]4Life  software. We will specify material properties (see Table 2), 
+grid details, and the current source, similar to our previous work. Induced electric fields will be 
+calculated using the Slice Viewer and Surface Viewer utilities within Sim4Life.  Voxels stimula ted above 
+a threshold electric field of 150 V/m will be recorded . 
+ 
+Table 2. Material properties we will specify in Sim4Life simulations of TMS.  
+ 
+ 
+Transcranial Magnetic Stimulation in Human Subjects  
+Subjects who underwent MR imaging, will also participate in two sessions of TMS. Each TMS session 
+will consist of baseline measures of MEPs in response to single pulse TMS, followed by [CONTACT_850183]. 
+One iTBS session will  one target  the biceps , and one session will target  the FDI. Each session will consist 
+of active iTBS applied to the hotspot of the target muscle , and sham iTBS . Sessions  will be separated by 
+[CONTACT_2669] [ADDRESS_1182032] er to quantify  corticomotor excitability  similar to our 
+preliminary work . 
+Subjects will be instrumented with surface electromyography (EMG ) electrodes on their dominant 
+arm after the skin is shaved and cleaned wit h alcohol wipes. S urface EMG electrodes (disposable Ag -
+AgCl, Noraxon) will be located over the biceps and the FDI. EMG signals will be amplified (x 1000) and 
+bandpass -filtered  prior to A/D conversion (CED Micro 1401 MkII, Cambridge Electronic Design ). All EMG 
+data will be sa mpled at 2 kHz using Spi[INVESTIGATOR_2531]2 softwar e (Cambridge Electronic Design ) and stored on a 
+personal computer for offline analysis.  
+Prior to the iTBS session, the maximal compound muscle action potential (Mmax) will be recorded 
+from the target muscle (biceps or FDI ). The amplitude of Mmax is required to normalize MEP amplitudes. 
+ 
+Fig. 3.  M1 fibers will be extracted from DTI MRI . Isolated fiber tracts will be exported as 3D objects in 
+order to simulate the  induced electric field from TMS on the 3D fibers at regions of interst in the brain.  
+
+[ADDRESS_1182033] Mmax, single pulse electrical stimuli, 0.2 ms pulse width will be delivered to Erb’s point via a 
+bipolar stimulating electrode (0.47 cm2; 2.5 cm inter -electrode distance) connected  to a constant current 
+stimulator (DS7AH, Digitimer Ltd .). To determine RMTs and record MEPs, single pulse TMS will be 
+delivered to the motor cortex contralateral to the  resting  target arm using a Super Rapid2 Plus1 stimulator 
+via a [ADDRESS_1182034]’s head. The coil will be held tangentially on the 
+scalp via a support stand with the coil center rotated to induce a pos terior -to-anterior cortical current 
+across the central sulcus. The h otspot for the target muscle will be identified as the location evoking the 
+largest peak -to-peak amplitude MEP using the lowest stimulation intensity. Resting motor threshold 
+(RMT) will be  determined as the lowest stimulus intensity that induces MEPs of ≥ [ADDRESS_1182035] 5 of 
+10 consecutive stimuli with the target muscle fully relaxed.21 The stimulus intensity for ensuing single 
+pulse MEP trials will be set at 120% of RMT. To record MEPs, the stimulator will be triggered to deliver 
+15 stimuli at a rate of 0.2 Hz.  Active motor threshold (AMT) will then be determined during sustained 
+contractions of 20% the subject’s maximum effort . With visual feedback provided relative to their 
+maximum  EMG root mean squared value , subjects will sustain a 20% maximum effort contrac tion of the 
+target muscle during which AMT will be determined as the stimulus intensity that elicits a MEP ≥ [ADDRESS_1182036] of three pulses presented at 50 Hz, repeated every 200 ms for 2 s at an 
+intensity of 80% AMT. Two second bursts will be repe ated every 8 s for a total of 600 pulses  (Figure 4) .2 
+For the sham condition, a sham coil (Magstim 70mm double air film sham coil) , looking  identical to  the 
+active coil and making a similar noise but without delivering any active stimulation, will be applied to the 
+hotspot of the target muscle. Throughout each session subjects will wear earplugs, be kept unaware of 
+the type of stimulation, an d be presented with  nature videos to control engagement.  
+ 
+Data and Statistical Analysis  
+We will calculate  the root mean square (RMS) amplitude of the evoked response, the RMS 
+amplitude of the pre -stimulus background EMG (over a duration  of approximately [ADDRESS_1182037]. The intensity of all iTBS 
+pulses will be 80% of the subject’s active motor threshold (AMT). Before each iTBS session (iTBS 1 
+and 2, which are sham  and active, respectively ), RMTs and motor evoked potentials (MEPs) will be 
+recorded. MEPs will also be recorded at 10 minute intervals following iTBS.  
+11 
+ duration of the corresponding evoked response), and the peak -to-peak amplitude of the evoked response 
+(MEP or M -wave) using purpose -written M atlab code (The MathWorks, Inc. ). Stimulus events where the 
+pre-stimulus RMS amplitude is large r than the evoked response, or where voluntary activity is detected, 
+will be discarded to ensure similar levels of background activity across subjects and trials. MEP 
+amplitudes will be normalized by [CONTACT_850184]. All patient charact eristics, 
+including RMTs and AMTs, will be summarized using means and standard deviations. The overall mean 
+and standard deviation of MEPs (normalized to Mmax and unnormalized) will be reported. Linear mixed 
+effect models will be used to determine the over all mean difference between the normalized MEP 
+amplitudes between the active and sham protocols. Separate mixed effect model analyses will be used 
+for each  muscle (biceps and FDI), condition (sham and active) and  time point following iTBS (in total [ADDRESS_1182038] models). Since this is a pi[INVESTIGATOR_799], all inference will be performed at the 0.[ADDRESS_1182039] for correlations between mean  MEPs in response to single pulse TMS (before iTBS protocol) and 
+the maximum induced electric field. A strong correlation between MEPs and induced electric fields would 
+indicate a strong relationship between our experimental and computational outcome measu res and 
+provide a foundation for our future work. Pearson correlation coefficients will also be computed to test for 
+correlations between mean  MEPs following iTBS and maximum induced electric fields to determine 
+whether greater induced electric fields indi cate a participant is more responsive to the iTBS protocol.   
+ 
+Biostatistical Justification  
+The difference in the corticomotor excitability  (as measured by [CONTACT_850185] (MEPS))  can be used to determine if there is a difference between the active and sham 
+protocols. Under the conditions that the true difference between the  active and sham  protocols is 5% of 
+the normalized MEP  with a standard deviation of 9%, and that the correlat ion between the differences 
+within an individual is 0.5, ten nonimpaired subjects will be needed to achieve at least 80% power using 
+a two -sided test of the overall mean using a repeated measures model. The Type -I error rate was set at 
+0.[ADDRESS_1182040], 
+to be submitted as an R01 application to National Center for Medical Rehabilitation Research (NCMRR) 
+within the Eunice Kennedy Shriver National Institute for Child Health and Human Development ( NICHD ) 
+in June [ADDRESS_1182041] aligns with two research priorities within NCMRR: 1) to explore multimodal 
+approaches that promote plasticity and sensorimotor function, particularl y the combination of physical 
+therapy with stimulation treatments, and 2) to develop objective measures that may predict rehabilitation 
+treatment response, monitor functional progress, and tailor interventions to the individual  abilities, needs, 
+and resources of the person with disabilities .  
+ 
+Potential Risks  
+Transcranial magnetic stimulation (TMS) is a non -invasive brain stimulation technique. TMS protocols, 
+including the single pulse and intermittent theta burst stimulation protocols that we propose  to use in 
+human subjects, present non -significant risk to the health, safety, or welfare of a human subject. The 
+risks associated with TMS protocols have been investigated and discus sed in detail.3 Risks and side 
+effects associated with TMS include: heating, induced voltages, forces and magnetization, effect on 
+hearing, induced seizure or syncope, headache, local pain or discomfort, and neurophysiological 
+changes.  
+ 
+12 
+ The risk of heating includes the overheating of the stimulating coil and/or brain tissue. This risk will be 
+minimized by [CONTACT_2329] a Magstim Double 70mm Air Film Coil . The Double 70mm Air Film Coil contains 
+two temperature sensors. When the internal coil tempe rature approaches 20°C, indicators on the UI 
+illuminate. When the internal temperature reaches 41°C, the stimulator will shut down and the Replace 
+Coil Light will illuminate.  
+ 
+The risks of induced voltages, forces and magnetization will be minimized by [CONTACT_850186]. Our protocols will exclude the use of TMS on, or in the vicinity of, 
+patients or users with cardiac demand pacemakers, implanted defibrillators and/or implanted 
+neurostimulators.  
+ 
+The effect on hearin g will be minimized by [CONTACT_850187].  
+ 
+The risk of induced seizure or syncope will be minimized by [CONTACT_850188]. Intake of or withdr awal 
+from certain central nervous system (CNS) active drugs lowers seizure threshold. The actual risk for 
+seizure induction may depend on additional, not yet fully explored, factors such as drug dose, speed of 
+dose increase (or decrease), and combination w ith other CNS active drugs. The majority of reported 
+TMS -induced seizures have occurred in subjects/patients on drugs with seizure threshold lowering 
+potential. Thus, we will exclude individuals taking medications as listed in section 5.[ADDRESS_1182042] stimulation (TBS), a review of the literature reveals [ADDRESS_1182043] of the published reports of TBS use an 
+intensity of 80% of Active Motor Threshold while the seizure occurred in a study applying an intensity 
+of 100% of Resting Motor Threshold.  
+ 
+Neurophysiological changes may occur and i s the basis of our research. There is evidence that iTBS 
+may increase the excitability of the neural pathway projecting to a muscle .[ADDRESS_1182044] injuries, as well as muscle that has 
+been altered my upper limb re construction.  
+ 
+In the majority of subjects/patients experiencing local pain during TMS, including toothache, the effect 
+rapi[INVESTIGATOR_850179]. Headache may occasionally persist, however, after TMS application; in this case, a 
+common analgesic administered orall y may be helpful. No migraine attacks have been described 
+following repetitive TMS, neither in nonimpaired individuals  nor in migraine patients who underwent 
+repetitive TMS applications as t reatment 5. 
+ 
+The devices we will use are labeled as investigational with the following statement: "CAUTION --
+Investigational device. Limited by [CONTACT_4496] (or  [LOCATION_002]) law to investigational use.” We will not 
+market or promote the device. We will report unanticipated adverse device effects to the IRB, sponsor, 
+etc. 
+ 
+13 
+ MRI can cause discomfort or anxiety and participants will be screened and accompanied by a  member of 
+the research team, as well as observed during MRI scanning.  
+ 
+ 
+ 
+References  
+1. Ackerley SJ, By[CONTACT_637009], Barber PA, MacDonald H, McIntyre -Robinson A, Stinear CM. Primed Physical 
+Therapy Enhances Recovery of Upper Limb Function in Chronic Stroke Patients. Neurorehabil Neural 
+Repair. 2016;30(4):[ADDRESS_1182045] stimulation of the human motor 
+cortex. Neuron. 2005;45(2):[ADDRESS_1182046] stimulation in changing 
+excitability of motor cortex: A systematic review an d meta -analysis. Neurosci Biobehav Rev. 2016;63:[ADDRESS_1182047] stimulation: implications for rehabilitation and recovery. Brain Stimul. 2014;7(3):[ADDRESS_1182048] Injury Facts and Figures at a Glance. Birmingham, AL: University of Alabama 
+at Birmingham;2016.  
+6. Anderson KD. Targeting recovery: priorities of the spi[INVESTIGATOR_1831] -injured population. J Neurotrauma. 
+2004;21(10):1371 -1383.  
+7. Smaby N, Johanson ME, Baker B, Kenney DE, Murray WM, Hentz VR. Identification of key pi[INVESTIGATOR_850180]. J Rehabil Res Dev. 2004;41(2):215 -224. 
+8. Peterson CL, Rogers LM, Bednar MS, et al. Posture -Dependent Corticomotor Excitability Differs Between 
+the Transferred Biceps in Individuals With Tetraplegia and the Biceps of Nonimpaired Individuals. 
+Neurorehabil Neural Repair. 2017;31(4):[ADDRESS_1182049] Stimulat ion Parameters on Biceps 
+Corticomotor Excitability. Paper presented at: Biomedical Engineering Society Annual Meeting2018; 
+Atlanta, GA.  
+10. Nettekoven C, Volz LJ, Leimbach M, et al. Inter -individual variability in cortical excitability and motor 
+network co nnectivity following multiple blocks of rTMS. Neuroimage. 2015;118:[ADDRESS_1182050] injury. Neural Regen Res. 2017;12(12):[ADDRESS_1182051] Stimulation in Humans: Established 
+Knowledge, Unknowns and Prospects. Brain Stimul. 2016;9(3):[ADDRESS_1182052] stimulation  does not reliably depress all regions of the 
+human motor cortex. Clinical Neurophysiology. 2006;117(12):[ADDRESS_1182053] Injury. Front 
+Neurol. 2017;8:380.  
+15. Lee EG, Duffy W, Hadimani RL, et al. Investigational Effect of Brain -Scalp Distance on the Efficacy of 
+Transcranial Magnetic Stimulation Treatment in Depression.  IEEE Transactions on Magnetics. 
+2016;52(7):1 -4. 
+16. Rastogi P, Lee EG, Hadimani RL, Jiles DC. Transcranial Magnetic Stimulation -coil design with improved 
+focality. AIP Advances. 2017;7(5):[ADDRESS_1182054] of anatomical variability in 
+brain on transcranial magnetic stimulation treatment. AIP Advances. 2017;7(5):[ADDRESS_1182055]: A data acquisition 
+perspective. NeuroImage. 2012;62(4):2222 -2231.  
+19. Windhoff M, Opi[INVESTIGATOR_7316] A, Thielscher A. Electric field calculations in brain stimulation based on finite elements: 
+An optimized processing pi[INVESTIGATOR_850181]. 
+Human Brain  Mappi[INVESTIGATOR_007]. 2011;34(4):923 -935. 
+20. Vos SB, Viergever MA, Leemans A. Multi -fiber tractography visualizations for diffusion MRI data. PLoS 
+One. 2013;8(11):e81453.  
+21. Rossini PM, Berardelli A, Deuschl G, et al. Applications of magnetic cortical stimulation. The International 
+Federation of Clinical Neurophysiology. Electroencephalogr Clin Neurophysiol Suppl. 1999;52:171 -185. 
+14 
+   

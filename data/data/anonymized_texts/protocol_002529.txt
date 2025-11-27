@@ -1,0 +1,1756 @@
+ 
+UVA CENTER FOR DIABETES TECHNOLOGY  
+ 
+   
+ 
+ 
+Evaluation of The Postprandial Impact of 
+Automated Priming Bolus for Full Closed Loop 
+Insulin Delivery  
+ 
+ 
+Protocol Chair 
+Sue A. Brown, MD   
+University of Virginia 
+Center for Diabetes Technology  
+  
+NCT #05528770 
+Version Number: v1.7 
+06-Oct-2022  
+CLINICAL PROTOCOL     
+ 
+Rocket -BPS  06-Oct-2022  Page 2 of 56 
+ 
+KEY ROLES  
+ 
+Protocol Principal Investigator   
+Name, degree  Sue Brown, MD  
+Institution Name  University of Virginia Center for Diabetes Technology  
+  
+CLINICAL PROTOCOL     
+ 
+Rocket -BPS  06-Oct-2022  Page 3 of 56 
+ 
+PROTOCOL VERSION HISTORY  
+Version 
+Number  Author(s)  Approver  Effective Date  Revision Description  
+1.0 Mark DeBoer ,  
+Mary Oliveri  Sue Brown 29-Jul-2022  Original Protocol  
+1.1 Mary Oliveri  Mark DeBoer  15-Aug-2022  FDA requested mods:  
+• Figure 1 was updated  
+• BPS transitions described 
+(section 7.6) 
+1.2 Mark DeBoer  Mark DeBoer  16-Aug-2022  FDA requested mods:  
+• Inclusion & exclusion criteria 
+(section 3.5 & 3.6) 
+• Pilot study BPS corrections 
+(section 6.3 & 6.4) 
+• Exercise termination criteria 
+(section 7.8) 
+• Discharge criteria (section 
+7.9) 
+• Individual stopping criteria 
+(section 11.10.1 ) 
+1.3 Mary Oliveri  Sue Brown 23-Aug-2022  FDA requested mods:  
+• Pilot study will complete  a 
+minimum of 2 -3 participants 
+(section  1.3, 3.2 & Chapter 6 ) 
+• A H&P within 9 months of 
+screening appointments may 
+be used (section 3.4 & 3.7) 
+• Further modified Exercise 
+termination criteria (section 
+7.8)  
+• Discharge criteria (section 
+6.6) 
+1.4 Mary Oliveri  Sue Brown 12-Sep-2022  IRB Pre -Review mods (07 -Sep-
+2022) :  
+• Clarified enrollment numbers 
+(section 3.2 & 13.2) 
+• Edited inclusion criteria 
+(section 3.5). 
+• Edited Screening Process 
+(section  3.4 &  3.7) 
+• Deleted references to 
+questionnaires (section 5.1, 
+7.2, & 7.10) 
+• Added 5 -minute low intensity 
+warm up (section 7.7) 
+• Clarified Covid testing 
+(section 9.1.3) 
+• Deleted Covid vaccination 
+record (section 10.3) 
+CLINICAL PROTOCOL     
+ 
+Rocket -BPS  06-Oct-2022  Page 4 of 56 
+ 
+• Edited pre -screening 
+description  (section 3.7) 
+1.5 Sue Brown Sue Brown 25-Sep-2022  IRB FB Review request:  
+• SAP description ( Chapter 13).  
+1.6 Mary Oliveri  Mary Oliveri  27-Sep-2022  IRB FB Review request:  
+• Remove screening remote 
+references  
+1.7 Mary Oliveri  Mary Oliveri  06-Oct-2022  IRB FB Review request:  
+• Clarified Part 11 
+identification process  (section  
+15.3.1 )  
+ 
+  
+CLINICAL PROTOCOL     
+ 
+Rocket -BPS  06-Oct-2022  Page 5 of 56 
+ 
+SITE PRINCIPAL INVESTIGATOR STATEMENT OF COMPLIANCE  
+ 
+Protocol Title: Evaluation of The Postprandial Impact of Automated Priming Bolus for Full Closed 
+Loop Insulin Delivery 
+Protocol Version/Date: v1 .7  06- Oct-2022 
+I have read the protocol specified above.  In my formal capacity as a Site Principal Investigator, 
+my duties include ensuring the safety of the study participants enrolled under my supervision.  It 
+is understood that all information pertaining to the study will be held strictly confidential and that 
+this confidentiality requirement applies to all study staff at this site.  
+This trial will be ca rried out in accordance with ICH E6 Good Clinical Practice (GCP) and as 
+required by the following: United States (US) Code of Federal Regulations (CFR) applicable to 
+clinical studies (45 CFR Part 46, 21 CFR Part 50, 21 CFR Part 56, 21 CFR Part 312, and/or 21 
+CFR Part 812). 
+As the Principal Investigator, I will assure that no deviation from, or changes to the protocol 
+will take place without prior agreement from the sponsor and documented approval from the 
+Institutional Review Board (IRB), or other approved Ethics Committee, except where necessary 
+to eliminate an immediate hazard(s) to the trial participants.  
+All key personnel (all individuals responsible for the design and conduct of this trial) have completed Human Participants Protection Training and Good Clinical Practice Training.  Further, 
+I agree to ensure that all staff members involved in the conduct of this study are informed about 
+their obligations in meeting the above commitments.  
+ 
+Investigator’s Signature __________________________________Date: _ ____ / _____ / _____ 
+Investigator’s Name: ________________________________ 
+Site Name:  University of Virginia 
+  
+CLINICAL PROTOCOL     
+ 
+Rocket -BPS  06-Oct-2022  Page 6 of 56 
+ 
+LIST OF ABBREVIATIONS  
+ABBREVIATION  DEFINITION  
+ADRR  Average Daily Risk Range  
+AP Artificial Pancreas  
+BG Blood Glucose  
+BT/BTLE  Bluetooth, Bluetooth low energy  
+BPS Bolus Priming System  
+CGM Continuous Glucose Monitoring  
+CLC Closed -Loop Control  
+CSII Continuous Subcutaneous Insulin Injection  
+DKA Diabetic Ketoacidosis  
+DSMB  Data Safety Monitoring Board  
+FCL Fully Closed Loop 
+FDA Food and Drug Administration  
+GCP Good Clinical Practice  
+HbA1c  Hemoglobin A1c  
+HBGI  High Blood Glucose Index  
+HIIT High -intensity interval training  
+HCL  Hybrid Closed Loop  
+IDE Investigational Device Exemption  
+IOB Insulin-on -Board  
+LBGI  Low Blood Glucose Index  
+POC Point -of-Care 
+QC Quality Control  
+UI User Interface  
+  
+CLINICAL PROTOCOL     
+ 
+Rocket -BPS  06-Oct-2022  Page 7 of 56 
+ 
+PROTOCOL SUMMARY  
+PARTICIPANT AREA  DESCRIPTION  
+Title  Evaluation of The Postprandial Impact of Automated Priming Bolus for Full Closed Loop 
+Insulin Delivery  
+Investigational Device  UVA Model Predictive Control Artificial Pancreas (RocketAP) with and without use of the 
+Bolus Priming System (BPS) 
+Objectives  The purpose of this study is to show the sa fety and feasibility of a new fully automated AP 
+controller with and without the Bolus Priming System  
+Study Design  A randomized cross -over trial  assessing glycemic responses to a fully automated  AP system 
+using two  approaches :  
+1) using the Bolus Priming System (which detects shifts in glucose level to trigger a priming 
+dose of insulin)  
+2) without the Bolus Priming System  
+We will also have structured meal and exercise challenges of the fully closed loop system.  
+Number of Sites  One 
+Endpoint  The primary outcome will be time in range 70 -180 mg/dL for a 24- hour period. 
+Population  Key Inclusion Criteria  
+• Age 18 and ≤65 years of age  
+• Clinical diagnosis, based on investigator assessment, of type 1 diabetes for at least one 
+year  
+• Currently u sing insulin for at least six months  
+• Currently using insulin pump for at least three months  
+Sample Size   • Pilot Study: complete a minimum of 2 -3 participant s  
+• Main Study : complete up to 20  participants  
+Treatment Groups  Randomized crossover:  Participants will be randomized to the order that they experience 
+the use of the BPS in fully automated closed loop (FCL)  (for 24 hours each, with a 24 -hour 
+washout in between): 1) with the BPS active, 2) without BPS.   
+Participant  Duration  Pilot Study:  Participants will be admitted to a local hotel or rental house for up to 
+approximately 24 hours and will have a dinner with the Rocket AP without the BPS  
+Main Study: Participants will be admitted to a local hotel for approximately 96 hours.  
+Protocol Overview/Synopsis  Main Study participants will be admitted to the hotel for a 4- night study, receiving the two 
+sessions in random order: 1) FCL  with BPS activated , 2) FCL without the BPS , with a 24 -
+hour washout period in between. During the admission, participa nts will receive structured 
+meals and have blood glucose control followed to compare time in range 70-180 mg/dL between Controller sessions .  After the first 24 hour period on the first FCL approach (BPS 
+vs. no BPS,)  that the participant has been randomized to, there will be a 24 hour challenge 
+period before shifting to the other randomized approach; during this session participants will undergo further testing of the control algorithm, including meal challenges and a high-
+intensity interval training bout.  
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 8 of 56 
+ STUDY VISITS AND PROCEDURES SCHEDULE   
+ 
+Screening  Study Equipment 
+Training  Pre-Admission 
+Check -In Study Admission  Post-Admission 
+Check -In 
+Location  Clinic  Clinic/ Remote  Phone/ Email/ 
+Text  Hotel/Rental 
+House  Phone/ Email/ 
+Text  
+Visit  1 2 3 4 5 
+Informed Consent  X     
+Eligibility Assessment  X     
+Medical History  X     
+HbA1c  X     
+Pregnancy test (if applicable)  X X  X  
+Physical Exam  X     
+Vital Signs (height/weight)  X   X  
+Electrocardiogram (ECG)  X     
+Demographic Survey  X     
+Randomization     X  
+COVID -19 Testing    X   
+CGM Use     X  
+Survey  X     
+Review diabetes management and AEs     X X 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 9 of 56 
+ TABLE OF CONTENTS  1 
+Chapter 1 Background  ..........................................................................................13  2 
+1.1 Introduction ......................................................................................................................... 13  3 
+1.2 Study Objective ................................................................................................................... 14  4 
+1.3 Study Design ....................................................................................................................... 14  5 
+1.4 Study Device Download ..................................................................................................... 16  6 
+1.5 Study System Issues ............................................................................................................ 16  7 
+Chapter 2 Study Devices  .......................................................................................18  8 
+2.1 Insulin Pump ....................................................................................................................... 18  9 
+2.2 Continuous Glucose Monitor .............................................................................................. 18  10 
+2.3 Blood Glucose Meter and Strips ......................................................................................... 18  11 
+2.4 Ketone Meter and Strips ..................................................................................................... 18  12 
+2.5 Study Devices Accountability Procedures .......................................................................... 18  13 
+Chapter 3 Study Screening  ...................................................................................19  14 
+3.1 Clinical Sites  ....................................................................................................................... 19  15 
+3.2 Participant Recruitment and Enrollment ............................................................................. 19  16 
+3.3 Informed Consent and Authorization Procedures ............................................................... 19  17 
+3.4 Screening Procedures .......................................................................................................... 19  18 
+3.5 Participant Inclusion Criteria .............................................................................................. 19  19 
+3.6 Participant Exclusion Criteria ............................................................................................. 20  20 
+3.7 Visit 1: Screening Procedures ............................................................................................. 21  21 
+3.8 Demographic Data Survey .................................................................................................. 23  22 
+Chapter 4 Randomization  .....................................................................................25  23 
+4.1 Pilot Study Participants ....................................................................................................... 25  24 
+4.2 Main Study Participants ...................................................................................................... 25  25 
+Chapter 5 Visit 2: Study Equipment Training  ....................................................26  26 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 10 of 56 
+ 5.1 CGM Training ..................................................................................................................... 26  27 
+5.2 Activity Tracker .................................................................................................................. 26  28 
+5.3 Study Insulin Pump ............................................................................................................. 27  29 
+Chapter 6 P ilot Study  ............................................................................................28  30 
+6.1 Qualifications and Role of the Staff.................................................................................... 28  31 
+6.2 Visit 3: Pre-Admission Check- In Visit  ............................................................................... 28  32 
+6.3 Visit 4: Admission Check- In .............................................................................................. 28  33 
+6.4 Study Meals ........................................................................................................................ 29  34 
+6.5 Admission Activities  ........................................................................................................... 29  35 
+6.6 Admission Discharge .......................................................................................................... 29  36 
+6.7 Visit 5: Post Admission Check- In Visit  .............................................................................. 30  37 
+Chapter 7 Main Study  ...........................................................................................31  38 
+7.1 Hotel Admission ................................................................................................................. 31  39 
+7.2 Qualifications and Role of the Staff.................................................................................... 31  40 
+7.3 Visit 3: Pre-Admission Check- In Visit  ............................................................................... 31  41 
+7.4 Visit 4: Admission Check- In .............................................................................................. 31  42 
+7.5 System Transitions .............................................................................................................. 32  43 
+7.6 Study Meals ........................................................................................................................ 32  44 
+7.7 Admission Activities  ........................................................................................................... 33  45 
+7.8 Admission Discharge .......................................................................................................... 34  46 
+7.9 Visit 5: Post Admission Check- In Visit  .............................................................................. 34  47 
+7.10 Medical Monitor Review .................................................................................................. 34  48 
+Chapter 8 Medical Monitor Review  .....................................................................35  49 
+8.1 Medical Monitor Study Safety Data Review ...................................................................... 35  50 
+8.2 Medical Monitor Main Study Safety Data Review ............................................................ 35  51 
+Chapter 9 Testing Procedures  ..............................................................................36  52 
+9.1 Laboratory / Point of Care Testing ..................................................................................... 36  53 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 11 of 56 
+ Chapter 10 Risks Associat ed with Clinical Trial  ................................................37  54 
+10.1 Potential Risks and Benefits of the Investigational Device .............................................. 37  55 
+10.2 General Considerations ..................................................................................................... 40  56 
+10.3 COVID- 19 Risk Mitigation Plan and Justification  ........................................................... 41  57 
+Chapter 11 Adverse Events, Device Issues, and Stopping Rules .......................42  58 
+11.1 Definitions......................................................................................................................... 42  59 
+11.2 Reportable Events ............................................................................................................. 43  60 
+11.3 Relationship of Adverse Event to Study Device............................................................... 44  61 
+11.4 COVID-19 Transmission .................................................................................................. 44  62 
+11.5 Intensity of Adverse Event................................................................................................ 45  63 
+11.6 Coding of Adverse Events ................................................................................................ 45  64 
+11.7 Outcome of Adverse Events ............................................................................................. 45  65 
+11.8 Reportable Device Issues .................................................................................................. 46  66 
+11.9 Timing of Event Reporting ............................................................................................... 46  67 
+11.10 Stopping Criteria ............................................................................................................. 47  68 
+11.11 Independent Safety Oversight ......................................................................................... 48  69 
+11.12 Definition of a Data Breach ............................................................................................ 48  70 
+Chapter 12 Miscellaneous Considerations  ..........................................................49  71 
+12.1 Prohibited Medications, Treatments, and Procedures ....................................................... 49  72 
+12.2 Participant Withdrawal ..................................................................................................... 49  73 
+12.3 Confidentiality .................................................................................................................. 49  74 
+Chapter 13 Statistical Consideration  ...................................................................50  75 
+13.1 Design and Randomization ............................................................................................... 50  76 
+13.2 Sample Size ....................................................................................................................... 51  77 
+13.3 Outcome Measures............................................................................................................ 51  78 
+13.4 Safety Analyses ................................................................................................................. 52  79 
+13.5 Baseline Descriptive Statistics  .......................................................................................... 52  80 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 12 of 56 
+ 13.6 Device Issues .................................................................................................................... 52  81 
+Chapter 14 Data Collection and Monitoring  .......................................................53  82 
+14.1 Case Report Forms and Device Data ................................................................................ 53  83 
+14.2 Study Records Retention................................................................................................... 53  84 
+14.3 Protocol Deviations ........................................................................................................... 53  85 
+Chapter 15 Ethics/Protection of Human Participants  .......................................54  86 
+15.1 Ethics Standard ................................................................................................................. 54  87 
+15.2 Institutional Review Boards .............................................................................................. 54  88 
+15.3 Informed Consent Process ................................................................................................ 54  89 
+Chapter 16 References  ...........................................................................................56  90 
+ 91 
+  92 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 13 of 56 
+ Chapter 1  Background 93 
+ 
+ 94 
+A major impediment to maintaining blood glucose (BG) control in  Type 1 diabetes (T1D) is missed 95 
+meal boluses, which has been associated with significantly higher HbA1c levels .1  While the 96 
+advent of the artificial pancreas (AP) offers promise of safe reductions in HbA1c, our research 97 
+group previously found that current  AP systems only partly compensates for missed prandial 98 
+insulin .2 We thus designed a new system called RocketAP  to be fully automated, utilizing  a Bolus 99 
+Priming System (BPS) that recognizes meal ingestion and delivers a quick priming dose of insulin 100 
+prior to extreme blood sugar excursions. When used as a fully automated closed loop (FCL) system 101 
+(without any meal announcements to the controller), this system improves time -in-range compared 102 
+to a current commercially available system (Con trol-IQ). However, we have not previously 103 
+determined whether the BPS provides improved blood sugar control over what the Rocket AP 104 
+controller could without the BPS.  Indeed, when the BPS provides a bolus, it reduces the amount 105 
+of insulin the controller can provide in response to high blood sugars —leaving open the possibility 106 
+that the Rocket AP controller could provide a similar degree of blood sugar control after 107 
+unannounced meals.  In addition, this system needs to be further tested under challenging 108 
+conditi ons of exercise and food intake.  This is particularly true for the BPS, given the potential 109 
+that the BPS could detect spurious changes in blood sugar and provide a priming dose of insulin 110 
+in the absence of a meal.   111 
+In the current study, the maximum amount of insulin that the BPS injects (which varies based on 112 
+the system’s calculation of the probability that a meal has been ingested) is 6% of the person’s 113 
+total daily insulin for any individual meal. This system is equipped with a novel hypoglycemia  114 
+anti-rebound system , which constrains insulin infusion after  CGM /SMBG readings <70 mg/dL. 115 
+The BPS system is also silenced at night (23:00 – 6:00h). 116 
+In the current study, we are testing this Rocket AP system for BG levels using two approaches :  117 
+A randomized cross -over trial where each participant will experience FCL for two 24- hour study 118 
+periods in random order (referred to as FCL1 and FCL2) with : 119 
+• The BPS functioning 120 
+• The BPS inactivated  121 
+During the washout period between FCL1 and FCL2, we will test the Rocket AP system in FCL  122 
+with further challenges, both before and after the change in BP S treatment arm —i.e., not as a 123 
+cross -over assessment but a comparison between participants randomized to start with  or without 124 
+BPS.  These challenges will include:  125 
+• A session of high- intensity interval training  (assessing the safety of the BPS when BG’s 126 
+may spike during bursts of anaerobic activity) 127 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 14 of 56 
+ • A high-carbohydrate, high- fat meal (assessing how the system  responds to prolonged 128 
+carbohydrate absorption) 129 
+• Ingestion of a bolus of simple sugar (assessing the safety of the BPS when the user’s 130 
+blood sugar spikes from a relatively low amount of carbohydrate)    131 
+Participants  will be admitted to a hotel and started o n the RocketAP for the purpose of comparing 132 
+FCL use with and without BPS  as described above, all implemented on the DiAs platform ( MAF 133 
+2109).  As an assessment of the efficacy of the system in maintaining BG control, participants will 134 
+be followed for appro ximately 24 hours in the randomized phase (FCL1 vs. FCL2) and during the 135 
+24-hour cross -over phase. Our primary outcome will be one of efficacy in assessing BG control  136 
+(TIR 70 -180 mg/dL) between the two 24-hour FCL1/FCL2 periods.  137 
+We hypothesize that  performances of  Rocket AP without BPS in FCL will provide similar glycemic 138 
+control as  FCL with BPS.  We expect that this will constitute an important step toward having a 139 
+fully automated  AP system  because it may remove the need for a BPS system that itself  could 140 
+increase risk of episodes of hypoglycemia.  141 
+ 
+ 142 
+The purpose of this study is to  test the performance of  the Rocket AP in FCL  both with and without 143 
+the BPS, assessing efficacy and safety . We will target  completion of up to 20 adults in a 144 
+randomized cross -over trial, comparing blood glucose time in range 70- 180 mg/dL for two 24- 145 
+hour periods  and assessing TIR during an additional challenge period, which will be compared 146 
+between those who started on BPS vs. those who did not.    147 
+ 
+ 148 
+We will consent up to 30 participants,  ages ≥18.0 and ≤65 ye ars, with a goal to have up to 20 149 
+participants complete the trial. The study will be performed overnight at a local hotel /rental  house 150 
+(heretofore referred to as “hotel ”). Enrollment in the Pilot Study will proceed with the goal of 151 
+completing a minimum of 2 -3 participants. This admission will be about 24 hours  at a hotel/rented 152 
+house. Enrollment in the Main Study will proceed with th e goal of completing 20 participants.   153 
+1.3.1 Study Hardware/Software 154 
+The study itself will involve use of the DiAs prototyping platform (MAF 2109), connected to a 155 
+Tandem t:AP research pump and a Dexcom G6 sensor, and implementing Rocket AP with and 156 
+without BPS.  Upon arrival at the hotel, participants will be instructed in how to use the Tandem 157 
+research pump as well as the UVa AP  system, including stopping the system.  158 
+1.3.2 Timing of UVa Artificial Pancreas Use 159 
+The participants will arrive to hotel  the evening before s tarting the experimental system to allow 160 
+for a settling of blood glucose  in an unfamiliar environment. The next morning, participants will 161 
+be connected to a Tandem research pump  connected to the UVa DiAs platform and their Dexcom 162 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 15 of 56 
+ G6 Transmitter will be linked with DiAs. Participants will then be taught how to use DiAs in this 163 
+configuration. The research pump will be programmed  with the individual ’s usual insulin 164 
+parameters. Once started, the p articipants will have their blood sugar managed through this  system 165 
+during the entirety of the time at hotel. 166 
+1.3.3 Study Controller Ses sions 167 
+Order and timing  of controller sessions : During the hotel stay, participants will have two separate 168 
+24-hour periods during which they will receive FCL control with and without the BPS active .  169 
+These will be separated by a 24 -hour challenge period which will involve further challenges.  The 170 
+timing and potential order of these sessions is shown in Figure 1. 171 
+ 172 
+Figure 1:  Timeline and randomized order of the Study Controller Sessions  173 
+During these 24- hour periods participants will be followed for the experimental meals as part of 174 
+the Study Controller Sessions to compare blood glucose control with and without the BP S (Figure 175 
+1). The study meals and activities will be standardized between study sessions (see Figure 2).  176 
+
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 16 of 56 
+  177 
+Figure 2:  Timeline of Study Controller Sessions and Study Meals  and activities .  There will be two identical 24- 178 
+hour periods (FCL1 in green and FCL2 in orange), separated by a 24- hour challenge period (FCL1 in green -hatched) 179 
+that will first involve the BPS activation assignment  the participant was randomized to  (the treatment approach used 180 
+in FCL1)  and then involve the alternate assignment  (the treatment approach to be used in FCL2) , with the system 181 
+switch at the end of the challenge day.  Arrows represent meals with Blue Arrows representing meals in which the 182 
+participants are using their personal devices.  183 
+The primary outcome will compare the percent time CGM is between 70 and 180 mg/dL during 184 
+daytime  for F CL1 and FCL2 sessions with and without BPS .  During the time between arrival at 185 
+the hotel and being started on the experimental system, participants will use their home diabetes 186 
+management approach, including insulin dosing via normal carbohydrate announcement.  S tarting 187 
+the first morning of the study (Day 2 of study), study staff who will be present will include nursing 188 
+staff and technical staff ; a study physician will be available either on- site or nearby off -site at all 189 
+times . Hyperglycemia and hypoglycemia treatment protocols will be followed per guidelines. We 190 
+anticipate more significant cases of hyperglycemia during meals on the study system because of 191 
+the lack of carbohydrate announcement; participants will be encouraged to drink large amounts of 192 
+non-caloric beverages, particularly after these meals . UVa CDT study staff will monitor CGM 193 
+output continuously and manage glucose control issues.  At the end of the hotel stay , the participant 194 
+will return to their home insulin management.  195 
+ 
+ 196 
+Before discharge from the hotel, all study devices will be turned in to study staff for device 197 
+download, and the participants will return to their usual diabetes management . 198 
+ 
+ 199 
+If the CGM signal becomes unavailable for more than 20 minutes consecutively, closed loop will 200 
+not operate to automatically adjust insulin.  If the CGM is not connected, the system will revert to 201 
+usual function of the pump and deliver insulin with the insulin dosing parameters programmed in 202 
+
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 17 of 56 
+ the system for that individual. Resumption of c losed-loop control will occur  automatically once 203 
+CGM signal is available again.  204 
+If the study system is unable to maintain pump connectivity, the pump will automatically revert to 205 
+pre-programmed basal insulin delivery after 30  minutes without any need for instruction from the 206 
+user.   207 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 18 of 56 
+ Chapter 2  Study Devices  208 
+ 
+ 209 
+The study system s will utilize  the Tandem t:AP  research pump  connected to the UVa DiAs system 210 
+run on a dedicated external smart phone, running the R ocket AP control algorithm with  either the 211 
+BPS system  active or not, with the order of these sessions determined randomly. 212 
+ 
+ 213 
+The study CGM will include Dexcom G6 transmitter and sensors. The CGM sensor is viable for 214 
+10 days. 215 
+ 
+ 216 
+Blood glucose levels will be measured during the hotel admission with the use of a study 217 
+glucometer. The CGM device will be calibrated, if needed, using the study glucometer and strips 218 
+in accordance with the manufacturer’s labelling .  219 
+ 
+ 220 
+Blood ketone levels will be measured during the hotel admission with the use of the Abbott 221 
+Precision Xtra meters and strips in accordance with the manufacturer’s labelling . The blood 222 
+glucose meter component of the Precision Xtra Device will not be used.   223 
+ 
+ 224 
+Device serial numbers will be recorded , and use of equipment will be tracked.  225 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 19 of 56 
+ Chapter 3  Study Screening   226 
+ 
+ 227 
+The study will be performed at the University of Virginia, with screening procedures taking place 228 
+either virtually, at the Clinical Research Unit, or at local hotel.  229 
+ 
+ 230 
+Pilot Study:  Enrollment goal in the Pilot Study will be to complete  a minimum of 2 -3 participant s. 231 
+Up to 6 participants may sig n consent forms.  232 
+Main Study:  Enrollment in the s tudy will proceed with the goal of completing up to 20 233 
+participants .  Participants will initially be randomized for the order of using FCL with or without 234 
+BPS.  Up to 30 participants may sign the consent form.  235 
+ 
+ 236 
+Before consent has been obtained, participants will be asked inclusion/exclusion criteria questions 237 
+during pre-screening  to determine study eligibility. Before completing any procedures or 238 
+collecting any data that are not part of usual  care, written inform ed consent, when applicable) will 239 
+be obtained. Potential eligibility may be assessed as part of a routine-care examination.   240 
+A participant is considered enrolled when the informed consent form has been signed by the 241 
+participant and the study team. 242 
+Consenting procedures and documentation is defined in section 15.3.  243 
+ 
+ 244 
+After informed consent has been signed, a potential participant will be evaluated for study 245 
+eligibility through the elicitation of a medical history, performance of a physical examination 246 
+by licensed  personnel, an ECG, and pregnancy testing (if applicable) to screen for exclusionary 247 
+medical conditions.   248 
+A physical exam documented in the prior 9 months can suffice for the physical exam  but will not 249 
+serve as an exclusionary criterion  if not available . Participants may self -report height ,  weight , 250 
+blood pressure, temperature, and heart rate . Individuals who do not initially meet study eligibility 251 
+requirements may be rescreened at a later date per investigator discretion.  252 
+ 
+ 253 
+The participants must meet all of the following inclusion criteria in order to be eligible to 254 
+participate in the study. 255 
+1. Age ≥18.0 a nd ≤65 years old  at time of consent  256 
+2. Clinical diagnosis, based on investigator assessment, of type 1 diabetes for at least one year  257 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 20 of 56 
+ 3. Currently using insulin for at least six months 258 
+4. Currently using insulin pump for at least three months  259 
+5. Using insulin parameters such as carbohydrate ratio and correction factors consistently on 260 
+their pump in order to dose insulin for meals or corrections  261 
+6. Current regular exercise (e.g. wal k, bike, jog) and be able to participate in a high intensity 262 
+interval training activity.  263 
+7. Access  to internet and willingness to upload data during the study as needed  264 
+8. For females, not currently known to be pregnant or breastfeeding  265 
+9. If female and sexually active, must agree to use a form of contraception to prevent p regnancy 266 
+while a participant in the study.  A negative serum or urine pregnancy test will be required for 267 
+all females of child bearing potential. Participants who become pregnant will be discontinued 268 
+from the study. Also, participants who during the study develop and express the  intention to 269 
+become pregnant within the timespan of the study will be discontinued. 270 
+10. Willingness to suspend use of any personal CGM for the duration of the clinical trial once the 271 
+study CGM is in use 272 
+11. Willingness to use the UVa closed -loop system throughout study admission  273 
+12. Willingness to use personal lispro (Humalog) or aspart (Novolog)  during the study admission.  274 
+13. Willingness not to start any new non-insulin glucose- lowering agent during the course of the 275 
+trial (including metformin/biguanides, GLP -1 receptor agonists, pramlintide, DPP -4 276 
+inhibitors, sulfonylureas and naturaceuticals) 277 
+14. Willingness to eat at least 1  g/kg of carbohydrate per day during the hotel admission  278 
+15. Willingness to reschedule if placed on oral steroids  279 
+16. An understanding and willingness to follow the protocol and signed informed consent  280 
+17. Willingness to follow COVID -19 protocols in place at the time of study.  281 
+ 
+ 282 
+The participant must not have any exclusion criteria in order to be eligible to participate in the 283 
+study.  284 
+1. History of diabe tic ketoacidosis (DKA) in the 6  months prior to enrollment 285 
+2. Severe hypoglycemia resulting in seizure or  loss of consciousness in the 12 months prior to 286 
+enrollment 287 
+3. Pregnancy or intent to become pregnant during the trial 288 
+4. Currently being treated for a seizure disorder 289 
+5. Planned surgery during study duration. 290 
+6. Treatment with meglitinides/sulfonylureas at the time of hotel study. 291 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 21 of 56 
+ 7. Use of metformin/biguanides, GLP -1 agonists, pramlintide, DPP -4 inhibitors, SGLT -2 292 
+inhibitors, or naturaceuticals with a change in dose in the past month.  293 
+8. Coronary artery disease or heart failure, unless written clearance is received from a   294 
+cardiologist or personal health care provider allowing clearance for high- intensity interval 295 
+training and documentation of a negative stress test within the year 296 
+9. History of cardiac arrhythmia (except for benign premature atrial contractions and benign 297 
+premature ventricular contractions which are permitted or previous ablation of arrhythmia 298 
+without recurrence which may be permitted)  299 
+10. Clinically significant electrocardiogram (ECG) at time of Screening, as interpreted by the 300 
+study medical physician. 301 
+11. A known medical condition that in the judgment of the investigator might interfere with the 302 
+completion of the protocol such as the following examples: 303 
+a. Inpatient psychiatric treatment in the past 6 months  304 
+b. Presence of a known adrenal disorder 305 
+c. Abnormal liver function test results (Transaminase >2 times the upper limit of 306 
+normal); testing required for subjects taking medications known to affect liver 307 
+function or with diseases known to affect liver function 308 
+d. Uncontrolled thyroid disease 309 
+e. Musculoskeletal or other condition that limits participation in exercise portion of 310 
+study 311 
+12. A known medical condition that in the judgment of the investigator might interfere with the 312 
+completion of the protocol. 313 
+13. Positive Covid-19 test result   314 
+ 
+ 315 
+The participant will be evaluated for study inclusion and exclusion eligibility  after the informed 316 
+consent form has been signed by the participant and the study team.  317 
+Individuals who do not initially meet study eligibility requirements may be rescreened at a later 318 
+date per investigator discretion. 319 
+Screening procedures will last appr oximately 1 -2 hours. The visit may occur in- person or  by 320 
+telecommunication. The following procedures may be performed/data collected/eligibility criteria 321 
+checked and documented:  322 
+1. Inclusion and Exclusion criteria assessed  323 
+2. Demographics, including: 324 
+a. Date o f birth 325 
+b. Gender  326 
+c. Race  327 
+d. Ethnicity  328 
+3. Medical History , including diabetes history  329 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 22 of 56 
+ a. Duration of disease (number of years) 330 
+b. Current insulin pump model 331 
+c. History of CGM use 332 
+d. Current treatment  333 
+e. Severe hypoglycemia history 334 
+f. Severe hyperglycemia history 335 
+g. History of seizures  336 
+h. Loss of consciousness 337 
+4. Basal rates  338 
+5. Carbohydrate ratios  339 
+6. Insulin sensitivity factors  340 
+7. Target glucose 341 
+8. Average daily insulin 342 
+9. Surgical history 343 
+10. Allergies  344 
+11. Concomitant medications  345 
+12. Electrocardiogram (ECG)   346 
+13. Physical Examination – Aa historical history and physical report within 9 months of 347 
+screening appointments may be used but is not required for eligibility. If vitals are not 348 
+available, may include self -reported values .  349 
+a. Weight  (may be self -reported)  350 
+b. Height (may be self -reported)  351 
+c. Blood pressure 352 
+d. Temperature  353 
+e. Heart Rate  354 
+14. Screening Labs  355 
+a. Hemoglobin A1c point of care  356 
+b. Urine or serum pregnancy test for all women of childbearing potential (this test can 357 
+be done remotely with results sent to the study team) 358 
+If needed based on medical history, investigators may include baseline chemistry panel, liver 359 
+function tests, hematocrit , and thyroid stimulating hormone (lab results within one year of 360 
+screening appointment may be used). 361 
+Up to 6 months of historical data from the participant’s personal insulin pump, glucometer, or 362 
+continuous glucose monitor may be downloaded or recorded. Data will be obtained from the 363 
+participant’s personal insulin pump and CGM. This data may be obtained through the commercial 364 
+applications (e.g. t:connect and Dexcom G6).  365 
+If participants are on -site, the participant’s glucometer may be uploaded to ensure that the 366 
+participant can successfully upload the equipment.  367 
+Any labs required may be obtained at a local laboratory (e.g. LabCorp) convenient to the 368 
+participant.  369 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 23 of 56 
+ This study is not meant to find out if the participant has any other disease or problem. The study 370 
+leaders will alert the participant if any of the research results are important to his/her health during 371 
+the study. The participant may have a copy of the screening tests to discuss with the personal 372 
+physician. When the blood tests are completed, any blood left over will be thrown away. It will 373 
+not be stored for any future testing. 374 
+For potential subjects who live out of state and or a significant distance from UVA to facilitate the 375 
+consent process, e -consent will be used. Note: For potential participants  who are not able to use 376 
+DocuSign, email, fax, or mail  will be an option for receipt of the signed consent. The consenting 377 
+process will involve discussing the study at length in a phone call/HIPAA compliant 378 
+telecommunication method with the interested potential participant.  The potential participant will 379 
+be asked permission to review inclusion/exclusion criteria to assess if they are eligible to 380 
+participate in the study.  If permission is granted, the study team will review the pre- screening  381 
+questionnaire which contains the inclusion/exclusion criteria.  If eligible, the study team member 382 
+will provide a copy of the informed consent form (i.e. in person, email, or mail) to the potential 383 
+participant for their review. Potential p articipants may also elect to choose to review the informed 384 
+consent form prior to discussing pre -screening  questions.  385 
+The potential participant will be given an opportunity to ask the study team questions or may speak 386 
+directly with the study physician. After ample time to make an informed decision, the potential 387 
+participant may sign the consent form at home and provide it to the study team (e.g. in person, 388 
+electronically, email, fax, or mail).  The potential participant’s understanding of the information, 389 
+presented in the process of consent will be assessed by asking open- ended questions, may occur 390 
+during the phone call or at the screening appointment. Once consent is obtained, study procedures 391 
+may begin (e.g. LabCorp).  392 
+The study physician or physician designee will have the discretion to repeat screening tests. The 393 
+repeat screening tests may be conducted locally (e.g. LabCorp). The participant may request a 394 
+copy of any of the results from the screening evaluation to review with their primary care provider.  395 
+If an exclusionary condition is identified, the study participant will be excluded from participation 396 
+with follow u p and referral to their primary care physician as needed.  397 
+If the study participant is pregnant, the study physician will discuss the results of the blood test 398 
+with the participant and the participant will be asked to seek confirmation of the test and the 399 
+appropriate medical care.  400 
+Participants may be re- screened at a later date if their clinical situation changes as determined by 401 
+the study physician. 402 
+ 
+ 403 
+Research in diabetes technology has revealed significant disparities in minoritized population’s 404 
+representation in clinical trials and access to devices that improve diabetes outcomes.  C ollection 405 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 24 of 56 
+ of detailed demographic data regarding participants in technology trials has become essential.  This 406 
+includes data on race/ethnicity, income levels and insurance status, as well as education and other 407 
+variables that describe the study population.  408 
+The Demo graphic Data Survey will be electronically administered once eligibility has been met.  409 
+a. Gender  410 
+b. Race  411 
+c. Ethnicity  412 
+d. Marital status  413 
+e. Level of education  414 
+f. Employment status  415 
+g. Household income 416 
+h. Health i nsurance status  417 
+i. Monthly insulin costs   418 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 25 of 56 
+ Chapter 4  Randomization  419 
+Participants  will receive the t wo different experimental conditions (FCL  with and without BPS ) in 420 
+random order as described below. 421 
+ 
+ 422 
+Pilot participants will not be randomized and will use the Rocket AP system with and with out BPS . 423 
+ 
+ 424 
+Once eligibility is met and screening procedures are completed, the participant may continue to 425 
+randomizati on. Screening failures and study dropout participants may be replaced. Randomization 426 
+will occur via permuted blocks of 4.    427 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 26 of 56 
+ Chapter 5  Visit 2: Study Equipment Training  428 
+Equipment training may begin at the hotel after UVa AP system has been pu t in place.   The purpose 429 
+of this training is to introduce the study insulin pump and study CGM to the participant.  430 
+The participant’s insulin parameters will be programmed into their study insulin pump and 431 
+confirmed by two research staff. Subjects will then switch to the study insulin pump. The 432 
+participant’s personal pump and infusion site will be removed. 433 
+The participant will have the insulin pump and sensor on them at all times.  434 
+ 
+ 435 
+A study CGM will be provided to all participants at the training session. The participant s will be 436 
+provided with CGM equipment and instructed to use the study CGM on a daily basis. If the 437 
+participant has  prior use of the CGM , re-training will be specific to the individual.  The study team 438 
+may elect to have less frequent CGM users watch the Dexcom online training videos 439 
+(https://www.dexcom.com/training -videos) to assist in the training session .  Study staff t raining 440 
+may include review of study CGM in real -time to make management decisions and how to review 441 
+the data after an upload for retrospecti ve review. Study staff will specifically identify how alarms 442 
+are set using the app and the frequency that these alarms will repeat.  443 
+The participants personal CGM will be discontinued. The participants will be observed placing the 444 
+sensor and will learn/revi ew how to access the CGM trace via the DiAs phone or the Tandem 445 
+research pump, as needed. The participants will be asked to perform fingerstick blood glucose 446 
+measurements (if needed) in accordance with the labelling  of the study CGM device.  447 
+An electronic copy of the CGM user’s guide will be provided for the participants to read . The 448 
+study team will be sure that the participants will leave the training session knowing how to properly 449 
+use the CGM. The study team will be available for any questions. 450 
+Participants will have the option of using their personal smartphone or receive a study smartphone 451 
+to use in order to collect the data from the devices. If the participant elects to use a personal device, 452 
+the Dexcom app will be downloaded to their phone in order to monitor the participant’s CGM 453 
+values and alerts in real -time may be used.  454 
+ 
+ 455 
+All participants may be asked to wear an activity tracker (e.g. Fitbit) during the entire study (home 456 
+and hotel admissions) to record information about movement and heart rate though not an endpoint 457 
+in this study. 458 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 27 of 56 
+ 
+ 
+ 459 
+The study team will be responsible for monitoring and managing the study insulin pump during 460 
+the hotel admission s. The participants may be provided a quick overview  on its funct ionality to 461 
+understand the equipment. 462 
+5.3.1 Study Insulin Pump Topics   463 
+The study team will assist the participant in study pump infusion site initiation and will start the 464 
+participant on the study pump. The study pump will be programmed with the participant’s us ual 465 
+basal rates and pump parameters. The participant’s personal pump will be removed. The 466 
+investigator may elect to use an existing personal pump infusion site at their discretion at the start 467 
+of the study. 468 
+The participant will be instructed on charging the pump, navigation through menus, bolus 469 
+procedures including stopping a bolus, etc. 470 
+5.3.2 Other Issues  471 
+The participant will be instructed to  notify study staff if they experience any issues with the study 472 
+devices during the hotel admission. Staff will be present in the event that if insulin is delivered by 473 
+any means other than the study pump (e.g. injection of subcutaneous insulin via syringe in the 474 
+event of infusion site failure). If insulin is delivered by any means other than the study pump, the 475 
+study team wi ll be instructed to turn off closed -loop mode for approximately four hours. 476 
+The participant will also be asked to alert  the study clinical staff for technical issues with the 477 
+Tandem research pump and/or the DiAs system, including use of the study pump and study CGM 478 
+(open loop mode) during periods of component disconnections or technical difficulties.  479 
+A glucagon emergency kit will be available at the hotel once the investigational system is in place.  480 
+Glycemic Treatment Guidelines will be available for staff use during the study admissions. 481 
+5.3.3 Optimization of Insulin Pump Settings  482 
+Data- driven optimization of pump settings can occur any time prior to the hotel admission, 483 
+particularly if the participant contacts the study physician due to concerns about their pump 484 
+settings due to recurring hypo- or hyperglycemia. No pump settings changes can occur during 485 
+closed loop testing.  486 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 28 of 56 
+ Chapter 6   Pilot Study   487 
+In order to optimize the flow of the study visits during the Main Study, we will perform a Pilot 488 
+Study at a local hotel or rent al house. The duration of the pilot admission will be approximately 489 
+24 hours with the intent of testing the logistics of our stud y procedures.  The goal will be to 490 
+complete  2-3 participants. Pilot study participants are eligible to enroll in the Main Study.  491 
+Participants and staff will adhere to the Covid- 19 Mitigation Plan as outlined in Section  10.3   492 
+ 
+ 493 
+For the pilot study, t here will be at least two study staff present at all times at the study site, at least 494 
+one of whom will be clinical staff (e.g. nurse, physician, nurse practitioner, physician assistant). 495 
+There will be a physician available either on -site or off- site within a n approximate  20-minute drive 496 
+at all times.  In addition, one of the study medical physicians and one senior engineer will be on 497 
+call during the entire admission. Glucagon for the emergency treatment of hypoglycemia will be 498 
+available on -site. 499 
+ 
+ 500 
+Pilot participants will be contacted by the study team approximately 24- 48 hours prior to the hotel 501 
+admission to verify the following information: 502 
+• Inquire about any changes to the participant’s medical history  503 
+• Study equipment (e.g. CGM  and activity tracker) initiation has occurred  504 
+• Determine pump profile(s) the participant us es on certain days  505 
+• New CGM sensor has been placed approximately 24 -72 hours prior to admission for proper 506 
+warm -up 507 
+• Verify with the participant that the goal CGM reading on  day 2 is less than 200 mg/dL; 508 
+this may require contact with the study physician prior today 2 of the hotel study.  509 
+• Should any concerns regarding medical history, pump information, or unforeseen issues 510 
+arise, the admission will be cancelled for that participant at the discretion  of the investigator  511 
+ 
+ 512 
+For the pilot study, one to three  p articipant s will be assessed at a time.  The participant will arrive 513 
+at the hotel on the first day of the admission.  The study team will perform vital signs and inquire 514 
+about any changes to the participant’s medical history.  Any changes to medical history will be 515 
+communicated to the medical physician to ensure continued eligibility and participation.   516 
+A urine pregnancy test will be collected  if relevant . The test must be  negative for the participant 517 
+to continue with the study.  518 
+The subject’s CGM reading, and ketone concentration will be recorded. In the event that the 519 
+participant’s CGM reading is not between 80- 250 mg/dL or ketone concentration is ≥ 0.6 mmol/L 520 
+prior to ini tiation  of the UVa AP system , the study physician may recommend  additional insulin 521 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 29 of 56 
+ dosing according to the participants’ usual doses . Study physician may elect to cancel participant’s 522 
+participation in the hotel admission if concerned about their medical safety.  This participant will 523 
+not be replaced.  524 
+The participant’s home insulin pump will be discontinued, and the study Tandem research  insulin 525 
+pump will be initiated  using the RocketAP system with BPS activated .  The study team will ensure 526 
+the proper function of the CGM, insulin pump, and activity tracker. T he goal will be to initiate 527 
+Closed -Loop Control by approximately lunch time, running the Rocket AP system  on the DiAs 528 
+platform .  529 
+The CGM used in the study is FDA -approved for the non- adjunctive measurement of blood 530 
+glucose (i.e. the CGM reading can be used for insulin dosing decisions). The CGM readings will 531 
+be the primary source of blood glucose values .  There are no protocol fingerstick blood glucose 532 
+measurements other than at times of CGM calibration (if necessary) and if directed by the study 533 
+team. Fingers tick blood glucose measurements may be taken whenever participants experience 534 
+symptoms, if the CGM glucose is suspected to be erroneous, or any time the participant would like 535 
+to be reassured.  536 
+ 
+ 537 
+Participants will eat a structured dinner at approximately 6 -7 pm during the admission. The 538 
+participant will not announce carbohydrate ingestion, allowing testing of the RocketAP controller 539 
+with BPS following dinner . Breakfast in the morning will be with the BPS system engaged. 540 
+Throughout the Pilot study, the participant will remain in closed loop mode.  541 
+ 
+ 542 
+In the afternoon after admission, participants will participate in a supervised bout of high- intensity 543 
+interval training (see details in Section 7.8). D uring this time, the system will have BPS activated. 544 
+Apart from the programmed exercise portions, participants will be free to engage in low- intensity 545 
+activity ( i.e. walking) during the admission . Participants will enjoy quiet activities in the evening. 546 
+ 
+ 547 
+Discharge will be at approximately noon. D ischarge criteria is CGM value 80 -300 mg/dL with 548 
+stable trend and ketones <=0.6 mmol/L. I f the CGM values are above 300 mg/dL and ketone values 549 
+are >0.6 mmol/L, the study team will check the insulin pump infusion site and correction insulin 550 
+will be administered per study physician judgement via the subject’s insulin pump.   A qualified 551 
+clinical study team member (e.g. MD, NP, PA, CDE) will assess and discuss the transition back to 552 
+usual care with t he study participant.    553 
+Participants will be asked to continue monitoring ketone levels for 24- 48 hours after the hotel 554 
+admission  if ketones were >0.6 mmol/L at time of discharge. Urine ketone supplies may be 555 
+provided for this testing.   556 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 30 of 56 
+ 
+ 
+ 557 
+Approximately 24- 48 hours after the hotel admission, the study team will contact the participant 558 
+via phone/email/text/text to assess adverse events, adverse device effects, and device issues . 559 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 31 of 56 
+ Chapter 7   Main Study  560 
+ 
+ 561 
+Main Study participants will participate in hotel admission . Each admission will be up to 562 
+approximately 96 hours in duration.  563 
+Participants and staff will adhere to the Covid-19 Mitigation Plan as outlined in Section 10.3.   564 
+ 
+ 565 
+There will be at least two  study staff present at all times at the study site, at least one of whom will 566 
+be clinical staff (e.g. nurse, physician, nurse practitioner, physician assistant). There will be a 567 
+physician at the hotel  or nearby on call  during the study at all times.  In addit ion, at least  one senior 568 
+engineer will be on call during the entire admission. P articipants will be remotely monitored by at 569 
+least one study team  member  using a web- based remote monitoring system that has been 570 
+previously established for DiAs .  The web -based remote monitoring system will display real- time 571 
+insulin delivery, CGM and other system information to allow for patient safety monitoring.    In 572 
+addition, study team members will be trained in all protocol and glycemic treatment guideline 573 
+procedures. The closed -loop system will be managed by the participant with study- staff 574 
+supervision, particularly at the time of insulin boluses .  Glucagon for the emergency treatment of 575 
+hypoglycemia will be available on- site. 576 
+ 
+ 577 
+Partici pants will be contacted by the study team approximately 24- 48 hours prior to each  hotel 578 
+admission  if most recent contact with the study participant exceeds 10 days. T he study team will 579 
+verify the following information: 580 
+• Inquire about any changes to the participant’s medical history  581 
+• Study equipment (e.g. CGM and activity tracker) initiation has occurred  582 
+• Determine pump profile(s) the participant uses on certain days 583 
+• New CGM sensor has been placed approximately 24- 72 hours prior to admission for proper 584 
+warm -up 585 
+• Verify with the subject that the goal CGM reading at time of arrival is less than 200 mg/dL; 586 
+this may require contact with the study physician prior to arrival on the day of the study 587 
+visit  588 
+• Should any concerns regarding medical history, pump information, or unforeseen issues 589 
+arise, the admission will be cancelled for that participant at the discretion of the investigator  590 
+ 
+ 591 
+Participants will arrive at the hotel on the first day of the admission.  As described in section 10.3, 592 
+all participants will receive a  test for COVID -19 after arriving for the study .  The study team will 593 
+perform vital signs and inquire about any changes to the participant’s medical history.  Any 594 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 32 of 56 
+ changes to medical history will be communicated to the medical physician to ensure continued 595 
+eligibility and participation.   596 
+A urine pregnancy test will be collected  for female participants of childbearing age . The test must 597 
+be negative for the participant to continue with the study.  598 
+The subject’s CGM reading, and ketone concentration will be recorded. In the event that the 599 
+participant’s CGM reading is not between 80- 250 mg/dL or ketone concentration is ≥0.6 mmol/L 600 
+prior to initiation of the UVa artificial pancreas system, the study physician may recommend  601 
+additional insulin dosing according to the participants’ usual doses. Study physician may elect to 602 
+cancel participant’s participation in the hotel admission if concerned about their medical safety.  603 
+This participant will not be replaced.  604 
+The participant’s home insulin pump will be discontinued, and the  study insulin pump will be 605 
+initiated.  The study team will ensure the proper function of the CGM, insulin pump, and activity 606 
+tracker.   607 
+The CGM used in the study is FDA -approved for the non- adjunctive measurement of blood 608 
+glucose (i.e. the CGM reading can be used for insulin dosing decisions). The CGM readings will 609 
+be the primary source of blood glucose values.  There are no protocol fingerstick blood glucose 610 
+measurements other than at times of CGM calibration (if necessary) and if directed by the study 611 
+team.  Fingerstick blood glucose measurements may be taken whenever participants experience 612 
+symptoms, if the CGM glucose is suspected to be erroneous, or any time the participant would like 613 
+to be reassured. Glycemic Treatment Guidelines to be used during the hotel admission are defined 614 
+in a separate document.  615 
+ 
+ 616 
+Participants will be informed beforehand and at the time of the transfer from one BPS state to 617 
+another.  Participants will be told what this transition means with respect to insulin do sing.  The 618 
+transfer from one treatment to another will proceed as follows: 619 
+• The system is stopped 620 
+• DiAs is plugged into a laptop and ‘parameters.xml’ file (with the corresponding BPS 621 
+condition) will be replaced  622 
+• DiAs is restarted  623 
+• CGM is recovered and pump connections is checked 624 
+• DiAs is transitioned to Closed Loop Control mode  625 
+ 
+ 626 
+Participants will eat structured study meals during the admission, with the same amount of 627 
+carbohydrate, protein and fat for meals (breakfast, lunch, dinner) on the days for FCL1 and FCL2).  628 
+During the 24- hour challenge period, there will be additional meal challenges that will only be 629 
+performed on that day.  This includes a high carbohydrate high fat meal at dinner (such as pizza) 630 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 33 of 56 
+ and a n early breakfast that consists prima rily of fast -acting carbs (e.g.. juice).  In all cases the 631 
+carbohydrate content of the meal will not be announced during the study once the AP system has 632 
+been placed .  Snacks with carbohydrates will not be allowed unless for the treatment of low blood 633 
+sugars. Non- carbohydrates snacks may be allowed throughout the protocol per investigator 634 
+discretion, but the intention is not to have non- carbohydrate snacks.  Blood glucose levels will be 635 
+followed via continuous glucose monitor and glucose values will be managed by the AP system 636 
+as usual.  637 
+ 
+ 638 
+During the study, we will challenge the participants with exercise sessions that will be supervised 639 
+by study staff.  During FCL1 and FCL2, participants will do a mild to moderate walking or similar 640 
+exercise at approximately 4pm on each of those study days. 641 
+During the challenge phase (the 24- hour period between the FCL1 and FCL2), participants will 642 
+undergo supervised session of high- intensity interval training (HIIT). The HIIT workout will 643 
+consist of a 5-minute  low intensity warmup period, a workout of about 1 minute of vigorous 644 
+exercise followed by approximately 2 minutes of light intensity exercise or rest. This 3- minute set 645 
+of intervals may be repeated up to 6 times or until volitional exhaustion, followed by approximately 646 
+5 minutes of light intensity cooldown and stretching. The goal of this will be to assess the safety 647 
+of the AP system in HIIT, given that HIIT has been observed to result in an increase in BG levels, 648 
+which could theoretically lead to activation of the BPS —dosing insulin.  The AP system will be 649 
+monitored for BPS activation during this workout.  If the BPS is activated, participants will 650 
+continue to be monitored for BG excursions, including receiving treatment for hypoglycemia if 651 
+this occurs (as described in the Glycemic Treatment Guidelines) .   652 
+Exercise challenges will be terminated early with subjective symptoms such as shortness of breath, 653 
+chest pain, dizziness, palpitations,  or any such concerning symptoms reported by participants. 654 
+Participants will stop their participation in the exercise portion of the study if reporting any 655 
+concerning symptoms. Study physicians (or physician’s assistants) will assess the participants for 656 
+their need for additional care outside the study. If symptoms resolve entirely and there is no 657 
+additional requirement for care outside the study, participants will stop participation in the exercise 658 
+portion of the study and will not repeat that portion of the study. Participants however may then 659 
+continue with the remainder of the study per investigator discretion.  660 
+Participants will also be free to engage in low -intensity activity ( i.e. walking) during the hotel 661 
+admission  but will be asked to have this match between 24-hour study periods as best as possible . 662 
+Partici pants may leave the hotel to be outside, provided they are accompanied by a study staff 663 
+member and follow COVID precautions in place at the time of study,  as described in Section .3. 664 
+Participants will enjoy quiet activities in the evening.  665 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 34 of 56 
+ 
+ 
+ 666 
+Discharge will be at approximately  1 pm . Discharge criteria is CGM value 80 -300 mg/dL with 667 
+stable trend and ketones <=0.6 mmol/L. If the CGM values are above 300 mg/dL and ketone values 668 
+are >0.6 mmol/L, the study team will check the insulin pump infusion site and correction insulin 669 
+will be administered per study physician judgement via the subject’s insulin pump. A qualified 670 
+clinical study team member (e.g. MD,  NP, PA, CDE) will assess and discuss the transition back to 671 
+usual care with the study participant.    672 
+Participants will be asked to continue monitoring ketone levels for 24- 48 hours after the hotel 673 
+admission  if ketones were >0.6 mmol/L prior to discharge. Urine ketone supplies may be provided 674 
+for this testing.  675 
+All study equipment will be returned at the time of study end. Per investigator discretion, a 676 
+participant may wear home the study CGM device in use and will be requested to return the study 677 
+transmitter.  678 
+ 
+ 679 
+Approximately 24- 48 hours after the hotel admission, the study team will contact the participant 680 
+via phone/email/text to assess adverse events, adverse device effects, and device issues .  681 
+ 
+ 682 
+At the conclusion of the Main Study, the medical monitor will review the data as referenced in 683 
+section 8.3.    684 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 35 of 56 
+ Chapter 8   Medical Monitor Review  685 
+ 
+ 686 
+The Medical Monitor  will be provided all adverse event data for review  to assess safety .  The 687 
+Medical Monitor will review data related to individual stopping criteria as detailed in the study 688 
+protocol.   689 
+ 
+ 690 
+A Medical Monitor will review compiled safety data at the conclusion of the trial. In addition, the 691 
+Medical Monitor  will review all DKA and severe hypoglycemia irrespective of relatedness to study 692 
+device use, and all seri ous events (including UADEs) related to study device use at the time of 693 
+occurrence. The Medical Monitor  also will be informed of any ADEs not meeting criteria for a 694 
+UADE if the Study PI requests the Medical Monitor review.  The Medical Monitor  can request 695 
+modifications to the study protocol or suspension or stoppage of the study if deemed necessary 696 
+based on the totality of safety data available.   697 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 36 of 56 
+ Chapter 9   Testing Procedures  698 
+ 
+ 699 
+9.1.1 HbA1c  700 
+A blood sample will be obtained at screening to obtain a baseline hemoglobin A1c level. A blood 701 
+test obtained within 2 weeks prior to enrollment may be used. 702 
+HbA1c level may be measured by study team using the DCA2000, a comparable point of care 703 
+device, at  time of screening   704 
+Labs may be obtained at a local laboratory (e.g. LabCorp) convenient to the participant. 705 
+9.1.2 Pregnancy Test  706 
+A serum or urine pregnancy test will be required for women of childbearing potential at in person 707 
+visit and admission.  Test must be negative to participate in the study.  708 
+9.1.3  Covid-19 Testing 709 
+All participants  and study staff (e.g. on- site research coordinators, technicians, nurses , and 710 
+physicians) will be tested with a COVID -19 test within the first 24 hours of the hotel admission or 711 
+up to 72 hours in advance of being on -site for the Pilot and Main Study.  Individuals with Covid- 712 
+19 positive tests will be excluded from the study.   713 
+9.1.4 Demographic Data Survey 714 
+The Demographic Data Survey will be asked after study eligibility has been met.   715 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 37 of 56 
+ Chapter 10  Risks Associated with Clinical Trial 716 
+ 
+ 717 
+Risks and Benefits are detailed below. Loss of confidentiality is a potential  risk; however, data are 718 
+handled to minimize this risk . Hypoglycemia, hyperglycemia and ketone formation are always a 719 
+risk in participants with type 1 diabetes and participants will be monitored for these symptoms.  720 
+10.1.1 Venipuncture Risks  721 
+A hollow needle/plast ic tube may  be placed in the arm for taking blood samples  (e.g. external 722 
+HbA1c measurements for inclusion criteria) . Blood draws can cause some common reactions like 723 
+pain, bruising, or redness at the sampling site.  Less common reactions include bleeding from the 724 
+sampling site, formation of a small blood clot or swelling of the vein and surrounding tissues, and 725 
+fainting. 726 
+10.1.2 Fingerstick Risks  727 
+About 1 drop of blood will be removed by fingerstick for measuring blood sugars and sometimes 728 
+HbA1c or other tests. This  is a standard method used to obtain blood for routine hospital laboratory 729 
+tests.  Pain is common at the time of lancing.  In about 1 in 10 cases, a small amount of bleeding 730 
+under the skin will produce a bruise. A small scar may persist for several weeks . The risk of local 731 
+infection is less than 1 in 1000. This should not be a significant contributor to risks in this study 732 
+as finger sticks are part of the usual care for people with diabetes. 733 
+10.1.3 Subcutaneous Catheter Risks (CGM)  734 
+Participants using the CGM will be at low risk for developing a local skin infection at the site of 735 
+the sensor needle placement . If a catheter is left under the skin for more than 24 hours it is possible 736 
+to get an infection where it goes into the skin, with swelling, redness and pain.  T here may be 737 
+bleeding where the catheter is put in and bleeding under the skin causes a bruise (1 in 10 risk). 738 
+Study staff should verbally alert the participant that on rare occasions, the CGM may break and 739 
+leave a small portion of the sensor under the skin that may cause redness, swelling, or pain at the 740 
+insertion site . The participant should be further instructed to notify the study coordinator 741 
+immediately if this occurs.  742 
+10.1.4 Risks of Hypoglycemia  743 
+As with any person having type 1 diabetes and using insulin, there is always a risk of having a low 744 
+blood sugar (hypoglycemia) . The frequency of hypoglycemia should be no more and possibly less 745 
+than it would be as part of daily living. Symptoms of hypoglycemia can include sweating, 746 
+jitteriness, and not feeling well.  Just as at home, there is the possibility of fainting or seizures 747 
+(convulsions) and that for a few days the participant may not be as aware of symptoms of 748 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 38 of 56 
+ hypoglycemia.  A CGM functioning poorly and significantly over -reading glucose values could 749 
+lead to inappropriate insulin delivery. 750 
+10.1.5 Risks of Hyperglycemia  751 
+Hyperglycemia is likely because of the study design including unannounced carbohydrate 752 
+ingestion.  Also, hyperglycemia and ketonemia could occur if insulin delivery is attenuated or 753 
+suspended for an extended period or if the pump or infusion set is not working properly.  A CGM 754 
+functioning poorly and significantly under -reading glucose values could lead to inappropriate 755 
+suspension of insulin delivery. 756 
+10.1.6 Risks of Device Reuse  757 
+Participant will be informed that FDA or relevant national authorities have approved the insulin 758 
+pump, CGM, glucometer and ketone meter for single use and that by using them among multiple 759 
+patients, bloodborne pathogens (i.e. Hepatitis B) may be spread through the use of mult iple users.  760 
+The study CGM system is labelled  for single use only. The sensor (the component of the system 761 
+that enters the skin) will be single use only. The transmitter and receiver may be reused during the 762 
+study after cleaning the device using a hospital -approved cleaning procedure. The transmitter is 763 
+attached to the sensor but does not enter the skin and the receiver, if used, is a handheld device.  764 
+The study insulin pumps are label led for single -patient use. During the study, this device may be 765 
+reused af ter cleaning adhering to a hospital -approved cleaning procedure. All infusion set 766 
+equipment will be single patient use only (infusion set insertion kits, tubing, cartridges etc.).   767 
+The study blood glucose meter and blood ketone meter are labe lled for single -patient use. 768 
+During the study, these devices may be reused after cleaning adhering to a hospital -approved 769 
+cleaning procedure.   770 
+10.1.7 Device Cleaning Instructions  771 
+CGM cleaning instructions are provided in the Dexcom G4 P latinum (Professional) Cleaning and 772 
+Disinfection manual (current edition) and a similar approach will be applied for the G6 version 773 
+used in this study. The transmitter should be cleaned with Clorox Healthcare® Bleach Germicidal 774 
+Cleaner or any disinfectant product in a spray bottle containing a bleach solution of 6500 parts per 775 
+million with the EPA registration number 56392- 7.  The transmitter will be submerged in this 776 
+solution and then placed on an absorbent wipe or clean surface.  Two sprays will be dispensed 777 
+from the Clorox cleaner onto each side of the transmitter. A nylon brush will be used to scrub the 778 
+transmitter on all sides for 30 seconds.  The transmitter will be placed in the Clorox Cleaner 779 
+solution for one minute. Transmitter is then rinsed under flowing tap water for ten seconds. The 780 
+transmitter will then be disinfected using a disinfectant product with EPA registration number 781 
+56392-7 using similar procedures as the cleaning process.   782 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 39 of 56 
+ Per the pump manufacturer, the insulin pump will be cleaned with a damp lint -free cloth. Use of 783 
+house hold or industrial cleaners, solvents, bleach, scouring pads, chemicals, or sharp instruments 784 
+are prohibited. The pump should never be submerged in water. If needed, use only a very mild 785 
+detergent, such as a bit of liquid soap with warm water. A soft to wel will be used to dry the pump.  786 
+The glucometer is cleaned and disinfected with two separate Super Sani -Cloths (EPA number 787 
+9480-4). The entire surface will be cleaned, making sure the surface stays wet for 2 minutes. This 788 
+step is repeated with a clean cl oth for disinfecting the device.  789 
+The Precision Xtra User’s Guide suggests that healthcare professionals use 10% bleach, 70% 790 
+alcohol or 10% ammonia to clean the device.  791 
+Equipment that touches intact skin will be cleaned with ethyl or isopropyl alcohol (70- 90%), 792 
+quaternary ammonium germicidal detergent (i.e. Cavicide, EPA number 46781) or household 793 
+bleach. The contact time on the surface depends on the method used to clean the equipment. 794 
+Cavicide requires three minutes on the surface of the equipment. Clorox Germicidal Bleach Wipes 795 
+require two minutes on the equipment. The surface should remain wet (i.e. slightly damp) with the 796 
+disinfectant to be considered effective though not wet enough to leave drops of liquid.  797 
+In the event a manufacturer updates cleanin g procedures for their device, the study team will 798 
+adhere to the most current recommendations.  799 
+There is the risk of blood sampling collection and contamination from sampling techniques. Hand 800 
+washing with either soap & water or waterless hand sanitizer wil l be used prior to caring for the 801 
+study subject. Gloves will be worn during blood sample collection and processing. Medical 802 
+personnel will continue to practice hygiene for the subject’s protection (i.e. hand washing, 803 
+changing gloves frequently, disposing needles properly). Gloves will be removed, and hands 804 
+washed  or sanitized  prior to leaving and upon return to the subject’s room. Soiled linen will be 805 
+changed to minimize the transfer of pathogenic organisms. 806 
+10.1.8 Risk of Exercise  807 
+There is a risk of  musculoskelet al symptoms or injury from participating in an exercise regimen. 808 
+There are cardiovascular or cerebrovascular risks (including but not limited to dizziness, 809 
+lightheaded, syncope, arrhythmia or ischemia) associated with participating in an exercise 810 
+regimen. The intention of the eligibility criteria will be to minimize these risks.  811 
+10.1.9 Hb1Ac Risk  812 
+An NGSP Point of Care analyzer (i.e. DCA Vantage Analyzer) will be utilized at the research site 813 
+to obtain the subject’s HbA1c level. 814 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 40 of 56 
+ 10.1.10 Other Risks  815 
+Some participants may develop skin irritation or allergic reactions to the adhesives used to secure 816 
+the CGM, or to secure the insulin infusion sets for the continuous subcutaneous insulin infusion.  817 
+If these reactions occur, different adhesives or “under -taping” (such as with IV 3000, Tegaderm, 818 
+etc.) will be tried, sites will be rotated frequently, and a mild topical steroid cream or other 819 
+medication may be required. 820 
+Whenever the skin is broken there is the possibility of an infection.  The CGM and pump infusion 821 
+sites are insert ed under the skin.  It is possible that any part that is inserted under the skin may 822 
+cause an infection.  These occur very infrequently, but, if an infection was to occur, oral and/or 823 
+topical antibiotics can be used.  The risk of skin problems could be greater if you use a sensor for 824 
+longer than it is supposed to be used.  Therefore, participants will be carefully instructed about 825 
+proper use of the sensor. 826 
+Data downloaded from the CGM, pump, glucometer, and ketone meter will be collected for the 827 
+study as me asures of diabetes self -management behaviours. Some people may  be uncomfortable 828 
+with the researchers' having such detailed information about their daily diabetes habits. 829 
+10.1.11 Known Potential Benefits  830 
+It is expected that this protocol will yield increased knowledge about using an automated closed- 831 
+loop system with anticipatory action to control glucose levels. The individual participant may not 832 
+benefit from study participation. 833 
+10.1.12 Risk Assessment  834 
+Based on the facts that (1) adults with diabetes experi ence mild hypoglycemia and hyperglycemia 835 
+frequently as a consequence of the disease and its management, (2) the study intervention involves 836 
+periodic automated insulin dosing that may increase the likelihood of hypoglycemia, and periodic 837 
+automated attenuati on of insulin delivery that may increase the likelihood of hyperglycemia, (3) 838 
+mitigations are in place, and have been tested in prior studies using the investigational device 839 
+system in the home setting, that limit the likelihood of excessive insulin dosing  or prolonged 840 
+withdrawal of insulin, and (4) rapid reversal of hypoglycemia and hyperglycemia can be achieved.. 841 
+In addition, it is the belief of the investigators that this study also presents prospect of direct benefit 842 
+to the participants and general bene fit to others with diabetes.  843 
+ 
+ 844 
+The study is being conducted in compliance with the policies described in the study policies 845 
+document, with the ethical principles that have their origin in the Declaration of Helsinki, with the 846 
+protocol described herein, and with the standards of Good Clinical Practice (GCP). 847 
+Whenever possible, data will be directly collected in electronic case report forms, which will be 848 
+considered the source data.  849 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 41 of 56 
+ The protocol is considered a significant risk device study, due to the fact that the closed -loop 850 
+system is experimental.  Therefore, an investigational device exemption (IDE) from the U.S. Food 851 
+and Drug Administration (FDA) is required to conduct the study. 852 
+ 
+ 853 
+The study team will follow local guidelines that are in effect at the time of the study admission.  854 
+10.3.1        Participants and Study Personnel  855 
+We will follow a combination of approaches to increase our likelihood of having a COVID -free 856 
+environment:    857 
+• We will follow CDC and local guidelines in effect at the time of the study.  858 
+• All participants and study  staff (research coordinators, technicians, nurses , and physicians ) 859 
+will be tested with an FDA authorized COVID -19 test with the first 24 hours of  study 860 
+start or up to approximately 72 hours before their participation in the study hotel .  861 
+Those with positive tests will be excluded from the study.   862 
+• Any participants with positive test will be  discharged from the study.  Hotel rooms of these 863 
+participants will be restricted from future use . We will limit any personal interaction 864 
+between study personnel and these individuals.  We will follow local guidelines in effect 865 
+at the time of study to guide interactions .   866 
+10.3.2  Environment  867 
+The study team will adhere to current hotel guidelines.   868 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 42 of 56 
+ Chapter 11  Adverse Events, Device Issues, and Stopping Rules  869 
+ 
+ 870 
+11.1.1 Adverse Events (AE)  871 
+Any untoward medical occurrence in a study participant, irrespective of the relationship between 872 
+the adverse event and the device(s) under investigation ( section 11.2) for reportable adverse events 873 
+for this protocol). 874 
+Positiv e pregnancy test will be not considered adver se event .  875 
+11.1.2 Serious  Adverse Event (SAE)  876 
+ Any untoward medical occurrence that: 877 
+• Results in death. 878 
+• Is life -threatening; (a non- life-threatening event which, had it been more severe, might 879 
+have become life- threateni ng, is not necessarily considered a serious adverse event). 880 
+• Requires inpatient hospitalization or prolongation of existing hospitalization. 881 
+• Results in persistent or significant disability/incapacity or substantial disruption of the 882 
+ability to conduct norma l life functions (life threatening). 883 
+• Is a congenital anomaly or birth defect. 884 
+• Is considered a significant medical event by the investigator based on medical judgment 885 
+(e.g., may jeopardize the participant or may require medical/surgical intervention to 886 
+prevent one of the outcomes listed above). 887 
+11.1.3 Unanticipated Adverse Device Effect (UADE)  888 
+Any serious adverse effect on health or safety or any life-threatening problem or death caused by, 889 
+or associated with, a device, if that effect, problem, or death was not previously identified in nature, 890 
+severity, or degree of incidence in the investigational plan or application (including a 891 
+supplementary plan or application), or any other unanticipated serious problem associated with a 892 
+device that relates to the rights, sa fety, or welfare of participants (21 CFR 812.3(s)). 893 
+11.1.4 Adverse Device Effect (ADE)  894 
+Any untoward medical occurrence in a study participant which the device may have caused or to 895 
+which the device may have contributed. 896 
+11.1.5 Device Complaints and Malfunctions  897 
+A device complication or complaint is something that happens to a device or related to device 898 
+performance, whereas an adverse event happens to a participant . A device complaint may occur 899 
+independently from an AE, or along with an AE . An AE may occur without a devi ce complaint or 900 
+there may be an AE related to a device complaint.  A device malfunction is any failure of a device 901 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 43 of 56 
+ to meet its performance specifications or otherwise perform as intended.  Performance 902 
+specifications include all claims made in the labelling  for the device.  The intended performance 903 
+of a device refers to the intended use for which the device is labelled  or marketed. (21 CFR 803.3).   904 
+ 
+ 905 
+For this protocol, a reportable adverse event includes any untoward medical occurrence that meets 906 
+one of the following criteria: 907 
+• A serious adverse event  as defined in section 11.2  908 
+• An Adverse Device Effect as defined in section 11.1.4, unless excluded from reporting in 909 
+section 11.7 910 
+• An Adverse Event as defined in section 11.1.1 occurring in association with a study 911 
+procedure 912 
+• An AE as defined in section 11.1.1 which leads to discontinuation of a study device for 2 913 
+or more hours 914 
+• Hypoglycemia meeting the definition of severe hypoglycemia as defined in section 11.2.1  915 
+• Diabetic ketoacidosis (DKA) as defined in section 11.2.2 or in the absence of DKA, a 916 
+hyperglycemic or ketosis event meeting the criteria defined below 917 
+Hypoglycemia and hyperglycemia not meeting the criteria below will not be recorded as adverse 918 
+events unless associated with an Adverse Device Effect . Skin reactions from sensor placement are 919 
+only reportable if severe and/or required treatment. 920 
+11.2.1 Hypoglycemia Event 921 
+Hypoglycemia not associated with an Adverse Device Effect is only reportable as an adve rse event 922 
+when the following definition for severe hypoglycemia is met:   923 
+• The event required assistance of another person due to altered consciousness, and required 924 
+another person to actively administer carbohydrate, glucagon, or other resuscitative action s 925 
+• Impaired cognitively to the point that he/she was unable to treat himself/herself, was unable 926 
+to verbalize his/ her needs, was incoherent, disoriented, and/or combative, or experienced 927 
+seizure or coma. These episodes may be associated with sufficient neu roglycope nia to 928 
+induce seizure or coma  929 
+• If plasma glucose measurements are not available during such an event, neurological 930 
+recovery attributable to the restoration of plasma glucose to normal is considered sufficient 931 
+evidence that the event was induced by a low plasma glucose concentration 932 
+11.2.2 Hyperglycemia Events/Diabetes Ketoacidosis  933 
+Hyperglycemia not associated with an Adverse Device Effect is only reportable as an adverse 934 
+event when one of the following four criteria is met:  935 
+• The event involved DKA, as defined by the Diabetes Control and Complications Trial 936 
+(DCCT) and described below  evaluation or treatment was obtained at a health care provider 937 
+facility for an acute event involving hyperglycemia or ketosis 938 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 44 of 56 
+ • Blood ketone level ≥1.5 mmol/L and communication oc curred with a health care provider 939 
+at the time of the event  940 
+• Blood ketone level ≥3.0 mmol/L, even if there was no communication with a health care 941 
+provider 942 
+Hyperglycemic events are classified as DKA if the following are present:  943 
+• Symptoms such as polyuria, polydipsia, nausea, or vomiting  944 
+• Serum ketones ≥1.5 mmol/L or large/moderate urine ketones  945 
+• Either arterial blood pH <7.30 or venous pH <7.24 or serum bicarbonate <15 946 
+• Treatment provided in a health care facility  947 
+All reportable Adverse Events—whether volunteered by the participant, discovered by study 948 
+personnel during questioning, or detected through physical examination, laboratory test, or other 949 
+means —will be reported on an adverse event form online.  Each adverse event form is reviewe d 950 
+by the Medical Monitor to verify the coding and the reporting that is required. 951 
+ 
+ 952 
+The study investigator will assess the relationship of any adverse event to be related or unrelated 953 
+by determining if there is a reasonable possibility that the adverse event may have been caused by 954 
+the study device. 955 
+To ensure consistency of adverse event causality assessments, investigators should apply the 956 
+following general guideline when determining whether an adverse event is related:  957 
+• There is a plausible temporal relationship between the onset of the adverse event and the 958 
+study intervention, and the adverse event cannot be readily explained by the participant’s 959 
+clinical state, intercurrent illness, or concomitant therapies; an d/or the adverse event 960 
+follows a known pattern of response to the study intervention; and/or the adverse event 961 
+abates or resolves upon discontinuation of the study intervention or dose reduction and, if 962 
+applicable, reappears upon rechallenge.  963 
+• Evidence exists that the adverse event has an etiology other than the study intervention 964 
+(e.g., pre-existing  medical condition, underlying disease, intercurrent illness, or 965 
+concomitant medication); and/or the adverse event has no plausible temporal relationship 966 
+to study intervention. 967 
+ 
+ 968 
+While we are taking steps to prevent transmission of COVID -19 during this study, there is a 969 
+possibility that participants, based either on exposure before the hotel admission or during the stay, 970 
+are infect ed with COVID -19.  Any appearance of significant COVID -19 symptoms in participants 971 
+will be cause for repeat COVID -19 testing an d possible quarantine  until test results are returned.  972 
+If this  Covid-19 test is positive, the participant will be discharged fro m the study.  973 
+In the event of a COVID -19 positive test in a participant , the study team will follow up with the 974 
+participant via phone until conclusion of treatment  for the COVID -19 related sy mptoms . All 975 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 45 of 56 
+ participants will be asked to follow up via phone with the study team in the event of a positive test 976 
+within 14 days after discharge from the hotel.  977 
+ 
+ 978 
+The intensity of an adverse event will be rated on a three -point scale: (1) mild, (2) moderate, or (3) 979 
+severe. It is emphasized that the term severe is a measure of intensity: thus, a severe adverse event 980 
+is not necessarily serious . For example, itching for several days may be rated as severe, but may 981 
+not be clinically serious. 982 
+• MILD: Usually transient, requires no specia l treatment, and does not interfere with the 983 
+participant’s daily activities.  984 
+• MODERATE: Usually causes a low level of inconvenience or concern to the participant 985 
+and may interfere with daily activities but is usually ameliorated by simple therapeutic 986 
+measures.  987 
+• SEVERE: Interrupts a participant’s usual daily activities and generally requires systemic 988 
+drug therapy or other treatment. 989 
+ 
+ 990 
+Adverse events will be coded per the UVA IRB website instructions (i.e. mild, moderate, severe).   991 
+The Medical Monitor  will review the investigator’s assessment of causality and may agree or 992 
+disagree.  Both the investigators  and Medical Monitor ’s assessments will be recorded.  The 993 
+Medical Monitor will have the final say in determining the causality. 994 
+Adverse events that continue after the participant’s discontinuation or completion of the study will 995 
+be followed until their medical outcome is determined or until no further change in the condition 996 
+is expected.  997 
+ 
+ 998 
+The outcome of each reportable adverse event will be classified by the investigator as follows: 999 
+• RECOVERED/RESOLVED – The participant recovered from the AE/SAE without 1000 
+sequelae.  Record the AE/SAE stop date. 1001 
+• RECOVERED/RESOLVED WITH SEQUELAE – The event persisted and had stabilized 1002 
+without change in the event anticipated.  Record the AE/SAE stop date. 1003 
+• FATAL – A fatal outcome is defined as the SAE that resulted in death. Only the event that 1004 
+was the cause of death should be reported as fatal.  AEs/SAEs that were ongoing at the 1005 
+time of de ath; however, were not the cause of death, will be recorded as “resolved” at the 1006 
+time of death.  1007 
+• NOT RECOVERED/NOT RESOLVED (ONGOING) – An ongoing AE/SAE is defined 1008 
+as the event was ongoing with an undetermined outcome. 1009 
+• An ongoing outcome will require follow- up by the site in order to determine the final 1010 
+outcome of the AE/SAE. 1011 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 46 of 56 
+ • The outcome of an ongoing event at the time of death that was not the cause of death, will 1012 
+be updated and recorded as “resolved” with the date of death recorded as the stop date.  1013 
+• UNKNO WN – An unknown outcome is defined as an inability to access the participant or 1014 
+the participant’s records to determine the outcome (for example, a participant that was lost 1015 
+to follow-up). 1016 
+All clinically significant abnormalities of clinical laboratory measurements or adverse events 1017 
+occurring during the study and continuing at study termination should be followed by the 1018 
+participant’s physician and evaluated with additional tests (if necessary) until diagnosis of the 1019 
+underlying cause, or resolution . Follow-up information should be recorded on source documents. 1020 
+If any reported adverse events are present when a participant completes the study, or if a participant 1021 
+is withdrawn from the study due to an adverse event, the participant will be contacte d for re - 1022 
+evaluation within 2 weeks.  If the adverse event has not resolved, additional follow -up will be 1023 
+performed as appropriate.  Every effort should be made by the Investigator or delegate to contact 1024 
+the participant until the adverse event has resolved or stabilized.  1025 
+ 
+ 1026 
+All UADEs, ADEs, device complaints, and device malfunctions will be reported irrespective of 1027 
+whether an adverse event occurred, except in the following circumstances.  1028 
+The following device issues are anticipated and will not be reported but will reported as an Adverse 1029 
+Event if the criteria for AE reporting described above are met:  1030 
+• Component disconnections 1031 
+• CGM sensors lasting fewer than the number of days expected per CGM labelling  1032 
+• CGM tape adherence issues  1033 
+• Pump infusion set occlusion not leading to ketosis 1034 
+• Battery lifespan deficiency due to inadequate charging or extensive wireless 1035 
+communication  1036 
+• Intermittent device component disconnections/communication failures not leading to 1037 
+system replacement  1038 
+• Device issues clearly ad dressed in the user guide manual that do not require additional 1039 
+troubleshooting 1040 
+• Skin reactions from CGM sensor placement or pump infusion set placement that do not 1041 
+meet criteria for AE reporting  1042 
+ 
+ 1043 
+• UADEs must be reported within 10 working days to the FDA  after the sponsor first receives 1044 
+notice of the adverse effect.  1045 
+• Other reportable adverse events, device malfunctions (with or without an adverse event) 1046 
+and device complaints should be reported promptly, but there is no formal required 1047 
+reporting period. 1048 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 47 of 56 
+ • The IDE Sponsor will investigate the UADE and if indicated, report the results of the 1049 
+investigation to the IRBs, FDA, and DSMB  within 10 working days of the study team  1050 
+becoming aware of the UADE per 21CFR 812.46(b) (2).  1051 
+• The Medical Monit or will determine if the UADE presents an unreasonable risk to 1052 
+participants. If so, the DSMB  must ensure that all investigations, or parts of investigations 1053 
+presenting that risk, are terminated as soon as possible but no later than 5 working days 1054 
+after the Medical Monitor  makes this determination and no later than 15 working days after 1055 
+first receipt notice of the UADE.  1056 
+• In the case of a device system component malfunction (e.g. pump, CGM, control 1057 
+algorithm), information will be forwarded to the responsible manufacturer by the study 1058 
+personnel. 1059 
+ 
+ 1060 
+11.10.1 Participant Discontinuation  1061 
+Rules for discontinuing study de vice use are described below.  1062 
+• The investigator believes it is unsafe for the participant to continue the intervention.  This 1063 
+could be due to the development of a new medical condition or worsening of an existing 1064 
+condition; or participant behaviour contrary  to the indications for use of the device that 1065 
+imposes on the participant’s safety 1066 
+• The participant requests that the treatment be stopped  1067 
+• The participant tests positive for COVID -19 (during study testing or otherwise within 14 1068 
+days of study start) or subsequently develops symptoms for COVID-19 and tests positive. 1069 
+• Diagnosis of DKA.  Any severe hypoglycemia event meeting the definition  in section 1070 
+11.2.1 of the protocol. 1071 
+11.10.2 Suspending/Stopping Overall Study  1072 
+In the case of an unanticipated system malfunction resulting in a severe hypoglycemia or severe 1073 
+hyperglycemia event (as defined in section 11.2.2), use of the study device system will be 1074 
+suspended while the problem is diagnosed. 1075 
+In the even t that two distinct episodes of DKA  or two distinct severe hypoglycemia events as 1076 
+defined in section 11.2  occur , the overall study would be suspended while the underlying 1077 
+conditions are determined.   1078 
+In addition, study activities could be similarly suspended if the manufacturer of any constituent 1079 
+study device requires stoppage of device use for safety reasons (e.g. product recall).  The affected 1080 
+study activities may resume if the underlying problem can be corrected by a protocol or system 1081 
+modification that will not invalidate the results obtained p rior to suspension. The study Medical 1082 
+Monitor will review all adverse events and adverse device events that are reported during the study 1083 
+and will review compiled safety data at periodic intervals . The Medical Monitor  may request 1084 
+suspension of study activities or stoppage of the study if deemed necessary based on the totality 1085 
+of safety data available.  1086 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 48 of 56 
+ 
+ 
+ 1087 
+A Medical Monitor  will review all DKA and severe hypoglycemia irrespective of relatedness to 1088 
+study device use, and all serious events (including UADEs) related to study device use at the time 1089 
+of occurrence. The Medical Monitor  can request modifications to the study protocol or suspension 1090 
+or outright stoppage of the study if deemed necessary based on the totality of safety data avai lable. 1091 
+Details regarding Medical Monitor review will be documented in a separate Medical Monitor  1092 
+document.   1093 
+ 
+ 1094 
+A data breach is defined in the HITECH Act (43 USC 17932) as an unauthorized acquisition, 1095 
+access, or use of protected health information (PHI) that compromises the security or privacy of 1096 
+such information.   1097 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 49 of 56 
+ Chapter 12  Miscellaneous Considerations  1098 
+ 
+ 1099 
+Participants using glulisine at the time of enrollment will be asked to contact their personal 1100 
+physician to change their prescribed personal insulin to lispro or aspart  for the duration of the trial.  1101 
+The study devices (study insulin pump, study CGM) must be removed before Magnetic Resonance 1102 
+Imaging (MRI), Computed Tomography (CT) or diather my treatment. Participants may continue 1103 
+in the trial after temporarily discontinuing use if requiring one of the treatments above. 1104 
+ 
+ 1105 
+Participation in the study is voluntary. P articipant may withdraw at any time.  For  participants who 1106 
+do withdraw from the study, the study team will determine if their data will be used in analysis.  1107 
+ 
+ 1108 
+For security and confidentiality purposes, subjects will be assigned an identifier that will be used 1109 
+instead of their name.  Protected health information gathered for this study may be shared with the 1110 
+third -party collaborators.  De -identified subject information may also be provided to collaborators 1111 
+involved in the study after the appropriate research agreement has been executed.  1112 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 50 of 56 
+ Chapter 13  Statistical Consideration 1113 
+ 
+ 1114 
+The main  study is itself a n early exploratory study to assess glycemic responses of a fully closed- 1115 
+loop system (Rocket AP).  This information is detailed in Table 1.  1116 
+Randomization will occur via selection from the above list using permuted blocks in groups of 4.   1117 
+13.1.1 Planned Analysis 1118 
+Our primary objective is to assess the impact of priming bolus on post prandial FCL control therefore we 1119 
+will test the following statistical hypotheses  1120 
+ 1121 
+a. Null Hypothesis:  There is no difference in the means of time spent in the 70 -180mg/dL range during 1122 
+daytime between FCL with and without prandial priming bolu s (BPS at 6% and 0% of TDI respectively)  1123 
+ 1124 
+b. Alternative Hypothesis:  There is a difference in the means of time spent in the 70 -180mg/dL range during 1125 
+daytime between FCL with and without prandial priming bolus (BPS at 6% and 0% of TDI respectively)  1126 
+ 1127 
+To do so we will use repeated measure ANOVA models to predict daytime time in range with the BPS 1128 
+status a fixed effect and baseline HbA1c and gender as covariates.  1129 
+ 1130 
+Secondary outcomes:  1131 
+All secondary outcomes will be similarly analyzed. If an outcomes distribution is not suited for mixed 1132 
+model analysis (e.g. profound skewness, or large atom at boundary) we will perform paired Wilcoxon 1133 
+signed rank test (and loose the capacity to use covariate) to test difference in the median instead of the 1134 
+mean; this is expected for time below 70mg/dL, number of hypoglycemia, and possibly time above 1135 
+250mg/dL.  1136 
+ 1137 
+We do not plan to correct for multiple comparisons.  1138 
+ 1139 
+We do not expect substantial missing values in this highly supervised study, but if more than 3 subjects 1140 
+have one or more missing admissions, we will consider switching from RANOVA to mixed model repeated 1141 
+measures.  1142 
+ 1143 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 51 of 56 
+ 
+ 
+ 1144 
+As a early exploratory Study, the goal will be to complete up to 20 participants  in the main study 1145 
+to provide data from a variety of individuals.  This number was chosen out of feasibility and not 1146 
+from a formal power calculation.  (The Pilot Study  for this proposal will assess ease of system  and 1147 
+will be completed in a minimum of 2 -3 individuals prior to the beginning of the Main Study.)  With 1148 
+N=20 and our randomized crossover design (allowing for paired comparison), we can hope to detect a 1149 
+minimum effect size of 0.66 at a power of 80%. Based of prior FCL study, the standard deviation of daytime 1150 
+TIR is approximately 12%, leading to a detec table difference in daytime TIR of 8%.  1151 
+ 
+ 1152 
+13.3.1 Primary Efficacy Endpoint  1153 
+The study design allows for multiple comparisons of blood glucose control during the study meals 1154 
+and exercise  sessions, with for the primary comparison of interest being bet ween the RocketAP 1155 
+with and without BPS. Our primary endpoint is CGM time -in-range 70 -180 mg/dL for the daytime 1156 
+period 6 a m – 12 am when on each treatment modality (BPS vs. no BPS) .  1157 
+13.3.2 Secondary Outcomes 1158 
+Each admission is separated in to windows of analysis: 1159 
+• The entirety of the admission (24h: 4pm to 4pm) 1160 
+• The 4 hours following each of the meals. 1161 
+• The overnight period (12 am to 6 am) 1162 
+For each of these periods we will compute the following outcomes: 1163 
+• Number of hypoglycemia events defined as at least two consecutive CGM values 1164 
+<70mg/dL or a hypoglycemia treatment (two events separated by less than 30 minutes are 1165 
+counted as one). 1166 
+• Percent CGM time < 70 mg/dL  1167 
+• Percent CGM time between 80 -140mg/dL 1168 
+• Percent CGM time between 70 -180mg/dL 1169 
+• Percent CGM time  >180 mg/dL  1170 
+• Percent CGM time > 250 mg/dL  1171 
+• Units of insulin injected  1172 
+• Area under the curve when accounting for starting BG  1173 
+• Low Blood Glucose Index 1174 
+• High Blood Glucose Index 1175 
+• CGM coefficient of variation  1176 
+• Mean CGM  1177 
+ 1178 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 52 of 56 
+ 13.3.3  CGM  data treatment  1179 
+• Saturated CGM values “High” and “Low” will be replaced by 401mg/dL and 39mg/dL 1180 
+respectively.  1181 
+• Any CGM gaps shorter than 1 hour will be interpolated  1182 
+• CGM data during recorded occlusion event will be removed from analysis as follow: 1183 
+any measurement less than  2h before or after the time of record will be removed. 1184 
+• CGM data following a pump/DiAs communication interruption >1h by less than 2h 1185 
+will be removed  1186 
+13.3.4  Outcome computation conditions  1187 
+Outcomes will only be computed if at least 80% of the analysis window CGM m easurements (after data 1188 
+treatment) are available  1189 
+ 
+ 1190 
+We will assess for the system’s functionality, including the ability of the system to run its code 1191 
+without error (delivering insulin safely, as planned), as well as its ability to avoid low BG <70 1192 
+mg/dL. 1193 
+ 
+ 1194 
+Baseline demographic and clinical characteristics of the cohort of all randomized participants will 1195 
+be summarized in a table using summary statistics appropriate to the distribution of each variable. 1196 
+Descriptive statistics will be displayed overall and by treatment group.  1197 
+Will include: 1198 
+• Age 1199 
+• HbA1c  1200 
+• Gender  1201 
+• Race/ethnicity  1202 
+• CGM use before enrollment 1203 
+• AID use before enrollment 1204 
+• Diabetes duration  1205 
+• BMI  1206 
+• Total Daily Insulin  1207 
+ 
+ 1208 
+The following tabulations and analyses will be performed during time on the UVa AP systems to 1209 
+assess device issues:  1210 
+• Device malfunctions requiring study team contact and other reported device issues 1211 
+• % time CGM data available  1212 
+• % time with closed loop control  1213 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 53 of 56 
+ Chapter 14   Data Collection and Monitoring 1214 
+ 
+ 1215 
+The study data are collected through a combination of case report forms (electronic and paper) and 1216 
+electronic device data files obtained from the software and individual hardware components . These 1217 
+electronic device files and electronic CRFs are considered the primary source documentation.  1218 
+When data are directly collected in electronic case report forms, this will be considered the source 1219 
+data.  Records will be maintained in accordance with ICH E6 and institutional regulatory 1220 
+requirements for the protection of confidentiality of participants. 1221 
+ 
+ 1222 
+Study documents should be retained for a minimum of 2 years after the last approval of a marketing 1223 
+application in an ICH region and until there are no pending or contemplated marketing applications 1224 
+in an ICH region or until at least 2 years have elapsed since the formal discontinuation of clinical 1225 
+development of the investigational product.  These documents should be retained for a longer 1226 
+period, however, if required by local regulations . No records will be destroyed without the written 1227 
+consent of the sponsor, if applicable . It is the responsibility of the sponsor to inform the investigator 1228 
+when these documents no longer need to be retained. 1229 
+ 
+ 1230 
+A protocol deviation is any noncompliance with the clinical trial protocol, Good Clinical Practices 1231 
+(GCP), or procedure requirements.  The noncompliance may be either on the part of the participant, 1232 
+the investigator, or the study site staff . As a result of deviations, corrective actions may be 1233 
+developed by the site and implemented as appropriate.  Major deviations will be reported to the 1234 
+IRB-HSR within 7 calendar days of when the study team becomes aware of the event.  1235 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 54 of 56 
+ Chapter 15   Ethics/Protection of Human Participants  1236 
+ 
+ 1237 
+The investigator will ensure that this study is conducted in full conformity with Regulations for 1238 
+the Protection of Human Participants of Research codified in 45 CFR Part 46, 21 CFR Part 50, 21 1239 
+CFR Part 5 6, and/or the ICH E6. 1240 
+ 
+ 1241 
+The protocol, informed consent form(s), recruitment materials, and all participant materials will 1242 
+be submitted to the IRB for review and approval.  Approval of both the protocol and the consent 1243 
+form must be  obtained before any participant is enrolled.  Any amendment to the protocol will 1244 
+require review and approval by the IRB before the changes are implemented to the study.  All 1245 
+changes to the consent form will be IRB approved; a determination will be made regarding whether 1246 
+previously consented participants need to be re- consented.  1247 
+ 
+ 1248 
+15.3.1 Consent Procedures and Documentation  1249 
+Informed consent is a process that is initiated prior to an individual’s agreement to participate in 1250 
+the study and continues throughout the individual’s study participation.  Extensive discussion of 1251 
+risks and possible benefits of participation will be provided.  Consent forms will be IRB approved 1252 
+and the participant will be asked to read and review the document.  The investigator or their 1253 
+delegate will explain the research study to the participant  and answer any questions that may arise.  1254 
+All participants will receive a verbal explanation in terms suited to their comprehension of the 1255 
+purposes, procedures, and potential risks of the study and of their rights as research participants.  1256 
+Participant  will have the opportunity to carefully review the written consent form and ask questions 1257 
+prior to signing. 1258 
+The consenting process will involve discussing the study at length in a phone call/HIPAA 1259 
+compliant telecommunication method for consenting that is not face to face. The participant will 1260 
+sign the informed consent document prior to any procedures being done specifically for the study. 1261 
+The consent form may be signed electronically with the use of the Part 11  compliant version of 1262 
+DocuSign for both in- person and telecommunication  screening visits . The study team will follow 1263 
+the FDA part 11 compliant process of  verification of reviewing two forms of identification  if 1264 
+signing electronically off site. A HIPAA compliant video conferencing tool will be utilized during 1265 
+the consenting process  of the telecommunication screening visit  to facilitate review of the 1266 
+participant’s identification .  A copy of the informed consent  document will be given to the 1267 
+participant for their records.  The rights and welfare of the participants will be protected by 1268 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 55 of 56 
+ emphasizing to them that the quality of their medical care will not be adversely affected if they 1269 
+decline to participate in this study. 1270 
+15.3.2 Participant and Data Confidentiality 1271 
+The study monitor, representatives of the IRB or device company supplying study product may 1272 
+inspect all documents and records required to be maintained by the investigator, including but not 1273 
+limited to, medical r ecords (office, clinic, or hospital) for the participants in this study.   1274 
+The study participant’s contact information will be securely stored at the clinical site for internal 1275 
+use during the study.  At the end of the study, all records will continue to be  kept in a secure 1276 
+location for as long a period as dictated by local IRB and Institutional regulations. 1277 
+ Participant
+ 1278 
+The study monitor, representatives of the IRB or device company supplying study product may 1279 
+inspect all documents and records required to be maintained by the investigator, including but not 1280 
+limited to, medical records (office, clinic, or hospital) for the  participants in this study.   1281 
+The study participant’s contact information will be securely stored at the clinical site for internal 1282 
+use during the study. At the end of the study, all records will continue to be kept in a secure location 1283 
+for as long a period as dictated by local IRB and Institutional regulations. 1284 
+Study participant research data, which is for purposes of statistical analysis and scientific reporting, 1285 
+will be transmitted to and stored at the University of Virginia Center for Diabetes Technolo gy.  1286 
+The study data entry and study management systems used by research staff will be secured and 1287 
+password protected.  At the end of the study, all study databases may be de -identified and archived 1288 
+at the University of Virginia Center for Diabetes Technology.  1289 
+CLINICAL PROTOCOL  
+ 
+Rocket -BPS  06-Oct-2022  Page 56 of 56 
+ Chapter 16  References  1290 
+1. Burdick J, Chase HP, Slover RH, et al. Missed insulin meal boluses and elevated hemoglobin 1291 
+A(1c) levels in children receiving insulin pump therapy. Pediatrics. Mar 2004;113(3):E221-E224. 1292 
+doi:10.1542/peds.113.3.e221 1293 
+2. Cherñavvsky DR, DeBoer MD, Keith- Hynes P, et al. Use of an artificial pancreas among 1294 
+adolescents for a missed snack bolus and an underestimated meal bolus. Pediatr Diabetes. Feb 1295 
+2016;17(1):28-35. doi:10.1111/pedi.12230 1296 
+3. Garcia -Tirado J, Brown SA, Laichuthai N, et al. Anticipation of Historical Exercise Patterns 1297 
+by a Novel Artificial Pancreas System Reduces Hypoglycemia During and After Moderate - 1298 
+Intensity Physical Activity in People with Type 1 Diabetes. Diabetes Technol Ther. Dec 1299 
+2020;doi:10.1089/dia.2020.0516 1300 
+4. Voysey, Merryn and Costa Clemens, Sue Ann and Madhi, Shabir A. et al and Group, Oxford 1301 
+COVID Vaccine Trial, Single Dose Administration, And The Influence Of The Timing Of The 1302 
+Booster Dose On Immunogenicity and Efficacy Of ChAdOx1 nCoV -19 (AZD12 22) Vaccine. 1303 
+Available at SSRN: https://ssrn.com/abstract=3777268 1304 

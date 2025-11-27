@@ -1,0 +1,1916 @@
+Statistical Analysis Plan (Methods)  Page 1 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+  
+Vertex Pharmaceuticals Incorporated    
+ 
+VERTEX PHARMACEUTICALS INCORPORATED  
+Statistical Analysis Plan 
+(Methods)  
+Protocol Number VX15 -440-101  Version 2.0  
+(Final Analysis)  
+ 
+A Phase 2, Randomized, Double blind, Controlled Study to Evaluate 
+the Safety and Efficacy of VX 440 Combination Therapy in Subjects 
+Aged 12 Years and  Older With Cystic Fibrosis  
+ 
+ 
+Author s of SAP:   
+ 
+Version:  Version 1.0 
+Version Date of SAP:  12 June 2017 
+ 
+Vertex Pharmaceuticals Incorporated  
+50 Northern Avenue 
+Boston, Massachusetts 02210-1862 
+ 
+CONFIDENTIAL  
+This document contains confidential information.  Any use, distribution, or disclosure without the prior written 
+consent of Vertex Pharmaceuticals Incorporated is strictly prohibited except to the extent required under 
+applicable laws or regulations.  Persons to whom the information is disclosed must be informed that the 
+information is confidential and may not be further disclosed by them.  
+
+Statistical Analysis Plan (Methods)  Page 4 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   8.4.3  Electrocardiogram  ............................................................................................ 39  
+8.4.4  Vital Signs  ........................................................................................................ 39  
+8.4.5  Pulse Oximetry  ................................................................................................. 40  
+8.4.6  Physical Examination  ....................................................................................... 40  
+  
+9 Interim and IDMC Analyses  ......................................................................................... 40  
+9.1 Interim Analysis  ....................................................................................................... 40  
+9.2 IDMC  Analysis  ......................................................................................................... 40  
+10 References  ....................................................................................................................... 41  
+11 List of Appendices .......................................................................................................... 42  
+Appendix A: Schedule of Assessments .............................................................................. 42  
+Appendix B: Analysis Visit Windows for Safety and Efficacy Assessments  ................... 56  
+Appendix C: Imputation Rules for Missing Prior/Concomitant Medication Dates  ........... 60  
+Appendix D: Important Protocol Deviation Programming Rules (Based on the Clinical 
+Database)  .................................................................................................................. 61  
+Appendix E: Details of GLI Equations for Calculating ppFEV 1 ....................................... 63  
+ 
+Appendix G: Calculation of BMI z- score for subjects <20 years old at screening ........... 66  
+Appendix H: Imputation Rules for Missing AE dates  ....................................................... 67  
+Appendix I: Criteria for Threshold Analysis  ..................................................................... 70   
+ 
+
+Statistical Analysis Plan (Methods)  Page 6 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   3 INTRODUCTION  
+This statistical analysis plan (SAP) for the final analysis is based on the approved clinical 
+study protocol (CSP), Version 2.0, dated 16 SEP 2016, approved electronic case report form (eCRF), Version 1.0, dated 13 Jul 2016, and approved eCRF completion guidelines, Version 1.0, dated 18 Oct 2016. This SAP will also be used to perform two separate interim analyses (IAs), after all subjects participating in Part 1  have completed  the safety follow -up, and 
+correspondingly, after all subjects participating in Part 2 have completed the safety follow -
+up.  
+This is a Phase 2, randomized, double-blind, placebo- and TEZ/IVA-controlled, parallel 
+group, multicenter study to evaluate the safety and efficacy of VX -440 combination therapy 
+in subjects aged  12 years and older with cystic fibrosis. 
+This SAP (Methods) documents the planned statistical analyses of efficacy endpoints and safety endpoints. 
+Vertex  Biometrics will perform the statistical analysis  for each IA , and the final analysis. 
+SAS
+® Version  9.2 or higher software (SAS Institute, Cary, North Carolina, USA) will be 
+used to generate all statistical outputs (tables, figures, listings, and datasets).   
+The SAP (Methods) will be finalized and approved prior to the data cut  for the first  IA. Any 
+revisions to the approved SAP will be documented and approved in an amendment to the 
+SAP prior to the clinical database lock for the final analysis. Any changes made to the 
+SAP Methods after the clinical database lock  has occurred will be document ed in the clinical 
+study report for this study.  
+4 STUDY OBJECTIVES  
+4.1 Primary Objective  
+• To evaluate the safety and tolerability of VX -440 in  triple combination with 
+TEZ and IVA  
+• To evaluate the efficacy of VX -440 in  triple combination with TEZ  and IVA  
+4.2 Secondary Objectives  
+• To evaluate the pharmacodynamic (PD) effect of VX -440 in  triple combination 
+with TEZ  and IVA on sweat chloride concentrations 
+• To evaluate the PK of VX -440 when administered in  triple combination with 
+TEZ and IVA  
+• To evaluate the PK of TEZ , IVA, and their respective metabolites when administered 
+with VX-440 
+
+Statistical Analysis Plan (Methods)  Page 7 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   5 STUDY ENDPOINTS  
+5.1 Efficacy Endpoint  
+5.1.1  Primary Efficacy Endpoint  
+• Absolute change in percent predicted forced expiratory volume in 1 second1 (ppFEV 1) 
+from base line through Day 29 (Parts 1 and 2)  
+5.1.2  Secondary Efficacy Endpoints  
+• Absolute change in sweat chloride concentrations from baseline through Day 29 (Parts 1 
+and 2)  
+• Relative change in ppFEV 1 from baseline through Day 29 (Parts 1 and 2)  
+ 
+  
+  
+  
+  
+  
+• Absolute change in Cystic Fibrosis Questionnaire- Revised2, 3, 4 (CFQ -R) respiratory 
+domain score from baseline at Day  29 (Parts 1 and 2)  
+• PK parameters of VX -440, TEZ, M1-TEZ, IVA, and M1- IVA 
+5.2 Safety Endpoints  
+The safety and tolerability is evaluated via the following endpoints: 
+• adverse events (AEs)  
+• clinical laboratory values  
+• standard 12- lead electrocardiograms (ECGs)  
+• vital signs  
+• pulse oximetry  
+ 
+
+Statistical Analysis Plan (Methods)  Page 9 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Table 6 -1 Key St udy Elements by Part  
+ Part 1a Part 2  
+Genotype  F508del /MF F508del /F508del  
+Age ≥18 years  ≥18 years  
+ppFEV 1 criteria  ≥40 to ≤90  ≥40 to ≤90  
+Number of subjects  Approximately 42a Approximately 24  
+Stratification c ppFEV 1d 
+• ≥70  
+• <70 ppFEV 1  
+• ≥70 
+• <70 
+Study design  Parallel  Parallel  
+Comparator  Placebo  TEZ/IVA  
+VX-440 treatment 
+duration  4 weeks  4 weeks  
+IVA: ivacaftor; MF: minimal function; ppFEV 1: percent predicted forced expiratory volume in 1 second; q12h: 
+every 12  hours; TC: triple combination; TEZ: tezacaftor  
+a Part 1 consists of Cohort 1A and Cohort 1B. Approximately 10 subjects will be in Cohort  1A and 
+approximately 32 subjects will be in Cohort 1B.  
+c Additional stratification information is provided in Section  8.1.3  of protocol . 
+d Stratification will be conducted for Cohort 1B subjects only.  
+
+Statistical Analysis Plan (Methods)  Page 10 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated    
+Table 6-2 Treatment Arms and Planned Doses by Part  
+Part  
+Randomization ratio   
+Treatment Arm  VX-440 Dosage  TEZ 
+Dosage  IVA 
+Dosage  
+Part 1 Cohort 1A  TC-1A 200 mg q12h  100 mg qd  150 mg q12h  
+4:1 Triple placebo  Placebo  Placebo  Placebo  
+Part 1 Cohort 1B TC-1B-high 600 mg q12ha 50 mg q12h  300 mg q12ha 
+2:1:1  TC-1B-low 200 mg q12h  50 mg q12h  150 mg q12h  
+ Triple placebo  Placebo  Placebo  Placebo  
+Part 2b TC-2  600 mg q12ha 50 mg q12h  300 mg q12ha  
+3:1 TEZ/IVA  Placebo  100 mg qd  150 mg q12h  
+a In the “TC -1B-high” and “TC -2” treatment arms, the dosage of VX -440 will be determined based on safety 
+and PK data from Cohort  1A. The planned dose is shown, but may be reduced to 400 mg q12h.  
+b In Part 2, all subjects will also receive TEZ 100 mg qd/IVA 150 mg q12h during the Run -in Period and the 
+Washout Period.  
+ 
+
+Statistical Analysis Plan (Methods)  Page 13 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Table 6 -3 Probability of Observing an Adverse Event 
+AE Incidencesa Number of Subjects per Treatment Groupb 
+10 20 30 40 50 
+5% 40% 64% 79% 87% 92% 
+10%  65% 88% 96% 98% >99%  
+15% 80% 96% >99%  >99%  >99%  
+AE: adverse event  
+a AE incidences are based on 4 weeks of treatment in Parts 1 and 2,  
+b Applies to Parts 1  
+6.2.1.2  Efficacy  
+The primary efficacy endpoint is the absolute change from baseline in ppFEV 1 through 
+Day 29 in Parts 1 and 2,  Table 6 -4 provides the power to 
+reject the null within -group hypothesis of no difference in the mean absolute change from 
+baseline for ppFEV 1 through Day 29 or Week 12, as applicable, for any treatment group in 
+Parts 1, 2,  with a sample size ranging from 8 to 44 subjects per treatment group. The 
+power calculations are based on a 2- sided 1-sample t -test at alpha = 5% using the PASS 
+software package (Version 11.0), assuming an absolute mean change of 3 to 7 percentage points and an SD of 8 percentage points in the absolute change from baseline for ppFEV
+1. 
+Sample sizes of 16 to 44 subjects per treatment group provide adequate power for mean changes of 5  to 7 percentage points as expected in Parts 1, 2, . 
+Table 6 -4 Power for Within -group Difference for Mean Absolute Change From 
+Baseline in  ppFEV
+1 
+Mean Absolute 
+Change From 
+Baseline in ppFEV 1 Number of Subjects per Treatment Groupa 
+8 16 20 22 24 40 42 44 
+3% 15% 29% 36% 39% 42% 64% 66% 68% 
+4%  23% 46% 56% 61% 65% 87% 89% 90% 
+5% 33% 65% 76% 80% 83% 97% 98% 98% 
+6% 45% 80% 89% 92% 94% >99%  >99%  >99%  
+7% 57% 90% 96% 97% 98% >99%  >99%  >99% 
+ppFEV 1: forced expiratory volume in 1 second; SD: standard deviation  
+Note: An SD of 8  percentage points for the absolute change from baseline in ppFEV 1 was used for power 
+calculations.  
+a Applies to Parts 1  
+6.2.2  Secondary Objectives  
+A secondary objective of the study is the evaluation of the PD effect of VX-440 in TC with TEZ/IVA (all parts)   
+6.2.2.1  Pharmacodynamic Effect (Part 1)  
+The absolute change from baseline through Day 29 in sweat chloride is a secondary endpoint used to evaluate the PD objective of the study. In Part 1, a test for a decreasing dose-response trend between placebo and the TC dose groups will be performed using a multiple 
+
+Statistical Analysis Plan (Methods)  Page 14 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   comparisons procedure (MCP). The procedure consists of testing the null hypothesis of the 
+lack of a decreasing dose -response trend versus a decreasing trend using the 1-sided 
+maximum t-statistic that controls the type I error at alpha  = 5%. The procedure requires a 
+family of candidate dose-response models to be prespecified, the range of plausible and diverse dose-response profiles.  
+The candidate models that best describe the expected decreasing dose-response profile of the 
+TC groups compared to placebo include a linear model, a maximum effect (E
+max) model, and 
+a sigmoid E max model. The contrasts (i.e., linear combinations of the treatment group means 
+through Day 29) selected to perform the MCP that captures  the shape of these candidate 
+models are described in Table 6 -5 below.  
+Table 6 -5 Contrast Coefficients for the Multiple Comparisons Procedure in Part  1, 
+Cohort 1B 
+Candidate Model  Placebo  TC-1B-low TC-1B-high  
+Linear  1.0 0.0 -1.0 
+Emax 1.0 -0.5 -0.5 
+Sigmoid E max 0.5 0.5 -1.0 
+Emax: maximum effect; TC: triple combination  
+ 
+Table 6 -6 provides the power to detect a dose-response trend with the MCP procedure for 
+3 different expected dose -response profiles with a total sample size of 32 subjects in 
+Cohort 1B assigned to TC-1B-high, TC- 1B-low, and placebo in the ratio 2:1:1, based on 
+5000 simulations for each profile using the MCPMod R software package [Version 1.0-8]. 
+Table 6 -6 Power to Detect a Dose- response Trend Based on Change From Baseline 
+in Sweat Chloride in Part 1, Cohort 1B 
+ Mean Change From Baseline in Sweat Chloride   
+Candidate Model  Placebo  TC-1B-low TC-1B-high  Power  
+Linear  0 -15 -20 95% 
+Sigmoid E max 0 0 -20 99% 
+Emax 0 -20 -20 96% 
+Emax: maximum effect; TC: triple combination  
+Note: A 1 -sided maximum t-statistic with a sample size of 32  subjects in Cohort 1B assigned to TC -1B-high, 
+TC-1B-low, and placebo at a ratio 2:1:1 was used for power calculations. An SD change from baseline in 
+sweat chloride of 13 mmol/L was used for power calculations.  
+Table 6 -7 provides the power to reject the null within-group hypothesis of no difference in 
+the mean absolute change from baseline for sweat chloride t hrough Day 29 (Parts 1 and 2)  
+for any treatment group with a sample size ranging from 8 to 44 subjects 
+per treatment group. The power calculations are based on a 2-sided 1- sample t -test at 
+alpha = 5% using the PASS software package (Version 11.0), assuming a mean change 
+of -10 to -20  mol/L and an SD of 13 mmol/L in the absolute change from baseline for sweat 
+chloride.  
+
+Statistical Analysis Plan (Methods)  Page 15 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Table 6 -7 Power for Within -group Difference for Mean Absolute Change From 
+Baseline in  Sweat Chloride 
+Mean Absolute Change 
+From Baseline in Sweat 
+Chloride (mmol/L)  Number of Subjects per Treatment Groupa 
+8 16 20 22 24 40 42 44 
+-10 47% 82% 90% 93% 95% >99%  >99%  >99%  
+-12  61% 93% 97% 98% 99% >99%  >99%  >99%  
+-15 80% 99% >99%  >99%  >99%  >99%  >99%  >99%  
+-18 92% >99%  >99%  >99%  >99%  >99%  >99%  >99%  
+-20 96% >99%  >99%  >99%  >99%  >99%  >99%  >99%  
+SD: standard deviation  
+Note: An SD of 13  mmol/L for the absolute change from baseline in sweat chloride  was used for power 
+calculations.  
+a Applies to Parts 1  
+ 
+6.3 Randomization 
+Treatment arms, randomization ratios, and stratification factors for each part are described in 
+Table 6 -1. An interactive web response system (IWRS) will be used to assign subjects to 
+treatment. The randomization code list will be produced by Vertex Biostatistics or a qualified randomization vendor. 
+6.4 Blinding and Unblinding 
+6.4.1  Blinding  
+All subjects, site personnel (including the investigator, the site monitor, and the study team), 
+and the Vertex study team will be blinded to the treatment codes with the exception of the following:  
+• Any site personnel for whom this information is important to ensure the safety of the 
+subject in the event of a life- threatening medical emergency  
+• Any site personnel for whom this information is important to ensure the safety of the subject and her fetus in the event of a pregnancy 
+• Vertex Global Patient Safety (GPS) and Regulatory Affairs personnel to satisfy serious adverse event (SAE) processing and reporting regulations 
+• Unblinded statistician preparing the final (production) randomization list who is not part of the study team 
+• Vertex IWRS Manag er 
+• Vertex Clinical Supply Chain  
+• IDMC  
+• Vendor preparing the unblinded analysis for the ongoing reviews of efficacy and safety data, and the IDMC  
+• Vendor analyzing PK samples  
+
+Statistical Analysis Plan (Methods)  Page 16 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   • Vertex Modeling and Simulation personnel or vendor conducting the population PK and 
+PK/PD analyses  
+• Vertex medical monitor (or contract medical monitor) may, for matters relating to safety concerns, unblind individual subjects at any time 
+Vertex Drug Metabolism and Pharmacokinetics laboratory personnel will not be involved in 
+the conduct of the study and will be unblinded to the bioanalysis results but will remain blinded to subject number and treatment assignment. 
+Spirometry and Sweat Chloride Data Blinding
+: During the conduct of the study, the Vertex 
+study team will not have access to the  spirometry results or sweat chloride concentration 
+values after the morning dose on Day 1. Furthermore, sites, subjects, and their 
+parents/caregivers/companions should not be informed of their study-related spirometry and sweat chloride results during the Treatment Period regardless of whether the subject has prematurely discontinued treatment.  
+A limited Vertex team will be unblinded and have access to safety, efficacy, and PD data for the purpose of conducting ongoing reviews of safety and efficacy data for planning and enabling clinical development, regulatory, and chemistry, manufacturing, and controls (CMC) decisions. Members of the limited unblinded Vertex team will not be part of the Vertex study team and will not be involved in or influence the conduct of the study.   
+The Vertex study team and lead investigator(s) will conduct a blinded review of all available 
+safety and PK data after all Cohort 1A subjects complete the Day 15 Visit. The Vertex study team will not have access to unblinded data from ongoing reviews by the limited Vertex team.  
+After all subjects within Parts 1 and 2 have completed the Safety Follow- up Visit, results 
+from each part will be unblinded for full review by the Vertex study team (Section  12.3.6.1 
+of protocol). 
+6.4.2  Unblinding 
+At th e initiation of the study, each study site will be instructed on the method for breaking the 
+blind. The unblinding method will be either a manual or electronic process.  
+Unblinding of the individual subject's treatment by the investigator will be limited to medical 
+emergencies or urgent clinical situations in which knowledge of the subject's study treatment is necessary for clinical management. In such cases, investigators will use their best judgment as to whether to unblind without first attempting to contact the medical monitor to discuss and agree to the need for unblinding. If investigators deem it not necessary to unblind immediately, they will first attempt to contact the medical monitor to discuss and agree to the need for unblinding. If investigators have tried but are unable to reach the medical monitor, they will use their best judgment, based on the nature and urgency of the clinical situation, and may proceed with unblinding without having successfully reached and discussed the situation with the  medical monitor.  
+Contact information for the medical monitor (or appropriate backup) will be provided in a separate document.  
+
+Statistical Analysis Plan (Methods)  Page 18 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   7.3.2  Part 2  
+The Safety  Set for the Run -in Period  will include all subjects who received at least 1 dose 
+of study drug TEZ/IVA in the Run-in Period. This Safety Set  will be used for individual 
+subject data listings for the Run-in Period, unless specified otherwise.  
+The Safety Set for the Treatment Period will include all subjects who received at least 1 
+dose of study drug in the Treatment Period. This Safety Set  will be used for all safety 
+analyses for the Treatment Period, unless specified otherwise. 
+If a subject receiv ed at least 1 dose of the higher TC treatment group in  the increasing 
+priority order: p lacebo + TEZ/IVA, TC -2 (VX-440 + TEZ /IVA),  the subject will be analyzed 
+in the higher treatment group.  
+Note: T he safety analysis will focus on the Safety Set for the Tr eatment Period only, unless 
+otherwise specified .  
+8 STATISTICAL ANALYSIS  
+8.1 General Considerations  
+The analysis will be performed for each part, and presented by treatment group and overall, 
+for the Treatment Period , unless specified otherwise. The treatment groups are defined as 
+follows:  
+• Part 1: F508del/MF genotype group 
+o TC-1B-high, TC- 1B-low, TC -1A, and placebo, with the TEZ component in the 
+TC-1B-low and TC-1B- high groups administered as 50 mg q12h, and that in th e 
+TC-1A group administered as 100 mg qd. More specifically, Part 1 includes 
+cohorts 1A and 1B; Cohort 1A includes TC-1A while Cohort 1B includes TC-1B-
+low and TC-1B-high. The placebo group is randomized in  both cohorts. 
+• Part 2: F508del/F508del genotype group  
+o TC-2, and TEZ/IVA, with the TEZ component in the TC group administered as 
+50 mg q12h 
+The Schedule of Assessments is provided in Appendix A. The precision standards for reporting safety and efficacy variables are provided in an internal Biometrics document that specifies the programming rules including the precision for derived variables.  
+All individual subject data for those randomized or dosed with any amount of study drug will 
+be presented in data listings. 
+Continuous variables  will be summarized using the following descriptive summary 
+statistics: the number of subjects (n), mean, SD, st andard error (SE), median , minimum value 
+(min), and maximum value (max). SE may not be reported for safety summary tables.  
+
+Statistical Analysis Plan (Methods)  Page 19 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Categorical variables  will be summarized using counts and percentages. Percentages will be 
+presented to 1 decimal place.  
+Baseline  value , unless otherwise specified, will be defined as the most recent non- missing 
+measurement (scheduled or unscheduled ) collected before the f irst dose of study drug on Day 
+1 of the Treatment Period. For ECG, baseline will be defined as the most re cent non- missing 
+measurement (the average of tri plicate measurements, if the most recent non- missing 
+measurem ent is obtained in triplicate) , before the first dose of study drug on Day 1 of the 
+Treatment Period . 
+Absolute change  from baseline will be calculated as postbaseline value – baseline value.  
+Relative change  from baseline will be calculated as (postbaseline value – baseline 
+value)/baseline value.  
+Treatment -emergent (TE) period  for Parts 1  will include the time from the first dose  
+of study drug in the Treatment Period to the Safety Follow-up (SFU) Visit, or 28 Days after 
+the last dose of study drug for subject s who do not complete the S FU Visit.  
+For Part 2 , the TE period will be defined separately for the Run -In Period, and the Treatment 
+Period: 
+• The TE period for the Run-in Period  will include the time from  the first dose of study 
+drug in the Run-in Period to: (1) the  last day prior to the first dose of study drug in the Treatment Period for subjects who complete the Run -in Per iod and continue to the 
+Treatment Period, or  (2) the SFU Visit for subjects who do not continue to the Treatment Period and have an S FU Visit, or (3) 28 days after the last dose of study drug in the Run-
+in Period for subjects who do not have an S FU Visit (e.g., subjects who do not meet the 
+criteria to enter the Treatment Period and re-enter Study 661-110).  
+• The TE period for the Treatment Period  will include the first dose of study drug in the 
+Treatment Period to: (1) the S FU Visit, or (2) 28 days after th e last dose of study drug for 
+subjects who do not have an S FU Visit (e.g. subjects whose E arly Treatment T ermination 
+(ETT) Visit occurs 3 weeks or later following the last dose of study drug and the ETT visit replaces the SFU visit, or who leave the Treatment Period early and re- enter Study 
+661-110).  
+Note: only data collected up to the end of study for a subject will be included in analysis. 
+Unscheduled visits:  Unscheduled visit measurements will be included in analysis as follows: 
+• In scheduled visit windows per specified visit windowing rules 
+• In the derivation of baseline and last on -treatment measurements  
+• In the derivation of maximum and minimum on -treatment values , and maximum and 
+minimum change from base line values for safety analyses  
+• In individua l subject data listings as appropria te 
+Visit windowing rules:  The analysis visit windows for protocol-defined visits are provided 
+in Appendix B .  
+
+Statistical Analysis Plan (Methods)  Page 20 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Incomplete/missing data  will not be imputed, unless specified otherwise.  
+Outliers:  No formal statistical analyses will be performed to detect or remedy the presence 
+of statistical outliers, unless specified otherwise.  
+Multiplicity:  There will be no multiplicity adjustment for performing multiple hypothesis 
+tests, unless specified otherwise.  
+8.2 Background Characteristics  
+8.2.1  Subject Disposition 
+For the Treatment Period  in Part 1, Part 2, , subject disposition will be summarized 
+as described below.  
+The n umber of subjects in the following categories will be summarized by treatment group  
+and overall, for each part :  
+• All Subjects Set (r andomized or dosed  in the Treatment Period) 
+• Randomized 
+• Full Analysis Set (FAS)  
+• Safety Set ( for Part 2, this is the Safety S et for the Treatment Period)  
+The number and percentage (based on FAS) of subjects in each of the following disposition 
+categories will be summarized by treatment group  and overall: 
+• Completed study drug treatment  
+• Prematurely discontinued treatment and the reason  for discontinuation (i.e., discontinued 
+all study drugs)  
+• Completed study (i.e., completed Safety Follow- up Visit or completed all study drug s 
+and re-entered Study 661-110 without Safety Follow-up per protocol) 
+• Prematurely discontinued the study and the reason for discontinuation  
+For the Run-in Period  in Part 2, a separate disposition table will be provided with the 
+following categories:  
+• All Subjects Set (enrolled or dosed in the Run-in Period) 
+• Completed treatment in the Run-in Period (i.e., completed randomization) 
+• Prematurely discontinued  treatment during the Run-in Period and the reason for 
+treatment discontinuation (i.e., discontinued all  study drugs in the Run-in Period) 
+• Prematurely discontinued the study during the Run-in Period and the reason for study 
+discontinuation 
+A listing will be provided by part, for subjects who discontinued treatment (including the Run-in Period in Part 2) or who discontinued study with reasons for discontinuation. A randomization listing of subjects will also be provided , by part . 
+
+Statistical Analysis Plan (Methods)  Page 21 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   8.2.2  Demographics and Baseline Characteristics  
+Demographics, medical history and baseline characteristics will be summarized based on the 
+FAS, and presented by treatment group and overall , for each part and cohort , as applicable. 
+Demographic data will include the following: 
+• Age at baseline (in years)  
+• Sex (female and male)  
+• Ethnicity (Hispanic or Latino, not Hispanic or Latino, and not collected per local 
+regulations) 
+• Race (White, Black or African American, Asi an, American Indian or Alaska Native, 
+Native Hawaiian or Other Pacific Islander, and Other)  
+Baseline characteristics will include the following:  
+• Weight (kg)  
+• Height (cm)  
+• BMI (kg/m2) 
+Stratification categories will include the following:  
+• ppFEV 1 at stratification  (< 70 and ≥ 70)  
+For subjects who are naïve to TEZ/IVA treatment in Part 2, ppFEV 1 at Day -14 will be used 
+for stratification; o therwi se, ppFEV 1 at screening will be used for stratification.  
+Disease characteristics will include the following:  
+• ppFEV 1 at baseline ( <40, ≥ 40 to <70, ≥70 to ≤90, >90) 
+• ppFEV 1 at baseline (continuous)  
+• Sweat Chloride at baseline (continuous) 
+• FEV 1 (L) at baseline (continuous) 
+• CFQ -R Respiratory Symptoms domain at baseline (continuous) 
+• Prior use of dornase alfa before first dose of study drug (Yes, No)  
+• Prior use of inhaled antibiotic before first dose of study drug (Yes, No)  
+• Prior use of any bronchodilator before first dose of study drug (Yes, No)  
+• Prior use of any inhaled bronchodilator before first dose of study drug (Yes, No)  
+• Prior use of any inhaled hypertonic saline before first dose of study drug (Yes, No)  
+• Prior use of any inhaled corticosteroids before first dose of study drug (Yes, No)  
+
+Statistical Analysis Plan (Methods)  Page 22 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   • Colonization with Pseudomonas aeruginosa at baseline (Positive, Negative)  
+A summary of medical history will be provided  by MedDRA system organ class  (SOC) and 
+preferred term  (PT) for the FAS . In addition, the number of subjects reported to have had 
+positive cultures for respiratory pathogens in 2 years prior to screening will be summarized 
+for the FAS . Further, the CFTR genotype for each subject will be provided in an individual 
+subject data listing.   
+8.2.3  Prior and Concomitant Medications  
+Medications will be coded using the World Health Organization Drug Dictionary Enhanced (WHODDE) and categorized as follows: 
+For Parts 1 
+  
+Prior medication:  any medication that started before the first dose date of study drug, 
+regardless of when the medication ended. Concomitant medication:  medication continued or newly received on or after the first dose 
+date of study drug through the end of the TE period. Post- treatment medication:  medication continued or newly received after the TE period. 
+For Part 2
+:  
+Prior medication:  any medication that started before the first dose date of study drug in the 
+Run-in Period, regardless of when the medication ended. Concomi tant medication during the Run- in Period:  medication continued or newly 
+received on or after the first dose date of study drug during the Run-in Period through the end 
+of the TE period for the Run-in Period. 
+Concomitant medication during the Treatment Peri od: medication continued or newly 
+received on or after the first dose date of study drug during the Treatment Period through the 
+end of the TE period for the Treatment Period. 
+Post-treatment medication:  medication continued or newly received after the TE period. 
+A given medication may be classified as follows: prior, concomitant, post-treatment, both 
+prior and concomitant, both concomitant and post-treatment, or prior, concomitant, and post- treatment. In Part 2, concomitant may  be concomitant during the Run-in Period, or 
+concomitant during the Treatment Period, or both.  
+If a medication has a completely missing or partially missing start/stop date and it cannot be 
+determined whether it was taken before the first dose date of study drug, concomitantly, or after the TE period, it will be classified as prior, concomitant, and post- treatment.  
+Prior medications and concomitant medications will be summarized descriptively using frequency tables by preferred name.  
+Summaries of medications will be based on the FAS , and presented by treatment group and 
+overall for each part .  
+Post- treatment medications will be listed by subject.  
+
+Statistical Analysis Plan (Methods)  Page 23 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Details for imputing missing or partial start and/or stop dates of medication are described in 
+Appendix C . 
+8.2.4  Study Drug Exposure  
+Study drug exposure (in days) will be calculated as: last dose date of study drug – first dose 
+date of study drug + 1 day, regardless of study drug interruption, and will be summarized descriptively. Study drug exposure will be summarized for the overall study drug period, which includes the Run-in Period, Treatment Period and Washout Period for Part 2, and the Treatment Period for Parts 1  Further, s tudy d rug exposure for the combined Treatment 
+Period  and Washout Period in Part 2 will also be summarized descriptively .  
+Study drug exposure (in weeks) will be summarized descriptively by the number of subjects (n), mean, SD, SE, median, min, and max. It will a lso be summarized in  categories: ≤2 
+weeks, >2 - ≤4 weeks, and >4 weeks (for Parts 1 and 2); and ≤2 weeks, >2- ≤4 weeks, >4 - ≤8 
+weeks, >8 - ≤12 weeks, and >12  weeks  (for Part 4), using counts and percentages. 
+Additionally, the total study drug exposure, defined as the sum total of t he study drug 
+exposure across all subjects (in patient -weeks) , will be provided. 
+Exposure summaries will be based on the Safety Set , and presented by treatment group and 
+overall, f or each part . For Part 2, exposure summaries will be based on the Safety  Set for the 
+Treatment Period .  
+8.2.5  Study Drug Compliance  
+Percentage of tablets taken will be calculated as: 100 ×  [(total number of tablets dispensed) – 
+(total number of tablets returned)]/( total number of tablets planned to be taken per 
+day ×  duration of study drug exposure in days). The maximum percentage of tablets taken 
+will be 100%.  
+Study drug compliance will be calculated as: 100  × [1 - (total number of days of study drug 
+interruption) / (duration of study drug exposure in days)].  A study drug interruption on a 
+given day will be determined by an interruption of all drugs on that day. 
+Percentage of tablets taken and s tudy drug compli ance will be summarized descriptively by 
+the number of subjects (n), mean, SD, SE, median, min, and max. It will also be summarized 
+in categories: <80% and ≥80% using frequency tables.  
+For all parts , study drug compliance will be summarized for the Treatment Period only.  
+Similarly, for all parts, percentage of tablets taken will be summarized for  the Treatment 
+Period  only. 
+Percentage of tablets taken and s tudy drug compliance summaries will be based on the FAS, 
+and pres ented by treatment group  and overall, for each part . 
+8.2.6  Important Protocol Deviations  
+An important protocol deviation (IPD) is a deviation that may significantly  affect the 
+completeness, accuracy, or reliability of the study data or that may significantly affect a 
+subject’s rights, safety, or well -being. IPD rules will be developed and finalized before 
+database lock.  
+
+Statistical Analysis Plan (Methods)  Page 25 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   8.3.1.1  Primary Analysis  of the Primary Efficacy Variable  
+8.3.1.1.1  Parts 1 and 2 
+The null hypothesis to be tested is that the mean absolute within -group change from baseline 
+in percent predicted FEV 1 (ppFEV 1) through Day 29 is zero for VX-440 in triple 
+combination (TC) with TEZ/IVA , for each part, separately . A 2-sided p-value of 0.05 or less 
+will be interpreted as sufficient evidence to reject the null hypothesis.   
+The primary analysis will be performed using a mixed -effects model for repeated measures 
+(MMRM) with change from baseline in ppFEV 1 as the dependent variable for each part, 
+separately . This MMRM a nalysis will include all treatment groups  within a part. For Part 1, 
+the analysis  will include 3 treatment groups: placebo, pooled TC -1A and  TC-1B-low, and 
+TC-1B-high. For Part 2, the analys is will include 2 treatment  groups: placebo + TEZ/IVA, 
+and TC -2 (VX -440 + TEZ/IVA). The model will include treatment group, visit, and 
+treatment -by-visit interaction as fixed effects, with  the continuous baseline ppFEV1 as a 
+covariat e, and will include all data from each treatment group and visit in the analysis. The 
+model will be estimated using restricted maximum likelihood. Denominator degrees of 
+freedom for the F  test for fixed effects will be estimated using the Kenward -Roger 
+approximation. An unstructured covariance structure will be used to model the within -subject 
+errors. If the model estimation does not converge, a reduced compound symmetry covariance 
+structure will be used instead. Conditional on the observed data and covariates, missing ppFEV
+1 data due to treatment or stud y discontinuation will be assumed to be missing at 
+random; consequently, no imputation of missing data will be performed.  
+The adjusted mean s and 95% confidence intervals (CI) of the average treatment effect 
+through Day 29 (Day 15 and Day 29 only) for each  triple combination , with a 2-sided p-
+value will be estimated within MMRM using  PROC MIXED in SAS, for all within -treatment  
+and between -treatment comparisons, for each  part, separately . Contrasts based on the fixed 
+effects in the model, defined at the baseline covariate mean  for the combined treatment 
+groups using unique subjects in the FAS who have at least one post -baseline measurement 
+through Day 29, will be u sed to estimate the average treatment effect across post -baseline 
+visits  through Day 29.  
+Further, t he adjusted mean and 95% CI of the treatment difference between each triple 
+combination and placebo at each post- baseline visit through Day 29 will be provided along 
+with the corresponding p -value, for each part. In addition, the adjusted mean and 95% CI of 
+the within -treatment difference at each post -baseline visit through Day 29 for each treatment 
+group will be provided along with the p- value, for each part.   
+The adjusted mean ( with 95% CI) obtained from the MMRM analysis at each post- baseline 
+visit through Day 29 will be plotted by treatment group, for each part. In addition, a waterfall 
+plot showing the subject -level absolute change in ppFEV 1 at Day 29 will be presented, by 
+treatment group. The plots will be based on the pooled treatment groups for Part 1.  
+In addition, for each part, descriptive analyses of the change from baseline will be performed 
+for all treatment groups by post- baseline visit through the safety follow- up visit . Treatment 
+groups in Part 1 will be presen ted both with TC -1A and TC-1B-low pooled, and separately  
+for descriptive analysis.  
+
+Statistical Analysis Plan (Methods)  Page 26 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+Vertex Pharmaceuticals Incorporated   
+
+Statistical Analysis Plan (Methods)  Page 28 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+Vertex Pharmaceuticals Incorporated   8.
+3.2 Analysis of Secondary Efficacy Variables  
+The secondary efficacy variables include:  
+• Relative change in ppFEV 1 from baseline through Day 29 (Parts 1 and 2)  
+ 
+
+Statistical Analysis Plan (Methods)  Page 32 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+Vertex Pharmaceuticals Incorporated   8.
+3.2.9  Multiplicity adjustment  
+There will be no multiplicity adjustment to control the overall type 1 error rate for secondary 
+efficacy variables . 
+
+Statistical Analysis Plan (Methods)  Page 36 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+Vertex Pharmaceuticals Incorporated   8.
+3.5.3  Absolute Change in S weat Chloride from Baseline through Day 29 
+(Parts 1 and  2)  
+8.3.5.3.1  Parts 1 and  2 
+The analysis of the absolute change in s weat chloride from baseline through Day 29 will be 
+based on an MMRM model similar to the analysis of the primary efficacy variable in Part 1, 
+with the continuous baseline sweat chloride as a covariate.  The presentation of results will 
+also be similar.  
+The adjusted mean ( with 95% CI) obtained from the MMRM analysis at each post- baseline 
+visit through Day 29 in the Treatment Period will be plotted by treatment group, for ea ch 
+part.  
+A waterfall plot showing the subject -level absolute change in sweat chloride at Day 29 will 
+be presented , by treatment group. The plots will be based on the pooled treatment groups for 
+Part 1.  
+In addition, for each part, descriptive analyses of the change from baseline will be performed 
+for all treatment groups by post- baseline visit. Treatment groups TC -1A and TC -1B-low in 
+Part 1 will be p resented both pooled and separately, for descriptive anal ysis. 
+
+Statistical Analysis Plan (Methods)  Page 37 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   8
+.4 Safety Analysis 
+For Parts 1  a ll safety analyses will be based on data from the TE Period  for all subjects 
+in the Safety Set. For Part 2, all safety analyses will be based on the TE Period for the 
+Treatment Period for all subjects in the corresponding Safety Set for the Treatment Period . 
+The overall safety profile of study drug will be assessed in terms of the following safety and tolerability endpoints:  
+• Treatment -emergent adverse events (TEAEs)  
+• Clinical laboratory values (i.e., hematology, serum chemistry, coagulation, and 
+urinalysis) 
+• ECGs  
+• Vital signs  
+• Pulse oximetry  
+All safety data will be summarized by treatme nt group and overall, for each part.  
+All safety data will be presented in individual subject data listings.  
+8.4.1  Adverse Events  
+For analysis purposes, AEs will be classified as pretreatmen t AEs, TEAEs, or post- treatment 
+AEs, defined as follows:  
+
+Statistical Analysis Plan (Methods)  Page 38 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   For Parts 1   
+Pretreatment AE:  any AE that started before the first dose date of study drug 
+TEAE:  any AE that worsened (either in severity or seriousness) or that was newly developed 
+at or aft er the first dose date of study drug through the end of the TE period  
+Post-treatment AE: any AE that worsened (either in severity or seriousness) or that was 
+newly developed beyond the TE period 
+For Part 2 :  
+Pretreatment AE:  any AE that started before the first dose date of study drug 
+TEAE during the Run- in Period:  any AE that worsened (either in severity or seriousness) 
+or that was newly developed at or after the first dose date of study drug through the end of 
+the TE period for the Run-in Period 
+TEAE dur ing the Treatment Period:  any AE that worsened (either in severity or 
+seriousness) or that was newly developed at or after the first dose date of study drug through 
+the end of the TE period for the Treatment Period  
+Post-treatment AE: any AE that worsened (either in severity or seriousness) or that was 
+newly developed beyond the TE period For AEs with completely missing or partially missing start dates, if there is no clear evidence 
+that the AEs started before or after study treatment, the AEs will be class ified as TEAEs.  
+Details for imputing missing or partial start dates of adverse ev ents are described in 
+Appendix H. 
+AE summary tables will be presented for TEAEs only, for the TE period , or accordingly, the 
+TE Period for T reatment Period  in Part 2 , by treatment group and overall, for each part and 
+cohort, as applicable, for the following :  
+• Number of TEAEs (total number of TEAEs only) 
+• Subjects with any TEAEs  
+• Subjects with TEAEs by Strongest Relationship  
+• Subjects with TEAEs by Maximum Severity  
+• Subjects with TEAEs Leading to Study Drug  Discontinuation (Discontinuation of all 
+study drug) 
+• Subjects with TEAEs Leading to Study Drug Interruption (Interruption of all study drug) 
+• Subjects with  Serious TEAEs  
+• Subjects with TEAE Leading to Death  
+Summaries will be presented by MedDRA system organ class (SOC) and preferred term (PT) 
+using frequency counts and percentages (i.e., number and percentage of subjects with an event). When summarizing the number and percentages of subjects, s ubjects with multiple 
+occurrences of the same adverse event or a continuing adverse event will be counted once, 
+
+Statistical Analysis Plan (Methods)  Page 40 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   and cohort , as applicable. The following vital signs parameters will be summarized: systolic 
+and diastolic blood pressure (mm Hg), body temperature ( °C), HR (beats per minute), and 
+respiratory rate (breaths  per minute). 
+The number and percentage of subjects meeting at least 1 threshold analysis criterion during 
+the TE period, or TE period for the Treatment Period in Part 2, will be summarized by treatment group  and overall, for each part . The threshold analysis criteria are provided in 
+Appendix I. 
+8.4.5  Pulse Oximetry  
+For the treatment -emergent pulse oximetry measurements, a summary of observed values and 
+change from baseline values will be provided at each scheduled visit, for the percent of 
+oxygen saturation, by  treatment group, for each part. 
+The number and percentage of subjects with shift changes from baseline (normal/missing and low according to the reference range) to the lowest percent of oxygen saturation during the TE Period , or accordingly, the TE period for the Treatment Period in Part 2, will be 
+summarized by treatment group  and overall, for each part. 
+8.4.6  Physical Examination  
+PE findings will be presented as an individual subject data listing only. 
+9 I
+NTERIM AND IDMC ANALYS ES 
+9.1 Interim Analysis  
+The first interim analysis will be performed after all subjects in Part 1 have completed the 
+Safety Follow -up Visit. All Data from Part 1 will be unblinded after the data from Part 1 are 
+cleaned for analysis and a data cut is performed. The Vertex Study Team will be unblinded to the interim analysis results from Part 1.  
+The second interim analysis will be performed after all subjects in Part 2 have completed the 
+Safety Follow -up Visit. The Vertex Study Team will be unblinded to the interim analysis 
+results from Part 2 , following a process similar to Part 1 . 
+9.2 IDMC Analysis  
+An independent data monitoring committee (IDMC) was formed before study initiation. The IDMC’s objectives and operational details were defined in a separate document (IDMC Charter) which was finalized before the first subject was screened in the study. The IDMC ’s 
+planned safety  reviews of study data are outlined in the IDMC Charter and IDMC Statistical 
+Analysis Plan.  Furth er, planned ongoing reviews of key study data by the limited Vertex 
+team  are al so described in the IDMC Statistical Analysis Plan .  
+
+Statistical Analysis Plan (Methods)  Page 41 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   10 REFERENCES  
+1Quanjer PH, Stanojevic S, Cole TJ, Baur X, Hall G, Culver BH, et al. Multi- ethnic reference 
+values for spirometry for the 3-95-yr age range: the global lung function 2012 equations. Eur 
+Respir J. 2012;40(6):1324-43. 
+2Quittner AL, Modi A, Cruz I . Systematic review of health -related quality of life measure for 
+children with respiratory conditions. Pediatr Respir Rev. 2008;9:220-32. 
+3Goss C, Quittner AL. Patient-reported outcomes in cystic fibrosis. Proc Am Thorac Soc. 
+2007;4:1-9. 
+4Modi AC, Quittner AL. Validation of a disease- specific measure of health -related quality of 
+life for children with cystic fibrosis. J Pediatr Psychol. 2003;28(8):535-45. 
+
+Statistical Analysis Plan (Methods)  Page 42 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   11 LIST OF APPENDICES 
+Appendix A: Schedule of Assessments  
+Table 11-1 Study VX15 -440- 101: Schedule of Assessments for Part  1 (Cohort 1A)  
+Event/Assessmenta Screening  Treatment Periodb 
+Day 43 
+(± 3 days)   
+ETT  
+Visitc Safety 
+Follow -up 
+28 (± 7) Days 
+After Last 
+Dose  Days  -28 
+to -1d Day 1  Day 8 
+(± 1 day)  Day 15 
+(± 2 days)  Day 29 
+(± 2 days)  
+Inform ed consent  X        
+Randomizatione  X       
+Demographics  X        
+Medical history  X        
+Ophthalmological history  X        
+CFQ -Rf,g  X  X X X Xh  X 
+Weighti X X X X X X X X 
+Height  X        
+                                                 
+a  All assessments will be performed before dosing, unless noted otherwise. Assessments that are collected before and after dosing will only be collected once 
+if study drug is not administered on the day of the visit (i.e., if subject prematurely discontinued study drug treatment).  
+b  To be eligible to continue into the Treatment Period, subjects must have stable CF disease and have remained on stable CF med ication regimen during the 
+28 days before the Day 1 Visit AND must not have had an acute non- CF illness within 14 days before the Day 1 Visit. See Section 8.1.3 of  the protocol.  
+c  If the subject prematurely discontinues study treatment, an ETT Visit should be scheduled as soon as possible after the decis ion to termi nate study drug 
+treatment. Subjects who prematurely discontinue treatment will also be required to complete the Safety Follow -up Visit. If the ETT Visit occurs 3 weeks or 
+later following the last dose of study drug, then the ETT Visit will replace the Safe ty Follow -up Visit, and a separate Safety Follow -up Visit will not be 
+required.  
+d  All screening results must be reviewed by an appropriately qualified member of the investigator’s team before randomization, unless noted otherwise.  
+e  Randomization may occ ur on the previous day (Day  -1) after all inclusion and exclusion criteria have been confirmed.  
+f  CFQ -R must be completed before the start of any other assessments scheduled at that visit.  
+g  The predose assessment on Day  1 may be performed on the previou s day (Day -1) if randomization has occurred.  
+h  Subjects will complete the CFQ -R at the ETT Visit only if it has been 2 weeks or more since their last visit.  
+i  Weight and height will be measured with shoes off.  
+
+Statistical Analysis Plan (Methods)  Page 43 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Table 11-1 Study VX15 -440- 101: Schedule of Assessments for Part  1 (Cohort 1A)  
+Event/Assessmenta Screening  Treatment Periodb 
+Day 43 
+(± 3 days)   
+ETT  
+Visitc Safety 
+Follow -up 
+28 (± 7) Days 
+After Last 
+Dose  Days  -28 
+to -1d Day 1  Day 8 
+(± 1 day)  Day 15 
+(± 2 days)  Day 29 
+(± 2 days)  
+Vital signsj X X X X X X X X 
+Pulse oximetry  X X X X X X X X 
+                                                 
+j  Vital signs and pulse oximetry will be collected after the subject has been seated for at least 5  minutes.  
+
+Statistical Analysis Plan (Methods)  Page 44 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Table 11-1 Study VX15 -440- 101: Schedule of Assessments for Part  1 (Cohort 1A)  
+Event/Assessmenta Screening  Treatment Periodb 
+Day 43 
+(± 3 days)   
+ETT  
+Visitc Safety 
+Follow -up 
+28 (± 7) Days 
+After Last 
+Dose  Days  -28 
+to -1d Day 1  Day 8 
+(± 1 day)  Day 15 
+(± 2 days)  Day 29 
+(± 2 days)  
+Physical examinationk Complete  Abbreviated   Abbreviated  Abbreviated   Abbreviated  Complete  
+Ophthalmologic 
+examinationl X        
+Standard 12 -lead ECGm X X X X X X X X 
+Sweat chlorideg,n X X X X X X X X 
+Spirometryo X X X X X X X X 
+Urinalysis  X X X X X X X X 
+Pregnancy test (all females 
+of childbearing potential)  Serum  Urine    Urine   Serum   Serum  
+CFTR  genotypep X        
+FSHq X        
+                                                 
+k  Complete and abbreviated PEs are described in Section  11.7.3  of the protocol . Symptom -targeted PEs will occur at any time during the study if triggered by 
+AEs or if deemed necessary by the investigator or healthcare provider.  
+l  The ophthalmological examination can be performed at any time during the Screening Period through the Day  1 Visit (before the first dose of study drug). 
+The screening ophthalmological examination does not have to  be performed if there is documentation of an examination that met protocol criteria and was 
+within 3  months before the date of informed consent, or if there is documentation of bilateral lens removal for the subject.  
+m  All standard 12 -lead ECGs will be performed after the subject has been seated for at least 5  minutes. On Days 1 and 15, ECGs will be collected before 
+dosing and 4 hours (±  1 hour) after dosing. At all other visits, ECGs will be collected before dosing (as applicable). ECG s collected on Day  1 before dosing 
+will be performed in triplicate.  
+n  Sweat chloride will be measured in all subjects. If the value cannot be determined from the screening test, a sweat chloride value documented in the subject’s 
+medical record may be used to establish eligibility.  
+o  Spirometry may be performed pre - or post -bronchodilator at the Screening Visit. Spirometry will be performed pre -bronchodilator, before the morning dose 
+of study drugs, and should be performed at approximately the same time a t every other study visit. On Days  1 and 15, spirometry will also be performed 
+pre-bronchodilator 5 hours (± 1 hour) after study drug administration.  
+p  CFTR  genotyping will be performed for all subjects. If the screening CFTR  genotype result is not received before randomization, a previous CFTR  genotype 
+laboratory report may be used to establish eligibility.  
+q  FSH will be measured for any suspected postmenopausal female subjects with at least 12 months of continuous spontaneous ameno rrhea.  
+
+Statistical Analysis Plan (Methods)  Page 45 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Table 11-1 Study VX15 -440- 101: Schedule of Assessments for Part  1 (Cohort 1A)  
+Event/Assessmenta Screening  Treatment Periodb 
+Day 43 
+(± 3 days)   
+ETT  
+Visitc Safety 
+Follow -up 
+28 (± 7) Days 
+After Last 
+Dose  Days  -28 
+to -1d Day 1  Day 8 
+(± 1 day)  Day 15 
+(± 2 days)  Day 29 
+(± 2 days)  
+G6PD activity testr X        
+Serum chemistry and 
+hematology  X X X X X X X X 
+Coagulation  X X  X X   X 
+PK samplingt  X X X X X X   
+Study drug dosingu  Day 1 through Day 29     
+AEs, medicationsv, 
+treatments, and procedures  Continuous from signing of the ICF through the Safety Follow -up Visit  
+ 
+                                                 
+r  A single blood sample will be collected for the G6PD activity test  
+  Blood samples will be collected for PK analysis of VX -440,  TEZ, M1- TEZ, IVA, and M1 -IVA. On Day 1, samples will be collected before dosing (0  hours) 
+and at 1, 2, 4, and 6 hours after dosing (relative to the morning dose). On Days 8 and 29, a predose sample will be collected before the morning dose of study 
+drug. On Day 15, samples will be collected before dosing (0 hours)  and at 1, 2, 4, 6, and 8 hours after dosing. At the Day 43 and the ETT Visits, a single 
+blood sample for PK analysis will be collected.  
+u  The last dose of study drug will be the morning dose on Day  29. 
+v  Refer to Section 9.4 of  the protocol for details.  
+
+Statistical Analysis Plan (Methods)  Page 46 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Table 11-2 Study VX15 -440- 101: Schedule of Assessments for Part  1 (Cohort 1B) 
+Event/Assessmenta Screening  Treatment Periodb 
+Day 43 
+(± 3 days)   
+ETT  
+Visitc Safety 
+Follow -up 
+28 (± 7) Days 
+After Last Dose  Days  -28 
+to -1d Day 1  Day 15 
+(± 2 day)  Day 29 
+(± 2 day)  
+Informed consent  X       
+Randomizatione  X      
+Demographics  X       
+Medical history  X       
+Ophthalmological history  X       
+CFQ -Rf,g  X X X X Xh  X 
+Weighti X X X X X X X 
+Height  X       
+Vital signsj X X X X X X X 
+Pulse oximetry  X X X X X X X 
+                                                 
+a  All assessments will be performed before dosing, unless noted otherwise. Assessments that are collected before and after dosing will only be collected once 
+if study drug is not administered on the day of the visit (i.e., if subject prematurely disconti nued study drug treatment).  
+b  To be eligible to continue into the Treatment Period, subjects must have stable CF disease and have remained on stable CF med ication regimen during the 
+28 days before the Day 1 Visit AND must not have had an acute non- CF illn ess within 14 days before the Day 1 Visit. See Section  8.1.3 of  the protocol.  
+c  If the subject prematurely discontinues study drug treatment, an ETT Visit should be scheduled as soon as possible after the decision to terminate study drug treatment. Subjects who prematurely discontinue treatment will also be required to complete the Safety Follow -up Visit. If the ETT Visit occurs 3 weeks or 
+later following the last dose of study drug, then the ETT Visit will replace the Safety Follow -up Visit, and a separate Safety Follow -up Visit will not be 
+required.  
+d  All screening results must be reviewed by an appropriately qualified member of the investigator’s team before randomization, unless noted otherwise.  
+e  Randomization may occur on the previous day (Day  -1) after all inclusion and exclusion criteria have been confirmed.  
+f  CFQ -R must be completed before the start of any other assessments scheduled at that visit.  
+g  The predose assessment on Day  1 may be performed on the previous day (Day -1) if randomization h as occurred. 
+h  Subjects will complete the CFQ -R at the ETT Visit only if it has been 2 weeks or more since their last visit.  
+i  Weight and height will be measured with shoes off.  
+j  Vital signs and pulse oximetry will be collected after the subject has been seated for at least 5  minutes.  
+
+Statistical Analysis Plan (Methods)  Page 47 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Table 11-2 Study VX15 -440- 101: Schedule of Assessments for Part  1 (Cohort 1B) 
+Event/Assessmenta Screening  Treatment Periodb 
+Day 43 
+(± 3 days)   
+ETT  
+Visitc Safety 
+Follow -up 
+28 (± 7) Days 
+After Last Dose  Days  -28 
+to -1d Day 1  Day 15 
+(± 2 day)  Day 29 
+(± 2 day)  
+Physical examinationk Complete  Abbreviated  Abbreviated  Abbreviated   Abbreviated  Complete  
+Ophthalmologic 
+examinationl X       
+Standard 12 -lead ECGm X X X X X X X 
+Sweat chlorideg,n X X X X X X X 
+Spirometryo X X X X X X X 
+Urinalysis  X X X X X X X 
+Pregnancy test (all females 
+of childbearing potential)  Serum  Urine   Urine   Serum  Serum  
+CFTR  genotypep X       
+FSHq X       
+                                                 
+k  Complete and abbreviated PEs are described in Section  11.7.3  of the protocol . Symptom -targeted PEs will occur at any time during the study if triggered by 
+AEs or if deemed necessary by the investigator or healthcare pro vider.  
+l  The ophthalmological examination can be performed at any time during the Screening Period through the Day  1 Visit (before the first dose of study drug). 
+The screening ophthalmological examination does not have to be performed if there is document ation of an examination that met protocol criteria and was 
+within 3  months before the date of informed consent, or if there is documentation of bilateral lens removal for the subject.  
+m  All standard 12 -lead ECGs will be performed after the subject has been seated for at least 5  minutes. On Days 1 and 15, ECGs will be collected before 
+dosing and 4 hours (±  1 hour) after dosing. At all other visits, ECGs will be collected before dosing (as applicable). ECGs collected on Day  1 before dosing 
+will be performed in triplicate.  
+n  Sweat chloride will be measured in all subjects. If the value cannot be determined from the screening test, a sweat chloride value documented in the subject’s 
+medical record may be used to establish eligibility.  
+o  Spirometry may be performed pre - or post -bronchodilator at the Screening Visit. Spirometry will be performed pre -bronchodilator, before the morning dose 
+of study drugs, and should be performed at approximately the same time at every other study visit. On Days  1 and 15, spirometry will also be performed 
+pre-bronchodilator, 5 hours (± 1 hour) after study drug administration.  
+p  CFTR  genotyping will be performed for all subjects. If the screening CFTR  genotype result is not received before randomization, a previous CFTR  genoty pe 
+laboratory report may be used to establish eligibility.  
+q  FSH will be measured for any suspected postmenopausal female subjects with at least 12 months of continuous spontaneous ameno rrhea.  
+
+Statistical Analysis Plan (Methods)  Page 48 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Table 11-2 Study VX15 -440- 101: Schedule of Assessments for Part  1 (Cohort 1B) 
+Event/Assessmenta Screening  Treatment Periodb 
+Day 43 
+(± 3 days)   
+ETT  
+Visitc Safety 
+Follow -up 
+28 (± 7) Days 
+After Last Dose  Days  -28 
+to -1d Day 1  Day 15 
+(± 2 day)  Day 29 
+(± 2 day)  
+G6PD activity testr X       
+Serum chemistry and 
+hematology  X X X X X X X 
+Coagulation  X X X X   X 
+PK samplingt  X X X X X   
+Study drug dosingu  Day 1 through Day 29     
+AEs, medicationsv, 
+treatments and procedures  Continuous from signing of the ICF through the Safety Follow -up Visit  
+ 
+                                                 
+r  A single blood sample will be collected for the G6PD activity test.  
+  B lood samples will be collected for PK analysis of VX -440, TEZ, M1- TEZ, IVA, and M1 -IVA. On Day 1, samples will be collected before dosing (0  hours) 
+and at 1, 2, 4, and 6 hours after dosing (relative to the morning dose). On Day  15, samples will be collected before dosing (0 hours) and at 1, 2, 4, 6, and 8 
+hours after dosing. On Day 29, a predose sample will be collected before the morning dose of study drug. At the Day 43 and the ETT Visits, a  single blood 
+sample for PK analysis will be collected.  
+u  The last dose of study drug will be the morning dose on Day  29. 
+v  Refer  to Section  9.4 of the  protocol for details.  
+
+Statistical Analysis Plan (Methods)  Page 49 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Table 11-3 Study VX15 -440-101: Schedule of Assessments for Part 2  
+Event/Assessmenta Screening  Run- in Period  Treatment Periodb Washout Period  
+ETT  
+Visitc Safety 
+Follow -up 
+28 (± 7) Days 
+After Last  
+Dosed Days  -56 
+to -29e Day -28 
+(± 1 day)  Day -14f 
+(± 1 day)  Day 1  Day 15 
+(± 2 days)  Day 29 
+(± 2 days)  Day 43 
+(± 3 days)  Day 57  
+(± 3 days)  
+Informed consent  X          
+Randomizationg    X       
+Demographics  X          
+Medical history  X          
+Ophthalmological 
+history  X          
+CFQ -Rh,i    X X X X X Xj  X 
+Weightk X X  X X X X X X X 
+Height  X          
+                                                 
+a  All assessments will be performed before dosing, unless noted otherwise. Assessments that are collected before and after dosing will only be collected once 
+if study drug is not administered on the day of the visit (i.e., if subject prematurely discontinued study drug treatment).  
+b  To be eligible to continue into the Treatment Period, subjects must have stable CF disease and have remained on stable CF med ication regimen during the 
+28 days before the Day 1 Visi t AND must not have had an acute non- CF illness within 14 days before the Day 1 Visit. See Section  8.1.3  of the protocol.  
+c  If the subject prematurely discontinues study treatment, an ETT Visit should be scheduled as soon as possible after the decis ion to  terminate study drug 
+treatment. Subjects who prematurely discontinue treatment will also be required to complete the Safety Follow -up Visit. If the ETT Visit occurs 3 weeks or 
+later following the last dose of study drug, then the ETT Visit will replace th e Safety Follow -up Visit, and a separate Safety Follow -up Visit will not be 
+required.  
+d  Part 2 subjects who meet criteria specified in Section 8.1.5  of the protocol will not have a Safety Follow -up Visit.  
+e  All screening results must be reviewed by an appropriately qualified member of the investigator’s team before the subject receives the first dose of TEZ/IVA 
+in the Run -in Period on Day  -28, unless noted otherwise.  
+f  The Day  -14 Visit is only required for subjects who are naïve to TEZ/IVA treatment.  
+g  Randomization may occur on the previous day (Day  -1) after all inclusion and exclusion criteria and criteria for entry into the Treatment Period have been 
+confirmed. See Section  8.1.3  of the protocol.  
+h  CFQ -R must be completed before the start of any other assessments scheduled at that visit.  
+i  The predose assessment on Day  1 may be performed on the previous day (Day -1) if randomization has occurred.  
+j  Subjects will complete the CFQ -R at the ETT Visit only if it has been 2 weeks or more since their last visit.  
+k  Weight and height will be measured with shoes off.  
+
+Statistical Analysis Plan (Methods)  Page 50 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Table 11-3 Study VX15 -440-101: Schedule of Assessments for Part 2  
+Event/Assessmenta Screening  Run- in Period  Treatment Periodb Washout Period  
+ETT  
+Visitc Safety 
+Follow -up 
+28 (± 7) Days 
+After Last  
+Dosed Days  -56 
+to -29e Day -28 
+(± 1 day)  Day -14f 
+(± 1 day)  Day 1  Day 15 
+(± 2 days)  Day 29 
+(± 2 days)  Day 43 
+(± 3 days)  Day 57  
+(± 3 days)  
+Vital signsl X X  X X X X X X X 
+Pulse oximetry  X X  X X X X X X X 
+Physical 
+examinationm Complete  Abbreviated   Abbreviated  Abbreviated  Abbreviated   Abbreviated  Abbreviated  Complete  
+Ophthalmologic 
+examinationn X          
+Standard 12 -lead 
+ECGo X X  X X X X X X X 
+Sweat chloridei,p X  X X X X X X X  
+Spirometryq X   X X X X X X X X 
+Urinalysis  X X  X X X X X X X 
+                                                 
+l  Vital signs and pulse oximetry will be collected after the subject has been seated for at least 5  minutes.  
+m  Complete and abbreviated PEs are described in Section  11.7.3  of the protocol . Symptom -targeted PEs will occur at any time during the study if triggered by 
+AEs or if deemed necessary by the investigator or healthcare provider.  
+n  The ophthalmological examination can be performed at any time during the Screening Period through the Day  1 Visit (before the first dose of study drug). 
+The screening ophthalmological examination does not have to be performed if there is documentation of an examination that met  protocol criteria and was 
+within 3  months before the date of informed consent, or i f there is documentation of bilateral lens removal for the subject.  
+o  All standard 12 -lead ECGs will be performed after the subject has been seated for at least 5  minutes. On Days 1 and 15, ECGs will be collected before 
+dosing and 4 hours (±  1 hour) after  dosing. At all other visits, ECGs will be collected before dosing (as applicable). ECGs collected on Day  1 before dosing 
+will be performed in triplicate.  
+p  Sweat chloride will be measured in all subjects. If the value cannot be determined from the screening test, a sweat chloride value documented in the subject’s 
+medical record may be used to establish eligibility.  
+q  Spirometry may be performed pre - or post -bronchodilator at the Screening Visit. Spirometry will be performed pre -bronchodilator, before the morning dose 
+of study drugs, and should be performed at approximately the same time at every other study visit. On Days  1 and 15, spirometry will also be performed 
+pre-bronchodilator, 5 hours (± 1 hour) after study drug administration.  
+
+Statistical Analysis Plan (Methods)  Page 51 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Table 11-3 Study VX15 -440-101: Schedule of Assessments for Part 2  
+Event/Assessmenta Screening  Run- in Period  Treatment Periodb Washout Period  
+ETT  
+Visitc Safety 
+Follow -up 
+28 (± 7) Days 
+After Last  
+Dosed Days  -56 
+to -29e Day -28 
+(± 1 day)  Day -14f 
+(± 1 day)  Day 1  Day 15 
+(± 2 days)  Day 29 
+(± 2 days)  Day 43 
+(± 3 days)  Day 57  
+(± 3 days)  
+Pregnancy test (all 
+females of 
+childbearing 
+potential)  Serum  Urine   Urine   Urine   Urine  Serum  Serum  
+CFTR  genotyper X          
+FSHs X          
+G6PD activity testt X          
+Serum chemistry 
+and hematology  X X  X X X X X X X 
+Coagulation  X X  X X X    X 
+PK samplingv    X X X X  X   
+TEZ/IVA dosingw  Day -28 through Day 57    
+VX-440 or placebo 
+dosingx    Day 1 through Day 29      
+                                                 
+r  CFTR  genotypi ng will be performed for all subjects. If the screening CFTR  genotype result is not received before Day  -28, a previous CFTR  genotype 
+laboratory report may be used to establish eligibility.  
+s  FSH will be measured for any suspected postmenopausal female su bjects with at least 12 months of continuous spontaneous amenorrhea.  
+t  A single blood sample will be collected for the G6PD activity test.  
+  B lood samples will be collected for  PK analysis of VX -440, TEZ, M1- TEZ, IVA, and M1 -IVA. On Day 1, samples will be collected before dosing (0  hours) 
+and at 1, 2, 4, and 6 hours after dosing (relative to morning dose). On Day 15, samples will be collected before dosing (0 hours) and at 1, 2,  4, 6, and 8 hours 
+after dosing. On Day  29, a predose sample will be collected before the morning dose of study drug. At the Day 43 Visit, a single blood sample for PK 
+analysis will be collected before the morning dose of TEZ/IVA. At the ETT Visit, a single blood sample for PK analysis will be collected.  
+w  The last dose of TEZ/ivacaftor will be the morning dose on Day  57. 
+x  The last dose of VX- 440 or placebo will be the morning dose on Day  29. 
+
+Statistical Analysis Plan (Methods)  Page 52 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+ 
+Vertex Pharmaceuticals Incorporated   Table 11-3 Study VX15 -440-101: Schedule of Assessments for Part 2  
+Event/Assessmenta Screening  Run- in Period  Treatment Periodb Washout Period  
+ETT  
+Visitc Safety 
+Follow -up 
+28 (± 7) Days 
+After Last  
+Dosed Days  -56 
+to -29e Day -28 
+(± 1 day)  Day -14f 
+(± 1 day)  Day 1  Day 15 
+(± 2 days)  Day 29 
+(± 2 days)  Day 43 
+(± 3 days)  Day 57  
+(± 3 days)  
+AEs, medicationsy, 
+treatments and 
+procedures  Continuous from signing of the ICF through the Safety Follow -up Visit  
+                                                 
+y  Refer to Section  9.4 of the protocol for details.  
+
+Statistical Analysis Plan (Methods)  Page 56 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Appendix B: Analysis Visit Windows for Safety and Efficacy Assessments  
+Table 11- 5 Analysis Visit Windows for Safety and Efficacy Assessments  
+Assessment  Visita Target Study 
+Dayb Analysis Visit Window  
+(in study days)  
+Safety Assessment (Part 1, Cohort 1A)  
+Serum Chemistry  
+Hematology 
+Urinalysis  
+Vital Signs (including 
+Weight)  
+ Day 1 (Baseline)  
+Day 8  
+Day 15  
+Day 29  
+Day 43  
+Safety Follow -up 1 
+8 
+15 
+29 
+43 
+57 ≤1 Pre-dose 
+[1, 12]  
+(12,22]  
+(22, 36]  
+(36, 50]  
+Use nominal visit  
+Coagulation  Day 1 (Baseline)  
+Day 15  
+Day 29  
+Safety Follow -up 1 
+15 
+29 
+57 ≤1 Pre-dose 
+[1, 22] 
+(22, 43]  
+Use nominal visit  
+Standard 12 -Lead ECG  Day 1 (Baseline; before dosing)  
+Day 1 (4 hours after dosing)  
+Day 8  
+Day 15 (before dosing and 4 
+hours after dosing)  
+Day 29  
+Day 43 
+Safety Follow -up 1 
+1 
+8 
+15 
+ 
+29 
+43 
+57 Use nominal visit for all 
+visits  
+Safety Assessment (Part 1, Cohort 1B)  
+Serum Chemistry  
+Hematology Urinalysis  
+Vital Signs (including 
+Weight)  Day 1 (Baseline)  
+Day 15  
+Day 29  
+Day 43  
+Safety Follow -up 1 
+15 
+29 
+43 
+57 ≤1 Pre-dose 
+[1,22]  
+(22, 36]  
+(36, 50]  
+Use nominal visit  
+Coagulation  Day 1 (Baseline)  
+Day 15  
+Day 29  
+Safety Follow -up 1 
+15 
+29 
+57 ≤1 Pre-dose 
+[1,22]  
+(22, 43]  
+Use nominal visit  
+Standard 12 -Lead ECG  Day 1 (Baseline; before dosing)  
+Day 1 (4 hours after dosing)  
+Day 15 (before dosing and 4 
+hours after dosing)  
+Day 29  
+Day 43  
+Safety Follow -up 1 
+1 
+15 
+ 
+29 
+43 
+57 Use nominal visit for all 
+visits  
+Safety Assessment (Part 2)  
+                                                 
+a  Visit name is used to report data in tables, listings and figures.   
+b  Target day time point per protocol is predose, except for ECG measurements.  
+Statistical Analysis Plan (Methods)  Page 57 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Table 11-5 Analysis Visit Windows for Safety and Efficacy Assessments 
+Assessment  Visita Target Study 
+Dayb Analysis Visit Window  
+(in study days)  
+Serum Chemistry  
+Hematology 
+Urinalysis  
+Vital Signs (including 
+Weight)  Day 1 (Baseline)  
+Day 15  
+Day 29 
+Day 43  
+Day 57  
+Safety Follow -up 1 
+15 
+29 
+43 
+57 
+85 ≤1 Pre-dose 
+[1,22]  
+(22, 36]  
+(36, 50]  
+(50, 71]  
+Use nominal visit  
+Coagulation  
+ Day 1 (Baseline)  
+Day 15  
+Day 29  
+Safety Follow -up 1 
+15 
+29 
+85 ≤1 Pre-dose 
+[1,22]  
+(22, 57] 
+Use nominal visit  
+Standard 12 -Lead ECG  Day 1 (Baseline; before dosing)  
+Day 1 (4 hours after dosing)  
+Day 15 (before dosing and 4 
+hours after dosing)  
+Day 29  
+Day 43  
+Day 57  
+Safety Follow -up 1 
+1 
+15 
+ 29 
+43 
+57 
+85 Use nominal visit for all 
+visits  
+Efficacy Assessment (Part 1, Cohort 1A)  
+
+Statistical Analysis Plan (Methods)  Page 58 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Table 11-5 Analysis Visit Windows for Safety and Efficacy Assessments 
+Assessment  Visita Target Study 
+Dayb Analysis Visit Window  
+(in study days)  
+Spirometry  
+Sweat Chloride  Day 1 (Baseline)  
+Day 1 (5 hours after dosing for 
+Spirometry ) 
+Day 8  
+Day 15   
+ 
+Day 29  
+Day 43  
+Safety Follow -up 1 
+1  
+8 
+15 
+ 29 
+43 
+57 ≤1 Pre-dose 
+1 Post -dose for Spirometry  
+ (1, 12]  
+(12,22]  (Pre and Post for 
+Spirometry ) 
+(22, 36]  
+(36, 50]  
+Use nominal visit  
+CFQ -R Day 1 (Baseline)  
+Day 15  
+Day 29  
+Day 43  
+Safety Follow -up 1 
+15 
+29 
+43 
+57 ≤1 
+(1,22]  
+(22, 36]  
+(36, 50]  
+Use nominal visit  
+Efficacy Assessment (Part 1, Cohort 1B)  
+Spirometry  
+Sweat Chloride  
+CFQ -R Day 1 (Baseline)  
+Day 1 (5 hours after dosing for 
+Spirometry ) 
+Day 15  
+ 
+Day 29  
+Day 43  
+Safety Follow -up 1 
+1  15 
+ 29 
+43 
+57 ≤1 
+1 
+ 
+(1,22]  (Pre and Post for 
+Spirometry ) 
+(22, 36]  
+(36, 50]  
+Use nominal visit  
+Efficacy  Assessment (Part 2)  
+Spirometry  
+Sweat Chloride  
+CFQ -R Day 1 (Baseline)  
+Day 1 (5 hours after dosing for 
+Spirometry )   
+Day 15  
+ 
+Day 29  
+Day 43  
+Day 57  
+Safety Follow -up 1 
+1  15 
+ 29 
+43 
+57 
+85 ≤1 
+1  
+(1,22]  (Pre and Post for 
+Spirometry ) 
+(22, 36]  
+(36, 50]  
+(50, 71]  
+Use nominal visit  
+aVisit name is used to report data in tables, listings and figures.  
+bTarget day time point is predose.  
+
+Statistical Analysis Plan (Methods)  Page 59 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Table 11- 5 Analysis Visit Windows for Safety and Efficacy Assessments  
+Assessment  Visita Target Study 
+Dayb Analysis Visit Window  
+(in study days)  
+ 
+Notes:  
+The analysis visit windows will be applied using the following rules for both scheduled and unscheduled visits:  
+1. If no numerical measurement is available within a visit window, the measurement will be considered 
+missing for the visit.  
+2. If there is more than 1  numerical measurement available within the same vis it window, use the 
+following rules:  
+a. For efficacy parameters: if there are multiple measurements within a visit window, the measurement at the scheduled visit will be used. Otherwise,  
+i. If there are no measurements at the scheduled visit, then the measuremen t closest to the target 
+day will be used; or  
+ii. If there are multiple measurements with the same distance to the target day, the latest 
+measurement will be used.   
+b. For safety parameters: if there are multiple measurements within a visit window,   
+i. The measurement closest to the target day will be used; or  
+ii. If there are multiple measurements within the same distance from the target day, the latest measurement will be used.  
+iii. For tables of the extreme lab measurement based on ULN or LLN, convert the lab  
+measurements into times of ULN or LLN first, and then select the extreme measurement.  
+ 
+Derived Variables  
+1. Age (in years) at first dose date  
+Obtain age at screening (in days) in yy mm format (e.g., 24 years, 6 months) from screening vital signs page, 
+and add 0.5 month to convert to days.  
+Obtain screening date from Date of Visit (DOV) page.  
+Then age (in years) at first dose date = integer part of {[(first dose date- screening date) in  days + age at 
+screening (in days)]/365.25}.  
+Correspondingly, age (in months) at first dose date = integer part of 12*{[(first dose date -screening date) in 
+days + age at screening (in days)]/365.25}.  
+2. Age (in years) at post -baseline visit (for use in calcul ation of percent predicted spirometry variables)  
+Age (in years) at post -baseline visit = integer part of {[(post- baseline visit date –  screening date) in days + age 
+at screening (in days)]/365.25}  
+3. Missing First Dose Date or Last Dose Date  
+If the first dose  date is missing, use Day 1 visit date.  
+If the last dose date is missing at final analysis, use maximum of Early Treatment Termination  (ETT) visit date 
+and last study drug administr ation date from EX SDTM domain ( excluding PK dosing dates).  When a subject is 
+lost to follow up  without ETT , impute the last dose date as the last on -treatment visit date.
+ 
+  
+Statistical Analysis Plan (Methods)  Page 60 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Appendix C: Imputation Rules for Missing Prior/Concomitant Medication Dates  
+Imputation rules for missing or partial medication start/stop dates are defined below:  
+1. Missing or partial medication start date:  
+a. If only DAY is missing, use the first day of the month.  
+b. If DAY and Month are both missing, use the first day of the year.  
+c. If DAY, Month and Year are all missing, use a date before the first dose date  
+(in practical, use Jan. 01, 2000 to impute) . 
+2. Missing or partial medication stop date: 
+a. If only DAY is missing, use the last day of the month. 
+b. If DAY and Month are both missing, use the last day of the year.  
+c. If DAY, Month and year are all missing, assign ‘c ontinuing’ status to stop 
+date (in practical, use Dec. 31, 2050 to impute) . 
+In summary, the prior, concomitant or post categorization of a medication is described below.  
+Table 11 -6 Prior, Concomitant, and Post Categorization of a Medication in Parts  1 and  4 
+Medication Start Date  Medication Stop Date  
+< First Dose Date of Study 
+Drug  ≥ First Dose Date and ≤ 
+End Date of TE Period  > End Date of TE Period  
+< First dose date of study drug  P PC PCA  
+≥ First dose date and  
+≤ End date of TE period  - C CA 
+> End date of TE period  - - A 
+P: Prior; C: Concomitant; A: Post  
+Table 11 -7 Prior, Concomitant, and Post Categor ization of a Medication in Part  2 
+Medication Start Date   Medication Stop Date  
+< First Dose 
+Date of Run -in 
+TE Period  ≥ First Dose Date and ≤ 
+End Date of Run- in TE 
+Period  ≥ First Dose Date and ≤ End 
+Date of Treatment TE Period  > End Date of 
+Treatment TE 
+Period  
+< First dose date of Run -in 
+TE period  P PC1 PC1C2  PC1C2A  
+≥ First dose date and  
+≤ End date of Run -in  TE 
+Period  - C1 C1C2  C1C2A  
+≥ First dose date and  
+≤ End date of Treatment TE 
+Period  - - C2 C2A  
+> End date of Treatment TE 
+Period  - - - A 
+P: Prior; C1: Concomitant during the Run -in Period; C2: Concomitant during the Treatment Period; A: Post  
+  
+Statistical Analysis Plan (Methods)  Page 61 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Appendix D : Important Protocol Deviation Programming Rules (Based on the 
+Clinical Database)  
+Important protocol deviations before first dose 
+1. Inclusion criteria:  
+a) I1: Subject (or subject’s legally appointed and authorized representative) will sign 
+and date an informed co nsent form (ICF), and, when appropriate, an assent form. 
+b) I3: Subjects will be aged 18 years or older for Parts  1 and 2,  
+ on the date of informed consent and, when appropriate, date of 
+assent.  
+c) I4: Body weight ≥35 kg.  
+d) I6: Subjects must have an eligible CFTR genotype as noted below. If the screening 
+CFTR genotype result is not received before randomization (Parts 1 ) or before Day -28 (Part 2), a previous CFTR genotype laboratory report may be used to 
+establish eligib ility. Note: Subjects who have been randomized and whose screening 
+genotype does not confirm study eligibility must be discontinued from the study (Section  9.5).  
+e) I7: Part  1 
+ Heterozygous for F508del  with a second CFTR allele carrying 
+an MF mutation that is not likely to respond to TEZ and/or IVA therapy (Appendix A) 
+Part 2: Homozygous for F508del  
+Parts 1, 2,  subjects must have an FEV 1 ≥40% and ≤90% of predicted normal 
+for age, sex, and height (equations of the Gl obal Lung Function Initiative [GLI])13 at 
+the S creening Visit. Spirometry measurements must meet American Thoracic 
+Society/European Respiratory Society criteria10 for acceptability and repeatability.  
+2. Exclusion criteria: 
+a) E4: History of hemolysis.  
+b) E5: G6PD deficiency, defined as G6PD activity less than the lower limit of normal 
+(LLN) or 70% of the mean of the LLN and the ULN, whichever is greater.  
+c) E6: Any of the following abnormal laboratory values at screening: 
+• Hemoglobin <10 g/dL  
+• Total bilirubin ≥2 × ULN  
+• Aspartate aminotransferase (AST), alanine aminotransferase (ALT), gamma-
+glutamyl transpeptidase  (GGT), or alkaline phosphatase (ALP) ≥3 × ULN  
+• Abnormal renal function defined as glomerular filtration rate 
+≤50 mL/min/1.73 m2 (calculated by the Modification of Diet in Renal Disease 
+Study Equation)14, 15 for subjects ≥18 years of age and ≤45 mL/min/1.73 m2 
+
+Statistical Analysis Plan (Methods)  Page 62 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    (calculated by the Counahan -Barratt equation)16 for subjects aged 12 to 17 
+years (inclusive) 
+d) E10: A standard digital ECG demonstrating QTc >450 msec at screening. If QTc 
+exceeds 450  msec for the screening ECG, the ECG should be repeated 2 more times 
+during the Screening Period, and the subject will be excluded if the average of the 3 QTc values is >450 msec.  
+e) E11: History of solid organ or hematological transplantation. 
+f) E16: Use of restricted medications as defined in the clinical study protocol, within the specified window before the first dose of study drug (Day 1 in Parts 1 , Day -28 in Part 2).  
+g) E17: Pregnant or nursing females: Females of childbearing potential must have a negative pregnancy test at screening and Day  1. 
+3. Stratification error  based on comparing the IWRS stratification with the clinical database:  
+• Age at Screening V isit (<18, ≥18 years)  from IWRS versus age at screening visit 
+in the clinical databas e 
+• % predicted FEV
+1 at Stratification  (<70 , ≥70)  from IWRS versus  ppFEV 1 at the 
+screening visit or Day -14 (Part 2) of the R un-in Period from the clinical database  
+Important protocol deviations during the Treatment Period  
+1. Compliance < 80% based on the number of tablets taken 
+2. Use of prohibited medications 
+3. Actual treatment received is different from  the randomized treatment  
+  
+
+Statistical Analysis Plan (Methods)  Page 63 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Appendix E: Details of GLI Equations for Calculating ppFEV 1 
+Percent predicted values will be calculated for parameters of FEV 1,  
+ using the Quanjer GLI-2012 R egression Equations and Lookup Tables. 
+The regression equations and lookup tables required to implement the Quanjer GLI-2012 
+predicted values are available in:  
+Quanjer GLI -2012 Regression Equations and Lookup Tables. Philip H. Quanjer, Sanja 
+Stanojevic, Tim J. Cole, Janet Stocks. Version 7 April 2013. Available at:  
+http://www.ers -education.org/guidelines/global-lung-function- initiative/tools/quanjer -gli-
+2012- regression -equations -and-lookup- tables.aspx .  
+Accessed March 13, 2017.  The instructions and tools on how to implement the Quanjer GLI-2012 equations are:   Implementing GLI -2012 regression equations. Philip H. Quanjer, Sanja Stanojevic, Tim J. 
+Cole, Janet Stocks. Version 19 July 2015. Available at:  http://www.ers -education.org/guidelines/global-lung-function- initiative/gli-2012-
+explained.aspx.  
+Accessed March 13, 2017 .   GLI-2012 - SAS Macro. Sanja Stanojevic. Version 2, 7 April 2013. Available at:  
+http://www.ers -education.org/guidelines/global-lung- function- initiative/tools/sas -macro.aspx  
+Accessed March 13, 2017. 
+  
+
+Statistical Analysis Plan (Methods)  Page 66 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Appendix G: Calculation of BMI z -score for subjects <20 years old at screening  
+BMI will be calculated from weight and height at baseline and  post- baseline time points (Day 
+15, Week 4, 8, and 12), as applicable for Parts 1, 2  
+BMI, adjusted for age and sex, will be referred to as BMI- for-age z- score (BMI z -score). 
+BMI z -score will be calculated by using Centers for Disease Control and Prevention (CDC) 
+growth charts. The BMI z -score will be calculated as follows:  
+
+
+
+=
+
+≠−
+
+
+=
+0 ,ln0 ,1
+LSMXLLSMX
+zL
+ 
+where X  is the derived BMI value in kg/m2 based on the raw weight and raw height and L , M, 
+and S are selected from the CDC BMI -for-age chart by subject sex and age. The BMIAGE 
+file contains these parameters by sex (1=male, 2=female) and age; it is available at :  
+http://www.cdc.gov/growthcharts/percentile_data_files.htm .  
+Additionally, SAS code for calculating percentiles and z- scores is available at:    
+http://www.cdc.gov/growthcharts/computer_programs.htm . 
+NOTE: The CDC BMI -for-age charts are designed for use in pediatric populations (2 to  20 
+years of age); in this analysis plan, BMI z- score will be calculated only for subjects between 
+2 and <20 years. 
+
+Statistical Analysis Plan (Methods)  Page 67 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Appendix H: Imputation Rules for Missing AE dates  
+H.1 Parts 1  
+Imputation rules for missing or partial AE start date for Parts 1  are defined below. 
+• If only Day of AE start date is missing: 
+o If the full (or partial) AE end date is NOT before the first dose date of the 
+Treatment Period or AE end date is missing, then  
+ if AE start year and month are equal to the month and year of first dose date of the Treatment Period, then impute the AE start day as the day of first dose date of the Treatment Period;  
+ else impute the AE start day as 1.  
+o else impute the AE start day as 1.  
+Compare the imputed AE start date with TE period to determine whether the AE is pretreatment AE, TEAE or post- treatment AE.  
+• If Day and Month of AE start date are missing: 
+o If the full (or partial) AE end date is NOT before the first dose date of the Treatment Period or AE end date is missing, then  
+ if AE start year is equal to the year of first dose date of the Treatment Period, then impute the AE start month and day as the month and day of first dose date of the Treatment Period;  
+ else impute the AE start month as January and day as 1.  
+o else impute the AE start month as January and day as 1.  
+Compare the imputed AE start date with TE period to determine whether the AE is pretreatment AE, TEAE or post- treatment AE.  
+• If Year of AE start date is missing: 
+If the year of AE start is missing or AE start date is completely missing then query site 
+with no imputation.  
+o If the full (or partial) AE end date is NOT before the first dose date of the Treatment Period or AE end date is missing, then the AE will be considered as TEAE for the Treatment Period.  
+o else the AE will be considered as  a pretreatment AE . 
+ 
+H.2 Part 2  
+Imputation rules for missing or partial AE start date for Part 2 are defined below.  
+• If only Day of AE start date is missing: 
+
+Statistical Analysis Plan (Methods)  Page 68 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    o If the full (or partial) AE end date is NOT before the first dose date of the 
+Treatment Period or AE end date is missing, then  
+ if AE start year and month are equal to the month and year of first dose date of the Treatment Period, then impute the AE start day as the day of first dose date of the Treatment Period;  
+ else if AE start year and month are equal to the month and year of first dose date of the Run- in Period, then impute the AE start day as the day of 
+first dose date of the Run -in Period;  
+ else impute the AE start day as 1.  
+o else if the full (or partial) AE end date is NOT before the first dose date of the Run- in Period, then impute the AE start day as the day of first dose date of the 
+Run- in Period;  
+ if AE start year and month are equal to the month and year of first dose date of the Run- in Period, then impute the AE start day as the day of first 
+dose date of the Run- in Period;  
+ else impute the AE start day as 1.  
+o else impute the AE start day as 1.  
+Compare the imputed AE start date with TE period to determine whether the AE is pretreatment AE, TEAE or post -treatment AE.  
+• If Day and Month of AE start date are missing:  
+o If the full (o r partial) AE end date is NOT before the first dose date of the 
+Treatment Period or AE end date is missing, then  
+ if AE start year is equal to the year of first dose date of the Treatment Period, then impute the AE start month and day as the month and day of first dose date of the Treatment Period;  
+ else if AE start year is equal to the year of first dose date of the Run -in 
+Period, then impute the AE start month and day as the month and day of first dose date of the Run -in Period;  
+ else impute the AE start month as January and day as 1.  
+o else if the full (or partial) AE end date is NOT before the first dose date of the Run- in Period, then impute the AE start day as the day of first dose date of the 
+Run- in Period;  
+ if AE start year is equal to the year of fir st dose date of the Run- in Period, 
+then impute the AE start month and day as the month and day of first dose date of the Run- in Period;  
+ else impute the AE start month as January and day as 1.  
+o else impute the AE start month as January and day as 1.  
+Statistical Analysis Plan (Methods)  Page 69 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Compare the imputed AE start date with TE period to determine whether the AE is 
+pretreatment AE, TEAE or post -treatment AE.  
+• If Year of AE start date is missing:  
+If the year of AE start is missing or AE start date is completely missing then query site with no imputation.  
+o If the full (or partial) AE end date is NOT before the first dose date of the Treatment Period or AE end date is missing, then the AE will be considered as TEAE for the Treatment Period.  
+o else if the full (or partial) AE end date is NOT bef ore the first dose date of the 
+Run- in Period, then the AE will be considered as TEAE for the Run- in Period. 
+o else the AE will be considered as  a pretreatment AE . 
+ Imputation rules  for partial AE end date are defined below:  
+If partial end date, then impute as min (the last day of the month, end of study) if day is 
+missing,  or min (Dec , end of study) if month is missing.  
+  
+Statistical Analysis Plan (Methods)  Page 70 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Appendix I: Criteria for Threshold Analysis  
+Table 11- 10 Threshold Analysis Criteria for Laboratory Tests  (as applicable)  
+Parameter  Threshold Analysis  Comments  
+Clinical Chemistry  (LFT)  
+ALT  >ULN - ≤3xULN  
+>3x - ≤ 5xULN  
+>5x - ≤ 8xULN  
+>8x - ≤ 20.0xULN  
+>20.0xULN  FDA DILI Guidance Jul  2009.  
+AST  >ULN - ≤3xULN  
+>3x - ≤ 5xULN  
+>5x - ≤ 8xULN  
+>8x - ≤ 20.0xULN  
+>20.0xULN  FDA DILI Guidance Jul  2009.  
+ALT or AST   (ALT>ULN - ≤  3xULN) or (AST>ULN - ≤  
+3xULN)  
+(ALT>3x - ≤  5xULN) or  (AST>3x -  ≤  
+5xULN)  
+(ALT>5x - ≤  8xULN) or  (AST>5x -  ≤    
+8xULN)  
+(ALT>8x  - ≤  20xULN) or (AST>8x -  ≤ 
+20xULN)  
+ALT>20xULN or AST> 20 xULN  FDA D ILI Guidance  
+Alkaline 
+Phosphatase  >ULN - ≤ 1.5xULN  
+>1.5 – ≤ 2.5 xULN  
+>2.5 – ≤ 5.0 x ULN  
+>5.0 – ≤ 20.0 x ULN  
+>20.0 x ULN  FDA DILI Guidance Jul  2009.  
+Total Bilirubin  >ULN - ≤ 1.5xULN  
+>1.5 – ≤ 2xULN  
+>2 – ≤ 3xULN  
+>3 – ≤ 10xULN  
+>10xULN  FDA DILI Guidance Jul 2009.  
+Direct  Bilirubin  >ULN - ≤ 1.5xULN  
+>1.5 – ≤ 2xULN  
+>2 – ≤ 3xULN  
+>3 – ≤ 10xULN  
+>10xULN  FDA DILI Guidance Jul  2009.  
+ALT and Total 
+Bilirubin  ALT>3xULN and TBILI>2xULN  FDA DILI Guidance Jul  2009.  
+ 
+AST and Total 
+Bilirubin  AST>3xULN and TBILI>2xULN  FDA DILI Guidance Jul  2009.  
+ 
+(ALT or AST) and 
+Total Bilirubin  (ALT>3xULN or AST>3xULN) and 
+TBILI>2×ULN  FDA DILI Guidance Jul 2009.  
+Statistical Analysis Plan (Methods)  Page 71 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Table 11- 10 Threshold Analysis Criteria for Laboratory Tests  (as applicable)  
+Parameter  Threshold Analysis  Comments  
+GGT  >ULN - ≤ 2.5xULN  
+>2.5 –  ≤ 5.0xULN  
+>5.0 –  ≤ 20.0xULN  
+>20.0xULN  CTCAE grade 1 -4 
+Clinical Chemistry  (NON -LFT)   
+Albumin  <LLN - ≥ 30 g/L  
+<30 – ≥ 20 g/L  
+<20 g/L  CTCAE grade 1 -3 
+Amylase  >1x -  ≤  1.5xULN  
+>1.5x -  ≤  2xULN  
+>2x -  ≤  5xULN  
+>5xULN  Criteria based upon CTCAE  
+Creatinine  >ULN - ≤ 1.5xULN  
+>1.5 - ≤ 3.0xULN  
+>3.0 - ≤ 6.0xULN  
+>6.0xULN  CTCAE grades 1 -4 
+Lipase  >ULN  -  ≤  1.5xULN  
+>1.5x -  ≤  2xULN  
+>2x -  ≤  5xULN  
+>5xULN  Criteria based upon CTCAE  
+Total  protein  
+ <LLN  
+>ULN  No CTCAE  
+Hematology  
+Hemoglobin Hgb decreased (anemia)  
+<LLN - ≥ 100 g/L  
+<100 – ≥ 80 g/L  
+< 80 g/L  CTCAE grade 1 -3 
+ Hgb increased  
+>ULN - ≤ 20 g/L above ULN  
+>20 g/L above ULN -  ≤ 40 g/L above ULN  
+>40 g/L above ULN  CTCAE grade 1 -3 
+Platelets  Platelet decreased  
+<LLN - ≥ 75.0 x 10e9 /L  
+<75.0 – ≥ 50.0 x 10e9 /L  
+<50.0 – ≥ 25.0 x 10e9 /L  
+<25.0 x 10e9 /L  CTCAE grade 1 -4 
+ Platelet increased   
+>ULN  No CTCAE available  
+ 
+Reticulocytes  
+ <LLN  
+>ULN  No CTCAE  
+ 
+Statistical Analysis Plan (Methods)  Page 72 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Table 11- 11 Threshold Analysis Criteria for ECGs  
+Parameter  Threshold Analysis  Comments  
+HR Bradycardia  
+ 
+<50 bpm  
+<45 bpm  
+Decrease from baseline ≥10 bpm  
+Decrease from baseline ≥20 bpm  
+<50 bpm and decrease from baseline ≥10 bpm  
+<50 bpm and decrease from baseline ≥20 bpm  
+ Per HV grade 2, 3, plus shift change  
+ 
+ 
+ Tachycardia  
+ >100 bpm  
+>115 bpm  
+>130 bpm  
+Increase from baseline ≥10 bpm  
+Increase from baseline ≥20 bpm  
+>100 bpm and increase from baseline ≥10 bpm  
+>100 bpm and increase from baseline ≥20 bpm  Per HV grade 1, 2, 3, plus shift change  
+  
+PR ≥240 ms  
+≥300 ms  
+≥200 ms and increase from baseline ≥40 ms  
+≥200 ms and increase from baseline ≥100 ms   
+QRS  >110 ms  
+>160 ms  
+Increase from baseline ≥20 ms  
+Increase from baseline ≥40 ms   
+QTc 
+Borderline  
+Prolonged*  
+Additional  
+  
+>450 ms (Male)  and <500ms ; >470 ms  and 
+<500ms  (Female)  
+≥500 ms  
+ 
+Increase from baseline  
+Increase from baseline >10 ms  
+Increase from baseline >20 ms  
+Increase from baseline >40 ms  
+Increase from baseline >60 ms  
+ To be applied to any kind of QT correction 
+formula.  
+ 
+ 
+  
+Note: Based on CPMP 1997 guideline.  
+ 
+Statistical Analysis Plan (Methods)  Page 73 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Table 11- 12 Threshold Analysis Criteria for Vital Signs  
+Parameter  Threshold Analysis  Comments  
+HR Same  as above in ECG category  
+  
+SBP increased  
+  
+>140 mmHg 
+>160 mmHg 
+>10 mmHg increase from baseline  
+>20 mmHg increase from baseline  
+ 
+>140 mmHg & >10 mmHg increase from 
+baseline  
+>140 mmHg & >20 mmHg increase from baseline  
+>160 mmHg & >10 mmHg increase from 
+baseline  
+>160 mmHg & >20 mmHg increase from 
+baseline  
+ 809/770 analyses  
+SBP decrease  
+  
+<90 mmHg  
+<80 mmHg  
+>10 mmHg decrease from baseline  
+>20 mmHg decrease from baseline  
+ 
+<90 mmHg and >10 mmHg decrease from 
+baseline  
+<90 mmHg and >20 mmHg decrease from 
+baseline  
+<80 mmHg and >10 mmHg decrease from baseline  
+<80 mmHg and >20 mmHg decrease from baseline  
+ Per HV grade 1, 3, plus shift change  
+Statistical Analysis Plan (Methods)  Page 74 of 85 
+Protocol Number: VX15- 440-101 Version 2.0  
+     
+Vertex Pharmaceuticals Incorporated    Table 11- 12 Threshold Analysis Criteria for Vital Signs  
+Parameter  Threshold Analysis  Comments  
+DBP  increased   
+>90 mmHg  
+>100 mmHg 
+>5 mmHg increase from baseline  
+>10 mmHg increase from baseline  
+ 
+>90 mmHg and >5 mmHg increase from 
+baseline  
+>90 mmHg and >10 mmHg increase from 
+baseline  
+>100 mmHg and >5 mmHg increase from 
+baseline  
+>100 mmHg and >10 mmHg increase from baseline  
+  
+DBP decreased  
+  
+<60 mmHg  
+<45 mmHg  
+>5 mmHg decrease from baseline  
+>10 mmHg decrease from baseline  
+ 
+<60 mmHg and >5 mmHg decrease from 
+baseline  
+<60 mmHg and >10 mmHg decrease from baseline  
+<45 mmHg and >5 mmHg decrease from baseline  
+<45 mmHg and >10 mmHg decrease from baseline  
+ 
+ 
+  
+Weight   Weight gain  
+≥5 % increase from baseline   
+≥10 % increase from baseline  
+≥ 20% increase from baseline  
+ CTCAE grade 1 -3 
+ 
+ Weight loss  
+≥5 % decrease from baseline   
+≥10 % decrease from baseline  
+≥ 20% decrease from baseline  
+ CTCAE grade 1 -3 
+ 
+ 

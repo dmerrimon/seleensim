@@ -1,0 +1,1199 @@
+ 
+         
+Replication  of the LEAD -2 Trial in Healthcare Claims  
+ 
+RCT DUPLICATE – LEAD -2 
+ 
+August 4, 202 1 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 1 1. RCT Details  
+This section provides a high -level overview of a published RCT that the described real -world evidence study is trying to replicate 
+as closely as possible given the remaining limitations inherent in the healthcare databases.  
+ 
+1.1 Title 
+Efficacy and  Safety Comparison of Liraglutide,  Glimepiride, and Placebo, All in Combination With Metformin, in Type 2 
+Diabetes . The LEAD (Liraglutide Effect and Action in Diabetes) -2 study  ([STUDY_ID_REMOVED] ). 
+ 1.2 Intended aim(s)  
+To assess whether the glycemic control  achieved by adding  liraglutide to metformin was non-inferior to glimepiride and 
+metformin combination therapy  after 26 weeks of tr eatment , in subjects with type 2 diabetes and previously treated with  
+oral antidiabetic  therapy .  
+ 
+1.3 Primary endpoint for replication  
+Long -term glycemic control defined as change in HbA1c from baseline to the end of follow -up.  
+ 
+1.4 Required power for primary endpoint and noninferiority margin (if applicable)  
+The sample size calculation w as based on both HbA1c and body weight endpoints . The assumed standard deviation for 
+HbA1c and the coefficient of variance for body weight were 1.2% and 3%, respectively. The c ombined power (calculated as 
+the product of the marginal powers for HbA1c and body weight) was at least 85%. Noninferiority of glycemic control with 
+liraglutide versus glimepiride was concluded if the upper limit of the two -sided 95% CI for the treatment d ifference was < 
+0.4%.  
+With a standard deviation of 1.2% for HbA1c and a coefficient of variance of 3% for body weight , it was concluded that at 
+least 168 subjects were required to complete the treatment in the  liraglutide and in the  glimepiride , respectively.  Assuming 
+a dropout rate of 25% after 26 weeks of treatment, the number of subjects to be randomized was calculated to be 228 in each of the liraglutide and  glimepiride treatment groups.  
+ 1.5 Secondary endpoint for replication (assay sensitivity ) and RCT finding  
+n/a 
+ 1.6 Trial estimate  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 2 The HbA1c mean decreases of 1.0% (± 0.1) for both the 1.2 and 1.8 mg /day  liraglutide groups and 1.0% ( ± 0.1) for 
+glimepiride group. Treatment difference in HbA1c was 0.0% [ 95% CI: -0.2 to 0.2] for both comparisons liraglutide 1.2 
+mg/day versus  glimepiride and liraglutide 1.8 mg/day versus glimepiride  (Nauck M  et al. 2009) . 
+ 
+2. Person responsible for implementation of replication in Aetion  
+Elvira  D’Andrea , MD, MPH, implemented the study design in the Aetion Evidence Platform  and SAS 9.4 . She is  not responsible for 
+the validity of the design and analytic choices. All implementation steps are recorded,  and the implementation history is archived 
+in the platform.  
+ 3. Data Source(s)  
+Optum CDM  
+ 4. Study Design Diagram  
+The study d esign diagram visualizes  key aspects of the longitudinal study design  for expedited review.  
+ 
+  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 3 Figure 1. Design Diagram – LEAD -2 TRIAL REPLICATION  
+ 
+
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 4 5. Cohort Identification  
+ 
+5.1 Cohort Summary 
+This study will involve a new user, parallel group, propensity score -matched, retrospective cohort design comparing  injectable 
+subcutaneous liraglutide  (1.2 or 1.8 mg/day ) to oral glimepiride  (4 mg once daily ). Treatments in both arms are administered in 
+combination with metformin (up to 2,000 mg/day ). Patients will be  required to have continuous enrollment during a baseline 
+period of 180 days before initiation of liraglutide or glimepiride . The analyses will be restricted to individuals with type 2 diabetes 
+mellitus who have been  previously treated with antidiabetic drugs . In the replication, previous anti -diabetic treatment was 
+defined as the presence of at least 2 prescriptions for metformin within 6 months before and including cohort entry . 
+ 
+5.2 Important steps for cohort formation  
+New use  of liraglutide  (exposure) is defined as no use of the exposure drug  with in 180 days  prior to index date . New use of 
+glimepiride  (comparator) is defined as no use of the comparator  drug with in 180 days prior to index date.  Eligible patients are 
+required to be new users with respect to both exposure and comparator groups ( i.e., no use of both exposure and comparator 
+drugs ) within 180 days prior to index date .  
+ 
+5.2.1 Eligible cohort entry dates  
+Liraglutide  indication as an adjunct  to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus  
+was approved by FDA on Jan 25, 2010 (the approval of glimepiride  for the same indication was antecedent to 20 10).  
+Thus, the initial eligible cohort entry date is the first date after the FDA approval  available in the data .  
+The last eligible date  is June 30, 2020, three months before the  end of all available data  in Optum CDM . Since the effects 
+of liraglutide and glimepiride on the outcome (i.e., change in HbA1c)  will be estimated  between 56 and 212 days after  
+cohort entry  (see Section 6.3), this will allow all eligible patients to contribute to the outcome.  
+The database used is Optum CDM because  lab results/values are available in th is database for a subset of labo ratory tests, 
+including the A1C tests.  The following eligible cohort entry dates were included:   
+ 
+• Optum CDM: Jan 26, 20 10 – Jun 30, 2020  
+ 
+5.2.2 Specify inclusion/exclusion  criteria  for cohort entry and define the index date  
+Inclusion and exclusion criteria were adapted from the trial as closely as possible. Definitions for all inclusion/exclusion are 
+provided in Appendix A and are summarized in the flowcharts below.  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 5 Note. Patients who are censored between cohort entry and the beginning of the outcome assessment window (i.e., 0.x-56 
+days after cohort entry ) for the reasons reported in the Section  6.3.2 will not contribute to the unmatched or matched 
+cohorts.  Further details on the number of  patients who are excluded from the study cohort are reported in the Section  7. 
+ 
+5.3 Flowchart of the study cohort assembly  
+For liraglutid e vs. glimepiride : Aetion link: https://bwh -dope.aetion.com/cohorts/details/23482/1688/71700  
+  
+Optum  
+ 
+Excluded  
+Patients  Remaining 
+Patients  
+All patients    79,335,559 
+Did not meet cohort entry criteria  -78,554,666 (99%)  780,893 
+Excluded due to insufficient enrollment  -119,528 (15%)  661,365 
+Excluded due to prior use of referent  -424,186 (64%)  237,179 
+Excluded due to prior  use of exposure  -138,679 (58%)  98,500 
+Excluded because patient qualified in >1 exposure category  -85 (<1%)  98,415 
+Excluded based on nursing home admission  in the prior 180 days  -3,784 (4%)  94,631  
+Excluded based on gender missing or unknown  -10 (<1%)  94,621 
+Excluded based on Inclusion #1.1 - Type 2 diabetes mellitus  -6,027 (6%)  88,594  
+Excluded based on Inclusion #1.2 - Metformin use ( 2 prescriptions within 18 3 days ) -55,832 (63%)  32,762 
+Excluded based on Inclusion #1.3 - Concomitant initiation or concurrent use of metformin  -3,670 (11%)  29,092 
+Excluded based on Inclusion #1.4 - No use of other anti -diabet ic meds  -9,861 (34%)  19,231 
+Excluded based on Inclusion #2.1 - 3 records of HbA1c 2 -20% values/results within 365 days  -13,962 (73%)  5,269 
+Excluded based on Inclusion #2.2 - At least 1 lab value HbA1c 7 -11% recorded within 90 days  -808 (15%)  4,461 
+Excluded based on Inclusion #3.1 - Age > 18  -0 (<1%)  4,461 
+Excluded based on Inclusion #3.2 - Age < 80  -87 (2%)  4,374 
+Excluded based on Exclusion #1 - Morbid Obesity BMI > 40  -147 (3%)  4,227 
+Excluded based on Exclusion #2 - Any insulin use  -234 (6%)  3,993 
+Excluded based on Exclusion #3 - End-stage liver disease  -9 (<1%)  3,984 
+Excluded based on Exclusion #4 - Viral Hepatitis B and C  -7 (<1%)  3,977  
+Excluded based on Exclusion #5 - CKD stage 5, End -stage renal disease, dialysis, or renal transplant  -0 (<1%)  3,977 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 6 Excluded based on Exclusion #6.1 - Myocardial Infarction  -1 (<1%)  3,976 
+Excluded based on Exclusion #6.2 - Heart Failure  -1 (<1%)  3,975  
+Excluded based on Exclusion #7 - Anti-VEGFi OR Photocoagulation  -5 (<1%)  3,970 
+Excluded based on Exclusion #8 - Uncontrolled hypertension  -34 (<1%)  3,936 
+Excluded based on Exclusion #9 - Malignant neoplasm (except non -melanoma skin cancer)  -79 (2%)  3,857 
+Excluded based on Exclusion #10 - Recurrent Hypoglycemia  -8 (<1%)  3,849 
+Excluded based on Exclusion #11 - Systemic glucocorticoids use  -48 (1%)  3,801 
+Excluded based on Exclusion #12 - Drug addiction or alcohol abuse and dependence  -11 (<1%)  3,790 
+Excluded based on Exclusion #13 - Mental incapacity, unwillingness to comply  -13 (<1%)  3,777 
+Excluded based on Exclusion #14 - Pregnancy  -0 (<1%)  3,777 
+Excluded based on Exclusion #15.1 - Type 1 diabetes mellitus (contraindication glimepiride)  -10 (<1%)  3,767 
+Excluded based on Exclusion #15.2 - Diabetic ketoacidosis (contraindication glimepiride)  -2 (<1%)  3,765 
+Excluded based on Exclusion #15.3 - Other metabolic acidosis (contraindication glimepiride)  -1 (<1%)  3,764  
+Excluded based on Exclusion #16 - Multiple endocrine neoplasia type 2 (MEN2)  -0 (<1%)  3,764 
+Final cohort   3,764  
+ 
+6. Variables  
+ 
+6.1 Exposure -related variables:  
+ 
+Study drug:  
+New initiation of injectable subcutaneous liraglutide  (1.2 or 1.8 mg/day ), a glucagon -like peptide -1 receptor agonist . New 
+initiation is defined as no use of liraglutide  with in 180 days before treatme nt initiation (washout period).  New users of liraglutide  
+are not allowed to receive glimepiride  within 180 days prior to treatment initiation . Concurrent use of metformin is required 
+(2,000 mg/day ). 
+ 
+Comparator agent : 
+New initiation  of oral glimepiride (4 mg once daily ). New i nitiation is defined as no use of glimepiride  with in 180 days before 
+treatme nt initiation (washout period).  New users of glimepiride  are not allowed to receive liraglutide  within 180 days prior to 
+treatment initiation . Concurrent use of metformin is required (2,000 mg/day ). 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 7 6.2 Preliminary Covariates:  
+• Age 
+• Gender  
+• Combined Comorbidity Index (CCI), measured over the baseline covariate assessment period, defined as 180 days prior to 
+and including index date . 
+ 
+Covariates listed above represent only a small subset of covariates that will ultimately be controlled for in the design and analys is. We use the covariates above only for initial feasibility analyses to judge whether there is likely to be sufficient overl ap 
+between treatment groups to proceed with the study. Remaining covariates are defined only after the study has passed the 
+initial feasibility analysis and the initial power assessment  and are listed in Table 1 ( Appendix B ).  
+ 6.3 Outcome variables and study follow -up:  
+ 
+6.3.1 Outcome variables  
+ 
+Effectiveness outcome variables of interest (definitions provided in Appendix A):  
+ 
+§ Primary outcome:  Changes in HbA1c from baseline to 26 weeks of treatment (end of follow -up). 
+ 
+Note . In the trial, HbA1c was also measured at 8, 12, 18 weeks ( ± 3 days)  after randomization . Missing values of HbA1c at 
+26 weeks were replaced using last observation carried forward (LOCF) in the intention -to-treat (ITT) analysis  set. 
+In the replication, HbA1c at baseline  will be defined as the last recorded HbA1c value measured within 90 days before and 
+including cohort entry  date in both groups . HbA1c at the end of follow -up will be  defined as a recorded HbA1c value closest 
+to the end of the 26th week and measured between 56 and 212 days ( 8-30 weeks)  after cohort entry .  
+ 
+§ Secondary outcome : -- 
+ 
+6.3.2 Primary analysis and s tudy follow -up 
+As-treated  (AT) analysis will be performed as main analysis . The treatment drug will be defined as the index drug assigned on the 
+day of cohort entry. Patients will be followed for about 30 weeks ( 212 days) . Compared to the trial  (Nauck M  et al. 2009) , we will 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 8 extend the follow -up and the outcome assessment periods of 4 weeks . The follow -up and outcome assessment  window will start 56 
+days after cohort entry date and will continue until the earliest date of the following events:   
+§ The first occurrence of the outcome of interest  (measured between 56 and 212 days after cohort entry) , 
+§ The date of end of continuous registration in the database  (disenrollment or end of available data),  
+§ End of the study period,  
+§ Measured death event occurs,  
+§ Index drug s discontinuation (liraglutide, gli mepiride or metformin) , 
+§ Crossover or addition of drug from the other treatment group,  
+§ Addition of any other anti -diabetic medications,  
+§ Nursing home admission  
+o Nursing home admissions are considered a censoring event because the data sources utilized typically provide little to 
+no data on a patient, particularly on drug utilization, after admission. We will utilize this as an exclusion reason for cohorts for the same reason.    
+ 
+Note . To decrease the incidence of missing values of the outcome ( specifica lly, missing of HbA1c values  measured  between 56 -212 
+days  after cohort entry ), we required that the eligible  patients  had at least 3 HbA1c measurement s recorded within 365 days before  
+and including  cohort entry.  This will increase the probability of includ ing in the final cohort patients who are adherent to a routinely 
+HbA1c testing  and, consequently, will decrease the frequency of missing values of the outcome.  Multiple imputation will be used to 
+handle missing values in the primary analysis, while complete case  analysis will be applied in a sensitivity analysis.  
+ 
+7. Initial Feasibility Analysis  
+Aetion report name:  
+For liraglutide  vs. glimepiride  
+Optum  CDM  (continuous HbA1c outcome)  https://bwh- dope.aetion.com/projects/details/1688/rwrs/71723  
+Optum CDM  (binary HbA1c outcome [flag: presence or absence of an HbA1c result within 56 -212 days after cohort entry]) – calculated 
+merging the databases from https://bwh -dope.aetion.com/projects/details/1688/rwrs/71715 and https://bwh -
+dope.aetion.com/projects/details/1688/rwrs/71716 – see file LEAD -2_programming_steps and output of  “STEP 1 - Initial FEASIBILITY 
+Analysis (with study outcome) - Paragraph 7 of the protocol ” 
+ 
+ 
+Date conducted:  06/17/202 1 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 9  
+Complete Aetion feasibility analysis using age and CCI as the only covariates and the primary endpoint (Section 6.3.1) as the 
+outcome. No measures of association will be computed nor will mean and standard deviation of the HbA1c outcome  stratified by 
+treatment group.  
+ 
+• Report patient characteristics by treatment group  
+For liraglutide  vs. glimepiride  
+ 
+  Optum CDM  
+ Glimepiride - Comparator  Liraglutide - Exposure  Difference  
+Number of patients  * 3,096 378 - (-, -) 
+Age    
+...mean (sd)  64.24 (10.37) 59.22 (10.9 4) 5.02 (3.90, 6.13) 
+...median [IQR]  67.00 [58 .00, 7 2.00] 60.00 [51.00, 68 .00] - (-, -) 
+Gender     
+...M = MALE; n (%)  1,726 (55.7%) 179 (47.4%) 8.39% (3.08%, 13.7%)  
+...F = FEMALE; n (%)  1,370 (44.3%) 199 (52.6%) -8.39% (-13.7%, -3.08%) 
+Combined Comorbidity Score - CCI (180 days)     
+...mean (sd)  2.06 (1.56) 1.86 (1.36) 0.19 (0.03, 0.36) 
+...median [IQR]  2.00 [ 1.00, 3.00] 2.00 [1.00, 2.00] - (-, -) 
+* The overall n. of patients in the unmatched cohort is 3,470 . Patients who were censored between cohort entry and the beginning of the outcome assessment 
+window (n. 290 patients) are excluded from the  Table reporting  patient characteristics by groups because  they will not contribute to the unmatched or matched 
+cohorts . 
+ 
+• Report summary parameters of study population  FEASIBILITY - FOR STUDY OUTCOME  
+For liraglutide  vs. glimepiride  
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 10  Optum CDM  
+Number of patients in full cohort  3,764 
+Number of patients that did not begin follow -up * 290 
+Number of patients  3,474  
+Number of person -years  of patients that did begin the follow -up 1,118.53 
+Number of patients in group: Glimepiride  3,096  
+Number of patients in group: Liraglutide  378 
+Outcome - Lab value HbA1c   
+...mean (sd)  7.24 (1.01)  
+...median [IQR]  7.00 [6.60, 7.70]  
+...minimum  4.1 
+...maximum  13.4 
+Number of patients with zero value  0 
+Non-zero mean value (SD)  7.24 (1.01)  
+Non-zero median value [IQR]  7.00 [6.60, 7.70]  
+* patients who were censored between cohort entry and the beginning of the outcome assessment window /follow -up (i.e., 0.5-56 days after cohort entry) will 
+not contribute to the unmatched and  match ed cohorts . 
+ 
+ 
+• Report median follow -up time by treatment group  
+For liraglutide vs. glimepiride  
+ 
+Median Follow -Up Time (Days) [IQR] – AT analysis 
+Patient Group  Optum CDM  
+Overall Patient Population  99 [84, 1 48] 
+Referent  101 [84, 148] 
+Exposure  88 [79, 1 30] 
+ 
+• Report reasons for censoring in the overall  study population  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 11 § For liraglutide vs. glimepiride  
+  
+Overall  (n. 3,470 ) Liraglutide (n. 378)  Glimepiride (n. 3,092)  
+Outcome  * 2,262 (65.2%) 233 (61.6%)  2,029 (65.6%)  
+Death  2 (0.1%)  0 (0%)  2 (0.1%)  
+Start of an additional exposure  8 (0.2%)  3 (0.8%)  5 (0.2%)  
+End of index exposure  368 (10.6%) 74 (19.6%)  294 (9.5%)  
+Maximum follow -up time  336 (9.7%) 22 (5.8%)  314 (10.2%)  
+End of patient data  37 (1.0%)  3 (0.8%)  34 (1.1%)  
+End of patient enrollment  108 (3.1%) 12 (3.2%)  96 (3.1%)  
+Start of additional antidiabetic drugs + Nursing home + Metformin 
+discontinuation with allowed 60 days gap  349 (10.1%) 22 (5.82%)  314 (10.2%)  
+* patients with outcome recorded  between 56 -212 days after cohort entry .  
+ 
+• Report overall mean (sd)  of the primary outcome.  
+ 
+  Optum  CDM  
+Outcome – Lab value HbA1c ...mean (sd)  7.24 (1.01) 
+ 
+ 8. Initial Power Assessment  
+ Analysis  report name:  
+For liraglutide  vs. glimepiride  
+Optum  CDM  – see file LEAD -2_programming_steps  and output of “STEP 2 - INITIAL POWER Assessment - PS matching on age,  gender, CCI 
+(with dummy outcome)  - Paragraphs 8 of the protocol ” 
+ Date conducted:   06/16/202 1 
+ In order to complete the initial power analysis, the dummy outcome of a 90 -day gap in database enrollment will be used. This 
+outcome is used to ensure that no information on the comparative risks of the outcomes of interest are available at this stag e. 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 12 Complete a 1:1 PS -matched comparative analysis using this outcome. PS should include only 3 covariates: age , gender  and combined 
+comorbidity index.  Power calculations are based on the formulas from Julios  et al. (2008).  
+ 
+• Stop analyses until feasibility and power are reviewed by primary investigators  and FDA.  Reviewers evaluate the results of the 
+analyses described above in Sec tions 7 and 8, including numbers of patients, patient characteristics, follow- up time, and reasons 
+for censoring by treatment group, as well as overall rates of outcomes and study power. These parameters are re -evaluated and 
+reported in the subsequent sect ions, after incorporating feedback and refining the protocol.  
+ 
+o Optum CDM  
+ 
+Non-inferiority Analysis   
+Standard deviation of outcome  1.01  
+Non-inferiority limit  0.4 
+Alpha (2 -sided)  0.05  
+Power (1 -beta)  90% 
+Sample size required per group  110 
+Total sample size required  220 
+  
+Number of patients matched  752 
+Reference  376 
+Exposed  376 
+ 
+ 
+• Stop analyses until feasibility and power are reviewed by primary investigators, FDA, and assigned members of advisory board.  
+Reviewed by PI:  Shirley Wang  Date reviewed:  07/16/2021  
+Reviewed by FDA:  Ken Quinto  Date reviewed:  08/2/2021  
+Reasons for stopping 
+analysis (if required):   
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 13  
+9. Balance Assessment  
+For liraglutide  vs. glimepiride  
+Optum CDM: see file LEAD -2_programming_steps and output of “ STEP 3 - BALANCE Assessment (with dummy outcome) - Paragraphs 9 -
+10 of the protocol ” 
+ 
+Date conducted : 06/16/2021  
+ After review of initial feasibility and power analyses, complete creation of the remaining covariates from Section 6.2. Again , using the 
+dummy outcome of a 90 -day gap in database enrollment, complete a 1:1 PS -matched analysis. The PS should include the complete 
+list of covariates.  
+ 
+• Provide plot of PS distributions stratified by treatment group.  
+ 
+Note - Please refer to Appendix B .  
+ 
+ 
+• Report covariate balance after matching.  
+ 
+Note - For Table 1, please refer to Appendix B.  
+ 
+ 
+• Report reasons for censoring by treatment group.  
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 14  
+Overall  
+(n. 7 46) Liraglutide – exposure  
+(n. 3 73) Glimepiride – comparator 
+(n. 3 73) 
+Outcome  (dummy)  0 (0%)  0 (0%)  0 (0%)  
+Death  0 (0%)  0 (0%)  0 (0%)  
+Start of an additional exposure  9 (1.2%) 6 (0.8%)  3 (0.4%) 
+End of index exposure  194 (26.0%) 137 (18.4%) 57 (7.6%) 
+Maximum follow -up time  340 (45.6%) 137 (18.4%) 203 (27.2 %) 
+End of patient data  5 (0.7%)  3 (0.4%) 2 (0.3%) 
+End of patient enrollment  61 (6.3%) 25 (3.4%) 36 (4.8%) 
+Start of additional antidiabetic drugs + Nursing home + Metformin 
+discontinuation with allowed 60 days gap  137 (18.4%) 65 (8.7%) 72 (9.7%) 
+ 
+• Report follow -up time by treatment group.  
+ 
+Median Follow -Up Time (Days) [IQR]  
+Patient  Group  Overall (n. 7 46) Liraglutide (n. 3 73) Glimepiride (n. 3 73) 
+Overall Patient Population  188 [97 - 212] 150 [89 - 212] 212 [11 9 -212] 
+ 
+• Report overall mean (sd) of the primary outcome  (from initial feasibility analysis) . 
+ 
+  Optum CDM  
+Outcome – Lab value HbA1c ...mean (sd)  7.24 (1.01) 
+ 
+ 10.  Final Power Assessment  
+ Date conducted:  
+ 
+• Re-calculate power in the appropriate excel table, using the revised number of matched patients from the PS -match in Section 9. 
+All other parameters in the table should be the same as in Section 8.  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 15  
+Non-inferiority Analysis   
+Standard deviation of outcome  1.01  
+Non-inferiority limit  0.4 
+Alpha (2 -sided)  0.05  
+Power (1 -beta)  90% 
+Sample size required per group  110 
+Total sample size required  220 
+  
+Number of patients matched  746 
+Reference  373 
+Exposed  373 
+ 
+ 
+• Stop analyses until balance and final power assessment are reviewed by primary investigators, FDA, and assigned members of 
+advisory board.  
+Reviewed by PI:  Shirley Wang  Date reviewed:  07/16/2021  
+Reviewed by FDA:  Ken Quinto  Date reviewed:  08/2/2021  
+Reasons for stopping 
+analysis (if required):   
+ 
+11.  Study Confidence and Concerns  
+ Deadline for voting on study confidence and listing concerns:  
+Date votes and concerns are summarized :    
+ 
+• If final feasibility and power analyses are reviewed and approved, proceed to the remaining protocol steps.  
+• All study team and advisory board members that review this protocol should at this stage provide their level of confidence fo r the 
+success of the RWD study in the Google Form . This form also provides space for reviewers to list any concerns that they feel may 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 16 contribute to a failure to replicate the findings of the RCT, including differences in study populations, poor measurement of study 
+variables, or residual confounding. All responses will be kept confidential and individual -level results will only be shared with the 
+individual respondent.  
+• After the deadline f or voting has passed, provide the distribution of responses and summarize all concerns here.  
+ 
+12.  Register study protocol on clinicalTrials.gov  
+ 
+Date conducted:    
+ 
+• Register the study on clinicalTrials.gov  and upload this document.  
+ 
+13.  Comparative Analyses  
+ 
+Aetion report name:  
+Date conducted:    
+ 13.1  For primary analysis :  
+ 13.2  For sensitivity analyses:  
+  14.   Requested Results  
+ 
+14.1  Table 1: Baseline characteristics before and after adjustment  
+ 
+Variable  
+ Before adjustment  After adjustment  
+Referent  Exposure  Std. diff.  Referent  Exposure  Std. diff.  
+Number of patients    -   - 
+Age categories        
+…       
+ 
+ 
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 17 14.2  Table 2: Follow -up time  
+ 
+Patient Group  Median Follow -Up Time (Days) [IQR]  
+Overall Patient Population   
+Referent   
+Exposure   
+ 
+14.3  Table 3: Censoring events  
+ 
+ Overall  Referent  Exposure  
+Outcome     
+Death     
+Start of an additional exposure     
+End of index exposure     
+Specified date reached     
+End of patient data     
+End of patient enrollment     
+…    
+ 
+14.4  Table 4: Results from primary analyses;  
+ 
+Analysis  No. exposed events  No. referent events  Exposed rate  Referent rate  HR (95% CI)  
+Crude       
+Analysis 1       
+Analysis 2       
+...      
+HR, Hazard Ratio; CI, Confidence Interval.  
+ 
+14.5  Table 5: Results from secondary analyses.  
+Effectiveness research with Real World Data to support FDA’s regulatory decision making  
+ 
+ 18  
+ 15.  References  
+  Nauck M, Frid A, Hermansen K, Shah NS, Tankova T, Mitha IH, Zdravkovic M, Düring M, Matthews DR; LEAD -2 Study Group. Efficacy 
+and safety comparison of liraglutide, glimepiride, and placebo, all in combination with metformin, in type 2 diabetes: the LE AD 
+(liraglutide effect and action in diabetes) -2 study. Diabetes Care. 2009 Jan;32(1):84- 90. doi: 10.2337/dc08- 1355.  
+Julious SA. Sample sizes for clinical trials with Normal data. Statist. Med. 2004; 23:1921 -1986.  Sealed Envelope Ltd. 2012. Power 
+calculator for continuous outcome non -inferiority trial. [Online] Available from:  
+https://www.sealedenvelope.com/power/continuous -noninferior/ [Accessed Fri May 07 , 2021].  
+ 
+ 
+# LEAD-2 trial definitions Implementation in routine care
+References/Rationale Color coding
+Exposure : Liraglutide s.c. 0.6 mg/day, 1.2 mg/day and 1.8 mg/day in combination with metformin (1500-
+2000 mg/day) for 26 weeks
+Reference for non-inferiority : Glimepiride (4 mg/day) in combination with metformin (1500-2000 
+mg/day)
+Reference for superiority : Metformin monotherapy (1500-2000 mg/day)
+Aim: To evaluate whether the effect on glycaemic control (as measured by change in HbA1c) of 
+treatment with 0.6 mg/day, 1.2 mg/day and 1.8 mg/day of liraglutide in combination with metformin was 
+superior to metformin monotherapy and non-inferior to metformin and glimepiride combination therapy 
+after 26 weeks of treatment.Exposure : new-use of Liraglutide (washout 180 days ) in combination with metformin 
+NDC Generic Name:
+LIRAGLUTIDE
+NDC Brand name:
+Viktoza (FlexPen)
+Reference : new use of Glimepiride (washout 180 days ) in combination with metformin
+NDC Generic Name:
+GLIMEPIRIDE
+NDC Brand name:
+GLIMEPIRIDE
+AMARYLCriteria
+Adequate mapping in claims
+Change in HbA1c from baseline to week 26
+Note: in the trial missing values are replaced with last value carried forward [LVCF]Measured as change in HbA1c from baseline to the last recorded HbA1c value between 56 and 212 days after drug 
+initiation: 
+Loinc codes:
+17855-8, 17856-6, 41995-2, 43150-2, 4548-4, 4549-2, 55454-3, 71875-9, 74246-0Intermediate mapping in claims
+Poor mapping or cannot be measured in claims 
+0Informed consent obtained before any trial-related activities (trial-related activities are any procedure that 
+would not have been performed during normal management of the subject).N/A Can't be measured in claims but not important for the analysis
+1 (1.1) Subjects diagnosed with type 2 diabetes and (1.2)  treated with OAD(s) for at least three months.1.1 Selecting patients with a diagnosis of type 2 diabetes measured from the time of enrollment to the day of drug 
+initiation inpatient (any position), outpatient (any position):
+Type 2 diabetes :
+ICD 9 diagnosis: 250.00, 250.02, 250.10, 250.12, 250.20, 250.22, 250.30, 250.32, 250.40, 250.42, 250.50, 250.52, 
+250.60, 250.62, 250.70, 250.72, 250.80, 250.82, 250.90, 250.92
+ICD 10 diagnosis: E11.x
+1.2 Selecting patients with  at least  two prescriptions of metformin within 183 days before cohort entry (OADs 
+treatment ≥ 3 months), and 
+1.3 Concomitant or current use of metformin at cohort entry date in both treatment groups:
+Generic name:
+Metformin Hcl
+1.4  Selecting patients with no other anti-diabetic treatments within the 180 days before cohort entry:
+Please refer to Anti-diabetic treatments (other than insulin)  in "Anti-diabetic treatment"
+2HbA1c:
+− 7.0-10.0% (both incl.) in subjects on OAD combination therapy
+− 7.0-11.0% (both incl.) in subjects on OAD monotherapy.2.1 Selecting patients with 3 measurements of HbA1c values (between 2-20%) recorded within 365 days prior to and 
+including cohort entry:
+Loinc codes:
+17855-8, 17856-6, 41995-2, 43150-2, 4548-4, 4549-2, 55454-3, 71875-9, 74246-0 AND Result value 2-20%
+2.2 Selecting patients with at least one measurement of HbA1c value (between and included 7-11%) recorded within 
+the last 91 days prior to and including cohort entry:
+Loinc codes:
+17855-8, 17856-6, 41995-2, 43150-2, 4548-4, 4549-2, 55454-3, 71875-9, 74246-0 AND Result value 7-11%
+3Age 18-80 years, both inclusive (as allowed according to local guidelines for metformin and glimepiride 
+treatment). This inclusion criterion has been modified for Site 344 in Australia according to Substantial 
+Protocol Amendment No. 1-AU, see Section 9.8.1.Female and male, 18-80 years at the time of drug initiation
+EXCLUSION CRITERIAPlease see the following Google Drive for further details or any missing information: 
+https://drive.google.com/drive/folders/1WD618wrywYjEaXzfLTcuK-VCcnb6b-gV?usp=sharing
+ICD-10 codes are not listed in this document because of excel cell size limitations and excessive number of ICD-10 
+codes. Full ICD-10 code lists will be available in the above Google Drive Folder (link above). ICD-9 to ICD-10 
+code conversions were completed using a SAS macro that implements forward/ backward mapping based on 
+the CMS ICD-9 to ICD-10 mapping:
+ https://www.nber.org/data/icd9-icd-10-cm-and-pcs-crosswalk-general-equivalence-mapping.htmlTrial details - clinicaltrial.gov [STUDY_ID_REMOVED]
+EXPOSURE vs. COMPARISON
+PRIMARY OUTCOME
+INCLUSION CRITERIA
+1 Body mass index (BMI) >= 40.0 kg/m2.Measured 180 days prior to and including the day of drug initiation inpatient (any position), outpatient (any 
+position):
+Morbid obesity diagnosis or BMI >= 40 kg/m2:
+ICD 9 diagnosis:: 278.01, 278.03, V85.4x
+ICD 10 diagnosis: E66.01, E66.2, Z68.4x
+NB. Codes for bariatric surgey, complications of bariatric surgery and prescriptions of drugs for weight loss were not 
+included in the measure since this exclusion criterion aims to exclude specifically patients with morbid obesity. Codes for 
+obesity during pregnancy were not included because of the exclusion criterion #17.  
+2Treatment with insulin within the last three months prior to trial (except for short-term treatment
+due to intercurrent illness at the discretion of the investigator).Measured 180 days prior to and including the day of drug initiation:
+NDC Generic Name:
+Please refer to Insulin  in "Anti-diabetic treatments"
+NB. Although the trial excluded patients in treatment with insulin within the 90 days before drug initiation, with real-
+world data we are required to be more conservative and to extend the washout period to 180 days. In fact, a 90-day 
+washout applied in real world does not  garantee the exclusion of prevalent users (i.e. patients on active insulin therapy) 
+from the cohort.
+3Impaired liver function, defined as alanine aminotransferase (ALAT) >= 2.5 times upper limit of
+normal (one retest analysed at the central laboratory within a week is permitted with the result
+of the last sample being conclusive).Measured 180 days prior to and including the day of drug initiation in any diagnosis position and inpatient or 
+outpatient care setting:
+Cirrhosis: 
+ICD-9 Diagnosis: 571.2, 571.5, 571.6
+ICD-10 Diagnosis: K70.11, K70.2, K70.3x, K70.4x, K74.x
+Hepatic decompensation: 
+ICD-9 Diagnosis: 456.0, 456.20, 456.1, 456.21, 789.5, 789.59, 572.2, 567.0, 567.2, 567.21, 567.22, 567.29, 567.8, 
+567.89, 567.9, 572.4 
+ICD-10 Diagnosis: R18.x, I85.x, K72.x, K65.x, K66.x, K67
+HCC is already excluded with exclusion criterion 9
+4 Subjects known to be Hepatitis B antigen or Hepatitis C antibody positive.Measured 180 days prior to and including the day of drug initiation  in any diagnosis position and inpatient or 
+outpatient care setting:
+Viral hepatitis B or C:
+ICD-9 diagnosis: 070.2x, 070.3x, 070.4x, 070.51, 070.54, 070.71, 070.74, V02.61, V02.62
+ICD-10 diagnosis: B16.x, B17.0, B17.1x, B18.0-B18.2, B19.1x, B19.2x, Z22.51, Z22.52
+5Impaired renal function defined as serum creatinine >= 135 µmol/L (>= 1.5 mg/dL) for males and
+>= 110 µmol/L (>= 1.3 mg/dL) for females (one retest analysed at the central laboratory within a
+week is permitted with the result of the last sample being conclusive)Measured 180 days prior to and including the day of drug initiation in any diagnosis position and inpatient or 
+outpatient care setting:
+CKD stage 5, End-stage renal disease, dialysis or renal transplant:
+ICD-9 diagnosis: 585.5, 585.6, 996.81, V42.0, V45.1x, V56.xx
+ICD-9 procedure: 39.95, 54.98, 55.6x
+ICD-10 diagnosis: N18.5, N18.6, R88.0, T82.41, T82.42, T82.49, T85.611, T85.621, T85.631, T86.1x, Y84.1, Z48.22, 
+Z49.xx, Z91.15, Z94.0, Z99.2
+ICD-10 procedure: 0TY00Zx, 0TY10Zx, 3E1M39Z, 5A1Dx0Z
+CPT: 50360, 50365, 90920, 90921, 90924, 90925, 90935, 90937, 90939, 90940, 90945, 90947, 90957, 90958, 90959, 
+90960, 90961, 90962, 90965, 90966, 90969, 90970, 90989, 90993, 90999, 90997, 99512, 99559, 99512, G0257, 
+G0314, G0315, G0316, G0317, G0318, G0319, G0322, G0323, G0326, G0327, S9335, S9339
+6Clinically significant active cardiovascular disease including history of myocardial infarction within the 
+past 6 months and/or heart failure (New York Heart Association class III and IV) at the discretion of the 
+investigator.Measured 180 days prior to and including the day of drug initiation in inpatient care setting, any position:
+Myocardial Infarction:
+ICD-9 DX: 410.xx 
+ICD-10 DX: I21.xx, I22.xx
+Measured 180 days prior to and including the day of drug initiation in inpatient care setting, primary position:
+Heart Failure:
+ICD-9 DX: 428.xx, 398.91, 402.x1, 404.x1, 404.x3
+ICD-10 DX: I09.81, I11.0, I13.0, I13.2, I50.xxx, I97.13x
+NB. HF is included only if inpatient / primary position to detect the most severe cases as specified in the exclusion 
+criterion of the trial
+7 Proliferative retinopathy or maculopathy requiring acute treatment as judged by the investigator.Measured 180 days prior to and including the day of drug initiation:
+Anti-VEGFi
+CPT: 67028 (Intravitreal injection for pharmacologic agent)
+AND
+HCPCS: J9035 OR C9257 OR Q5107 (Bevacizumab 10 mg injection)  OR
+HCPCS: J2778 (Ranibizumab 0.1 mg) OR
+HCPCS: C9291 OR Q2046 OR J0178 OR C9296 OR J9400 (Aflibercept 2 mg injection)
+Photocoagulation:
+CPT: 67228 (Panretinal photocoagulation) OR
+CPT: 67220 (Focal/Grid photocoagulation) OR
+CPT: 67028 (Intravitreal injection for pharmacologic agent) 
+8Uncontrolled treated/untreated hypertension (systolic blood pressure >= 180 mmHg and/or diastolic 
+blood pressure >= 100 mmHg).Measured 180 days prior to and including the day of drug initiation in any diagnosis position in the inpatient and 
+outpatient and emergency care setting:
+ 
+Hypertensive crisis
+ICD-10 diagnosis: I16.x (includes hypertensive urgency, emergency, crisis, unspecified)
+ 
+OR
+ 
+Measured 180 days prior to and including the day of drug initiation in primary diagnosis position for inpatient or 
+any position for emergency care setting:
+ 
+Uncontrolled hypertension:
+ICD-9 diagnosis:
+401.9 (unspecified essential hypertension)
+401.0 (malignant essential hypertension)
+402.0x (malignant hypertensive heart disease)
+403.0x (malignant hypertensive kidney disease)
+404.0x (malignant hypertensive heart and kidney disease)
+405.0x (malignant secondary hypertension)
+403.9x (unspecified hypertensive kidney disease)
+796.2 (elevated BP reading without Dx of HTN)
+9Cancer (except basal cell skin cancer or squamous cell skin cancer) or any clinically significant
+disease or disorder, except for conditions associated to type 2 diabetes, which in the
+investigator’s opinion could interfere with the results of the trial.Measured 1825 prior to and including the day of drug initiation in any diagnosis position and inpatient or outpatient 
+care setting:
+Cancer:
+ICD 9 diagnosis: 140.x-209.x (except 173.x, non-melanoma skin cancer and 209.4x, 209.5x, 209.6x)
+ICD 10 diagnosis: C00.x-C96, D45 (except C44.x, non-melanoma skin cancer) 
+10 Recurrent major hypoglycaemia as judged by the investigator.At least two measurements in the 180 days prior to and including the day of drug initiation inpatient or emergency 
+department settings:
+Hypoglycemia :
+ICD-9  diagnosis: 251.0, 251.1, 251.2, 962.3, or 270.3 (primary position) or 250.8 without co-existence of 259.8, 272.7, 
+681.x,682.x, 686.9, 707.1–707.9, 730.0–730.2, or 731.8 (any position)
+ICD-10 diagnosis: E10.641, E11.641, E13.641, E10.649, E11.649, E13.649, E16.0, E16.1, E16.2 (primary position) or 
+E11.69, E13.69, E10.69 without coexistence of E34.1, E34.8, E35, E75.2, E75.3, E77, L01, L02, L03, L97, M86, M90
+N/A Known or suspected allergy to trial product(s) or related products. N/A
+11Use of any drug (except for OADs), which in the investigator’s opinion could interfere with glucose 
+levels (e.g. systemic corticosteroids).Measured 90 days prior to and including the day of drug initiation:
+Injectable (IV) or (IM): 
+NDC Generic Name:
+methylprednisolone, hydrocortisone, dexamethasone
+CPT/HCPCS Procedure Code:
+J1020, J1030, J1040, J1720, J2920, J2930
+Oral:
+NDC Generic Name: 
+Cortisone, hydrocortisone, prednisone, prednisolone, methylprednisolone, dexamethasone 
+N/A Receipt of any investigational drug within the four weeks prior to this trial. N/A
+N/APrevious participation in the randomised phase of this trial. Re-screening is allowed once within
+the recruitment period.N/A
+12 Known or suspected abuse of alcohol or narcotics.Measured 180 days prior to and including the day of drug initiation in any diagnosis position in inpatient or 
+outpatient care setting:
+Alcohol Abuse or Dependence
+ICD-9 diagnosis: 291.x, 303.xx, 305.9x, 357.5, 425.5, 535.30, 535.31, 571.0 - 571.3, 760.71, 790.3, 980.0, E860.0, 
+E860.1, E860.8, E860.9, V11.3, V79.1
+ICD-10 diagnosis: E24.4, F10.1xx (excluding F10.13x), F10.2xx, F10.9xx (excluding F10.93x), G31.2, G62.1, G72.1, 
+I42.6, K29.2x, K70.xx, K85.2x, K86.0, O35.4, P04.3, Q86.0, R78.0, T51.0X1x, Z50.2, Z71.4, Z72.1
+OR
+Drug Abuse or Dependence 
+ICD-9 diagnosis: 292.xx, 304.xx, 305.xx (excluding 305.0x and 305.1), 648.3x, 779.5, 965.0x, 967.x, 969.xx, 970.xx, 
+V65.42
+ICD-10 diagnosis: F11.xxx, F12.xxx, F13.xxx, F14.xxx, F15.xxx, F16.xxx, F18.xxx, F19.xxx, O99.32x, P96.1, 
+T40.xxxx (excluding T40.xx6x), T43.xxxx (excluding T43.xx6x), Z71.51
+13Mental incapacity, unwillingness or language barrier precluding adequate understanding or
+cooperation.Measured 180 days prior to and including the day of drug initiation in any diagnosis position in inpatient or 
+outpatient care setting:
+Dementia and brain damages :
+ICD-9 diagnosis: 290.x, 294.x, 330.x, 331.x
+ICD-10 diagnosis: F01.50, F01.51, F02.80, F02.81, F03.90, F03.91, F04, F05, F06.x, F84.2, G13.2, G13.8, G30.x, 
+G31.x, G91.x, G93.x, G94, E750, E751, E752, E754
+NDC generic names: RIVASTIGMINE, DONEPEZIL HCL, ERGOLOID MESYLATES, GALANTAMINE HBR, 
+MEMANTINE HCL, MEMANTINE HCL/DONEPEZIL HCL, RIVASTIGMINE TARTRATE, TACRINE HCL
+OR
+Non-compliance: 
+ICD-9 diagnosis: V45.12, V15.81 
+14Females of childbearing potential who are pregnant, breast-feeding or intend to become
+pregnant or are not using adequate contraceptive methods (adequate contraceptive measures as
+required by local law or practice). This exclusion criterion has been modified in Germany
+according to Substantial Protocol Amendment No. 2-DE, see Section 9.8.1.Measured 180 days prior to and including the day of drug initiation in any diagnosis position and inpatient or 
+outpatient care setting:
+Please refer to "Pregnancy definition"
+15 Any contraindications to metformin or glimepiride (according to local requirements).Measured 180 days prior to and including day of drug initiation in any diagnosis position and inpatient or outpatient 
+care setting:
+Contraindications to Glimepiride:
+Type 1 diabetes:
+ICD 9 diagnosis: 250.01, 250.03, 250.11, 250.13, 250.21, 250.23, 250.31, 250.33, 250.41, 250.43, 250.51, 250.53, 
+250.61, 250.63, 250.71, 250.73, 250.81, 250.83, 250.91, 250.93
+ICD 10 diagnosis: E10.x
+Diabetic ketoacidosis (DKA):
+ICD9 diagnosis: 250.1x
+ICD10 diagnosis: E10.1x, E11.1x, E13.1x, E08.1x, E09.1x
+Other metabolic acidosis:
+ICD9 diagnosis: 276.2 
+ICD10 diagnosis: E87.2
+NB. All patients no treated with metformin at cohort entry have been excluded from the eligible cohort, assuming that all 
+included patients have not conraindications for this drug. 
+16Subjects with medical history of multiple endocrine neoplasia type 2 (MEN2) or familial medullary 
+thyroid carcinoma (FMTC) if total thyroidectomy has not been performed or cannot be ensured (i.e. 
+posterior capsule of the thyroid gland not removed). This exclusion criterion has been added only in 
+Germany according to Substantial Protocol Amendment No. 2-DE, see Section 9.8.1.Measured 1825 days prior to and including day of drug initiation in any diagnosis position and inpatient or 
+outpatient care setting:
+ICD-9 diagnosis: 258.02, 258.03
+ICD-10 diagnosis: E31.22, E31.23
+NB. Thyroid carcinoma is already excluded with exclusion criterion 9
+1. Delivery Codes
+Procedure Codes Description
+CPT-4 codes
+1960 Anesthesia for vaginal delivery only
+1961 Anesthesia for cesarean delivery only
+1962 Anesthesia for urgent hysterectomy following delivery
+1963 Anesthesia for cesarean hysterectomy w/o any labor analgesia/anesthesia care
+1967 Neuraxial labor analgesia/anesthesia, planned vaginal delivery
+1968 Anesthesia for cesarean delivery following neuraxial labor analgesia/anesthesia
+1969 Anes for cesarean hysterectomy following neuraxial labor analgesia/anesthesia
+59050 Fetal monitoring in labor, physician w/written report; s & i
+59051 Fetal monitoring in labor, physician w/written report; intrepretation only
+59400 ROUTINE TOTAL OBSTETRIC CARE including antepartum care, vaginal delivery (with or without episiotomy, and/or forceps) and postpartum care.
+59409 Vaginal delivery only (w/wo episiotomy &/or forceps)
+59410 Vaginal delivery only (w/wo episiotomy &/or forceps); w/postpartum care
+59412 Ext cephalic version, w/wo tocolysis
+59414 Delivery of placenta (separate  proc)
+59430 Postpartum care only
+59510 Routine obstetric care w/antepartum care, cesarean delivery, & postpartum care
+59514 Cesarean delivery only
+59515 Cesarean delivery only; w/postpartum care
+59525 Subtotal/total hysterectomy after cesarean delivery
+59610 Routine obstetric care including antepartum care, vaginal delivery (with or without episiotomy, and/or forceps) and postpartum care, after previous cesarean delivery
+59612 Vaginal delivery only, after previous cesarean delivery (with or without episiotomy and/or forceps)
+59614 Vaginal delivery only, previous cesarean delivery w/postpartum care
+59618 Routine obstetric care including antepartum care, cesarean delivery, and postpartum care, following attempted vaginal delivery after previous cesarean delivery
+59620 Cesarean delivery after failed vaginal delivery, previous cesarean delivery
+59622 Cesarean delivery after failed vaginal delivery, previous cesarean delivery; w/postpartum care
+99436 Attendance at delivery, at request of delivering physician, & stabilization of newborn
+99440 Newborn resuscitation
+ICD-9 procedure codes
+72.xx Forceps, vacuum, & breech
+73.xx Other including manual delivery
+74xx Cesarean section
+75.4x Manual removal of placenta
+ICD-10 procedure codes
+Normal Delivery
+10E0XZZ Delivery of Products of Conception, External Approach
+C-Section
+ 10D00Z0 Extraction of Products of Conception, High, Open Approach
+ 10D00Z1 Extraction of Products of Conception, Low, Open Approach
+ 10D00Z2 Extraction of Products of Conception, Extraperitoneal, Open Approach
+Other assisted delivery (forceps, vacuum, internal version, other)
+10D07Z3 Extraction of Products of Conception, Low Forceps, Via Natural or Artificial Opening
+10D07Z4 Extraction of Products of Conception, Mid Forceps, Via Natural or Artificial Opening
+10D07Z5 Extraction of Products of Conception, High Forceps, Via Natural or Artificial Opening
+10D07Z6 Extraction of Products of Conception, Vacuum, Via Natural or Artificial Opening
+10D07Z7 Extraction of Products of Conception, Internal Version, Via Natural or Artificial Opening
+10D07Z8 Extraction of Products of Conception, Other, Via Natural or Artificial OpeningPREGNANCY DEFINITION
+2.      Identify preterm births
+a.       Codes that have a specific gestational age mentioned
+ICD-9 code Definition
+765.21 Less than 24 completed weeks of gestation
+765.22 24 completed weeks of gestation
+765.23 25-26 completed weeks of gestation
+765.24 27-28 completed weeks of gestation
+765.25 29-30 completed weeks of gestation
+765.26 31-32 completed weeks of gestation
+765.27 33-34 completed weeks of gestation
+765.28 35-36 completed weeks of gestation
+ICD-10 code Definition
+P07.21 Extreme immaturity of newborn, gestational age less than 23 completed weeks
+P07.22 Extreme immaturity of newborn, gestational age 23 completed weeks
+P07.23 Extreme immaturity of newborn, gestational age 24 completed weeks
+P07.24 Extreme immaturity of newborn, gestational age 25 completed weeks
+P07.25 Extreme immaturity of newborn, gestational age 26 completed weeks
+P07.26 Extreme immaturity of newborn, gestational age 27 completed weeks
+P07.31 Preterm newborn, gestational age 28 completed weeks
+P07.32 Preterm newborn, gestational age 29 completed weeks
+P07.33 Preterm newborn, gestational age 30 completed weeks
+P07.34 Preterm newborn, gestational age 31 completed weeks
+P07.35 Preterm newborn, gestational age 32 completed weeks
+P07.36 Preterm newborn, gestational age 33 completed weeks
+P07.37 Preterm newborn, gestational age 34 completed weeks
+P07.38 Preterm newborn, gestational age 35 completed weeks
+P07.39 Preterm newborn, gestational age 36 completed weeks
+ICD-9 code Definition
+765 Disorders relating to extreme immaturity of infant
+765.00 Extreme immaturity, unspecified [weight]
+765.01 Extreme immaturity, less than 500 grams
+765.02 Extreme immaturity, 500-749 grams
+765.03 Extreme immaturity, 750-999 grams
+765.04 Extreme immaturity, 1,000-1,249 grams
+765.05 Extreme immaturity, 1,250-1,499 grams
+765.06 Extreme immaturity, 1,500-1,749 grams
+765.07 Extreme immaturity, 1,750-1,999 grams
+765.08 Extreme immaturity, 2,000-2,499 grams
+ICD-10 code Definition
+P07.2 Extreme immaturity of newborn
+P07.20 Extreme immaturity of newborn, unspecified weeks of gestation
+O42.012 Preterm premature rupture of membranes, onset of labor within 24 hours of rupture, second trimester
+ICD-9 code Definition
+765.1 Disorders relating to other preterm infants
+765.10 Other preterm infants, unspecified [weight]
+765.11 Other preterm infants, less than 500 grams
+765.12 Other preterm infants, 500-749 grams
+765.13 Other preterm infants, 750-999 gramsb.       Codes indicating extreme prematurity
+c.       Other preterm codes
+765.14 Other preterm infants, 1,000-1,249 grams
+765.15 Other preterm infants, 1,250-1,499 grams
+765.16 Other preterm infants, 1,500-1,749 grams
+765.17 Other preterm infants, 1,750-1,999 grams
+765.18 Other preterm infants, 2,000-2,499 grams
+644.21 Onset of delivery before 37 completed weeks of gestation
+ICD-10 code Definition
+P05.01 Disorders of newborn related to slow fetal growth and fetal malnutrition less than 500 grams
+P05.02 Disorders of newborn related to slow fetal growth and fetal malnutrition, 500-749 grams
+P05.03 Disorders of newborn related to slow fetal growth and fetal malnutrition, 750-999 grams
+P05.04 Disorders of newborn related to slow fetal growth and fetal malnutrition, 1000-1249 grams
+P05.05 Disorders of newborn related to slow fetal growth and fetal malnutrition, 1250-1499 grams
+P05.06 Disorders of newborn related to slow fetal growth and fetal malnutrition, 1500-1749 grams
+P05.11 Newborn small for gestational age, less than 500 grams
+P05.12 Newborn small for gestational age, 500-749 grams
+P05.13 Newborn small for gestational age, 750-999 grams
+P05.14 Newborn small for gestational age, 1000-1249 grams
+P05.15 Newborn small for gestational age, 1250-1499 grams
+P05.16 Newborn small for gestational age, 1500-1749 grams
+P07.01 Extremely low birth weight newborn, less than 500 grams
+P07.02 Extremely low birth weight newborn, 500-749 grams
+P07.03 Extremely low birth weight newborn, 750-999 grams
+P07.14 Other low birth weight newborn,1000-1249 grams
+P07.15 Other low birth weight newborn,1250-1499 grams
+P07.16 Other low birth weight newborn,1500-1749 grams
+P07.3 Preterm [premature] newborn [other]
+P07.30 Preterm newborn, unspecified weeks of gestation
+O60.1 Preterm labor with preterm delivery
+O42.01  Preterm premature rupture of membranes, onset of labor within 24 hours of rupture
+O42.019  Preterm premature rupture of membranes, onset of labor within 24 hours of rupture, unspecified trimester
+O42.013 Preterm premature rupture of membranes, onset of labor within 24 hours of rupture, third trimester
+Other Codes Description
+ICD-9
+644.2 early onset of delivery
+644.2 Early onset of delivery, unspecified as to episode of care or not applicable
+644.21 Early onset of delivery, delivered, with or without mention of antepartum condition
+776.6 anemia of prematurity
+362.2 retinopathy of prematurity, unspecified
+362.22 retinopathy of prematurity, stage 0
+362.23 retinopathy of prematurity, stage 1
+362.24 retinopathy of prematurity, stage 2
+362.25 retinopathy of prematurity, stage 3
+362.26 retinopathy of prematurity, stage 4
+362.27 retinopathy of prematurity, stage 5
+CPT
+49491 repair, initial inguinal hernia, preterm infant (younger than 37 weeks gestation at birth), performed from birth up to 50 weeks postconception
+49492 repair, initial inguinal hernia, preterm infant (younger than 37 weeks gestation at birth), performed from birth up to 50 weeks postconception
+67229 treatment of extensive or progressive retinopathy, 1 or more sessions; preterm infant (less than 37 weeks gestation at birth), performed from
+836 anesthesia for hernia repairs in the lower abdomen not otherwise specified, infants younger than 37 weeks gestational age at birth
+ICD-10 code Definition
+H35.1 Retinopathy of prematurity
+P61.2 Anemia of prematurity
+2.      Multiple Gestation (V for ICD-9 and Z for ICD-10 codes excluded)
+ICD9 Code Description
+V27.2 Twins both liveborn
+V27.3 Mother with twins one liveborn and one stillborn 
+V27.4 Mother with twins both stillborn
+V27.5 Other multiple birth, all liveborn
+V27.6 Other multiple birth, some liveborn
+V31 Twin, mate liveborn
+V32 Twin birth mate stillborn 
+V33 Twin, unspecified
+V34 Other multiple, mates all liveborn
+V35 Other multiple birth (three or more) mates all stillborn 
+V36 Other multiple, mates live- and stillborn
+V37 Other multiple, unspecified
+651 Multiple gestation
+651.0x Twin Pregnancy
+651.1x Triplet pregnancy
+651.2x Quadruplet pregnancy
+651.3x Twin pregnancy with fetal loss and retention of one fetus 
+651.4x Triplet pregnancy with fetal loss and retention of one or more fetus(es)
+651.5x Quadruplet pregnancy with fetal loss and retention of one or more fetus(es)
+651.6x Other multiple pregnancy with fetal loss and retention of one or more fetus(es)
+651.7x Multiple gestation following (elective) fetal reduction
+651.8x Other specified multiple gestation
+651.9x Unspecified multiple gestation
+652.6x Multiple gestation with malpresentation of one fetus or more
+660.5x Locked Twins
+662.3x Delayed delivery of second twin, triplet, etc.
+761.5x Multiple pregnancy
+ICD10 Code Description
+ O30xxxx Multiple gestation
+ O31xxxx Complications specific to multiple gestation
+ O43.02 Fetus-to-fetus placental transfusion syndrome
+ O63.2 Delayed delivery of second twin, triplet, etc.
+ Z37.2 Twins, both liveborn
+ Z37.3 Twins, one liveborn and one stillborn
+ Z37.5 Other multiple births, all liveborn
+ Z37.50 Multiple births, unspecified, all liveborn
+ Z37.51 Triplets, all liveborn
+ Z37.52 Quadruplets, all liveborn
+ Z37.53 Quintuplets, all liveborn
+ Z37.54 Sextuplets, all liveborn
+ Z37.59 Other multiple births, all liveborn
+ Z37.6 Other multiple births, some liveborn
+ Z37.60 Multiple births, unspecified, some liveborn
+ Z37.61 Triplets, some liveborn
+ Z37.62 Quadruplets, some liveborn
+ Z37.63 Quintuplets, some liveborn
+ Z37.64 Sextuplets, some liveborn
+ Z37.69 Other multiple births, some liveborn
+ Z38.3 Twin liveborn infant, born in hospital
+ Z38.30 Twin liveborn infant, delivered vaginally
+ Z38.31 Twin liveborn infant, delivered by cesarean
+ Z38.4 Twin liveborn infant, born outside hospital
+ Z38.5 Twin liveborn infant, unspecified as to place of birth
+ Z38.6 Other multiple liveborn infant, born in hospital
+ Z38.61 Triplet liveborn infant, delivered vaginally
+ Z38.62 Triplet liveborn infant, delivered by cesarean
+ Z38.63 Quadruplet liveborn infant, delivered vaginally
+ Z38.64 Quadruplet liveborn infant, delivered by cesarean
+ Z38.65 Quintuplet liveborn infant, delivered vaginally
+ Z38.66 Quintuplet liveborn infant, delivered by cesarean
+ Z38.68 Other multiple liveborn infant, delivered vaginally
+ Z38.69 Other multiple liveborn infant, delivered by cesarean
+ Z38.7 Other multiple liveborn infant, born outside hospital
+ Z38.8 Other multiple liveborn infant, unspecified as to place of birth
+ P01.5 Newborn affected by multiple pregnancy
+3.      Post-Term Codes
+ICD-9 code Definition
+645 Late Pregnancy
+645.1 Post term pregnancy
+645.1 Post term pregnancy, unspecified as to episode of care or not applicable
+645.11 Post term pregnancy, delivered, with or without mention of antepartum condition
+645.13 Post term pregnancy, antepartum condition or complication
+645.2 Prolonged pregnancy
+645.2 Prolonged pregnancy, unspecified as to episode of care or not applicable
+645.21 Prolonged pregnancy, delivered, with or without mention of antepartum condition
+645.23 Prolonged pregnancy, antepartum condition or complication
+766.2 Late infant, not 'heavy-for-dates'
+766.21 Post-term infant
+766.22 Prolonged gestation of infant
+ICD-10 code Definition
+ O48 Late pregnancy
+ O48.0 Post-term pregnancy
+ O48.1 Prolonged pregnancy
+ P08.2 Late newborn, not heavy for gestational age
+ P08.21 Post-term newborn
+ P08.22 Prolonged gestation of newborn
+ Z3A.41 41 weeks gestation of pregnancy
+ Z3A.42 42 weeks gestation of pregnancy
+ Z3A.49 Greater than 42 weeks gestation of pregnancy
+4.      Codes indicating a prenatal care visit:
+ICD-9: V220x, V221x, V23xx
+ICD-10: O0900, O0901, O0902, O0903, O0910, O0911, O0912, O0913, O09211, O09212, O09213, O09219, O09291, O09292, O09293, O09299, O0930, O0931, O0932, O0933, O0940, O0941, O0942, O0943, 
+O09511, O09512, O09513, O09519, O09521, O09522, O09523, O09529, O09611, O09612, O09613, O09619, O09621, O09622, O09623, O09629, O0970, O0971, O0972, O0973, O09811, O09812, O09813, 
+O09819, O09821, O09822, O09823, O09829, O09891, O09892, O09893, O09899, O0990, O0991, O0992, O0993, O09A0, O09A1, O09A2, O09A3, O3680X0, O3680X1, O3680X2, O3680X3, O3680X4, O3680X5, 
+O3680X9, Z3400, Z3401, Z3402, Z3403, Z3480, Z3481, Z3482, Z3483, Z3490, Z3491, Z3492, Z3493, Z362
+Anti-diabetic treatments (other than insulin)
+1st and 2nd Generation Sus (excluding glimepiride)
+GLIPIZIDE/METFORMIN HCL
+ACETOHEXAMIDE
+GLYBURIDE,MICRONIZED
+TOLBUTAMIDE
+GLYBURIDE/METFORMIN HCL
+TOLAZAMIDE
+CHLORPROPAMIDE
+GLYBURIDE
+GLIPIZIDE
+AGIs
+ACARBOSE
+MIGLITOL
+DPP-4 Inhibitors
+ALOGLIPTIN BENZOATE
+DAPAGLIFLOZIN PROPANEDIOL/SAXAGLIPTIN HCL
+ERTUGLIFLOZIN PIDOLATE/SITAGLIPTIN PHOSPHATE
+SAXAGLIPTIN HCL/METFORMIN HCL
+LINAGLIPTIN
+ALOGLIPTIN BENZOATE/METFORMIN HCL
+ALOGLIPTIN BENZOATE/PIOGLITAZONE HCL
+EMPAGLIFLOZIN/LINAGLIPTIN
+SAXAGLIPTIN HCL
+SITAGLIPTIN PHOSPHATE/METFORMIN HCL
+SITAGLIPTIN PHOSPHATE/SIMVASTATIN
+SITAGLIPTIN PHOSPHATE
+Glitazones
+ALOGLIPTIN BENZOATE/PIOGLITAZONE HCL
+PIOGLITAZONE HCL
+PIOGLITAZONE HCL/GLIMEPIRIDE
+PIOGLITAZONE HCL/METFORMIN HCL
+ROSIGLITAZONE MALEATE
+ROSIGLITAZONE MALEATE/GLIMEPIRIDE
+ROSIGLITAZONE MALEATE/METFORMIN HCL
+GLP-1 RA (excluding liraglutide monotherapy)
+ALBIGLUTIDE
+DULAGLUTIDE
+EXENATIDE
+EXENATIDE MICROSPHERES
+INSULIN DEGLUDEC/LIRAGLUTIDE
+INSULIN GLARGINE,HUMAN RECOMBINANT ANALOG/LIXISENATIDE
+LIXISENATIDE
+SEMAGLUTIDE
+Meglitinides
+NATEGLINIDE
+REPAGLINIDE
+REPAGLINIDE/METFORMIN HCL
+SGLT-2 Inhibitors
+CANAGLIFLOZIN
+CANAGLIFLOZIN/METFORMIN HCL
+DAPAGLIFLOZIN PROPANEDIOL/SAXAGLIPTIN HCL
+ERTUGLIFLOZIN PIDOLATE
+ERTUGLIFLOZIN PIDOLATE/SITAGLIPTIN PHOSPHATE
+DAPAGLIFLOZIN PROPANEDIOL/METFORMIN HCL
+EMPAGLIFLOZIN/LINAGLIPTIN
+EMPAGLIFLOZIN
+DAPAGLIFLOZIN PROPANEDIOL
+ERTUGLIFLOZIN PIDOLATE/METFORMIN HCL
+EMPAGLIFLOZIN/METFORMIN HCL
+Insulin
+Bolus insulins
+INSULIN GLULISINE
+INSULIN REGULAR,BEEF-PORK
+INSULIN ASPART (NIACINAMIDE)
+INSULIN REGULAR, HUMAN/INSULIN RELEASE UNIT
+INSULIN REGULAR,HUMAN BUFFERED
+INSULIN REGULAR, HUMAN/INSULIN RELEASE UNIT/CHAMBER/INHALER
+INSULIN ASPART
+INSULIN ASPART PROTAMINE HUMAN/INSULIN ASPART
+INSULIN LISPRO PROTAMINE AND INSULIN LISPRO
+INSULIN LISPRO
+INSULIN REGULAR, HUMAN
+Intermediate and Long-acting Insulins
+INSULIN DEGLUDEC
+INSULIN DETEMIR
+INSULIN DEGLUDEC/LIRAGLUTIDE
+INSULIN NPH HUMAN AND INSULIN REGULAR HUMAN SEMI-SYNTHETIC
+INSULIN NPH HUMAN SEMI-SYNTHETIC
+INSULIN ISOPHANE NPH,BF-PK
+INSULIN GLARGINE,HUMAN RECOMBINANT ANALOG/LIXISENATIDE
+INSULIN GLARGINE,HUMAN RECOMBINANT ANALOG
+INSULIN NPH HUMAN ISOPHANE
+INSULIN NPH HUMAN ISOPHANE/INSULIN REGULAR, HUMAN
+Optum
+BEFORE PS MATCHING AFTER PS MATCHING
+The c-statistics for the propensity score model, pre-matching was 0.722 The c-statistics for the propensity score model, post-matching was 0.576
+Variable Glimpiride Liraglutide St. Diff Variable Glimepiride Liraglutide St. Diff
+Number of patients 3,096 378 Number of patients 373 373
+Age squared Age squared*
+...mean (sd) 761406 (223830.2) 651214 (225218.8) 0.491 ...mean (sd) 631746.5 (235037.9) 653328.8 (225529.3) -0.094
+Age (continuous) Age (continuous)
+...mean (sd) 64.24 (10.37) 59.22 (10.94) 0.471 ...mean (sd) 58.19 (11.58) 59.31 (10.96) -0.099
+Age (categories) Age (categories)
+...18 - 40; n (%) 95 (3.1%) 20 (5.3%) -0.110 ...18 - 40; n (%) 32 (8.6%) 20 (5.4%) 0.126
+...41 - 50; n (%) 266 (8.6%) 64 (16.9%) -0.251 ...41 - 50; n (%) 63 (16.9%) 62 (16.6%) 0.008
+...51 - 60; n (%) 602 (19.4%) 106 (28.0%) -0.203 ...51 - 60; n (%) 104 (27.9%) 104 (27.9%) 0.000
+...61 - 70; n (%) 1187 (38.3%) 133 (35.2%) 0.064 ...61 - 70; n (%) 127 (34.0%) 132 (35.4%) -0.029
+...71 - 80; n (%) 946 (30.6%) 55 (14.6%) 0.390 ...71 - 80; n (%) 47 (12.6%) 55 (14.7%) -0.061
+Gender Gender*
+...M = MALE; n (%) 1726 (55.7%) 179 (47.4%) 0.167 ...M = MALE; n (%) 188 (50.4%) 194 (52.0%) -0.032
+...F = FEMALE; n (%) 1370 (44.3%) 199 (52.6%) -0.167 ...F = FEMALE; n (%) 185 (49.6%) 179 (48.0%) 0.032
+Race Race*
+...White; n (%) 1492 (48.2%) 220 (58.2%) -0.201 ...White; n (%) 202 (54.2%) 217 (58.2%) -0.081
+…Not white; n (%) 1604 (51.8%) 158 (41.8%) 0.201 …Not white; n (%) 171 (45.8%) 156 (41.8%) 0.081
+Calendar time years (Jan 2010 - Jun 2020) Calendar time years (Jan 2010 - Jun 2020)*
+...Jan 26, 2010 - Dec 31, 2017; n (%) 1850 (59.8%) 255 (67.5%) -0.161 ...Jan 26, 2010 - Dec 31, 2011; n (%) 254 (68.1%) 251 (67.3%) 0.017
+...Jan 1, 2018 - Jun 30, 2020; n (%) 1246 (40.2%) 123 (32.5%) 0.161 ...Jul 1, 2018 - Dec 31, 2018; n (%) 119 (31.9%) 122 (32.7%) -0.017
+General Health General Health 
+Smoking; n (%) 296 (9.6%) 30 (7.9%) 0.060 Smoking; n (%)* 22 (5.9%) 30 (8.0%) -0.083
+Obesity or Overweight; n (%) 760 (24.5%) 93 (24.6%) -0.002 Obesity or Overweight; n (%)* 89 (23.9%) 91 (24.4%) -0.012
+    Obesity; n (%) 554 (17.9%) 79 (20.9%) -0.076     Obesity; n (%) 72 (19.3%) 77 (20.6%) -0.033
+    Overweight; n (%) 247 (8.0%) 16 (4.2%) 0.159     Overweight; n (%) 21 (5.6%) 16 (4.3%) 0.060
+Combined comorbidity score, 180 days Combined comorbidity score, 180 days
+...mean (sd) 2.06 (1.56) 1.86 (1.36) 0.137 ...mean (sd) 1.92 (1.35) 1.86 (1.37) 0.044
+Frailty Score: Empirical Version 180 days Frailty Score: Empirical Version 180 days*
+...mean (sd) 0.99 (0.77) 1.03 (0.73) -0.053 ...mean (sd) 1.05 (0.73) 1.02 (0.72) 0.041
+Lab value HbA1c Lab value HbA1c*
+...mean (sd) 8.16 (0.96) 8.18 (0.99) -0.021 ...mean (sd) 8.16 (0.98) 8.18 (0.99) -0.020
+Cardiovascular Comorbidities Cardiovascular Disorders
+Hypertension; n (%) 391 (12.6%) 66 (17.5%) -0.137 Hypertension; n (%)* 69 (18.5%) 63 (16.9%) 0.042
+Hyperlipidemia; n (%) 2296 (74.2%) 299 (79.1%) -0.116 Hyperlipidemia; n (%)* 297 (79.6%) 296 (79.4%) 0.005
+Atherosclerosis Disease (MI, angina, CAD and other forms of chronic ischemic 
+heart disease, History of CABG or PTCA); n (%)566 (18.3%) 43 (11.4%) 0.195Atherosclerosis Disease (MI, angina, CAD and other forms of chronic ischemic 
+heart disease, History of CABG or PTCA); n (%)*43 (11.5%) 42 (11.3%) 0.006
+    Old MI; n (%) 64 (2.1%) 3 (0.8%) 0.109     Old MI; n (%) 6 (1.6%) 3 (0.8%) 0.074
+    Acute MI ; n (%) 10 (0.3%) 1 (0.3%) 0.000     Acute MI ; n (%) 0 (0.0%) 1 (0.3%) -0.078
+    ACS/unstable angina; n (%) 18 (0.6%) 1 (0.3%) 0.045     ACS/unstable angina; n (%) 0 (0.0%) 1 (0.3%) -0.078
+    Stable angina; n (%) 80 (2.6%) 6 (1.6%) 0.070     Stable angina; n (%) 3 (0.8%) 6 (1.6%) -0.074
+    CAD and other forms of chronic ischemic heart disease; n (%) 415 (13.4%) 30 (7.9%) 0.179     CAD and other forms of chronic ischemic heart disease; n (%) 33 (8.8%) 29 (7.8%) 0.036
+    History of CABG or PTCA ; n (%) 107 (3.5%) 9 (2.4%) 0.065     History of CABG or PTCA ; n (%) 5 (1.3%) 9 (2.4%) -0.082
+    PAD or PAD surgery; n (%) 166 (5.4%) 11 (2.9%) 0.126     PAD or PAD surgery; n (%) 9 (2.4%) 11 (2.9%) -0.031
+Cerebrovascular disease (Stroke, TIA, Late effects); n (%) 77 (2.5%) 2 (0.5%) 0.165 Cerebrovascular disease (Stroke, TIA, Late effects); n (%)* 1 (0.3%) 2 (0.5%) -0.032
+    Stroke (Ischemic or hemorrhagic); n (%) 40 (1.3%) 1 (0.3%) 0.112     Stroke (Ischemic or hemorrhagic); n (%) 1 (0.3%) 1 (0.3%) 0.000
+    TIA; n (%) 27 (0.9%) 1 (0.3%) 0.078     TIA; n (%) 1 (0.3%) 1 (0.3%) 0.000
+    Late effects of cerebrovascular disease; n (%) 28 (0.9%) 0 (0.0%) 0.135     Late effects of cerebrovascular disease; n (%) 1 (0.3%) 0 (0.0%) 0.078
+Heart Failure; n (%) 103 (3.3%) 10 (2.6%) 0.041 Heart Failure; n (%)* 10 (2.7%) 10 (2.7%) 0.000
+Atrial fibrillation; n (%) 121 (3.9%) 14 (3.7%) 0.010 Atrial fibrillation; n (%)* 13 (3.5%) 14 (3.8%) -0.016
+Other cardiac dysrhythmia; n (%) 190 (6.1%) 18 (4.8%) 0.057 Other cardiac dysrhythmia; n (%) 25 (6.7%) 17 (4.6%) 0.091
+Diabetes Mellitus Comorbidities Diabetes Mellitus Complications
+Hypoglycemia; n (%) 20 (0.6%) 4 (1.1%) -0.054 Hypoglycemia; n (%)* 6 (1.6%) 4 (1.1%) 0.043
+Diabetic nephropathy; n (%) 434 (14.0%) 48 (12.7%) 0.038 Diabetic Nephropathy; n (%)* 39 (10.5%) 46 (12.3%) -0.057
+Diabetic Neuropathy; n (%) 495 (16.0%) 60 (15.9%) 0.003 Diabetic Neuropathy; n (%)* 61 (16.4%) 59 (15.8%) 0.016
+Diabetic Retinopathy ; n (%) 134 (4.3%) 20 (5.3%) -0.047 Diabetic Retinopathy ; n (%)* 15 (4.0%) 20 (5.4%) -0.066
+ Diabetes with unspecified complications; n (%) 122 (3.9%) 14 (3.7%) 0.010 Diabetes with unspecified complications; n (%) 14 (3.8%) 13 (3.5%) 0.016
+Diabetes with peripheral circulatory disorders and amputations, DF; n (%)* 70 (2.3%) 9 (2.4%) -0.007 Diabetes with peripheral circulatory disorders and amputations, DF; n (%)* 7 (1.9%) 9 (2.4%) -0.034
+    Diabetes with peripheral circulatory disorders; n (%) 38 (1.2%) 5 (1.3%) -0.009     Diabetes with peripheral circulatory disorders; n (%) 3 (0.8%) 5 (1.3%) -0.049
+    Lower-limb amputations; n (%) 4 (0.1%) 1 (0.3%) -0.045     Lower-limb amputations; n (%) 0 (0.0%) 1 (0.3%) -0.078
+    Diabetic Foot; n (%) 32 (1.0%) 3 (0.8%) 0.021     Diabetic Foot; n (%) 5 (1.3%) 3 (0.8%) 0.049
+Renal Comorbidities Renal Disorders
+Chronic kidney disease stages I-IV and NOS; n (%) 381 (12.3%) 40 (10.6%) 0.053 Chronic kidney disease stages I-IV and NOS; n (%)* 36 (9.7%) 40 (10.7%) -0.033
+Miscellaneous renal disease; n (%) 109 (3.5%) 10 (2.6%) 0.052 Miscellaneous renal disease; n (%) 10 (2.7%) 10 (2.7%) 0.000
+Mood disorders (Anxiety and Depression); n (%) 332 (10.7%) 47 (12.4%) -0.053 Mood disorders (Anxiety and Depression); n (%)* 47 (12.6%) 47 (12.6%) 0.000
+    Anxiety; n (%) 211 (6.8%) 27 (7.1%) -0.012     Anxiety; n (%) 28 (7.5%) 27 (7.2%) 0.011
+    Depression; n (%) 162 (5.2%) 28 (7.4%) -0.091     Depression; n (%) 26 (7.0%) 28 (7.5%) -0.019
+Other Comorbidities Other Disorders
+Obstructive sleep apnea; n (%) 259 (8.4%) 41 (10.8%) -0.082 Obstructive sleep apnea; n (%)* 38 (10.2%) 39 (10.5%) -0.010
+COPD; n (%) 207 (6.7%) 9 (2.4%) 0.207 COPD; n (%)* 15 (4.0%) 9 (2.4%) 0.091
+Asthma; n (%) 96 (3.1%) 14 (3.7%) -0.033 Asthma; n (%) 19 (5.1%) 13 (3.5%) 0.079
+Osteoarthrosis; n (%) 363 (11.7%) 49 (13.0%) -0.040 Osteoarthrosis; n (%) 50 (13.4%) 48 (12.9%) 0.015
+NASH/NAFLD; n (%) 98 (3.2%) 16 (4.2%) -0.053 NASH/NAFLD; n (%) 14 (3.8%) 15 (4.0%) -0.010
+Medications Medications
+Antihypertensive medications; n (%) 2585 (83.5%) 324 (85.7%) -0.061 Antihypertensive medications; n (%)* 318 (85.3%) 320 (85.8%) -0.014
+    ACEi/ARBs; n (%) 2257 (72.9%) 285 (75.4%) -0.057     ACEi/ARBs; n (%) 282 (75.6%) 281 (75.3%) 0.007
+    Beta blockers; n (%) 971 (31.4%) 94 (24.9%) 0.145     Beta blockers; n (%) 98 (26.3%) 94 (25.2%) 0.025
+    Calcium channel blockers; n (%) 795 (25.7%) 83 (22.0%) 0.087     Calcium channel blockers; n (%) 91 (24.4%) 81 (21.7%) 0.064
+    Thiazide; n (%) 369 (11.9%) 52 (13.8%) -0.057     Thiazide; n (%) 54 (14.5%) 51 (13.7%) 0.023
+    Diuretics; n (%) 1108 (35.8%) 133 (35.2%) 0.013     Diuretics; n (%) 137 (36.7%) 129 (34.6%) 0.044
+Statins Other lipid-lowering drugs; n (%) 2402 (77.6%) 291 (77.0%) 0.014 Statins Other lipid-lowering drugs; n (%)* 299 (80.2%) 287 (76.9%) 0.080
+    Statins; n (%) 2285 (73.8%) 273 (72.2%) 0.036     Statins; n (%) 281 (75.3%) 269 (72.1%) 0.025
+    Other lipid-lowering drugs; n (%) 370 (12.0%) 49 (13.0%) -0.030     Other lipid-lowering drugs; n (%) 50 (13.4%) 48 (12.9%) 0.015
+Opioids; n (%) 507 (16.4%) 72 (19.0%) -0.068 Opioids; n (%)* 74 (19.8%) 69 (18.5%) 0.033
+Mood Stabilizing Medications; n (%) 719 (23.2%) 129 (34.1%) -0.243 Mood Stabilizing Medications; n (%)* 127 (34.0%) 125 (33.5%) -0.041
+    Antidepressants; n (%) 540 (17.4%) 105 (27.8%) -0.251     Antidepressants; n (%) 98 (26.3%) 101 (27.1%) -0.018
+    Anxiolytics/hypnotics; n (%) 114 (3.7%) 25 (6.6%) -0.131     Anxiolytics/hypnotics; n (%) 23 (6.2%) 24 (6.4%) -0.008
+    Benzodiazepine; n (%) 256 (8.3%) 42 (11.1%) -0.095     Benzodiazepine; n (%) 47 (12.6%) 40 (10.7%) 0.059
+Gabapentinoids; n (%) 319 (10.3%) 49 (13.0%) -0.084 Gabapentinoids; n (%)* 47 (12.6%) 47 (12.6%) 0.000
+Healthcare Utlization Healthcare Utlization 
+Number of medication claims Number of medication claims*
+...mean (sd) 11.47 (6.60) 12.82 (6.94) -0.199 ...mean (sd) 12.76 (7.08) 12.73 (6.89) 0.004
+Number of office visits Number of office visits*
+...mean (sd) 4.76 (3.58) 5.24 (3.72) -0.131 ...mean (sd) 4.91 (3.59) 5.19 (3.66) -0.071
+Number of hospitalizations or ED visits Number of hospitalizations or ED visits* 
+...mean (sd) 0.24 (0.87) 0.20 (0.66) 0.052 ...mean (sd) 0.25 (0.91) 0.20 (0.67) 0.025
+Number of Endocrinologist visits Number of Endocrinologist visits*
+...mean (sd) 0.13 (0.55) 0.27 (0.85) -0.196 ...mean (sd) 0.25 (0.75) 0.24 (0.73) 0.013
+Number of HbA1c test orders Number of HbA1c test orders
+...mean (sd) 1.77 (0.68) 1.79 (0.78) -0.012 ...mean (sd) 1.84 (0.64) 1.78 (0.78) 0.083
+Number of lexible Sigmoidoscopy or colonoscopy or CT virtual colonoscopy (CRC 
+screening); n (%)149 (4.8%) 17 (4.5%) 0.014Number of flexible Sigmoidoscopy or colonoscopy or CT virtual colonoscopy 
+(CRC screening); n (%)57 (15.3%) 54 (14.5%) 0.022
+ Number of Mammograms (Breast cancer screening); n (%) 400 (12.9%) 59 (15.6%) -0.077 Number of Mammograms (Breast cancer screening); n (%) 15 (4.0%) 16 (4.3%) -0.015
+Number of Pap smear (Cervical cancer screening); n (%) 120 (3.9%) 16 (4.2%) -0.015 Number of Pap smear (Cervical cancer screening); n (%) 48 (12.9%) 59 (15.8%) -0.083
+Flu vaccine; n (%) 659 (21.3%) 93 (24.6%) -0.079 Flu vaccine; n (%) 20 (5.4%) 15 (4.0%) 0.066
+Pneumococcal vaccine; n (%) 671 (21.7%) 82 (21.7%) 0.000 Pneumococcal vaccine; n (%) 87 (23.3%) 93 (24.9%) -0.037
+Number of DXA tests Number of DXA tests 76 (20.4%) 82 (22.0%) -0.039
+...mean (sd) 0.04 (0.19) 0.03 (0.18) 0.002 ...mean (sd) 0.03 (0.18) 0.03 (0.18) 0.000
+ Copay for pharmacy cost (charges in U.S. $) Copay for pharmacy cost (charges in U.S. $)*# 
+...mean (sd) 180.68 (259.85) 280.36 (336.80) -0.331 ...mean (sd) 268.00 (356.42) 269.85 (316.10) -0.005
+ Business type  Business type*
+...Commercial; n (%) 1016 (32.8%) 201 (53.2%) -0.421 ...Commercial; n (%) 201 (53.9%) 196 (52.5%) 0.028
+...Medicare; n (%) 2080 (67.2%) 177 (46.8%) 0.421 ...Medicare; n (%) 172 (46.1%) 177 (47.5%) -0.028
+Generic/Brand unique prescriptions Generic/Brand unique prescriptions
+...mean (sd) 0.99 (0.04) 0.99 (0.04) 0.000 ...mean (sd) 0.99 (0.04) 0.99 (0.04) 0.000
+Brand name prescription - unique value Brand name prescription - unique value*
+...mean (sd) 8.55 (3.69) 9.35 (3.85) -0.212 ...mean (sd) 9.32 (4.11) 9.25 (3.70) 0.018
+Generic name prescription - unique value Generic name prescription - unique value*
+...mean (sd) 8.47 (3.64) 9.23 (3.76) -0.205 ...mean (sd) 9.20 (4.05) 9.13 (3.62) 0.018
+* variables included in the PS model
+# copay of index drugs is not includedMATCHED UNMATCHED
+Optum Optum

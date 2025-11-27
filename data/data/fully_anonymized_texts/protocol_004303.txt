@@ -1,0 +1,77 @@
+ 
+  
+ 
+ 
+ 
+ 
+ 
+   
+Study Protocol  and Statistical Analysis Plan 
+How Long Should a Behavioral Activation Single- session Intervention be? A Four -armed 
+Trial Comparing Effectiveness by [CONTACT_657294].gov ID  [STUDY_ID_REMOVED]  
+April 17, [ADDRESS_886081] to recruit and 
+compensate participants. Researchers  will pay participants $0.25 USD for completing 
+the screener and (if eligible) the study information sheet. If participants are eligible, 
+researchers will send them invites through the crowdwork platform to participate in the 
+next parts of the study. Researchers will pay them $ 4.00 for completing session 1 of the 
+study and $1.[ADDRESS_886082] 
+two months.  
+ 
+Researchers will recruit a sample of 1,100 adults who struggle with depression. To 
+recruit these adults, potential participants will complete a screener and, if eligible, read 
+the study content information and decide whether  to participate (2 minutes). Within  five 
+days , participants who consent will be invited to complete the first part of the study. In 
+this part, they will first complete a questionnaire of demographics and well -being at 
+baseline (roughly 4 minutes), be randomly allocated to one of four conditions with equal 
+odds of assignment to each condition, complete the SSI to which they were randomized 
+(2-15 minutes) and then complete the post -test measures (roughly 4 minutes) just after 
+the SSI and eight weeks later. Combined across all three  study sessions, the study 
+should take roughly [ADDRESS_886083] of free online mental health support resources (shown in 
+supporting documents) . At the end of the study, researchers will also offer participants 
+permanent access to all  four SSIs . 
+ 
+The research team created the SSIs of different lengths aiming to make the active 
+elements in each SSI as consistent as possible. Thus, even though the 2- minute 
+version contains less content than the 15- minute version, researchers tried to ensure it 
+expresses the same general message and activates similar mechanisms of change.  
+Participants will complete questionnaires asking about their well- being and experiences  
+with the interventions  at baseline, post -test, and 8- week follow- up. 
+ 
+All interventions and survey materials are available at https://osf.io/g846j . 
+ 
+Statistical Analysi s Plan  
+Main analysis: The main DV is change in depressive symptoms (PHQ -8) from baseline 
+to 8-week follow -up. The main analysis compares change in PHQ -8 score from baseline 
+to 8-week follow -up across experimental conditions. Researchers will use a mixed -
+effects model predicting depressive symptoms with condition, measurement time point 
+(1 = baseline, 2= 8- week follow -up), and the 2- way interaction between condition and 
+measurement time point as IVs and a participant identifier as a random  intercept. Using 
+the “lme4” package in R, these analyses will take the following form:  
+ 
+lmer(phq8 ~ time*condition + (1|pid))  
+ 
+Secondary analysis: Researchers will re -run the same analysis as above separately for 
+each secondary outcome collected. Researchers will also duplicate the main analysis 
+but with the following covariates included in the mixed- effects model: gender (multiple 
+choice), age (continuous), ethnicity (categorical), education level (categorical), 
+employment (categorical), and if one completed the study on a phone (binary).  
+ 
+Inference criteria  
+For all analyses, researchers will use the standard p < 0.05 criterion for determining 
+statistical significance. Researchers will use two -tailed tests for each of researchers ’ 
+analyses.  
+ 
+Data exclusion  
+Main analyses will be limited to only those participants who 1) were randomized to a 
+condition ( i.e., those who consented to participate and completed the baseline 
+measures), 2) did not indicate that they did not participate seriously at the end of the study, and 3) completed the study only once.  
+ 
+Missing data  
+Based on researchers ’ previous work on Cloudresearch Connect, researchers do not 
+foresee a great deal of missing data or differential dropout . Although researchers will 
+take efforts to avoid missing data (e.g., a financial incentive for completing the study 
+and reminder emails), it is not necessary to impute missing data before performing a 
+longitudinal mixed- model analysis (Twisk et al., 2013). Participants with mis sing data at 
+some assessments will be included in the analysis and results will be modeled on the basis of the available data.  
+ 
+ 

@@ -1,0 +1,956 @@
+ABCD
+001-MCS -90-124_RD -01(4.0)TITLE PAGE
+Protocol for non
+-interventional studies based on existing data : 
+TITLE PAGE
+Document Number : c12696196 -01
+BI Study Number : 1160.[ADDRESS_726538](s):PRADAXA (dabigatran)
+Title : Validation of predictors for oral anticoagulant medication choice 
+using EMR data
+(Phase 3b of the BI/BWH Pradaxa study program)
+Protocol version 
+identifier:1.[ADDRESS_726539] version of 
+protocol:02 Novem ber2016
+PASS: No
+EU PAS r egister number :Notavailable yet
+Active substance : Dabigatran etexilate
+Medicinal product : Pradaxa
+Product reference: EU/1/08/442/001 -019
+Procedure number : EMEA/H/C/000829
+JointPASS : Not applicable
+Research question and 
+objectives:The research question is whether select patient characteristics that 
+may be incompletely captured by [CONTACT_552717], differ 
+between dabigatran and warfarin initiators.
+Objectives:
+1)Descriptive: To identify select clinical covariates from 
+electronic m edical records that might be associated with 
+initiation of oral anticoagulant medications (dabigatran or 
+warfarin) in NVAF patients at risk for stroke and are not 
+usually well captured in the associated claims database
+2)Prediction Rule: To assess how well E MR-based clinical 
+characteristics can be captured on the basis of claims data only
+3)Assess Balance: To assess the potential for unmeasured 
+confounding in dabigatran vs warfarin comparative 
+effectiveness and safety studies based on administrative claims 
+Boehringer Ingelheim Page 2of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726540] -01(4.0)databases
+Country( -ies) of study: US
+Author :
+Marketing authorisation 
+holder(s) :Boehringer Ingelheim
+MAH contact [CONTACT_9702] :
+Date: 02 November 2016
+Page 2of 55
+Proprietary confidential information
+© 2016 Boehringer Ingelhei m International GmbH or one or more of its affiliated companies. All rights reserved.
+This document may not -in full or in part -be passed on, reproduced, published or otherwise used without prior written permission
+
+Boehringer Ingelheim Page 3of 55
+Protocol for non -interventional studies based o n existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726541] -01(4.0)1. TABLE OF CONTENTS
+TITLE PAGE ................................ ................................ ................................ .................. [ADDRESS_726542] ........................................................................................................... 8
+5. AMENDMENTS AND UPDATES ..................................................................... 12
+6. MILESTONES ..................................................................................................... 13
+7. RATIONALE AND BACKGROUND ................................................................ 14
+8. RESEARCH QUESTI ON AND OBJECTI VES ................................................. 15
+9.
+RESEARCH METHODS .................................................................................... 16
+9.1 STUDY DESIGN ............................................................................................ 16
+9.2 SETTI NG........................................................................................................ 16
+9.3 VARIABLES ................................ ................................ ................................ ..16
+9.3.1 Exposures ................................................................................................ 16
+9.3.2 Outcomes ................................................................................................. 16
+[IP_ADDRESS] Primary  outcomes .................................................................................. 17
+[IP_ADDRESS] Secondary  outcomes .............................................................................. 17
+[IP_ADDRESS] Fur
+ther outcomes ................................ ................................ ................... 17
+9.3.3 Covariates ................................ ................................ ................................ 20
+9.4 DATA SOURCES ................................ ................................ ........................... 32
+9.5 STUDY SIZE................................ ................................ ................................ ..33
+9.6 DATA MANAGEMENT ................................ ................................ ................ 34
+9.7 DATA ANALYSI S................................ ................................ ......................... 34
+9.7.1 Main anal ysis........................................................................................... 34
+9.7.2 Further anal ysis....................................................................................... 38
+9.8 QUALITY CONTROL ................................ ................................ ................... 38
+9.9 LIMITATIONS OF THE RESEARCH METHODS ...................................... 38
+9.10 OTHER ASPECTS ......................................................................................... 39
+9.11 SUBJECTS ................................ ................................ ................................ ......39
+9.11.1 Study  group ............................................................................................. 39
+9.11.2
+EMR- linked subset .................................................................................. 40
+9.12 BIAS ................................ ................................ ................................ ................ 42
+10. PROTECTI ON OF HUMAN SUBJECTS .......................................................... 43
+Boehringer Ingelheim Page 4of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726543] -01(4.0)11. MANAGEMENT AND REPORTI NG OF ADVERSE EVENTS/ADVERSE 
+REACTI ONS ....................................................................................................... [ADDRESS_726544] FOR STUDY PROTOCOL S ................................. 49
+ANNEX 3. ADDITIONAL  INFORMATION .............................................................. 55
+Boehringer Ingelheim Page 5of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726545] -01(4.0)2. LIST OF ABBREVIATIONS
+ACCP American College of Chest Phy sicians
+ACEI Angiotensin- converting Enzy me Inhibitor
+AES Advanced Encry ption Standard
+AF Atrial Fibrillation
+ALT Serum Alanine Aminotransferase
+ARB Angiotensin Receptor Blocker
+ASCVD Atherosclerotic Cardiovascular Disease
+BB Beta Blocker
+BI Boehringer Ingelheim
+BMI Body Mass Index
+BWH Brigham and Women’s Hospi[INVESTIGATOR_552710] 2DS 2-VASc Congestive Heart Failure, Hy pertension, Age > 75, Diabetes 
+Mellitus, Prior Stroke or Transient Ischemic Attack, Vascular 
+Disease, Age 65- 74, Sex Category
+CHADS 2 Congestive Heart Failure, Hy pertension, Age> 75, Diabetes Mellitus, 
+Prior Stroke or Transient Ischemic At tack
+CHF Congestive Heart Failure
+CI Confidence Interval
+CONSORT Consolidated Standards for Reporting Trials
+CPT Current Procedural Terminology
+Cr Creatinine
+DM Diabetes Mellitus
+DVT Deep Venous Thromboembolism
+Dx Diagnosis
+EMR Electronic Medical Records
+ESC European Societ y of Cardiology
+GFR Glomerular Filtration Rate
+GI Gastrointestinal
+H2 Receptor Histamine H2 Receptor
+HAS -BLED Hypertension, Abnormal Liver/Renal function, Stroke, Bleeding 
+history  or predisposition, L abile INR, Elderl y (Age >65), Drugs -
+Alcohol usage
+HbA1c Hemoglobin A1C
+HCPC Healthcare Common Procedure Coding
+hdPS High -dimensional Propensity  Score
+HR Hazard Ratio
+ICD-[ADDRESS_726546]
+ISF Investigator Site File
+Boehringer Ingelheim Page 6of 55
+Protocol for non -interventional studies bas ed on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726547] -01(4.0)LDL Low Density  Lipoprotein
+LOS Length of Stay
+MDRD Modification of Diet in Renal Disease
+MI Myocardial Infarction
+NOAC New Oral Anticoagulant
+NSAID Non-steroidal Anti -inflammatory  Drug
+NVAF Non-valvular Atrial Fibrillation
+PAD Peripheral Artery  Disease
+PCI Percutaneous Coronary  Intervention
+PE Pulmonary  Embolism
+PGP P-glycoprotein
+PPI [INVESTIGATOR_405125] I nhibitor
+PPV Positive Predictive Value
+PS Propensity Score
+PTCA Percutaneous Transluminal Coronary  Angioplast y
+PVD Peripheral Vascular Disease
+PY Person-Year
+RE-LY Randomized Evaluation of L ong-Term Anticoagulation Therapy
+RR Relative Risk
+SAH Subarachnoid Hemorrhage
+SBP Systolic Blood Pressure
+SCr Serum Creatinine
+SD Standard deviation
+TIA Transient Ischemic Attack
+t.i.d. ter in die (3 times a day )
+US [LOCATION_002]
+VTE Venous Thromboembolism
+Boehringer Ingelheim Page 7of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726548] -01(4.0)
+
+Boehringer Ingelheim Page 8of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726549] -01(4.0)4. ABSTRACT
+Name [CONTACT_23359]:
+Boehringer Ingelheim
+Name [CONTACT_47666]:
+Pradaxa® (Dabigatran etexilate), or
+warfarin
+Name [CONTACT_23361]:
+Dabigatran etexilate or warfarin
+Protocol date: Study number: Version/Revision: Version/Revision 
+date:
+02 November 2016 1160.219 1.0
+Title of study : Association of select EMR -based covariates with oral anticoagulant 
+medication selection
+Version and date: Version 1.0 , 02 November 2016
+ 
+ 
+Rationale and 
+background:A study of safety/effectiveness of dabigatran is being conducted in health 
+insurer claims databases that may incompletely capture select variables 
+representing covariates. This validation study seeks to ascertain a select set 
+of covariates in electronic me dical records (EMRs) linked to a subset of 
+patients within the insurance claims data in order to assess the potential for 
+unmeasured confounding in observational studies based on insurance 
+claims databases only .
+Research question 
+and objectives:The research question is whether select patient characteristics that may be 
+incompletely captured by [CONTACT_552718].
+Objectives:
+1) Descriptive: To identify select clinical covariates from electronic 
+medical records that might be associated with initiation of oral 
+anticoagulant medications (dabigatran or warfarin) in patients with NVAF 
+at risk for stroke and are not usually well captured in the associated claims 
+database.
+2) Prediction Rule: To quantify t he association between EMR -based 
+clinical characteristics and patterns of insurance claims
+
+Boehringer Ingelheim Page 9of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726550] -01(4.0)Name [CONTACT_23359]:
+Boehringer Ingelheim
+Name [CONTACT_47666]:
+Pradaxa® (Dabigatran etexilate), or 
+warfarin
+Name [CONTACT_23361]:
+Dabigatran etexilate or warfarin
+Protocol date: Study number: Version/Revision: Version/Revision 
+date:
+02 November 2016 1160.219 1.0
+Research question 
+and objectives:3) Assess Balance: To assess the potential for unmeasured 
+confounding in dabigatran vs warfarin comparative effectiveness and 
+safety studies based on administrative claims databases
+Study design: A validation study
+Population: Patients from an US health insurance database (electronic medical records )
+with a recorded diagnosis of atrial fibrillation without evidence of valvular 
+etiology and at risk for stroke who initiate dabigatran or warfarin between 
+October 2010 and December 201 4 (This date range corresponds to the 
+available matched cohort date range ).
+Inclusion criteria:
+•A recorded diagnosis of atrial fibrillation.
+•Initiation of anticoagulant medication (dabigatran or warfarin).
+•At least 18 years of age on the date of anticoagulant initiation.
+•CHA 2DS 2-VASc score ≥ 1
+•Presence of electronic medical records (for the EMR -based subset)
+Exclusion criteria:
+•Patients with missing or ambiguous age or sex information.
+•Patients with evidence of valvular disease.
+•Patients with less than 12 months enrolment preceding the date of 
+anticoagulant initiation.
+•Patients with  a dispensing of any oral anticoagulant during the 12 
+months preceding the date of anticoagulant initiation
+•Patients with a nursing home stay during baseline
+•Unmatched dabigatran/warfarin initiators
+Boehringer Ingelheim Page 10of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196-0 1
+Proprietary confidential information © [ADDRESS_726551] -01(4.0)Name [CONTACT_23359]:
+Boehringer In gelheim
+Name [CONTACT_47666]:
+Pradaxa® (Dabigatran etexilate), or 
+warfarin
+Name [CONTACT_23361]:
+Dabigatran etexilate or warfarin
+Protocol date: Study number: Version/Revision: Version/Revision 
+date:
+02 November 2016 1160.219 1.0
+Variables: Patient characteristics derived from insurance claims (claims- based 
+covariates)
+This study will characterize patients initiating oral anticoagulant 
+medications with respect to select characteristics, some of which might be 
+reflected differently in claims data compared to electronic medical records 
+prior to and including the date of initiation. These characteristics from 
+EMR data are usually treated as covariates but will be considered 
+outcomes in this validation study.
+These characteristics include:
+Primary Outcomes
+• Obesity 
+• Smoking 
+• Alcohol consumption
+• Abnormal renal function 
+• Bleeding history or predisposition
+• Renal function (estimated GFR)
+• Serum Creatinine
+• Abnormal liver function
+Secondary Outcomes
+• Duration of atrial fibrillation 
+• History of adherence
+• History/duration of hypertension
+• Uncontrolled Hypertension (for HAS -BLED)
+• History/duration of CHF 
+• Prior TIA 
+• Diabetes
+• Hyperlipi[INVESTIGATOR_552711] 11of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726552] -01(4.0)Name [CONTACT_23359]:
+Boehringer Ingelheim
+Name [CONTACT_47666]:
+Pradaxa® (Dabigatran etexilate), or 
+warfarin
+Name [CONTACT_23361]:
+Dabigatran etexilate or warfarin
+Protocol date: Study number: Version/Revision: Version/Revision 
+date:
+02 November 2016 1160.219 1.0
+Variables: • HAS -BLED Score
+• Use of antiplatelets or NSAIDs (needed for HAS -BLED)
+Data sources: This study will be conducted within MarketS candata linked to electronic 
+medical records.
+Study size: Study cohort: approximately 15,000 dabigatran initiators PS -matched  to 
+15,000 warfarin initiators 
+EMR- linked subset: approx. 5.5% of the study cohort.
+Data analysis: •Analyses will describe the presence in the claims data of each 
+EMR- based clinical characteristic among initiators of dabigatran 
+and initiators of warfarin.  
+•A prediction algorithm to identify in the claims data each of the 
+EMR- based clinical characteristic will be developed. The 
+prediction algorithm will be estimated using a regression model 
+that uses each of the EMR characteristic as the model outcome and 
+all available claims- based covariates as predictors.  
+•Strength of association between each EMR -based cov ariate and 
+medication choice will guide quantitative assessments of potential 
+confounding of the association betw een anticoagulant and clinical 
+outcomes.
+Milestones: Draft Protocol: September 2013
+Final Protocol: November 2016
+Draft Report: July2017
+Final Report: September 2017
+
+Boehringer Ingelheim Page 12of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726553] -01(4.0)5. AMENDMENTS AND UPDAT ES
+None .
+Boehringer Ingelheim Page 13of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726554] -01(4.0)6. MILESTONES
+Milestone Planned Date
+Contract June [ADDRESS_726555] draft report July 2017
+Registration in the EU PAS 
+registerNovember 2016
+Final report of study  results: September 2017
+Boehringer Ingelheim Page 14of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726556] -01(4.0)7. RATIONALE AND BACKGR OUND
+A number of new oral anticoagulants are being developed and marketed to replace vitamin K 
+antagonists, one of the most important drugs in modern medicine. [P11-[ZIP_CODE]] Unlike 
+vitamin K a ntagonists, these new drugs do not require dose titration involving intensive 
+therapeutic monitoring of prothrombin time to achieve target anticoagulation within a narrow 
+therapeutic range. In Phase III studies, these drugs were found to be therapeutically
+advantageous or non -inferior over warfarin. In the coming years, as man y as six new 
+anticoagulants could be on the market and a lack of valid comparative evidence will hinder 
+prescriber and pay or decision -making.
+Pharmacoepi[INVESTIGATOR_552712] y utilized for that purpose; however, these data are collected for reasons unrelated 
+to research, and as a result, might not contain sufficient information on important 
+confounders, such as body  mass index , smoking, family  history , or alcohol consumption, 
+leading to residual confounding. Several approaches have been proposed to address the issue 
+of unmeasured confounding, and internal validation studies, based on additional data 
+obtained for a subset of par ticipants in the main study  population is one of them. Such studies 
+offer specific advantages since they  are more representative of the main study  population and 
+allow application of methods that do not require assumptions about the direction of 
+confoundin g. [R13-2768]
+This protocol is for a validation study  conducted within a cohort of patients initiating 
+dabigatran or warfarin during October 2010 –December 2014 time period and matched on 
+propensity  score (PS). 
+Thestudy  will involve targeted data ascertainment from linked
+patients for enhanced covariate assessment via extraction from electronic medical records
+using existing electronic data including pre-defined variables, with the goal of describing the 
+presence of covariates not ty pi[INVESTIGATOR_1306] y present or insufficientl y measured in claims data in 
+dabigatran users as compared to users of warfarin and assessing the potential for confounding 
+in the comparative safet y research that will be undertaken in other phases of the study  
+program.
+Boehringer Ingelheim Page 15of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726557] -01(4.0)8. RESEARCH QUESTION AN D OBJECTIVES
+The objectives of this study  are:
+1)Descriptive: T o identify  select clinical covariates from electronic medical records that 
+might be associated with initiation of oral anticoagulant medications (dabigatran or 
+warfarin) in patients with NVAF at risk for stroke and are not usually  well captured in 
+the associated claims database.
+2)Prediction Rule: To quantify  the association between EMR -based clinical 
+characteristics and patterns of insurance claims
+3)Assess Bala nce: To assess the potential for unmeasured confounding in dabigatran vs 
+warfarin comparative effectiveness and safet y studies based on administrative claims 
+databases
+Boehringer Ingelheim Page 16of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726558] -01(4.0)9. RESEARCH METHODS
+9.[ADDRESS_726559].
+This study  will be conducted within a cohort of NVAF patients at risk for stroke initiating
+dabigatran or warfarin during October 2010 – December 2014 time period identified in 
+MarketScan research claims database based on Protocol 1160.207 (Sequential Expansion of 
+Comparative Effectiveness of Oral Anticoagulants) . 
+9.[ADDRESS_726560] an 
+indicator for being recorded in EMR (Present, Y/N) . Index date is the date of dabigatran or 
+
+Boehringer Ingelheim Page 17of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726561] -01(4.0)warfarin initiation. All characteristics will be assessed prior and including the medication 
+initiation date (index date).  The characteristics presented in Table [ADDRESS_726562] likely  availab ility 
+in the EMR.
+[IP_ADDRESS] Primary  outcomes
+• Obesity  
+• Smoking 
+• Alcohol consumption
+• Abnormal renal function
+• Bleeding history  or predisposition
+• Renal function (estimated GFR)
+• Serum Creatinine
+• Abnormal liver function
+[IP_ADDRESS] Secondary  outcomes
+• Duration of atrial fibrillation 
+• History  of adherence
+• History /duration of hy pertension
+• Uncontrolled Hy pertension (for HAS -BLED)
+• History /duration of CHF 
+• Prior TIA 
+• Diabetes
+• Hyperlipi[INVESTIGATOR_035]
+• HAS -BLED Score
+• Use of antiplatelets or NSAI Ds (nee ded for HAS -BLED)
+
+Boehringer Ingelheim Page 18of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726563] - 01(4.0)Outcome definitions Table 1
+Outcom e Definition Present Categories if present
+Primary
+Obesity Calculated BMI >30 or 
+recorded “obesity”Y/N Obese, not -obese based on 
+note of obesity or recorded 
+BMI>30.
+Smoking Any note on smoking Y/N Current & past combined and 
+nonsmoker & not noted 
+combined.
+Alcohol consumption Any note on alcohol use Y/N Alcohol use (any);
+No use
+Abnorm al renal function Any note of:
+Dialysis, renal transplant
+Serum Creatinine >1.3 mg/dLY/N
+Bleeding history or 
+predispositionAny note of:
+Major bleeding requiring 
+hospi[INVESTIGATOR_552713] a 
+decrease in hemoglobin  level 
+of > 2 g/LY/N
+Renal function Estimated GFR closest to index 
+dispensingY/N The value
+Serum Creatinine Closest to the index date Y/N The value
+Abnorm al liver function Any note of:
+Liver disease, cirrhosis,
+Active hepatitis C
+Active hepatitis B
+Active hepatitis A
+AST/ALT >3X upper limit of 
+norm al 
+Absence of any note would be 
+considered as absence of the 
+diseaseY/N
+Boehringer Ingelheim Page 19of 55
+Protocol for non -interventional studies based on exi sting data:
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726564] -01(4.0)Outcome definitions Table 1 (cont'd)
+Outcom e Definition Present Categories if present
+Secondary
+Duration of atrial 
+fibrillation Years/months prior to initiation 
+of dabigatran/warfarinY/N Number of months prior to 
+index date for the earliest note
+History of adherence Any note of patient 
+adherence/lack thereof in EMRY/N Non-adherent
+Adherent
+History/duration of 
+hypertensionAny note of:
+Hypertension
+SBP >120 mmHg
+Hypertension drugsY/N Number of months prior to 
+index date for the earliest date
+Uncontrolled 
+Hypertension (for 
+HASBLED)SBP >[ADDRESS_726565] recent information prior 
+to index dateY/N
+History/duration of CHF Any note of:
+CHFY/N Number of months prior to 
+index date for the earliest note
+Prior TIA Any note of TIA Y/N Also, number of months prior 
+to index date if noted
+Diabetes Any note of:
+Diabetes
+Absence of any note of diabetes 
+will be considered as absence 
+of the diseaseY/N
+Hyperlipi[INVESTIGATOR_552714];
+Hyperlipi[INVESTIGATOR_035], dyslipi[INVESTIGATOR_035], 
+LDL>130 mg/dl
+HAS Bled Score As recorded (if recorded) or 
+calculated from EMR data.  Recorded/
+calculated
+/noneThe value
+Use of antiplatelets or 
+NSAIDs (needed for 
+HASBLED)Use of aspi[INVESTIGATOR_248], clopi[INVESTIGATOR_7745], 
+prasugrel, ticagrelor or NSADs 
+(within 1 month or on the 
+index date) Y/N
+INR Closest to the index date Y/N The value
+
+Boehringer Ingelheim Page 20of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726566] -01(4.0)Components of HAS -BLED bleeding risk score* Table 2
+HAS -BLED item Points
+Hypertension (uncontrolled) 1
+Abnorm al renal and liver function (1 point each) 1or 2
+Stroke 1
+Bleeding history or predisposition (anemia) 1
+Labile INR 1
+Elderly 1
+Drugs or alcohol (1 point each) 1 or 2
+*HAS-BLED score is calculated by [CONTACT_552719] . [R10-6394 ]
+
+Boehringer Ingelheim Page 21of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726567] -01(4.0)
+
+Boehringer Ingelheim Page 22of 55
+Protocol for non -interventional studies ba sed on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726568] -01(4.0)
+
+Boehringer Ingelheim Page 23of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726569] -01(4.0)
+
+Boehringer Ingelheim Page 24of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726570] -01(4.0)
+
+Boehringer Ingelheim Page 25of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726571] -01(4.0)
+
+Boehringer Ingelheim Page 26of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196-0 1
+Proprietary confidential information © [ADDRESS_726572] -01(4.0)
+
+Boehringer Ingelheim Page 27of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726573] -01(4.0)
+
+Boehringer Ingelheim Page 28of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726574] -01(4.0)
+
+Boehringer Ingelheim Page 29of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726575] -01(4.0)
+
+Boehringer Ingelheim Page 30of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726576] -01(4.0)
+
+Boehringer Ingelheim Page 31of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726577] -01(4.0)
+
+Boehringer Ingelheim Page 32of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726578] -01(4.0)9.[ADDRESS_726579] will be data from MarketScan , a research claims database 
+from commercial employer -
+sponsored health plans, through December 2014 .  
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+
+Boehringer Ingelheim Page 33of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726580] -01(4.0)9.[ADDRESS_726581] and whether 
+binary  (yes/no) or other . 
+The PS -matched dabi gatran and warfarin initiators during Oct 2010– December 2013 period 
+are approximately  20,000 each. Assuming that 5.5% of this study  group will be linked to 
+EMR, the EMR -
+linked subset up to Dec [ADDRESS_726582] of approximately  1100 patients in 
+each exposure group. 
+The precision of estimated prevalence for a covariate obtained from the EMR depends on the 
+prevalence of the c ovariate, and the sample size. With 10,000 dabigatran initiators, this study  
+will estimate a patient characteristic that has a 10% prevalence with considerable precision 
+(the 95% confidence interval will be 9.4% to 10.6%) (Table 7). A characteristic not captured 
+in claims, but present in the medical record with a prevalence of 10% to 20% is plausibly  a 
+confounding variable and so this table enumerates character istics with these prevalences. The 
+table has not been extended below 10% since such lower prevalence characteristics have 
+progressivel y less ability to produce meaningful confounding, so that while the study will 
+have less precision to estimate such a characteristic, validation of the presenc e for such a low 
+prevalence chara cteristic becomes unnecessary . At the other end of the range presented in the 
+table, a characteristic with a prevalence above 20% will be identified with even greater 
+precision, so that it also does not nee d to be depi[INVESTIGATOR_312523].
+Boehringer Ingelheim Page 34of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726583] -01(4.0)Precision of Estimates for Proportion Measures Table 7
+Numerator Denominator Prevalence 95% CI Precision (s.e.)
+10 100 10% 4.9% -17.6% 3.0%
+100 1,000 10% 8.2% -12.0% 0.9%
+1,000 10,000 10% 9.4% -10.6% 0.3%
+10,000 100,000 10% 9.8% -10.2% 0.1%
+100,000 1,000,000 10% 9.9% -10.1% 0.003%
+20 100 20% 12.7% -29.2% 4.0%
+200 1,000 20% 17.6% -22.6% 1.3%
+2,000 10,000 20% 19.2% -20.8% 0.4%
+  20,000   100,000    20%    19.8% -20.2%    0.1%
+200,000 1,000,000 20% 19.9% -20.1% 0.004%
+9.7 D ATA ANALYSIS
+9.7.1 Main analysis
+Representativeness of EMR
+We will assess whether the subpopulation with linked EMR data is a representative sample of 
+the full MarketScan cohort of oral antico agulant medication initiators. In the full MarketScan
+cohort, the proportion of each exposure group with linked EMR data available will be 
+determined. We will evaluate the claims -based covariates in the linked and non -linked 
+subpopulations, separately  by [CONTACT_552720], by  [CONTACT_552721] 35of 55
+Protocol for non -interventional studies based on exi sting data:
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726584] -01(4.0)for categorical covariates and means and standard deviations for continuous covariates. These 
+data will be summarized as in the example Table 8 and will allow us to determine if there are 
+any patient characteristics that ar e over -represented or under -represented in the EMR 
+subpopulation. I f EMR linkage is only  available for a subset with considerably  different 
+characteristics than the full cohort or among a subset where the propensity  score balance is 
+not retained, then furt her remedies might be applied such as stratification or weighting.
+Association between claims -based covariates and EMR linkage. Table 8
+Claims -based covariate Dabigatran initiators Warfarin initiators
+N= N=
+Linked Not linked Linked Not linked
+Proportion (N)
+Age
+Age category 18 -35
+Age category 36 -64
+Age category 65 -74
+Age category 75+
+Sex
+…
+Objective 1: Descriptive
+The anal yses for this objective will occur within the subpopulation of individuals with linked 
+EMR data and will focus on describing the EMR- based clinical characteristics for the 
+dabigatran and warf arin initiators. This table will provide an evaluation of the association 
+between the EMR clinical characteristics and initiat ion of dabigatran or warfarin.
+ 
+The prevalence of each category  for categorical characteristics and the mean and standard 
+deviation for continuous characte ristics will be calculated (as shown in the example Table 9).  
+This analysis will aid in identify ing EMR characteristics that are unbalanced across exposure 
+groups and are therefore potential unmeasured confounders after PS match ing.
+
+Boehringer Ingelheim Page 36of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726585] -01(4.0)EMR clinical characteristics in matched dabigatran and warfarin Table 9
+initiators
+EMR clinical characteristic
+Dabigatran 
+initiators
+Warfarin 
+initiators
+N= N=
+Smoking
+Alcohol consumption
+Obesity
+…
+Note: anticoagulant initiation  are based on claims data
+We will seek to define variables derived from the EMR in a manner that reduces missingness. 
+Accordingl y, most variables will be defined as presence or non -presence in the EMR, which 
+we will take as a proxy  of being medically- recognized. For example, if smoking is noted in 
+the medical record, it will be recorded as present, if it is not present, it will be assumed that 
+the patient does not smoke. We will also evaluate the patterns of missing data in t heEMR 
+clinical characteristics.
+Objective 2: Prediction Rule
+Within the EMR linked subpopulation, a prediction model will be developed 
+with particular focus on covariates that are found to represent potentially  
+important unmea sured confounding in the primary anal ysis.  Specificall y, a logistic 
+regression model (potentially  a multinomial logistic regression, depending on the number of 
+categories for the EMR characteristic) will be estimated  that 
+uses the EMR covariate as the model outcome and all available claims- based covariates as 
+predictors.  
+ 
+For continuous EMR
+-based characteristic, a 
+linear regression model will be estimated.  Coefficients from these models will be reported as 
+well as prediction accuracy , defined by  [CONTACT_941] R2 statistic.
+
+Boehringer Ingelheim Page 37of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726586] -01(4.0)Objective 3: Potential Unmeasured Confounding Assessment
+To assess the potential for confounding, we will conduct a series of logistic regression 
+analyses that predict exposure (dabiga tran versus warfarin) from covariates.   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Boehringer Ingelheim Page 38of 55
+Protocol for non -interventional studies ba sed on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726587] -01(4.0)9.7.[ADDRESS_726588] (validation anal yst). For all d ata 
+processing and anal ysis steps, the validation analyst will review the program along with input 
+and output data sets, and for select steps of the project will employ  double programming 
+techniques to reduce the potential for programming errors.
+9.[ADDRESS_726589] to certainty  of the capture of 
+exposure, covariates, and outcomes. As a comprehensive insurance database, essentiall y all 
+billable medical services will result in claims for reimbursement, so that the certainty  of 
+capture is tied to likelihood of a claim being submitted to the insurer.
+Although more information on covariates is captured in EMR, some data will be missing in 
+EMR as well. In addition, information is assessed during routine medical care (not in a 
+standardized way ) and some variation in assessment persists but cannot be stud
+ied within the 
+scope of the stud y.
+As in any  EMR source, there could be potentially  small number of dabigatran initiators and 
+they might not represent dabigatran initiators in the general population. In addition, the data 
+sources for this study are commer cial US data sources (based on emplo yed people and their 
+dependents), so they  tend to over -represent working -age people. The data are supplemented 
+with elderly  through patients with certain t ypes of Medicare coverage (Medicare Advantage); 
+however, elderl y with Medicare Advantage tend to be healthier and more likely  to still be 
+employ ed as compared to elderl y with other t ypes of Medicare. These features of data may  
+further limit the generalizability  in that the results will be most generalizable to US people
+who are employ ed.[P13-[ZIP_CODE], P13-[ZIP_CODE]]
+
+Boehringer Ingelheim Page 39of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726590] -01(4.0)9.10 OTHER ASPECTS
+Funding: Boehringer Ingelheim GmbH
+9.[ADDRESS_726591] of patients with NVAF at risk for stroke initiating warfarin and 
+dabigatran, from October 2010 through December 2014.  
+Inclusion criteria: 
+Initiation of an oral anticoagulant is defined b y a dispensing of an anticoagulant 
+medication (warfarin or dabigatran) in the source data, with no dispensing of an y oral 
+anticoagulant in the prior 12 months. The date of that dispensing will be defined as 
+the index date for that initiation.
+At least one ICD -
+9 diagnosis code of 427.31 (atria l fibrillation) at any  time prior to 
+and including the index date 
+At least 12 months (365 day s) continuous enrollment, defined as ≤32 day s enrollment 
+gap using enrollment and disenrollment dates, preceding the index date 
+18 years of age and older at inde x date
+CHA 2DS 2-VASc score ≥ 1
+Exclusion criteria: 
+Patients with a nursing home stay  during baseline
+Patients with missing or ambiguous age or sex information.
+Patients with a dispensing of an y oral anticoagulant during the 12 months preceding 
+and includi ng the index date
+Patients with documented evidence of valvular disease defined as at least 1 inpatient 
+or outpatient I CD-9 Dx code of [ R11- 4334] 
+394.x (diseases of mitral valve)
+395.x (diseases of aortic valve)
+396.x (diseases of mitral and aortic valve)
+397.x (diseases of other endocardial structures)
+398.9x (other and unspecified rheumatic heart diseases)
+V42.2 (heart valve replaced by  [CONTACT_9707])
+V43.3 (heart valve replaced b y a mechanical device/prosthesis)
+OR 
+ICD-9 procedure code 35.1x (open heart valvuloplasty  without replacement), 35.2x 
+(replacement of heart valve) [R03-
+1232 ]
+OR 
+one of the following CPT codes:
+[ZIP_CODE]- [ZIP_CODE] (atrioventricular valve repair)
+[ZIP_CODE]- [ZIP_CODE] (aortic valve valvuloplasty )
+[ZIP_CODE]- [ZIP_CODE] (mitral valve repair/valvuloplasty /replacement)
+[ZIP_CODE] (valvectom y, tricuspid valve, with cardiopulmonary b ypass)
+[ZIP_CODE]- [ZIP_CODE] (tricuspid valve repair/valvuloplasty /replacement)
+[ZIP_CODE] (replacement, pulmonary  valve)
+Boehringer Ingelheim Page 40of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726592] -01(4.0)[ZIP_CODE] (prostheti c valve dy sfunction repair)
+0257T (implantation of catheter -delivered prosthetic aortic heart valve; open thoracic 
+approach)
+0258T (transthoracic cardiac exposure for catheter- delivered aortic valve replacement; 
+without cardiopulmonary by [CONTACT_6476])
+0259T (trans thoracic cardiac exposure for catheter -delivered aortic valve replacement; 
+with cardiopulmonary  by[CONTACT_6476])
+0262T (implantation of catheter -delivered prosthetic pulmonary  valve, endovascular 
+approach)
+at an y time prior to and including the index date.
+Cohort formation
+Initiators of dabigatran and warfarin will be matched on their PS to initiate the treatment of 
+interest (dabigatran) and the calendar quarter of initiation. PS will be derived from predicted 
+probabilities of treatment initiation with dabigatran as compared to warfarin estimated in a 
+logistic regression model that includes all claims -based covariates identified in this protocol 
+ The PS will be 
+used to match dabigatran initiators to warfarin initiators on a 1:[ADDRESS_726593] covariates among them prior to proceeding with the anal ysis.  In the event of 
+imbalances, we will proceed with anal yses outlined after stratify ing by  [CONTACT_552722].
+
+Boehringer Ingelheim Page 41of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726594] -01(4.0)Figure 1 Patient Selection Flow Chart
+We will provide Truven with linkage IDs and exposure indicators. Within the EMR -linked 
+subset, Truven will evaluate the balance of the EMR clinical characteristics across exposure 
+groups ( see section 9.7Data Anal ysisfor detailed description).
+
+Boehringer Ingelheim Page 42of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196-0 1
+Proprietary confidential information © [ADDRESS_726595] -01(4.0)9.[ADDRESS_726596] to numerous variables.  
+As a validation study , the aim of this study  is to assess the magnitude of potential 
+confounding that might be present in the main cohort study  as a result of non-claims 
+characteristics that are both associated with choice of anticoagulant and predictive of study  
+outcomes.
+Boehringer Ingelheim Page 43of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726597] -01(4.0)10. PROTECTION OF HUMAN SUBJECTS
+This stud y will be submitted to the I nstitutional Review Board (IRB) of  
+
+Boehringer Ingelheim Page 44of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726598] -01(4.0)11. MANAGEMENT AND REPOR TING OF ADVERSE 
+EVENTS/ADVERSE REACT IONS
+As an observational study based on existing data all patient data will be de -identified and 
+analyzed in aggregate. Individual patient safet y related information will not be captured 
+during this study . Thus, individual safet y reporting is not applicable for this study.
+Boehringer Ingelheim Page 45of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726599] -01(4.0)12. PLANS FOR DISSEMINAT ING AND COMMUNICATIN G 
+STUDY RESULTS
+The interim and final reports will consist of a description of the methods, including patient 
+selection and variable definitions along with tabular summaries of cohort characteristics, 
+numbers of patients receiving each anticoagulant and associated follow -up time.  Counts of 
+outcomes and corresponding rates and measures of association will be presented. The tabular 
+results will be followed by  [CONTACT_9714] a discussion of the findings 
+and implications.
+Manuscripts describing this work will be submitted for publication in peer -review journals. 
+Findings may  also be submitted for presentation at scientific conferences.
+Boehringer Ingelheim Page 46of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726600] -01(4.0)13. REFERENCES
+13.1 PUBLISHED REFERENCES
+P11-[ZIP_CODE] Potpara TS, L ip GY. New anticoagulation drugs for atrial fibrillation. 
+Clin Pharmacol Ther 2011;90:5 02-6.
+R13-2768 Sturmer T, Gly nn RJ, Rothman KJ, Avorn J, Schneeweiss S. 
+Adjustments for unmeasured confounders in pharmacoepi[INVESTIGATOR_552715]. Med Care 2007;45:S158 -65.
+R11-[ADDRESS_726601] MJ, 
+Gage BF. Accuracy  of ICD -9-CM codes for identify ing cardiovascular 
+and stroke risk factors. Med Care 2005;43:480 -5.
+R03-1232 Go AS, Hy lek EM, Borowsky  LH, Phillips KA, Selby  [CONTACT_9715], Singer DE. 
+Warfarin use among ambulatory  patients with nonvalvular atrial 
+fibrillation: the anticoagulation and risk factors in atrial fibrillation 
+(ATRIA) stud y. Ann Intern Med 1999;131:[ADDRESS_726602] 
+MJ. Validation of clinical classification schemes for predicting stroke: 
+results from the National Registry  of Atrial Fibrillation. JAMA 
+2001;285:2864-70.
+R10-[ADDRESS_726603] DA, Crijns HJ. Refining clinical 
+risk stratification for predicting stroke and thromboembolism in atrial 
+fibrillation using a novel risk factor -based approach: the euro heart 
+survey  on atrial fibrillation. Chest 2010;137:263-72.
+R10-[ADDRESS_726604] DA, Nieuwlaat R, de Vos CB, Crijns HJ, L ip GY. A 
+novel user -friendl y score (HAS -BLED) to assess 1 -year risk of major 
+bleeding in patients with atrial fibrillation: the Euro Heart Survey . Chest 
+2010;138:1093-100.
+P12-[ADDRESS_726605] PA, et al. Antithrombotic therapy  for atrial 
+fibrillation: Antithrombotic Therap y and Prevention of Thrombosis, 9th 
+ed: American College of Chest Phy sicians Evidence -Based Clinical 
+Practice Guidelines. Chest 2012;141:e531S- 75S.
+R11-4190 Granger CB, Alexander JH, McMurray JJ, et al. Api[INVESTIGATOR_552716]. N Engl J Med 2011;365:981 -
+92.
+P09-[ZIP_CODE] Connolly  SJ, Ezekowitz MD, Yusuf S, et al. Dabigatran versus warfarin 
+in patients with atrial fibrillation. N Engl J Med 2009;361:1139-51.
+R11-4223 Patel MR, Mahaffey  KW, Garg J, et al. Rivaroxaban versus warfarin in 
+nonvalvular atrial fibrillation. N Engl J Med 2011;365:883-91.
+Boehringer Ingelheim Page 47of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726606] -01(4.0)P14-[ZIP_CODE] Camm AJ, L ip GY, De Caterina R, et al. 2012 focused update of the ESC 
+Guidelines for the management of atrial fibrillation: An update of the 
+2010 ESC Guidelines for the management of atrial fibrillation * 
+Developed with the special contribution of the European Heart Rhy thm 
+Association. Europace 2012;14:1385-413.
+R13-4176 Olesen JB, L ip GY, Hansen PR, et al. Bleeding risk in 'real world' 
+patients with atrial fibrillation: comparison of two established bleeding 
+prediction schemes in a nationwide cohort. J Thromb Haemost 
+2011;9:1460 -7.
+R13-0521 Molnar AO, Coca SG, Devereaux PJ, et al. Statin use associates with a 
+lower incidence of acute kidney  injury  after major elective surgery . J Am 
+Soc Nephrol 2011;22:939 -46.
+R11-4329 Winkelmay er WC, Schneeweiss S, Mogun H, Patrick AR, Avorn J, 
+Solomon DH. I dentification of individuals with CKD from Medicare 
+claims data: a validation study . Am J Kidney  Dis 2005;46:[ADDRESS_726607] M, L ip GY. Evaluation of risk stratification 
+schemes for ischaemic stroke and bleeding in 182 678 patients with atrial 
+fibrillation: the Swedish Atrial Fibrillation cohort study . Eur Heart J 
+2012;33:[ADDRESS_726608] SL , Strom BL, Freundlich B, Normand E, Koch G, Savitz DA. 
+Completeness of prescription recording in outpatient medical records 
+from a health maintenance organization. J Clin Epi[INVESTIGATOR_5541] 1994;47:[ADDRESS_726609] SL , Savitz DA, Koch G, Strom BL, Guess HA, Hartzema A. Recall 
+accuracy  for prescription medications: self -report compared with 
+database information. Am J Epi[INVESTIGATOR_5541] 1995;142:1103 -12.
+13.2 U NPUBLISHED REFERENCES
+None
+Boehringer Ingelheim Page 48of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726610] -01(4.0)ANNEX 1. LIST OF STAND -ALONE DOCUMENTS
+None
+Boehringer Ingelheim Page 49of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726611] -01(4.0)
+
+Boehringer Ingelheim Page 50of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726612] -01(4.0)
+
+Boehringer Ingelheim Page 51of 55
+Protocol for non -interventional studies based on exi sting data:
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726613] -01(4.0)
+
+Boehringer Ingelheim Page 52of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726614] -01(4.0)
+
+Boehringer Ingelheim Page 53of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726615] -01(4.0)
+
+Boehringer Ingelheim Page 54of 55
+Protocol for non -interventional studies ba sed on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726616] -01(4.0)
+
+Boehringer Ingelheim Page 55of 55
+Protocol for non -interventional studies based on existing data :
+BI Study Number 1160.219 c12696196- 01
+Proprietary confidential information © [ADDRESS_726617] -01(4.0)ANNEX 3. ADDITIONAL INFORMATION
+None

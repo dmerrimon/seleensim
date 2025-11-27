@@ -1,0 +1,1050 @@
+PECARN Electronic Medical Record Registry
+(PECARN Medical Record Registry)
+PECARN Protocol Number 036
+Pediatric Emergency Care Applied Research Network
+Emergency Medical Services for Children (EMSC)
+Maternal and Child Health Bureau
+Health Resources and Services Administration
+Protocol Version 1.00
+Version Date: September 9, 2016
+Printing Date: September 9, 2016
+Copyright c
+2016. University of Utah School of Medicine on behalf of the Principal
+Investigator, Elizabeth R. Alpern, MD, MSCE and the Pediatric Emergency Care Applied
+Research Network (PECARN). All rights reserved.
+This protocol is PECARN Protocol Number 036, and has been authored by Elizabeth
+R. Alpern, MD, MSCE, Ann & Robert H. Lurie Children's Hospital of Chicago, for
+implementation with the PECARN investigators.
+The PECARN Research Node Centers are Nationwide Children's Hospital, Cincinnati
+Children's Hospital Medical Center, Columbia University, University of California at
+Davis Medical Center, University of Arizona Health Sciences Center, and Children's
+National Medical Center, and are supported by Cooperative Agreements U03-MC28844,
+U03-MC22684, U03-MC00007, U03-MC00001, U03-MC28845, and U03-MC00006 from
+the Emergency Medical Services for Children (EMSC) Program, Maternal and Child
+Health Bureau, Health Resources and Services Administration.
+This document was prepared by the PECARN Data Coordinating Center (DCC)
+located at the University of Utah School of Medicine, Salt Lake City, Utah. The document
+was written and typeset using LATEX 2". The DCC at the University of Utah is supported
+by Cooperative Agreement U03-MC00008 from the Emergency Medical Services for
+Children (EMSC) Program, Maternal and Child Health Bureau, Health Resources and
+Services Administration.
+Protocol 036 (Alpern) Page 3 of 32
+PROTOCOL TITLE:
+PECARN Electronic Medical Record Registry
+Short Title: PECARN Medical Record Registry
+PECARN Protocol Number: 036
+Lead Investigator and Author:
+Elizabeth R. Alpern, MD, MSCE
+Ann & Robert H. Lurie Children's Hospital of Chicago
+Protocol Version: 1.00
+Version Date: September 9, 2016
+I conrm that I have read this protocol, I understand it, and I will conduct the study
+according to the protocol. I will also work consistently with the ethical principles that have
+their origin in the Declaration of Helsinki and will adhere to the Ethical and Regulatory
+Considerations as stated. I conrm that if I or any of my sta are members of the Insti-
+tutional Review Board, we will abstain from voting on this protocol, its future renewals,
+and its future amendments.
+Principal Investigator Name:
+Principal Investigator Signature:
+Date:
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 4 of 32 Protocol 036 (Alpern)
+THIS PAGE IS INTENTIONALLY BLANK.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 5 of 32
+Contents
+1 Study Summary 7
+1.1 Study Objectives . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+2 Background 8
+3 Study Population 9
+4 Study Procedures 10
+4.1 Data Domains of Interest . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+4.2 Adding Hospitals to Registry . . . . . . . . . . . . . . . . . . . . . . . . 11
+4.3 Database Extraction and Submission . . . . . . . . . . . . . . . . . . . . 12
+4.4 De-identication Procedures . . . . . . . . . . . . . . . . . . . . . . . . . 13
+4.4.1 General Algorithm . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+4.4.2 Eectiveness of Algorithm . . . . . . . . . . . . . . . . . . . . . . 14
+4.5 Report Card Preparation . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+5 Statistical Analyses 16
+6 Data Management 19
+6.1 Data Coordinating Center . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+6.2 Data Transmission . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+6.3 Data Security and Condentiality . . . . . . . . . . . . . . . . . . . . . . 21
+6.4 Data Sharing Plan . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+7 Protection of Human Subjects 23
+7.1 Institutional Review Board Approval . . . . . . . . . . . . . . . . . . . . 23
+7.1.1 Expedited IRB Approval . . . . . . . . . . . . . . . . . . . . . . . 23
+7.2 Waiver of Informed Consent and Assent . . . . . . . . . . . . . . . . . . 23
+7.3 Waiver of Written Authorization for HIPAA . . . . . . . . . . . . . . . . 24
+7.4 Risks to Human Subjects . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+7.4.1 Research Participants and Characteristics . . . . . . . . . . . . . 25
+7.4.2 Sources of Materials . . . . . . . . . . . . . . . . . . . . . . . . . 25
+7.4.3 Potential Risks . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+7.5 Adequacy of Protection Against Risks . . . . . . . . . . . . . . . . . . . 26
+7.5.1 Protection Against Risks . . . . . . . . . . . . . . . . . . . . . . . 26
+7.5.2 Human Subjects Protection Training . . . . . . . . . . . . . . . . 26
+7.6 Potential Benet of Research . . . . . . . . . . . . . . . . . . . . . . . . . 27
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 6 of 32 Protocol 036 (Alpern)
+7.7 Importance of Knowledge to be Gained . . . . . . . . . . . . . . . . . . . 27
+8 Health Insurance Portability and Accountability Act 28
+9 Inclusion of Women and Minorities 28
+10 Inclusion of Children 28
+11 Access to and Retention of Records 29
+Bibliography 29
+List of Tables
+1 Summary of PECARN Registry as of April 2016. . . . . . . . . . . . . . 9
+List of Figures
+1 Hospital level tabular data from performance report card. . . . . . . . . . 16
+2 Clinician specic tabular data from performance report card. . . . . . . . 17
+3 Hospital level graphic display from performance report card. . . . . . . . 18
+4 Clinician specic graphic display from performance report card. . . . . . 18
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 7 of 32
+1 Study Summary
+The Pediatric Emergency Care Applied Research Network (PECARN) began collecting
+data for the PECARN Core Data Project (PCDP) in 2002, using administrative data from
+all PECARN hospitals. This project now has nearly 15 million visit records in it. However,
+the PCDP does not include clinically important data about processes and outcomes of
+care, changes in clinical status, physiologic measures of severity of illness, laboratory data,
+or narrative reports. These types of clinical data, while important for improving the care
+of children in our emergency departments, previously have been prohibitively expensive
+to extract from the (largely paper based) medical record on a large scale.
+In 2011, the Agency for Healthcare Research and Quality (AHRQ) funded a grant
+to create a medical record registry by extracting data from electronic health records
+(EHR) at four PECARN hospitals and their aliates (R01HS020270). Technology was
+developed to extract data for all pediatric emergency department (ED) visits, accomplish
+substantial deidentication of the extract prior to transmission to the Data Coordinating
+Center (DCC), and produce a data warehouse registry to use for quality improvement
+and research. At the present time, this medical record registry includes 1.9 million visits
+with over 800,000 dierent patients, and performance report cards are provided to all
+participating providers on a monthly basis.
+This protocol (PECARN Protocol Number 36) continues the registry as the \PECARN
+Electronic Medical Record Registry (PECARN Medical Record Registry)" and will replace
+PECARN Protocol Number 30, entitled \Improving the Quality of Pediatric Emergency
+Care Using an Electronic Medical Record Registry and Clinician Feedback (PECARN
+Emergency Care Registry)". All data from the PECARN Emergency Care Registry will
+be incorporated into the PECARN Medical Record Registry.
+1.1 Study Objectives
+This study has the following objectives:
+Objective 1. Continue the PECARN electronic medical record registry for pediatric
+patients by merging electronic health record (EHR) clinical data from participating
+hospital emergency departments (ED) for quality improvement purposes and to
+plan future research.
+Objective 2. Continue to use the emergency care visit registry to analyze and describe
+processes of care and outcomes for injuries and illnesses of patients presenting to
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 8 of 32 Protocol 036 (Alpern)
+participating hospital EDs.
+Objective 3. Continue preparation and dissemination of clinical performance report
+cards to assess quality improvement initiatives.
+2 Background
+Children account for over one quarter of the 114 million annual emergency department
+(ED) visits in the US,1,2yet the needs of children in the ED have received relatively
+small attention.3Recently, there has been increased attention to the unique needs of
+children during emergencies. Among the areas in need of evaluation are the eectiveness
+and quality of emergency care, outcomes of dierent congurations of EMSC, optimal
+resource allocation and utilization, and cost-eectiveness of EMSC and its components.4
+There has also been documentation of signicant variation in the quality of care provided
+to children in EDs,5{11as well as recognition of racial and ethnic disparities in healthcare
+delivery.12The Pediatric Emergency Care Applied Research Network (PECARN) was
+established in 2001 to address these needs and improve the quality of emergency care for
+children through the performance of rigorous research.13,14
+The network's rst project was to design and implement an administrative database of
+all emergency department visits in PECARN hospitals, the PECARN Core Data Project
+(PCDP).15The PCDP, which has been ongoing with Institutional Review Board (IRB)
+approval at every PECARN hospital since 2002, uses data from billing and registration
+systems at all participating hospitals, as well as electronic health record data from some
+hospitals. The PCDP currently has nearly 15 million visits to the PECARN sites. The
+project has been successful in providing basic demographic and injury or illness infor-
+mation,15{18evaluation of methodology,19,20developing diagnosis grouping and severity
+systems,21,22and providing limited benchmarking information.16{18, 23
+In the rst year of the PCDP, investigators also collected detailed clinical information
+for a sample of children seen in PECARN emergency departments by linked manual chart
+review. Availability of clinical data, in addition to the administrative data available in
+the overall PCDP database, allowed investigators to evaluate practice pattern variation
+for asthma and long-bone fractures.10,24Pain was under-documented in children with
+long bone fractures and only two-thirds of these patients received analgesics in the ED.24
+More than one-third of patients treated for status asthmaticus received potentially un-
+necessary ancillary testing and the risk for this testing was higher in children cared for
+at non-children's hospitals and by clinicians without subspecialty training in pediatric
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 9 of 32
+emergency medicine.10
+This early experience led to funding from AHRQ (RO1HS020270) to build a medical
+record registry, leveraging the availability of electronic health records (EHR) in selected
+PECARN sites. The PECARN Emergency Care Registry has detailed information about
+all children seen in the EDs in four PECARN hospitals as well as their satellite facilities.
+The EHR vendors include Epic and Cerner. The Registry information from January 2012
+through April 2016 is summarized in Table 1.
+Encounters 1,943,607
+Patients 819,665
+Diagnoses 5,960,989
+Lab Results 12,005,884
+Medication Orders 2,542,557
+Radiology Tests 685,515
+Narrative Documents 12,226,548
+Table 1: Summary of PECARN Registry as of April 2016.
+The Registry provides a unique resource for understanding and improving pediatric
+emergency care. The Registry has been used to create performance report cards for
+participating sites as part of a quality improvement initiative, and to explore processes
+of care associated with specic disorders, such as asthma, long bone fractures, and viral
+infections. This has enabled measurements to determine the eectiveness of specic quality
+improvement initiatives for these conditions. The narratives (over 12 million) provide a
+valuable corpus upon which to improve natural language processing methods, critical to
+deriving meaningful research results from EHRs over the next decade. Continuing the
+Registry per the present protocol will increase the value of this resource, as additional
+hospitals are added to the project, which will increase the generalizability of knowledge
+based on the Registry. Finally, the Registry will provide a structure for development of
+future research endeavors.
+3 Study Population
+The Registry will include all patients who are seen at participating PECARN hospitals
+and satellite facilities. As funding becomes available, PECARN hospitals and satellites
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 10 of 32 Protocol 036 (Alpern)
+will be added to the original sites, with the goal of including all PECARN centers that
+have an accessible EHR. The project is anticipated to continue for at least ve years,
+subject to annual Institutional Review Board (IRB) review and approval.
+4 Study Procedures
+4.1 Data Domains of Interest
+The EHR contains a large number of data, including information required for auditing the
+medical record, and it is not intended to extract all EHR information into the Registry.
+For example, if a laboratory value is incorrectly entered, and then corrected, both values
+are retained in the EHR for legal auditing purposes. The Registry will only receive the
+value nal at the time of data transmission. The following data domains are extracted
+from the EHR for inclusion in the Registry:
+Demographic Data. For example, but not limited to: site of care, insurance type, race,
+ethnicity, birthdate (age).
+Clinician Data. For example, but not limited to: independent licensed provider.
+Date and Time Data. For example, but not limited to: all date and time values relating
+to the ED or hospital visit, as well as date and times of all events or ndings.
+Diagnoses and Procedures. For example, but not limited to: all available diagnoses
+codes, procedure codes, cause of injury codes, including ICD9 (when still available),
+ICD10, and CPT.
+Review of Systems. For example, but not limited to: review of physical systems as
+recorded in specic elds, if available. Otherwise derived from narrative text data.
+History of Illness. For example, but not limited to: history of illness as recorded in
+specic elds, if available. Otherwise derived from narrative text data.
+Physical Examination. For example, but not limited to: physical examination ndings
+(including weight) and clinical scores (e.g. pain score, asthma scores, GCS scores)
+as recorded in specic elds, if available, or in narrative text.
+Laboratory Testing Data. For example, but not limited to: all laboratory tests sent
+during the ED visit, including results that may be returned after the ED visit is
+concluded.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 11 of 32
+Medications. All medications reported as home medications, ordered or administered
+in the ED, or ordered as discharge prescriptions, including dosage information.
+Treatment Data. For example, but not limited to: radiology orders, EKG orders,
+respiratory therapy orders.
+Vital Sign Data. All vital signs as recorded in specic elds, if available. Otherwise
+derived from narrative text data.
+Narrative Text Data. All available narrative data related to the ED visit, including
+potentially delayed radiologic dictation reports. Narrative or free text notes may be
+created by physicians, nurses, or other clinicians, and the author of each narrative
+will also be extracted.
+ED Admission and Discharge Data. For example, but not limited to: Reason for
+visit, chief complaint, triage category, mode of arrival, urgency, use of an interpreter,
+discharge location, vital status.
+Inpatient Admission and Discharge Data. For ED visits resulting in a hospital ad-
+mission at the same hospital, the date and time of hospital discharge, vital status
+at discharge, and hospital discharge summary.
+4.2 Adding Hospitals to Registry
+For hospitals already included in the Registry, the De-identication Procedures described
+in Section 4.4and Data Submission procedures described in Section 4.3are already
+optimized. For new hospitals, it is necessary to tailor these procedures to the specic
+EHR vendor and to optimize the de-identication algorithm for the specic hospital and
+its location. The steps required include the following general stages:
+1.Identify potential sources of relevant data elements in the specic EHR at each site.
+2. Finalize the types of data elements that will be extracted.
+3. Extract data for one day of data at each clinical site.
+4. Transmit one day identied data to the DCC for de-identication.
+5. Establish de-identication procedure at each clinical site.
+6.Extract and de-identify the same one day sample to verify that de-identication at
+site works.
+7. If site de-identication does not work, revise process and iterate until successful.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 12 of 32 Protocol 036 (Alpern)
+8.Extract and de-identify at least two one-month data sets from between the rst
+month of the previous 12 month period and the most recent complete month at
+each site.
+9. Transmit at least two one-month data sets to the DCC.
+10. Finalize and test import procedures from two one-month extracts into Registry.
+11.Analyze frequencies of missing, out of range, or unexpected values for key data
+elements.
+12.Extract, de-identify, and transmit entire previous 12 months (rolling) data from
+each site to the DCC.
+13. Integrate previous 12 month data (rolling) into existing Registry.
+4.3 Database Extraction and Submission
+Available data will be extracted from each site's EHR in an automated fashion that is
+vendor-specic, and is likely to be installation specic (i.e. two dierent sites may have
+the same vendor but dierent preferred extraction methods depending on the vendor
+features that were purchased or updated). Currently the nal extraction format is plain
+text formatted with extensive markup language (XML) tags. The XML format enables au-
+tomatic validation of the extracted le. After de-identication procedures are established
+at each site (Section 4.4 on the next page), these are applied to the extracted informa-
+tion prior to encrypted transmission to the DCC and importing into the Registry database.
+The precise manner of database extraction, XML formatting of variables, and technical
+details of the steps required to accomplish this task are described here for information
+purposes. The technical approach is likely to evolve in the future, and may be altered
+without revising this protocol document.
+Data that are not available at the time of data transfer, which typically will take place
+30 days after the completion of the calendar month in which the ED visit occurred, will
+be considered unavailable or missing, and no eort will be made to follow up for these
+delayed data. For example, if a patient has a radiologic procedure but the dictation is
+not in the EHR within 30 days of the visit, that dictation will not be incorporated into
+the Registry. This time window is necessary because of the logistical issues of attempting
+to follow up every potential result, as well as the time constraints relating to producing
+timely provider-specic performance report cards for Objective Three.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 13 of 32
+4.4 De-identication Procedures
+The text le that is produced by automatic extraction will be fully identied, and sophis-
+ticated algorithms will then be used to remove or recode essentially all HIPAA-dened
+identifying information. There are only four potentially identifying data elements that
+will remain in the study record after the de-identication procedure is carried out: the
+site identication, the clinician identication, the month of the visit, and a one-way hash
+encryption of the medical record number. The rst three data elements are needed in
+order to provide feedback for specic months to specic sites and clinicians. The hash
+encryption value of the medical record number is required to identify repeat visits by
+the same patient, enabling longitudinal study of selected pediatric illnesses and injuries
+seen in the ED setting. Other patient-related identiers are eectively removed by the de-
+identication procedure (Fscore 98% to 99%, which is superior to manual de-identication
+by humans).
+The precise technology to be employed may be changed as this project moves forward
+to re
+ect improvements in available tools, without revision of this protocol. The purpose
+of this section is not to constrain the use of state-of-the-art technologies, but rather to
+describe the principles by which the process is currently implemented. For current sites in
+the Registry, we will continue the current methods for de-identication. For new sites, it
+is necessary to nalize and verify the eectiveness of the de-identication for each specic
+site. In order to accomplish this, the DCC will have access to fully identied records from
+each new site from a single day from the 12 months previous to implementation, the DCC
+will de-identify the data, and verify that the de-identication was fully accomplished.
+The process will then be implemented at each site and we will conrm that the process
+was eective (for the same day of patient data). After the de-identication procedures
+have been conrmed, all identiable records that are at the DCC will be removed from
+production servers and will not be incorporated into the Registry.
+The de-identication is done with software (De-Id) that was developed by other
+investigators25to produce a de-identied public use intensive care database.26The DCC
+has developed a software platform that includes De-Id as well as XML verication software.
+After the initial de-identication process has been veried, this software will be installed
+at each hospital, so that the hospital can verify its le structure (XML verication) and
+execute the de-identication software on its own servers within its own rewall, prior to
+encrypted transmission of the de-identied data to the DCC.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 14 of 32 Protocol 036 (Alpern)
+4.4.1 General Algorithm
+The software (De-Id) is a program script that uses multiple dictionaries to identify and
+remove names and locations from text. A list of known patient names (at an individual
+hospital) can be the rst dictionary used at the site by the script, and this will remove
+patient names. The software then uses large dictionaries of rst and last names to identify
+other potential names, such as relatives, nurses, doctors, or other clinicians. A similar
+approach is used for locations | namely, a list of locations that are relevant to each
+clinical site will be used as a location dictionary, and locations will be removed.
+Dates and times present an interesting problem because it is necessary to preserve time
+intervals and patient ages. The software will remove all dates and replace them with a
+random patient-specic oset. This shifted date preserves the day of the week and the
+season to prevent confusion due to free text phrases such as \next Wednesday". The
+patient's date of birth is treated in the same manner, so that the correct age can be
+calculated from the replaced dates. The random shift is patient specic and will be
+consistent for the entire individual patient record and between subsequent visits for that
+patient.
+In order to preserve the month in which the data were submitted, the clinician identica-
+tion,and site identication, separate database elds will be added to each record when
+the le is sent to the DCC, so that month-specic feedback can be provided to sites and
+providers, as already described.
+Other identiers include telephone and fax numbers, Social Security numbers, medical
+record numbers or other numeric identiers. The software will remove these throughout.
+The medical record number will be one-way hash encrypted to allow identication of
+repeat visits for patients.
+4.4.2 Eectiveness of Algorithm
+This software has been tested rigorously.25Three human de-identiers manually de-
+identied text for comparison with the software. On test data consisting of nearly 2,000
+free text nursing notes, the software performed better than the average individual human
+de-identier, better than the best single human de-identier, and better than the average
+consensus of two human de-identiers. The software has subsequently been used to
+de-identify the MIMIC II intensive care database previously mentioned,26processing
+approximately 700,000 nursing notes, 30,000 inpatient discharge summaries, and 300,000
+radiology reports, containing a total of over 220 million words.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 15 of 32
+During the AHRQ funded project, the DCC has regularly sampled de-identied
+data submitted from sites to verify that the de-identication process is eective. This
+review process has conrmed on-going eectiveness of the current procedures. A sample
+de-identied attending physician narrative from the PECARN Registry is shown below:
+History of Present Illness HPI [**2013-06-05**], 11:04 PM [**Known
+patient rstname 1175**] [**Known patient lastname 458**] is a 11 y.o. male
+brought to the ED by mother for right wrist pain and mild swelling that
+began after falling and injurying the wrist while ice skating last night around
+2130. Pt states another skater bumped into his shoulder and he 
+ipped
+over, landing with hyper
+exion of the right wrist. Mom applied ice to the
+wrist without relief. He took Ibuprofen last night before bed. The pain is
+aggravtaed by movement and has no alleviating factors. He has fractured the
+right wrist in the past. No changes in alertness, activity or appetite. Patient
+is otherwise healthy with no other concerns or complaints at this time. HPI
+Documentation is Complete History Review: PMH: No signicant problems
+[**Name (NI) 17**]: Reviewed - no changes Social History: Attends school /
+daycare and Exposure to tobacco / smoking Family History: Reviewed nursing
+documentation - no changes Review of Systems Constitutional: Negative for
+activity change, appetite change and fever. HENT: Negative. Eyes: Negative.
+Respiratory: Negative. Musculoskeletal: Positive for injury (right wrist), pain
+(right wrist) and swelling (mild swelling to right wrist). Gastrointestinal:
+Negative. Neurological: Negative. Skin: Negative for rash.
+4.5 Report Card Preparation
+The performance report cards contain 20 to 30 pages of tabular and graphic data; examples
+are provided in this section to illustrate the type of content in the reports. Performance
+report cards are prepared on a monthly basis for each hospital (Figure 1 on the following
+page) as well as for clinicians within the hospital (Figure 2 on page 17). In order to
+make the data more easily interpretable, the report cards also include graphic displays
+for each measure that include trend over time charts at the hospital level (Figure 3 on
+page 18) and clinician level (Figure 4 on page 18). Each of these reports includes relevant
+comparisons as well as the Achievable Benchmarks of Care (ABC)27derived from the
+previous CY data. The ABC serves as the target for performance improvement.
+The Data Coordinating Center creates a randomly generated study provider number
+that links to the email address for each clinical provider. The clinician-specic report
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 16 of 32 Protocol 036 (Alpern)
+Pediatric Emergency Medicine Quality of Care Update
+PECARN RegistryFebruary 2016
+CHCO Main
+Performance Measure Your Site Network ABC
+Time from ED arrival to being seen by any provider who can initiate care
+(resident, NP, PA, fellow, or attending) for ESI 5 visits71 47 21
+Length of stay (from ED arrival to ED departure time) for all visits 184 173 98
+Length of stay (from ED arrival to ED departure time) for admit, obser-
+vation or transfer disposition visits329 325 226
+Length of stay (from ED arrival to ED departure time) for dischargedisposition visits169 159 96
+Left without being seen: visits arrived in the ED but not seen by a
+provider who can initiate care (resident, NP, PA, fellow, or attending)4.9% 2.8% †
+Time interval between plain ﬁlm order and image available for viewingby ED sta ↵; may have more than one image per visit10 20 †
+Time interval between CT test ordered and ﬁrst radiologist reading avail-
+able to ED provider for all CT reports; may have more than one image
+per visit70 100 †
+Time interval between US test ordered and ﬁrst radiologist reading avail-
+able to ED provider for all US reports; may have more than one image
+per visit67 101 †
+Quality and Safe Care Relevant to Every ED Patient ‡
+ED Return visits within 48 hrs of prior ED departure 2.7% 2.7% 1.2%
+ED Return visits within 48 hrs of prior ED departure resulting in admis-sion, observation, transfer or death on return visit0.6% 0.74% 0.05%
+Childhood Infections
+Visits with viral diagnoses (excluding visits with chronic care conditions
+or bacterial infection diagnoses) for which antibiotics were given in the
+ED or on discharge0.7% 1.4% 0.1%
+Pain and Sedation (Long-bone Fracture)
+Pain score documented at any time during the ED visit 96.4% 96.5% 100%
+Patients with moderate or severe pain who had a reassessment of their
+pain documented60.4% 73.2% 99.6%
+ABC = Achievable Benchmark of Care (performance of the top providers in the network during 2013)Network = performance attributable to the 7 sites in the PECARN Registry networkPage 3
+Figure 1: Hospital level tabular data from performance report card.
+card is anonymized and emailed to the clinician, and is not sent to the hospital nor the
+clinician's supervisors. The DCC maintains a list of coded clinician identiers that are
+linked to the email address of the clinicians.
+In order to fully understand the performance improvement measures on the report
+cards, clinicians may request the Data Coordinating Center to provide encrypted study
+identiers for patients included in a specic measure. The encrypted study identiers are
+retained at the original hospital with the medical record, enabling the provider to review
+the medical record to identify ways to improve future performance.
+5 Statistical Analyses
+Objective 1. Continue the PECARN electronic medical record registry for pediatric
+patients by merging electronic health record (EHR) clinical data from participating
+hospital emergency departments (ED) for quality improvement purposes and to
+plan future research.
+Process Measures. During the maintenance of the Registry for current sites, and
+bringing on new sites to improve the Registry, we will track several process measures to
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 17 of 32
+Pediatric Emergency Medicine Quality of Care Update
+PECARN RegistryApril 2015
+Performance Summary
+Site Network
+Performance Measure You Your Site Network ABC ABC
+Respiratory Diseases (Asthma)
+Systemic corticosteroids given in the ED 100% 95.2% 91.9% 98.2% 99%
+Time (min) to ﬁrst beta-agonist treatment 36 39 47 32 32
+Asthma score documented while in the ED 86.7% 89.3% 88.6% 94.9% 99.1%
+Patients with moderate or severe asthma score with an im-proved asthma score documented (admit, observation, or
+transfer disposition)50% 52.3% 65.6% 68.6% 92.9%
+Patients with moderate or severe asthma score with an im-proved asthma score documented (discharge disposition)25% 46.5% 75% 59% 99.6%
+Childhood Infections
+Visits with viral diagnoses (excluding visits with chronic care
+conditions or bacterial infection diagnoses) for which antibi-
+otics were given in the ED or on discharge0% 1.7% 1.9% 0.2% 0.1%
+Pain and Sedation (Long-bone Fracture)
+Pain score documented at any time during the ED visit 92.3% 93.8% 95.8% 97.1% 100%
+Patients with moderate or severe pain who had a reassessment
+of their pain documented75% 56.8% 72.8% 80.1% 100%
+Patients with moderate or severe pain who had a reassessment
+and reduction of their pain by at least two points on the pain
+scale25% 41.8% 63.3% 78% 90.6%
+ED Flow
+Time from ED arrival to being seen by any provider who can
+initiate care (resident, NP, PA, fellow, or attending) for all
+visits regardless of ESI29 32 38 18 20
+ABC = Achievable Benchmark of Care (performance of the top providers in the network during 2013)
+Network = performance attributable to the 7 sites in the PECARN Registry networkPage 2
+Figure 2: Clinician specic tabular data from performance report card.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 18 of 32 Protocol 036 (Alpern)
+Pediatric Emergency Medicine Quality of Care Update
+PECARN RegistryFebruary 2016
+CHCO Main
+Performance Measure Comparison Trend
+Time (min) to ﬁrst documentation of all vital signs for all visits
+812162024
+Sites within PECARN RegistryMar '15 Aug '15 Jan '160 5 10 15
+●●●
+●●●
+●
+●●
+●●● Site (med[IQR]) 11 [7,20] (N=5167)
+Network (med[IQR]) 15 [9,33]
+ABC 10
+ED Flow
+Time from ED arrival to being seen by any provider who can initiate care (resident, NP, PA, fellow, or attending) for all visits
+regardless of ESI
+2030405060
+Sites within PECARN Registry● ●Mar '15 Aug '15 Jan '160 20 40 60●
+●●
+●
+●●●
+●●
+●●●
+Site (med[IQR]) 61 [29,108] (N=6087)
+Network (med[IQR]) 46 [21,88]
+ABC 20
+Time from ED arrival to being seen by any provider who can initiate care (resident, NP, PA, fellow, or attending) for ESI 2
+visits
+1015202530
+Sites within PECARN RegistryMar '15 Aug '15 Jan '16010 20 30●
+●●
+●●●●
+●●
+●●● Site (med[IQR]) 29 [16,50] (N=1139)
+Network (med[IQR]) 24 [13,45]
+ABC 12
+ABC = Achievable Benchmark of Care (performance of the top providers in the network during 2013)
+Network = performance attributable to the 7 sites in the PECARN Registry networkPage 10
+Figure 3: Hospital level graphic display from performance report card.
+Pediatric Emergency Medicine Quality of Care Update
+PECARN RegistryApril 2015
+Performance Measure Comparison Trend
+Childhood Infections
+Visits with viral diagnoses (excluding visits with chronic care conditions or bacterial infection diagnoses) for which antibiotics
+were given in the ED or on discharge
+02468
+Providers at Y our Site (Y ou=highlighted bar) May '14 Oct '14 Mar '15
+0 5 10 15●●
+●
+●●●●●●
+●●●●●●●●●●●●●●●You0% (N⇤=17)
+Your Site 1.7%
+Network 1.9%
+Site ABC 0.2%
+Network ABC 0.1%
+Pain and Sedation (Long-bone Fracture): All pain and sedation performance measures include only visits with a long-
+bone fracture in the diagnosis or on radiograph regardless of disposition of the patient
+Pain score documented at any time during the ED visit
+708090100
+Providers at Y our Site (Y ou=highlighted bar) May '14 Oct '14 Mar '15
+70 80 90 100●●
+●●●●●● You 92.3% (N⇤=13)
+Your Site 93.8%
+Network 95.8%
+Site ABC 97.1%
+Network ABC 100%
+ABC = Achievable Benchmark of Care (performance of the top providers in the network during 2013)
+Network = performance attributable to the 7 sites in the PECARN Registry networkPage 6
+Figure 4: Clinician specic graphic display from performance report card.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 19 of 32
+assess improved eciency as technology evolves. For example, measures will include (but
+are not limited to) the following:
+Total time to generate the data upload for each site
+Total time spent by the DCC and investigators examining and cleaning data
+Number of discrete variables and free text (narrative) elds
+Proportion of missing data for each variable
+Proportion of impossible or nonsensical data for each variable
+Proportion of outlier (out of range) data for each variable
+Objective 2. Continue to use the emergency care visit registry to analyze and describe
+processes of care and outcomes for injuries and illnesses of patients presenting to
+participating hospital EDs.
+Appropriate descriptive statistics and multivariable modeling methods will be used to
+carry out this objective.
+Objective 3. Continue preparation and dissemination of clinical performance report
+cards to assess quality improvement initiatives.
+Report card specic data extracts are created on a monthly basis, and the report
+cards are generated on a monthly basis. The precise contents of the report cards may be
+adjusted in accordance with the specic quality improvement initiatives that are being
+undertaken by participating sites, but will be similar to existing report cards. The reports
+are generated using SAS and R software.
+6 Data Management
+6.1 Data Coordinating Center
+The Data Coordinating Center (DCC) in the Department of Pediatrics at the University
+of Utah School of Medicine provides data coordination and management services for a
+variety of national research networks. Anchoring these services is a state-of-the-art, energy
+ecient data center completed in 2013. The data center facility supports more than 1200
+users around the world and provides a secure, reliable, enterprise-wide infrastructure
+for delivering critical DCC systems and services. The data center was built using high
+industry standards and energy ecient cooling solutions. The data center is cooled by
+Rittal's LCP inline cooling technology, providing eciency, redundancy and modularity.
+Cooling is based upon a hot/cold aisle design that allows for even air distribution with
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 20 of 32 Protocol 036 (Alpern)
+minimal hot spots. The data center electrical power system contains a redundant Mit-
+subishi uninterruptible power system (UPS) with a diesel backup generator. The data
+center is protected with a FM200 re suppression system, early warning smoke detectors
+and a heat detection warning system to act as a secondary system to the smoke detectors.
+Security guards are on-site conducting access control and rounds 24/7/365. Entry into
+the data center is restricted by card access and layered security measures and controls.
+The data center and external building access points are monitored with video surveillance.
+In 2011 the data center began a large scale VMware server virtualization deployment.
+Currently, the data center has virtualized about 95% of its environment. The virtual
+environment consists of more than 160 virtual servers and nearly 20 physical servers. The
+data center's virtualization solution provides key advantages:
+high availability { in the event of hardware failure, virtual servers automatically go
+back online in a seamless process.
+
+exible infrastructure { disk storage, memory and processor capacity can be increased
+or reallocated at any time.
+rapid deployment { servers can be provisioned on-demand with minimal waiting on
+hardware of software.
+The data center has enhanced its storage resources by implementing a networked
+storage system to support its virtualized environment. The data center currently manages
+over 50 terabytes of data. The storage solution consists of Dell's EqualLogic PS Series
+Storage system for providing a virtualized storage area network (SAN). Some of the
+benets that are realized through this technology are:
+storage architecture is not a bottleneck for IT services;
+improved performance;
+tiered storage;
+provisioning and reclamation of SAN disk is ecient; and most important,
+complete redundancy from the SAN fabric architecture.
+Production servers running critical applications are clustered and congured for failover
+events. Servers are backed up with encryption through a dedicated backup server that
+connects across an internal 10 gigabit network to a tape drive. DCC storage area net-
+working (SAN) applications, clusters, and switch-to-switch links are also on a 10 gigabit
+network. Incremental backups occur hourly Monday through Friday from 6 am to 6 pm.
+Incremental backups also are performed each night with full system backups occurring
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 21 of 32
+every Friday. Tapes are stored in a reproof safe inside the data center facility, and full
+backups are taken o site on a weekly basis to an o-site commercial storage facility.
+In the event of catastrophic failure, such as a re in the server facility, daily backups
+would probably survive because of the re suppression system and reproof safe, but there
+would be obvious delay in re-establishing data center function because the servers will not
+survive such a disaster. Total destruction of the data center facility could cause the loss
+of up to one week's data. In future investments, the data center is making co-location,
+disaster recovery and business continuity solutions a top priority.
+DCC information systems are available 24 hours a day, 7 days a week to all users
+unless a scheduled maintenance interruption is required. If this occurs, we notify all users
+of the relevant systems, and data entry can be deferred until after the interruption is over.
+Critical systems availability has exceeded 99.9% for the past two years, and there has
+been no unscheduled downtime in over ve years.
+6.2 Data Transmission
+All data transmission to the DCC over public networks is encrypted with virtual point-to-
+point sessions using secure socket layer (SSL) or virtual private network (VPN) technolo-
+gies, both of which provide at least 128 bit encryption. No study data will be transferred
+by email.
+6.3 Data Security and Condentiality
+The data center coordinates the network infrastructure and security with the Health
+Sciences Campus (HSC) information systems at the University of Utah. This provides us
+with eective rewall hardware, automatic network intrusion detection, and the expertise
+of dedicated security experts working at the University. Network equipment includes four
+high-speed switches. User authentication is centralized with two Windows 2008 domain
+servers. Communication over public networks is encrypted with virtual point-to-point
+sessions using secure socket layer (SSL) or virtual private network (VPN) technologies,
+both of which provide at least 128 bit encryption. All of our Web-based systems use
+the SSL protocol to transmit data securely over the Internet. Direct access to data cen-
+ter machines is only available while physically located inside our oces, or via a VPN client.
+All network trac is monitored for intrusion attempts, security scans are regularly run
+against our servers, and our IT sta is notied of intrusion alerts. Security is maintained
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 22 of 32 Protocol 036 (Alpern)
+with Windows 2008 user/group domain-level security. Users are required to change their
+passwords every 90 days, and workstations time out after 5 minutes of inactivity. All les
+are protected at group and user levels; database security is handled in a similar manner
+with group-level access to databases, tables, and views in Microsoft SQL Server. Finally,
+all laptop computers in use in the DCC or in the Department of Pediatrics are whole-disk
+encrypted.
+The data center uses control center tools to continuously monitor systems and failure
+alerts. Environmental and network systems are also monitored to ensure up time. Highly
+trained system administrators on sta are available to respond in high risk emergency
+events.
+All personnel involved with the DCC have signed condentiality agreements concerning
+data encountered in the course of their daily work. All personnel (including administrative
+sta) have received Human Subjects Protection and Health Information Portability and
+Accountability Act (HIPAA) education. We require all users to sign specic agreements
+concerning security, condentiality, and use of our information systems, before access is
+provided.
+6.4 Data Sharing Plan
+It is a Federal requirement to share research data in a project such as this one. When the
+study is completed, the DCC will prepare a distributable database in compliance with
+these Federal requirements. This database will be de-identied suciently that it will not
+be subject to 45 CFR x46 nor the Health Insurance Portability and Accountability Act
+(HIPAA). Note that the limited PHI in the analysis database (month, year, clinician and
+encrypted medical record number) is used in order to direct performance measure reports,
+but these variables will not be included in the database produced for sharing with other
+researchers.
+Access to this research database will be managed in accordance with PECARN
+data sharing policies and applicable Federal laws. Registry data in this study will
+not be provided back to participating study sites except as outlined in the protocol
+(specic performance report cards for quality improvement initiatives). Each site, of
+course, has its own original data and can conduct its own quality improvement activities.
+Individual clinicians may request the encrypted study identiers of patients included in
+their performance report card, in order to enable their review of the medical record to
+identify opportunities for future performance improvement.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 23 of 32
+7 Protection of Human Subjects
+7.1 Institutional Review Board Approval
+Institutional Review Board (IRB) approval will be required from all sites participating
+in this study, including the PECARN Data Coordinating Center (DCC). The DCC will
+maintain documentation of initial and on-going approval at each site, and this documen-
+tation will be required in order for a site to submit electronic data to the DCC.
+7.1.1 Expedited IRB Approval
+Expedited IRB approval is requested for this study. Expedited IRB approval procedures
+are permissible when the research activities present no more than minimal risk to human
+subjects, and only involve procedures listed in specic categories listed in the regulations
+at Federal Register 63:29748, 1998, 21 CFR x56.110, and 45 CFR x46.110. For this project,
+the procedures fall under Category 5, which is research that involves materials (data,
+documents, records) that have been collected, or will be collected, solely for non-research
+purposes (e.g., medical treatment, diagnosis). All data in this study are from the medical
+records produced during the on-going clinical activities of the participating centers.
+7.2 Waiver of Informed Consent and Assent
+Waiver of informed consent and patient assent is requested for this study. As described
+in Section 3 on page 9, the participating sites and their component clinicians are the
+units of analyses in this study. The topic of study is the aggregate behavior of the emer-
+gency departments and potential changes in clinician performance measures, and selective
+consenting or assenting would destroy the scientic validity of the study. Performance
+feedback, while studied as part of this proposal, will be directed at quality improvement.
+Any practitioner or site specic feedback will be directed to that individual, identied
+only by a randomly generated study provider number, or site so that there is minimal
+risk of adverse nancial or professional consequences during the study. Feedback will be
+provided so that the clinicians can better understand their own practice as a starting point
+for practice improvement. Practitioners will have the option of not reviewing provided
+feedback.
+Waiver of informed consent from the clinicians is requested because risks to the
+individual clinicians are minimal (Section 7.4.3 on page 25), the waiver will not adversely
+aect the rights and welfare of the clinicians, uniform participation is necessary for the
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 24 of 32 Protocol 036 (Alpern)
+scientic validity of the study, and the clinicians will receive information about their
+performance during the study. These are the four requirements for waiver of informed
+consent outlined in 45 CFR x46.116(d).
+Waiver of informed consent and assent from patients is requested for this project.
+Specic patients are not the subjects of study, but rather, their ED visit contributes infor-
+mation about the sites and clinicians, which are the subjects of study. The requirements
+of 45 CFRx46.116(d) are also met for the patient population, as the risk is minimal,
+the rights and welfare of the patients are not being aected, and uniform inclusion of
+all patients is necessary for the scientic validity of the study. There is no provision for
+providing additional pertinent information to patients, as they are not the subjects of the
+study.
+7.3 Waiver of Written Authorization for HIPAA
+Waiver of authorization for use and/or disclosure of protected health information under the
+the Privacy Rule is requested for this study. Waiver of authorization for the use of patient
+electronic health record data is permissible under x164.512(i)(2)(ii). The requirements
+are that the use of the data involves no more than minimal risk to the privacy of the
+patients, that the research could not practicably conducted without the waiver, and the
+research cannot be conducted without access to the data. Written authorization is not
+practicable in the urgent environment of the ED, data are being abstracted long after the
+patient has departed the ED, and the scientic validity of the study would be destroyed
+since all visits must be included in order to determine the performance measures. The
+use or disclosure of the protected health information involves no more than minimal risk
+to the individuals because:
+There is an adequate plan to protect the identiers from improper use and disclosure.
+The PECARN DCC has provided Business Associate Agreements for execution
+by each participating site, and the security of its information systems has been
+described in Section 6.3 on page 21.
+There is provision to destroy identiers before integrating patient data into the
+registry, and the de-identication procedures are thoroughly discussed in Section
+??.
+The protected health information will not be reused or disclosed to any other persons
+or entities, except as required by law, or for authorized oversight of the research
+project.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 25 of 32
+7.4 Risks to Human Subjects
+7.4.1 Research Participants and Characteristics
+Number and characteristics of participants. This project will maintain and en-
+large an existing registry of electronic health record data including all visits to the base
+and satellite emergency departments (EDs) of the participating sites for all patients. The
+registry currently contains data from seven hospitals in four health care systems since CY
+2012, and will accrue records from participating sites for at least the next ve calendar
+years.
+Inclusion in the registry will be regardless of race, ethnicity, or gender. Inclusion will
+be regardless of diagnosis or chronic health condition. Clinicians will be included in the
+protocol regardless of race, ethnicity, or gender.
+7.4.2 Sources of Materials
+This project includes only data that will be obtained from already completed EHRs. No
+prospective data will be collected solely for study purposes. Queries of the Pediatric
+Emergency Care Registry will provide the data for analysis. At each site, the investigators
+involved in the project, the site research coordinator and information technology contact
+will have access to identiable private information about some or all subjects. After
+de-identication procedures are nalized by the DCC (Section 4.4 on page 13), the
+procedures will be carried out at each clinical site, on their servers within their rewall.
+Then the encrypted components of the EHR will be submitted electronically using a
+secure system hosted by the DCC. At the DCC, the DCC PI, data managers, statisticians,
+and other sta may have access to a limited set of identiable information.
+7.4.3 Potential Risks
+This study is without direct patient contact and utilizes only existing electronic health
+record data. Data will be acquired from hospital computer systems and the primary
+potential risk to subjects is improper disclosure of medical information. This risk is
+minimized by data management steps outlined above.
+Provision of performance report cards is anticipated to improve the quality of care, and
+there are no reasons to anticipate that such report cards will pose risks to patients. Risk to
+the participating sites or practitioner is the disclosure that any one site or practitioner has
+quality outcome patterns that greatly dier. This risk is mitigated by use of deidentied
+practitioner and site study numbers assigned by the DCC for the Registry and report cards.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 26 of 32 Protocol 036 (Alpern)
+The DCC maintains a study key to allow for appropriate identication of visits pertaining
+to each practitioner and also to allow for distribution of the report cards. This decreases
+the risk to practitioners as identication is not known by the hospital site administration.
+All individual feedback reports are anonymized to protect the identication of clinicians,
+and all published results will be presented in aggregate form.
+7.5 Adequacy of Protection Against Risks
+This project entails the continuation and expansion of an established emergency depart-
+ment electronic health record registry for purposes of quality improvement and research
+about processes of care for diseases and injuries seen in the pediatric emergency setting.
+All data will be obtained from already completed electronic health records. We will collect
+no prospective data solely for study purposes. In every case, nal decisions regarding
+clinical care will have been made between patients, their parents, and clinicians at the
+bedside, prior to the transmittal of data to the DCC or provision of performance measure
+information to sites and clinicians. This intervention will in no way mandate clinicians
+to pursue a specic treatment for a given patient. However, clinicians may be better
+informed about their own prior performance and will have an opportunity to provide
+evidence-based improvements in the quality of care they provide to future patients.
+7.5.1 Protection Against Risks
+Data will be acquired from hospital computer systems and the primary potential risk
+to subjects is improper disclosure of medical information. Data analysis for this project
+will be conducted using de-identied data. Data will be housed at the DCC, for which
+security was previously described (Section 6.3 on page 21).
+The performance measures involved in the current report cards have been carefully
+developed to include only ones with a strong evidence base and endorsement by nationally
+recognized experts and stakeholders. Audit and feedback concerning clinical care is a
+regular activity in all health care organizations. All published results will be presented
+in the aggregate and care will be taken to keep identication of sites and investigators
+condential.
+7.5.2 Human Subjects Protection Training
+All key personnel have completed Human Subjects Protection Training as mandated by
+involved Institutional Review Boards. This training involves an extensive, web-based,
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 27 of 32
+curriculum emphasizing the safeguards necessary to conduct human subjects research,
+particularly with children.
+7.6 Potential Benet of Research
+This project will continue using the Registry to enable quality performance measures of
+emergency healthcare for children across participating EDs (base and satellite) in the
+Pediatric Emergency Care Applied Research Network. It compares quality performance
+measures of emergency care provided to children across dierent institutions by using data
+extracted from electronic health records, enabling hospitals to target best performance.
+The Registry enables participating hospitals to evaluate the impact of providing provider-
+specic feedback and benchmarks of care on quality measures that are within the locus of
+control of the individual provider. The feedback may directly improve the quality of care
+of future patients treated by the practitioners and the sites.
+7.7 Importance of Knowledge to be Gained
+In its 2006 report, \Emergency Care for Children: Growing Pains", the Institute of
+Medicine recommended that pediatric emergency medical systems support the development
+and measurement of standards for emergency care performance measurement. The ability
+to accurately and comprehensively assess the process and outcomes of care in pediatric
+emergency patients is imperative to the evaluation of the quality of care provided. Past
+endeavors have been limited by the labor intensive nature of obtaining the information
+needed to determine quality performance measures. The PECARN Registry has allowed
+for the comprehensive and scalable determination of quality performance measures using
+an electronic health record registry across multiple sites. It has enabled evaluation of
+the impact of providing provider-specic feedback and benchmarks of care on quality
+measures that are within the locus of control of the individual provider. In addition,
+the systematic and widespread collection and reporting of performance and outcomes,
+using the same operational denitions, is critical to allow clinicians and other emergency
+care stakeholders to continue to work together to innovate and improve care beyond the
+local level. The PECARN Registry has demonstrated potential to improve the care of
+children in the emergency setting, and continuation of the Registry will enable continued
+improvement of care to this vulnerable population.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 28 of 32 Protocol 036 (Alpern)
+8 Health Insurance Portability and Accountability
+Act
+All relevant data in the electronic health record is being collected in this study, including
+potentially identifying information, because the entire project aims to create a registry
+automatically from the medical record. Rigorous de-identication procedures will be
+conducted to produce the analysis database with a minimum of Protected Health Infor-
+mation (PHI). Specically, the analysis database will have the month and year of visit.
+If unexpected additional PHI is detected in submitted data by the Data Coordinating
+Center, it will be de-identied by the DCC, and feedback will be provided to the clinical
+site(s) to further rene the de-identication procedures so that this does not recur.
+Data elements for race, ethnicity, and gender of subjects will be preserved. These demo-
+graphic data are required for Federal reporting purposes to delineate subject accrual by
+race, ethnicity, and gender.
+All study sites have been oered a Business Associate Agreement with the University of
+Utah, which agrees to handle submitted data with the security precautions required for
+PHI. Copies of executed Business Associate Agreements are maintained at the DCC.
+9 Inclusion of Women and Minorities
+Data from the emergency department (ED) electronic health record of all patients seen at
+the protocol sites will be included. Visits will be included without regard to patient race
+or ethnicity. A diversity of ethnic and racial backgrounds is represented at the selected
+PECARN sites.
+10 Inclusion of Children
+Data from the emergency department electronic health record for all visits of patients
+will be collected from the selected sites. ED visits will be included without regard to
+age. Members of the investigative team are board certied in pediatrics and pediatric
+emergency medicine and have extensive experience and expertise in caring for children in
+this age range. The sites participating all have emergency departments dedicated to the
+care of children.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 29 of 32
+11 Access to and Retention of Records
+For federally funded studies subject to the Common Rule, records relating to the research
+conducted shall be retained for at least 3 years after completion of the research. Completion
+of the research for this protocol should be anticipated to include planned primary and
+secondary analyses, as well as subsequent derivative analyses. Completion of the research
+also entails completion of all publications relating to the research. All records shall be
+accessible for inspection and copying by authorized representatives of the regulatory
+authorities at reasonable times and in a reasonable manner [45 CFR x46.115(b)].
+Bibliography
+[1]Health, United States, 2005: Chartbook on Trends in the Health of Americans.
+Hyattsville, Maryland: National Center for Health Statistics; 2005.
+[2]Health, United States, 2009: With Special Feature on Medical Technology. Hyattsville,
+Maryland: National Center for Health Statistics; 2010.
+[3]Institute of Medicine Committee on the Future of Emergency Care in the US Health
+Care System. Emergency Care for Children: Growing Pains. Washington, DC:
+National Academy Press; 2006.
+[4]Seidel JS, Henderson D, Tittle S, Jae D, Spaite D, Dean JM, et al. Priorities for
+research in emergency medical services for children: results of a consensus conference.
+Pediatr Emerg Care. 1999 Feb;15(1):55{8.
+[5]Chamberlain JM, Patel KM, Pollack MM. Association of emergency department
+care factors with admission and discharge decisions for pediatric patients. J Pediatr.
+2006 Nov;149(5):644{649.
+[6]Crain EF, Weiss KB, Fagan MJ. Pediatric asthma care in US emergency departments.
+Current practice in the context of the National Institutes of Health guidelines. Arch
+Pediatr Adolesc Med. 1995 Aug;149(8):893{901.
+[7]Crain EF, Mortimer KM, Bauman LJ, Kercsmar CM, Weiss KB, Wissow L, et al.
+Pediatric asthma care in the emergency department: measuring the quality of
+history-taking and discharge planning. J Asthma. 1999;36(1):129{38.
+[8]Hampers LC, Trainor JL, Listernick R, Eddy JJ, Thompson DA, Sloan EP, et al.
+Setting-based practice variation in the management of simple febrile seizure. Acad
+Emerg Med. 2000 Jan;7(1):21{7.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 30 of 32 Protocol 036 (Alpern)
+[9]Ramenofsky ML, Luterman A, Quindlen E, Riddick L, Curreri PW. Maximum
+survival in pediatric trauma: the ideal system. J Trauma. 1984 Sep;24(9):818{23.
+[10]Stanley RM, Teach SJ, Mann NC, Alpern ER, Gerardi MJ, Mahajan PV, et al.
+Variation in ancillary testing among pediatric asthma patients seen in emergency
+departments. Acad Emerg Med. 2007 Jun;14(6):532{8.
+[11]Zerr DM, Del Beccaro MA, Cummings P. Predictors of physician compliance with
+a published guideline on management of febrile infants. Pediatr Infect Dis J. 1999
+Mar;18(3):232{8.
+[12]Cain VS, Kington RS. Investigating the role of racial/ethnic bias in health outcomes.
+Am J Public Health. 2003 Feb;93(2):191{2.
+[13]Pediatric Emergency Care Applied Research Network. The Pediatric Emergency
+Care Applied Research Network (PECARN): rationale, development, and rst steps.
+Acad Emerg Med. 2003 Jun;10(6):661{8.
+[14]Pediatric Emergency Care Applied Research Network. The Pediatric Emergency
+Care Applied Research Network (PECARN): rationale, development, and rst steps.
+Pediatr Emerg Care. 2003 Jun;19(3):185{93.
+[15]Alpern ER, Stanley RM, Gorelick MH, Donaldson A, Knight S, Teach SJ, et al.
+Epidemiology of a pediatric emergency medicine research network: the PECARN
+Core Data Project. Pediatr Emerg Care. 2006 Oct;22(10):689{99.
+[16]Alpern ER, Donaldson AE, Alessandrini EA, Gorelick MH, Stanley RM, Teach SJ,
+et al.; PAS. Epidemiology of pediatric emergency department recurrent visits. PAS.
+2005;57:1862.
+[17]Mahajan P, Alpern ER, Grupp-Phelan J, Chamberlain J, Dong L, Holubkov R,
+et al. Epidemiology of psychiatric-related visits to emergency departments in a
+multicenter collaborative research pediatric network. Pediatr Emerg Care. 2009
+Nov;25(11):715{20.
+[18]Timm N, McAneny C, Alpern E, Macy M, Ruddy RM. Is pediatric emergency
+department utilization by pregnant teens on the rise? PAS. 2010;p. 20101494.434.
+[19]Gorelick MH, Alpern ER, Singh T, Snowdon D, Holubkov R, Dean JM, et al.
+Availability of pediatric emergency visit data from existing data sources. Acad Emerg
+Med. 2005 Dec;12(12):1195{200.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Protocol 036 (Alpern) Page 31 of 32
+[20]Gorelick MH, Knight S, Alessandrini EA, Stanley RM, Chamberlain JM, Kuppermann
+N, et al. Lack of agreement in pediatric emergency department discharge diagnoses
+from clinical and administrative data sources. Acad Emerg Med. 2007 Jul;14(7):646{
+52.
+[21]Alessandrini EA, Alpern ER, Chamberlain JM, Shea JA, Gorelick MH. A new
+diagnosis grouping system for child emergency department visits. Acad Emerg Med.
+2010 Feb;17(2):204{13.
+[22]Alessandrini EA, Alpern ER, Chamberlain JM, Gorelick MH. Developing a diagnosis-
+based severity classication system for use in emergency medical systems for children.
+PAS. 2007;p. 61670.5.
+[23]Dean JM, Chamberlain J, Gorelick MH, Stanley R, Snowdon D, Mahajan P, et al.
+The PECARN Core Data Project: benchmarking hospitals in a pediatric emergency
+medicine research network. Pediatr Res. 2004;55:119A.
+[24]Stanley R, Alpern ER, Gerardi M, Mahajan P, Teach SJ, Chamberlain JM, et al.
+Variations in diagnostic testing in the ED for pediatric non-urgent illnesses. PAS.
+2005;57:2865.
+[25]Neamatullah I, Douglass MM, Lehman LwH, Reisner A, Villarroel M, Long WJ,
+et al. Automated de-identication of free-text medical records. BMC Med Inform
+Decis Mak. 2008;8:32.
+[26]Saeed M, Villarroel M, Reisner AT, Cliord G, Lehman LW, Moody G, et al.
+Multiparameter Intelligent Monitoring in Intensive Care II: a public-access intensive
+care unit database. Crit Care Med. 2011 May;39(5):952{60.
+[27]Weissman NW, Allison JJ, Kiefe CI, Farmer RM, Weaver MT, Williams OD, et al.
+Achievable benchmarks of care: the ABCs of benchmarking. J Eval Clin Pract. 1999
+Aug;5(3):269{81.
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network
+Page 32 of 32 Protocol 036 (Alpern)
+PECARN Medical Record Registry Protocol Version 1.00
+Protocol Version Date: September 9, 2016
+The EMSC Pediatric Emergency Care Applied Research Network

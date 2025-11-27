@@ -1,0 +1,86 @@
+Planned Analyses for:  
+Novelty, Conformity and Trust in Vaccines  
+ 
+March 1 , 202 1 
+Click Here for the Latest Version  of Planned Analysis  
+Click Here for the Survey Instrument  
+ 
+1. Trust in COVID -19 vaccines  across 9 countries  
+ 
+The responses to the following four questions are of key interest:  
+ 
+A3. How much do you think the government should subsidize the conventional  COVID -19 vaccine? 
+[100%, 75%, 50%, 25%, 0%]  
+ 
+A4. If the conventional COVID -19 vaccine were provided to you for free, how likely are you to 
+accept the vaccination? [Likert scale 1 = Very unlikely, 5 = Very likely]  
+ 
+A5. Suppose the conventional COVID -19 vaccine is endorsed by your Government, free, but no 
+one in your country has received the vaccine.   How likely would you be willing to be vaccinated 
+with this new vaccine?  [Likert scale  1 = Very unlikely, 5 = Very likely]  
+ 
+A6. Suppose the conventional/RNA COVID -19 vaccine is endorsed by your Government, free, but 
+no one  in your country has received the vaccine.   How likely would you recommend your loved 
+ones to be vaccinated with this ne w vaccine?  [Likert scale 1 = Very unlikely, 5 = Very likely]  
+ 
+Note: This is a 2x5 between -subjects design. The two varying dimensions are vaccine technology 
+(conventional vs. RNA) and adoption rate in the country (0%, 20%, 40%, 60%, 80%).  
+ 
+For questions A4 -A6, the primary outcome variable of interest is the proportion of people who 
+respond, “Very likely”. Secondary outcome variables of interest are the proportion of people who 
+respond either “Very likely” or “Somewhat likely”; those who respond either “Some what unlikely” 
+or “Very unlikely”; and those who respond “Very unlikely”.  
+ 
+We plan to examine the differences in outcome variables across countries (USA, Brazil, Mexico, 
+China, India, Indonesia, Russia, Germany, and the UK).  We will conduct two -sample  proportion 
+test to test if the difference  in proportions  between  two countries are statistically significant.  We 
+will conduct Kolmogorov -Smirnov test  to test if the distributions of responses between two 
+countries are statistica lly significant.  
+ 
+We will plot the average responses to the above questions in two ways. First, we will plot simple 
+bar charts, where the nine countries are displayed on the x-axis, and the outcome variables  on the 
+y-axis, along with  95% confidence interval s. Second, we will draw a heatmap of the globe, with 
+colors corresponding to the average responses from each country (higher color intensity 
+corresponds to higher willingness to receive vaccine).  
+ 
+Finally, we will normalize the aver age responses to the four COVID -19 questions above by the 
+country’s attitude towards vaccines in general. We will create an index of country’s general 
+attitude towards vaccines by averaging the responses to the following three questions in the survey:  
+ 
+A1. Do you agree, disagree, or neither agree nor disagree with the following statement? (If agree) 
+Do you strongly or somewhat agree? (If disagree) Do you strongly or somewhat disagree?  
+ 
+A1-1. Vaccines are important for children to have. [Likert scale 1 = Str ongly disagree, 5 = 
+Strongly agree]  
+ 
+A1-2. Vaccines are safe.  [Likert scale 1 = Strongly disagree, 5 = Strongly agree]  
+ 
+A1-3. Vaccines are effective.  [Likert scale 1 = Strongly disagree, 5 = Strongly agree]  
+ 
+The index will range from 1 to 5. The normalizat ion will be done by dividing the average responses 
+to question A3 (A4, A5, A6) by the index.  
+ 
+We will conduct two -sample t-test to test if the differences in normalized measures of trust in 
+COVID -19 vaccines across countries are statistically significant. We will plot the normalized 
+measures using bar charts and heatmaps.  
+ 
+2. Comparison of attitudes towards conventional vs. RNA vaccines  for COVID -19 
+ 
+50% of survey subjects will be asked about their attitudes towards conventional  COVID -19 
+vaccines (questions A3 – A6), and the other 50% will be asked about their attitudes towards RNA  
+COVID -19 vaccines.  For each country, we will conduct two -sample proportion  test to test if there 
+are significant differences in attitudes  towards  conventional vs. RNA COVID -19 vaccines.  
+ 
+3. Relationship between trust in COVID -19 vaccines and the adoption rate in the country  
+ 
+We will examine if the willingness to receive new COVI D-19 vaccine (question A6) is  affected 
+by the adoption rate of the new vaccine in the country. We will plot a graph, where the adoption 
+rates are displayed on the x-axis, and the willingness to receive the new vaccine on the y-axis. 
+There will be two lines : the first line will show the plot for conventional vaccines, and the second 
+line for RNA vaccines.  
+ 
+We will estimate regression models to test if the slope is positive (i.e., the willingness to receive 
+the vaccine increases with the adoption rate in the country); whether the slope for RNA vaccine is 
+steeper than that for conventional vaccines; and to identify points at which the slope is steepest.  
+ 
+ 

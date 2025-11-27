@@ -1,0 +1,238 @@
+IRB NUMBER: HSC -MS-19-0630 
+IRB APPROVAL DATE: 02/09/2023  Page 1 of 9   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Deep Learning Enabled Endovascular Stroke Therapy Screening  
+in Community Hospi[INVESTIGATOR_600]  
+ 
+[STUDY_ID_REMOVED]  
+ 
+Version Date: 02/09/2023  
+  
+IRB NUMBER: HSC -MS-19-0630 
+IRB APPROVAL DATE: 02/09/2023  Page 2 of 9  Protocol  Title:  Deep Learning Enabled Endovascular Stroke Therapy  Screening  
+in Community Hospi[INVESTIGATOR_328413]/Date: 
+Principal Investigator:  3.0, 01/16/2023  
+ 
+Sunil A. Sheth, MD, Luca Giancardo, PhD  
+ 
+Co-Investigators:  Youngran Kim,  MD 
+ 
+Key Study  Personnel:  Sergio A. Salazar  Marioni  
+ 
+Population:  5,000  subjects  
+ 
+Number  of Sites:  4 Sites  
+Memorial Hermann Hospi[INVESTIGATOR_307] – TMC 
+Memorial Hermann Hospi[INVESTIGATOR_307] – Memorial City 
+Memorial Hermann Hospi[INVESTIGATOR_307] – Southwest 
+Memorial Hermann Hospi[INVESTIGATOR_307] – Woodlands  
+ 
+Study  Duration:  July 15th 2019 – March 01st, [ADDRESS_405434]  Duration:  Not applicable  
+ 
+ 
+Acute Ischemic Stroke (AIS) is the leading cause of long -term disability in the US, and 
+every  minute  of delay  from  onset  to treatment  reduces  the likelihood  of good  clinical  outcome.  As 
+a result  of our ongoing  Comprehensive  Stroke  Center  (CSC)  quality  improvement  efforts,  we have 
+identified a key delay: time from the completion of computed tomography (CT) angiography of 
+the head and neck to interpretation in the setting of AIS care. Motivated by [CONTACT_328418],  and in partnership  with the UTHealth  School  of Biomedical  Informatics,  we recently 
+developed a machine -learning algorithm to automate the interpretation of CT angiography (CTA) 
+for the presence or absence of large vessel occlusion (LVO) and other stroke relevant  information 
+such as estimated stroke core size. We propose a prospective, cluster - randomized study to 
+determine  whether  incorporating  our automated  machine  learning  (ML)  algorithms  to AIS care pathways 
+reduces the time from patient ER arrival to imaging interpretation by [CONTACT_328419]. Physicians will ultimately decide if patients are 
+eligible for thrombectomy, and all patients wil l receive the standard of care following current 
+guidelines. This strategy is expected to help improve patient stratification procedures for 
+endovascular thrombectomy by [CONTACT_328420]. Our unique research team 
+consisting  of machine -learning  and AIS imaging  experts  will take advantage  of the rich and diverse 
+talents across the UTHealth Campuses and Memorial Hermann Hospi[INVESTIGATOR_328414].  
+IRB NUMBER: HSC -MS-19-0630 
+IRB APPROVAL DATE: 02/09/2023  Page 3 of 9  Background Information  
+ 
+Acute  Ischemic  Stroke  (AIS)  is the leading  cause  of long-term disability  in the US adult  population 
+with nearly 800,000 new patients affected by [CONTACT_328421], and with Large Vessel Occlusion 
+(LVO), a subtype of AIS that could require endovascular stroke therapy (EST), disproportionately 
+contributing to stroke -related dependence and death.1,[ADDRESS_405435] were nearly 2.5 fold more likely to achieve good 
+neurological outcomes (number needed to treat = 3), a treatment effect size rivaling that of antibiotics to 
+treat acute bac terial infections.8,[ADDRESS_405436] moved on to c are for another  patient.  
+Through our continuous process of quality improvement, we recently conducted an analysis of 
+delays  in AIS treatment.  Among  833 patients  with AIS, median  time from  ER arrival  to CTA  interpretation 
+for presence or absence of LVO was 65 minutes [IQR 41 - 127]. In order to comply with our Joint 
+Commission requirements for Comprehensive Stroke Center, the EST procedure must be initiated within 
+[ADDRESS_405437], and can nearly instantaneously analyze images for LVO.12 We then 
+validated this algorithm on a fully external dataset of 126 patients, and found that it can perform this task 
+with very high discrimination (Figure  1). 
+IRB NUMBER: HSC -MS-19-0630 
+IRB APPROVAL DATE: 02/09/2023  Page 4 of 9  Given  these  results,  we propose  a prospective,  cluster -randomized  study  to determine  whether  AIS 
+care pathways incorporating image based ML algorithms reduces the time from patient ER arrival to 
+imaging  interpretation  (Figure  2). Our unique  research  team  consisting  of machine -learning  and AIS imaging 
+experts  will take advantage  of the rich and diverse talents  across  the UTHealth  Campuses  and the Memorial 
+Hermann Hospi[INVESTIGATOR_48214]. Given our preliminary findings, we hypothesize that integration of these 
+approaches into the AIS care pathway will reduce delays from CTA acquisition to interpretation, wit hout 
+requiring any change in existing CT hardware or acquisition  protocols.  
+Objectives  
+ 
+The expected outcome is the creation of a state -of-the-art infrastructure for deploying artificial 
+intelligence algorithms in the clinical practice and a thorough evaluation of a potential paradigm shifting 
+approach for a measurable and sustainable quality  improvement of stroke care.  
+Study Design  
+ 
+To test the previously mentioned hypotheses, we propose a multi -center, stepped wedge cluster - 
+randomized study that will include patients across 4 hospi[INVESTIGATOR_328415]/UTHealth stroke 
+system of care in the greater Houston area. The software will be randomly enabled at each of [ADDRESS_405438] (“door -to- 
+groin” time). Secondary outcomes include the number of patients treated with EST and [ADDRESS_405439] angiography imaging studies for participating Hosp itals.  
+A valid sample will be one that satisfy the following criteria:  
+ 
+Inclusion Criteria  
+1. Male or Female, 18 years of age or  older.  
+2. Patients who present to the emergency department with signs and/or symptoms concerning  for 
+acute ischemic  stroke.  
+3. Patients who undergo CT angiography  imaging  
+4. Patients determined to have a large vessel occlusion acute ischemic stroke. This determination will be made 
+based on official radiology report for the CT angiography  imaging.  
+IRB NUMBER: HSC -MS-19-0630 
+IRB APPROVAL DATE: 02/09/[ADDRESS_405440].  
+ 
+Study Procedures  
+ 
+ML Algorithms Integration  
+ 
+Custom ML software (Viz.AI) will be installed on a server and receive data from the centralized 
+PACS system. This software has been purchased by [CONTACT_3433] e MH hospi[INVESTIGATOR_328416]. The 
+system will then send alerts to the care team through notifications pushed through the Viz.AI app present 
+on the physician, nurse and technologist’s mobile phone. Diagnosis and treatment decisions will be based 
+on the clinical evaluation and review of the images by [CONTACT_1963], as per routine standard of 
+care.  This study  will not interfere  with routine  clinical  work.  Data  capture  will be performed  after treatment 
+decisions and care have been  delivered.  
+ 
+Clinical Data Acquisition  
+ 
+Clinical data will be collected at each of the participating sites as a part of our ongoing 
+Comprehensive Stroke System quality improvement protocols. All other clinical and outcome data will be 
+collected through electronic medical record review. Captured data will include patient demographics, past 
+medical history, imaging utilization and imaging findings, time intervals (i.e. time from last known well  to 
+presentation, time from door to imaging, time from door to IV tPA, time from door to groin puncture), 
+procedural  outcomes  (i.e. TICI  scores,  hemorrhage  rates),  discharge  clinical  outcomes,  and in patients  who 
+received  EST or IV tPA, 90-day disability  outcomes.  These  data are routinely  captured  per standard -of-care 
+at our Comprehensive Stroke System and wil l be used for analysis as a part of this  study.  
+Ethics  
+ 
+Being an observational project, there will be no interventions, investigations, tests, drugs, and/or 
+interviews administered to patients. We do not expect any research -related adverse events. All personal 
+health  information  from  patients  will be kept confidential  and in compliance  with HIPAA  regulations.  This 
+site is seeking waver of consent for this observational study involving electronic medical chart review and 
+analysis of de -identified CTA  images.  
+Risks and benefits for the human subjects  
+ 
+Risks  
+In this study, ML algorithms are not used for diagnosis, cure, mitigation, treatment or prevention as it  
+only sends alerts. All diagnosis and treatment decisions are still based on the clinical evaluations and 
+radiology reports. As such, we do not foresee t hat this study poses more than minimal risk encountered 
+during the routine stroke care.  
+ 
+Benefits  
+We do not foresee any immediate benefits for the human subjects involved. However, if successful,  
+this study could enable a faster time -to-treatment for strok e patients.  
+ 
+Data handling and record keepi[INVESTIGATOR_328417]: 02/09/[ADDRESS_405441]’s  MRN 
+for prospective data collection. If data is to be analyzed, no patient identifier will be included to ensure no 
+patient  can be tracked  or identified.  Thus,  analysis  will solely  be performed  on de-identified  data.  No paper 
+records will be kept. To ensure reproducibility of the finding, the UTHealth RedCap will continue to store 
+the data after the completion  of the study  and until IT resources  will allow  to maintain  the machine  updated 
+and protected. If this is not possible, all the data containing Protected Health Information (PHI) will be 
+destroyed.  
+ 
+Data Sharing  
+In order  to allow  for a broader  reach for our finding  and scientific  publications,  we might  have  to share  part 
+of the data for scientific non -commercial purposes. In this case, we will strip the imaging and clinical data 
+of any PHI  information.  
+ 
+Publication Plan  
+ 
+Results based on data gathered from this this study may serve to elaborate abstract submissions or 
+manuscripts for peer -reviewed journals. Research publications will not include any patient -specific 
+information or identifiers.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Page 5 of 9  IRB NUMBER: HSC -MS-19-0630  
+IRB NUMBER: HSC -MS-19-0630 
+IRB APPROVAL DATE: 02/09/2023    
+ 
+ 
+ 
+References  
+ 
+1. Benjamin,  E.J. et al. Heart  Disease  and Stroke  Statistics -2018  Update:  A Report  From  the American 
+Heart Association. Circulation 137, e67–e492  (2018).  
+2. Malhotra, K., Gornbein, J. & Saver, J. L. Ischemic Strokes Due to Large -Vessel Occlusions 
+Contribute Disproportionately to Stroke -Related Dependence and Death: A Review. Front Neurol 
+8, 651 (2017).  
+3. Berkhemer, O. A. et al. A randomized  trial of intraarterial treatment for acute ischemic stroke. N. 
+Engl. J. Med. 372, 11–20 (2015).  
+4. Campbell, B. C. V. et al. Endovascular therapy for ischemic stroke with perfusion -imaging 
+selection. N. Engl. J. Med. 372, 1009 –1018  (2015).  
+5. Goyal, M. et al. Randomized assessment of rapid endovascular treatment of ischemic stroke. N. 
+Engl. J. Med. 372, 1019 –1030  (2015).  
+6. Saver, J. L. et al. Stent -retriever thrombectomy after intravenous t -PA vs. t -PA alone in stroke. N. 
+Engl. J. Med. 372, 2285 –2295  (2015).  
+7. Jovin , T. G. et al. Thrombectomy  within  8 Hours  after Symptom  Onset  in Ischemic  Stroke.  N. Engl. 
+J. Med. 150417035025009 (2015).  doi:10.1056/NEJMoa1503780  
+8. Tibayrenc M. Encyclopedia of Infectious Diseases : Modern Methodologies. John Wiley & Sons; 
+2007.  
+9. Powers, W. J. et al. 2018 Guidelines for the Early Management of Patients With Acute Ischemic 
+Stroke: A Guideline for Healthcare Professionals From the American Heart Association/American 
+Stroke Association. Stroke; a journal of cerebral circulation 49, e46–e110  (2018).  
+10. Sheth, S. A. et al. Time to endovascular reperfusion and degree of disability in acute stroke. Ann 
+Neurol 78, 584–593 (2015).  
+11. Saver, J. L. et al. Time to Treatment With Endovascular Thrombectomy and Outcomes From 
+Ischemic Stroke: A Meta -analysis. JAMA 316, 1279 –1288  (2016).  
+12. Barman, A. et al. Determining Ischemic Stroke From CT -Angiography Imaging Using Symmetry - 
+Sensitive Convolutional Networks. IEEE International Symposium on Biomedical Imaging ISBI 
+(2019) (in print)  
+13. Saver, J. L. Time is brain --quantified. Stroke; a journal of cerebral circulation 37, 263–266 
+(2006).  
+IRB NUMBER: HSC -MS-19-0630 
+IRB APPROVAL DATE: 02/09/2023    
+ 
+ 
+ 
+ 
+Figure 1. DeepSymNet performance for large vessel occlusion detection in fully external dataset of acute ischemic 
+stroke from the clinical PACS at Memorial Hermann/UTHealth. The model was previously trained on an independent 
+set of 297 CTA images. AUC: Area Under th e Receiving Operating Characteristic curve.  
+ 
+Figure 2. Overview of current stroke care and the proposed approach, designed to reduce the time to imaging 
+interpretation  

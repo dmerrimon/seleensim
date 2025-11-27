@@ -1,0 +1,316 @@
+Page 1 of 12 
+ VQI-DELTA Paclitaxel Device Safety Analysis – Phase I  Study Protocol 
+Version: 1.10          
+Updated:   May 5, 2020  
+Principle Investigators:   Daniel Bertges MD , Jens Jorgensen MD and Frederic S. Resnic, 
+MD MSc 
+ 
+1.0  Background:     
+In December 2018, a meta-analysis published by Katsanos and colleagues identified an 
+association between the use of paclitaxel drug coated balloons (DCB)  or drug eluting 
+stents (DES) in the trea tment of peripheral arterial disease (PAD)  and increased mortality 
+at two and five years after treatment, when compared to patients treated with non 
+paclitaxel -coated or eluting devices1.  After further investigation of the available data, the 
+FDA advised physicians to inform patients of this reported risk and consider  alternatives 
+to paclitaxel devices in the treatment of PAD. The FDA  has initiated additional review of 
+the mortality signal and convened an Advisory Panel.   
+Since 2004, the Society of Vascular Surgeons has collected detailed clinical data regarding the treatment of PAD through the Vascular Quality Initiative (VQI).   Today, VQI collects data from over 550 hospitals in North America, and contains over 575,000 individual patient records.   The  VQI Peripheral Vascular Intervention Registry (PVI)  
+module was launched in 2010 and began  capturing device identifier information  in the 
+fall of 2016 with linkage to the Global Unique Device Identification Database  (GUDID) .   
+The PVI registry has established a linkage to the Social Security Death Index file in order 
+to ascertain vital status in a longitudinal manner.   As such, the VQI- PVI registry may 
+serve as a unique and representative data source for assessing t he long-term safety of 
+Paclitaxel DCB and DES.   
+The Data Extraction and Longitudinal Trend Analysis ( DELTA) surveillance system was 
+developed to monitor ongoing clinical datasets in an effort  improve the efficiency of 
+identifying potential medical device safety concerns .  DELTA has been previously 
+validated for prospective monitoring of clinical registries and clinical data sets and is available as an open source software tool with associated technical documentation 
+2-5. 
+The VQI-DELTA Paclitaxe l Device Safety Analysis seeks to assess the comparative 
+safety of paclitaxel coated balloons and stents in the treatment of PAD through analysis of the Vascular Quality Initiative  (VQI) Peripheral Vascular Intervention (PVI)  registry 
+module using the DELTA system.   
+As a National Evaluation System for health Technology ( NEST) demonstration project 
+the Registry Assessment of Peripheral Devices (RAPID) is a private public partnership  of 
+academia, industry and governmental regulatory agencies dedicated to the improving the 
+national evaluation of peripheral arterial devices throughout the total product lifecycle. RAPID has convened the RAPID Pathways Working Group to address issues rela ted to 
+paclitaxel in a framework that will improve future device evaluation. The VQI DELTA Paclitaxel Device Safety Analysis will be conducted in communication with the RAPID Pathways initiative.   
+Page 2 of 12 
+ 2.0  Study Objectives:     
+1. The objective of the VQI – DELTA Paclitaxel Study  is to evaluate the relative 
+safety of Paclitaxel used as an antiproliferative agent in the treatment of 
+symptomatic PAD.   We will analyze Paclitaxel Drug Coated Balloons (DCB)  and 
+Paclitaxel Drug Eluting Stents (DES), both together and as unique exposures 
+using propensity score matched survival analysis .     
+2. If a mortality signal is detected we will then analyze factors associated with 
+mortality.  
+3.0  Active Surveillance System :  All proposed analyses will be performed using 
+DELTA v3.65 which  has the capability to prospectively monitor clinical data repositories 
+for safety signals, and is designed to support risk- adjusted prospective safety surveillance 
+analyses of complex clinical datasets.   
+4.0  Data Source and Limitations :   All proposed analyses will be performed using VQI 
+PVI dataset to maximize consistency of outcome and clinical covariate definitions6.   
+Limitations include incomplete linkage to the SSDI because social security numbers are not universall y available to the VQI PVI registry. This limitation is partly mitigated by 
+the ability to ascertain survival status through VQI center reporting directly to the registry. While capture of patient, lesion and treatment variables is generally complete for 
+the index procedure some covariates may have missing data. While the VQI mandates 
+consecutive procedure capture there is obligate time lag for centers to perform audits against their claims data.  
+5.0  Scientific Oversight  Committee:    At the initiation of the project, a study oversight 
+committee will be established including two  representatives from VQI (Drs. Eldrup-
+Jorgensen and Bertges) and two representatives from the DELTA data analysis  center 
+(Drs. Resnic and  Matheny ), two representatives from FDA (Misti Malone, PhD, Danica 
+Marinac-Dabic, MD, PhD ) and two representatives from the peripheral vascular device 
+manufacturer industry (Joshua Smale, BS, Aaron Lottes, PhD, MBA). The study 
+oversight committee will be responsible for the approval of the study protocol, will have 
+oversight of the overall performance and execution of the study, will propose any additional exploratory (post-hoc) analyses, and approve any proposed publications 
+resulting from the project.   
+6.0  Devices of Interest :  The proposed sa fety analyses will evaluate two classes of  
+paclitaxel coated  interventional devices used to treat PAD  and compare patient 
+outcomes with propensity score matched patients of similar risk who receive alternative 
+devices within the same calendar quarter  of the case implant .  The primary outcome will 
+be freedom from death using a propensity matched survival analysis approach.   Three 
+principle analyses are planned :   
+a) Paclitaxel DCB (including the Bard Lutonix, Medtronic In.Pact and Philips 
+Spectranetics Stellarex DCB’s) as compared with propensity matched patients 
+treated with plain balloons .  
+Page 3 of 12 
+ b) Paclitaxel delivering DES (including the Cook Zilver PTX and Boston Scientific 
+Eluvia DES ) as compared with propensity matched cases using bare metal stents 
+(BMS).  
+c) Patients treated with either Paclitaxel DCB or Paclitaxel DES compared with 
+propensity matched controls (with DCB patients matched to patients treated with plain balloons, and DES patients matched to patients treated with BMS . Matches 
+will be retained from the individual device cohort analyses). 
+Note that this  analysis is planned at the device class level  and is not intended to compare 
+early or late mortality between  specific devices or brands . 
+7.0  Missing Data:   Based on previous data quality audits of VQI Registry , it is 
+anticipated that less than 3 % of all data to be used in the VQI - DELTA  Paclitaxel  study 
+will be missing from the limited dataset.  If missing data represents  less than 3% of the 
+total dataset, simple imputation methods will be used, substituting missing data with median gender-specific values for continuous variables, and assuming “negative” results for dichotomous variables.    If missing data represents >3 .0% of any covariate used in 
+the propensity score match model (see below), the Study Oversight Committee will 
+determine the  most appropriate manner to handle missing data, including consideration of 
+multivariate imputation methods  or case-wise deletion .   
+8.0  Patient Inclusion and Exclusion Criteria :  All patients , age 18 or older, who 
+underwent endovascular interventional treatment of the femoral or popliteal arteries for  
+symptomatic PAD between  1/1/17 and 4/1/2020 will be candidates for inclusion in the 
+analyses.   See Figure 1 for case inclusion diagram.   
+In an effort to focus this safety evaluation  on those patients being treated in accordance 
+with accepted ‘best practice’ endovascular intervention strategies  and ‘on-label’ use of 
+devices, patients will be excluded if they received a balloon expandable stent or a balloon 
+expandable stent graft in the treatment of femoral or popliteal disease.  Balloon 
+expandable stents will be excluded because current best practice favors placement of self -
+expanding nitinol stents which were engineered for the femoral popliteal segment and tested in multiple trials for this indication  
+7-9. 
+Patients will also  be excluded (as either potential cases or controls) if their index 
+procedure was performed for acute limb ischemia as compared with chronic conditions as they have different treatment strategies  and higher major amputation and mortality rates 
+as compared with conventional use of PVI for chronic ischemic conditions
+10-14.   In 
+addition, patients with prior angioplasty or stenting of the SFA- popliteal segment will be 
+excluded in order to avoid the possibility of improperly assigning paclitaxel exposure to the control group. 
+Control patients for each of exposure groups will be selected as follows.  F or the DCB , 
+control patients will be selected from patients treated with “plain balloon”  therapies, and 
+will exclude those patients treated with any form of stent (including non -Paclitaxel DES, 
+self-expanding or covered stents).    Control patients for the Paclitaxel DES analyses will 
+Page 4 of 12 
+ be selected from those patients receiving bare metal self -expanding stents (BSES) with or 
+without concomitant plain balloon angioplasty.  
+Second and later procedures 
+The primary analysis will consider the first procedure recorded in the V QI PVI registry  as 
+the qualifying index procedure.  Should patients with a first treatment that is not 
+paclitaxel and has a subsequent paclitaxel device treatment, the paclitaxel case will be considered the index case for that patient.  
+  
+ 
+9.0  Endpoint Def initions:   The primary safety outcome of interest is survival (freedom 
+from death from any cause) at  2 years post intervention in three cohorts of patients:   
+a) Patients treated with paclitaxel DCB,  
+b) Patients treated with paclitaxel DES and  
+c) Patients treated with either paclitaxel DCB or DES analyzed together .     
+ 
+See Figure 1 for case/control identification and association with mortality .  
+The secondary  efficacy endpoint is  the composite endpoint of Intervention Success at 2 
+years defined as the freedom from death (from any cause) , retreatment  of the target limb  
+or major amputation  at 2 years .   An additional secondary efficacy endpoint will be 
+successful ambulation at 1 year post treatment.        
+  
+Page 5 of 12 
+ Figure 1:  Case Inclusion of exposures and controls.   Panel A:  Paclitaxel drug coated 
+balloon analysis, Panel B: Paclitaxel drug eluting stent analysis and Panel C: Any 
+Paclitaxel Device.    
+ 
+ 
+ 
+
+Page 6 of 12 
+  
+ 
+ 
+ 
+   
+    
+
+Page 7 of 12 
+ 10.0  Statistical Methodology:      
+10.1   Propensity Score Model Development:    Patients receiving a device of interest  
+(either DCB or DES) will be matched with contro l patients (those receiving any 
+traditional balloon or BMS respectively ) who had undergone an interventional procedure 
+during the same  calendar quarter , in a 1:1 ratio based on propensity score matching using 
+a non-parsimonious propensity model as described below.     
+A propensity score (i.e. probability of receiving the interventional device of interest) for 
+each patient will be calculated using the propensity score model via logit estimation .     
+The propensity score model itself will be recalibrated with each new cumulative analysis performed.   Ordering of patients will be randomized before each match procedure, control patients will not be allowed to match to more than 1 exposure (no replacement ) 
+and no common-support will be imposed during matching.   
+10.2   Variable Selection for Propensity Score Matching:    Covariates will be included in 
+the propensity score model if they were available to the treating physician at the time the 
+index intervention, are considered to be associated with the outcomes of interest based on prior published research, or plausibly related to the selection of the interventional device (based on expert opinion).    
+Proposed variables to be considered for inclusion in the propensity score match model    
+include:        
+• Age 
+• Male Gender  
+• Current smoker 
+• BMI 
+• History of hypertension 
+• History of diabetes 
+• History of Coronary artery disease 
+• Positive Pre-procedural Cardiac Stress  Test 
+• History of heart failure  
+• History of COPD  
+• Renal Insufficiency (defined as creatinine > 2.0mg/dL ) 
+• Dialysis dependent   
+• Poor pre-operative functional status 
+• Poor pre-operative ambulation  
+• Procedural indication for critical  limb ischemia  
+o Claudication  
+o Critical Limb Is chemia – Rest Pain  
+o Critical Limb Ischemia – Tissue Loss  
+• Presence of active infection in treated limb  
+• Emergent procedural status 
+Page 8 of 12 
+ • Treatment length  
+• Treatment for chronic occlusion  
+Variables will be excluded if they are found to be co- linear with covariates al ready 
+included in the propensity score model.   To guard against the possibility of the model 
+being unable to converge due to quasi- complete (or complete) separation, we will 
+calculate linear Variance Inflation Factor (VIF) for each candidate covariate, ex cluding 
+from the model any covariate with VIF>8, and further assessing any covariate with a VIF 
+>4.15   For this latter group, we will review the correlation to identify those covariates that 
+were highly correlated (with correlation coefficient > 0.80 ) and eliminate one of the two 
+highly correlated covariates.    
+In addition to guarding against co- linearity, the number of variables will be limited to 
+prevent potential instability in the propensity score  model through the inclusion of “too 
+many” covariates.   We will therefore estimate the number of maximum candidate covariates to include by calculating the total number of composite outcomes during the 
+first 12 months of accumulating data, and dividing this total by 4
+16. 
+10.3    Propensity Score Matching and Survival Analysis :   Matched controls will be 
+selected as the nearest -neighbor in a 1:1 ratio from all patients who underwent 
+endovascular treatment of PAD during the calendar quarter  as the interventional 
+treatment of interes t (either DCB or DES), using a fixed caliper width of 0.2 SD of the 
+logit of propensity score4, 17, 18 using a greedy matching algorithm.   Separate propensity 
+score (and matches) will be developed for the DCB and DES analyses .  
+The adequacy of the propensity score match model will be assessed by analyzing the distribution of risk factors between cohorts.  A propensity score match will be considered adequate for all post-match percent standardized differences less than a 0.10 threshold. 
+ 10.4   DELTA Alerts :   To determine whether any  (potentially)  observed difference in the 
+survival is meaningful w e will prospectively establish both a requirement for 
+demonstration of statistical significance in the estimated survival function as well as the 
+requirement that the magnitude of difference between the performance of the propensity 
+score matched controls . Any deviation will be considered meaningful enough to possibly 
+warrant further review.    
+DELTA alerts will be triggered if the Kaplan -Meier survival probability curve for the 
+device of interest (“case”) demonstrates a “clinically meaningful” increased risk of mortality, as defined by an increased mortality  at 2 years ≥ 50% than the survival rate 
+of the alternative  (“control”) population, with a final survival analysis Log Rank test 
+significant at the p=0.05 level
+19.      
+Page 9 of 12 
+ 10.5  Sample Size Expectation and Estimated  Statistical Power :  Based on case counts 
+(without further exploration of the VQI dataset), annual mortality following femoral-
+popliteal endovascular intervention was observed to be 12.1%.   We  anticipate a total 
+sample of 5,700 paclitaxel DES and 25,200 paclitaxel DCB treated patients would be 
+captured by  4/1/2020, with 1,865 PTX -DES and 8,250 PTX -DCB patients having been 
+followed for a minimum of 2 years.   Further conservatively assuming 90% match with 
+non-paclitaxel treated patients , the statistical power to detect a 50% increase in mortality 
+at 5 years , given α=0.05, exceeds 99% for each of the three primary analyses.   
+10.6   Pre -specified subgroups: :    Pre-specified subgroups will be  explored through 
+independent propensity score match analyses  for any evidence of uniquely increased risk 
+of mortality.  These subgroups will include:  age <70yr versus ≥70yrs, female gender, 
+patients on dialysis, and patients with cardiac history (including CAD, CHF or a positive 
+stress test).    Similarly, the three primary analyses will be further explored through 
+analysis of the subgroup of patients treated for critical limb ischemia will be analyzed 
+separately from those patients treated for intermittent claudication . 
+Additionally, the association between discharge statin medications and treatment with Paclitaxel devices will be explored, as well as the potential relationship between treatment with optimal medical therapy (discharge medications including statin, aspirin +/- P2Y12 inhibitor agent) and mortality.     
+10.7   Falsification Hypothesis Analysis:   A pre-specified falsification -hypothesis 
+analysis will performed  to assess the extent of residual confounding after propensity 
+score matching.  For each of the exposures of interest , we will evaluate matched patient 
+cohorts for the documentation of resuming smoking on follow up evaluation.   Continued active smoking is anticipated to be independent of the selection of the specific 
+interventional device, and is therefore an appropriate Falsification Hypothesis candidate outcome.  If the falsification hypothesis demonstrates no evidence for residual confounding through finding similar rates of  smoking in follow up, we will conclude that 
+the propensity sco re match was robust in minimizing residual confounding.   
+ 
+  
+Page 10 of 12 
+ 11.0   Study Analysis and Final Report :    It is anticipated that the final report will 
+serve as the basis for at least one manuscript  that will be prepared within 6 months of the 
+completion of the analysis and submitted for publication in peer reviewed journal.    
+Members of the committee will be invited to participate in the writing and review of each of the proposed manuscripts.   Additional, post- hoc and exploratory analyses may be 
+deemed suitable for inclusion in additional manuscripts, on the approval of the study steering committee.    
+ 
+12.0    Human Subjects Institutional Review:    All study related materials will be 
+submitted for IRB review and approval per the institutional requirements of VQI and 
+Lahey Clinic.    
+ 
+  
+Page 11 of 12 
+ 13.0   References  
+ 
+1. Katsanos K, Spiliopoulos S, Kitrou P, Krokidis M, Karnabatidis D. Risk of De ath 
+Following Application of Paclitaxel-Coated Balloons and Stents in the 
+Femoropopliteal Artery of the Leg: A Systematic Review and Meta -Analysis of 
+Randomized Controlled Trials. J Am Heart Assoc. Dec 18 2018;7(24):e011245. 
+2. Resnic FS, Majithia A, Marin ac-Dabic D, et al. Registry -Based Prospective, 
+Active Surveillance of Medical -Device Safety. N Engl J Med. Feb 09 
+2017;376(6):526-535. 
+3. Kumar A, Matheny ME, Ho KK, et al. The data extraction and longitudinal trend 
+analysis network study of distributed automated postmarket cardiovascular device safety surveillance. Circ Cardiovasc Qual Outcomes. Jan 2015;8(1):38-46. 
+4. Resnic FS, Gross TP, Marinac- Dabic D, et al. Automated surveillance to detect 
+postprocedure safety signals of approved cardiovascular devic es. JAMA. Nov 10 
+2010;304(18):2019-2027. 
+5. Resnic FS MM, Robbins S, Ssemeganda H, Cope R, Matheny ME. DELTA 
+Software - in DBP Tools - iDASH - integrating Data for Analysis, 
+Anonymization, and Sharing. 2017; https://idash.ucsd.edu/dbp-tools. Accessed 06-24-17, 2017. 
+6. National Cardiovascular Data R. NCDR Data Collectoin Form Generator and 
+Leads v2.2. 2018; https://cvquality.acc.org/docs/default-source/ncdr/Data-Collection/icd_v2_datacollectionform_genleads_2-2.pdf?sfvrsn=3e748dbf_0. Accessed 1/25/19, 2019. 
+7. Schillinger M, Minar E. Past, present and future of femoropopliteal stenting. J 
+Endovasc Ther. Feb 2009;16 Suppl 1:I147-152. 
+8. Dick P, Wallner H, Sabeti S, et al. Balloon angioplasty versus stenting with 
+nitinol stents in intermediate length superfici al femoral artery lesions. Catheter 
+Cardiovasc Interv. Dec 1 2009;74(7):1090-1095. 
+9. Chowdhury MM, McLain AD, Twine CP. Angioplasty versus bare metal stenting 
+for superficial femoral artery lesions. Cochrane Database Syst Rev. Jun 24 
+2014(6):CD006767. 
+10. Eliason JL, Wainess RM, Proctor MC, et al. A national and single institutional 
+experience in the contemporary treatment of acute lower extremity ischemia. Ann 
+Surg. Sep 2003;238(3):382-389; discussion 389-390. 
+11. Earnshaw JJ, Whitman B, Foy C. National Audit of Thrombolysis for Acute Leg 
+Ischemia (NATALI): clinical factors associated with early outcome. J Vasc Surg. 
+May 2004;39(5):1018-1025. 
+12. Howard DP, Banerjee A, Fairhead JF, Hands L, Silver LE, Rothwell PM. 
+Population-Based Study of Incidence, Risk Factors, Outcome, and Prognosis of Ischemic Peripheral Arterial Events: Implications for Prevention. Circulation. 
+Nov 10 2014;132(19):1805-1815. 
+13. Baril DT, Ghosh K, Rosen AB. Trends in the incidence, treatment, and outcomes 
+of acute lower extremity isch emia in the United States Medicare population. J 
+Vasc Surg. Sep 2014;60(3):669-677 e662. 
+Page 12 of 12 
+ 14. Gerhard-Herman MD, Gornik HL, Barrett C, et al. 2016 AHA/ACC Guideline on 
+the Management of Patients With Lower Extremity Peripheral Artery Disease: 
+Executive Summary: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines. J Am Coll Cardiol. Mar 21 2017;69(11):1465-1508. 
+15. Hsieh FY, Lavori PW, Cohen HJ, Feussner JR. An overview of variance inflation 
+factors for sample -size calculation. Evaluation & the health professions. Sep 
+2003;26(3):239-257. 
+16. Cepeda MS, Boston R, Farrar JT, Strom BL. Comparison of logistic regression 
+versus propensity score when the number of events is low and there are multiple confounders. Am J Epidemiol. Aug 1 2003;158(3):280-287. 
+17. Vidi VD, Matheny ME, Resnic FS. Post- marketing device safety surveillance. 
+Contemp Clin Trials. May 2011;32(3):307-308. 
+18. Austin PC. Optimal caliper widths for propensity -score matching when est imating 
+differences in means and differences in proportions in observational studies. Pharm Stat. Mar -Apr 2011;10(2):150-161. 
+19. Oakes D, Feng C. Combining stratified and unstratified log-rank tests in paired 
+survival data. Stat Med. Jul 20 2010;29(16):1735-1745. 
+ 
+  
+        
+ 
+      
+ 
+ 

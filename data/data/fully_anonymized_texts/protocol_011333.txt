@@ -1,0 +1,1504 @@
+12/30/2020   Page  | 1 INtegrating Care After Exacerbation of COPD (InCasE)  
+ 
+Protocol 
+[STUDY_ID_REMOVED]  
+12/18/2018  
+12/30/2020   Page  | 2 Table of Contents  
+1. Abbreviations  ............................................................................................................................................................... 3  
+2. Funding/Regulatory ..................................................................................................................................................... 3  
+3. Study Inv estigators  ...................................................................................................................................................... 3  
+4. Background/Rationale  ................................................................................................................................................. 4  
+5. Rationale and objectives  .............................................................................................................................................. 4  
+6. Setting  ............................................................................................................................................................................ 5  
+7. Overall Design  .............................................................................................................................................................. 5  
+8. Provider Eligibility, Recruitment, and Consent  ....................................................................................................... 6  
+8.1. Eligibility:  .............................................................................................................................................................. 6  
+8.2. Recruitment:  .......................................................................................................................................................... 6  
+8.3. Consent:  ................................................................................................................................................................. 7  
+8.4. Provider clustering/randomization:  .................................................................................................................. 7  
+9. Index discharges  ........................................................................................................................................................... 7  
+9.1. International Classification of Diseases (ICD) discharge diagnosis codes: .................................................. 7  
+9.2. Discharges with missing ICD codes:  ................................................................................................................. 7  
+9.3. Additional eligibility criteria.  ............................................................................................................................. 8  
+10. Intervention  ................................................................................................................................................................... 8  
+10.1.  Recommendations for COPD guideline care:  .............................................................................................. 8  
+10.2.  In-services:  ......................................................................................................................................................... 9  
+11. Blinding:  ................................................................................................................................................................ ........ 9  
+12.
+ Outcome and Baseline Assessments .......................................................................................................................... 9  
+12.1.  Primary outcome measures  .......................................................................................................................... 10 
+12.2.  Secondary measures  ...................................................................................................................................... 10 
+12.3.  Other measures:  .............................................................................................................................................. 11 
+12.4.  Baseline Characteristics:  ................................................................................................................................ 11 
+12.5.  Remuneration:  ................................................................................................................................................ 13 
+13. Analytic Approach  ..................................................................................................................................................... 13 
+13.1.  Models  ............................................................................................................................................................. 13 
+13.2.  Sampling and non -response bias and missing data .................................................................................. 13 
+13.3.  Sample size and study power  ....................................................................................................................... 14 
+13.4.  Qualitative analyses  ....................................................................................................................................... 14 
+14. Protection of Human Subjects  .................................................................................................................................. 15 
+12/30/2020   Page  | 3 14.1.  Minimal risk  .................................................................................................................................................... 15 
+14.2.  Consent  ............................................................................................................................................................ 15 
+14.3.  Data and safety monitoring  .......................................................................................................................... 15 
+14.4.  Data management and confidentiality  ........................................................................................................ 16 
+15. Summary of Changes from original protocol  ........................................................................................................ 16 
+16. References .................................................................................................................................................................... 18 
+Appendix 1: Chart abstraction template  ....................................................................................................................... 20 
+Appendix 2: Recommendations checklist template  ................................................................................................... 24 
+Appendix 3: Modified SHEP  .......................................................................................................................................... 34 
+Appendix 4: Provider Satisfaction Survey  ................................................................................................................... 36 
+Appendix 5: Provider Interview Guide  ........................................................................................................................ 38 
+ 
+ 
+1. Abbreviations 
+• (CCQ) – Clinical COPD Questionnaire 
+• (CDW) – VA Corporate Data Warehouse(ICD) - International Classification of Diseases 
+• (DC) - Discharge  
+• (EHR) – Electronic Health Record  
+• (GLMM) – Generalized Linear Mixed Model  
+• (IRB) – Institutional Review Board 
+• (MCS) – Mental Component Summary  
+• (PCP) – Primary Care Provider  
+• (PCS) – Physical Component Summary  
+• (SHEP) – Survey of Healthcare Experiences of Patients 
+• (VA) – Veterans Affairs 
+• (VISN) – Veterans Integrated Service Network  
+• (VR-12) – Veterans RAND 12 Item Health Survey 
+ 
+2. Funding/Regulatory  
+• Funding: V eterans Affairs (VA)  Health Services Research and Development IIR 12-130-2 
+• IRB: VA Puget Sound Institutional Review Board (IRB) approved all study procedures.  
+• Trial regis tration: ClinicalTrials.gov as [STUDY_ID_REMOVED]. 
+ 
+ 
+3. Study Investigators 
+VA Puget Sound Health Care System:  
+Principal Investigator  
+• David H. Au, MD, MS ; [EMAIL_11206]  
+12/30/2020   Page  | 4  
+Co-Investigators:  
+• Rosemary Adamson, MB, BS; [EMAIL_11207]  
+• Douglas Berger, MD; [EMAIL_11208]  
+• Scott Coggeshall, PhD; [EMAIL_11209]  
+• Richard Goodman, MD; [EMAIL_11210]  
+• Karin Nelson, MD, MSHS; [EMAIL_11211]  
+• Lynn Reinke, PhD, ARNP; [EMAIL_11212]  
+• Deborah Woo , PharmD; pharmacist;  [EMAIL_11213]  
+• Andrew Zhou, PhD; biostatistician, [EMAIL_11214]  
+ 
+Boise VA Medical Center: Site Principal Investigator:  
+• Paula Carvalho, MD; site principal investigator [INVESTIGATOR_588425] ; [EMAIL_11215]
+ 
+ Co-Investigator:  
+• William Weppner, MD, MPH; co-investigator and clinical reviewer ; [EMAIL_11216]
+ 
+ 
+4. Background /Rationale 
+Hospi[INVESTIGATOR_588426] a n interest as an important driver of healthcare costs (AHRQ – 
+Au-DH).[ADDRESS_774962] health care expenditures with as many 
+as half of patients requiring readmission within 6 months.   The time after discharge  (DC)  for hospi[INVESTIGATOR_588427] a sensitive period where the likelihood of relapse peaks within [ADDRESS_774963] 
+health systems.  
+Within North America, the Department of Veterans  Affairs provides care to Veterans at more than 1000 
+primary care settings and 150 medical centers.   To meet  the needs of Veterans across all instances of health 
+care settings, VA needs to redesign care delivery systems regardless of locale.  VA’s current  specialty care 
+system reflects a fee- for-service model where specialists wait for patient referrals and do not assume 
+responsibility for the health of a population of patients.  This approach does not take advantage of the VA 
+integrated health system incr easing risk of care fragmentation.  Specialists also are geographically 
+concentrated at major medical centers that are culturally and physically separated from the patient's medical 
+home. Determining how to deploy existing specialties using a primary care and patient centric approach 
+represents an important opportunity to improve access, timeliness, and quality -of-care.  
+ 
+5. Rationale and objectives  
+To be success ful, health systems require a pragmatic health system -level solution . In this intervention, w e 
+propose to realign  specialty care to collaborate with primary care teams and focus on patient needs and 
+guideline concordance after discharge from hospi[INVESTIGATOR_588428].  The intervention was designed to: 
+1) support primary care t eams in the care of patients recently discharged for a COPD exacerbation, 2) utilize 
+population health methods to identify patients at risk of readmission, 3) integrate proactive collaborative care 
+12/30/2020   Page  | 5 with specialty care and primary care teams 4) deliver care  within the context of existing services and ongoing 
+care, 5) leverage data systems and virtual care to facilitate improved delivery, and 6) respect the role of primary 
+care while attempting to minimize their workload.  Our goal is to improve 1) patient quality -of-life as measured 
+by [CONTACT_588468] 2) reduce 180- day hospi[INVESTIGATOR_588429].   
+6. Setting 
+We will conduct this trial at the VA Pug et Sound Health Care System in Washington State, and the Boise VA 
+Medical Center  in Idaho . These are two academic medical facilities within VISN 20.  We will include their  
+accompanying 10 community-based outpatient clinics. These facilities cover a wide ge ographic range, 
+including six that are designated as rural facilities.  
+ 
+7. Overall Design  
+We will perform  a modified stepped wedge clinical 
+trial which is a variant of a clustered randomized 
+cross -over design .8,9   Our focus will be to evaluate a 
+mult ifaceted intervention designed to improve 
+qual ity-of-life and decrease rate of hospi[INVESTIGATOR_588430]  (Figure 2).  We chose a modified stepped 
+wedge design for several reasons: 1) resource 
+constraints require a staggered roll out of the 
+intervention; 2) timing is randomized, allowing all 
+providers to eventually receiv e the intervention; 3) 
+utilizes within and across provider comp arisons 
+maximiz ing efficiency and  allowing the fewest 
+number of providers to be enrolled because analyses 
+utilize within provider and between provider comparisons increasing power .   
+ 
+In this  stepped wedge design, clusters of teams transition from the control group to the intervention group 
+over time .  For this trial  (Figure 2) , we will assemble  30 clusters of primary care teams (see Section 8.4) .   Each 
+primary care team consists of between 1-4 primary care clinicians.  The number of primary care teams allocated to each cluster will be done to ensure a balanced number of patients with COPD in each cluster.  All 
+clusters of teams  will start in the control group  (first column of Figure 2) .  At the beginning of e very 30- day 
+period , a randomly selected cluster of primary care teams will transition to the intervention group such that 
+all clusters will be in the intervention group in the 30th period  (last column of Figure 2) .  The first control 
+period (period 0) started on May 12, 2015. 
+ 
+We describe the trial flow in the following sections as illustrated in Figure 2. Figure 2.  Transition of primary care team clusters 
+from control to intervention.
+0 11c1c 1I2c2c 2I3c3c 3I4c4c 4I5c5c 5I6c6c 6I30c30c30I
+2c2c3c3c 3c3c4c4c 4c4c 4c4c5c5c 5c5c 5c5c 5c5c6c6c 6c6c 6c6c 6c6c 6c6c30c30c30c30c30c30c30c30c30c30c30c30c
+I
+2 3 4 5 6 3012345630Clusters*
+Period (30 days each)1I 1I 1I 1I 1I 1I2I 2I 2I 2I 2I3I 3I 3I 3I4I 4I 4I5I 5I6I...
+...cc
+ 
+*1-4 providers/team and 2 -13 teams/cluster such that each 
+cluster had  comparable number of COPD patients  
+12/30/2020   Page  | 6  
+ 
+8. Provider Eligibility , Recruitment, and Consent  
+8.1. Eligibility:  
+We will obtain names and contact [CONTACT_588469] (CDW).10 
+We will invite all PCPs  (physicia ns, physician residents, physician’s assistants, and nurse practitioners) from  
+the V A Puget Sound  and the Boise VA Medical Center  to participate.  The only exception will be PCPs who 
+agreed to be co -investigators on this trial.   
+ 
+8.2. Recruitment:  
+We will approach providers using the following methods:  
+Primary c are t eam meetings :  We will introduce the study at primary care  team meetings  and grand rounds .  
+At the end of the presentation, we will ask providers to complete a n enrollment sheet indicating their 
+willingness , or not,  to participate and a short demographic survey.  Providers will either return the enrollment 
+forms to trial staff after the meeting or mail it to us after the meeting.  F or providers who d o not indica te their 
+willingness , we will send an email inviting them to participate (see next section) .   
+ 
+Email:  We will invite providers via email if they d o not return an enrollment sheet after  a team meeting or if 
+they are hired after the intervention launches .  The email will contain a n overview of the study, and a  link to a 
+detailed study description and the demographic survey, as well study contact [CONTACT_3031].  The email will ask 
+provider s to review the material and repl y if they wish to be excluded .  The email explains that we will 
+consider them enrolled in the study if  they do not respond within one week  (default opt -in), and that they 
+could withdraw at any time.  
+ 
+  Figure 2: Overll study flow  
+Randomized to 
+date to cross 
+from control to 
+intervention:
+• All start in 
+control
+• All move to 
+intervention 
+over 30 -
+month periodRecruitment 
+& Consent:
+• staff 
+meeting
+• e-mail, or
+• telephonePatient 
+DC 
+with 
+COPD dx Chart 
+Abstrac -
+tionStudy 
+Team 
+Clinical 
+ReviewGuideline 
+treatment 
+recommen -
+dations placed 
+in CPRS 
+patient recordSatisfaction 
+survey; 
+interviewPrimary care  
+post -DC visit : 
+PCP accepts, 
+modifies, or 
+declines 
+reccomen -
+dationsFollow -up 
+with PCPProvider
+experience
+Intervention OutcomesControl
+(Usual 
+Care)
+Repeat  for each patient DC with COPD ExacerbationPatient
+experience post DC 
+survyey 
+(mail or 
+telephoneReceives 
+care as 
+directed by 
+[CONTACT_588470]
+ 
+12/30/2020   Page  | 7 8.3. Consent:  
+We will consider a provider consented once they return the enrollment sheet , respond to the invitation email 
+indicating that they want to participate , or we receive no response to the email within one  week.  
+ 
+8.4. Provider c lustering/ randomization : 
+We will group VA Primary care teams based on continuity and usual cross -coverage purposes.  Primary care 
+teams consist of 1- 4 providers .  We will group consented providers into 30 clusters.  When assembling 
+provider clusters , to the extent possible, we will group teams 1) that had  shared staffing (e.g. nurses, medical 
+support assistants), 2 ) are from the same site, and 3) when combined ha ve relatively even distributions of 
+empaneled clinic  patients with a COPD diagnosis.  By [CONTACT_588471] , we minimize potential 
+contamination of providers in the control arm by [CONTACT_588472].   
+ 
+The trial biostatistician will randomly assign each cluster to one of 30 30- day time period s.  Each period the 
+next cluster of PCP teams will transition from the control to the intervention period .  When  new providers  join  
+a primary care team, they assume their team’s cluster and randomization time period. If providers change teams after randomization , they will  retain their original cluster assignment.  Any new teams created will be 
+randomly assigned into one of the remaining intervention time periods such that they will have  at least one 
+time period in the control and intervention period s.   
+ 
+9. Index discharges   
+An index discharge is the date of a hospi[INVESTIGATOR_588431] a patient under the care of 
+an enrolled provider  starting May 12, 2015.  We will interrogate the CDW daily to identify all eligible 
+discharges as described below.   
+ 
+9.1. International Classification of Diseases (ICD) discharge diagnosis codes: 
+We will define a COPD exacerbation as a primary ICD- 9 primary discharge diagnosis of COPD ( 491%, 492%, 
+493.2%, or 496%), or a primary discharge diagnosis of respi[INVESTIGATOR_1399] (518.51, 518.53, 518.81, 518.83, 518.84) with any secondary diagnosis of COPD. In October 2015, VA will  switch from the ICD-9 to the ICD-10 coding 
+convention ( J41.0, J41.1, J41.8, J42., J43.0, J43.1, J43.2, J43.8, J43.9, J44.0, J44.1, or  J44.9 for COPD and J80., J96.00, 
+J96.01, J96.02, J96.10, J96.11, J96.12, J96.20, J96.21, J96.22, J96.90, J96.91, J96.92 for respi[INVESTIGATOR_1399] ).  
+ We will exclude patients who were miscoded as having COPD discharge.  Study coordinators  will review the 
+electronic health  record ( EHR ) to confirm that t he patient  received care consistent with a COPD exacerbation.  
+A single coordinator will review discharges where COPD is the primary  discharge diagnosis.  For cases of 
+uncertainty, a second coordinator will review.  If discordant, a study clinician will adjudicate and make the 
+final decision.  
+Discharges for respi[INVESTIGATOR_588432] a secondary COPD diagnosis are often more complicated . In this 
+situation, two coordinators will independently review and adjudicate with a clinician when discordan t.   
+ 
+9.2. Discharges with missing ICD codes:  
+For discharges with a missing ICD discharge code, we will employ a N atural Language Processing algorithm 
+to identify potential index discharges .  This algorithm identifie s discharges with  pre-defined keywords  
+(%COPD%, %Bronchitis%, %Bronchiectasis%, %Bronc hospasm%, %Emphysema%, %Acute% and %Bronc%, 
+%SOB% and %Bronchitis%, %Chronic% and %Bronc%, %Chronic% and %Pulm%, %Chronic% and 
+12/30/2020   Page  | 8 %Obstruct%, Obstructive Pulmonary Disease, or Reactive Airway Disease) contained within the admission 
+diagnosis or discharge summary text. Once identified, coordinators will review  the EHR to confirm the 
+hospi[INVESTIGATOR_588433] a COPD exacerbation.   
+ 
+9.3. Additional eligibility criteria.   
+• A patient may have more than one  index discharge if the 180- day outcomes period for the prior index 
+discharge is completed and was with a provider in the control group.  Once a patient has a discharge with 
+a provider in the intervention group, they cannot have additional index discharges.  We will include each 
+patient’s first discharge only in primary analyses.  
+• We will exclude patients for whom we would not be able to provide recommendations including those 
+discharged to a domiciliary unit, a nursing home, respi[INVESTIGATOR_4594], or to hospi[INVESTIGATOR_6125].  
+• We considered patients discharged and readmitted within [ADDRESS_774964] a continuous hospi[INVESTIGATOR_15517].   
+ 
+10. Intervention  
+10.1. Recommendations for COPD guideline care : 
+Each week , for patients with a new index discharge and under the care of a provider in the intervention group, 
+we will perform the following:  
+Chart abstraction: A study coordinator will cut and paste pertinent sections of the EHR  into an abstraction 
+template ( Appendix 1).  These abstractions will includ e notations from emergency care, discharge summaries, 
+primary care, pulmonary/sleep, social work, advanced directives, post-discharge telephone calls, and procedures and imaging studies .   
+ 
+Clinical review : The intervention team, consisting of pulmonary, primary care, and pharmacy providers, and 
+study coordinators will convene to prepare recommendations for each patient with an abstraction as follows:  
+• Clinical lead:  
+o A pulmonologist or PCP team member will be designated to lead the review  each week  
+o Reviews the abstractions, and/or EHR as needed, to draft a recommendations checklist 
+(Appendix 2 ).  The checklist will include:  
+ Recommendations for diagnostic testing, medications, therapi[INVESTIGATOR_014]/referrals, and/or 
+follow- up, addressing any gaps in contemporary COPD guideline recommended 
+care4,11 and related co- morbidities . 
+ Draft of the recommendations note that will be placed into the EHR for the PCP ’s 
+review.     
+• Review meeting:  
+o Moderat or: clinical lead . 
+o Attendees: a clinical team consisting of at least one pulmonologist and one PCP, with input by [CONTACT_588473] , and coordinators . 
+o Review: the clinical team will discuss each patient’s history, consulting the abstraction and 
+EHR as needed, and identify any gaps in guideline COPD/comorbidity care . 
+• Recommendations:  
+o Final recommendations: modify draft recommendations checklist as appropriate per team review  
+o Language/content: ensure that notations will be acceptable to primary care providers.  For 
+example, smoking cessation counseling:   
+12/30/2020   Page  | 9  Do not recommend if there have been notations reflecting previous discussions.  
+ Do offer recommendations such as addition of pharmacotherapy for smok ing cessation 
+if none has been previously offered. 
+o No recommendations: if a patient is receiving all guideline care, reinforce the excellent work . 
+ 
+Entering recommendations and/or order s into EHR:  We will provide recommendations to the PCP timed to 
+coincide with the patient’s post- discharge clinic follow -up (usually within two weeks of discharge) as follows:  
+• EHR notation :  
+o Enter note: a study coordinator  will cut and paste the finalized recommendation s note into the 
+EHR as an E- Consult note for the lead clinician to sign.   
+o Lead study clinician signs: once entered, the clinician will receive an EHR alert that they have 
+a note ready for signature.   
+o Additional signers: To ensure awareness, we will add  the patient’s PCP  and pulmonologist, if 
+any, as additional signer s. If the PCP is a resident, we will add the attending physician as a 
+signer .  
+o Questions: The note will encourage  the PCP to ask any questions about the recommendation s, 
+or any other elements of their OPD care,  by [CONTACT_588474], 
+through encrypted email, or telephone.  
+• Enter unsigned orders:   
+o A study  coordinator will enter any recommended orders  notated on the finali zed. 
+recommendations checklist  as an unsigned order o n behalf of the PCP  to sign .  
+o For any questions that arise, the coordinator will seek guidance from the lead clinician.  
+• PCP reviews recommendations :  
+o View alert: o nce entered, the PCP will receive an EHR alert that an order  is awaiting signature.   
+o Signs, modifies, or cancels orders: the PCP may choose to sign the order as is, modify the 
+order , or decline t he order a s appropriate given their personal knowledge of the patient’s 
+clinical condition .   
+o Autonomy: this process e nsur es the PCP maintains autonomous care of the patient.   
+• Recommendations requiring more clinical context:  
+o We will elaborate on recommendations that require more clinical context in the E- consult  note 
+but will not enter  any related orders on behalf of the PCP.   
+ 
+10.2. In-services:  
+The study pharmacist will provide  periodic training to residents on correct use of inhalers available in the VA 
+formulary.  
+ 
+11. Blinding: 
+Because we will only review for recommendations patients whose PCP was in the intervention, it is not 
+possible for anyone on the study team to be blinded for the intervention .  Patient self -report outcomes 
+collected over the telephone were collected by a coordinator blinded to the patient’ s intervention status.  
+ 
+12. Outcome  and Baseline  Assessments  
+We will assess the following  using a combination of data extracted from CDW, EHR chart review, and self-
+report surveys (Table 1) .  For patient self -report , we will mail an invitation to complete surveys six weeks after 
+their index discharge.  The mailing  will includ e a cover letter inform ing them that their provider is  taking part 
+in the study and asking for their input about their satisfaction with their COPD care and COP D-related health.  
+12/30/2020   Page  | [ADDRESS_774965] indicating they do  not want 
+to participate or t hat they want more information through a telephone call.  For those who do not respond 
+after two weeks, we  will follow up with a telephone call.  For those who prefer, we administered the surveys 
+over the telephone.   We describe provider self -report metho ds below.  
+ 
+12.1. Primary o utcome  measures 
+Hospi[INVESTIGATOR_588434] :  assess 180 days after the index discharge with a composite measure of 
+any hospi[INVESTIGATOR_588435].  
+COPD specific health status :  measured with the Clinical COPD Questionnaire  (CCQ),12-14 which consists of 10 
+items that encompass three domains (symptoms, functional state, mental state).  Scores range from 0-to- 6 with 
+higher scores indicating better  health. The minimally important difference (MID) is 0.[ADDRESS_774966] error 
+of 0.21.     
+ 
+12.2. Secondary measures 
+Secondary outcomes - patient -reported: 
+General health status: measure using  the Veterans RAND 12 Item Health Survey (VR -12),15,16 which consists of 12 
+items  yielding a Physical Component Summary (PCS) and Mental Component Summary (MCS) score of 0 -100, 
+with higher scores reflecting better health.  Our outcome is the PCS score, which has a national mean of 27.0 
+(SD=8.4) among Veterans admitted for COPD.17 
+Patient satisfaction :  assess patients’ satisfaction with respect to the post- discharge primary care follow -up visit 
+using  sections of the  Patient Care Medical Home Survey of Healthcare Experiences of Patients (SHEP)  (Appendix 3 ).  
+We will use the  6-item communication, 3 -item medication decisions, and the 2-item self- management 
+composite scores, as well as single- item questions covering coordination of care, information, and provider 
+rating.   
+Secondary outcomes - provider experience and perception:  
+To assess providers’ experience and perception of  the intervention,  we will use a convergent mixed methods18 
+approach, c oncurrently using quantitative and qualitative measures.18 For quantitative measures, we 
+develop ed a brief 10-item survey ( Appendix 4 ), based on our work with the VA Office of Specialty Care 
+Transformation evaluation, that assessed topi[INVESTIGATOR_588436], workload, patient access to specialty care, and quality of care delivered.  Within 
+two weeks of posting recommendation s for their first intervention patient, w e will emai l providers asking 
+them to complete this survey on -line.  For those who do not respond, we will mail the survey with a return 
+inter -office envelope.     
+ For the qualitative approach, coordinators will conduct semi -structured interviews using scripted, open -ended 
+questions and semi-structured prompts ( Appendix 5
+) to elicit thick descriptions that capture the depth and 
+breadth of providers’ experiences including: acceptability; fit with practice; feasibi lity and satisfaction with the 
+intervention; and its perceived effectiveness.  We will invite providers to participate in the interview after the ir 
+first intervention patient is discharged.  We anticipated needing to interview no more than 30 providers to 
+reach thematic saturation, the point at which no new or novel insights are provided 19 
+ 
+12/30/2020   Page  | 11 12.3. Other measures: 
+Uptake of c are recommendations:   A coordinator will use the finalized recommendations checklist to enter 
+recommendations into the study database.  A second coordinator, blinded to the first coordinator’s entries, 
+also will enter the recommendations.  The coordinators will discuss any disc repancies, clarifying with that 
+week’s lead clinician as needed to resolve. Six weeks after an index discharge for a patient of an intervention provider, two study coordinators  will independently conduct EHR chart reviews to determine which of the 
+care recommendations  have been endorsed and completed by [CONTACT_21122].  They will discuss any determination 
+for which they did not agree and consul t with a study investigator for resolution as appropriate.  
+ 
+ 
+Quality of COPD care:   
+Using  a composite measure of quality metrics  endorsed by [CONTACT_66427]20, we will use a 
+combination of data from CDW and EHR chart review to assess the overall quality of COPD care 180 days 
+after discharge.  Similar to the approach used by [CONTACT_588475]21 et al., our measure will dichotomized those 
+patients who achieved all of the recommended care processes for which they were eligible (score =1) versus 
+those who did not (score =0).  Individual measures may be assessed individually or grouped based on whether 
+they are generic (tobacco use, vaccinations) or COPD specific (medications, spi[INVESTIGATOR_038]). These recommended 
+processes include:  
+• Assessment of smoking status  
+• Referral/counseling for smoking cessation, if current or recent quitter (within 1 year) 
+• Assessment of resting O2 saturation or PaO2  
+• Provision of O2 for long-term continuous therapy for patients with SpO2<88% or PaO2<55mhg 
+• Addition of at least one controller agent (LABA, LAMA, ICS, Roflumilast) when appropriate  
+• Confirmation of COPD by [CONTACT_588476]  
+• Offer, confirmation or administration of influenza vaccination during appropriate season 
+• Offer, confirmation or administration of pneumococcal vaccination 
+• Other inhaled therapy types --date filled 
+• Systemic corticosteroid therapy types --date filled  
+• Antibiotic therapy types-- date filled  
+• Other therapy types-- date filled  
+ 
+ 
+12.4. Baseline Characteristics:  
+• Sociodemographic: patient and provider characteristics at enrollment  using a combination of CDW 
+and self- report.   
+ 
+We will use CDW to identify/calculate the following:  
+• COPD and medications: results from patients’ most recent  pulmonary function tests and pulmonary 
+medication prescriptions  over the past 12 months .    
+• Days exposed to steroid: number of days a patient was prescribed an oral corticosteroid in the year 
+prior to index admission.  
+• COPD exacerbations not requiring hospi[INVESTIGATOR_059]: number of outpatient exacerbations over the year 
+prior to the index discharge, defined by a primary outpatient ICD-9 or ICD-10 diagnosis associated with a clinical event and prescription for an antibiotic and systemic corticosteroid within 2 days of the diagnosis. 
+12/30/2020   Page  | 12 • Comorbidities and health status indicators: collected information on common comorbidities that 
+comprised the health inventory checklist used in previous intervention studies22,23 for the year prior 
+to and through the index admission:  
+o diagnoses for COPD and common co -morbidities such as diabetes, liver disease, chronic heart 
+failure, vascular disease, and the like to include diagnoses that comprise the Charl son 
+comorbidity index24 
+o number of all -cause admissions 
+o number of inpatient COPD  exacerbations 
+o number of COPD outpatient exacerbation 
+o length of admission  
+o Intensive care unit hours  during index admission  
+ 
+Table 1.  Summary and timing of data elements.   Data element  Source  Timing  
+Primary 
+Outcomes  Hospi[INVESTIGATOR_588437], CDW, 
+patient self -report, CMS 
+(on early participants)  [ADDRESS_774967] index 
+discharge  
+Secondary  
+Outcomes and 
+other measures  VR-12 
+Patient satisfaction / smoking status  
+Care recommendations  EHR chart review  
+Quality of COPD care  EHR chart review, CDW, 
+patient self -report  [ADDRESS_774968] index 
+discharge  
+Provider sociodemographic  Provider self -report and 
+CDW  Enrollment  
+Comorbid diagnoses  
+CDW  1 year prior to index 
+discharge  All cause hospi[INVESTIGATOR_588438]  
+-Days exposed to steroid  
+Additional COPD treatments  
+-Oral corticosteroid use prior to 
+admission  
+-Oral corticosteroid dosage at 
+admission  
+-Inhaled medications  
+-LTE inhibitors  
+-PDE -4 inhibitor  
+12/30/2020   Page  | 13  
+12.5. Remuneration:  
+We remunerated participant $20 for survey completion.  We did not pay providers .   
+ 
+13. Analytic Approach 
+Our modified stepped wedge design, through its randomized intervention allocation, offers several 
+advantages to interval validity compared to observational approaches. However, our clustered design also 
+require s additional analytic evaluation comp ared to a simple two- arm randomized trial.9  The primary 
+outcome measure is COPD hospi[INVESTIGATOR_61715]/mortality within 180 days as assessed through the CDW.  
+Time zero for intervention patients is the start of the period when the provider cluster is  randomized to 
+receive the intervention.  Time zero for control patients is the start of each 30- day period (wedge) while the 
+provider cluster remained unexposed to the intervention.  Provider clusters r andomized to receive the 
+intervention at later time periods will accrue fewer patients than clusters randomized to earlier periods.  We will present the analysis for hospi[INVESTIGATOR_588439].  
+ 
+13.1.  Models 
+We will use  mixed -effects linear regression or logistic regression as appropriate for the outcome of interest25 
+(180- day readmission or death, CCQ Total Score, VR -12 PCS) with clustering by [CONTACT_48368]: 𝑔𝑔�E�𝑦𝑦𝑖𝑖�𝐗𝐗𝑖𝑖,𝛼𝛼𝑗𝑗[𝑖𝑖]��=
+𝐗𝐗𝑖𝑖𝛃𝛃+𝛼𝛼𝑗𝑗[𝑖𝑖], where 𝑦𝑦𝑖𝑖 is the outcome for patient i and  𝛼𝛼𝑗𝑗[𝑖𝑖] is a random effect for provider j seen by [CONTACT_4676] i  such 
+that, across providers, the 𝛼𝛼 𝑗𝑗[𝑖𝑖]’s are assumed independently and identically distributed (i.i.d.) Normal (0,𝜎𝜎𝛼𝛼2). 𝛃𝛃 
+is a 7 × 1 vector of fixed effects regression coefficients, and 𝐗𝐗 𝑖𝑖 is a 1 × 7 vector containing the following fixed 
+effects terms for patient i : a constant term (identical across patients), an indicator for patient i’s receipt of the 
+intervention ( X𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖= 1 if patient i  received the intervention, X𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖𝑖= 0 otherwise), three time-
+based restricted cubic spline terms for patient i, the number of days in the past year that patient i was exposed 
+to systemic corticosteroids, and the number of COPD exacerbations not requiring admission experienced by 
+[CONTACT_4676] i in the past year. The logistic link function was used for the 180- day readmission or death GLMM such 
+that E�𝑦𝑦𝑖𝑖�𝐗𝐗𝑖𝑖,𝛼𝛼𝑗𝑗[𝑖𝑖]�=𝜋𝜋𝑖𝑖=  �𝑒𝑒𝐗𝐗𝑖𝑖𝛃𝛃+𝛼𝛼𝑗𝑗[𝑖𝑖]� �1 +𝑒𝑒𝐗𝐗𝑖𝑖𝛃𝛃+𝛼𝛼𝑗𝑗[𝑖𝑖]� � . The identity link function was used f or the CCQ Total 
+Score and VR -12 PCS GLMMs such that E�𝑦𝑦𝑖𝑖�𝐗𝐗𝑖𝑖,𝛼𝛼𝑗𝑗[𝑖𝑖]�=𝜇𝜇𝑖𝑖=𝐗𝐗𝑖𝑖𝛃𝛃+𝛼𝛼𝑗𝑗[𝑖𝑖]. 
+ 
+13.2. Sampling and non- response bias and missing data  
+We will perform an intention -to-treat analysis.  The analysis will include all patients in the groups and time 
+period which they were randomly assigned to begin receiving treatment, regardless of their adherence with 
+the treatment and/or subsequent participation. An adjusted odds ratio will be estimated to compare control 
+and intervention group odds of 180- day readmission or death, and adjustment mean differences will be 
+estimated to compare control and intervention group means for CCQ Total Score and VR -12 PCS. In the event 
+of missing outcome data, the primary analysis of the respective outcome will be based o n outcome data 
+imputed under a multiple imputation using chained equations procedure, with inference from 70 models of 
+imputed data combined using Rubin’s Rules. Sensitivity complete- case analyses will be performed for 
+outcomes with missing values to assess whether direction of association or statistical significance is impacted 
+by a change in missing data approach. 
+ 
+12/30/2020   Page  | [ADDRESS_774969] I  clusters, T  time points, and N individuals sampled per 
+cluster per time interval.  Assume the model, 𝑌𝑌𝑖𝑖𝑗𝑗=𝜇𝜇+𝛼𝛼𝑖𝑖+𝛽𝛽𝑗𝑗+𝑋𝑋𝑖𝑖𝑗𝑗𝜃𝜃+𝑒𝑒𝑖𝑖𝑗𝑗, where 𝛼𝛼 𝑖𝑖 is a random effect for 
+cluster i such that 𝛼𝛼𝑖𝑖~𝑁𝑁(0,𝜏𝜏2), 𝛽𝛽𝑗𝑗 is a fixed effect corr esponding to time interval j , 𝑋𝑋𝑖𝑖𝑗𝑗 is an indicator of the 
+treatment mode in cluster i at time j (1=intervention; 0=control), 𝜃𝜃 is treatment effect and 𝑒𝑒𝑖𝑖𝑗𝑗=∑𝑒𝑒𝑖𝑖𝑗𝑗𝑁𝑁⁄𝑘𝑘  are 
+independent and identically distributed 𝑁𝑁(0,𝜎𝜎2) and 𝜎𝜎2𝑖𝑖𝑁𝑁⁄.  Let 𝑌𝑌 𝑖𝑖𝑗𝑗 be the mean for cluster i  at time j .  
+Assume testing the hypothesis 𝐻𝐻 0:𝜃𝜃= 0 versus 𝐻𝐻𝐴𝐴:𝜃𝜃=𝜃𝜃𝐴𝐴, where 𝜃𝜃𝐴𝐴 is the treatment effect size.  The 
+approximate power for conducting a two -tailed test of size alpha is 𝑝𝑝𝑝𝑝𝑝𝑝
+𝑒𝑒𝑝𝑝=Φ��𝜃𝜃𝐴𝐴�𝑉𝑉𝑉𝑉𝑝𝑝�𝜃𝜃�� � �−𝑍𝑍1−𝛼𝛼 2⁄� 
+where Φ is the cum ulative standard normal distribution function, 𝑍𝑍 1−𝛼𝛼 2⁄ is the (1−𝛼𝛼 2⁄)𝑡𝑡ℎ quantile of the 
+standard normal distribution function and 𝜃𝜃 � is the estimated treatment effect size.  Let 𝑋𝑋𝑖𝑖𝑗𝑗= 0 if cluster i 
+receives the control at time j  and let 𝑋𝑋𝑖𝑖𝑗𝑗= 1 if cluster i receives the intervention at time j .   Thus with this 
+matrix 𝑿𝑿 and assuming equal N  per cluster per time interval, then assume 𝑉𝑉𝑉𝑉
+𝑝𝑝�𝜃𝜃��=
+[𝐼𝐼𝜎𝜎2(𝜎𝜎2+𝑇𝑇𝜏𝜏2)] [(𝐼𝐼𝐼𝐼−𝑊𝑊 )𝜎𝜎2+(𝐼𝐼2+𝐼𝐼𝑇𝑇𝐼𝐼−𝑇𝑇 𝑊𝑊−𝐼𝐼𝑉𝑉)𝜏𝜏2] ⁄  where 𝐼𝐼=∑𝑋𝑋𝑖𝑖𝑗𝑗𝑖𝑖𝑗𝑗, 𝑊𝑊 =∑�∑𝑋𝑋𝑖𝑖𝑗𝑗𝑖𝑖�2
+𝑗𝑗  and 𝑉𝑉=
+∑�∑𝑋𝑋𝑖𝑖𝑗𝑗𝑗𝑗�[ADDRESS_774970] approached the power estimates 
+conservatively allowing for a lower proportion of subjects who may experience hospi[INVESTIGATOR_5394], 
+allowing for regression to the mean.  
+We assume 30 unidirectional movements from control to intervention among 30 clusters (clinics) and 15 individuals sampled per cluster per time interval. We assume a significance level of alpha = 0.05. We assume 
+baseline hospi[INVESTIGATOR_588440] 0.40 with a 10% relative reduction to 0.36, baseline CCQ of 0.40 with a 10% relative reduction to 0.36, and baseline SF-12 of 0.35 with an 11% relative increase to 0.39. We assume each 
+outcome to have a coefficient of variation equal to 0.1. Under these assumptions, our power is estimate d for 
+hospi[INVESTIGATOR_61715], CCQ, and SF-[ADDRESS_774971] 
+deductive content analysis through the identification of quotes and phrases that fit within pre- identified and 
+defined a -priori categories. A -priori categories  to be  included: acceptability, feasibility, provider satisfaction, 
+sustainability, barriers, facilitators, intrusions, collaboration, engagement and perceived patient outcomes. Inductive content analysis will be conducted through open/unstructured coding, allowing for the 
+identification of emergent , previously unidentified or unexpected themes . This will allow us to capture data 
+that did not fit into a- priori categories. Coding will continue until thematic saturation: the point at which 
+subsequent data failed to produce new findings
+ 19.  
+ 
+An important component of mixed methods is the ability to compare and contrast the findings from each data 
+source.27 “Triangulation” describes a process by [CONTACT_588477], broadening and validating the definition and understanding of comp lex cons tructs. We will 
+compare  the survey derived satisfaction ratings from the full sample with the coded constructs that we have 
+identified from the qualitative data.  We will assess if there is concordance or discordance between these scores/constructs with a particular focus on whether the qualitative constructs offer some mechanism for 
+understanding sources or satisfaction or dissatisfaction.  
+ 
+12/30/2020   Page  | [ADDRESS_774972] 
+of care, the IRB determined that the study intervention presents minimal risks. 
+ 
+14.2. Consent  
+Using methods described above we will consent PCPs  to receive guideline care recommendations ( Section 8)  
+for their patients discharged with COPD and to complete self -report surveys and interviews   (Section 12.2) 
+under a Waiver of Documentation of Informed Consent.  The IRB does not require informed conse nt for 
+activities  that do not directly engage the patient by [CONTACT_3476]; therefore, we will collect information about 
+patients under Waiver of Informed Consent.  For patient reported outcomes, w e will provide an information 
+sheet and opportunity to add ress questions.  We will invite patients to complete self- report surveys ( Section 
+12) approximately six weeks after their index discharge under a Waiver of Documentation of Informed 
+Consent.  
+ 
+14.3. Data and safety monitoring  
+Adverse events: Although all clinical decisions will be  left with the patient’s primary care clinician, there is an unlikely, but 
+small chance for unanticipated adverse events.  For example, recommendations may not consider a unique patient circumstance that is not well d ocumented in the chart, yet the provider accepts the recommendations 
+without review, resulting in worse outcomes.  As such, our monitoring entity consists of [CONTACT_588487], the 
+study P rincipal Investigator, and a clinical researcher with expertise in pulmonary medicine and not part of 
+the study team, [CONTACT_588488].  We will not have a formal data and safety monitoring committee or 
+board.    
+Based on previous work with a cohort of [ADDRESS_774973] 1% of patients during their initial hospi[INVESTIGATOR_588441].  We will consider any occurrence of these 
+events to be expected .  All deaths and all- cause re -admissions will be considered expected.  
+ Systematic adverse event review will occur  after a patient’s [ADDRESS_774974] formal stoppi[INVESTIGATOR_58106], efficacy, and futility are not proposed.   
+ 
+Care recommendation fidelity:  
+Prior to study launch, the study team will conduct mock reviews using actual patients discharged with a 
+COPD diagnosis.  We will continue reviews until the team has reached consensus about types of 
+recommendations, orders, and standardized language we will  use for providers in the intervention.   
+12/30/2020   Page  | 16 We will prepare a detailed “how- to” guide to entering notes and orders in the EHR for coordinators to follow.  
+Using the guide, coordinators will enter orders into the EHR for a test patient until they have demonst rated 
+100% accuracy as assessed by a study clinician.  For intervention patients, we will require c oordinators to 
+consult with a study clinician before entering any information in the EHR about which they have any 
+questions. 
+ 
+14.4. Data management and confidenti ality  
+This project require s the creation, maintenance, and analysis of a large, multivariate, database that includes a 
+variety of measures from multiple sources.  Recognizing that the success of this study critically depends on the 
+quality of the data collected, systematic data collection, quality control, and data management procedures, we 
+will implement: 1) specification and use of concise protocols; 2) rigorous training, certification, and periodic re-
+training of study per sonnel, with on -going monitoring of adherence to data collection and handling protocol; 
+3) regular review of questionnaire response rates, reported respondent burden, and missing items to identify and correct problem areas; 4) validation and verification of all data, and 5) regular meetings and progress 
+reports to provide specific, well- documented feedback to project personnel concerning potential difficulties as 
+well as follow -up to ensure that problems are resolved quickly.   
+ 
+We will assign all participa nts a unique study ID. The master list will be  stored separately from the data and 
+accessible only by [CONTACT_281877].  For clinical note abstractions, we will not remove identifiers 
+because that material is  copi[INVESTIGATOR_588442], making it difficult to ensure that any reference to names, location, 
+and dates were removed. We believe it is safer to acknowledge that identifiers will be  present, and to carefully 
+adhere to our strict protocol to store the abstracted notes on a secure server accessible only by [CONTACT_464].  
+Chart abstracted notations will not be entered into the study database. 
+ 
+We will store data in strong password protected SQL and ACCESS relational databases that reside on a secure 
+VA network server.  To reduce errors in data entry with participant self-report data elements, we will use 
+double data entry and field valuation che cks wherever possible.   
+ 
+For provider on -line surveys, we will e-mail a link that populates data on the VA secure server.  Data will be 
+secured at the database level, using a role- based and record- level security model.   Providers will belong to a 
+Windows group, which allows  access to the database.  Roles and the provider’s login credentials restrict  them 
+to records associated only with themselves.   They will not  be able to see any other provider’s records, 
+regardless of the application used to connect to the database. 
+ 
+We will store d ata on paper in secure, locked file cabinet s within secure office s. Any communications between 
+study staff and provider participants regarding patient care will  occur via encrypted e -mail.   
+ 
+ 
+ 
+15. Summary of Changes fr om original protocol  
+• 2/12/2014: VA CDW:  
+o Used instead of Veterans Integrates Service Network (VISN) 20 data warehouse because of changes in VA policy . 
+• 2/12/2014: Remuneration 
+o Patient participants were remunerated $20 instead of $25 based on budget and IRB application. 
+12/30/2020   Page  | 17 • 3/5/2015: Provider enrollment  
+o Modified to passively consent providers who had not responded to invitation after one week. 
+• 4/2/2014: Outcomes  
+o Used VR-12 instead of the SF-12 because VR- 12 is the SF -12 modified for a Veteran population.  
+• 2/12/2014: Wedge interval length/outcomes period:  
+o Wedges consisted of 30-day wedge intervals instead of [ADDRESS_774975] interval 
+length . 
+o 30-day int ervals resulted in 180- day outcomes period instead of six months.  
+• 5/6/2014: Number of wedges  
+o Used 30 wedges over 30 months instead of 36 wedges over 36 months;  
+o Recalculated power estimates based on actual numbers of consented providers and COPD exacerbat ion discharge data.  To maintain 0.90 power assuming an alpha of 0.95 and coefficient 
+of variation of 0.1, we would require 30 clusters in lieu of 36.   
+• 5/21/2015: Smoking status self- report  
+o Added short smoking status questionnaire with patient outcomes, as smoking status around the time of discharge is an indicator of quality of COPD care.  
+• 8/4/2016: COPD Training for inpatient discharge and primary care  teams   
+o After several attempts to coordinate in-services to inpatient and primary care  teams, we were 
+unable to develop a practical and mutually agreeable schedule because of logistical and 
+scheduling constraints.  
+• 7/23/2015: Mailed patient outcomes 
+o Added option for patient participant to complete surveys via mail instead of telephone. 
+• 3/22/2016: E-cigarettes and vapi[INVESTIGATOR_007] 
+o Included a question about e -cigarette and vapi[INVESTIGATOR_416236], as these devices’ popularity increased 
+and many Veterans had adopted these practices over cigarette smoking. 
+• 7/27/2017: Qualitative interviews  
+o Initially targeted providers after three intervention discharge; because of low response rate we 
+reduced to one in attempt to include more providers. 
+• 1/12/18: Correlation of measures within patient/used participants first DC only  
+o We did not correlate measures within patient, because we used only the first index discharge per patient. Given the small number of patients with > [ADDRESS_774976] to 
+degrees of freedom.  
+• 7/27/18: VR- [ADDRESS_774977] – we will not adjust for i t. 
+• 12/28/18: Analyses  
+o Modeling time: w e originally wanted to model (k – 1) fixed effects for the k wedges in the 
+stepped-wedge design. However, each wedge only had ~10 discharges, on average, and it would be expensive (and likely not very informative) to model all of the wedges individually. 
+Therefore, we modeled time using a 3 -knot restricted (or natural) cubic spline for flexibility and 
+lower degrees of freedom cost.  
+o Medicare data: n ot used because of insufficient time/resources to pull and merge with cu rrent 
+data.  
+ 
+12/30/2020   Page  | 18 16. References  
+1. Elixhauser A, Au DH, Podulka J. Readmissions for Chronic Obstructive Pulmonary Disease, 2008: 
+Statistical Brief #121. 2006. 
+2. Aboumatar H, Naqibuddin M, Chung S, et al. Effect of a Program Combining Transitional Care and 
+Long- term Self -management Support on Outcomes of Hospi[INVESTIGATOR_588443]: A Randomized Clinical Trial. JAMA. 2018;320(22):2335-2343. 
+3. Prieto -Centurion V, Markos MA, Ramey NI, et al. Interventions to reduce rehospi[INVESTIGATOR_588444]. A systematic review. Ann Am Thorac Soc. 
+2014;11(3):417-424. 
+4. Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary 
+Disease. Global Initiative for Chronic Obstructive Lung Disease. Available at: https://goldcopd.org/2021 -gold- reports/
+. Published 2020. Accessed December, 2020. 
+5. Niewoehner DE. The impact of severe exacerbations on quality of life and the clinical course of chronic 
+obstructive pulmonary disease. Am J Med. 2006;119([ADDRESS_774978] 1):38-45. 
+6. Miravitlles M, Ferrer M, Pont A, et al. Effect of exacerbations on quality of life in patients with chronic 
+obstructive pulmonary disease: a 2 year follow up study. Thorax. 2004;59(5):387-395. 
+7. David A, Corlateanu A. Influence of COPD exacerbations on health related quality of life. 
+2012;40(Suppl 56):P4821. 
+8. Brown CA, Lilford RJ. The stepped wedge trial design: a systematic review. BMC medical research 
+methodology. 2006;6:54. 
+9. Hussey MA, Hughes JP. Design and analysis of stepped wedge cluster randomized trials. Contemporary 
+clinical trials. 2007;28(2):182-191. 
+10. Corporate Data Warehouse (CDW), VA Informatics and Computing Infrastructure. U.S. Department of 
+Veterans Affairs. https://www.hsrd.research.va.gov/for_researchers/vinci/cdw.cfm . Accessed Feburary 
+6, 2020. 
+11. VA/DoD Clinical Practice Guideline for Management of Outpatient Chronic Obstructive Pulmonary Disease. Version 3.0 Web site. https://www.healthquality.va.gov/guidelines/CD/copd/
+. Accessed 
+December, 2020. 
+12. van der Molen T, Willemse BW, Schokker S, ten Hacken NH, Postma DS, Juniper EF. Development, 
+validity and responsiveness of the Clinical COPD Questionnaire. Health Qual Life Outcomes. 2003;1:13. 
+13. Trappenburg JC, Touwen I, de Weert -van Oene GH, et al. Detecting exacerbations using the Clinical 
+COPD Questionnaire. Health Qual Life Outcomes. 2010;8:102. 
+14. Stallberg B, Nokela M, Ehrs PO, Hjemdal P, Jonsson EW. Validation of the clinical COPD Questionnaire 
+(CCQ) in primary care. Health Qual Life Outcomes. 2009;7:26. 
+15. Selim AJ, Rogers W, Fleishman JA, et al. Updated U.S. population standard for the Veterans RAND 12-
+item Health Survey (VR-12). Qual Life Res. 2009;18(1):43-52. 
+16. Jones D, Kazis L, Lee A, et al. Health status assessments using the Veterans SF-12 and SF-36: methods 
+for evaluating otucomes in the Veterans Health Administration. J Ambul Care Manage. 2001;24(3):68-86. 
+17. Kazis L. Health Status of Vet erans: Physical and Mental Component Summary Scores Veterans SF -12. 
+Veterans Health Administration Medical Center, Bedofrd MA.: Veterans Health Administration; 1998 
+1998. 
+18. Creswell JW, Klassen AC, Plano Clark VL, Smith KC. For the Office of Behavioral S ocial Sciences 
+Research: Best practices for mixed methods research in the health sciences. 2011. 
+19. Sandelowski M. Sample size in qualitative research. Res Nurs Health. 1995;18(2):179-183. 
+20. National Quality Forum. http://www.qualityforum.org/Measures_List.aspx . Accessed Decemeber 01, 
+2011. 
+12/30/2020   Page  | [ADDRESS_774979] AS, Gutierrez B, Benjamin EM. Quality of care for patients 
+hospi[INVESTIGATOR_588445]. Ann Intern Med. 
+2006;144(12):894-903. 
+22. Au DH, Udris EM, Engelberg RA, et al. A Randomized Trial to Improve Communication about End- of-
+Life Care among Patients with COPD. Chest. 2011. 
+23. Fihn SD, McDonell MB, Diehr P, et al. Effects of sustained audit/feedback on self- reported health status 
+of primary care patients. Am J Med. 2004;116(4):241-248. 
+24. Deyo RA, Cherkin DC, Ciol MA. Adapting a clinical comorbidity index for use with ICD-9- CM 
+administrative databases. J Clin Epi[INVESTIGATOR_211832]. 1992;45(6):613-619. 
+25. McCullagh P, Nelder JA. Generalized Linear Models 2nd Ed. ed. London: Chapman and Hall; 1989. 
+26. Elo S, Kyngas H. The qualitative content analysis process. Journal of advanced nursing. 2008;62(1):107-
+115. 
+27. Denzin NK. Momen ts, mixed methods, and paradigm designs. . Qualitative Inquiry. 2010;16(6):419-427. 
+ 
+  
+12/30/2020   Page  | 20 Appendix 1: Chart abstraction template          
+(back to intervention ) 
+Date of abstraction: Click for date.  Abstractor: Click here.  
+Links:  
+Patient Information  DC Summary  and/or H&P Template  
+Advanced Directive  Dates/Diagnoses  HPI [INVESTIGATOR_588446] -up/Post DC call  
+Home CPAP/BIPAP/O2  Prior ER Visits  Social History  Activity Restrictions  Instr. and Education  
+Prior Primary Care Visit  Consultations  Review of Systems  Diet Competency  
+Prior Pulmonary Visit  Procedures  Physic al Exam  Medications/Allergies  Code Status  
+Social Work Notes      
+Immunizations      
+Sleep Study  
+ 
+Patient:    Station:  Choose an 
+item.  
+ Age:   Sex:  Click here. Ht (in):  Wt (lb):  BMI:   
+ 
+Discharge Summary:  Back to top  
+ Current DC DATES/DIAGNOSES: (from Clinical Reports/Visits/Admissions/Discharge Diagnoses) :  
+  
+  
+DC summary DC diagnoses text:   
+  
+  
+PRIOR ADMISSIONS  (click for details)   
+Back to top  
+   
+ PRIOR ER Visits  (click for details)  Back to top  
+  
+CONSULTATIONS  (click for details of consults up to 1 year prior)   
+Back to top  
+  DC summary text:  
+ 
+  
+PROCEDURES/IMAGING (during or most recent to this hospi[INVESTIGATOR_059]) :     
+Back to top  
+  Click here for copy of most recent report:  PFT;  CXR;  CT; ECHO 
+DC summary text:  
+ 
+  
+HISTORY OF PRESENT ILLNESS :  
+Back to top  
+  
+  
+HOSPI[INVESTIGATOR_588447] :  
+Back to top  
+  
+  
+PAST MEDICAL HISTORY :  
+Back to top  
+  
+  
+SOCIAL HISTORY (incl smoking) :    
+Back to top  
+   
+ 
+12/30/2020   Page  | 21   
+REVIEW OF SYSTEMS :  
+Back to top  
+  
+  
+PHYSICAL EXAM  (click for details)   
+Back to top  
+  
+CONDITION ON DISCHARGE :  
+Back to top  
+ Choose an item.  
+  
+ACTIVITY RESTRICTIONS :  
+Back to top  
+ Choose an item.  
+  
+DIET :  
+Back to top  
+ Choose an item.  
+  
+DISCHARGE MEDICATIONS  (click for details)   
+Back to top  
+  
+DISPOSITION :  
+Back to top  
+ Choose an item.  
+  
+FOLLOW UP/Post DC Follow -up call :   
+Back to top  
+  
+  
+DISCHARGE INSTRUCTIONS AND EDUCATION :  
+Back to top  
+  
+  
+COMPETENCY :  
+Back to top  
+ Choose an item.   
+  
+CODE STATUS :  
+Back to top  
+ Choose an item.   
+ 
+ 
+ 
+Allergies: Back to top  
+  
+ 
+Medications:  Back to top  Prior Hospi[INVESTIGATOR_588448]:  Back to top  
+Back to DC Summary  
+  
+Prior ER Visits past year (not resulting in hospi[INVESTIGATOR_063]):  Back to top  
+Back to DC Summary  
+  
+  
+  
+  
+  
+12/30/2020   Page  | [ADDRESS_774980] at discharge:  
+  
+  
+Meds filled over last year  (from Pharmacy Outpatient Medications)  , now not on Active list (above) : 
+  
+  
+MEDICATION CHANGES:  
+From DC summary : 
+ 
+From Pharmacy Discharge Note : 
+ 
+ 
+PFT:  Back to top  
+Back to DC Summary  
+  
+CXR:  Back to top  
+Back to DC Summary  
+  
+CT Scan:  Back to top  
+Back to DC Summary  
+        
+Echo:  Back to top  
+Back to DC Summary  
+  
+ 
+Physical Exam/labs:  Back to top  
+Back to DC Summary  
+  
+ 
+Consultations/findings (through 1 yr prior to DC):  Back to top  
+Back to DC Summary  
+   
+ 
+Prior Primary Care Visit :   Back to top  
+  
+ 
+Prior Outpatient Pulmonary Visit:   Back to top  
+  
+ 
+Social Work Notes   Back to top  
+  
+ 
+Home CPAP/BIPAP/O2:  Back to top  
+  Date: Settings (inpt/outpt)  
+12/30/2020   Page  | 23  O2:   
+ BiPap:    
+ CPAP:   
+ 
+Sleep Study:  Back to top  
+  
+ 
+Advanced Directive:  Back to top  
+  
+  
+Immunizations  Back to top  
+   
+ 
+  
+12/30/2020   Page  | [ADDRESS_774981] this document only in the InCasE 
+secure network folder.   
+\\VHAPUGFPC30.v20.med.va.gov\ Projects$ \InCasE -
+MIRB \InCasE Clinical Reviews  Appendix 2: Recommendations checklist template          
+(back to intervention ) 
+RECOMMENDATIONS CHECKLIST: InCasE      
+Patient ID: «Patient_ID» /«PatientLastName» /«PatientSSN» /«DischargeStation»  
+PCP: «Provider_Name» Institution: «InstitutionCode»  «InstitutionName»  
+Attending Physician:  Pulmonologist:  
+Completed by: [CONTACT_9142]’s name     [CONTACT_588485]: Click here to enter a date.     
+1. PCP VISIT SCHEDULED PRIOR TO THIS MEETING?  
+No 
+☐  Yes 
+☐  Follow up scheduled for :  
+2. DIAGNOSIS AND ASSESSMENT RECOMMENDATIONS:   
+ADD  
+☐1 Consider  
+☐3 
+☐3 
+☐3 
+☐3 PFT 
+☐ spi[INVESTIGATOR_91368]  
+☐ lung volumes  
+☐ DLCO  
+☐ MIP/MEP  
+☐1 ☐3 6-minute walk  
+☐1 ☐3 Ambulatory/Exercise Oximetry  
+☐1 ☐[ADDRESS_774982] X -ray  
+☐1 ☐[ADDRESS_774983]   
+☐1 ☐3 ECHO  
+☐1 ☐3 ABG   
+☐1 ☐3 PSG/sleep study  
+☐1 ☐3 Serologies  
+☐1 ☐3 IGE levels  
+3. PHARMACOLOGIC TREATMENT RECOMMENDATIONS:  
+Add Remove  Consi - 
+Sider*  Cont.  *check this box if the add or remove is not definitive, but we want the PCP to 
+consider the change and we did not enter a consult for this  
+3.a. Short -acting beta -agonist (SABA)  
+3.a.1. by [CONTACT_588478] (MDI)  
+☐1 ☐0 ☐3/4 ☐2 Albuterol  
+☐1 ☐0 ☐3/4 ☐2 Levalbuterol (non -formulary at VA, second line to Albuterol)  
+☐1 ☐0 ☐3/4 ☐2 Metaproternol (no longer manufactured, only available as tablet and syrup, non- formulary at VA)  
+3.a.2 by [CONTACT_588479]  
+☐1 ☐0 ☐3/4 ☐2 Albuterol  
+☐1 ☐0 ☐3/4 ☐2 Levalbuterol  
+☐1 ☐0 ☐3/4 ☐2 Metaproternol (no longer manufactured, only available as tablet and syrup, non- formulary at VA)  
+3.b. Short -acting antimuscarinic agents (SAMA)  
+3.b.1. by [CONTACT_588478] (MDI)  
+☐1 ☐0 ☐3/4 ☐2 Ipratropi[INVESTIGATOR_1890]  
+3.b.2. by [CONTACT_588479]  
+☐1 ☐0 ☐3/4 ☐2 Ipratropi[INVESTIGATOR_1890], Inhl 0.02%  
+3.c. Combo  
+3.c.1. by [CONTACT_130751][INVESTIGATOR_96862]  
+☐1 ☐0 ☐3/4 ☐2 Ipratropi[INVESTIGATOR_1890] /Albuterol (Combivent)  
+3.c.2. by [CONTACT_588479]  
+☐1 ☐0 ☐3/4 ☐2 Ipratropi[INVESTIGATOR_1890] /Albuterol (DuoNeb)  
+12/30/2020   Page  | [ADDRESS_774984] (LABA)  
+☐1 ☐0 ☐3/4 ☐2 Olodaterol  
+☐1 ☐0 ☐3/4 ☐2 Salmeterol  
+3.e. Long -acting antimuscarinic (LAMA)  
+☐1 ☐0 ☐3/4 ☐2 TIOTROPI[CONTACT_258507]  
+3.f. Long -acting antimuscarinic (LAMA)/ Long -acting beta -agonist (LABA) (combination)  
+☐1 ☐0 ☐3/4 ☐2 Olodaterol/Tiotropi[INVESTIGATOR_1890] (Stiolto Respi[INVESTIGATOR_96862])  
+3.g. Inhaled corticosteroid (ICS)  
+☐1 ☐0 ☐3/4 ☐2 Beclomethasone Dipropi[INVESTIGATOR_588449] (non -formulary at VA after mometasone and symbicort)  
+☐1 ☐0 ☐3/4 ☐2 Budesonide (not available at VA)  
+☐1 ☐0 ☐3/4 ☐2 Flunisolide (not available at VA)  
+☐1 ☐0 ☐3/4 ☐2 Fluticasone (non -formulary at VA, after mometasone, symbicort, and beclomethasone)  
+☐1 ☐0 ☐3/4 ☐2 Mometasone  
+☐1 ☐0 ☐3/4 ☐2 Triamcinolone no longer manufactured  
+3.h. Inhaled corticosteroid (ICS)/ Long -acting bronchodilator (LABA) (combination)  
+☐1 ☐0 ☐3/4 ☐2 Budesonide /Formoterol (Symbicort)  
+☐1 ☐0 ☐3/4 ☐2 FLUTICASONE/Salmeterol (non -formulary at VA)  
+☐1 ☐0 ☐3/4 ☐2 Formoterol / Mometasone (non -formulary at VA)  
+☐1 ☐0 ☐3/4 ☐2 Modified Titration of inhaled glucocorticoid (mometasone)  
+3.i. Phosphodiesterase -4 inhibitor  
+☐1 ☐0 ☐3/4 ☐[ADDRESS_774985] (non -formulary at VA)  
+3.j. Methylxanthine  
+☐1 ☐0 ☐3/4 ☐2 Theophylline  
+3.k. Mucolytic  
+☐1 ☐0 ☐3/4 ☐2 Acetylcysteine  
+3.l. Oral Corticosteroid  
+☐1 ☐0 ☐3/4 ☐2 Methylprednisolone  
+☐1 ☐0 ☐3/4 ☐2 Dexamethasone  
+☐1 ☐0 ☐3/4 ☐2 Hydrocortisone  
+☐1 ☐0 ☐3/4 ☐2 Prednisolone (not available at VA)  
+☐1 ☐0 ☐3/4 ☐2 Prednsone  
+☐1 ☐0 ☐3/4 ☐[ADDRESS_774986] taper prn home use  
+3.m. Antibiotics  
+☐1 ☐0 ☐3/4 ☐2 Antibiotics  
+☐1 ☐0 ☐3/4 ☐2 Antibiotics, prn home use  
+3.n. Leukotriene modifier  
+☐1 ☐0 ☐3/4 ☐[ADDRESS_774987]  
+3.o. Smoking Cessation  
+☐1 ☐0 ☐3/4 ☐2 Nicotine replacement  patch, gum, lozenge, (nasal spray non -formulary at VA)  
+☐1 ☐0 ☐3/4 ☐2 Varenicline  
+☐1 ☐0 ☐3/4 ☐2 Buproprion  
+3.p. Other  
+☐1 ☐0 ☐3/4 ☐2  
+4. PHARMACY EDUCATION:        
+Add Consi - 
+sider*  *check this box if the add is not definitive and we did not enter a consult for this  
+☐1 ☐3 Inhaler technique  
+☐1 ☐3 Spacer  
+☐1 ☐3 Pharmacy Other (ie med review, peak flow meter):  
+12/30/2020   Page  | 26 5. THERAPI[INVESTIGATOR_5165]/REFERRALS:  
+Add Consi - 
+Sider*  *check this box if the add is not definitive and we did not enter a consult for this  
+☐1 ☐3 Pulmonary rehabilitation  
+☐1 ☐3 Respi[INVESTIGATOR_105868]  
+☐Oxygen titration evaluations  
+☐ Nocturnal oximetry  
+☐ home oxygen evaluation  
+☐1 ☐3 Smoking cessation   
+☐ 1-800 quit line  
+☐Behavioral Health/Pharmacy Counseling  
+☐1 ☐3 Pulmonary specialty care evaluation  
+☐1 ☐3 Palliative care  
+☐1 ☐3 Weight loss:   ☐ MOVE!     ☐ TELE -MOVE!  
+☐1 ☐3 Nutritional eval  
+☐1 ☐3 PT/OT  
+☐1 ☐3 Social Services  
+☐1 ☐3 Dental  
+☐1 ☐3 Vaccinations:  
+☐1 ☐3 OTHER Recommendations:  
+6. DIFFERENTIAL DIAGNOSIS:  
+This hospi[INVESTIGATOR_588450]: Yes 
+☐ Probably Yes  
+☐ Probably No  
+☐ No 
+☐ 
+If COPD Dx is questionable, list probable differential diagnosis:  
+ 
+********************************************************************** 
+CPRS RECOMMENDATIONS TEMPLATE  
+DRAFT completed by [CONTACT_588480], then finalized and copi[INVESTIGATOR_588451]            
+********************************************************************** 
+----------------------------------------------------------------------------------- 
+This patient's medical record was reviewed by [CONTACT_588481] (InCasE) collaborative review team on [date].  Team members include the following 
+primary care physicians and pulmonary specialists:  Seattle: Rosemary Adamson, David Au, Douglas Berger, Richard Goodman, Karin Nelson, Lynn 
+Reinke, Deborah Woo.  
+Boise: Paula Carvalho, William Weppner, Theodore Lange  
+For your convenience, we have entered unsigned orders for you to review and accept, 
+modify, or discontinue 
+based on your clinical judgment and personal knowledge of 
+this patient. 
+ 
+SUMMMARY: 
+ 
+DIAGNOSTICS: 
+Recommended: -  
+-  
+Consider: 
+-  
+-  
+
+12/30/2020   Page  | 27  
+MEDICATION(S):  
+Recommended: -  
+-  
+Consider: -  
+-  
+ 
+PHARMACY USE/EDUCATION: 
+Recommended: -  
+-  
+Consider: 
+-  
+-  
+ THERAPY(S)/REFERRALS(S): 
+Recommended: 
+- <<Per DAU, discuss Pulm Rehab for all pts>> 
+-  
+Consider: -  
+-  
+ 
+FOLLOW-UP: 
+Recommended: 
+-  
+-  
+Consider: 
+-  
+-  
+  
+We are happy to address any of these recommendations with you based on your preference by 
+[CONTACT_164173] e- mail ([EMAIL_11217]), CPRS, Pulmonary SCAN- ECHO, E- Consult, 
+and/or phone .  
+ 
+*********** 
+We have made COPD- specific recommendations based on the: 
+*Global Strategy for the Diagnosis, Management and Prevention of COPD, Global Initiative 
+for Chronic Obstructive Lung Disease (GOLD) 2014, available from: 
+http://www.goldcopd.org/uploads/users/files/GOLD_AtAGlance_2014_Jun11.pdf, and 
+ 
+*VA/DOD Clinical Practice Guideline for the Management of Outpatient Chronic Obstructive Pulmomary Disease, Version 3.0, 2014, available from:
+ 
+http://www.healthquality.va.gov/guidelines/CD/copd/VADoDCOPDCPG.pdf  (full). 
+http://www.healthquality.va.gov/guidelines/CD/copd/VADoDCOPDClinicianSummary.pdf  
+(summary). 
+http://www.healthquality.va.gov/guidelines/CD/copd/VADoDCOPDPocketCard.pdf  (pocket card). 
+ 
+----------------------------------------------------------------------------------- 
+  
+
+12/30/2020   Page  | 28 ********************************************************************************* 
+STANDARD PHRASES 
+********************************************************************************* 
+DIAGNOSTICS:   
+CXR 
+        - Follow up 2- view chest x- ray in 6- [ADDRESS_774988] X- ray in approximately one month to evaluate areas of  
+infiltrate/atelectasis evident on admission films. 
+PFT 
+        - Pulmonary function testing – spi[INVESTIGATOR_91368], lung 
+volumes and DLCO.  Needs updating. 
+ 
+- Pulmonary function testing with bronchodilator response, volumes, DLCO, 6- MWT, exercise 
+oximetry with titration. Functional assessment should be performed when the patient is at 
+or approximating his respi[INVESTIGATOR_588452]. 
+ 
+        - Minimum of spi[INVESTIGATOR_588453].  If no airflow 
+obstruction is found by [CONTACT_15209][INVESTIGATOR_038], focus evaluation of <dyspnea> on <list other 
+diagnoses> issues as he is not likely to have COPD. 
+ 
+MIP and MEP 
+- Although the admitting diagnosis was Acute Respi[INVESTIGATOR_588454]. To verify diagnosis,  
+we suggest obtaining an updated pulmonary function test including MIP  
+and MEP to evaluate for neuromuscular dysfunction. 
+ 
+MRI 
+        - Follow-up on previously ordered MRI. 
+ 
+Obesity 
+        - The team is unclear if the symptoms are driving by [CONTACT_588482].   
+ 
+ 
+MEDICATIONS: 
+COPD 
+        - Agree with current medication management.  However, if pt. does not stabilize, 
+would consider addition of Symbicort 160/4.[ADDRESS_774989] of PNA  
+                from steroid component  
+        - Consider replacing with combination of mometosone and formoterol with  
+                plan to titrate off mometasone as described (we have arranged  
+                pulmonary follow up for patient) 
+-LABA/ICS or LAMA/LABA:  
+- simplify regimen with LABA/ICS (budensonide/formoterol) or LAMA/LABA  
+(tiotropi[INVESTIGATOR_1890]/oldaterol) if he becomes willing. As you are aware, tiotropi[INVESTIGATOR_588455] - ipra outcompetes tio for binding sites 
+ 
+LABA  
+- Starting Olodaterol 2 actuations daily. Long -acting bronchodilator (in this case a Long- acting beta -agonist) is the preferred 
+controller therapy approach for symptomatic patients with COPD.  
+ 
+Opi[INVESTIGATOR_588456] 
+- We also recommend consideration of an opi[INVESTIGATOR_588457]. The 
+Canadian Thoracic Society guidelines on the management of dyspnea in COPD are extremely 
+useful and include a regimen for the initiation of morphine for dyspnea. This guideline provides very clear recommendations for how to initiate opi[INVESTIGATOR_588458] 
+12/30/2020   Page  | 29 dyspnea in COPD using morphine solution. This allows you to start at an extremely low 
+dose, such as 1mg and then titrating extremely slowly. Such low doses are unlikely to 
+cause respi[INVESTIGATOR_2341]. Marciniuk et al. Managaing dyspnea in patients with 
+advanced COPD: A Canadian Thoracic Society clinical practice guideline. Can Respir J 
+2011;18(2):69- 78 
+ 
+Suggested protocol for managing dyspnea with opi[INVESTIGATOR_588459]: 
+• Initiate opi[INVESTIGATOR_588460]- release morphine syrup – 
+titrate slowly at weekly intervals over a 4- to 6-week period 
+• Start therapy with morphine 0.5 mg orally twice daily for 2 days, and then increase to 0.5 mg orally every 4 h while awake for remainder of week 1 
+• If tolerated and indicated, increase to morphine 1.0 mg orally every 4 h 
+while awake in week 2, increasing by 1.0 mg/week or 25% dosage 
+increments/week until the lowest effective dose that appropriately 
+manages the dyspnea is achieved • Once a stable dosage is achieved (ie, no significant dose change for 
+2 weeks and dyspnea managed), a sustained- release preparation at a 
+comparable daily dose could be considered for substitution • If patients experience significant opi[INVESTIGATOR_2480]- related side effects such as nausea 
+or confusion, substitution of an equipotent dose of oral hydromorphine 
+could be considered (1 mg hydromorphine = 5 mg morphine) 
+• Stool softeners and laxatives should be routinely offered to prevent 
+opi[INVESTIGATOR_2480]-associated constipation 
+ 
+Titrate methadone/opi[INVESTIGATOR_858]:  
+-Titrate methadone and opi[INVESTIGATOR_858]:  from a pulmonary standpoint based on 
+pharmakinitics and risk these can repress breathing.  Please discuss with patient 
+the need to reduce these medications.  
+Step down on inhaled corticosteroids once resolved.   
+Titrate glucocorticoid:  
+- Modified Titration of glucocorticoid medications based on the NEJM article found here: 
+http://www.nejm.org/doi/full/10.1056/NEJMoa1407154  to comply with medications available 
+at VA. At least eight (8) weeks after the patient started the high potency high dose 
+regimene they are currently on reduce the dose by [CONTACT_2016].  Six(6) weeks later cut the dose 
+in half again and six (6) weeks after that discontinue the medication completely.  
+ 
+For Mometasone: Beginning at highest dose than the patient is currently on usually 
+Begin at 220 mgm BID 2 puff 
+after 8 weeks reduce it to 110mgm bid, 
+after 6 weeks reduce it to 110 mgm QD 1 puff OD, 
+after 6 weeks off  
+For steroid: beginning at the high dose that the patient is currently on  Begin flovent at 500 BID 
+ After 8 weeks cut flovent in half (flovent 250 BID) 
+ After 6 weeks cut in half again (flovent 125 BID) 
+ After 6 weeks off 
+ 
+Smoking Cessation 
+Nicotine lozenges:         - Consider prescribing nicotine lozenges as use for replacement of cigarettes, 
+                which is effective even among precontemplators.. 
+ 
+Bupropi[INVESTIGATOR_588461] a tobacco cessation program to provide the patient with additional 
+support and educational materials.  
+http://www.publichealth.va.gov/smoking/professionals/treatment/pharmacotherapy.asp  
+ 
+GERD:  
+12/30/2020   Page  | [ADDRESS_774990] controlling medication (H2 blocker or PPI) and GERD education  
+ 
+PHARMACY USE/EDUCATION:         
+         - To maximize inhaler teaching we are entering a return to clinic order for PCC 
+pharmacy teaching.  This can be done on a day he is already at VA.  
+ 
+THERAPI[INVESTIGATOR_5165]/REFERRALS 
+Smoking Cessation 
+- Refer to behavioral health for assistance with smoking cessation  
+- Consider a warm hand- off to behavioral health at next visit to address smoking 
+cessation and oxygen compliance. 
+- Consider behavioral health referral for assistance in smoking cessation, as it 
+is evident that prior attempts to offer assistance with smoking cessation has 
+been declined. 
+- Continue to encourage smoking cessation, consider referral to behavioral medicine or 
+home telemonitoring if patient willing. 
+ 
+Smoking Cessation- inconsistent pt report of status  
+- In reviewing chart, we noticed patient inconsistent in reporting of smoking  
+status (told PCP none x3 mo, reported 2 cigs/day to admitting resident).  
+Encourage continued attention to smoking, as you are doing. 
+ 
+Co-Smoking Cessation and Mental Health  
+-[CONTACT_131264] and colleagues have demonstrated that co- treatment of mental health 
+and tobacco concomitantly is effective for smoking cessation. 
+ 
+Marijuana 
+-Encourage patient to not smoke marijuana  
+ 
+Palliative Care 
+-Consider focusing on palliation of symptoms and clarifying goals of care. 
+-Consider a Palliative care consult to address goals of care and symptomatic treatment of 
+dyspnea. 
+ 
+Pulmonary Rehab 
+-Pulmonary rehabilitation: Demonstrated to reduce readmission and improve quality of life 
+by [CONTACT_588483]. 
+ 
+-Pulmonary rehabilitation – we will enter a non- VA care consult given patient lives > 40 
+miles from the Seattle VA 
+ 
+- Pulmonary rehabilitation: randomized evidence reduces readmission and improves functional status.  
+ 
+Rule out DVT -BLE venous duplex exam  
+- Consider ruling out DVT- BLE venous duplex exam. Patient has sufficiently elevated 
+pulmonary arterial pressures thus increasing the morbidity factor of PE if he does have 
+DVT. Further diagnostics for PTE would depend on results of duplex.  
+-If clinically indicated at this time, further assessment for cardiac ischemia with 
+cardiac stress test could be considered. 
+ 
+O2*** 
+-Needs reevaluation for use of long- term oxygen therapy. 
+- Consider a warm hand- off to behavioral health at next visit to address oxygen 
+compliance. 
+- Respi[INVESTIGATOR_588462] [ADDRESS_774991], exercise oximetry, o2 titration  
+evaluation, and home oxygen evaluation (order entered) 
+ 
+***Seattle Reevaluation does not have the staff for us to be able to do the evaluations routinely. Alice Hanse n may 
+complete some on Thursdays if the Provider requests her, otherwise it is up to the PCP to re- assess. When Norco does 
+12/30/2020   Page  | [ADDRESS_774992] the PCP co -sign when a discrepancy is 
+noted. Per A. Hans on 4/2016  
+ 
+ 
+MOVE! 
+Lung specialists agree that obesity is likely the driving factor in this 
+patient’s disease process, and weight reduction may be the most beneficial therapy; therefore encouragement to participate in MOVE! or TeleMOVE! is recommended.  
+ 
+Dental 
+        - Agree with dental and nutrition consult 
+ 
+Nutrition 
+        - Agree with dental and nutrition consult 
+ 
+Non-compliant patient  
+Based on this review, patient has received excellent care in the hospi[INVESTIGATOR_588463]-up. He is receiving guideline concordant care for COPD and any co-  
+morbidities; therefore, we have only minor suggestions to consider adding to  your management of this patient. We understand the difficulties providing care in this 
+apparently reluctant participant with recommend Rx. 
+ 
+Other: 
+- If the patient completes smoking cessation for 6 months and pulmonary rehabilitation, 
+he may be considered for lung transplantation. 
+ 
+Question of if patient actually has COPD: 
+This patient has a number of complex comorbid issues of which respi[INVESTIGATOR_588464].  The etiology of his symptoms includes both potential 
+cardiac and pulmonary etiologies.   Although the pretest probability is 
+reasonable that the patient has COPD, we were unable to find records of PFT to confirm the diagnosis.  Some of the below recommendations are based on whether he actually has COPD.  
+ 
+ 
+Good job-minor suggestions: 
+Based on this review, patient has received excellent care in the hospi[INVESTIGATOR_588463]-up. He is receiving guideline concordant care for COPD and any co- 
+morbidities; therefore, we have only minor suggestions to consider adding to  
+your management of this patient. 
+ 
+We agree thus far with excellent inpatient and outpatient management, with the following 
+recommendations to further the plan that has been initiated.  
+ 
+This patient with typi[INVESTIGATOR_588465]. His disease is obviously very severe COPD. Appreciate attention to his goals of care/discussion with DPOA. 
+ 
+********************************************************************************* 
+GOOD Job - NO RECOMMENDATIONS: 
+----------------------------------------------------------------------------------- 
+Based on this review, your patient is receiving guideline concordant care for COPD and any co- morbidities; therefore, we do not have additional 
+recommendations. We agree with your excellent management of this patient.  
+
+12/30/2020   Page  | [ADDRESS_774993] us via e- mail ([EMAIL_11217]), CPRS, Pulmonary SCAN- ECHO, E-
+Consult, and/or phone [insert study number], whichever is easiest for you.  
+ 
+COPD guideline recommendations may be found here: *Global Strategy for the Diagnosis, Management and Prevention of COPD, Global Initiative for Chronic Obstructive Lung Disease (GOLD) 2014, available from: http://www.goldcopd.org/uploads/users/files/GOLD_AtAGlance_2014_Jun11.pdf, and  
+*VA/DOD Clinical Practice Guideline for the Management of Outpatient Chronic 
+Obstructive Pulmomary Disease, Version 3.0, 2014, available from: http://www.healthquality.va.gov/guidelines/CD/copd/VADoDCOPDCPG.pdf
+ (full). 
+http://www.healthquality.va.gov/guidelines/CD/copd/VADoDCOPDClinicianSummary.pdf  
+(summary). 
+http://www.healthquality.va.gov/guidelines/CD/copd/VADoDCOPDPocketCard.pdf  
+(pocket card). 
+----------------------------------------------------------------------------------- 
+  
+
+12/30/2020   Page  | 33 
+12/30/2020   Page  | 34 Appendix 3: Modified SHEP  
+(Back to Secondary Measures ) 
+ 
+Our records show that you received care from  [insert name [CONTACT_588486]] a fter your hospi[INVESTIGATOR_588466] 
+[insert discharge date].    
+The questions in this survey will refer to [insert name [CONTACT_588486]]  as “this provider.” Please think of that 
+person as you answer the survey.  
+1. Did this provider explain things in a way 
+that was easy to understand?   Not at all 
+(0)  A little (1)  Some (2)  A lot (3) 
+2. Did this provider listen carefully to you?   Not at all 
+(0)  A little (1)  Some (2)  A lot (3) 
+3. Did this provider give you easy to 
+understand information about your health 
+questions or concerns?   Not at all 
+(0)  A little (1)  Some (2)  A lot (3) 
+4. Did this provider seem to know the 
+important information about  your 
+medical history?   Not at all 
+(0)  A little (1)  Some (2)  A lot (3) 
+5. Did this provider show respect for what 
+you had to say?   Not at all 
+(0)  A little (1)  Some (2)  A lot (3) 
+6. Did this provider seem informed and up -
+to-date about the care you got from 
+specialists?   Not at all 
+(0)  A little (1)  Some (2)  A lot (3) 
+7. When you talked about starting or 
+stoppi[INVESTIGATOR_007] a prescription medicine, how 
+much did this provider talk about the 
+reasons you might want to take a 
+medicine?   Not at all 
+(0)  A little (1)  Some (2)  A lot (3) 
+8. When you talked about starting or 
+stoppi[INVESTIGATOR_007] a prescription medicine, how 
+much did this provider talk about the reasons you might not want to take a 
+medicine?   Not at all 
+(0)  A little (1)  Some (2)  A lot (3) 
+9. When you talked about starting or 
+stoppi[INVESTIGATOR_007] a prescription medicine, did this 
+provider ask you what you thought was 
+best for you?   Yes (1)  No (1)   
+10. Did you and anyone in this provider’s 
+office talk about all the prescription 
+medicines you were taking?   Yes (1)  No (1)   
+11. Did anyone in this provider’s office talk 
+with you about your specific goals for 
+your health?   Yes (1)  No (1)   
+12. Did anyone in this provider’s office ask 
+you if there are things that make it hard 
+for you to take care of your health?   Yes (1)  No (1)   
+13. Did this provider’s office give you 
+information about what to do if you needed care during evenings, weekends, 
+or holidays?   Yes (1)  No (1)   
+12/30/2020   Page  | 35 14. Did this provider spend enough time with 
+you?   Yes (1)  No (1)   
+15. Using any number from [ADDRESS_774994] provider possible, what number 
+would you use to rate this provider? 
+(please only mark one box)  0   1   2   3   4   5   6   7   8   9   
+[ADDRESS_774995] 
+ 
+  
+12/30/2020   Page  | 36 Appendix 4: Provider Satisfaction Survey        
+(Back to Secondary Measures ) 
+ 
+Provider Survey            Study ID:  
+This survey is intended for primary care providers involved in the INtegrating Care After Exacerbation of COPD 
+(InCasE) intervention. The purpose of this survey is to evaluate how the intervention is working for patients 
+discharged from your facility for a COPD exacerbation. For each item below, please rate the strength of your agreement or disagreement with the statement. If you intentionally do not answer a question, please indicate 
+the question number in #[ADDRESS_774996] you for a missing answer. 
+12/30/2020   Page  | 37  strongly 
+disagree  disagree  neither 
+agree 
+nor 
+disagree  agree strongly 
+agree not 
+applicabl
+e 
+1. Training for the InCasE intervention 
+has been ade quate.        
+2. The InCasE  intervention has 
+increased my workload.        
+3. The intervention was helpful to me.        
+4. I feel that the InCasE  intervention 
+process respects the role of the 
+primary care provider in patient 
+management.        
+5. InCasE clinicians respond to my 
+questions about their 
+recommendations in constructive 
+ways.        
+6. The InCasE  intervention has 
+improved patient access to 
+specialty care.        
+7. The InCasE  intervention has 
+improved coordination of care 
+between primary and specialty 
+care providers.        
+8. The InCasE  intervention has 
+improved the quality of care for our 
+patients.        
+9. As a provider, I find participating in 
+InCasE to be a satisfying 
+component of my role in patient 
+care.        
+10. Please provide any additional comments or insights into the InCasE intervention below:  
+ 
+ 
+  
+12/30/2020   Page  | 38 Appendix 5: Provider Interview Guide        
+(Back to Secondary Measures ) 
+Interview Guide  
+ 
+Interviewer Name:  
+ [CONTACT_1782]: 8/21/17 #301 
+ 
+Time Start:  
+Time End:  Hello [Dr./Mr./Ms. interview participant name],  
+ My name [CONTACT_832] [interviewer name]. We are interviewing providers of patients who have participated in the InCaseE intervention in order to get your perspective on the program.  
+ 
+We won’t identify you  as a participant, nor will we identify your site in any of our reports.  
+ 
+The call will take approximately 30 minutes.  
+ Your participation in this interview is voluntary.  You can stop the interview at any time, and let me know if you’d rather not answer a  particular question.  
+ Do you have any questions?  
+ In order to make sure we capture all of the information you give us, we would like to record this call.  The audio -file for 
+the recording will be stored directly to a restricted access file on the VA secure network. Is this okay with you?  Since we are recording, please do not refer to specific patients by [CONTACT_2300]. [Hit record button.]   Okay, to confirm, I’m starting the 
+recording.  Is this ok with you?  
+ [Generic prompts:  If responses are limited or require clarification, probes may be used to elicit more det ailed 
+responses. Probes should use words or phrases presented by [CONTACT_588484]:  
+1. What do you mean by ____________ ?  
+2. Can you tell me more about  ____________ ?  
+3. Can you give me an example of ____________ ?  
+4. Can you tell me about a time when ____________ ?]  
+    
+1.  Are you familiar with the INCasE Program?  
+    
+IF YES: Please describe the program for me.  
+ 
+IF NO:  The InCasE study began in May 2015.  The intervention was developed by a team of primary care,  pulmonar y, pharmacy, and palliative care providers to decrease rates of hospi[INVESTIGATOR_588467].  
+ 
+After patients are discharged for a COPD exacerbation, the study team reviews the patient’s CPRS record a nd 
+provides a summary of recommended COPD treatments, medication, and follow -up through a CPRS note.  They also 
+enter any recommended orders for the provider to review, and then sign, modify, or decline.  
+ 
+a.  Are you familiar with this program?  
+12/30/2020   Page  | 39  
+Note: if s till not familiar with this program, PAUSE RECORDER  and list patients seen as part of the intervention.  
+Our records indicate that you have received InCasE recommendations for some of your patients. Do you recall this?  
+  IF NO  Provide patient full name & last 4.  
+1.  
+2. _________________  
+3. _____________________________________  
+I am now going to turn the recorder back on, remember that because we are recording, please do not refer to any patients by [CONTACT_2300].  RESUME RECORDER  
+ If provider is still not familiar with the program, skip to question 8.  
+ 
+2. Please tell me about your experience with the InCasE.  
+3. [As needed] How well does the InCase intervention fit with your practice? 
+[Acceptability]  
+a. [If needed] What, if anything, about the InCasE intervention fit with your work flow? 
+b. [If needed] Was there anything about the InCasE intervention that did not fit with your work flow?  
+4. [As needed] How easy or difficult was it to implement the InCasE recommendations? [ Feasibility]  
+a. [If needed] Were there any challenges to implementing the InCasE recommendations? 
+b. [If needed] What, if anything, helped to implement the InCasE recommendations?  
+5. [As needed] How satisfied have you been with InCasE? [Satisfaction]  
+a. [If needed] Was there anything about InCas E that you found satisfying?  
+b. [If needed] Was there anything about InCasE that you were dis -satisfied with?  
+6. [If needed] Can you tell me about InCasE’s effect on patient care. [Effectiveness]  
+7. [If needed] What future do you see for InCasE?  [Feasibility & Sustainability]  
+8. Would you like to see the approach used in InCasE extended to other disciplines?  
+9. Do you have any questions for us, or is there anything else you would like to add?  
+ 
+Thank you fo r participating in this interview.  
+ 
+  
+12/30/2020   Page  | 40  

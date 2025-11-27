@@ -1,0 +1,69 @@
+Title:  Mechanisms  of Fall Resistance  to Diverse  Slipping  Conditions 
+[STUDY_ID_REMOVED]  
+11 Mar 2021  
+Study  Protocol  
+For all gait collections, participants  will arrive at the Biomechanics Research Building on the University of 
+Nebraska  at Omaha  campus.  All participants  will be consented  and screened  prior  to gait testing.  During  
+the consent  process,  participants  will be asked  if they  can be contacted  again  for future  research  studies.  
+During the screening, participants  will undergo a short medical history.  
+Partic ipants  will be asked to put on  a form  fitting  suit for data collection. Body  weight, height and  
+extremity anthropometry  will be collected  (length  of arm and leg segments).  Retroreflective  markers  will 
+be placed on the legs, arms, torso and head to obtain whole -body kinematic data. A ceiling -mounted 
+safety harness will also  be fitted to each participant . Prior to performing any  walking trials,  the 
+participants  will be allowed to "sit" in the harness to experience how it feels when it catches them.  
+ 
+ 
+Aim 1 Specific  Methods  
+Young healthy participants  will undergo overground gait and stabilization movement analysis sessions 
+that will  last approximately  210 minutes.  All participants  will be fitted  with  a form -fitting  singlet,  ceiling  
+mounted safety harness, lab -provided shoes, and a full -body retroreflective marker set. A load cell 
+placed in line with the safety harness will allow for the quantification of forces exerted on the harness at 
+80 Hz. A 17 camera  3D motion  capture  system  will be used  to collect  kinematic  data  at 120 Hz 
+throughout  each  trial. Data will be collected at a comfortable walking speed of 1.3 m/s53. Walking 
+speed will be monitored using timing gait plates placed along the path. Participants will be coached to 
+maintain prescribed walking speed. A repeated  measures design will have participants  slip both feet at  3 
+different  times in  the gait cycle for each of 3 path curvatures for a total of 18 slip episodes. Slips will be 
+delivered while walking along a straight path (infinite radius), or curved paths with radii of 2 or 1 meters. 
+A path consisting of multiple turns will be marked on the floor of the lab, including turning radii of 2 and 
+1 meters.  
+Only right turns  will be  examined, as previous research has found no  difference between  the kinematics 
+of left and right  turns.  Participants  will follow  the path  for a randomly  selected  amount  of time  between  
+1 and 3 minutes. After this time has elapsed, the investigator will initiate a slip during a randomized turn 
+on the path in early, middle, or late stance. Participants  will be given a seated rest period of 5 minutes  
+between  each  trial.  
+ 
+ 
+Aim 2 Specific  Methods  
+Young  healthy  participants  will undergo  treadmill  gait and stabilization  movement  analysis  sessions  that 
+will last approximately 270 minutes. All participants  will be fitted with a form -fitting singlet, a safety 
+harness mounted  to the rigging  of the CAREN  system,  lab-provided  shoes,  and a full- body  retroreflective  
+marker set.  A load  cell placed  in line with  the safety  harness  will allow  for the quantification  of forces  
+exerted  on the harness at 80 Hz. Data  will be collected with the treadmill set at a comfortable walking 
+speed of 1.3 m/s53. A repeated measures design will have participants  slip at 3 different times in the 
+gait cycle for each of 5 different uphill/downhill slopes and at 3 times to both feet for 2 cross -slopes for 
+a total of 27 slip  episodes  (3 phases  x 5 slopes  that foot doesn't  matter  + 3 phases  x 2 feet x 2 slopes  that 
+foot  matters).  
+Specifically,  slips  will be delivered  over  sloped  ground  surface  of no slope,  ±5.0  and ±10.0  degrees  slopes 
+in the direction of walking, and 5.0 and 10.0 degrees perpendicular to the direction of walking.  
+Sloped  surfaces  will be generated  with  the CAREN  system  treadmill,  which  is capable  of pitch  and roll 
+±16 degrees.55Slip onset will be triggered by the experimenter in a randomized order at early, mid, or 
+late stance. Participants  will walk on the prescribed slope and a slip will be triggered on after a randomly 
+predetermined  amount  of time  between  1 and 3 minutes  at either  early,  middle,  or late stance.  
+Participants will be given a seated rest period of 5 minutes between each  trial. To quantify the effects of 
+the slip perturbation, whole body angular momentum, COM characteristics,  arm movements,  and slip 
+characteristics  will be derived  from  the kinematic  data.  
+ 
+ 
+Statistical  Analysis  Plan 
+For each variable, investigators  will test for normality and employ the appropriate parametric or non -
+parametric descriptive statistics. Histograms and plots for each variable will be made and examined. 
+Statistical hypothesis  testing  will be done  using  custom  software  written  in R statistical  computing  
+language  (R Core Team).  General  linear  mixed -effects  model  will be used  to determine  the effects  of 
+diverse  slip conditions on reactive movements and slip severity measures for all aims. This mixed -effects 
+model will be used to include participants  and order as random factors while testing for differences 
+between conditions. For  example,  even  though  these  data  will have  repeated  measures  from  the same  
+subject,  a linear  mixed effect model can resolve those non -independencies by including participants  as a 
+random factor and  accounting  for changes  from  baseline  participant  variation.  Aim 1: independent  
+variables  will be a) turn radius (4 levels: no turn, 2m, 1m, 1/2m), b) slip timing (3 levels: early,  mid, and 
+late stance). Aim  2: independent variables will be a) slope (7 levels: no slope, ±5.3 degrees AP, ±10.6 
+degrees AP, ±5.3 degrees ML, ±10.6 degrees ML).  

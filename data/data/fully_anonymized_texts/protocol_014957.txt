@@ -1,0 +1,915 @@
+Principal Investigator/Study Chair : Babak Bazrgari  
+The assessment of lower back mechanical behavior and spi[INVESTIGATOR_804009]-specific low back pain: a feasibility study  (Protocol # TBD)  
+Funding Agency: Veteran Health Administration  
+ [July 14th, 2022]  
+ 
+ 
+Abstract  
+Low back pain (LBP) is strongly associated with opi[INVESTIGATOR_804010], and improved clinical management of LBP is likely to reduce reliance on opi[INVESTIGATOR_804011]. Up to 60% of patients with an acute e pi[INVESTIGATOR_43180]-
+specific  LBP experience either symptom persistence or symptom relapse within 
+one year. This is likely an indication of a failure in addressing the underlying mechanisms of pain or initiation of a new etiology; both may stem from a mismatch between patients and treatments. The overall goal of our research is to develop, validate and implement measures that are relevant to known mechanisms of LBP, which can then be used to holistically gauge the health status of patients’ lower backs beyond self -reporting of symptoms . More accurate 
+measurements will help better match of patients with existing treatments or development of more effective new treatments. The specific objective of this study is to generate evidence in support of the feasibility of our methods for 1) the evaluation of relative contribution of lower back tissues to spi[INVESTIGATOR_804012], and 2) the investigation of the resultant spi[INVESTIGATOR_804013]- specific LBP. 
+We have developed a powerful set of tools for the comprehensive assess ment of 
+spi[INVESTIGATOR_804012] a nd lower back mechanical behavior (MB), that will enable us to 
+examine the existence or development of abnormalities in spi[INVESTIGATOR_804014]- specific 
+LBP. These  groups will include 1 ) veterans with chronic, non- specific LBP and 
+high level of disability (n=18 ), 2) veterans with chronic, non- specific LBP and low 
+level of disability (n=18 ), 3) asymptomatic veterans without a recent history of 
+non-specific LBP (n=1 8; serving as control gr oup). Successful completion of this 
+feasibility project will pave the way for future studies (merit grant applications) that will verify the role of abnormalities in lower back MB and spi[INVESTIGATOR_804015]. Such an understanding has the potential to help the 
+affected veterans with disabling non- specific LBP. Specifically, measures of 
+lower back MB and spi[INVESTIGATOR_804016], but also to guide novel integrated physical and psychological 
+preventative treatments aimed at improved lower back mechanics. Ultimately, the 
+goal and resultant improvement in clinical outcomes of treatment for non- specific 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/[ADDRESS_1109817] of Abbreviations  
+Abaqus/CAE  A finite element software  
+CBOC  community -based outpatient clinic  
+cm centimeter  
+Co-I Co-Investiga tor 
+DMAP  Data managem ent and access plan  
+EMG  Electromyography  
+FE Finite element  
+Fig Figure  
+Hz Hertz  
+ICC Intra class correlation  
+ID Identification  
+IRB Institutional Review Board  
+Kollmorgen, AKM53K  A servomotor model  
+KY Kentucky  
+L4, L5  4th and 5th lumbar vertebrae  
+LBP Low back pain  
+Matlab  A computational software  
+MB Mechanical behavior  
+n Number of participants  
+Natick, MA  Natick, [LOCATION_005]  
+Optex FA  A laser sensor model  
+PI [INVESTIGATOR_804017] -reported outcomes measureme nt information system  
+Providence, RI  Providence, Rhode Island  
+Radford, VA  Radord, Virginia  
+RFA Request for application  
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/[ADDRESS_1109818] sacrum vertebra  
+Scottsdale, AZ  Scottsdale, Arizona  
+SL Spi[INVESTIGATOR_804018]  A motion sensor model  
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 4 of 27 
+  
+Contents  
+Protocol Title:  ............................................................................................................................. 5 
+1.0 Study Personnel  .............................................................................................................. 5 
+2.0 Introduction  ..................................................................................................................... 5 
+3.0 Objectives  ....................................................................................................................... 7 
+4.0 Resources and Personnel  ............................................................................................... 9 
+5.0 Study Procedures  ...........................................................................................................10 
+5.1 Study Design  ...................................................................................................................10 
+5.2 Recruitment Methods .......................................................................................................12 
+5.3 Informed Consent Procedures  .........................................................................................13 
+5.4 Inclusion/Exclusion Criteria  ..............................................................................................14 
+5.5 S tudy Evaluations  ............................................................................................................15 
+5.6 Data Analysis  ..................................................................................................................18 
+5.7 Withdrawal of Subjects  ....................................................................................................19 
+6.0 Reporting  ........................................................................................................................20 
+7.0 Privacy and Confidentiality  .............................................................................................20 
+8.0 Communication Plan ......................................................................................................21 
+9.0 References  ...................................................................................................................21 
+ 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 5 of 27 
+  
+Protocol Title:  The assessment of lower back mechanical behavior and spi[INVESTIGATOR_804019]- specific low back pain: a feasibility study  
+ 
+1.0 Study Personnel  
+• Provide name, contact [CONTACT_3031], and affiliations/employee status  for 
+Study Investigators and research staff : (e.g. John Smith, Principal 
+Investigator, [EMAIL_15270]. , Part Time 5/8)  
+ 
+Principal Investigator : [INVESTIGATOR_804020], [EMAIL_15271] , VA part tim e 5/8 
+Co-Investigators:  Theresa Wolfe, [EMAIL_15272] , VA full time  
+Coordinator:  N/A 
+Research Assistant/ Staff: Clare Tyler, [EMAIL_15273] , VA WOC  
+Research Assistant/Staff: Taylor Young, [EMAIL_15274] , VA WOC  
+Research Assistant/Staff: Allison V King, [EMAIL_15275] , VA full time  
+Research Assistant/Staff: Evan M Brown, [EMAIL_15276] , VA full time  
+Research Assistant/Staff: Amy C Pohle, [EMAIL_15277] , VA full time  
+Research Assistant/Staff: Elizabeth Salt, [EMAIL_15278] , VA WOC  
+Research Assistant/Staff: Vanessa Ramirez, [EMAIL_15279] ,  VA WOC  
+Collaborators:  TBD 
+2.0 Introduction 
+• Provide scientific background and rational e for study.   
+• Include summary of gaps in current knowledge, relevant data,  and how 
+the study will add to existing knowledge.   
+• Include rationale for including or excluding certain populations – in 
+particular vulnerable populations.  
+Low back pain (LBP) is a significant human health disorder affecting up to 18%  of the world 
+population at any given time.1-3 In response to a recent national survey, 33% of veter ans versus 
+28% of non -veterans reported an epi[INVESTIGATOR_804021].4 Chronic 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/[ADDRESS_1109819] root cause(s) of LBP in these patients will be an important research challenge for years, there are measures that have relevance to some s pecific causal 
+sources  of LBP. These measures can be used for the clinical management of LBP to 
+holistically gauge the health status of patients’ lower back more accurately than from the 
+symptom reports alone. One such group of measures relates to the “spi [INVESTIGATOR_804012]” 
+experienced in daily life. Despi[INVESTIGATOR_804022],
+17-21 there is strong 
+evidence in the literature to support the plausibility of a causal relationship between 
+spi[INVESTIGATOR_804023]. For instance, the association of measures of spi[INVESTIGATOR_804012] (e.g., 
+net moment at the lower back), and the incidence and prevalence of LBP have been 
+widely reported.22-[ADDRESS_1109820] demonstrated how 
+spi[INVESTIGATOR_804024], with or without injuries in spi[INVESTIGATOR_158461].30-32 Therefore, there is an important 
+research need  for determination of whether measures of spi[INVESTIGATOR_804025]- specific LBP, and to help eliminate the risk of 
+symptom relapse or persistence. Improved and objective assessment of patients’ lower back will enable clinicians to better match patients with treatments or develop more 
+personalized novel treatm ents which will ultima tely help improve the clinical outcomes of 
+treatments offered for LBP.  
+In this application, forces and deformations experienced in spi[INVESTIGATOR_804026], and are the result of the active and passive mechanical  responses of 
+lower back tissues (i.e., internal forces) to the physical demand of an activity (i.e., 
+external forces), in order to assure spi[INVESTIGATOR_804027].
+33-35 When performing 
+a physical activity, active (motor or sensory) responses of lower back tissues to the 
+activity demand determine the trunk and pelvic motions. The resultant trunk and pelvic 
+motions in turn determine lumbar posture and passi ve tissue contribution (due to 
+deformation) to spi[INVESTIGATOR_804028]. Therefore, alterations in active and 
+passive aspects of lower back MB, along with changes in the way a physical activity is 
+performed, alter spi[INVESTIGATOR_804028], an d thus ultimately the spi[INVESTIGATOR_804012].  
+There is a large body of literature, including some from our laboratory , concerning the 
+differences in the way a physical activity is performed between individuals with healthy back s, 
+and those with acute/sub- acute/chronic or experimentally -induced LBP.36-[ADDRESS_1109821] bending has been suggested to be associated with higher spi[INVESTIGATOR_804012].42 It has 
+been further shown that abnormalities in trunk and pelvic motions , observed in patients with 
+non-specific LBP, linger beyond pain alleviation.43-45 Consistently, similar abnormalities in trunk 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/[ADDRESS_1109822] a physical activity is performed 
+in veterans with different LBP experiences  are associated with potential differences in  spi[INVESTIGATOR_804029]  (i.e., Aim 2) . 
+Persistent physical abnormalities (§1.4), which are likely inf luenced by [CONTACT_804103], could potentially lead to adaptive changes in lower back MB. For instance, 
+asymmetric trunk motion and lumbo -pelvic coordination is evident in individuals with 
+unilateral lower limb amputation,53, [ADDRESS_1109823] (i.e., Aim 1) will equip us with critical preliminary data for future studies 
+aimed at investigation of the role of changes in lower back MB in transition from acute 
+LBP to chronic  disabling LBP . 
+In summary and considering the strong evidence in support of a causal relationship 
+between spi[INVESTIGATOR_804023], investigation of the role of abnormalities in spi[INVESTIGATOR_804030] (symptom persistence, relapse, o r recurrence), is 
+clearly critical. As a first step toward addressing such an important research gap, we will 
+generate evidence in support of the sensitivity of our methods for capturing potential 
+abnormalities in 1) relative contribution of lower back tis sues to spi[INVESTIGATOR_804012], and 2) the 
+resultant spi[INVESTIGATOR_804031] -specific LBP. 
+Successful completion of this project will facilitate future longitudinal research to 
+determine the role of abnormalit ies in spi[INVESTIGATOR_804032]. Ultimately, the outcomes of such research will support integration 
+of measures of lower back mechanics in clinical assessment of veterans with LBP, 
+hence will allow identification of ve terans at risk for sym ptom persistence/relapse due to 
+abnormal spi[INVESTIGATOR_804012]. Availability of such a capability in clinic will enable clinicians to better match patients with existing physical and psychological treatments or even may 
+lead to development of more effective new treatments. The resultant improvement in 
+clinical outcome of treatment for non -specific LBP is likely to reduce reliance on opi[INVESTIGATOR_804033].
+ 
+3.0 Objectives  
+• Relevance to VA Mission, Veterans health and or healthcare issu es 
+• Describe the study’ s purpose, specific aims, or objectives.  
+• State the hypotheses to be tested. How will the aims or objectives test the 
+hypothesis?  
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/[ADDRESS_1109824] common prescription pain medications among patients with chronic low 
+back pain (LBP),[ADDRESS_1109825] cases (referred as non-
+specific LBP). Accordingly, unsatisfactory clinical outcomes for LBP are common for a wide 
+range of treatments , with two out of three patients with LBP experienc ing symptom persistence 
+or relapses.  
+Considering the current level of opi[INVESTIGATOR_804034], it is critical to go beyond 
+patient’s report of symptom s for the management of non- specific LBP , and to i mplement 
+screening tools that can direct us to potential root causes of LBP. One group of such tools relates to measures of forces and deformations in spi[INVESTIGATOR_158461], or the “spi[INVESTIGATOR_804035]”, 
+experienced in daily life activities. Extensive evidence relates spi[INVESTIGATOR_804036], yet, treatment -induced changes in spi[INVESTIGATOR_804037]. Spi[INVESTIGATOR_804038] -induced alterations in trunk neuro- musculoskeletal behavior and lumbo -pelvic 
+coordination. Therefore, it is important to equip researchers and clinicians with the latest advanced tools that will enable evaluation of spi[INVESTIGATOR_804012] , and eventually help better m atch 
+patients with treatments, or even designing more effective interventions that mitigate LBP 
+persistence/relapses due to biomechanical factors.  
+The specific objective of this study  is to generate evidence in support of the feasibility of our 
+developed methods for the evaluation of 1) relative contribution of lower back tissues to spi[INVESTIGATOR_804029], and 2) the resultant spi[INVESTIGATOR_804039]- specific LBP . Results of this feasibility study will enable proper design of our future 
+projec ts, wherein we will investigate the role of spi[INVESTIGATOR_804040].  We have developed several innovative computational and 
+experimental methods for a comprehensive and personalized assessment of spi[INVESTIGATOR_804012]. Specifically, the relative mechanical contribution of active and passive lower back tissues to 
+spi[INVESTIGATOR_804041] [ bulk] lower back mechanical behavior 
+(MB) , whereas muscular responses to physical demands of daily activities and the resultant 
+spi[INVESTIGATOR_804042] . We have used the 
+methods proposed in this application extensively for evaluation of [bulk] lower back MB  and 
+spi[INVESTIGATOR_804043].  This project will demonstrate the sensitivity of our 
+measures for capturing abnormalities in lower back MB  and spi[INVESTIGATOR_804044]-
+specific LBP  by [CONTACT_804104] [ given the feasibility 
+nature of this project  and lack of adequate power, no specific hypothesis has been provided]:  
+Aim-1: Feasibility of distinguishing potential differences in lower back MB between 
+veterans with different LBP experiences. We will characterize lower  back MB in three  
+gender -balanced groups of veterans between 20 and 7 0 years old. These will include veterans 
+with 1) chronic LBP and a Roland- Morris Disability Questionnaire (RMDQ) score of >12 (n=18), 
+2) chronic LBP and RMDQ score of ≤12 (n=18 ), 3) no re cent history of LBP and currently 
+asymptomatic (n=18 ), serving as control group).  Participants will be recruited from the 
+population served by [CONTACT_804105], KY, VA Medical Center. We will determine passive stiffness 
+of the lower back and its relaxation al ong with its active in trinsic and reflexive mechanical 
+properties, using our sudden perturbation and stress -relaxations tests. Given the reported 
+differences in trunk neuromuscular behavior and lumbo- pelvic coordination, we expect to see 
+differences in our  measures between pati ent groups  targeted for this project . 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 9 of 27 
+ Aim-2: Feasibility of distinguishing potential differences in spi[INVESTIGATOR_804045] . Trunk muscle forces and the resultant spi[INVESTIGATOR_804046]. Considering the causal role of spi[INVESTIGATOR_804012] , 
+and given the persistence of symptom in patient s with chronic LBP , along with the high risk of 
+LBP recurrence  in patients  with non-chronic LBP and those with a recent history of LBP, we 
+expect differences in spi[INVESTIGATOR_804047].  
+Our long -term goal  is to help uncover the potential role of spi[INVESTIGATOR_804048]. If such a role is established, our measures can be used to identify veterans at 
+risk for [symptom relapse, or transitioning to disabling chronic LBP] due to 
+biomechanical f actors, and can guide novel, integrated physical and psychological 
+treatments aimed at improved lower back mechanics. Ultimately, the resultant 
+improvement in clinical outcome of treatment for non- specific LBP is likely to reduce 
+reliance on opi[INVESTIGATOR_804049] . 
+4.0 Resources and Personnel  
+ 
+• Include where and by [CONTACT_427346].  
+• Provide a brief description of each individual’s role in the study.  Be sure 
+to indicate who will have access to protected health information and who will be  involved in recruiting subjects; obtaining informed consent; 
+administering survey/interview procedures; and performing data analysis.  
+• If applicable provide information on any  services that will be performed by 
+[CONTACT_804106] h whom.  
+• If applicable provide information on any Memoranda of Understandings (MOUs) or Data Use Agreements (DUAs) that are being entered into including with whom and for what reason.  
+Data collection and analyses will be conducted in a designated research s pace in the 
+Lexington VA Medical Center on Leestown Road, building 27, room #003E . The current  
+research  team include [CONTACT_804122] (PI) and [CONTACT_627918] (Co -Investigator) , [CONTACT_804123] 
+(Research Staff), Clare Tyler (Research Staff), Allison K ing (Research Staff), Evan 
+Brown (Research Staff), Amy Pohle (Research Staff), and Vanessa Ramirez, PT 
+(Research Staff) . [CONTACT_804124] (biostatistics) will be included later on for statistical support .  
+The study will not involve accessing protected health i nformation of participants.  
+[CONTACT_804122], PI,  will have the overall responsibility and will lead all aspects of the project 
+including protocol implementation, data collection and analyses, computational modeling, results interpretation and dissemination. H e will also be respons ible for 
+recruiting and training of research personnel who will be assisting with subject 
+recruitment, data collections  and analyses .  
+[CONTACT_627918], Co -Investigator, will provide specific contributions in recruitment , consenting 
+and medi cal screening of poten tial participants to assure their overall eligibility (i.e., 
+meeting the primary inclusion/exclusion criteria) for the study . 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/[ADDRESS_1109826]. Kryscio will oversee our statistical analyses.   
+5.0 Study Procedures  
+5.1 Study Design 
+• Study Design: Describe experimental design of the study .  Inc lude 
+sequential  and/or  parallel phases of the study, including durations, 
+and explain which interventions are standard of care and which 
+procedures are being done for research purposes .   
+This is a cross -sectional, observational study to investigate differences in 1)  active and  
+passive aspects of lower back MB and 2) spi[INVESTIGATOR_804050]. Each participants will complete one data 
+collection session during which they will complete a number of experiments and surveys.  
+ 
+• Risk vs Benefit:  Include a description of how anticipated risk will 
+be minimized and include an analysis of risk vs. potential benefit.  
+The potential risks of this study will be outlined in the informed consent document, and 
+discussed with participants during the screening meeting. While the risk associated with 
+the tasks performed during biomechanical assessment is no more than the risk experienced during daily life, some participants may experience muscle and/or joint 
+soreness associated with the tests that are self -limiting and last a few minutes to a few 
+hours. Mild discomfort may also occur during EMG preparation consisting of mild skin 
+rubbing (with alcohol), possible shaving (with electric clippers), and the removal of 
+adhes ive tape holding the electrodes after test completion. The PI [INVESTIGATOR_804051] [ADDRESS_1109827] been reported from similar measurements in the literature. Participa nts may feel unpleasant or uncomfortable answering some 
+questions on the self -reported questionnaires. We will ensure participants that their 
+answers are confidential and also inform them that they may choose not to answer any 
+question.  
+ 
+Data security prot ections:  To protect confidentiality, data on paper will be kept in locked 
+filing cabinets and will be identifiable only by [CONTACT_804107]. Identifying 
+participant information will be kept separate from other study -related mat erials. 
+Computer files  will be kept in password- protected computers with access restricted to 
+the members of the study team who will use this information to recruit participants or 
+obtain follow -up data. Computer files will also be backed up on a VA design ated network 
+location as well as on a VA -approved encrypted hard drive which will be used primarily 
+for transfer of computer files between PI’s VA and [LOCATION_006] labs. No electronic data will contain participants’ identifying information. Only study personnel who are approved by 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/[ADDRESS_1109828] access to the lab wherein all study equipment and 
+materials are housed.  
+Emotional distress or sadness in completing self -report measures:  In the event that 
+answering any study questions elicits emotional distress or sadness, study personnel will 
+assist participants to access counseling services through their primary care provider.  
+Biomechanical assessment:  R isks of muscle strain and soreness during our proposed 
+experimental tasks is considered low, as the movement associated with these tests is 
+self-selected pace. Risks of skin irritation from the EMG electrodes will be minimized by 
+[CONTACT_804108]. 
+Research clinicians and biomechanical personnel conducting the  tests will monitor 
+participants closely and stop the testing procedure if safety is or is potentially 
+compromised. Testing will also be terminated by [CONTACT_804109]’s 
+request.  
+We have implemented all of the proposed biomechanical methods in this application in our earlier studies of asymptomatic individuals (see Research Approach). However, the 
+proposed sudden perturbation and stress -relaxation tests will be done on patients with 
+LBP for the first time in our lab. Similar tests on patie nts with LBP have been reported in 
+the literature,
+70-[ADDRESS_1109829], the participant’s leg will be raised using a 
+slow speed (3 deg/second) actuator which can be stopped immediately at subject’s request.  
+Direct benefits  to the subjects are minimal; in particular, there are no immediate health 
+benefits of participating in the proposed study. A potential indirect benefit is further the 
+understanding of LBP for patient veterans.  
+LBP is a significant health problem and is strongly associated with opi[INVESTIGATOR_804052] v
+eterans.3-6 Despi[INVESTIGATOR_804053], LBP persistence, recurrence, 
+and transition from the acute to chronic stage is not managed effectively for majority of patients.
+14-17 This clinical challenge arises, in part, because of the inability to determine 
+the etiology of symptom (i.e., patients with non -specific LBP). The objective of this 
+feasibility project is to verify the sensitivity of our biomechanical outcome measures for capturing potential differences in lower back mechanics between veterans with different 
+LBP experiences. Successful completion of this project will warrant conduct of larger 
+projects (i.e., using merit grant mechanism) to verify the role of lower back 
+biomechanical abnormalities in LBP presentation. Given technological advances that 
+have made biomechanical assessment more accessible, screening patients with non-
+specific LBP for biomechanical abnormalities can help reduce the possibility of symptom 
+persistence and relapse due to excessive force and deformation experienced in spi[INVESTIGATOR_804054] . Improvement in clini cal outcomes of treatment for non -specific LBP will diminish 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 12 of 27 
+ reliance on opi[INVESTIGATOR_804055]. 
+• Patient Population:  Provide description of the study population 
+(delineate all categories of subjects – patients, providers, family 
+members , employees, etc.). Include anticipated enrollment 
+numbers . How many participants.samples per group studies? 
+Justify the sample size to obtain power  for statistical analysis.   
+We will conduct a c ross-sectional study involv ing three  groups of research participants 
+with and without LBP:  
+Group -1: Veterans with chronic, non -specific LBP and a Roland- Morris Disability 
+Questionnaire (RMDQ) score of >12 (gender -balanced, n1=18)  
+Group -2: Veterans with chronic, non -specific LBP and a RMDQ score of ≤12 (gender -
+balanced, n2=18 )]  
+Group -3: Asymptomatic veterans with no recent history of LBP (gender -balanced, 
+n3=18) 
+Sample size justification:  The purpose of this SPi[INVESTIGATOR_804056]. In the absence of preliminary data 
+from veterans with LBP, we calculated a sample size using effect sizes estimated from 
+our earlier investigations of back -healthy individuals as well as reports of relevant 
+measures in the literature. Based on our earlier studies of asymptomatic individuals,56, 57, 
+[ADDRESS_1109830] a power of >80% for detection of significant (p = 0.05) 
+differences in the proposed measures of lower back MB following acute exposure to 
+awkward working posture. Further, using results in the literatu re,67-69 a sample size (i.e., 
+sum of two groups) of [ADDRESS_1109831] sizes 
+between individuals with and without LBP with 80%  power. Therefore, a sample size of 
+18 for each group is selected to facilitate sample size calculation and power analyses for 
+our future merit grant applications while maximizing our chances of discovering potential 
+differences in lower back MB and spi[INVESTIGATOR_804057].  
+• Vulnerable Populations: As applicable, provide information on 
+any added protections for vulnerable populations.  
+Not Applicable   
+• Data and Specimen Banking:  If applicable include information on 
+data and specimen banking. 
+Not Applicable  
+ 
+5.2 Recruitment Methods 
+• State how many subjects will be needed.  
+• Describe when, where, how  and by [CONTACT_589283].  
+• Describe materials that will be used to recruit subjects, e.g., advertiseme nts.  Include material s as an appendix or separate 
+attachment.  
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 13 of 27 
+ • Describe any payments to subjects, including the amount, timing (at 
+the end of the study or pro- rated for partial study participation), 
+method (e.g., cash, check, gift card), and whether subjec ts will 
+experience a delay in receiving the payment .
+We will recruit  54 gender -balanced veterans in the following three  groups: 1) with 
+chronic, non- specific LBP and a Roland- Morris Disability Questionnaire (RMDQ) score of 
+>12 (n=18 ), 2) with chronic, non- specific LBP and a RMD Q score of ≤12 (n=18 ), 3) 
+asymptomatic and no a recent history of non- specific LBP (n=1 8; serving as control 
+group)  
+Participants  will primarily be recruited from veteran populations receiving t reatments at 
+the Lexington VA Medical Center in Lexington, KY. This center has two facilities and 
+several community -based clinics in the surrounding areas, and serves a population of 
+more than 92,[ADDRESS_1109832]. Wolfe (Co -I) 
+from the Department of Physical Medicine and Rehabilitation, with assistance from 
+Vanessa Ramirez (Clinical Research Assistant), will lead our patient recruit ment efforts.  
+Recruitment will be done between months [ADDRESS_1109833] days to provide more information to the 
+interested patients. We will also distribute our study fly ers to local institutions that serve 
+Veterans.  The distribution of study flyers will also include the use of listservs  that will be 
+sent to Veterans who are studying at the University of Kentucky . 
+The recruitment flyer  describes the main inclusion/exclusion criteria, contact [CONTACT_445493], location and duration of experiments and the amount of compensation.  
+Participants will be compensated for their time and efforts in participating in the study for a total 
+of $40.  
+5.3 In formed Consent Procedures  
+• Indicate if informed consent will be obtained and/or if you are 
+requesting a waiver of informed consent or waiver of 
+documentation of informed consent.  If the research involves 
+multiple phases, specify for which phases of the res earch  the 
+waiver(s) is being requested and/or the informed consent will be sought.  
+• Describe  who will be obtaining informed consent,  if applicable,  and 
+any circumstances that may need to be addressed (e.g. subjects with impaired decision making ability  and the use of a legally 
+authorized representative, etc.) 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 14 of 27 
+ • If applicable, indicate how local site study personnel will be trained 
+regarding human subjects protections requirements and how to obtain and document informed consent.  
+This project  requires written documentation of informed consent from all study 
+participants. Approval of the informed consent document, the study protocol, and 
+recruitment materials will be obtained before data collection begins. During the informed 
+consent process, research personnel will explain the handling of data and personal health information and guide potential partici pants through the study consent form. 
+Additionally, study staff will explain the study requirements and provide a study flow chart and information sheet to the potential participant. This will include an explanation 
+of the interview time commitments and biomechanical assessments, potential risks of 
+participation, potential benefits of participation, what to do if an adverse event occurs, and the option for discontinuation of study participation. Participants will be informed that 
+they may choose to stop participating in the study at any stage. Once informed consent 
+is administered, both the participant and research personnel will sign and date the 
+consent form. A copy of the consent form will be provided to the participant. 
+Finally, all study personnel will have up- to-date training in human subject’s protection 
+and study procedures.  
+5.4 Inclusion/Exclusion Criteria 
+• Describe the criteria that determine who will be includ ed in or 
+excluded from the study.  
+Inclusion/Exclusion Criteria  
+ Group -1 Group -2 Group -3 
+Current 
+condition Non-specific LBP  Non-specific LBP  Asymptomatic  
+LBP Experience  Chronic*  Chronic*  No recent history  
+RMDQ score  >12 ≤12 N/A 
+Pain severity (0 -
+9) ≥2 ≥2 N/A 
+Inclusion criteria  • Age between 21 and 70 years old  
+• Body mass index between 18 and 32  
+Exclusion 
+criteria  • Any spi[INVESTIGATOR_61691] [e.g., spi[INVESTIGATOR_61679] ] 
+• Any abnormalities in lower extremity joints due to disease or  injury 
+that would likely affects lower back mechanics [ e.g., lower limb 
+amputation or peripheral arterial disease] 
+• Any safety concern [ e.g., pregnancy ] 
+• Any medical condition for which we can’t determine the impact of 
+our experimental procedures. [ e.g., we don’t know whether our 
+measurement instrument will affect pacemakers. ] 
+• Inability to read or verbally comprehend English  
+• Unwilling or unable to comply with study protocol  
+• Retention of legal advice or an open / pending legal case related to 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 15 of 27 
+ LBP 
+• Definitio n recommended by [CONTACT_804110]: a pain in the lower back on more than half of days over the past [ADDRESS_1109834] the study personnel via information given in the flyer or it will be done 
+in the clinic by [CONTACT_804111] p resent in clinic for participant recruitment. During 
+the brief screening an overview of study objectives and procedures will be provided, and the 
+following provisional eligibility criteria will be verified:  
+• Age between 21 and 70 years  
+• Body mass index between  18 and 32, calculated using self -report of weight and height  
+• Current , a recent history, or no recent history of LBP  
+• Any spi[INVESTIGATOR_61691] [e.g., spi[INVESTIGATOR_61679] ] 
+• Any abnormalities in lower extremity joints due to disease or injury that would likely  
+affects lower back mechanics [ e.g., lower limb amputation or peripheral arterial disease ] 
+• Any safety concern [ e.g., pregnancy ] 
+• Any medical condition for which we can’t determine the impact of our experimental 
+procedures. [ e.g., we don’t know whether our m easu rement instrument will affect 
+pacemakers. ] 
+• Inability to read or verbally comprehend English  
+• Retention of legal advice or an open / pending legal case related to LBP  
+Those who are provisionally eligible and still interested will then complete an on- site screening, 
+consist ing of informed consent process and final eligibility screening. [CONTACT_627918] (Co -I) will 
+oversee the on- site screening. [CONTACT_804122] (PI) together with [CONTACT_627918] (Co- I) will then review 
+the results of each screening and decide about the el igibility of the participants. Participants 
+deemed eligible will be scheduled for the data collection which can also take place immediately 
+after eligibility determination. The study will be conducted in a newly developed lab for studies of 
+the human muscu loskeletal biomechanics that will be directed by [INVESTIGATOR_124]. Bazrgari .  
+5.5 Study Evaluations 
+• Describe all evaluations to be conducted  (including screening; 
+tests/questionnaires that will be administered; any procedures that 
+subjects will be required to complete) and data collection methods .  
+Include materials as an appendix or separate attachment.  
+In each data collection session, participants will first be instrumented with sensors to enable 
+measurement of kinematics and muscle activity, similar to procedures we used in our earlier 
+studies.70-73 Specifically, wireless inertial measurement units (Xsens MTW, Xsens Technologies, 
+Enschede, Netherlands)[ADDRESS_1109835] 
+bending posture and then return to the upright posture  at a self -selected pace. Participants will 
+then be instructed to perform the following activities of daily life  at a self -selected pace: walking 
+on level76, [ADDRESS_1109836] been selected bec ause  they represent basic 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/[ADDRESS_1109837] successfully used them in our earlier 
+investigation of spi[INVESTIGATOR_804058]- veterans,  as well as  persons with 
+unilateral lower limb amputation. Finally,  sudden pertur bation followed by [CONTACT_174120] -relaxation tests 
+will be conducted as in earlier studies and as explained below . Each of the above tests will take 
+less than  5 minutes , and we will provide break periods between each set of tests to minimize 
+fatigue and discom fort.  
+In preparation for future projects, we will also administer the following questionnaires that are 
+relevant to LBP experience during the data collection session: 1) comprehensive health status 
+using the PROMIS -29 questionnaire81 ([all participants ]), 2) survey of habitual physical activity82 
+(all participants), 3) the short version of Copenhagen Psychosocial questionnaire concerning 
+work and non- work -related factors83 (all participants), [ 4) the minimum data set recom mended 
+by [CONTACT_804112] (only veterans with LBP) ], 5) pain 
+intensity using a numerical rating scale84 (only veterans with LBP), 6) LBP -related disability 
+using the 24 -item Roland Morris Disability Questionnaire85 (only veterans with LBP),  7) the fear -
+avoidance beliefs questionnaire86 (only veterans with LBP) , pain catastrophizing scale 
+questionnaire (only veterans with LBP), and pain self -efficacy questionnaire (only veterans with 
+LBP) . Total time for the entire data collection session, including the instrumentation time, is 
+estimated to be less than 3 hours . 
+Characterization of lower back MB:  Sudden perturbation and stress -relaxation tests will be used 
+to characterize [ bulk] active and passive aspects of lower back MB. Sudden perturbation tests 
+will be conducted in a displacement -control manner that we have developed, which provides 
+separate quantif ication of both active reflexive and intrinsic stiffness of the lower back.71, 73 Here, 
+intrinsic stiffness  refers to aspects of lower back MBs that are quantified during the reflex delay 
+period (i.e., between perturbation onset and reflexive muscle response), and whic h incorporate 
+both passive and active contributions of lower back tissues.  However, the passive contribution 
+of tissues to intrinsic stiffness in upright standing posture (i.e., the position used in our experimental setting) is minimal;
+[ADDRESS_1109838], participants will 
+stand in a metal frame that restrains the pelvis and lower 
+limbs [to isolate  the lower back response] (Fig. 1). 
+Horizontal position perturbations, generated by a 
+servomotor  (Kollmorgen AKM53K, Radford, VA, [LOCATION_003]) , 
+are transmitted to the trunk (T8) via a rigid harness -rod 
+system. A one -minute sequence of anteroposterior trunk 
+displacements (± 5 mm) is induced with a pseudo -
+random set of delays between each. The d riving force 
+during the perturbations will be measured using an in-line load cell (Interface SM2000, Scottsdale, AZ, [LOCATION_003])  
+located next to the motor , whereas t he resulting kinematics (small displacements with high 
+accelerations) will be measured using  two lase r displacement sensors (Optex FA, Kyoto, 
+Japan), with one targeting the back of the harness at the T8 level , and the other  targeting the 
+load cell.   
+The s udden perturbation  frame is designed so that trunk 
+flexion  can be achieved by [CONTACT_804113]’s 
+legs/pelvis  using an actuator  (Fig. 2); rotation of the lower 
+body is about the L5 -S1 while the trunk is kept upright.  
+Accordingly , the stress -relaxation tests  will be conducted 
+in the same setup used for the perturbation tests, by 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 17 of 27 
+ 
+Figure 3. FE model of the trunk. Spi[INVESTIGATOR_804059] 
+(left), and lateral/sagittal views of muscle architecture (right).   rotating the part icipant’s legs around his/her lower back using an actuated platform.70, 88 The 
+lower extremities and the pelvis of participants will be  constrained to the platform and the thorax 
+position will be  fixed (Fig. 2). Therefore, the amount of lumbar flexion will be  the same as the 
+amount of platform rotation. During stress -relaxation tests, we will specifically rotate the leg 
+platform to the extent that it generates 70% of  the lumbar  flexion angle that can be achieved 
+during a trunk forward bending and backward return activity, as described in § 2.6. This posture 
+will be maintained for 4 minutes, during which trunk resistance (via load cell) will be  measured.   
+We have extensively used the methods proposed here in our earlier st udies of asymptomatic 
+individuals 56, 57, 70, 88 and persons with unilateral lower limb amputation.55 Our sudden 
+perturbation and stress -relaxation tests yield excellent within- day (ICC>0.85) and moderate -high 
+between- day (ICC=0.5 -0.8) reproducibility of measures of lower back MB.66 
+Estimation of spi[INVESTIGATOR_804012]:  The 
+computational strategy that will 
+be used to estimate spi[INVESTIGATOR_804060] -linear finite element 
+(FE) model of the spi[INVESTIGATOR_804061], 
+accounting for passive 
+contribution of lower back 
+tissues, can estimate the 
+required muscle forces to complete  a particular task using 
+an optimization- based iterative 
+procedure.
+[ADDRESS_1109839] been included in our model by 
+[CONTACT_804114][INVESTIGATOR_53530] a set of flexible beam elements that mimic intervertebral discs and 
+rigid elements that mimic the thorax and lumbar vertebrae ( Fig. 3). Material nonlinearities are 
+also considered in our model by [CONTACT_804115]- strain relationships, along with moment -rotation relationships in the 
+sagittal/coronal/transverse planes that have been obtained from earlier numerical and 
+experimental studies of lumbar spi[INVESTIGATOR_804062].90-[ADDRESS_1109840] trunk muscle forces on the basis of satisfying 
+equilibrium at only one spi[INVESTIGATOR_139730] (i.e., often at the L4- L5 or L5- S1),64, 93, 94 and therefore result 
+in the prediction of muscle forces that violate equilibrium requirements at other spi[INVESTIGATOR_351171] .95 In 
+our improved model, muscle forces are estimated such that equilibrium requirements  are 
+satisfied across the entire lumbar spi[INVESTIGATOR_050].  Our model also includes a detailed trunk  muscle 
+architecture ( Fig. 3), wherein muscle wrappi[INVESTIGATOR_804063].96 The 
+muscle architecture in our computational model includes 56 muscles  (Fig. 3); 46 muscles 
+connecting the lumbar vertebrae to the pelvis (i.e., local muscles), and 10 musc les connecting 
+the thoracic spi[INVESTIGATOR_050]/rib cage to the pelvis (i.e., global muscles ). To determine the required muscle 
+forces for the satisfaction of equilibrium across the entire lumbar spi[INVESTIGATOR_050], segmental kinematics  in 
+the lumbar region are required. Since only  whole -body level kinematics data are available from 
+experimental measurement s, a heuristic optimization procedure will be  used with our model to 
+determine a set of segmental kinematics in the lumbar region (i. e., from L1 to L5) , such that the 
+corresponding set of predicted muscle forces minimize a cost function.[ADDRESS_1109841] function that 
+will be used  for this heuristic optimization procedure will be  the sum of square d muscle stress 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 18 of 27 
+ Figure  4. The slope of loading side and 
+the moment drop on the relaxation sides 
+of curve denote respectively average 
+passive stiffness (K ave) and viscoelastic 
+relaxation (R). Adopted from ref #[ADDRESS_1109842] recently published a detailed description of this 
+procedure in Journal of Biomechanics.97 Predictions of lumbar segmental kinematics from this 
+model provide good- excellent agreement with those from image -based measurements.97 The 
+associated muscle forces with the optimal local kinematics will then be  used to determine spi[INVESTIGATOR_804064]. This heuristic optimization procedure was developed in Matlab (The 
+MathWorks Inc., Natick, MA, version 7.13), and FE simulations will be conducted in 
+Abaqus/CAE ( Version 2018, Dassault Systemes Simulia, Providence, RI) . 
+We have used our FE  computational model extensively to study occupational risk factors for 
+LBP, including manual material handling,35, [ADDRESS_1109843],100 and sudden loading/unloading.101, 102 The bio-f idelity of our model -based 
+predictions  of trunk muscle forces and spi[INVESTIGATOR_804065] . More specifically, good -to-excellent correlations w ere found between model 
+predictions and  measured trunk muscle activity (R>0.7) ,101 with measured ground reaction 
+forces (R >0.8),89 and with measured trunk resistance to sudden loading (R>0.8 unpublished 
+data from103). In an ongoing collaboration with Walter -Reed National Military Medical Center, we 
+are using our model to estimate spi[INVESTIGATOR_804066] .76-
+79 
+  
+Data analyses - Aim-1: From the perturbation tests, w e 
+will obtain three outcome measures: reflex latency (t), intrinsic stiffness (K
+IN), and maximum reflexive force 
+(FREF). Latency of reflexive responses of trunk muscles 
+will be estimated using a system identification approach and by [CONTACT_804116] y to trunk displacement.
+71 
+Intrinsic stiffness will be estimated using a system identification procedure, and by [CONTACT_804117], respectively, from displacement 
+sensors and load cell obtained during the latency 
+period.
+73 To obtain the maximum reflexive force, the 
+reflexive responses of lower back will be estimated by [CONTACT_804118] (i.e., reac tion force from load cell) over a 
+time window between the end of latency period and [ADDRESS_1109844], 
+we will obtain the average passi ve stiffness (K p) and viscoelastic relaxation (R) of lower back 
+tissues as shown in Figure 4.70, 88  
+Data analyses -Aim-2: Outputs of FE simulations  of daily activities will include forces in 56 trunk 
+muscles and sp inal loads at all lumbar spi[INVESTIGATOR_522236].98, 99, 102 These outputs will be estimated for 
+each instance of each simulated activity  described in §2.6. To facilitate quantitative comparison, 
+and considering that maximum spi[INVESTIGATOR_804067], we  will extract the maximum spi[INVESTIGATOR_804068] L5- S1 level during 
+each activity. The measure of spi[INVESTIGATOR_804069] s 
+for statistical analyses: 
+  wherein norm  denotes the magnitude 
+of vect or summation and SL activity denotes the maximum spi[INVESTIGATOR_804070]. 
+ 
+5.6 Statistical Analysis 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 19 of 27 
+ • What statistical test will be done?  
+• Provide sample size determination and analysis (include 
+anticipated rate of screen failures, study discontinuations, lost to 
+follow- up etc.).  
+• Describe how , where and by [CONTACT_427351].  
+For each measure (i.e., reflexive latency, intrinsic stiffness, reflexive force, passive stiffness, 
+and stress relaxation from Aim  1, along with the spi[INVESTIGATOR_804035], SL , from A im 2), we will run a 
+univariate analysis of variance to verify potential differences between study groups (i.e., 
+independent factor: participant  group with five levels). A significant ANOVA will be followed with 
+post-hoc pairwise comparison using Bonferron i’s procedures . Prior to these analyses, 
+parametric assumptions will be evaluated. As needed, data transformations will be used, or a 
+non-parametric approach will be employed.  
+The statistical analyses will be led by [CONTACT_978]  [INVESTIGATOR_804071]. Krysc io 
+ 
+5.7 Withdrawal of Subjects  
+• Describe any anticipated circumstances under which subjects will 
+be withdrawn from the research without their consent.  
+• Describe the consequences of a subject's decision to withdraw from the research and the procedures for or derly termination of 
+participation by [CONTACT_423] (e.g., the subject contact[CONTACT_427332]- of-study visit).  
+Except for the noted exclusion criteria, there is no other anticipated circumstances for 
+subject withdrawal.  
+Participants will com plete a screening session upon completion of the consenting 
+procedure and then will participate in one data collection session if determined eligible. 
+Since it is most likely that the screening and data collection take place in the same visit, 
+there is no spec ific procedure for withdrawal from the study but to inform the research 
+personnel that they are no longer willing to complete the study.  
+ 
+5.8 Expected Results  
+• Based on literature and hypothesis, what can be expected?  
+• Alternative Hypothesis if main hyp othesis is not confirmed.  
+This is a feasibility project and doesn’t involve a specific hypothesis (per SPi[INVESTIGATOR_804072]). The followings are, however, our expected findings: Given the reported differences 
+in physical performance between individuals with and without LBP, we expect differences in 
+spi[INVESTIGATOR_804073]. Considering the high rate 
+of LBP recurrence, we specifically expect those with LBP (or a recent history LBP) to 
+experience larger spi[INVESTIGATOR_804012]. Furthermore,  we expect differences in lower back MB between 
+veterans with chronic and non- chronic LBP. These differences will support future longitudinal 
+research to verify whether they are developed during transition to chronic LBP. Therefore, 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/[ADDRESS_1109845] for future studies (merit grant 
+applications) that will verify the role of abnormalities in lower back MB and spi[INVESTIGATOR_804015]. Such an understanding has the po tential to help the affected 
+veterans, particularly those with disabling non- specific LBP.  
+ 
+6.0 Reporting  
+• Include procedures for reporting unanticipated problems, serious adverse 
+events, and protocol deviations.  
+Reporting for this study will include an annual repo rt to the VA IRB, regulatory and sponsoring 
+agencies at a minimum, with appropriate updates and reports in the event of unanticipated 
+adverse event(s).  This project  represent s no more than minimal risk as they involve activities 
+participants do during dail y life. Further, we do not anticipate moderate, severe, life- threatening 
+or fatal adverse events. The PI [INVESTIGATOR_804074]. Mild adverse events will be reported within 10 working days of the  occurrence; 
+moderate, severe, life- threatening or fatal adverse events will be reported within 48 hours of the 
+occurrence.  
+7.0 Privacy and Confidentiality  
+• Data Collection:  List sources/procedures for which data will be collected, 
+transmitted, stored, maintai ned and/or shared.  
+• Describe whether the study will use or disclose subjects’ Protected Health 
+Information (PHI).  
+• Describe the steps that will be taken to secure the data (e.g., training, authorization of access, password protection, encryption, physical contr ols, Certificates of Confidentiality, and separation of identifiers and 
+data)  
+Research material obtained for biomechanical assessment during proposed 
+biomechanical tests includes non- invasive measures of muscle activity (EMG), kinetics 
+and kinematics. Pati ent health- related data such as psychological characteristics, pain, 
+disability, medication use, and health care utilization will be obtained by [INVESTIGATOR_2993]- person 
+interviews, self -reporting questionnaires, and/or examinations. All data used for this 
+project wi ll be obtained only after receiving written informed consent from the participant.  
+We will not collect any PHI  
+To protect confidentiality, data on paper will be kept in locked filing cabinets and will be identifiable only by [CONTACT_804107]. Identi fying participant information will be 
+kept separate from other study -related materials. Computer files will be kept on a 
+password- protected computer with access restricted to the members of the study team 
+who will use this information to recruit participants o r obtain follow -up data. Backups of 
+computer files will be saved on a VA -designated network space as well as on a VA -
+approved encrypted hard drive. The latter will primarily be used for the transfer of 
+computer files between the PI’s lab at VA and Univ ersity of Kentucky. No electronic data 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 21 of 27 
+ will contain participants’ identifying information. Only study personnel who are approved 
+by [CONTACT_804119].  
+8.0 Communication P lan 
+• Include plan for ensuring all required local site approvals are obtained and 
+notifying the Director of any facility where the research in being conducted but the facility is not engaged.  
+• Include plan for keepi[INVESTIGATOR_804075], informed consent, and HIPAA authorization 
+• Include plan for informing local sites of any Serious Adverse Events , 
+Unanticipated Problems , or interim results that may impact conduct of the 
+study . 
+• Include plan for ensuring the study is conducted according to the IRB -
+approved protocol.  
+• Include plan for notifying all local facility directors and LSIs when a multi -
+site study reaches the point that it no longer requires engagement of the local facility (e.g., all subsequent follow -up of subjects will  be performed by 
+[CONTACT_978] [INVESTIGATOR_91714]).
+ 
+This proje ct is a single site project wherein a single group of researchers (PI, Co -I, and 
+research staff) performs all recruitments, screening, data collection and analysis. Any 
+potential changes to the prot ocol will be discussed during weekly lab meetings. 
+Considering the above described reporting,  research personnel will be trained to 
+recognize, respond to, and record adverse events when they occur or immediately after 
+they occur to insure the safety of the human subjects; and to report adverse events to 
+the PI [INVESTIGATOR_2993] a timely manner to insure compliance with institutional policies on human subject protection. Research assistants engaged in data collection will contact [CONTACT_978] [INVESTIGATOR_804076].
+ 
+9.0 Refe rences  
+ 
+Bibliography of cited literature: Citations supporting, hypothesis, data collection and 
+analysis. 
+1. Buchbinder R, van Tulder M, Öberg B, et al. Low back pain: a call for action. The Lancet  
+2018; 391([ZIP_CODE]): 2384 -8. 
+2. Hartvigsen J, Hancock MJ, Kongsted A, et al. What low back pain is and why we need to 
+pay attention. The Lancet  2018.  
+3. Maher C, Underwood M, Buchbinder R. Non- specific low back pain. The Lancet  2017; 
+389([ZIP_CODE]): 736 -47. 
+4. Nahin RLJTJoP. Severe pain in veter ans: The effect of age and sex, and comparisons 
+with the general population. 2017; 18 (3): 247 -54. 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 22 of 27 
+ 5. Vos T, Flaxman AD, Naghavi M, et al. Years lived with disability (YLDs) for 1160 
+sequelae of 289 diseases and injuries 1990 -2010: a systematic analysis for  the Global Burden 
+of Disease Study 2010. Lancet (London, England)  2012; 380(9859): 2163- 96. 
+6. Schofield DJ, Shrestha RN, Percival R, Callander EJ, Kelly SJ, Passey ME. Early 
+retirement and the financial assets of individuals with back problems. European Spi[INVESTIGATOR_83217]  
+2011; 20(5): [ADDRESS_1109846] A, Fletcher SL. Chronic disease and 
+labour force participation among older Australians. Medical Journal of Australia 2008; 189(8): 
+447. 
+8. Dobscha SK, Morasco BJ, Duckart JP , Macey T, Deyo RAJTCjop. Correlates of 
+prescription opi[INVESTIGATOR_108760]- term opi[INVESTIGATOR_108761]. 2013; 
+29(2): 102.  
+9. Hudson TJ, Painter JT, Martin BC, et al. Pharmacoepi[INVESTIGATOR_804077]/OIF/OND v eterans. 2017; 158 (6): 1039.  
+10. Edlund MJ, Austen MA, Sullivan MD, et al. Patterns of opi[INVESTIGATOR_804078] 2009 to 2011. 2014; 155(11): 2337- 43. 
+11. Shmagel A, Ngo L, Ensrud K, Foley R. Prescript ion medication use among community -
+based us adults with chronic low back pain: a cross -sectional population based study. The 
+Journal of Pain 2018.  
+12. Deyo RA, Von Korff M, Duhrkoop D. Opi[INVESTIGATOR_580568]. Bmj  2015; 350: g6380.  
+13. Knecht C, Humphrey s BK , Wirth B. An Observational Study on Recurrences of Low 
+Back Pain During the First 12 Months After Chiropractic Treatment. Journal of manipulative and 
+physiological therapeutics  2017; 40(6): 427- 33. 
+14. Kongsted A, Kent P, Hestbaek L, Vach WJTsj. Patients with low back pain had distinct 
+clinical course patterns that were typi[INVESTIGATOR_804079]. A latent 
+class analysis of longitudinal data. 2015; 15(5): 885 -94. 
+15. da Silva T, Mills K, Brown BT, et al. Risk of recurrence of  low back pain: a systematic 
+review. 2017; 47 (5): 305 -13. 
+16. Stanton TR, Henschke N, Maher CG, Refshauge KM, Latimer J, McAuley JH. After an 
+epi[INVESTIGATOR_804080], recurrence is unpredictable and not as common as previously thought. Spi[INVESTIGATOR_050] 2008; 33(26): 2923- 8. 
+17. Van Dieën J, Kuijer P, Burdorf A, Marras W, Adams M. Non- specific low back pain. The 
+Lancet  2012; 379(9829): 1874.  
+18. Bakker EW, Verhagen AP, van Trijffel E, Lucas C, Koes BW. Spi[INVESTIGATOR_804081] 
+a risk factor for low back pain: a systematic review of prospective cohort studies. Spi[INVESTIGATOR_050] 2009; 
+34(8): E281- E93. 
+19. Balagué F, Mannion AF, Pellisé F, Cedraschi C. Non- specific low back pain. The lancet  
+2012; 379(9814): 482 -91. 
+20. Kwon B, Roffey D, Bishop P, Dagenais S, Wai E. Systematic review: occupational 
+physical activity and low back pain. Occupational medicine 2011; 61(8): 541 -8. 
+21. Kuijer PPF, Frings -Dresen MH, Gouttebarge V, van Dieën JH, van der Beek AJ, Burdorf 
+A. Low back pain: we cannot afford ignoring work. The Spi[INVESTIGATOR_83217]  2011; 11(2): 164.  
+22. Coenen P, Kingma I, Boot CR, Bongers PM, van Dieën JH. Cumulative mechanical low -
+back load at work is a determinant of low -back pain. Occup Environ Med  2014; 71(5): 332 -7. 
+23. Coenen P, Kingma I, Boot CR, Twisk JW, Bongers PM, van Dieën J H. Cumulative low 
+back load at work as a risk factor of low back pain: a prospective cohort study. Journal of 
+occupational rehabilitation 2013; 23(1): 11 -8. 
+24. Kerr MS, Frank JW, Shannon HS, et al. Biomechanical and psychosocial risk factors for 
+low b ack pain at work. American journal of public health 2001; 91(7): 1069.  
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/[ADDRESS_1109847] low back functional impairment. Spi[INVESTIGATOR_050] 2010; 
+35(8): 914 -23. 
+26. Norman R, Wells R, Neumann P, et al. A comparison of peak vs cumulative physical 
+work exposure risk factors for the reporting of low back pain in the automotive industry. Clinical 
+biomechanics  1998; 13(8): 561- 73. 
+27. Griffith LE, Shannon HS, Wells RP , et al. Individual participant data meta -analysis of 
+mechanical workplace risk factors and low back pain. American journal of public health 2012; 
+102(2): 309 -18. 
+28. da Costa BR, Vieira ER. Risk factors for work ‐related musculoskeletal disorders: a 
+systematic  review of recent longitudinal studies. American journal of industrial medicine 2010; 
+53(3): [ADDRESS_1109848] of lifting during work on 
+low back pain: a health impact assessment based on a meta- analysis. Occup Environ Med  
+2014; 71(12): 871 -7. 
+30. Brinckmann P, Biggemann M, Hilweg D. Fatigue fracture of human lumbar vertebrae. 
+Clinical biomechanics  1988; 3: i-S23. 
+31. Lynn B. . Neurogenic inflammation caused by [CONTACT_804120].  Progress 
+in brain research: Elsevier; 1996: 361- 8. 
+32. Solomonow M, Baratta R, Zhou B -H, Burger E, Zieske A, Gedalia A. Muscular 
+dysfunction elicited by [CONTACT_804121]. Journal of Electromyography and 
+Kinesiology  2003; 13(4): 381- 96. 
+33. Arjmand N, Bazrgari B, Shirazi -Adl A. Modeling and simulation of tissue load in the 
+human spi[INVESTIGATOR_050]. Routledge Handbook of Biomechanics and Human Movement Science Taylor and 
+Francis Ltd, London 2008: [ADDRESS_1109849] flexions. J Biomech 2006; 39(3): 510- 21. 
+35. Bazrgari B, Shirazi -Adl A. Spi[INVESTIGATOR_804082]. Computer Methods in Biomechanics and Biomedical Engineering 2007; 10(5): 
+351-60. 
+36. van Dieën JH, Reeves NP, Kawchuk G, van Dillen L, Hodges PW. Motor Control 
+Changes in Low -Back Pain: Divergence  in Presentations and Mechanisms. Journal of 
+Orthopaedic & Sports Physical Therapy  2018; (0): 1- 24. 
+37. van Dieën JH, Reeves NP, Kawchuk G, van Dillen L, Hodges PW. Analysis of Motor 
+Control in Low -Back Pain Patients: A Key to Personalized Care? Journal of  Orthopaedic & 
+Sports Physical Therapy  2018; (0): [ADDRESS_1109850]: A 
+review of the effects of participants and task characteristics. International musculoskeletal medicine 2016; 38(2): 51-8. 
+39. Geisser ME, Ranavaya M, Haig AJ, et al. A meta -analytic review of surface 
+electromyography among persons with low back pain and normal, healthy controls. The journal of pain 2005; 6(11): 711- 26. 
+40. Colloca CJ, Hinrichs RN. The biomechanical and clinical significance of the lumbar 
+erector spi[INVESTIGATOR_804083]- relaxation phenomenon: a review of literature. Journal of manipulative 
+and physiological therapeutics  2005; 28(8): [ADDRESS_1109851] M, Vollenbroek -Hutten MM, Rietman JS, Hermens HJ. Lum bar and 
+abdominal muscle activity during walking in subjects with chronic low back pain: support of the 
+“guarding” hypothesis? Journal of Electromyography and Kinesiology  2010; 20(1): [ADDRESS_1109852] sagittal trunk rotations: combined in vivo measurement with inertial 
+tracking device and biomechanical modeling. Clinical Biomechanics  2014; 29(1): 7 -13. 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 24 of 27 
+ 43. Ferguson SA, Marras WS, Gupta P. Longitudinal quantitative m easures of the natural 
+course of low back pain recovery. Spi[INVESTIGATOR_050] 2000; 25(15): 1950- 6. 
+44. Thomas JS, [LOCATION_009] CR, Lavender SA, Johnson MR. Effects of fear of movement on 
+spi[INVESTIGATOR_804084]. Spi[INVESTIGATOR_050] 2008; 33(5): 564 -70. 
+45. Thomas JS, [LOCATION_009] CR. The relationship between pain- related fear and lumbar flexion 
+during natural recovery from low back pain. European Spi[INVESTIGATOR_83217]  2008; 17(1): [ADDRESS_1109853] bending in subjects with and without a history of low back pain. Spi[INVESTIGATOR_050] 
+1996; 21(1): [ADDRESS_1109854], flexed positi on in patients with and without a history of low 
+back pain. Spi[INVESTIGATOR_050] 1997; 22(5): 552 -8. 
+48. Lamoth CJ, Meijer OG, Daffertshofer A, Wuisman PI, Beek PJ. Effects of chronic low 
+back pain on trunk coordination and back muscle activity during walking: changes in motor 
+control. European Spi[INVESTIGATOR_83217]  2006; 15(1): 23- 40. 
+49. Seay JF, Van Emmerik RE, Hamill J. Low back pain status affects pelvis -trunk 
+coordination and variability during walking and running. Clinical biomechanics  2011; 26(6): [ADDRESS_1109855] of low back pain on the kinematics and joint 
+coordination of the lumbar spi[INVESTIGATOR_804085] -to-stand and stand -to-sit. Spi[INVESTIGATOR_050] 2005; 
+30(17): 1998 -2004.  
+51. Christe G, Redhead L, Legrand T, Jolles BM, Favre J. Multi -segment analysis  of spi[INVESTIGATOR_804086] -to-stand in patients with chronic low back pain. Journal of biomechanics  
+2016; 49(10): 2060 -7. 
+52. Thomas JS, [LOCATION_009] CR. Pain- related fear is associated with avoidance of spi[INVESTIGATOR_740513]. Sp ine 2007; 32(16): E460- E6. 
+53. Silverman AK, Fey NP, Portillo A, Walden JG, Bosker G, Neptune RR. Compensatory 
+mechanisms in below -knee amputee gait in response to increasing steady -state walking 
+speeds. Gait & posture  2008; 28(4): [ADDRESS_1109856] altered 
+lumbosacral kinetics during sitting and standing movements. Gait & posture  2015; 42(2): 204- 9. 
+55. Hendershot BD, Bazrgari B, Nussbaum MA. Persons with unilateral lower -limb 
+amputation have altered and asymmetric trunk mechanical and neuromuscular behaviors 
+estimated using multidirectional trunk perturbations. Journal of biomechanics  2013; 46(11): 
+1907- 12. 
+56. Hendershot B, Bazrgari B, Muslim K, Toosizadeh N, Nussbaum MA, Madigan ML. 
+Disturbance and recovery of trunk stiffness and reflexive muscle responses following prolonged 
+trunk flexion: influences of flexion angle and duration. Clinical Biomechanics  2011; 26(3): 250 -6. 
+57. Bazrgari B, Hendershot B, Muslim K, Toosizadeh N, Nussbaum M A, Madigan ML. 
+Disturbance and recovery of trunk mechanical and neuromuscular behaviours following 
+prolonged trunk flexion: influences of duration and external load on creep -induced effects. 
+Ergonomics  2011; 54(11): 1043- 52. 
+58. Ahern DK, Follick MJ, Counc il JR, Laser -Wolston N. Reliability of lumbar paravertebral 
+EMG assessment in chronic low back pain. Arch Phys Med Rehabil  1986; 67(10): 762- 5. 
+59. Ambroz C, Scott A, Ambroz A, Talbott EO. Chronic low back pain assessment using 
+surface electromyography. J Occup Environ Med 2000; 42(6): 660 -9. 
+60. Arendt -Nielsen L, Graven -Nielsen T, Svarrer H, Svensson P. The influence of low back 
+pain on muscle activity and coordination during gait: a clinical and experimental study. Pain  
+1996; 64(2): 231 -40. 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 25 of 27 
+ 61. Lariviere C, Gagnon D, Loisel P. The comparison of trunk muscles EMG activation 
+between subjects with and without chronic low back pain during flexion- extension and lateral 
+bending tasks. J Electromyogr Kinesiol  2000; 10(2): 79- 91. 
+62. Silfies SP, Squillante D, Maur er P, Westcott S, Karduna AR. Trunk muscle recruitment 
+patterns in specific chronic low back pain populations. Clin Biomech (Bristol, Avon)  2005; 20(5): 
+465-73. 
+63. Granata KP, Orishimo KF. Response of trunk muscle coactivation to changes in spi[INVESTIGATOR_804087]. Journal of biomechanics  2001; 34(9): 1117 -23. 
+64. Granata KP, Lee PE, Franklin TC. Co- contraction recruitment and spi[INVESTIGATOR_804088]. Clin Biomech  2005; 20(10): 1029- 37. 
+65. Veterans Benefits Administration Annual Benefits Report Fiscal Year 2017: U.S. 
+Department of Veterans Affairs, 2017.  
+66. Hendershot BD, Bazrgari B, Nussbaum MA, Madigan ML. Within- and between- day 
+reliability of trunk mechanical behaviors estimated using position- controlled perturbations. 
+Journal  of biomechanics  2012.  
+67. Hodges P, van den Hoorn W, Dawson A, Cholewicki J. Changes in the mechanical 
+properties of the trunk in low back pain may be associated with recurrence. Journal of 
+biomechanics  2009; 42(1): 61- 6. 
+68. Radebold A, Cholewicki J, Pan jabi MM, Patel TC. Muscle response pattern to sudden 
+trunk loading in healthy individuals and in patients with chronic low back pain. Spi[INVESTIGATOR_050] 2000; 
+25(8): 947 -54. 
+69. Radebold A, Cholewicki J, Polzhofer GK, Greene HS. Impaired postural control of the 
+lumbar spi[INVESTIGATOR_804089]. Spi[INVESTIGATOR_050] 2001; 26(7): 724 -30. 
+70. Shojaei I, Allen- Bryant K, Bazrgari B. Viscoelastic response of the human lower back to 
+passive flexion: the effects of  age. Annals of biomedical engineering 2016; 44(9): 2817- 26. 
+71. Shojaei I, Nussbaum MA, Bazrgari B. Age -related differences in trunk muscle reflexive 
+behaviors. Journal of biomechanics  2016; 49(14): 3147- 52. 
+72. Vazirian M, Shojaei I, Agarwal A, Bazrgari B. Lumbar contribution to the trunk forward 
+bending and backward return; age -related differences. Ergonomics  2017; 60(7): 967 -76. 
+73. Vazirian M, Shojaei I, Tromp RL, Nussbaum MA, Bazrgari B. Age- related differences in 
+trunk intrinsic stiffness. Journal of  biomechanics  2016; 49(6): 926 -32. 
+74. Al-Amri M, Nicholas K, Button K, Sparkes V, Sheeran L, Davies JL. Inertial 
+Measurement Units for Clinical Movement Analysis: Reliability and Concurrent Validity. Sensors  
+2018; 18(3): 719.  
+75. Vazirian M, Shojaei I, Ba zrgari B. Age -related differences in the timing aspect of 
+lumbopelvic rhythm during trunk motion in the sagittal plane. Human movement science 2017; 
+51: 1 -8. 
+76. Hendershot BD, Shojaei I, Acasio JC, Dearth CL, Bazrgari B. Walking speed 
+differentially alter s spi[INVESTIGATOR_804090]. Journal of 
+biomechanics  2018; 70: 249- 54. 
+77. Shojaei I, Hendershot BD, Wolf EJ, Bazrgari B. Persons with unilateral transfemoral 
+amputation experience larger spi[INVESTIGATOR_804091] -ground walking compared to able- bodied 
+individuals. Clinical Biomechanics  2016; 32: 157- 63. 
+78. Acasio JC, Shojaei I, Banerjee R, Dearth CL, Bazrgari B, Hendershot BD. Spi[INVESTIGATOR_804092]. Journal 
+of Biomechanics  2019 (under review).  
+79. Shojaei I, Hendershot BD, Acasio JC, Dearth CL, Ballard M, Bazrgari B. Trunk muscle 
+forces and spi[INVESTIGATOR_804093] -to-stand 
+and stand -to-sit activities. Clinical Biomechanics  2019 (in press).  
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 26 of 27 
+ 80. Shojaei I, Salt EG, Hooker Q, Bazrgari B. Mechanical demands on the lower back in 
+patients with non- chronic low back pain during a symmetric lowering and lifting task. Journal of 
+biomechanics  2018; 70: 255- 61. 
+81. Cella D, Yount S, Rothrock N, et al. The Patient -Reported Outcomes Measurement 
+Information System (PROMIS): progress of an NIH Roadmap cooperative group during its first 
+two years. 2007; 45([ADDRESS_1109857] 1): S3.  
+82. Baecke JA, Burema J, Frijters JEJTAjocn. A short questionnaire for the measurement of 
+habitual physical activity in epi[INVESTIGATOR_9037]. 1982; 36 (5): 936 -42. 
+83. Kristensen TS, Hannerz H, Hogh A, Borg VJSjowe, health. The Copenhagen 
+Psychosocial Questionnaire- a tool for the assessment and improve ment of the psychosocial 
+work environment. 2005; 31(6): 438- 49. 
+84. Ferreira -Valente MA, Pais -Ribeiro JL, Jensen MPJP. Validity of four pain intensity rating 
+scales. 2011; 152 (10): 2399- 404. 
+85. Roland M, Fairbank J. The Roland- Morris Disability Questionna ire and the Oswestry 
+Disability Questionnaire. Spi[INVESTIGATOR_050](PhilaPa1976)  2000; 25(24): 3115 -24. 
+86. Waddell G, Newton M, Henderson I, Somerville D, Main CJ. A Fear -Avoidance Beliefs 
+Questionnaire (FABQ) and the role of fear -avoidance beliefs in chronic low back pain and 
+disability. Pain 1993; 52(2): 157- 68. 
+87. Panjabi MM. The stabilizing system of the spi[INVESTIGATOR_050]. Part II. Neutral zone and instability 
+hypothesis. J Spi[INVESTIGATOR_804094]  1992; 5(4): 390 -6; discussion 7.  
+88. Shojaei I, Suri C, van Dieën JH, Bazrgari B. Alterations in trunk bending stiffness 
+following changes in stability and equilibrium demands of a load holding task. Journal of 
+Biomechanics  2018; 77: 163- 70. 
+89. Bazrgari B, Shirazi -Adl A, Trottier M, Mathieu P. Computation of trunk equilibrium and 
+stability in f ree flexion- extension movements at different velocities. J Biomech  2008; 41(2): 412-
+21. 
+90. Shirazi -Adl A, Ahmed AM, Shrivastava SC. Mechanical response of a lumbar motion 
+segment in axial torque alone and combined with compression. Spi[INVESTIGATOR_050] 1986; 11(9): 914 -27. 
+91. Shirazi -Adl A, Parnianpour M. Nonlinear response analysis of the human ligamentous 
+lumbar spi[INVESTIGATOR_804095]. On mechanisms affecting the postural stability. Spi[INVESTIGATOR_050] 1993; 18(1): 
+147-58. 
+92. Shirazi -Adl A, Parnianpour M. Load- bearing and stress analysis of the human spi[INVESTIGATOR_804096] a novel wrappi[INVESTIGATOR_804097]. Clin Biomech  2000; 15(10): 718- 25. 
+93. Cholewicki J, McGill SM, Norman RW. Comparison of muscle forces and joint load from 
+an optimization and EMG assisted lumbar spi[INVESTIGATOR_804098]: towards dev elopment of a hybrid 
+approach. J Biomech  1995; 28(3): 321 -31. 
+94. Marras WS, Ferguson SA, Burr D, Davis KG, Gupta P. Spi[INVESTIGATOR_804099]. Spi[INVESTIGATOR_050] J  2004; 4(1): 64 -75. 
+95. Arjmand N, Shirazi -Adl A, Parnianpour M. Trunk biomechanical models based on 
+equilibrium at a single- level violate equilibrium at other levels. Eur Spi[INVESTIGATOR_050] J  2007; 16(5): 701 -9. 
+96. Arjmand N, Shirazi -Adl A, Bazrgari B. Wrappi[INVESTIGATOR_804100]. Clinical Biomechanics  2006; 21(7): 
+668-75. 
+97. Shojaei I, Arjmand N , Bazrgari B. An optimization‐based method for  prediction of 
+lumbar spi[INVESTIGATOR_804101]. 
+International journal for numerical methods in biomedical engineering 2015; 31(12): e02729.  
+98. Bazrgari B , Shirazi -Adl A, Arjmand N. Analysis of squat and stoop dynamic liftings: 
+muscle forces and internal spi[INVESTIGATOR_804012]. European Spi[INVESTIGATOR_83217]  2007; 16(5): 687 -99. 
+99. Bazrgari B, Shirazi -Adl A, Kasra M. Computation of trunk muscle forces, spi[INVESTIGATOR_804102] -body vibration. Journal of Sound and Vibration 2008; 318(4-5): 1334- 47. 
+[Version Number or Date]  Lexington VAHCS IRB Protocol Template – version 1/23/2019  Page 27 of 27 
+ 100. Bazrgari B, Shirazi -Adl A, Kasra M. Seated whole body vibrations with high- magnitude 
+accelerations --relative roles of inertia and muscle forces. J Biomech  2008; 41(12): [ADDRESS_1109858] 
+perturbations using a kinematics -driven model. J Biomech 2009; 42(9): 1193- 200. 
+102. Bazrgari B, Shirazi -Adl A, Parnianpour M. Transient analysis of tru nk response in 
+sudden release loading using kinematics -driven finite element model. Clin Biomech (Bristol, 
+Avon)  2009; 24(4): 341 -7. 
+103. Bazrgari B, Nussbaum MA, Madigan ML, Shirazi -Adl A. Soft tissue wobbling affects 
+trunk dynamic response in sudden pert urbations. J Biomech  2011; 44(3): 547- 51. 
+ 

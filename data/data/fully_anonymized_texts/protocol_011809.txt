@@ -1,0 +1,422 @@
+ 
+ 
+Official Title:   
+EHR Embedded Comparative Effectiveness Studies --WWC  
+ 
+NCT number : NCT0451467  
+Document Type:   Study Protocol; Statistical Analysis Plan  
+Date of the 
+Document:  08.05.21  
+ 
+ 
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page 1 of 14
+v.08.05.21D-HH IRB OVERSIGHT:
+One of the following must be true in order to submit to the D-HH IRB. Please check all 
+that apply:
+☐ The Principal Investigator [INVESTIGATOR_62831] D-H
+☐ The study will utilize any D-H data or specimens
+☒ The study will enroll D-H patients or recruit from D-H sites
+☒ The study will utilize any D-H resources, e.g. study procedures will occur 
+at D-H locations and/or use of D-H equipment or shared resources
+PROTOCOL TITLE:
+EHR Embedded Comparative Effectiveness Studies
+PRINCIPAL INVESTIGATOR:
+[INVESTIGATOR_220724] D. Tosteson, ScD
+Professor of Biomedical Data Science
+Director, Division of Biostatistics
+[PHONE_4675]
+[EMAIL_4322]
+Clinical Co-Investigators:
+John A. Batsis, MD, FACP, AGSF, FGSA, FTOS
+Associate Professor of Medicine and The Dartmouth 
+Institute for Health Policy & Clinical Practice
+Section of General Internal Medicine
+[EMAIL_4323]
+Auden C. McClure, MD, MPH
+Assistant Professor of Pediatrics & Medicine
+[EMAIL_4324]
+Adam M. Pearson, MD, MS 
+Assistant Professor of Orthopaedics
+[EMAIL_4325]>
+Dawne M. Mortenson, RN
+Center for Pain and Spi[INVESTIGATOR_050]
+[EMAIL_4326]
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page 2 of 14
+v.08.05.21VERSION NUMBER/DATE:
+Include the version number and date of this protocol.
+REVISION HISTORY
+Revision # Version 
+DateSummary of Changes Consent 
+Change?
+4 092320 Change language for WWC clinic changes 
+due to COVID and process modification; 
+change from single-site to multi-site trial; 
+change to tear-off sheet to gather patient 
+contact [CONTACT_220728] (done via 
+Redcap in WWC)Yes
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page 3 of 14
+v.08.05.21Table of Contents
+1.0 Study Summary..............................................................................................................................4
+2.0 Objectives*.......................................................................................................................................5
+3.0 Background* ...................................................................................................................................5
+4.0 Study Endpoints* ..........................................................................................................................5
+5.0 Study Intervention/Investigational Agent.........................................................................5
+6.0 Procedures Involved*..................................................................................................................7
+7.0 Data and Specimen Banking*...................................................................................................9
+8.0 Sharing of Results with Subjects* ..........................................................................................9
+9.0 Study Timelines* ...........................................................................................................................9
+10.0 Inclusion and Exclusion Criteria* ..........................................................................................9
+11.0 Vulnerable Populations* .........................................................................................................10
+12.0 Local Number of Subjects .......................................................................................................10
+13.0 Recruitment Methods...............................................................................................................10
+14.0 Withdrawal of Subjects*..........................................................................................................11
+15.0 Risks to Subjects* .......................................................................................................................11
+16.0 Potential Benefits to Subjects* .............................................................................................12
+17.0 Data Management* and Confidentiality ...........................................................................12
+18.0 Provisions to Monitor the Data to Ensure the Safety of Subjects*........................[ADDRESS_265066] the Privacy Interests of Subjects.............................................14
+20.0 Compensation for Research-Related Injury ...................................................................14
+21.0 Economic Burden to Subjects ...............................................................................................14
+22.0 Consent Process..........................................................................................................................14
+23.0 Process to Document Consent in Writing........................................................................17
+24.0 Setting .............................................................................................................................................18
+25.0 Resources Available ..................................................................................................................18
+26.0 Multi-Site Research* .................................................................................................................19
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page 4 of 14
+v.08.05.21Study Summary
+Study Title EHR Embedded Comparative Effectiveness Study
+Study Design Survey and interview assessment of parallel group 
+randomization embedded into clinical processes and EHR 
+Systems
+Primary Objective Evaluation of the feasibility, quality, and acceptability of 
+informatics systems and consent procedures for EHR 
+embedded comparative effectiveness research.
+Secondary 
+Objective(s)
+Research 
+Intervention(s)/ 
+Investigational 
+Agent(s) The demonstration interventions are: Initial visit with 
+Dietitian (RD) then Health Coach (HC) or initial visit with 
+Health Coach (HC) then Dietitian (RD) in Weight & 
+Wellness Center (WWC); and activity restriction versus 
+activity as tolerated post discectomy (see below for full 
+descriptions)
+IND/IDE # N/A
+Study Population 1) Patients and providers in the D-H Weight & Wellness 
+Center (WWC) of the Department of Medicine enrolling 
+in obesity management programs; 2) patients 
+undergoing spi[INVESTIGATOR_220725] (CPS).
+Sample Size For the WWC: [ADDRESS_265067] initial visit; For the CPS: 30 for activity 
+restriction/30 for activity as tolerated.
+Study Duration for 
+individual 
+participants6 months of follow-up for CPS patients; follow-up for 
+WWC patients is dependent on when the intervention 
+was completed which could range from 1-6 months.
+Study Specific 
+Abbreviations/ 
+Definitions Health Coach (HC); Registered Dietitian (RD) Weight and 
+Wellness Clinic (WWC); Dartmouth Hitchcock Medical 
+Center (DHMC); Center for Pain and Spi[INVESTIGATOR_050] (CPS)
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page 5 of 14
+v.08.05.21Objectives*
+Evaluation of the feasibility, ease of use, quality, and acceptability of 
+informatics systems and consent procedures for EHR embedded comparative 
+effectiveness research.
+Estimate survey-based patient-participation, approval of EHR processes, and 
+assigned treatment completion rates for embedded randomization 
+procedures in the Weight and Wellness Clinic comparing visit order for initial 
+Health Coach (HC) and Registered Dietitian (RD) visits (part of initial WWC 
+multidisciplinary evaluation at approximately 2 weeks). 
+Hypothesis: Patients participation and approval rates of the process will be 
+greater than 80%.
+Estimate survey-based patient-participation, approval of EHR processes, and 
+assigned treatment completion rates for embedded randomization 
+procedures in the Center for Pain and Spi[INVESTIGATOR_220726] (CPS).
+Hypothesis: Patients participation and approval rates of the process will be 
+greater than 80%.
+Following study completion, verify treatment status and determine EHR 
+outcomes through chart review and records from the D-H data warehouse.
+Background*
+It is commonly acknowledged that patient-clinician decision making is inadequately 
+supported by [CONTACT_220729][INVESTIGATOR_014]. In 
+response to this need, efforts to reform health care delivery—such as the Affordable 
+Care Act—have included large investments in improving electronic health record 
+systems (EHR) as a potential source of evidence development. The expectation is 
+that the large quantity of organized and accessible health care records will 
+ultimately provide a resource for conducting comparative effectiveness research on 
+an ongoing basis to guide “learning health care systems.”  [IOM (Institute of 
+Medicine). Digital Data Improvement Priorities for Continuous Learning in Health 
+and Health Care: Workshop summary. Washington, D.C.: The National Academies 
+Press; 2013.]
+ This protocol will evaluate the feasibility, quality, and acceptability of informatics 
+systems and consent procedures for EHR embedded comparative effectiveness 
+research based in eDH, our Dartmouth-Hitchcock EHR. 
+Two initial demonstrations evaluating the new systems will be conducted targeting 
+obesity interventions in the D-H Weight & Wellness Center (WWC): initial visits with 
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page 6 of 14
+v.08.05.21Dietitian (RD) then Health Coach (HC) or initial visits with Health Coach (HC) then 
+Dietitian (RD); and in the CPS:  activity restriction versus activity as tolerated 
+following discectomy.
+In the WWC, t he demonstration will focus on patients who are returning for their 
+RD and HC visit. These visits are scheduled after the initial provider visit.  These 
+visits are a part of normal clinical care and are scheduled interchangeably as part of 
+the initial WWC multidisciplinary evaluation.  
+In spi[INVESTIGATOR_79477], patients undergoing lumbar discectomy commonly have post-
+operative restrictions related to bending, twisting, and lifting, as well as return to 
+work. However, it is also common to have these activities allowed as tolerated 
+[Carragee EJ, Helms E, O'Sullivan GS. Spi[INVESTIGATOR_050];1996;21(16):1893-1897], and both 
+approaches are used in the DHMC Center for Pain and Spi[INVESTIGATOR_050]. 
+Study Endpoints*
+WWC: System recorded activity and patient surveys/interviews for the quality, and 
+acceptability of informatics systems and consent procedures. 
+CPS: System recorded activity and patient surveys/interviews for the quality, and 
+acceptability of informatics systems and consent procedures. Treatment status and 
+patient reported outcomes as available retrospectively in the EHR.
+Study Intervention/Investigational Agent
+In the WWC obesity and related complications are managed by a WWC provider and 
+obesity specific medications are prescribed as needed. Team care is provided by 
+[CONTACT_220730]. Progress is monitored at provider visits every 1-3 
+months with an aim to provide skills and support for sustained lifestyle change with 
+a goal of 5-10% weight loss . Due to the COVID19 pandemic visits are  now offered as 
+a hybrid of in-person and telehealth visits. 
+In the WWC, t he demonstration will focus on patients eligible and willing to be 
+randomized for the order of their initial RD and HC visits. Both visits  are offered as 
+part of routine clinical care following the first provider visit and are consistent with 
+current best practice medical guidelines for obesity. 
+WWC Arm A: Scheduling the initial RD visit first and then the HC visit as part of 
+standard care. 
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page 7 of 14
+v.08.05.21WWC Arm B: Scheduling the initial HC visit first and then RD visit as part of 
+standard care. 
+CPS Arm A: Standard post-operative activity instructions (i.e., no bending, 
+twisting, or lifting more than 10 lbs for 4 weeks, no return to work until 
+cleared to do so).
+CPS Arm B: Instructions advising activity as tolerated and return to work 
+based on patient discretion
+Procedures Involved*
+The software will identify patients for consent and randomized treatment 
+assignments in obesity treatment and spi[INVESTIGATOR_79477].  Eligible patients will be 
+identified and approached during patient visits to consent for participation.
+Initial pi[INVESTIGATOR_220727]. Clinicians and 
+support staff will be trained in using the EPIC based systems and clinical workflows. 
+This feedback will be used to make final revisions to the systems and procedures for 
+the demonstrations as necessary.
+All potentially eligible patients in demonstration protocols will be initially identified 
+through EPIC system alerts. Alerts will be triggered by [CONTACT_220731]. 
+If the clinicians confirm that eligibility criteria are met, the patients will be asked if 
+they would consider participation in a research project. If the patient is in person 
+and agrees, the demonstration protocol will be explained and information sheet will 
+be handed out. If the patient is not in person the information sheet will be mailed or 
+emailed out to the participant via RedCap link. They will be asked to consent to be 
+assigned randomly to one of the comparative effectiveness interventions and to 
+participate in the follow-up survey and potentially a follow up semi-structured 
+interview (see below). This follow up survey may be done in person via paper 
+survey, sent via RedCap link, or participants can answer the survey questions 
+verbally over the phone and a research assistant will enter responses directly into 
+RedCap.   
+The software will return a computer-generated treatment assignment, with random 
+block sizes chosen to balance the number in each comparison group. A code will be 
+stored in the patient record to indicate the assigned treatment. The provider will be 
+notified of the assigned treatment and place the proper orders in EPIC. In the WWC, 
+this will be done using the pre-defined pathway order screen in EPIC.
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page [ADDRESS_265068]-visit survey (<5 min) with all patients who are approached 
+about participating in the two studies. The survey will focus on the consent process, 
+reasons for deciding to consent or to not consent, and a few demographics (e.g., 
+gender, age, race, education level).  The survey will be anonymous and will be given 
+to the patient at the end of their visit or after their consent phone call. This brief 
+post-visit survey may be done in person via paper survey, sent via RedCap link, 
+paper survey via mail, or participants can answer the survey questions verbally over 
+the phone and a research assistant will enter responses directly into RedCap. 
+Invitations to participate in the survey will be sent up to four times by [CONTACT_65056],    
+For patients in the CPS who have decided to enroll we will use the sheets to also 
+gather their contact [CONTACT_220732]. To allow us to get 
+feedback from unenrolled patients, the information sheet will have a tear off section 
+with blanks for the patient’s contact [CONTACT_3031]. That sheet will be torn off before 
+being given to an unenrolled patient who will remain anonymous. 
+All the demonstration interventions are considered standard of care at DHMC. Risks 
+will be monitored according to clinical standards as currently employed in the 
+participating clinics. 
+A follow-up survey will be sent after 1 to 6 months  to ask whether they received the  
+assigned treatment, their perceptions of the study processes, and some basic 
+demographic information.  The survey and semi-structured interviews will be 
+conducted by [CONTACT_220733] (CPDE) 
+and overseen by [INVESTIGATOR_124]. Schifferdecker, study Co-I. Identifying information (e.g., name, 
+email, address, phone number) will only be used to contact [CONTACT_220734] a survey or administer it by [CONTACT_648], and to assess their interest in being 
+interviewed. Invitations to participate in the survey will be sent up to four times by 
+[CONTACT_65056], and paper surveys will be mailed as a last resort to non-respondents 
+with a paid return envelope. 
+Participants who agree to be contact[CONTACT_220735]-structured interview will be 
+asked their preference for setting up an interview (e.g., by [CONTACT_19052]). CPDE 
+staff will use the participant’s preference to contact [CONTACT_220736]. All interviews will be conducted by [CONTACT_648], audio-recorded, and transcribed for 
+analysis. 
+Following study completion treatment status and patient reported outcomes 
+determined through retrospective chart review based on EHR data.
+Data and Specimen Banking*
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page 9 of 14
+v.08.05.21Study data are derived from responses to the surveys. Patient level data files will be 
+maintained until a final report is released. Full name, email and phone number will 
+be entered into RedCap database and will only be stored with the study team. 
+Sharing of Results with Subjects*
+Summary results from the demonstrations will be available as a published final 
+report from the funding agency (PCORI), and in scientific publications. Information 
+on the location and timing of summary results will be communicated to 
+participating patients during the consent process.
+Study Timelines*
+The anticipated start date for enrollment into the study is September 1, 2020. 
+Approximately three months is expected for enrollment. Patients will be contact[INVESTIGATOR_530] 
+1-[ADDRESS_265069] follow-up 
+survey completed by [CONTACT_11711] 1, 2021. The primary data analyses will be executed on 
+a blinded basis as survey data are accrued, and summarized by [CONTACT_220737].
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page 10 of 14
+v.08.05.21Inclusion and Exclusion Criteria*
+CPS
+Inclusion Criteria: Adults (>18) able to consent, with sufficient fluency in English; 
+indications for discectomy; able to restrict activities or to resume activities as 
+tolerated.
+Exclusion Criteria: Pregnant women; Prisoners; Children (<18).
+WWC
+Inclusion Criteria: Adults (>18) able to consent, with sufficient fluency in English; 
+initial RD and HC visits are part of routine care as recommended by [CONTACT_13917]; 
+willing to be randomized. 
+Exclusion Criteria: Pregnant women; Prisoners; Children (<18).
+Vulnerable Populations*
+N/A
+Local Number of Subjects
+WWC: 60 patients total, 30 in each treatment arm.
+CPS: [ADDRESS_265070] of care options in the WWC 
+and CPS according to established clinical practice. 
+Withdrawal of Subjects*
+It is unlikely that patients will be withdrawn unless the study terminates 
+prematurely. In this case, participating patients and providers will be notified. 
+Partial withdrawal from procedures will not affect the continued data collection, 
+unless the patient also withdraws permission to use their data. No plans are in place 
+to collect survival data.
+Risks to Subjects*
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page [ADDRESS_265071] of care treatment are anticipated. Patients 
+will be informed of these risks according to currently used procedures in the clinics 
+and during the consent process. Patients will be contact[CONTACT_51095]-up 
+questionnaires, and risks/protections regarding privacy will be discussed in the 
+consent process.
+Potential Benefits to Subjects*
+There are no direct benefits.
+Data Management and Confidentiality*
+Data collected through the surveys and interviews will be subject to strict 
+confidentiality safeguards. The brief post-visit survey  and follow up survey may be 
+conducted using DH RedCap account, which is a standard and secure online survey 
+platform. Interview audio recordings will be transcribed and analyzed; the audio 
+will be destroyed at the completion of the full study (around March 2021). In 
+addition, the following procedures will be used to minimize risk: 1) unique 
+identifiers will be assigned to each participant, and any potential identifiers (e.g., 
+name) in surveys or transcripts will be removed prior to entering data into software 
+for analysis; and 2) only the members of the study team will have access to a list 
+linking unique IDs to participants; this list will be stored on a password protected 
+computer. Information will be kept on password-protected secure computers and 
+electronic files. 
+Access to retrospective EHR data is requested following study completion for all 
+study participants to examine clinical and outcomes for assessing the quality and 
+feasibility of the EHR process. The following data elements are requested: 
+For  WWC:
+Age
+Sex
+Race
+Ethnicity
+Date of enrollment/treatment group assignment
+Date of initial Health Coach and Dietitian visits
+Patient Weight and Height at initial and subsequent visits
+Patient Reported Outcomes: PROMIS quality-of-life measure functional 
+status questionnaire, and self-efficacy
+For CPS:
+Age
+Sex
+Race
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page 12 of 14
+v.08.05.21Ethnicity
+Date of enrollment/treatment group assignment
+Date of surgery
+Patient discharge instructions for chart review by [CONTACT_220738]
+Patient Reported Outcomes: PROMIS quality-of-life measure functional status 
+questionnaire.
+Oswestry Disability Index
+The following table gives estimates of the accuracy of the estimates for the primary 
+outcomes with the planned demonstration sample sizes, with a range of 
+participation and adherence rates.
+Parameters for 
+Sample Size90% CI half-width for 
+participation and 
+adherance rates in 
+each arm 
+N 30
+Rate: 80% 13%
+Rate: 70% 15%
+Rate: 60% 16%
+Provisions to Monitor the Data to Ensure the Safety of Subjects*
+The interventions are all standard of care and considered to be minimal risk.  Safety 
+concerns will be addressed as part of routine clinical practice. 
+Provisions to Protect the Privacy Interests of Subjects
+For the surveys and interviews, de-identified data are only linked through separate 
+logs that are stored on password protected computers. 
+Compensation for Research-Related Injury
+The WWC and CPS assigned treatments are considered standard of care and 
+minimal risk. There will be no compensation to participants for study-related 
+injuries beyond those offered in routine clinical practice. 
+Economic Burden to Subjects
+No costs outside of usual care are anticipated.  Those patients being asked to 
+participate in interviews at either the beginning or end of the study will be given/sent $30 
+VISA gift cards, and those patients responding to surveys at the end of the study will be 
+sent $20 VISA gift cards.
+Consent Process
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page [ADDRESS_265072]-discectomy Activity Restriction/Activity as Tolerated,  following 
+the SOP: Informed Consent Process for Research (HRP-090). 
+Process to Document Consent in Writing
+Given the minimal risk, a waiver of documentation of written consent is requested 
+for this protocol. Note that all data are collected via anonymous survey, and no 
+HIPPA data are collected.
+Note that both WWC and the CPS have reviewed and approved this protocol. 
+Consent scripts are attached as well as a detailed information sheet for each 
+comparison, covering all required consent elements.
+A waiver of HIPPA authorization is requested for the retrospective use of EHR data 
+and chart reviews for patients who are no longer participating in the study. The data 
+are requested to assess the feasibility of our embedded systems and processes, and, 
+as in other retrospective EHR chart reviews, it is not practicable to obtain consent. 
+The privacy risks are mitigated by [CONTACT_220739], which 
+are securely stored. The files linking the study IDs to patient records will be 
+destroyed at the conclusion of the study. PHI will not be reused or disclosed 
+following the conclusion of the study.
+Setting
+The study will be conducted in the Department of Medicine D-H Weight & Wellness 
+Center Clinic and in the Department of Orthopedic Surgery Center for Pain and 
+Spi[INVESTIGATOR_050]. All interventions are standard of care and will be performed at these sites. 
+The DH Research Ethics Committee serves as an advisory board and includes 
+community representation. 
+Resources Available
+There are approximately 150 patients per year/75 per 6 months who undergo 
+lumbar discectomy at DHMC, of whom we plan to enter 30 to each of the two arms 
+for activity restriction following discectomy.
+Current WWC volume is estimated at approximately 600 patients per year ([ADDRESS_265073] initial visit;
+PROTOCOL TITLE: EHR Embedded Comparative Effectiveness Studies
+Page [ADDRESS_265074] 
+supports approximately 40% FTE for the Investigators and Co-Investigators and 
+120% FTE for staff in supporting roles as research assistants and programmers. 
+Informed consent will be performed by [CONTACT_220740], 
+most of whom are regular participants in team meetings. Scripts and training will be 
+reviewed prior to initiation of the demonstration projects.
+Multi-Site Research*
+One of our Co-Investigators, [CONTACT_220741], has moved to the University of 
+North Carolina (UNC).  To maintain his involvement in this and other of his 
+studies at Geisel and at Dartmouth-Hitchcock, we have changed the 
+designation of this trial to a multi-site trial, including UNC.  The appropriate  
+materials for this change were uploaded in MOD00011236.

@@ -208,18 +208,85 @@ Expected response:
 
 ---
 
-## Quick Copy-Paste for Render Dashboard
+## Quick Reference - Your Actual Values
 
-If you already have the credentials in your old service, you can export them:
+**For ilanalabs-add-in service** (copy these exact values):
 
-```bash
-# This command doesn't exist - you must manually copy from Render dashboard UI
-# Go to old service → Environment tab → Copy values to new service
+### Azure OpenAI
+```
+AZURE_OPENAI_API_KEY=77E50MKmkSJRfCB7ivtrQbDvU9Wn8wOuFMPuzsrxy5xWR9ROINv1JQQJ99BKACYeBjFXJ3w3AAABACOGDKMT
+AZURE_OPENAI_ENDPOINT=https://protocol-talk.openai.azure.com/
+AZURE_OPENAI_DEPLOYMENT=gpt-4o-deployment
+ENABLE_AZURE_OPENAI=true
 ```
 
+### Pinecone
+```
+PINECONE_API_KEY=pcsk_4Vp5Xw_6ucBVe9wAfcf1qBewRAxs9gzCNJrq3ZvDpQCZo5hG2zNsXum12LvsMJA2wBxQTn
+PINECONE_ENVIRONMENT=gcp-starter
+PINECONE_HOST=https://clinical-protocols-gdwejfu.svc.eastus2-5e25.prod-azure.pinecone.io
+PINECONE_INDEX_NAME=protocol-intelligence-768
+ENABLE_PINECONE_INTEGRATION=true
+```
+
+### HuggingFace/PubMedBERT
+```
+PUBMEDBERT_ENDPOINT_URL=https://dk8e3vdcuov185qm.us-east-1.aws.endpoints.huggingface.cloud
+HUGGINGFACE_API_KEY=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
+ENABLE_PUBMEDBERT=true
+```
+
+### Model Configuration
+```
+ANALYSIS_FAST_MODEL=gpt-4o-deployment
+FAST_TOKEN_BUDGET=2000
+FAST_MAX_TOKENS=1500
+DEEP_TOKEN_BUDGET=3500
+```
+
+### Confidence & Performance
+```
+MIN_CONFIDENCE_ACCEPT=0.3
+MIN_CONFIDENCE_AUTO_APPLY=0.85
+SIMPLE_PROMPT_TIMEOUT_MS=20000
+CHUNK_MAX_CHARS=3500
+SELECTION_CHUNK_THRESHOLD=10000
+```
+
+### Feature Flags
+```
+USE_SIMPLE_AZURE_PROMPT=false
+ENABLE_CONTINUOUS_LEARNING=true
+ENABLE_ADVANCED_ANALYTICS=true
+ENABLE_TA_ON_DEMAND=true
+ENABLE_TA_SHADOW=false
+ENABLE_LEGACY_PIPELINE=true
+FALLBACK_TO_SIMPLE_ON_ERROR=true
+RAG_ASYNC_MODE=true
+TELEMETRY_ENABLED=true
+```
+
+### Python Environment
+```
+PYTHON_VERSION=3.11
+PYTHONDONTWRITEBYTECODE=1
+PYTHONUNBUFFERED=1
+ENVIRONMENT=production
+```
+
+### ChromaDB
+```
+ANONYMIZED_TELEMETRY=False
+CHROMA_TELEMETRY_DISABLED=True
+```
+
+---
+
+## Quick Copy-Paste for Render Dashboard
+
 **Manual Steps:**
-1. Open old service (e.g., `ilana-backend`) in one browser tab
-2. Open new service (e.g., `ilana-backend-v2`) in another browser tab
-3. Go to Environment tab in both
-4. Copy each secret value from old → new
-5. Click Save Changes in new service
+1. Go to Render Dashboard → `ilanalabs-add-in` → Environment tab
+2. For each variable above, click "Add Environment Variable"
+3. Copy variable name and value exactly as shown
+4. Mark API keys as "Secret" (checkbox in Render UI)
+5. Click "Save Changes" (Render will auto-deploy)

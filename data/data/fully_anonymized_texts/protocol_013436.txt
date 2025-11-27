@@ -1,0 +1,233 @@
+ Assessing the Relative Efficacy of Communication Modalities for Messages Promoting Flu 
+Shots  
+ 
+Study Protocol with SAP 
+ 
+[STUDY_ID_REMOVED]  
+ 
+10/6/2022  
+  
+ 
+Study Protocol  
+ 
+Scientific Background  
+ 
+The Centers for Disease Control (CDC) recommends a flu vaccination to everyone aged 6+ 
+months, with rare exception; almost anyone can benefit from the vaccine, which can reduce 
+illnesses, missed work, hospi[INVESTIGATOR_602], and death. Flu shots are particularly important for 
+patients at high risk of experiencing se vere outcomes.  
+ 
+During the 2020 -21 and 2021 -22 flu seasons, the study team sent messages to Geisinger 
+patients in the top 10% of risk for flu and complications according to an artificial intelligence 
+algorithm. Messages that told patients they were at high  risk significantly increased their 
+likelihood of getting vaccinated.  
+ 
+Objectives  
+ 
+The present study extend s previous work by [CONTACT_858224]. In previous campaigns , patients 
+received messages via all communication modalities patients were eligible for (mailed letter, 
+SMS text, and/or patient portal message). In this study, patients were  randomized to receive 
+high-risk messages in one or more modalities.  
+ 
+Design   
+ 
+This study  is a randomized controlled trial  with up to  [ADDRESS_1195863] divided into the following modality 
+groups  according to the modalities they were eligible for : 
+ 
+A. Letter + Patient portal + SMS (29,505 patients)  
+B. Letter + Patient portal (4,980 patients)  
+C. Letter only  (4,366 patients)  
+D. Letter + SMS  (4,364 patients ) 
+E. Patient portal + SMS  (8 patients)  
+F. SMS only  (2 patients ) 
+ 
+Note: there were no eligible patients who had Patient portal access only.  
+ 
+Then, each modality group was  randomized across study  arms  the patients were eligible for:   
+ 
+1. Control (no message)  
+2. Letter only  
+3. Patient portal only  
+4. SMS only  
+5. Patient portal + SMS  
+ 6. Letter + Patient portal + SMS  
+ 
+For example,  patients who are eligible to receive a letter and an SMS (modality group D) were 
+randomized to Control  (study arm 1 ), Letter only (study arm 2 ), or SMS only (study arm 4 ). 
+ 
+Note: Due to power limitations, we did not test all possible combinations of modalities (e.g., we 
+did not include a Letter + SMS study arm).  
+ 
+Power Analysis  
+ 
+Our primary analysis sample includes patients in modality group A, with patients eligible for all 
+three modalities . This group includes between 4 ,916 and 4 ,919 patients per arm. This sample 
+size allows  80% power to detect an increase in flu vaccination rates from 35% to 37.7% with 
+alpha = .05. 
+ 
+Project Status  
+ 
+All intervention messages have been sent. Letters were sent on 9/6/22. Patient portal messages 
+and SMS were sent on 9/8/22, to match the date whe n the majority of patients were expected to 
+receive the letter  (i.e., 2 days after the letters are  sent) . The primary outcome date was 10/4/22.  
+ 
+As of this writing, t he study team has not yet obtained or analyzed any outcome data from the 
+study.  
+ 
+ 
+Statist ical Analysis Plan  
+ 
+Analysis Exclusion  Criteria  
+ 
+We will remove patients from analysis who received a flu shot prior to 9/ 6/22, the study start 
+date, because they could not have been influenced by [CONTACT_369885] a flu shot.  
+ 
+Planned Analyses  
+ 
+Primary Outcome : Flu vaccination within [ADDRESS_1195864] message send date  [ Time 
+Frame: [ADDRESS_1195865] messages are sent in the study  ] 
+ 
+The primary analysis sample will be patients in modalit y group A, who are eligible for all 3 
+modalities and were randomized across all study arms.  We will address the following four 
+questions in this primary analysis sample:  
+ 
+Question 1: Are flu shot rates higher  when a  high-risk flu shot  message is sent in any modalit y 
+or combination of modalities  independently  compared to when no message is sent ? 
+ 
+Hypotheses:  
+1.a. Flu shot rates will be higher in the Letter only arm than the Control arm  
+1.b. Flu shot rates will be higher in the Patient portal only arm than the Control arm  
+1.c. Flu shot rates will be higher in the SMS only arm than the Control arm  
+1.d. Flu shot rates will be higher in the Patient portal +SMS arm than the Control arm  
+1.e. Flu shot rates will be higher in the  Letter + Patient portal + SMS arm than the Control arm  
+ 
+ Analysis 1 ( Confirmatory ): We will run an OLS regression with a categorical independent 
+variable coding for study arm with the Control arm coded as baseline.  All 5 hypotheses above 
+will be tested wit hin the same regression.  
+ 
+Question 2: Which modality on its own most effectively increases flu shots?  
+ 
+Analysis 2 (Exploratory):  We will run an OLS regression with a categorical independent variable  
+coding for study arm , including only patients randomized to be  sent messages in one modality  
+(Letter only, Patient portal  only, SMS  only).  We will test for significant pairwise differences  in flu 
+vaccination rates  between the study arms  by [CONTACT_858225]’s HSD test. 
+ 
+Question 3:  Are Patient portal and SMS messages better in combination than either modality 
+alone?  
+ 
+Analysis 3 (Exploratory):  We will run an OLS regression including patients in the Patient portal 
+only, SMS only, and Patient portal + SMS arms, with a categorical independent variable coding 
+for study arm. The Patient portal + SMS arm will be coded as baseline , so the individual Patient 
+portal and SMS modalities can be compared directly against the combination of the two 
+modalities.  
+ 
+Question 4: Is there value to sending a letter in addition to Patient portal and SMS  messages ? 
+ 
+Analysis 4 (Exploratory) : We will run an OLS regression comparing the Patient portal + SMS 
+study arm to the Letter + Patient portal + SMS arm , with a categorical independen t variable 
+coding for study  arm.  
+ 
+Analyses with additional modality groups  
+ 
+We also will run  the following  additional analyses  on the primary outcome:  
+ 
+Within  modality groups B and D (Letter + Patient portal, Letter + SMS , respectively ), we will run 
+Analyses 1 and 2 (comparing active study arms to the control arm, and comparing active study 
+arms to one another).  
+ 
+For modality group C  (Letter only), we will run Analysis 1, compar ing the letter arm to control.  
+ 
+Because there are so few patients in modality groups E  (8 patients) and F (2 patients), we will 
+not separately analyze data on these groups.  
+ 
+Finally, we will run Analyses 1 and 2 on the entire sample, with all modality groups combined.  
+ 
+ 
+Sensitivity Analyses and Robustness Checks   
+ 
+Recent work suggests that OLS regressions are appropriate in randomized experiments with 
+binary outcome variables such as ours (Gomilla, 2021). However, as a robustness check, we 
+will also run  the regressions described above as logistic regressions instead of OLS 
+regressions.  
+ 
+Other  Pre-specified Outcomes  
+ 
+ Other Pre -specified Outcomes listed below include flu outcomes (diag nosis, complications) and 
+COVID -[ADDRESS_1195866] certainly be increased flu vaccination. Therefore, we will only 
+run analyses on Other Pre-specified Outcomes for analyses above where there is a difference 
+in flu vaccination.  
+ 
+1. High confidence flu diagnosis  
+ 
+Patient received a flu diagnosis via a positive polymerase chain reaction 
+(PCR)/antigen/molecular test (yes/no) during the 2022 -23 flu season (from the first 
+message send date through April 30, 2023).  
+ 
+[Time Frame: Up to 8 mon ths] 
+ 
+2. "Likely flu" diagnosis  
+ 
+Received a "high confidence flu" diagnosis (with positive PCR/antigen/molecular test) 
+and/or "likely flu" diagnosis (as assessed via International Classification of Disease [ICD] 
+codes or Tamiflu administration or positive PCR/antigen/molecular test) (yes/no) during 
+the 2022 -23 flu season (from the first message send date through April 30, 2023).  
+ 
+Note that "likely flu" is a superset of the "high confidence flu" diagnoses.  
+ 
+[Time Frame: Up to 8 months]  
+ 
+3. Flu complica tions  
+ 
+Diagnosed with flu -related complications (yes/no) from the first message send date 
+through July 31, 2023.  
+ 
+[Time Frame: Up to 11 months]  
+ 
+4. ER visits  
+ 
+Number of ER visits from the first message send date through July 31, 2023.  
+ 
+[Time Frame: Up to 11 m onths]  
+ 
+5. Hospi[INVESTIGATOR_858223] 31, 2023.  
+ 
+[Time Frame: Up to 11 months]  
+ 
+6. COVID -[ADDRESS_1195867] one COVID -19 vaccination (yes/no) during the 2022 -23 flu season 
+(from  the first message send date through April 30, 2023).  
+ 
+[Time Frame: Up to 8 months]  
+ 
+  
+Additional Exploratory Analyses  
+ 
+1. Age and gender  
+ 
+While older patients tend to be aware of their increased vulnerability, younger patients 
+may be more surprised to learn of their high -risk status. Additionally, our previous work 
+suggests that males and females are differently likely to get vaccinated as a  function of 
+age, with younger females  more  likely to get vaccinated than males , and older females 
+less likely to get vaccinated than older males.  
+ 
+We will therefore run an OLS regression including binned age (18 -24, 35 -44,45 -54, 65+), 
+gender,  and their in teraction.   
+ 
+We will also test for an interaction between age, gender and study arm , as people of 
+different ages and genders may be differentially receptive to different modalities . 
+ 
+2. Timing of shot  
+ 
+We will run regression models to test whether intervention messages influenced the 
+timing (time elapsed since the beginning of the intervention, September 6, 202 2) of flu 
+shots.  
+ 
+3. Risk level  
+ 
+As in our studies in the 2020 -21 and 2021 -22 flu seasons, patient s who were in the top 
+3% of risk were told they were in the top 3% of risk, while those in the next 7% (i.e., the 
+top 4 -10% of risk) were told they were in the top 10% of risk. We will test whether flu 
+vaccination rates differ across risk level (top 3%, to p 10%) and whether risk level 
+interacts with study arm among patients in modality group A  who have access to all 3 
+modalities.  
+ 
+ 

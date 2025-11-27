@@ -1,0 +1,596 @@
+ 
+ Evaluation of Breast CT  
+ 
+[STUDY_ID_REMOVED]  
+ 
+ 
+Protocol 214750  including statistical analysis plan  
+  
+ 
+Protocol Version dated March 1, 2021  
+ 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 1 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  1) Protocol Title  
+ 
+Principal Investigator:  John M. Boone, PhD, Professor of Radiology  
+Title:  Evaluation of Breast CT  
+Protocol Version Date: March 1 2021  
+  
+2) Objectives  
+ 
+The purpose of this study is to evaluate the efficacy of breast computed 
+tomography (CT) for breast cancer detection. A breast CT scanner has been built 
+using a flat panel detector and cone beam techniques. The breast CT system will be evaluated to determine the efficacy of the scanner in the detection of lesions and the results will be compared to breast MRI, mammography and the histopathological findings of the detected lesions.  
+  We have studied the potential of breast CT (bCT) for breast imaging under an NIH -
+funded Biomedical Research Partnership (BRP) grant (R01 EB002138 -10), and 4 
+breast CT scanners have been developed that have imaged over 600 women to date (under more than one IRB -approved protocol).  The BRP grant cannot be 
+renewed, and with this (resubmitted) R01 grant application, we seek to finalize our research in breast CT – The specific aims have been significantly modified as a 
+result of the first critique, and we now focus on a narrower set of remaining issues.  
+ 
+Specific Aims:  
+ Contrast injections are used to identify breast cancer lesions in clinical p rocedures, 
+most notably breast MRI (gadolinium contrast agent).  Other investigators have demonstrated the utility of iodine contrast agent injection for breast cancer delineation in projection mammography techniques, using both dual energy subtraction (Le win) and temporal subtraction (Yaffe) to highlight the visualization 
+of the breast tumor.   Specific Aim 1: Develop scatter correction and image processing methods to improve Hounsfield Unit (HU) accuracy.   
+The UC Davis bCT scanners do not use an anti -scatter grid to keep radiation dose 
+low. We have developed an inverse beam stop method for accurate scatter -
+correction, but this needs to be implemented in software. In addition to this 
+physics -based scatter correction method, additional image processing meth ods 
+will be explored to maximize the quantitative integrity (Hounsfield unit accuracy) 
+of bCT images while minimizing cupping. We hypothesize that improvements in HU 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 2 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  accuracy will improve the quantitative predictive value of CE -bCT, for example, 
+comparing differences in lesion HU before and after contrast injection ( ΔHU).  
+ 
+Specific Aim 2: Optimize non -contrast bCT imaging for microcalcification detection.  
+The ultimate goal of the breast tomography project is to improve breast cancer screening beyond the lim itations of projection mammography, and for practical 
+reasons this precludes contrast injection for screening normal risk patients.  Since the (4th) Doheny scanner has >4 times the MTF (at 10%) than earlier scanners, we 
+believe that bCT can now compete with mammography for microcalcification 
+detection. In this aim, image optimization in terms of microcalcification detection performance will be performed. Using physical phantoms with microcalcifications, image reconstruction parameters (apodization filter, m atrix dimensions, 
+preprocessing techniques, etc.) will be optimized and evaluated using mathematical metrics and human observer performance studies on phantoms containing microcalcifications.  
+ Specific Aim 3:  Clinical Trial: Imaging women using breast CT and CE -MRI 
+Women with suspicious lesions (BIRADS 4+5) will undergo digital mammography (“2D”) and tomosynthesis (“3D”) as standard of care workup. Patients who participate will undergo both unenhanced and contrast enhanced breast CT imaging, and also contrast -enhanced breast MRI. Both breasts (affected and 
+unaffected) will be imaged  with bCT and MRI.  Our facility biopsies 2400 patients 
+over 5 years, and power analysis shows that we will need a total of 400 patients 
+whose images will be used for the normal- risk patient screening comparisons (Aim 
+4) and for the high risk patient screening comparisons (Aim 5).  
+ Specific Aim 4:  Normal Risk Screening Performance: Comparison of non -contrast 
+bCT with 2D and 2D+3D mammography.  The 4th bCT scanner (“Doheny”) is now operational and has four times the spatial resolution of our earliest scanner.  Non -
+contrast bCT has demonstrated better mass -lesion detection performance than 
+mammography (Lindfors, et al, 2008) but using the earlier bCT systems, microcalcification detection was inferior to mammography.  Doheny now has vastly improved spatial resolution, and we hypothesize that bCT is (now) equal to or better than screening mammography for microcalcification detection. In this aim, digital mammography and non -contrast bCT images will be compared in a 
+standard receiver operating characteristic (ROC) study.  Mammography with 
+Tomosynthesis will also be compared against non -contrast bCT, using ROC 
+methods.  A full- search methodology will be used.  
+ 
+Specific Aim 5:  High Risk Screening Performance: CE breast CT and CE -breast MRI.  
+To evaluate the potential of CE -bCT for use in high risk screening (as MRI is used 
+now), CE -bCT ROC performance will be compared against CE -MRI ROC 
+performance.  Radiologists will perform full 3D search of the CT and MRI (independently) volume data sets (both with and without contrast) and report 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 3 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  overall probability of malignancy for each modality.  Location -specific metrics for 
+potential FROC or LROC analysis will also be captured.  Assessme nt of ΔHU will also 
+be performed to quantitatively evaluate predictive performance for malignancy.  
+ 
+Specific Aims 1 and 2 do not require changes in hardware; these two aims are completely focused on post -acquisition image processing techniques (software). 
+Therefore, accrual to the clinical trials as described in Aim 3 can commence on day one of this project. The acquired projection image data from the scanner is always 
+saved, and once the scatter -correction and flat fielding techniques (Aim 1) and 
+optimized reconstruction methods (Aim 2) are finalized, images will be re -
+reconstructed and become available for the ROC studies on normal -risk screening 
+(Aim 4) and high -risk screening (Aim 5) performance.  We believe that this 5 year 
+study will demonstrate that non -contrast bCT can outperform 2D & 3D 
+mammography in breast cancer screening for normal risk patients, and that CE -
+bCT is (at least) equivalent to CE -MRI for screening high -risk women.  
+ 
+3) Background  
+ 
+Breast cancer is a disease with high incidence that will affect the life of one of every eight women in the United States. Early detection of breast cancer is the most important factor determining prognosis, and X -ray mammography is the 
+principal screening tool for breast cancer world -wide.  While mammography is not 
+without shortcomings, it nevertheless plays an important and documented role in reducing mortality associated with breast cancer. The principal weakness of mammography is in its application to women with extremely dense, glandular breasts. Imaging the dense breast with good sensitivity has taken on more 
+importance as younger women (40 -49 year age group) are now screened routinely, 
+as the use of hormone replacement therapy has expanded, and as genetic testing identifies younger women at risk. Equalizatio n techniques have been shown to 
+increase the effective dynamic range of mammography, however their technical complexity has hampered widespread adoption. Digital radiographic systems, finally nearing wide -scale clinical use, have the promise of improving 
+mammography of the dense breast due to their increased dynamic range over 
+screen -film mammography. However, like screen -film mammography, digital 
+mammography integrates all anatomical structures in the breast onto a planar projection image. The fundamental problem of detecting breast cancer in dense 
+breasts is the superposition of multiple overlaying glandular structures, which can 
+obscure the visualization of a breast tumor. A fundamental solution to this problem lays in the use of tomographic imaging techniques, which vastly reduces 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 4 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  anatomical complexity by separating overlapping structures into individual 
+tomographic images of the breast.  
+ 
+Summary of Initial Experience  
+ Dedicated breast computed tomography (bCT ) is a fully tomographic cone beam x -
+ray based imaging modality that generates three dimensional images of the breast. In initial clinical trials, bCT was shown to provide significantly better visualization 
+of mass lesions than that capable with mammograph y; however mammography 
+outperformed bCT in visualizing microcalcifications.[1] Further work using injected 
+iodine based contrast medium in conjunction with bCT, or so called contrast-enhanced bCT (CE -bCT), verified that mass lesions are seen better on CE -bCT than 
+on mammography. However, the visualization of microcalcifications, specifically those associated with a malignant lesion, was similar at CE -bCT and 
+mammography, suggesting that the use of iodine contrast medium may close the gap between bCT and mam mography in visualizing malignancy.[2] Due to the 
+contrast injection, CE -bCT is a more invasive procedure than mammography and 
+may not be appropriate as a modality for breast cancer screening in the general population. CE -bCT may have more potential as a tool for screening in high risk 
+patients, for cancer staging, and for tumor targeting. Unenhanced bCT may still serve as an important imaging modality for tumor staging and targeting in patients with contraindications to iodine contrast imaging.  
+ Contrast Enhanced Breast CT Significance  
+ Contrast injections are used to identify breast cancer lesions in clinical procedures, most notably breast MRI (gadolinium contrast agent).  Other investigators have demonstrated the utility of iodine contrast agent injectio n for breast cancer 
+delineation in projection mammography techniques, using both dual energy subtraction (Lewin) and temporal subtraction (Yaffe) to highlight the visualization of the breast tumor.  
+ 
+Reference List:  
+ 
+1. Duffy SW, Tabar L, Vitak B, Yen MF, Warwick J, Smith RA, Chen HH. The 
+Swedish Two -County Trial of mammographic screening: cluster randomisation 
+and end point evaluation. Ann Ocol 2003; 14:1196-1198. 
+2. Hackshaw A. EUSOMA review of mammography screening. Ann Oncol 2003; 14: 1193-1195. 
+3. Tabar L, Yen MF, Vitak B, Chen HH, Smith RA, Duffy SW. Mammography service screening and mortality in breast cancer patients: 20 -year follow- up before 
+and after introduction of screening. Lancet 2003; 361:1405-1410. 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 5 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  4. Tabar L, Duffy SW, Yen MR, Warwick J, Vitak B, Chen HH, Smith RA. All-
+cause mortality among breast cancer patients in a screening trial: support for breast cancer mortality as an end point. J Med Screen 2002; 9:159-162. 
+5. Jackson VP, Hendrick RE, Feig SA, Kopans DB. Imaging of the radiographically dense breast. Radiology 1993; 188:297-301. 
+6. Boone JM, Lindfors KK. The effect of breast density on cancer detection performance in mammography. J Women’s Imaging 3, 122-128. 5-5-2001. 
+7. Spratt JS, Greenberg RA, Heuser LS. Geometry, growth rates and duration of cancer and carcinoma in situ of the breast before detection by screening. Cancer Res 1986; 46:970-974. 
+8. Boone JM, Nelson TR, Lindfors KK, Seibert JA. Dedicated breast CT: radiation dose and image quality evaluation. Radiology 2001; 221:657-667. 
+9. Ning R, Chen B, Conover D, HcHugh L, Cullinan J, Yu R. Flat panel detector-based cone beam volume CT mammography imaging: Preliminary phantom study. SPIE 2001; 4320:601-610. 
+10. Chen B, Ning R. Cone- beam volume CT mammography imaging: Feasibility 
+Study. SPIE 2001; 4320:655-664. 
+11. Chen B, Ning R. Cone-beam volume CT breast imaging: feasibility study. Med Phys 2002; 29:755-770. 
+12. Vedula AA, Glick SJ, Gong X. Computer simulation of CT mammography using a flat -panel imager. SPIE 2003; 5030:349-360. 
+13. Glick SJ, Vedantham S, Karellas A, A’Hern RP. Investigation of optimal kVp settings for CT mammography using a flat panel imager. SPIE 2002; 4682:392-402. 
+14. McCauley TG, Stewart AX, Stanton MJ, Wu T, Philips WC. Three-dimensional breast image reconstruction from a limited number of views. SPIE 2000; 3977:384-395. 
+15. Tornai MP, Bowsher JE, Jaszczak RJ, Pieper BC, Greer KL, Hardenbergh PH, Coleman RE. Mammotomography with pinhole incomplete circular orbit SPECT. J Nucl Med 2003; 44:583-593. 
+16. Samei E, Tornai MP. Optimizing beam quality for x-ray computed mammotomography. SPIE 2003; 5030:575-584. 
+17. Chen B, Ning R. Cone-beam volume CT breast imaging: feasibility study. Med Phys 2002; 29:755-770. 
+18. Boone JM, Shah N, Nelson TR. A comprehensive analysis of DgN(CT) coefficients for pendant -geometry cone-beam breast computed tomography. Med 
+Phys 2004; 31:226-235. 
+19. Gisvold JJ, Reese DF, Karsell PR. Computed tomograhic mammography (CTM). AJR Am J Roentgenol 1979; 133:1143-1149. 
+20. Gisvold JJ, Karsell PR, Reese EC. Clinical evaluation of computerized tomographic mammography. Mayo Clin Proc 1977; 52:181-185. 
+21. Reese DF, Carney JA, Gisvold JJ, Karsell PR, Kollins SA. Computerized reconstructive tomography applied to breast pathology. Am J Roentgenol 1976; 126:406-412. 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 6 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  22. Chang CH, Sibala JL, Fritz SL, Dwyer SJ, III, Templeton AW. Specific value of 
+computed tomographic breast scanner (CT/M) in diagnosis of breast disease. Radiology 1979; 132:647-652. 
+23. Chang CH, Sibala JL, Fritz SL, Gallagher JH, Dwyer SJ, III, Templeton AW. Computed tomographic evaluation of the breast. AJR Am J Roentgenol 1978; 131:459-464. 
+24. Chang CH, Sibala JL, Gallagher JN, Riley RC, Templeton AW, Beasley PV, Porte RA. Computed tomography of the breast. A preliminary report. Radiology 1977; 124:827-829. 
+25. McKinley RL, Tornai MP, Samei E, BML. Simulation of a quasi -monochromatic 
+beam for x -ray computed mammotomography. Med Phys 2004; 31:800-812. 
+26. Niklason LT, Christian BT, Niklason LE, Kopans DB, Castleberry DE, Opsahl-Ong BH, Landberg CE, Slanetz PJ, Giardino AA, Moore R, Albagli D, DeJule MC, Fitzgerald PF, Fobare DF, Giambattista BW, Kwasnick RF, Liu J, Lubowski SJ, Possin GE, Richotte JF, Wei CY, Wirth RF. Digital tomosynthesis in breast imaging. Radiology 1997; 205:399-406. 
+27. Dobbins JT, III, Godfrey DJ. Digital x-ray tomosynthesis: current state of the art and clinical potential. Phys Med Biol 2003; 48:R65-106. 
+28. Stevens GM, Birdwell RL, Beaulieu CF, Ikeda DM, Pelc NJ. Circular tomosynthesis: potential in imaging of breast and upper cervical spine—preliminary phantom and in vitro study. Radiology 2003; 228:569-575. 
+29. Suryanarayanan S, Karellas A, Vedantham S, Glick SJ, D’Orsi CJ, Baker SP, Webber RL. Comparison of tomosynthesis methods used with digital mammography. Acad Radiol 2000; 7:1085-1097. 
+30. Feldkamp LA, Davis LC, Kress JW. Practical cone- beam algorithm.  J Opt Soc 
+Am A 1984; 1:612-619. 
+31. Huda W, Lieberman KA, Chang J, Roskopf ML. Patient size and x-ray technique factors in head computed tomography examinations. II. Image quality. Med Phys 2004; 31:595-601. 
+32. Sundaram P, Beaulieu CF, Paik DS, Schraedley- Desmon d P, Napel S. CT 
+colonography: does improved z resolution help computer-aided polyp detection? Med Phys 2003; 30:2663-2674. 
+33. Boone JM, Geraghty EM, Seibert JA, Wootton-Gorges SL. Dose reduction in pediatric CT: a rational approach. Radiology 2003; 228:352-360. 
+34. Boone JM. Glandular breast dose for monoenergetic and high-energy X- ray 
+beams: Monte Carlo assessment. Radiology 1999; 213:23-37. 
+35. Johns PC, Yaffe MJ. X- ray characterization of normal and neoplastic breast 
+tissues. Phys Med Biol 1987; 32:675-695. 
+36. Brenner DJ, Amols HI. Enhanced risk from low- energy screen -film 
+mammography X-rays. Br J Radiol 1989; 62:910-914. 
+37. Wu X, Barnes GT, Tucker DM. Spectral dependence of glandular tissue dose in screen -film mammography. Radiology 1991; 179:143-148. 
+38. Michaelson JS. Silverstein M, Wyatt J, Weber G, Moore R, Halpern E, Kopans DB, Hughes K. Predicting the survival of patients with breast carcinoma using tumor size. Cancer 2002; 95:713-723. 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 7 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  39. Tabar L. Natural History of Breast Cancer. RSNA Scientific Assembly and 
+Annual Meeti ng Program 2003, 108. 2003. 
+40. Bushberg JT, Seibert JA, Leidholdt EM, Boone JM. The Essential Physics of Medical Imaging. 2 ed. Philadelphia: Lippincott, Williams, and Wilkins, 2002. 
+41. Raptopoulos V, Baum JK, Hochman M, Karellas A, Houlihan MJ, D’Orsi CJ. High resolution CT mammography of surgical biopsy specimens. J Comput Assist Tomogr 1996; 20:179-184. 
+42. Nelson TR, Pretorius DH. Three-dimensional ultrasound imaging. Ultrasound Med Biol 1998; 24:1243-1270. 
+43. Nelson TR, Kellner AL. High- performance clinical patient  data review and 
+consultation system. Stud Health Technol Inform 1997; 39:289-297. 
+44. Doi K, Giger ML, Nishikawa RM, Schmidt RA. Computer-Aided Diagnosis of Breast Cancer on Mammograms. Breast Cancer 1997; 4:228-233. 
+45. Vybornyp CJ, Giger ML, Nishikawa RM. Computer -aided detection and 
+diagnosis of breast cancer. Radiol Clin North Am 2000; 38:725-740. 
+46. Kahsikar -Zuck S, Keefe FJ, Kornguth P, Beaupre P, Holzberg A, Delong D. Pain 
+coping and the pain experience during mammography: a preliminary study. Pain 1997; 73:165-172. 
+47. Sharp PC, Michielutte R, Freimanis R, Cunningham L, Spangler J, Burnette V. Reported pain following mammography screening. Arch Intern Med 2003; 163:833-836. 
+48. Leaney BJ, Martin M. Breast pain associated with mammographic compression. Australas Radiol  1992; 36:120-123. 
+49. Poulos A, Rickard M. Compression in mammography and the perception of discomfort. Australas Radiol 1997; 41:247-252. 
+50. Gibbs P, Liney GP, Lowry M, Kneeshaw PJ, Turnbull LW. 141 Differentiation of benign and malignant sub- 1 cm breast lesion s using dynamic contrast enhanced 
+MRI. Breast 2004; 13:115-121. 
+51. Schnall MD. Breast MR imaging. Radiol Clin North Am 2003; 41:43-50. 
+52. Prionas ND, Lindfors KK, Ray S, Huang SY, Beckett LA, Monsky WL, Boone JM. Contrast- enhanced Dedicated Breast CT : Initial Clinical Experience. 
+Radiology: Volume 256: Number 3-September 2010; 714-723.  
+ 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 8 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  4) Inclusion and Exclusion Criteria  
+ 
+Inclusion Criteria:  
+ 
+• Age at least 35 years old  
+• Diagnostic findings from prior mammography highly suggestive of breast 
+malignancy (BI-RADS® category 4 or BI -RADS® category 5)  
+• Not pregnant or breast -feeding  
+• Ability to lay still and hold breath for approximately 15 seconds  
+ 
+Exclusion Criteria:  
+  
+• Recent breast biopsy  
+• History of moderate or severe reaction to contrast agent injection  (these  
+    subjects can still participate in the non -contrast CT scanning)  
+• History of Allergy to Iodine     
+• History of multiple food and/or drug allergy    
+• Currently taking Glucophage or Glucovance (Metformin)    
+• History of Chronic Asthma    
+• History of Diabetes Mellitus   
+• Renal (kidney) disease, or solitary kidney    
+• Recent lab tests showing elevated serum creatinine (≥ 1.5 mg/dL)   
+• Recent lab tests showing estimated glomerular filtration rate (eGFR) ≤ 60 
+ml/minute  
+• Positive urine pregnancy test or currently breast- feeding  
+• Inability to understand the risks and benefits of the study  
+● The standard MRI contraindications apply, including but not limited to: having a  
+pacemaker or other implanted electronic device, metal foreign bodies within the 
+eye,  aneurysm clips, heart valve prosthesis, vascular stents, coils, intrauterine 
+devices (IUDs),  inferior vena cava (IVC) filters, gunshot wounds with retained 
+bullet fragments.  (MRI only)  
+• Prisoners  
+ 
+ Subject candidates will be informed of the study’s existence when they are told that they need a biopsy. Posters will also advertise the clinical trial, and the posters will be placed in the scan rooms and consultatio n areas. Brochures will 
+also be available in the mammography facility (Suite 0500 ACC).  Mammography staff including technologists, clinical coordinators, fellows, or radiologists will inform the patient of the clinical trial. If the patient expresses an i nterest, a 
+mammography technologist or study coordinator will review their eligibility and obtain contact information for a subsequent phone call. Patients may also be given a brochure by the scheduler, at the time of scheduling their biopsy.  Patients who  
+have expressed an interest or who have taken a brochure will be called by the 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 9 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  study coordinator, who will use a script. If the candidate agrees to participate, the 
+coordinator will schedule the MRI scan and breast CT scans.  
+ 5) Study Timelines  
+ 
+The duration of the subject’s active participation  is approximately 1.5 hours . 
+The duration of the subject’s pathology follow- up is ~2 -3 months.  
+The estimated date to complete the study is approximately December 31, 2022. 
+ 6) Study Endpoints  
+ Primary: The primary study endpoint will be the assessment of patient safety and 
+comfort at the conclusion of the imaging phase of the study.  
+ Secondary: The secondary study endpoint will be the comparison of breast MRI 
+versus breast CT in terms of sensitivity and specificity using biopsy findings as the standard of truth for lesion characterization. True positives & negatives and false positive & negatives will be defined and ROC (receiver operating characteristics) curves will be generated.  
+ 
+7) Procedures Involved  
+ 
+The patient’s biopsy appointment typically occurs about 1 week after her 
+diagnostic work -up in the Mammography clinic. Breast CT and breast MRI scans 
+may take place on different days, or both may be done on the day of her biopsy appointment. Whichever is done first will depend on the clinical MRI clinic schedule. The second scan, whether it is breast CT or breast MRI, will take place prior to the subject’s scheduled breast biopsy appointment.  
+ 
+Breast CT : 
+ The subjects will arrive at the Ambulatory Care Center, Suite 0500 on the day of their study breast CT. The woman to be scanned will lie prone on a large table (which is covered by a foam pad), and she will place the breast to be scanned in a small hole in that tabletop. The hole is surrounded by a soft neoprene “hammock,” which will allow the woman’s entire upper torso to slump into the scan plane of 
+the device. After positioning of the breast by a female mammography 
+technologist, two single projection scout images will be acquired to confirm proper positioning  and two additional single projection images will be acquired with a 
+tungsten collimator placed at the X -ray tube for scatter correction. The woman will 
+be instructed to hold her breath (for approximately 15  seconds) and the scan will 
+commence. There will be no breast compression (as in mammography), and other 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 10 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  than the sound of the relatively noisy x -ray system in the room, the woman will 
+not feel or sense any aspect of this scan.  
+ 
+Contrast Injection Procedures  
+ 
+(Note: If the study subject cannot tolerate i odinated contrast, or IV placement is 
+not possible, the subject may still participate in the non -contrast CT scanning.)  
+ 
+After aseptically prepping the patient’s skin, a intravenous catheter will be 
+inserted into the antecubital vein. The patient will be positioned in the scanner as described above and the IV will be connected to the power injector. 100 ml of contrast agent (Omnipaque -350 350 mg I/ml) at a rate of 4ml/sec will be injected 
+over the course of approximately 25 seconds. In the event the subject has bilateral 
+breast lesions, the contrast administration will be split into two separate injections. 50 ml of contrast at 4ml/sec will be injected prior to scanning the first breast, and a second 50 ml at 4ml/sec will be injected prior to imaging the sec ond 
+breast. The total radiation dose will be the same as that for those subjects who receive the single 100 ml contrast injection. Post -contrast CT scanning will begin 
+approximately 90 seconds after the start of injection. This time point represents the expected peak concentration of contrast in the circulation. Total time for this visit is approximately 45 minutes.  
+ 
+Breast MRI : 
+ The subjects will arrive at the Ambulatory Care Center, Suite 0500 on the day of their study breast MRI. After screening by an MRI technologist for MRI contraindications, an I.V. will be placed in the subject’s forearm. The subject will 
+then be positioned on the scan table prone, with each breast hanging into separate holes of the MRI coil. Pre -contrast scanning will then take pla ce (short T -1 
+inversion recovery (STIR) and T -1 weighted pulse sequences). MRI contrast will 
+then be injected (Omniscan (Gadodiamide) GE Healthcare) at a dose of 0.2 ml/kg and at a rate of 2 ml/second by a power injector. 15 -20 ml of normal saline will be 
+used as a flush. Post- contrast scanning will then take place. Following this, the 
+subject’s visit will be complete. Total time for this visit is approximately 45 minutes.  
+  
+ NOTE: If a subject wishes  to participate, but cannot or will not, undergo MRI 
+scanning, the subject may  still be enrolled for the CT portion only.  
+ 
+ After the scans have finished, the participant will be given a questionnaire to complete about their experience during the study.  A fter completion of the scans 
+and completing the questionnaire, their active participation in the study will be 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 11 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  completed.  Access to their medical record for follow up information may 
+continue.  
+ 8) Data and/or Specimen Management and Confidentiality  
+ 
+Statistics  and Determination of Study Sample and Data Analysis : 
+ 
+For this next cohort of 400 subjects, the following statistical analysis has been 
+performed:  
+ 
+Over the past three years, the UC Davis breast imaging facility has averaged 15,818 
+screens, 2,665 diagnostic exams, and 480 biopsies annually. Patient recruitment will be ongoing during the first 4 years of the proposal, so that a “forgetting” time of at least 6 months can be enforced from the time of imaging to the reader studies. All cases will be recruited from BIRADS 4 & 5 women who will be biopsied in our facility, and we assume the historical 38% positive biopsy rate for our facility. The recruited w omen will undergo pre - and post - contrast bCT imaging, as 
+well as pre - and post- contrast CE -MRI imaging. These women will all have had 
+bilateral 2D and 3D mammography imaging as part of their screening and diagnostic workup. The biopsy findings will serve  as ground truth for all cases. In 
+addition, the vast majority of women will have all findings limited to a single breast, leaving the unaffected breast available as a non -cancer image (i.e. normal) 
+for the screening study in Aim 4. Based on the power studies described below, the minimum number of women we need to recruit to run the study is 150 with biopsy -verified cancer and an additional 50 with benign findings (i.e., 150 / 0.38 = 
+395 ≈ 400). At a minimum, we plan to recruit 400 and will strive to recrui t 
+substantially more. Given a total of 1,920 candidate women, the 38% positive rate for biopsy, and a 25% rate of recruitment, we would expect to be able to acquire 182 cases (1920 × 0.38 × 0.25) with cancer over the recruitment period, and this would corr esponding to ~298 (1920 × 0.25 × [1- 0.38]) women with benign findings. 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 12 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  These recruitment figures are conservative in terms of the recruitment rate, and 
+they still provide more than enough cases for our studies.  
+ 
+Numbers of patients needed: To size the s tudies, we have conducted power  
+analyses [Abbey et al., 2013] based on the Roe and Metz simulation (2,000 runs)  
+for a fixed effects ANOVA model instead of the usual mixed effects model  
+proposed by Dorfman, Berbaum, and Metz (DBM) or correlated error model of  
+Obuchowski and Rockette (Hillis SL, et al., 2005). For the normal- risk bCT -screening  
+study (Aim 4), we have sized the study on the basis of 4 readers, an improvement  
+of 0.05 in AUC, and with average AUC near 0.85 (i.e. AUC = 0.825 vs AUC =  
+0.875). At th ese performance benchmarks, 82% power is achieved with 150  
+positive cases and 250 negative cases. This is a reasonable number of cases given  
+the recruitment procedures described in §D3.1. For the CE -bCT/CE -MRI (high risk  
+screening) comparison (Aim 5), we investigate the non- inferiority of breast CT  
+relative to MRI. We will consider breast CT to be successful in the pilot study if the  
+observed difference in reader -averaged AUC values is greater than -0.025 (i.e.  
+AUC(BCT) – AUC(MRI) > - 0.025), for a study in  which average AUC is approximately  
+0.85. The Roe and Metz simulation [Abbey, et al, 2013] with 4 readers and 150  
+cases (60 positive and 90 negative) yields 82% power for finding non- inferiority as  
+defined above in 2,000 independent simulation runs. We expect to be able to  
+recruit at least this many patients for this study based on the recruitment  
+procedures described above.  
+ 
+ Informed consent and subject accountability : 
+  There will be a clear accounting of all subjects involved with the study. This includes subjects who are consented, screened, eligible and enrolled as well as ineligible subjects. If a candidate is deemed ineligible for enrollment, the reason for ineligibility will be recorded. There will also be a listing of all patients discontinue d or withdrawn from the study after enrollment. These statistics will be 
+reported to the IRB during annual reviews  when required . 
+ 
+All subjects participating in this study will provide written consent in the form of the Informed Consent Form. The investigators will allow the candidate to read the consent form and will ask the candidate if they have any questions prior to enrollment. Subject initials, signatures, and date and time will be required in the 
+appropriate places on the form.  
+ 
+  
+Data Handling and Data Management: 
+ 
+The data from all subjects will be used in the safety and efficacy evaluation. Documentation containing the subjects’ Protected Health Information (medical history, mammograms, ultrasound images, Breast CT images, breast MRI image s, 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 13 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  biopsy reports) that is collected for research purposes will remain in the custody of 
+study personnel ( kept in a secure location ), and will not be copied or discarded. 
+This documentation will be de -identified after the data has been analyzed and the 
+results are ready for publication.  
+ Source documentation will be identified by ink stamp which will include the initials of the study personnel recording the data and the date on which it was recorded.  
+ 
+Written corrections to source documents will be made in the following manner: 
+the corrected information will be written next to the information being corrected, and the information being corrected will be crossed out with a single line and the investigator’s initials and the date of the correction will be writt en next to the 
+lined out information.  
+ 
+Records Retention: 
+ All source documentation pertaining to the conduct of this study will be retained by the investigator for a period of 5 years following the closure of the study. This documentation includes screeni ng mammography images, mammography exam 
+reports, breast CT images, digital image data files, case report forms, biopsy reports, IRB correspondence and approvals, informed consent forms, urine pregnancy test reports, protocol deviations, and adverse event r eports.  
+  Documentation containing the subjects’ Protected Health Information (name, medical record number, medical history) that is used for recruitment purposes will remain in the custody of study personnel, and will not be copied or discarded. No identi fiers, used for recruitment purposes, will be disclosed to a third party except 
+as required by law or for authorized oversight of the research project.  
+ 9) Data and/or Specimen Banking  
+ 
+Breast CT images maintained on the laboratory redundant array of independent  
+disks (RAID) will be banked for future image processing development work  
+covered under a separate IRB protocol. The images will not contain any  
+identifiers  when they are used for this purpose.  
+ 
+10) Provisions to Monitor the Data to Ensure the Safety of S ubjects  
+ 
+Physical presence of a licensed technologists, and a physician during the scanning 
+procedure.  
+ The IRB form HRP -214 Reportable New Information will be used to report all 
+serious, unanticipated, and related adverse events to the UC Davis  IRB 
+Administration within 5 days of occurrence. This form will also be used to 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 14 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  document minor, anticipated, and/or unrelated adverse events for annual IRB 
+review.  
+ 11) Withdrawal of Subjects  
+ 
+A subject will be considered to have successfully completed their participation in the study at the conclusion of the scanning procedure. If a subject is removed or withdraws from the study, the specific reasons for discontinuation will be clearly 
+documented in the subject’s study file.  
+ 
+12) Risks to Subjects  
+ 
+This study involves a small amount of radiation exposure that is typical of other diagnostic tests involving the use of radiation exposure (such as a mammogram). 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 15 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  The amount of radiation exposure received in this study is below the levels that 
+are thought t o result in a significant risk of harmful effects.  
+ Risks associated with iodine -based IV contrast injection are as follows:  
+ Minor/Common risks:                                       Severe/Rare risks:  
+● Bruising/infection at the  IV site                  ● Pulmonary edema  
+● Nausea & vomiting                                        ● Respiratory arrest  
+● Urticaria                                                          ● Cardiac arrest  
+● Pruritis                                                             ●  Seizures  
+● Diaphoresis  
+ Moderate/Uncommon risks:  
+● Faintness  
+● Facial edema  
+● Laryngeal edema  
+● Bronchospasm  
+ Risks associated with gadolinium- based IV contrast injection are as follows:  
+ Minor/Common risks:  
+● Bruising/infection at the IV site  
+ Severe/Rare risks:  
+● Nephrogenic Systemic Fibrosis (NSF)  
+ Risks associated with MRI scans are as follows:  
+ Minor/Common risks:  
+● Claustrophobia  
+ Special IV Contrast Patient Safety Precautions:  
+ A doctor will be present during each contrast -enhanced breast CT and MRI scan to 
+monitor the subject for signs and symptoms of adverse reaction to the contrast injection. A fully -stocked hospital -issued crash kit will be available for emergency 
+treatment. Emergency Medical Services (EMS) will  be called for immediate 
+transport to the UCDMC emergency department.  Verbal and written post contrast instructions will be provided to the patient at the end of the study visit.  
+ 13) Potential Benefits to Subjects  
+ 
+Breast CT images will not be used for diagn osis or treatment planning, and will 
+provide no direct benefit for subjects. Breast MRI scans are the imaging Gold 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 16 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  Standard for breast lesion clinical diagnosis, and the MRI scans performed for this 
+study will be interpreted by a radiologist with the repor ts available in the subject’s 
+medical record. These findings will be available to the subject’s referring or primary care physician.  
+ 14) Multi -Site Research  
+ 
+Not applicable.  
+ 15) Community -Based Participatory Research  
+ 
+Not applicable.  
+ 16) Sharing of Results with Subjects  
+ 
+Breast CT images and data will not be shared with subjects.  
+ 17) Prior Approvals  
+ 
+This protocol has been approved by the Cancer Center Scientific Review  
+Committee  (UCDCC#162) and the Radiation Use Committee.  
+ 
+18) Provisions to Protect the Privacy Interests of Subjects  
+ 
+Documentation containing the subjects’ Protected Health Information (medical  
+history, mammograms, Breast CT images, biopsy reports) that is collected fo r 
+research purposes will remain in the custody of study personnel in a secure location  and will not be copied or discarded. This documentation will be de -
+identified after the data has been analyzed and the results are ready for  
+publication.  
+ 
+19) Compensation for Research -Related Injury  
+ 
+The following standard language is stated in the Informed Consent  Form: It is 
+important that you promptly tell the Researcher if you believe that you have been injured because of taking part in this study.  If you are injured as a result of being 
+in this study, the University of California will provide necessary medical treatment.  The costs of the treatment may be covered by University or the study sponsor or may be billed to your insurance company just like other  medical costs.  The 
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 17 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  University and the study sponsor do not normally provide any other form of 
+compensation for injury. You do not lose any legal rights by signing this form.  
+ 20) Economic Burden to Subjects  
+ 
+None.  
+ 
+21) Drugs or Devices  
+ Breast Computed Tomography (CT) scanner. The device was fabricated in the 
+Principal Investigator’s laboratory.  The major hardware components (x -ray 
+generator, x -ray tube, x -ray detector, computer -controlled motor) were purchased 
+from vendors. The MRI scanner is a General  Electric 1.5 Tesla magnet used for 
+clinical service.  
+ 
+☐ I confirm that all investigational drugs will be received by the Investigational 
+Drug Service (IDS).   The IDS will store, handle, and administer those drugs so 
+that they will be used only on subjects and be used only by authorized investigators.  
+ 
+☒ I confirm that all investigational devices will be labelled in accordance with 
+FDA regulations and stored and dispensed in such a manner that they will be 
+used only on subjects and be used only by authorized investigators.  
+ 22) ClinicalT rials.gov
+ Registration  
+ 
+[STUDY_ID_REMOVED]  
+ 
+Section 1:  NIH Funded Studies  
+If yes to BOTH, the study must be registered on Clinicaltrials.gov.  
+Yes  
+ This study is funded by the NIH. (If this study is not funded by NIH, go to Section 
+2.) 
+ One or more human subjects will be prospectively assigned to one or more 
+interventions (which may include placebo or other control) to evaluate the 
+effects of those interventions on health -related biomedical or behavioral 
+outcomes.  
+ 
+  
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 18 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  23) Criteria for 10 Year Approval  
+ 
+If yes to all items below this research may qualify for a 10 -year approval period.  
+ 
+Yes  
+ This research involves no more than minimal risk.  
+ This research does not receive any federal or state government fundi ng or 
+funding from a private funder who requires annual review per contract.  
+ This research is not subject to FDA jurisdiction.  
+ This research does not include prisoners as participants.  
+ This research is not subject to SCRO oversight.  
+ This research is not subject to oversight by the Research Advisory Panel of 
+California (RAP of C).  
+ This research does not involve ident ifiable information held by the State of 
+California Department or Agency  
+ No personnel involved in the design, conduct, or reporting of this research have 
+a new unreported related financial interest (RFI)  in this study.  
+ 
+ 
+ 
+             
+ 
+                                                               
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 19 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  Appendix 1  
+ 
+ 
+ 
+ 
+                                               “Evaluation of Breast CT”  
+                                   URINE PREGNANCY TEST REPORT  
+                                                        ______________________                                                                Candidate’s Name/MRN                                           
+  
+Test Result:                     
+□ Positive                                 □ Negative  
+ 
+   ________________________________    ___________________  __________________     Signature of Study Candidate                               Date                             Time    ________________________________    ___________________  __________________      Signature of Investigator                                     Date                             Time   Name:__________________________ MRN:___________________________ 
+  
+  
+PROTOCOL TITLE:  Evaluation of Breast CT                 IRB# 214750  
+Ver. March 1 2021  
+Page 20 of 20   HRP -503-PTOTOCOL TEMPLATE- General  
+  Template Revision: June 15, 2017  Appendix 2  
+ 
+Inclusion/Exclusion Checklist 
+ 
+ 
+Inclusion Criteria:  
+ 
+ Age at least 35 years old  
+ Diagnostic findings from prior mammography highly suggestive of breast 
+malignancy (BI -RADS® category 4 or BI -RADS® category 5)  
+ Not pregnant or breast -feeding  
+ Ability to lay still and hold breath for approximately 15 seconds  
+ 
+ Exclusion Criteria:  
+  
+ Recent breast biopsy  
+ History of moderate or severe reaction to contrast agent injection  (these  
+    subjects can still participate in the non -contrast CT scanning)  
+ History of Allergy to Iodine     
+ History of multiple food and/or drug allergy    
+ Currently taking Glucophage or Glucovance (Metformin)    
+ History of Chronic Asthma    
+ History of Diabetes Mellitus   
+ Renal (kidney) disease, or solitary kidney    
+ Recent lab tests showing elevated serum creatinine (≥ 1.5 mg/dL)   
+ Recent lab tests showing estimated glomerular filtration rate (eGFR) ≤ 60 ml/minute  
+ Positive urine pregnancy test or currently breast -feeding  
+ Inability to understand the risks and benefits of the study  
+ The standard MRI contraindications apply, including but not limited to: having a pacemaker or other implanted electronic device, metal foreign bodies within the eye, aneurysm clips, heart valve prosthesis, vascular stents, coils, intrauterine devices (IUDs),  inferior vena cava (IVC) filt ers, gunshot wounds 
+with retained bullet fragments.  (MRI only)  
+ Prisoners  
+ 
+ 
+________________________________    ___________________  __________________      Signature of Investigator/Study Personnel                           Date                             Time 
+ 
+ 

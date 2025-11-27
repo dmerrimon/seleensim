@@ -1,0 +1,1074 @@
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 1 of 154 
+ STATISTICAL ANALYSIS PLAN AMENDMENT 
+  
+ 
+ 
+ 
+Protocol D5495C00001 
+   
+Quantifying Uric Acid Excretion with RDEA3170, 
+Febuxostat and Dapagliflozin 
+ 
+PAREXEL Study Number  
+ 
+  
+Version: 1.0 
+                          Date 16 July 2018 
+ 
+        
+ 
+  &&,
+33'
+33'
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.[ADDRESS_59916] RESULTS .................................................................................... 25  
+6.10  MEDICATION ON ENTRY AND DURING THE STUDY.......................................... 25  
+6.11  DOSE ADMINISTRATION ........................................................................................... 25  
+6.12  MEAL ADMINISTRATION .......................................................................................... 25  
+7. PHARMACOKINETIC CONCENTRATIONS AND PARAMETERS ........................ 25  
+7.1 HANDLING OF VALUES BELOW THE LIMIT OF 
+QUANTIFICATION (BLQ) ............................................................................................ 27  
+7.2 PK PLASMA CONCENTRATIONS .............................................................................. 27  
+7.3 PK PARAMETERS ......................................................................................................... 28  
+7.4 GRAPHICAL PRESENTATION OF PK DATA ........................................................... 28  
+7.5 STATISTICAL ANALYSIS OF PHARMACOKINETIC DRUG-DRUG 
+INTERACTION .............................................................................................................. 28  
+7.6 MULTIPLICITY ............................................................................................................. 29  
+8. PHARMACODYNAMIC RESULTS ............................................................................. 29  
+8.1 PRIMARY PD VARIABLES ......................................................................................... 29  
+8.2 SECONDARY PHARMACODYNAMIC VARIABLES ............................................... 30  
+8.3 STATISTICAL ANALYSIS OF PHARMACODYNAMIC VARIABLES ................... 31  
+8.3.1  ANALYSIS OF PRIMARY PD VARIABLE ................................................................. 31  
+8.3.2  ANALYSIS OF SECONDARY PD VARIABLES ........................................................ 32  
+8.3.3  ANALYSIS OF EXPLORATORY PD VARIABLES ................................................... 32  
+8.3.4  VISUALIZING THE PHARMACODYNAMIC RESULTS .......................................... 32  
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 6 of 154 
+ 8.3.5  ANALYSIS OF URINARY PD VARIABLES OVER A 24 HOUR 
+INTERVAL ..................................................................................................................... 33 
+9. SAFETY ANALYSIS ..................................................................................................... 33  
+9.1 ADVERSE EVENTS ...................................................................................................... 33  
+9.2 DIABETIC KETOACIDOSIS (DKA) ............................................................................ 36  
+9.3 CLINICAL SAFETY LABORATORY TESTS (HEMATOLOGY, 
+CHEMISTRY, URINALYSIS) ....................................................................................... [ADDRESS_59917] measurable concentration 
+AUCĲ Area under plasma concentration time curve over a dosing interval 
+(24 hours) 
+  
+BMI Body Mass Index 
+bpm Beats per minute 
+BUN Blood urea nitrogen 
+CI Confidence Interval 
+  
+ 
+CS Clinically significant 
+Cmax Maximum observed plasma concentration 
+CO2 Carbon dioxide 
+CrCL Creatinine Clearance 
+CV Coefficient of Variation 
+DDI Drug-Drug Interaction 
+DKA Diabetic Ketoacidosis 
+ECG Electrocardiogram 
+eGFR Estimated glomerular filtration rate  
+FAS Full Safety Analysis Set 
+FPG Fasting plasma glucose 
+FSH Follicle-stimulating hormone 
+GGT Gamma glutamyl transpeptidase (transferase) 
+Hb Hemoglobin 
+HbA1c Hemoglobin A1c 
+HBsAg Hepatitis B surface antigen &&,&&,
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.[ADDRESS_59918] 
+LLOQ Lower limit of quantification 
+MCH  Mean corpuscular hemoglobin  
+MCHC  Mean corpuscular h emoglobin concentration 
+MCV  Mean corpuscular volume  
+MedDRA Medical Dictionary for Regulatory Activities 
+ms milliseconds 
+n Number of subjects 
+NC Not Calculated 
+NCS Not Clinically Significant  
+ND Not determined 
+NR No result 
+NQ Non-quantifiable 
+PD Pharmacodynamics 
+PDS Protocol deviation specification (document) 
+PK Pharmacokinetics 
+QTcB QT Interval Corrected by [CONTACT_35019]’s Formula 
+QTcF QT Interval Corrected by [CONTACT_6550]’s Formula 
+RBC Red blood cell 
+SAE Serious adverse event  
+SAP Statistical Analysis Plan 
+SD Standard deviation 
+SOC System Organ Class 
+sUA Serum uric acid 
+TEAE Treatment-Emergent Adverse Event 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 9 of 154 
+ t1/[ADDRESS_59919] measurable concentration 
+tmax Time to reach maximum observed plasma concentration 
+UA Uric acid 
+WBC White blood cell 
+WHO-DD World Health Organization Drug Dictionary 
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 10 of 154 
+  
+1. Statistical Analysis Plan 
+This Statistical Analysis Plan (SAP) is based on the final protocol D5495C00001  
+Version 1.0 dated 05 September 2017 and incorporates protocol amendment #1 dated 
+02 October 2017 and protocol amendment #2 dated 02 May 2018. The SAP provides details on the planned statistical methodology for analysis of the study data.  The SAP 
+also outlines the statistical programming specifications for the tables, listings and 
+figures.  It describes the safety, pharmacodynamic (PD) variables, and the pharmacokinetic (PK) variables; as well as the anticipated data transformations and manipulations, and other details of the analyses not provided in the study protocol.  This SAP covers the planned analysis of all data collected electronically in  and provided by [CONTACT_55409]. 
+2. Study Objectives and Hypotheses 
+2.1 Primary Objectives 
+To assess the effects of intensive UA lowering therapy with RDEA3170, febuxostat 
+and dapagliflozin on urinary excretion of UA. 
+2.2 Secondary Objectives 
+x To assess the effects of intensive UA lowering therapy with RDEA3170, 
+febuxostat and dapagliflozin on sUA levels. 
+x To assess the PK of RDEA3170 and its main metabolites (M1 and M8), 
+febuxostat and dapagliflozin in this patient population. 
+x To assess the renal and general safety and tolerability of intensive UA lowering 
+therapy with RDEA3170, febuxostat and dapagliflozin. 
+2.3 Exploratory  Objectives 
+x  
+ 
+  
+ 
+  
+ &&,&&,
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.[ADDRESS_59920] 8 hours (maximum amount excreted in an interval 
+out of the first 8 hours) on Day 7 of treatment (Day [ADDRESS_59921] day of treatment).  
+2.[ADDRESS_59922] of intensive UA lowering therapy with RDEA3170, febuxostat and dapagliflozin on urinary excretion of UA, in asymptomatic hyperuricemic patients. Twenty-four asymptomatic hyperuricemic patients aged 18 to 65 years (inclusive) will be enrolled into this study at 2 study centers. Each patient will receive the 2 treatments listed below for 7 consecutive days (1 treatment per treatment period). 
+ 
+ 
+  &&,
+&&,
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 12 of 154 
+ x Treatment A: 9 mg RDEA3170 + 80 mg febuxostat + 10 mg dapagliflozin  
+ 
+x Treatment B: 9 mg RDEA3170 + 80 mg febuxostat + placebo  
+ 
+The study consists of a screening period of maximum 28 days. As well as: 
+x Two treatment periods during which patients will be resident in the Clinical 
+Unit from Day -2 to Day 1 and from Day 6 to Day 8; and 
+x A Follow-up Visit within [ADDRESS_59923] dose of IMP. Patients that are meet all of the inclusion criteria and none of the exclusion criteria , will return to 
+the Clinical Unit on Day -2 of Treatment Period 1 and will be randomized (1:1) to 1 of 2 treatment sequences (AB or BA) before the start of urine collection on Day -1 
+of Treatment Period 1. 
+For each treatment period, baseline measurements will be performed. Patients 
+receive the IMP for 7 consecutive days (Day 1 to Day 7). Patients will be residential 
+in the Clinical Unit from Day -[ADDRESS_59924] patient’s last visit to the Clinical Unit. 
+3.[ADDRESS_59925] meet all of the inclusion criteria and none of the exclusion 
+criteria outlined in the study protocol. Any patient who fails to meet the inclusion 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 13 of 154 
+ criteria or meet any exclusion criterion should not, under any circumstances, be 
+randomized into the study. There can be no exceptions to this rule. 
+3.2 Statistical Basis for Sample Size 
+Detailed information regarding the formal calculation of sample size can be 
+found in the study protocol section 11.4. 
+ 
+3.3 Randomization 
+Upon completion of the randomization requirements specifications form, the 
+randomization will be produced by [CONTACT_55410] (AZRand). For this study, a total of 24 patient identifiers will be randomly assigned to the treatment sequence(s): AB, BA, with 12 patients assigned per sequence. An additional set of replacement random numbers will be generated within AZRand on a like for like treatment sequence basis.   Randomization codes will be assigned strictly sequentially as patients become 
+eligible for randomization (codes to be used without leading zero[s]). When using 
+unique enrolment number, the specific format must be followed (i.e., reduced enrolment number, e.g., ” [for Baltimore] and ” [for Los Angeles] for outputs). The site number for Baltimore is  and the site number for Los Angeles is .  If a patient withdraws his/her participation in the study, then his/her enrolment/randomization code cannot be reused. If a replacement is mandated, replacement patients will receive a new randomization number and will be allocated to the same treatment sequence as the replaced patient. 
+3.[ADDRESS_59926] to treatment (dapagliflozin or placebo) in each 
+treatment period.  Dapagliflozin and placebo will be matched for formulation, appearance and amount. Patients randomized to placebo received the same number of tablets as patients on active drug.    &&, &&,
+&&,
+&&,
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 14 of 154 
+ 3.5 Dose Administration 
+Patients will receive 9 mg RDEA3170 plus 80 mg febuxostat once daily in 
+combination with either placebo or dapagliflozin 10 mg once daily for 7 consecutive days. 
+Clinical Unit Dosing 
+Patients will be residential in the Unit from Day -2 to Day 1, and from Day 6 to Day 
+8. 
+On Days -2, -1, 1, 6 and 7, patients will receive standardized meals, and will be 
+encouraged to consume the entire meal. 
+On Day -1, Day 1 and Day 7 of each treatment period, patients will be fasted for 10 
+hours before dosing (for Day -1, clock time of planned dose administration for 
+dosing days) until [ADDRESS_59927] at the PAREXEL Early Phase Clinical Unit and at the patient’s 
+homes. The administration of all IMPs will be recorded in . 
+Compliance will be assured by [CONTACT_55411]. After IMP administration, a check of the patient’s mouth and hands will be performed. 
+Compliance will be assured during at home dosing by [CONTACT_8249]. 
+ 
+3.7 Interim Analysis 
+Not applicable &&,
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 15 of 154 
+ 4. Study Analysis Variables 
+4.1 Demographic and Background Variables 
+The following demographic and anthropometric information will be recorded: 
+x Date of informed consent 
+x Medical/surgical history  
+x Urine drug, blood alcohol 
+x Age calculated as (date of informed consent – date of birth)/365.25 
+x Gender 
+x Ethnic origin 
+x Race 
+x Height (cm) 
+x Body weight (kg) 
+x Body mass index (BMI) (kg/m2) 
+x eGFR 
+4.2 Safety Variables 
+4.2.1 Adverse Events 
+The Adverse events will be collected from the start of randomization throughout the 
+treatment period up to and including the Follow-up Visit. 
+Serious adverse events will be recorded from the time of informed consent. 
+4.3 Potential Events of Diabetic Ketoacidosis 
+All potential events of DKA will be recorded in  and submitted to an 
+independent DKA Adjudication Committee.  The DKA Committee T2DM will assess available information on each potential DKA event and will classify the event in accordance with the definitions in the DKA Adjudication Charter T2DM. 
+4.3.1 Clinical Laboratory Tests 
+Laboratory safety tests for hematology and chemistry will be performed at Screening, 
+Period 1 (Day-2, Day 7), Period 2 (Day -2, Day 7), and at Follow-up.  
+The following safety laboratory parameters will be measured: 
+Hematology 
+ &&,
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 16 of 154 
+ x White blood cell (WBC) count 
+x Red blood cell (RBC) count  
+x Hemoglobin (Hb)  
+x Hematocrit (HCT) (c)  
+x Mean corpuscular volume (MCV)  
+x Mean corpuscular hemoglobin (MCH)  
+x Mean corpuscular hemoglobin concentration (MCHC)  
+x Neutrophils absolute count 
+x Lymphocytes absolute count 
+x Monocytes absolute count 
+x Eosinophils absolute count 
+x Basophils absolute count 
+x Platelets 
+x Reticulocytes absolute count 
+x Hemoglobin A1c (HbA1c) (Screening Visit only) 
+ 
+Clinical Chemistry  
+ 
+x Alkaline phosphatase (ALP) 
+x Alanine aminotransferase (ALT) 
+x Aspartate aminotransferase (AST) 
+x Gamma glutamyl transpeptidase (GGT) 
+x Potassium  
+x Blood Urea Nitrogen (BUN)  
+x Creatinine(c)  
+x Albumin  
+x Calcium  
+x Phosphate  
+x Uric acid(c)  
+x Total Bilirubin 
+x Unconjugated bilirubin 
+x Cystatin-C(c) 
+x Sodium 
+x Estimated Creatinine Clearance (CrCl) 
+x eGFR(a) 
+x Glucose (Fasting)(b)(c) 
+ 
+Notes:  
+(a) eGFR collected at screening visit only (Visit 1) 
+(b) Plasma glucose after at least 4 hours fasting (Day -1 of each period) 
+ 
+ 
+ 
+ 
+ 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 17 of 154 
+  
+ 
+Urinalysis by [CONTACT_5230] 
+x Glucose 
+x Protein 
+x Blood 
+x Microscopy (if dipstick is positive for protein or blood): RBC, WBC, Casts 
+(Cellular, Granular, Hyaline) 
+ 
+Urinalysis for urine collection interval(c) 
+x Uric Acid 
+x Creatinine 
+x Glucose  
+x Sodium 
+x pH 
+x Cystatin-C 
+ 
+Pregnancy Test (females only) 
+x Human beta chorionic gonadotrophin (HCG) 
+x Follical-stimulating hormone (FSH) – Screening visit. 
+ 
+ 
+Vital Serology 
+x Human immunodeficiency virus (HIV) I and II 
+x Hepatitis C Virus antibody  
+x Hepatitis B surface antigen (HBsAg) 
+ 
+Drugs of Abuse 
+x Amphetamine/Ectasy 
+x Benzodiazepi[INVESTIGATOR_1651] 
+x Ethanol  
+x Cannabinoids  
+x Cocaine  
+x Opi[INVESTIGATOR_858] 
+x Tricyclic anti-depressants (TCA) 
+x Methadone Metabolites 
+x Barbiturates 
+x Phencyclidine 
+ 
+Note: Laboratory results indicated (c) will be listed, summarized, and analyzed as part of the PD panel, as described in section 8 below.  
+ 
+ 
+ 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 18 of 154 
+ 4.3.2 Vital Signs 
+Vital signs will be collected at Screening, Period 1 (Day -2, Day 7), Period 2 (Day -
+2, Day 7), and at Follow-up.  The following variables will be collected after the patient has rested in the supi[INVESTIGATOR_21683] 5 minutes:  
+x Systolic BP (mmHg) 
+x Diastolic BP (mmHg) 
+x Pulse rate (bpm) 
+ 
+4.3.[ADDRESS_59928] 12-lead ECGs will be collected at Screening, Day-2 of each period, and at Follow-up. 
+ 
+The ECG will be evaluated by [CONTACT_5256] ‘Normal’, ‘Abnormal, NCS’ or 
+‘Abnormal, CS’. 
+4.3.[ADDRESS_59929] dose of IMP; all 
+medications taken after first dosing are considered as concomitant (including medications that started before dosing and continued after). Prior medication started within [ADDRESS_59930]-dose. 
+ 
+&&,
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 19 of 154 
+ The PK analyses of the plasma concentration data for RDEA3170, febuxostat, 
+dapagliflozin, M1, and M8 will be performed by [CONTACT_55412], on behalf of Clinical Pharmacokinetic Alliance, [COMPANY_008] R&D. 
+Where possible, the following plasma PK parameters will be calculated for 
+RDEA3170, febuxostat, dapagliflozin, M1, and M8 using plasma concentrations. 
+ 
+AUCĲ Area under plasma concentration time curve over a dosing 
+interval (24 hours) 
+AUClast  Area under plasma concentration time curve from time zero to the 
+time of last measurable concentration 
+Cmax Maximum observed plasma concentration 
+tmax Time to reach maximum observed plasma concentration 
+tlast Time of last measurable concentration 
+ 
+4.4.[ADDRESS_59931] will be calculated using the linear trapezoidal method when 
+concentrations are increasing and the logarithmic trapezoidal method when concentrations are decreasing. 
+ &&,
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.[ADDRESS_59932] 3 consecutive plasma concentrations above the lower limit of quantification (LLOQ), with at least 1 of these concentrations following Cmax. 
+4.5 Pharmacodynamic Data 
+The following PD data will be collected:  
+ 
+Time Urine Sample Collections 
+ 
+The times of urine sample collection will occur at Day -1 and 7 of each period. Day -1 baseline collection of urine consists of hourly collections from -24 to -12 hours (inclusive, counted from the time of dosing on Day 1 where 0 hours is time of dosing) at the following sampling intervals: -24 to -23 hours, -23 to -22 hours, -22 to -21 hours, -21 to -20 hours, -20 to -19 hours, -19 to -18 hours, -18 to -17 hours, -17 to -
+16 hours, -16 to -15 hours, -15 to -14 hours, -14 to -13 hours, -13 to -12 hours, followed by a single 12-hour collection from -12 to 0 hours.  Directly following the dose of study treatment on Day 7, hourly collection of urine is performed every hour from 0 to 12 hours (inclusive), at the following post-dose 
+sampling intervals (0 to 1 hour, 1 to 2 hours, 2 to 3 hours, 3 to 4 hours, 4 to 5 hours, 5 
+to 6 hours, 6 to 7 hour, 7 to 8 hours, 8 to 9 hours 9 to 10 hours, 10 to 11 hours, 11 to 12 hours). These sampling intervals will be followed by a single pooled collection from 12 to 24 hours.  
+Time matched PD Urine Samples for Each Period 
+Day -1 Day 7 
+-24 to -23 hours  0 to 1 hour  
+-23 to -22 hours 1 to 2 hours 
+-22 to -21 hours 2 to 3 hours 
+-21 to -20 hours 3 to 4 hours 
+-20 to -19 hours 4 to 5 hours 
+-19 to -18 hours 5 to 6 hours 
+-18 to -17 hours 6 to 7 hours 
+-17 to -16 hours 7 to 8 hours 
+-16 to -15 hours 8 to 9 hours  
+-15 to -14 hours 9 to 10 hours 
+-14 to -13 hours 10 to 11 hours  
+-13 to -12 hours 11 to 12 hours 
+-12 to 0 hours* 12 to 24 hours** 
+*single 12-hour collection 
+**Single Pooled Collection 
+ 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 21 of 154 
+ Blood Samples for Serum Uric Acid 
+ 
+A single sUA assessment (matched by [CONTACT_55413], e.g. always in the morning, and 
+after a [ADDRESS_59933]) will be taken at screening, Day -1 of each period and at the follow-up visit. The screening sUA can be repeated once during the screening period.  In each period day 7 blood samples for serum UA will match the PK sample times: 
+pre-dose and [ADDRESS_59934] 1 analyte  (RDEA3170, M1, M8, Febuxostat or dapagliflozin), and who have no major protocol deviations thought to impact on analysis of the PK data.  
+Patients may be excluded from the PK analysis set as a result of the following: 
+ 
+x Data from patients who experienced vomiting during the PK samples collection 
+day may be excluded from summary statistics and statistical analysis if 
+vomiting occurred at or before the median tmax for each respective analyte. 
+ A patient may be excluded from the analysis only for the specific treatment period in which the AE occurred. 
+4.7.3 Pharmacodynamic Analysis Set 
+Analysis of the primary variable, maximum uric acid excretion in urine per hour, as 
+well as the secondary variable serum UA at 7 days will be done using the full Safety Analysis Set as defined in section 4.7.1 above. Any sensitivity analysis will be 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 22 of 154 
+ considered using the Per Protocol (PP) Set. The PP Set will be defined as all patients 
+in the randomized set without major protocol deviations (to be defined before database lock). 
+4.7.[ADDRESS_59935] of all patients randomized into the study. 
+5. STATISTICAL REPORTING 
+For the purposes of this SAP IMP will include any of the study drugs: 
+RDEA3170, febuxostat, dapagliflozin, or placebo. 
+5.[ADDRESS_59936]-dose assessments, including unscheduled assessments and repeats, will be included in the data listings. For unscheduled (repeat) assessments collected pre-dose, the last assessment taken for a time point will be used in the data summaries (summary tables, figures, and statistical analysis); for all post-dose time points, the 
+original assessment for any given time point will be used in the data summaries 
+(summary tables, figures, and statistical analysis). 
+ Data summaries of continuous variables will be summarized using descriptive statistics including: number of observations (n), mean (arithmetic and/or geometric), median, standard deviation (SD), minimum, and maximum. Frequencies and percentages will be used for summarizing discrete (categorical) data. In summaries for 
+safety the denominator for all percent’s will be the number of subjects in a given treatment.   Data that are reported as missing will be excluded from all descriptive and non-
+descriptive data analysis. There will be no imputation of data.  Observations that 
+might be considered spurious (extreme relative to the majority of the data) will not be 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 23 of 154 
+ altered or removed from any presentation of the data, including the calculation of 
+summary statistics (means, medians, etc.), unless approved by [CONTACT_456].   For data listings, all raw data will be reported/displayed exactly as provided. For summaries of quantitative safety data, the minimum and maximum value will be reported exactly as the raw data are reported; measures of central tendency (means, medians) will be reported to one more decimal place than the raw data; measures of variance (SD) will be reported to two more decimal places than the raw data.   
+Methods for summarizing PK data are described in Section [ADDRESS_59937] identifier (enrolment number) and time point (where applicable). All listings will include the site number identifier, the subject identifier, and the subject’s treatment sequence. All derived data used in a data summary or statistical analysis will be listed.  In all data presentations treatment will be defined by [CONTACT_941] 2 categories:  
+x Treatment A: 9 mg RDEA3170 + 80 mg febuxostat + 10 mg dapagliflozin  
+x Treatment B: 9 mg RDEA3170 + 80 mg febuxostat + placebo  
+ 
+ 
+ SOFTWARE  
+ 
+All statistical analyses will be performed using 
+ 
+(  Institute Inc., Cary, North Carolina, [LOCATION_002] of America [[LOCATION_003]]) 
+Version 9.2 or higher. The PK analysis will be performed using  
+  (Certara, L.P., [ADDRESS_59938]. Louis MO [ZIP_CODE]). 
+6. Subject and Treatment Information 
+6.[ADDRESS_59939]’s treatment sequence.  
+6.2 Discontinued Subjects 
+All subjects who discontinued early from the study will be listed including the date of 
+study exit, duration of treatment, and the reason for early discontinuation.    &
+&
+&
+&,&
+&
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.[ADDRESS_59940] and Data Exclusions 
+Listings will be provided showing any subjects or data excluded from the safety 
+population, the PD population, and the PK population. 
+6.6 Demographic Data
+  
+Demographic information will be listed.  Descriptive statistics will be obtained for the 
+continuous variables: height, age, BMI, and baseline body weight.  Frequencies and percentage of subjects will be tabulated by [CONTACT_55414], race, and gender.  
+6.[ADDRESS_59941]’s informed consent response will be listed including date and time of informed consent, whether a subject complies with all inclusion/exclusion criteria, 
+and the actual date/time of eligibility. 
+6.[ADDRESS_59942] including a description of the 
+condition or abnormality, system organ class, and preferred term.  Medical history will be coded using Medical Dictionary Regulatory Activities (MedDRA Version 20.1). Only those body systems where a condition or abnormality has been reported 
+will be listed. Included will be the date and time recoded. 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.[ADDRESS_59943]. 
+Included will be the medication name, WHO Drug name, and ATC classification. 
+ 
+Datasets Coding Dictionary Version 
+Previous and Concomitant Medications WHODDE +HD  WHODDE+HD [ADDRESS_59944]. 
+  
+7. Pharmacokinetic Concentrations and Parameters 
+Table presentations of the PK concentrations and PK parameter data will be 
+conducted using the PK analysis set. 
+All tables, listings and figures for RDEA3170, febuxostat, dapagliflozin, M1, and 
+M8 will be presented in the units as provided in the source file received from the bioanalytical laboratory.  
+The following descriptive statistics will be presented in PK parameter summary 
+tables: n (number of non-missing observations), arithmetic mean, SD, median, minimum, maximum, geometric mean, geometric CV% (CV%), geometric +GSD, geometric –GSD.  
+The geometric mean is calculated as the exponential of the arithmetic mean calculated 
+using log-transformed data. 
+ 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 26 of 154 
+ CV%=SQRT[exp(s²)-1] x 100 and ‘s’ is the standard deviation of the log-transformed 
+values.   The standard deviation of the geometric mean (GSD) will be displayed as: exp(lgmean +/- s), where 'lgmean' is the mean of the data on the log scale. For tmax and tlast, only n, median, minimum and maximum will be presented.  All PK tables, listings, and figures will be presented by [CONTACT_55415]:  
+ 
+x Treatment A: 9 mg RDEA3170 + 80 mg febuxostat + 10 mg dapagliflozin 
+x Treatment B: 9 mg RDEA3170 + 80 mg febuxostat 
+ 
+For presentations in data listings, concentration data will be presented using the same number of significant figures as the data received from the bioanalytical laboratory.   For PK parameters, the listings will be presented according to the following rules:  
+x Cmax – will be presented to the same number of significant figures as received 
+from the bioanalytical laboratory. 
+x tmax and tlast – will be presented as received in the data, usually to [ADDRESS_59945], only median, minimum, maximum, and n will be calculated. 
+Below is a summary of the rounding rules to be applied to the PK tables.  
+Concentration Tables Rounding 
+Individual concentrations n s.f. as supplied in source 
+Minimum and Maximum 3 s.f. 
+Mean/SD/Median/Geomean/GSD 4 s.f. 
+CV% 4 s.f.   
+PK Parameter Tables   
+Derived Individual parameters 3 s.f. 
+Directly Derived Individual parameters ( Cmax, 
+C12, C24) n s.f. as supplied in source 
+Minimum and Maximum 3 s.f. 
+Mean/SD/Median/Geomean/GSD 4 s.f. 
+CV% [ADDRESS_59946] individual values and  
+all descriptive statistics (median, minimum, and maximum) Presented as received in the data, usually 2 d.p. 
+s.f = signficant figures, d.p. = decimal place 
+7.1 Handling Of Values Below The Limit Of Quantification (BLQ)  
+Individual plasma concentrations below the LLOQ of the bioanalytical assay will be 
+listed as NQ (not quantifiable) with the LLOQ defined in the Tables, Figures and 
+Listings (TFLs), as applicable.  For calculation of descriptive statistics, plasma concentrations that are NQ or if there are missing values (e.g., no result [NR]) will be handled as follows:  Where results are reported as ‘NR’, these will be set to missing in calculations of descriptive statistics.  
+x At a time point where less than or equal to 50% of the values are NQ, all NQ 
+values will be set to the LLOQ, and all descriptive statistics will be calculated. 
+x At a time point where more than half (but not all) of the values are NQ, the mean, 
+SD, geometric mean, geometric +GeoSD, geometric –GeoSD and CV% will be 
+set to Not Calculated (NC).  The maximum value will be reported from the individual data, and the minimum and median will be set to NQ. 
+x If all values are NQ at a time point, no descriptive statistics will be calculated for 
+that time point.  Not calculated “NC” will be written in the field for SD, geometric 
++GeoSD, geometric –GeoSD and CV% and NQ will be written in fields for mean, geometric mean, minimum, median and maximum. 
+x The number of NQ values (n below LLOQ) will be reported for each time point. 
+ 
+Three observations > LLOQ are required as a minimum for a plasma concentration or PK parameter to be summarized.  Two values are presented as a minimum and maximum with the other summary statistics as NC. 
+7.[ADDRESS_59947] profiles on linear and semi-logarithmic scale.  For each of the mean plasma concentrations profiles, error bars will be displayed as exp(lgmean +/- sd_lg), where 'lgmean' is the mean of the data on the log scale, and 'sd_lg' is the SD of the data on the log scale. Error bars will be excluded from mean figures on the log scale.  
+For the mean figures and individual subject profiles, all treatments will be overlaid on 
+the same plot, and seprate plot for each analyte. 
+Nominal sampling times will be used in the PK concentrations summary tables and 
+mean plasma concentration figures. Actual times from dosing will be used in the individual subject concentration -time profiles.    For mean plots, NQ values will be handled as described for the summary tabulations; 
+for individual plots, plasma concentrations which are NQ before the first quantifiable 
+concentration will be set to a value of zero (linear plots only).  After the first quantifiable concentration, any NQ plasma concentrations will be regarded as missing.  All plots will be based on the PK analysis set, with the exception of 
+individual plots by [CONTACT_55416]. 
+7.[ADDRESS_59948] and Roger's method will be used to calculate the denominator degrees of freedom for the fixed effects (DDFM=KR).  The 
+point estimate and 90% CI for the difference between treatments (RDEA3170 + 
+febuxostat + dapagliflozin versus RDEA3170 + febuxostat) will be constructed.  The point estimate and adjusted 90% CIs will be exponentially back transformed to 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 29 of 154 
+ provide point and CI estimates for the treatment ratio (RDEA3170 + febuxostat + 
+dapagliflozin versus RDEA3170 + febuxostat).  Additionally, for each treatment, back transformed geometric means together with 95% CIs for AUC Ĳ, AUClast
+ and Cmax, 
+for RDEA3170, M1, M8, and febuxostat will be estimated and presented.  To make the treatment comparison the following SAS code maybe used as reference:   PROC MIXED data = data ; 
+CLASS subject treatment period sequence; 
+MODEL log( var) = treatment period sequence ; 
+RANDOM  subject(sequence) ; LSMEAN treatment /  CL ALPHA=0.05 ; ESTIMATE 'A vs. B' treatment 1 -1  / ALPHA=0.1 CL; RUN;  For all ANOVA PK models described above the geometric mean ratios, their 90% CI, along with the ratios of individual patient values will be plotted to visualize the treatment comparisons. 
+7.6 Multiplicity  
+Since there is only one primary hypothesis on pharmacokinetics there is no need for a 
+multiplicity adjustment. 
+8. Pharmacodynamic Results 
+8.1 Primary PD Variables  
+PD urine collection times will be provided including the derived sampling time 
+deviations.  From the uric acid concentrations the urinary excretion of uric acid will 
+be derived as follows: 
+   
+x Amount Excreted = urine acid concentration * weight of produced urine * 
+1.000 
+ The primary outcome variable,  the ‘Peak uric acid excretion during the first 8 hours’, will be identified as the maximum amount excreted in an interval out of the first [ADDRESS_59949] listings will be provided of the raw uric acid concentrations and the derived values for the urinary excretion of uric acid. Among the Day -1 and Day 7 timepoints tabulated below, the peak (maximum) uric acid excretion will be flagged in the data listing.  
+ 
+The maximum change from baseline in the amount excreted in urine for each period 
+will be derived as the difference between the peak amount excreted during Day [ADDRESS_59950] 8 hours of 
+assessment  -23 to -22 hours 1 to 2 hours 
+-22 to -21 hours 2 to 3 hours 
+-21 to -20 hours 3 to 4 hours 
+-20 to -19 hours 4 to 5 hours 
+-19 to -18 hours 5 to 6 hours 
+-18 to -17 hours 6 to 7 hours 
+-17 to -16 hours 7 to 8 hours 
+-16 to -15 hours 8 to 9 hours   
+-15 to -14 hours 9 to 10 hours  
+-14 to -13 hours 10 to 11 hours   
+-13 to -12 hours 11 to 12 hours  
+-12 to 0 hours* 12 to 24 hours**  
+*single 12-hour collection, **Single Pooled Collection 
+ For each subject the derived values for the maximum change from baseline in the amount excreted in urine for each period will be listed.  Descriptive summary tables will be provided for the raw uric acid concentrations, the derived values for the urinary excretion of uric acid, the peak uric acid excretions, as well as the change from baseline of the peak uric acid excretions.  Subject profiles will be used to visualize the derived values for the urinary excretion 
+of uric acid for each treatment over time. Side-by-side box plots will be used to 
+visualize the distribution of the peak uric acid excretions at Day -[ADDRESS_59951] listings will be provided for the raw serum uric acid concentrations. The 
+serum uric acid results will be analyzed for each period as the Day 7 predose assessment compared to the Day -1 assessment using change from baseline (Day 7 
+predose versus Day -1). Change from baseline values will be listed for each subject. 
+ 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.[ADDRESS_59952] include change from baseline (Day 
+7 versus Day -1) for the following clinical laboratory parameters:  
+ 
+x Estimated glomerular filtration rate  
+x serum levels of creatinine 
+x urinary levels of creatinine 
+x cystatin-C 
+x Blood urea nitrogen 
+x Serum electrolytes 
+x Urinary electrolytes 
+x Urinary pH 
+ 
+All secondary PD variables will be listed for each subject as observed values and 
+changes from baseline. Descriptive summary tables by [CONTACT_55417]. 
+8.[ADDRESS_59953] 8 hours. Analysis of the primary variable will be done on log-transformed values. Using the peak uric acid excretion the analysis will consider the maximum change from baseline difference from placebo at day 7 of treatment. The maximum change from baseline is the change from baseline (Day 7 versus Day -1) in the peak uric acid excretion where the  baseline is the peak urine excretion observed over the first 8 hours of Day -1. A linear mixed effects analysis of variance (ANOVA) model will be used, with fixed effects terms for sequence, period, and treatment. In this analysis, subjects nested within sequence will be assumed to be a random effect.  Kenward and Roger's method will be used to calculate the denominator degrees of freedom for the fixed effects (DDFM=KR). A geometric 
+mean ratio for the change from baseline response will be calculated by [CONTACT_55418]-logarithm of the difference between treatment means.  A 95% CI for each treatment ratio will be obtained by [CONTACT_43101]-logarithm of the 95% CI endpoints 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 32 of 154 
+ for each mean difference. Results will be presented as geometric mean ratios for the 
+change from baseline difference from placebo including 95% Cis for the mean ratios, based on Student’s t-distribution.   
+8.3.[ADDRESS_59954] is the serum uric acid (sUA) levels on Day 7. 
+Analysis of serum UA will be conducted in an equivalent way as urine UA, using 
+log-transformed values and change from baseline (Day -1) to observed serum UA at 
+Day 7.  A linear mixed effect model of the change from baseline will be used with fixed effects terms for sequence, period, and treatment. In this analysis, subjects nested within sequence will be assumed to be a random effect.  Kenward and Roger's method will be used to calculate the denominator degrees of freedom for the fixed effects (DDFM=KR). Results will be presented in the same way as the results for urine UA: using the geometric mean ratios for the change from baseline difference from placebo including 95% Cis for the mean ratios.    Statistical analysis of the other secondary PD variables will be conducted in an equivalent way as described for serum and urine UA.   
+8.3.3 Analysis of Exploratory PD Variables  
+ 
+ 
+ 
+  
+  
+  
+ 
+ 
+ 
+ 
+ 
+  
+8.3.4 Visualizing the Pharmacodynamic Results  
+For all ANOVA PD models described above the geometric mean ratios, their 95% CI, 
+and data permitting the ratio of individual patient values will be plotted to visualize the treatment comparisons. 
+ &&,
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 33 of 154 
+ 8.3.5 Analysis of Urinary PD Variables Over a 24 hour Interval  
+Using the amount excreted in urinary uric acid, derived as: 
+x Amount Excreted = urine uric acid concentration * weight of produced urine 
+* 1.000 
+ For each 24 hour profile (Day -1 and Day 7 ), the amount excreted for each individual 
+time point will be summed over each [ADDRESS_59955] this will 
+provide a total value for each period for each day defined as: the ‘Total Amount of Uric Acid Excreted in Urine over a 24 hour period (mg/day)’.    Similar calculations will be applied to the other quantitative urinalysis PD parameters: Sodium, Creatinine, Cystatin-C, and pH.  For each of these secondary urine PD parameters, the amount excreted will be listed and the total amount excreted in urine over a 24 hour period will be listed. These total values derived over a 24 hour period will be summarize by [CONTACT_55419].   
+9. Safety Analysis 
+The analysis of the safety variables will be conducted using the safety analysis set. 
+9.1 Adverse Events 
+ 
+All verbatim AE terms reported will be coded according to MedDRA, version 20.1. A treatment-emergent adverse event (TEAE) is defined as an AE with onset (start date/time) after the first dose of IMP in Treatment period 1.  Adverse events will be assigned to a treatment based on the start date/time of the AE in relation to dosing in that period; for tabulation purposes the AE will then be 
+assigned to the treatment received in the respective treatment period as follows: 
+ 
+x Screening: all AEs with start date/time before dosing in Treatment period 1. 
+x Treatment period 1: AEs with start date/time at the time of or after dosing in 
+Treatment period 1 until the time of dosing in Treatment period 2 will be assigned 
+to the treatment received in period 1. 
+x Treatment period 2: AEs with start date/time at the time of or after dosing in 
+Treatment period 2 until the Follow-up Visit, will be assigned to the treatment 
+received in period 2. 
+ Adverse events with missing start dates/times will be handled as follows: 
+x If the start date is completely missing but the end date is known and shows that 
+the AE ended on or after the first dose date, then the start date will be imputed as 
+the first day of dosing; if the end date is known and shows that the AE ended 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.[ADDRESS_59956] dose date, then the screening date will be used for the start date.  If 
+the end date is non-informative (i.e., is missing or does not contain enough information), the start date will be imputed as the first date of dosing; 
+x If only the start day is missing the day will be imputed as the first day on which a 
+dose was given in that month unless the end date is known and shows that the AE 
+ended before a dose was given in that month; in which case the date will be imputed as 01.  If the end date is non-informative (i.e., is missing or does not contain enough information), the start date will be imputed as the first date of 
+dosing in the known month.  If the month is not a dosing month the date will be 
+imputed as 01; 
+x If the start day and month are missing the date will be imputed as the first day of 
+dosing in the known year unless the end date is known and shows that the AE 
+ended before a dose was given in that year; in which case the start day and month will be imputed as 01Jan or with the date of screening if this is later.  If the end date is non-informative (i.e., is missing or does not contain enough information), the start date will be imputed as the first date of dosing in the known year.  If the year is not a year of dosing, then the date will be imputed as 01Jan or with the date of screening if this is later. 
+ Missing times will be imputed as 00:[ADDRESS_59957] (Listing [IP_ADDRESS]). All serious AEs (SAEs) will be listed (Listing [IP_ADDRESS]). A listing of all AEs leading to treatment discontinuation will be presented, if applicable (Listing [IP_ADDRESS]).   The following information will be included in the listings: verbatim term, SOC, Preferred Term and lowest level term, start date/time, end date/time, time from most recent dose, causality, action taken, whether the AE was classified as serious and the outcome.  Unless specified otherwise, all adverse event summaries will include the TEAEs only and adverse event summary counts of AEs will be the number of subjects reporting 
+adverse events and not the number of events reported. The number and percentage of 
+subjects with adverse events will be tabulated by [CONTACT_55420]. A subject with multiple adverse events within a body system is only counted once towards the total of that body system.  If the same AE (preferred term) is reported several times for the same subject within a treatment period, it will only appear once for that specified treatment in the summary tables.  For purposes of the summary tables, AEs will be classified as either being related to study drug or not related.  
+As defined in the protocol, within the source data all AEs will be assigned a severity 
+grade of: Mild, Moderate, Severe. For subjects with multiple adverse events of the 
+same preferred term and of different severities, the AE with the highest assessment of 
+severity will be used in the summaries presented by [CONTACT_926].   
+&&,
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 35 of 154 
+ A general summary of all treatment-emergent adverse events will show the number 
+and percentage of subjects, as well as the number of events, according to the following categories: 
+x All treatment emergent adverse events  
+x Treatment emergent adverse events ‘Related to IMP’ 
+x Mild treatment emergent adverse events 
+x Moderate treatment emergent adverse events 
+x Severe treatment emergent adverse events 
+x Treatment emergent adverse events leading to death 
+x Serious treatment emergent adverse events 
+x Treatment emergent adverse events leading to early termination 
+ 
+Other summary tables for adverse events will include: 
+x Number and Percentage of Subjects with Treatment Emergent Adverse Events by 
+[CONTACT_1196], Preferred Term, and Treatment 
+x Number and Percentage of Subjects with Treatment Emergent Adverse Events 
+‘Related to IMP’ by [CONTACT_1196], Preferred Term, Severity, and 
+Treatment. 
+x Number and Percentage of Subjects with Treatment Emergent Adverse Events 
+‘Not Related to the IMP’ by [CONTACT_1196], Preferred Term, Severity, and 
+Treatment. 
+x Number and Percentage of Subjects with Treatment Emergent Adverse Events by 
+[CONTACT_55421]; for those subjects assigned to the ‘AB’ treatment 
+sequence, any AE occurring during the first period and before the Period 2 dose, will be assigned to the ‘A’ treatment (9 mg RDEA3170 + 80 mg febuxostat + 10 mg dapagliflozin). Any AE occurring after the period 2 dose, will be assigned to the ‘B’ treatment (9 mg RDEA3170 + 80 mg febuxostat + placebo).  
+ 
+For those subjects assigned to the ‘BA’ sequence, any AE occurring during the first period and before the period 2 dose, will be assigned to the ‘B’ treatment (9 mg RDEA3170 + 80 mg febuxostat + placebo). Any AE occurring after the period 2 dose, will be assigned to the ‘A’ treatment (9 mg RDEA3170 + 80 mg febuxostat + 10 mg dapagliflozin).   
+If a subject has multiple AEs with the same preferred term but occurring after each 
+dose administration, then one AE will be counted for each treatment.  Adverse events that emerge in one treatment period and carry over into the next period will be attributed to only the period in which the AE emerged. 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 36 of 154 
+ 9.2 Diabetic Ketoacidosis (DKA) 
+ 
+All DKA events will be listed for each subject. 
+9.3 Clinical Safety Laboratory Tests (Hematology, Chemistry, Urinalysis) 
+9.3.[ADDRESS_59958] listing of all observed chemistry and hematology laboratory data will be provided.  Laboratory results outside the normal range will be flagged.  The abnormal values will be flagged with ‘L’ (low) for values below the lower limit of the laboratory’s normal range or ‘H’ (high) for values above the upper limit of the laboratory’s normal range. Abnormal values will be graded as not clinically significant (NCS) or clinically significant (CS). Clinically significant laboratory results will be included in the AE listings.    Change from baseline will be derived and listed for each subject.  The observed values and change from baseline values of all safety laboratory 
+assessments for clinical chemistry and hematology will be summarized using 
+descriptive statistics showing the number of observations (n), mean, median, SD, minimum, and maximum value. Table summaries will be presented by [CONTACT_55422].  Baseline values for all clinical chemistry and hematology parameters will be categorized as being below the normal range (Low), within the normal range (Normal), and above the normal range (High).  Shift from baseline tables will present 
+the frequency and percentage of subjects who have observations that are Normal, Low, or High. Shift tables will be presented by [CONTACT_7206].   A moving baseline will be used for shift tables and calculation of change from 
+baseline: baseline in each period will be the last laboratory assessment prior to the 
+first dose day [ADDRESS_59959].  All positive findings in the microscopic examination will be listed.   
+ Observations outside the normal range will be flagged.  The abnormal quantitative 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 37 of 154 
+ values will be flagged with ‘L’ for values below the lower limit of the laboratory’s 
+normal range, ‘H’ for values above the upper limit of the laboratory’s normal range, or ‘Ab’ for abnormal qualitative test results.  All original and unscheduled assessments will be listed.  Clinically significant laboratory results that are considered by [CONTACT_55423].  
+9.4 Vital Signs 
+ 
+The observed data for blood pressure (systolic and diastolic), heart rate (pulse), will be listed by [CONTACT_1130], treatment, and time point (Listings [IP_ADDRESS]).  Change from baseline for blood pressure (systolic and diastolic), heart rate (pulse), will be derived and listed by [CONTACT_1130], treatment, and time point (Listing [IP_ADDRESS]).   
+The baseline for vital signs measurements will be the pre-dose assessment on Day 1 in 
+each treatment period.  For systolic, diastolic blood pressure, and heart rate, the observed and change from baseline data will be summarized by [CONTACT_12268]. Summaries will include tables of descriptive statistics showing the number of observations (n), mean, 
+SD, median, minimum, and maximum value. 
+   
+9.5 12-Lead Safety ECG 
+ 
+Raw quantitative results for: PR interval, QRS interval, RR interval, QT interval,  QTcB (corrected QT according to Bazett), QTcF (corrected QT according to Fridericia), and heart rate will be listed for each subject.    
+The overall qualitative ECG assessment for each subject will be listed by [CONTACT_1130], and 
+time point. 
+9.6 Physical Examination 
+ 
+All abnormal physical examination findings (pre and post-dose assessments) will be listed. Weight collected at pre and post dose time points will be listed. 
+  
+10. Reporting Output 
+ 
+PAREXEL International 
+Statistical Analysis Plan 
+ 
+[COMPANY_008] AB 
+Protocol D5495C00001  
+ Version 1.0 
+16 July 2018 
+ 
+ 
+Page 38 of 154 
+ The tables, listings, figures and any non-descriptive statistical analysis will be 
+produced using  ).  The REPORT 
+procedure will be used to produce all tables and listings; SAS/GRAPH will be used to 
+produce all figures.    Tables, listings, and figures will be produced in the order that they appear in the textual sections of the plan.   
+All tables, listings, and graphs will be produced to landscape orientation using Courier 
+New 8pt font and will be incorporated into a MS Word document as a (RTF) rich text file (margins: top, left, right, and bottom: 1 inch).  A separate RTF document will be created for each table, figure and listing individually.  &
+&
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,
+&&,&&,
+&&,
+&&,
+&&,
+&&,

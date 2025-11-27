@@ -1,0 +1,626 @@
+IRB17-1694   Version Date:  06/10/2022 
+Page 1 of 14 
+ MRI DERIVED QUANTITA TIVE RISK MAPS FOR P ROSTATE CANCER DIAGN OSIS 
+USING TARGETED BIOPS Y 
+Principle Investigators:  
+Aytekin Oto, M.D., Professor of Radiology  
+ 
+ 
+Co-Investigators:  
+Scott Eggener. MD  
+Tatjana Antic, MD  
+Greg Karczmar, Ph.D.  
+Yulei Jiang, Ph.D.  
+Ambereen Yousuf, M.D  
+Aritrick Chatterjee, Ph.D.  
+Ajit Devaraj , Ph.D.  
+Milica Medved Ph.D.  
+Xiaobing Fan P h.D. 
+Luke Reynolds, M.D.  
+ 
+Location:  University of Chicago Medical Center, Department  of Radiology  
+ 
+A. BACKGROUND AND RATIONALE  
+Prostate cancer ( PCa) is the most frequently diagnosed cancer and the second most 
+common cause of cancer death in US men (3).  Approximately 26,730 men in the US will 
+die of PCa in 201 7 (3).  Current methods for detecting and diagnosing PCa are seriously 
+flawed since they frequently produce inconsistent and unreliable results, often with high 
+cost.  PCa screening is  driven by the serum prostate specific antigen (PSA) test, with 
+definitive diagn osis from histologic  analysis of 12–24 tissue cores sampled randomly from 
+the prostate with trans -rectal ultrasound (TRUS) -guided biops y.  This approach is prone 
+to under -sampling the prostate  (only 1% of the prostate tissue is sampled)  and under -
+diagnosing clinically significant PCa.   Typically, only 30% of the first TRUS -guided biops y 
+is positive for PCa but u nfortunately , a negative biopsy does not rule out PCa, and repeat 
+biopsies  are often required .  Furthermo re, Gleason score —one of the most important 
+prognostic factors for PCa—is not reliabl y assessed from TRUS -guided biopsy , and is 
+upgraded in 30% of cases in repeat biopsies or prostatec tomies (4, 5).  Every year, 
+approximately 1.2 million prostate biopsies are performed in the US  (6), which cost the 
+US health c are system an estimated $2 billion/year  (7-10).  As a result, there are currently 
+no effective, widely accepted and reliable methods for risk assessment, detection and 
+diagnosis of PCa.  Consequently, the number of early cancers detected is also decreasing 
+IRB17-1694   Version Date:  06/10/2022 
+Page 2 of 14 
+ significantly , and therefore  increased incidence  of metastatic PCa and disease specific 
+mortality is expected , beginning in approximately 2017  (11).  In addition , inefficient 
+diagnosis algorithms and unreliable risk prediction leads to "overtreatment "—it is 
+estimated  that, for 30–40% PCa patients , prostatectomy does not impact survival but 
+exposes them to significant complications (impotence and incontinence ).  There is a 
+critical and immediate need for accurate  and non-invasive diagnostic tools  to improve 
+PCa diagnosis and grading.  At the time of initial diagnosis, we  need  a diagnostic tool  for 
+evaluat ion of  the entire prostate , to identify PCa foci, and to differentiate  clinically 
+significant cancer  (requires aggressive trea tment ) from indolent disease  (does not require 
+aggressive treatment ), to reduce financial, logistical, and emotional costs from PCa and 
+improv e the outcome  of PCa management . 
+Currently t here is no consensus on the definition of clinically significant prostate cancer .  
+In this proposal we define significant cancer based on pa thologic criteria.  For biopsy , 
+based on the Canadian recommendations  (12), clinically significant cancers include all 
+tumors with Gleason score >6 (3+3)  (ISUP grade group 1), and with Gleason score ≤6 
+(3+3)  (ISUP grade group 1) if not localized.    
+Multi -parametr ic MRI (MP -MRI) is an MRI protocol optimized for PCa and embraced 
+worldwide by the radiology community.  MP -MRI is a combination of two or more of the 
+following imaging sequences: T 2-weighted (T 2w), diffusion -weighted (DW), and dynamic 
+contrast enhanced (D CE).  One promising solution for improving PCa detection is 
+targeted biopsy of the prostate using MP -MRI.  When performed by experts, Mp -MRI 
+targeted biopsies result in higher detection rates of clinically significant cancer with a 
+reduced upgrading of cancers at surgery, improving confidence in the biopsy results (13-
+16).  MR-targeted biopsies can be performed either by fusing MR ima ges to real time US 
+images or directly under MR guidance (in -bore MR guided biopsy).  
+A.1 Current status and shortcomings of prostate magnetic resonance imaging 
+(MRI)  
+Performance of MRI -targeted biopsy depends on accurate and reproducible interpretation 
+of MR images leading to accurate identification of targets for biopsy.  Images from MP-
+MRI are compl ementary and synergistic  in diagnostic information , but they are also 
+complex and difficult to decipher  by radiologists .  T2w and DW MR images are the 
+mainstay of MP-MRI, and can depict PCa with high sensitivity .  T2w and DW-MRI are the 
+main  imaging techniques for PI-RADS , the standardized reporting approach to MP-MRI 
+(17).  Currently, all commercially available PCa MP -MRI protocols are based on 
+subjective and qualitative interpretation by radiologists, and none is truly quantitative, well  
+defined, and reproducible.  I nterpretation of prostate MP-MRI varies greatly  among 
+radio logists , because of a lack of reproducible  and quantitative MRI acquisition protocols , 
+and because of a lack of decision support system (DSS) tools  to assist radiologist s 
+interpret  the images .  This problem  is exacerbated by  limited number of  radiologists who 
+have substantial experience and expertise in interpretation of prostate MP-MRI.  Success  
+of MP -MRI achieved in select centers of excellence cannot be reproduced easily 
+worldwide .  We propose to evaluate  a quantitative prostate MRI acquisition protocol , 
+and a novel Risk Map DSS tool for image interpretation , to enabl e wide spread  
+clinical translation  of PCa MRI.  If these emerging results are reproduced widely, MRI 
+has the potential to revolutionize PCa management, reduce unproductive biopsies and 
+IRB17-1694   Version Date:  06/10/2022 
+Page 3 of 14 
+ unnecessary radical therapies (e.g., prostatectomy and radiation), and achieve more 
+accurate and efficient diagnosis, effective follow -up, and targeted eradication of 
+aggressive disease.   
+We will use a new MRI technique to obtain quantitative tissue composition maps based 
+on a new hybrid multi -dimensional MRI (HM -MRI) approach that combines T2 and ADC 
+measurements and detects tissue heterogeneity at the microscopic level in an innovative 
+way.   
+Our group has developed two novel app roach es that have potential to substantially 
+improve multi -parametric MRI  in prostate: the kT -T2 sequence  (18-21) and the hybrid 
+multi -dimensional MRI (HM -MRI)  (22-25). The kT -T2 sequence provides a direct 
+assessment of the prostatic micro -environment and HM-MRI provides an assessment of 
+the prostatic tissue micro anatomy which allows us to find water signals that are 
+characteristic of cancers.  This is important new information that cannot be obtained  
+from conventional T2 and ADC measurements.  
+HM-MRI data can be analyzed to produce accurate tissue composition maps showing 
+volume  fractions of stroma, epithelia, and lumen.  These maps have been shown in 
+preliminary studies from this laboratory to enhance diagnostic accuracy  (26) , as 
+summarized in Preliminary Results ( Section A.3.1.).  Inf ormation from these tissue 
+composition maps will be incorporated into the DSS tool . 
+A.2. Protocol  overview:   
+We propose to test a Risk Map DSS image interpretation tool  for automated interpretation 
+of prostate MR  using research sequences , which will include quantitative kT -T2, and HM -
+MRI acquisition , in the clinical MRI protocol . This will also allow straightforward 
+comparison of kT -T2 and HM -MRI vs. conventional T2 and ADC images.   This, in turn, 
+will be used for reliable determination of clinically  significant cancer in prostate which will 
+be targeted by MR -targeted biopsies at the time of diagnosis.   The goal is to achieve 
+clinical translation of advanced and innovative techn ology for accurate and reliable PCa 
+diagnosis , to provide patients and tre ating physicians with quantitative and objective data , 
+and to enable them to make inform ed treatment decisions.   
+A.3. Preliminary results:  
+Preliminary results and research accomplishments directly related to this proposal are 
+listed below.  
+A.3.1 . Tissue composition estimate from HM -MRI data, and correlation with 
+histology : 
+IRB17-1694   Version Date:  06/10/2022 
+Page 4 of 14 
+ A preliminary study demonstrates that HM -
+MRI has potential to significantly enhance 
+the diagnostic accuracy of PCa detection 
+and diagnosis (26).  This analysis included 
+21 PCa patients who underwent 
+preoperative 3 T HM -MRI.  Axial images 
+using HM -MRI were acquired with TE = 47, 
+75, 100 ms and b-values of 0, 750, 1500 
+s/mm2, resulting in a 3×3 array of data for 
+each voxel.  Volume fractions of three tissue 
+components —epithelium, stroma, and 
+lumen —were estimated by fi tting the HM -
+MRI data to a three -component  signal model 
+(see section c.2.3.iv) with distinct ADC and 
+T2 values for each component.  Figure 1 
+shows an example Gleason 4+5 cancer 
+outlined on H&E slides and superimposed on 
+estimated ADC and T2 maps (top row),  
+stromal, luminal, and epithelial volume 
+fraction maps (2nd row, and 3rd row, left), and 
+finally a tissue composition map (3rd row, 
+right).  This aggressive cancer is clearly 
+evident on conventional ADC and T2 
+images, but is shown here with greater 
+contras t in the tissue composition map.  We 
+analyzed 28 PCa and 71 normal tissue ROIs 
+outlined by an expert radiologist.  The 
+volume fractions of normal tissue are similar 
+to histological  
+studies (27-29).  Stromal volume was highest 
+in AFMS followed by transition zone, 
+epithelium volume was highest in central 
+zone, and lumen volume was highest in PZ (Fig. 1, 4th row).  The volume fractions were 
+significantly different in cancers than in normal tissue (Table 1 for cancer and normal PZ, 
+and Fig. 1, 4th row, for cancer vs. normal tissue in all zones).  PCa has significantly 
+increased epithelium than normal tissue (48.8±9.2 vs. 23.2±7.1%), reduced lume n 
+(14.0±5.2 vs. 26.4±14.1%), and 
+reduced stroma (37.2±9.1 vs. 
+50.5±15.7%) fractional volumes.  
+The volume fractions also 
+correlate more strongly with 
+Gleason Score (ρ = 0.65 for 
+epithelium, -0.44 for stroma, and 
+-0.39 for lumen) than T 2 (ρ = -
+0.29) and ADC  (ρ = -0.32).  The 
+AUC value for differentiating Table 1.  Comparison of Tissue Composition  
+ Study  Stroma (%)  Epithelium (%) Lumen (%)  
+Normal 
+Peripheral 
+Zone  
+Tissue  Langer et al 2010  38.2  31.2  29.6  
+Chatterjee et al 2016  38.3±1.4  32.0±1.5  30.1±1.2  
+HM-MRI 39.0±13.6  21.5±4.6  39.4±14.1  
+Prostate 
+Cancer  Langer et al 2010  38.6  46.2  13.5  
+Chatterjee et al 2016  27.9±1.0  60.9±1.9  11.2±1.1  
+HM-MRI 37.2±9.1  48.8±9.2  14.0±5.2   
+Figure 1.  Representative tissue composition maps 
+estimated from HM -MRI for an ROI of histologically 
+confirmed Gleason Grade 4+5 cancer.  The red color in the 
+"composition map" wh ich combines the stroma (1), lumen 
+(blue), and epithelium (2) maps is consistent with  
+increased epithelial and reduced lumen and stromal 
+volume fraction  in this cancer.  The box plots show 
+epithelial, stromal, and luminal volume fractions in the 
+AFMS, CZ, PZ, TZ, and cancer.  
+
+IRB17-1694   Version Date:  06/10/2022 
+Page 5 of 14 
+ PCa from normal tissue was 0.99 for epithelium, 0.80 for lumen, 0.79 for stroma, and 0.71 
+for T 2 (AUC for ADC was not evaluated because cancer ROIs were outlined in ADC 
+maps).  These results suggest that HM -MRI non -invasively provides 3 -dimensional 
+information that is similar to the information obtained from 2D ex vivo histology slices, and 
+that prostate tissue composition measured non -invasively by using HM -MRI have 
+potential to improve PCa diagnosis and ass essment of PCa aggressiveness.  The study 
+also resulted in a filed patent application (30). 
+A.3.2. PCa risk maps derived from quantitative MRI data  
+We have developed a preliminary risk map based 
+on mpMRI: ADC, T2, and DCE signal enhancement 
+rate (α).  These parameters were calculated on a 
+voxel -by-voxel basis for the entire, co -registered 
+prostate.  Each parameter was normalized (to 0 -
+100) with low T2, low ADC, and high α signify high 
+risk.  The final risk score is a weighted sum of the 
+parameters (ADC 40%, T2 40%, DCE 20%) with 
+higher risk for low T2, low ADC, and high α values.  
+We analyzed preoperative 3T mpMRI of 22 PCa 
+patients, and used five pa tients as the training set 
+to find the optimal threshold for predicting PCa and 
+17 patients as the test set.  A sector -based analysis 
+(18 sectors per prostate) on the 17 test patients 
+showed the following PCa detection performance: 
+sensitivity 75% (105/140 ), specificity 89% 
+(147/166), positive predictive value 85% (105/124), 
+negative predictive value 81% (147/182), and AUC 0.82 (95% CI [0.77, 0.87]).  
+Importantly, the risk map correctly identified all index lesions.  This study suggests that 
+the risk map ca n detect PCa and guide targeted biopsies for improved PCa diagnosis.  
+A.3.3. Pilot DSS study:  
+We developed a pilot DSS based on T 2w and DW -MRI (31).  A radiologist and a 
+pathologist identif ied 104 ROIs (61 cancer and 43 normal tissue) based on correlation of 
+histological and MR findings.  AUC values in the differentiation of PCa from normal tissue 
+foci of 10th percentile ADC, average ADC and T 2w skewness were 0.92, 0.89, and 0.86 
+respectivel y.  The combination of the 10th percentile ADC, average ADC, and T 2w 
+skewness yielded an AUC value of 0.95 for the same task.  Gleason score correlated 
+moderately with the 10th percentile ADC (ρ= -0.34, p=0.008) and with the average ADC 
+value (ρ= -0.30, p=0.02).  The combination of 10th percentile ADC, average ADC, and 
+T2w skewness were promising in differentiation of PCa from normal tissue, and ADC 
+image features correlated moderately with Gleason score (31). 
+A.3.4 . Validation study of pilot DSS:  
+We validated the pilot Risk Map DSS on preoperative 1.5T MP -MR images (with 
+endorectal coil) of 119 PCa patients (GE scanners, n=71; Philips scanners, n=48) and 
+265 PCa and normal peripheral zone  ROIs identified through histology -MR consensus 
+review (32).  AUC values of the pilot DSS image  features combined were 0.95 and 0.88  
+Figure 2 .  Representative example of developed risk map 
+tool showing a slice from mid prostate where  the tool 
+detected the index lesion (Gleason 4+3) . 
+IRB17-1694   Version Date:  06/10/2022 
+Page 6 of 14 
+ on the Philips and GE dataset (leave -one-patient -out evaluation), respectively, and 0.96 
+and 0.89 when training on the GE dataset and testing on the Philips dataset, and vice 
+versa, respectively.  Spearman correlation coefficients between ROI -specific Gleason 
+scores and the ADC features were between -0.27 and -0.34.  This previous work (32) 
+demonstrates that a pilot DSS tool developed based on data from Philips scanners can 
+be effective with data from other scanners, and supports the feasibility of the proposed 
+Risk Map DSS tool.  
+ 
+B. PURPOSE  
+The purpose of the proposed research is to test and validate an artificial intelligence -
+based Risk Map decision -support system (DSS) for PCa MRI interpretation and 
+identification of clinically significant tumor site based on MRI acquisition of  a 
+protocol c overing the entire prostate which will include the kT -T2 and the hybrid 
+multi -dimensional MRI (HM -MRI) sequences.    
+We will test an artificial intelligence -based Risk Map DSS tool we have developed, which 
+is based on and expanded from previously identified  key MR image features that are 
+effective for identifying PCa from normal prostate tissue, and which also correlate s 
+moderately with Gleason scores (ADC, T2, and tissue composition maps).  The DSS tool 
+will assist radiologists interrogate suspicious areas in the prostate that are potentially 
+clinically significant PCa foci, and will identify up to two potential clinically significant tumor 
+sites.  In addition to systematic biopsies  and the targets identified by the radiologist , up 
+to two targets determined by the DSS tool will be biopsied.  Biopsy histology results of all 
+cores will be used as the reference standard to evaluate the performance of the Risk Map 
+DSS tool.  
+ 
+C. METHODOLOGY  
+C.1. Study Design:  
+This is a prospective, single -arm, unblinded study of patients with known or suspected 
+prostate cancer.  A total of 125 patients will be enrolled.  
+Recruitment: We will recruit patients with known or suspected prostate cancer who have 
+been referred to the Department of Radiology at the University of Chicago Me dical Center 
+for a diagnostic MRI exam of the prostate, to be followed by an MRI -guided fusion biopsy 
+of the prostate, per standard clinical protocol.  
+All patients will be scanned using a standard clinical prostate MRI protocol. Research 
+sequences will be added to the routine clinical exam. The research sequences will not 
+exceed 15 minutes. The patients will not receive intravenous contrast agent as part of the 
+research protocol.  
+All patients will then undergo a 12 -core TRUS -guided or transperineal US -guided sextant 
+random  biopsy  by the ir urologist  at the Urology Clinic as their standard of care treatment . 
+Additional biopsy targets may be selected based on an expert radiologist's interpretation 
+of the patient’s clinical MRI, as part of the clinical, standard of care MR targeted biopsy 
+procedure.   Up to two additional biopsy targets  per patient will be selected by the Risk 
+IRB17-1694   Version Date:  06/10/2022 
+Page 7 of 14 
+ Map DSS tool , if different from the already selected targets by the radiologist per standard 
+of care.  Ultimately,  the clinical radiologist will make the final decision on the targets to be 
+biopsied .  MR -targeted biopsies will be done by using a  Uronav MR -US fusion device .  
+The following results will be recorded for each core: (1) the reason of biopsy (random 
+biopsy; DSS tool alone; radiologist alone ) (2) location (sextant and zone), and (2) 
+histology result.  Research cores will be evaluated by expert genitourinary pathologist,  
+Dr. Antic , and results will be communicated to the urologist.   
+Studies will be carried out using FDA approved 3 Tesla Philips , GE and Siemens  MRI 
+units at the University of Chicago Medical Center.  All of the research MR sequences will 
+be in compliance with FDA safety requirements and MR contrast agents will not be 
+injected for research purposes . 
+C.2. MRI Data acquisition methods:  
+The data acquisition will consist of obtaining the standard clinical protocol and research 
+sequen ces, in compliance with FDA safety requirements. Research sequences may 
+include, but will not b e limited to (1) kT -T2 sequence (high spatial resolution axial ME -
+TSE for T 2 measurements and anatomy visualization), and (2) axial HM -MRI with 4 b -
+values and 4 TEs for diffusion and T2 measurements.  MR images will be acquired using 
+Philips , GE or Siemens  3T clinical MR systems with a phased array surface receiver coil.  
+C.3. Study Endpoints and Statistical  Analysis  
+The major goal of this study is to compare the accuracy of the Risk Map DSS tool against 
+the clinical accuracy of experienced radiologists in t he context of the reference standard 
+of biopsy histology.  The primary endpoints will be ROC curve, AUC value, the secondary 
+endpoint will be sensitivity, specificity, PPV, and NPV, and the tertiary endpoint will be 
+correlation strength between the DSS too l output and tumor -specific Gleason scores.  
+Both per -patient and per -tumor analyses will be conducted.  For the per -patient analysis, 
+patients who are diagnosed with PCa from the biopsy procedure will be considered as 
+positive for PCa, and patients who ar e not diagnosed with PCa from the biopsy procedure 
+will be considered as negative for PCa.  For the per -tumor analysis, each individual PCa 
+tumor diagnosed from the biopsy procedure will be analyzed separately, and biopsy sites 
+that do not yield PCa diagno sis will be considered as negative for PCa.  To ascertain a 
+true positive biopsy, the finding and the biopsy must match in sextant and zone.  If 
+ambiguity in biopsy site arises with regard to indication s from the DSS tool, or the 
+radiologist's opinion, and  the biopsy, e xpert radiologist (Dr. Oto) and pathologist (Dr. 
+Antic) will review each case to make the determination .  This will allow us to calculate the 
+performance of : (1) the Risk Map DSS tool, (2) the radiologist , and (2) the standard 
+sextant biopsy .  We will evaluate these performance endpoints on clinically significant 
+PCa (but we will have data for all tumors).  Spearman correlation coefficient will be 
+estimated in the usual manor.  
+C.4. Statistical  power consider ation  
+We expect the following  level of performance: AUC 0.90±0.0 3, sensitivity 90± 5%, 
+specificity 90± 4%, and statistically significant (Spearman's) correlation strength of 0.8 
+with tumor -specific Gleason scores.  Variances are estimated based on the expect ation 
+of PCa diagnosis in 35% of 125 patients, and based on an empirical rule -of-thumb formula 
+IRB17-1694   Version Date:  06/10/2022 
+Page 8 of 14 
+ for AUC and binomial probability for sensitivity and specificity.  The estimated 95% 
+confidence intervals (CIs) are: for AUC [0.8 7, 0.93], for sensitivity [0.8 5, 0.95], and for 
+specificity [0.8 6, 0.94].  These uncertainty estimates do not include analysis of biopsy by 
+sextant and zone of the 12 -20 cores per patient; estimates of 12 by -location -analyses per 
+patient reduce all uncertainties to about 1%.  These estim ates suggest that this protocol  
+will produce meaningful performance estimates.   
+ 
+D. DURATION OF THE PROTOCOL  
+The probable  duration of the study will be 3  years with review, at least annually, to recruit 
+the target number of patients and complete all data analysis.  
+ 
+E. LOCATION WHERE RESEARCH WILL BE CONDUCTED  
+The study will be conducted on the FDA approved 3 Tesla Philips , GE or Siemens  MRI 
+scanners at the University of Chicago Medical Center, 5841 South Maryland Avenue, 
+Chicago, IL 60637.  
+ 
+F. SAFETY MONITORING  
+We do not anticipate any adverse events. However, adverse events related directly to the 
+study will be reported to the Cancer Center Clinical trials office following standard 
+operating procedures outlined in the Cancer Center data safety and mon itoring plan.  
+ 
+G.  DESCRIPTION OF EXPERIMENTAL CONTROLS AND USE OF PLACEBOS  
+N.A. 
+ 
+H.  TYPE AND NUMBER OF EXPERIMENTAL SUBJECTS  
+We will recruit 125 patients who will receive a diagnostic MRI exam of the prostate, to be 
+followed by an MRI -guided fusion biopsy of the prostate.  
+Inclusion Criteria  
+We will recruit patients with known or suspected prostate cancer who have been referred 
+to the Department of Radiology at the University of Chicago Medical Center for a 
+diagnostic MRI exam of the prostate, to be f ollowed by an MRI -guided fusion biopsy of 
+the prostate.  Written informed consent will be signed by the patients before the MRI 
+examination . 
+Exclusion Criteria  
+Subjects will be screened and excluded per standard clinical protocol . 
+Also excluded are:  
+ Subjects incapable of giving informed written consent;  
+IRB17-1694   Version Date:  06/10/2022 
+Page 9 of 14 
+  Subjects who cannot adhere to the experimental protocols for any reason, 
+or have an inability to communicate with the researcher;  
+ Subjects with psychiatric disorders that affect their ability to consen t for 
+themselves will be excluded and not the entire population of patients with 
+psychiatric disorders .  
+ Prisoners;  
+ Minor children (under the age of 18 years old).  
+ Previous treatments (surgery, radiation, focal ablation, hormone or other 
+chemotherapy) for prostate cancer.  
+ 
+Data to be collected  
+Demographic information will be collected from each recruited subject. The research team 
+will also collect  clinic visit,  laboratory, imaging and pathology results relevant to the clinical 
+question for each subject.  
+ 
+J. SHARING RESEARCH RESULTS : 
+At times, the advancement of research or the development of healthcare devices is aided 
+by the sharing of de -identified image data, pathology data, genetic data and clinical 
+information with other organizations. De -identified copies of image data, pathology data, 
+genetic data and clinical information may be sent outside of The University of Chicago for 
+such purposes, including as part of an image library. If this occurs, scientists outside of 
+The University of Chicago will be u nable to identify the subject from medical images, 
+pathology data, genetic data or from clinical information, because all identifying 
+information will have been removed from the images and records. Insurance agencies 
+will not have access to this informatio n. 
+ 
+K. POTENTIAL RISKS AND BENEFITS TO SUBJECTS  
+Risks Associated with Magnetic Resonance Imaging  
+The risks below are the risks of standard MR imaging which the patients will undergo for 
+clinical indications. The research component will not cause any additional risk to the 
+existing minimal risks of clinical MR imaging. The research sequences will be de signed 
+in compliance  with FDA requirements , and intravenous contrast material will not be 
+administered for research purposes.    
+The presence of devices, implants, or other objects containing metal : Metal objects pose 
+a serious risk to all patients undergo ing MRI exams. This includes internally implanted 
+objects such as surgical clips, biosupport devices (e.g., pacemakers), and artificial joints 
+which contain metal.  
+Claustrophobia:  Some individuals may experience claustrophobia during the MRI exam 
+due to t he limited space available inside the bore of the magnet.  
+IRB17-1694   Version Date:  06/10/2022 
+Page 10 of 14 
+ Breach of confidentiality: There is a minimal risk that patient confidentiality may be 
+breached.  
+ 
+Protection against risks  associated with MRI  
+Protection against risks related to presence of metals, devices and other metal containing 
+material: Participants are questioned carefully before MRI imaging to insure that they do 
+not have metal implants. Prospective study participants who have such impla nts will be 
+excluded from the study.  Patients who have worked in or near machine shops and 
+electronics shops and may have  had metal slivers become trapped in the ir eyes, posing 
+a potential hazard if exposed to a strong magnetic field , will also be exclude d from the 
+study .  In addition, metal objects such as heavy key chains that are carried into the scan 
+room can cause serious accidents.   Participants will be cautioned to remove all metal 
+objects before entering the scan room.  Access to the scan room is carefully controlled to 
+insure that no ferrous metal is inadvertently brought in.  
+Protection against claustrophobia: Prospective participants will be counseled about this 
+possibility before the exam.  The magnet is equipped with an intercom system enabling  
+study subjects to communicate with the operators at any time during the exam. If they 
+report any discomfort during the MRI examination they will be removed from the magnet 
+immediately.  
+Protection again st the breach of confidentiality: Patient identifiers will be kept and used 
+only for the purpose of correlating patient data between radiology,  urology and pathology.  
+Patient identifiers will be removed from data anal ysis unles s it become s necess ary to 
+correlate results of the analysis to other clinica l data, which we do not e xpect.  Patient 
+identifiers will be removed from all presen tations and publica tions; only data from a group 
+of patients will be reported so that data from any individua l patient cann ot be identified. 
+ 
+Risks associated with Transrectal and Transperineal Ultrasound -Guided Prostate 
+Biopsy:  
+The risks will be those associated with  standard MRI-guided fusion biopsy  of the prostate , 
+which the patients will undergo for clinical indications . The research component  (upto two 
+additional biopsy targets)  will cause a minimal increase in the risk of bleeding and 
+infection . 
+ 
+Benefits  
+There may or may not be any direct medical benefit to patients who are enrolled in the 
+study.  
+There  will be  a long-term benefit  to society  in general  if this research  leads  to the 
+development of a new technology  that improves  clinical  practice.  
+ 
+Alternatives  
+IRB17-1694   Version Date:  06/10/2022 
+Page 11 of 14 
+ If patients decide not to participate in this study, they will undergo routine clinical 
+examination ordered by their referring physician.  
+ 
+L. PAYMENT TO SUBJECTS  
+Patients will not be paid or compensated for their participation in this study.  
+ 
+M.  OBTAINING WRITTEN CONSENT  
+The Principal Investigator or Co -Investigators or the Clinical Research Coordinator will be 
+responsible for ob taining written informed consent signatures from the patients based on 
+the research plan and consent form approved by University of Chicago Institutional 
+Review Board.  
+Confidentiality will be insured by use of an encrypted patient ID numbering system for all 
+research data to maintain confidentiality and anonymity.  
+ 
+N. CONFIDENTIALITY OF RECORDS  
+In accordance with the regulations promulgated by the Federal Food and Drug 
+Administration, all records will be treated with strict adherence to professional standards 
+of confidentiality. Care will be taken during the review of medical records to maintain as 
+much privacy as possible. Only the treating physician or study staff will review the medical 
+records. Records will be kept locked, and the database will ha ve restricted access 
+(password protected).  
+Security and Privacy : 
+This protocol is designed to respect proper attention to patient privacy and prevention of 
+breach of confidentiality. For each patient, the study protocol number and the patient`s 
+medical rec ord number will be entered into a restricted database by selected research 
+personnel. Additional relevant general clinical information will be included. Access to the 
+database will be password protected. All personnel are trained to maintain confidentialit y 
+of patient information according to HIPAA regulations. All of the images will be maintained 
+in the password protected University of Chicago PACS.  
+Research charts, including signed consent forms, will be stored in a locked file cabinet in 
+the clinical res earch coordinator’s office at University of Chicago Medical Center, Room 
+Q200.  Although each chart, radiographic study, and MRI examination will contain the 
+patient’s name, and as such will not be anonymous, no individual identities will be used 
+in any pu blications resulting from this study.  Officials from examining bodies such as the 
+U.S. Food and Drug Administration or NIH may inspect records pertaining to this study.  
+ 
+O. PATIENT RECRUITMENT:  
+We will recruit patients referred by the UCMC Urology Depar tment, who are scheduled 
+for diagnostic MRI exam of the prostate, to be followed by an MRI -guided fusion biopsy 
+of the prostate . In addition, patients may also be referred to the study team from other 
+IRB17-1694   Version Date:  06/10/2022 
+Page 12 of 14 
+ medical centers/hospitals.  The study protocol will be discussed with the patient and the 
+study coordinators will consent the patient.  
+ 
+ 
+BIBLIOGRAPHY AND LIT ERATURE CITED  
+1. Greenhall AM. House bat management. Jamestown, ND: Northern Prairie Wildlife Research 
+Center Online; 1982.  
+2. Andriole GL, Crawford ED, Grubb RL, 3rd, Buys SS, Chia D, Church TR, Fouad MN, 
+Gelmann EP, Kvale PA, Reding DJ, Weissfeld JL, Yokochi LA, O'Brien B, Clapp JD, Rathmell 
+JM, Riley TL, Hayes RB, Kramer BS, Izmirlian G, Miller AB, Pinsky PF, Prorok PC, Gohagan 
+JK, Berg  CD, Team PP. Mortality results from a randomized prostate -cancer screening trial. N 
+Engl J Med. 2009;360(13):1310 -9. doi: 10.1056/NEJMoa0810696. PubMed PMID: 19297565; 
+PMCID: PMC2944770.  
+3. Siegel RL, Miller KD, Jemal A. Cancer statistics, 2016. CA Cancer  J Clin. 2016;66(1):7 -30. 
+doi: 10.3322/caac.21332. PubMed PMID: 26742998.  
+4. Montironi R, Mazzuccheli R, Scarpelli M, Lopez -Beltran A, Fellegara G, Algaba F. Gleason 
+grading of prostate cancer in needle biopsies or radical prostatectomy specimens: 
+contempo rary approach, current clinical significance and sources of pathology discrepancies. 
+BJU Int. 2005;95(8):1146 -52. doi: 10.1111/j.1464 -410X.2005.05540.x. PubMed PMID: 
+15877724.  
+5. Kvale R, Moller B, Wahlqvist R, Fossa SD, Berner A, Busch C, Kyrdalen AE, Svi ndland A, 
+Viset T, Halvorsen OJ. Concordance between Gleason scores of needle biopsies and radical 
+prostatectomy specimens: a population -based study. BJU Int. 2009;103(12):1647 -54. Epub 
+2009/01/22. doi: 10.1111/j.1464 -410X.2008.08255.x. PubMed PMID: 191544 61. 
+6. Weiner AB, Matulewicz RS, Eggener SE, Schaeffer EM. Increasing incidence of metastatic 
+prostate cancer in the United States (2004 -2013). Prostate cancer and prostatic diseases. 
+2016;19(4):395 -7. doi: 10.1038/pcan.2016.30. PubMed PMID: 27431496.  
+7. U. S. Preventive Services Task Force. Screening for prostate cancer: U.S. Preventive 
+Services Task Force recommendation statement. Ann Intern Med. 2008;149(3):185 -91. PubMed 
+PMID: 18678845.  
+8. Sammon JD, Abdollah F, Choueiri TK, Kantoff PW, Nguyen PL, Menon  M, Trinh QD. 
+Prostate -Specific Antigen Screening After 2012 US Preventive Services Task Force 
+Recommendations. JAMA. 2015;314(19):2077 -9. doi: 10.1001/jama.2015.7273. PubMed PMID: 
+26575066.  
+9. Drazer MW, Huo D, Eggener SE. National prostate cancer screeni ng rates after the 2012 US 
+Preventive Services Task Force recommendation discouraging prostate -specific antigen -based 
+screening. J Clin Oncol. 2015;33(22):2416 -23. doi: 10.1200/JCO.2015.61.6532. PubMed PMID: 
+26056181.  
+10. Thompson IM, Goodman PJ, Tangen CM , Lucia MS, Miller GJ, Ford LG, Lieber MM, 
+Cespedes RD, Atkins JN, Lippman SM, Carlin SM, Ryan A, Szczepanek CM, Crowley JJ, 
+Coltman CA, Jr. The influence of finasteride on the development of prostate cancer. N Engl J 
+Med. 2003;349(3):215 -24. doi: 10.1056/ NEJMoa030660. PubMed PMID: 12824459.  
+11. Pondman KM, Futterer JJ, ten Haken B, Schultze Kool LJ, Witjes JA, Hambrock T, 
+Macura KJ, Barentsz JO. MR -guided biopsy of the prostate: an overview of techniques and a 
+IRB17-1694   Version Date:  06/10/2022 
+Page 13 of 14 
+ systematic review. Eur Urol. 2008;54(3):517 -27. doi: 10.1016/j.eururo.2008.06.001. PubMed 
+PMID: 18571309.  
+12. Morash C, Tey R, Agbassi C, Klotz L, McGowan T, Srigley J, Evans A. Active surveillance 
+for the management of localized prostate cancer: Guideline recommendations. Can Urol Assoc 
+J. 2015;9(5 -6):171 -8. doi: 10.5489/cuaj.2806. PubMed PMID: 26225165; PMCID: PMC4479637.  
+13. Pokorny MR, de Rooij M, Duncan E, Schroder FH, Parkinson R, Barentsz JO, Thompson 
+LC. Prospective study of diagnostic accuracy comparing prostate cancer detection by 
+transrectal  ultrasound -guided biopsy versus magnetic resonance (MR) imaging with subsequent 
+MR-guided biopsy in men without previous prostate biopsies. Eur Urol. 2014;66(1):22 -9. doi: 
+10.1016/j.eururo.2014.03.002. PubMed PMID: 24666839.  
+14. Le JD, Stephenson S, Brugg er M, Lu DY, Lieu P, Sonn GA, Natarajan S, Dorey FJ, 
+Huang J, Margolis DJ, Reiter RE, Marks LS. Magnetic resonance imaging -ultrasound fusion 
+biopsy for prediction of final prostate pathology. J Urol. 2014;192(5):1367 -73. doi: 
+10.1016/j.juro.2014.04.094. Pu bMed PMID: 24793118; PMCID: PMC4201866.  
+15. Salami SS, Ben -Levi E, Yaskiv O, Ryniker L, Turkbey B, Kavoussi LR, Villani R, 
+Rastinehad AR. In patients with a previous negative prostate biopsy and a suspicious lesion on 
+magnetic resonance imaging, is a 12 -core biopsy still necessary in addition to a targeted 
+biopsy? BJU Int. 2015;115(4):562 -70. doi: 10.1111/bju.12938. PubMed PMID: 25252133.  
+16. Arsov C, Becker N, Rabenalt R, Hiester A, Quentin M, Dietzel F, Antoch G, Gabbert HE, 
+Albers P, Schimmoller L. The use of targeted MR -guided prostate biopsy reduces the risk of 
+Gleason upgrading on radical prostatectomy. J Cancer Res Clin Oncol. 2015;141(11):2061 -8. 
+doi: 10.1007/s00432 -015-1991 -5. PubMed PMID: 26013424.  
+17. Barentsz JO, Richenberg J, Clements R, Choyke  P, Verma S, Villeirs G, Rouviere O, 
+Logager V, Futterer JJ. ESUR prostate MR guidelines 2012. Eur Radiol. 2012;22(4):746 -57. 
+Epub 2012/02/11. doi: 10.1007/s00330 -011-2377 -y. PubMed PMID: 22322308; PMCID: 
+3297750.  
+18. Agarwal HK SJ, Turkbey B, Bernardo M, Nielsen T, Keupp J, Choyke PL, editor. Whole -
+prostate T2 mapping in under 6 minutes using autocalibration and partial -Fourier MRI. Proc of 
+the 20th Annual Meeting of ISMRM; 2012; Melbourne, Australia.  
+19. Agarwal HK TB, Alexander V, Bernardo M, Daar D, Sén égas J, Kruecker J, Linehan WM,  
+Merino MJ, Pinto P, Wood B, Choyke PL, editor. Fast T2 mapping during MRI for prostate 
+cancer. Proc of the 98th Scientific Assembly and Annual Meeting of the RSNA; 2012; Chicago, 
+Illinois.  
+20. Liu W, Turkbey B, Senegas J, R emmele S, Xu S, Kruecker J, Bernardo M, Wood BJ, 
+Pinto PA, Choyke PL. Accelerated T2 mapping for characterization of prostate cancer. Magn 
+Reson Med. 2011;65(5):1400 -6. doi: 10.1002/mrm.22874. PubMed PMID: 21394778; PMCID: 
+PMC3079019.  
+21. Senegas J, Liu W,  Dahnke H, Song H, Jordan EK, Frank JA. Fast T(2) relaxometry with 
+an accelerated multi -echo spin -echo sequence. NMR Biomed. 2010;23(8):958 -67. doi: 
+10.1002/nbm.1521. PubMed PMID: 20878973.  
+22. Does MD, Gore JC. Compartmental study of diffusion and relaxat ion measured in vivo in 
+normal and ischemic rat brain and trigeminal nerve. Magn Reson Med. 2000;43(6):837 -44. 
+PubMed PMID: 10861878.  
+23. Sadinsky MS KG, Peng Y, Medved M, Wang S, Oto A., editor. Evaluation of a Novel 
+Combined T2 -weighted and Diffusion -weighted MR Imaging Sequence for Diagnosis of Prostate 
+IRB17-1694   Version Date:  06/10/2022 
+Page 14 of 14 
+ Cancer and Determination of Its Aggressiveness: Correlation with Histopathology Following 
+Prostatectomy. RSNA, ed Radiological Society of North America; 2014; Chicago, Illinois.  
+24. Wang S, Peng Y, Medved  M, Yousuf AN, Ivancevic MK, Karademir I, Jiang Y, Antic T, 
+Sammet S, Oto A, Karczmar GS. Hybrid multidimensional T(2) and diffusion -weighted MRI for 
+prostate cancer detection. J Magn Reson Imaging. 2014;39(4):781 -8. doi: 10.1002/jmri.24212. 
+PubMed PMID: 2 3908146; PMCID: PMC4251798.  
+25. Wang S PY, Medved M, Yousuf A, Ivancevic M, Karademir I, Jiang Y, Antic T, Sammet S, 
+Oto A, Karczmar G, editor. Hybrid T2 and diffusion weighted MRI for prostate cancer detection. 
+Proc Intl Soc Mag Reson Med 21; 2013.  
+26. Chatterjee A, Bourne R, Wang S, Devaraj A, Gallan AJ, Antic T, Karczmar GS, Oto A. 
+Diagnosing prostate cancer through non -invasive estimation of prostate tissue composition 
+using Hybrid Multidimensional MRI: A feasibility study. Radiology. (provisionally acc epted).  
+27. Chatterjee A, Watson G, Myint E, Sved P, McEntee M, Bourne R. Changes in Epithelium, 
+Stroma, and Lumen Space Correlate More Strongly with Gleason Pattern and Are Stronger 
+Predictors of Prostate ADC Changes than Cellularity Metrics. Radiology. 2 015;277(3):751 -62. 
+doi: 10.1148/radiol.2015142414. PubMed PMID: 26110669.  
+28. Langer DL, van der Kwast TH, Evans AJ, Plotkin A, Trachtenberg J, Wilson BC, Haider 
+MA. Prostate tissue composition and MR measurements: investigating the relationships 
+between A DC, T2, K(trans), v(e), and corresponding histologic features. Radiology. 
+2010;255(2):485 -94. doi: 10.1148/radiol.10091343. PubMed PMID: 20413761.  
+29. Helfrich O, Puech P, Betrouni N, Pincon C, Ouzzane A, Rizk J, Marcq G, Randazzo M, 
+Durand M, Lakroum S, L eroy X, Villers A. Quantified analysis of histological components and 
+architectural patterns of gleason grades in apparent diffusion coefficient restricted areas upon 
+diffusion weighted MRI for peripheral or transition zone cancer locations. J Magn Reson 
+Imaging. 2017. doi: 10.1002/jmri.25716. PubMed PMID: 28383776.  
+30. ; The University of Chicago  
+Koninklijke Philips N.V., assignee. Non -invasive estimation of prostate tissue composition.  
+31. Peng Y, Jiang Y, Yang C, Brown JB, Antic T, Sethi I, Schmid -Tannwa ld C, Giger ML, 
+Eggener SE, Oto A. Quantitative analysis of multiparametric prostate MR images: differentiation 
+between prostate cancer and normal tissue and correlation with Gleason score --a computer -
+aided diagnosis development study. Radiology. 2013;267( 3):787 -96. doi: 
+10.1148/radiol.13121454. PubMed PMID: 23392430.  
+32. Peng Y, Jiang Y, Antic T, Giger ML, Eggener SE, Oto A. Validation of quantitative analysis 
+of multiparametric prostate MR images for prostate cancer detection and aggressiveness 
+assessment : a cross -imager study. Radiology. 2014;271(2):461 -71. doi: 
+10.1148/radiol.14131320. PubMed PMID: 24533870.  
+ 

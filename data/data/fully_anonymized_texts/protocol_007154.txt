@@ -1,0 +1,637 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CAMS Relational Agent System (CAMS -RAS) for Suicide Prevention  
+1R43MH108222 -01A1  
+[STUDY_ID_REMOVED]  
+Document Date: December 10, 2015  
+  
+ Study Title: CAMS Relational Agent System (CAMS-RAS) for Suicide Prevention 
+Phase I Small Business Innovation Research Grant | National Institute of Mental Health 
+Principal Investigators: Linda Dimeff, PhD & David Jobes, PhD, ABPP 
+Institutional Review Boar d: Behavioral Health and Research Collective (BHRC), Seattle, WA 
+ 
+PROJECT ABSTRACT / INTRODUCTION  
+Every 13 minutes, someone in the [LOCATION_002] (US) chooses to end his or her life, resulting in over 40,[ADDRESS_742943] of suicide in the US was $34.6 billion annually in 2005; when 
+adjusted for present day inflation, the economic toll rises to $42.[ADDRESS_742944] of medical and 
+work loss is estimated at $34.6 billion annually2. In 2011, 487,700 people were treated in emergency 
+departments ( EDs) for self-inflicted injuries 3. Beginning in 1999 with the Surgeon General’s Call to Action to 
+Prevent Suicide4, millions have been devoted annually – both publicly (approximatel y $40 million from NIH) 
+and privately (approximately $20 million from American Foundation for Suicide Prevention) – to prevent 
+suicide5. Yet despi[INVESTIGATOR_565641], there is no evidence of a decrease in suicides or 
+suicide attempts in the US5.  
+ 
+Our overarching goal is to create a tool that could reduce suicide rates, increase delivery of efficacious suicide 
+interventions, and decrease overall costs associated with suicidal behaviors. With this in mind, we intend to: (1) 
+develop and scientifically validate a relational agent for suicidal patients that delivers Collaborative Assessment 
+and Management of Suicidality (CAMS), an efficacious and cost-effective intervention developed by [CONTACT_565673], PhD, ABPP; and (2) to create an integrated software system (CAMS Relational Agent System; CAMS-
+RAS) tha t assists medical personnel by [CONTACT_565674]-to -interpret 
+report and providing empi[INVESTIGATOR_3675]-derived clinical decision support ; integrates into the health care system’s 
+electronic health record (EHR); enhances the patient’s copi[INVESTIGATOR_565642]; and automates the delivery of caring contacts, a n 
+efficacious and brief suicide prevention intervention provided after discharge. Our initial target will be EDs, as 
+they are often the initial point of contact [CONTACT_565675][INVESTIGATOR_565643]. We will also conduct testing in other medical and outpatient mental health 
+settings to ensure public health impact and commercial success.  
+ 
+SPECIFIC AIMS: 
+The concept for this project emerged from an invited NIMH/AHRQ-sponsored workshop, Mental Health and 
+Health IT: The Way Forward  (April 26-27, 2010) that sought to promote the use of innovative technologies to 
+advance mental health treatments and to improve treatment accessibility, utilization and outcomes for those 
+suffering from mental illness. There, Brian Jack, MD presented Project RED (Reengineered Discharge) and 
+“Louise,” a discharge planning nurse relational agent (avatar) designed to reduce hospi[INVESTIGATOR_565644]. Use of “Louise” reduced hospi[INVESTIGATOR_565645] 30%. Importantly, 74% of 
+patients who used “Louise” preferred her over a human nurse or physician. We wondered whether a relational 
+agent like “Louise” could be used in EDs to facilitate a suicide risk assessment and intervention for the nearly 
+half-million suicidal patients admitted annually to EDs, as well as other medical and clinic settings. Given the 
+limited training in evidence-based suicide assessment, intervention, and risk management among ED and 
+other medical personnel, such a tool, if effective, could significantly increase the proportion of suicidal patients 
+who receive a cost-effective, evidence-based suicide intervention 
+ 
+Project Vision: Our overarching goal is to create a to ol that could reduce suicide rates, increase delivery of 
+efficacious suicide interventions, and decrease overall costs associated with suicidal behaviors. With this in 
+mind, we intend to: (1) develop and scientifically validate a relational agent for suicidal patients that delivers 
+Collaborative Assessment and Management of Suicidality (CAMS), an efficacious and cost-effective 
+intervention developed by [CONTACT_500653], PhD, ABPP ; and (2) to create an integrated software system (CAMS 
+Relational Agent System; CAMS-RAS) that assists medical personnel by [CONTACT_565676]-to -interpret report and providing empi[INVESTIGATOR_3675]-derived clinical decision support ; integrates  
+into the health care system’s electronic health record (EHR); enhances the patient’s copi[INVESTIGATOR_565646]; and automates the 
+delivery of caring contacts6-10, an efficacious and brief suicide prevention intervent ion provided after discharge. 
+Our primary target will be EDs, as they are often the initial point of contact [CONTACT_565677][INVESTIGATOR_565647]. To ensure the broadest possible public health 
+and commercialization impact, we will simultaneously conduct testing in psychiatric inpatient settings, on 
+medical floors where patients are receiving medical treatment for injuries sustained during a suicide attempt, 
+and in outpatient mental health clinic s. 
+ 
+ 
+ 
+  
+ Phase 1 study aims include: 
+ Aim 1:  Create a CAMS-RAS Advisory Board to advise team in its development and to ensure it aligns 
+well with the needs and system requirements of hospi[INVESTIGATOR_565648]. 
+ Aim 2 : Iteratively design and develop “[CONTACT_500699]” (named and modeled after CAMS treatment 
+developer, David Jobes, PhD), a socially and emotionally intelligent relational agent that can 
+successfully perform the CAMS in the ED and other hospi[INVESTIGATOR_84359]; also design and develop 
+prototypes of all other features planned for Phase II including: clinical decision support, optional risk 
+management assessments, and non-demanding caring contacts.  
+ Aim 3 : Conduct feasibility tests (usability, acceptability, and satisfaction) of CAMS-RAS (including “[CONTACT_500698]”) with primary target end-users including: suicidal patients admitted to the ED, inpatient 
+psychiatry, or medical floors (n=8, resulting from five onsite days at a local hospi[INVESTIGATOR_307]) , as well as 
+hospi[INVESTIGATOR_307]-based administrators (n=8), medical personnel (n=12), and peer advocates (n=7); outpatient 
+suicidal clients (n=20)  and outpatient administrators & clinicians (n=10).  
+ 
+BACKGROUND & SIGNIFICANCE  
+Suicide Remains a Significant Public Health Problem.  Suicide is currently the tenth leading cause of death  
+among Americans of all ages2. Over 40,600  suicides occurred in the US in 2012 – one suicide every 13 
+minutes3 – and more than a million adults in the U.S. reported suicide attempts3. In 2012, 483,596 people were 
+treated in EDs for self-inflicted injuries (primarily suicide attempts), of whom 332,[ADDRESS_742945] of self -inflicted injuries in the U.S. was $33 billion11, including $1 billion for medical 
+treatment and $[ADDRESS_742946] of completed suicide was $34.6 
+billion, with each completed suicide costing over $1M2. A third of those who suicide test positive for alcohol, 
+and nearly a quarter test positive for opi[INVESTIGATOR_858]12. The depression and despair leading an individual to consider 
+suicide are profound, characterized by [CONTACT_565678]. Family, friends, 
+and co-workers also experience uniquely painful consequences following a loved one’s suicide13-[ADDRESS_742947] clinicians and ED personnel are unprepared or unwilling to treat suicidal patients21-24. For 
+example, only 40% of psychology training programs21,22, [ADDRESS_742948] 
+of losing a patient, and/or fear of malpractice litigation21,24. Within the ED, while medical personnel are often 
+confident in their ability to screen for suicidality, they are significantly less confident in their ability to assess 
+severity of risk, counsel patients, and generate safety plans. Numerous studies also highlight that negative 
+biases about suicidal patients exist among ED medical personnel111 which may decrease the willingness of 
+suicidal patients to openly communicate about their reasons for wanting to die and their intentions111. 
+ 
+Treatments to Reduce Suicide Attempts and Suicides Do Exist.  Linehan27 recently summarized published 
+findings from all available suicide-specific randomized controlled trials (N=43). Overall, outpatient psychosocial 
+interventions show considerably more promise compared  to inpatient hospi[INVESTIGATOR_565649]7,9,27-
+32. Brief caring contacts via mail or phone were highly successful brief interventions that prevent ed death by 
+[CONTACT_20673]6-10. Specifically, those who receive a caring note from the hospi[INVESTIGATOR_565650] 10 
+times less likely to attempt suicide compared to contr ols in one study6; in others, those who received caring 
+contact [CONTACT_565679]7-10.  
+ 
+CAMS is an Efficacious , Cost -Effective  and Easy -to-Transport  Intervention . CAMS was developed by 
+[CONTACT_500653], PhD , ABPP  for use by [CONTACT_565680], assessing, and treating  suicidal patients33,34.  
+CAMS uses a c hart-ready documentation tool called the “Suicide Status Form” (SSF) to serve as a clinical 
+roadmap guiding assessment, treatment planning, and ongoing tracking of risk and outcome/disposition of 
+care. The assessment information gathered via the SSF then informs a suicide -specific and problem-solving 
+focused treatment plan including stabilizing the patient and identifying and treating the drivers of suicidality. 
+Subsequent sessions begin with updating the SSF, and addressing the suicide -related issues and drivers. 
+Each session ends with  updating the CAMS treatment plan and crisis plan .  
+ 
+Seven non-randomized trials35-[ADDRESS_742949] sizes on a range of outcome variables, including hopelessness and psychological pain, as well as a 50% 
+  
+ drop on self-perceived risk of suicide among an inpatient sample. In a quasi-experimental comparison group 
+clinical trial with 56 suicidal US Air Force personnel, Jobes et al.41 found that patients receiving CAMS resolved 
+suicidal ideation in significantly fewer sessions (M = 7.3) compared to care-as -usual (CAU) patients (M = 11.4). 
+Moreover, CAMS patients had significantly fewer, and spent less time in, ED visits and primary care medical 
+appointments compared to CAU patients by [CONTACT_565681]. Recently , Comtois and her 
+colleagues42 conducted an RCT that investigated the feasibility of CAMS within a “Next-Day Appointment” 
+outpati ent treatment setting. Suicidal patients (N=32) were randomly assigned to CAMS or a CAU control 
+condition. While patients in both conditions improved overall, CAMS patients had significantly larger and 
+sustained decreases in suicidal ideation, as well as significantly greater gains  in overall symptoms and hope. 
+Further more, CAMS subjects reported significantly higher satisfaction at the 12-month follow up .  
+      
+Innovative Technologies Can F acilitate the Dissemination and Delivery of CAMS to Improve Reach and 
+Public Health Outcomes. A substantial and growing body of research has emerged on the use of innovative 
+technologies (IT) to improve mental health outcomes43-[ADDRESS_742950] as they would to a human56; they can be as engaging as humans57. In the area of mental health , users 
+both accept and like agents, which enhance patient interactions with health interventions58,59. In EDs, a virtual 
+discharge nurse (“Louise”) was well accepted and liked, and significantly reduced hospi[INVESTIGATOR_5394]60,61. 
+One relational agent is currently being investigated as a non-threatening provider of psychoeducation and 
+referrals for veterans with PTSD or depress ion54. 
+ 
+RESEARCH & DESIGN METHODS  
+The CAMS Relational Agent System is highly innovative in what it seeks to do and how it seeks to do it. We 
+know no other project of its kind – one that uses a relational agent with highly vulnerable and distressed 
+patients to perform an exquisitely sensitive clinical intervention. If we are able to build a relational agent that 
+acutely suicidal patients find acceptable in delivering CAMS during a suicidal crisis and in the context of an ED, 
+we will significantly add to the research literature on what is possible to achieve with relational agents in mental 
+health. More importantly, we will be one step closer to solving a significant public health pr oblem through 
+increased access to an efficacious, cost-effective suicide prevention intervention. 
+ 
+CAMS-RAS “Transports” [CONTACT_500701] to the Suicidal Patient & Medical Providers 24/7. Rather than training 
+all hospi[INVESTIGATOR_565651], and adherent in delivery of CAMS, CAMS-RAS will ensure 
+the reliable and consistent delivery of CAMS to suicidal patients. Health professionals will receive clinical 
+decision support consistent with best-practice and the latest research findings on predictors of suicide risk will 
+aid personnel in deciding whether to hospi[INVESTIGATOR_18552] a patient.  
+ 
+The CAMS-RAS Platform will be Designed to Maximize Public Healt h Impact. First, we will design and 
+build the platform and all CAMS -RAS features for ease of expansion to other settings and for other languages 
+(a Spanish version of CAMS-RAS is planned for Phase III), and cultures (building a team of culturally diverse 
+avatars to join “[CONTACT_500699]”). Second, CAMS-RAS will be designed to incorporate other empi[INVESTIGATOR_3675]-supported 
+suicide prevention interventions, like use of non-demanding caring contacts in this project. Third, we will design 
+it to integrate within the setting’s workflow  and to integrate into EHR s (versus as a stand-alone “silo”). Both 
+aspects are imperative to increase the probability that large systems will adopt its use. Finally, CAMS-RAS will 
+be offered as an additional product within our WILLOW product line of treatment delivery tools designed for 
+use in health maintenance organizations and their EHRs (www.willow.technology). Our building of commercial 
+partners, as well as development of the marketing and sales strategy for WILLOW, will speed successful 
+commercialization of CAMS-RAS and thereby [CONTACT_565682].   
+ 
+CAMS-RAS Directly Addresses the NIMH Strategic Plan by [CONTACT_565683]-Supported Research (Objective 4): To ensure that efficacious interventions generated through NIMH 
+and other funding are “used by [CONTACT_1962], families, healthcare providers, and the wider community involved in 
+mental health care”62, CAMS- RAS address es all elements of NIMH Objective 4 : It is an innovative method to 
+facilitate the dissemination and implementation of an evidence-based practices (Strategy 4.1); and we will 
+thoroughly (in Phase II and III) evaluate this new technology for information dissemination (Strategy 4.2) . 
+Finally, we will expand our network of meaningful relationships with key stakeholder organizations (Strategy 
+4.3) to include HealthPartners/Regions Hospi[INVESTIGATOR_565652]. (Current organizations 
+partnering with EBPI [INVESTIGATOR_565653], Group Health 
+Cooperative, and Oregon State Hospi[INVESTIGATOR_307]). 
+  
+  
+ Overview. Our overarching goal is to develop a socially and emotionally intelligent relational agent (“[CONTACT_500699]”) 
+and software system for suicidal patients and their treatment providers that: (1) facilitates the delivery of an 
+evidence-based approach to suicide assessment and management, (2) in tegrates naturally treatment 
+providers’ workflow, and (3) streamlines the clinical assessment, intervention, and care of suicidal patients in 
+diverse settings. Our primary Phase I target are EDs, as they are th e initial point of contact [CONTACT_565684][INVESTIGATOR_565654]. To ensure the broadest 
+possible public health and commercialization impact, we will simultaneously conduct testing in psychiatric 
+inpatient settings, on medical floors where patients are receiving medical treatment for injuries sustained 
+during a suicide attempt, and in outpatient mental health clinics. 
+ 
+In Phase I, we propose to develop and test key elements of the CAMS Relational Agent System (CAMS-RAS), 
+including “[CONTACT_500699]” who will engage suicidal patients in a 15 -minute suicide risk assessment using a portion of 
+the CAMS Suicide Status Form (SSF). We also will develop and test the basic designs for all other features 
+plann ed for Phase II including: clinical decision support (content and graphical layout); optional suicide risk 
+assessment modules; non-demanding caring contacts ( a brief intervention for post-discharge) ; and brief skills-
+based behavioral interventions to dec rease acute distress (e.g., paced breathing, progressive muscle 
+relaxation, distraction strategies, etc) . CAMS content will be developed in close collaboration with treatment 
+developer [CONTACT_500701], and CAMS research collaborator, Katherine Comtois, PhD, MPH. “[CONTACT_500699]” will be built 
+by [CONTACT_565685], PhD in her Affective Social Computing Laboratory in The School of Computing and 
+Information Sciences at [LOCATION_012] International University. Consistent with the novelty and complexity of this 
+project, Phase I outcomes will include: usability (e.g., Can target end-users easily use all elements of the 
+system?); satisfaction (e.g., Do suicidal patients like “[CONTACT_500699]” and wish to engage with him; are the caring 
+contacts messages from [CONTACT_500699] viewed positively?); and acceptability (e.g., Do suicidal patients, treatment 
+providers, and administrators find CAMS-RAS acceptable?). In the event of a successful Phase I, we will 
+proceed to Phase II to complete all elements of CAMS-RAS, including necessary training (for provid ers) and 
+systems implementation materials (for administrators) to ensure the successful use of CAMS-RAS . We will 
+then conduct a RCT comparing CAMS-RAS to care-as -usual in hospi[INVESTIGATOR_565655]. In 
+addition to use of Phase I outcome variables, Phase II client outcome variables will include: decreases in 
+suicidal ideation, suicidal attempts, and hopelessness; and increase in perceived reasons to live. Provider 
+outcomes variables will include: increased self-efficacy in intervening with suicidal patients; system-level 
+outcomes will include cost-effectiveness.  
+ 
+Rationale for Phase I Scope . While the CAMS-RAS has the potential for significant public health impact, 
+there are a number of unknowns. For example, will suicidal patients respond  favorably to “[CONTACT_500699]”? Will they 
+like him enough to welcome and benefit from caring contact [CONTACT_565686] a later 
+date? Table [ADDRESS_742951] basic questions: Can we successfully build a relational agent that acutely suicidal patients 
+will find acceptable for purposes of performing a suicide risk assessment and intervention? Furthermore, can 
+we link it to a broader system that will meet the needs of medical personnel and their administrators? 
+ 
+Product Description. The CAMS-RAS, when Phase I and II are completed, will consist of the following 
+components: “[CONTACT_500699]” (the relational agent); clinical decision support to help medical personnel determine 
+the patient’s suicide risk and whether hospi[INVESTIGATOR_89648]; non -demanding brief intervention caring 
+contacts; optional modules for more in-depth assessment of behavioral risk factors for suicide (drug/alcohol 
+abuse12; intimate partner violence63, etc.), psychoeducational copi[INVESTIGATOR_25125], including evidence-based 
+behavioral skills for assisting patients in regulating their emotions and tolerating distress (e.g., diaphragmatic 
+breathing, paced breathing, progressive muscle relaxation, etc.); training tools to teach personnel how to use 
+CAMS-RAS; and a systems architecture design document illustrating a step-wise approach to integrating 
+CAMS-RAS within systems’ EHRs. This document will illustrate how information provided by [CONTACT_15767] “[CONTACT_500698]” will flow into the EHR so medical personnel can readily access it. The design document will also 
+illustrate where the clinical decision support will reside. Table 2 provides a provisional description of several 
+key CAMS-RAS features for Phase I and Phase II.  
+ 
+The centerpi[INVESTIGATOR_565656]-RAS system is “[CONTACT_500699]”, a relational agent, or avatar, that will deliver the SSF 
+to assess the user’s suicide risk; “[CONTACT_500699]” will communicate using Text-to -Speech while the patient answers 
+by [CONTACT_11017][INVESTIGATOR_565657]-choice items. “[CONTACT_500699]” will respond empathically, with 
+verbal and non-verbal expressions. The computer codes the user’s responses to quantitative items and 
+collates qualitative responses into a clinically useful summary that includes intervention recommendations for 
+review by [CONTACT_6098].  
+ 
+Formative Evaluation: Usability, Satisfaction, and Acceptability Studies.  Because the success of any 
+system rests on whether end-users like, can easily use, and find it acceptable, we will solici t extensive input 
+  
+ from target end -users and stakeholders throughout the Phase I process. Often referred to as user-centered 
+design64,65, we use a rigorous iterative process of development in which end-users join each development 
+cycle, using and giving feedback on prototypes, to ensure product design successfully meets their needs. We 
+will iterate on all CAMS-RAS features as often as necessary to ensure usability, satisfaction, and acceptance, 
+and to optimize workflow among medical personnel who use CAMS -RAS. Each iterative phase of development 
+will involve testing with no less than five individuals, allowing the development team to validate hypotheses and 
+themes, and to guard against outliers.  
+ 
+Participants, Settings, and Recruitment. Primary target end-users include: 1) suicidal patients currently 
+admitted to EDs, psychiatric inpatient units, and medical floors (n=8; gathered during a total of five onsite days 
+at a local hospi[INVESTIGATOR_307] ); 2) hospi[INVESTIGATOR_565658] (n=12); 3) hospi[INVESTIGATOR_367596] 
+(n=8); 4) hospi[INVESTIGATOR_307]-based peer advocates (n=7); 5) outpatient mental health clinicians and administrators (n=10); 
+and 6) suicidal individuals currently receiving outpatient mental health services (n=20). All research 
+participants will be 18 years or older. Hospi[INVESTIGATOR_565659]’s Chief, onsite coordinator, or their designee (“onsite contact”); outpatient suicidal clients will 
+be invited to participate by [CONTACT_565687]. To ensure external validity, Phase I exclusion criteria will 
+be limited to the following criteria: (1) acutely psychotic and thus unable to provide informed consent ; (2) 
+severely agitated (as deemed by [CONTACT_5936], nurse, or outpatient therapi[INVESTIGATOR_541]); and (3) not fluent in English as the 
+initial “[CONTACT_500699]” will be English-speaking. (We will create a Spanish-speaking “[CONTACT_500699]” in Phase III). 
+Prospective medical personnel, outpatient clinicians, administrators, and stakeholders who wish to participate 
+as subjects will learn about the project from their onsite coordinator. Inclusion criteria for non-patient 
+participants will include English fluency. Those interested in participating will be referred to the research team 
+for consenting. Hospi[INVESTIGATOR_565660] (Seattle, WA). Hospi[INVESTIGATOR_565661], administrators, and other stakeholders will be recruited from Harborview and Health 
+Partners/Regions Hospi[INVESTIGATOR_307] (St. Paul, MN). Outpatient mental health clinic administrators and therapi[INVESTIGATOR_565662] (PDBTI; Portland, OR), DBT Center of Michigan (Holt, MI), and Mid-
+Valley Behavioral Care Network (Portland, OR). Suicidal outpatients will be recruited from PDBTI.  
+ 
+No less than 50% of hospi[INVESTIGATOR_565663]’s ED because the 
+ED is the initial point of entry for many suicidal patients admitted to a hospi[INVESTIGATOR_307]. Additionally, EDs face the 
+weighty decision of whether to hospi[INVESTIGATOR_565654] (e.g., stigmatization of the patient, high 
+healthcare costs associated with psychiatric hospi[INVESTIGATOR_059], risks of a completed suicide). Finally, the acute 
+nature of the suicidal crisis when patients are in the ED allows us to design CAMS-RAS to appropriately 
+incorporate the complexity of the tasks ED staff face as we build “[CONTACT_500699]” and to determine the research 
+procedures that will be required for a successful Phase II trial. 
+ 
+Procedures. Patient Participants : For efficiency and safety in recruiting, consenting, and testing hospi[INVESTIGATOR_565664], we will establish specific dates in which Drs. Dimeff or Koerner (both licensed 
+clinical psychologists with expertise in treating suicidal patients) will be onsite to conduct testing. Hospi[INVESTIGATOR_565665] (five days total) will coincide with the work schedule of our onsite contacts to ensure that eligible 
+suicidal clients are informed of the study and, if interested, directly introduced to study staff. We will then 
+conduct the informed consent process. PDBTI suicidal outpatients will learn about the study from their clinician. 
+Those wishing to participate will contact [CONTACT_565688] (RA) via the phone for purposes of screening 
+and informed consent. The RA will describe the study, answer questions, and conduct informed consent. After 
+providing consent, an appointment with [CONTACT_412896] or [CONTACT_500702] will then be arranged at PDBTI. Before 
+conducting the user-testing, [CONTACT_412896] or [CONTACT_500702] will administer the demographics measures; following 
+the testing, participants will be asked to complete a usability measure and a brief semi-structured interview. 
+Measures may be completed verbally, using paper/pencil or an online method as directed by [CONTACT_565689]. Expected duration of the study session after informed consent (e.g., user-testing, brief 
+measures completion, and semi-structured interview) is 45 to 90 minutes, d epending on the task, extent of 
+participant feedback, and capacity of participant. Subjects will be compensated $50 for their time. Non-Patient 
+Participants:  After learning of the study from the onsite contact, those interested in participating will contact [CONTACT_565690] a brief screening interview with the RA. Those meeting study criteria will 
+then be sent (via email or fax) the informed consent form for review during the telephone call. The RA will 
+review informed consent; those providing verbal consent will return the signed informed consent via fax, scan, 
+or standard mail. An appointment with study staff will be scheduled at a mutually convenient time, either 
+remotely or in-person, depending on what is most efficient and the content being reviewed. Remote sessions 
+will occur via the telephone and Join.Me, a free online screen-sharing service. All assessments will be 
+conducted online. Expected testing length is 45 to 90 minutes; subjects will be compensated $50. During 
+Phase I, use of “[CONTACT_500699]” will be under the guidance and instruction of study staff. Thus Phase I 
+participants will require no training in the use of “[CONTACT_500699].”  
+ 
+  
+ End-User Testing. Patient-Participants. Special attention will be paid to their reactions to “[CONTACT_500699]’s” emotive 
+and communicative expressions, as well as the helpfulness and genuineness of the non-demanding caring 
+contacts messages. In addition to usability and acceptability, considerable emphasis will be placed on users’ 
+interest in “engaging” with “[CONTACT_500699]”, the extent to which they feel connected to and understood by [CONTACT_12552], and 
+their degree of interest in receiving non-demanding caring contacts from him. Early on in the process of 
+product development, feedback will primarily be derived by [CONTACT_565691]-fidelity representations of “[CONTACT_500698]” and conducting a semi-structured interview done by [INVESTIGATOR_124]. Dimeff or [CONTACT_500702]. The interview will be 
+guided by [CONTACT_565692] 2. The intent of this interview is to understand the user’s likes, d islikes, 
+and preferences. Once the first “[CONTACT_500699]” prototype is built, to aid in our understanding of design problems 
+that interfere with intended use we will begin a “talk out loud” process where users will verbalize their thoughts 
+and actions in real-ti me as they interact with the software system. We will conduct the semi-structured 
+interview after this process to better understand their comments and preferences. Service Professional & 
+Stakeholder Participants. The testing process is identical to the patient testing method described above with 
+the following exceptions: considerably less emphasis will be placed on “[CONTACT_500699]” and content of the caring 
+contacts; emphasis will instead be placed on workflow integration, the content and layout of the clinical 
+decision support, and risk management considerations (for administrators). These subjects may be asked to 
+provide input and guidance on more than one occasion during the developmental process. (They will be 
+compensated $[ADDRESS_742952]).   
+ 
+Assessment Instruments-Patients. The Demographic Questionnaire-Brief (DDQ- B)66 obtains limited, 
+essential demographic data. The Patient Health Questionnaire-9 (PHQ-9)67 is a brief nine-item multiple-choice, 
+self-report measure68 used as a screening and diagnostic tool. Non-Patients:  The Demographics 
+Questionnaire (DQ)69 obtains a wide range of demographic data about healthcare providers. The Usability, 
+Satisfaction and Acceptability Questionnaire ([LOCATION_003]Q) is a brief face-valid, self-report measure that the PI 
+[INVESTIGATOR_565666]70,71 and has successfully used in previous studies. Items are rated on 
+a five-point Likert scale (1 = poor; 3 = good; 5=excellent). The [LOCATION_003]Q will include open -ended questions to 
+better understand what was most/least helpful with respect to each category as well as additional items to 
+measure users’ acceptance of the avatar .  
+ 
+Data Management Procedures. Participants will be assigned a participant identification number which will be 
+used to label all data collected. A single list of participant names linked with ID numbers will exist in a 
+password-protected electronic file stored securely and accessible only to study staff. Research staff must use 
+their names and passwords to access the storage site itself. Signed copi[INVESTIGATOR_565667] a locked file cabinet in a locked office at the EBPI [CONTACT_3725], accessible only to the PIs and research team 
+or electronically on a secure, password protected site with maximum protections. Participant ID numbers will 
+not appear on consent forms.  
+ 
+Data Analysis. Qualitative data will include  written feedback from participants and annotations from 
+investigators noting: likes,  dislikes, confusion, suggestions for improvement, misunderstandings, and potential 
+unintended consequences. Qualitative data will be analyzed u sing a grounded theory approach (a data-
+reduction method for qualitative data used to generate and test hypotheses from the ground up)72. Data from 
+the [LOCATION_003]Q  will determine feasibility: [LOCATION_003]Q scores below a 3.5 on a five-point Likert scale will indicate a need 
+for improvement. An aggregated mean score of 3.5 or higher will support feasibility.  
+ 
+PROTECTION OF HUMAN SUBJECTS 
+Because our patient participants will be currently acutely suicidal and/or recently hospi[INVESTIGATOR_565668], there is a higher probability than usual for the study procedures to cause emotional distress. (It is 
+equally possible that engagement with [CONTACT_412896] or Koerner and turning their mind to another topic will serve 
+as a distress tolerance/copi[INVESTIGATOR_63966], and in the moment of their participation, reduce their anguish). Even 
+with this sensitive population, we believe the risk to be low for several reasons. First, the department chair or a 
+designee will determine who is sufficiently stable to engage in the interview process. They will r ule out those  
+patients they believe to be at considerable imminent risk and/or so agitated that engagement in the study  
+protocol could cause harm to them or the interviewers. Second, both [CONTACT_412896] and Koerner are highly 
+experienced in interacting with acutely suicidal patients and as such, will be able to gauge whether to reduce 
+the length/scope of the interview, discontinue the testing, and/or teach these patients distress tolerance 
+strategies (e.g., paced breathing, distraction techniques). Third, it is likely that for the majority of individuals, 
+engagement doing the research trial will function as a distraction from either the events resulting in their 
+suicidality and/or from unpleasant elements of their hospi[INVESTIGATOR_059]. 
+ 
+  
+ The most distressing portion of the testing for patients may be at the beginning, when asked to complete the 
+PHQ -9 to assess their psychological distress. Importantly, items from both of this measure are similar to those 
+commonly and routinely asked of suicidal clients upon admission. The Suicide Short Form (SSF) also involves 
+the individual reflecting on the "drivers" for suicide as well as their "reasons for living". 
+ 
+Other potential risks common to participants are minimal. Some participants may feel discomfort as they 
+provide feedback on the relational tool and answer the questionnaires because they are hesitant to criticize the 
+tool that we have developed. Because patients will be referred to the study by a service professional that they 
+have received treatment from, they may feel some pressure to participate. Non-patient participants may also  
+feel a similar pressure to participate as they will receive the recruitment materials from their 
+supervisors/administrators. There is also the potential risk of loss of confidentiality. 
+ 
+There is no known physical, social, economic, or legal risk from participating for patients and non-patients. 
+There are no known alternative procedures to assess this information.  
+ 
+The primary alternative to participating in the research is to elect not to participate in the research. Patient 
+refusal to participation will not affect their treatment and provider refusal to participate will not affect their 
+employment. Participants will be informed that they have the right to refuse to participate or to discontinue 
+participation at any time. 
+ 
+Protections against Risk:  
+The primary risk to participants is relevant only to client participants and involves the potential for the study 
+procedures to engender emotional distress or further increase their suicidality. As mentioned earlier, these 
+risks are minimized by [CONTACT_565693]: clients will be referred by [CONTACT_565694]’s clinical presentation, we will have limited contact [CONTACT_565695] (45 -90 minutes), the primary focus of 
+and assessment and user testing will be the relational agent, and the patient will be receiving treatment at the 
+time of the user test. Additionally, Drs. Dimeff and Koerner, who will be conducting the user tests, are experts 
+in treating suicidal patients. In the event that they determine that the study procedures are causing or 
+increasing distress or suicidal ideation in a particular client they will stop the user immediately and inform the 
+patient’s care team. Drs. Dimeff and Koerner will collaborate closely with  co-I [CONTACT_565702] throughout the 
+study to ensure proper management of high-risk situations. [CONTACT_217352] has been conducting assessment and 
+clinical trial research with suicidal individuals for more than [ADDRESS_742953] (DSMB) since [ADDRESS_742954] -protected computer. For service providers and 
+stakeholders, these data are not considered to be sensitive or health-related, because participants are 
+providing information about their experience of the CAMS-RAS, not sensitive information about themselves. 
+For patients, this data is considered sensitive, given that participants will be identified as being mental health 
+clients. Therefore, as described above, the identity of all participants will be kept separate from records of their 
+testing data. 
+ 
+Participants will also be asked to complete the aforementioned self-report questionnaires on SurveyMonkey. 
+To complete the questionnaires, participants will enter their unique participant code rather than identifying 
+demographic information into SurveyMonkey. Data gathered via SurveyMonkey will be securely transmitted 
+and stored according to SurveyMonkey’s data security policy, accessible only to the PIs, Co-Is, and research 
+  
+ staff via a password secured account. Study RAs will download the data from SurveyMonkey and place it into 
+a local database that is password protected and does not include any identifying information beyond the 
+participant code. 
+ 
+User testing data will be recorded and stored on EBPI [INVESTIGATOR_565669]. Data will be securely stored 
+on password protected EBPI [CONTACT_427143], accessible only by [CONTACT_565696]. User testing data will be destroyed after [ADDRESS_742955] service providers and stakeholders from perceiving pressure from their supervisors/administrators to 
+participate in several ways. First, we will instruct supervisors/ administrators to invite but not pressure their 
+employees to participate. Second, supervisors will invite their employees to participate, but will not participate 
+in the consent process. Instead, service providers will contact [CONTACT_565697]. 
+Finally, supervisors will not be informed of their staffs’ decision to participate in the study. 
+ 
+We will safeguard patients from perceiving pressure from their treatment provider to participate in several 
+ways. First, we will instruct service providers to invite but not pressure clients to participate. Second, clinicians 
+will recruit and invite their patients to participate, but will not participate in the consent process. Instead, 
+patients will contact [CONTACT_565697]. Finally, service providers will not be informed 
+of clients’ decision to participate in the study. [CONTACT_500702] will be available to talk with any clinician or study 
+participant who experiences discomfort related to the study procedures. Her contact [CONTACT_565698].  
+ 
+Management of Adverse Events. Participants will be provided with information about how to report Potential 
+Adverse Events (patients will report to the chair of their department or the onsite coordinator; non-patients will 
+be directed to a study website). In addition, client participants will be encouraged to report any Potential 
+Adverse Events directly to their medical personnel who is in charge of their care. Potential Adverse Event 
+reports will be monitored daily by [CONTACT_464]. Because the risks to participation are low, the likelihood of 
+Adverse Events related to the proposed research is judged to be low. In the event that a Potential Adverse 
+Event is reported, the departmental chair and a PI/Co-Investigator will be notified by [CONTACT_565699]. 
+The chair and/or Co-PI/Co-Investigator will then assess the situation and determine an appropriate clinical and 
+ethical course of action, including report of an Adverse Event to the PI, EBPI's IRB (BHRC) and the Data 
+Safety Monitoring Board. 
+ 
+Potential Benefits of the Proposed Research to Human Subjects and Others 
+Patient participants may benefit from improved care as a result of their interaction with the relational agent. 
+Findings from this study will be used to develop a product that is intended to increase quality of care for 
+patients who recently made a suicide attempt or are struggling with suicidal ideation.  
+ 
+IMPORTANCE OF THE KNOWLEDGE TO BE GAINED 
+The proposed research contributes to the goal of improving  quality of care for suicidal patients, particularly in 
+EDs where there is often a lack of sufficient mental health resources. Developi[INVESTIGATOR_007] a successful relational agent 
+based on CAMS means that suicidal patients will receive evidence-based assessment and treatment delivered 
+in a more timely, effective, and efficient manner than is typi[INVESTIGATOR_565670]. 
+ 
+PLANNED ENROLLMENT  
+Racial Categories  Ethnic Categories  
+Total  Not Hispanic or Latino  Hispanic or Latino  
+Female  Male  Female  Male  
+American I ndian/Alaska Native  0 0 0 0 0 
+Asian  3 1 0 0 4 
+Native Hawaiian or Other Pacific Islander  0 0 0 0 0 
+Black or African American  6 5 2 0 13 
+White  21 16 5 3 45 
+More than One Race  2 1 0 0 3 
+Total  32 23 7 3 65 
+  
+  
+LITERATURE CITED  
+1. Pantin, H., Prado, G., Lopez, B., Huang, S., Tapia, M. I., Schwartz, S. J., . . . Branchini, J. (2009). A 
+randomized controlled trial of familias unidas for hispanic adolescents with behavior problems. 
+Psychosomatic Medicine , 71(9), 987-995. doi: 10.1097/PSY.0b013e3181bb2913 
+2. Laird, R. D., Criss, M. M., Pettit, G. S., Dodge, K. A., & Bates, J. E. (2008). Parents' monitoring knowledge 
+attenuates the link between antisocial friends and adolescent delinquent behavior. Journal of Abnormal 
+Child Psychology: An official publication of the International Society for Research in Child and Adolescent 
+Psychopathology , 36(3), 299-310. doi: 10.1007/s10802 -007-9178-4 
+3. Ary, D. V., Duncan, T. E., Biglan, A., Metzler, C. W., Noell, J. W., & Smolkowski, K. (1999). Development o f 
+adolescent problem behavior. Journal of Abnormal Child Psychology: An official publication of the 
+International Society for Research in Child and Adolescent Psychopathology , 27(2), 141-150. doi: 
+10.1023/a:1021963531607  
+4. Cohen, M. A. & Pi[INVESTIGATOR_426761], A. R. (2009). New evidence on the monetary value of saving a high risk youth. 
+Journal of Quantitative Criminology , 25(1), 25-49. doi: 10.1007/s10940 -008-9057-3 
+5. Jessor, R. & Turbin, M. (2014). Parsing protection and risk for problem behavior versus pro-social behavior 
+among us and chinese adolescents. Journal of Youth & Adolescence , 43(7), 1037-1051. doi: 
+10.1007/s10964 -014-0130-y 
+6. Luxton, D. D., June, J. D., & Comtois, K. A. (2013). Can postdischarge follow-up contacts prevent suicide 
+and suicidal behavior? A review of the evidence. Crisis , 34(1), 32-41. doi: 10.1027/0227 -5910/a000158  
+7. Fleischmann, A., Bertolote, J. M., Wasserman, D., De Leo, D., Bolhari, J., Botega, N. J., . . . Thanh, H. T. 
+(2008). Effectiveness of brief intervention and contact [CONTACT_331872]: A randomized controlled trial 
+in five countries. Bulletin of the World Health Organization , 86(9), 703-709. doi: 10.2471/blt.07.046995  
+8. Carter, G. L., Clover, K., Whyte, I. M., Dawson, A. H., & Este, C. D. (2005). Postcards from the edge 
+project: Randomized controlled trial of an intervention using postcards to reduce repi[INVESTIGATOR_565671]. British Medical Journal , 331(7520), 805. doi: 
+10.1136/bmj.[ZIP_CODE].455266.e0  
+9. Motto, J. A. & Bostrom, A. G. (2001). A randomized controlled trial of postcrisis suicide prevention. 
+Psychiatric Services , 52(6), 828-833. doi:  
+10. Vaiva, G., Ducrocq, F., Meyer, P., Mathieu, D., Philippe, A., Libersa, C., & Goudemand, M. (2006). Effect of 
+telephone contact [CONTACT_565700]: 
+Randomised controlled study. British Medical Journal , 332(1241-1245), doi:  
+11. Corso, P. S., Mercy, J. A., Simon, T. R., Finkelstein, E. A., & Miller, T. R. (2007). Medical costs and 
+productivity losses due to interpersonal and self-directed violence in the united states. American Journal of 
+Preventive Medicine , 32(6), 474-482. doi: 10.1016/j.amepre.2007.02.010  
+12. Karch, D. L., Logan, J., McDaniel, D., Parks, S., & Patel, N. (2012). Surveillance for violent deaths - 
+national violent death reporting system, 16 states, 2009. Surveillance Summaries , 61(6), 1-43. doi:  
+13. Jordan, J. R. (2001). Is suicide bereavement different? A reassessment of the literature. Suicide and Life-
+Threatening Behavior , 31(1), 91-102. doi:  
+14. Begley, M. & Quale, E. (2007). The lived experience of adults bereaved by [CONTACT_20673]: A phenomenological 
+study. Crisis , 28(1), 26-34. doi:  
+15. Barrett, T. W. & Scott, T. B. (1990). Suicide bereavement and recovery patterns compared with nonsuicide 
+bereavement patterns. Suicide and Life-Threatening Behavior , 20(1), 1-15.  
+16. McMenamy, J. M., Jordan, J. R., & Mitchell, A. M. (2008). What do suicide survivors tell us they need? 
+Results of a pi[INVESTIGATOR_799]. Suicide and Life-Threatening Behavior , 38(4), 375-389.  
+17. Cvinar, J. G. (2005). Do suicide survivors suffer social stigma: A review of the literature. Perspectives in 
+Psychiatric Care , 41(1), 14-21. doi:  
+18. Pompi[INVESTIGATOR_45769], M., Shrivastava, A., Serafini, G., Innamorati, M., Milelli, M., Erbuto, D., . . . Girardi, P. (2013). 
+Bereavement after the suicide of a significant other. Indian Journal of Psychiatry , 55(3), 256-263.  
+19. Weiss, B., Han, S., Harris, V., Catron, T., Ngo, V. K., Caron, A., . . . Guth, C. (2013). An independent 
+randomized clinical trial of multisystemic therapy with non-court-referred adolescents with serious conduct 
+problems. 81, 1027 -1039. doi: 10.1037/a0033928  
+20. Farrington, D. P., Ttofi, M. M., & Coid, J. W. (2009). Development of adolescence-limited, late-onset, and 
+persistent offenders from age 8 to age 48. Aggressive Behavior , 35(2), 150-163. doi: 10.1002/ab.[ZIP_CODE]  
+  
+ 21. Jobes, D. A., Rudd, M. D., Overholser, J. C., & Joiner, T. E. (2008). Ethical and competent care of suicidal 
+patients: Contemporary challen ges, new developments, and considerations for clinical practice. 
+Professional Psychology: Research and Practice , 39(4), 405-413. doi: 10.1037/a0012896  
+22. Bongar, B. & Harmatz, M. (1991). Clinical psychology graduate education in the study of suicide: 
+Availability, resources, and importance. Suicide and Life-Threatening Behavior , 21(3), 231-244.  
+23. Baraff, L. J., Janowicz, N., & Asarnow, J. R. (2006). Survey of california emergency departments about 
+practices for management of suicidal patients and resources available for their care. Annals of Emergency 
+Medicine , 48(4), 452-458. doi: 10.1016/j.annemergmed.2006.06.026 
+24. Hendin, H., Lipschitz, A., Maltsberger, J. T., Haas, A. P., & Wynecoop, S. (2000). Therapi[INVESTIGATOR_11437]' reactions to 
+patients' suicides. American Journal of Psychiatry , 157 (12), 2022-2027.  
+25. Fang, F., Kemp, J., Jawandha, A., Juros, J., Long, L., Nanayakkara, S., . . . Anzia, J. (2007). Encountering 
+patient suicide: A resident's experience. Academic Psychiatry , 31(5), 340-344.  
+26. Coverdale, J. H., Roberts, L. W., & Louie, A. K. (2007). Encountering patient suicide: Emotional responses, 
+ethics, and implications for training programs. Academic Psychiatry , 31(5), 329-332. doi:  
+27. Linehan, M. M. (2008). Suicide intervention research:  A field in desperate need of development. Suicide 
+and Life -Threatening Behavior , 38(5), 483-485. doi:  
+28. Comtois, K. A. & Linehan, M. M. (2006). Psychosocial treatments of suicidal behaviors: A practice-friendly 
+review. Journal of Clinical Psychology , 62(2), 161-170.  
+29. Hawton, K., Townsend, E., Arensman, E., Gunnell, D., Hazell, P., House, A., & van Heeringen, K. (2000). 
+Psychosocial versus pharmacological treatments for deliberate self harm. Cochrane Database System 
+Review , 2, CD001764.  
+30. Gonzales, N. A., Pi[INVESTIGATOR_7929], S. C., Hill, N. E., & Roosa, M. W. (2000). A mediational model of the impact of 
+interparental conflict on child adjustment in a multiethnic, low-income sample. Journal of Family 
+Psychology , 14(3), 365-379. doi: 10.1037/[ADDRESS_742956], T., Henriques, G. R., Xie, S. X., Hollander, J. E., & Beck, A. T. (2005). Cognitive 
+therapy for the prevention of suicide attempts: A randomized controlled trial. Journal of the American 
+Medical Association , 294 (5), 563-570.  
+32. Linehan, M. M., Comtois, K. A., Murray, A. M., Brown, M. Z., Gallop, R. J., Heard, H. L., . . . Lindenboim, N. 
+(2006). Two-year randomized controlled trial and follow-up of Dialectical Behavior Therapy vs therapy by 
+[CONTACT_565701]. Archives of General Psychiatry , 63(7), 
+757-766.  
+33. Jobes, D. A. (2012). The Collaborative Assessment and Management of Suicidality (CAMS): An evolving 
+evidence-based clinical approach to suicidal risk. Suicide and Life-Threatening Behavior , 42(6), 640-653. 
+doi: 10.1111/j.1943 -278x.2012.[ZIP_CODE].x 
+34. Jobes, D. A. (2006). Managing suicidal risk: A collaborative approach . [LOCATION_001]: Guilford Press. 
+35. Jobes, D. A., Jacoby, A. M., Cimbolic, P., & Hustead, L. A. T. (1997). Assessment and treatment of suicidal 
+clients in a university counseling center. Journal of Counseling Psychology , 44(4), 368-377. doi: 
+10.1037//0022 -0167.44.4.368  
+36. Ellis, T. E., Rufino, K. A., Allen, J. G., Fowler, J. C., & Jobes, D. A. (in press). Impact of a suicide-specific 
+intervention within inpatient psychiatric care: The Collaborative Assessment and Management of Suicidality 
+(CAMS). Suicide and Life-Threatening Behavior .  
+37. Ellis, T. E., Green, K. L., Allen, J. G., Jobes, D. A., & Nadorff, M. R. (2012). Collaborative Assessment and 
+Management of Suicidality in an inpatient setting: Results of a pi[INVESTIGATOR_799]. Psychotherapy , 49(1), 72-80. doi: 
+10.1037/a0026746  
+38. Arkov, K., Rosenbaum, B., Christiansen, L., Jonsson, H., & Munchow, M. (2008). Treatment of suicidal 
+patients: The Collaborative Assessment and Management of Suicidality. Ugeskr Laeg , 170(3), 149- 153.  
+39. Jobes, D. A., Kahn-Greene, E., Greene, J., & Goeke-Morey, M. (2009). Clinical improvements of suicidal 
+outpatients: Ex amining suicide status form responses as predictors and moderators. Archives of Suicide 
+Research , 13(2), 147-159. doi: 10.1080/13811110902835080  
+40. Nielsen, A. C., Alberdi, I. F., & Rosenbaum, B. (2011). Collaborative Assessment and Management o f 
+Suicidality method shows effect. Danish Medical Bulletin , 58(8), A4300. PMID: 21827722 
+41. Jobes, D. A., Wong, S. A., Conrad, A. K., Drozd, J. F., & Neal-Walden, T. (2005). The Collaborative 
+Assessment and Management of Suicidality (CAMS) versus treatment as usual: A retrospective study with 
+suicidal outpatients. Suicide and Life- Threatening Behavior , 35(5), 483-497.  
+  
+ 42. Comtois, K. A., Jobes, D. A., O'Connor, S. S., Atkins, D. C., Janis, K., Chessen, C. E., . . . Yuodelis-Flores, 
+C. (2011). Collaborative Assessment and Management of Suicidality (CAMS): Feasibility trial for next-day 
+appointment services. Depression and Anxiety , 28(11), 963-972. doi: 10.1002/da.[ZIP_CODE] 
+43. Dimeff, L. A., Paves, A. P., Skutch, J. M., & Woodcock, E. A. (2010). Shifting paradigms in clinical 
+psychology: How innovative technologies are shapi[INVESTIGATOR_500645]. In D.H. Barlow (Ed. ), The oxford 
+handbook of clinical psychology  (618-648). [LOCATION_001]: Oxford University Press. 
+44. Mohr, D. C., Burns, M. N., Schueller, S. M., Clarke, G., & Klinkman, M. (2013). Behavioral intervention 
+technologies: Evidence review and recommendations for future research in mental health. General Hospi[INVESTIGATOR_459299] , 35(4), 332-338.  
+45. McHugh, R. K. & Barlow, D. H. (2010). The dissemination and implementation of evidence-based 
+psychological treatments. A review of current efforts. American Psychologist , 65(2), 73-84. doi: 
+10.1037/a0018121  
+46. Fogg, B. J. & Eckles, D. (2007). Mobile persuasion: 20 perspectives on the future of behavior change . 
+[LOCATION_004]: Stanford Captology Media. 
+47. Pramana, G., Parmanto, B., Kendall, P. C., & Silk, J. S. (2014). The Smart CAT: An m-health platform for 
+ecological momentary intervention in child anxiety treatment. Telemedicine Journal and e-Health , 20(5), 
+419-427. doi: 10.1089/tmj.2013.0214  
+48. Harrison, V., Proudfoot, J., Wee, P. P., Parker, G., Pavlovic, D. H., & Manicavasagar, V. (2011). Mobile 
+mental health: Review of the emerging field and proof of concept study. Journal of Mental Health , 20(6), 
+509-524. doi: 10.3109/09638237.2011.608746 
+49. Donker, T., Petrie, K., Proudfoot, J., Clarke, J., Birch, M., & Christensen, H. (2013). Smartphones for 
+smarter delivery of mental health programs: A systematic review. Journal of Medical Internet Research , 
+15(11), e247.  
+50. Luxton, D. D., McCann, R. A., Bush, N. E., Mishkind, M. C., & Reger, G. M. (2011). mH ealth for mental 
+health: Integrating smartphone technology in behavioral healthcare. Professional Psychology: Research 
+and Practice , 42(6), 505-512. d oi: 10.1037/a0024485 
+51. Kendall, P. C., Khanna, M. S., Edson, A., Cummings, C., & Harris, M. S. (2011). Computer and 
+psychosocial treatment for child anxiety: Recent advances and ongoing efforts. Depression and Anxiety , 
+28(1), 58- 66. doi: 10.1002/da.[ZIP_CODE]  
+52. Barak, A. & Grohol, J. M. (2011). Current and future trends in internet supported mental health 
+interventions. Journal of Technology in Human Services , 29(3), 155-196. doi:  
+53. Roy-By[CONTACT_7943], P., Craske, M. G., Sulivan, G., Rose, R. D., Edlund, M. J., Lang, A. J., . . . Stein, M. B. (2010). 
+Delivery of evidence-based treatment for multiple anxiety disorders in primary care: A randomized 
+controlled trial. Journal of the American Medical Association , 303(19), 1921-1928. doi: 
+10.1001/jama.2010.608 
+54. Rizzo, A., Lange, B., Buckwalter, J. G. K., Forbell, E., Kim, J., Sagae, K., . . . Kenny, P. (2011). 
+Proceedings from The Interservice/Industry Training, Simulation, and Education Conference : Simcoach: An 
+intelligent virtual human system for providing healthcare information and support . 
+55. Lisetti, C., Amini, R., Yasavur, U., & Rishe, N. (2013). I can help you change! An empathic virtual agent 
+delivers behavior change health interventions. ACM Transactions on Management Information Systems 
+(TMIS), 4 (4), 19. doi: 10.1145/2544103 
+56. Reeves, B. & Nass, C. (1996). The media equation: How people treat computers, television, and new media 
+like real people and places . [LOCATION_001], NY: Cambridge University Press. 
+57. Gratch, J., Wang, N., Okhmatovskaia, A., Lamothe, F., Marsella, S., Morales, M., . . . Morency, L. P. 
+(2007). Can virtual humans be more engaging than real ones? In J.A. Jacko (Ed. ), Human-computer 
+interaction. HCI intelligent multimodal interaction environments . Berlin: Springer Berlin Heidelberg. 
+58. Bickmore, T. W. & Pi[CONTACT_1137], R. W. (2005). Establishing and maintaining long-term human-computer 
+relationships. ACM Transactions on Computer-Human Interaction (TOCHI) , 12(2), 293-327. doi: 
+10.1145/1067860.1067867  
+59. Bickmore, T. W., Pfeifer, L. M., & Jack, B. W. (2009). Proceedings from SIGCHI Conference on Human 
+Factors in Computing Systems : Taking the time to care: Empowering low health literacy hospi[INVESTIGATOR_565672].   [LOCATION_001], NY. 
+60. Jack, B. W. & Bickmore, T. W. (2011). The re-engineered  hospi[INVESTIGATOR_309001]: A randomized trial. Annals of Internal Medicine , 150(3), 178-187. doi: 10.7326/0003 -
+4819-150-3-200902030-[ZIP_CODE] 
+  
+ 61. Berkowitz, R. E., Fang, Z., Helfand, B. K. I., Jones, R. N., Schreiber, R., & Paasche-Orlow, M. K. (2013). 
+Project R eengineered Discharge (RED) lowers hospi[INVESTIGATOR_308993] a skilled 
+nursing facility. Journal of the American Medical Directors Association , 14(10), 736-740. doi: 
+10.1016/j.jamda.2013.03.004 
+62. Wymbs, B. T., McCarty, C. A., Baer, J. S., King, K. M., Stoep, A. V., & McCauley, E. (2013). Callous-
+unemotional traits and conduct disorder symptoms as prospective risk factors for adolescent sexual 
+activity. Journal of Clinical Child & Adolescent Psychology , 42(5), 693-699. doi: 
+10.1080/15374416.2013.796858  
+63. Devries, K., Watts, C., Yoshihama, M., Kiss, L., Schraiber, L. B., Deyessa, N., . . . Garcia-Moreno, C. 
+(2011). Violence against women is strongly associated with suicide attempts: Evidence from the who multi-
+country study on women's health and domestic violence against women. Social Science & Medicine , 73(1), 
+79-86.  
+64. Massey, A. P., Montoya-Weiss, M. M., & O'Driscoll, T. M. (2002). Performance-centered design of 
+knowledge-intensive processes. Journal of Management Information Systems , 18, 37 -58. doi:  
+65. Gery, G. (1995). Attributes and behaviors of performance-centered systems. Performance Improvement 
+Quarterly , 8, 47-93.  
+66. Klahr, A. M., McGue, M., Iacono, W. G., & Burt, S. A. (2011). The association between parent–child conflict 
+and adolescent conduct problems over time: Results from a longitudinal adoption study. Journal of 
+Abnormal Psychology , 120 (1), 46-56. doi: 10.1037/a0021350  
+67. Kroenke, K., Spi[INVESTIGATOR_626], R. L., & Williams, J. B. (2001). The phq-9: Validity of a brief depression severity 
+measure. Journal of General Internal Medicine , 16(9), 606-613.  
+68. Spi[INVESTIGATOR_626], R. L., Kroenke, K., & Williams, J. (1999). Validation and utility of a self-report version of PRIME-
+MD: The PHQ primary care study. Journal of the American Medical Association , 282 (18), 1737-1744. doi:  
+69. Koerner, K., Linehan, M. M., & Dimeff, L. A. (2001). Demographics questionnaire. Unpublished manuscript . 
+70. Bangor, A., Kortum, P., & Miller, J. A. (2009). Determining what individual SUS scores mean: Adding an 
+adjective rating scale. Journal of Usability Studies , 4, 114 -123.  
+71. Brooke, J. (1996). Sus: A "quick and dirty" usability scale. In P.W. Jordan, B. Thomas, B.A. Weerdmeester, 
+& I.L. McClelland (Eds.), Usability evaluation in industry  (189-194). London: Taylor and Francis. 
+72. Strauss, A. L. & Corbin, J. M. (1998). Basics of qualitative research: Techniques and procedures for 
+developi[INVESTIGATOR_48545] . [LOCATION_004]: Sage Publications, Inc. 
+ 

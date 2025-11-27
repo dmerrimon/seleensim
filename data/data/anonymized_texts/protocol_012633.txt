@@ -1,0 +1,115 @@
+Evaluation of the Safer Bars Prevention Program for Sexual Assault  
+ 
+NCT: 04141839  
+ 
+Date: March 13, 2025   
+ 
+Study Protocol and Statistical Analysis Plan  
+Study Protocol  
+The objectives of the protocol are to conduct  a cluster -randomized controlled trial with 
+crossover, multiple sources of data,  and a theory -driven analysis plan to assess the immediate 
+and intermediate effectiveness of Safer Bars, a primary perpetration prevention program to train 
+bar staff to recognize and respond to sexual aggression and its precursors among patrons.   
+This prospective evaluation will assess individual -level outcomes,  including changes in bar staff 
+members’ attitudes, perceived social norms, perceived behavioral control,  behavioral intent, and 
+subsequent bystander behavior. Bar -level outcomes will include changes in the physical  bar 
+environment and risk management safety policies. Additionally, we will use GIS mapping to 
+identify “hot  spots” of liquor licenses in areas within a 3 -mile radius of the three major Arizona 
+universities and map police dispatches for reports of sexually -violent behavior in these areas 
+prior and subsequent to the intervention in order to assess community -level outcomes.  
+ 
+Recruitment . The study will recruit approximately 56 bars with an average of ten 
+participants per bar for a n intended sample size of 564 individual bar staff and 56 bar 
+owners/managers. Sampling of bars will be proportional to the size of student enrollment at 
+each of the universities. The study will sample from bars that are located within 3 miles of the 
+university campuses, have a current liquor license to serve on -premises , and have not received 
+the Safer Bars  training within the past year .  
+Project staff will generate a list of bars in the catchment areas  and will contact their 
+owner/managers  through combinations  of email, phone, social media, and in-person visits. If a 
+bar owner/manager is interested in receiving more information, staff will describe the training and study, as well as  provide informational material. If a bar agrees to participate, the 
+owner /manager will  sign the Bar Agreement Form, which details the time commitment and study 
+details.  Project staff will then utilize a block randomization procedure to determine which arm 
+(control or intervention) the bar is in and will convey this to the owner/manager as well as details 
+about the monetary incentive ($ 250) available to cover some of the costs of hosting the study at 
+their establishment . Research staff may also recruit through organizations or associations 
+related to bartending, bartenders, or bar owner/managers within the specified catchment areas. 
+Bars may receive Safer Bars  training without participating i n the study.  
+Before training session 1 (intervention group) or the information session (control group) , 
+research staff will meet with the bar owner/manager to review the consent form and screening 
+questions. If the bar owner/manager is eligible and agrees to participate, they will provide 
+informed consent and their contact information. At the beginning of training session 1 (intervention group) or the information session (control group), staff will discuss the study with 
+the bar staff, provide them the opportunity to ask questions , assess eligibility, and obtain 
+informed consent and contact information.  Individuals  who do not wish to participate in the study 
+may still attend the training.  
+Retention. We will take multiple steps to retain participants throughout the project. First, we will 
+make participation as convenient as possible by using in -person data collection for the baseline 
+surveys and online data collection for the follow- up surveys. Second, we will give reminders to 
+participants regarding survey completion . Finally, we will structure our payment and incentive 
+schedule to encourage full completion.  
+ 
+Study Design . A 6-month, cluster -randomized controlled trial study design will be implemented. 
+Bars (n = 56 bars; n  = 564 bar staff; n  = 56 bar owners/managers) will be randomized to receive 
+either the Safer Bars  bystander promotion intervention or will be assigned to a waitlist  control 
+condition in which they receive the Safer Bars  intervention after a 3 -month waiting period. 
+Participants  working at bars  in the intervention group will receive two , 2.5-hour in-person 
+intervention sessions spaced approximately two weeks apart coupled with assessments pre-
+intervention session 1 (baseline) and immediately post- intervention session 2. They will then 
+complete follow -up assessments at 3 months and 6 months post -intervention. Participants 
+working at bars assigned to the  waitlist  control group will complete an initial information session 
+about the study in which they respond to the same baseline measures as the intervention group, 
+followed by a 3 -month assessment identical to that of the intervention group. Control bar s will 
+then be eligible to receive the Safer Bars  intervention.   
+ 
+Statistical Analysis Plan  
+ Individual -level Analyses   
+Because randomization to study arm will be at the bar level,  we will use analytic 
+techniques (generalized linear mixed models [GLMMs] and multilevel structural equation models 
+[MSEMs]) that account for clustering of individuals nested within bars and repeated measures 
+within  individuals and allow for participant -level missing data [18,19,20]. Selection of model link 
+functions (e.g., identity, log, logit) and error distributions (e.g., normal, Poisson,  binomial) in 
+GLMMs and MSEMs will be guided by the scale of measurement and observed distribution of 
+the outcome measure. To test  program effects on bystander behavior, we will estimate GLMMs 
+predicting bystander behaviors at follow- up, adjusting for baseline bystander  behavior as well as 
+any relevant covariates identified in preliminary analyses. GLMMs will  include random 
+components for bar -level intercepts. To address mediation of program effects via TPB 
+constructs, we will estimate prospective MSEMs in which the effect of study arm on bystander behavior is mediated through its  effects on TP B constructs. Point estimates of indirect  effects 
+will be computed using a product -of-coefficients  approach [21]. As M Plus does not produce 
+bootstrap standard errors for indirect  effects in multilevel SEMs, Bayesian credible intervals will 
+used for inference. To address potential moderation of program effects by participant  
+characteristics ( gender identity , job position, education, personal sexual assault experiences,  
+prior education in sexual assault prevention) and bar characteristics (policies, physical 
+environment) , we will extend  above GLMMs by  including Study Arm x Characteristic interaction 
+terms. Each significant interaction will be probed to characterize the pattern of differential 
+program effects across categories or levels of a background characteristic [22].  
+Bar-level Analyses  
+Within a generalized linear modeling framework, a series of ANCOVAs  will be conducted 
+to examine the effect of intervention condition on changes in physical environment  
+characteristics and risk management safety policies. Outcome scores at 3 -month follow -up will 
+be predicted from study arm, adjusting for baseline scores and relevant bar -level covariates. 
+The Sidak procedure  will be used to control study -wise Type 1 error inflation.  
+Community- level Analyses 
+ Violent crime datasets will be obtained from  relevant  municipal police departments  via 
+public records requests  for years prior to and during the study. Maps will be generated using 
+ArcGIS ArcMap. Violent crimes of interest will be mapped using the “Esri World Geocoder” 
+under the “Geocode Addresses” tool and then shapefile layers will be created.  
+Next, spatial information of the liquor licenses for the relevant bars will be obtained from 
+the Arizona Department of Liquor Licenses and Control (DLLC) website. Only “on- premises” 
+liquor license addresses will be queried and mapped. Shapefile layers of bar locations  will be 
+created and added to the maps. Utilizing the “Kernel Density” tool within the “Spatial Analyst  
+Toolbox” via ArcMaps, bar location  density  will be mapped against the crime points. The results 
+will illustrate the a mount of violent crime in a  specific location in relation to the density of bars for 
+that exact location. Analyses will compare the frequency  of violent crime -related police 
+dispatches to study catchment areas before and after  receiv ing Safer Bars  training.  
+ 
+Power Analysis  
+The sample size of 564 individual bar staff  (approximately 56 bars [28 bars in each study arm] x 
+average of 10 participants per bar) affords power of .80 to detect small -to-moderate 
+standardized between- group differences (i.e., intervention effects) on individual -level outcomes 
+ranging from d = 0.28 to 0.45, depending on an assumed intraclass correlation (ICC) of .10 for 
+outcome scores, assumed correlations between baseline and follow -up scores ranging from r = 
+.10 to .50, and assumed ICCs for pre- post change scores ranging from .05 to .10. Adjusting for 
+bar-level clustering, the proposed sample should afford power of .80 to detect indirect effects 
+and small- to-moderate constituent direct effects ( ds= 0.35 -0.45 for X  to M, r2s = .04 -.09 for M to 
+Y), assuming a 10% attrition rate. For bar -level outcomes, the proposed sample size affords 
+power to detect large effects ( ds = 0.66 -0.76, for pre- post correlations of r = .10- .50). 
+ 

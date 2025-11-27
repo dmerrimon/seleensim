@@ -1,0 +1,417 @@
+Protocol 2015.03  Version Date: 07/7/16
+1IRB #15452
+Revised:
+Oregon  Health  & Science  University
+RESEARCH PROTOCOL
+Protocol Title: Testing and Tuning a Multiparameter Exercise Detection Algorithm
+Principal Investigator: Joseph El Youssef  MD elyoussj@ohsu.edu 
+Sponsor: National Institute of  Diabetes and Digestive and  Kidney Diseases
+BACKGROUND
+The risk of hypoglycemia in individuals with type 1 diabetes (T1D) increases considerably  
+during exercise. Increased  glucose utilization during exercise as well  as promotion  of insulin 
+sensitivity, both during and after  exercise,  have been shown to  occur  with  prolonged  periods  of 
+increased insulin  sensitivity  even after a single bout of intense physical activity. As a  result,  
+many patients with T1D experience fear of and reluctance to  pursue physical activity, in order  to 
+avoid the discomforting symptoms associated  with hypoglycemia.
+The artificial  pancreas, a  device used  for automatic delivery of insulin and  glucagon 
+subcutaneously to subjects  with T1D, is paving the way to  revolutionize the management of this  
+disease. Already, the  benefit of improved  glycemic  control compared to current open-loop pump 
+therapy has  been  demonstrated in several trials.  We have shown that  our artificial pancreas (AP) 
+algorithm dual hormone system effectively manages  blood glucose in  a clinic setting and  our 
+group specifically has shown  great  progress  using  glucagon to reduce hypoglycemic  episodes  
+outside of  exercise 1-3. Our  most recent inpatient study, as yet unpublished, shows  that adjusting 
+insulin and glucagon delivery during closed  loop treatment, after announcing exercise, 
+effectively reduces mean time below a glucose  level  of 70 mg/dl when compared to  closed  loop  
+control without  adjustments. We utilized initial  open-loop  data from this study to help devise 
+dosing changes for the AP algorithm 4.
+In order  to prepare for a future  home  study,  the ability  to detect, grade, and classify physical 
+activity so  as to appropriately adjust system parameters is vital in helping to prevent exercise-
+induced hypoglycemia in the home  setting. Currently, our closed-loop system transmits heart rate 
+and accelerometry  outputs  from  a Zephyrlife BioPatch  monitoring device to a  Nexus 5 smart 
+phone master controller  via Bluetooth.  The algorithm then converts  the heart rate  and 
+accelerometry data into  modified estimated energy  expenditure - accounting for age,  weight, 
+height, sex,  resting and sitting heart  rates - to determine if exercise  is present.  However, further 
+data collection is needed  to hone  the specificity and sensitivity of the detection algorithm to 
+account for a wide  variety of subject  characteristics and  activities.
+This study  is designed to collect 3-axis accelerometry data  and heart rate data  during a variety of 
+different home  activities, as well  as during formal exercise in  both  healthy subjects and subjects 
+with type 1 diabetes and optionally VO 2 data from a portable VO 2 mask.   The data collected will 
+be used to further enhance our algorithm that, in future closed-loop studies, will detect  exercise 
+Protocol 2015.03  Version Date: 07/7/16
+2and automatically  trigger algorithmic adjustments to reduce exercise-related  hypoglycemia  
+during and  after  exercise in individuals with T1D.
+SPECIFIC OBJECTIVES
+Primary Objective: To  obtain  accelerometer,  heart rate, and optionally  VO 2 data from subjects 
+with and without T1D  during  various  home related activities and formal exercise for the purpose 
+of training an  exercise  detection algorithm.
+Secondary Objective: To obtain  data  from insulin pumps and glucose sensors from subjects 
+with T1D during open-loop  therapy  while  exercising  to further define changes  in glucose level  
+while performing home activities and formal exercise.
+HYPOTHESIS
+We hypothesize that  an exercise detection algorithm that utilizes accelerometer and heart rate  
+data along with  patient parameters, such as age, sex, weight, height, sitting and resting heart rate,  
+can accurately and  reliably estimate  energy expenditure. We also hypothesize that certain home 
+exercises may  be of sufficient  intensity to trigger  a fall in glucose  levels,  which would require 
+dose adjustment during closed-loop treatment of  T1D  in order to  prevent hypoglycemia.
+ENDPOINTS:
+Primary Endpoints: The primary endpoints are accelerometer and heart rate  data from both 
+healthy subjects  and subjects with T1D and  healthy  subjects during  home activities and a  
+structured exercise period.
+Secondary Endpoints: Secondary endpoints include glucose data from  Dexcom  continuous 
+glucose monitoring (CGM) systems and  insulin  pumps  attached  to subjects with T1D  during  
+home activities and formal  exercise.
+STUDY TYPE:  Pilot  study for data  collection.
+STUDY POPULATION
+The study population will include healthy  adults and  adults  with T1D who  have  been using an 
+insulin pump for  at least  6 months, ages 21 – 45 years of age.  Older  subjects are  excluded due to  
+higher risk of unrecognized coronary artery  disease.  Younger subjects are excluded  as it is 
+appropriate to assess safety first in the adult  population and the current AP system has not  been 
+tested in  the younger population. Use of an  insulin pump is required so as to obtain  accurate 
+insulin dosing information on subjects with T1D.
+Type 1  Diabetic Subject  Criteria
+Inclusion criteria:
+Subjects meeting all  of the following criteria  will be considered for enrollment  into the study:
+a.Male or female subjects 21 to 45 years of age with a  diagnosis  of T1D for at least 6 
+months on an insulin pump.
+b.Physically active on a regular basis, i.e.  at least 3 days of scheduled physical activity per 
+week and willing  to perform approximately 60 minutes of exercise (as determined by the 
+investigator after  reviewing the  subjects activity level).
+Protocol 2015.03  Version Date: 07/7/16
+3c.Willingness to follow  all study  procedures.
+d.Willingness to sign informed  consent  and HIPAA documents.
+Exclusion criteria:
+Subjects presenting with any of the following will not  be considered for  enrollment in the study:
+a.Pregnancy  or Lactation:
+i. For women of  childbearing potential,  there is a requirement for a  negative urine 
+pregnancy test.
+b.Any cardiovascular disease,  defined as a  clinically significant  EKG abnormality at the 
+time of  screening or any history of: stroke, heart failure, myocardial infarction,  angina 
+pectoris, or  coronary arterial bypass graft or angioplasty. Diagnosis of 2nd or 3rd degree  
+heart block or any  non-physiological arrhythmia  judged by the investigator to  be 
+exclusionary.
+c.Renal  insufficiency (GFR <  60 ml/min, using the MDRD  equation as report by the 
+OHSU laboratory).
+d.Hematocrit  of less than or equal  to 34%.
+e.History of severe  hypoglycemia during the  past 12  months  prior  to screening visit or 
+hypoglycemia unawareness as judged  by the investigator. 
+f.Adrenal insufficiency.
+g.Any active infection.
+h.Known or suspected abuse of alcohol,  narcotics, or illicit  drugs (except marijuana  use). 
+i.Seizure disorder.
+j.Active foot ulceration.
+k.Severe peripheral arterial  disease  characterized  by ischemic rest pain or severe 
+claudication.
+l.Major surgical operation  within 30 days prior  to screening.
+m.Use of an investigational drug within 30 days prior to screening.
+n.Chronic usage of  any immunosuppressive medication (such as cyclosporine, 
+azathioprine, sirolimus, or tacrolimus).
+o.Bleeding disorder,  treatment with warfarin, or  platelet count below 50,000.
+p.Current administration of oral or parenteral corticosteroids.
+q.Any life threatening  disease, including malignant  neoplasms  and medical  history of 
+malignant neoplasms  within  the past 5 years prior  to screening (except basal and 
+squamous cell skin cancer). 
+r.Any concurrent illness, other  than diabetes, that is not  controlled by a  stable therapeutic 
+regimen.
+s.Beta blockers or non-dihydropyridine  calcium  channel blockers.
+t.A positive response to any of the questions from the Physical Activity Readiness Questionnaire, see  Appendix A.
+u.Any chest discomfort with physical activity, including pain or pressure, or other  types  of 
+discomfort. 
+v.Any clinically  significant disease or disorder  which in  the opinion of the Investigator may 
+jeopardize the subject’s safety  or compliance  with the protocol.
+Healthy Subject Criteria
+Inclusion Criteria:
+Protocol 2015.03  Version Date: 07/7/16
+4a.Male or female subjects 21 to 45 years of age.
+b.Physically active on a regular basis, i.e.  at least 3 days of scheduled physical activity per 
+week and willing  to perform approximately 60 minutes of exercise (as determined by the 
+investigator after  reviewing the  subjects activity level).
+c.Willingness to follow  all study  procedures.
+d.Willingness to sign informed  consent  and HIPAA documents.
+Exclusion criteria:
+a.Pregnancy  or Lactation:
+a.For women of  childbearing potential, there is a requirement for a negative urine 
+pregnancy test.
+b.Any history or evidence  of renal  insufficiency,  adrenal insufficiency, liver disease or 
+anemia. 
+c.A history of cerebrovascular disease  or coronary artery disease  (or angina) regardless  of 
+the time since occurrence.
+d.Congestive heart  failure, New York Heart Association (NYHA) any  class.
+e.Diagnosis of 1st, 2nd or 3rd degree  heart  block  or any arrhythmia judged by the 
+investigator to be  exclusionary.
+f.Any condition which,  in the opinion of the investigator, makes it difficult to engage in 
+vigorous physical  activity. 
+g.Any active infection.
+h.Severe peripheral arterial  disease  characterized  by ischemic rest pain or severe 
+claudication.
+i.Active alcohol abuse, substance abuse, or severe  mental illness (as judged by the 
+principal investigator).
+j.Active malignancy, except basal cell or squamous cell skin cancers.
+k.Major surgical operation  within 30 days prior  to screening.
+l.Seizure disorder.
+m.Bleeding disorder,  or treatment with warfarin.
+n.Use of an investigational drug within 30 days prior to screening.
+o.A positive response to any of the questions from the Physical Activity Readiness Questionnaire.
+p.Any chest discomfort with physical activity, including pain, pressure or other  types  of 
+discomfort.
+q.Any reason the principal investigator deems exclusionary.
+STUDY RECRUITMENT
+Subjects will be  recruited from OHSU clinics, from flyers to be posted in approved places at 
+OHSU, or from the  OHSU Subject Recruitment website. Records from OHSU Harold  Schnitzer  
+Diabetes Clinic  patients may be  screened to find potential TID subjects.  Subjects will also  be 
+recruited from a list of subjects who participated in past OHSU studies,  past studies  involving 
+Drs. Castle or El Youssef,  from the OHSU diabetes research registry and www.clinicaltrials.gov. 
+Up to 60 subjects may  be screened in this study with up to 40 subjects enrolled into the study at  
+OHSU, split 60-80% healthy subjects  and 20-40% subjects with T1D.
+Protocol 2015.03  Version Date: 07/7/16
+5Non-English speaking T1D subjects will not be recruited since this  protocol will require use of a  
+device and mobile software (Dexcom G4, Dexcom Share or Dexcom G5  Mobile) that  does not  
+have non-English versions available  yet for  users.
+Withdrawal Criteria
+The subject  may withdraw at will at any time or at  the discretion of the Investigator.
+A subject  must  be withdrawn if the following applies:
+1.Hypoglycemia, in T1D subjects, during the treatment period  posing a  safety problem as 
+judged by the  investigator.
+2.Hyperglycemia, in T1D subjects, during the treatment period  posing  a safety problem as 
+judged by the  investigator.
+3.Protocol deviation having influence on efficacy or safety data as judged by the Investigator.
+4.Substantial and  repeated non-compliance  with trial procedures.
+5.Pregnancy.
+6.Intention of becoming pregnant.
+OVERALL STUDY  DESIGN
+The aim of  the study is  to determine if accelerometer, heart rate,  and VO 2 data can be utilized to 
+enhance our  exercise detection algorithm for  use in our  closed-loop system.  The VO 2 mask  may  
+be worn by subjects  during a single exercise  visit  to determine the  actual  energy  expenditure of 
+each activity using metabolic equivalents (METs).  Each subject may wear one  or more 
+monitoring devices  which will be transmitting heart rate and  accelerometer  data  to a master  
+controller, such as a  Nexus  5 smart  phone.  The master controller may be running an algorithm  to 
+detect and grade exercise, and will be  collecting  data  for offline  analysis and algorithm tuning. 
+This device will  not be connected to a  glucose  sensor, a pump  delivering insulin or a pump 
+delivering glucagon for the purpose of managing  blood sugar in  subjects  with T1D.
+STUDY DETAILS
+Visit 1: Screening
+Screening will  take place at OHSU’s Harold Schnitzer Diabetes Health Center clinic Prior to any 
+procedures, the  consent/authorization form  will be reviewed and signed,  with  a copy of the 
+consent/authorization form given to the subject.  The original will be kept for the source 
+document. This visit  will take  approximately  1.5 hours for healthy subjects.
+In all  subjects, study personnel will review medical  history and medications, and fill  out the 
+Physical Activity  Readiness Questionnaire  (Appendix A); height, weight, pulse, blood pressure,  
+and a resting EKG will be obtained;  a study investigator will perform a physical  examination, 
+excluding breast and  pelvic exams; and females of child-bearing potential will take a  urine  
+pregnancy test, which must be negative to participate. A study investigator  will assess 
+inclusion/exclusion criteria and review the subject’s  medical record for clarification as needed.  
+Subjects may  be asked to be fitted  with a portable VO 2 mask and  will wear the mask for 
+approximately 1 hour to obtain accurate baseline  data. Subjects will be asked to  abstain from  
+food, caffeine and alcohol for approximately  3-4 hours prior to screening to ensure accurate VO 2 
+baseline data. A three  digit subject ID number  will be assigned to each subject. The TID subjects 
+Protocol 2015.03  Version Date: 07/7/16
+6and the healthy subjects will be randomized  separately to ensure  that there are equal numbers 
+within each arm of the study, as follows:
+ 
+1)Aerobic exercise at  OCTRI followed  by activities of daily living and resistance exercise  
+at the POC lab,  or
+2)Activities  of daily  living  and resistance exercise at the POC lab followed by aerobic 
+exercise at OCTRI
+This randomization is  intended to help address  if glucose changes  in subjects with  T1D are 
+affected by either the  order of structured exercise  and activities of daily  living  (ADLs) or aerobic 
+vs. resistance  exercises.
+T1D Subject Screening Specifics : This screening  will take approximately 2 hours. At the 
+beginning of  screening, after consent has been  signed, subjects with T1D will be  asked to test 
+their blood  sugar using their own meter  and strips. Venous blood  samples will be taken for 
+complete blood  count, and complete metabolic panel  (including creatinine, liver panel,  and 
+electrolytes) labs. If subjects have  had the aforementioned  labs performed within the 3 months  
+prior to the intended date of Visit  2 and  we can access  the results, venous blood  samples will not 
+be taken. These  subjects  will be fitted with a Dexcom G4,Share, or Dexcom G5  Mobile glucose 
+sensor and short device training  will be performed  at the screening. The subjects that require 
+blood tests will be asked to return for an  approximately 15-30 minutes  sensor  training and 
+insertion visit if their lab  results determine that they  pass screening. 
+Visit 2: Exercise Study  
+For all  subjects,  the exercise visit will occur within  12 weeks of  screening. For T1D subjects, the 
+exercise visit will occur no less than 24 hours and no more than  5 days from  the time of  sensor  
+insertion. 
+Subjects with T1D will always  be asked to check their capillary blood  glucose (CBG) before  
+driving to the  clinic and to bring a snack  in the car in case hypoglycemia  does occur (in  which 
+case, subjects must  park and treat the hypoglycemia).
+This visit will  take approximately  4 hours and take place  at the OCTRI Clinical research unit as 
+well as the  Biomedical Engineering Point of Care  (BME  POC) Lab. A study technician and 
+Protocol 2015.03  Version Date: 07/7/16
+7investigator will always be present  in the room throughout the study for safety purposes. On  the 
+day of the study, subjects  will be instructed  to have  breakfast at 6 am. 
+Subjects will be  instructed to arrive at OCTRI or BME  POC  lab around  8 am depending on their 
+randomization group. Subjects  with T1D will measure their capillary  blood  glucose (CBG)  with  
+their own glucose meter at  the beginning of the visit. Subjects with T1D will continue their 
+normal basal  insulin  delivery using their own pump and will be allowed to adjust insulin delivery 
+during the structured exercise  period as they normally would at home. All  subjects will be  fitted 
+with a device to record  accelerometer and heart rate  data, and may be  fitted with the portable 
+VO 2 mask.
+During the aerobic exercise  period  and resistance exercise period, there will be defined  rules for 
+stopping, including:
+1)If the subject feels unwell,
+2)If a subject with T1D develops hypoglycemic  symptoms, such as excessive sweating, 
+shaking/tremors, palpitations, feelings of dread or panic,  light-headedness,  nausea, 
+difficulty concentrating or the like,
+3)If the subject develops chest  pain/pressure,
+4)If the subject develops undue  shortness of breath,
+5)If the maximum  heart  rate (defined as 220 – the  subject’s age) is reached or exceeded,
+6)For patient preference.
+The study technician  and physician will accompany the subject up and  down the tram between 
+the two portions of  the visit (from  OCTRI to CHH or CHH to  OCTRI).
+Aerobic Exercise: During the aerobic exercise  event,  all subjects will perform exercise on a 
+treadmill or  cycle ergometer in three 15 minute periods each with  at least 10 minutes  of rest 
+between each exercise period. Exercise intensity will vary between periods  to achieve different 
+energy expenditures,  which may be determined  based  on VO2 measurements.  Subjects with T1D 
+will do a CBG prior to exercise and will not start exercising if glucose is <70 mg/dl; they will be given 15-20 grams  of carbohydrates  for CBG  values  of <70 mg/dL  and CBG retested  in 15 
+minutes. A code cart  is on site at OCTRI and  a code team is available by page at  all times. After  
+completion of the exercise, T1D subjects  will complete another CBG sample and  have it 
+reviewed by an  investigator. These subjects will be provided with  a snack after testing  if 
+necessary to avoid  post-testing hypoglycemia. 
+ADL and Resistance Exercise: T1D subjects will complete a CBG prior to  starting  this exercise  
+period if ADL and resistance  exercise  is their first exercise of Visit  2. If the T1D subject has just 
+come from aerobic exercise, they will not need  to complete  a CBG  prior  to starting  this period. 
+Activities simulating  normal household activities will be completed in  the Point of Care Lab.  
+These activities may  include:
+1)sitting on a chair or  lying on a bed,
+2)washing dishes or  folding laundry,
+3)sweeping the  floor or vacuuming,
+4)organizing a room or adjusting furniture in a room,
+Protocol 2015.03  Version Date: 07/7/16
+85)scrubbing  the carpet or the walls and/or
+6)going up and down  flights  of stairs.
+Each activity will be  performed between 5-15 minutes. After  the ADL are complete,  subjects 
+will perform  resistance exercises such  as straight-leg raises or wall sits for approximately 20 
+minutes. All items necessary  for performing  these  activities are  provided in the POC lab, and 
+subject safety throughout all activities  will be ensured by coordinator observation. A  CBG  will 
+be completed at the  end of this exercise portion if the  subject has already  completed  aerobic  
+exercise. If the subject  has yet to complete  the aerobic portion of the visit, they will not  take a 
+CBG measurement at  this time  and will instead complete one just prior to starting  aerobic 
+exercise.
+After the study is completed, the subject  will have all  devices removed.   Subjects with  T1D will 
+have a CBG sample taken and reviewed  by an investigator. If necessary, oral carbohydrates will 
+be given for values below  70 mg/dl, and  an insulin bolus will be given if deemed appropriate by 
+the study investigator for values above  250 mg/dl. Study staff  will download the data from the 
+subject’s personal insulin  pump.
+Visit 3: Study  Follow-up
+The study follow-up visit  will be conducted  by phone call  to the subject at the phone number 
+obtained during screening, to determine the general post-discharge status of the subject.   The  
+subject will be contacted 48 hours (+/- 24 hours) after the exercise portion of the study takes place.
+CONFIDENTIALITY AND  PROTECTION OF HUMAN SUBJECTS
+Risks and Benefits:
+Risks: The risks of the protocol  procedures are considered  minor.  It should be noted that  a fully 
+trained physician will be in constant  attendance  on the research  ward. The likelihood of 
+significant harm is  quite low. Risks of exercise  include falls, sprains, bruises, very low risk of 
+bone fractures and head trauma.
+In subjects with T1D, there is a small risk of sensor  fracture, and in  such a case, a piece of the  
+sensor could be  left in the tissue after sensor  removal. For  this reason, the study investigator will 
+inspect each removed  sensor  for the possibility of breakage or fracture. Any  evidence of sensor 
+breakage will  be recorded and reported to FDA and the sensor company.
+Benefits: The subject may  not directly  benefit from being in this study;  however, their  
+participation may help to  advance automated insulin and glucagon delivery technology.
+Monitoring Entity:
+This investigation  will be monitored by the principal  investigator Joseph El Youssef, MD.  Dr.  El 
+Youssef has  no commercial interest in any  of the companies which  manufacture any of the 
+devices used  in this  study. 
+Data Collection :
+Protocol 2015.03  Version Date: 07/7/16
+9Subject privacy will be protected by using a  three  digit identifying number to code  study 
+documents. Study staff will record  data  required by the protocol onto  the Case Report Forms 
+(CRF). Case report forms (CRF) for  this study  will be entered  into REDCAP, a clinical research 
+electronic data repository housed at Oregon  Health  Science University and administered by the 
+Oregon Clinical  and Translation Research Institute (OCTRI).  Investigators and research 
+coordinator will  verify that the  procedures are conducted according  to the approved protocol. All 
+paper source  documents will be kept in a locked  cabinet for a minimum of  five years. Original,  
+completed CRF’s will be  kept with the PI in a designated repository. All data from  CRF’s will 
+subsequently be  entered into the authorized electronic REDCAP database
+Recording of Data:
+Investigators and staff  will record data  collected  during the clinical trial on the CRF’s. Case 
+report forms  (CRF) for  this study  will be  entered  into REDCAP, a clinical research electronic 
+data repository housed at  Oregon Health Science University and  administered  by the Oregon 
+Clinical and Translation Research Institute (OCTRI). The REDCAP CRFs will include:
+1.Screening  form
+2.Exercise Study form
+3.Phone Update Form
+4.Adverse Event form
+5.Serious Adverse Event form
+6.Concomitant  Medications
+The Principal Investigator  may authorize other personnel to  make entries  in the CRF.
+Data Analysis:
+All data will be  actively  streamed to the master controller on the Nexus 5 phone  and will be  
+analyzed online  with a currently described exercise detection  algorithm  5. The  algorithm  results 
+will be compared  to data from the  VO2 mask in order to  assess the sensitivity and  specificity  of 
+the algorithm, and may also be used  to improve upon the parameters of the  algorithm.  
+Additionally, glucose data from CGM devices will be  analyzed  for the rate of change of glucose 
+(in mg/dl/min) during exercise events in order  to help quantify this for different activities. Model  
+analysis with a  published non-linear model  of glucose regulation  6 will help  track  glucose  
+changes with respect to insulin delivered and activity  level.
+Monitoring Procedures:
+This protocol  is written  in accordance with the principles established by the  18th  World Medical  
+Assembly General Assembly (Helsinki,  1964) and amendments and  clarifications adopted by the 
+29th (Tokyo, 1975),  35th (Venice, 1983), 41st (Hong Kong,  1989), 48th (Somerset West, South 
+Africa, 1996), 52nd (Edinburgh, 2000), 53rd (Washington, 2002), 55th  (Tokyo, 2004), and 59th  
+(Seoul, 2008)  General  Assemblies.   The investigator  will ensure that the study described in this  
+protocol is  conducted in full conformance with those principles, the protocol, current FDA  
+regulations, ICH Good Clinical Practices (GCP)  guidelines, Good  Laboratory Practices (GLP) 
+guidelines, local ethical  and regulatory requirements, including the Federal Food, Drug and 
+Cosmetic Act, U.S. applicable Code of Federal Regulations  (title 21), any IEC  requirements 
+relative to clinical studies. 
+Protocol 2015.03  Version Date: 07/7/16
+10Should a conflict arise, the investigator  will follow whichever law or guideline affords the 
+greater protection to the  individual subject. The investigator will also ensure thorough familiarity  
+with the appropriate  use and potential risks  of use of all study devices as described in this  
+protocol, prior to the initiation of the study.
+Unanticipated problems  will be detected  by reviewing  descriptions  of known or foreseeable  
+adverse events and risks in the IRB-approved research protocol and the current IRB approved consent form,  any underlying disease  or conditions of the subject experiencing the adverse  event, 
+a careful assessment of whether the adverse event is related or possibly related to  the subject’s 
+participation in  the study. Triggers for reporting  unanticipated problems are  seizure, 
+hospitalization, death or any other  occurrence considered serious by the PI.
+Any adverse event and/or  unanticipated problem (UP)  will be reported to  the investigator 
+monitor immediately  by one of the investigators.  One  of the investigators will always be  on-site 
+during the studies  and will write up a description of the adverse event/unanticipated problem.  
+Deaths and potentially life-threatening events will be  reported to the IRB within seven calendar 
+days after the  PI learns of the event. All other UPs must be reported to the IRB within fifteen 
+calendar days.  The  report will be submitted to the IRB by the principal investigator or study 
+coordinator. All  summary of all UP's and adverse  events will be submitted with the continuing 
+review. 
+Confidentiality Procedures :
+To protect  confidentiality, standard  institutional practices will be followed as described in  the 
+OHSU Information  Security and Research  Data Resource Guide 
+(http://ozone.ohsu.edu/cc/sec/isg/res_sec.pdf) to maintain the confidentiality and security  of data 
+collected in this study.  Study staff will be trained  with regard to  these procedures. Upon 
+enrollment, subjects will be assigned with a  three-digit code that will be used instead  of their 
+name, medical record  number or other personally identifying information.  The key associating 
+the code and the  subject’s  personal identifying information will be restricted to  the PI  and study 
+staff. The key will be  kept  secure on a restricted OHSU  network  drive  in a limited access  folder.   
+Electronic files  for data analysis will contain  only the subject code.  Access to data/specimens is 
+restricted to study personnel and requires OHSU  ID/password authentication. Paper files will be 
+stored in locked  filing  cabinets  in restricted  access offices at OHSU.  Electronic  data  is stored on 
+restricted drives on the OHSU network  or stored on encrypted computers as well as on the web-
+accessible REDCap database housed on an OHSU secure server. User  passwords  will be  changed  
+every 3  months and a firewall will be enabled at all times.  After  the study,  source documents 
+will be maintained at the  participating clinical  center  (or offsite record storage facilities) 2 years 
+after a marketing application is approved  for our group's artificial pancreas/decision  support 
+device since  the data from this study will be included  in future software revisions or  
+discontinuance of pursuit of marketing approval.   At the end of the study, an  electronic  copy  of 
+the database  will be provided  on a CD for  long-term storage under lock.
+Protocol 2015.03  Version Date: 07/7/16
+11APPENDIX A
+
+Protocol 2015.03  Version Date: 07/7/16
+12REFERENCES 
+1. Castle JR, Engle JM, El Youssef J, et al.  Novel use of glucagon in  a closed-loop system  for 
+prevention of  hypoglycemia  in type  1 diabetes . Diabetes Care. 2010;33(6):1282-1287. doi: 
+10.2337/dc09-2254; 10.2337/dc09-2254. 
+2. Jacobs PG, El Youssef  J, Castle J, et  al. Automated control of an adaptive  bihormonal,  dual-
+sensor artificial  pancreas and evaluation during inpatient studies. IEEE Trans Biomed Eng. 
+2014;61(10):2569-2581. doi: 10.1109/TBME.2014.2323248 [doi]. 
+3. Jacobs PG, El Youssef  J, Castle JR, et al.  Development of a  fully automated  closed loop  
+artificial pancreas control  system with dual  pump  delivery  of insulin and  glucagon. Conf Proc 
+IEEE Eng Med Biol Soc . 2011;2011:397-400. doi: 10.1109/IEMBS.2011.6090127; 
+10.1109/IEMBS.2011.6090127. 
+4. Jacobs PG, Resalat N, El Youssef J, et al. Incorporating an Exercise Detection,  Grading, and 
+Hormone Dosing Algorithm  Into the  Artificial  Pancreas Using  Accelerometry  and Heart Rate. J 
+Diabetes Sci  Technol. 2015;9(6):1175-1184.  doi: 10.1177/1932296815609371 [doi]. 
+5. Zakeri I, Adolph AL, Puyau MR, Vohra FA, Butte NF. Application of cross-sectional time 
+series modeling for the prediction of energy expenditure  from heart rate and  accelerometry. J 
+Appl Physiol  (1985) . 2008;104(6):1665-1673. doi: 10.1152/japplphysiol.01163.2007 [doi]. 
+6. Hovorka R, Canonico  V, Chassin LJ, et al. Nonlinear model predictive control  of glucose  
+concentration in subjects with type 1 diabetes. Physiol  Meas . 2004;25(4):905-920. 
+Protocol 2015.03  Version Date: 07/7/16
+13

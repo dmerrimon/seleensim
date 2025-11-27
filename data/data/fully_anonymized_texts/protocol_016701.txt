@@ -1,0 +1,170 @@
+  1  
+ Study Protocol  
+ 
+TITLE:  The perceptual experience of Argus II users  
+ PROTOCOL NO.:  IRB Protocol #20213190  
+ CLINICALTRIALS.GOV ID : [STUDY_ID_REMOVED] 
+ SPONSOR:  National Institutes of Health (NIH)  
+ INVESTIGATOR:  Michael Beyeler, PhD  
+ [ADDRESS_709929] population:  25 – 80  
+Anticipated number of subjects : 15 
+Subjects are blind individuals whose vision was restored with the Argus II Retinal Prosthesis System (Second Sight Medical Products, https://www.secondsight.com). Argus II is approved for adults of age 25 and up with severe to profound outer retinal degeneration, some residual light perception or the ability of the retina to respond to electrical stimulation, and a history of useful form vision. 
+We do not control the patient population -  patient selection is performed by [CONTACT_461095], and 
+eye surgery is performed by [CONTACT_543703], Europe, and parts of Asia. Retinal prosthesis patients are extremely rare (~500 patients worldwide).  
+Inclusion and exclusion criteria:  
+We will exclude retinal prosthesis patients for whom ophthalmic fundus images and optical coherence tomography (OCT) images show that they will be unable to perform the necessary behavioral tests (many individual differences in the quality of vision produced by [CONTACT_543704]/or the location of the prosthetic implant). In addition, subjects will be excluded if they cannot perform the behavioral tests for any other reason (e.g. cognitive difficulties). 
+Recruitment method  
+All patients will be recruited from our participating sites in the US: Wilmer Eye Institute at Johns Hopkins University (PI: [INVESTIGATOR_543696]), W. K. Kellogg Eye Center at University of Michigan, Ann Arbor (PI: [INVESTIGATOR_543697]), and University of Minnesota Health Ophthamology (Eye) Clinic  
+(PI: [INVESTIGATOR_543698]).  
+Each of these sites provides care for 8 -15 Argus II patients. A member of the care team will tell 
+the patient about our study using our provided talking points (see attachment) either in person during their next visit to the clinic or on the phone. Should the patient decide to participate in our study, the member of the care team will schedule a visit at the clinic.  
+  3  
+ Location 
+Coordinating / administrative site:  
+• University of [LOCATION_004], Santa Barbara (UCSB):  This is the PI’s (Michael Beyeler’s) 
+institution. No human subject research will take place at UCSB. No PII/PHI data will be 
+shared with UCSB. The PI’s team will design the study and analyze the de -identified data 
+collected at the participating sites.  
+Participating sites:  
+Human subjects research will be performed at the participating sites  in a clinical testing suite of 
+the local eye clinic:  
+• Wilmer Eye Institute, Johns Hopkins University . PI: [INVESTIGATOR_543696]  
+• W. K. Kellogg Eye Center at University of Michigan, Ann Arbor. PI: [INVESTIGATOR_543697]  
+• University of Minnesota Health Ophthamology (Eye) Clinic. PI: [INVESTIGATOR_543699], and co -ordination with the administrative staff member responsible for managing 
+the ophthalmology clinic. 
+Identifiable data is used only for recruiting and analyzing ophthalmic records of the patient. Each 
+collaborating site is already set up to store identifiable data of their respective patients. No identifiable patient data will be shared across sites.  
+Purpose  
+Objectives . Our goal is to understand and computationally model the perceptual experiences of 
+blind individuals whose vision was restored with retinal prostheses.  
+Rationale. Degenerative retinal diseases such as retinitis pi[INVESTIGATOR_543700] 10 million people worldwide. Analogous to cochlear implants, retinal prostheses electrically stimulate surviving retinal cells in order to evoke neuronal responses that are interpreted by [CONTACT_543705]. 
+However, clinical experience with existing retinal prostheses (FDA approved in 2013 under the 
+human device exemption, ~500 implantees) has made it apparent that the vision provided by [CONTACT_543706]. Interactions between implant electronics and the underlying neurophysiology lead to nontrivial perceptual distortions that can severely limit the quality of the generated visual experience. Understanding the causes of these distortions and finding ways to alleviate them will be critically important to the success of this device technology. 
+Hypotheses.  In our prior research, we developed a model that can predict the shape of the visual 
+percepts that implantees see when a single electrode in the array is stimulated 
+  4  
+ (https://doi.org/10.1038/s41598- 019-[ZIP_CODE]- 4). However, it is not clear whether this model will 
+generalize to more complex stimulation patterns. We hypothesize that the shape and number of 
+percepts elicited by [CONTACT_7163]- electrode stimulation depends on the geometric arrangement of 
+activated nerve fiber bundles in the retina. Our model predicts that subjects should see a single phosphene when two activated electrodes stimulate the same optic nerve fiber bundle, and two phosphenes when the two electrodes stimulate distinct nerve fiber bundle.  
+We further hypothesize that object recognition can be improved by a stimulation strategy that minimizes accidental stimulation of passing nerve fiber bundles in the retina. We will use our computational model to predict which electrodes should be activated to produce a desired percept, and test whether this optimized stimulation strategy can improve behavioral performance.  
+The purpose of this research is to further our understanding of the visual experience of Argus II users. Clinical experience with existing devices makes it clear that the provided artificial vision differs substantially from normal sight. In the research proposed here, we will combine human behavioral measurements and computational modeling to try to develop better stimulation protocols for retinal implants.  
+Procedures  
+Overview.  Our experiments are designed to quantify the perceptual experiences of retinal 
+prosthesis patients. We will produce visual percepts in patients either by [CONTACT_543707] (using FDA -approved pulse trains) or by [CONTACT_543708] a computer or projector 
+screen and using standard FDA -approved stimulation protocols (as is standard for their devices) 
+to convert the computer or projector screen image into pulse trains on their electrodes. All stimulation protocols will be FDA -approved.  
+Our experiments will follow standard procedures for collecting behavioral data on retinal prosthesis patients. Testing will be carried out within the ophthalmology department of our participating sites, in the clinical testing suite of the ophthalmological surgeon who helped with recruiting the patient. Use of the suite will require the permission of the ophthalmological surgeon who aids with recruitment, and co- ordination with the administrative staff member 
+responsible for managing the ophthalmology clinic. 
+Methods  
+Retinal prosthesis setup The setup for using the Argus II Retinal Prosthesis System (Second Sight Medical Products; 
+Sylmar, CA) is shown in Figure 1 below . The system consists of a 6x10 microelectrode array 
+implanted epi[INVESTIGATOR_543701], a pair of glasses with a small embedded camera, and a video processing unit (VPU). Stimuli are delivered to the retina as a series of electrical pulse trains (square -wave, charge -balanced) via the various electrodes in the array. The chip is 
+powered wirelessly by [CONTACT_543709]. Safeguards to ensure only 
+  [ADDRESS_709930] in both software (in the VPU) and hardware form (in 
+the electronics of the implant).  
+ 
+Figure 1: Argus II setup  
+The setup can be operated in two different modes:  
+1) 'Camera mode': Video captured by [CONTACT_543710] (attached 
+figure, Panel A), which converts incoming frames into an FDA -approved stimulation protocol 
+that is relayed wirelessly to the implant (Panel B). This is how patients use the device in everyday life.  
+2) 'Direct stimulation mode': An external computer is used to specify the pulse trains applied to each electrode (e.g., a 1s 10 Hz cathodic pulse train, with a current amplitude of 100 microAmps and a pulse width of 45 microseconds to Electrode 12) using Second Sight's software suite. 
+Specified stimuli are then sent to the VPU for  safety checking, and then delivered to the implant. 
+This mode can only be used by [CONTACT_543711]. 
+Stimuli  
+We will be using the prosthesis setup in both camera mode and direct stimulation mode. 
+Stimuli will be biphasic square -wave electrical pulses of a given pulse duration, amplitude, and 
+inter-phase gap, or  a train of pulses with a given frequency and stimulus duration. None of these 
+stimuli will elicit emotional responses  or be aversive in any way.  
+As mentioned above, the VPU contains software that makes sure that all pulse trains are within 
+FDA -approved safety limits. For example, pulses must be charge -balanced (equal 
+anodic/cathodic charge; so that there is no lasting residual net current in the tissue) and must 
+  [ADDRESS_709931] a charge density below 35 microCoulombs/cm2 (FDA  specification thought to be safe for 
+long- term stimulation).  
+There are two stages in the software that ensure that these pulse trains must remain within FDA 
+limits: (1) every  app in the software suite is based on an FDA approved application programming 
+interface (API) that carries out  checks and will “gracefully error” if the specified pulse trains are 
+outside acceptable bounds, (2) the VPU's  firmware is programmed to only deliver FDA approved 
+pulses. 
+The frequency of the pulse train and the current amplitude of the pulse train is not actually a 
+critical safety issue,  since the electronic/neural interface is robust to extremely high rates of 
+stimulation and high current levels. However, high frequency pulse trains or high amplitude pulse trains can produce discomfort in patients (analogous  to going from a dark movie theater to 
+direct sunlight) due to inducing large -scale neuronal firing. We will normally  be focusing on 
+pulse train frequencies/amplitudes that are commonly used by [CONTACT_543712].  
+If we use parameters that might be expected to produce a more intense neural response (and therefore have the  potential to cause discomfort) we will always introduce them in a step -wise 
+manner (e.g., by [CONTACT_543713]) while checking that the sensation is not ‘uncomfortably bright’, and we will immediately decrease the intensity of stimulation if patients report that the sensation approaches discomfort.  
+Tasks  
+Subjects will be asked to make behavioral judgments in response to single -electrode or multi-
+electrode stimulation. Examples include detecting a stimulus (‘did you see a light on that trial’), reporting size by [CONTACT_543714] a touch screen, reporting shape by [CONTACT_20683] a tactile object of similar shape, or identifying what letter has been presented.  
+We will use standard protocols for collecting behavioral data. The subject will either use verbal report, will draw shapes on a touch screen, or will use the keyboard or keypad attached to a computer as a means of reporting about the stimuli. Both patient response and reaction time will be recorded.  
+Subjects will sit in a comfortable chair approximately 100 cm from either a computer monitor or a back -projection screen onto which an image is projected using a video projector. Auditory 
+stimuli may be used to cue the beginning of trials/response period. These auditory cues will be at comfortable loudness levels. 
+Subjects are encouraged to take breaks as often as needed (they may leave the testing room). We 
+use various experimental techniques including: (1) Same -different – e.g. subjects are shown two 
+percepts and are asked if they are the same or different. (2) Method of adjustment – e.g. subjects are asked to adjust a display/stimulation intensity until a percept is barely visible, (3) 2 -
+alternative -forced choice – e.g. subjects will be presented with two stimuli and asked which of 
+the two stimuli is brighter (4) Identification – subjects are asked to identify which letter was presented.  
+  7  
+ Data collection  
+At the participating sites, ophthalmological records showing the position of the implant in the 
+eye (fundus photographs) and the height of the implant from the retinal surface (OCT) will be obtained to screen potential subjects. This is necessary because in a significant number of subjects the implant is poorly position and the patient will not be able to carry out the required behavioral tests. Prescreening avoids frustration on the part of the patient, and unnecessarily expense (since these patients are not local). If we choose not to enroll a patient or the patient decides not to enroll these data will be immediately destroyed.  
+Many individual differences in the quality of vision produced by [CONTACT_543704]/or the location of the prosthetic implant. At the participating sites, fundus and OCT images will be used to estimate the retinal location of the implant. This extracted information will be shared with the coordinating site, which will use these values to inform their computational models.  
+In some cases, as well as measuring accuracy, we will also measure improvement with practice by [CONTACT_543715] (up to 5 sessions, each carried out on different testing days).  
+Importantly, identifiable data is used only for recruiting and analyzing ophthalmic records of the patient at each participating site. Each participating site is already set up to store identifiable data 
+of their respective patients. No identifiable patient data will be shared across sites.  
+The coordinating site will only have access to de -identifiable behavioral results that include 
+phosphene drawings, brightness ratings, behavioral judgments, response times, etc.  
+ 
+Compensation 
+Subjects will be compensated at a rate of $20/hour, including travel time. Should a participant withdraw, they will be paid a pro- rated amount per fifteen minutes that they participated in the 
+experiment.  
+  8  
+ Risks  
+Psychological  
+Risk: The main risk in behavioral experiments is fatigue or possible boredom. 
+Safeguard:  If subjects report any of these experiences we will ask the subject to take a break 
+from the experiment until they feel better, and if necessary discontinue the session. 
+Physical  
+Risk: There is also a small risk that subjects may get temporary headaches or feel temporary 
+nausea. Patients may experience uncomfortably bright flashes of light. Safeguard:  If subjects report any of these experiences we will ask the subject to take a break 
+from the experiment until they feel better, and if necessary discontinue the session. If we use 
+parameters that might be expected to produce a more intense neural response (and therefore have the potential to cause discomfort) we will always introduce them in a step -wise manner (e.g., by 
+[CONTACT_543713]) while checking that the sensation is not ‘uncomfortably bright’, and we will immediately decrease the intensity of stimulation if patients report that the sensation approaches discomfort. The PI [INVESTIGATOR_543702], and will train all personnel on these protocols.  
+Confidentality/Privacy 
+Risk: Since all our patients are blind, and retinal prosthesis patients are extremely rare, it may be 
+possible to identify individual subjects based on their ophthalmic records.  
+Safeguard:  Private and medical health records will only be used by [CONTACT_543716]. All information shared with the coordinating site 
+(for the purpose of data analysis and computational modeling) will be de -identified.  
+Risk: The IRS requires UCSB to report compensation in excess of $[ADDRESS_709932]:  Social security numbers will exclusively be used for the Form 1099- Misc for Internal 
+Revenue Service (IRS) tax -reporting purposes , and not be associated with the research data.  
+Data Storage  
+Data with identifier information is stored exclusively at the participating site as part of the patient’s medical health record, and is managed by [CONTACT_102]’s physician. Importantly, identifiable data will not be shared across sites, which includes the coordinating site. 
+If necessary, social security numbers will be stored on a HIPAA -compliant UCSB Box account 
+(cloud storage) and will be deleted after the study ends. 
+  9  
+ Publications will only present de -identified data. We plan to make this data available to 
+academic researchers interested in using the data for either domain or methodological research.  
+Fully anonymized data will be committed to an open- source neuroscience database. Data that 
+cannot be fully anonymized will not up committed to that database.  
+Autonomy  
+Risk:  Subjects will be compensated at a rate of $20/hour, including travel time. Should a 
+participant withdraw, they will be paid a pro- rated amount per fifteen minutes that they 
+participated in the experiment.  
+Safeguard: All participants will receive the same payment regardless of how they are recruited. 
+There will be no deception.  
+Other 
+Risk: There are minimal to no risks of harm involved in stimulation of the prosthetic devices as 
+long as standard stimulation protocols are followed. 
+Safeguard:  The prosthetic devices are designed with multiple safeguards to ensure that only safe 
+stimulation protocols can be used. In specific, there are two stages in the software that ensure 
+that stimuli remain within FDA limits: (1) every app in the software suite is based on an FDA 
+approved application programming interface (API) that carries out checks and will "gracefully error" if the specified stimuli are outside acceptable bounds, (2) the VPU's firmware is programmed to only deliver FDA approved pulses. We will use only FDA -approved stimuli. 
+Consent process  
+Potential participants will be given the consent form in electronic format so it processed with text-to-speech technology. During their visit, before we start the experiment, we will read aloud 
+the consent form in its entirety and answer any questions. After all questions are answered and the participant feels comfortable, he or she will be asked to sign if they would like to participate.  
+Typi[INVESTIGATOR_897], a subject will be accommodated by a sighted person of trust, who will co- sign the 
+consent as an impartial witness. Otherwise a member of the patient's care team or a member of our research team will co -sign as impartial witness.  
+Once all parties have signed the consent form, the experiment will start. If the participant is not comfortable, they will be free to leave.  
+ 
+    

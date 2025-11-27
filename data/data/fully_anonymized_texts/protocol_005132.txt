@@ -1,0 +1,1738 @@
+Clinical Development  
+LDK378 (Ceritinib) 
+LDK378A2205 / 
+[STUDY_ID_REMOVED]
+A Phase II, multi-center, open-label, five-arm study to 
+evaluate the efficacy and safety of oral ceritinib treatment 
+for pa tients with ALK -positive non -small cell lung cancer 
+(NSCLC ) metastatic t o the br ain a nd/or to leptomeninges 
+RAP Module 3 (SAP) – Detaile d Statistical M ethodology 
+Author:  , Trial Statistician; ,  Program 
+Statistician ;  CP Statistician; , 
+Biomarker Statistician   
+Document type:  RAP Documentation  
+Document status:  Amendment 1 .0 
+Release date:  11-Mar-2019
+Number of pages:  56 
+Property of [COMPANY_001]  
+Confidential  
+May not be used, divulged, published or otherwise disclosed  
+without the consent of [COMPANY_001]  
+
+[COMPANY_001]  Confidential  Page 2 
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  Document History  – Changes compared to previous version of RAP module 3.  
+Version  Date  Changes  
+Draft 1.0  05-Aug-2015 Original version  
+Amendment 1 .0 11-Mar-2019 Section 1:  
+• Standard languages added to clarify that the SAP 
+should be finalized before database lock  
+Section 1.1: 
+• Details added describing the study design with regards to each study arm 
+• Timeline for primary and final analysis updated to align with protocol amendment 6 
+Section 1.2: 
+• Details added for the definition of primary endpoint in Section 1.2.1 
+• Details and clarification added for other secondary objectives for endpoints and study arms in Section 1.2.2 
+Section 2.1: 
+• Study arms used with regard to the general presentation of descriptive summaries updated 
+• Subgroup analysis removed  
+Section 2.2: 
+• Per-protocol set was removed 
+•  
+Section 2.3: 
+• By [CONTACT_782854] 
+• Details of summaries of diagnosis and extent of cancer, medical history, and prior anti- cancer 
+therapy were updated to align with eCRF 
+Section 2.4: 
+• Summary of major protocol deviations leading to exclusion from PPS removed 
+Section 2.5: 
+• By [CONTACT_782854] 
+• Details of summaries of disposition were updated to align with eCRF  
+Section 2.6:  
+
+[COMPANY_001]  Confidential  Page 3 
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  Version  Date  Changes  
+• Baseline definitions for general efficacy and safety 
+evaluations moved from Section 2.8.2 
+• Exposure by [CONTACT_782854] 
+• Kaplan -Meier analysis for dose reduction or 
+interruption removed 
+Section 2.7: 
+• Definition and derivation algorithm of best overall response moved from Section [IP_ADDRESS] to Section 2.7.1. The cut-off for SD too early and PD t oo late 
+was updated based on tumor assessment schedule. 
+• Subgroup analysis and PPS analysis were removed from Section 2.7.4 
+Section 2.8: 
+• Description of secondary efficacy endpoints moved from Section 2.8.1 to Section [IP_ADDRESS] 
+• Table 2 -1 updated to remove supportive analysis 
+and subgroup analysis. IDCR and EDCR at week 8 and week 16 added. 
+• PPS analysis and subgroup analysis removed from Section [IP_ADDRESS]  
+• OIRR, TTIR and DOIR analyses based on all patients added in Section [IP_ADDRESS] 
+• IDCR and EDCR at week 24 updated to at week 8 and week 16. Algorithms on derivation of IDCR and EDCR at 8 and 16 weeks added. Similar analyses based on patients with measurable brain metastases added for IDCR in Section [IP_ADDRESS] 
+• Methods used for TTIR, TTER and TTR analyses chang ed from KM method to descriptive summary 
+in Section [IP_ADDRESS] 
+• The strategy of handling start of new anticancer therapy updated from censoring to the new standard of ignoring for DOIR, DOER, DOR and PFS analyses in Section [IP_ADDRESS]. 
+• Supportive and PPS analyses for ORR and DCR per BIRC removed in Section [IP_ADDRESS] 
+• Gap analyses removed from Section [IP_ADDRESS] 
+• On treatment deaths, by [CONTACT_183008], AESI leading to study drug discontinuation, two safety disclosure tables added and subgroup 
+analysis for AEs removed in Section 2.8.2  
+[COMPANY_001]  Confidential  Page 4 
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  Version  Date  Changes  
+• Lab parameter updated to include RBC and direct 
+bilirubin ; Urinalysis listings were  removed; 
+Categories for liver function tests updated in 
+Section 2.8.2 
+• The denominator used for the percentage calculation for ECG abnormality was further clarified ; respi[INVESTIGATOR_782839]; Clarification for the analysis of WHO PS added in Section [IP_ADDRESS] 
+• 
+ 
+• 
+ 
+• Sample size calculation and power analysis updated to align with protocol amendment in Section 2.9 and Section 2.10 
+• A preliminary interim analysis for arm 5 added in Section 2.11 
+Section 3: 
+• Table 3 added to include the changes to protocol specified analyses  
+Section 4:  
+• Patient classification into analysis sets  removed  
+• Further details were added for the derivation of last contact [CONTACT_782855] 4.2 
+• Age derivation added as Section 4.4 
+• “New anticancer therapy will defined for whole body, intracranial, and extracranial separately” added ; PFS censoring reasons updated in Section 
+4.6.1. 
+• Details of PROC LIFETEST added in Section 
+4.6.4 
+• Baseline ECG definition updated in Section 4.7 
+• Imputation rule for death date updated in Section 
+4.8.6 
+• Imputation rule for concomitant medication date added as Section 4.8.2 and imputation i ncomplete 
+dates for disease progression prior to start of study 
+drug added as Section 4.8.8  
+
+[COMPANY_001]  Confidential  Page 5 
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.[ADDRESS_1076588] of tables  ........................................................................................................................ 7 
+1 Introduction ......................................................................................................................... 8 
+1.1 Study design............................................................................................................. 8 
+1.2 Objectives  ................................................................................................................ 9 
+1.2.1  Primary objective  .................................................................................... 9 
+1.2.2  Key secondary and other secondary objectives ...................................... 9 
+1.2.3  Exploratory objectives .......................................................................... 10 
+2 Statistical methods  ............................................................................................................. 10 
+2.1 Data analysis  .......................................................................................................... 11 
+2.2 Analysis sets .......................................................................................................... 11 
+2.3 Patient demographics and other baseline characteristics  ....................................... 12 
+2.4 Protocol deviations ................................................................................................ 14 
+2.5 Patient disposition  .................................................................................................. 14 
+2.6 Treatments (study drug, concomitant therapi[INVESTIGATOR_014], compliance) ............................... 15 
+2.7 Analysis of the primary variable ............................................................................ 18 
+2.7.1  Variable  ................................................................................................. 18 
+2.7.2  Statistical hypothesis, model, and method of analysis .......................... 19 
+2.7.3  Handling of missing values/censoring/discontinuations ....................... [ADDRESS_1076589] date  .................................................................................................... 38 
+
+[COMPANY_001]  Confidential  Page 6 
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.[ADDRESS_1076590] guidelines ................................................. 40 
+4.6.2  Implementation of RANO guidelines (protocol Appendix 3)............... [ADDRESS_1076591] 
+recurrence/progression and date of most recent recurrence .................. [ADDRESS_1076592] dose of study drug ......................................... 54 
+4.8.8  Incomplete dates for disease progression prior to start of study drug ... 54 
+  55 
+5 Reference:  .......................................................................................................................... 55 
+ 
+  
+
+[COMPANY_001]  Confidential  Page 7 
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.[ADDRESS_1076593] of tables 
+Document History – Changes compared to previous version of RAP module 3. ...................... 2 
+Table 1 -1 Allocation into Study Arms based on prior radiation to brain 
+(yes/no) and prior treatment with ALK inhibitor (yes/no) ...................... [ADDRESS_1076594] binomial 95% confidence intervals for various observed ORRs  ..................................................................................................... [ADDRESS_1076595] binomial 95% confidence intervals for various observed DCRs  ..................................................................................................... [ADDRESS_1076596] binomial 95% confidence intervals for various observed OIRRs  .................................................................................................... 36
+ 
+Table 3 -1 Changes to protocol specified analysis or descriptions and rationale ... 37 
+Table 4 -1 Overall lesion re sponse at each assessment: patients with non -
+target disease only  ................................................................................. 42 
+Table 4 -2 Inclusion/exclusion of assessments used in waterfall graph ................. 43 
+Table 4 -3 Summary of the RANO response criteria ............................................. 46 
+Table 4 -4 Sources for overall lesion response ....................................................... 46 
+Table 4 -5 AE/treatment date abbreviations  ........................................................... 51 
+Table 4 -6 AE partial date imputation algorithm .................................................... 51 
+Table 4 -7 AE/treatment date relations hip and imputation legend ......................... 52 
+Table 4 -8 AE imputation example scenarios ......................................................... 52 
+ 
+ 
+[COMPANY_001]  Confidential  Page 8 
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  1 Introduction 
+This Statistical Analysis Plan  (SAP)  describes the planned statistical methods for all safety , 
+efficacy , ,  analyses  for study LDK378A2205 final clinical study 
+report .  
+The content of this SAP is based on LDK378A2205 study protocol Amendment 6. All decisions 
+regarding final analysis, as defined in the SAP document, have been made prior to database 
+lock of the study data. 
+1.1 Study design 
+This is a phase II, multi -center, open -label, five -arm study in which the efficacy and safety of 
+oral ceritinib treatment will be assessed in patients with NSCLC metastatic to the brain and/or to leptomeninges harboring a n ALK rearrangement using the FDA approved Vysis ALK Break 
+Apart FISH Probe Kit (Abbott Molecular Inc.) test and scoring algorithm (including positivity criteria). The study will enroll approximately 160 patients globally . 
+Patients with ALK -positive NSCLC and active metastases to the brain and/or to leptomeninges 
+will be included in this study. Patients without evidence of leptomeningeal carcinomatosis (LC) 
+will be allocated  into 1 of the 4 arms taking into account the patient’s history of prior therapy: 
+prior radiation therapy (whole brain or stereotactic radiation therapy) to the brain (yes/no) and 
+prior treatment with an ALK  inhibitor (ALKi)  (yes/no) ( Table 1 -1). The allocation of patients 
+into the five study arms are described below.  
+Table 1-1 Allocation into Study Arms based on prior radiation to brain (yes/no) and prior treatment with ALK inhibitor (yes/no)  
+ Prior Radiation to the b rain: 
+YES  Prior Radiation to the brain: 
+NO 
+Prior treatment with a ALKi1: YES  Arm 1  Arm 2  
+Prior treatment with a ALKi: NO  Arm 3  Arm 4  
+Leptomeningeal disease1 Arm 5  
+1Previous treatment with ALK inhibitors other than crizotinib is not allowed in Arms 1, 2 and 5.  
+The description of patients in each of the five study arms is as follows: 
+• Arm 1 will include patients with metastases in the brain without evidence of 
+leptomeningeal carcinomatosis, previously treated with radiation to the brain and with prior exposure to an ALKi. 
+• Arm 2 will include patients with metastases in the brain without evidence of leptomeningeal carcinomatosis, previously untreated with radiation to the brain but with prior exposure to an ALKi.  
+• Arm 3  will include patients with metastases in the brain without evidence of 
+leptomeningeal carcinomatosis, previously treated with radiation to the brain but with no prior exposure to an ALKi.  
+• Arm 4  will include patients with metastases in the brain without evidence of 
+leptomeningeal carcinomatosis, previously untreated with radiation to the brain and with no prior exposure to an ALKi . 
+
+[COMPANY_001]  Confidential  Page 9 
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  • Arm 5 will include any patients with leptomeningeal carcinomatosis with or without 
+evidence of active lesion at the baseline Gadolinium -enhanced brain MRI. 
+All patients will receive the same treatment regimen regardless of the arm to which they are allocated. Treatment with ceritinib will continue until the patient experiences disease 
+progression (in the brain, outside of the brain or both) as determined  by t he investigator 
+according to RECIST 1.1, unacceptable toxicity that precludes further treatment, pregnancy, start of a new anticancer therapy, discontinues treatment at the discretion of the patient or investigator, lost to follow -up, death, or study is terminated by [CONTACT_1034]. 
+Tumor response will be evaluated starting from the first day of treatment with ceritinib until the 
+time of disease progression according to RECIST 1.[ADDRESS_1076597] discontinued earlier respectively. The study will end when both of the following conditions are met: 
+1. At least [ADDRESS_1076598] 75% of patients have died, have been lost to follow-up, or have withdrawn 
+consent for survival follow-up, or  the last patient will be able to enter into a separate 
+rollover study and/or other options for continued treatment, whichever comes first. 
+If the end of study criteria is met before the primary analy sis is conducted, a single final analysis 
+and study report may be performed. If the end of the study criteria is not met by [CONTACT_782856], a final CSR will be produced reporting all available data collected up to last patient last visit (LPLV) including the additional study data collected after the primary analysis . 
+1.2 Objectives 
+1.2.1  Primary o bjective  
+The primary objective is to evaluate the antitumor activity of ceritinib in patients with ALK -
+positive NSCLC metastatic to the brain and/or to leptomeninges based on investigator assessment per RECIST 1.1 . The primary endpoint is the overa ll response rate (ORR)  defined 
+as the proportion of patients with a best overall confirmed response of complete response (CR) or partial respons e (PR) in the whole body as assessed per RECIST 1.1 by [CONTACT_1275]. 
+1.2.2  Key s econdary and other secondary o bjectives  
+The key secondary objective is to evaluate Disease Control Rate (DCR)  in patients with ALK -
+positive NSCLC metastatic to the brain and/or to leptomeninges  based on investigator 
+assessment per RECIST 1.[ADDRESS_1076599] 1.1. 
+[COMPANY_001]  Confidential  Page 10  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  Other secondary objectives are: 
+• To evaluate intracranial tumor -response related endpoints (OIRR, IDCR, TTIR and DOIR)   
+as asses sed by [CONTACT_782857] (BIRC) (using 
+modified RECI ST 1.1 criteria)  
+• To evaluate extracranial tumor -response related endpoints (OERR, EDCR, TTER and 
+DOER) as assessed by [CONTACT_782858] (using RECIST 1.1 criteria) 
+• To evaluate whole body tumor -response related endpoints as assessed by [CONTACT_431]  (TTR, 
+DOR and PFS)  and BIRC (ORR, DCR, TTR, DOR and PFS)  (using RECIST 1.1 criteria) 
+• To evaluate overall survival (OS)  in patient s with ALK- positive NSCLC metastatic to the 
+brain and/or to leptomeninges  
+• To evaluate safety  in patient s with ALK- positive NSCLC metastatic to the brain and/or to 
+leptomeninges  
+•  
+ 
+1.2.3  Exploratory objectives 
+• To evaluate intracranial endpoints for patients with measurable  brain metastases at baseline 
+in Arms 1 to 4 (OIRR, TTIR and DOIR) and for patients with active brain lesions at baseline 
+in Arms 1 to 4 (IDCR)  using the Response Assessment in Neuro- Oncology (RANO) criteria 
+for high grade gliomas ( Wen et al 2010 ) by [CONTACT_782858]. 
+[ADDRESS_1076600] tense when imported into the CSR ; references to Section 4 
+of the RAP, where additional details are provided for programming implementation, may be 
+removed in the CSR.  
+In what follows, study drug refers to LDK378 (certinib) . 
+
+[COMPANY_001]  Confidential  Page 11  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  2.1 Data analysis  
+Data will be  analyzed by [CONTACT_782859] 10 of the LDK378A2205 protocol, which will 
+be available in Appendix 16.1.1 of the Clinical Study Report ( CSR) . Important information is 
+given in the following sections and details are provided, as applicable, in Section 4 from which 
+Appendix 16.1.9 of the CSR will be extracted .  
+SAS® version 9.4 (or later version if available at time of database lock) will be use d in all 
+analyses.  
+Data from all patients who signed main informed consent in centers that participate in this study 
+will be used in the  analysis . Data collected after withdrawal of informed consent will not be 
+reported. D ue to expected small size of enrollment at individual centers, no center effect will 
+be assessed . Each  analysis will use all data in  the database up to the analysis cutoff date, 
+determined prior to database lock . Data collected after patients’ withdrawal of informed consent 
+for furthe r participation in the study will not be reported (except for death date , which might be 
+obtained from public records). 
+Section 4.1 provides further details regarding data to be included in the analyses.  
+General presentation of descriptive summaries  
+Qualitative data  (e.g., gender, race) will be summarized by [CONTACT_169770] s and percentages. 
+Percentages will be calculated using the number of patients in the relevant population or 
+subgroup, as the denominator.   
+Continuous data (e.g., age, body weight) will be summarized by [CONTACT_64261] (i.e. mean, standard deviation, median, minimum, and maximum). 
+All baseline characteristics , efficacy  (except intracranial endpoints by [CONTACT_95733] ) and safety 
+analyses will be presented by [CONTACT_30157]  (Arm 1, Arm  2, Arm 3, Arm 4 and Arm 5)  and for all 
+patients.  
+In addition, all efficacy endpoints, except intracranial endpoints by [CONTACT_95733] , will be presented 
+by [CONTACT_782860] (Arms 1+ 3 vs. Arm s 2+4) and by [CONTACT_782861] (Arms 
+1+2 vs. Arms 3+4)  and overall, for patients from Arms [ADDRESS_1076601] signed a study informed consent will be included in the 
+analysis data sets.  
+Full Analysis Set  
+The Full Analysis Set (FAS) consists of all patients who received at least one dose of study drug.  
+[COMPANY_001]  Confidential  Page 12  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  The FAS will be used for summaries of baseline characteristics and all efficacy analyses , unless 
+otherwise specified.  
+The following endpoints will be analyzed on a subset of  FAS :  
+Patients with measurable brain metastases: Overall intracranial response rate (OIRR), Time to 
+intracranial tumor response (TTIR) and Duration of intracranial response (DOIR)  
+Safety Set  
+The Safety Set consists of all patients who received at least one dose of study drug. All safety 
+data will be analyzed using the Safety Set . The FAS and Safety Set  in this study are identical.  
+2.3 Patient demographics and other baseline characteristics 
+The FAS will be used for all patient demographic and baseline characteristic summaries and 
+listings , unless otherwise specified. Summaries will be produced by [CONTACT_782862]. Listings will be produced by [CONTACT_30157]. 
+
+[COMPANY_001]  Confidential  Page 13  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.[ADDRESS_1076602] ics data will be summarized by [CONTACT_782863] . Categorical data (e.g. gender, race, ethnicity, WHO performance status , age 
+groups: <65, 65- <85, ≥85 years,  smoking history) will be summarized by [CONTACT_782864]. Continuous da ta (e.g. age, weight, hei ght) will be summarized by [CONTACT_84814] (as defined in  Section 2.1).  
+Diagnosis and extent of cancer  
+Descriptive statistics and frequency counts and percentages will be tabulated  by [CONTACT_30157] ,  as 
+appropriate, for diagnosis and extent of cancer based on the data collected on the electronic 
+Case Report Form (eCRF) including primary site of cancer, predominant histology/cytology, histological grade, time  (in months)  from  initial diagnosis of primary site, stage at initial 
+diagnosis, stage at  time of study entry, time (in months)  from initial diagnosis to first 
+recurrence/progression, time  (in months)  from  most recent relapse/progression, metastatic sites  
+of cancer , number of  metastatic sites  of cancer , types of intracranial and extracranial lesions 
+(target and non -target lesions) at baseline  based on investigator and BIRC assessment , 
+Intracranial lesion (target and non- target) location at baseline , disease burden  (intracrania l, 
+extracranial and whole body)  at baseline for target lesion  based on investigator and BIRC  (based 
+on the data collected on the RECIST eCRF  page).  
+Medical history  
+Medical history and ongoing conditions, including cancer -related conditions and symptoms, 
+will be summarized and listed  by [CONTACT_30157]. Separate summaries will be presented for ongoing 
+and historical medical conditions.  The summaries will be presented by [CONTACT_782865] , in each study arm and all patients . Medical history  and current medical 
+conditions are coded using the Medical Dictionary for Regulatory A ctivities (MedDRA ) 
+terminology. 
+Prior anti -cancer therapy  
+Prior anti -neoplastic (anti- cancer) therapy will be listed in three separate categories : 1. 
+medications, 2. radiotherapy, and 3. surgery.   
+The number and percentage of patients who received any prior anti -neoplastic medications, 
+prior antineoplastic therapy Crizotinib, prior anti -neoplastic radiotherapy, prior anti -neoplastic 
+radiotherapy t o the brain,  or prior anti -neoplastic surgery will be summarized  by [CONTACT_782866] .  
+Prior anti -neoplastic medications will be summarized by [CONTACT_30157]. Summaries will include 
+chemotherapy (medication) setting, other therapy (medication) setting, number of prior 
+regimens  (crizotinib and other) , therapy type, setting, best response at  last treatment,  time from 
+last treatment start to progression and duration of last treatment best response. Prior antineoplastic medications will also be summarized by [CONTACT_84304], preferred term  and study  
+arm. Prior antineoplastic therapy crizotinib will be summarized by [CONTACT_782867], best response at last crizotinib treatment, time from last crizotinib treatment start to progression, duration of last crizotinib treatment best response and reason for discontinuation of last crizotinib treatment.  
+[COMPANY_001]  Confidential  Page 14  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.[ADDRESS_1076603] surgery  will be summarized . ATC class 
+and preferred term will also summarize steroid use at the start of study drug. 
+Screen ing phase  disposition   
+A patient wh o signs study  informed consent but fails to satisfy all of the eligibility criteria for 
+any reason will be considered a screen failure.  These patients are not treated with study drug. 
+Frequency counts and percentages will be tabulated for all enrolled patients  as follows: 
+• Number (%) of patients who completed screening phase (based on the presence of study 
+phase completion date and the ‘Next phase entered’ is ‘Treatment’ in the ‘Screening Phase Disposition’ page) ;  
+• Number (%) of patients who discontinued  during screening phase ( based on the presence of date of discontinuation and discontinuation / “subject status”  reason  entered and  ‘Will the subject continue into the next phase of the trial’ is ‘No’ in the ‘Screening Phase Disposition’ page ); 
+• Reasons for screening phase discontinuation (based on reasons recorded in Screening 
+Phase Disposition’ page ). 
+All screen failure patients with reasons for screen failure will be listed.  
+2.4 Protocol deviations  
+Frequency counts and percentages  of patients i n the FAS with any CSR reportable protocol 
+deviations (related to study inclusion/exclusion criteria , conduct of the trial, patient 
+management or patient assessment ) will be tabulated by [CONTACT_782868] .  
+All protoc ol deviations will be listed.  
+2.5 Patient disposition 
+The FAS will be used for the patient disposition summary tables and listings. The following will be tabulated  by [CONTACT_30157]. 
+Related to the treatment phase:  
+• Number (%) of patients who are still on -treatment (based on the absence of the ‘End of 
+Treatment Disposition ’ page) ;  
+• Number (%) of patients who discontinued treatment (based on completion of the ‘End of Treatment Disposition ’ page with date of discontinuation and reason of discontinuation/ 
+‘Subject Status’ entered);  
+• Number (%) of p atients who entered post treatment follow -up phase from treatment phase 
+(based on ‘Next Phase Entered’ is ‘Post -treatment follow -up’ on the ‘End of Treatment 
+Disposition ’ page for patients who discontinued treatment ); 
+• Number (%) of patients who entered survival follow -up from treatment phase (based on 
+‘Will the subject be followed for survival ’ is ‘Yes ’ on the ‘End of Treatment Disposition ’ 
+page for patients who discontinued treatment ); 
+[COMPANY_001]  Confidential  Page 15  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  • Number (%) of patients who discontinued from study from treatment phase (based on ‘Will 
+subject continue into the next phase of the trial’ is ‘No’ as entered on the ‘End of Treatment 
+Disposition ’ page for patients who discontinued treatment ); 
+• Primary reasons for study treatment discontinuation (based on discontinuation reasons entered under ‘Subject Status’ in the ‘End of Treatment Phase Disposition’ page) . 
+Related to the post- treatment follow -up phase: 
+• Number (%) of patients who are still in the post -treatment follow-up phase (based on 
+presence of ‘End of Treatment Disposition ’ and absence of ‘ End of Post Treatment Phase 
+Disposition ’ page);  
+• Number (%) of patients who discontinued from the post -treatment  follow- up (based on 
+completion of ‘End of Post Treatment Phase Disposition’’ page with date of discontinuation and discontinuation reasons entered under ‘Subject Status’); 
+• Number (%) of  patien ts who entered survival follow -up (based on completion of ‘End of 
+Post Treatment Phase Disposition’ ’ page with date of discontinuation and discontinuation 
+reasons entered under ‘Subject Status’ and ‘Will the subject be followed for survival ’ is 
+‘Yes’ for p atients who discontinued from the post- treatment  follow-up ); 
+• Number (%) of  patients who discontinued from study (based on completion of ‘End of Post 
+Treatment Phase Disposition ’ page with date of discontinuation and discontinuation reasons 
+entered under ‘S ubject Status’ and ‘Will subject be followed for survival ’ is ‘No’ for 
+patients who discontinued from the post- treatment  follow-up); 
+• Primary reasons for discontinuation from the post- treatment  follow-up (based on 
+discontinuation reasons entered under ‘Subj ect Status’ in the ‘ End of Post Treatment 
+Phase Disposition’ page).  
+2.6 Treatments (study drug, concomitant therapi[INVESTIGATOR_014], compliance) 
+The Safety Set  will be used for a ll medication data summaries and listings  unless otherwise 
+specified . Summaries will be produced by [CONTACT_782869]. Listing will be 
+produced by [CONTACT_30157]. 
+Study drug and study treatment  
+Study drug and study treatment  both refer to LDK378 (ceritinib) and will be used 
+interchangeably. 
+Date of first /last admini stration of study drug  
+The date of first administration of study drug is defined as the first date when a non- zero dose 
+of study drug was administered and recorded on the Dosage Administration Record (DAR) 
+eCRF. For the sake of simplicity, the date of first administration of study drug will also be referred to as start date of study drug. 
+The date of last administration of study drug is defined as the last date when a non- zero dose of 
+study drug was administered and recorded on the DAR eCRF. This date will also be referred  to 
+as the last date of study drug. 
+Study day  
+[COMPANY_001]  Confidential  Page 16  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  The study day for all assessments (e.g. tumor assessment, death, disease progression, tumor 
+response, performance status, adverse event onset, laboratory abnormality occurrence, vital sign measurement, dose interruption etc. ) will be calculated using the start date of study drug as the 
+origin. For assessments occurring after or on the start date of study drug, study day will be 
+calculated as:  
+Study Day = Date of the assessment/ Event date - start date of study drug + 1. 
+The first day of study drug is therefore study day 1.  
+For any assessment or events such as baseline disease characteristics or medical history (e.g., 
+time since diagnosis of disease) occurring prior to the start of the study drug, study day will be negative and will be calculated as:  
+Study Day = Event date - start date of study drug. 
+The study day will be displayed in the relevant  data listings.  
+Baseline  
+Baseline is the result of an investigation describing the “true” uninfluenced state of the patient. 
+For efficacy  evaluations , the last non- missing assessment, including unscheduled assessments 
+on or before the date of start of study treatment  is taken as “baseline” value or “baseline” 
+assessment.  
+For safety evaluations , the last available assessment on or before the date of start of study  
+treatment is taken or ‘‘baseline” assessment.   
+If an assessment is planned to be performed prior to the first dose of study treatment in the 
+protocol and the assessment is performed on the same day as the first administration of study treatment, it will be assumed that it was performed prior to study treatment administration, if assessment time point is not collected or is missing.  
+If assessment time points are collected, the observed time point will be used to determine pre -
+dose on study day [ADDRESS_1076604] two different sets of data collected on study day 1, one being reported to the cycle 1 day 1 visit, the other reported to the end of treatment (EOT) visit. Data reported at the EOT visit are not eligible for baseline selection.  
+Dose exposure  and intensity  
+Definitions of duration of  exposure , cumulative dose, average daily dose, dose intensity (DI) , 
+relative dose intensity (RDI) , as well as intermediate calculations , include: 
+• Duration of exposure (days): last date  of study drug  −  first date  of study drug + 1  
+(periods of interruption are not excluded)  
+• Cumulative dose (mg): total dose of study drug taken by a patient in the study 
+• Number of dosing days (days): duration of exposure − number of zero dose days  
+[COMPANY_001]  Confidential  Page 17  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  • Average daily dose (mg/day): cumulative dose (mg) ∕  number of dosing days (days) 
+• DI (mg/day): cumulative dose (mg) ∕ duration of exposure (days) 
+• RDI (%): 100 × [ DI (mg/day) ∕ planned dose intensity (750 
+mg/day)] 
+Note: given the planned ceritinib dose of 750 mg/day, the planned dose  intensity can be 
+calculated as : 
+PDI (mg/day) = cumulative planned dose (mg)/Duration of exposure (days), 
+where  
+cumulative planned dose (mg) = Protocol planned dose of 750 (mg)* Duration of 
+exposure. 
+then, RDI (%) which is calculated as 100*DI /PDI can be simpl ified as shown above. 
+Duration of exposure to study drug, cumulative dose, average daily dose, DI and RDI will be 
+summarized  by [CONTACT_782870] . In addition, the duration of exposure to study 
+drug will be categorized into time intervals  and frequency counts and percentages of patients 
+with exposure in each time interval will be presented . Frequency counts and percentages  of 
+patients who have dose changes, reductions  or interruptions, and the corresponding reasons, 
+will be summarized  by [CONTACT_782870] . Time to first dose reduction and time to 
+first dose interruption will be summarized  by [CONTACT_782871] , using summary 
+statistics along with frequency counts and percentages for pre- specified time intervals   
+Listings  of all doses of the study drug along with dose change  and dose interruption reasons 
+will b e produced.   
+Section 4.5 provides further details on the definition of dose changes and interruptions. 
+Concomitant therapy  
+Concomitant therapi[INVESTIGATOR_782840] (excluding study drug, pr ior 
+antineoplastic treatments and blood transfusions), surgeries or  procedures (including physical 
+therapy) administered in the study and are recorded in the Prior and Concomitant Medications 
+and the Surgical and Medical Procedures eCRF, respectively.  
+Conc omitant medications  will be coded using the WHO Drug Reference Listing (WHO DRL) 
+dictionary that employs the WHO Anatomical Therapeutic Chemical (WHO ATC) classification system. Surgeries or procedures will be coded using the Medical Dictionary for 
+Regulatory Activities (MedDRA) terminology. All summaries will be tabulated using frequency counts and percentages  by [CONTACT_30157]. 
+Concomitant therapi[INVESTIGATOR_782841] . These summaries will include : 1) medications starting on or after the start of 
+study drug but starting no later  than [ADDRESS_1076605] dose of study drug; and 2) medications 
+starting prior to the start o f study drug but continuing after the start of study drug. 
+All concomitant therapi[INVESTIGATOR_782842].  Any concomitant 
+therapi[INVESTIGATOR_782843] [ADDRESS_1076606] date of study drug will be flagged in the listings.  
+[COMPANY_001]  Confidential  Page 18  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  Antineoplastic therapy  after discontinuation of study drug  
+The FAS will be used for all listings and summaries of antineoplastic therapi[INVESTIGATOR_782844]. All summaries will be tabulated by [CONTACT_782869] , 
+using frequency counts and percentages. 
+Antineoplastic medications initiated after discontinuation of study drug will be summarized by 
+[CONTACT_6977] (ATC) class , preferre d term  and listed . 
+Antineoplastic radiotherapy since discontinuation of study treatment will be summarized and 
+listed.  
+Antineoplastic surgery since discontinuation of study treatment will be summarized by [CONTACT_782872] . 
+2.7 Analysis of the primary variable 
+The primary objective is to evaluate the anti -tumor activity of ceritinib in patients with ALK -
+positive NSCLC metastatic to the brain and/or to leptomeninges.  
+2.7.1  Variable  
+The primary endpoint used to evaluate the anti -tumor activity of ceritinib is the overall response 
+rate (ORR), which is defined as the proportion of patients with a best overall confirmed response  
+(BOR)  of CR or PR in the whole body, as assessed per RECIST 1.[ADDRESS_1076607] met . The next scheduled assessment may be used for 
+purposes of confirmation of response.   
+BOR for each patient is determined from the sequence of overall (lesion) responses according 
+to the following rules: 
+• CR = at least two determinations of CR at least 4 w eeks apart before progression  
+PR = at least two determinations of PR or better at least 4 weeks apart before progression  
+(and not qualifying as  a CR)  
+• SD = at least one SD assessment (or better) > 7 weeks after start of study drug (and not 
+qualifying as a  CR or PR)  
+• PD = progression ≤ 17 weeks after start of study drug (and not qualifying as a CR, PR or 
+SD) 
+• UNK = all other cases (i.e. not qualifying for confirmed CR or PR and without SD after 
+more than [ADDRESS_1076608] 17 weeks)  
+The cut -off for SD too early and PD too late were chosen based on tumor assessment schedule. 
+Only tumor assessments performed before the start of any further anti -neoplastic therapi[INVESTIGATOR_014] (i.e. 
+any additional secondary anti -neoplastic therapy or anti -cancer surger y) will be considered in 
+[COMPANY_001]  Confidential  Page 19  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  the assessment of BOR.  If a patient receives any further anti -neoplastic therapy while on study, 
+any subsequent assessments will be excluded from the BOR determination. Further  anti-
+neoplastic therapi[INVESTIGATOR_782845] ‘Anti -neoplastic therapi[INVESTIGATOR_782846]’ as appropriate. Clinical deterioration will not be considered as 
+documented disease progression. Patients with BOR ‘unknown’ will be summarized by [CONTACT_674781]. The following reasons will be used: 
+• No valid post- baseline assessment  
+• All post- baseline assessments have overall response UNK  
+• New anti -neoplastic therapy started before first post- baseline assessment  
+• Stable disease (SD) too early (≤ 7 weeks after start d ate of study drug) 
+• PD too late (> 17 weeks after start date of study drug). 
+Special (and rare) cases where BOR is ‘unknown’ due to both early SD and late PD will be 
+classified as ‘SD too early’.  In case, a patient had only a non- measurable disease at basel ine, 
+same cut -off (≤ 7 weeks after start date of study drug) will be applied for a response  of non -
+CR/non-PD too early. 
+2.7.2  Statistical hypothesis, model, and method of analysis  
+The primary efficacy analysis will be performed on the FAS. This is a n estimation based study 
+and no statistical testing of hypothesis will be conducted.  
+The primary efficacy endpoint ORR  per investigator  in the whole body will be estimated and 
+the 95% exact binomial ( Clopper and Pearson 1934) confidence intervals (CIs) will be provided  
+by [CONTACT_782870] . Exact binomial  confidence intervals will be used since the 
+confidence limits based on the normal approximation are not bounded by [CONTACT_941] [0, 1] interval, 
+meaning that for rates close to 0 or 1, the upper limit of the normal approximation interval for the proportion could exceed 1 or the lower limit could be negative.  
+Additionally, the ORR in the whole body will also be  summarized by [CONTACT_782860], 
+prior ALK inhibitor use and overall using the data from Arms 1 through 4.  
+2.7.3  Handling of missing values/censoring/discontinuations  
+Confirmed PR or CR reported prior to any additional anticancer therapy will be considered as 
+responses in the calculation of the ORR , irrespective of the number of missed assessments 
+before response.  
+Patients with a best overall response (BOR) of ‘Unknown’ per RECIST 1.[ADDRESS_1076609] percentage change from baseline in the sum of the tumor  
+diameters for target lesions will be produced by [CONTACT_782873] (Yes/No) for FAS . See 
+Section 
+4.6.1  for details on construction of waterfall graphs. 
+[COMPANY_001]  Confidential  Page 20  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.[ADDRESS_1076610] 1.1 
+guidelines and RANO guidelines are p rovided in Section 4.6.1 and Section 4.6.2 respectively . 
+Table 2-1 Summary of tumor -related efficacy endpoints and analysis 
+populations  
+Category  Efficacy endpoints  * By [CONTACT_782874] # 
+Primary endpoint  ORR  Investigators FAS 
+Key secondary endpoint  DCR  Investigators  FAS 
+Other secondary endpoints     
+   Intracranial endpoints  OIRR  Both FAS and FAS subset **  
+ IDCR  Both FAS and FAS subset** 
+ IDCR at week 8 and 
+week 16  Both  FAS 
+ TTIR  Both FAS and FAS subset **  
+ DOIR  Both FAS and FAS subset ** 
+   Extracranial endpoints  OERR  Both FAS 
+ EDCR  Both FAS 
+ EDCR at week 8 and 
+week 16  Both  FAS 
+ TTER  Both FAS 
+ DOER  Both FAS 
+  Whole body endpoints  ORR  BIRC  FAS 
+ DCR  BIRC  FAS 
+ TTR  Both  FAS 
+ DOR  Both  FAS 
+ PFS Both  FAS 
+ OS N/A FAS 
+Exploratory endpoints     
+Intracranial endpoints  OIRR by [CONTACT_782875] ** 
+ TTIR by [CONTACT_782875] ** 
+ DOIR by [CONTACT_782875] ** 
+ IDCR by [CONTACT_782876] 
+#: Efficacy endpoints  per RECIST or Modified RECIST will be  analyzed  1) by [CONTACT_782877] 2) by [CONTACT_782878] 1-4. Efficacy 
+endpoints per RANO will be analyzed by [CONTACT_634025] f or patients in arm 1 -4. 
+*: Efficacy endpoints are evaluated by [CONTACT_393] 1.[ADDRESS_1076611] 1.1 unless otherwise noted.  
+ **: FAS subset with measurable brain metastase s at baseline . 
+[COMPANY_001]  Confidential  Page 21  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  [IP_ADDRESS]  Key secondary endpoint  
+The key secondary objective is t o evaluate Disease Control Rate (DCR) . The  DCR is defined 
+as the proportion of patients with best overall response ( BOR ) of CR, PR  or SD in the whole 
+body, as assessed per RECIST 1.[ADDRESS_1076612] binomial 95% CI (Clopper & Pearson, 1934) will be 
+presented  by [CONTACT_782869] .  
+Supportive and sensitivity analyses  
+The DCR will also be summarized by [CONTACT_782879]. 
+[IP_ADDRESS]  Other secondary endpoints  
+The following intracranial, extracranial  and whole body (for lesions in and outside  the brain ) 
+tumor- response related endpoints will be assessed separately based on investigator assessment  
+and BIRC assessment  per RECIST 1.1 ( OERR, EDCR, TTER, DOER , ORR, DCR, T TR, DOR 
+and PFS) or Modified RECIST 1.1 (OIRR, IDCR, TTIR, DOIR). 
+[IP_ADDRESS].1  Intracranial endpoints  
+Overall intracranial response rate (OIRR ): OIRR is calculated based on response 
+assessments in the brain for patients having measurable brain metastases at baseline. The OIRR 
+is defined as the proportion of patients with a best overall confirmed response of CR or PR in the brain as assessed per modified RECIST 1.1.  
+OIRR will be estimated and the exact binomial 95% CI will be presented  by [CONTACT_782880] . OIRR will also be summarized by [CONTACT_782881] (yes, no) and prior 
+ALK inhibitor use (yes, no) and overall using the data from Arms 1 through 4. OIRR by [CONTACT_782882]. 
+Same analysis on OIRR will be conducted for patients having evaluable (measurable or non-
+measurable) brain metastases at baseline.  
+Intracranial disease control rate ( IDCR) at 8 and 16 weeks and overall : IDCR is calculated 
+based on response assessments in the brain for patients having evaluable (measurable or non-measurable) brain metastases at baseline. In what follows, CR, PR and SD are possible 
+responses only for patients with measurable brain metastases at baseline, while non -CR/non-
+PD is a possible response only for patients without measurable brain metastases at baseline. 
+• The IDCR at 8 and 16 weeks is defined as the proportion of patients with CR, PR, SD or non-CR/non- PD assessment in the brain  at Week 8 and Week 16 intracranial tumor 
+evaluations respectively , taking into consideration 4- week window for each 
+assessment, i.e.,  assessment done between study day 29 and 85 (both inclusive) for 
+week 8 and study day 86 and 141 (both inclusive) for week 16, as per modified RECIST 1.1. If there are multiple tumor assessments within the defined window, the following rules should be used hierarchically to select the overall response contributing to the xx- week IDCR rate:  
+1) PD - If at least one tumor assessment with overall response of PD;  
+2) Unknown - if all tumor assessment with overall responses of unknown; 
+[COMPANY_001]  Confidential  Page 22  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  3) CR/PR/SD - Overall response from the latest tumor assessment within the 
+window  
+The assessment of SD too early or PD to o late will be considered as Unknown and 
+following the same rule specified in SAP Section 2.7.1 . 
+• IDCR overall is defined as the proportion of patients with a best overall response of CR, PR, SD or non-CR/non-PD in the brain, as assessed per modified RECIST 1.1. 
+IDCR will be estimated and the exact binomial 95% CI will be presented by [CONTACT_782869] . IDCR will also be summarized by [CONTACT_782881] (yes, no) and prior 
+ALK inhibitor use (yes, no)  and overall  using the data from Arms 1 through 4. IDCR by [CONTACT_782882]. 
+Same analysis on overall IDCR will be conducted for patients having measurable brain 
+metastases at baseline.  
+Time to intracranial tumor respo nse (TTIR): TTIR  is defined as the time from the date of 
+the first dose of ceritinib to the date of the first documented response (CR or PR) in the brain 
+as assessed per  modified  RECIST 1.1 criteria  for patients with measurable brain metastases at 
+baseline. 
+TTIR will be summarized by [CONTACT_782883]. These analyses of TTIR will be performed separately based on in vestigator and BIRC 
+assessment.  
+Same analysis on TTIR will be conducted for patients having evaluable (measurable or non-
+measurable) brain metastases at baseline.  
+Duration of intracranial response (DOIR) : Among patients with measurable brain metastases 
+at baseline and a confirmed response (PR or CR) in the brain per Modified RECIST 1.1, DOIR 
+is defined as the time from the first documented response (PR or CR) in the brain to the date of 
+the first documented disease progression in the brain or death due to any cause. If a patient has not had an event, DOI R is censored at the date of last adequate tumor assessment . 
+The censoring and event date options to be considered for the main analysis are presented in Table 2 -2. Please note that the intracranial/extracranial/whole body tumor assessments apply to 
+intracranial (DOIR), extracranial (DOER) and whole body (DOR and PFS) endpoints, respectively.  
+Table 2-2 Outcome and event dates for DO IR, DOER, DOR and PFS analyses  
+ Situation  Date  Outcome  
+A No baseline intracranial/extracranial/ whole 
+body assessment  Date of first dose of study drug 
+a Censored  
+ 
+B Progression at or before next scheduled  
+intracranial/extracranial/ whole body  
+assessment  Date of progression  
+ Progressed  
+ 
+C1 Progression or death after exactly one  
+missing intracranial/extracranial/ whole body 
+assessment  Date of progression (or death)  Progressed  
+ 
+[COMPANY_001]  Confidential  Page 23  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only   Situation  Date  Outcome  
+C2 Progression or death after two or more  
+missing intracranial/extracranial/ whole body 
+assessments  Date of last adequate 
+intracranial/extracranial/ whole body assessment 
+b Censored  
+ 
+D No progression  Date of last adequate intracranial/extracranial/ 
+whole body assessment b Censored  
+ 
+E Treatment discontinuation due to ‘Disease  
+progression’ without documented  
+progression, i.e. clinical progression  
+based on investigator claim  N/A 
+ 
+ Information ignored. Outcome derived based on radiology data only.  
+F New anticancer therapy given  
+Ignore the new anticancer 
+therapy and follow  
+situations above (ITT 
+approach)  As per above situations  
+ 
+a The rare exception to this is if the patient dies no later than the time of the second scheduled assessment as 
+defined in the protocol in which case this is a PFS event at the date of death  
+b After the last adequate tumor assessment. “Date of next scheduled assessment” is defined in Section 14 .2.25  of 
+(Appendix 2) of the LDK378A2205 p rotocol . 
+DOIR  will be described by [CONTACT_782884]- Meier methods, including estimated median 
+(in months) with 95% CI, 25th and 75th percentiles and Kaplan -Meier estimated probabilities 
+with corresponding 95% CIs at pre- specified  time points.  
+DOIR will also be summarized by [CONTACT_782881] (yes, no) and prior ALK 
+inhibitor use (yes, no) using the data from Arms 1 through 4. 
+These analyses of DOIR will be performed separately based on investigator assessment and 
+based on BIRC assessment.  
+Same analysis on DOIR will be conducted for patients having evaluable (measurable or non-
+measurable) brain metastases at baseline.  
+[IP_ADDRESS].2  Extr acranial endpoints  
+Overall extracranial  response rate (OERR):  OERR is defined as the proportion of patients 
+with a best overall confirmed response of CR or PR outside of the brain, as assessed per RECIST 1.1.  
+OERR will be estimated and the exact binomial 95% CI will be presented by [CONTACT_782885] . OERR will also be summarized by [CONTACT_782881] (yes, no) and 
+prior ALK inhibitor use (yes, no) and overall using the data from Arms 1 through 4.  OERR by [CONTACT_782886].  
+Extracranial disease control rate (EDCR)  at 8 and 16 weeks and overall : 
+• EDCR at  [ADDRESS_1076613] 1.1.  Same method will be used as for IDCR. See details in 
+Section [IP_ADDRESS].1
+.  
+• EDCR overall is defined as the proportion of patients with a best overall response of CR, PR or SD outside of the brain as assessed per RECIST 1.1. 
+[COMPANY_001]  Confidential  Page 24  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.[ADDRESS_1076614] binomial 95% CI will be prese nted by [CONTACT_30157] . EDCR 
+will also be summarized by [CONTACT_782881] (yes, no) and prior ALK inhibitor 
+use (yes, no) and overall using the data from Arms 1 through 4.  
+EDCR by [CONTACT_782886]. Time t o extracranial  tumor response (TTER):  TTER is defined as the time from the date of 
+the first dose of ceritinib to the date of the first documented response (CR or PR) outside of the 
+brain as assessed per RECIST 1.1 criteria.  
+TTER  will be summarized by [CONTACT_782887].   These analyses of TTER will be performed separately based on investigator assessment and 
+based on BIRC assessment. Duration of extracranial response (DOER):  Among patients with a confirmed response (PR 
+or CR) outside of the brain per RECIST 1.1, DOER is defined as the time from the first 
+documented response (PR or CR) outside of the brain to the date of the first documented disease 
+progression outside of the brain or death due to any cause.  DOER  will be described by [CONTACT_782884]- Meier methods, including estimated 
+median (in months) with 95% CI, 25
+th and 75th percentiles and Kaplan -Meier estimated 
+probabilities with corresponding 95% CIs at pre -specified  time points.  . 
+Additionally, DOER will also be presented by [CONTACT_782881] (yes, no) and prior 
+ALK inhibitor use (yes, no) and overall using the data from Arms 1 through 4. 
+These analyses of DOER will be performed separately based on investigator assessment and 
+based on BIRC assessment. 
+[IP_ADDRESS].3  Whole body  endpoint s 
+ORR by [CONTACT_14988]:  The evaluation of ORR will be repeated based on BIRC assessment by [CONTACT_782888] . Additionally, ORR by [CONTACT_782889] (yes, no) and prior ALK inhibitor use (yes, no) and overall using the 
+data from Arms 1 through 4. 
+DCR by [CONTACT_14988]:  The evaluation of DCR will be repeated based on BIRC assessment  by [CONTACT_782888] . Additionally, DCR by [CONTACT_782889] (yes, no) and prior ALK inhibitor use (yes, no)  and overall using the 
+data from Arms 1 through 4. Time to tumor response (TTR):  TTR is defined as the time from the date of t he first dose of 
+ceritinib to the date of the first documented response (CR or PR) in the whole body as assessed 
+per RECIST 1.1 criteria.  
+TTR  will be summarized by [CONTACT_782883].  
+[COMPANY_001]  Confidential  Page 25  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  These analyses of TTR will be performed separately based on investigator assessment and based 
+on BIRC assessment.  
+Duration of response (DOR):  Among patients with a confirmed response (PR or CR) in the 
+whole body per RECIST 1.1, DOR is defined as the time from the first documented response 
+(PR or CR) to the date of the first documented disease progression or death due to any cause. 
+DOR  will be described by [CONTACT_782890]- Meier methods, including 
+estimated med ian (in months) with 95% CI, 25th and 75th percentiles and Kaplan -Meier 
+estimated probabilities with corresponding 95% CIs at pre -specified  time points.  
+Additionally, DOR will also be presented by [CONTACT_782881] (yes, no) and prior 
+ALK inh ibitor use (yes, no) and overall using the data from Arms 1 through 4. 
+These analyses of DOR will be performed separately based on investigator assessment and 
+based on BIRC assessment. 
+Progression -free survival (PFS):  PFS is defined as the time from the date of the first dose of 
+ceritinib to the date of the first radiologically  documented disease progression in the whole body 
+per RECIST 1.[ADDRESS_1076615] adequate tumor evaluation  
+performed  on or before the cut -off date. By [CONTACT_15094], if disease progression or death for any 
+reason is documented after one single missing tumor evaluation, the  actual event date of disease 
+progression/death will be used for the PFS event date. If disease progression or death for any reason is documented after two or more missing tumor evaluations, the PFS time of these patients will be censored at the date of th e last adequate tumor evaluation without PD. Refer to 
+Table 2 -2 for censoring and event date options and outcomes for PFS. See also Section 4.6.1 
+describing the special case of a missing baseline tumor assessment.  
+PFS will be described by [CONTACT_782884]- Meier methods, including estimated median 
+(in months) with 95% CI, 25
+th and 75th percentiles and Kaplan -Meier estimated probabilities 
+with corresponding 95% CIs at pre -specified  time points.  Censoring reasons will also be 
+summarized.  
+These analyses will be performed separately based on investigator assessment and based on BIRC assessment.  Additionally, PFS will also be presented by [CONTACT_782881] 
+(yes, no) and prior ALK inhibitor use (yes, no) and overall using the data from Arms 1 through 4. 
+Overall survival (OS) : OS time is defined as time from the date of first dose of ceritinib to the 
+date of  death due to any cause. OS time for patients who are alive by [CONTACT_782891]-off or are lost to follow -up will be censored at the date of last contact.  
+OS will be described by [CONTACT_782884]- Meier methods, including estimated median  
+(in months) with 95% CI, 25
+th and 75th percentiles and Kaplan -Meier estimated probabilities 
+with corresponding 95% CIs at pre -specified  time points.  Censoring reasons will also be 
+summarized.  
+OS will be analyzed by [CONTACT_782892] 1 through 5. However, Kaplan -
+Meier curves of OS will not be produced for Arm 5 alone if the number of patients enrolled in 
+this arm is ≤ 10.  
+[COMPANY_001]  Confidential  Page 26  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  Additionally, OS will also be presented by [CONTACT_782881] (yes, no) and prior 
+ALK inhibitor use (yes, no) and overall using the data from Arms 1 through 4. 
+Duration of Follow -up  
+Follow- up in the study will be summarized using the following methods to provide a 
+comprehensive assessment of follow-up for all patients.  
+Summary of duration between start date of study drug and cut -off date, and follow -up times for 
+PFS/OS, are defined as follows: 
+• Duration between start date of study drug and data cut -off date = (Cut -off date – Start date 
+of study drug + 1) / 30.4375 (months). 
+• Follow- up time = (Date of event or censoring – Start date of study drug + 1) / 30.4375 
+(months) regardless of censoring.  Date of censoring is defined as the last adequate tumor 
+assessment date for PFS or last contact [CONTACT_568] (when the patient is known as alive) for OS.  
+All summaries will be reported in months (see Section 4.3). The calculations for PFS will be 
+based on investigator assessment and BIRC assessment .  
+Exploratory endpoints  
+ 
+    
+ 
+O
+IRR by [CONTACT_95733] : OIRR by [CONTACT_782893] 95% CI will be 
+presented  by [CONTACT_30157] . OIRR by [CONTACT_782886]. 
+IDCR by [CONTACT_95733] : IDCR by [CONTACT_782893] 95% CI will be 
+presented by [CONTACT_30157] . IDCR by [CONTACT_782894] . 
+TTIR  by [CONTACT_95733] : Similar to TTIR by [CONTACT_782895] 1.1, TTIR by [CONTACT_782896].  
+These analyses of TTIR will be performed separately based on investigator assessment and based on BIRC assessment. 
+DOIR by [CONTACT_95733] : Similar to DOIR by [CONTACT_782895] 1.1, DOIR  by [CONTACT_782897]- Meier methods  by [CONTACT_30157].  
+ 
+ 
+2.8.2  Safety  
+All safety analyses will be performed based on the Safety Set  by [CONTACT_30157]  (Arms 1 to 5) and 
+all patients .  
+Observation periods  for the analyses  
+
+[COMPANY_001]  Confidential  Page 27  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  The overall observation period will be divided into three mutually exclusive segments:  
+• Pre-treatment period: from day of patient’s informed consent to the day before first dose 
+of study drug 
+• On-treatment period: 
+o For discontinued patients, from day of first dose of study drug to [ADDRESS_1076616] dose of study drug to the data cut- off date  
+• Post-treatment period: starting at day [ADDRESS_1076617] items,  shift tables  or change from baseline summaries  generated for labo ratory, ECG, 
+vital signs and change score (WHO PS)  generation  may  use data from pre -treatment period  for 
+baseline calculations.  All data, regardless of observation period, will be listed  and assessments collected during the 
+pre-treatment and post-treatment period will be flagged in all the listings . 
+Adverse events (AEs)   
+AEs will be coded using MedDRA using the latest version available prior to clinical database 
+lock and will be gra ded using Common Terminology Criteria for Adverse Events ( CTCAE)  
+version 4.03. I f CTCAE grading exist s for an AE, grades 1, 2, 3, or 4 corresponding to the 
+severity of mild, moderate, severe, and life -threatening, respectively,  will be used. CTCAE 
+grade 5 ( death)  will not be used in this study; rather, this information will be collected on the 
+“End of Treatment Dispo sition ”, “End of Post Treatment Phase Disposition” or “Death” eCRF 
+pages.  
+All AE summaries will be summarized (fre quency counts and percentages) by [CONTACT_782898] (SOC) and/or preferred term  (PT), maximum severity grades, and relation to study 
+drug except where otherwise noted.  A patient with multiple CTC grades for an AE will be 
+summarized under the maxim um CTC grade recorded for the event.  
+The following AE  summaries will be produced: 
+• AEs regardless of study drug relationship 
+• AEs suspected to be study drug related 
+• All deaths , by [CONTACT_782899]  
+• On treatment deaths, by [CONTACT_183008] 
+• SAEs regardless of study drug relationship 
+• SAEs suspected to be study drug related 
+• AEs associated with discontinuation of study drug 
+• AEs requiring dose adjustment 
+• AEs requiring study drug interruption 
+• AEs requiring dose adjustment or study drug interruption 
+• AEs requiring significant additional therapy 
+[COMPANY_001]  Confidential  Page 28  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  • AEs excluding SAEs 
+ 
+Per safety disclosure, two tables for on-treatment death/SAE and non- SAE will be 
+summarized but not included in the CSR.  
+Adverse events of special interest  
+Adverse events of special interest (AESIs)  are defined as AEs with in the following categories/ 
+groupi[INVESTIGATOR_782847]: 
+• Hepat otoxicity  
+• Interstitial lung disease /pneumonitis 
+• QTc prolongation 
+• Hyperglycemia 
+• Bradycardia  
+• GI toxicity (nausea, diarrhea, and vomiting) 
+• Pancreatitis   
+AESIs  are defined at the pr oject level and may be updated based on emergent data  to reflect 
+new AESIs  at the time of analysis . The AESIs  listed above will be identified based on a list of 
+preferred terms. The final list of preferred te rms is available in the electronic case retrieval 
+strategy and  will be presented  in a separate annex of the  document. These AESI s will be 
+summarized for each groupi[INVESTIGATOR_007], by [CONTACT_11702],  as follows: 
+• All AESI s  
+• CTC grade 3/4 AESI s 
+• AESI s suspected to be study drug related  
+• CTC grade 3/4 AESIs suspected to be drug related 
+• Serious AESI s 
+• AESI leading to study drug discontinuation 
+• AESI s requiring dose adjustment or study drug interruption 
+• AESI s requiring dose adjustment 
+• AESI s requiring study drug interruption 
+Laboratory data  
+For laboratory data assessments, data from all sources (central and local laboratories) will be 
+combined. The summaries will include all laboratory assessments collected in the on- treatment 
+period. All laboratory assessments will be listed and those collec ted prior to first dose of study 
+drug or later than 30 days after study drug discontinuation will be flagged in the listings.  
+Laboratory data will be classified (by [CONTACT_782900] ) into CTC 
+grades according to the NCI CTCAE v4.03. For all reports, CTC grade is always obtained on 
+the converted measurement in SI unit.  Grade 5 will not be used. The CTC grade 0 will be 
+assigned as below in different scenarios:   
+[COMPANY_001]  Confidential  Page 29  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  1. For laboratory parameters defined by [CONTACT_782901], a severity grade 
+of 0 will be assigned when the value is within normal limits.    
+2. For laboratory, parameters whose grade is defined by [CONTACT_782902] (e.g. plate let count decrease) . A severity grade of 0 will be assigned when 
+the value is within normal limits.  
+3. For laboratory parameters whose grade is defined by [CONTACT_782903], with no other associated clinical criteria such as concomitant 
+medication (e.g. creatinine increased)  the following will be applied.  For the baseline grading 
+and for the grading of post- baseline laboratory values with missing baseline grading, the 
+grade will be derived using the criteria bas ed only on the normal range as per CTCAE v4.03. 
+A severity grade of [ADDRESS_1076618] -baseline value is ≤ ULN (for hyper) or 
+≥ LLN (for hypo).  
+Parameters for which a grading does not exist will be classified into low/normal/high group by [CONTACT_540880]. 
+The following summaries will be produced for the hematology and biochemistry laboratory 
+data (by [CONTACT_90715]): 
+• Shift tables using CTC grades to compare baseline to the worst post -baseline value for 
+laboratory parameters with CTC grades  
+• Shift tables using low , normal , high ( as well as low and high combined) classifications to 
+compare baseline to the worst post -baseline value for laboratory parameters where CTC 
+grades are not defined.  
+The following l ab parameters will be summarized:  
+• Hematology: absolute lymphocytes, absolute neutrophils, hemoglobin (anemia), WBC , 
+platelet counts , absolute basophils, absolute eosinophils, absolute monocytes , RBC. 
+• Biochemistry: alkaline phosphatase (A LP), SGPT  (ALT), S GOT  (AST), total bilirubin, 
+amylase, lipase, potassium (hyper and hypo), sodium (hyper and hypo), creatinine, glucose 
+(hyper and hypo), phosphate , albumin, calcium (corrected for albumin), m agnesium, 
+creatinine clearance, direct bilirubin, blood urea nitrogen (BUN) or urea, GGT. 
+• For bi-directional parameters, both hyper and hypo summaries will be presented.  
+All hematology and biochemistry will be listed as per protocol. Further, following laboratory parameters will be pres ented in listings  and will not be summarized:  
+• Coagulation: INR, pro- thrombin time (PT) or Quick Test. 
+Other laboratory parameters collected and not described above may be summarized if clinically indicated.  
+The following listings will be produced for the  laboratory data  for all laboratory parameters 
+where CTC grades are defined : 
+• Listing of patients with laboratory abnormalities of CTC grade 3 or 4. 
+• Listing of all laboratory data with values flagged to show the corresponding CTC grades 
+and the classifications relative to the laboratory reference ranges.  
+[COMPANY_001]  Confidential  Page 30  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  Liver function tests (LFTs) of interest for ceritinib  are total bilirubin (TBILI), ALT, AST and 
+ALP.  In what fol lows, AT refers to ALT or AST values. LFTs will be summarized as follows: 
+• Shift tables of baseline vs. worst post- baseline on -treatment values for the categories:  
+o TBILI ≤ 2xULN, TBILI > 2xULN and missing TBILI  
+o ALT ≤ 3xULN, ALT > 3xULN and missing ALT  
+o AST ≤  3xULN, AST > 3xULN and missing AST 
+o ALP < 2xULN, ALP ≥ 2xULN and missing ALP 
+• Frequency counts and percentages  of patients with worst post- baseline on -treatment 
+values in the categories:  
+o ALT > 3xULN, ALT > 5xULN, ALT > 10xULN, ALT > 20xULN  
+o AST > 3xULN, AST > 5xULN, AST > 10xULN, AST > 20xULN 
+o AT > 3xULN, AT > 5xULN, AT > 10xULN, AT > 20xULN 
+o TBILI > 2xULN  
+o Concurrent ALT > 3xULN and TBILI > 2xULN 
+o Concurrent AST > 3xULN and TBILI > 2xULN 
+o Concurrent AT > 3xULN and TBIL>2xULN 
+o Concurrent AT > 3xULN and TBILI > 2xULN and ALP < 2xULN 
+o Concurrent AT > 3xULN and TBILI > 2xULN and ALP ≥ 2xULN  
+Concurrent measurements are those o ccurring on the same date. 
+In addition, a listing of all TBILI, ALT, AST and ALP values for patients with a post -baseline 
+TBILI > 2xULN, ALT> 3xULN or AST > 3xULN will be provided. 
+[IP_ADDRESS]  Other safety data  
+ECGs 
+ECG data will be analyz ed based on central laboratory  reported results . The summaries will 
+include all ECG assessments performed in the on- treatment period .  All ECG assessments will 
+be listed, and those collected  prior to first dose of study drug or  later than [ADDRESS_1076619] been proposed in the literature. For this analysis we will use some of those methods of correction, as described below. The QT interval correcte d for heart rate by [CONTACT_581139]’s formula, QTcB, is defined as  
+RRQTQTcB=
+, 
+the QT interval corrected for heart rate by [CONTACT_469414]’s formula, QTcF, is defined as  
+[COMPANY_001]  Confidential  Page 31  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  3RRQTQTcF=
+ , 
+where RR represents the RR interval of the ECG, in seconds.   
+Although Bazett’s correction is the historical standard, it does not perform  well when heart rate 
+fluctuates. Fridericia’s formula may perform better under these conditions.  An alternate 
+correction to achieve the goal of getting uncorrelated QTc and RR is based on linear or log-linear regression methods which yield, theoretically , uncorrelated QTc and RR.  
+Linear regression method: 
+• Fit a model QT = a + b * RR to baseline data  
+• Use the estimated slope,  , 𝑏𝑏� , to correct QT  
+• Corrected QT for heart rate will be computed as follows:  
+QTcP = QT + 𝑏𝑏� * (1- RR)  
+Data will be summarize d using QTcF and QTcB. However, if these are not appropriate for the 
+data set due to an observed large correlation between corrected QT and HR using the baseline 
+assessments, the results will also be summarized using QTcP.  
+ECG Summaries  
+The following analyses will be performed for each applicable ECG parameters ( RR, PR, QRS, 
+QT, ventricular rate – denoted as HR in what follows, and QTc ) as noted. 
+• Pearson correlation between QT and HR, QTc (QTcB, QTcF and, if applicable, QTcP) and HR using individual (non -averaged) baseline assessments and separately using on -treatment 
+assessments  
+• For each of the ECG parameters (HR, and QT, QTc, QRS, PR intervals), descriptive statistics at baseline, at each post -baseline time point and changes from baseline at each 
+post- baseline time point  
+• For each of the QTc and QT intervals, s hift table s based on notable parameter categories  
+(≤450, >450 - ≤480, >480 - ≤500, >500 ms) at baseline and the worst post -baseline value 
+observed 
+• Frequency counts and percentages  of patients having notable ECG  values  according to the 
+following categories:            
+o QT parameter  (QT, QTc)  increase from baseline >30  ms,  >[ADDRESS_1076620]-baseline QT parameter > 450 ms, > 480 ms, > 500 ms 
+o HR increase from baseline > 25% a nd value > 100 bpm 
+o HR decrease from baseline > 25% and value < 50  bpm 
+o PR increase from baseline > 25% and value > [ADDRESS_1076621]- baseline PR > 200 ms and ≤220 ms, > 220 ms  
+o QRS increase from baseline > 25% and value > [ADDRESS_1076622]-baseline QRS > 110 ms and ≤ 120ms , > 120 ms 
+[COMPANY_001]  Confidential  Page 32  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.[ADDRESS_1076623] -baseline but did not meet the criterion at 
+baseline  
+• Frequency counts and percentages of patients with  newly occurring post- baseline 
+qualitative ECG abnormalities  (morphology) will be summarized.  The denominator to 
+calculate percentages  for any newly occurring ECG abnormality, each abnormality type and 
+each individual finding is the number of patients with both a baseline and a post -baseline 
+evaluation , and baseline being normal, i.e. those patients who are at risk of developi[INVESTIGATOR_782848] .  A newly occurring post- baseline qualitative ECG abnormality is defined as a 
+post-baseline abnormal finding which was not present at baseline 
+Patients with notable ECG interval values and newly occurring qualitative ECG abnormalities 
+will be listed by [CONTACT_4676], time point and the corresponding notable values and abnormality 
+findings will be included in the listings.  
+Unscheduled ECG measurements wi ll not be used in computing the descriptive statistics  for 
+change from baseline at each post -baseline time point. However, they will be used in the 
+analysis of notable ECG changes and the shift table analysis of notable QT parameters. 
+Vital signs  
+Vital sig n assessments will be performed in order to characterize basic body function. The 
+parameters collected are weight (kg), body temperature ( °C), pulse rate (beats per minute), and 
+sitting systolic and diastolic blood pressure (mmHg).  
+Clinically notable elev ated values are defined as:  
+• Systolic BP: ≥  160 mmHg and an increase ≥  20 mmHg from baseline 
+• Diastolic BP: ≥  100 mmHg and an increase ≥  15 mmHg from baseline. 
+• Body temperature: ≥  39.1°C 
+• Weight: increase from baseline of ≥  10% 
+• Pulse rate: ≥  120 bpm with incr ease from baseline of ≥ 15 bpm 
+Clinically notable below normal values are defined as: 
+• Systolic BP: ≤  90 mmHg and a decrease ≥  20 mmHg from baseline 
+• Diastolic BP: ≤  50 mmHg and a decrease ≥  15 mmHg from baseline 
+• Body temperature: ≤  35°C 
+• Weight: decrease from baseline of ≥  10% 
+• Pulse rate: ≤  50 bpm with decrease from baseline of ≥  15 bpm  
+Vital signs shift table based on values classified as notable low, normal, notable high or notable 
+(high and low) at baseline and worst post -baseline will be produced for pulse rate, diastolic BP 
+and systolic BP. 
+[COMPANY_001]  Confidential  Page 33  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.[ADDRESS_1076624]- baseline value  for each vital sign measure.  
+Patients with clinically notable vital sign abnormalities  will be listed  by [CONTACT_30157] . All vital 
+sign assessments will be listed by [CONTACT_30157], patient and vital sign parameter . 
+In the listings, clinically notable values will also be flagged.  
+WHO performance status  
+The WHO performance  assessment allows patients to be classified as to their functional 
+impairment, the definition of scores in relation to their performance status is provided in  Table 
+2-3, ranging from 0 (most active) to 5 (dead): 
+Table 2-3 WHO  performance  scale 
+Score  Description  
+0 Fully active, able to carry on all pre -disease performance without restriction  
+1 Restricted in physically strenuous activity but ambulatory and able to carry out work of a 
+light or sedentary nature, e.g., light house work, office work  
+2 Ambulatory and capable of all self -care but unable to carry out any work activities. Up and 
+about more than  50% of waking hours  
+3 Capable of only limited self-care, confined to bed or chair more than 50% of waking hours  
+[ADDRESS_1076625]- baseline WHO  status by [CONTACT_782904]; shift tables of WHO  performance status at baseline to best post -baseline WHO  
+status by [CONTACT_782905].  WHO  performance status at each time point will be listed.  
+
+[COMPANY_001]  Confidential  Page 34  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only    
+ 
+  
+ 
+2.8.
+6 Patient -report outcomes  
+Not applicable.  
+
+[COMPANY_001]  Confidential  Page 35  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  2.9 Sample size calculation  
+The study will enroll approximately 160 patients, with approximately 40 patients each in 
+Arms 1 and 2 and ~[ADDRESS_1076626] 20 patients in Arm 5 (See Table 2 -4). It is assumed that 5% of the patients diagnosed with brain metastases have 
+leptomeningeal carcinomatosis.  Additional patients in Arm 4 may be enrolled in order achieve 
+approximately 60 patients in Arms 3 and 4 together (i.e. ALKi naïve patients) if enrollment rate in Arm 3 is slow.  
+An observed ORR of 50% in [ADDRESS_1076627] binomial 
+95% CI with a lower bound greater than 40% which is clinically meaningful and exceeds the ORR expected with available therapi[INVESTIGATOR_014] ( Shaw 2012). Table [ADDRESS_1076628] binomial 95% 
+CI for various observed ORRs for the [ADDRESS_1076629] binomial 95% confidence intervals for various observed ORRs  
+Sample Size  Observed ORR  Number of Patients with 
+Confirmed PR or CR  Exact 95% CI 
+N=140 (overall  
+Arms 1 -4) 50% 70 (41.44%, 58.56%)  
+60% 84 (51.39%, 68.18%)  
+N=80 (Arms 1  
+and 2)  40% 32 (29.20%, 51.56%)  
+50% 40 (38.60%, 61.40%)  
+60% 48 (48.44%, 70.80%)  
+N=40 (each of  
+Arms 1 or 2)  40% 16 (24.87%, 56.67%)  
+50% 20 (33.80%, 66.20%)  
+N=30 (each of 
+Arms 3 or 4)  60% 18 (40.60%, 77.34%)  
+70% 21 (50.60%, 85.27%)  
+
+[COMPANY_001]  Confidential  Page 36  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  2.10 Power for analysis of key secondary variables 
+Estimation of the DCR is the key secondary objective of the study. An observed DCR of 65% 
+in [ADDRESS_1076630] binomial 95% CI with a lower bound greater 
+than 55%. Table [ADDRESS_1076631] binomial 95% CI for various observed DCRs for the 
+[ADDRESS_1076632] binomial 95% confidence intervals for various observed DCRs  
+Sample Size  Observed DCR  Number of Patients with SD, PR 
+or CR  Exact 95% CI  
+N=140 (overall  
+Arms 1 -4) 65% 91 (56.49%, 72.86%)  
+75% 105 (66.98%, 81.93%)  
+N=80 (Arms 1  
+and 2)  60% 48 (48.44%, 70.80%)  
+70% 56 (58.72%, 79.74%)  
+N=40 (each of 
+Arms 1 or 2)  60% 24 (43.33%, 75.14%)  
+70% 28 (53.47%, 83.44%)  
+N=30 (each of 
+Arms 3 or 4)  70% 21 (50.60%, 85.27%)  
+80% 24 (61.43%, 92.29%)  
+An additional secondary objective of the study is estimation of the OIRR for patients with 
+measurable brain metastases at baseline. As described in Section 4.1.1 of the study protocol , 
+the study targets enrolling approximately 70 patients with measurable b rain metastases: ~ 50 
+patients with prior ALKi treatment (Arms 1 and 2)  and ~ 20 patients with no prior ALKi 
+treatment (Arms 3 and 4). An observed OIRR of 50% in [ADDRESS_1076633] binomial 95% CI with a lowe r bound greater than 35%. An 
+observed OIRR of 60 % in 50 patients with measurable brain metastases previously treated with 
+ALKi (Arms 1 and 2)  will result in an exact binomial 95% CI with a  lower bound greater than 
+45%. An observed OIRR of 60% in 20 patients with measurable brain metastases not previously 
+treated with ALKi (Arms 3 and 4)  will result in an exact binomial 95% CI with a lower bound 
+greater than 36%  (Table 2 -6). The reported OIRR with c rizotinib is 18% (95% CI: 5 - 40) for 
+patients with measurable brain metastases and prior radiation therapy to the brain, and 33% (95% CI: 13 - 59) for patients without prior radiation to the brain; recent whole brain radiation was 
+allowed ( Crino et al 2013 ). 
+Table  2-[ADDRESS_1076634] binomial 95% confidence intervals for various observed OIRRs  
+ Observed 
+OIRR  Number of Patients with 
+Confirmed PR or CR in the brain  Exact 95% CI  
+N=70 (Overall  45% 32   (33.74%, 58.06%)  
+[COMPANY_001]  Confidential  Page 37  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  Arms 1 -4) 50% 35   (37.80%, 62.20%)  
+55%  39   (43.34%, 67.59%)  
+60%  42   (47.59%, 71.53%)  
+N=50 (prior 
+ALKi  
+treatment, Arms  
+1+2) 
+ 40% 20 (26.41 %, 54.82 %)  
+45% 23 (31.81 %, 60.68 %)  
+50% 25 (35.53%, 64.47%)  
+55% 28 (41.25%, 70.01%)  
+60% 30 (45.18%, 73.59%)  
+N=20 (no prior  
+ALKi treatment,  
+Arms 3+4)  50%  10 (27.20%, 72.80%)  
+55%  11 (31.53%, 76.94%)  
+60%  12 (36.05%, 80.88%)  
+65% 13 (40.78%, 84.61%)  
+  
+ 
+       
+ 
+3 Changes to protocol specified analyses  
+Table 3 -1 summarizes the changes to protocol -specified analyses and associated rationale for 
+inclusion in Appendix 16.1.9 (Documentation of S tatistical Methods) of the CSR.  
+Table 3-1 Changes to protocol specified analysis or descriptions and rationale  
+Protocol Section  Protocol Description  Change  
+Section 10.5.2 The distribution function of TTIR 
+will be estimated using the Kaplan -
+Meier method. The median TTI R 
+along with 95% CI will be presented.   
+TTIR  will be summarized  by [CONTACT_782906] (yes, no), prior ALK inhibitor use (yes, no) and overall using the data from Arms 1 through 4. 
+Similar for TTER and TTR.  TTIR will be summarized by 
+[CONTACT_782907]. 
+This analysis is removed. 
+This update was made because median value is not estimable using KM method due to low response rate. Descriptive 
+statistics suggested median 
+
+[COMPANY_001]  Confidential  Page 38  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  values were consistent across 
+study arms.  
+Section 10.5.2 A patient who has not progressed or 
+died at the date of the analysis or 
+when he/she receives any further anticancer therapy in the absence of disease progression will be censored at the time of the last adequate 
+tumor evaluation before the earlier of the cut- off date or the anticancer 
+therapy date.  A patient who has not 
+progressed or died at the date of the analysis  cut-off will be 
+censored at the time of the last adequate tumor evaluation  
+performed  on or before the cut-
+off date.  
+This update was made to align with the latest “Guidelines for response, duration of overall response, TTF, TTP, progres sion-free survival, and 
+overall survival ”. 
+ 
+4 Additional details on implementation of statistical 
+methodology  
+The sections below  contain additional details on statistical methodology that will be included 
+in Appendix 16.1.9 (Documentation of Statistical Methods) of the CSR as well as rules details 
+on programing rules that will be followed to implement the analyses described in Section 2 . 
+4.1 Data included in the analyses 
+This section provides additional details to those included in Section 2.1. 
+Each analysis (primary analysis and final analysis ) will include the data with an assessment date 
+or event start date (e.g. vital sign assessment date or start date of an adverse event) prior to or 
+on the cut -off date. For example, if the cut -off date is 30DEC2008, an AE starting on 
+28DEC2008 will  be reported, whereas an adverse event starting on 31DEC2008 will not be 
+reported. 
+4.[ADDRESS_1076635] complete date among the following: 
+• All patient assessment dates (e.g. blood draws (laboratory, ), vital signs, performance 
+status, ECG, tumor assessments)  
+• Start and end dates of antineoplastic therapi[INVESTIGATOR_782849] ( with non-missing medication/procedure term). 
+• AE start and end dates  (with non- missing verbatim AE term present) 
+• From ‘Survival information’ eCRF: 
+
+[COMPANY_001]  Confidential  Page 39  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  • Last known date patient alive if answer to question ‘Is  subject alive?’ is ‘lost to 
+follow-up’;  
+• Date of assessment if answer to question ‘Is  subject a live?’ is Yes  
+Note: If answer to question ‘Is subject alive?’ is ‘unknown’, neither ‘last known date patient alive’ nor ‘date of assessment’ is used  
+• Study drug start and end date s from DAR with non -missing dose. Doses of 0 are allowed.  
+• Concomitant medications/Surgical and Medical Procedures start and end dates  
+• Date of discontinuation/study phase completion on the ‘End of treatment discontinuation’ and the ‘End of Post Treatment Phase Disposition’ eCRF s. 
+The last contact [CONTACT_782908] -off date . The cut -off date will not be used for last contact [CONTACT_568], unless the patient was 
+seen or contact[CONTACT_782909]. Completely imputed dates (e.g. the analysis cut -off date 
+programmatically  imputed to replace the missing end date of a dose administration record) will 
+not be used t o derive the last contact [CONTACT_568].  
+Only dates associated with patient visits or actual examinations of the patient will be used in the der ivation. Dates associated wit h a technical operation unrelated to patient status such as 
+the date a blood sample was processed will not be used. Assessment dates after the cutoff date 
+will not be applied to the last contact [CONTACT_568].  
+Partial date imputation is allowed for event (death)/c ensoring if the date is coming from 
+‘Survival information’ eCRF only.  If the day is missing for the ‘Date of assessment’ when 
+answer to question ‘Is subject alive?’ is Yes, or ‘Last known date patient alive’ when answer to question ‘Is  subject alive?’ is  ‘lost to follow -up’, it will be imputed to [ADDRESS_1076636] date.  
+4.3 Month derivation 
+For all derivations, a  month will be calculated as (365.25 / 12) = 30.4375 days. If duration is to 
+be reported in months, duration in days will be divided by 30.4375. 
+4.4 Age derivation 
+Age for enrolled  patients or screen failures will be calculated based on the date when the patient 
+signed the main study informed consent from the date of birth. 
+4.5 Dose interruptions and dose changes 
+This section provides additional details to those included in Section 2.6. Both dose interruption 
+and dose change are analyzed based on CRF pages  based on the dose actually taken by [CONTACT_493200] . 
+An interruption is defined as a 0 mg dose taken on one or more days. What follows defines how 
+dose interruptions will be counted in the case of multiple dose interruptions. 
+• If an interruption occurs consecutively for at least two days due to the same reason, then it 
+will be counted only once ( example: If the actual dose on days 1- 3 is 750 mg and actual 
+[COMPANY_001]  Confidential  Page 40  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  dose on days 4 -5 is 0 mg and dose interruption on days 4- 5 is due to AE, then the total 
+number of dose interruptions is 1).  
+• If an interruption occurs consecutively for at least two days due to different reasons, then it 
+will be counted for each reason ( example: If the actual dose on days 1- 3 is 750 mg and 
+actual dose on days 4 -5 is 0 mg and dose interruption on day 4 is due to AE and dose 
+interruption on day 5 is due to dosing error, then the total number of dose interruptions is 2).  
+• If an interru ption occurs for more than one day due to the same reason, but the days are not 
+consecutive , i.e. there is at least one dosing day in between, then each dose interruption will be counted as a different occurrence ( example: if the actual dose on days 1, 3 and 5, is 
+750 mg and actual dose on days 2 and 4 is 0mg, and dose interruptions on day 2 and 4 are both due to dosing error, the total number of dose interruptions is 2).  
+A dose change is defined as a change in dosing from one record to the next. However, a dose interruption will not be counted as a dose change.  For example, for LDK378, in the sequence 
+750 mg – 0 mg – 600 mg, the 600 mg dose will be counted as a dose change (with reason documented), preceded by a 0 mg due to interruption (with reason documented) . Dose 
+reductions are a subset of dose changes where dose changes to higher than protocol planned 
+dose are excluded . 
+4.6 Efficacy endpoints  
+For further details on efficacy endpoints, see Section 14 (Appendixes  2 and 3) of the 
+LDK378A2205 protocol. For the evaluation of tumor -response related endpoints, response is 
+assessed by [CONTACT_782910] 1.[ADDRESS_1076637] 1.1  (whole body and extracranial)  or Modified RECIST 1.1 ( intracranial ) (e.g. 
+radiologic scan, histology for bronchoscopy, photos for skin lesions). If a new lesion is detected 
+using an objective assessment method other than radiologic scan, it should be entered on the 
+‘New lesion’ RECIST eCRF with appropriate method (or method=‘Other’).  
+In particular, discontinuation due to disease progression or death due to progressive disease , 
+without supporting objective evidence (as defined above), will not be considered as PD in the 
+determination of BOR, the derivation of any efficacy endpoint or efficacy analysis.  
+Change in imaging modality  
+Per RECIST 1.1, a change in methodology can be defined as either a change in contrast use (e.g. 
+keepi[INVESTIGATOR_157809], like CT, but switching from with to without contrast use or vice -
+versa, regardless of the justification for the change) or a change in technique (e.g. from CT to 
+[COMPANY_001]  Confidential  Page 41  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  MRI, or vice -versa), or a change in any other imaging modality. A change from conventional 
+to spi[INVESTIGATOR_782850] (e.g. switching from spi[INVESTIGATOR_782851]) is not considered a change in imaging modality . 
+A change in methodology will result by [CONTACT_15074] a UNK (unknown) overall lesion response 
+assessment. However, a response assessment other than the [COMPANY_001] calculated UNK response may be accepted from the investigator or BIRC if a definitive response assessment can be justified based on the available information. Potential discrepancies between the modality used and overall lesion response reported by [CONTACT_093] (e.g. change in modality but investigator assessment of response is different from UNK ) will be queried during the data validation 
+process.  
+Determination of missing adequate tumor assessments  
+For the computation of ORR  (for primary analysis), patients without any radiological 
+assessment after the start date of study drug will be counted as failure.  
+Partial or complete responses reported prior to any additional anticancer therapy will be considered for ORR computation irrespective of the number of missed assessments before response. The anticancer therapy will be defined for intracranial, extracranial and whole body 
+separately : e.g., radiotherapy to the brain wil only be considered as anticancer therapy for 
+intracranial and whole body endpoints but not for extracranial endpoint. In this section, the 
+‘missing adequate assessment’ is defined as assessment not done or assessment with overall lesion res ponse equal to UNK.  For the sake of simplicity, the ‘missing adequate assessment’ 
+will also be referred as ‘missing assessment’.  
+As detailed in Section 14 (Appendix 2) of the LDK378A2205 protocol and Table [ADDRESS_1076638] adequate tumor assessment date and the event date.  
+If the distance is larger  than threshold D
+1 or D 2 then the analysis will assume one or two missing 
+assessments, respectively. The threshold D 1 will be defined as the protocol specified interval 
+between the tumor assessments plus the protocol allowed window around the assessments. Similarly, the threshold D
+2 is defined as two times the protocol specified interval between the 
+tumor assessments plus the protocol allowed window around the assessments. In this study, the protocol defined schedule of tumor assessment is every 8 weeks and each assessment is 
+expected to be performed at the scheduled time point plus or minus 1 week, i.e. the window is 2 week s, then any distance larger than D
+1 = 8+2 = 10 weeks means one missing assessment and 
+any distance larger than D 2 = (2*8) + 2 = 1 8 weeks  means two missing assessments.  
+The same definition of D 2 will be used to determine the PFS censoring reason.  
+Possible censoring reasons for PFS are: 
+1: Ongoing without event 2: Lost to follow-up 
+[COMPANY_001]  Confidential  Page 42  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  3: Withdrew consent 
+4: Adequate assessment no longer available 5: Event after >=2 missing tumor assessments  
+Non-measurable disease at baseline  
+As specified in Section 14 (Appendix 2) of the LDK378A2205 protocol, the RECIST 1.1 
+criteria imply  that only patients with measurable disease at baseline  (at least one extracranial 
+measurable lesion  as per inclusion criteria ) should be included in the study. If a patient without 
+measurable disease is enrolled, the intent -to-treat (ITT) principle requires including these 
+patients in the analys es. Hence, analyses will be based on FAS including patients with either 
+measurable or non- measurable disease. Therefore, a rule needs to be specified on how to handle 
+these cases.  
+As specified in Table 3 -1 of Sectio n 14 (Appendix 2) of the LDK378A220 5 protocol, overall 
+lesion response can be derived for patients without measurable disease at baseline  as follows 
+(Table 4 -1). 
+Table 4-1 Overall lesion response at each assessment: patients with non -target 
+disease only  
+Non-target lesions  New Lesions  Overall lesion 
+response  
+CR No CR 
+Non-CR/Non -PD1 No Non-CR/non -PD 
+UNK  No UNK  
+PD Yes or No  PD 
+Any Yes PD 
+1 In general, the non- CR/non -PD response for these patients is considered equivalent to an SD 
+response in endpoint determination.  
+Missing baseline tumor assessment  
+As specified in Section 14 (Appendix 2) of the protocol, since the timing of PD cannot be 
+determined for patients with missing baseline tumor assessment, these patients are censored in the PFS analysis at the start date of treatment. This rule, however, only applies to the ‘PD component’ of the PFS or DOR  asse ssment.   
+Patients without baseline tumor assessment who die within D
+[ADDRESS_1076639] percentage change from baseline in the sum of the measured diameter of all target lesions for each patient.  The proportions of patients with various degrees of tumor shrinkage or growth can then represent a useful efficacy metric.  
+[COMPANY_001]  Confidential  Page 43  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  However, caution needs to be paid to the assessments, where an occurrence of a new lesion or 
+worsening in non- target lesions (resulting in PD as an overall lesion response at gi ven 
+assessment) contradicts the measurements obtained on target lesions.  These assessments will not be displayed as bars in the graph. If such a “contradicting” assessment represents the only post- baseline assessment for a patient, then the patient will b e represented by a special symbol 
+(e.g. *) in the waterfall graph. 
+The assessments with unknown target response and also assessments with unknown overall 
+response will be excluded. Patients without any valid assessments will be completely excluded from the  graphs. 
+The total number of patients displayed in the graph needs to be shown and this number will be used as a denominator when calculating the percentages of patients with tumor shrinkage and tumor growth.  Footnote will explain the reason for excluding some patients (due to absence of 
+any valid assessment).  
+All possible assessment scenarios are described in Table 4 -2. 
+Table 4-2 Inclusion/exclusion of assessments used in waterfall graph  
+Criteria for inclusion/exclusion  Possible source of 
+contradictions  
+Target response Overall lesion 
+response  Include in waterfall  Non-target 
+response  New lesion?  
+CR/PR/SD  PD Yes but as * only  PD any 
+CR/PR/SD  PD Yes but as * only  any Yes 
+UNK  UNK or PD  No any any 
+CR/PR/SD  UNK  No UNK  No 
+CR/PR/SD  CR/PR/SD  Yes as a bar  SD/IR  No 
+PD PD Yes as a bar  any any 
+The following algorithm will be used to construct the graph: 
+1. Select “valid” post- baseline assessments to be included, i.e. for each patient and each 
+assessment repeat the following four steps: 
+1.1. Check the target lesion response and overall lesion response at each assessment.  If at least 
+one of them is UNK then exclude the whole assessment.  Otherwise, go to step 1.2. 
+1.2. Check the overall lesion response.  If PD , then go to step 1.3. Otherwise, go to step 1.4 
+1.3. Check target response.  If PD , then go to step 1.4.  Otherwise flag the assessment  . 
+1.4. Calculate the % change from baseline in target lesions.  
+2. For each patient, go through all valid assessments identified in step [ADDRESS_1076640] % change from baseline in target lesions.  The “best” means best for the patient, i.e. the largest shrinkage or if a  patient only has assessments with tumor growth 
+take the assessment where the growth is minimal. ( Example 1 : Patient 1 has the following % 
+[COMPANY_001]  Confidential  Page 44  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  changes from baseline at assessments 1, 2, 3, 4 and 5, respectively: -10%; - 25%; -13%; -4% 
+and +6%. His/her best % change is then -25%. Example 2: Patient 2 has the following % 
+changes from baseline at assessments 1, 2 and 3, respectively: +5%; +18% and +35%. 
+His/her best % change is then +5%.  
+3. Construct the waterfall graph displaying the best % change from baseline for e ach patient. 
+Patients having only   flagged assessment(s) will be displayed separately.  
+The recommended way of the display from left to right is: 
+1. Bars above the horizontal axis representing tumor growth  
+2. Bars under the horizontal axis representing tumor shrinkage 
+3.  “Zero” bars with   symbol representing patients with contradiction 
+4.6.2  Implementation of RANO guidelines (protocol Appendix 3)  
+As described in the protocol, intracranial endpoints (OIRR, IDCR, DOIR, and TTIR in the brain) 
+will also be evaluated by [CONTACT_782911]. This section provides some 
+details on how to derive these intracranial endpoints by [CONTACT_782912] 3. 
+RANO vs. RECIST 1.[ADDRESS_1076641] 1.1 and RANO include: 
+• The measurability criteria for target lesion by [CONTACT_782913] 1.[ADDRESS_1076642] 1.1; 
+• In RECIST 1.1, only one diameter is recorded for each target lesion, while in RANO, two perpendicular diameters are measured for each target lesion;  
+• In RANO, corticosteroids use and clinical status are also considered for determining 
+overall response; 
+• There are two types of non -target lesions by [CONTACT_95733]: non-enhancing lesions and non-
+measurable enhancing lesions. Both types of non-target lesions contribute to the non-target lesion response. 
+Overall Lesion Response Collected on RANO eCRF page  
+Intracranial endpoints by [CONTACT_782914] “RANO Overall Lesion Response” (ZR domain, ZRCAT = ”RESPONSE ASSESSMENT IN NEURO- ONCOLOGY”, and ZRSCAT = ”OVERALL LESION 
+RESPONSE”). The derivation of intracranial endpoints (OIRR, IDCR, DOIR, TTIR and TTP in the brain) by [CONTACT_782915] 1.1. 
+[COMPANY_001]  Confidential  Page 45  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  Calculation of Overall Lesion Response by [CONTACT_782916]: 
+1. Target lesion measurements;  
+2. Non-target lesion response;  
+3. New lesion present (Yes/No);  
+4. Corticosteroids use; 
+5. Clinical status.  
+All these components are collected on the following eCRF page s: 
+1. RANO target lesion - Measurable enhancing lesion (T1) (ZI domain, ZICAT = 
+”MODIFIED RANO CRITERIA FOR BRAIN METASTASES”, ZISCAT = ”TARGET ENHANCING T1”);  
+2. RANO non -target lesion - Non -measurable enhancing lesion (T1) (ZI domain, ZICAT = 
+”MODIFIED RANO CRITERIA FOR BRAIN METASTASES”, ZISCAT = ”NON -
+TARGET ENHANCING T1”);  
+3. RANO non -target lesion - Non -enhancing lesion (T2/FLAIR) (ZI domain, ZICAT = 
+”MODIFIED RANO CRITERIA FOR BRAIN METASTASES”, ZISCAT = ”NON -
+TARGET NON ENHANCING T2/FLAIR”);  
+4. RANO New Lesion (Z I domain, ZICAT = ”MODIFIED RANO CRITERIA FOR BRAIN 
+METASTASES”, ZISCAT = ”NEW”);  
+5. Corticosteroids use and c linical status  are collected on the Modified RANO Assessment 
+(ZR domain, ZRCAT =  ”MODIFIED RANO CRITERIA FOR BRAIN METASTASES”, 
+ZISCAT = ”RESPONSE AS SESSMENT”).  
+Unlike in RECIST 1.1, each target lesion by [CONTACT_782917]. In order to calculate the target lesion response, the product of the two perpendicular diameters is calculated for each target lesion. Then the sum of the products of all target lesions is compared to the baseline or nadir to determine the target lesion response.  
+The non- target lesion response is collected on the field of “Non- target lesion present” in the 
+Modified RANO Assessment page, and is evaluated based on both non- target lesion eCRF 
+pages as shown above. However, no derivation will be performed from individual non- target 
+lesion status to non-target lesion response.  The RANO response/progression crit eria are summarized in Table [ADDRESS_1076643] response they can achieve 
+is stable disease (SD) in the brain.  
+[COMPANY_001]  Confidential  Page 46  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  Table 4 -3 Summary of the RANO response criteria  
+ CR PR SD PD 
+T1-Gd+ target 
+lesions  None  ≥50% decrease 
+from baseline  <50% decrease from 
+baseline but <25% 
+increase from nadir  ≥25% increase 
+from nadir*  
+T1-Gd+ non-
+target lesions  Stable or improved  Stable or 
+improved  Stable or improved  Increase*  
+T2/FLAIR  Stable or improved  Stable or 
+improved  Stable or improved  Increase*  
+New Lesion  None  None  None  Present*  
+Corticosteroids  None  Stable or 
+decrease  Stable or decrease  NA**  
+Clinical Status  Stable or improve  Stable or improve  Stable or improve  Deterioration*  
+Requirement for 
+Response  All All All Any*  
+CR=complete response; PR=partial response; SD=stable disease; PD=progressive disease  
+*: Progression when this criterion is met **: Increase in corticosteroids alone will not be taken into account 
+in determining progression in the absence of persistent clinical deterioration  
+Two fields in the Modified RANO Assessment page will not be used for any data analysis in 
+the study: “New enhancement outside radiation field?”, “Tumor present in histopathology”. 
+As in RECIST 1.1, PD should only be assigned if it is demonstrated by [CONTACT_782918]. Discontinuation due to disease progression or death due to progressive disease, without supporting objective evidence, will not be considered as PD.  
+As in RECIST 1.1, the same method of assessment and the same technique should be used to 
+characterize each identified and reported lesion at baseline and during follow -up. The details of 
+change in imaging modality are described in Section 4.6.1. 
+The same principle will be followed for determining missing adequate tumor assessments, as 
+described in section 4.6.1.  
+4.6.3  Sources for overall lesion  response  
+The tumor endpoints derivation is based on the sequence of overall lesion responses at each 
+assessment/time point. However, the overall lesion response at a given assessment/time point will be provided from different sources as illustrated in  Table 4 -4. 
+Table 4-4 Sources for overall lesion response  
+Source 1  Investigator (local radiology) reported overall lesion response 
+(intracranial, extracran ial and whole body)  
+Source 2 BIRC (Blinded Independent review committee) reported overall lesion 
+response  (intracranial, extracranial and whole body)  
+In this study, Source 1 will be used for the primary endpoint ORR, the key secondary endpoint DCR and other secondary endpoint calculations based on investigator assessment ( OIRR, IDCR, 
+TTIR, DOIR, OERR, EDCR, TTER, DOER, DOR, TTR , and PFS).  Source 2 will be used to 
+calculate OIRR, IDCR, TTIR, DOIR, OERR, EDCR, TTER, DOER, ORR, DCR, DOR, TTR, 
+[COMPANY_001]  Confidential  Page 47  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  and PFS by [CONTACT_14988] . In addition, OIRR, TTIR, DOIR, and IDCR are also assessed according to 
+RANO from both Source 1 and 2.  
+4.6.4    Kaplan -Meier estimates  
+To analyze time to  event variables ( DOIR, TTIR, DOER, TTER, DOR, TTR, OS and PFS) a n 
+estimate of the surv ival function will be constructed using Kaplan- Meier (product -limit) 
+method  as implemented in SAS PROC LIFETEST with METHOD=KM option (see example 
+below). The TIME state ment will include a variable with survival times ( survtime  in the 
+example below) and a (right) censoring variable ( censor  in the example below) with a value of 
+1, representing censoring: 
+PROC LIFETEST data = dataset   
+METHOD = KM  
+CONFTYPE=LOGLOG; 
+TIME survtime* censor(1); 
+RUN; 
+/* survtime  represents variable containing event/censor times; 
+censor represents censoring variable (1 = censored, 0 = event); */  
+Kaplan -Meier survival and failure function estimates from this procedure will be used to 
+construct the Kaplan -Meier figures . 
+Median survival will be obtained along with 2- sided 95% CIs calculated from PROC 
+LIFETEST output using the method of Brookmeyer & Crowley, 1982.  
+Kaplan -Meier estimates with 2 -sided 95% CIs at specific time points will be summarized.  The 
+time points can be expressed in weeks or in months depending on the time -to-event variable.  
+The CIs will be constructed using Greenwood’s formula [Collet, 1994, p.23]  for the standard 
+error of the Kaplan -Meier estimate.  
+The PROC LIFETEST statement will use the option CONFTYPE=LOGLOG. The 
+CONFTYPE option specifies the transformation applied to the survival function to obtain the point- wise confidence intervals and the confidence intervals for the quartiles of the survival 
+times. The LOGLOG keyword specifies the complementary log- log transformation (Collett, 
+1994; Lachin, 2000) g(x)=log( -log(x)) which ensures that the point -wise confidence intervals 
+are always within interval [0,1]. Although the LOGLOG is the default option in SAS v 9.4, it should be explicitly shown. 
+The Kaplan -Meier graphs will be constructed using SAS software.  
+4.6.5  Confidence interval  for response rate s 
+The estimate of the  response rates ( OIRR, IDCR, OERR,  EDCR  ORR , DCR ) will be 
+summarized in terms of percentage rates with 95% CIs. An exact binomial confidence interval 
+(implemented using SAS procedure FREQ with EXACT statement for one- way tables) will be 
+calculated (Clopper and  Pearson,1934).  
+SAS procedure FREQ will be used to estimate the proportion of responders (binary outcome = 1 or “Yes”), along with the  associated 95% (=100 × (1 – two-sided alpha level )) two-sided exact 
+binomial CI. These estimates are obtained as follows : 
+[COMPANY_001]  Confidential  Page 48  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only   
+proc freq data = dataset;  table binary event /  
+binomial( 
+level = “Yes”) 
+alpha = two-sided alpha level ; 
+exact binomial; 
+When there are no responders, SAS does not produce a CI by [CONTACT_15094]. To obtain a CI in this 
+situation, PROC FREQ is used as specified above except changing level =”No” . From the results 
+of this modified procedure, the values in percent of the LCL and UCL of a 0% response rate are calculated as follows:  
+LCL
+LEVEL=”Yes”  (%) = 100% - UCL LEVEL=”No”  (%) 
+UCL LEVEL=”Yes”  (%) = 100% - LCL LEVEL=”No”  (%) 
+4.[ADDRESS_1076644]-
+baseline value (laboratory, ECGs, vital signs, WHO  performance status), all post -baseline 
+values will be included (scheduled, unscheduled, repeat). All unscheduled and repeat 
+measurements will be included in listings.  
+Laboratory  Data   
+For laboratory data, assessments can  be collected from both local and central laboratory on the 
+same date. For shift tables using CTC grades to compare baseline to the worst post -baseline 
+value, the assessment with worst post -baseline value is used for analyses irrespective of the 
+source. Fo r LFT summaries, where concurrent measurements are used in the calculation of 
+number and percentage of patients with worst post -baseline values, the assessment with worst 
+post- baseline value is used (since worst values are based on the largest ratio of lab  value to its 
+ULN for each patient) although the worst values for the different parameters may be coming 
+from different laboratories. 
+ECGs  
+For all patients, 3 ECGs are targeted to be measured at the protocol -defined (nominal) time-
+points. If a patient has more than one measurement at a nominal time point, the average of all 
+available measurements associated with the nominal time  point will be used for the analyses.   
+4.7.[ADDRESS_1076645] available assessment before or on the date of start of study 
+drug is defined as “baseline” value or “baseline” assessment.  
+Laboratory data  
+[COMPANY_001]  Confidential  Page 49  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  If both central and local laboratory assessments wer e performed on the same date and 
+corresponding to the baseline assessment date , then the central laboratory assessment will be 
+used for the calculation of baseline. 
+ECGs   
+Baseline for ECG measurement is the average of all available measurements (unscheduled, if 
+applicable) taken prior to dosing on the date associated with the last available ECG measurement before or on the date of start of study treatment. To determine whether ECG measurement was taken prior to dosing, ECG time will be compared with dosing time, if available. Unscheduled assessments will be included in the calculation of the average if ECG time is before dosing time. Study day [ADDRESS_1076646]- dose measurement.  
+For unscheduled assessments on study day 1, 
+• if dosing time is non -missing, then the assessment is classified as post- baseline if ECG 
+time is later than dosing time.  
+• if dosing time is missing, the assessment is classified as post- baseline.  
+The same ECG assessments will be used for both qualitative and quantit ative baseline 
+evaluations. 
+4.7.3  Laboratory Parameters 
+This section provides further detail on the analysis of laboratory parameters that will be listed 
+and summarized as described in Section 2.8.2.  
+Hematology Hematolog ic tests include: Hemoglobin, platelets, white blood cells (WBC), red blood cells 
+(RBC), differential (basophils, eosinophils, lymphocytes, monocytes, neutrophils (% or 
+absolute) 
+The following rules will be applied to derive the WBC differential counts when only 
+percentages are available (this is mainly for neutrophils and lymphocytes, because CTC grading 
+is based on the absolute counts).  
+The method to convert the value is straightforward: for each patient , the original lab value (%) 
+is divided by 100 and multiplied by [CONTACT_782919] e.g. for neutrophils (NEU): 
+NEU count = (WBC count) * (NEU%value/100) 
+In order to derive the corresponding absolute normal range,  the rule to be applied depends on 
+the availability of the % range and the absolute range for the differential: 
+• If % range missing and absolute range missing, then use pre -defined normal range 
+reported in the [COMPANY_006] manual 
+[COMPANY_001]  Confidential  Page 50  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  • If %  absolute range NOT missing (% range is or isn’t missing), then use the absolute 
+range provided by [CONTACT_779] 
+• If % range NOT miss ing and absolute range missing, then the % normal limits ( i.e. LLN 
+and ULN) are divided by 100 and multiplied by [CONTACT_782920], e.g. for neutrophils NEU): 
+LLN for NEU count = (LLN for WBC count)* (LLN for NEU%value /100) ULN for NEU count = (ULN for WBC count)*(ULN for NEU%value/100) 
+Biochemistry  
+The following calculation will be applied for corrected calcium in SI unit: 
+Corrected calcium (mmol/L)=measured total Ca (mmol/L)+0.02 (40 -serum albumin[g/L]), 
+where 40 represents the average albumin level in g/L. 
+4.[ADDRESS_1076647] died prior to the cut- off date:  
+• All events with start date before or on the cut -off date, and with end date missing or 
+after the cut -off date  or after the date of withdrawal of informed consent  will be reported 
+as “continuing”.  
+• This approach applies, in particular, to AEs and concomitant medication reports. For these 
+events, the end date will not be imputed and therefore will not appear in the listings.  
+If imputation of an end date is required for a specific analysis (e.g. for a dose administration 
+record with missing end date or last date of study drug after the cut -off date), the end date will 
+be imputed by [CONTACT_782921], cut-off date  and withdrawal of informed consent 
+date for the purpose of calculating duration of exposure to study drug and dose intensity. The 
+imputed date will be displayed and flagged in the listings. 
+4.8.1  AE date i mputation  
+Date imputation is the creation of a new, complete date from a partial one according to an a greed 
+and acceptable algorithm.  Missing date for AE will be handled according to rules specified 
+below. A partial date is simply an incomplete date e.g. DDOCT2001: the days are missing from 
+this DDMMMYYYY date.  
+Partial AE start dates, if left partial, would ultimately mean the following  
+It would not be possible to place the AE in time. 
+Therefore the treatment/dosage at the time of the event would be unknown. Therefore the event could not be reported/summarized appropriately – if at all.  
+Therefore it is important to perform date imputation to ensure that as many data events are 
+represented as correctly as possible. Of course partial and/or missing dates should also  be 
+caught as edit checks and passed back to the in vestigator for resolution. 
+There will be no  attempt to impute the following:  
+[COMPANY_001]  Confidential  Page 51  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  • Missing  AE start dates  
+• AE start dates missing the year  
+• Partial/missing AE end dates  
+The following Table 4 -5 explains the abbreviations used. 
+Table 4-5 AE/treatment date abbreviations  
+ Day Month  Year  
+Partial Adverse Event 
+Start Date  <not used>  AEM  AEY 
+Treatment Start Date 
+(TRTSTD)  <not used>  TRTM  TRTY  
+The following matrix Table 4 -6 describes the possible combinations and their associated 
+imputations. In the light grey boxes the upper   text indicates the imputation and the lower text 
+the relationship of the AE start date to the treatment start date (TRTSTD).  
+Table 4-6 AE partial date i mputation algorithm  
+  
+AEM MISSING  
+ AEM < TRTM  AEM = TRTM  AEM > TRTM  
+AEY MISSING  NC 
+Uncertain  NC 
+Uncertain  NC 
+Uncertain  NC 
+Uncertain  
+AEY < TRTY  ( D )  
+Before TRTSTD  ( C ) 
+Before TRTSTD  ( C ) 
+Before TRTSTD  ( C ) 
+Before TRTSTD  
+AEY = TRTY  ( B ) 
+Uncertain  ( C ) 
+Before TRTSTD  ( B ) 
+Uncertain  ( A )  
+After TRTSTD  
+AEY > TRTY  ( E ) 
+After TRTSTD  ( A )  
+After TRTSTD  ( A )  
+After TRTSTD  ( A )  
+After TRTSTD  
+[COMPANY_001]  Confidential  Page 52  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  The following Table 4 -7 is the legend to the above table. 
+Table 4-7 AE/treatment date relationship and imputation legend  
+Relationship   
+Before TRTSTD  Indicates AE start date prior to Treatment 
+Start Date  
+After TRTSTD  Indicates AE start date after Treatment Start 
+Date  
+Uncertain  Insufficient to determine the relationship of 
+AE start date to Treatment Start Date  
+Imputation Calculation  
+NC / Blank  No convention/imputation  
+( A )  01MONYYYY  
+( B ) TRTSTD+1  
+( C ) 15MONYYYY  
+( D )  01JULYYYY  
+( E ) 01JANYYYY  
+The following Table 4 -8 gives a few examples . 
+Table 4-8 AE imputation example scenarios  
+Partial  
+AE start date  Treatment  
+start date  Relationship  Imputation 
+Calculation  Imputed Date  
+12mmyyyy  20OCT2001  Uncertain  NC <blank>  
+ddmmm2000  20OCT2001  Before  ( D ) 01JUL2000  
+ddmmm2002  20OCT2001  After  ( E ) 01JAN2002  
+ddmmm2001  20OCT2001  Uncertain  ( B ) 21OCT2001  
+ddSEP2001  20OCT2001  Before  ( C ) 15SEP2001  
+ddOCT2001  20OCT2001  Uncertain  ( B ) 21OCT2001  
+ddNOV2001  20OCT2001  After  ( A ) 01NOV2001  
+4.8.[ADDRESS_1076648] 
+recurrence/progression  and date of most recent recurrence  
+Missing day is defaulted to the 15th of the month and missing month and day is defaulted to 01-
+Jan.  
+[COMPANY_001]  Confidential  Page 53  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  4.8.4  Incomplete date for anti -neoplastic therapi[INVESTIGATOR_782852]:  
+The same rule which is applied to the imputation of AE/concomitant medication start date 
+will be used with the exception that for  scenario (B) will be replaced to be ‘start date of 
+study drug - 1’. 
+End date: 
+Imputed date = min (start date of study drug, last day of the month), if day is missing; 
+Imputed date = min (start date of study drug, 31DEC), if month and day are missing. If the end date is not missing and the imputed start date is after the end date, use the end 
+date as the imputed start date.  
+If both the start date and the end date are imputed and if the imputed start date is after the 
+imputed end date, use the imputed end dat e as the imputation for the start date.  
+Post therapi[INVESTIGATOR_782853] : 
+Imputed date = max (last date of study drug + 1, first day of the month), if day is missing; 
+Imputed date = max (last date of study drug + 1, 01JAN), if day and month are missing.  
+End date: No imputation.  
+4.8.5  Incomplete assessment dates for tumor assessment  
+All investigation dates (e.g. X-ray, CT scan) must be completed with day, month and year. If one or more investigation dates are incomplete but other investigation dates are available, the 
+incomplete date(s) are not considered for calculation of the assessment date and assessment date is calculated as the latest of all investigation dates (e.g. X -ray, CT -scan) if the overall lesion 
+response at that assessment is CR/PR/SD/UNK. Otherwise, if o verall lesion response is PD, the 
+assessment date is calculated as the earliest date of all investigation dates at that evaluation number.  If all measurement dates have no day recorded, the 1
+st of the month is used.  
+If the month is not completed, for any of the investigations, the respective assessment will be 
+considered to be at the date which is exactly between the previous and the following assessment. 
+If both a previous and following assessment s are not available, this assessment will not be used 
+for any calculation s.  
+In case of multiple imaging scans performed within an evaluation, if some imaging dates for tumor assessment under the same evaluation for a patient are before as well as after cut -off, the 
+entire evaluation will not be included for analyses based on the pre-specified cut- off. 
+[COMPANY_001]  Confidential  Page 54  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.[ADDRESS_1076649] be completed with day, month and year. 
+If the day or month is  missing, death date will be imputed to the maximum of the  full (non-
+imputed) last contact [CONTACT_568] (excluding th e date of death) and the following: 
+• Missing day:   1st day of the month and year of death 
+• Missing day and month:    Jan 1st of the year of death  
+4.8.[ADDRESS_1076650] dose date:  
+ = 31DECYYYY, if only Year is available and Year < Year of min (EOT visit date, death 
+date)  
+= Last day of the month, if both Year and Month are available and EITHER  
+     -- Year = Year of min (EOT visit date, death date) and Month < the month of min (EOT 
+visit date, death date)  OR, 
+    -- Year < Year of min (EOT date, death date) irrespective of the month  
+    = min (EO T visit date, death date), for all other cases . 
+The imputed date will be compared with start date of study drug.  
+If the imputed date < start date of study drug, then last date of study drug is set to start date of study drug; 
+ Otherwise, use the imputed date.  
+4.8.8  Incomplete dates for disease progression prior to start of study drug 
+If day of PD associated with prior antineoplastic medication is missing then imputed PD date: 
+= min (midpoint between the end date of the prior antineoplastic medication and the end of the month, start date of LDK, start date of prior medication from the next regimen), if end date of prior antineoplastic medication is in the same month as the PD date,  
+= min (15th of the month of the PD date, start date of LDK, start date of prior medication from the next regimen), if end date of prior antineoplastic medication is in a month prior to the PD date 
+= 15th of the month of the PD date, if end date of prior antineoplastic medication is in a month after the PD date.  
+[COMPANY_001]  Confidential  Page 55  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  If both day and month of PD associated with prior antineoplastic medication are missing then 
+imputed PD date: 
+= min (midpoint between the end date of the prior antineoplastic medication and the end of the 
+year, start date of LDK, start date of prior medication from the next regimen), if end date of prior antineoplastic medication is in the same year as the PD date  
+= min (July 1 of the year of the PD date, start date of LDK, start date of prior medication from the next regimen), if end date of prior antineoplastic medication is in  a year prior to the PD date  
+= July [ADDRESS_1076651] start date of any medication(s) from the next regimen. For the mid-point calculation, if odd days in between, (e.g. last dose of medication is 27 June 2012, and 
+end of the month is 30 June 2012), then use the next day from the midpoint calculation (e.g. mid-point is 29 June 2013). 
+5 Reference:  
+Brookmeyer R and Crowley J (1982). A Confidence Interval for the Median Survival Time, Biometrics  38, 29 - 41.    
+Clopper CJ, Pearson ES (1934).  The use of confidence or fiducial limits illustrated in the case of the binomial.  Biometrika; 26, 404-413. 
+Collet D (1994). Modelling survival data in medical research. London, Chapman & Hall. 
+Crinò L, Ahn MJ, Ou SH, et al (ECC 2013 – Abst#3413) Clinical Experience with 
+Crizotinib in Patients with Advanced ALK-positive Non- Small Cell Lung Cancer and Brain 
+Metastases.  
+FDA (2007). Guidance for Industry Clinical Trial Endpoints for the Approval of Cancer Drugs and Biologics, US Department of Health and Human Services. 
+Kalbfleisch JD, Prentice RL. (2002)  The Statistical Analysis of Failure Time Data. Wiley Series 
+in Probability and Statistics.  
+
+[COMPANY_001]  Confidential  Page 56  
+16-Jan-2020 (11:03)   LDK378A2205 SAP Amendment 1.0  
+ 
+CONFIDENTIAL - For Business Use Only  Klein JP, Moeschberger ML. (1997) Survival analysis: techniques for censored and truncated 
+regression. [LOCATION_001], NY: Springer -Verlag. Jung, Sin- Ho and Kim, Kyung Mann (2004). On 
+the estimation of the binomial probability  in multistage clinical trials. Statistics in Medicine 23, 881-896.  
+Shaw AT, Kim DW, Nakagawa K, et al (2012) Phase III study of crizotinib versuspemetrexed 
+or docetaxel chemotherapy in patients with advanced ALK -positive non -small cell lung cancer 
+(NSCLC) (PROFI LE 1007). Ann Oncol 23 (Suppl; abstr LBA1). 
+Wen PY, Macdonald DR, Reardon DA, et al (2010) Updated response assessment criteria for  
+high- grade gliomas: response assessment in neuro- oncology working group. J Clin Oncol. 
+28(11):1963-72. doi: 10.1200/JCO.2009.26.3541. Epub 2010 Mar 15. 

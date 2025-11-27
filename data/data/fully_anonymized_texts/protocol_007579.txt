@@ -1,0 +1,696 @@
+LifeVest Trends Validation Protocol
+NCT#02149290
+Date: June 26, 2015
+Protocol # 90D0120
+DOCUMENT APPROVAL PAGE 
+ Document Number:    Rev:   Page: 
+90D0120 B 1 of 20 
+ 
+Title:   LifeVest Trends Validation Protocol  
+  
+ Author:  Nicole Bianco Date:  26-June-2015  
+Approvals  
+( “ ” indicates approval signature [CONTACT_60675])  
+☒ Medical Affairs:  Date: 
+ ☒ Marketing:  Date: 
+ 
+☒ Clinical Operations: Date: 
+ ☐ Billing/Reimbursement:  Date: 
+ 
+☐ IE/QE Engineering:  Date: 
+ ☐ Support Service:  Date: 
+ 
+☐ Service Operations:  Date: 
+ ☐ Technology Applications:  Date: 
+ 
+☒ OEM Regulatory:  Date: 
+ ☐ OEM Engineering:  Date: 
+ 
+    
+    Documentation Control:  Date Archived: 
+    Electronic File info: (if applicable) *If multiple files (such as multiple sheets of a drawing) list file info separately  
+ File name:   [CONTACT_587958] (in by[CONTACT_355465])  Time & Date (or Date & Time ) 
+   
+   
+   
+90D0120 _revB.docx   
+   
+   
+   
+     Transferred File info:  (To be completed by [CONTACT_587944])  
+ File name:   [CONTACT_587958] (in by[CONTACT_355465]) Time & Date (or Date & Time ) 
+   
+   
+   
+90D0120_revB.docx   
+   
+   
+   
+   
+ 
+ZOLL Form Number:  90A0001-A01 
+Form REV Level:  FI 
+ 
+ 
+ 
+DOCUMENT REVISION HISTORY PAGE  
+  Document Number:    Rev:   Page: 
+90D0120 B 2 of 20  
+ Title:  LifeVest Trends Validation Protocol 
+  
+Revision History Of Document  
+ 
+ 
+Rev  
+CO 
+Number  
+ 
+Description of Change  
+ 
+Author   
+ 
+Effective Date 
+FI -------  First Release NRB          9/23/[ADDRESS_774160] at the office/clinic was changed so that there is  NRB 12/19/[ADDRESS_774161] at home was modi fied to switch the paths taken NRB 7/20/15 
+  by [CONTACT_587945]. Odd patients.   
+  Line 4.1.2 was rearranged  to avoid confusion.   
+  Obtaining Informed Consent was moved from 5.1 (Pre-Study   
+  Assessment) to 5.2 (Initial Visit) for accuracy.   
+  Line 5.3.1 was removed as patient diaries are no longer collected   
+  by [CONTACT_779].   
+  Added details to the patient diary instructions in 5.2.4.   
+  Maximum number of sites was increased from 10 to 20.   
+  The definition of an adverse event was further clarified in   
+  Section 11.   
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+           
+ 
+ZOLL Form Number:  90A0001-A03 
+Form REV Level: FI 
+ 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774162] wearable 
+cardioverter defibrillator (WCD) modified to collect data (Trends) in order to  evaluate data accuracy 
+and patient interactions with the device.   
+Study Population  Participants will be heart failure patients with an ejection fraction ≤ 35% who have been prescribed a 
+LifeVest WCD. 
+Intervention A LifeVest WCD modified to coll ect data (Trends). These devices will be commercially available 
+and CE marked. 
+Study Design  This will be a multi-center pr ospective observational study. 
+Study Size 
+The study will enroll a minimum of 150 and a maxi mum of 250 subjects. A minimum of five and a 
+maximum of twenty centers will be used for enrollment.  
+ 
+ 
+  
+ZOLL Document Number:  90D0120 Page [ADDRESS_774163] Trends Validation Protocol B 
+ ___________________________________________________________________________________________  
+ 
+     
+ZOLL Pi[INVESTIGATOR_9109] 1. INTRODUCTION 
+ZOLL has released (CE marked) its latest softwa re version of the LifeVest 4000, modified for 
+the collection of data relevant to the heart failure patient population.  Like all wearable 
+defibrillators, this version also monitors for VT /VF, notifies the patient if VT/VF occurs and 
+instructs them to press response buttons.  If the patient is unresponsive to the alarms, the 
+LifeVest delivers defibrillation therapy. Versions of the LifeVest have been used commercially in the [LOCATION_002] and Europe since 2002, with over 100,[ADDRESS_774164] (Appendix A). The LifeVest general use and performance data are published 
+regularly on the commercial website www.zoll.com . 
+This software version has modification s that include but are not limited to: 
+ Body position data collection 
+ Activity data collection 
+ The ability to perform a health survey 
+ The ability to guide patients through a walk test  
+ 
+2. DEVICE DESCRIPTION 
+A complete description of the operation and management of the LifeVest is given in the 
+Operator Manual (20B0048). 
+2.1 Description of Heart Trends modifica tion for heart failure monitoring 
+2.1.1 Body Position : This metric uses the acceleromete r in the LifeVest belt node to 
+measure body position trends.  It is reporte d as a percent time of day at lying flat, 
+reclined (and at what degree), or standing.   This may be used to indicate body 
+position during sleep.  Fluid buildup in the lungs often causes patients to add 
+pi[INVESTIGATOR_587928] a reclining chair to alleviate their symptoms.  Changing body 
+angle during sleep is an established indicator of worsening heart failure. 
+2.1.2 Body Orientation:   This metric uses the accelerome ter in the LifeVest belt node 
+to measure sleepi[INVESTIGATOR_587929].  It is repo rted as a percent time of day at lying 
+supi[INVESTIGATOR_050], prone, left or right.   
+2.1.3 Activity Trends : The patient activity metric uses  the accelerometer in the belt 
+node to measure patient movement.  It is reported as hours active per day and 
+total number of steps taken.  
+Decreases in activity may represent an in crease in heart failure symptoms, while 
+an increase in activity may represent posi tive effects of the patient’s medical 
+treatment. 
+2.1.4 Heart Rate Trends : The heart rate (HR) metric uses the existing HR software to 
+provide a moving average of HR.  It is reported as minimum, maximum, and [ADDRESS_774165]:   A six-minute walk test (6MWT) is a valuable tool used by [CONTACT_587946]’s functional capacity.  It is intended to be performed in an 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774166], but 
+is patient-initiated, and is conducted in the patient’s home.  The program reports 
+HR and step count during the test, as we ll as the recovery period. The LifeVest 
+can also calculate the distance covered by [CONTACT_587947]. 
+2.1.6 Health Survey:   The health survey is a short questionnaire that is administered 
+via the LifeVest Monitor.  It can be co nducted daily or weekly, and the physician 
+can customize which questions should be asked.   
+2.2 Documents referenced 
+Wearable Defibrillator Operator’s Manual: 20B0048  
+(to be referred to as “Operator Manual”) 
+Wearable Defibrillator Patient Manual: 20B0047 
+(to be referred to as “Patient Manual”) 
+Sample Consent Form: 90D0120-ICD 
+Case Report Forms: 90D0120-CRF 
+Patient Diary: 20C0238 (German) or 20C0240 (English) 
+ 
+3. OBJECTIVES 
+The primary objectives are to document the pr ecision of the HF metrics measurements, and 
+to demonstrate that they are comparable to results from other traditional methods of 
+measurement. The specific primary objectives are: 
+3.[ADDRESS_774167], and  
+3.2 To observe the accuracy of daily heart rate, a ctivities, and body position in patients with 
+heart failure by [CONTACT_587948][INVESTIGATOR_587929]. 
+Secondary objectives are to obse rve patient interactions with the Trends user interface. The 
+specific secondary objectives are: 
+3.[ADDRESS_774168], and  
+Further secondary objectives are to observ e patient interactions with the wearable 
+defibrillator itself. The specific tertiary objectives are: 
+3.5 To observe compliance with wearable defibr illator use during the study period, and 
+3.6 To observe patient-device interactions during  a ventricular arrhythmia, if any should 
+occur during the study period. 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774169] be met: 
+4.1.[ADDRESS_774170] symptomatic heart failure (i.e., NYHA class II or higher). 
+4.1.[ADDRESS_774171] an ejection fraction of 35% or less at the start of WCD use. 
+4.1.[ADDRESS_774172] be ≥18 years of age (over the legal age of providing consent). 
+4.2 None of the following exclus ion criteria are permitted: 
+4.2.[ADDRESS_774173] an implantable cardiove rter defibrillator (ICD), recently had 
+an ICD removed, or are planning to receiv e an ICD within the next three months. 
+4.2.2 Patients who need an assistive device for ambulation (wheelchair, walker or 
+cane). 
+4.2.[ADDRESS_774174] prescription, the prescribing physician/research coordinator will determine 
+whether the patient is eligible for the study.   
+5.[ADDRESS_774175]'s eligibility to enter the stud y will be determined during the pre-study 
+assessment.  The pre-study assessment will include: 
+ Reviewing the subject's medical history and symptoms to determine whether the 
+inclusion and exclusion criteria are met. 
+ Discussing the risks and benefits of the study with the patient. 
+5.2 Initial Visit (0 to 2 weeks of WCD use) 
+ Obtain informed consent.  
+5.2.1 WCD Setup 
+The monitor will be programmed in accordance with the instructions in the 
+Operator Manual.  The followi ng settings will be used: 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774176] Trends Validation Protocol B 
+ ___________________________________________________________________________________________  
+ 
+     
+ZOLL Pi[INVESTIGATOR_9109] [IP_ADDRESS]  The Walk Test at home will be  programmed to occur weekly. 
+[IP_ADDRESS]  The Heart Health Survey will be programmed to occur daily. 
+5.2.[ADDRESS_774177] at office/clinic (monthly) 
+This portion will be done under the superv ision of the research coordinator during 
+each visit, including the Initial Visit.  Follow the instructions in section 5.6. 
+ 
+5.2.[ADDRESS_774178] at home (weekly) 
+[IP_ADDRESS]  Subjects will receive a WCD notification  once per week to do a Walk Test.  
+[IP_ADDRESS]  It is important for subjects to wear the WCD for the complete duration of 
+the Walk Test 
+[IP_ADDRESS]  Before and after, they will be aske d to answer a question about shortness 
+of breath and another about fatigue. They should pi[INVESTIGATOR_587930]. 
+[IP_ADDRESS]  Subjects should walk at a comfortable pace.  
+[IP_ADDRESS].1  Odd numbered subjects: Advise od d-numbered subjects to walk 
+in a straight line, turning back at each end, such as walking back and forth in a hallway or narrow room.  
+[IP_ADDRESS].2  Even numbered subjects: Advise ev en-numbered subjects to walk 
+in a circle or oval, such as walking a track, or walk in a square or 
+rectangle, such as walking around a room. 
+[IP_ADDRESS]  Subjects should stop walking when th e voice prompt says “stop walking”.  
+[IP_ADDRESS]  During the walk test, it is OK for subj ects to stop and rest at any time. 
+The subject should continue walking after resting if they feel able. 
+[IP_ADDRESS]  Subjects should do the Walk Test in the same place each week. 
+[IP_ADDRESS]  Remind subjects that these instructions can also be found in the Patient 
+Manual. 
+5.2.[ADDRESS_774179] Diary (daily, for 28 days)  
+Subjects will be given four diaries compri sing [ADDRESS_774180] the following: 
+[IP_ADDRESS].1  How well they slept on a scale of 1 (very restless) to 5 (very well).  
+[IP_ADDRESS].2  Location of sleep, either chair or bed. 
+[IP_ADDRESS].3  Number of pi[INVESTIGATOR_587931]. 
+[IP_ADDRESS].[ADDRESS_774181] lying down. 
+[IP_ADDRESS].5  The position they found themselves when awakened. 
+[IP_ADDRESS].6  If they got out of bed at night (include approximate time and 
+duration). 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774182] Trends Validation Protocol B 
+ ___________________________________________________________________________________________  
+ 
+     
+ZOLL Pi[INVESTIGATOR_9109] [IP_ADDRESS]  In the evening, subjects should, at a minimum, record the following: 
+[IP_ADDRESS].1  How active they were during the day on a scale of 1 (seldom 
+active) to 5 (very active).  
+[IP_ADDRESS].2  Any activities they can remember during the day and the 
+approximate time (examples: “I went shoppi[INVESTIGATOR_52857] 3:30 to 
+5:00PM” or “I watched my grandchildren from 10 AM to 2 PM”). 
+[IP_ADDRESS].3  If they slept during the day (include approximate time and 
+duration, as well as whether it was on a chair or bed). 
+[IP_ADDRESS].[ADDRESS_774183] did not do it, the reas on why should be recorded. 
+5.2.5 Instructions for Heart Health Survey (daily) 
+Subjects will answer questions daily concer ning their health. These questions will 
+appear on the screen of the WCD. The questions should be answered honestly.  
+5.2.[ADDRESS_774184] in approximately four weeks. 
+5.2.7 Complete the Initial Case Report Form. 
+5.3 Follow-up Visit 1 (4 to 6 weeks of WCD use) 
+5.3.[ADDRESS_774185] in approximately four weeks. 
+5.4 Follow-up Visit 2 (8 to 10 weeks of WCD use) 
+5.4.[ADDRESS_774186] in approximately four weeks. 
+5.5 Follow-up Visit 3 (12 to 14 weeks of WCD use) 
+5.5.[ADDRESS_774187] at office/clinic 
+5.6.1 Odd numbered subjects: While the subject is wearing the WCD, the Walk Test 
+should be performed in the office/clinic using the American Thoracic Society 
+guidelines. Record the data using the Walk Test Case Report Form. 
+5.6.2 Even numbered subjects: Program the WCD to start a Walk Test. The subject 
+should perform the WCD Walk Test using the same walking space as the odd 
+numbered subjects. Record the data us ing the Walk Test Case Report Form. 
+5.[ADDRESS_774188] be completed.  
+ZOLL Document Number:  90D0120 Page [ADDRESS_774189] pr ompted by [CONTACT_587949] (clinical) 
+environment, and the Walk Test prompted by  [CONTACT_587950]. Distance will be 
+used to compare the standard method with the WCD method performed within the same 
+environment. Step count will be used to compare WCD methods. Odd and even numbered 
+subjects will have outpatient WCD results anal yzed separately and combined. Paired or 
+independent t-test methods w ill be used as appropriate. 
+Patient Diaries will be qualitatively compared to the position, orientation, and activity 
+metrics recorded by [CONTACT_587951], as well as to the results of the Health Survey. 
+Health Survey results will be qualitativel y and quantitatively correlated (Pearson or 
+Spearman as appropriate) to the position, orient ation, and activity metrics recorded by [CONTACT_587952]. Health Survey results will also be compar ed to the position, orientation, and activity 
+metrics recorded by [CONTACT_587951]. 
+Heart Rate metrics will be evaluated by [CONTACT_587953] (t-test) with a random and non-random 
+sampling of ECG data recorded by [CONTACT_587951]. At a minimum, one random sample per week 
+will be compared to the Heart Rate metrics. 
+All data will be analyzed and reviewed for intervariable trends and correlations.  
+ 
+7. RISKS AND BENEFITS 
+Since subjects are selected from patients al ready wearing a WCD for medical reasons, the 
+risks of the study relate entirely to the perfor mance of the Walk Test and the data collection 
+involved. 
+Some subjects may not be accustomed to walkin g for six minutes at a time. The extra exercise 
+may result in sore muscles. A few subjects ma y experience cardiac ischemia while walking. 
+Subjects are advised not to perform the Walk Test  or stop the test if they feel any cardiac 
+symptoms.  If the patient does not adhere to th ese directives, it is possible that a myocardial 
+infarction may occur, with pain, hospi[INVESTIGATOR_587932] a result.  
+Although subjects will not receiv e direct personal or health benefits from taking part in this 
+study, the study may be helpful to future pa tients by [CONTACT_587954].  
+ 
+8. SUBJECT CONSENT AND CONFIDENTIALITY 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774190]'s name [CONTACT_587959] (the “Sponsor”) but will be kept 
+confidential.  Authorized personnel from the et hics committee and regulatory authorities may 
+have access to original subject records. 
+ 
+9. STUDY SIZE 
+A minimum of [ADDRESS_774191] igator will be responsible for obtaining and 
+maintaining Informed Consent Forms and Case  Report Forms (90D0120-CRF).  A copy of the 
+signed Informed Consent Form will be given to  every subject.  A copy of each Case Report 
+Form will be sent to the Sponsor, with th e originals maintained by [CONTACT_737]. 
+ 
+11. ADVERSE EVENTS 
+If a subject or person associated with the s ubject reports or otherwise indicates an adverse 
+event occurred due to the performance of the st udy, specifically while performing the Walk 
+Test or Health Survey, an Adverse Event Form must be filled out.  
+Serious adverse events should be reported to  ZOLL immediately.  The reviewing ethics 
+committee must also be noti fied within [ADDRESS_774192] or completing the Heath Survey shou ld be referred to customer support. These are 
+not to be reported as adverse events. 
+ 
+12. DATA ANALYSIS PLANS 
+Data from all patients enrolled in the study that wear the WCD will be considered and/or 
+analyzed and may be correlated with arrhyt hmias and other events recorded by [CONTACT_230991]'s monitoring system and patient cha rts.  The data stored in the monitor includes: 
+ Automatically stored ECG recordings (including true arrhythmias and false 
+arrhythmia declarations). 
+ Manually stored ECG recordings. 
+ Duration of time that the WCD was worn. 
+ Noise, arrhythmia, and other internal event flags. 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774193] Trends Validation Protocol B 
+ ___________________________________________________________________________________________  
+ 
+     
+ZOLL Pi[INVESTIGATOR_9109]  Device actions during a treatment se quence; i.e., transthoracic impedance 
+measurement, energy delivered and outcome. 
+ Patient device interactions, including patient use of the response buttons. 
+The stored data will be analyzed and correlated to data recorded through Case Report Forms. 
+The data will also be analyzed to determine frequency of noise events, frequency of false 
+arrhythmia events, and percentage of subject wear time.  The results obtained will be 
+compared with the results of commercial LifeVest use.  
+ 
+13. ADMINISTRATIVE RESPONSIBILITIES 
+ZOLL, the Sponsor, is responsible for study ad ministration and providing devices and related 
+materials for the study.   
+The Sponsor will designate one or more approp riately trained and qualified individuals to 
+monitor the investigation.  These individuals will conduct at least one pre-investigation on-
+site visit and one on-site visit during the invest igation to verify the adherence to procedures 
+specified in the protocol, and verify mainte nance of required subject and data records.  
+Monitoring activities will be conducted accordin g to ZOLL's Monitoring of Clinical Studies 
+Standard Operating Procedure (ZOLL 90D0013) and will be documented. 
+The Investigator is responsible for obtaining and maintaining ethics approval of the study 
+protocol.  The Investigator is responsible for obtaining patient consent, and maintaining 
+Informed Consent Forms and Case Report Forms for each subject.  The Investigator is 
+responsible for maintaining records of study protocol deviations and amendments and all 
+correspondence relating to the study.  The Sp onsor will provide an Inve stigator Notebook for 
+this purpose.  At the conclusion of the stud y, the Investigator will provide a report to the 
+Sponsor and the ethics committee. 
+If the device malfunctions or fails to function  as expected, the Investigator must report the 
+incident to ZOLL immediately. 
+Patient identities will be kept confidential; ho wever, ZOLL may provide study results to the 
+[LOCATION_003]’s Food and Drug Administration (FDA) and other regulatory agencies. 
+ 
+ 
+ 
+  
+ZOLL Document Number:  90D0120 Page [ADDRESS_774194] publications 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774195] Trends Validation Protocol B 
+ ___________________________________________________________________________________________  
+ 
+     
+ZOLL Pi[INVESTIGATOR_587933] 
+1. Auricchio et al., “Clinical Efficacy of the Wearable  Cardioverter-Defibrillator in Acutely Terminating 
+Epi[INVESTIGATOR_587934], ” Am J Card, 1998, 81(10):1253-1256. 
+Initial EP lab experience 
+2. Meltendorf et al., “The Wearable Defibrillator – a new Method to prevent Sudden Death,” PACE, 2000; 
+23(4, part II):606. 
+Abstract of single-center case series demonstrati ng safety and feasibility in post-MI and post-CABG. 
+Three of 39 patients had VT/VF events corrected by [CONTACT_587955]. 
+3. Reek et al., “The Wearable Cardioverter Defibrillato r (WCD®) for the prevention of sudden cardiac death 
+– a single center experience,” Z Kardiol, 2002; 91:1044–1052. 
+An expanded post-MI and post-CABG single center case series demonstrating safety and feasibility. 
+4. Schott, “The Wearable Defibrillator,” J Cardiovasc Nurs, 2002; 16(3):44-52. 
+A review of LifeVest function and use from a nursing perspective. 
+5. Reek et al., “Clinical Efficacy of the Wearable Defibrillator in Acutely Terminating Epi[INVESTIGATOR_587935] S hocks,” PACE, 2002, 25 (4, part II):577. 
+Abstract documenting the clinical effica cy of the LifeVest biphasic waveform. 
+6. Reek et al. “A wearable defibrillator for patients w ith an intermittent risk of arrhythmia,” Dtsch Med 
+Wochenschr, 2002; 127(41):2127-30. 
+Review of wearable defibrillator function and use. 
+7. Capucci et al. “Cost-effective use of a new wearable ca rdioverter defibrillator to protect patients at risk of 
+SCA,” Europace, 2003, 4(suppl 1):A44-A45. 
+Abstract analyzing cost of wearable defibrillators. 
+8. Gasparini et al. “A new wearable defibrillator: In itial single center experience,” Europace, 2003, 4(suppl 
+1):A45. 
+Abstract of a small, single-center case series. 
+9. Pi[INVESTIGATOR_587936]. “Use of a new wearable cardioverter defibrillator to reduce the risk of sudden cardiac 
+death,” Europace, 2003, 4(suppl 1):A45-A46. 
+Abstract of a small, single-center case series. 
+10. Suzzani P et al. “The lifecor lifevest™ wearable cardioverter defibrillator,” Europace, 2003, 4(suppl 
+1):A46. 
+Abstract reviewing LifeVest function and use. 
+11. Lang et al., “Morbidity and Mortality of UNOS Status  1B Cardiac Transplant Candidates at Home,” J 
+Heart Lung Transplant, 2003; 22:419-426. 
+Article on outpatient inotropic drug use for transpl ant patients. Both ICDs and wearable defibrillators 
+were used. Compliance not favorable in this article  and two patients died not wearing the LifeVest. 
+12. Reek et al., “Clinical Efficacy of a Wearable Defibr illator in Acutely Terminating Epi[INVESTIGATOR_587937]”, PACE, 2003, 26:2016-2022. 
+Documents the clinical efficacy of  the LifeVest biphasic waveform. 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774196], “Personal Security: Clinical Applica tions of the Wearable Defibrillator,” PACE, 2004; 
+27(1):2-3. 
+Editorial comments on FDA approval study. 
+14. Feldman et al., “Use of a Wearable Defibrillator in  Terminating Tachyarrhythmias in Patients at High 
+Risk for Sudden Death: Results of WEARIT/BIROAD”, PACE, 2004, 27:4-9. 
+FDA approval study. Shows 75% resuscitation success, few inappropriate shocks. Compliance and length 
+of use less than current stats (older versions of LifeVest). 
+15. Chung et al., “Robust Long-Term Cardiac Monitoring Using Dry, Non-adhesive Capacitive Electrodes,” 
+JACC, 2004; 43(5, suppl A):141A. 
+Abstract showing low levels of signal disruption using capacitive electrodes. 
+16. Joseph et al., “Compliance and Effectiveness of th e Wearable Defibrillator Vest,” JACC, 2004; 43(5, 
+suppl A):300A. 
+Abstract showing commercial compliance and effecti veness. Better compliance, only 8 VT/VF events.  
+17. Meltendorf, “Using the Wearable Cardioverter Defibri llator- a strategy for bridging high risk patients 
+after CABG,” Heart Rhythm, 2005; 2(5, suppl):S32. 
+Abstract reviewing [ADDRESS_774197]-CABG patients. Two events. Only 9 of 30 needed ICD after three months of 
+use. 
+18. Wase, “Wearable Defibrillators: A Ne w Tool in the Management of Ventricular Tachycardia/Ventricular 
+Fibrillation,” EP Lab Digest, 2005; 12:22-24. 
+Case report and review of LifeVest function and use. 
+19. Szymkiewicz et al., “Analysis of Sudden Cardiac Arrests During Wearable Defibrillator Use,” 
+Circulation, 2006; 114 (18, suppl II):II-349. 
+Abstract reviewing commercial SCA events while th e LifeVest was worn. Shows SCA was mostly VT/VF 
+and high rate of successful resuscitation. 
+20. Gronda et al., “Heart Rhythm Considerations in H eart Transplant Candidates and Considerations for 
+Ventricular Assist Devices: Intern ational Society for Heart and Lung Transplantation Guidelines for the 
+Care of Cardiac Transplant Candidates—2006,” J Heart Lung Transplant, 2006; 25(9):1043-1056. 
+LifeVest given class I recommendation for status 1B cardiac transplant candidates discharged home. 
+21. Losordo et al., “Intramyocardial Transplantation of Autologous CD34+ Stem Cells for Intractable Angina: 
+A Phase I/IIa Double-Blind, Randomized Controlled Trial,” Circulation, 2007; 115:[ADDRESS_774198] during high-risk time after stem cell transplantation for angina. 
+22. Traub et al., “Sudden cardiac arrest aborted by a wear able cardioverter-defibrillator in newly diagnosed 
+non-ischemic cardiomyopathy,” Heart Rhythm, 2007; 4(5, suppl):S101. 
+Abstract of SCA termination in NICM (case report). 
+23. Choudhuri et al., “Arrhythmic Events During the 40/90 days ‘Cooling Off’ Period: Clinical Utility of the 
+Wearable Defibrillator,” Circulation, 2007; 116: II_348. 
+Abstract of case series using LifeVest before ICD to prevent unnecessary ICD use. 
+24. Wang et al., “Ventricular Fibrillation remains the Primary Presenting Rhythm: Results from the Wearable 
+Cardioverter Defibrillator Human Study,” Circulation, 2007; 116: II_934 - II_935. 
+Abstract documenting VT/VF as first arrhythmia in SCA while wearing LifeVest. 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774199] Trends Validation Protocol B 
+ ___________________________________________________________________________________________  
+ 
+     
+ZOLL Pi[INVESTIGATOR_9109] 25. Freeman et al., “Is Severe Post-shock Bradyarrhyt hmia In Patients Using Wearable Defibrillators 
+Common or Serious?” Circulation, 2007; 116: II_931. 
+Abstract documenting post-shock bradyarrh ythmias are uncommon using LifeVest. 
+26. LaPage et al., “A Fatal Device-Device In teraction between a Wearable Automated De ﬁbrillator and a 
+Unipolar Ventricular Pacemaker,” PACE, 2008; 31:912–915. 
+Case report of pacemaker-LifeVest interac tion (despi[INVESTIGATOR_587938]). 
+27. Abi−Samra et al., “Wearable Defibrillator: Effective Bridging Substitute for ICD Implants,” Europace, 
+2008; 10: i160. 
+Abstract describing case series with  one successful resuscitation. 
+28. Mortada et al., “Sudden Cardiac Death” in: Jeremias A, Brown DL (eds). Cardiac Intensive Care, 2nd 
+Edition, Elsevier, St. Louis (in press). 
+Chapter contains description and pi[INVESTIGATOR_587939]. 
+29. Szymkiewicz, et al. “A Comparison of Compliance and Effectiveness of Wearable Defibrillators and 
+Home AEDs in Out-of-Hospi[INVESTIGATOR_587940],” Circulation, 2008; 118: S_1466. 
+Abstract showing the superiority of the LifeVest to home AED. 
+30. Lewicke et al., “Exploring QT interval chang es as a precursor to the onset of ventricular 
+fibrillation/tachycardia,” Journal of El ectrocardiology, 2009; 42(4):374-9. 
+Changes in QTc prior to a VT event in a variety of VT/VF patients were not significant. 
+31. Szymkiewicz, et al., “Incidence and causes of ina ppropriate defibrillation during wearable defibrillator 
+use,” Heart Rhythm, 2009; 6(5, suppl): S74. 
+Abstract demonstrating the safety of LifeVest use. 
+32. Morrison et al., “Taking a vested interest in a w earable cardioverter defibrillator,” Nursing, 2009; 
+39(6):30-2. 
+Nursing perspective of LifeVest use. 
+33. Dillon et al., “An evaluation of the effectiveness of  a wearable cardioverter defibrillator detection 
+algorithm,” Journal of Electrocardiology, 2009; (June, electronic ahead of print). 
+The WCD detection algorithm has a low risk of inappropriate shocks. 
+34. Saltzberg et al., “Characteristics of Peripartum Cardiomyopathy Patients Using a Wearable Cardiac 
+Defibrillator,” Journal of Cardiac Fail, 2009; 15(6):S59. 
+Abstract demonstrating wearable defib rillator use in peripartum patients. 
+35. Lee et al., “Role of wearable and automatic external de fibrillators in improving survival in patients at risk 
+for sudden cardiac death,” Curr Treat Options Cardiovasc Med, 2009;11(5):360-5. 
+Review of wearable defibrillator. 
+36. Klein et al., “Bridging a Temporary High Risk of Sudden Arrhythmic Death. Experience with the 
+Wearable Cardioverter Defibrillator (WCD), ” PACE, 2009 Nov 2 [Epub ahead of print] 
+Detailed technical review, indication review, and reports  results of European experience (350+ patients. 
+37. Prochnau, “Successful use of a wearable cardioverte r-defibrillator in myocarditis with normal ejection 
+fraction,” Clin Res Cardiol, 2009 Nov 17. [Epub ahead of print] 
+Case report of myocarditis use. 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774200] Trends Validation Protocol B 
+ ___________________________________________________________________________________________  
+ 
+     
+ZOLL Pi[INVESTIGATOR_9109] 38. Zareba et al., “Sudden Cardiac Arrest in End- Stage Renal Disease: Successf ul Resuscitation With 
+Wearable Cardiac Defibrillator”, Circulation, Nov 2009; 120: S701 - S702. 
+Shows resuscitation success among dialysis patients. 
+39. Klein et al. “The Wearable Cardioverter Defibrillato r: Bridge to the Implantable Defibrillator,” Cardiac 
+Electrophysiology Clinics, 2009; 1(1):129-46. 
+Detailed technical review, indication review, and some commercial experience. 
+40. Everitt et al., “Use of the Wearable External Ca rdiac Defibrillator in Children,” PACE, 2010 Feb 23. 
+[Epub ahead of print]. 
+Small retrospective of pediatric commercial experience. 
+41. Chung et al. “Aggregate national experience with the w earable cardioverter-defibr illator vest: event rates, 
+compliance and survival,” JACC, 2010; 55([ADDRESS_774201] 1):A10. 
+Abstract reviewing commercial experience through 2006. 
+42. Szymkiewicz et al. “Wearable defibrillator use prior to ICD implantation or evaluation,” Heart Rhythm, 
+2010; 7([ADDRESS_774202]):S54. 
+Abstract (also oral presentation) detaili ng use prior to ICD in 950 patients. 
+43. Zishiri, et al. “Appropriateness of ICD indications: insi ghts from an analysis of mortality rates in patients 
+using a wearable cardioverter-defibrillator,” Heart Rhythm, 2010; 7([ADDRESS_774203]):S122. 
+Abstract comparing “traditional” and “non-traditional” sudden death indications. 
+44. Bianco et al. “Impact of transthoracic impedance on wearable cardioverter-defibrillator effectiveness,” 
+Heart Rhythm, 2010; 7([ADDRESS_774204]):S365. 
+Abstract demonstrating high success ra te in 252 sustained VT/VF events. 
+45. Carrillo et al. “Wearable defibrillator use after IC D explantation,” Heart Rhythm, 2010; 7([ADDRESS_774205]):S437. 
+Abstract detailing use after ICD explant in 2,060 patients. 
+46. Mitrani et al. “Use of Automatic Wearable Defibr illator in an Uninsured Patient Population,” Heart 
+Rhythm, 2010; 7([ADDRESS_774206]):S234. 
+Abstract showing ICD guideline adheren ce with wearable defibrillator use. 
+47. Karia et al. “Newly Diagnosed Non-ischemic Card iomyopathy patients bridged with the Wearable 
+Cardioverter Defibrillator,” Eur J Heart Fail, 2010; 9 (suppl 1):S149. 
+Abstract reviewing use in 166 new- onset cardiomyopathy patients. 
+48. Bianco et al. “Impact of transthoracic impedance on wearable cardioverter-defibrillator effectiveness,” 
+Europace, 2010; 12([ADDRESS_774207]):i53. 
+Abstract demonstrating high success ra te in 252 sustained VT/VF events. 
+49. Bianco et al. “The Impact of Age on Wearable Ca rdioverter-defibrillator Compliance and Treatment,” 
+Europace, 2010; 12([ADDRESS_774208]):i158. 
+Abstract showing older patients have better complian ce, similar duration of use, and more treatments 
+than younger patients. 
+50. Chung et al. “Aggregate national experience with the w earable cardioverter-defibr illator vest: event rates, 
+compliance and survival,” JACC, 2010; 56:194-203. 
+A review of the entire commercial experience through 2006. 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774209] Trends Validation Protocol B 
+ ___________________________________________________________________________________________  
+ 
+     
+ZOLL Pi[INVESTIGATOR_9109] 51. Verdino “The Wearable Cardioverter-Defibrillato r: Lifesaving Attire or "Fashion Faux Pas?” JACC, 
+2010; 56:204-205. 
+Editorial with positive discussion of commercial data reported by [INVESTIGATOR_583564]. 
+52. Bianco et al. “Wearable Defibrilla tors Within a NYHA Class IV Heart Failure Population,” J of Cardiac 
+Fail, 2010; 16(8):S57. 
+Abstract showing good compliance and hi gher event rates in Class IV patients. 
+53. Siddiqi et al. “Real World Experience with the W earable External Defibrillator: A False Sense of 
+Security?” J of Cardiac Fail, 2010; 16(8):S58. 
+Abstract reporting that time worn is suboptimal co mpared to time prescribed.  Data issues exist as 
+calculations are asserted rather than derivable from the poster. 
+54. Mearns “Wearable cardioverter-defibrillators in th e spotlight,” Nat Rev Cardiol, 2010; 7(10):541.  
+Critical review and summary of Chung article  and other published LifeVest data. 
+55. Glad et al., “Early Defibrillation in Patients Wearing a Wearable Defibrillator,” Circulation, 2010; 
+12(2):120.  
+Abstract reporting on survival benefits of early de fibrillation in a wearable defibrillator population. 
+56. Wilmer et al., “Time Dependence of Sudden Cardi ac Arrest in a Wearable Defibrillator Population,” 
+Circulation, 2010; 122:A2109.  
+Abstract examining SCA circadian variation patt erns in a wearable defibrillator population.  
+57. Conti “Automatic External Defibrillator, Life Vest W earable Defibrillator, or Bo th?” Clin Cardiol, 2010; 
+33(12):722-3. 
+Commentary on potential situatio ns for limited Lifevest use. 
+58. Burkhart et al., “Cardiac Arrhythmias During Pregna ncy,” Current Treatment Options in Cardiovascular 
+Medicine, 2010; 12:457-47. 
+Review article stating wearable defibrillato rs are an option for peripartum arrhythmias. 
+59. Budzikowski, et al., “Ventricular fibrillation effectiv ely treated by [CONTACT_587956] – a 
+case report,” Kardiol Pol, 2011; 69(1):89-90. 
+Case report of wearable defibrillator use with su ccessful treatment of ventricular fibrillation. 
+60. Deering et al. “Wearable Defibrillator Use After Myocar dial Infarction: Results of the WAMI Registry,” 
+JACC, 2011; 57:A14.  
+Abstract reporting on LV recovery in MI patients who obviate the need for an ICD by [CONTACT_2329] a wearable 
+defibrillator.   
+61. Rao, M. et al. “Wearable Defibrillator in Conge nital Heart Disease and Inherited Arrhythmia: A 
+Multicenter Experience,” JACC, 2011; 57:E467. 
+Abstract reporting on wearable defibrillator use in congenital heart disease and inherited arrhythmias. 
+62. Hanson, R. et al. “Clinical Outcomes among Patie nts Using a Wearable Defibrillator,” JACC, 2011; 
+57:E1128. 
+Abstract reporting on clinical outcomes among patie nts using a wearable defibrillator (single site 
+experience).  
+63. Bianco et al. “Long-Term Mortality Risk in Post-Myo cardial Infarct Patients Resuscitated by a Wearable 
+Cardiac Defibrillator,” JACC, 2011; 57:E39. 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774210] been resuscitated by [CONTACT_587957].  
+64. Carrillo et al. “Wearable Defibrillator in patient s following ICD explants for Sudden Cardiac Death 
+protection,” Heart Rhythm, 2011; 8([ADDRESS_774211]):S435. 
+Abstract reporting on wearable defibrillator use as an effective adjunct in ICD explantation 
+65. Mirro et al., “Use of the wearable automatic defi brillator: outcomes and compliance,” Heart Rhythm, 
+2011; 8([ADDRESS_774212]):S437.  
+Abstract on single site experience of wearabl e defibrillator use prior to ICD evaluation 
+66. Glad et al. “Sudden cardiac arrest survival in patients wearing a wearable cardiac defibrillator: 
+Geographic location does not impact su rvival,” Europace, 2011; 13(3):1204. 
+Abstract reporting on survival following SCA in wear able defibrillator patients: geographic location does 
+not make a difference. 
+67. Glad et al. “Survival outcomes for post shock asyst ole in patients wearing a WCD. Pending journal,” 
+Europace, 2011; 13(3):1203. 
+Abstract reporting on post-shock asystole survival and clinical outcomes in wearable defibrillator 
+patients.  
+68. Wan et al. “Incidence of inappropriate wearable de fibrillator shocks is rare —an evaluation of 15,193 
+wearable defibrillator patients,” Europace, 2011; 13(3):375. 
+Abstract reporting on the scarcity of inappropria te shocks in wearable defibrillator patients.  
+69. Karia et al. “Rate of LV Systolic Function Recove ry in Cardiomyopathy Pa tients prescribed Wearable 
+Cardiac Defibrillator,” Eur J of Heart Fail, 2011; 10(suppl 1):S40. 
+Abstract reporting on EF recovery during wearable defibrillator use.  
+70. Saltzberg et al. “Use of a Wearable Cardioverter De fibrillator among Pre-partum Pregnant Women:  An 
+analysis of Safety, Characteristics and Outcom es,” Eur J of Heart Fail, 2011; 10(suppl 1):S26. 
+Abstract reporting on the low inappropriate sho ck events in wearable defibrillator patients.  
+71. Rao et al., “Wearable defibrillator in Congenital Stru ctural Heart Disease and Inherited Arrhythmias: A 
+Multicenter Experience,” Am J Cardiol, 2011;108:1632–1638.  
+Article on wearable defibrillator use for inherited arrhythmia risk.  
+72. Everitt et al., “The Wearable External Cardiac Defibri llator for cancer patients at risk for   sudden cardiac 
+death,” Community Oncol, 2011; 8(9):400-403. 
+Article on wearable defibrillator use for cardiomyopat hy secondary to chemotherapy, in patients with 
+potential for recovery.  
+73. Bianco et al., “Extending Wearable Cardiac Defibrilla tor Use in Heart Failure Patients beyond the ICD 
+waiting period,” J of Cardiac Fail, 2011; 17(8):S52. 
+Abstract reporting on long-term wearable defibrillator use.  
+74. Glad et al.  “Protecting tako tsubo patients from sudde n death: are wearable defibrillators the answer?” J 
+of Cardiac Fail, 2011; 17([ADDRESS_774213]): S55.  
+Abstract reporting on wearable defibrillator use in a population that frequently recovers.  
+75. Austin et al., “Frequency of Improvement in Ve ntricular Function Allows Many Patients to Defer 
+Defibrillator Implantation,” J of Cardiac Fail, 2011; 17(8):S102. 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774214] reporting on EF recovery during wearable defibrillator use.  
+76. Dewland et al., “Indications for Wearable Cardiovert er Defibrillator,” Cardiac Electrophysiol Clin, 2011; 
+3:339-347. 
+A review of the WCD and clinical indications for use.   
+77. Wan et al., “Economic Evaluation of the Wearable Cardioverter-Defibrillator in Patients After ICD 
+Explantation,” Circulation, 2011; 124:A245. 
+Abstract showing cost-effectiveness in ICD explantation patients.  
+78. Wan et al., The Wearable Cardioverter Defibrillator Is Cost-Effective in Protecting High-Risk Patients 
+After Acute Myocardial Infarction,” Circulation, 2011; 124:A100. 
+Abstract showing cost-effectiveness in acute MI patients.  
+79. Mosesso et al., “Successful conversion of Ventricu lar arrhythmias by a Wearable Defibrillator,” 
+Circulation, 2011; 124 :A278. 
+Abstract of survival benefit of wearable de fibrillator use among various indications. 
+80. Cronin et al., Some Like It Cool - Seasonal Temperature, as Well as Clinical And Demographic Factors, 
+Predicts Compliance With the Wear able Cardioverter Defibrillator , Circulation, 2011;124:A14183.  
+Abstract showing good compliance, with m ild variation, despi[INVESTIGATOR_587941]. 
+81. Zishiri et al. Use of the Wearable Cardioverter Defibrillator and Survival after Coronary Artery 
+Revascularization in Patients with Left Ventricular Dysfunction,” Circulation, 2011 ; 124: A9816 . 
+Abstract showing survival differences in low EF reva scularization patients with wearable defibrillator 
+use and single site population without wearable defibrillator use.  
+82. Saltzberg et al., “Characteristics and Outcomes of Peripartum versus Non- peripartum       
+Cardiomyopathy in Women using a Wearable Cardia c Defibrillator,”  J Cardiac Fail, 2012; 18:21-27. 
+Article describing wearable defibrillator use in peripartum women and non-peripartum women. 
+83. Knops et al., “First experience with the wearable cardioverter defibrillator in the Netherlands,” Neth 
+Heart J, 2012; 20(2):77-81. 
+Article describing first use in the Netherlands. 
+84. Whiting et al., “Health and Lifestyle Benefits Resu lting from Wearable Cardioverter Defibrillator Use,” 
+Journal of Innovations in Cardiac Rh ythm Management, 2012; March:1–2. 
+Article describing benefits of wearabl e defibrillator use beyond survival. 
+85. Peters et al., “WCD LifeVest: risk stratifica tion in a case of Tako-Tsubo cardiomyopathy with QT 
+interval prolongation,” Herz, 2012; 37(2):219-21. 
+Case report of wearable defibrillator use in Takotsubo cardiomyopathy. 
+86. Mehta, et al., “Prognostic Significance of Postprocedural Sustained Ventricular Tachycardia or 
+Fibrillation in Patients Undergoing Primary Percut aneous Coronary Intervention (from the HORIZONS-
+AMI Trial),” Am J Cardiol, 2012; 109:805–812. 
+Article mentioning wearable defib rillator use as an option after MI. 
+87. Epstein et al., “Wearable cardioverter-defibrillator use in patients perceived to be at high risk early post-
+MI,” JACC, 2012; 59:E644. 
+Abstract of survival benefit of wearable defibrillator use in post-MI patients. 
+ZOLL Document Number:  90D0120 Page [ADDRESS_774215] Trends Validation Protocol B 
+ ___________________________________________________________________________________________  
+ 
+     
+ZOLL Pi[INVESTIGATOR_9109] 88. Wan et al., “Improved sudden cardiac arrest survival in  hemodialysis patients with wearable cardioverter-
+defibrillator,” JACC, 2012; 59:E651  
+Abstract of survival benefit of wearable de fibrillator use in hemodialysis patients. 
+89. Glad, et al. “Do multiple shock epi[INVESTIGATOR_587942] a Wearable 
+Cardioverter Defibrillator?” Heart Rhythm, 2012; 9(5):S446. 
+Abstract comparing survival of patient s receiving multiple shocks and single shocks. 
+90. Bianco et al. “Protecting the Alcoholic Cardiomyopa thy Patient: Bridge to Decision with the Wearable 
+Cardioverter Defibrillator,” Eur J Heart Fail, 2012; 11(suppl 1):S21. 
+Abstract describing wearable defibrilla tor use in alcoholic cardiomyopathy. 
+91. Szymkiewicz et al. “ECG Quality of Dry, Non-a dhesive Electrodes for Arrhythmia Monitoring,”  
+Europace, 2012; 14(suppl 1):i1. 
+Abstract showing ECG quality is high, with >99% of monitoring time usable. 
+92. Wan et al. “Physical Activity and Relation to Sudde n Cardiac Arrest,” Europace, 2012; 14(suppl 1):i122. 
+Abstract describing lack of activity prior to SCD (most were sleepi[INVESTIGATOR_587943]). 
+93. Wan et al. “Use of Wearable Cardioverter Defibr illator after Implantable Cardioverter Defibrillator 
+explantation: Clinical Experience from 151 German centers,” Euro Heart J, 2012; 33(suppl 1): Sxxx. 
+Abstract describing LifeVest use after ICD explantation. 
+94. Horstmanshof et al. “Experience with the Wearable  Cardioverter Defibrillator in Heart Transplant 
+Candidates,” J of Cardiac Fail, 18([ADDRESS_774216]):S49-S50. 
+Abstract describing LifeVest use pr ior to cardiac transplantation. 
+95. Wan et al. “Patients with Terminal Illness Using a Wearable Cardioverter Defibrillator,” Circulation, 
+2012; 126:A75. 
+Abstract describing LifeVest use in pa tients considered to have terminal illness. 
+96. Karia et al. “Dynamic ECG Changes in Wearable Cardioverter Defibrillator Patients Predict Impending 
+Sudden Cardiac Arrest,” Circulation, 2012; 126:A8. 
+Abstract describing manually d erived ECG changes preceding SCA. 
+97. Karia et al. “Baseline ECG Predictors of 90-Day Surviv al in Wearable Cardioverter-Defibrillator Patients 
+Experiencing a Sudden Cardiac Arrest,” Circulation, 2012; 126:A186. 
+Abstract describing manually derived ECG features that predict mortality. 
+98. Kao et al. “Wearable defibrillator use in heart failure  (WIF): results of a prospective registry,” BMC 
+Cardiovasc Disord, 2012; 12(1):123. 
+Journal article reporting the results of the WIF registry. 
+99. Zishiri et al. “Early Risk of Mortality after Cor onary Artery Revascularization in Patients with Left 
+Ventricular Dysfunction and Potential Role of the W earable Cardioverter Defibrillator.” Circ Arrhythm 
+Electrophysiol. 2012 Dec 28. [Epub ahead of print] 
+Journal article comparing survival of LifeVest patients after CABG with a cohort of patients not using the 
+LifeVest after CABG from the Cleveland Clinic. 
+ 
+ 

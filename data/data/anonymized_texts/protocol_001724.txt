@@ -1,0 +1,813 @@
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 1 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+  
+ 
+Statistical Analysis Plan  
+Clinical Investigation Plan Title  Attain StabilityTM Quad Clinical Study  
+Clinical Investigation Plan Version  Version 3.0  
+20 March  2017 
+Sponsor/Local Sponsor  Medtronic, Inc.  
+8200 Coral Sea Street NE  
+Mounds View, MN U.S.A. 55112  
+1-800-328-2518  
+Document Version  1.0 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 2 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ Table of Contents  
+1. Version History  ................................ ................................ ................................ ..............  3 
+2. List of Abbreviations and Definitions of Terms  ................................ .............................  4 
+3. Introduction ................................ ................................ ................................ ...................  5 
+4. Study Objectives  ................................ ................................ ................................ ............  5 
+4.1. Primary objective  ................................ ................................ ................................ ..............  5 
+4.2. Secondary Objectives  ................................ ................................ ................................ ........  6 
+5. Investigation Plan  ................................ ................................ ................................ .........  6 
+6. Determination of Sample Size  ................................ ................................ .......................  7 
+7. Statistical Methods  ................................ ................................ ................................ ........  8 
+7.1. Study Subjects  ................................ ................................ ................................ ..................  8 
+7.1.1.  Disposition of Subjects  ................................ ................................ ..........................  8 
+7.1.2.  CIP Deviations  ................................ ................................ ................................ .... 10 
+7.1.3.  Analysis Sets  ................................ ................................ ................................ ...... 10 
+7.1.4.  Primary Endpoints  ................................ ................................ ...............................  10 
+7.1.5.  Secondary Endpoints  ................................ ................................ ...........................  11 
+7.2. Center Pooling  ................................ ................................ ................................ ................  11 
+7.3. Handling of Missing Data and Dropouts  ................................ ................................ ............  12 
+7.4. Adjustments for Multiple Comparisons  ................................ ................................ ..............  12 
+7.5. Demographic and Other Baseline Characteristics  ................................ ...............................  12 
+7.6. Treatment Characteristics  ................................ ................................ ................................  12 
+7.7. Interim Analyses  ................................ ................................ ................................ .............  13 
+7.8. Evaluation of Objectives  ................................ ................................ ................................ .. 13 
+7.8.1.  Primary Safety Objective  ................................ ................................ .....................  13 
+7.8.2.  Primary Efficacy Objective  ................................ ................................ ...................  14 
+7.8.3.  Secondary Objective #1  ................................ ................................ ......................  15 
+7.8.4.  Secondary Objective #2  ................................ ................................ ......................  16 
+7.8.5.  Secondary Objective #3  ................................ ................................ ......................  19 
+8. Validation Requirements  ................................ ................................ .............................  19 
+   
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 3 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ 1. Version History  
+Version  Summary of Changes  Author(s)/Title  
+1.0 •  ‘Not Applicable, New Document ’ Joao Monteiro/ Sr Statistician  
+Adam Himes/ Sr Pr Test 
+Engineering  
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 4 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ 2. List of Abbreviations  and Definitions of Terms  
+Abbreviation  Definition  
+ACC American College of Cardiology  
+AHA American Heart Association  
+BMI Body Mass Index  
+CABG  Coronary A rtery Bypass G raft 
+CIP Clinical Investigation Plan  
+CEC Clinical Events Committee  
+CRF Case Report Form  
+CRT Cardiac Resynchronization Therapy: Established  
+pacing therapy for patients with heart failure  
+CRT-D Cardiac Resynchronization Therapy - Defibrillator  
+CRT-P Cardiac Resynchronization Therapy - Pacemaker  
+CS cannulation  Coronary Sinus cannulation  
+eCRF Electronic Case Report Form  
+EMEA  Europe, Middle East, Africa  
+FDA Food and Drug Administration  
+HRS Heart Rhythm Society  
+IDE Investigational Device Exemption   
+LV Left Ventricular  
+MI Myocardial Infarction  
+NYHA  New York Heart Association  
+OUS Outside of the United States  
+PCT Pacing Capture Threshold  
+PMA Premarket Approval  
+PNS Phrenic Nerve Stimulation  
+ 
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 5 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ Abbreviation  Definition  
+PTCA  Percutaneous Transluminal Coronary  Angioplasty  
+RA Right Atrial  
+RV Right Ventricular  
+SAP Statistical Analysis Plan  
+US United States  
+ 
+3. Introduction  
+The Attain Stability ™ Quad  LV Lead  Clinical Study is a prospective, non -randomized, multi -site, global,  
+Investigational Device Exemption (IDE), interventional clinical study. The purpose of this clinical study is  
+to evaluate the safety and efficacy of the Attain Stability Quad MRI SureScan LV Lead (Model 4798).  This 
+study will not be considered investigational in geographies with CE Mark of the Attain Stability  Quad MRI 
+SureScan LV  lead (Model 4798). However, data collected from all study subjects will be  represented in 
+the PMA Supplement (PMA -S) and all clinical reports.  Subjects successfully implanted with the Attain 
+Stability  Quad MRI SureScan LV Lead (Model 4798) will be followe d at implant, three months, six months 
+and every six months thereafter until FDA approval is obtained or until study closure, whichever comes 
+first. 
+ 
+This Statistical Analysis Plan (SAP) has been designed to document, before data is analyzed, the rationale  
+for the study design, and the planned analyses related to the primary objective and secondary  objectives . 
+Additional analysis of the study data beyond this plan may be conducted to provide evidence further 
+supporting the market approval of the lead  and ad ditional publications . The statistical analyses conducted 
+for publications and/or ad -hoc requests may not be limited to this document.  
+ 
+The Attain StabilityTM Quad Clinical Study CIP Version 3.0, dated 20 March 2017  was used to create this 
+SAP. 
+4. Study Objectives  
+4.1. Primary objective  
+The primary objective of the study is to assess the safety and characterize the efficacy  of the Attain 
+Stability Quad MRI SureScan LV Lead (Model 4798) . 
+ 
+Primary Safety Objective: Lead complication -free rate at 6 months  
+The Att ain Stability Quad MRI SureScan LV Lead (Model 4798) will be considered safe if the probability of  
+subjects free of Model 4798 lead -related complications at 6 months post -implant is greater than 87%.  
+ 
+Primary Efficacy Objectives: Lead pacing capture thresh olds at 6 months  
+To demonstrate the effectiveness of the Attain Stability Quad MRI SureScan LV Lead (Model 4798), the  
+study will evaluate the likelihood that there are at least two programmable vectors for each patient post  
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 6 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ implant. The effectiveness of th is lead will be evaluated based on two primary efficacy objectives. More  
+specifically, both primary efficacy objectives must be met simultaneously.  
+ 
+Primary Efficacy Objective #1  
+The Attain Stability Quad MRI SureScan LV Lead (Model 4798) will meet this objective if the   
+proportion of subjects with at least one LV lead pacing vector having a pacing capture threshold  
+less than or equal to 2.5 V at 0.5 ms pulse width (with absence of Phrenic Nerve Stimulation  
+(PNS) at 5.0 V) at 6 months post -implant is greater than 80%.  
+ 
+Primary Efficacy Objective #2  
+The Attain Stability Quad MRI SureScan LV Lead (Model 4798) will meet this objective if the   
+proportion of subjects with at least one additional (or second) LV lead pacing vector having a  
+pacing capture thre shold less than or equal to 4.0 V at 0.5 ms pulse width (with absence of PNS  
+at 5.0 V) at 6 months post -implant is greater than 80%.  
+4.2. Secondary  Objectives  
+The secondary objectives are descriptive in nature and are intended to provide additional information  
+about the Attain Stability Quad MRI SureScan LV Lead (Model 4798). There will be no established  
+performance requirements for these secondary objectives.  
+o To summarize implant procedure related information: success rate, implant related times   
+o To estimate 6 -month reliability: post implant lead failure modes (i.e. complication rate)  
+o To estimate electrical measurement values (Pacing Capture Thresholds (PCTs) and Lead 
+Impedance) at 6 months post -implant  
+5. Investigation Plan  
+The Attain StabilityTM Quad Clinical Stu dy is a prospective, non -randomized, multi -site, global,  IDE, 
+interventional clinical study . Up to 471  subjects may be enrolled in the study.  
+The inclusion  and exclusion criteria to be enrolled in the study are as follows:  
+Inclusion criteria  
+o Patient meets CRT implant criteria as determined by local regulatory and/or hospital policy 
+(i.e. US subjects should meet CRT device indications per  the HRS/ACC/AHA guidelines)  
+o Patient (or legally authorized representative) has  signed and dated the study -specific  
+Consent Form  
+o Patient is 18 years of age or older, or is of legal age to give informed consent per local and  
+national law  
+o Patient is expected to remain available for follow -up visits 
+Exclusion criteria  
+o Patient has had a previous unsuccessful LV lead  implant  attempt  
+o Patient has a previous CRT system or LV lead  implanted (for example, transvenous or 
+epicardial)  
+o Patient is currently implanted with a recalled (i.e. market -withdrawn, recalled or safety alert) 
+RA and/or RV lead  
+o Patient has known coronary venous va sculature  that is inadequate for lead placement  
+o Patient has unstable angina pectoris or has had an acute myocardial infarction (MI) within 
+the past 30  days 
+o Patient has had a coronary artery bypass graft (CABG) or percutaneous transluminal coronary  
+angiopla sty (PTCA) within the past 90 days  
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 7 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ o Patient has contraindications for standard transvenous cardiac pacing (e.g., mechanical right  
+heart valve)  
+o Patient has had a heart transplant (patients waiting for heart transplants are allowed in the  
+study)  
+o Patient has k nown renal insufficiency and/or significant allergy to contrast dye that would 
+prevent them from receiving an occlusive  venogram during the implant procedure  
+o Patient is contraindicated for <1mg  dexamethasone acetate  
+o Patient is enrolled in any concurrent dr ug and/or device study that may confound the results 
+of this study  
+o Patient has a terminal illness and is not expected  to survive more than six months  
+o Patient meets exclusion criteria required by local  law (e.g. age, pregnancy, breast feeding, 
+etc.) 
+o Patien t is unable to tolerate an urgent thoracotomy  
+Selection of subjects, treatment of subjects, and evaluation of study data are potential sources of bias.  
+Methods incorporated in the study design to minimize potential bias include (but are not limited to):  
+ 
+o Subjects will be evaluated at baseline to confirm eligibility for enrollment with defined 
+inclusion/exclusion criteria  
+o Subject demographics and medical history will be collected at baseline and differences that 
+may affect primary endpoints will be identifi ed 
+o To ensure widespread distribution of data between sites, the maximum number of subjects 
+allowed per site is 50  
+o All implanters in the study will be experienced in the implant of CRT -P and/or CRT -D systems  
+o Data collection requirements and study procedures  will be standardized across all sites and  
+geographies  
+o All study site personnel and Medtronic personnel will be trained on their respective aspects of 
+the study using standardized training materials, and required to follow the CIP  
+o Per the specifications in  the Monitoring Plan, monitori ng visits will be conducted for 
+adherence to  the CIP and to verify the CRF data against source data  
+o Pre-defined statistical methods specified in the CIP and the Stati stical Analysis Plan (SAP) will 
+be followed  
+o The Steering Com mittee  members will not have influence on the treatment decisions by 
+study site investigators  during the trial  
+o An independent and blinded CEC will regularly review and adjudicate reported adverse events  
+and deaths  
+o Registration of the trial on ClinicalTrial s.gov and the publicat ion plan will ensure that study 
+results  will be reported  
+o All study investigators are required to meet 21 CFR Part 54, Financial Disclosure by Clinical  
+Investigators, to identify potential bias due to financial interest in the outcome of the study  
+6. Determination of Sample Size  
+The sample size requirement at 6 -months for each of the study objectives is displayed in  
+ 
+Table  1. The  first row does not account for attrition, while the second row is inflated by 15% attrition  
+which accounts for 5% pre -procedure and 10% post procedure attritions . The sample size  requirement  
+for Secondary Objective #2  was given by the FDA  as a requirement for ev aluating post implant lead 
+failures.  Therefore, the overall sample size for the study is 471.    
+ 
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 8 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ Table 1: Require Sample size by Study Objective  
+ Primary  
+Safety  
+Objective  Primary 
+Efficacy  
+Objective  
+#1 Primary 
+Efficacy  
+Objective  
+#2 Secondary  
+Objective  
+#1 Secondary 
+Objective  
+#2 (post -
+implant 
+failure 
+modes)  Secondary  
+Objective  
+#3 Overall  
+Number 
+needed at  
+6-months  170 145 50 NA 400 NA 400 
+Number of 
+enrollments  200 171 59 NA 471 NA 471 
+ 
+7. Statistical Methods  
+7.1. Study Subjects  
+7.1.1.  Disposition of Subjects  
+A STROBE flow diagram  will be used to describe the disposition  of study subjects.   
+  
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 9 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ Figure 1 shows an example of a blank STROBE flow diagram .   
+Allocation : 
+Since the Attain StabilityTM Quad Clinical Study  is not a randomized study, all study subjects that are 
+enrolled are allo cated t o the intervention (i.e. implanted with Attain StabilityTM Quad Clinical Study ).   
+Follow -up: 
+All Model 4798 lead implanted subjects will be followed until  study closure or subject exiting from the 
+study  due, but not limited, to  the following reasons:  
+• Study subject withdrawal of consent  
+• Study subject death   
+• Lost to follow -up 
+• Investigator withdr aws subject from the study  
+• Other reasons described by the study subject  
+Analysis:  
+Analys es of study objectives will  be completed for subjects  with valid data entries, e.g.  save-complete 
+case report forms  and CEC fully adjudicated adverse events, etc.   If there is missing data that prevents 
+the analysis  of a pre -specified objective  then those test subjects will be excluded  from that objective .  
+Unless otherwise specified, t here will be no imputation for missing data.  Additional sensitivity analysis will 
+be carried out to assess impact of missing data on study objectives.  
+ 
+  
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 10 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ Figure 1 – Attain StabilityTM Quad Clinical Stud y 
+ 
+  
+Subjects who had Model 4798 lead 
+successfully implanted and 
+completed 6 -month follow -up 
+visit(n=xx) 
+Subjects who had Model 4798 lead 
+successfully implanted (n=xx) 
+Consented  (n=xx) 
+Subjects who had an Model 4798 
+lead implant attempt (n=xx) 
+•Subjects who did not have an implant 
+attempt  of the Attain Stability Quad MRI 
+SureScan LV Lead - Model 4798 (n=x)  
+•Subjects who did not have the Attain 
+Stability Quad MRI SureScan LV Lead - 
+Model 4798  successfully implanted  (n=x)  
+•Number of exits (n=x)  
+•Num ber of deaths (n=x)  
+•Number of lost to follow -up (n=x)  
+ 
+•Number of exits (n=x)  
+•Number of deaths (n=x)  
+•Number of lost to follow -up (n=x)  
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 11 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+  
+7.1.2.  CIP Deviations  
+Deviations from the CIP will be co llected on the Study Deviation CRF. Deviations will be summarized in 
+the final report in a table by coded category. Deviation codin g will be performed by Medtronic . The 
+number of deviations per category, and the number and percentage of subjects with a deviation in each 
+category will be reported.  
+7.1.3.  Analysis Sets  
+There will be three analysis sets  used in this study:  
+Analysis Set #1 : 
+All subjects who undergo Model 4798 lead implant attempt procedure.  
+ 
+Analysis Set #2 : 
+All subjects who are successfully implanted with a Model 4798 lead and with valid1 pacing data collected 
+at 6 months post implant follow -up visit .  
+ 
+Analysis Set #3 : 
+All subj ects who are successfully implanted with a Model 4798 lead and who completed the 6 -month post 
+implant follow -up visit or experienced lead failure prior to 6 -months.  
+ 
+If a subject experienced multiple Model 4798 lead implant proce dures ( e.g. a second lead was implanted 
+due to  a system modification of the initialed implanted lead), only first experience will be included for the 
+analysis. Multiple lead attempts during this same procedure will not be counted as multiple procedures.   
+7.1.4.  Primary  Endpoints  
+Primary Safety Endpoint  
+The study primary safety endpoint is Attain Stability Quad MRI SureScan LV Lead (Model 4798) related  
+complications through 6 months post implant. All reported system and procedure -related adverse events  
+will be  reviewed by an event review committee for LV lead relatedness and severity . 
+ 
+Primary Efficacy Endpoint #1  
+The Model 4798 LV lead has sixteen (16) programmable pacing vectors. The endpoint for the primary  
+efficacy objective is whether there is at least one Model 479 8 LV lead pacing vector with pacing capture 
+voltage thresholds less than or equal to 2.5V (with absence of PNS at 5.0 V). This endpoint will  be 
+measured at the 6 -month post implant follow -up visit.  
+ 
+Primary Efficacy Endpoint #2  
+The co -primary efficacy endp oint is whether a second Model 4798 lead configuration has a pacing  
+capture threshold less than or equal to 4V (with absence of PNS at 5.0 V), excluding the pacing vector  
+that is already counted to the primary efficacy endpoint #1. This endpoint will be me asured at 6 -month  
+post implant follow -up visit .   
+                                                
+ 
+1 PCT measured at pulse width ≤ 0.5 ms  
+ 
+ 
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 12 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ 7.1.5.  Secondary Endpoints  
+To summarize implant procedure related information  
+Implant procedure related endpoints will include implant success rate and procedure durations.  
+ 
+To estimate 6 -month reliability  
+The Model 4798 LV lead 6 -month reliability endpoint is Model 4798 lead related complications.   
+ 
+To estimate electrical measurement values (PCTs and Lead  Impedance) at 6 months post -
+implant  
+The electrical measurements endpoints are pacing capture thresholds and  impedance values collected at  
+each time point (i.e. Implant, 6 months, etc.).    
+7.2. Center Pooling  
+The Attain StabilityTM Quad Clinical  Study is expected to be conducted at up to 5 6 sites worldwide, with a 
+total enrollment of 471 subjects across all study centers. Participating geographies are expected to 
+include, but are not limited to: the United States  (US), Canada, E MEA, Malaysia , and Hong Kong . Per the 
+CIP, each center will enro ll between 0 and 50 subjects.  
+The primary analysis for all study objectives will include valid d ata entries  from all study sites. In 
+additional, sensitivity analysis will be conducted to assess in characteristics of each region and/or study 
+site impact the overall study results. Specifically, t his analysis will investigate whether sites exhibit 
+significant heterogeneity in event rates, and whether geography (a binary variable representing whether 
+a site is located in the US or outside United States (OUS) ) moderates any statistically significant 
+heterogeneity that is observed. Models will be fit separately for each primary outcome; in the analysis of 
+each, centers within the US having ≤5 subjects with complete data will be considered as coming from 
+one center, here denoted as ‘US small’ . Similarly, `OUS small’ will be the collection of data from centers 
+outside the US having ≤5 subjects with complete data . If a Cochran’s Q -test for heterogeneity shows 
+p<0.05, it will be taken as evidence of significant hete rogeneity between sites. Evidence of between -site 
+heterogeneity will not necessarily preclude pooling data; rather, it will prompt further investigation into 
+the sources of the apparent differences in event rates between sites. At a minimum, findings of an alyses 
+on heterogeneity between study sites and between all US and OUS sites will be shown in the final report 
+in a table by endpoint.  
+In addition, s ummary statistics for baseline characteristics and primary endpoints by study center may be 
+provided in cli nical reports . See examples below (actual format may vary).  
+ 
+Table A: Baseline Characteristics by Center  
+Site Numbe r of 
+Subjects 
+Underwent Model 
+4798 Implant 
+Attempt  Mean LVEF  
+(± SD)  Mean QRS  
+(± SD)  % Subjects 
+with NYHA 
+Class III /IV 
+Medical Center X      
+Medical Center  Y     
+Medical Center Z      
+ 
+ 
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 13 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ Primary Objective Results by Site  
+Site Numbe r of Subjects 
+Underwent Model 
+4798 Implant 
+Attempt  Number of 
+Subjects 
+implanted 
+successfully 
+with Model 
+4798 Lead  Number of 
+Subjects with 
+Model 4 798 
+Related 
+Complications  
+through  6-
+months  post-
+implant  % of Subjects with  
+at least 2 vectors 
+with PCT≤ 4.0V  % of Subjects 
+with at least 
+one vector with 
+PCT≤ 2.5V  
+Medical Center X       
+Medical Center  Y      
+Medical Center Z       
+ 
+7.3. Handling of Missing Data and Dropouts  
+Unless otherwise specified, i f data is missing then there will be no imputation of the data.  Instead, 
+subjects with missing data will be excluded.   Survival analyses will consider time to event censored at the 
+last contact for lost to follow -up subjects.  
+7.4. Adjustments for Multiple Comparisons  
+No adjustments will be made for multiple comparisons.  
+7.5. Demographic and Other Baseline Characteristics  
+Several  characteristics will be reported for each enrolled subject at time of enrollment. The variables 
+collected will include , but not limited to,  subject age, gender , body mass index (BMI), left ventricular 
+ejection fraction (LVEF), intrinsic QRS duration, New York Heart Association ( NYHA ) class and medical 
+history . Tables and descriptive statistics will be used to summarize subject data with respect to these 
+variables. For quantitative variables, the mean, standard deviation, median, first and third quartiles, 
+minimum and maximum wil l be presented. For qualitative variables, counts and percentages will be given . 
+ 
+Sensitivity analysis will also be carried out using a similar method as outlined in section 7.2 to assess in 
+subject gender affects overall study outcome.  
+7.6. Treatment Characteristics  
+Statistical s ummaries for  treatment characteristic variables (on the LV Lead Implant Procedure CRF ) will 
+be reported. Continuous variables will be reported as mean, standard deviation, median, minimum, 
+maximum, and quartiles . Categorical variables will be reported as number and percentage of subjects.  
+The procedure variables to be summarized  will includ e, but not limited to , CRT implant timing, operative 
+time, LV lead implant timing, number of LV lead implant attempts, reason for being unable to implant the 
+LV lead, diameter of the cardiac vein at final LV lead tip position, final location of LV tip elec trode, final 
+location of helix , final vector programmed for LV pacing configuration, reason for choosing final 
+programmed vector . 
+ 
+ 
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 14 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ 7.7. Interim Analyses  
+The study protocol specified one non-formal interim analysis for secondary objective #2 (6 -month 
+reliabili ty). See Section 7.8.4 for details.  No formal  interim analysis is planned for study primary 
+objectives; or other secondary objectives.  
+7.8. Evaluation of  Objectives  
+7.8.1.  Primary Safety Objective  
+The Attain StabilityTM Quad  MRI SureScan LV Lead (Model 4798) will be considered safe if the probability 
+of subjects free of Model 4798 lead -related complications at 6 months post -implant is greater than 87%  
+(i.e., the lower bound of a one -sided 97.5% confidence interval must be greater than 87%).  
+ 
+                                                          Hypothesis:  
+H0: S(6-month) ≤ 87%  
+H1: S(6-month) > 87%  
+ 
+where S 6-month is the probability that a subject remains free from Model 4798 lead related complications  
+through 6 months since implant.  
+ 
+Analysis Dataset:  
+Analysis set # 1 per section 7.1.3.   
+Analysis Method:  
+A standard  time to first event survival analysis type will be performed to investigate the hypothesis 
+proposed in the primary safety objective. More specifically, t he Kapl an-Meier method will be used to 
+estimate the probability of a subject surviving from any Model 4798 lead -related complication  as a 
+function of time; the 1-sided 97.5% confidence limit lower bound for the survival probability at 6 months 
+(183 days) will be calculated using the log -log survival function approach (Kalbfleisch and Prentice 
+2002)2. For the purposes of this analysis, t ime 0 is defined as  the day a subject undergoes the implant 
+procedure of the Attain Stability Quad MRI SureScan LV Lead (Model 479 8), which is independent of 
+success status of this implant procedure. For the survival analysis, an event is defined as an Attain 
+Stability Quad MRI SureScan LV Lead (Model 4798) related complication according to Clinical Events 
+Committee (CEC) adjudicatio n. Event date  is the onset date of a subject’s first complication that is related 
+to the Attain Stability Quad MRI SureScan LV Lead (Model 4798) . The definition of “complication” and “LV 
+lead related” can be found on the study CIP.  Subjects who undergo an Attain Stability Quad MRI 
+SureScan LV Lead (Model 4798) implant attempt and do not experience any LV lead related complications 
+will have their time to event  censored at their last known time to exposure to the initial Attain Stability 
+Quad MRI SureScan LV Lead (Model 4798). For any lost to follow -up subject, the last contact date will be 
+used as the censor date.  
+ 
+Additional Analysis:  
+Sensitivity analyses  will be performed to assess the robustness of the results . In par ticular,  
+                                                
+ 
+2 Kalbfleisch, J.D. and Prentice, R.L. (2002). The Statistical Analysis of Failure Time Data . Second Edit ion. 
+John Wiley & Sons, Inc. New York.  
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 15 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ • In the event a site investigator disagrees with the CEC’s classification of an event, site 
+investigator’s event classification will be disclosed, however only CEC final adjudication results will 
+be used for the statistical analysis.  In the event when CEC final adjudication of relatedness of an 
+event is “unknown”, the “worst -case” scenario analysis will be carried out where the event will be 
+counted as a lead related event in addition to the primary analysis of this objective.  
+ 
+• A tipping point survival analysis  will be performed . In particular,  subjects having time to event 
+censored before 6 months will be considered one -by-one (by implant date) as observed events.  
+Therefore,  the 6-month survival intervals will be calculated for all scenarios i n which a censored 
+subject becomes an event.  
+• A similar survival analysis will be performed , but considering the first 200 subjects who  had at 
+least an implant attempt of the Attain Stability Quad MRI SureScan LV Lead - Model 4798 . The 
+first 200 subjects will be selected based on the date of implant. In case of a tie (for the 200th 
+position) among subjects  who are implanted on the same day, the initial proc edure time 
+(converted to U.S. central time) will be used to select the first 200 subjects.  
+7.8.2.  Primary Efficacy  Objective  
+To demonstrate the effectiveness of the Attain Stability Quad MRI SureScan LV Lead (Model 4798), the  
+study will evaluate the likelihood that there are at least two programmable vectors for each patient post  
+implant . The effectiveness of this lead will be evaluated based on two primary efficacy objectives. Both 
+primary efficacy objectives must be met simultaneously.  
+ 
+Primary Efficacy Objective #1  
+The Attain Stability Quad MRI SureScan LV Lead (Model 4798) will meet t his objective if the  
+proportion  of subjects with at least one LV lead pacing vector having a pacing capture threshold  
+less than or equal to 2.5 V at 0.5 ms pulse width (with absence of Phrenic Nerve Stimulation  
+(PNS) at 5.0 V) at 6 months post -implant is g reater than 80%.  
+ 
+Hypothesis  
+H0: P1 6-month ≤ 80%  
+HA: P1 6-month > 80%  
+ 
+where P1 6-month is the proportion  of subjects with pacing voltage thresholds ≤ 2.5V at 0.5ms (with  
+absence of PNS at 5.0 V) at 6 months  follow -up visit post -implant for at least one LV lead pacing 
+vector.  
+ 
+Primary Efficacy Objective #2  
+The Attain Stability Quad MRI SureScan LV Lead (Model 4798) will meet this objective if the  
+proportion of subjects having the two following condition s satisfied at the 6 -month follow -up visit 
+is greater than 80%:  
+ 
+o At least two  LV lead pacing vectors having PCT less than or equal to 4.0 V at 0.5 ms 
+pulse width  and absence of PNS at 5.0V  
+o At least one LV lead pacing vector having PCT less than or equal to 2.5 V  at 0.5 ms pulse 
+width  and absence of PNS at 5.0V  
+ 
+ 
+Hypothesis  
+H0: P2 6-month ≤ 80%  
+HA: P2 6-month > 80%  
+ 
+where P2 6-month is the proportion  of subjects  meeting  the two conditions above.  
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 16 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ Analysis Dataset:  
+Analysis set # 2 per section 7.1.3.   
+Analysis Method:  
+The lower bound of the 1 -sided 97.5% Confidence Interval  for P16-month and P2 6-month will be calculated 
+using the Clopper -Pearson method.  More specifically,  
+• For th e primary efficacy objective #1 , the number of successes  observed is defined as  the 
+number of subjects who had at the  6-month follow -up visit at least one vector with pacing 
+voltage thresholds ≤ 2.5V at 0.5ms and absence of PNS at 5.0 V.  
+ 
+• For the primary efficacy objective #2, the number of successes observed is defined as the 
+number of subjects who had a) at least two LV lead pacing vectors having PCT less than or equal 
+to 4.0 V and absence of PNS at 5.0V b) At least one LV lead pacing vector having PCT l ess than 
+or equal to 2.5 V at 0.5 ms and absence of PNS at 5.0 V . 
+For both objectives, only Model 4798 lead successfully implanted subjects who had the 6 -month follow -up 
+and performed the PNS testing will be considered.  
+ 
+Additional Analysis:  
+Sensitivity analyses will be performed to assess the robustness of the results . In particular,  
+• A tipping point analysis will be performed to find how many more failures are necessary to not 
+meet the primary efficacy objectives.  
+ 
+• Repeat these analyses using  the first 200 subjects  who are successfully implanted with a Model 
+4798 lead and have valid pacing data collected at 6 months post implant follow -up visit. In case 
+of a tie (for the 200th position) among subjects who are implanted on the same day, the ini tial 
+procedure time (converted to U.S. central time) will be used to select the first 200 subjects.    
+7.8.3.  Secondary  Objective # 1 
+The first secondary  objective is  to summarize implant proce dure information . 
+Analysis Dataset:  
+Analysis set #1  per section 7.1.3.   
+Analysis Method:  
+Descriptive statistics will be computed. The Attain Stability Quad LV lead implant success rate will be 
+estimated as the number of subjec ts with Attain Stability Quad MRI SureScan LV Lead (Model 4798) 
+successfully implanted divided by the total number of subjects who  undergoes  an Attain Stability Quad 
+MRI SureScan LV Lead (Model 4798) implant attempt. A 2 -sided 95% Confidence Interval will be 
+calculated using the Clopper -Pearson  method.   
+Procedure times are collected via eCRF. Only subjects with the Attain Stability Quad MRI  
+SureScan LV Lead (Model 4798) successfully implanted will be included in this calculation.  
+ 
+• The total implant procedu re time is defined as time from initial incision to final skin closure.  
+• Fluoroscopy time is defined as the total time the fluoroscope is imaging.  
+• Cannulation time is defined as the time from insertion of the first CS cannulation catheter to the 
+first successful CS cannulation.  
+• Successful lead placement time is defined as the time from lead insertion of the successfully 
+placed lead to the time when the lead is placed in its first acceptable pacing location.  If a subject 
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 17 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ experienced multiple implant attempts  during the same procedure, only the final successful 
+attempt will be included in this analysis.  
+ 
+Statistical summaries (e.g. mean, standard devia tion, min, max, median) will be compute for these 
+procedure time s. 
+7.8.4.  Secondary  Objective # 2 
+The second  secondary objective aims to estimate the  probability of  post implant lead failure through 6 
+months for each individual failure type (e.g. lead dislodgement , infection, device capturing issue).  
+ 
+Analysis Dataset:  
+To proactively address FDA reviewer’s potential questions a t the time of PMA -s submission,  two 
+approaches will be considered : (a) standard frequentist approach and (b) Bayesian approach borrowing 
+information from historical datasets. Per FDA requirement, the study reports will provide standard 
+frequentist estimates as primary results. The analysis dataset will consist of all su bjects successfully 
+implanted with the Attain Stability Quad MRI SureScan LV Lead (Model 4798) and who completed at least  
+6-month follow -up or experienced  lead failure prior to 6 -months  (i.e. Analysis set #3  per section 7.1.3.).   
+For the Bayesian approach, analysis will be performed using data from the first 360 subjects successfully 
+implanted with the Attain Stability Quad MRI SureScan LV Lead (Mod el 4798) and who completed the 6 -
+month follow -up. In addition, the Bayesian approach will use historical datasets from the Attain Stability 
+and Attain Performa clinical studies, described in more detail below.  
+ 
+Analysis Method:  
+Standard Frequentist Approac h 
+For each lead failure mode, the Attain Stability Quad LV lead failure rate will be estimated as the number 
+of subjects with Attain Stability Quad MRI SureScan LV Lead (Model 4798) failure before 6 months (183 
+days) divided by the total number of subjects  successfully implanted with  an Attain Stability Quad MRI 
+SureScan LV Lead (Model 4798) successfully implanted and who completed  at least  the 6 -month follow -
+up or had a lead failure before 6 months post -implant . A 2 -sided 95% Confidence Interval will be 
+calculated using the Clopper -Pearson  method.  
+ 
+Bayesian Approach  
+The Bayesian analysis will be conducted as a virtual adaptive study.  The interim look dataset will be 
+constructed as it would have been available after the 360th patient was enrolled, and the additional 
+enrollment will be computed. The final analysis will be conducted using only the data from the interim 
+and additional enrollment, along with the historical prior data, to simulate the results of an adaptive 
+study.  
+ 
+Methodology  
+Historical data from the Attain Stability and Attain Performa Clinical studies will be incorporated using the 
+power prior methodology with a discount function3. A maximum weight of 37 effective patients will be 
+                                                
+ 
+3 Haddad, Tarek, et al. "Incorporation of stochastic engineering models as prior information in Bayesian 
+medical device trials."  Journal of Biopharmaceutical Statistics  (2017): 1 -15. 
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 18 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ given to the historical data, eq ual to the number of subjects in the Attain Stability OUS study that had 
+follow up data at six months or longer with an Attain Stability lead. Historical data will be scaled to create 
+an effective weight of 37 patients in the case of the Attain Performa hi storical data because the actual 
+study enrolled 401 patients.  
+The Attain Stability data will be applied only to complications associated with lead fixation: dislodgement 
+and perforation.  There were 0 events for 37 patients in the Attain Stability study. T he Attain Performa 
+data will be applied to all other complications.  There were 10 non -fixation complications in the Attain 
+Performance study, out of 401 patients.  
+There are three steps in the methodology:  
+1. Compare the historical and current data to creat e a measure of similarity, 𝑝 
+2. Compute the effective sample size 𝑎0 of the historical data using a discount function based on 
+the level of similarity  
+3. Combine the historical data 𝑦0 and current data 𝑦 using the calculated weight 𝑎0 to get the 
+combined da ta set 𝑦+𝑎0𝑦0 
+These three steps are performed at the interim analysis and at the final analysis.  
+Comparison  
+Let y and y0 be the number of events that occur for the current data and historical data respectively and 
+let n and n0 be the total number of su bjects for the current and historical studies that reach the 6 month 
+time point or had an event.  A discount  function is used to adjust the strength of the prior according to 
+the agreement between current and historical data.    
+Suppose we develop the post erior distribution of θ̃ and θ0 for the current data and historical data, 
+respectively, both with minimally informative priors.  Calculate θ as: 
+ 
+θ̃~𝑏𝑒𝑡𝑎 (y+1,n−y+1)        (1) 
+𝜃0~𝑏𝑒𝑡𝑎 (𝑦0+1,𝑛0−𝑦0+1)      (2) 
+ 
+We can stochastically compare the distribution of θ̃ to θ0 as follows : 
+ 
+𝑝=𝑃(θ̃≤𝜃0|𝑦,𝑛,𝑦0,𝑛0) (3) 
+ 
+Equation (3) can be calculated by drawing m samples of θ̃  and  𝜃ℎ  from (1) and (2) (i.e.  
+ 𝜃1̃ ,𝜃2̃… 𝜃𝑚̃ and θ01,θ02…θ0m  ) 
+𝑝=𝑃(θ̃≤𝜃0)=1
+𝑚∑𝐼{θ̃𝑖<𝜃0𝑖} 
+ 
+The resulting p -value is then used to compute the discount  function.  
+Compute the discount function  
+The weight of the historical data will be computed with a discount function based on the measure of 
+similarity 𝑝.  The historical data will be scaled f rom 0 to 37 effective patients as:  
+Prior weight from Attain 
+Stability  Prior weight from Attain 
+Performa  
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 19 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ a0̂ =1−𝑒−(𝑝∗5)2 a0̂ =37
+401[1−𝑒−(𝑝∗5)2] 
+The discount function for the Attain Stability data set is given below:  
+ 
+Figure 2: Loss function a0̂ =𝟏−𝒆−(𝒑∗𝟓)𝟐 
+ 
+Combine the current and historical data  
+Let 𝑦 and 𝑦0 be the number of event s that occur for the current data and historical data respectively and 
+let 𝑛 and 𝑛0 be the total number of subjects for the current and historical studies that reach the 6 month 
+time point or had an event.  Following the work of Ibrahim and Chen [1], the posterior probability  for 
+event  rate 𝜃 using the power prior is given as:  
+𝑃(𝜃|𝑦,𝑛,𝑦0,𝑛0,a0̂ )=𝑏𝑒𝑡𝑎 (𝛼,𝛽) 
+                                                     where  
+𝛼=𝑦+a0̂ 𝑦0+1 
+𝛽=(𝑛−𝑦)+a0̂ (𝑛0−𝑦0)+1 
+ 
+Interim analysis  
+This analysis will be conducted with  data retrospectively analyzed as it would have been available for the 
+first consecutively enrolled 360 subjects . Within this data set , some patients will not have completed the 
+full evaluation period. A longitudinal model will be employed to enable final observations to be imputed 
+for those subjects with incomplete information.  
+There are 3 types of subjects at a given interim analysis:  
+1. Subjects that have complete data  
+2. Subjects that have partial data (censored value at a particular time)  
+3. Subjects that have no information (subjects that have not been enrolled)  
+We will construct predictive probabilities for types 2 and 3. The predictive probability model that will be 
+used is a piecewise exponential. This will allow us to impute  final outcomes for the subjects who have not 
+had an event and have not completed 6 mon th follow up.  
+We assume a gamma distribution prior for each of the exponential segments, which allows us to estimate 
+the hazard rate using closed form conjugacy. Therefore, the posterior is also a gamma distribution.   
+We partition duration time into 3 int ervals  across six months (0 -2, 2-4, and 4 -6 months)  and assume the 
+hazard is constant within each interval. The event times are therefore modeled as:  
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 20 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ Tevent ~ PE(1,2,3) 
+where 1,2,3 are the hazards for the three segments.  
+ 
+The purpose of the interim look is to determine the number of additional patients to enroll in order of 
+have a high probability of  meeting the required effective sample size of 𝑛𝑒𝑓𝑓𝑒𝑐𝑡𝑖𝑣𝑒 =400 (after accounting 
+for attrition). The effective sample size is the sum of enrolle d patients and effective historical patients at 
+the final analysis. The interim analysis may result in as few as 363 patients enrolled.  This study follows 
+methods from Berry, et.al.4  
+Adaptive Bayesian sample size algorithm : 
+1. If the predictive probability of 𝑛𝑒≥400 is larger than 80% then enrollment will stop.  
+2. If the predictive probability of 𝑛𝑒≥400 is less than 80%, enroll sufficient additional 
+patients to make the probability of 𝑛𝑒≥400 at least 80%.   
+Final Analysis  
+The final analysis will be performed using the 6 -month data from the patients enrolled at the interim 
+analysis time point, along with the 6 -month data from the number of additional patients resulting from 
+the interim analysis.  The same three steps (Compare , Compute, Combine) will be performed to 
+incorporate the historical data sources.  
+The estimates for rates of lead failure modes will be presented as a point estimate and 95% credible 
+intervals.  
+7.8.5.  Secondary Objective #3  
+The third secondary objective aims to estimate electrical measurement values (PCTs and Lead 
+Impedance) at 6 months post -implant . 
+Analysis Dataset:  
+Analysis set #2 per section 7.1.3.   
+Analysis Method:  
+Mean, standard deviation, minimum, median and maximum for PCTs and lead pacing impedance at the  
+6-month follow -up visit will be presented  for the final programmed LV lead pacing polarity . In addition, 
+the frequency of each LV lead pacing polarity being used  at the final programmed configurations will be 
+presented.  
+Electrical values may be collected via eCFR and  Save-to-Media files (i.e. Save -to-Diskette and Carelink 
+Transmissions). The statistical analysis will prioritize documented values from eCRF over sav e-to-media 
+data. If discrepancies of over 1 volt is identified comparing values from two data sources, data queries 
+may be initiated for resolution.  
+8. Validation Requirements  
+Minimum validation requirements for the programs written to execute the analyses in this SAP:  
+                                                
+ 
+4 S.M. Berry, B.P. Carlin, J.J. Lee, P. Muller, Bayesian adaptive methods for clinical trials. CRC press , 
+2010. 
+
+056-F286, Statistical Analysis Plan Templat e, Versio n 2.0 Page 21 of 21 
+Version 1.0  Attain StabilityTM Quad Clinical Study   25 Jul 2017  
+Statistical Analysis Plan  
+ • Primary objective: Level II  
+• Secondary  objectives: Level II  
+• Description of patient population (baseline demographics , patient characteristics , etc.):  Level II  
+• Deviation table and listing: Level II I 

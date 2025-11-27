@@ -1,0 +1,1384 @@
+UVA CENTER FOR DIABETES TECHNOLOGY  
+Adaptive Biobehavioral Control (ABC) of 
+Automated Insulin Delivery: A Randomized, 
+Controlled Pi[INVESTIGATOR_16116]  
+[STUDY_ID_REMOVED]
+Version Number: v1.3 
+30-Jun-2 021
+CLINICAL PROTOCOL     
+ 
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 2 of 58 
+ 
+KEY ROLES 
+ 
+Protocol Principal Investigator   
+[CONTACT_5627], degree Sue A. Brown, MD  
+Institution Name  [CONTACT_464733][INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 3 of 58 
+ 
+PROTOCOL  VERSION  HISTORY  
+Version 
+Number  Author(s)  Approver  Effective Date Revision Description  
+1.0 Jon Olson,  
+Mary Oliveri  Sue Brown  17-Nov-2020  Original Protocol  
+1.1 Jon Olson  
+ Mary Oliveri  20-Nov-2020  FDA modifications  
+• Added “Participants will be 
+notified that eA1c is for 
+informational purposes only 
+and not to be used for short -
+term changes to insulin 
+settings (section 5.3).   
+• Modified study stoppi[INVESTIGATOR_464700] (section 
+9.9.2 ) 
+1.2 Jon Olson  Sue Brown  11-Jan-2020  IRB Pre -Review  
+• Corrected visit numbering 
+(section 6.7) 
+1.3 Mary Oliveri  Sue Brown  30-Jun-2021  Study Team  
+• Modified u se of personal CGM 
+equipment (Section 3.2 & 5.1) 
+• Added Participant Compliance 
+definitions (section 6.5) 
+  
+CLINICAL PROTOCOL     
+ 
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 4 of 58 
+ 
+SITE PRINCIPAL INVESTIGATOR [INVESTIGATOR_113411]:  Adaptive Biobehavioral Control (ABC) of Automated Insulin Delivery: A 
+Randomized, Control led Pi[INVESTIGATOR_464701]/Date: v1. 3/30-Jun-[ADDRESS_595661] read the protocol specified above.  In my formal 
+capacity as a Site Principal Investigator, my duties include ensuring the safety of the study 
+participants enrolled under my supervision.  It is  understood that all information pertaining to 
+the study will be held strictly confidential and that this confidentiality requirement applies to all 
+study staff at this site.  
+This trial will be carried out in accordance with ICH E6 Good Clinical Practice (GCP) and as required 
+by [CONTACT_716]: [LOCATION_002] (US) Code of Federal Regulations (CFR) applicable to clinical studies (45 CFR Part 46, 21 CFR Part 50, 21 CFR Part 56, 21 CFR Part 312, and/or 21 CFR Part 812).  
+As the Principal Investigator, I will assu re that no deviation from, or changes to the protocol 
+will take place without prior agreement from the sponsor and documented approval from the 
+Institutional Review Board (IRB), or other approved Ethics Committee, except where necessary to eliminate an imm ediate hazard(s) to the trial participants.  
+All key personnel (all individuals responsible for the design and conduct of this trial) have completed Human Participants Protection Training and Good Clinical Practice Training.  Further, I agree to ensure that all staff members involved in the conduct of this study are informed about 
+their obligations in meeting the above commitments.  
+Investigator’s Signature ___________________________ Date: _____ / _____ / _____   
+Investigator’s Name :  _____________________________________________________  
+Site Name:  [CONTACT_464734][INVESTIGATOR_2268] 1_ 30-Jun-[ADDRESS_595662] OF ABBREVIATIONS  
+ABBREVIATION  DEFINITION  
+ABC Adaptive Biobehavioral Control  
+AID Automated Insulin Delivery Device  
+ATM  Auto Titration Module  
+ADRR  Average Daily Risk Range  
+AP Artificial Pancreas  
+APG  Ambulatory Glucose Profile  
+API [INVESTIGATOR_464702]/BTLE  Bluetooth, Bluetooth low energy  
+CF Insulin sensitivity factor  
+CGM  Continuous Glucose Monitoring  
+CLC Closed -Loop Control  
+Control -IQ Tandem t:slim X2 Insulin Pump with Control -IQ Technology  
+CR Carbohydrates Ratios Profile  
+CSII Continuous Subcutaneous Insulin Injection  
+DKA  Diabetic Ketoacidosis  
+DSMB  Data Safety Monitoring Board  
+eA1c  Estimated Hemoglobin A1c  
+FDA Food and Drug Administration  
+GCP Good Clinical Practice  
+HbA1c  Hemoglobin A1c  
+HBGI  High Blood Glucose Index  
+IDE Investigational Device Exemption  
+IOB Insulin -on-Board  
+LBGI  Low Blood Glucose Index  
+NIH National Institutes of Health  
+O/P Office Visit / Phone Visit  
+POC  Point -of-Care  
+SAP Sensor -Augmented Insulin Pump  
+QC Quality Control  
+CLINICAL PROTOCOL     
+ 
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-[ADDRESS_595663]  Web Simulation Tool  
+  
+CLINICAL PROTOCOL     
+ 
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 7 of 58 
+ 
+PROTOCOL SUMMARY  
+PARTICIPANT AREA  DESCRIPTION  
+Title  Adaptive Biobehavioral Control (ABC) of Automated Insulin Delivery: A 
+Randomized, Controlled Pi[INVESTIGATOR_464703] (WIT) - A web -based software providing additional 
+information regarding glucose variability, estimated A1c, risks for hypo - and 
+hyperglycemia, and potential changes of insulin pump parameters, to users of the 
+Control-IQ system . The WIT is the clinical implementation of the ABC concept, 
+which includes the following modules :  
+• Behavioral Anticipation Module (BAM) - an app running on a smart 
+phone which provides on- demand  information to the participant 
+primarily on glycemic risks.  
+• Auto Titration Module (ATM) that provides recommendations to the 
+participant to  periodically update insulin parameters.  
+• Web Simulation Tool (WST) - is intended to allow users of the Control -IQ 
+system replay treatment scenarios in computer simulation, thereby [CONTACT_464714].  
+Investigational Medication  None  
+Objectives  Assess the safety and feasibility of two modules (BAM and ATM  / WST ) used in 
+conjunction with an FDA approved automated insulin delivery system (t:slim X2 
+with Control-IQ technology)  
+Study Design  Randomized parallel group trial.  
+Number of Sites  1 
+Endpoint  Primary Outcome : Safety assessment of ATM  / WST  and BAM modules.  
+Secondary Outcomes : 
+• Percent of readings in the target ranges of 70 -180 and 70 -140 md/dL  
+• Other CGM -based metrics;  
+• Questionnaires addressing BAM and participant preferences for system/technology use.  
+Population  Key Inclusion Criteria  
+• Age [ADDRESS_595664] one year  
+• Current user of t:slim X2 insulin pump with Control -IQ Technology  
+Key Exclusion Criteria  
+• Recent severe hypoglycemic event or DKA during the past one year  
+Sample Size   Recruit up to 45 participants of Control -IQ with the objective of randomizing 30 
+subjects  
+Treatment Groups  • Group 1: Control -IQ + Auto Titration Module (ATM)  and Web Simulation Tool 
+(WST) for  6 weeks 
+• Group 2: Control -IQ + Auto Titration Module (ATM) and Web Simulation Tool 
+(WST) + Behavioral Adaptation Module (BAM) for 6 weeks  
+Participant Duration  8 weeks  
+CLINICAL PROTOCOL     
+ 
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 8 of 58 
+ 
+Protocol Overview/Synopsis  Two -week baseline use of personal Control -IQ system followed by [CONTACT_17628] 
+1:1 into two groups. Group 1 will use their personal Control -IQ system and add an 
+auto titration module ATM)  and web simulation tool (WST)  in which insulin 
+parameters may be adju sted on a weekly basis. Group 2 will use their personal 
+Control-IQ system and add the ATM  / WST  on a weekly basis as well as a 
+behavioral adaptation module (BAM). The BAM will consist of information 
+modules in which information only is given to participant s (e.g. hypoglycemic risks, 
+daily glycemic profiles, eA1c , and variability tracker).  
+ 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 9 of 58 
+ Table 1 Schedule of Study Visits and Procedures  
+ Visit Name  [CONTACT_4838] 1  Visit 2  Visit 3  Visit 4  Visit 5  Visit 6  Visit 7  Visit 8  Visit 9  
+Description  Screening 
+Visit  Device 
+Training & 
+Run-In Randomiza
+tion Weekly 
+Check -In Weekly 
+Check -In Weekly 
+Check -In Weekly 
+Check -In Weekly 
+Check -In Final 
+Visit   
+Timing  -8 to -2 
+weeks  -28 to -14 
+days  Day 1  Day 7±3 Day 
+14±3 Day 
+21±3 Day 
+28±3 Day 
+35±3 Day 
+42±3 
+Location  O/P O/P O/P O/P O/P O/P O/P O/P O/P 
+Informed Consent  X         
+Eligibility Assessment  X         
+Medical History  X         
+HbA1c  X        X 
+Screening Blood 
+Testing: CMP, TSH if 
+applicable  X         
+Pregnancy test (if 
+applicable)  X X X      X 
+Physical Exam  X         
+Vital Signs (including 
+height/weight)  X         
+Training on Relevant 
+Devices or Modules   X X       
+Randomization    X       
+Questionnaires    X      X 
+Review diabetes 
+management and AEs  X X X X X X X X X 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 10 of 58 
+ Table of Contents  1 
+Chapter 1:  Background  ....................................................................................................... 14 2 
+1.1 Introduction  ........................................................................................................................ 14 3 
+1.2 Description of the Equipment  ............................................................................................. 18 4 
+1.3 Description of the  Information  Modules  ............................................................................ 19 5 
+Chapter 2:  Study Description  ............................................................................................... 22 6 
+2.1 Study Objective  ................................................................................................................... 22 7 
+2.2 Study Design ........................................................................................................................ 22 8 
+2.3 Purpose/Obje ctives of Clinical Study  .................................................................................. 23 9 
+2.4 Study Participants  ............................................................................................................... 23 10 
+2.5 Clinical Sites  ........................................................................................................................ 23 11 
+2.6 Primary Specific Aim  ........................................................................................................... 23 12 
+2.7 Secondary Specific Aim ....................................................................................................... 23 13 
+Chapter 3:  Study Devices  ..................................................................................................... [ADDRESS_595665] udy Devices Accountability Procedures ........................................................................... 24 19 
+Chapter 4:  Study Screening  .................................................................................................. 25 20 
+4.1 Participant Recruitment and Enrollment  ............................................................................ 25 21 
+4.2 Informed Consent and Authorization Procedures  .............................................................. 25 22 
+4.3 Screening Procedures  ......................................................................................................... 25 23 
+4.4 Participant Inclusion Criteria ............................................................................................... 26 24 
+4.5 Participant Exclusion Criteria  .............................................................................................. 26 25 
+4.6 Screening Procedures  ......................................................................................................... 27 26 
+Chapter 5:  Study Equipment Training  ................................................................................... 30 27 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 11 of 58 
+ 5.1 CGM Training  ...................................................................................................................... 30 28 
+5.2 Insulin Pump Trainin g ......................................................................................................... 30 29 
+5.3 Training on the Investigational Applications  ...................................................................... 31 30 
+5.4 Ancillary Device Training  ..................................................................................................... 32 31 
+5.5 Blood Glucose Training  ....................................................................................................... 33 32 
+5.6 Blood Ketone Training ......................................................................................................... 33 33 
+Chapter 6:  Study Procedures  ................................................................................................ 34 34 
+6.1 Run -In Phase (Visit 2)  .......................................................................................................... 34 35 
+6.2 Ra ndomization Visit (Visit 3)  ............................................................................................... 34 36 
+6.3 Optimization of Insulin Pump Settings  ............................................................................... 35 37 
+6.4 Check -In Visits (Visit 4 -8) .................................................................................................... 35 38 
+6.5 Participant Study Compliance  ............................................................................................. 35 39 
+6.6 Study System Issues  ............................................................................................................ 35 40 
+6.7 Repeat ing Visits & Unscheduled Visits  ............................................................................... 36 41 
+6.8 Final Visit (Visit 9)  ................................................................................................................ [ADDRESS_595666] -Study Check -In Visit  .................................................................................................... 36 43 
+6.10 Early Withdraw  ................................................................................................................. 36 44 
+Chapter 7:  Testing Procedures  ............................................................................................. 37 45 
+7.1 Laboratory / Point of Care Testing  ...................................................................................... 37 46 
+7.2 Questionnaires  .................................................................................................................... 37 47 
+Chapter 8:  Risks Associated with Clinical Trial  ...................................................................... 39 48 
+8.1 Potential Risks and Benefits of the Investigational Device  ................................................. 39 49 
+8.2 General Considerations ....................................................................................................... 41 50 
+Chapter 9:  Adverse Events, Device Issues, and Stoppi[INVESTIGATOR_1869]  .............................................. 42 51 
+9.1 Definitions  ........................................................................................................................... 42 52 
+9.2 Reportable Events  ............................................................................................................... 43 53 
+9.3 Relation ship of Adverse Event to Study Device  .................................................................. 44 54 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 12 of 58 
+ 9.4 Intensity of Adverse Event  .................................................................................................. 45 55 
+9.5 Coding of Adverse Events  ................................................................................................... 45 56 
+9.6 Outcome of Adverse Events ................................................................................................ 45 57 
+9.7 Reportable Device Issues  .................................................................................................... 46 58 
+9.8 Timing of Event Reporting  .................................................................................................. 47 59 
+9.9 Stoppi[INVESTIGATOR_2121]  ................................................................................................................. 47 60 
+Chapter 10:  Miscellaneous Considerations  ........................................................................... 49 61 
+10.1 Prohibited Medications, Treatments, and Procedures  .................................................... 49 62 
+10.2 Participant Withdrawal  ..................................................................................................... 49 63 
+10.3 Confidentiality  ................................................................................................................... 49 64 
+Chapter 11:  Statistical Consideration  ................................................................................... 50 65 
+11.1 Design and Randomization  ............................................................................................... 50 66 
+11.2 Sample Size  ....................................................................................................................... 50 67 
+11.3 Outcome Measures  ........................................................................................................... 50 68 
+11.4 Safety Analyses  ................................................................................................................. 51 69 
+11.5 Baselin e Descriptive Statistics  ........................................................................................... 52 70 
+11.6 Device Issues  ..................................................................................................................... 52 71 
+11.7 Analysis of Secondary CGM -based Outcomes  .................................................................. 52 72 
+Chapter 12:  Data Collection and Monitoring  ........................................................................ 54 73 
+12.1 Case Report Forms and Device Data  ................................................................................. 54 74 
+12.2 Study Records Retention  .................................................................................................. 54 75 
+12.3 Protocol Deviations  ........................................................................................................... 54 76 
+Chapter 13:  Ethics/Protection of Human Participants  ........................................................... [ADDRESS_595667]  ................................................................................................................. 55 78 
+13.2 Institutional Review Boards  .............................................................................................. 55 79 
+13.3 Informed Consent Process  ................................................................................................ 55 80 
+Chap ter 14:  References  ........................................................................................................ 57 81 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 13 of 58 
+  82 
+  83 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 14 of 58 
+ Chapter 1:  Background  [ADDRESS_595668] established the current capabilities of closed -loop control ( CLC) [ADDRESS_595669] elements of a next - 89 
+generation CLC system – Adaptive Biobehavioral Control ( ABC) based on the novel concept of 90 
+human- machine co -adaptation – which uses a stochastic -process approximation of the day -to- [ADDRESS_595670] the Web Information Tool (WIT), a web -based software that provides additional 95 
+information regarding glucose variability, estimated A1c, risks for hypo - and hyperglycemia, and 96 
+potential changes of insulin pump parameters, to users of the Control -IQ system (Tandem 97 
+Diabetes Care, San Diego, CA) . 98 
+The ABC concept was conceived during our extensive studies carried under NIH/NIDDK project 99 
+UC4DK108483 “Clinical Acceptance of the Artificial Pancreas: the International Diabetes Closed 100 
+Loop (iDCL) Trial.” The iDCL Trial became most successful study funded by [CONTACT_464715] -DK- 101 
+14-024 “Advanced Clinical Trials to test Artificial Pancreas Device Systems in Type 1 Diabetes 102 
+(UC4).” We completed three clinical protocols, DCLP1, DCLP3, and DCLP5, which became three [ADDRESS_595671] closed -loop control studies attempted to date:  104 
+1) Protocol 1 ( DCLP1 , [STUDY_ID_REMOVED], IDE#G160181) established that a mobile Artificial Pancreas 105 
+(AP) system using a smart phone as a computational hub running the control algorithm, is a 106 
+viable treatment for T1D. This protocol was executed at sev en U.S. sites and was coordinated 107 
+by [CONTACT_464716]. DCLP1 recruited N=127 subjects randomized to AP 108 
+vs. sensor -augmented pump (SAP). The results were published in Diabetes Care , showing that 109 
+the study met its predefined criteria for s uccess.1  110 
+2) Protocol 3 ( DCLP3 , [STUDY_ID_REMOVED], IDE #G180053) was a pi[INVESTIGATOR_464704], responding to the 111 
+requirements of RFA -DK-14-024, aimed at regulatory clearance of Control -IQ – a system that 112 
+includes a Dexcom G6 sensor and a t:slim pump (Tandem Diabetes Care). This system is based 113 
+on a control algorithm developed at the University of Virginia under the NIDDK -funded grant 114 
+RO1 DK 085623. DCLP3 randomized N=168 participants to Control -IQ vs. SAP, all of whom 115 
+completed the 6 -month trial and then continued with a 12 -month study extension. DCLP3 116 
+met all of its predefined primary and secondary outcomes. The results were published in the 117 
+New England Journal of Medicine.2 As a result, the  Control -IQ system received FDA clearance 118 
+for clinical use by [CONTACT_464717] 14 and up.  119 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 15 of 58 
+ 3) Protocol 5 ( DCLP5 , [STUDY_ID_REMOVED], IDE #G180053/S008) was also a pi[INVESTIGATOR_16076], which aimed 120 
+at regulatory clearance of Control -IQ in children ages 6 -13 years old . DCLP5 randomized 121 
+N=101 participants to Control -IQ vs. SAP, and met all of its predefined primary and secondary 122 
+outcomes. The results were also published in the New England Journal of Medicine.3 As a 123 
+result, the Control -IQ system received FDA clearance for clinical use by [CONTACT_332389] 6 -13 124 
+years old as well.  125 
+Defining the ABC Process:  The ABC process consists of interacting cycles developi[INVESTIGATOR_464705] 126 
+time scales: 4 (1) First, it is initialized by [CONTACT_311206], s uch as HbA 1c, history of severe 127 
+hypoglycemia, or hypoglycemia unawareness that sets the stage for further control adaptation; 128 
+this initialization is slow, develops over months or years, and can be favorable or unfavorable to 129 
+CLC (e.g. individuals at overall good vs. poor control would fare differently using CLC;2 (2) Natural 130 
+variation in a person’s metabolic parameters occurs within a day (e.g. circadian rhythms) and 131 
+between days; slower changes are possible, e.g. due to illness; (3) Behavioral perturbations 132 
+challenge the metabolic system with meals or physical activity, which may trigger low BG events 133 
+and escalate to recurrent hypoglycemia; this cycle includes significant randomness and is [ADDRESS_595672] described by a stochastic process (dotted lines –clockwise cycles in Figure 1). This 135 
+bio-behavioral interplay amplifies or attenuates the BG fluctuations of a person and is detected 136 
+as degree of GV by [INVESTIGATOR_294535] M and/or other signals. ( 4) In this context, the control co -regulation 137 
+objective is two -fold: gradual and safe stabilization of the metabolic system by [CONTACT_464718] [ADDRESS_595673] 139 
+response to biobehavioral challenges that may require behavioral adaptation by [CONTACT_28024], e.g. 140 
+around meals and exercise (solid lines –counterclockwise cycles in Figure 1).  141 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 16 of 58 
+  142 
+Figure 1: Main premise, signals, time scales, and control action of the recursive ABC 143 
+process: initialization with routine T1D treatment parameters; behavioral an d 144 
+physiological perturbations monitored through CGM and other signals, and human - 145 
+machine co -adaptation using pattern/risk information presented to the user and to the 146 
+control algorithm. Clockwise cycles indicate system disturbances; Counterclockwise 147 
+cycles  indicate adaptation.  148 
+Monitoring the ABC Process:  Observed in time, the compounded effect of the recurrent 149 
+processes presented in Figure 1 is a stochasti c process of glycemic variation5 governed by 150 
+transition probabilities from one CGM daily profile to the next. We introduced this concept in 151 
+February 2019, in two consecutive presentations at the international ATTD conference,  focusing 152 
+on its applications to patient decision support6 and adaptation of automated control built upon 153 
+a virtual image of the patient (VIP).7 These two applications will be used in the proposed study to 154 
+enable: (i) behavioral co -adaptation through pattern/risk information provided to the user an d [ADDRESS_595674] or require, adaptive behavioral 156 
+reaction, and (ii) adaptation of the insulin pump parameters used by [CONTACT_464719], which 157 
+will be proposed to the user, but not implemented automatically in this  pi[INVESTIGATOR_464706].  158 
+Initialization:
+Basel i ne A1c;
+Hi story of severe 
+hypoglycemia;
+Hypoglycemia 
+unawareness.
+TIME SCALE:
+Years/Months
+Behavior:
+Physical activity;
+Missed meals;
+Excessive insulin.
+TIME SCALE:
+Days/Hours/Minutes
+Physiology:
+Endogenous gl ucose 
+production; Insulin 
+action; Insulin sensitivity.
+TIME SCALE:
+Weeks/Days/Hours
+Treatment:
+Adaptive 
+Biobehavioral 
+Control ( ABC).
+TIME SCALE: 
+Minutes
+Clockwise: 
+Disturbances
+Counterclock
+wise: Control
+Data: Real -time CGM; body sensors; Psychometrics; Diabetes treatment parameters;
+Information Flow: To algorithm: every few minutes; To User: epi[INVESTIGATOR_49564], on demand.
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 17 of 58 
+ Pattern Recognition, Clustering, and Classification:  At the core of the ABC technology is an 159 
+innovative method for pattern- based therapy optimization. In this approach, the collection of all 160 
+possible daily patterns, i.e. t he state space of the ABC process, is defined by [CONTACT_211420] -learning 161 
+classification of CGM profiles into clusters derived from our library of over 50,000 CGM daily 162 
+profiles accumulated in our studies.  To illustrate how this works, we use data from the 163 
+Internatio nal Diabetes Closed -Loop ( iDCL ) Trial Protocol 1, [STUDY_ID_REMOVED]. This study yielded 164 
+~9,000 CGM daily profiles, which allowed performing the following steps: ( 1) CGM daily profiles 165 
+are classified into identifiable clusters; ( 2) Over time, each person transiti ons through a sequence 166 
+of clusters, which are approximated by a stochastic Markov chain identified by [CONTACT_28045] 167 
+transition probability matrix; ( 3) Treatment adaptation is then assisted by [CONTACT_464720]/risk 168 
+predictions to the patient and to the co ntrol algorithm, aiming to maximize the probabilities of 169 
+favorable daily transitions. For illustrative purposes, Figure 2 shows  results for a 3 -cluster 170 
+solution. Clusters are color coded according to their clinical interpretation: Cluster 1: Tight 171 
+Control/Intensive Treatment;  Cluster 2: Hyperglycemic exposure; Cluster 3: Intermediate/ 172 
+Average Control.  173 
+Each cluster is associated with a specific  level of glucose control, and over time each person 174 
+transitions through a sequence of clusters, each describing this person’s glycemic control for 175 
+one day .  176 
+The color -coded profiles  in Figure 2 present  the daily stochastic transitions of two participants in 177 
+the iDCL Protocol 1 using sensor -augmented pump (SAP) and CLC, respectively. Underneath, we [ADDRESS_595675] the state of each person when s/he was in 179 
+each one of the 180 
+three clusters.  By 181 
+cluster design, 182 
+despi[INVESTIGATOR_464707] 183 
+differences in the 184 
+overall control of 185 
+these subjects, 186 
+their glycemic 187 
+characteristics are 188 
+very similar when 189 
+they are in the 190 
+same cluster. For 191 
+example, both had 192 
+mean glucose of 193 
+151- 152mg/dL 194 
+when in a blue 195  
+ 
+Figure 2: Daily transitions, cluster assignment, and transition 
+probability for two representative participants in iDCL Protocol 1.  
+CL mean SD CV LBGI HBGI <70 70-180 >180 #Days
+[ADDRESS_595676]
+Days1 10 20 30 40 50 60 70 80
+CL 1 2 3
+1 0.00 0.00 1.00
+2 0.00 0.58 0.42
+3 0.07 0.41 0.51Transition Probabilities
+CL mean SD CV LBGI HBGI <70 70-180 >180 #Days
+[ADDRESS_595677]
+Days1 10 20 30 40 50 60 70 80
+CL 1 2 3
+1 0.67 0.00 0.33
+2 1.00 0.00 0.00
+3 0.57 0.04 0.39Transition Probabilities
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 18 of 58 
+ cluster for the day, or 237 -235mg/dL when in a red cluster. The major difference between these [ADDRESS_595678]  (Figure 2). Further, each person’s [ADDRESS_595679] to remain in tight control for two consecutive days (blue -to-blue), 201 
+while this probability is 67%  for the Experimental Subject.  We therefore conclude that: ( i) A library 202 
+of clinically -relevant clusters describes the possible one -day glycemic profiles for each person; ( ii) 203 
+When in the same cluster, the glycemic metrics for different people are similar;  (iii) However, each 204 
+person transitions through a different sequence of daily profiles, governed by [CONTACT_464721] 205 
+probability matrices; ( iv) This allows each person’s ABC process to be encoded in a Markov chain 206 
+of consecutive daily profiles; ( v) Th is encoding results in estimates of the probabilities for 207 
+upcoming events, i.e. the chances from transition to a particular cluster tomorrow, which informs 208 
+a person’s treatment decisions and the control algorithm’s adaptation.  209 
+With this conceptual description in mind, the overall objective of the ABC strategy is to enable a 210 
+new generation of artificial pancreas technologies which will: (i) Provide information to the user 211 
+to inform user’s adaptation to the CLC system, and (ii) Ad apt automatically the action of the [ADDRESS_595680] of our 213 
+knowledge, such bi -directional human- machine co -adaptation has not been attempted before, 214 
+partially due to underestimation of the behavioral challenges related to CLC use, and partially 215 
+due to the relative immaturity of CLC systems, which until recently could not sustain long -term 216 
+use without facing significant technical problems or requiring extensive user involvement.  217 
+In this IDE application, we make the case that we are now equipped with well -established CLC 218 
+technology (Control -IQ, Tandem Diabetes Care), with which we have very extensive experience. [ADDRESS_595681] pi[INVESTIGATOR_799], the 223 
+feedback to the patient will be limited to information about relevant glycemic parameters and 224 
+risks. No prescription will be given for behavioral changes or adaptation. Similarly, adjustment of 225 
+the control parameters, will be proposed to the user and will be accompanied by [CONTACT_464722] 226 
+replay treatment scenarios via computer simul ation, but will not  be implemented automatically .  227 
+ 
+ 228 
+Closed -Loop Control System:   229 
+Trade/Device Name: [CONTACT_66727]- IQ Technology   230 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 19 of 58 
+ Regulation Name: [CONTACT_464735]  231 
+System components include:   232 
+• t:slim X2 insulin pump  with Control -IQ technology, and   233 
+• Dexcom G6 continuous glucose monitor (CGM).   234 
+The CLC system and its components are approved by [CONTACT_464723] 235 
+ages 6 years old or older.   236 
+ 
+ 237 
+The WIT is the clinical implementation of the ABC concept, which includes:  238 
+• A Behavioral Adaptation Module ( BAM ); 239 
+• An Auto Titration Module ( ATM ), and  240 
+• A Web Simulation  Tool  (WST) . [ADDRESS_595682] will be provided to users of the t:slim X2 [ADDRESS_595683], and allows the user to navigate to other 248 
+modules. Details for all algorithm modules are provided in Appendix A- 2. 249 
+BAM  uses the concept described in the Introduction under “Monitoring the ABC Process” and 250 
+well- established metrics of glycemic con trol computed daily:  251 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 20 of 58 
+ Measure   Computed From   
+Estimated A1c    14 days of CGM data plus lab HbA 1c calibration10  
+Low/High BG [Risk] Indices 
+(LBGI/HBGI)  – measures of risk for 
+hypo - or hyperglycemia   Previous day of CGM data8  
+Average Daily Risk Range (ADRR) – a 
+measure of  glucose  variability   Computed as the average of the HRRs (Hourly Risk 
+Range) for the previous day8  
+Forecast -today   8 days of CGM data, plus today’s readings by 6AM    
+Table 2: Glycemic metrics used by [CONTACT_464724]   252 
+Results  will be  presented every morning, e.g.  at 7AM.  All Variability and Risk metrics are mapped 253 
+to the interval [0 -11] as follows: 0 is mapped to 0; 99th percentile of the metric is mapped to 11 .  254 
+ATM  is a set of optimization algorithms designed to use the participants’ data and provide weekly 255 
+updates for their default insulin pump parameters: basal rate profile, insulin to carbohydrates 256 
+ratios profile (CR), and insulin sensitivity factors profile (CF). The module is derived from the 257 
+optimization already used in G200122 and is largely identical but for one key element: the CR and 258 
+CF profiles are not using fixed timestamps (e.g. 3am- 11am and 11am -3am), but automatically 259 
+determined in concert with the basal profile so as to ensure no more than 12 segmen ts for the 260 
+combinations of the daily profiles. As the timing of each CR/CF profile segments is not fixed, the 261 
+algorithm has been modified to use all historical boluses for each profile segments (vs using only 262 
+boluses that fell in the segment specific time interval) with appropriate weighing (a historical 263 
+bolus at 1pm has a much larger influence on a noon -3pm segment than a historical 11pm bolus).  [ADDRESS_595684]: each use r can not only see their historical CGM/insulin/meal data streams, summary 266 
+indices, and summary graphical representation (in a format similar to an ambulatory glucose 267 
+profile, AGP), but can also modify their insulin treatment strategies, play “what -if” sce narios, and [ADDRESS_595685]. For example, a user could observe an early morning 269 
+hypoglycemia tendency (from the summary graphical representation), reduce the underlying 270 
+basal rate (say 3am -6am) by 10%, and see if such change would hav e limited the hypoglycemic 271 
+exposure and/or increase late morning hyperglycemia. Therefore, WST can be considered an 272 
+advanced education tool for people with T1D to leverage their own data and experience and gain 273 
+insight in possible behavioral/therapeutic ch anges they may want to consider with their care 274 
+team. This module is based on our replay simulation technology11-13 and is supported by a 275 
+transfer of data from the user devices (in the case of this study, an automated transmission of 276 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 21 of 58 
+ the t:slim X2 data to the Tandem phone app and then to the t:connect web system, with a 277 
+frequent (every 6h) pull triggered by [CONTACT_464725] t:connect data via a Tandem 278 
+API) (Application Programming Interface) .  279 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 22 of 58 
+ Chapter 2:  Study Description [ADDRESS_595686] the safety and feasibility of using two or three research  282 
+modules in conjunction with an approved automated insulin delivery device (AID) (t:slim X2 283 
+insulin pump with Control -IQ technology, Tandem Diabetes Care).  284 
+This concept is implemented in the Adaptive Biobehavioral Control ( ABC) system  – ABC will use 285 
+human- machine co-adaptation  of CLC, recognizing both the necessity for the control algorithm 286 
+to adapt to changes in human physiology, and the necessity for the person to adapt to CLC action. 287 
+ABC will be implemented on the Web Information Tool (WIT) platform/system and includes the 288 
+following modules  to be used alongside the automated insulin delivery device:  289 
+• Behavioral Adaptation Module (BAM) – a behavioral intervention deployed in a mobile [ADDRESS_595687] a person’s adaptation to automated insulin delivery by [CONTACT_464726] 291 
+assessment primarily regarding glycemic risks, and  292 
+• Auto Titration Module (ATM) — a web -based tool with an automated procedure to track 293 
+risk status and changes in the par ticipant’s metabolic profile. This module will present 294 
+updated insulin control parameters (e.g. basal rate, carb ratio, correction factor) to the 295 
+user once a week using a web -based format accessible to the participant. These adjusted 296 
+parameters are not able to directly update the pump automatically, so the participant will 297 
+then need to manually enter the suggested changes directly onto their insulin pump.  298 
+• Web- based Simulation Tool (WST) --a web -based education tool for participants  to [ADDRESS_595688] 300 
+of insulin parameter  changes.  301 
+ 
+ 302 
+This is a safety and feasibility study with a randomized two -arm parallel group trial in which both 303 
+groups will use the AID (Control -IQ) plus ATM and WST.  The difference between the two groups 304 
+will be the behavioral module. One group will be randomized to add BAM and one group will not 305 
+use BAM. This is illustrated in  Figure 2: 306 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 23 of 58 
+  307 
+Figure 3: Study Diagram  [ADDRESS_595689] a Web -based Information Tool (WIT) software providing [ADDRESS_595690] two weeks 324 
+of the treatment data and the two -week baseline to compare:  325 
+• ATM / WST  vs. Baseline  326 
+• ATM  / WST  + BAM vs. Baseline  327 
+• Group 1 vs. Group 2: ATM  / WST  vs. ATM  / WST  + BAM .   328 
+
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 24 of 58 
+ Chapter 3:  Study Devices 329 
+ 
+ 330 
+Participants will use their personal FDA -approved Tandem  t:slim X2 with Control -IQ Technology 331 
+which will be used without modifications.   332 
+ 
+ 333 
+Participants will be provided a study provided CGM that includes Dexcom G6 transmitter and 334 
+sensors while using the Tandem t:slim X2 insulin pumps. The CGM sensor is viable for 10 days. 335 
+All p articipants will be provided a Dexcom G6 system by [CONTACT_464727] . This system 336 
+will be used without modifications.  The CGM device will be calibrated, if needed, using the 337 
+glucometer in accordance with the manufacturer’s labeling . The participant may elect to 338 
+continue use of their personal CGM  during the study . The study will provide CGM supplies,  as 339 
+necessary . As a previously noted, data may be obtained through the commercial applications 340 
+(e.g. t:connect and Dexcom G6).   341 
+ 
+ 342 
+Blood glucose levels will be measured using the participant’s personal glucometer.  343 
+ 
+ 344 
+Blood ketone levels will be measured using the Abbott Precision Xtra meters and strips in 345 
+accordance with the manufacturer’s labeling. The blood glucose meter component of the 346 
+Precision Xtra Device will not be used.  347 
+ 
+ 348 
+Device serial numbers will be recorded and use of equipment will be tracked.   349 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 25 of 58 
+ Chapter 4:  Study Screening  350 
+ 
+ 351 
+Enrollment in the study will proceed with the goal of completing approximately 30 subjects.  352 
+Up to 45 participants may sign the consent form.  353 
+Recruitment, screening, and enrollment may be performed as an office visit, or via 354 
+telecommunication.  355 
+ 
+ 356 
+Before consent has been obtained, participants will be asked inclusion/exclusion cri teria [ADDRESS_595691] of all in -person study visits as deemed feasible 364 
+by [CONTACT_3476] .  365 
+ 
+ 366 
+After informed consent has been signed, a potential  participant will be evaluated for study 367 
+eligibility through the elicitation of a medical history, performance of a physical examination 368 
+by [CONTACT_464728] a historical exam within 12 months if the visit is done 369 
+remotely, and pregnancy te sting (if applicable) to screen for exclusionary medical conditions.  370 
+Once all results of the screening evaluations are available, a decision will be made to determine 371 
+the participant’s eligibility for the study, or if one or more parts of the screening wil l have to be [ADDRESS_595692] meet all the following inclusion criteria in order to be eligible to participate 377 
+in the study.  378 
+1. Age ≥18.0 and ≤[ADDRESS_595693] six months  383 
+5. Currently using or anticipated to be using the t:slim X2 i nsulin pump with Control -IQ 384 
+technology at the start of the run- in phase (Visit 1).  [ADDRESS_595694] will be re quired for all females of childbearing potential. Participants 393 
+who become pregnant will be discontinued from the study. Also, participants who during 394 
+the study develop and express the  intention to become pregnant within the timespan of 395 
+the study will be discontinued.  396 
+11. Willingness to use only insulin analogs approved for use in the t:slim X2 pump such as 397 
+lispro (Humalog) or as  part (Novolog) and not use ultra -rapid acting insulin analogs (e.g. 398 
+FiAsp) during the study  399 
+12. Total daily insulin dose (TDD) at least 10 units per day  400 
+13. Willingness not to start any new non -insulin glucose -lowering agent during the course of 401 
+the trial (including metformin, GLP -1 agonists, pramlintide, DPP -4 inhibitors, biguanides, 402 
+and sulfonylureas)  [ADDRESS_595695] any exclusion criteria in order to be eligible to participate in the 406 
+study.  407 
+1. Concurrent use of any non -insulin glucose -lowering agent other than metformin 408 
+(including GLP -1 agonists, pramlintide, DPP -4 inhibitors, SGLT -2 inhibitors, s ulfonylureas)  409 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 27 of 58 
+ 2. A condition, which in the opi[INVESTIGATOR_66678], would put the 410 
+participant at risk or interfere with the completion of the protocol.  411 
+3. History of diabetic ketoacidosis (DKA) in the [ADDRESS_595696] of employment who is also directly involved in 420 
+conducting the clinical trial (e.g. study investigator, coordinator, etc.); or having a first - [ADDRESS_595697] approximately 1 -2 hours. The visit may occur in -person or  by 428 
+telecommunication. The following procedures may be performed/data collected/eligibility 429 
+criteria checked and documented:  430 
+• Inclusion and exclusion criteria assessed  431 
+• Demographics (date of birth, gender, race and ethnicity, and socioeconomic indicators)  432 
+• Contact [CONTACT_3031]  433 
+• Diabetes history including severe hypoglycemia history  434 
+• Medical history  435 
+• Concomitant Medications  436 
+• Physical examination to include (a physical exam report within last 52 weeks may be 437 
+substituted):  438 
+• Weight, height (may be self -reported)  439 
+• Vital signs including measurement of blood pressure and pulse (may use medical record 440 
+within 6 months or self- report)  441 
+• Urine or serum pregnancy test for all females of child -bearing potential (this test can be 442 
+done remotely with results sent to the study team)  443 
+• HbA1c level measured using the DCA Vantage or similar point of care device or local lab  444 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 28 of 58 
+ • If needed based on medical history, investigators may include baseline chemistry panel, 445 
+liver function tests, hematocrit and thyroid stimulating hormone (lab results w ithin one 446 
+year of screening appointment may be used)  447 
+• Diabetes Management Information: We will record the participant’s average total daily 448 
+insulin use, carbohydrate ratio, correction factor (insulin sensitivity factor), and insulin 449 
+infusion basal rate prof ile. Up to 6 months of historical data from the participant’s 450 
+personal insulin pump, glucometer, or continuous glucose monitor may be downloaded 451 
+or recorded.  452 
+• Data will be obtained from the participant’s personal insulin pump and CGM. This data 453 
+may be obtained through the commercial applications (e.g. t:connect and Dexcom G6).  454 
+• If participants are on -site, the participant’s glucometer  may be uploaded  to ensure that 455 
+the participant can successfully upload the equipment.  456 
+• Any labs required may be obtained at a local laboratory (e.g. LabCorp) convenient to the 457 
+participant.  458 
+This study is not meant to find out if the participant has any other disease or pro blem. The study 459 
+leaders will alert the participant if any of the research results are important to his/her health [ADDRESS_595698] pre -screening with labs performed locally (e.g. LabCorp) prior to Visit 1.  [ADDRESS_595699] the discretion to repeat screening tests. The 468 
+repeat screening tests may be conducted locally (e.g. LabCorp). The participant may request a [ADDRESS_595700] and the 475 
+appropriate medical care.  476 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 29 of 58 
+ Participants may be re -screened at a later date if their clinical situation changes as determined 477 
+by [CONTACT_5989].    478 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 30 of 58 
+ Chapter 5:   Study Equipment Training  479 
+Equipment training  relevant to the study visit  may begin immediately after screening eligibility 480 
+has been met or may be deferred for a maximum of 30 days.  481 
+All participants will be asked to use the ir personal t:slim X2 insulin pump with Control -IQ [ADDRESS_595701] less frequent CGM users watch the Dexcom online training videos 493 
+(https://www.dexcom.com/training -videos) to assist in the trai ning session.    494 
+The participants will be asked to perform fingerstick blood glucose measurements (if needed) in 495 
+accordance with the labeling of the CGM device.  496 
+ 
+ 497 
+Participants are current users of Control -IQ and therefore do not require training on the pump. 498 
+The participant will be instructed on how to use the system if insulin is delivered by [CONTACT_61076] 499 
+other than the Control -IQ pump (e.g.  injection of subcutaneous insulin via syringe in the event of 500 
+infusion site failure). If insulin is delivered by [CONTACT_3451], the [ADDRESS_595702] information and will be asked to call the study 503 
+clinical staff during periods of illness with an elevated temperature >101.5 degrees Fahrenheit 504 
+(38.6 degrees Celsius), periods of significant illness, or during periods of use of medications such 505 
+as epi[INVESTIGATOR_27979] a severe allergic reaction or asthma attack in 506 
+addition to use of oral or injectable glucocorticoids to determine if automated insulin delivery  507 
+should be temporarily discontinued.  508 
+The participant will be provided Glycemic Treatment Guidelines (Appendix A -11) to use at home.  [ADDRESS_595703] with the suggested settings.  The 520 
+study clinician will then evaluate and may alter the implementation of some or all of the 521 
+parameters if deemed a significant safety concern.  522 
+ 
+ 523 
+All participants in both groups will be trained on the WIT application .  524 
+Autotitration  / WST  training consists of:  525 
+• Review of how to access the web -based application (e.g. on a smart phone, iPAD or 526 
+computer).  527 
+• Review of menus of the applicatio n. 528 
+• Review of actual parameters being adjusted  (e.g. basal rates, correction factors)  529 
+• Review of frequency of parameter updates (i.e. once weekly)  530 
+• Participants will be instructed to contact [CONTACT_464729] 531 
+any time if they are concerned about appropriateness of adjustments  532 
+• Participants will be instructed to contact [CONTACT_464730] 533 
+parameter adjustments  534 
+• Participants will be instructed to how to run a simulation and interrupt the results [ADDRESS_595704] of the following:  538 
+• Review of how to access the BAM application  components and troubleshooting.  539 
+• Hands -on training of identification of information modules  components  and how to 540 
+access the information modules  and an explanation of those modules   541 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 32 of 58 
+ • Hands -on training of how to access prescriptive modules on demand and an explanation 542 
+of those modules  543 
+• Participants will be notified that eA1c is for informational purposes only and not to be 544 
+used for short- term changes to insulin settings  545 
+Information Modules will include:  546 
+i. Hypoglycemia Risk Indicator based on pattern recognition and risk assessment;  [ADDRESS_595705];  548 
+iii. Estimated A1c  (eA1c ) which  will assist with tracking average glycemia and goal setting, 549 
+and  550 
+iv. Variability tracker highlighting glycemic patterns related to behavioral challenges such 551 
+as meals and exercise.  552 
+Study staff will be available 24/[ADDRESS_595706] the data from the CGM and insulin pump devices  and stream it to 557 
+respective cloud servers . The chosen phone will also  allow  the participant to access the WIT 558 
+application . 559 
+If participants choose the study -owned smartphone option, they will be provided a study phone 560 
+with a data plan, an anonymous email account, the Dexcom G6 a pp, the Tandem t:conne ct 561 
+Mobile App, and access to the WIT system  for the duration of the study. The Dexcom app will 562 
+allow the participant to monitor the CGM values and alerts in real -time and stream CGM data to 563 
+the Dexcom Clarity cloud. The Tandem t:connect Mobile App will be downloaded to their phone 564 
+in order allow the participant to stream insulin  pump data to the Tandem t:connect cloud. Study [ADDRESS_595707] can access the WIT system  via 566 
+the smartphone.   567 
+If the participant elects to use a personal smartphone , the Dexcom  G6 app and the Tandem 568 
+t:connect Mobile App  will be downloaded to their phone s if they are not already installed.  [ADDRESS_595708] the option of using their personal Dexcom and their 570 
+personal Tandem t:connect account s or anonymous, study -provided accounts . Participants who [ADDRESS_595709] to use a study phone will be trained on the basic functioning of the phone 574 
+(e.g. charging, password entry, accessing apps). All participants will be asked to verify su ccessful 575 
+installation of apps (where applicable) and account access.  [ADDRESS_595710] two different 585 
+concentrations of control solution, if available.  A tested meter will not be used in a study if it 586 
+does n ot read within the target range at each concentration per manufacturer labeling.   587 
+Participants will be instructed to perform blood ketone testing as described in Glycemic 588 
+Treatment Guidelines ( see Participant Manual) . A home glucagon emergency kit is cons idered [ADDRESS_595711] one will be asked to obtain a 590 
+prescription for the glucagon emergency kit.  591 
+The study team may inquire about ketone readings if the study visits are performed remotely. If 592 
+visits are done in pe rson, the glucometer may be uploaded.   593 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 34 of 58 
+ Chapter 6:  Study Procedures  594 
+ 
+ 595 
+After eligibility is confirmed, participants will undergo a run -in phase. This visit may occur on the 596 
+same day as the screening visit and should be completed within 30 days on ce screening elements 597 
+are completed and eligibility determined.  This visit may occur as an in -person office visit or via 598 
+telecommunication. For visits occurring remotely, these relevant devices will be shipped to the 599 
+participant.  600 
+The purpose of the run -in phase is  to obtain about 14 days  of baseline data  while the participant 601 
+is following their usual care with their personal  t:slim X2 study pump and Dexcom G6 CGM.  The [ADDRESS_595712] a randomization 614 
+visit. This visit can occur between 14-28 days from Visit 2. This visit can be conducted either in - 615 
+person office visit or as a remote visit.   616 
+Screening failures and study dropout participants may be replaced.  617 
+This visit  may be performed as an office visit, or via telecommunication.  618 
+ Participants  619 
+Participants will be randomized  1:1 to either:  620 
+• Group 1: Use of AID and ATM / WST  for 6 weeks  621 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 35 of 58 
+ • Group 2: Use of AID,  ATM / WST,  and BAM for [ADDRESS_595713] study participant and will be done 623 
+by a study team member who is not involved with enrollment.    624 
+ 
+ 625 
+Insuli n pump optimization will occur during the study as described in Section 4.2.1. 626 
+ 
+ 627 
+These visit s will occur either as in-person office visits or remote  visits. These visit s will occur 628 
+weekly (+/ - 3 day). Prior to each phone visit, participants will be asked to download any relevant 629 
+devices if applicable (i.e. not using a shared web -based app for data such as the t:connect mobile 630 
+app or G6  mobile app). During these visits, the study team will:  631 
+• Answer any questions and inquire about any device complaints.  632 
+• Inquire about new medications, updates to medical conditions,  adverse events, and 633 
+whether the adverse event was related to study device use. 634 
+• Inquire about ketone readings (a ketone meter download will not be required)  635 
+• Review the downloaded/uploaded  data to assess completeness. [ADDRESS_595714]  642 
+with th at module . 643 
+The study team will determine if non -compliance should result in additional study weeks or 644 
+discontinuation from the study.   645 
+ 
+ 646 
+The study team will be available to troubleshoot with the investigational WIT, BAM , and ATM  / [ADDRESS_595715] unscheduled visits during the study period if required for additional device 651 
+training or other unanticipated needs per the study investigator discretion.  652 
+ 
+ 653 
+The following procedures will be performed in both groups at the final study  visit:  654 
+• Adverse events, adverse device effects, and device issues  655 
+• All devices will be downloaded (i.e. insulin pump, CGM, glucometer, ketone meter)  656 
+• Study team or participant may download the study equipment  657 
+• Questionnaires will be completed  electronically when possible  658 
+• Blood will be drawn for HbA1c (which can be done on- site or locally)  659 
+• Pregnancy test (if applicable)  660 
+• Equipment may be re turned in person or via Federal Express  661 
+Study participants will be instructed on how to transition back to the home insulin  regimen . 662 
+Subjects will be informed that there may be a risk of severe hypoglycemia and/or severe [ADDRESS_595716]’s usual home insulin  parameters . The [ADDRESS_595717] the participant via phone/email/text to assess:  670 
+• Adverse events   671 
+• Confirm HbA1c completed 672 
+• Equipment returned in person or via Federal Express  [ADDRESS_595718] Study 675 
+Check -In Visit requirements.   676 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 37 of 58 
+ Chapter 7:  Testing Procedures 677 
+ 
+ 678 
+ HbA1c  679 
+• A blood sample will be obtained at screening to obtain a baseline hemoglobin A1c level. [ADDRESS_595719] obtained within 2 weeks prior to enrollment may be used.  681 
+• HbA1c level may be measured by [CONTACT_91112]2000, a comparable point of 682 
+care device, at time of screening  683 
+• Labs may be obtained at a local laboratory convenient to the participant.  684 
+ Comprehensive Metabolic Panel/TSH/Hematocrit  685 
+• A blood sample may be obtained at screening to assess kidney and liver functioning, 686 
+thyroid function or hematocrit.  687 
+• Labs may be obtained at a local laboratory convenient to the participant.  [ADDRESS_595720]  689 
+• A serum or urine pregnancy test will be required for women of childbe aring potential at [ADDRESS_595721] be negative to participate in the study.  692 
+ 
+ 693 
+Questionnaires are completed as noted below for all participants.  694 
+ Ques tionnaire Schedule  695 
+Screening :  696 
+• ABC Pi[INVESTIGATOR_464708] : This questionnaire has 5 open -ended questions for baseline 697 
+assessment of expectations for the investigational system.  698 
+Administration time is approximately 5 minutes.  699 
+• INSPI[INVESTIGATOR_66681]: The INSPI[INVESTIGATOR_21392] (Insulin Delivery Systems: Perceptions, Ideas, Reflections and 700 
+Expectations) survey was developed to assess various aspects of a user’s experience 701 
+regarding automated insulin delivery. The surveys include various topi[INVESTIGATOR_418079] 702 
+patients with type 1 diabetes based upon >200 hours of qualitative interviews and focus 703 
+groups. The adult survey includes 31 items. Response options for all surveys include a 5 - 704 
+point Likert scale from strongly agree to strongly disagree, along with an N/A option.   705 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 38 of 58 
+ Administration time is approximately 5 minutes.  706 
+Final Visit:  707 
+• ABC Pi[INVESTIGATOR_464709] -up: This questionnaire has [ADDRESS_595722]- study 708 
+assessment of experience with investigational system that are similar to the baseline 709 
+questionnaire.  710 
+Administrati on time is approximately 5 minutes.  711 
+• INSPI[INVESTIGATOR_66681] : Similar  survey administered at Screening Visit.  712 
+Administration time is approximately 5 minutes.       713 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 39 of 58 
+ Chapter 8:   Risks Associated with Clinical Trial  714 
+ 
+ 715 
+Risks and Benefits are detailed below. Loss of confidentiality is a potential risk; however, data are 716 
+handled to minimize this risk.  Hypoglycemia, hyperglycemia and ketone formation are always a 717 
+risk in participants with type 1 diabetes and participants will be monitored for these symptoms.  718 
+ Venipuncture Risks  719 
+A hollow needle/plastic tube will be placed in the arm for taking blood samples. Blood draws can [ADDRESS_595723] for several weeks.  The 728 
+risk of local infection is less than 1 in 1000.  This should not be a significant contributor to risks in 729 
+this study as finger sticks are part of the usual care for people with diabetes.  730 
+ Subcutaneous Cathe ter Risks (CGM)  731 
+Participants using the CGM will be at low risk for developi[INVESTIGATOR_007] a local skin infection at the site of 732 
+the sensor needle placement.  If a catheter is left under the skin for more than 24 hours it is 733 
+possible to get an infection where it goes into the skin, with swelling, redness and pain.  There 734 
+may be bleeding where the catheter is put in and bleeding under the skin causes a bruise (1 in 10 735 
+risk).  [ADDRESS_595724] a small portion of the sensor under the skin that may cause redness, swelling, or pain at 738 
+the insertion site.  The participant should be further instructed to notify the study coordinator 739 
+immediately if this occurs.  740 
+ Risks of Hypoglycemia  741 
+As with any person having type 1 diabetes and using insulin, there is always a risk of having a low 742 
+blood sugar (hypoglycemia).  The frequency of hypoglycemia should be no more and possibly less 743 
+than it would be as part of daily living.  Symptoms of hypoglycemia can i nclude sweating, 744 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 40 of 58 
+ jitteriness, and not feeling well.  There is the possibility of fainting or seizures (convulsions) and 745 
+that for a few days the participant may not be as aware of symptoms of hypoglycemia.  A CGM 746 
+functioning poorly and significantly over -reading glucose values could lead to inappropriate 747 
+insulin delivery.  748 
+ Risks of Hyperglycemia  749 
+Hyperglycemia and ketonemia could occur if insulin delivery is attenuated or suspended for an 750 
+extended period or if the pump or infusion set is not working properly.   A CGM functioning poorly 751 
+and significantly under -reading glucose values could lead to inappropriate suspension of insulin 752 
+delivery.  753 
+ Hb1Ac Risk  754 
+An NGSP Point of Care analyzer (i.e. DCA Vantage Analyzer) may  be utilized at the research site [ADDRESS_595725]’s HbA1c level.  756 
+ Other Risks  757 
+Some participants may develop skin irritation or allergic reactions to the adhesives used to secure 758 
+the CGM, or to secure the insulin infusion sets for the continuous subcutaneous insulin infusion.  759 
+If these reactions occ ur, different adhesives or “under -tapi[INVESTIGATOR_007]” (such as with IV 3000, Tegaderm, 760 
+etc.) will be tried, sites will be rotated frequently, and a mild topi[INVESTIGATOR_91101] 761 
+medication may be required.  762 
+Whenever the skin is broken there is the possibility of an infection.  The CGM and pump infusion 763 
+sites are inserted under the skin.  It is possible that any part that is inserted under the skin may 764 
+cause an infection.  These occur very infrequently, but, if an infection was to occur, oral and/or 765 
+topi[INVESTIGATOR_27996].  The risk of skin problems could be greater if you use a sensor for 766 
+longer than it is supposed to be used.  Therefore, participants will be carefully instructed about 767 
+proper use of the sensor.  768 
+Data downloaded from the CGM, pump, and glucose and ketone meter will be collected for the 769 
+study as measures of diabetes self -management behaviors.  Some people may  be uncomfortable 770 
+with the researchers' having such detailed information about their daily diabetes habits.  771 
+ Known Potential Benefits  772 
+It is expected that this protocol will yield increased knowledge about using an automated insulin 773 
+delivery  system with anticipatory action to control glucose levels.  The individual participant may 774 
+not benefit from study participation.  775 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 41 of 58 
+ 
+ Risk Assessment  776 
+Based o n the facts that (1) adults and adolescents with diabetes experience mild hypoglycemia 777 
+and hyperglycemia frequently as a consequence of the disease and its management, (2) the study 778 
+intervention involves periodic automated insulin dosing that may increase the likelihood of 779 
+hypoglycemia, and periodic automated attenuation of insulin delivery that may increase the 780 
+likelihood of hyperglycemia, (3) mitigations are in place, and have been tested in prior studies 781 
+using the investigational device system in the hom e setting, that limit the likelihood of excessive 782 
+insulin dosing or prolonged withdrawal of insulin, and (4) rapid reversal of hypoglycemia and [ADDRESS_595726] their origin in the Declaration of Helsinki, with 790 
+the protocol described herein, and with the standards of Good Clinica l Practice (GCP).  [ADDRESS_595727] that investigational 794 
+modules of BAM and ATM  / WST are experimental.  Therefore, an investigational device 795 
+exemption (IDE) from the U.S. Food and Drug Administration (FDA) is required to conduct the 796 
+study.   797 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 42 of 58 
+ Chapter 9:    Adverse Events, Device Issues, and Stoppi[INVESTIGATOR_1869] 798 
+ 
+ 799 
+ Adverse Events (AE)  [ADDRESS_595728] medical occurrence in a study participant, irrespective of the relationship between 801 
+the adverse event and the device(s) under investigation (section 9.2) for reportable adverse 802 
+events for this protocol).  803 
+ Serious Adverse Event (SAE)  [ADDRESS_595729] medical occurrence that:  805 
+• results in death.  806 
+• is life -threatening; (a non- life-threatening event which, had it been more severe, might [ADDRESS_595730] become life-threatening, is not necessarily considered a serious adverse event).  808 
+• requires inpatient hospi[INVESTIGATOR_1081].  809 
+• results in persistent or significant disability/incapacity or substantial disruption of the [ADDRESS_595731] normal life functions (life threatening).  811 
+• is a congenital anomaly or birth defect.  812 
+• is considered a significant medical event by [CONTACT_13656] 813 
+(e.g., may jeopardize the participant or may require medical/surgical interv ention to 814 
+prevent one of the outcomes listed above).  [ADDRESS_595732] (UADE)  [ADDRESS_595733], problem, or death was not previously identified in 818 
+nature, severity, or degree of incidence in the investigational plan or application (including a 819 
+supplementary plan or application), or any other unanticipated serious problem associated with 820 
+a device that relates to the  rights, safety, or welfare of participants (21 CFR 812.3(s)).  [ADDRESS_595734] (ADE)  [ADDRESS_595735] contributed.  824 
+ Device Complaints and Malfunctio ns 825 
+A device complication or complaint is something that happens to a device or related to device 826 
+performance, whereas an adverse event happens to a participant.  A device complaint may occur 827 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 43 of 58 
+ independently from an AE, or along with an AE.  An AE may occur without a device complaint or 828 
+there may be an AE related to a device complaint.  A device malfunction is any failure of a device 829 
+to meet its performance specifications or otherwise perform as intended.  Performance 830 
+specifications include all claims made in the labeling for the device.  The intended performance 831 
+of a device refers to the intended use for which the device is labeled or marketed. (21 CFR 803.3).   [ADDRESS_595736] medical occurrence that 834 
+meets one of the following criteria:  835 
+• a serious adverse event as defined in section 9.1.2 836 
+• an adverse device effect as defined in section 9.1.4 , unless excluded from reporting in 837 
+section 9.7 838 
+• an adverse event as defined in section 9.1.4  occurring in association with a study 839 
+procedur e 840 
+• an ae as defined in section 9.1.1  which leads to discontinuation of a study device for 2 or 841 
+more hours  842 
+• hypoglycemia meeting the definition of severe hypoglycemia as defined in section 9.2.1   843 
+• diabetic ketoacidosis ( DKA ) as defined in section 9.2.2  or in the absence of DKA, a 844 
+hyperglycemic or ketosis event meeting the criteria defined below  845 
+• hypoglycemia and hyperglycemia not meeting the criteria belo w will not be recorded as [ADDRESS_595737].  Skin reactions from 847 
+sensor placement are only reportable if severe and/or required treatment.  [ADDRESS_595738] is only reportable as an adverse event 850 
+when the following definition for severe hypoglycemia is met:   851 
+• the event required assistance of another person due to altered consciousness, and 852 
+required another person to actively administer carbohydrate, gluc agon, or other 853 
+resuscitative actions;  854 
+• impaired cognitively to the point that he/she was unable to treat himself/herself, was 855 
+unable to verbalize his/ her needs, was incoherent, disoriented, and/or combative, or 856 
+experienced seizure or coma.  These epi[INVESTIGATOR_464710] 857 
+neuroglycopenia to induce seizure or coma;  858 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 44 of 58 
+ • if plasma glucose measurements are not available during such an event, neurological 859 
+recovery attributable to the restoration of plasma glucose to normal is considered 860 
+sufficient evidence that the event was induced by a low plasma glucose concentration.  861 
+ Hyperglycemia Events/Diabetes Ketoacidosis  [ADDRESS_595739] is only reportable as an adverse 863 
+event when one of the following four criteria is met:  864 
+• the event involved DKA, as defined by [CONTACT_3467] 865 
+(DCCT) and described below  866 
+• evaluation or treatment was obtained at a health care provider facility for an acute event 867 
+involving hyperglycemia or ketosis  868 
+• blood keton e level ≥1.5 mmol/L and communication occurred with a health care provider 869 
+at the time of the event  870 
+• blood ketone level ≥3.0 mmol/L, even if there was no communication with a health care 871 
+provider  872 
+Hyperglycemic events are classified as DKA if the following are present:  873 
+• symptoms such as polyuria, polydipsia, nausea, or vomiting;  874 
+• serum ketones ≥1.5 mmol/l or large/moderate urine ketones;  875 
+• treatment provided in a health care facility  876 
+• all reportable Adverse Events —whether volunteered by [CONTACT_2299], discovered  by [ADDRESS_595740], or other means —will be reported on an adverse event form online.   [ADDRESS_595741] been caused 882 
+by [CONTACT_19911].  883 
+To ensure consistency of adverse event causality assessments, investigators should apply the 884 
+following general guideline when determining whether an adverse event is related:  885 
+• There is a plausible temporal relationship between the onset of the adverse event and 886 
+the study intervention, and the adverse event cannot be readily explained by [CONTACT_941] 887 
+participant’s clinical state, intercurrent illness, or concomitant therapi[INVESTIGATOR_014]; and/or the 888 
+adverse event follows a known pattern of response to the study intervention; and/or the 889 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 45 of 58 
+ adverse event abates or resolves upon discontinuation o f the study intervention or dose 890 
+reduction and, if applicable, reappears upon re -challenge.  891 
+• Evidence exists that the adverse event has an etiology other than the study intervention 892 
+(e.g., preexisting medical condition, underlying disease, intercurrent illn ess, or 893 
+concomitant medication); and/or the adverse event has no plausible temporal 894 
+relationship to study intervention.  895 
+ 
+ 896 
+The intensity of an adverse event will be rated on a three point scale: (1) mild, (2) moderate, or 897 
+(3) severe .  It is emphasized that the term severe is a measure of intensity: thus, a severe adverse 898 
+event is not necessarily serious.  For example, itching for several days may be rated as severe, 899 
+but may not be clinically serious.  900 
+• MILD: Usually transient, requires  no special treatment, and does not interfere with the 901 
+participant’s daily activities.  902 
+• MODERATE: Usually causes a low level of inconvenience or concern to the participant and 903 
+may interfere with daily activities, but is usually ameliorated by [CONTACT_464731] 904 
+measures.  905 
+• SEVERE: Interrupts a participant’s usual daily activities and generally requires systemic 906 
+drug therapy or other treatment.  907 
+ 
+ 908 
+Adverse events will be coded per the UVA IRB website instructions (i.e. mild, moderate, severe).   909 
+Adverse events that continue after the participant’s discontinuation or completion of the study 910 
+will be followed until their medical outcome is determined or until no further change in the 911 
+condition is expected.  912 
+ 
+ 913 
+The outcome of each reportable adverse event will be classified by [CONTACT_3470]:  914 
+• RECOVERED/RESOLVED – The participant recovered from the AE/SAE without sequelae.  [ADDRESS_595742] the AE/SAE stop date.  916 
+• RECOVERED/RESOLVED WITH SEQUELAE – The event persisted and had stabilized without [ADDRESS_595743] the AE/SAE stop date.  918 
+• FATAL – A fatal outcome is defined as the SAE that resulted in death.  Only the event that 919 
+was the cause of death should be reported as fatal.  AEs/SAEs that were ongoing a t the 920 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 46 of 58 
+ time of death; however, were not the cause of death, will be recorded as “resolved” at 921 
+the time of death.  922 
+• NOT RECOVERED/NOT RESOLVED (ONGOING) – An ongoing AE/SAE is defined as the 923 
+event was ongoing with an undetermined outcome.  924 
+• An ongoing outcome wi ll require follow -up by [CONTACT_3471] 925 
+outcome of the AE/SAE.  926 
+• The outcome of an ongoing event at the time of death that was not the cause of death, 927 
+will be updated and recorded as “resolved” with the date of death recorded as the stop 928 
+date.  929 
+• UNKNOWN – An unknown outcome is defined as an inability to access the participant or 930 
+the participant’s records to determine the outcome (for example, a participant that was [ADDRESS_595744] to follow -up). 932 
+All clinically significant abnormalities of clinical  laboratory measurements or adverse events 933 
+occurring during the study and continuing at study termination should be followed by [CONTACT_941] 934 
+participant’s physician and evaluated with additional tests (if necessary) until diagnosis of the [ADDRESS_595745] the participant until the adverse event has resolve d or stabilized.  942 
+ 
+ 943 
+All UADEs, ADEs, device complaints, and device malfunctions will be reported irrespective of 944 
+whether an adverse event occurred, except in the following circumstances.  945 
+The following device issues are anticipated and  will not be reported but will reported as an 946 
+Adverse Event if the criteria for AE reporting described above are met:  947 
+• Component disconnections  948 
+• CGM sensors lasting fewer than the number of days expected per CGM labeling  949 
+• CGM tape adherence issues  950 
+• Pump infusion set occlusion not leading to ketosis  951 
+• Battery lifespan deficiency due to inadequate charging or extensive wireless 952 
+communication  953 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 47 of 58 
+ • Intermittent device component disconnections/communication failures not leading to 954 
+system replacement  955 
+• Device issues cle arly addressed in the user guide manual that do not require additional 956 
+troubleshooting  957 
+• Skin reactions from CGM sensor placement or pump infusion set placement that do not 958 
+meet criteria for AE reporting  959 
+ 
+ 960 
+• UADEs must be reported within [ADDRESS_595746].  962 
+• Other reportable adverse events, device malfunctions (with or without an adverse event) 963 
+and device complaints should be reported promptly, but there is no formal re quired 964 
+reporting period.  965 
+• The IDE Sponsor will investigate the UADE and if indicated, report the results of the 966 
+investigation to the IRBs  and FDA, within 10 working days of the study team becoming 967 
+aware of the UADE per 21CFR 812.46(b) (2).  968 
+• In the case of a  device system component malfunction (e.g. pump, CGM, control 969 
+algorithm), information will be forwarded to the responsible manufacturer by [CONTACT_1758] 970 
+personnel.  971 
+ 
+ 972 
+ Participant Discontinuation  973 
+Rules for discontinuing study device use are described below.  974 
+• The investigator believes it is unsafe for the participant to continue on the intervention.  975 
+This could be due to the development of a new medical condition or worsening of an 976 
+existing condition; or participant behavior contrary to the indica tions for use of the device 977 
+that imposes on the participant’s safety  978 
+• The participant requests that the treatment be stopped  979 
+• Two distinct epi[INVESTIGATOR_3414]  980 
+• Two distinct severe hypoglycemia events as defined in section 9.2.1. 981 
+ Suspending/Stoppi[INVESTIGATOR_3396]  982 
+In the case of an unanticipated system malfunction resulting in a severe hypoglycemia or severe 983 
+hyperglycemia event (as defined in section 9.2), use of the study device system will be suspended 984 
+while the problem is diagnosed.  985 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 48 of 58 
+ In addition, study activities could be similarly suspended if the manufacturer of any constituent 986 
+study device requires stoppage of device use for safety reasons (e.g. product recall).  The affected [ADDRESS_595747] also stop if there are  three severe hypoglycemia events or three DKA events. 991 
+After further medical/safety review of the events, the study may resume if the events are [ADDRESS_595748] (43 USC [ZIP_CODE]) as an unauthorized acquisition, access, 994 
+or use of protected health information (PHI) that compromises the security or privacy of such 995 
+information.   996 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 49 of 58 
+ Chapter 10:  Miscellaneous Considerations  [ADDRESS_595749] their 999 
+personal physician to change their prescribed personal insulin to a rapid -acting insulin approved 1000 
+for use in the t:slim X2 pump (e.g. lispro or aspart ) for the duration of the trial.  1001 
+The devices (in sulin pump, CGM) must be removed before Magnetic Resonance Imaging (MRI), 1002 
+Computed Tomography (CT) or diathermy treatment. Participants may continue in the trial after [ADDRESS_595750] information may also be provided to 1012 
+collaborators involved in the study after the appropriate research agreement has been executed.   1013 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 50 of 58 
+ Chapter 11:  Statistical Consideration  [ADDRESS_595751] elements of two modules 1015 
+to be included in a future Adapti ve Biobehavioral Control (ABC) system: (1) A Behavioral 1016 
+Adaptation Module (BAM) and (2) An Auto Titrat ion Module (ATM)  and a Web Simulation Model  1017 
+(WST). BAM and ATM  / WST  will be provided to users of the t:slim X2 with Control -IQ closed -loop 1018 
+system. The on ly purpose of this trial is safety testing and receiving feedback from the 1019 
+participants regarding system functionality and user interface.   1020 
+ 
+ 1021 
+1022 
+The study will recruit current users of the Control -IQ system. Following a 2 -week baseline using 1023 
+Control -IQ only, the participants will be randomized 1:1 to Control -IQ + ATM / WST vs Control IQ 1024 
++ ATM  / WST  + BAM and will be followed for [ADDRESS_595752] will use a sequence 1025 
+of computer -generated pseudorandom Bernoulli trials. The 6 weeks of active trial will be used 1026 
+for assessment of the safety and usability of ATM / WST  and BAM. The baseline data and the last 1027 
+2 weeks of the active trial will be used for secondary comparisons of CGM -based metrics of 1028 
+glycemic control.  1029 
+ 
+ 1030 
+We intend to recruit up to 45 users of Control -IQ, with the objective to randomize N=30 subjects . 1031 
+The number of participants is a convenience sample not based on stati stical principles.  This 1032 
+sample will provide ~180 weeks of data for the assessment of the safety and utility of the ATM 1033 
+and up to 90 weeks for assessment of the safety and utility of the BAM.  1034 
+ 
+ 1035 
+ Primary Efficacy Endpoint  1036 
+Safety assessment of ATM  / WST  and BAM.  1037 
+ Secondary Outcome  1038 
+CGM -based metrics and user experience (UX) questionnaires, including:  1039 
+
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 51 of 58 
+ • Percentage of readings in the target ranges of 70 -180 and 70 -140 mg/dl;  1040 
+• Mean glucose;  1041 
+• Glucose variability measured by [CONTACT_464732];  1042 
+• Percentage of readings <70, 60, and 54 mg/dl;  1043 
+• Low blood glucose index (LBGI)10  1044 
+• Percentage of readings >180, 250, and 300 mg/dl;  1045 
+• High blood glucose index (HBGI)10 1046 
+• ABC Pi[INVESTIGATOR_464711]  1047 
+• INSPI[INVESTIGATOR_21392]  1048 
+ 
+ 1049 
+All randomized participants will be included in these analyses and the circumstances of all 1050 
+reportable cases of the following will be summarized and tabulated by [CONTACT_1570]:  1051 
+• Severe hypoglycemia;  1052 
+• Diabetic ketoacidosis (DKA);  1053 
+• Ketone events defined as a calendar day with ketone level >1.0 mmol/L;  1054 
+• Serious adverse events (SAE) with a possible or greater relationship to a study device 1055 
+(including anticipated and unanticipated adverse device effects);  1056 
+• Other serious adverse events not related to a study devic e, and  1057 
+• Adverse device effects (ADE) that do not meet criteria for SAE.  [ADDRESS_595753] been discussed with FDA during the submission of our previous pi[INVESTIGATOR_2268] 1059 
+study (IDE G170255, “A Pi[INVESTIGATOR_7447] t:slim X2 with Control -IQ Technology”), which was used to 1060 
+introduce Control -IQ and enable a subsequent pi[INVESTIGATOR_16076].  These criteria included system safety 1061 
+checks and CGM -based performance criteria consistent with the recommendations of the 1062 
+International Consensus on Time -in-Range.  Because these criteria are well established, we will 1063 
+keep them to gauge the success of the pi[INVESTIGATOR_464712] / WST and BAM:  1064 
+• No critical ATM / WST or BAM errors;  1065 
+• No SAE or ADE related to the use of ATM / WST or BAM;  1066 
+• Percent time in the range 70 -180 mg/dL: mean 71% ±11;  1067 
+• Percent time <70 mg/dL: median <5%.  1068 
+• Percent time >250 mg/dL: median <10%.  1069 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 52 of 58 
+ 
+ 
+ 1070 
+Baseline demographic and clinical characteristics of the cohort of all randomized participants will 1071 
+be summarized in a table using summary statistics appropriate to the distribution of each 1072 
+variable. Descriptive statistics will be displayed overall and by [CONTACT_1570], and will include:  1073 
+• Demographics (e.g. age, duration of diabetes, and other);  1074 
+• Baseline HbA1c, and  1075 
+• CGM -based metrics from the 2 -week baseline use of Control -IQ: 1076 
+o Percentage of readings in the target ranges of 70 -180 and 70 -140 mg/dl;  1077 
+o Mean glucose;  [ADDRESS_595754] deviation and coefficient of variation;  1079 
+o Percentage of readings <70, 60, and 54 mg/dl;  1080 
+o Low blood glucose index (LBGI)  ;10 1081 
+o Percentage of readings >180, 250, and 300 mg/dl;  1082 
+o High blood glucose index (HBGI) .10 1083 
+ 
+ 1084 
+The following tabulations and analyses will be performed by [CONTACT_418103] 1085 
+issues:  1086 
+• Device malfunctions requiring study team contac t and other reported device issues  1087 
+• Sensor performance metrics (difference, absolute relative difference, and International 1088 
+Organization for Standardization criteria) – if applicable, by [CONTACT_91121].  1089 
+• % time CGM data available - overall and by [CONTACT_24473]  1090 
+• % tim e in different operational modes per week - overall and by [CONTACT_24473]  1091 
+ 
+ 1092 
+The study design includes repeated measures (baseline vs last 2 weeks of study) on all secondary  1093 
+CGM and UX outcomes  (Figure 1); thus, we will use a linear mixed -effect model that corresponds 1094 
+well to this structure5,6 (e.g. Linear Mixed Models in SPSS.7), with “Subject” as a random factor 1095 
+and “Group” as a fixed factor. The models will adjust for age and HbA1c as fixed effects.  We 1096 
+should note that similar results may be generated by [CONTACT_93739], but mixed 1097 
+models handle missing data better (e.g. ANOVA only uses listwise deletion, which could reduce 1098 
+pow er and introduce bias towards study completers).8,9 1099 
+The general principles that will be followed during analysis are:  1100 
+• The analysis will follow an Intention -to-treat (ITT) approach;  1101 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 53 of 58 
+ • All randomized participants will be included in the primary safety analysis and in the 1102 
+secondary analyses of CGM metrics.  1103 
+• All covariates obtained on a continuous scale will be entered into the models as [ADDRESS_595755] a linear 1105 
+relationship with the outcome. In such a case, categorization and/or transformation will 1106 
+be explored. All p -values will be two -sided.  1107 
+• Standard residual diagnostics will be performed for all analyses. If values are highly 1108 
+skewed, then an alternate transformation or nonparametric methods will be us ed. 1109 
+Previous experience suggests that no transformation or nonparametric analyses will be 1110 
+necessary for TIR 70 -180 mg/dL, TIR above 180 mg/dL, mean glucose, or HbA 1c.Other 1111 
+outcomes, such as TIR below 70 mg/dL are typi[INVESTIGATOR_244216].   1112 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 54 of 58 
+ Chapter 12:  Data Collection and Monitoring  1113 
+ 
+ 1114 
+The study data are collected through a combination of case report forms (electronic and paper) [ADDRESS_595756].  These documents should 1126 
+be retained for a longer p eriod, however, if required by [CONTACT_427].  No records will be 1127 
+destroyed without the written consent of the sponsor, if applicable.  It is the responsibility of the 1128 
+sponsor to inform the investigator when these documents no longer need to be retaine d. 1129 
+ 
+ 1130 
+A protocol deviation is any noncompliance with the clinical trial protocol, Good Clinical Practices 1131 
+(GCP), or procedure requirements.  The noncompliance may be either on the part of the 1132 
+participant, the investigator, or the study site staff.  As a result of deviations, corrective actions 1133 
+may be developed by [CONTACT_91123].  Major deviations will be reported 1134 
+to the IRB -HSR within 7 calendar days of when the study team becomes aware of the event.   1135 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 55 of 58 
+ Chapter 13:  Ethics/Protection of Human Participants  1136 
+ 
+ 1137 
+The investigator will ensure that this study is conducted in full conformity with Regulations for 1138 
+the Protection of Human Participants of Research codified in 45 CFR Part 46, 21 CFR Part 50, 21 1139 
+CFR Part 56, and/or the ICH E6.  1140 
+ 
+ 1141 
+The protocol, informed consent form(s), recruitment materials, and all participant materials will [ADDRESS_595757] be obtained before any participant is enrolled.  Any amendment to the protocol will 1144 
+require review and approval by [CONTACT_3484].  All 1145 
+changes to the consent form will be IRB approved; a determination will be made regarding 1146 
+whether previously consented participants need to be re -consented.  1147 
+ 
+ 1148 
+ Consent Procedures and Documentation  1149 
+Informed consent is a process that is initiated prior to an individual’s agreement to participate in 1150 
+the study and continues throughout the individual’s study participation.  Extensive discussion of [ADDRESS_595758] s required to be maintained by [CONTACT_093], including but 1166 
+not limited to, medical records (office, clinic, or hospi[INVESTIGATOR_307]) for the participants in this study.   1167 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 56 of 58 
+ The study participant’s contact [CONTACT_91124] [ADDRESS_595759] protected.  At the end of the study, all study databases may be de - 1174 
+identified and archived at the University of Virginia Center for Diabetes Technology.   1175 
+CLINICAL PROTOCOL  
+ 
+ 
+ABC Pi[INVESTIGATOR_2268] 1_ 30-Jun-2021  Page 57 of 58 
+ Chapter 14:  References  1176 
+1. Kovatchev BP, Anderson SM, Raghinaru D, et al, for the iDCL Trial Research Group. 1177 
+Randomized Controlled Trial of Mobile Closed -Loop Control. Diabetes Care. 2020; 43:607- 1178 
+615. PMID: 31937608  1179 
+2. Brown SA, Kovatchev BP, Raghinaru D, et al, for the iDCL Trial Research Group. 6 -month 1180 
+randomized multicenter trial of closed -loop control in type 1 diabetes. N Engl J Med. 2019; 1181 
+381: 1707- 17. PMID: 31618560.  1182 
+3. Breton MD, Kanapka LG, Beck RW, et al, for the iDCL Trial Research Group. A Randomized 1183 
+Trial of Closed -Loop Control in Children with Type 1 Diabetes. N Engl J Med. 2020; 383:836 - 1184 
+845. PMID: 32846062.  1185 
+4. Kovatchev BP, Cobelli  C.  Glucose variability: timing, risk analysis, and relationship to 1186 
+hypoglycemia in diabetes. Diabetes Care. 2016; 39: 502 -510. PMCID: PMC4806774  1187 
+5. Ching Ng W -K, Ching MK W. Markov Chains. Springer- Verlag; 2006.  1188 
+6. Kovatchev BP. Decision Support System for Pat ients with Diabetes: Concept, Goals, and 1189 
+Feasibility. Advanced Technologies and Treatments for Diabetes (ATTD), [LOCATION_010], 1190 
+2019.  1191 
+7. Kovatchev BP. Building a Virtual Image of a Patient – the VIP Approach to Precision Medicine 1192 
+for Diabetes. Advanced Technologies and Treatments for Diabetes (ATTD), [LOCATION_010], [ADDRESS_595760] of automated bio -behavioral feedback on the control of type 1 diabetes. Diabetes Care. 1196 
+2011; 34: 302- 307. PMCID: PMC3024338  1197 
+9. Fabris C, Heinemann L, Beck RW, Cobelli C, Kovatchev B. Estimation of Hemoglobin A1c From 1198 
+Continuous Glucose Monitoring Data in Individuals With Type 1 Diabetes: Is Time in Range All 1199 
+We Need? Diabetes Technol Ther. 2020 doi: 10.1089/dia.2020.0236  1200 
+10. Kovatchev BP. Metrics for glycaemic control: from HbA1c to continuous glucose monitoring. 1201 
+Nature Reviews Endocrinology. 2017; 13: 425 -436. PMID: 28304392  1202 
+11. Patek SD, Lv D, Ortiz EA, Hughes -Karvetski C, Kulkarni S, Zhang Q, Breton MD. Empi[INVESTIGATOR_10477] 1203 
+representation of blood glucose variability in a compartmental model. InPrediction Methods 1204 
+for Blood Glucose Concentration 2016 (pp. 133 -157). Springer, Cham.  [ADDRESS_595761] 1;103:104605.  [ADDRESS_595762] Look at Control- IQ: A New - 1211 
+Generation Automated Insulin Delivery System. Diabetes Care 2018; 41:2634 -2636, PMID: 1212 
+30305346  1213 
+15. Kovatchev BP, Kollar L, Anderson SM, Barnett C,  Breton MD, Carr K, Gildersleeve R, Oliveri 1214 
+MC, Wakeman CA, Brown SA. Evening and overnight closed -loop control versus 24/7 1215 
+continuous closed- loop control for type 1 diabetes: a randomized crossover trial. Lancet 1216 
+Digital Health 2020; 2: e64 -e73.  1217 
+16. Ekhlaspou r L, Forlenza GP, Chernavvsky D, Maahs DM, Wadwa RP, DeBoer MD, Messer LH, 1218 
+Town M, Pi[INVESTIGATOR_464713] J, Kruse G, Kovatchev BP, Buckingham BA, Breton MD. Closed Loop Control 1219 
+in Adolescents and Children During Winter Sports: Use of the Tandem Control -IQ AP System.  1220 

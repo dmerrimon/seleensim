@@ -1,0 +1,965 @@
+Version 5/5/2015   
+ 
+  
+ Implementing Technology -Assisted Drug Treatment and Relapse Prevention in FQHCs.  
+ 
+PRINCIPAL INVESTIGATOR :         David H. Gustafson, PhD . 
+University of WI - Madison       
+Department: Industrial Engineering  
+1513 University Avenue, ME Bldg. Suite 4109  
+Madison, WI 53706  
+ Phone 608.263.4882  
+ Fax:608.265.3281 or 608.890.1438  
+Email: Dhgustaf@wisc.edu  
+ 
+ 
+CO-INVESTIGATOR S:    Lisa Marsch, PhD.  
+Dartmouth College  
+Dartmouth Psychiatric Research Center  
+Rivermill Commercial Center, Suite B4 -1 
+Lebanon, NH 03766  
+Phone: 603-448-0263  
+E-mail: Lisa.A.Marsch@Dartmouth.edu   
+ 
+Randall Brown , M.D. 
+Department: Family Medicine  
+1100 Delaplaine Ct Room 3832  
+Madison, WI 53715  
+Phone: 608.263.6558, 608.263.3111  
+E-mail: randy.brown@fammed.wisc.edu  
+ 
+BIOSTATISTICIAN:                            Amy Atwood, PhD . 
+ Department: Industrial Engineering  
+1513 University Avenue, ME Bldg. Suite 4155C  
+Madison, WI 53706  
+ Phone 608.265.6277  
+ Fax:608.265.3281  or 608.890.1438  
+Email: amy.atwood@chess.wisc.edu  
+     
+  PROJECT DIRECTOR:                    Fiona McTavish , M.S.  
+ Department: Industrial Engineering  
+1513 University Avenue, M E Bldg.  Suite 4111  
+Madison, WI 53706  
+ Phone 608.262. 7852  
+ Fax:608.265.3281  or 608.890.1438  
+Email: fiona.mctavish @chess.wisc.edu  
+ 
+Version 5/5/2015   
+ 
+SPONSOR:      National Institutes of Health : NIDA  
+ 
+ 
+PARTICIPATING INSTITUTIONS:    
+      Access  Community Health Center in Madison, WI. ,  
+     .   
+      The Institute for Family Health, Bronx, NY  
+      Partnership Health Center Missoula, MT  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Version 5/5/2015   
+ 
+TABLE OF CONTENTS  
+ 
+Schema/Abstract . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . 4 
+ 
+ 1.0 Introduction/Background  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 
+ 
+ 2.0 Objectives. . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . 6 
+ 
+ 3.0 Selection of Patients  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  8 
+ 
+ 4.0 Registration Procedures………………………………………………………. . . . . . .   8 
+ 
+ 5.0 Treatment Plan . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ..  11 
+ 
+ 6.0 Measurement of Effect  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . 11   
+ 
+ 7.0 Study Parameters  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  12 
+ 
+ 8.0 Drug Formulation and Procurement  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12 
+ 
+ 9.0 Statistical Considerations  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12 
+ 
+10.0 Pathology Review  (if appropriate)  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . .. 14  
+ 
+11.0 Records to be Kept . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14 
+ 
+12.0 Patient Consent and Peer Judgment  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  .  14 
+ 
+Appendix  A:    CHESS Data and Safety Monitoring Plan ………. . . . . . . . . . . . . . . . . ….16 
+ 
+13.0 References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . .   19 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 4 Abstract  
+ 
+Primary care providers at Federally Qualified Health Care facilities  (FQHCs)  are being asked to integrate substance 
+use disorder (SUD) treatment and HIV care into their practices which are already overburdened. We will implement 
+a wireless smart phone based delivery system called Seva (the Sanskrit word for selfless caring). Seva integrates 
+HIV risk behaviors, status, and services into both the patient interface and provider registry components. Seva will 
+combine: Therapeutic Education System ( TES addiction t reatment ), Addiction  Comprehensive Health 
+Enhancement Support System ( A-CHESS relapse prevention ), and a symptom reporting system called the Clinician  
+Report (CR).  The CR facilitates patient - clinician communication and assists clinicians in better managi ng patient 
+symptoms and treatment. Each component of Seva has proven to be effective, but each has its own interface and 
+operates independently making it difficult to take advantage of their synergistic potential. While Seva has great 
+potential, success re lies not only on technology, but on creating a welcoming environment and effective processes 
+to implement and sustain. We propose to overcome key barriers to integrating substance abuse treatment and HIV 
+care into primary care by using a blending of three proven quality improvement strategies to implement Seva. We 
+hypothesize that our implementation strategy will create a welcoming environment, and enhance implementation 
+success and sustainability by removing barriers and building on facilitators, allowing Seva to flourish. We will use 
+quantitative and qualitative methods to determine how much our implementation improves: Reach, Effectiveness, 
+Adoption, Implementation and Maintenance. We will implement Seva in 3 FQHCs.  ACCESS community health 
+center in Madi son will test and refine the implementation strategy and adapt Seva to meet FQHC needs & ensure 
+ease of use. Two other FQHCs will receive Seva at six -month intervals in a stepped wedge design. A coach will be 
+assigned to each FQHC to help implement, operat e and sustain Seva. We will measure impact on the FQHC over a 
+three -year period.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 5 1.0 INTRODUCTION  
+ 
+This proposal combines evidence -based computerized intervention strategies designed to provide treatment and 
+recovery support fo r Substance use Disorder ( SUD ) and tests a strategy for implementing them to make more 
+efficient and effective use of limited healthcare and addiction treatment resources. The integrated intervention 
+delivery system we propose, called Seva will be availabl e to patients anytime and anywhere. If successfully 
+implemented, it may be an important “clinician -extender” because much of ongoing therapeutic support can be 
+delivered using Seva, allowing clinicians to focus on providing the primary care they are unique ly trained to 
+deliver. The development period will be dedicated to the technical integration of these systems.   
+ 
+While Seva has great potential, success relies not only on technology, but on creating a welcoming environment 
+and effective processes to impl ement and sustain. We propose to overcome key barriers to integrating substance 
+abuse treatment and HIV care into primary care by using a blending of three proven quality improvement strategies 
+to implement Seva. We hypothesize that our implementation stra tegy will create a welcoming environment, and 
+enhance implementation success and sustainability by removing barriers and building on facilitators, allowing Seva 
+to flourish. We will use quantitative and qualitative methods to determine how much our impleme ntation improves: 
+Reach, Effectiveness, Adoption, Implementation and Maintenance. We will implement Seva in 3 FQHCs. A ccess  
+Community Health Center in Madison will test and refine the implementation strategy and adapt Seva to meet 
+FQHC needs & ensure ease of use. Two other FQHCs will receive Seva at six -month intervals in a stepped wedge 
+design. A coach will be assigned to each FQHC to help implement, operate and sustain Seva. We will measure 
+impact on the FQHC over a three -year period. Below are the detail s of the integrated system:  
+ 
+Seva is a computer system that functions on smart phones and tablets with one easy -to-use interface. Seva 
+combines t hree evidence -based computer systems --one for SUD treatment (TES) , one for recovery support (A -
+CHESS)  and one t hat allows patients to communicate healthcare concerns to their clinical team  (Clinician Report)  
+allowing these data to be used to improve patient care, reduce side effects and improve patient quality of life.  Seva 
+is much more than the sum of its parts b ecause the programs will be integrated to make the resources unique to 
+TES, A -CHESS, and Clinician Report  (CR)  available throughout treatment and recovery support. Seva will:  
+• support individual and population -based care (by tracking, reminding, and repor ting on health status, visit 
+attendance, and treatment adherence for addiction.   
+• speed up and make more predictable transitions between FQHCs and addiction specialists. Transitions (or 
+handoffs, e.g. between a FQHC and specialty treatment) often produce  dropouts, inefficiencies, and errors.  
+• allow patients to securely communicate health symptoms and concerns with  their clinic al team  to facilitate 
+clinician integration and patient care management.  
+ 
+Seva components  include:  
+ 
+TES is a computer program buil t on the evidence -based Community Reinforcement Approach. TES has 65 
+interactive, multimedia modules, beginning with basic cognitive behavioral recovery support skills (refusing drugs, 
+managing thoughts about drug use, etc.). TES also includes modules to p revent HIV, hepatitis, and sexually 
+transmitted infections (STIs). Additional modules teach skills to improve psychosocial functioning (family/social 
+relations, managing negative moods, etc). TES is a self -directed program that includes a module teaching p atients 
+how to use the system and a "customization program" to build an individualized treatment plan for patients. TES 
+uses “fluency -based” computer -assisted instruction to assess a patient’s grasp of material and adjust it to promote 
+the mastery of skill s and information. Its experiential learning environments (via interactive videos) help patients 
+learn modeled behaviors (e.g., progressive muscle relaxation). Further, TES allows therapists to view (on their 
+computers) summaries of their patients' TES act ivity and progress, and integrates patients’ use of TES into 
+counseling sessions so that TES can function as a clinician -extender. Randomized trials have found that 1) TES is 
+as efficacious as behavioral therapy delivered by therapists and superior to stan dard substance abuse treatment , 2) 
+TES modules for HIV, hepatitis, and STI risk increased HIV/disease prevention knowledge and self -reported risk 
+for HIV and were perceived as more useful than a standard intervention , and 3) adding TES to methadone 
+  
+ 
+ 
+ 
+ 6 treatment improved objectively measured opioid abstinence rates. TES is being converted to operate on wireless 
+systems.   
+ 
+A-CHESS , or Addiction - CHESS, is a smart phone recovery support system. CHESS is the umbrella name for 
+eHealth systems developed and teste d for the past 25 years at the University of Wisconsin Center for Health 
+Enhancement Systems Studies [chess.wisc.edu]. CHESS is also an NCI -designated Center of Excellence in Cancer 
+Communication Research and an AHRQ -designated Center of Excellence in usin g technology to promote active 
+aging. CHESS is built upon evidence -based principles of recovery support: long duration,  assertive outreach,  
+monitoring,  prompts,  action planning, peer and family support, and case management. Recovery support can 
+improve hea lth and reduce healthcare use, but is rarely used in addiction because of the lack of resources. 
+Compared to the unrestricted Internet, CHESS offers a closed, guided universe of tailored information and support 
+with efficient navigation, eliminating the ne ed for complicated search and discovery. In randomized trials, CHESS 
+significantly improved: 1) quality of life and costs of care in people with HIV,  2) quality of life and self -efficacy for 
+women with breast cancer vs. control and Internet groups , 3) ast hma control for young children, and 4) quality of 
+dying and length of survival for lung cancer patients.  Smart phone forms of CHESS are in randomized trials on 
+colon cancer, urban teenagers with asthma, and alcohol -dependent patients. Four -month tests wit h 192 alcohol -
+dependent subjects found that A -CHESS reduced heavy drinking days by 46% vs. a control group and that long -
+term use of A -CHESS is higher than other CHESS applications. For more detail on A -CHESS, please see 
+http://www.innovationsforrecovery.com   
+ 
+Clinician Report (CR)  is a patient monitoring, clinical decision making and communication tool that allows patients 
+to answer questions about their symptom status, current physical and emotional n eeds and concerns to be addressed 
+by the clinicians at the next clinic visit.   The CR summarizes the data provided by patients and makes it available 
+online to the ir clinicians and patients.  The CR also provides a graphical summary of the patient’s longi tudinal data 
+so both the patient and the clinician can view status changes over time. Additionally by summarizing the needs 
+conveyed by patients , the CR provides clinical staff with immediate patient health and behavioral issue s as well as 
+an understanding  of other important life concerns . The CR is intended to facilitate coordination of care and assist 
+clinicians in treatment follow -up to improve patient adherence and improved health outcomes.   
+   
+ 
+2.0 OBJECTIVES  
+ 
+Clinician Subject:  Approximately 45 (15 fr om each site) clinician subjects will be recruited.  Participating clinicians 
+will be asked to participate in three (30 -45 minute) focus groups where they will be asked about their impressions 
+and experience using Seva, whether the system helped or did not help their clinical practice and any suggestions to 
+improve the Seva system.   No personal health information will be collected during the focus groups, but we will 
+audio record the focus groups so that we can transcribe responses after the groups are compl ete.  Participants, 
+however, will not be identified on the recording or transcription.  Clinicians will also be asked to refer appropriate 
+patients to the research study team  for possible study recruitment  and accept receipt of the Clinician Report and 
+respond accordingly.   Additionally they will be asked to complete  7 surveys about their work environment and how 
+their clinic is using/implementing the Seva recovery support system .  Clinicians will also be asked to keep track of 
+the time they spend on projec t related activities.  
+ 
+Patient subjects : Approximately 300 (100 from each site) patient subjects will be recruited .  A sample of 15 -20 
+participating patients will be asked to participate in three (30 -45 minute) focus groups where they will be asked 
+about t heir opinion and experience using the Seva system and if the system helped or did not help them abstain 
+from drug use and any suggestions to improve the system. No personal health information will be collected during 
+the focus groups, but we will record th e focus groups so that we can transcribe responses after the groups are 
+complete.  Participants, however, will not be identified on the recording or transcription.   
+  
+ 
+ 
+ 
+ 7 Patient subjects will also be asked to complete 4 surveys. The first survey will be filled  out in person at the clinic 
+and the other  two surveys will be completed  at 6 and 12 and 18 months after they have received the phone and Seva 
+system. Patients  can complete these surveys either on the phone or on paper, whichever they prefer. These surveys  
+will take about 20 minutes to complete and will ask information about drug and alcohol use and potentially risky 
+behavior (i.e., sharing needles, unprotected sex).   When patient s use  Seva  they will also be asked how they are 
+doing  and about their recent a lcohol and drug use.   As part of the Clinician Report, t hese questions will be sent  
+weekly  on the Seva system and will take about 2 -4 minutes to compl ete. All questions are voluntary. Patients are 
+free to refuse to answer any survey questions they are unco mfortable with.  However, by answering the weekly 
+questions about their recent alcohol and drug use the Seva system can send the patient information to help them 
+stay clean and sober.    In addition, t he information will be sent to his/her clinical team so  the clinic team can 
+provide him/her with the support they need  
+We propose that pre -post differences will reveal improvements in the following:  
+ Organization readiness for i mplementation  and sustainability of the SUD  system called Seva  
+ SUD care coordination  between primary and specialty care systems  
+ Reduction in urgent and emergent care visits  
+ Patient satisfaction  
+ Patient perceived social support  
+ 
+By tracking both frequency and duration of Seva  use (hours, minutes, and seconds) this research will also determ ine 
+how much Seva is used in a real world healthcare context: The data will be relevant to decisions about 
+implementation, sustainability and dissemination of SUD  technologies , especially via FHQCs where the 
+intervention might be integrated with other aspe cts of routine patient care.  The Seva system will also use the 
+phone’s GPS to monitor location  to help support the ir recovery. Patients are not required to use this feature. They 
+can turn it off at any time.  
+ 
+The information being provided by patients is  sensitive health information.   Patients are free to refuse to answer any 
+survey questions they are uncomfortable with.  The objective of the study is to provide technology that will help the 
+clinicians treat patients with SUDs better.  Without collecting this sensitive information a study like this could not 
+be conducted as the very nature of the intervention is to allow clinicians to be better informed and provide treatment 
+more responsively to their patients’  needs as they deal with addiction and other s erious health issues.  All patients 
+will be reminded that they are under no obligation to participate in this study, can withdraw from the study at any 
+time, and in no way will their health care be effected by their participation in this study.  
+ 
+3.0 SELEC TION OF PATIENTS   
+ 
+The UW CHESS Research team will not have access to medical records.   Staff members from the Federally 
+Qualified Health Centers  (FHQC)  as well as patients from those sites will be recruited as human subjects for this 
+protocol.    
+ 
+Recru itment will be conducted at three 3 FHQCs ; Access  Community Health Center in Madison, WI., Partner ship 
+Health Center Missoula, MT and The Institute for Family Health Bronx, NY.  
+ 
+Clinician  Subjects :  45 clinicians among the 3 FQHCs  (15 at each site ).  Staff  members include MDs, behavioral 
+health providers, RNs and management staff from the clinics’ primary care and behavioral health departments.  
+Clinician  must have an interest in the research objectives.  Clinician participation will be voluntary.    
+ 
+Patien t Subjects :  300 patients  among the 3 FQHCs  (100 at each site) .  .  Patients must be 1) age 18 or older 2)  3) 
+meet criteria for Substance Use Disorder (SUD) according to the  Severity of Dependence Scale .  Clinician subjects 
+referring patients  (Drs. Randa ll Brown , , Chantelle Thomas,  Jonas Lee and Mischa Ronick  at Access)  will ensure 
+that patients: 4) have no current psychotic disorder severe enough to prevent participation, 5) have no acute medical 
+  
+ 
+ 
+ 
+ 8 problem requiring immediate inpatient treatment, 6) are willing to use Seva, and 7) can understand and sign a 
+consent form in English.  If a patient is incarcerated during the study their participation will be stopped. If they are 
+still interested in participating in the study when released from jail they will be able to rejoin the study. Patient 
+participation will be voluntary.   
+ 
+ 
+4.0 REGISTRATION PROCEDURES  
+ 
+Clinician  Subject Identification and Recruitment  
+Prior to the start of the study, Dr Randall Brown and the UW research team will either meet with potenti al clinician 
+subjects either 1:1 and/or present the study at an Access Clinic provider staff meeting to gauge the clinicians' 
+interest in participating in the study. UW researchers will explain the study objectives and subject participation 
+expectations du ring this meeting. UW Researchers will assure the providers that there is no obligation to participate 
+in the study.  That their decision is voluntary and that their clinical practice will in no way be effected by their 
+choice to participate or not.   The clinicians will be told they do not have to decide about participation during this 
+meeting. They can take their time to think about it and either contact Dr Brown or the UW Research team at a later 
+time. They will also be told they can drop from study part icipation at any time. Dr Brown and the UW Researchers 
+will be available at anytime to answer questions about the study. This will ensure the Access clinicians do not feel 
+pressured or coerced in any way.  UW Researchers will provide clinician subjects tra ining on the Seva system prior 
+to patient subject enrollment.  
+ 
+Patient Subject Identification and Recruitment  
+Drs. Randall Brown , Chantelle Thomas, Mischa Ronick, a nd Jonas Lee are clinician s at Access  and also 
+participating researchers (part of the resear ch team).  They will review medical records to identify potentially 
+eligible patient subjects. These clinicians have valid access to the EMR as part of their clinical role.  As part of 
+routine care (at Access clinic) a ll patients will complete the Severity  of Dependence Scale  survey. This data will be 
+used to assure the patient meets eligibility criteria. When potentially eligible patient subjects have been identified 
+the clinician will inform the UW research team recruitment coordinator that there are pote ntially eligible patients 
+coming into clinic. The UW research team recruitment coordinator will arrange to be in clinic to talk to any 
+potentially interested patients. No protected health information will be shared with the UW research team 
+recruitment coo rdinator prior to the patient giving permission.   
+ 
+During the clinic appointment, the clinician will ask the patient if they are interested in hearing about the study.  If 
+they are interested and give permission, the clinician will tell the UW research te am recruitment coordinator there is 
+a patient who is interested in hearing about the project. The clinician will not give the patient’s name to the UW 
+research team recruitment coordinator.  In the privacy of a clinic exam room or private office the UW res earch team 
+recruitment coordinator will explain the study, its benefits and potential risks of participation.  The UW research 
+team recruitment coordinator will also answer any questions the patient subject may have. If the patient is interested 
+in partici pating they will be asked to complete informed consent and  the first online  survey  in the clinic during this 
+first meeting. After the informed consent is complete  the UW research team recruitment coordinator will schedule a 
+training meeting between the sub ject and the recruiter. The training will involve instructions on how to use the 
+smart phone, complete  survey  questions to acquaint the patient with online surveys  ecological momentary 
+assessment and setting up the patient’s profile and preferences (includ ing if the patient allows the clinical team to 
+assess the answers to their ecological momentary assessments and navigat e the information and resources in Seva. 
+This meeting will be scheduled at a time and place most convenient for the patient subject.  
+ 
+No additional clinic visits will be required of patient subjects. The UW research team recruitment coordinator will 
+have a private space in the clinic for meeting with patients to confirm eligibility, obtain consent, and conduct  
+training. This private space will be either a regular exam room or  private office in the clinic. Patients will have 
+access to Seva for 12 months. Patients must agree to allow monitoring of their Seva usage .  Patients are not 
+required to use the GPS monitoring system.  They can turn it  off at any time.   
+  
+ 
+ 
+ 
+ 9 Intervention:  
+The study will be conducted over a 12 month period.  All patient subjects will have access to the Seva system for 
+12 months  and clinician subjects will have access for the duration of the study . There will be no cost to su bjects for 
+participating in this research study. There will also be an 800 number available for technical support.  Clinician and 
+Patients subjects will also have access to the internet and will be able to use email if they choose to do so.  Use of 
+the inte rnet and email will not be tracked by the UW Research team.    
+ 
+Clinician Subjects  will be asked to participate in three (30 -45 minute) focus groups where they will be asked about 
+their impressions and experience using Seva, whether the system helped or di d not help their clinical practice and 
+any suggestions to improve the Seva system.  Clinicians will also be asked to refer appropriate patients to the 
+research study team for possible study recruitment.  Additionally they will be asked to complete 7 survey s about 
+their work environment and how their clinic is using/implementing the Seva recovery support system.   
+Use of Seva: Clinician Subjects may use any or all of the elements of the  Seva  system, which combines  the A - 
+CHESS application that provides infor mation and support to patients to help them maintain sobriety, the TES 
+application  which provides cognitive behavioral therapy based tutorials to improve decision making and help 
+patients maintain sobriety and the  Clinician Report which is a patient monito ring, clinical decision making and 
+communication tool that allows patients to answer questions about their symptom status, current physical and 
+emotional needs and concerns to be addressed by the clinicians at the next clinic visit.   The CR summarizes the  
+data provided by patients and makes it available online to their clinicians and patients.  The CR also provides a 
+graphical summary of the patient’s longitudinal data so both the patient and the clinician can view status changes 
+over time.  Clinician s will receive a report from their patients participating in the study who elect to complete and 
+send the information to their clinician.  To accommodate the ‘real word’ processes of busy clinical practice,  
+Clinicians can designate one of their team, registere d nurse (RN), nurse practitioner (NP) or physician assistant 
+(PA) to receive the report for them.  Patients will be told if the report goes to a designee.  This designee  will be 
+consented as a clinician subject for this protocol and have access to the Seva system.  The designee RN, NP or PA 
+will receive the report and provide the information to the clinician for follow -up.  The clinical team can access the 
+CR in three ways. First, the clinician (or designee) can log into Seva and then access a summary report  of their 
+patients. Second, for participating patients, the Seva system will generate an alert that is immediately sent to 
+clinician  (or designee) whenever the patient’s BAM  responses exceed  a threshold score patient’s BAM responses 
+exceed a threshold scor e of 6 on a 0 –7 scale or 1 on a reversed 0 –7 scale  for at least one symptom item. Finally, 
+clinicians (or designee) can also receive  a CR notification  two days before a scheduled clinic visit.   The Clinician 
+can then review the report and respond to the pa tient information accordingly.  These reports are private 
+communication between the patient and their healthcare team.    
+Patient Subjects :  A random sample of 15 -20 participating patients will be asked to participate in three (30 -45 
+minute) focus groups w here they will be asked about their opinion and experience using the Seva system and if the 
+system helped or did not help them abstain from drug use and any suggestions to improve the system. No personal 
+health information will be collected during the focu s groups.  All p atient subjects will also be asked to complete 4 
+surveys. The first  survey will be completed  in person at the clinic and the other  two surveys  at 6,  12, and 18  
+months after you have received the phone and Seva system. Patients can complete  these surveys either on the phone 
+or on paper, whichever they prefer. These surveys will take about 20 minutes to complete and will ask i nformation 
+about drug and alcohol use and potentially risky behavior (i.e., sharing needles, unprotected sex).   
+Use o f Seva:  When patient s ubjects use Seva they will also be prompted to complete the CR. They will be asked 
+how they are doing and about their recent alcohol and drug use. These questions will be sent weekly on the Seva 
+system and will take about 2 -4 minutes to complete.    All questions are voluntary. Patients are free to refuse to 
+answer any survey questions they are uncomfortable with.  However, by answering the weekly questions about 
+their recent alcohol and drug use the Seva system can send the patient in formation to help them stay clean and 
+sober.  The information will be sent to his/her clinical team so the clinic team can provide him/her with the support 
+they need.  If their responses exceed a threshold score of 6 on a 0 –7 scale or 1 on a reversed 0 –7 scale for at least 
+one BAM symptom item  the Seva system will generate an alert that is immediately sent to the clinician (or 
+designee) . The patient decides whether to answer the questions .  These reports are private communication between 
+  
+ 
+ 
+ 
+ 10 the patient and the ir healthcare team.   Using a self-selected usern ame and password patient  subjects will be able to 
+access a discussion group within Seva  to connect with other patient subjects. This discussion group will be 
+monitored daily by UW research staff .  
+The Seva r ecovery support system will automatically collect data on how often and for how long subjects use each 
+of the various parts of the system. This data will be used to determine which parts of the system are the most useful 
+and valuable .  This data will be ke pt in a secure, limited access, password -protected file service the UW Madison 
+Center for Health Enhancement Systems Studies, 4th Floor Mechanical Engineering Building , 1513  University 
+Avenue, Madison, WI 53706 .  
+ 
+Privacy and Confidentiality : 
+ 
+Clinician Su bjects : Clinician surveys will be distributed to  clinic  staff members by the UW recruitment coordinator 
+and sent directly to the research team by respondents using self -addressed stamped envelopes. In survey responses, 
+a code will be self -assigned by the r espondent corresponding to the first  two letters of their first name and the first 
+two letters of their last nam e and the last number of their birth year  (e.g., for a person whose  name is Jan Donovan 
+born 1967 would assign the code JA DO 7) .  This approa ch to coding for staff de -identification has be en reviewed 
+and approved by the University of Wisconsin IRB in our previous organizational research studies. Staff members 
+will not have access to one another’s responses in any form. Respondent identification  will not be linked to survey 
+responses. De -identified survey responses will be kept in a locked file in the CHESS office.  Staff could also feel 
+coerced into participation.  To minimize this risk, the option to return a blank survey will be clearly stated .  
+ 
+Data collected during focus groups will be identifiable for the researcher collecting the data.  Focus groups will be 
+conducted by  members  the UW research team trained in qualitative research and in protecting patient 
+confidentiality.  Data collected during the focus groups will not be identifiable to anyone other than the group 
+facilitators.  T he focus groups will be audio recorded and all  responses transcribed after the groups are complete.  
+Participants, however, will not be identified on the audio recording or transcription.  Clinician subject survey date 
+will be coded as described above.  Research staff members that have access to the data for analysis purposes will 
+not have access to subject names .  
+Patient Subjects : To mitigate the risk of patient  breaches of confidentiality, all subjects will be assigned a code 
+number. A list of subject code numbers will be maintained by the project director and stored in a password -
+protected spreadsheet.  This data will be kept in a secure, limited access, passwor d-protected file service on CHESS 
+servers which are located in the Mechanical Engineering building on the 4th floor.   Other id entifiable data entered 
+on the subjects’ smartphones will be  removed by  the UW recruitment coordinator before it can be access by the 
+research team.  The UW Research Coordinator will assist patient subjects  in choosing codenames and passwords to 
+use to login to the Seva system.  Patients will be instructed not to use their real names as a code name and will be 
+warned of the potential  dangers of divulging confidential information (e.g. real names or telephone numbers).   
+ 
+There is a risk that information and resources provided in Seva will be used to the detriment of the subjects.  
+Some potential risks include:  
+ The S eva recovery suppor t program could give patient subjects  wrong information. However, a panel of 
+experts in the field of addiction looks at all information before it is put on the smart phone.  
+ Learning about sensitive issues (such as drug and alcohol use, mental health) whil e using the Seva  recovery 
+support program may cause anxiety, distress, embarrassment, or feelings of sadness. However, patient 
+subjects  do not have to answer any questions that they don’t want to answer.  
+ Patient subjects  could receive wrong information fro m the Internet and/or discussion group. However, we 
+will provide simple tips to help them  figure out whether they can trust the information they receive from 
+these sources.  
+ We will be collecting information on how the smart phone is used and may discover b ehavior that raises 
+concern about harm to self or others. If we see anything that suggests that patient subjects  or others face 
+  
+ 
+ 
+ 
+ 11 imminent risk of harm, we will contact appropriate others to intervene (e.g., your community mental health 
+center, and/or police ) 
+ The service to the smart phone is stopped after 12 months.  Patient subjects  may feel some loss when they 
+no longer have that service.  
+ If patient subjects  smart phone is lost or stolen, we will not be able to replace it. They  may feel some loss if 
+this o ccurs. Also, any personal information that they’ve put on the phone could be seen by unknown others.   
+ If patient subjects  are incarcerated or enter inpatient treatment during the study their participation will be 
+stopped. If they are still interested in p articipating in the study when released from jail or inpatient 
+treatment they will be able to rejoin the study.  
+ Patient subjects might use the phone for unintended harmful purposes such as procuring drugs or alcohol.  
+ Patient subjects will also be able to upload images of themselves onto the Seva system . Subjects will be 
+informed of the risks involved in using identifying services as part of the informed consent process.   This 
+is not required for participation in this study.  
+To further protect subject conf identiality the Principal Investigator has received  a Certificate of Confidentiality 
+through the National Institutes of Health, which grants immunity from legal process to iden tifiable subject 
+information . 
+ 
+ 
+5.0 TREATMENT PLAN   
+ 
+There will b e no randomization involved in this study. It is anticipated that 45 clinician  subjects and 300 patient 
+subjects will be recruited at the 3  participating  Federally Qualified Health Centers.  Clinician subjects will have 
+access to Seva for the duration of t his implementation study at their respective FQHC. All patient subjects will have 
+access to S eva for 12 months.  
+ 
+ 
+6.0 MEASUREMENT OF EFFECT  
+ 
+The evaluation of our implementation strategy is built upon Glasgow’s RE -AIM model.1 RE-AIM has been used to 
+plan and evaluate many disease management interventions. Gaglio and Glasgow2 found over 140 published studies 
+that claim to have used the RE -AIM model, though few adopted the model with fidelity.3 Our evaluation uses the 
+criteria Glasgow et al have set for “ful ly developed” use of RE -AIM. The labeling of outcomes as primary and 
+secondary is challenging in the RE -AIM framework.  On the one hand, organization -wide impact on patients 
+(effectiveness measures) are central and we have labeled them primary. But this is  primarily a study of Seva’s 
+impact on the organizations, where issues such as coordination of care, job satisfaction, and the cost of adopting 
+and operating Seva are critical.  Having said that, the primary  outcomes attached to each dimension of the RE -
+AIM4 framework are listed in italicized bold .  Other outcomes are listed in standard font.  
+ Adoption : The # and type of clinicians using Seva will be representative of the FQHCs’ clinicians. The RIS  
+scores and provider attitudes  toward SUD treatment will incr ease after Seva implementation  
+ Effectiveness :  The following outcomes will improve: # identified with SUD , # identified with HIV risk  
+behaviors , % treated for SUD, Treatment attendance , Care coordination % reducing HIV risk behaviors , % 
+reducing substance use, Time to treatment, # treated for HIV.   
+ Maintenance : Seva Cost effectiveness, costs of operation , Sustainability score , long-term effectiveness (see 
+above), , will increase during the posttest period.  
+ Reach : the # and type of  patients served by Seva a re representative of SUD patients served by the FQHC  
+ Implementation : We describe  Seva services used & when, by what patients and providers  
+ 
+All quantitative analyses will be supplemented by qualitative research to help us understand the findings.  All 
+outcomes will be assessed with as much sensitivity -fidelity in the baseline as in post -intervention periods, thus 
+  
+ 
+ 
+ 
+ 12 permitting unbiased assessment of performance from pre to post.  Exceptions include: (except Seva adoption and 
+use, HIV risk behavior and substan ce use) . The specific surveys to be used are referenced next to the outcome. All 
+surveys are validated. Other data come from EMRs and Seva.  
+As stated earlier, all patients will be reminded that they are under no obligation to participate in this study, can  
+withdraw from the study at any time, and in no way will their health care be effected by their participation in this 
+study.  
+ 
+7.0  STUDY PARAMETERS  
+ 
+There will be no randomization involved in this study. It is anticipated that 45 staff subjects and 300 pa tient 
+subjects will be recruited at the 3 participating Federally Qualified Health Centers.  Clinician subjects will have 
+access to Seva for the duration of this implementation study at their respective FQHC. All patient subjects will have 
+access to Seva f or 12 months.  
+ 
+ 
+8.0 DRUG FORMULATION AND PROCUREMENT  (if applicable)  
+ 
+Not applicable.  
+ 
+ 
+9.0 STATISTICAL CONSIDERATIONS  
+ 
+Research Design : We propose to examine the quality, speed, and impact of implementing Seva in primary care at 3 
+FQHCs, using a stepped -wedge (or multiple -baseline) design.5 6 Using the clinic as the unit of analysis, this single -
+subject approach7 will closely track the timing of intervention elements and repeatedly measure outcomes at the 
+organizational level, including aggregated effects  on clinicians, patients, and practices.  
+The design includes a pilot -testing phase during which  Seva will be introduced at Access Community Health 
+Center in Madison, WI. After pilot testing and improving Seva and the overall implementation strategy, w e wil l 
+standardize the implementation process and Seva so that the elements of the intervention are held constant from one 
+site to another. Then we will sequentially introduce Seva at 2 other FQHCs ( The Institute for Family Health, Bronx, 
+NY, and Partnership He alth Care in Missoula, MT). In this single -subject, stepped -wedge design, each FQHC acts 
+as its own pretest control, with 12 months of baseline data collection. The 6 -month gap creating the stepped -wedge 
+design will give us insight into seasonal variation in substance abuse. During the data collection period, core 
+organizational indicators will be assessed every 2 months, many aggregated from EMRs. During the 24 months of 
+Seva deployment at each site, log -file analysis will also produce daily metrics about patterns of system use. Our 
+FQHCs are typical of other FQHCs and similar to one another on core criteria.  Responding to NIDA’s call for 
+innovative research methods, this stepped -wedge design offers advantages compared to RCTs. This design costs 
+less than randomizing the large sample of organizations required to run the inferential statistics associated with 
+RCTs. It makes it easier to understand the dynamics of change processes (such as implementation) than RCTs do. It 
+avoids the ethical problem in RCTs of  withholding interventions from a proportion of participants who might 
+benefit8. 
+ 
+The single -subject approach9 10emphasizes recurrently tracking behaviors and practices in a “repeated time series” 
+that permits the study of change patterns. The stepped -wedge  designs that often accompany single -subject studies 
+provide the intervention to all participants, but isolate the independent variable by introducing the intervention at 
+specified points11. As Horner et al12 note, “to document experimental control, independ ent variables in single -
+subject research are actively, rather than passively, manipulated.  ”.  
+ 
+While this design may not provide as strong a basis for causal inference as a large -scale experiment, this design is 
+highly appropriate for the initial evaluati on of a new innovative intervention strategy that targets patients, health 
+  
+ 
+ 
+ 
+ 13 care systems, and methods for adoption, implementation, and maintenance. It would be inappropriate to launch a 
+major randomized trial without the preliminary evidence that will be p roduced in the proposed work and that will 
+lay the groundwork for more expensive, and extensive, analysis.  
+ 
+Cost measures : The sustainability of Seva will depend not just on its results but its cost. To be widely disseminated, 
+Seva and its implementation must be cost effective. During the project, we will keep track of the following: 1) 
+Development costs (time and effort spent by software developers for ongoing upgrades based on user feedback 
+from the implementation process). 2) Setup costs (hardware and e quipment such as smart phones issued to patients 
+and tablet PCs used by clinicians to screen and access the registry). 3) Implementation costs (estimated allocations 
+of clinician salaries for time spent recruiting and training new patients; setting up Seva  and offering feedback; and 
+attending required coaching and project management sessions). Any volunteer or other services provided free of 
+charge during implementation will be documented. 4) Implementation costs (salaries for clinicians on the research 
+team). Salary estimates for clinic and research clinician time include fringe benefits. Operating costs of the system 
+consist mainly of the monthly phone/data charges for the patient smart phones and IT and clinician time required 
+for data management and main tenance of the system. Any costs incurred by patients are expected to be minimal and 
+are outside the scope of the evaluation. We will clearly separate research and clinical costs.  
+ 
+Data sources : Data will be collected using: EMR (for patient subject identi fication only), staff surveys, Seva use 
+data, administrative records, and qualitative focus groups.  FQHC clinicians will be asked to complete 7 surveys to 
+collect readiness for implementation scores (RIS), and sustainability propensity scores (SI) (all va lidated 
+instruments). Seva automatically records data on patient use of each service (e.g., times when the discussion group 
+is entered and left) and movement from one service to another (e.g., a patient left a discussion group and went to 
+relaxation exerci ses for 15 minutes). Seva also records test scores for each skills training module and sensor data 
+(e.g., when a patient nears a high -risk location). Seva will also contain patient responses to Seva surveys on self -
+report substance use, HIV risk behavior, depression, and healthcare utilization outside the clinic (e.g., specialty 
+addiction treatment appointments, trips to the emergency room, etc.). Qualitative data will come from focus groups 
+with clinical staff and patients.  To collect cost data, we will c onduct a simple time study tracking project staff and 
+clinician subjects’ time spent on study implementation related activities.   
+ 
+ 
+Quantitative Analysis : Because this is a study of organizational impact of Seva, there will be no single patient 
+analyses; a ll will be aggregated across patients.  As listed above, the primary outcome measures are:  % at risk 
+who enter treatment for SUD, % reducing HIV risk behavior, average treatment attendance, RIS, and 
+Sustainability Index.  Analysis  of these outcomes will pr oceed on 2 fronts: 1) Interrupted time series analysis will 
+compare outcomes within a clinic before and after implementation using our primary outcome measures . Research 
+questions  will be tested using linear regression models, with each analysis having 2 t ime-series segments 
+representing means and slopes before and after implementation.  Given the limited degrees of freedom, no 
+covariates will be included in the models.  A test of the regression coefficient for  implementation  (a dichotomous 
+variable indicatin g whether the time point occurred pre or post implementation) will allow us to examine 
+differences in the mean change at implementation. Differences in slope from pre - to post -implementation will be 
+tested using the coefficient for the  implementation  x month interaction, where  month  is a continuous variable 
+indicating the month of measurement. Weighted least squares analysis will be used to account for potential 
+differences in the number of patients or staff reporting outcomes within each clinic across time . Power.  
+Observations from the NIATx 200 study provide estimates of baseline values and variability for the RIS, and 
+Sustainability measures (5.05, 5, and 55, respectively). We assume no increase during time before implementation 
+(i.e., pre -implementation slope of 0), while non -zero slopes are assumed post -implementation, due to both 
+improved use of the system by clinic staff and additional patients entering the system over time.  With a minimum 
+of 6 time points measured before and after implementation, we w ill have adequate power (1 -β ≥ .8, α = .05) to 
+detect a 20% total increase in our primary outcomes of interest within each clinic. Using estimates based on clinic 
+reported outcomes from 2010, we will also have adequate power to detect a 20% increase in the  average percent of 
+patients entering treatment for SUD.  2) Drawing from conventional approaches to single -subject analysis, we will 
+  
+ 
+ 
+ 
+ 14 also compare within and across the clinics using visualization of the data13 to determine  whether the shift from 
+baseline t o intervention phases of the study generated shifts in the level, trend, and variability of 
+performance.12 This will allow us to evaluate the immediacy, consistency, and magnitude of the observed effects.13 
+The visual analysis will be strengthened by including non -equivalent control time series.  
+ 
+Qualitative Analysis : We will use an integrative, mixed quantitative and qualitative method approach to determine 
+the extent to which implementation and sustainability of Seva improve RE -AIM framework goals: reach, 
+effectiveness, adoption, implementation, and maintenance. Our mixed -methods research is influenced by “Best 
+Practices for Mixed Methods Research in the Healt h Sciences” (Office of Behavioral and Social Sciences 
+Research). Because facilitators and barriers associated with RE -AIM rely on the intervention (i.e., Seva), the 
+organization (e.g., staff, infrastructure), and implementation process (i.e., PPM, NIATx, a nd Rogers), we will use 
+qualitative research methods to understand how they affect RE -AIM outcomes.  Specifically, we will: 1) Tailor 
+Seva to each FQHC and document and evaluate processes used in the tailoring.  Focus groups data will help us 
+understand th ese processes (months 6 -12).  2) Provide insights into the quantitative results by using the mixed -
+method research model we employed to evaluate the VA’s mental health systems redesign. We will interview key 
+stakeholders following each wave of surveys. As within - and across -site findings emerge from RIS, and 
+Sustainability data, we will interview people who can help inform the findings. 3) Understand the barriers to and 
+facilitators of implementing and sustaining Seva and how they relate to outcomes. Key st akeholders will be asked 
+to reflect on reach, outcomes, adoption at the setting level, staff participation, implementation, and long -term 
+effects.  4) Ask informants to reflect upon how they might advise a similar FQHC in integrating Seva.  Qualitative 
+analysis is labor -intensive. Hence we will carefully select people who can best inform our questions, while limiting 
+the number of interviews. We will collect, transcribe, and analyze (via NVIVO -9), researcher, counselor, and 
+FQHC staff field notes and intervi ews collected during RE -AIM phases. The qualitative analysis will follow 
+grounded theory to build a conceptual model of Seva’s implementation.14 Two researchers will independently and 
+then together analyze 6 interviews that represent different organization -level stakeholders. Because RIS, OCM, and 
+Sustainability factors as well as RE -AIM components are associated with adoption and sustainability, we will 
+include them as a priori themes, while seeking new insights from the interviews. Researchers will then co de the 
+remaining interviews, comparing themes to distinguish different types of organizations and conditions. To assure 
+coding consistency, every fourth interview will be double -coded. Significant inconsistencies will be discussed and 
+recoded. Finally, we will categorize the themes into a working model.  
+ 
+Cost-effectiveness analysis : Conventional cost effectiveness analysis compares the costs and effects of different 
+interventions assigned in parallel. In contrast, the stepped -wedge design allows each clini c to serve as its own 
+control,6 an approach similar to one used in a study of screening for abdominal aortic aneurysm.15 When FQHCs 
+use Seva to screen for drug use and identify potential subjects, patients wh o report drug use will be asked to report 
+any hospitalizations or emergency department (ED) visits in the previous 6 months. Patient self -report has been 
+validated as a means of assessing healthcare utilization in homeless and injection -drug-using populati ons.16 17 The 
+validity of self -report improves with shorter recall periods and less frequent utilizations.18 Provided other inclusion 
+criteria are met, a patient screening positive for drug use is eligible for the study and will be invited to participate. 
+The same measures of healthcare utilization (hospitalizations and ED visits) will be monitored in bi -monthly 
+surveys of patients during the 12 -month period they use Seva. Changes in the rate of healthcare utilization between 
+the 6 -month period before and the 12-month period after invitation are coupled with implementation and operating 
+costs to generate 2 primary cost -effectiveness measures: cost per avoided hospitalization and cost per avoided ED 
+visit. These cost -effectiveness measures will be aggregated to the clinic level. It is hypothesized that patient and 
+clinician use of Seva will produce cost savings by reducing utilization of high -cost services among the drug -using 
+population.   
+ 
+ 
+10.0 PATHOLOGY REVIEW  
+ 
+Not applicable.  
+  
+ 
+ 
+ 
+ 15  
+ 
+11.0 RECORDS TO BE KEPT  
+ 
+ Subje ct Intake  
+ Subject Demographics  
+ Subject Consent Forms  
+ HIPAA Authorization  Form  
+ Baseline and follow up survey data  
+ De-identified Seva  Use data    
+ 
+ 
+12.0 PATIENT CONSENT AND PEER JUDGMENT  
+ 
+Potential subjects will be informed of: (1) the nature and purpose o f the study, (2) the types of data which will be 
+collected, (3) what will be given to study participants, (4) the measures taken to ensure confidentiality of data 
+collected and HIPAA regulations privacy protection, (5) and the  timeline of the study. Signed  consent forms will be 
+obtained from each subject and kept securely at  UW Center for Health Systems Studies (CHESS). Potential 
+subjects will be clearly informed that their treatments will be in no way affected by their decision to join, or not to 
+join the study.  
+ 
+It is anticipated that r ecruitment for this study will begin in  June 2013  upon receipt of IRB approval  and completion 
+of the technical development . Subject consent forms are included with this submission.  
+ 
+ 
+  
+ 
+ 
+ 
+ 16 Appendix A  
+Revised 2/2010  
+ 
+Center for H ealth Enhancement Systems Studies  
+Data Security and Monitoring Plan  
+ 
+In accordance with the Health Insurance Portability and Accountability Act (HIPAA) the following Data Security 
+and Monitoring Plan has been instituted at the Center.   
+ 
+The following poli cies have been adopted by the Center:  
+ 
+I. Appointment of Center Data Security Officers.  
+A. Susan Dinauer and Matt Wright are the security officers for the Center.  
+B. Responsibilities of the security officers include:  
+ Developing information technology (IT) security policies  
+ Increasing security awareness for all Center faculty and Team Members  
+ Providing virus protection for IT resources  
+ Maintaining security patches on computing equipment  
+ Developing and implementing back up procedures  
+ Performing periodic vulnerability scanning on computers  
+ Reviewing and updating firewall strategies and policies  
+ Enhancing the physical security of IT resources  
+ 
+II. Policy for Orientation and Training  
+A. All Center students, faculty and staff are required to complete the UW -Madison Human Subjects  
+training on -line.  https://my.gradsch.wisc.edu/citi/index.php   (You register with your WiscID.  Select 
+the training program for Biomedical Researchers, social & Behavioral Researchers, or both.  T eam 
+members who work on projects that are reviewed by the health Sciences IRB should complete the 
+combined (both) training; otherwise the social and Behavioral training would be fine.  Please contact 
+me if you are not sure about which one to complete.  You  will also need to complete one elective.)  
+B. Successful completion of this training is required before any Team Member is allowed access to Center 
+data.  Certificate of completion must be given to a Center Data Security Officer.  
+C. All Center Team Members are r equired to complete an on -line training course on the HIPAA Privacy 
+Rule training http://ptehipaa.doit.wisc.edu/moodle/login/index.php Certificate of completion must be 
+given to the Center Data Security Officer.   (Note:  You will be asked a series of ques tions when you 
+register.  Sign -up as HIPAA Shared.  We are not a member of the HCC, but we do work with the HCC; 
+PHI is used in our research but not for teaching.  You will be completing HIPAA 101 and Use & 
+Disclosure sections of the training.)  
+D. All Center Team Members are required to complete training on Center security procedures and 
+policies.   
+E. Sign the “Center Data Security Policy Certification” upon completion of this training.  
+ 
+III. Workstation Policy  
+A. All workstations will require login with a unique user name and password.  
+B. All workstations are required to be joined to the ENGR domain under the control of the College of 
+Engineering.  
+C. All workstations are required to use anti -virus software that can be remotely administered from the 
+College of Engineering dom ain. 
+D. Users will log -out from or lock workstations when leaving them unattended.   
+  
+ 
+ 
+ 
+ 17 E. Screen savers will be configured to require a password and to activate after ten minutes of workstation 
+inactivity.  
+F. Users requiring remote access to the Center network will o nly do so with computers specifically 
+certified by a Center Data Security Officer.   
+ 
+IV. Password Policy  
+A. Users will require a password to access any computer connecting to the Center network.   
+B. Passwords must meet the requirements of the Computer Aided Enginee ring department (CAE).  CAE 
+password construction help can be found here: http://www.cae.wisc.edu/passwrdhlp . 
+C. Passwords may not be stored in proximity to the workstation and may not be shared by others.  
+ 
+V. Policy for the Use of Email  
+A. Patient Identifiable, Confidential or Personnel Data may only be included in an encrypted attachment 
+and should never be sent in the body or subject line of an email message.  
+B. Team Members who need to send encrypted attachments sh ould contact a Center Data Security Officer 
+to schedule a training session.  
+ 
+VI. Policy for Storage, Retrieval, and Disposal of Protected Information  
+A. Any Patient Identifiable, Confidential or Personnel Data in electronic form will be stored on secure 
+servers only and may not be stored on individual workstations.  Currently, the only place such 
+information can be stored is the R: Drive.  
+B. All paper -based files will be stored in locked rooms inside locked file cabinets with limited access.  
+C. Servers containing Patie nt Identifiable, Confidential or Personnel Data must be located within the 
+Mechanical Engineering Server Room which can only be accessed via security card.  
+D. The Center Data Security Officers will be responsible for assigning and restricting access to shared  
+resources on the Center servers.   
+E. Patient Identifiable, Confidential, and Personnel Data as a general rule may not be copied to or stored 
+on the Center’s publicly accessible servers at any time (currently CHESS1, CHESS2, and CHESS4).  
+However, in some st udies, patient’s name, disease state, and physician are stored within the Center 
+program.  This information is only accessible via a codename/password.  
+F. Remote access to files on the secure Center servers will be provided in a very limited case only through  
+a Remote Desktop connection from a certified Center Workstation (See Center Workstation policy 
+above for details).  
+G. Storage media containing Patient Identifiable, Confidential or Personnel Data will be rendered 
+unusable before disposal.  
+H. All back up media w ill be stored in locked rooms with limited access.  
+ 
+VII. Policy for the use of portable and home equipment and the transport of data media containing 
+Patient Identifiable, Confidential, and Personnel Data  
+A. All computers being used from outside the Center to acce ss the Center network must be certified by the 
+Center Data Security Officer.  
+B. All computers being used from outside the Center to access the Center network must have Firewall 
+software (such as Windows Firewall) installed and activated.  
+C. All computers being u sed from home to access the Center network must have all wireless connections 
+disabled . 
+D. All home and portable computers and PDAs on which Patient Identifiable, Confidential, and Personnel 
+Data files are used, on which user account information is temporaril y stored, or that access the Center 
+network must comply with the policies for workstations listed above.  
+E. Use of Patient Identifiable, Confidential, and Personnel Data files offsite must comply with security 
+policies and procedures developed for data use wi thin the Center.  
+  
+ 
+ 
+ 
+ 18 F. Patient Identifiable, Confidential, and Personnel Data files may not be transported from the Center 
+unless the device/medium is monitored for physical security at all times.  
+G. Team members who place files on portable* and home computers must  delete these files as soon as 
+they are finished using them.  Quarterly reminders will be sent to the team to facilitate compliance with 
+this requirement.  (*thumb  drives, laptops, anywhere a file is placed with confidential information)  
+ 
+VIII.  Policy governing the storage and use of audiovisual materials  
+A. Audiovisual media containing Patient Identifiable, Confidential, and Personnel Data are governed by 
+the same policies and procedures that apply to handling and use of computerized data, including 
+disposal, stora ge and access to media.  
+B. Such audiovisual media may not be transported from the Center unless the material is monitored for 
+physical security at all times.  
+ 
+IX. Policy governing the transmission of information via fax  
+A. All outgoing correspondence via fax must be  stripped of confidential information.  
+B. Before confidential information is transmitted to the Center via fax, the sender must notify the 
+appropriate Center Team Member to ensure that the recipient is available to pick up the fax document.  
+ 
+X. Field hardware po licy 
+A. Upon their return, all Center study computers, smartphones, or other devices that have been used in the 
+field will have all data wiped from the hard drive in compliance with DOD standards.  
+B. Field computers will be stored at the Center in a wiped state.  
+ 
+XI. Study participant information.  
+A.  Center Team Members will not share or talk about confidential information regarding the CHESS 
+study participant with anyone who is not directly involved in the management of the CHESS Project.   
+B. Confidential or other sensi tive information regarding the study participant cannot be left in an 
+unsecured place where others may see it.   
+C. Copies of written correspondence about the study participants with anyone other than CHESS 
+management cannot be provided, unless specifically a uthorized to do so by the Project Director.  
+ 
+XII. User Responsibilities  
+A. All Center Team Members are responsible for adhering to the Center Data Security Policies at all 
+times.  
+B. All Center Team Members will be given a comprehensive briefing session upon hire.  
+C. Usernames and passwords are not to be shared with others.  
+D. No equipment may be connected to the Center network without specific prior certification by a Center 
+Security Officer.  
+E. Specifically, no wireless access points may be deployed or connected to the netwo rk under any 
+circumstances.  
+F. The Center Data Security Officers will maintain records to insure that all Center Team Members have 
+been briefed.  
+G. The Center Data Security Officers will provide periodic refresher sessions to all Center Team 
+Members.  
+ 
+ 
+ 
+  
+  
+ 
+ 
+ 
+ 19 Refer ences  
+                                                      
+1 Glasgow, R. E., Vogt, T. M., & Boles, S. M. (1999). Evaluating the public health impact of health 
+promotion interventions: The RE -AIM framework. American Journal of Public Health,  89(9), 1322 -1327.  
+2 Gaglio, B., & Glasgow, R. E. (in press). Evaluation approaches for dissemination and implementation 
+research . In R. C. Brownson, G. A. Colditz, & E. K. Proctor (Eds) , Dissemination and Implementation 
+Research in Health: Translating Sci ence to Practice.  New York: Oxford University Press.  
+3 Glasgow, R. Personal communication. September 18, 2011.  
+4 Glasgow, R. E., Klesges, L. M., Dzewaltowski, D. A., Bull, S. S., & Estabrooks, P. (2004). The future of health 
+behavior change research: What is needed to improve translation of research into health promotion practice? 
+Annals of Behavioral Medicine, 27 (1), 3 -12. 
+5 Cook, T. D., & Campbell, D. T. (1979). Quasi -experimentation: Design & analysis issues for field settings . Boston: 
+Houghton Mifflin.  
+6 Brown, C. A., & Lilford, R. J. (2006). The stepped wedge trial design: A systematic review. BMC Medical 
+Research Methodology, 6 , 54. 
+7 Kazdin, A. E. (1982). Single -case research designs: Methods for clinical and applied settings . New York: Oxford 
+Univers ity Press.  
+8 Biglan, A., Ary, D., & Wagenaar, A. C. (2000). The value of interrupted time -series experiments for community 
+intervention research. Prevention Science, 1 (1), 31 -49. 
+9 Morgan, D. L., & Morgan, R. K. (2001). Single -participant research design: Bringing science to 
+managed care. American Psychologist, 56 (2), 119 -127. 
+10 Kearns, K. P. (1986). Flexibility of single -subject experimental designs. Part II: Design selection and arrangement 
+of experimental phases. Journal of Speech and Hearing Disorders, 51, 204 –214. 
+11 Barlow, D. H., & Hersen, M. (1984). Single case experimental designs: Strategies for studying behavior change.  
+2nd Ed. New York: Pergamon.  
+12 Horner, R. H., Carr, E. G., Halle, J., McGee, G., Odom, S., & Wolery, M. (2005).The use of single -subject 
+research to identify evidence -based practice in special education. Exceptional Children , 71(2), 165 -179. 
+13 Bobrovitz, C. D., & Ottenbacher, K. J. (1998). Comparison of visual inspection and statistical analysis 
+of single -subject data in rehabilitatio n research. American Journal of Physical Medicine & Rehabilitation , 
+77(2), 94 -102. 
+14 Strauss, A. (1987). Qualitative analysis for social scientists. Cambridge, England: Cambridge 
+University Press  
+15 Wilmink, A. B. M., Quick, C. R. G., Hubbard, C. Sff., & Da y, N. E. (2003). Effectiveness and cost of screening for 
+abdominal aortic aneurysm: Results of a population screening program. Journal of Vascular Surgery, 38 (1), 72 -77. 
+16 Gelberg, L., & Siecke, N. (1997). Accuracy of homeless adults' self -reports. Medical Care, 35 (3), 287 -290. 
+17 Palepu, A., Strathdee, S. A., Hogg, R. S., Anis, A. H., Rae, S., Cornelisse, P. G. A., Patrick, D. M., 
+O’Shaughnessy, M. V., & Schechter, M. T. (1999). The social determinants of emergency department and hospital 
+use by inje ction drug users in Canada. Journal of Urban Health, 76 (4), 409 -418. 
+18 Bhandari, A., & Wagner, T. (2006). Self -reported utilization of health care services: Improving measurement and 
+accuracy. Medical Care Research and Review, 63 (2), 217 -235. 

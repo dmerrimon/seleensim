@@ -1,0 +1,1872 @@
+ 
+UVA CENTER FOR DIABETES TECHNOLOGY  
+ 
+ 
+Adapting Diabetes Treatment Expert 
+Systems to Patient's Expectations and 
+Psychobehavioral Characteristics in Type 1 
+Diabetes  
+ 
+ 
+ 
+  Protocol Chair  
+Marc Breton, PhD   
+University of Virginia  
+Center for Diabetes Technology  
+ Version Number: v 2.[ADDRESS_660414]-2021   Page 3 of 82 
+ 
+PROTOCOL VERSION HISTORY  
+Version 
+Number  Author(s)  Approver  Effective 
+Date  Revision Description  
+1.0   24-Apr-2020  Original Protocol  
+1.1 Mary Oliveri  Mary Oliveri  20-May -
+2020  Added  
+• Demographic Data Survey added 
+at screening   
+1.[ADDRESS_660415] Revisions:  
+• Clarified that par ticipants may 
+contact [CONTACT_510745] (Section 5.1.1  
+5.3.2, 6.4.3, 6.6.3, 7.6.3).  
+• Corrected erroneous sentence  
+referencing DHHS 46.405 (section 
+10.3).  
+• Corrected bullet formatting 
+(section 12.3.2).  
+• Removed references to Medical 
+Monitor throughout protocol.  
+• Added references to Data  Safety 
+Monitoring Board (section 12.10 ).  
+1.3 Jon Olson  Mary Oliveri  08-Nov-2020  Study Team modifications:  
+• Physical examination (may use a 
+medical record within the past 6 months)  
+• Weight, height (participant may 
+self-report this information)  
+• Vital signs including measurement of blood pressure and pulse (may use a medical record within the past 6 months)  
+• Participants will have the option to be given a receiver from the 
+study team for medical needs.  
+1.[ADDRESS_660416] : 
+• If applicable, subjects will have a 
+pregnancy test between phases  
+(section 6.4). 
+2.[ADDRESS_660417]-2021  Study Team Modifications:  
+• Modified HbA1c limit to HbA1c 6.0-11.0%, inclusive  (section 
+3.3
+)Edited Sensor Augmented 
+Pump Therapy (SAP) to Sensor 
+CLINICAL PROTOCOL     
+ 
+ 
+ 
+DSS- 2_05- Oct-2021   Page 4 of 82 
+ 
+Augmented Mode (SAM) 
+throughout the document  
+• Deleted inclusion of carbohydrate 
+counting (section 3.3) 
+• Added  NPH insulin as study 
+exclusion (section 3.4) 
+• Added Post -Screening Assessment 
+section describing participant  
+requirements (section 3.5) 
+• Clarified Training visit definition 
+(Chapter 4 )Clarified pump and 
+MDI training issues  (section 4.1.2, 
+4.1.3) 
+• Study physician may add up to two 
+weeks to CGM run-in period 
+(section 5.2.1) 
+• Revised Figure [ADDRESS_660418]-2021   Page 5 of 82 
+ 
+SITE PRINCIPAL INVESTIGATOR [INVESTIGATOR_113411]:  Adapting Diabetes Treatment Expert Systems to Patient’s Expectations and 
+Psychobehavioral Characteristics in Type 1 Diabetes  
+Protocol Version/Date: v 2.0/05-Oct-[ADDRESS_660419] written  the protocol specified above. In my formal capacity as a Site Principal Investigator, 
+my duties include ensuring the safety of the study participants enrolled under my supervision. It 
+is understood that all information pertaining to the study will be held strictly confidential and 
+that this confidentiality requirement applies to all study staff at this site.  
+This trial will be carried out in accordance with ICH E6 Good Clinical Practice (GCP) and as required by [CONTACT_716]: [LOCATION_002] (US) Code of Federal Regulations (CFR) applicable to clinical studies (45 CFR Part 46, 21 CFR Part 50, 21 CFR Part 56, 21 CFR Part 312, and/or 21 CFR Part 812).  
+As the Principal Investigator, I will assure that no deviation from, or changes to the protocol 
+will take place without prior agreement from the sponsor and documented approval from the 
+Institutional Review Board (IRB), or other approved Ethics Committee, except where necessary 
+to eliminate an immediate hazard(s) to the trial participants.  
+All key personnel (all individuals responsible for the design and conduct of this trial) have 
+completed Human Participants Protection Training and Good Clinical Practice Training. Further, I 
+agree to ensure that all staff members involved in the conduct of  this study are informed about 
+their obligations in meeting the above commitments.  
+ 
+Investigator’s Signature __________________________________ Date: _____ / _____ / _____  
+Investigator’s Name: ________________________________  
+Site Name:  [CONTACT_510767]- 2_05- Oct-[ADDRESS_660420] Index  
+BG Blood Glucose  
+BT/BTLE  Bluetooth, Bluetooth low energy  
+CR Carbohydrate Ratio  
+CLC Closed -Loop Control  
+CGM  Continuous Glucose Monitor  
+CSII Continuous Subcutaneous Insulin Injection  
+CV Coefficient of Variation  
+DiAs  Diabetes Assistant  
+DCCT  Diabetes Control and Complications Trial  
+DKA  Diabetic Ketoacidosis  
+DSS Decision Support System  
+DWM  DiAs Web Monitoring  
+eA1c  Estimated Hemoglobin A1c  
+EMA  Ecological Momentary Assessment  
+FDA  Food and Drug Administration  
+GCP  Good Clinical Practice  
+GLM  General L inear Models  
+GV Glucose Variability  
+HbA1c  Hemoglobin A1c  
+HBGI  High Blood Glucose Index  
+HTTP  Hypertext Transfer Protocol  
+IDE Investigational Device Exemption  
+IOB Insulin -on-Board  
+ISF Insulin Sensitivity Factor  
+JSON  JavaScript Object Notation  
+LBGI  Low Blood Glucose Index  
+NIH National Institutes of Health  
+PF Personalized Feedback  
+POC  Point -of-Care  
+CLINICAL PROTOCOL     
+ 
+ 
+ 
+DSS- 2_05- Oct-[ADDRESS_660421]-2021   Page 8 of 82 
+ 
+PROTOCOL SUMMARY  
+PARTICIPANT AREA DESCRIPTION  
+Title  Adapting Diabetes Treatment Expert Systems to Patient’s Expectations and Psychobehavioral 
+Characteristics in Type 1 Diabetes  
+Investigational Device  CGM -based Personalized Feedback (PF) and Decision Support System (DSS)  
+Objectives  Aim 1  (control of GV) We will confirm and contrast the efficacy of two previously designed technological 
+interventions – Personalized Feedback (PF) and Decision Support System (DSS) - in reducing glucose 
+variability ( GV) in Type 1 Diabetes Mellitus ( T1DM ) during a 6 -month randomized crossover clinical trial.  
+Aim 2  (personalization of treatment policy) We hypothesize that the participants in this study will have 
+technology intervention preferences (e.g. PF or DSS) that can be predicted by [CONTACT_510746].  
+Aim 3  (monitoring of treatment policy) Finally, we propose to define a novel, measurable, technology 
+Acceptance and Trust Index  (ATI) , passively observing and recording user -system interactions, and 
+validate this new index using active Ecological Momentary Assessment (EMA) to track user subjective response to DSS.  
+Study Design  This is a randomized crossover study in T1DM adults designed to demonstrate the efficacy of 
+personalized feedback (PF) and decision support (DSS) over sensor -augmented mode (SAM) therapy and 
+to establish relationships between the level of glucose variability (GV) control achievable by [CONTACT_510747] -behavioral characteristics.  
+Number of Sites  1 
+Outcomes  A key advantage of the proposed study design (beyond the optimal statistical power) is the possibility to 
+explore the glucose control and psycho -behavioral impact of features being added and/or enhanced 
+with prescriptive components (DSS), vs. features being limited to information (PF) or even removed 
+(SAM ).  
+Population  Key Inclusion Criteria  
+• Age 18 years and older 
+• T1DM diagnosis for at least 1 year  
+• Established insulin parameters  
+Key Exclusion Criteria d 
+• Hemoglobin A1c 6.0-11.0%, inclusive  
+Sample Size  Enrollment will proceed with the goal of completing 4 cohorts of about 25 participants each (expected 
+retention 20 per cohort)  
+Treatment Groups  • De-escalation (DSS→PF→ SAM ) 
+• Escalation ( SAM →PF→DSS)  
+Participant Duration  The study duration for each participant is approximately 7 months.  
+Protocol Overview/Synopsis  Four  cohorts of about 25 participants each (expected retention 20 per cohort). Each cohort will continue 
+for ~7 months . Following recruitment, screening, and a run- in period of SAM , participants will be 
+randomized into one of two groups: escalation vs. de -escalation of devices and function. Each treatment 
+modality ( SAM , PF, DSS) will continue for about [ADDRESS_660422] 
+Study 
+Check in  
+Location  Clinic  Clinic  Home  x 
+2-4 
+weeks  Web 
+Conference 
+or Clinic  Home x 
+8 weeks  Web 
+Conference 
+or Clinic  Home x 
+8 weeks  Web 
+Conference 
+or Clinic  Home x 
+8 weeks  Phone  
+or 
+Clinic  Phone 
+or 
+Clinic  
+Informed Consent  X           
+Medical History  X           
+Medications  X           
+Physical Exam (including 
+vital signs, height/weight)  X           
+Pregnancy Test (if 
+childbearing potential)  X     X  X    
+Blood Testing: TSH, CMP 
+(additional labs as 
+necessary)  X           
+Questionnaires  X  X X X X X X X X  
+Equipment Training   X          
+DiAs in SAM  Training   X          
+Glycemic Treatment 
+Guidelines Training   X          
+Glucagon Emergency Kit 
+Training   X          
+Use of DiAs in SAM     X         
+Eligibility Assessment     X        
+AE Assessment     X  X  X  X  
+Randomization     X        
+DiAs Phase [ADDRESS_660423] 
+Study 
+Check in  
+Location  Clinic  Clinic  Home x 
+2-4 
+weeks  Web 
+Conference 
+or Clinic  Home x 8 
+weeks  Web 
+Conference 
+or Clinic  Home x 8 
+weeks  Web 
+Conference 
+or Clinic  Home x 8 
+weeks  Phone 
+or Clinic  Phone 
+or Clinic  
+Use of DiAs in Phase 1 
+Mode      X       
+EMA Surveys      X  X  X   
+DiAs Phase 2 Mode Training       X      
+Use of DiAs in Phase 2 
+Mode        X     
+DiAs Phase 3 Mode Training         X    
+Use of DiAs in Phase 3 
+Mode          X   
+Review diabetes 
+management & AEs     X  X  X  X X 
+CLINICAL PROTOCOL  
+ 
+ 
+DSS- 2_05- Oct-2021   Page 11 of 82  
+ Table of Contents  1 
+ Background  .................................................................................................... 15 2 
+1.1. Introduction  .................................................................................................................. 15 3 
+1.2. Specific Aims  ................................................................................................................. 23 4 
+1.3. Outcomes  ...................................................................................................................... 24 5 
+1.4. Study Design .................................................................................................................. 27 6 
+1.5. Study Participants  ......................................................................................................... 28 7 
+1.6. Clinical Sites  .................................................................................................................. 28 8 
+ Study Devices  ................................................................................................. 29 9 
+2.
+1. Diabetes Assistant (DiAs)  .............................................................................................. 29 10 
+2.2. Insulin Pump  ................................................................................................................. 29 11 
+2.3. Continuous Glucose Monitor (CGM)  ............................................................................ [ADDRESS_660424]-2021   Page 12 of 82  
+ 5.2. Sensor -Augmented Mode (SAM) Run -in Period  ........................................................... 37 26 
+5.3. Visit 3 – Eligibility Assessment, Randomization and Training  ....................................... 38 27 
+ Study Procedures - Escalation ......................................................................... 39  28 
+6.2. Sensor Augmented Mode  ............................................................................................. 39 29 
+6.3. Home Use of DiAs in Phase 1 Mode  ............................................................................. 39 30 
+6.4. Visit 4 – Phase 2 Initiation  ............................................................................................. 40 31 
+6.5. Home Use of DiAs in Phase 2 Mode  ............................................................................. 41 32 
+6.6. Visit 5 – Phase [ADDRESS_660425] Study Check -In Visit (Visit 7)  ................................................................................. 44 36 
+ Study Procedures – De-Escalation................................................................... 45 37 
+7.
+1. Randomization to De- Escalation  ................................................................................... 45 38 
+7.2. Training on Phase 1 DiAs Mode  .................................................................................... 45 39 
+7.3. Home Use of DiAs in Phase 1 Mode  ............................................................................. 46 40 
+7.4. Visit 4 – Phase 2 Initiation  ............................................................................................. 46 41 
+7.5. Home Use of DiAs in Phase 2 Mode  ............................................................................. 47 42 
+7.6. Visit 5 – Phase [ADDRESS_660426] Study Check -In Visit (Visit 7)  ................................................................................. 50 46 
+ Testing Procedures  ......................................................................................... 51 47 
+8.
+1. Laboratory / Point of Care Testing  ................................................................................ 51 48 
+ Questionnaires & Ecological Momentary Analysis  .......................................... [ADDRESS_660427]-2021   Page 13 of 82  
+ 9.3. Diabetes Locus of Control  ............................................................................................. 52 52 
+9.4. Confidence in Diabetes Self -Care Scale  ........................................................................ 52 53 
+9.5. Clarke's Hypoglycemia Awareness Scale  ...................................................................... 53 54 
+9.6. The Diabetes Distress Scale  .......................................................................................... 53 55 
+9.7. Hypoglycemia Fear Survey  ............................................................................................ 53 56 
+9.8. Hyperglycemia Avoidance Scale  ................................................................................... 53 57 
+9.9. Pi[INVESTIGATOR_2272] ...................................................................................... 54 58 
+9.10.  Technology Acceptance and Expectations Survey (burdens subscale only)  ................ 54 59 
+9.11.  INSPI[INVESTIGATOR_21392] (revised for DSS)  .............................................................................................. 54 60 
+9.12.  Ecological Momentary Analysis (EMA)  ......................................................................... [ADDRESS_660428] of treatment escalation vs. de -escalation  ............................ 72 90 
+14.5.  Psychological and Behavioral Questionnaires  .............................................................. 72 91 
+14.6.  Baseline Descriptive Statistics ....................................................................................... 72 92 
+14.7.  Device Issues  ................................................................................................................. 72 93 
+ Data Collection and Monitoring  ...................................................................... 73 94 
+15.
+1. Case Report Forms and Device Data  ............................................................................. 73 95 
+15.2.  Study Records Retention  .............................................................................................. 73 96 
+ Ethics/Protection of Human Participants  ........................................................ [ADDRESS_660429]-2021   Page 15 of 82  
+  103 
+ 104 
+ Background  105 
+ 
+ 106 
+1.1.1.  Significance  107 
+Type 1 diabetes mellitus (T1DM) is an autoimmune condition resulting in absolute insulin 108 
+deficiency and a life -long need for insulin replacement  [1]. Glycemic control in T1DM remains a 109 
+challenge, despi[INVESTIGATOR_510730] [ 2], the improving accuracy of 110 
+glucose monitoring [ 3-4], and the widening use of intensive insulin therapy. While new [ADDRESS_660430] proven benefits in avoiding diabetes related complications [5] and may have 112 
+reduced excess mortality in some populations [6], excess mortality and complication rates remain 113 
+significantly higher in T1DM when compared to the general population [ 7-8]. 114 
+Glucose variability (GV) in T1DM  is typi[INVESTIGATOR_510731]’ inability to safely achieve 115 
+near -normal average glycemia, as reflected by [CONTACT_33308] A1c (HbA1c) [ 9]. While target HbA1c 116 
+values of 7% or less result in decreased risk of micro - and macrovascular complications [ 10-13], 117 
+the risk for severe hypoglycemia ( SH) increases with tightening glycemic control [ 14-16]. 118 
+Consequently, hypoglycemia has been implicated as the primary barrier to optimal control [ 17- 119 
+18]. Thus, individuals with T1DM face a life -long optimization challenge: reduce average glucose 120 
+levels and postprandial hyperglycemia while simultaneously avoiding hypoglycemia. A strategy 121 
+for achieving such an optimization can only be effective if it reduces GV. This is because bringing 122 
+average glycemia down is only possible if GV is constrained – otherwise blood glucose (BG) [ADDRESS_660431] for average glycemic control, the 126 
+Diabetes Control and Complications Trial ( DCCT ) concluded that: “HbA1c is not the most 127 
+complete expression of the degree of glycemia. Other features of diabetic glucose control, which 128 
+are not reflected by [CONTACT_13505]1c, may add to, or modify the risk of complications. For example, “the 129 
+risk of complications may be highly dependent on the extent of postprandial glycemic excursions” 130 
+[19]. Thus, more recent studies increasingly focused on the variability of BG fluctuations as an 131 
+independent risk factor for diabetes complications [ 9, 20-21], particularly cardiovascular disease 132 
+[22-25]. [ADDRESS_660432]-2021   Page 16 of 82  
+ Intensive insulin therapy : Introduced in the 1980s, intensive insulin treatment by [CONTACT_510748] 134 
+injections (MDI) or use of continuous subcutaneous insulin infusion (CSII), typi[INVESTIGATOR_510732] [ADDRESS_660433] postprandial hyperglycemia, in an attempt to 137 
+mimic insulin secretion in health [ 26]. Advanced insulin therapy relies on key individual 138 
+parameters such as basal rate, carbohydrate ratio  (CR) and  insulin sensitivity factor  (ISF)  [26].  139 
+Evidence -based resources are available to patients to control their insulin intake and schedules, 140 
+and clinicians to initiate and maintain CSII therapy by [CONTACT_510749], 141 
+carbohydrate ratios , and insulin sensitivity factor patt erns [ 27].  142 
+Expert systems and Control of Glucose Variability:  Periodic adjustments of basal rate, CR , and ISF  143 
+patterns are needed based on review of self -monitoring blood glucose (SMBG) profiles, or 144 
+continuous glucose monitoring (CGM). If a pattern is identified, optimized insulin dosing 145 
+parameters are calculated and implemented. This can be a time -consuming and onerous task, 146 
+requiring data to be downloaded from multiple devices and often subjectively evaluated. 147 
+Information technology is increasingly playing a positive role in improving the management of 148 
+chronic conditions [ 28-29], including diabetes [ 30]. For example, in T1DM, telemedicine and 149 
+online patient support has shown promising results [ 31-32]; and retrospectively linking behavior 150 
+to glycemic outcomes has proven effective as well [ 33]. With improvements in SMBG and CGM 151 
+technologies, a growing appreciation of the quantitative (algorithmic) aspect of the management 152 
+of T1DM has led to new tools for remote patient monitoring, data aggregation and visualization 153 
+[34]. Early research has developed algorithms for titrating individual insulin treatment 154 
+parameters, including iterative learning approaches such as ‘run- to-run’ with structured SMBG 155 
+[35-39]. Insulin titration and dosing tools for type [ADDRESS_660434] [ 40], mostly using SMBG. Today, researchers are actively working on CGM -based 157 
+decision support for T1DM [ 26, 41-44], capable of providing specific feedback to the clinician [ADDRESS_660435] advanced 160 
+form, they deliver advice directly to the patient [ 41], reducing burden and uncertainty when 161 
+making self -management decisions.  162 
+Automated Insulin Delivery:  Closed loop control (CLC) technology (i.e. artificial pancreas or AP), 163 
+involve s the pairing of CGM with CSII (insulin pump) via a closed loop control algorithm which 164 
+automatically adjusts insulin infusion in real- time [ 45]. In the past decade, AP studies have 165 
+advanced from short -term inpatient studies [ 46], to long -term clinical trials in free -living 166 
+conditions using wearable wireless automated AP systems [ 47]. Our AP studies have enrolled 167 
+>[ADDRESS_660436]-2021   Page 17 of 82  
+ Algorithmic advances and computational platforms from these efforts are at the core of this 169 
+investigation . 170 
+Smartphone based data acquisition and advice delivery platforms:  This investigation  brings 171 
+together two key pi[INVESTIGATOR_510733] T1DM treatment: The Diabetes 172 
+Assistant (DiAs) and Ecological Momentary Assessment ( EMA ). 173 
+Diabetes Assistant (DiAs):  The Diabetes Assistant (DiAs) 174 
+[48-49] platform is a smartphone- based, modular, 175 
+portable device developed at the University of Virginia 176 
+(UVa), in collaboration with the University of Montpellier 177 
+(Figure 1 ).  DiAs operates on a commercial phone, using a [ADDRESS_660437] 181 
+wireless protocol like BT or BTLE. Its modular architecture 182 
+allows different control modules to be swapped in real 183 
+time, enabling either automated control (CLC) or expert - 184 
+decision sup port systems. The DiAs platform also 185 
+integrates automated data transfer to a secured server, 186 
+enabling cloud functionalities such as remote monitoring 187 
+and patient specific adaptation of treatment [ 50]. DiAs is 188 
+filed with the FDA (MAF 2109) and has been approved for 189 
+use by [CONTACT_67022], adolescents, and children with T1DM in 190 
+over 20 clinical trials. DiAs is a powerful computation platform that enables both local control of 191 
+insulin and cloud applications; it is the most advanced research glucose control platform to date 192 
+and has been deployed for months in home CLC trials. DiAs enables the seamless integration and 193 
+sequential development of modular decision support systems in a form factor assessed by [CONTACT_451733] 194 
+groups to be acceptable by [CONTACT_113484] T1DM.   195 
+Leveraging EMA  to assess user’s subjective reactions to the decision support system will enable [ADDRESS_660438] levels, psychological, 197 
+and behavioral responses.  198 
+Remote computation and cloud analytics:  DiAs is capable of real- time data transmission to secure 199 
+remote servers: the DiAs Web Monitoring (DWM) is a suite of functionalities located on a secure [ADDRESS_660439] party applications to 203 •  
+ 
+ 
+Figure 1: The DiAs system, a mobile Glucose 
+control platform  
+ 
+CLINICAL PROTOCOL  
+ 
+ 
+DSS- 2_05- Oct-2021   Page 18 of 82  
+ access data stored on the  DWM server.  It relies on the HTTP protocol and a Representational 204 
+State Transfer (REST -ful) architecture to provide  authenticated users with access to the content 205 
+of the database, formatted as JSON or XML. The API [INVESTIGATOR_388806] a  URL-based system of requests to 206 
+target and filter the  data sent to the client. Several systems are already connected to DWM  [50- 207 
+52]. [ADDRESS_660440] and acceptance in glycemic control:  Trust must be earned; it cannot [ADDRESS_660441] plays an important role in an individual’s willingness to engage 210 
+in the use of a medical device.  In its basic definition ‘trust is to depend or rely on another’ [ 53]. 211 
+The “other” can be another person or a device. Trust and acceptance incorporate several key [ADDRESS_660442] on others as well as oneself (positive and negative) [ 54-55].   215 
+Human factors research indicates that such psychosocial variables play an important role when 216 
+it comes to technology uptake. In CGM, factors predictive of uptake and effectiveness, include 217 
+perceived system reliability and ease -of-use [ 53,56]. P rior CLC research has also shown that [ADDRESS_660443] a novel device (CGM, CSII and algorithm), sacrificing [ADDRESS_660444] in the system 222 
+experience decreases in diabetes burden and stress [ 57]. In general, trust is associated with 223 
+positive glycemic outcomes and improved psychosocial functioning and quality of life (QOL) [ 58]. [ADDRESS_660445] and continued acceptance include frustration felt when expectations of the 225 
+system are not met; feelings of being overwhelmed by [CONTACT_510750], or 226 
+negative reactions from the social environment e.g. diabetes -related stigma, possibly resulting in 227 
+a perceived need to explain/justify why a technical device is worn constantly on the body [ 53]. In 228 
+addition to patients’ perceptions rooted in their previous experience, unrealistic expectations 229 
+may lead to disappointment and discontinuation of the device.  230 
+General ‘tech savviness’ can also play a role in acceptance in that those more familiar and [ADDRESS_660446] and acceptance may be 233 
+underestimated (and often is), as these range from technical handling to integrating the system 234 
+information into one’s diabetes self -management and everyday living without intrusive [ADDRESS_660447] likely to realize benefits of any intervention as well as 239 
+those individuals who may require more support to succeed with technology. Additional 240 
+individual patient’s characteristics (e.g. diabetes belief systems and self -management skills) may [ADDRESS_660448] and acceptance, allowing future 247 
+systems to adapt to the user’s need s, minimizing potential burden and lifestyle interference, and 248 
+ensuing individualized, person- centered support for optimal glycemic and psychosocial/quality 249 
+of life outcomes.  250 
+Hypothesis:  We hypothesize that psycho -behavioral factors are likely to influence system [ADDRESS_660449], and ultimately the patients’ success in leveraging the device to achieve [ADDRESS_660450] appropriate to a patient’s [ADDRESS_660451] beneficial for treatment success.  257 
+Tracking and Quantifying User/System Interactions:  This study merges the expert platform 258 
+(DiAs) with software designed to detect, record, and contextualize the interactions between the 259 
+patient and a medical device. This unique combination of established mobile diabetes technology 260 
+and cutting -edge software previously unrelated to diabetes, will allow: (i) systematically record 261 
+treatment behaviors; (ii) track user/system interactions, and (iii) accurately quantify the resulting 262 
+glucose control. The new DiAs -EMA system  is a k ey innovation and a new tool enabling us to 263 
+study the interplay of technology, behavior, and treatment of diabetes.  264 
+Using a tracking system, the investigators will be able to observe each user of the system; this in [ADDRESS_660452] and acceptance and its time 266 
+course.  267 
+Modular Design of Decision Support Systems:  The AP and diabetes expert systems are 268 
+assembled from independent (but compatible) modules, each performing a specific control or 269 
+diagnostic function, e.g. prevention of hypoglycemia or postprandial insulin corrections [ 59-60]. 270 
+This architecture allowed for sequential testing and clinical deployment of AP and DSS 271 
+components and provided a structured framework for networks of control systems  [60]. This [ADDRESS_660453]: we plan to further refine and evaluate a 273 
+layered glucose variability control system activating different modules depending on the stage of 274 
+the proposed study ( PF vs DSS). Moreover, a modular system is inherently capable of graceful [ADDRESS_660454] been validated in human clinical trials (see  279 
+1.1.2 Preliminary Data). These modules include:  280 
+• CGM value, trace, and threshold alarms (applicable to SAM  & PF & DSS):  Similar to 281 
+commercial real -time CGM (e.g. Dexcom G6), this module informs the user of the current 282 
+glucose level and how it has changed recently, enabling treatment decisions. Alerts are set by 283 
+the user to trigger if BG leaves a preset range.  284 
+• Hypoglycemia Risk Indicator (PF & DSS):  Based on our group’s work in the  1990s and the 285 
+definition of the glycemic risk ranges [ 61], we have developed short (1 -3 hours), medium (1 -3 286 
+days), and long (1 -3 weeks) term hypoglycemia risk indices. Prototypes of these modules have 287 
+been evaluated clinically (see Preliminary Data).  288 
+• Insulin Sensitivity Profile & Indicator ( PF & DSS):  We have designed an algorithm capable of 289 
+tracking changes in insulin sensitivity (SI) and creating daily and monthly SI profiles [ 62]. We 290 
+additionally validated a real- time SI indicator to inform insulin dosing (e.g. is the patient more 291 
+or less sensitive than usual?)  [41].  292 
+• Insulin on Board ( PF & DSS ): IOB is a key index to avoid insulin stacking and is available to DiAs 293 
+through its insulin pump connectivity. DiAs uses a common 4 -6 hours action curve derived 294 
+from encoparesis study  [63]. 295 
+• Exercise Advice (DSS): From our modeling work [ 64], we have derived an advisory module that 296 
+ensures safety of mild to moderate exercise by [CONTACT_510751] 297 
+result in hypoglycemia and providing a graded carbohydrate supplementation strategy. See 298 
+clinical validation in  [64]. 299 
+• Bedtime Advice (DSS):  Similar to the Exercise advisor, this module uses logistic regression and 300 
+recent data (CGM, insulin and meals) to gauge overnight hypoglycemia risk and provide 301 
+bedtime carbohydrate advice.  302 
+• Smart Bolus Calculator ( DSS):  DSS supports advanced bolus calculation capable of accounting 303 
+for several GV factors such  as metabolic characteristics (correction based on 45  min predicted 304 
+glucose to account for insulin delays) and SI fluctuations (insulin sensitivity tracker).  305 
+• Automated Treatment Parameter Optimization (DSS):  Based on replay simulation technology 306 
+[42], this optimization routine analyzes the previous 30 days of CGM, insulin, and meal data to 307 
+provide updated insulin treatment parameters (CR, I SF). [ADDRESS_660455]-2021   Page 21 of 82  
+ 1.1.2.  Preliminary Data  309 
+SMBG Information- Based 310 
+Decision Support (PF, 2006 - 311 
+11): We have shown that 312 
+automated behavioral 313 
+feedback delivered in the field 314 
+by a portable device can 315 
+optimize glycemic control by 316 
+reducing HbA1c and/or 317 
+occurrence of severe 318 
+hypoglycemia [ 33]. We tested [ADDRESS_660456] of an automated 320 
+system providing real -time 321 
+estimates of HbA1c, glucose 322 
+variability, and risk for 323 
+hypoglycemia. For 10 months, 324 
+120 adults with T1DM, 325 
+performed SMBG and received 326 
+feedback  at three increasingly  327 
+complex levels (3 months, each): (i) routine SMBG; (ii) estimated HbA1c, hypo risk, and glucose 328 
+variability; (iii) estimates of symptoms potentially related to hypoglycemia. HbA1c, and 329 
+hypoglycemia were evaluated at baseline and at the end of each level. This information -based 330 
+decision -support reduced HbA1c from 8.0 to 7.6%, p=0.001 (effect confined to subjects with 331 
+baseline HbA1c above 8.0. Incidence of symptomatic moderate/  severe hypoglycemia was 332 
+reduced from 5.72 to 3.74 epi[INVESTIGATOR_1841]/person per month (p=0.019), more prominently for subjects 333 
+with history of SH or hypoglycemia unaw are (Figure 2 ). We therefore concluded that feedback of 334 
+SMBG data and summary SMBG -based measures can result in improvement in average glycemic 335 
+control and reduction in moderate/severe hypoglycemia [ 33]. The system used in this study was 336 
+an early prototype of the PF developed  here but leveraging only SMBG data [ 33]. This 337 
+technological limitation necessitated manual input of high measurement frequencies (4 -10 338 
+SMBG per day). This investigation  leverages automatically collected high frequency CGM data to [ADDRESS_660457] and acceptability 340 
+of DSS to more prescriptive features.  341 
+Pi[INVESTIGATOR_510734] (DSS, 2012 -2017):  The feasibility and safety of a prototype DSS 342 
+was tested in 15 women and 9 men with T1DM on insulin pump (N=16) or MDI (N=8), 343  
+Figure 2: Results from 1 -year automated decision -support intervention 
+based on SMBG data, with 3 levels of feedback to the patient  
+    
+ 5678910
+Baseline Level 1 Level 2 Level 3
+Baseline A1c < 8.0 Baseline A1c >= 8.0A: HbA1c Throughout the Study
+[IP_ADDRESS].40.5
+Baseline Level 1 Level 2 Level 3
+No history of SH History of SHB: Severe Hypoglycemia
+(epi[INVESTIGATOR_1841]/subject/month)
+P=0.001
+P<0.005 n.s.P<0.001
+n.s. P<0.[ADDRESS_660458]-2021   Page 22 of 82  
+ [STUDY_ID_REMOVED]. Age was 37±11 years old, average T1DM duration was 21±11 years. Participants 344 
+were well controlled on average (HbA1c of 7.2±1%). Participants followed a non -blinded 345 
+randomized crossover design, with two 48 -hours observation periods where patients were 346 
+exposed to a variety of meals and physical activities to challenge their own control strategies and 347 
+the DSS. DSS  was shown to be feasible and safe (no adverse events). Furthermore, GV was 348 
+significantly improved (primary outcome, CGM coefficient of variation) from 0.36±0.[ADDRESS_660459] of care to 0.33±0.06 using DSS, p=0.045, with maximum effect  during daytime. Further 350 
+GV analysis using the Low and High blood glucose indices (LBGI, HBGI, [ 65]), confirmed that most 351 
+of the observed improvement was due to the hypoglycemia -related GV measured by [CONTACT_333030]: 352 
+2.5±2.1 to 1.6±1.3, p=0.042. As depi[INVESTIGATOR_123614] ( Figure 3 ), protection from hypoglycemia was 353 
+improved significantly while using the DSS: median percent time spent below 70mg/dL was 354 
+reduced 3.5 -fold, from 3.2% to 0.9%, p=0.018, while maintaining average glycemia 155±27mg/dL 355 
+vs. 155±23mg/dL, p=0.86.  [41] 356 
+ 357 
+ 358 
+ 359 
+ 360 
+ 361 
+ 362 
+ 363 
+ 364 
+ 365 
+Ecological Momentary Analysis (EMA) : Our research group has a long and prolific history in the [ADDRESS_660460] before SMBG, 3 -5/day over several weeks. We investigated 369 
+numerous aspects of living with T1D, including idiosyncratic symptoms associated with BG 370 
+fluctuations [ 66-67 ], patient ability to recognize hypo - and hyperglycemia [ 68-69], adherence to 371 
+SMBG recommendations, and relationships between BG extremes and mood state [ 70-71]. In the 372 
+1990s handheld personal computer technology replaced paper for the collection and storage of 373 
+more complex daily diary data with date & time stamps. This technological advance allowed us 374 
+to investigate relationships between diabetes self -management behaviors and BG patterns, as 375 
+well as treatment decision -making (e.g. to drive or not when BG is low) [ 72-75]. 376 
+ 
+Figure 3: Impact of DSS on exposure to hypoglycemia and average glucose. 
+Control (grey dots and envelop) and Treatment (black dot and dark grey 
+envelop) are linked by [CONTACT_510752].  
+CLINICAL PROTOCOL  
+ 
+ 
+DSS- 2_05- Oct-2021   Page 23 of 82  
+ As technology continued to advance, we were able to program daily diaries to include, not only 377 
+questionnaires, but also brief cognitive tasks, which could be timed and scored. In a series of 378 
+studies in the early 2000s [76- 79], our group utilized PDAs to investigate cognitive performance 379 
+in real -world settings at different BG levels in adults with T1DM and T2D M [77] and school -aged 380 
+children [ 79]. Additionally, we conducted studies exploring the relationships between glycemic 381 
+fluctuations and symptoms/moods in patients with T2D M [76] and the ability of young children 382 
+and their parents to recognize hypoglycemia [ 78]. Leading to our first DSS system. [ADDRESS_660461] few years, our group has combined EMA approaches with CGM data collection in 384 
+innovative ways to address clinically important questions regarding relationships between BG 385 
+levels and behavioral variables, such as the association between psychological stress and BG 386 
+patterns using CLC algorithms [ 80]; where we found a small but significant association between 387 
+stress and glycemic instability. In 2017, we used the EMA approach in a study of the accuracy of 388 
+Diabetes Alert Dogs, comparing daily diaries of dog alerts to blinded CGM data [ 81-82]. That study [ADDRESS_660462] recently, our team 391 
+has completed a clinical trial using EMAs in a sample of older adults (age > 65) and children with [ADDRESS_660463] of CLC; the data collection process was a success , but the [ADDRESS_660464] -intervention data in clinical trials of behavioral interventions [ 66-69], as proposed here. 396 
+Taken together, there is ample evidence of our group’s experience and expertise with research [ADDRESS_660465] of psycho- behavioral factors on system performance, which will enable system 401 
+individualization and lead to automated adaptation of advice delivery to optimize glycemic 402 
+control and reduce the system’s psychological impact.  403 
+ 
+ 404 
+Aim 1 ( Control of Glucose Variability ) We will confirm and contrast the efficacy of two previously 405 
+designed technological interventions – Personalized Feedback (PF) and Decision Support System 406 
+(DSS) - in reducing GV in T1DM during a 6 -month randomized crossover clinical trial. This will 407 
+allow us to show:  [ADDRESS_660466]-2021   Page 24 of 82  
+ Aim 1.1 the superiority of the PF over Sensor -augmented mode  (SAM ) in controlling GV. PF is a 409 
+system designed to provide patients with actionable information about glucose control in general 410 
+and GV in particular (e.g. estimated HbA1c (eA1c), risk of hypoglycemia, and activity level);  411 
+Aim 1.2 the superiority of the DSS over SAM  in controlling GV. DSS is a CGM -based system that 412 
+includes PF and further assists with treatment recommendations for common metabolic 413 
+challenges;  414 
+Aim 1.3 the overall non -inferiority of DSS over PF intervention to control GV and superiority of 415 
+DSS to maintain tight glycemic control over time (lower variations of GV in time).  416 
+Aim 2 (personalization of treatment policy)  We hypothesize that the participants in this study [ADDRESS_660467] technology intervention preferences (e.g. PF or DSS) that can be predicted by [CONTACT_99870] 418 
+psychosocial and behavioral parameters and are prognostic of the level of GV control achievable 419 
+by [CONTACT_25234]. We will:  [ADDRESS_660468] are predictive of the level of GV control 421 
+achieved during the study (see Aim 1), regardless of the type of DSS system in use. We 422 
+hypothesize that technology acceptance will correlate negatively with GV: i.e. higher technology 423 
+acceptance leads to lower GV;  [ADDRESS_660469] of technology expectations and experience on the performance of 425 
+each type of technology intervention ( SAM , PF, DSS). For example, higher expectation will 426 
+negatively correlate with GV for the SAM  treatment, but not the DSS treatment.  427 
+Aim 2.3 assess the correlation between relevant psycho -behavioral traits with the performance 428 
+of PF vs DSS, identifying potential pathways to the corresponding optimal technology- based 429 
+treatment policies.  430 
+ 
+ 431 
+ Glycemic outcomes 432 
+The primary outcome of this study will be Glucose Variability (GV) as measured by [CONTACT_28047]- based 433 
+Coefficient of Variation (CV), as recommended by [CONTACT_510753] 434 
+Continuous Glucose Monitoring. To further characterize glucose control, we will compute other 435 
+CGM Consensus outcomes as well:   436 
+Average   437 
+Percent in different ranges:   438 
+o <50 mg/dL   439 
+o <54 mg/dL   [ADDRESS_660470]-2021   Page 25 of 82  
+ o <60 mg/dL   441 
+o <70 mg/dL   442 
+o ≤70-≤180 mg/dL   443 
+o >180 mg/dL   444 
+o >250 mg/dL   445 
+o >300 mg/dL   [ADDRESS_660471] 4 weeks of the 449 
+intervention, and a minimum of 24 days of data is considered optimal for CGM –based CV 450 
+determination.  451 
+1.3.2.  Glucose Variability Reduction Achieved with CGM -based expert systems  452 
+General linear models (GLM) (repeated measures ANOVA) will be used to assess the significance 453 
+of the differences in average response between SAM , PF, and DSS across appropriate CGM -based 454 
+metrics. The particular design of the clinical study allow for Aims 1.1, 1.2, and 1.3 to each be 455 
+addressed independently in a randomized crossover analysis, as shown in Figure 4 . While the 456 
+randomized order of the interventions (escalation vs de -escalation) allows for an objective 457 
+assessment of the average efficacy of each of them, we will introduce the order as a fixed factor 458 
+to verify if significant study effects can be detected. Finally, we will study the evolution of GV 459 
+within each modality period: GV and other CGM -based outcomes will be computed bi -weekly 460 
+(the minimum length of time for precise GV assessment) and entered in a repeated measures 461 
+GLM analysis; within -subject contrast (linear and polynomial) using 5 repeated measures per 462 
+condition to explore the evolution of the glycemic outcomes in time; Aim 1.3 .  463 
+ 464 
+Figure 4:  Multiple analyses enabled by [CONTACT_510754] 1.1, 1.[ADDRESS_660472] of treatment escalation vs. de- escalation   466 
+A key advantage of the proposed study design (beyond the optimal statistical power) is the [ADDRESS_660473] of features being added 468 
+and/or enhanced with prescriptive components (DSS), vs. features being limited to information 469 
+(PF) or even removed ( SAM ). We will perform this analysis by [CONTACT_510755] [ADDRESS_660474], acceptance, satisfaction, 476 
+confidence as well as fear, worries, distress and burden. Validated and reliable measures will be 477 
+used to explore psycho -behavioral characteristics and outcomes in addition to specifically 478 
+adapted measures for SAM  and DSS technologies to capture holistic, disease -specific and 479 
+technology -specific data. These questionnaires will evaluate how specific constructs are 480 
+predictive of successful glycemic outcomes associated with DSS. These questionnaires will enable 481 
+us to assess important non- glycemic treatment outcomes that are meaningful to patients 482 
+including those affecting Quality of Life (QOL) (e.g. fear of hypoglycemia and diabetes distress). 483 
+To those ends, participants will complete a battery of questionnaires related to diabetes 484 
+management, treatment satisfaction and QOL at baseline (before system use) and after each 485 
+treatment modality.  486 
+1.3.5.  Ecological Momentary Assessment  Data Collection  487 
+Participants will be trained on the EMA surveys and requirements. During each treatment 488 
+condition,  over the course of  2-3 days  every two weeks,  the participant will be asked to complete 489 
+a “Daily Diary” with 3 -5 entries  of 3-4 questions each day, for a minimum total of 48  entries  per 490 
+participant during each Phase. The DiAs phone will display a text message containing a link to the 491 
+survey. Surveys will be triggered at fixed times, including a morning survey ~1h after waking up 492 
+and an end -of-the-day survey around 8 -9 PM. Participants will be able to delay (up to 30 min) or 493 
+skip (up to 2 per day excluding at wake up) surveys for their convenience.  Participants will 494 
+respond to questions on a 5 -point Likert scale (0=Not at All, 4=Extremely). The first Diary for each 495 
+day will contain two additional items for rating sleep quantity/quality. The Daily Diary questions [ADDRESS_660475] Diary for each day will contain two additional items for rating sleep quantity/quality.  [ADDRESS_660476]-2021   Page 27 of 82  
+ 1.3.6.  Mappi[INVESTIGATOR_510735] -behavioral Characteristics to DSS Preferences and Performance  500 
+Baseline assessments of psycho -behavioral traits will be introduced as covariates in the general 501 
+linear model when analyzing the glycemic performance of each treatment modality ( SAM , PF, 502 
+DSS). Contrasts will be used to study each pair, specifically SAM  vs any advisory system. For 503 
+constructs that can be changed by [CONTACT_510756] (e.g. Fear of hypoglycemia) and that are [ADDRESS_660477] covariates (MIXED models) to understand their impact on DSS efficacy. This analysis will 506 
+shed light on the relationship between the efficacy of treatment modality and individual patient 507 
+characteristics;  Aims 2.1 and 2.2  508 
+Using the cloud  data system, we will isolate patient -system interactions for each advisory module 509 
+(e.g. eA1c,  predictive hypoglycemia  alert), and compute for each subject the probability of the 510 
+interaction to lead to the expected action, and positive glycemic outcomes. These probabilities 511 
+will then be used as outcome variables in separate analysis to assess whether psycho -behavioral 512 
+traits are associated with the acceptance of specific advisory functionalities (e.g. Fear of 513 
+Hypoglycemia could be lowered by [CONTACT_510757]); answering Aim 2.3.  514 
+1.3.7.  Identification and Validation of the Acceptance & T rust Index  [ADDRESS_660478] 3 groups used to iteratively refine our estimation procedure (interaction 518 
+quantification and dynamical model parameters) to accurately reproduce acceptance and trust [ADDRESS_660479], and acceptance, thereby [CONTACT_510758] 3.2; retrospectively we will use the finalized [ADDRESS_660480] and acceptance 522 
+and ATI and study the ability of ATI to track changes in time; Aim 3.3. Such an index, shown to [ADDRESS_660481] and acceptance (via standard methods) will enable [ADDRESS_660482] with patient’s expectation (fault detection), and potentially associating them with 526 
+specific functionalities (fault classification), leading to self -adaptations capable of optimizing [ADDRESS_660483]. 528 
+ 
+ 529 
+This is a randomized crossover study in T1DM designed to demonstrate the efficacy of 530 
+personalized feedback (PF) and decision support ( DSS) over sensor -augmented mode  (SAM) 531 
+therapy  and to establish relationships between the level of glucose variability (GV) control [ADDRESS_660484]-2021   Page 28 of 82  
+ We plan to split the study into 4 cohorts of about 25 participants each (expected retention 20 534 
+per cohort). Each cohort will continue for ~[ADDRESS_660485] the structure presented in  535 
+Figure 5 . Following recruitment, screening, and a run -in period of SAM, participants will be 536 
+randomized into one of two groups: escalation vs . de-escalation of devices and function. Each 537 
+treatment modality (SAM , PF, DSS) will continue for about [ADDRESS_660486] 4 weeks used 538 
+to assess GV from CGM data.  539 
+ 540 
+Figure 5: Study design and timeline  541 
+ 
+ 542 
+We anticipate recruiting a total of 100 adults aged 18 years and older . An e qual numbers of males 543 
+and females will attempt to be recruited and all racial/ethnic groups will be eligible for [ADDRESS_660487] that 80% [ADDRESS_660488]-2021   Page 29 of 82  
+ 
+ Study Devices  553 
+ 
+ 554 
+The Diabetes Assistant (DiAs) system which is a medical platform that uses a smart -phone to [ADDRESS_660489] to a continuous glucose sensor to insulin pump and run closed- loop control.  556 
+ 
+ 557 
+For CSII participants, the study system will  include a modified  Tandem t:slim  X2 insulin pump 558 
+(Tandem Diabetes Care, Inc., San Diego, CA), capable of communicating wirelessly with DiA s 559 
+(t:AP).  560 
+ 
+ 561 
+The study CGM will include Dexcom G6 ® transmitter and sensors (Dexcom, Inc., San Diego, CA)  562 
+connected to the Diabetes Assistant (DiAs) .  563 
+ 
+ 564 
+Blood ketone levels will be measured using Precision Xtra® meters and strips (Abbott 565 
+Laboratories Inc., Alemeda, CA) in accordance with the manufacturer’s labeling. The blood 566 
+glucose meter component of the Precision Xtra ® will not be used.  567 
+ 568 
+ 569 
+Figure 6: Study Equipment   [ADDRESS_660490]-2021   Page 30 of 82  
+ 
+ Study Screening  571 
+ 
+ 572 
+Before consent has been obtained, participants will be asked inclusion/exclusion criteria [ADDRESS_660491] of all in-person study visits as deemed feasible by [CONTACT_1758] 580 
+team.  581 
+ 
+ 582 
+After informed consent has been signed, a potential participant will be evaluated for study 583 
+eligibility through the elicitation of a medical history, performance of a physical examination 584 
+by [CONTACT_430884], blood draw and urine pregnancy testing (if applicable) to screen for 585 
+exclusionary medical conditions.  586 
+The following procedures will be performed/data collected/eligibility criteria checked and 587 
+documented:  588 
+• Inclusion and exclusion criteria assessed  589 
+• Demographics ( address, date of birth, gender, race , ethnicity) 590 
+• Contact [CONTACT_3031]  591 
+• Diabetic history  592 
+• Medical history  593 
+• Medications  594 
+• Physical examination  (may use a medical record within  the past 6 months)  595 
+• Weight, height  (participant may self -report this information)  596 
+• Vital signs including measurement of blood pressure and pulse  (may use a medical record [ADDRESS_660492] 6 months)  598 
+• Urine or serum pregnancy test for all females of child -bearing potential  599 
+• Chemistry panel, liver function tests, and thyroid stimulating hormone  [ADDRESS_660493]-2021   Page 31 of 82  
+ • Diabetes Management Information: participant’s typi[INVESTIGATOR_510736] 601 
+average total daily insulin use (calculated over 1 week), basal rates, carbohydrate ratio(s), 602 
+and correction factor(s)  [ADDRESS_660494] approximately 2 hours. Once all results of the screening 604 
+evaluations are available, a decision will be made to determine the participant’s eligibility for the [ADDRESS_660495] meet all of the following inclusion criteria in order to be eligible to 612 
+participate in the study.  613 
+• Age 18 years  and older 614 
+• Clinical diagnosis, based on investigator assessment, of type [ADDRESS_660496] one year  616 
+• HbA1c 6. 0-11.0%, inclusive  617 
+• Demonstration of proper mental status and cognition for the study  618 
+• If on a non -insulin hyperglycemic therapy, stability on that therapy for the prior 3 months 619 
+and willingness not to alter the therapy for the study duration.  620 
+• For females, not currently known to be pregnant  621 
+• If female and sexually active, must agree to use a highly effective form of contraception [ADDRESS_660497] will be required for all premenopausal women who are not surgically 624 
+sterile.  Subjects who become pregnant will be discontinued from the study.  Also, 625 
+subjects who during the study develop and express the intention to become pregnant 626 
+within the timespan of the study will be discontinued.  627 
+•  Subjects must have Internet access and a computer system that meets the requirements 628 
+for uploading the study equipment and ability to participate in video conferencing.  629 
+• Investigator has confidence that the subject can successfully operate all study devices and [ADDRESS_660498] any exclusion criteria in order to be eligible to participate in the 633 
+study.  634 
+• NPH ( neutral protamine hagedorn) insulin   635 
+• Use of any medication that at the discretion of the investigator is deemed to interfere 636 
+with the trial.  637 
+• Current treatment of a primary seizure disorder  638 
+• Coronary artery disease or heart failure, unless written clearance is received from a [ADDRESS_660499].  640 
+• Hemophilia or any other bleeding disorder  641 
+• A known medical condition, which in the opi[INVESTIGATOR_66678], would 642 
+put the participant or study at risk such as the following examples:  [ADDRESS_660500] results (Transaminase >3 times the upper limit of 646 
+normal)  [ADDRESS_660501] results (calculated GFR <60 mL/min/1.73m2).  648 
+o Active gastroparesis requiring medical therapy  649 
+o Uncontrolled thyroid disease (TSH undetectable or >10 mlU/L).  650 
+o Abuse of alcohol or recreational drugs  651 
+o Infectious process not anticipated to be resolved prior to study procedures (e.g. 652 
+meningitis, pneumonia, osteomyelitis, deep tissue infection).  653 
+o Uncontrolled arterial hypertension (Resting diastolic blood pressure >100 mmHg 654 
+and/or systolic blood pressure >180 mmHg).  655 
+o Uncontrolled microvascular complications such as current active proliferative 656 
+diabetic retinopathy defined as proliferative retinopathy requiring treatment (e.g. 657 
+laser therapy or VEGF inhibitor injections) in the past 12 months.  658 
+• A recent injury to body or limb, muscular disorder, use of any medication, any [ADDRESS_660502] the completion of the protocol.  661 
+• Not familiar with smart phone technology  662 
+• Current use of the following drugs and supplements:   [ADDRESS_660503]’s participation  666 
+• Participation  in another pharmaceutical or device trial at the time of enrollment or during [ADDRESS_660504] approximately 2 hours. Once all results of the screening 669 
+evaluations are available, a decision will be made to determine the participant’s eligibility for the [ADDRESS_660505] to use either 677 
+continuous subcutaneous insulin infusion (CSII) or MDI therapy for the duration of the study, no [ADDRESS_660506] to use 679 
+carbohydrates counting or not  for the computation of the meal bolus , this choice will apply to 680 
+the entire study.   681 
+Participants will then go through  a baseline psycho -behavioral assessment. The following 682 
+questionnaires will be completed:  683 
+• Diabetes Specific Personality Questionnaire  684 
+• ABACUS  685 
+• Diabetes Locus of Control  686 
+• Confidence in Diabetes Self -Care Scale  687 
+• Clarke's Hypoglycemia Awareness Scale Participant Inclusion Criteria  688 
+• Demographic Data Survey (screening visit only)   [ADDRESS_660507]-2021   Page 34 of 82  
+ 
+  Training Visit  690 
+Participants may use  CSII or multiple daily insulin (MDI) injection therapy  for their diabetes 691 
+management .  Participants  will be asked to maintain this treatment throughout the study.  In the 692 
+event that MDI participants elects to change to CSII therapy  (see section 3.5), the run- in period [ADDRESS_660508] to 694 
+extend this time frame if additional time would be beneficial to the participant.  695 
+If participants intend on identifying carbohydrate counting (carbohydrate ratio, insulin sensitivity 696 
+factor and glucose goal) at mealtime , they will be asked to continue to provide this information [ADDRESS_660509] less frequent CGM users watch the Dexcom online training videos 704 
+(https://www.dexcom.com/training -videos) to assist in the training session.  Study staff training 705 
+may include review of study CGM in real- time to make management decisions and how to review 706 
+the data after an upload for retrospective review. Study staff will specifically identify how alarms 707 
+are set using the app and the frequency that these alarms will repeat when  enabled.   708 
+The participants personal CGM will be discontinued. The participants will be observed placing the 709 
+sensor and will learn/review how to access the CGM trace. The participants will be asked to 710 
+perform fingerstick blood glucose measurements (if needed) in accordance with the labeling of 711 
+the study CGM device.  712 
+An electronic copy of the CGM user’s guide will be provided for the participants to take home. [ADDRESS_660510], t he study team will provide a Dexcom receiver to allow participants to share their 716 
+CGM data with their personal care providers.  717 
+4.1.2.  Study Pump (Tandem t:AP) Training  (CSII participants)  [ADDRESS_660511]-2021   Page 35 of 82  
+ Additional training topi[INVESTIGATOR_418073]: infusion site initiation, 722 
+cartridge/priming procedures, setting up the pump, charging the pump, navigation through [ADDRESS_660512]’s usual basal rates and pump parameters.  [ADDRESS_660513]’s personal pump will be removed.  [ADDRESS_660514] will be encouraged to review the literature provided with the pump and infusion sets 731 
+after the training is completed.  732 
+4.1.3.  DiAs Training  733 
+Prior to initial use, the DiAs will be initialized by a study team member with the participant’s [ADDRESS_660515] in performing specific tasks including the 738 
+following:  739 
+• How to view the CGM information including the most recent CGM value, trend arrow, and 740 
+CGM graph.  Low and high threshold alerts will be set. The patient may choose the 741 
+threshold alert values, but the low alert may not be set to <70 mg/dL and the high alert 742 
+may not exceed 300 mg/dL.  743 
+• How to connect the CGM transmitter to DiAs as well as troubleshooting techniques for [ADDRESS_660516] will be asked to perform 745 
+fingerstick BG measurements for insulin dosing and treatment management.  746 
+• How to start and stop a sensor session with the DiAs APP . 747 
+• [for CSII participants] How to connect the pump to DiAs and troubleshooting steps for 748 
+reconnection.  749 
+• [For MDI participants] How to retroactively inform the system of past insulin doses  750 
+• How to activate the “meal” screen of the DiAs system any time meal insulin or additional 751 
+correction insulin is desired . And how to use the selected bolus calculator (different if 752 
+counting carbohydrates or not , see section 3.5).  [ADDRESS_660517]-2021   Page 36 of 82  
+ • How to inform the system of hypoglycemia treatment via a “hypoglycemia treatment” 754 
+button on the DiAs user interface after glucose is consumed that is not accompanied by 755 
+an insulin bolus . 756 
+• What to do when exercising while using the system and how to use a temporary basal 757 
+rate. 758 
+• How to accept DiAs  mode changes sent remotely by [CONTACT_3476].  [ADDRESS_660518] information for 781 
+technical support with DiAs  System , the study insulin pump and the study CGM. The partic ipant  782 
+will be asked to call the study team  at any time during the study for any health -related issues  783 
+(adverse events),  including hypoglycemia <54 mg/dL, frequent highs >300 mg/dL, or ketones ≥3.0 784 
+mmol/L. The participant may use the study pump and study CGM during periods of DiAs 785 
+disconnections or technical difficulties.  786 
+5.1.2.  Web C onferencing  787 
+Study visits may be completed using HIPAA compliant web conference tool. The study team will 788 
+provide the participant with the meeting information  in advance of the appointment .  789 
+ 
+ 790 
+5.2.1.  CGM use  791 
+Once all training activities are completed, the participant will be given adequate supplies to 792 
+complete the Run -in home use of the DiAs system in SAM .  793 
+Participants will complete a minimum of 14 days  (if CGM use within the preceding 3 months) or 794 
+4 weeks (if no CGM use within the preceding 3 months) of home use of the DiAs system in SAM . [ADDRESS_660519] be used on a minimum of 11 out of 14 days for CGM users or 22 out of 28 days CGM 798 
+nonusers.  799 
+An appointment for Visit 3 will be scheduled.  800 
+5.2.2.  Questionnaires  801 
+Participants will be sent the following questionnaires on the final week of the Run- in Period and 802 
+will be asked to complete them within 1 week:                                                                               803 
+• T1-Diabetes Distress Scale    804 
+• Hypoglycemia Fear Survey  [ADDRESS_660520]-2021   Page 38 of 82  
+ • Hyperglycemia Avoidance Scale  806 
+ 
+ 807 
+The participant may complete this v isit via web conferencing and/or at the study site.  [ADDRESS_660521] visit. The participant will also be asked if there were any low BGs <54 mg/dL, 818 
+high BGs >300 mg/dL, or ketones ≥3.0 mmol/L since the last visit.  Participants will be encouraged [ADDRESS_660522] the study team between visits as needed (i.e. report adverse events in real -time).   [ADDRESS_660523]-2021   Page 39 of 82  
+ 
+ Study Procedures - Escalation 821 
+6.1.1.  Randomization  to Escalation  822 
+Eligible subjects will be randomized to therapy escalation ( SAM →PF→DSS).  [ADDRESS_660524] any questions answered about continuing use of 827 
+the DiAs system in SAM . 828 
+6.2.1.  SAM  EMA Surveys  829 
+Over the course of  2-3 days  every two weeks of Phase 2, the participant will be asked to complete 830 
+a “Daily Diary” with 3 -5 entries  of 3-4 questions each day, for a minimum total of 48  entries  per 831 
+participant during each Phase.  832 
+6.2.2.  Phase 1 Initiation Questionnaires  833 
+Participants randomized to escalation will complete the following questionnaires:  834 
+• Pi[INVESTIGATOR_2272]  [ADDRESS_660525]- phase questionnaires.  840 
+6.3.1.  Phase 1 EMA Surveys  841 
+Over the course of  2-3 days  every two weeks of Phase 1, the participant will be asked to complete 842 
+a “Daily Diary” with [ADDRESS_660526] -Phase 1 Questionnaires Week 7  845 
+Participants randomized to escalation will be sent the following questionnaires on week 7 (day 846 
+42 of Phase 1) and will be asked to complete them within 1 week:  847 
+• Pi[INVESTIGATOR_2272]   [ADDRESS_660527]-2021   Page 40 of 82  
+ • Hyperglycemia Avoidance Scale  [ADDRESS_660528] -Phase 1 Questionnaires Week 8  850 
+Participants randomized to escalation will sent the following questionnaires on week 8 (day 49 851 
+of Phase 1) and will be asked to complete them within 1 week:  852 
+• Confidence in Diabetes Self -Care Scale  853 
+• T1-Diabetes Distress Scale  854 
+• Hypoglycemia Fear Survey  855 
+ 
+ 856 
+All participants in each randomization scheme use PF in Phase 2. Phase 2 initiation may be 857 
+conducted either via web conference or an office visit. The participant will remotely receive a 858 
+mode change for Phase 2. Study staff will review the features of the Personalized Feedback (PF) [ADDRESS_660529] a blood/urine pregnancy test that must be 860 
+negative in order to continue to participate in this study.  861 
+6.4.1.  Training on Phase 2 DiAs Mode 862 
+The participant will be trained on the following features of the Personalized Feedback System:  863 
+• Tracking of estimated HbA1c:  When properly calibrated, eA1c  is within 0.3% of 864 
+reference HbA1c on average, and within 1% of HbA1c >95% of the time.  865 
+• Hypoglycemia Risk Indicator:  Provides an indication of the current risk for 866 
+hypoglycemia.  867 
+• Insulin Sensitivity Profile & Indicator:  Tracks changes in insulin sensitivity (SI) and 868 
+creates daily and monthly SI profiles.  869 
+• Insulin on Board:  Tracks active insulin to avoid insulin stacking using a common 4 -6 hour 870 
+action curve . 871 
+• Personalized weekly feedback.  Provides advice to the user on what went well in terms [ADDRESS_660530] week and what may be a good thing to 873 
+focus on for the following week.  874 
+6.4.2.  Phase 2 Initiation Questionnaires  875 
+Participants randomized to escalation will complete the following questionnaires:  876 
+• Technology Expectations (burdens subscale only)  877 
+• INSPI[INVESTIGATOR_21392] (revised for DSS)  [ADDRESS_660531] visit. The participant will also be asked if there were any low BGs <54 mg/dL, 881 
+high BGs >300 mg/dL, or ketones ≥3.0 mmol/L since the last visit.  [ADDRESS_660532] the study team between visits as needed (i.e. report 885 
+adverse events in real -time).  [ADDRESS_660533] -phase 889 
+questionnaires.  890 
+6.5.1.  Phase 2 EMA Surveys  891 
+Over the course of  2-3 days  every two weeks of Phase 2, the participant will be asked to complete 892 
+a “Daily Diary” with [ADDRESS_660534] -Phase 2 Questionnaires Week 7  895 
+All participants will be sent the following questionnaires on week 7 (day 42 of Phase 2) and will 896 
+be asked to complete them within 1 week:  897 
+• Technology Acceptance (burdens subscale only)  898 
+• Pi[INVESTIGATOR_2272]  899 
+• T1-Diabetes Distress Scale  [ADDRESS_660535] -Phase 2 Questionnaires Week 8  901 
+All participants will be sent the following questionnaires on week 8 (day 49 of Phase 2) and will 902 
+be asked to complete them within 1 week:  903 
+• Hypoglycemia Fear Survey  904 
+• Hyperglycemia Avoidance Scale  905 
+• Confidence in Diabetes Self -Care Scale  [ADDRESS_660536] a blood/urine pregnancy test that must be negative in order to continue to participate 911 
+in this study.  912 
+6.6.1.  Training on Phase 3 DiAs Mode  913 
+Participants randomized to escalation will be trained to use DiAs in DSS mode, including the 914 
+following features:  915 
+• Exercise Advice:  An advisory module that ensures safety of mild to moderate exercise 916 
+by [CONTACT_510759] 917 
+a graded carbohydrate supplementation strategy and possible reduction in insulin 918 
+advice.  919 
+• Bedtime Advice:  Gauges overnight hypoglycemia risk and provides bedtime 920 
+carbohydrate advice.  921 
+• Smart Bolus Calculator:  An advanced bolus calculator capable of accounting for several 922 
+factors such as exercise (activity on board), metabolic characteristics (correction based 923 
+on 45 min predicted glucose to account for insulin delays) and SI fluctuations (insulin 924 
+sensitivity tracker).  925 
+• Treatment Parameter Optimization:  An optimization routine that analyzes the previous 926 
+30 days of CGM, insulin, and meal data to provide updated insulin treatment 927 
+parameters (CR, CF, and basal rate) to minimize glycemic risk.  928 
+6.6.2.  Phase 3 Initiation Questionnaires  929 
+Participants randomized to escalation will complete the following questionnaires:  930 
+• Technology Expectations (burdens subscale only)  931 
+• INSPI[INVESTIGATOR_21392] (revised for DSS)  932 
+• Diabetes Locus of Control  [ADDRESS_660537] visit. The participant will also be asked if there were any low BGs <54 mg/dL, 936 
+high BGs >300 mg/dL, or ketones ≥3.0 mmol/L since the last visit.  Participants will be encouraged [ADDRESS_660538] the study team between visits as needed (i.e. report adverse events in real -time).  [ADDRESS_660539] -phase questionnaires.  941 
+6.7.1.  Phase 3 EMA Surveys  942 
+Over the course of  2-3 days  every two weeks of Phase 3, the participant will be asked to complete 943 
+a “Daily Diary” with [ADDRESS_660540] -Phase 3 Questionnaires Week 7  946 
+Participants randomized to escalation will be sent the following questionnaires on week 7 (day 947 
+42 of Phase 1) and will be asked to complete them within 1 week:  948 
+• Technology Acceptance (burdens subscale only)  949 
+• Pi[INVESTIGATOR_2272].  950 
+• T1-Diabetes Distress Scale  [ADDRESS_660541] -Phase 3 Questionnaires Week 8  952 
+Participants randomized to escalation will sent the following questionnaires on week 8 (day 49 953 
+of Phase 3) and will be asked to complete them within 1 week:  954 
+• Hypoglycemia Fear Survey  955 
+• Hyperglycemia Avoidance Scale  956 
+• Confidence in Diabetes Self -Care Scale  [ADDRESS_660542] diabetes care using their personal equipment .  The study 960 
+team will be available to answer questions about insulin parameters.   961 
+The participant will be asked to return all investigational study devices (e.g. study insulin pump, 962 
+study, CGM, study phone, other associated supplies) either via mail or at an office visit. 963 
+Participants may keep the study glucometer and ketone meter.  964 
+6.8.1.  Study Exit Questionnaires  965 
+Participants randomized to escalation will complete the following questionnaires:  966 
+• ABACUS  [ADDRESS_660543]-2021   Page 44 of 82  
+ • INSPI[INVESTIGATOR_21392] (revised for DSS)  968 
+• Diabetes Locus of Control  [ADDRESS_660544] visit. The participant will also be asked if there were any low BGs <54 mg/dL, 972 
+high BGs >300 mg/dL, or ketones ≥3.0 mmol/L since the last visit.  [ADDRESS_660545] the 975 
+participant  via phone/email/text to assess:  976 
+• Adverse events, adverse device effects, and device issues  977 
+• Blood glucose values <60 mg/dL and >300 mg/dL   [ADDRESS_660546]-2021   Page 45 of 82  
+ 
+ Study Procedures – De-Escalation 979 
+ 
+ 980 
+Eligible subjects will be randomized to therapy de -escalation (DSS→PF→ SAM ).  981 
+A baseline Hemoglobin  A1C will be collected.   982 
+The participant will receive a mode change for Phase 1 according to the randomization scheme.  983 
+ 
+ 984 
+Participants randomized to de -escalation will be trained to use DiAs in DSS mode, including the 985 
+following features:  986 
+• Exercise Advice:  An advisory module that ensures safety of mild to moderate exercise by 987 
+predicting whether an exercise bout is likely to result in hypoglycemia and providing a 988 
+graded carbohydrate supplementation strategy and possible reduction in insulin advice.  989 
+• Bedtime Advice:  Gauges overnight hypoglycemia risk and provides bedtime carbohydrate 990 
+advice.  991 
+• Smart Bolus Calculator:  An advanced bolus calculator capable of accounting for several 992 
+factors such as exercise (activity on board), metabolic characteristics (correction based 993 
+on 45 min predicted glucose to account for insulin delays) and SI fluctuations (insulin 994 
+sensitivity tracker).  995 
+• Treatment Parameter Optimization:  An optimization routine that analyzes the previous 996 
+30 days of CGM, insulin, and meal data to provide updated insulin treatment parameters 997 
+(CR, CF, and basal rate) to minimize glycemic risk.  998 
+7.2.1.  Phase 1 EMA  Surveys  999 
+Over the course of  2-3 days  every two weeks of Phase 2, the participant will be asked to complete 1000 
+a “Daily Diary” with 3 -5 entries  of 3-4 questions each day, for a minimum total of 48  entries  per 1001 
+participant during each Phase.  1002 
+7.2.2.  Phase 1 Initiation Questionnaires  1003 
+Participants randomized to de -escalation will complete the following questionnaires: 1004 
+• Pi[INVESTIGATOR_2272]  1005 
+• Technology Expectations (burdens subscale only)  1006 
+• INSPI[INVESTIGATOR_21392] (revised for DSS)  [ADDRESS_660547]- phase questionnaires.  1012 
+7.3.1.  Phase 1 EMA Surveys  1013 
+Over the course of  2-3 days  every two weeks of Phase 1, the participant will be asked to complete 1014 
+a “Daily Diary” with [ADDRESS_660548] -Phase 1 Questionnaires Week 7  1017 
+Participants randomized to de -escalation will be sent the following questionnaires on week 7 1018 
+(day 42 of Phase 1) and will be asked to complete them within 1 week:  1019 
+• Technology Acceptance (burdens subscale only)  1020 
+• Pi[INVESTIGATOR_2272]  1021 
+• T1-Diabetes Distress Scale  [ADDRESS_660549] -Phase 1 Questionnaires Week 8  1023 
+Participants randomized to de -escalation will be sent the following questionnaires on week 8 1024 
+(day 49 of Phase 1) and will be asked to complete them within 1 week:  1025 
+• Hypoglycemia Fear Survey  1026 
+• Hyperglycemia Avoidance Scale  1027 
+• Confidence in Diabetes Self -Care Scale  1028 
+ 
+ 1029 
+All participants in each randomization scheme use PF in Phase 2. Phase 2 initiation may be 1030 
+conducted either via web conference or an office visit. The participant will remotely receive a 1031 
+mode change for Phase 2. Study staff will review the features of the Personalized Feedback (PF) 1032 
+mode and answer any questions.  1033 
+7.4.1.  Training on Phase 2 DiAs Mode 1034 
+The participant will be trained on the following features of the Personalized Feedback System:  1035 
+• Tracking of estimated HbA1c:  When properly calibrated, eA1c  is within 0.3% of reference 1036 
+HbA1c on average, and within 1% of HbA1c >95% of the time.  1037 
+• Hypoglycemia Risk Indicator:  Provides an indication of the current risk for hypoglycemia.  [ADDRESS_660550]-2021   Page 47 of 82  
+ • Insulin Sensitivity Profile & Indicator:  Tracks changes in insulin sensitivity (SI) and creates 1039 
+daily and monthly SI profiles.  1040 
+• Insulin on Board:  Tracks active insulin to avoid insulin stacking using a common 4 -6 hour 1041 
+action curve . 1042 
+• Personalized weekly feedback.  Provides advice to the user on what went well in terms of [ADDRESS_660551] week and what may be a good thing to focus 1044 
+on for the following week.  1045 
+7.4.2.  Phase 2 Initiation Questionnaires  1046 
+Participants randomized to de -escalation will complete the following questionnaires: 1047 
+• Technology Expectations (burdens subscale only)  1048 
+• INSPI[INVESTIGATOR_21392] (revised for DSS)  1049 
+• Diabetes Locus of Control  [ADDRESS_660552] visit. The participant will also be asked if there were any low BGs <54 mg/dL, 1053 
+high BGs >300 mg/dL, or ketones ≥3.0 mmol/L since the last visit.  [ADDRESS_660553] -phase 1059 
+questionnaires.  1060 
+7.5.1.  Phase 2 EMA Surveys  1061 
+Over the course of  2-3 days  every two weeks of Phase 2, the participant will be asked to complete 1062 
+a “Daily Diary” with [ADDRESS_660554] -Phase 2 Questionnaires Week 7  1065 
+All participants will be sent the following questionnaires on week 7 (day 42 of Phase 2) and will 1066 
+be asked to complete them within 1 week:  1067 
+• Technology Acceptance (burdens subscale only)  [ADDRESS_660555]-2021   Page 48 of 82  
+ • Pi[INVESTIGATOR_2272]  1069 
+• T1-Diabetes Distress Scale  [ADDRESS_660556] -Phase 2 Questionnaires Week 8  1071 
+All participants will be sent the following questionnaires on week 8 (day 49 of Phase 2) and will 1072 
+be asked to complete them within 1 week:  1073 
+• Hypoglycemia Fear Survey  1074 
+• Hyperglycemia Avoidance Scale  1075 
+• Confidence in Diabetes Self -Care Scale  [ADDRESS_660557] any questions answered about resuming use 1082 
+of the DiAs system in  SAM . 1083 
+7.6.2.  Phase 3 Initiation Questionnaires  1084 
+Participants randomized to de -escalation will complete the following questionnaires:  1085 
+• INSPI[INVESTIGATOR_21392] (revised for DSS)  1086 
+• Diabetes Locus of Control  [ADDRESS_660558] visit. The participant will also be asked if there were any low BGs <54 mg/dL, 1090 
+high BGs >300 mg/dL, or ketones ≥3.0 mmol/L since the last visit.  [ADDRESS_660559] the study team between visits as needed (i.e. report 1094 
+adverse events in real -time).  [ADDRESS_660560]-2021   Page 49 of 82  
+ 7.7.1.  Phase 3 EMA Surveys  1099 
+Over the course of  2-3 days  every two weeks of Phase 3, the participant will be asked to complete 1100 
+a “Daily Diary” with [ADDRESS_660561] -Phase 3 Questionnaires Week 7  1103 
+Participants randomized to de -escalation will be sent the following questionnaires on week 7 1104 
+(day 42 of Phase 1) and will be asked to complete them within 1 week:  1105 
+• Pi[INVESTIGATOR_2272]  1106 
+• T1-Diabetes Distress Scale  [ADDRESS_660562] -Phase 3 Questionnaires Week 8  1108 
+Participants  randomized to de -escalation will be sent the following questionnaires on week 8 1109 
+(day 49 of Phase 1) and will be asked to complete them within 1 week:  1110 
+• Hypoglycemia Fear Survey  1111 
+• Hyperglycemia Avoidance Scale (HAS)  1112 
+• Confidence in Diabetes Self -Care Scale  [ADDRESS_660563] diabetes care using their personal equipment .  The study 1116 
+team will be available to answer questions about insulin parameters.   1117 
+The participant will be asked to return all investigational study devices (e.g. study insulin pump, 1118 
+study, CGM, study phone, other associated supplies) either via mail or at an office visit. 1119 
+Participants may keep the study glucometer and ketone meter.  1120 
+7.8.1.  Study Exit Questionnaires  1121 
+Participants randomized to de -escalation will complete the following questionnaires:  1122 
+• ABACUS  [ADDRESS_660564] visit. The participant will also be asked if there were any low BGs <54 mg/dL, 1126 
+high BGs >300 mg/dL, or ketones ≥3.0 mmol/L since the last visit.   [ADDRESS_660565] the 1129 
+participant via phone/email/text to assess:  1130 
+• Adverse events, adverse device effects, and device issues  1131 
+• Blood glucose values <60 mg/dL and >300 mg/dL   [ADDRESS_660566]-2021   Page 51 of 82  
+ 
+ Testing Procedures  1133 
+ 
+ 1134 
+8.1.1.  HbA1c  1135 
+• A blood sample will be obtained at screening to obtain a baseline hemoglobin A1c level.  1136 
+• HbA1c level may be measured by [CONTACT_91112]2000, a comparable point of 1137 
+care device , at time of screening   1138 
+• Labs may be obtained at a local laboratory (e.g. LabCorp) convenient to the participant.  1139 
+• Blood test may be obtained within 14 days  prior to enrollment may be used for eligibility 1140 
+purposes.   1141 
+• Sample collected at randomization and end of study will be used for statistical purposes.  1142 
+8.1.2.  Comprehensive Metabolic Panel  1143 
+• A blood sample will be obtained at screening to assess kidney and liver functioning.  1144 
+• Labs may be obtained at a local laboratory (e.g. LabCorp) convenient to the participant.  1145 
+• Blood test may be obtained within 14 days prior to enrollment may be used for eligibility 1146 
+purposes.  1147 
+8.1.3.  Thyroid Stimulating Hormone 1148 
+• A blood sample will be obtained at screening to assess thyroid function.  1149 
+• Labs may be obtained at a local laboratory (e.g. LabCorp) convenient to the participant.  1150 
+• Blood test may be obtained within [ADDRESS_660567]  1153 
+A blood/ urine pregnancy test will be required for women of childbearing  potential at the [ADDRESS_660568]-2021   Page 52 of 82  
+ 
+ Questionnaires & Ecological Momentary Analysis  1156 
+ 
+ 1157 
+The Diabetes Specific Personality Questionnaire is based on the original Six Factor Personality 1158 
+Questionnaire  [81], a well -validated measure that was adapted for the diabetes -specific version 1159 
+of the questionnaire. The Six Factor Personality Questionnaire  is a measure of six personality 1160 
+dimensions each consisting of three facet scales, measured by 108 Likert items. The Six Factor 1161 
+Personality Questionnaire  facet scales  are organized in terms of six factor  scales.  The Diabetes 1162 
+Specific Personality Questionnaire assesses  three personality factors – conscientiousness, 1163 
+obsessive -compulsiveness, and openness. In this study, the Diabetes Specific Personality 1164 
+Questionnaire  is used to explore whether personality type is associated with willingness and/or 1165 
+ability to effectively engage with the D SS. Administration time is approximately 15  minutes . 1166 
+ 
+ 1167 
+This is a structured interview used to provide a very brief assessment of carbohydrate counting 1168 
+and diabetes self -management skills important to effective engagement consisting of a series of 1169 
+25 questions assessing health literacy and health numeracy in people with T1DM  [84].. The [ADDRESS_660569] answer to each question on a scale ranging from 1 (No 1171 
+competency) to 3 (Full competency); the sum yields to a total score. The higher the score, the [ADDRESS_660570]. Administration time is 1173 
+approximately 10 -20 minutes . 1174 
+ 
+ 1175 
+This questionnaire [85] was developed for use on adults (18 -80 y.o.) The scale consists of 18 items 1176 
+measuring the individual’s personal beliefs about their control over their diabetes management 1177 
+and outcome: 6 items measuring internal locus of control, 6 items measuring powerful others 1178 
+locus of control, and 6 items measuring chance locus of control. A 6 -point Likert -type scale is used 1179 
+in which 0 indicates ‘strongly disagree with the statement’ and 5 indicates ‘strongly agree with 1180 
+the statement.’ Administration time is approximately 5 minutes . 1181 
+ 
+ 1182 
+This is a short 20 -item self -report questionnaire assessing self -efficacy, the perceived ability to 1183 
+perform diabetes self -care tasks, in patients with T1DM  [87]. Items are constructed to cover all 1184 
+domains of self -care as well as social skills. Each item is preceded by, “I believe I can…” with the 1185 
+strength of this belief rated on a 5 -point Likert scale ranging from 1 (“No, I am sure I cannot”) to 1186 
+5 (“Yes, I am sure I can”). Administration time is approximately [ADDRESS_660571]-2021   Page 53 of 82  
+ 
+ 
+ 1188 
+The scale comprises eight questions characterizing the participant's level of hypoglycemia 1189 
+awareness, as well as risk for exposure to epi[INVESTIGATOR_510737]  [88]. 1190 
+It also examines the glycemic threshold for symptomatic responses to hypoglycemia. A score of 1191 
+four or more on a scale of 0 to 7 implies impaired awareness of hypoglycemia.  Administration 1192 
+time is approximately 5 minutes . 1193 
+ 
+ 1194 
+This is a measure that reflects diabetes -specific quality of life and emotional well-being  [90]. The 1195 
+Diabetes Distress Scale is a measure of diabetes -related distress over a number of domains (e.g. 1196 
+diabetes management regimen, interpersonal distress) and consists of a scale of 17 items. These 1197 
+include items from each of four domains central to diabetes -related emotional distress. Patients 1198 
+rate the degree to which each item is currently problematic for them on a 6 -point Likert scale, 1199 
+from 1 (no problem) to 6 (serious problem). Administration time is approximately 5 minutes . 1200 
+ 
+ 1201 
+This questionnaire will be used to determine if the PF and DSS is associated with reduced fear of 1202 
+hypoglycemia . The Hypoglycemia Fear Survey -II [91] was developed to measure behaviors and 1203 
+worries related to fear of hypoglycemia in adults with T1DM . It is composed of 2 subscales, the 1204 
+Behavior and Worry. B ehavior  items describe behaviors in which patients may engage to avoid 1205 
+hypoglycemic epi[INVESTIGATOR_49591]/or their negative consequences (e.g., keepi[INVESTIGATOR_418077] 1206 
+higher, making sure other people are around, and limiting exercise or physical activity). W orry [ADDRESS_660572] about their hypoglycemic epi[INVESTIGATOR_1841] (e.g., 1208 
+being alone, epi[INVESTIGATOR_251249], or having an accident). Items are rated on a 5 -point 1209 
+Likert scale (0=never, 4=always), with higher scores indicating higher fear of hypoglycemia. 1210 
+Administration time is approximately 10 minutes . 1211 
+ 
+ 1212 
+This measure is used to assess the extent of potentially problematic avoidant attitudes and 1213 
+behaviors in people with T1DM [91]. The H ypoglycemia Avoidance Scale reliably quantifies [ADDRESS_660573]-2021   Page 54 of 82  
+ 
+ 
+ 1220 
+This questionnaire will be used to assess whether the PF and DSS improve sleep quality and 1221 
+quantity. The Pi[INVESTIGATOR_2272] [ 93] is a self -report questionnaire that assesses sleep 1222 
+quality over a 1 -month time interval. The measure consists of 19 individual items, creating 7 1223 
+components that produce one global score: the higher the global score, the poorer the sleep 1224 
+quality.  Administration time is approximately 5 -10 minutes . 1225 
+ 
+ 1226 
+The Technology Acceptance Surveys [94-95] were developed for an artificial pancreas camp study 1227 
+in adolescents. The 38 items in the questionnaire were based on interviews conducted with 1228 
+individuals who had participated in previous artificial pancreas trials about their experience 1229 
+regarding the device. It was subsequently adapted to assess these same measures for the PF and 1230 
+DSS. It assesses both positive and negative experiences with PF and DSS, including blood glucose 1231 
+management, device burden, and overall satisfaction. Items a re rated on a 5 -point scale. In this 1232 
+study only the burden subscale will be used.  The Technology Expectations Survey has the same 1233 
+items included on the Technology Acceptance Survey but asks whether the individual expects to 1234 
+experience the various benefits and burdens from use of a device. Administration time is 1235 
+approximately 10 minutes . 1236 
+ 
+ 1237 
+This questionnaire will be used to assess patient preferences to support effective onboarding and 1238 
+successful continued use of the PF and DSS. The INSPI[INVESTIGATOR_510738] 1239 
+aspects of a user’s experience regarding automated insulin delivery for both patients and family 1240 
+members. The surveys include various topi[INVESTIGATOR_510739] T1DM  and their family 1241 
+members based upon >200 hours of  qualitative interviews and focus groups. It was adapted by 1242 
+its developer for use with the PF  and DSS . The survey includes 22 items. Response options include 1243 
+a 5-point Likert scale from strongly agree to strongly disagree, along with an N/A option.  1244 
+Administration time is approximately 5 minutes.  1245 
+ 
+ 1246 
+In addition to the behavioral data automatically recorded (e.g. insulin dosing, interactions with 1247 
+system), an EMA procedure will be used to track the users’ daily experiences of trust in the 1248 
+system, emotional well -being, treatment satisfaction, and diabetes -related concerns and burden.  1249 
+Using a brief daily survey, we will capture the dynamic changes in participant experience 1250 
+throughout the day and the associations between users’ subjective experience and their 1251 
+reactions to/interactions with the PF and DSS devices. This will be the first use of EMA with [ADDRESS_660574]-2021   Page 55 of 82  
+ During each treatment condition,  over the course of  2-3 days  every two weeks,  the participant 1254 
+will be asked to complete a “Daily Diary” with 3 -5 entries  of 3 -4 questions each day, for a 1255 
+minimum total of 48  entries  per participant during each Phase.  1256 
+The DiAs phone will display a text message containing a link to the survey. Surveys will be 1257 
+triggered at fixed times, including a morning survey ~1h after waking up and an end- of-the-day 1258 
+survey around 8 -9 PM . Participants will be able to delay (up to 30 min) or skip (up to 2 per day 1259 
+excluding at wake up) surveys for their convenience.   1260 
+Participants will respond to questions on a 5 -point Likert scale (0=Not at All, 4=Extreme ly). The [ADDRESS_660575] Diary for each day will contain two additional items for rating sleep quantity/quality.  [ADDRESS_660576], 1263 
+treatment satisfaction, diabetes burden, self -efficacy, mood valence, energy level, and  physical 1264 
+well-being.  1265 
+• Quality of Life Parameters  1266 
+ At this moment, to what extent do you feel... 1267 
+ Burdened by [CONTACT_510760]?  1268 
+ Worried about your blood sugar levels?  1269 
+ In a positive or good mood?  1270 
+ Physically  well?   1271 
+• Sleep Items  (only presented in the first Diary for each day)  1272 
+ Was your sleep last night…  1273 
+ Long enough?  1274 
+ Restful enough?  1275 
+• Technology acceptance (only presented in the last Diary for each day)  1276 
+ Today to what extent have you... 1277 
+ Found (name [CONTACT_510768]) easy  to use?  1278 
+ Found (name [CONTACT_510768]) useful?  1279 
+ Trusted the information given by  (name [CONTACT_510768])?  1280 
+ Found (name [CONTACT_510768]) easy  to use?  1281 
+ Found (name [CONTACT_510768]) useful?  1282 
+ Trusted the information given by  (name [CONTACT_510768])?   [ADDRESS_660577]-2021   Page 56 of 82  
+ 
+ 
+ 1284 
+  1285 Timing  Escalation  De-escalation  
+Visit 1 – Screening  and 
+Questionnaires  Diabetes Specific Personality Questionnaire  
+ABACUS  
+Diabetes Locus of  Control  
+Confidence in Diabetes Self -Care Scale  
+Clarke's Hypoglycemia Awareness Scale  
+Visit 2  – Study Equipment 
+Training  None  
+Final week of SAM  Run- in T1-Diabetes Distress Scale  
+Hypoglycemia Fear Survey  
+Hyperglycemia Avoidance Scale  
+Visit 3 Eligibility Assessment, 
+Randomization and Training  Pi[INVESTIGATOR_510740] (burdens subscale only)  
+INSPI[INVESTIGATOR_510741] 1 Mode  EMA Surveys  EMA Surveys  
+Week 7 of DiAs Use in Phase 
+1 Mode  Pi[INVESTIGATOR_510742] (burdens subscale only)  
+Pi[INVESTIGATOR_2272]  
+T1-Diabetes Distress Scale  
+Week 8 of DiAs Use in Phase 1 Mode  Confidence in Diabetes Self -Care  
+T1-Diabetes Distress Scale  
+Hypoglycemia Fear Survey  Hypoglycemia Fear Survey  
+Hyperglycemia Avoidance Scale  
+Confidence in Diabetes Self -Care Scale  
+ 
+Visit 4 Phase 2 Initiation  Technology Expectations (burdens subscale only)  
+INSPI[INVESTIGATOR_21392] (revised for DSS)  Technology Expectations (burdens subscale only)  
+INSPI[INVESTIGATOR_21392] (revised for DSS)  
+Diabetes Locus of Control  
+DiAs Use in Phase 2 Mode  EMA Surveys  EMA Surveys  
+Week 7 of DiAs Use in Phase 
+2 Mode  Technology Acceptance (burdens subscale only)  
+Pi[INVESTIGATOR_2272]  
+T1-Diabetes Distress Scale  
+Week 8 of DiAs Use in Phase 
+2 Mode  Hypoglycemia Fear  
+Hyperglycemia Avoidance Scale  
+Confidence in Diabetes Self -Care Scale  
+ 
+Visit 5 Phase 3 Initiation  Technology Expectations (burdens subscale only)  
+INSPI[INVESTIGATOR_21392] (revised for DSS)  
+Diabetes Locus of Control  
+ INSPI[INVESTIGATOR_21392] (revised for DSS)  
+Diabetes Locus of Control  
+DiAs Use in Phase 3 Mode  EMA Surveys  EMA Surveys  
+Week 7 of DiAs Use in Phase 
+3 Mode  Technology Acceptance (burdens subscale only) to 
+assess patients’ experienced burdens related to 
+the use of DSS  
+Pi[INVESTIGATOR_2272] (PSQI) to assess whether DSS improves sleep quality and quantity.  
+ Pi[INVESTIGATOR_2272]  
+T1-Diabetes Distress Scale  
+Week 8 of DiAs Use in Phase 
+3 Mode  Hypoglycemia Fear Survey  
+Hyperglycemia Avoidance  
+Confidence in Diabetes Self -Care Scale  Hypoglycemia Fear Survey  
+Hyperglycemia Avoidance Scale  
+Confidence in Diabetes Self -Care Scale  
+ Visit 6 Study Exit  ABACUS  
+INSPI[INVESTIGATOR_21392] (revised for DSS)  
+Diabetes Locus of Control  
+ ABACUS  
+CLINICAL PROTOCOL  
+ 
+ 
+DSS- 2_05- Oct-2021   Page 57 of 82  
+ 
+ Risks , Benefits, and Risk Assessment  1286 
+ 
+ 1287 
+Risks and Benefits are detailed below. Loss of confidentiality is a potential risk; however, data are 1288 
+handled to minimize this risk. Hypoglycemia, hyperglycemia and ketone formation are always a 1289 
+risk in participants with T1DM  and participants will be monitored for these symptoms.  1290 
+10.1.1.  Venipuncture Risks  1291 
+A hollow needle will be placed in the arm for taking blood samples. Blood draws can cause some 1292 
+common reactions like pain, bruising, or redness at the sampling site. Less common reactions 1293 
+include bleeding from the sampling site, formation of a small blood clot or swelling of the vein 1294 
+and surrounding tissues, and fainting.  1295 
+There is the risk of contamination from blood sampling techniques. Hand washing with either 1296 
+soap & water or waterless hand sanitizer will be used prior to caring for the study subject. Gloves [ADDRESS_660578]’s protection (i.e. hand washing, changing gloves frequently, 1299 
+disposing needles properly). Gloves will be removed and hands washed or sanitized prior to [ADDRESS_660579]’s room. Soiled linen will be changed to minimize the [ADDRESS_660580] for several weeks. The risk 1307 
+of local infection is less than 1 in 1000. This should not be a significant contributor to risks in this 1308 
+study as fingerstick s are part of the usual care for people with diabetes.  1309 
+10.1.3.  Subcutaneous Catheter Risks  1310 
+Participants using the study pump infusion sets will be at low risk for developi[INVESTIGATOR_007] a local skin 1311 
+infection at the site of the infusion set  placement. Though approved for 3 days of use, if a catheter 1312 
+is left under the skin for more than 24 hours it is possible to get an infection where it goes into 1313 
+the skin, with swelling, redness and pain. There may be bleeding where the catheter is put in and 1314 
+bleeding under the skin causing a bruise (1 in 10 risk).  [ADDRESS_660581]-2021   Page 58 of 82  
+ 10.1.4.  Sensor Needle Risks  1316 
+Participants using the continuous glucose monitor ( CGM) with sensor will be at low risk for 1317 
+developi[INVESTIGATOR_007] a local skin infection at the site of the sensor needle placement. Though approved for 1318 
+10 days of use, i f a catheter is left under the skin for more than 24 hours it is possible to get an 1319 
+infection where it goes into the skin, with swelling, redness and pain. There may be bleeding 1320 
+where the catheter is put in and bleeding under the skin caus ing a bruise (1 in 10 risk).  [ADDRESS_660582] a small portion of the sensor under the skin that may cause redness, swelling, or pain at 1323 
+the insertion site. The participant should be further instructed to notify the study coordinator 1324 
+immediately if this occurs.  1325 
+10.1.5.  Risks of Hypoglycemia  1326 
+As with any person having T1DM  and using insulin, there is always a risk of having a low blood 1327 
+sugar (hypoglycemia). The frequency of hypoglycemia should be no more and possibly less than [ADDRESS_660583] as at home, there is the possibility of fainting or seizures (convulsions) [ADDRESS_660584] approved the insulin 1340 
+pump, CGM, glucometer and ketone meter for single use and that by [CONTACT_423818] 1341 
+patients, bloodborne pathogens (i.e. Hepatitis B) may be spread through the use of multiple 1342 
+users.  1343 
+The study CGM system is label led for single use only. The sensor (the component of the system 1344 
+that enters the skin) will be single use only. The transmitter and receiver may be reused during [ADDRESS_660585]-2021   Page 59 of 82  
+ is attached to the sensor but does not enter the skin and the receiver, if used, is a hand held 1347 
+device.  1348 
+The study insulin pump s are labell ed for single -patient use. During the study, this device may be 1349 
+reused after  adhering to a hospi[INVESTIGATOR_307]- approved cleaning procedure. All infusion set equipment will 1350 
+be single patient use only (infusion set insertion kits, tubing, cartridges etc.) . 1351 
+10.1.8.  Other Risks  1352 
+Some participants may develop skin irritation or allergic reactions to the adhesives used to secure 1353 
+the CGM, or to secure the insulin infusion sets for the continuous subcutaneous insulin infusion.  1354 
+If these reactions occur, different adhesives or “under -tapi[INVESTIGATOR_007]” (such as with IV 3000, Tegaderm, 1355 
+etc.) will be tried, sites will be rotated frequently, and a mild topi[INVESTIGATOR_91101] 1356 
+medication may be required.  1357 
+Whenever the skin is broken there is the possibility of an infection. The CGM and pump infusion 1358 
+sites are inserted under the skin. It is possible that any part that is inserted under the skin may 1359 
+cause an infection. These occur very infrequently, but, if an infection was to occur, oral and/or 1360 
+topi[INVESTIGATOR_27996]. The risk of skin problems could be greater if you use a sensor for 1361 
+longer than it is indicated for  use. Therefore, participants will be carefully instructed about proper 1362 
+use of the sensor.  1363 
+ 
+ 1364 
+It is expected that this protocol will yield increased knowledge about using a Decision Support 1365 
+System for insulin dosing suggestions. The individual participant may or may not benefit from 1366 
+study participation.  1367 
+ 
+ 1368 
+Based on the facts that (1) adults with diabetes experience mild hypoglycemia and hyperglycemia 1369 
+frequently as a consequence of the disease and its management, (2) the study intervention 1370 
+involves feedback and advice for insulin dosing that may increase the likelihood of hypoglycemia, 1371 
+and hyperglycemia, (3) mitigations are in place, and have been tested in prior studies using the [ADDRESS_660586] their origin in the Declaration of Helsinki, with 1376 
+the protocol described herein, and with the standards of Good Clinical Practice (GCP).  [ADDRESS_660587]-2021   Page 61 of 82  
+ 
+ Device Cleaning Instructions  1380 
+CGM cleaning instructions are provided in the Dexcom G4 PLATINUM (Professional) Cleaning and 1381 
+Disinfection manual (current edition). The transmitter will  be cleaned with Clorox Healthcare® [ADDRESS_660588] skin will be cleaned with ethyl or isopropyl alcohol (70 -90%), 1396 
+quaternary ammonium germicidal detergent (i.e. Cavicide, EPA number [ZIP_CODE]) or household [ADDRESS_660589] time on the surface depends on the method used to clean the equipment. 1398 
+Cavicide requires three minutes on the surface of the equipment. Clorox Germicidal Bleach Wipes 1399 
+require two minutes on the equipment. The surface should remain wet (i.e. slightly damp) with [ADDRESS_660590] that the closed loop 1405 
+system is experimental. Therefore, an investigational device exemption (IDE) from the U.S. Food 1406 
+and Drug Administration (FDA) is required to conduct the study.  1407 
+ 
+ 1408 
+12.1.1.  Adverse Events (AE)  [ADDRESS_660591] medical occurrence that meets one of the 1410 
+following criteria:  1411 
+• A Serious Adverse Event  as defined in section 12.1.2  1412 
+• An Adverse Device Effect as defined in section 12.1.4, unless excluded from reporting in 1413 
+section 12.8  1414 
+• An Adverse Event as defined in section 12.1.4 occurring in association with a study 1415 
+procedure  1416 
+• An AE as defined in section 12.1.1 which leads to discontinuation of  a study device for 2 1417 
+or more hours  1418 
+• Hypoglycemia meeting the definition of severe hypoglycemia as defined in section 12.3.1   1419 
+• Diabetic ketoacidosis (DKA) as defined in section 12.3.[ADDRESS_660592]. Skin reactions from sensor placement 1423 
+are only reportable if severe and/or required treatment.  1424 
+12.1.2.  Serious  Adverse Event (SAE)  [ADDRESS_660593] medical occurrence that:  1426 
+• Results in death.  1427 
+• Is life -threatening; (a non -life-threatening event which, had it been more severe, might [ADDRESS_660594] become life- threatening, is not necessarily considered a serious adverse event).  1429 
+• Requires inpatient hospi[INVESTIGATOR_1081].  1430 
+• Results in persistent or significant disability/incapacity or substantial disruption of the [ADDRESS_660595] normal life functions ( life threatening).  1432 
+• Is a congenital anomaly or birth defect.  [ADDRESS_660596]-2021   Page 63 of 82  
+ • Is considered a significant medical event by [CONTACT_13656] 1434 
+(e.g., may jeopardize the participant or may require medical/surgical intervention to 1435 
+prevent one of the outcomes listed above).  [ADDRESS_660597] (UADE)  [ADDRESS_660598], problem, or death was not previously identified in 1439 
+nature, severity, or degree of incidence in the investigational plan or application (including a 1440 
+supplementary plan or application), or any other unanticipated serious problem associated with 1441 
+a device that relates to the rights, safety, or welfare of participants (21 CFR 812.3(s)).  [ADDRESS_660599] (ADE)  [ADDRESS_660600] contributed . 1445 
+12.1.5.  Device Complaints and Malfunctions  1446 
+A device complication or complaint is something that happens to a device or related to device 1447 
+performance, whereas an adverse event happens to a participant.  A device complaint may occur 1448 
+independently from an AE, or along with an AE. An AE may occur without a device complaint or 1449 
+there may be an AE related to a device complaint. A device malfunction is any failure of a device 1450 
+to meet its performance specifications or otherwise perform as intended. Performance 1451 
+specifications include all claims made in the labeling for the device.  The intended performance 1452 
+of a device refers to the intended use for which the device is labeled or marketed. (21 CFR 803.3).   1453 
+ 
+ 1454 
+A protocol deviation is any noncompliance with the clinical trial protocol, Good Clinical Practices 1455 
+(GCP), or procedure requirements. The noncompliance may be either on the part of the [ADDRESS_660601] is only reportable as an adverse event 1462 
+when the following definition for severe hypoglycemia is met:  [ADDRESS_660602]-2021   Page 64 of 82  
+ • The event required assistance of another person due to altered consciousness, and 1464 
+required another person to actively administer carbohydrate, glucagon, or other 1465 
+resuscitative actions;  1466 
+• Impaired cognitively to the point that he/she was unable to treat himself/herself, was 1467 
+unable to verbalize his/ her needs, was incoherent, disoriented, and/or combative, or 1468 
+experienced seizure or coma. These epi[INVESTIGATOR_91103] 1469 
+neuroglycopenia to induce seizure or coma;  1470 
+• If plasma glucose measurements are not available during such an event, neurological 1471 
+recovery attributable to the restoration of plasma glucose to normal is considered 1472 
+sufficient evidence that the event was induced by a low plasma glucose concentration.  1473 
+12.3.2.   Hyperglycemia Events/Diabetes Ketoacidosis  [ADDRESS_660603] is only reportable as an adverse 1475 
+event when one of the following four  criteria is met . 1476 
+The event involved DKA, as defined by [CONTACT_3467] (DCCT) and 1477 
+described below: 1478 
+• Evaluation or treatment was obtained at a health care provider facility for an acute event 1479 
+involving hyperglycemia or ketosis  1480 
+• Blood ketone level ≥1.5 mmol/L and communication occurred with a health care provider 1481 
+at the time of the event  1482 
+• Blood ketone level ≥3.0 mmol/L, even if there was no communication with a health care 1483 
+provider  1484 
+• Hyperglycemic events are classified as DKA if the following are present:  1485 
+o Symptoms such as polyuria, polydipsia, nausea, or vomiting;  1486 
+o Serum ketones ≥1.5 mmol/L or large/moderate urine ketones;  1487 
+o Treatment provided in a health care facility  1488 
+All reportable Adverse Events —whether volunteered by [CONTACT_2299], discovered by [CONTACT_3449] [ADDRESS_660604], or 1490 
+other means —will be reported on an adverse event form online. Adverse event s  will be [ADDRESS_660605]-2021   Page 65 of 82  
+ To ensure consistency of adverse event causality assessments, investigators should apply the 1497 
+following general guideline when determining whether an adverse event is related:  1498 
+• There is a plausible temporal relationship between the onset of the adverse event and 1499 
+the study intervention, and the adverse event cannot be readily explained by [CONTACT_941] 1500 
+participant’s clinical state, intercurrent illness, or concomitant therapi[INVESTIGATOR_014]; and/or the 1501 
+adverse event follows a known pattern of response to the study intervention; and/or the 1502 
+adverse event abates or resolves upon discontinuation of the study intervention or dose 1503 
+reduction and, if applicable, reappears upon re -challenge.  1504 
+• Evidence exists that the adverse event has an etiology other than the study intervention 1505 
+(e.g., preexisting medical condition, underlying disease, intercurrent illness, or 1506 
+concomitant medication); and/or the adverse event has no plausible temporal 1507 
+relationship to study intervention. 1508 
+ 
+ 1509 
+The intensity of an adverse event will be rated on a three point scale: (1) mild, (2) moderate, or 1510 
+(3) severe. It is emphasized that the term severe is a measure of intensity: thus, a severe adverse 1511 
+event is not necessarily serious. For example, itching for several days may be rated as severe, but 1512 
+may not be clinically serious.  1513 
+• MILD:  Usually transient, requires no special treatment, and does not interfere with the 1514 
+participant’s daily activities.  1515 
+• MODERATE:  Usually causes a low level of inconvenience or concern to the participant and 1516 
+may interfere with daily activities, but is usually ameliorated by [CONTACT_91118] 1517 
+measures.  1518 
+• SEVERE:  Interrupts a participant’s usual daily activities and generally requires systemic 1519 
+drug therapy or other treatment.  1520 
+ 
+ 1521 
+Adverse events will be coded per the UVA IRB website instructions (i.e. mild, moderate, severe).    1522 
+Adverse events that continue after the participant’s discontinuation or completion of the study 1523 
+will be followed until their medical outcome is determined or until no further change in the 1524 
+condition is expected.  1525 
+ 
+ 1526 
+The outcome of each reportable adverse event will be classified by [CONTACT_3470]:  1527 
+• RECOVERED/RESOLVED  – The participant recovered from the AE/SAE without sequelae.  [ADDRESS_660606] the AE/SAE stop date.  [ADDRESS_660607]-2021   Page 66 of 82  
+ • RECOVERED/RESOLVED WITH SEQUELAE – The event persisted and had stabilized [ADDRESS_660608] the AE/SAE stop date.  1531 
+• FATAL – A fatal outcome is defined as the SAE that resulted in death. Only the event that 1532 
+was the cause of death should be reported as fatal. AEs/SAEs that were ongoing at the 1533 
+time of death; however, were not the cause of death, will be recorded as “resolved” at 1534 
+the time of death.  1535 
+• NOT RECOVERED/NOT RESOLVED (ONGOING) – An ongoing AE/SAE is defined as the 1536 
+event was ongoing with an undetermined outcome.  1537 
+• An ongoing outcome will require follow- up by [CONTACT_3471] 1538 
+outcome of the AE/SAE.  1539 
+• The outcome of an ongoing event at the time of death that was not the cause of death, 1540 
+will be updated and recorded as “resolved” with the date of death recorded as the stop 1541 
+date.  1542 
+• UNKNOWN – An unknown outcome is defined as an inability to access the participant or 1543 
+the participant’s records to determine the outcome (for example, a participant that was [ADDRESS_660609] to follow -up). 1545 
+All clinically significant abnormalities of clinical laboratory measurements or adverse events 1546 
+occurring during the study and continuing at study termination should be followed by [CONTACT_941] 1547 
+participant’s physician and evaluated with additional tests (if necessary) until diagnosis of the [ADDRESS_660610] 1553 
+the participant until the adverse event has resolved or stabilized.  1554 
+ 
+ 1555 
+All UADEs, ADEs, device complaints, and device malfunctions will be reported irrespective of 1556 
+whether an adverse event occurred, except in the following circumstances.   1557 
+The following device issues are anticipated and will not be reported but will reported as an 1558 
+Adverse Event if the criteria for AE reporting described above are met:  1559 
+• Component disconnections  1560 
+• CGM sensors lasting fewer than the number of days expected per CGM labeling  1561 
+• CGM tape adherence issues  [ADDRESS_660611]-2021   Page 67 of 82  
+ • Pump infusion set occlusion not leading to ketosis  1563 
+• Battery lifespan deficiency due to inadequate charging or extensive wireless 1564 
+communication  1565 
+• Intermittent device component disconnections/communication failures not leading to 1566 
+system replacement  1567 
+• Device issues clearly addressed in the user guide manual that do not require additional 1568 
+troubleshooting  1569 
+• Skin reactions from CGM sensor placement or pump infusion set placement that do not 1570 
+meet criteria for AE reporting  1571 
+ 
+ 1572 
+• UADEs must be reported within [ADDRESS_660612].  1574 
+• Other reportable adverse events, device malfunctions (with or without an adverse event) 1575 
+and device complaints should be reported promptly, but there is no formal required 1576 
+reporting period.  1577 
+• The IDE Sponsor will investigate the UADE and if indicated, report the results of the 1578 
+investigation to the IRBs, FDA, and DSMB  will within 10 working days of the study team  1579 
+becoming aware of the UADE per 21CFR 812.46(b).  1580 
+• The DSMB  will determine if the UADE presents an unreasonable risk to participants. If so, [ADDRESS_660613] receipt 1584 
+notice of the UADE.  1585 
+• In the case of a device system component malfunction (e.g. pump, CGM, control 1586 
+algorithm), information will be forwarded to the responsible manufacturer by [CONTACT_1758] [ADDRESS_660614] (DSMB) will be  establish to review compi[INVESTIGATOR_42602] [ADDRESS_660615]-2021   Page 68 of 82  
+ 
+ 
+ 1595 
+12.11.1.  Participant Discontinuation  1596 
+Rules for discontinuing study device use are : 1597 
+• The investigator believes it is unsafe for the participant to continue on the intervention.  1598 
+This could be due to the development of a new medical condition or worsening of an 1599 
+existing condition; or participant behavior contrary to the indications for use of the device 1600 
+that imposes on the participant’s safety  1601 
+• The participant requests that the treatment be stopped  1602 
+• Two distinct epi[INVESTIGATOR_3414]  1603 
+• Two distinct severe hypoglycemia events  as defined in section 12.3.1  1604 
+12.11.2.  Suspending/Stoppi[INVESTIGATOR_3396]  1605 
+In the case of an unanticipated system malfunction resulting in a severe hypoglycemia or severe 1606 
+hyperglycemia event, use of the study device system will be suspended while the problem is 1607 
+diagnosed.  1608 
+In addition, study activities could be similarly suspended if the manufacturer of any constituent 1609 
+study device requires stoppage of device use for safety reasons (e.g. product recall). The affected 1610 
+study activities may resume if the underlying problem can be corrected by a protocol or system 1611 
+modification that will not invalidate the results obtained prior to suspension.  1612 
+ 
+ 1613 
+A Medical Monitor will  review all DKA and severe hypoglycemia irrespective of relatedness to 1614 
+study device use, and all serious events (including UADEs) related to study device use at the time [ADDRESS_660616] their personal 1622 
+physician to change their prescribed personal insulin to lispro or aspart for the duration of the 1623 
+trial.  1624 
+The study devices (study insulin pump, study CGM) must be removed before Magnetic Resonance 1625 
+Imaging (MRI), Computed Tomography (CT) or diathermy treatment. Participants may continue [ADDRESS_660617]-2021   Page 70 of 82  
+ 
+ Statistical Consideration  1637 
+ 
+ 1638 
+This is a randomized crossover study in T1DM designed to demonstrate the efficacy of 1639 
+personalized feedback (PF) and decision support (DSS) over sensor -augmented pump ( SAM ) 1640 
+therapy and to establish relationships between the level of glucose variability (GV) control 1641 
+achievable by [CONTACT_510747] -behavioral characteristics.  1642 
+We plan to split the study into 4 cohorts of about 25 participants each (expected retention 20 1643 
+per cohort). Each cohort will continue for ~[ADDRESS_660618] the structure presented in 1644 
+Figure 5 . Following recruitment, screening, and a run -in period of SAM , participants will be 1645 
+randomized into one of two groups: escalation vs. de -escalation of devices and function. Each 1646 
+treatment modality ( SAM , PF, DSS) will continue for about [ADDRESS_660619] 4 weeks used 1647 
+to assess GV from CGM data.  1648 
+Escalation: SAM  → PF → DSS  1649 
+De-escalation: DSS → PF → SAM  1650 
+ 
+ 1651 
+14.2.1.  Sample Size D etermination:  [ADDRESS_660620] size of DSS vs. SAM  will be  f³0.22. Power calculations (G*Power [IP_ADDRESS]) assuming a=0.017 1654 
+(corrected for multiple comparisons), 95% power, correlation of 0.55 between the repeated 1655 
+measures, and attrition of 20%, yield a sample size of N=100 subjects to be randomized at 1656 
+baseline, with N=[ADDRESS_660621] size (0.15) but 5 repeated 1659 
+measures (bi -weekly) in each condition with higher correlation (0.65), leading to an achieved 1660 
+power of 97.2% for this Aim.  [ADDRESS_660622] of treatment escalation vs. de- escalation:  1662 
+A key advantage of the proposed study design (beyond the optimal statistical power) is the [ADDRESS_660623] of features being added 1664 
+and/or enhanced with prescriptive components (DSS), vs. features being limited to information 1665 
+(PF) or even removed ( SAM ). We will perform this analysis by [CONTACT_510755] [ADDRESS_660624]-2021   Page 71 of 82  
+ not powered , this analysis will provide key insights in the future feature adaptation schemes 1668 
+based on the ATI.   1669 
+ 
+ 1670 
+ Glycemic outcomes: 1671 
+The primary outcome of this study will be Glucose Variability (GV) as measured by [CONTACT_28047]- based 1672 
+Coefficient of Variation (CV), as recommended by [CONTACT_510753] 1673 
+Continuous Glucose Monitoring. To further characterize glucose control, we will compute other 1674 
+CGM Consensus outcomes as well:   1675 
+• Average   1676 
+• Percent in different ranges:   1677 
+o <50 mg/dL   1678 
+o <54 mg/dL   1679 
+o <60 mg/dL   1680 
+o <70 mg/dL   1681 
+o ≤70-≤180 mg/dL   1682 
+o >180 mg/dL   1683 
+o >250 mg/dL   1684 
+o >300 mg/dL   1685 
+• SD and coefficient of variation  1686 
+• LBGI, HBGI, ADRR  [ADDRESS_660625] 4 weeks of the 1689 
+intervention, and a minimum of 24 days of data is considered optimal for CGM –based CV 1690 
+determination.   1691 
+14.3.2.  Glucose Variability Reduction Achieved with CGM -based expert systems:   1692 
+General linear models (GLM) (repeated measu res ANOVA) will be used to assess the significance 1693 
+of the differences in average response between SAM , PF, and DSS  across appropriate CGM -based 1694 
+metrics. The particular design  of the clinical study allow for Aims 1.1, 1.2, and 1.3 to each be 1695 
+addressed independently in a randomized crossover analysis, as sho wn in Figure 4 . While the 1696 
+randomized order of the interventions (escalation vs de -escalation) allows for an objective 1697 
+assessment of the average efficacy of each of them, we will introduce the order as a fixed factor 1698 
+to verify if significant study effects can be detected. Finally, we will study the evolution of GV 1699 
+within each modality period: GV and other CGM -based outcomes will be computed bi -weekly 1700 
+(the minimum length of time for precise GV assessment) and entered in a repeated measures [ADDRESS_660626]-2021   Page 72 of 82  
+ GLM analysis; within -subject contrast (linear and polynomial) using 5 repeated measures per 1702 
+condition to explore the evolution of the glycemic outcomes in time; Aim 1.3 .  1703 
+ 
+ 1704 
+A key advantage of the proposed study design (beyond the optimal statistical power) is the [ADDRESS_660627] of features being added 1706 
+and/or enhanced with prescriptive components (DSS), vs. fea tures being limited to information 1707 
+(PF) or even removed ( SAM ). We will perform this analysis by [CONTACT_510755] [ADDRESS_660628] 1715 
+predictive models in the general linear modeling (GLM) framework to examine each set of 1716 
+psychological factors (e.g., INSPI[INVESTIGATOR_179563]) over time, and their  association with glycemic  1717 
+outcomes. Group assignment  and Study Phases  will be the primary covariate.  1718 
+ 
+ 1719 
+Baseline demographic and clinical characteristics of the cohort of all randomized participants will 1720 
+be summarized in a table using summary statistics appropriate to the distribution of each 1721 
+variable. Descriptive statistics will be displayed overall and by [CONTACT_1570].  1722 
+Will include:  1723 
+• Age 1724 
+• HbA1c  collected at randomization and study end  1725 
+• Gender  1726 
+• Race/ethnicity  1727 
+• CGM use before enrollment  1728 
+• Diabetes duration  1729 
+• BMI [ADDRESS_660629]-2021   Page 73 of 82  
+ 
+ Data Collection and Monitoring 1735 
+ 
+ 1736 
+The study data are collected through a combination of case report forms (electronic and paper) [ADDRESS_660630]-2021   Page 74 of 82  
+ 
+ Ethics/Protection of Human Participants  1750 
+ 
+ 1751 
+The investigator will ensure that this study is conducted in full conformity with Regulations for 1752 
+the Protection of Human Participants of Research codified in 45 CFR Part 46, 21 CFR Part 50, 21 1753 
+CFR Part 56, and/or the ICH E6.  1754 
+ 
+ 1755 
+The protocol, informed consent form(s), recruitment materials, and all participant materials will [ADDRESS_660631] be obtained before any participant is enrolled. Any amendment to the protocol will 1758 
+require review and approval by [CONTACT_3484]. All 1759 
+changes to the consent form will be IRB approved; a determination will be made regarding 1760 
+whether previously consented participants need to be re -consented.  1761 
+ 
+ 1762 
+Informed consent is a process that is initiated prior to an individual’s agreement to participate in 1763 
+the study and continues throughout the individual’s study participation. Extensive discussion of [ADDRESS_660632] all documents and records required to be maintained by [CONTACT_093], including but 1779 
+not limited to, medical records (office, clinic, or hospi[INVESTIGATOR_307]) for the participants in this study.   [ADDRESS_660633]-2021   Page 75 of 82  
+ The study participant’s contact [CONTACT_91124] [ADDRESS_660634]-2021   Page 76 of 82  
+ 
+ References  1789 
+1. American Diabetes Association. Diagnosis and classification of diabetes mellitus. Diabetes 1790 
+care. 2014 Jan 1;37(Supplement 1):  S81- 90. 1791 
+2. Hirsch IB. Insulin analogues. New England Journal of Medicine. 2005 Jan 13;352(2):174 - 1792 
+83. 1793 
+3. Klonoff DC, Prahalad P. Performance of cleared blood glucose monitors. Journal of 1794 
+diabetes science and technology. 2015 Jun 30;9(4):895 -910.  1795 
+4. Castle JR, Jacobs PG. Nonadjunctive use of continuous glucose monitoring for diabetes 1796 
+treatment decisions. Journal of diabetes science and technology. 2016 Sep;10(5):1169 - 1797 
+73. 1798 
+5. Diabetes Control and Complications Trial. Intensive diabetes treatment and 1799 
+cardiovascular disease in patients with type 1 diabetes. N Engl J Med. 2005 Dec 1800 
+22;2005(353):2643- 53. [ADDRESS_660635] TJ. All -cause mortality trends in a 1802 
+large population -based cohort with long -standing childhood- onset type 1 diabetes. 1803 
+Diabetes care. 2010 Dec 1;33(12):[ADDRESS_660636] S, 1805 
+Clements M, Rosengren A. Glycemic control and excess mortality in type 1 diabetes. New 1806 
+England Journal of Medicine. 2014 Nov 20;371(21):1972- 82. [ADDRESS_660637] TJ. Mortality trends in 1808 
+type 1 diabetes. Diabetes care. 2001 May 1;24(5):823 -7. 1809 
+9. McCall AL, Kovatchev BP. The Median is Not the Only Message: A Clinician's Perspective 1810 
+on Mathematical Analysis of Glycemic Variability and Modeling in Diabetes Mellitus. J 1811 
+Diabetes Sci Technol  3: 3-11, 2009.  [ADDRESS_660638]/EDIC Research Group: [ADDRESS_660639] of Glycemic Exposure on the Risk of Microvascular Complications in the Diabetes 1814 
+Control and Complications Trial Revisited. Diabetes , 57: 995- 1001, 2008.  1815 
+11. Santiago JV. Lessons from the Diabetes Control and Complications Trial, Diabetes , 1816 
+42:[ADDRESS_660640] of intensive 1818 
+treatment of diabetes on the development and progression of long -term complications 1819 
+of insulin -dependent diabetes mellitus. N Engl J Med 329: 978 -986, 1993.  1820 
+13. [LOCATION_006] Prospective Diabetes Study Group ([LOCATION_006]PDS). Intensive blood- glucose control with 1821 
+sulphonylureas or insulin compared with conventional treatment and risk of 1822 
+complications in patients with type 2 diabetes.  Lancet  352: 837- 853, 1998.  1823 
+14. American Diabetes Association Workgroup on Hypoglycemia (Childs BP, Clark NG, Cox DJ, 1824 
+Cryer PE, Davis SN, Di -Nardo MM, Kahn R, Kovatchev BP, Shamoon H). Defining and 1825 
+Reporting Hypoglycemia in Diabetes. Diabetes Care , 28:1245- 1249, 2005.  1826 
+15. Cryer PE, Davis SN, Shamoon H. Hypoglycemia in Diabetes. Diabetes Care , 26: [ADDRESS_660641]-2021   Page 77 of 82  
+ 16. The Diabetes Control and Complications Trial Research Group. Hypoglycemia in the 1829 
+Diabetes Control and Complications Trial. Diabetes  46: 271- 286, 1997.  1830 
+17. Cryer PE. Hypoglycaemia: The limiting factor in the glycaemic management of type I and 1831 
+type II diabetes. Diabetologia  45: 937- 948, 2002.  1832 
+18. Cryer PE: Hypoglycemia: The Limiting factor in the management of IDDM. Diabetes  43: 1833 
+1378- 1389, 1994.  1834 
+19. The Diabetes Control and Complications Trial Research Group: The relationship of 1835 
+glycemic exposure (HbA1c) to the risk of development and progression of retinopathy in 1836 
+the Diabetes Control and Complications Trial. Diabetes  44:968– 983, 1995.  1837 
+20. Brownlee M, Hirsh IB.  Glycemic Variability: A hemoglobin A1c –Independent Risk Factor 1838 
+for Diabetic Complication?  JAMA,  295: 1707 -1708, 2006.  1839 
+21. Hirsh IB, Brownlee M: Should minimal blood glucose variability become the gold standard 1840 
+of glycemic control? J Diabetes Complications , 19:178– 181, 2005.  1841 
+22. Esposito K, Giugliano D, Nappo F, Martella K, for the Campanian Postprandial 1842 
+Hyperglycemia Study Group. Postprandial Hyperglycemia Study Group.  Regression of 1843 
+carotid atherosclerosis by [CONTACT_510761] 2 diabetes 1844 
+mellitus . Circulation  110: 214 -219, 2004.  1845 
+23. Haffner S.M. The importance of postprandial hyperglycaemia in development of 1846 
+cardiovascular disease in people with diabetes: International Journal of Clinical Practice . 1847 
+Supplement 123:  24-26, 2001.  1848 
+24. Monnier L, Mas E, Ginet C, Michel F, Villon L, Cristol JP, Colette C. Activation of Oxidative 1849 
+Stress by [CONTACT_510762] 1850 
+Patients With Type 2 Diabetes.  JAMA  2006 295: 1681 -1687.  1851 
+25. Temelkova -Kurktschiev TS, Koehler C, Henkel E, Leonhardt W, Fuecker K, Hanefeld M. 1852 
+Postchallenge Plasma Glucose and Glycemic Spi[INVESTIGATOR_510743] 1853 
+Atherosclerosis Than Fasting Glucose or HbA1c Level. Diabetes Care , 23:1830– 1834, 2000.  1854 
+26. Waldhäusl WK. The physiological basis of insulin treatment —clinical aspects. 1855 
+Diabetologia. 1986 Dec 1;29(12):837- 49. 1856 
+27. Grunberger G, Abelseth JM, Bailey TS, et al Consensus statement by [CONTACT_317921] 1857 
+Association of Clinical Endocrinologists/American College of Endocrinology Insulin Pump [ADDRESS_660642] 2014;20:463– 89. 1859 
+28. YB Kim and J. Lee, “Smart Devices for Older Adults Managing Chronic Disease: A Scopi[INVESTIGATOR_007] 1860 
+Review,” JMIR Mhealth and Uhealth, 5(5):e69, 2017.  1861 
+29. K. Singh, K. Drouin, L. P. Newmark, et al., “Patient- Facing Mobile Apps to Treat High -Need, [ADDRESS_660643] Populations: A Scopi[INVESTIGATOR_247114],” JMIR Mhealth and Uhealth, 4(4):e316, 2016.  1863 
+30. N. Kaufman and A. Salahi, “Using Digital Health Technology to Prevent and Treat 1864 
+Diabetes,” Diabetes Technology & Therapeutics, 19(Supplement 1):59 -73. 1865 
+31. H. D. Lehmkuhl et al., “Telehealth Behavior Therapy for the Management of Type 1 1866 
+Diabetes in Adolescents,” J. Diabetes Science and Technology, 4(1):[ADDRESS_660644]-2021   Page 78 of 82  
+ 32. C. L. Wood, et al., “Use of Telemedicine to Improve Adherence to American Diabetes 1868 
+Association Standards in Pediatric Type 1 Diabetes,” Diabetes Technology & Therapeutics, 1869 
+18(1):7- 14, 2016.  1870 
+33. B. P. Kovatchev, P. Mendosa, S. Anderson, J. S. Hawley, L. M. Ritterband, L. Gonder - 1871 
+Frederick, “Effect of Automated Bio -Behavioral Feedback on the Control of Type 1 1872 
+Diabetes,” Diabetes Care, 34:302 -307, 2011.  1873 
+34. D. C. Klonoff and D. Kerr, “Digital Diabetes Communication: There’s an App for That,” J. 1874 
+Diabetes Science and Technology, 10(5):1003 -1005, 2016.  1875 
+35. H. Zisser, L. Jovanovic, F. J. Doyle III, P. Ospi[INVESTIGATOR_28947], and  C. Owens. Run -to-run control of meal - 1876 
+related insulin dosing. Diab Technol Ther, 7:48 –57, 2005.  1877 
+36. C. Owens, H. Zisser, L. Jovanovic, B. Srinivasan, D. Bonvin, and F. J. Doyle III. Run -to-run 1878 
+control of blood glucose concentrations for people with type 1 diabetes mellitus. IEEE 1879 
+Trans Biomed Eng, 53:996– 1005, 2006  1880 
+37. P. Herrero, P. Pesl, M. Reddy, N. Oliver, P. Georgiou, and  C. Toumazou. Advanced insulin 1881 
+bolus advisor based on run- to-run control and case -based reasoning. IEEE Journal of 1882 
+Biomedical and Health Informatics, 19(3):1087 –1096, 2015.  1883 
+38. C.C. Palerm, H. Zisser, W.C. Bevier, L. Jovanovic, and F. J. Doyle III. Prandial insulin dosing 1884 
+using run- to-run control: application of clinical data and medical expert[INVESTIGATOR_510766] a 1885 
+suitable performance metric. Diabetes Care, 30:1131 –1136, 2007.  [ADDRESS_660645] basal insulin infusion rates in type 1 diabetes. J Process Control, 18:258 –265, 2008.  1888 
+40. L. Kennedy and A. Brown, “FDA Clears ‘My Dose Coach’ App to Optimize Basal Insulin 1889 
+Dosing,” diaTribe: Making Sense of Diabetes, (https://diatribe.org/fda- clears -my-dose - 1890 
+coach -app-to-optimize -basal- insulin -dosing), posted April 2017.  1891 
+41. S. D. Patek, D. Lv, E. Campos -Nanez, M. Breton, “Retrospective Optimization of Daily 1892 
+Insulin Therapy Parameters: Control Subject to a Regenerative Disturbance Process,” IFAC 1893 
+Symposium on Dynamics and Control of Process Systems, IFAC -PapersOnLine 49 -7, pp. 1894 
+773-778, 2016.  1895 
+42. C. Toffanin, A. Sandri, M. Messori, C. Cobelli, and L. Magni. Automatic adaptation of basal 1896 
+therapy for type 1 diabetic patients: a run -to-run approach. In IFAC 19th World Congress, 1897 
+pages 2070– 2075, 2014.  1898 
+43. Steil GM, Oladunjoye AO, Wald JS, Slyne C, Atakov -Castillo A, Greenberg J, Greaves T, 1899 
+Toschi E, Munshi M. Use of Automated Clinical Decision Support (CDS) to Effect Glycemic 1900 
+Control in Elderly Patients with T1D.  1901 
+44. J. Tuo et al., “Optimization of insulin pump therapy based on high order run -to-run control 1902 
+scheme,” Comput Methods Programs Biomed, 120(123 -134), 2015.  [ADDRESS_660646], Huyett LM, Lee JB, Zisser HC, Dassau E. Closed -loop artificial pancreas 1904 
+systems: engineering the algorithms. Diabetes care 2014;37:1191 -7. 1905 
+46. Hovorka, R et al. Manual closed -loop insulin delivery in children and adolescents with 1906 
+Type 1 Diabetes: A phase 2 randomised crossover trial. The Lancet,  375, 743- 751 (2010).  [ADDRESS_660647]-2021   Page 79 of 82  
+ 47. Anderson SM et al. Multinational Home Use of Closed -Loop Control Is Safe and Effective. 1908 
+Diabetes Care 39, 1143- 1150 (2016).  [ADDRESS_660648], C. Cobelli, et al. “Feasibility of outpatient fully integrated 1910 
+closed -loop control: first studies of wearable artificial pancreas”, Diabetes Care, 1911 
+36(7):[ADDRESS_660649], “The diabetes assistant: a smartphone - 1913 
+based system for real -time control of blood glucose”, Electronics, 3(4):[ADDRESS_660650], A. Robert, N.B. Brahim, et al. “DiAs web monitoring: A real -time remote 1915 
+monitoring system designed for artificial pancreas outpatient trials”, J. Diabetes Sci. 1916 
+Technol., 7(6):1427- 1435, [ADDRESS_660651], Real Time Remote 1918 
+Monitoring with Artificial Panrceas: A Family -Centered Pi[INVESTIGATOR_4238], Diabetes Care 63 Sup 1: 1919 
+LB27, 2014  1920 
+52. Gonder -Frederick L, Hughes -Karvetski C, McElwee M, Kovatchev BP, Interactive Internet 1921 
+Intervention Providing Individually -Tailored Glycemic Feedback Based on CGM, Insulin 1922 
+and Meal Data, and Computer Simulation: Content Design. Diabetes Technology & 1923 
+Therapeutics. February 2013, 15(S1): A -104-A- [ADDRESS_660652] KD and Heinemann L.  Psychosocial Aspects of Continuous 1925 
+Glucose Monitoring: Connecting to the Patients’ Experience.  J Diabetes Sci Technol 2016 1926 
+Jul; 10(4): 859- [ADDRESS_660653] KD and Weisberg -Benchell J, Psychosocial Aspects and Diabetes Technology:  1928 
+Head to Head or Hand in Hand. European Endocrinology 12(1):[ADDRESS_660654] online, Communications of the 1930 
+ACM, 43, 12, 34- 40. 1931 
+56. Ritholz MD, Atakov -Castillo A, Beste M, et al. Psychosocial factors associated with use of 1932 
+continuous glucose monitoring. Diabet Med. 2010;27:[ADDRESS_660655] K. Diabetes technology and the human factor. Diabetes Technology 1934 
+& Therapeutics. Feb 2018.S -128-S- 138.http://doi.org/10.1089/dia.2018.[ADDRESS_660656] KD, Wysocki T, Thabit H, Evans M et al.  Psychosocial Aspects of Closed and Open 1936 
+Loop Insulin Delivery: Closing the Loop In Adults with Type 1 Diabetes in the Home Setting  1937 
+Diabetic Medicine 32(5)  January 2015  DOI: 10.1111/dme.[ZIP_CODE]  1938 
+59. Kovatchev BP, Patek SD, Dassau E, Doyle FJ III, Magni L, De Nicolao G, and Cobelli C. 1939 
+Control -to-range for diabetes: functionality and modular architecture, J Diabetes Sci 1940 
+Technol, 3: 1058- 1065, 2009.  [ADDRESS_660657] E, Zisser H, Doyle FJ III, Cobelli C, Kovatchev BP. Modular Closed - 1943 
+Loop Control of Diabetes, Transactions on Biomedical Engineering, 29: 2986 -3000, 2012.  1944 
+61. Kovatchev BP, Cox DJ, Gonder -Frederick LA Young -Hyman D, Schlundt D, Clarke WL. 1945 
+Assessment of risk for severe hypoglycemia among adults with IDDM: Validation of the 1946 
+Low Blood Glucose Index, Diabetes Care  21: 1870- 1875, 1998.  [ADDRESS_660658] 14;9(6):[ADDRESS_660659] of age of infusion site and type of rapid- acting analog on 1952 
+pharmacodynamic parameters of insulin boluses in youth with type 1 diabetes receiving 1953 
+insulin pump therapy. Diabetes Care. 2009 Feb 1;32(2):[ADDRESS_660660] 18;9(6):1185 -91. 1957 
+65. Kovatchev BP. Metrics for glycaemic control - from HbA1c to continuous glucose 1958 
+monitoring. Nature Reviews Endocrinology. 2017 Jul 1;13(7):425 -36. 1959 
+66.  Cox, DJ, Carter, WR, Gonder- Frederick, LA, Clarke, WL, Pohl, S. Blood Glucose 1960 
+Discrimination Training in Insulin -Dependent Diabetes Mellitus Patients. Biofeedback and 1961 
+Self-Regulation. 1988;13(3):201- 217.  [ADDRESS_660661] Blood Glucose Awareness Training (BGAT) with Insulin- 1964 
+Dependent Diabetes: Mechanisms and Ancillary Effects. Psychosomatic Medicine. 1965 
+1991;53(4):453- 462.  1966 
+68. Cox, DJ, Gonder -Frederick, LA, Julian, D, Clarke, W. Long -term Follow -up Evaluation of 1967 
+Blood Glucose Awareness Training. Diabetes Care. 1994;17(1):1 -5. 1968 
+69. Cox, D, Gonder -Frederick, L, Polonsky, W, Schlundt, D, Julian, D, Clarke, W. A Multicenter 1969 
+Evaluation of Blood Glucose Awareness Training -II. Diabetes Care. 1995;18(4):523 -8.  1970 
+70.  Gonder -Frederick LA, Julian DM, Cox DJ, Clarke WL, Carter WR. Self -measurement of 1971 
+blood glucose: Accuracy of self- reported data and adherence to recommended regimen. 1972 
+Diabetes Care. 1988;11(7):579- 585.  1973 
+71. Gonder -Frederick LA, Cox DJ, Bobbitt SA, Pennebaker JW. Mood changes associated with 1974 
+blood glucose fluctuations in insulin dependent diabetes mellitus. Health Psychology. 1975 
+1989;8(1):45- 59. 1976 
+72. Clarke WL, Cox DJ, Gonder- Frederick LA, Julian D, Schlundt D, Polonsky W. The 1977 
+relationship between non- routine use of insulin, food and exercise and the occurrence of 1978 
+hypoglycemia in adults with IDDM and varying degrees of hypoglycemic awareness and 1979 
+metabolic control. Diabetes Educator. 1997;23(1):55 -58. 1980 
+73. Clarke WL, Cox DJ, Gonder- Frederick LA, Julian D, Kovatchev B, Young -Hyman D. The 1981 
+biopsychobehavioral model of risk of severe hypoglycemia II: Self -management 1982 
+behaviors. Diabetes Care. 1999;22(4):[ADDRESS_660662] a motor vehicle by [CONTACT_510763]. JAMA. 1999;282(8):750- 4. 1985 
+75. Cox DJ, Gonder -Frederick LA, Schroeder DB, Cryer PE, Clarke WL. Disruptive effects of 1986 
+acute hypoglycemia on speed of cognitive and motor performance. Diabetes Care. 1987 
+1993;16(10):[ADDRESS_660663]-2021   Page 81 of 82  
+ 76. Cox DJ, Kovatchev BP, Gonder -Frederick LA, Summers K, McCall A, Grimm KJ, Clarke WL. 1989 
+Relationships between hyperglycemia and cognitive performance among adults with type 1990 
+1 and type 2 diabetes mellitus. Diabetes Care. 2005;28(1):71 -77. 1991 
+77. Cox D, Gonder -Frederick L, McCall A, Kovatchev B, Clarke W. The effects of glucose 1992 
+fluctuation on cognitive function and QOL: the functional costs of hypoglycaemia and 1993 
+hyperglycaemia among adults with type 1 or type 2 diabetes. International journal of 1994 
+clinical practice. Supplement. 2002;(129):20 -6. 1995 
+78. Gonder -Frederick L, Zrebiec J, Bauchowitz A, Lee J, Cox D, Ritterband L, Kovatchev B, 1996 
+Clarke W. Detection of hypoglycemia by [CONTACT_510764] 1 diabetes 6 to 11 years of age 1997 
+and their parents: a field study. Pediatrics. 2008;121(3):e489- 95. 1998 
+79.  Gonder -Frederick , LA, Zrebiec , JF, Bauchowitz , AU, Ritterband , L, Magee , JC, Cox , DJ, 1999 
+Clarke WL. Cognitive Function Is Disrupted by [CONTACT_510765] -and Hyperglycemia in School- 2000 
+Aged Children With Type 1 Diabetes: A Field Study. Diabetes care. 2009;32(6):1001 -6. 2001 
+80. Gonder -Frederick LA, Grabman JH, Kovatchev, B, Brown SA, Patek S, Basu A, Pi[INVESTIGATOR_45905], 2002 
+Kudva YC, Wakeman CA, Dassau E, Cobelli C. Is Psychological Stress a Factor for 2003 
+Incorporation into Future Closed- Loop Systems? Journal of Diabetes Science and 2004 
+Technology. 2016;10(3)[ADDRESS_660664] JA, Tripathi AV, Ducar DM, McElgunn ZR. 2006 
+Variability of Diabetes Alert Dog Accuracy in a Real- World Setting. Journal of Diabetes 2007 
+Science and Technology. 2017;doi: 1932296816685580.  [ADDRESS_660665] JS. Diabetes Alert Dogs (DADs): An 2009 
+Assessment of Accuracy and Implications. Diabetes Research and Clinical Practice Volume 2010 
+134, December 2017, Pages 121- 130   2011 
+83. Jackson DN, & Tremblay PF. The Six- Factor Personality Questionnaire. In B. de Raad & M. 2012 
+Perugini (Eds.), Big Five Assessment (p. 354 -372). Hogrefe & Huber Publishers.  [ADDRESS_660666] K, Ryder J, Vogel C, Parkin CG, Koehler Vesper I, 2014 
+Petersen B, Schweitzer MA, Wagner RS. Use of an Insulin Bolus Advisor Improves Glycemic 2015 
+Control in Multiple Daily Insulin Injection (MDI) Therapy Patients With Suboptimal 2016 
+Glycemic Control. Diabetes Care. 2013 Nov 36(11) 3613- 3619.  2017 
+85. Peyrot M, Rubin RR.  Structure and Correlates of Diabetes -Specific Locus of Control. 2018 
+Diabetes Care. 1994;17:994– 1001.  2019 
+86. Ferraro LA, Price JH, Desmond SM, Roberts S. Development of a Diabetes Locus of Control 2020 
+Scale. Psychological Reports, 1987, Volume: 61 (3) 763 -770.  2021 
+87. Van Der Ven NC, Weinger K, Yi J, Pouwer F, Adèr H, Van Der Ploeg HM, Snoek FJ. The 2022 
+Confidence in Diabetes Self -Care Scale: Psychometric Properties of a New Measure of 2023 
+Diabetes -Specific Self -Efficacy in Dutch and US Patients with Type 1 Diabetes. Diabetes 2024 
+Care. 2003;26(3):713– 718. doi:10.2337/diacare.26.3.713  2025 
+88. Clarke WL, Cox DJ, Gonder- Frederick LA, Julian D, Schlundt D, Polonsky W. Reduced 2026 
+Awareness of Hypoglycemia in Adults with IDDM: A Prospective Study of Hypoglycemic 2027 
+Frequency and Associated Symptoms. Diabetes Care 18:517 –522, [ADDRESS_660667]-2021   Page 82 of 82  
+ 89. Fisher L, Hessler DM, Polonsky WH, Mullan J. (2012).  When is Diabetes Distress Clinically 2029 
+Meaningful?  Establishing Cut -Points for the Diabetes Distress Scale.  Diabetes Care, 35, 2030 
+259-264.  2031 
+90. Polonsky WH, Fisher L, Esarles J, Dudl RJ, Lees J, Mullan JT, Jackson R (2005). Assessing 2032 
+Psychosocial Distress in Diabetes: Development of the Diabetes Distress Scale.  Diabetes 2033 
+Care, 28, 626- 631.  2034 
+91. Gonder -FrederickLA, Schmidt KM, Vajda KA, et al. Psychometric Properties of the 2035 
+Hypoglycemia Fear Survey -ii for Adults with Type 1 Diabetes. Diabetes Care. 2036 
+2011;34(4):801– 806, 2011.  [ADDRESS_660668] D, Vajda KA, Hawley, Cox DJ.  Assessing 2038 
+Hyperglycemia Avoidance in People with Type 1 Diabetes. Diabetes Management. 2039 
+4(3):[ADDRESS_660669], Monk TH, Berman SR, Kupfer DJ. The Pi[INVESTIGATOR_510744] 2041 
+Index: A New Instrument for Psychiatric Practice and Research. Psychiatry Res. 2042 
+1988;28:193– 213. PMID: 2748771 DOI:10.1016/0165- 1781(89)[ZIP_CODE]- [ADDRESS_660670] of the Bionic 2044 
+Pancreas During Summer Camp. J Diabetes Sci Technol. 2016;10(4):840– 844, 2016.  [ADDRESS_660671] K.  2046 
+Assessing patient -reported outcomes for automated insulin delivery systems: the 2047 
+psychometric properties of the INSPI[INVESTIGATOR_418084].  Diabet Med. 2019 May;36(5):644 -652. 2048 
+doi: 10.1111/dme.[ZIP_CODE].  2049 

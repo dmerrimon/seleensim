@@ -1,0 +1,218 @@
+Encouraging Blood Donation in Patients With a Blood Type in Short Supply  – Part 2  
+ 
+Protocol and Statistical Analysis Plan  
+ 
+[STUDY_ID_REMOVED]  
+ 
+July 3 , 2023  
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Protocol  
+ 
+Scientific background  
+ 
+There has been a years -long national shortage of several blood types in the U.S., including in 
+the Geisinger community. Previously, the study team collaborated with Miller Keystone, where 
+Geisinger refers patients who wish to donate blood and from whom Gei singer receives blood for 
+clinical purposes, on an outreach study to encourage blood donation in patients with needed 
+blood types. The study demonstrated that, compared with a no-message control group, patient 
+portal messages sent to patients with needed b lood types increase patients' likelihood of 
+attending donation appointments. However, results were ambiguous with respect to which of 
+two message versions was most effective. One version, which stated that the patient had a 
+needed blood type (blood -type me ssage), caused a numerically, but not significantly, higher 
+number of patients who attended appointments compared to the other version, which did not 
+state that the patient had a blood type in need but rather informed the recipi[INVESTIGATOR_22874] a general 
+blood short age (no -blood -type message).  
+ 
+Because Miller Keystone particularly values reaching new donors, the team ran a preregistered 
+exploratory analysis to test whether the messages were differently effective for new donors 
+compared to those who had previously don ated at a Miller Keystone site. There was a 
+significant interaction between previous donor status (previous donor, previous non -donor) and 
+message type, such that previous non -donors were relatively more responsive to the blood -type 
+message, while previous  donors were more responsive to the no -blood -type message. 
+However, the groups were uneven with respect to the number of patients that had previously 
+donated. Moreover, when the analysis was limited to patients who opened their messages, this 
+interaction e ffect disappeared: blood -type messages were still most effective in previous non -
+donors, and there was no difference in message effectiveness among previous donors. These 
+follow -up analyses, and the unevenness of previous donors across groups, call into qu estion the 
+robustness of the interaction effect.  
+ 
+Objectives  
+ 
+The present study again test ed whether the blood -type message is more effective than the no -
+blood -type message for patients with needed blood types overall, and separately for previous 
+donors an d non -donors. Messages in the present study were  sent via email rather than via 
+patient portal. Randomization occur red at the email -address level to one of the two message 
+types to ensure everyone using the same email address receive d the same message (alt hough 
+each patient was sent an individualized message with their name; there was no no -contact 
+[CONTACT_416358]). Email addresses were  excluded if they were  shared by [CONTACT_416359]. Randomization was stratified by [CONTACT_416360] (email addresses shared by [CONTACT_416361] -
+donors were  excluded).  
+ 
+ 
+Design  
+ 
+This study is a randomized controlled trial with 2 study arms.  
+ 
+Methods  
+ 
+Email addresses of patients enrolled in the study were randomized to the following arms:  
+ 
+1. No-blood -type message  – a message that did not mention the patient had a needed 
+blood type  
+2. Blood-type message  – a message that mentioned the patient had a needed blood type  
+ 
+Randomization was stratified by [CONTACT_416362] . 
+ 
+Power analysis  
+ 
+Our sample includes 40,[ADDRESS_524555] 80% power to detect an increase in the 
+primary outcome  from 0.07% (the primary -outcome  rate in previous non-donors  who were sent  
+a no-blood -type message in our previous study) to 0.16% , with a two -tailed alpha of .05.  
+ 
+Within the previous donor  group , we will have 80% power to detect  an increase  in the primary 
+outcome from 4. 76% (the primary -outcome rate in previous donors who were sent a no -blood -
+type message in our previous study) to 9.87%, with a two -tailed alpha of .05.  
+ 
+Note that a portion of the sample  will be excluded from analysis (e.g., those whose emails were 
+not sent or bounced; see the Analysis notes section for details).  
+ 
+Project status  
+ 
+All emails have been sent. No outcome data have been extracted . 
+ 
+ 
+Statistical Analysis Plan  
+ 
+Primary outcome  
+ 
+Number of Participants Who Attended a Donation Appointment  
+ 
+Attended a donation appointment within 6 weeks of their message send date, regardless 
+of whether they donated. This outcome includes patients who were unable to donate for 
+any rea son (e.g., low hemoglobin) or patients who showed up to the appointment but 
+decided to leave before donating.  
+ 
+[Time Frame: Within 6 weeks of the patient’s message send date]  
+ 
+Question  1: Within  patients who are not  previous donors, do more patients attend donation 
+appointment s if they are sent the blood -type message compared with those sent the no -blood -
+type message?  
+ 
+Analysis  1: We will test the hypothesis that previous non -donors who are sent a blood -type 
+message  are more likely to attend a donatio n appointment than those sent a no-blood -type 
+message . We will run an OLS regression with a binary predictor variable indicating whether 
+patients were sent the blood -type message or the no -blood -type message . 
+ 
+Question 2:  Within  patients who are previous d onors, do more patients attend donation 
+appointments if they are sent the blood -type message compared with those sent the no -blood -
+type message?  
+ 
+Analysis 2: We will run Analysis 1  including only patients who are previous donors.  
+ 
+ 
+Analysis notes  
+ 
+Whether or not a patient is a previous donor  was determined by a data pull completed prior to 
+randomization. Because the data on previous donors from this pull was used to stratify 
+randomization,  we will use this data pull to  determine whether patients sho uld be included in 
+Analysis 1  (previous non-donors ) or Analysis 2  (previous donors) , even if we later learn the 
+patient had previously donated (e.g., if they donated after the pre-randomization data pull but 
+before the intervention began).  
+ 
+Analyses will b e conducted on the email -address level . For each email address, if any 
+associate d patient attended a donation appointment , the email address will be “counted” as 
+achieving  the primary outcome . To ensure that our findings do not depend on patients who 
+share an email address, we will also run the analyses above removing all patients who share an 
+email address with another patient in the study.  
+ 
+All analyses will exclude patients who scheduled t heir appointment prior to their message send 
+date.   
+ 
+Patients will be excluded from analysis if, according to our records, their emails were not sent 
+(e.g., due to being unsubscribed from emails) or for whom our emails bounced.  
+ 
+Timeframes listed refer to the amount of time elapsed from the send date for a given patient. 
+For instance, the primary outcome timeframe is 6 weeks; thus, for the purposes of this study, a 
+patient will be counted as having donated if they donated blood within 6 weeks of their messa ge 
+send date.  
+ 
+As a robustness check, we will rerun  the analyses above  on the subset of patients who open the 
+messages, using a time frame of 6 weeks from the date each individual patient opened their 
+message  (rather than 6 weeks from the patient’s message  send date) . 
+ 
+We will run an additional robustness check including only patients who scheduled an 
+appointment within the 2 weeks following their message send date.  
+ 
+Recent work suggests that OLS regressions are appropriate in randomized experiments with 
+binary outcome variables such as ours (Gomila, 2021) . 
+ 
+ 
+Other prespecified  outcomes  
+ 
+We will use the approaches described in Analyses [ADDRESS_524556] of the 
+intervention on the other prespecified  outcome measures listed in the pre -registration:  
+ 
+1. Number of Participants Who Successfully Donated Blood  
+ 
+Attended a donation appointment within [ADDRESS_524557] from or left their 
+appointment without donating.  
+ 
+[Time Frame: Within 6 weeks of the patient’s  message send date]  
+ 
+2. Number of Participants Who Scheduled a Blood Donation Appointment  
+ 
+Scheduled an appointment within 2 weeks of their message send date.  
+ 
+[Time Frame: Within 2 weeks of the patient’s message send date]  
+ 
+3. Number of Participants Who Scheduled a Blood Donation Appointment  
+ 
+Scheduled an appointment within 6 weeks of their message s end date.  
+ 
+[Time Frame: Within 6 weeks of the patient’s message send date]  
+ 
+ 
+ 
+Additional exploratory analyses  
+ 
+1. Primary outcome in the full sample   
+ 
+We will run an OLS regression to test whether the primary outcome varies as a function 
+of experimental group  in the full sample, without dividing the sample by [CONTACT_416363].  
+ 
+2. New donors vs. previous  donors  
+ 
+We will run an OLS regression to test whether the primary outcome  varies as a function 
+of experimental group, a bivariate indicator for whether or n ot the patient previously 
+donated blood, and the interaction between these variables.  
+ 
+3. Time to donation  
+ 
+We will run regression models to test whether either intervention message influenced the 
+timing (time elapsed since the message was sent) of donations.  
+ 
+4. Type of donation  
+ 
+We will test whether there are differences in donation type (particularly whole blood and 
+red blood cell donations) as a function of experimental group.  
+ 
+5. Demographics  
+ 
+We will run regression models to test for main effects of several demographic factors on 
+donation behavior, along with interactions between these factors and message group. 
+These demographic factors  may include binned age  (18–24, 25 –34, 35 –44,45 –54, 55–
+64, and  65+), sex, race, ethnicity, line of insurance (as a p roxy for socioeconomic 
+status), and Charlson Comorbidity.  
+ 
+ 
+References  
+ 
+Gomila, R. (2021). Logistic or linear? Estimating causal effects of experimental treatments on 
+binary outcomes using regression analysis. Journal of Experimental Psychology: General , 
+150(4), 700 –709. https://doi.org/10.1037/xge0000920  
+ 

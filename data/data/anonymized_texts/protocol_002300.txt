@@ -1,0 +1,1073 @@
+ Page 1 of 22 Revised: 07.08.2021  1. Protocol Title 
+Rehabilitation of Complex TBI with Sensory Integration Balance Deficits; Can Early Initiation of Rehabi litation with 
+Wearable Sensor Technology Improve Outcomes? 
+ 
+2. Objectives 
+In Aim I, we will 1) determine the role of timing in rehabilitation after mTBI and 2) determine meaningful change 
+measures of novel head stability and gait metrics after rehabilitation. In Aim II, we will 1) validate 3D head and 
+trunk motion inertial algorithms with Motion Analyses during the 3 specified exercises 2) devel op reports with 
+visual displays for the physical therapist to determine performance and compliance of home ex ercises done 
+during each week and 3) compare the outcome of the subjects who used wearable sensors during the home 
+exercise program versus those who did not. In Aim III, we will 1) develop and validate real-time algo rithms for 
+physical therapists to observe and measure head movement and trunk stability during e xercises (head 
+movement - range of motion of head movement and peak velocity; trunk – stability RMS); 2) determine 
+feasibility of physical therapists using the feedback system in the clinic during rehabilitati on, and 3) collect 
+normative values on 50 healthy control subjects to enhance interpretation of feedback an d report to the 
+physical therapist. 
+ 
+Our long-term goal is to clarify best practices for the rehabilitation of balance deficits in  people with mTBI by 
+comparing early vs late (standard of care) initiation of physical therapy with and without wearabl e sensors on 
+balance deficits after mTBI. There are three objectives of this proposal: 1) To determine the role of timi ng in 
+rehabilitation of balance deficits in people with mTBI 2) To determine if home monito ring of balance and 
+vestibular exercises using wearable sensors improves outcomes and 3) To develop a nov el feedback system 
+using wearable sensors to provide physical therapists information, in real-time during train ing, about quality of 
+head and trunk movement during exercise. To achieve these objectives, we have the following Specific Aims : 
+Aim I. Early Intervention: To determine the effects of early versus late rehabilitation for balance defici ts in mTBI.  
+We hypothesize that early rehabilitation initiated at the initial physician visit will im prove outcomes more than 
+standard of care (later initiation of physical therapy) in people with mTBI who have complaints of imbal ance. We 
+will also determine clinically meaningful change measures due to rehabilitation for objecti ve measures of head 
+stability during gait, based on Patient Global Impression of Change Scale (Hurst and Bolton 2004). We will 
+randomize 160 people with mTBI, between the ages of 18 and 60, into early rehabilitation (within firs t 2 weeks 
+after physician visit) or late rehabilitation (standard of care; 60 days from first physician visit). People will be 
+tested before and after a 6-week rehabilitation program and again 6 months later to determin e long-term 
+effects. Our primary outcome to measure efficacy of rehabilitation is the Dizziness Handicap Inventor y (DHI). 
+Secondary outcomes will be structured along the International Classification of Function and Disab ility (ICF) 
+models framework. We will measure baseline peripheral vestibular and ocular motor function and other 
+covariates in rehabilitation efficacy. In Aim I, we will 1) determine the role of timing in rehabi litation after mTBI 
+and 2) determine meaningful change measures of novel head stability and gait metrics after rehabilitation . 
+ 
+Aim II. Home Monitoring: To compare traditional balance rehabilitation versus balance rehabil itation with 
+sensor-based home monitoring of compliance and quality of prescribed exercises. We hypothesiz e that 
+providing physical therapists with objective measures on compliance and the quali ty of prescribed exercises 
+performed at home, using wearable sensors, will improve outcomes in rehabilitation . Subjects entering 
+rehabilitation in Aim 1 (both early and late rehabilitation) will be further randomized into ei ther: 1) home 
+exercise program or 2) the same home exercise program with wearable sensors worn on the forehead and trunk 
+to monitor compliance and quality of performance during home exercises. The data from the sensors will be 
+reviewed by the physical therapist at the subsequent weekly visit. All people will be seen 1x/ week by a physical 
+therapist and expected to do a home exercise program. People will be tested before and after a 6-week 
+rehabilitation period and again 6 months later to determine long-term retention. In  Aim II, we will 1) validate 3D 
+head and trunk motion inertial algorithms with Motion Analyses during the 3 specified exercises 2) develop 
+reports with visual displays for the physical therapist to determine performance and compliance of home 
+ Page 2 of 22 Revised: 07.08.2021  exercises done during each week and 3) compare outcome of the subjects who used wearable sensors durin g 
+the home exercise program versus those who did not. 
+ 
+Aim III. Real-time Monitoring for Training: To develop and evaluate a novel sensor syst em to provide real-time 
+feedback to physical therapists on head and trunk movement during training. We hypothesize that real-time 
+feedback on head and trunk movements during prescribed exercise will be feasible for a physical therap ist to 
+use during training sessions. Five physical therapists and 25 patients with mTBI will test and eval uate our new 
+prototype head and trunk motion feedback system in preparation for future clinical efficacy trials. In Aim  III, we 
+will 1) develop and validate real-time algorithms for physical therapists to observe and measure head movement 
+and trunk stability during exercises (head movement - range of motion of head movement and peak v elocity ; 
+trunk – stability RMS); 2) determine feasibility of physical therapists using the feedback sys tem in the clinic 
+during rehabilitation, and 3) collect normative values on 50 healthy control subjects to  enhance interpretation of 
+feedback and report to the physical therapist. Input from researchers, physical therapists and mTBI patients  on 
+the perceived usability of the real-time feedback will be used for further tuning and optimizing  the system. 
+ 
+3. Background 
+Every year 1.7 million people sustain a traumatic brain injury (TBI) in the United States and of these, 84% are 
+considered mild TBI (mTBI) (Faul, Xu et al. 2010, Group 2016). According to data from the Defense and Veterans 
+Brain Injury Center, 18,686 Service Members sustained a mTBI in 2015 (Defense 2015). The estimat ed annual cost 
+to society from TBI, including lost productivity, was $60.4 billion (Corso, Finkel stein et al. 2006, Coronado, 
+McGuire et al. 2012). Data suggest that during deployment as many as 20% of Service Members may have  
+suffered a mTBI (Terrio, Brenner et al. 2009). Balance impairments are a common complaint after mTBI,  with an 
+estimated odds ratio of 3.14 in chronic mTBI compared to control subjects (Vanderploeg, Curtiss et al. 2007) . 
+Ongoing balance problems are significant contributors to anxiety, difficulty with return  to work, and may even 
+underlie the observation that people with a recent history of mTBI are at a threefold greater risk of sustaining a 
+second mTBI (Guskiewicz, McCrea et al. 2003, McCrory 2011). 
+ 
+Although balance is one of the most common and debilitating complaints after mTBI, we currentl y lack clear 
+guidelines on when to initiate balance rehabilitation and it is unclear if early physical therapy  is beneficial. A 
+recent systematic review that focused on early rehabilitation for mTBI was inconclusive stati ng that there was a 
+paucity of well-designed trials that could address the question adequately (Gravel, D’Angelo et al. 2013) . 
+However, some evidence suggests that prolonged or strict rest, while it continues to b e common practice, may be 
+counterproductive (Silverberg and Iverson 2013, Thomas, Apps et al. 2015). Rest within the first week is well 
+established as a guiding principle for treating physicians. A paper in 2016 surveyed 572 physici ans and reported 
+that 97% recommended rest within the first week of injury (Rose, Fischer et al. 2016). However, when sym ptoms 
+do not resolve after a few weeks, the guidelines and practices are less clear and less consistent. Prelimin ary 
+evidence suggests that beginning subthreshold activity as part of a rehabilitation program may be beneficial 
+(Grabowski, Wilson et al. 2016) but this approach is not standard practice. A retrospective chart review rep orted 
+that, of 266 patients, only 25% of people were referred to PT and/or vestibular rehabilitation du ring the 
+management of their protracted recovery after mTBI (Kostyun and Hafeez 2015). Another recent study re ported 
+that the median time from injury to PT visit was 60 days (Alsalaheen, Mucha et al. 2010). There is evidence for 
+peripheral vestibular dysfunction after mTBI (Hoffer, Gottshall et al. 2004, Akin and Murnane 20 11) as well as 
+central sensory integration deficits from mTBI (Walker, Cifu et al. 2012), both of which could  cause imbalance. A 
+systematic review identified impaired balance after injury as one of the most prevalent and consistent indicators 
+of mTBI, along with disorientation or confusion, slowed reaction time and impaired verbal  learning and memory 
+(Carney, Ghajar et al. 2014) .  
+ 
+There is a clear gap in our clinical care guidelines after mTBI and it is unclear if initiating rehabilitation e arly would 
+improve outcomes related to imbalance. The timing of physical therapy has been stud ied most extensively for 
+orthopedic, stroke and vestibular impairments and there is a general consensus that earlier intervention i s better 
+ Page 3 of 22 Revised: 07.08.2021  for conditions such as acute low back pain (Wand, Bird et al. 2004), dizziness (Whitn ey, Alghadir et al. 2016), 
+post-surgery (Schaller, Anstey et al. 2016), and stroke rehabilitation (Musicco, Emberti et al . 2003). However, the 
+message is less clear after mTBI since early activity may exacerbate symptoms and there is concern ov er Second 
+Impact Syndrome (Rose, Fischer et al. 2016). Although rest is a well accepted recommendatio n acutely after 
+injury, the rest period is not specified. Further, strict rest acutely after concussion may be less beneficial than a 
+stepwise return to activity within days of injury (Thomas, Apps et al. 2015). It is thought that the brain can 
+undergo plastic change throughout one’s life and that there are critical periods during development and after 
+injury in which neuroplasticity capabilities are highest (Nudo 2003). Experience –dependent plasticity during these 
+phases may result in the largest behavioral changes (Wolf, Winstein et al. 2006, Kleim and Jones 200 8, Holtmaat 
+and Svoboda 2009). Conversely, maladaptive compensatory mechanisms may also devel op after injury whereby 
+avoidance of movements that provoke discomfort (i.e. dizziness or imbalance) m ay be inappropriate (Taub 1980, 
+Shepard and Telian 1995) . This notion of early intervention contradicts the ‘prolonged rest’ that many physicians 
+adhere to in treating people with mTBI.  
+ 
+Measures of imbalance are subjective and are easily overlooked as a treatable deficit. The most frequently  
+administered clinical balance test after mTBI is the Balance Error Scoring Scale (BESS) in which people are asked 
+to stand in varying conditions (i.e. eyes closed on firm surface or foam surface) to challeng e their postural 
+stability. Errors, such as loss of balance, are counted subjectively by the clinician (Rieman n and Guskiewicz 2000) . 
+Recent studies have reported that the BESS has a high degree of subjectivity and provides only limited, l ow-
+resolution information about the balance control system and does not provide a sensiti ve scale on which to judge 
+progress or deficits (Finnoff, Peterson et al. 2009, Giza, Kutcher et al. 2013). Sub-optim al psychometric properties 
+(sensitivity 34% –64% to detect mTBI) have also been reported for the BESS and are likely due to the subjectivity 
+of the measurement (Finnoff, Peterson et al. 2009, Giza, Kutcher et al. 2013). We believe that such  poor 
+clinometric properties of this clinical test do not lend itself to timely referrals to ph ysical therapy. Clinical balance 
+tests with limited properties may lead to lower detection rates and make it difficult to detect tho se who might 
+benefit from physical therapy. A more objective measure of balance may help identify people with i mpaired 
+balance due to sensory deficits (i.e. vestibular) and/or central sensory motor integration defici ts in which an early 
+physical therapy may help recovery. Our work has provided evidence that instrumenting common balance tests 
+with inertial sensors can better differentiate people after mTBI compared to standard subjective measures of 
+balance (King, Horak et al. 2014) (See Preliminary Data).  
+ 
+Even with rehabilitation, recovery of balance in people with mTBI is challenging, particularly in  people with 
+central vestibular and sensory integration deficits (Pfaltz and Kamath 1970). In addition to addres sing the timing 
+of physical therapy intervention, this proposal addresses 2 other potential obstacles for successful rehabili tation 
+after mTBI; 1) poor compliance and quality of performance of home exercise program (standard of care af ter 
+mTBI for balance rehabilitation) and 2) lack of important feedback during training o f balance and vestibular 
+exercises on head and trunk movement during movement. In this proposal, we aim to improve h ome exercise 
+program and improve training in the clinic; both using novel wearable sensor technology. 
+ 
+Home monitoring: Vestibular and balance rehabilitation after mTBI relies heavily on a ho me exercise program 
+and repetition is essential for recovery (Shepard and Telian 1995). We recently published  a paper showing that 
+home exercise program is the least effective way to address balance deficits in people with Parki nson’s disease 
+compared to a group class or individualized physical therapy (King, Wilhelm et al. 2015) . This finding was 
+particularly true is if a person had common comorbidities such as depression or mild cog nitive impairment, also 
+commonly seen after mTBI. Despite this, a home exercise program remains an important part of care after m TBI 
+and, in fact, all patients with mTBI in our rehabilitation clinic are prescribed a home exercise component to  
+address imbalance and dizziness. The average time they are seen by physical therapy is only 1x/ week. However, 
+we believe that home exercise can be improved using wearable sensors to monitor compliance and pe rformance 
+at home.  
+ 
+ Page 4 of 22 Revised: 07.08.2021  The slow progress in balance rehabilitation may be partially due to an inability of people with mTBI to correctly 
+perform the prescribed rehabilitation exercises on their own. There is evidence that people with vestib ular 
+pathology have impaired perception of body position such as head in relationship to trunk and m ay limit head 
+velocity and head in relation to trunk to minimize symptoms (Borel, Harlay et al. 200 2). After mTBI, participating 
+in a home exercise program that emphasizes head movement may be particularly difficu lt to comply with and 
+may  explain slow or delayed recovery. Vestibular and balance rehabilitation relies on progressiv ely increasing 
+head movement amplitude and velocity during static and dynamic balance tasks while maintaining a stable trunk 
+(Konrad, Tomlinson et al. 1992, Kang and Tusa 2013). Further, other comorbidities such  as depression could limit 
+compliance and determination to perform the home portion of rehabilitation. 
+ 
+Training in the physical therapy clinic: One of the most important components of motor learni ng is feedback of 
+performance, yet this important feature is hard to implement objectively in balance rehabilitatio n. For example, 
+orthopedic physical therapy focuses on objective measures of joint angles, peak torques and gait speed du ring 
+task acquisition. Rehabilitation of balance deficits is more difficult to quantify and to provide feedback around a 
+training task. Subtle movements, such as postural sway and head and trunk synchronicity are often not detected 
+visually. Furthermore, people with mTBI show more deficits during complex mobility tas ks, yet we do not 
+objectively evaluate and provide feedback on complex tasks in the clinic.  For example, an average individual turns 
+over 800X/ day (Mancini, El-Gohary et al. 2015) and 35-45% of all steps during daily  locomotion are not straight 
+(Glaister, Bernatz et al. 2007). A stereotyped multi-segmental sequence of reorientation occurs du ring turning, 
+whereby vision is realigned with the new direction of travel and closely followed by  the head then trunk and 
+pelvis (Authié, Hilt et al. 2015) . The anticipatory lead of the head and “top -down” reorientation is necessary to 
+maintain gaze stabilization in the new direction of movement (Akram, Frank et al. 2010) . Yet, individuals with 
+recent mTBI show more variable reorientation sequencing (Powers, Kalmar et al. 2014). Independent eye 
+movement, head rotation, and trunk rotation, is important for everyday mobility to int egrate visual, vestibular, 
+and somatosensory information and may be impaired after mTBI. Even during straight ahead gait, the role of 
+head stability is critical to maintain a stable visual field. Less independent oculomotor control has been 
+associated with poorer balance performance in athletes with mTBI (Murray, Ambati et al. 2014). A recent s tudy 
+using Motion Analysis showed a lack of head and trunk synchronicity during gait on a treadmil l in people with 
+vestibular deficits and TBI (Sessoms, Gottshall et al. 2015) and such asynchronicity may lead t o avoidance 
+behavior and decreased quality of life, and delayed return to previous levels of function (Shepard and T elian 
+1995). We believe it is critical to evaluate and treat complex balance skills and to incorp orate performance 
+information objectively into training and rehabilitation.  
+ 
+Biofeedback is a clinical technique that provides physiologic information that wou ld otherwise be unknown to 
+patients and may improve outcomes after mTBI. Biofeedback complements the patients’ internal feedback 
+(visual, auditory, and proprioceptive) and re inforces patients’ weaker or absent sensory signals. Different forms 
+of biofeedback have successfully been used in laboratories for the treatment of gait abnormalities in patient s 
+with Parkinson's disease (McIntosh, Brown et al. 1997, Nieuwboer, Kwakkel et al. 2007, Horak, Wrisley  et al. 
+2009), Multiple Sclerosis (Baram and Miller 2006, Baram and Miller 2007), Stroke (Glanz, Klawansky et al. 1997, 
+Thikey, Grealy et al. 2012), Amputation (Lee, LIN et al. 2006), and Spinal Cord Injuries (Jensen, Barb er et al. 2009) . 
+We have also shown significant benefits of practicing tandem gait with vibrotactile biofeed back in people with 
+unilateral vestibular loss (Horak, Dozza et al. 2009) and auditory biofeedback to improve postural sw ay during 
+standing in subjects with bilateral vestibular (Dozza, Chiari et al. 2006, Dozza, Wall Iii et al . 2007). Biofeedback has 
+also been successfully used in the laboratory to reduce leg loading after total hip arthroplasty (Pataky, Rodrig uez 
+et al. 2009), increase knee motion symmetry after total knee arthroplasty (McClelland, Zeni Jr et al . 2012), and to 
+modify gait and reduce knee joint loads (Dowling, Fisher et al. 2010). While electr oencephalography biofeedback 
+has been explored to rehabilitate cognition (Thornton and Carmody 2009) and others have desc ribed the 
+potential of biofeedback to improve balance and gait in the mTBI population (Lawson and Rup ert 2010, Collins, 
+Markham et al. 2015, Mortimer, McGrath et al. 2015, Sessoms, Gottshall et al. 2015),  we are unaware of any 
+ Page 5 of 22 Revised: 07.08.2021  study that has examined the use of biofeedback to improve the compliance and performance of prescrib ed 
+rehabilitation exercises for mTBI. 
+ 
+There are no commercially available systems to provide the physical therapist and/or patient objectiv e 
+information on the quality of head movements during training of rehabilitation tasks that involve balance and 
+walking. Despite evidence that people with vestibular deficits and TBI may have impaired percepti on of head 
+movement (Borel, Harlay et al. 2002), we currently have no easy way to quantify or provi de feedback during 
+therapy on these important aspects during functional mobility. Computerized dynamic v isual acuity testing is 
+available to measure 1) changes in visual acuity at head velocities associated with the Vestibul o-Ocular Reflex 
+(VOR) and 2) the maximum head velocity the patient can achieve while maintaining accurate vision durin g a gaze 
+stabilization test (Herdman, Tusa et al. 1998). While this system provides a quantitative assess ment of gaze 
+stabilization with head movement, it is limited to stationary, in-clinic use. Since home e xercise programs are an 
+integral part of rehabilitation care after mTBI, a portable system for monitoring head movements  and one that 
+can assess head movement in walking conditions is needed. The ideal system would be wearable and po rtable for 
+both clinic and home use and would combine biofeedback with monitoring capa bilities. Our intention is to design 
+and build a wireless biofeedback system to allow therapists to select among a variety of exercises that target 
+balance and vestibular function. This system will (1) enable physical therapists to teach their pati ents to perform 
+the exercises correctly, (2) monitor quality and rate of improvement in home exercise performance, and  (3) 
+enable patients to monitor their own progress and increase their adherence to home exercise regimen. 
+ 
+Relationship to other funded studies: Our group has extensive experience running clinical trials an d studies 
+related to gait, balance and rehabilitation in people with mTBI. This proposal is a natural contin uation of previous 
+funding. In 2012 we were awarded a pilot grant (Center for Translation of Rehabilitation Engineeri ng Advances 
+and Technology; King PI) to develop a protocol for instrumented balance testing which was tes ted on people with 
+chronic post-concussion syndrome (King, Horak et al. 2014). From there, we moved the instrum ented balance 
+testing to onsite assessment at 6 local Universities (NIH; Oregon Clinical Translational Research Center  (OCTRI) 
+KL2 Award and National Institute of Health KL2TR000152; R21 NIH R21HD080398; King PI) t o explore the 
+usefulness of wearable sensors in acutely injured athletes and to determine trajectory of balance recovery after 
+concussion. We enrolled 50 people with mTBI and 75 controls (results are under review). Most recen tly, we 
+received funding from the DOD (King PI-W81XWH- 15-1-0620) to investigate central sensorimotor integration and 
+vestibular deficits in people with chronic non-resolving balance deficits after mTBI. With th at funding we have 
+developed new methodology to assess central sensorimotor integration (CSMI test) using a commercial ly 
+available Neurocom platform and are currently executing that study. We will use the CSMI test in  the proposed 
+study as an impairment level outcome measure. 
+ 
+PRELIMINARY STUDIES 
+Pilot data for Aim I 
+The primary goal of Aim I is to determine the role timing plays in rehabilitation effi cacy after mTBI. To accomplish 
+this goal, we will randomize people into early physical therapy (within first two weeks of phy sician visit) or late 
+physical therapy  (standard of care; 8 weeks from first physician visit). We will use both recommended  Common 
+Data Elements (CDE) outcome measures alongside innovative objective measures to quantify balan ce control and 
+change after rehabilitation. In preparation for this proposal, we have investigated current rehabi litation practice 
+at our University and summarized our ongoing and published research demonstrating the value of objective 
+balance and gait measures for mTBI. 
+ 
+ Page 6 of 22 Revised: 07.08.2021  Despite evidence of early intervention being a critical aspect of rehabilitation for many balan ce problems, people 
+with mTBI are not being seen early by physical therapy. Our 
+University has a comprehensive mTBI rehabilitation program 
+that incorporates physical therapy recommendations from 
+recent guidelines to include work on vestibular dysfunction, 
+high-level balance dysfunction, attention and dual-task 
+performance deficits (Weightman, Bolgla et al. 2010) . 
+However, even at our specialized mTBI clinic, the referral 
+patterns for physical therapy are late and inconsistent. We 
+randomly sampled 40 patients who were seen in OHSU 
+Rehabilitation Center between October 2014 and September 
+2016. The average age of this population was 37.5 ±12 years. Figure 1 shows the average timel ine for patients 
+seeking care after mTBI. On average, people were seen by the primary care physician on average 10 days after 
+injury. In this group, 80% had complaints of imbalance and/or dizziness at their first physi cian office visit and yet 
+the average time to see physical therapy was on average 61 days later.  
+ 
+The lack of guidelines after the initial ‘rest period’ leads to inconsistent rehabilitation care. In  the same 40 mTBI 
+patients, we found that, unlike the initial physician visit, the timing for the initial physical  therapy visit was 
+extremely varied and unrelated to patients’ symptoms     (r = 
+-0.049, p = 0.32). Figure 2 compares the right-skewed 
+distribution of the time from injury to the first physician visit, 
+with the delayed and variable distribution of the time from 
+injury to the first physical therapy visit. The people who were 
+seen early in physical therapy were the small 
+percentage of people who had a direct 
+referral from the OHSU Concussion Clinic. 
+Similarly, we found that a random sampling of 
+20 Veterans with mTBI seen at our Portland 
+VA in Sept 2016, 60% (12/20) had subjective 
+complaints of imbalance and/or dizziness and 
+the average length of time to be seen by 
+physical therapy for the first visit for Veterans 
+was approximately 48 days from that 
+physician visit. However, this group 
+represented a more chronic population and 
+had likely been seen outside the VA prior to 
+the first physician visit at the Portland VA.  
+ 
+We have data indicating that mTBI subjects 
+with chronic balance complaints demonstrate 
+abnormal sensorimotor weighting strategies 
+for balance control. We tested 6 subjects with 
+Figure 2.  Histograms showing distribution of time from injury until 
+the first physician visit and until the first physical therapy visit.  Figure 1.  Average time from injury to first visit with a physician and 
+time from first physician visit to first visit with a physical therapist  
+ 
+Figure 3 . Central Sensorimotor Integration (CSMI) test. A. Balance 
+control model used to interpret experimental body sway evoked by 
+surface and/or visual tilt stimuli. B. Example results showing mean CoM 
+body sway across 11 stimulus cycles evoked in a control subject and a n 
+mTBI subject by a surface tilt stimulus during eyes closed stance. C. 
+Sensory weighting factors from control subjects (mean±sd) and 
+individual mTBI subjects from 4 test conditions. 
+ 
+ Page 7 of 22 Revised: 07.08.2021  chronic mTBI and 16 healthy control subjects using a novel Central Sensorimotor Integration (CSMI)  test. This 
+data was obtained from currently funded DOD project # W81XWH- 15-1-0620. The CSMI test evokes body sway in 
+response to continuously applied pseudorandom wide-bandwidth, low-amplitude rotati ons of the stance surface 
+and/or the visual scene viewed by the subject (Fig. 3B). The Center of Mass sway responses are interpreted with 
+reference to a mathematical model (Fig. 3A) of the balance control system by adjusting mo del parameters to 
+optimally account for the experimentally observed body sway. The identified model parameters are 
+physiologically meaningful and include ‘sensory weights’, which quantify the proportional con tributions of 
+sensory systems to balance control, neural controller parameters, which quantify the amount of corrective action 
+(ankle torque) generated to control balance, and the time delay in initiating corrective actions (P eterka 2002) .  
+Four of 6 chronic mTBI subjects tested to date showed abnormalities in sensory weighting scores on at l east 1 of 
+4 test conditions indicating increased abnormal reliance on proprioception and/or vision fo r balance control (Fig. 
+3C). Additionally, 4 of the 6 mTBI subjects also showed reduced corrective action in one or more test conditions 
+(not shown). Abnormally high sensory weights in a given test condition correspond to a  greater disruption of 
+balance in response to balance disturbances and balance is further disrupted when corrective action s are weaker 
+than normal.  
+ 
+Our preliminary results demonstrate that major sensorimotor integration deficits are present in many m TBI 
+subjects with chronic balance complaints and that CSMI testing can characterize these deficits in individual  
+subjects. The identified abnormal balance control (i.e. decreased weighting on vestibular inform ation) strategies 
+may be responsive to rehabilitation. Therefore, CSMI testing has the potential to track the effectiveness of 
+rehabilitation in restoring normal balance control strategies. It is currently unknown if the abnor mal strategies 
+observed in chronic mTBI are due to maladaptive compensation that may be avoided with early intervention.  
+We have recently demonstrated that instrumented tests of balance and gait are more senstive to mTBI than the 
+clinical BESS. Balance impairment is most commonly assessed with a subjective question on im balance 
+(Guskiewicz, Register-Mihalik et al. 2013) and, sometimes, a clinical assessment such as the BESS (Shumwa y-Cook 
+and Horak 1986, Riemann and Guskiewicz 2000). The low sensitivity (< 
+64%) (Finnoff, Peterson et al. 2009) of the BESS may contribute to 
+inconsistent referrals. We have shown that wearing an inertial sensor on 
+the waist while performing the BESS significantly improves its sensitivity 
+to mild impairments (Mancini, Salarian et al. 2012, King, Horak et al. 
+2014). Specifically, mediolateral (ML) root-mean-squared (RMS) 
+acceleration during double stance with eyes closed was more sensitive 
+to classifying mTBI than clinical error counts when comparing the areas 
+under the receiver operator characteristic curves (ROC) (AUC = 0.74 vs, 
+0.61) from 128 college athletes; 50 with acute mTBI at approximately 2 
+days post-injury (Fig. 4). While wearable sensor data is not currently 
+used for balance assessment in the clinic, we have found it feasible for a 
+trained assistant to perform instrumented tests of static and dynamic 
+balance in patients with mTBI presenting to our clinic. Wearable sensor 
+technology is commercially available and could readily be adopted for 
+use in rehabilitation of balance disorders in mTBI patients presenting with imbalance. In th is proposal we will 
+develop and refine test protocols that can be used specifically for mTBI. Increasing the sensitivity o f clinical 
+balance testing may improve the consistency of referrals for physical therapy 
+ 
+Pilot data for Aim II  
+The primary goal of Aim II is to improve the compliance and quality of the rehabilitation exercises after mTBI by 
+monitoring and reporting the performance of a home exercise program while using wearabl e sensors during self-
+directed exercise at home. Here, we summarize preliminary data showing that head control is ab normal after 
+mTBI which presents a challenge to consistently high quality exercises that target impairment. 
+ 
+Figure 4.  ROC curves for Instrumented and non- 
+instrumented BESS 
+ Page 8 of 22 Revised: 07.08.2021  We have preliminary data showing that individuals with mTBI do not perform balance rehabilitati on exercises in 
+the same way as controls, despite similar instructions and ability to perform the task while workin g with the  
+physical therapist. In our Rehabilitation Clinic, a physical therapist instructed 2 people with mTBI and 2  control 
+subjects to perform a series of 3 common balance and vestibular exercises: gaze stabilization wh ile standing, 
+walking with head turns and quiet stance on foam with head turns. After all 4 people had learned the exercises, 
+we later tested them, without coaching and without feedback, to perform the exercises, as they were meant t o 
+do at home. All participants wore a head-mounted Opal inertial sensor while performing the exercises. The two 
+participants with mTBI had smaller peak- to-peak amplitudes and greater variability of rotational head velocity 
+while performing the task compared to the control subjects (Fig. 5).  
+Head turns while walking may be a good indicator for recovery after mTBI. We have data on 25 young ath letes 
+with a sport-related mTBI (2 days post-injury) and 25 matched healthy controls. Adapting the p rotocol for the 
+Dynamic Gait Index (DGI), participants were asked to turn their head side to side while walking . Using an Opal 
+inertial sensor affixed to the head with an elastic headband, we found that individuals with acute mTBI ro tated 
+their heads with less velocity (3.7 rad/s versus 4.3 rad/s; p = 0.07) and had smaller head movements (0.9 1 rad 
+versus 1.0 rad; p = 0.06) during this common rehabilitation and everyday task at the initial as sessment (Fig 6). 
+Following the resolution of their symptoms, participants improved and executed the head turns a t a similar 
+angular velocity compared to controls. These preliminary results suggest symptomatic individu als with mild mTBI 
+preferentially choose slower rotational head velocities and can improve over time. We similarl y expect 
+participants in Aim II to be capable of rotating their heads faster than they preferentially choose. We expect they 
+are capable of increasing the speed and amplitude of head rotation when quantitative feedback is provid ed to 
+the physical therapist about their performance at home. The individuals presented in Fig 6 were very m ild and all 
+returned to their sport without the 
+need for a physician visit or 
+rehabilitation. In contrast, we 
+expect the participants in our 
+proposed study will be more 
+impaired since they are seeking out 
+physician evaluation of their 
+symptoms.  
+ 
+Head coordination is altered during 
+functional tasks of everyday living, 
+such as walking and turning. We 
+have preliminary data from 3 
+individuals with chronic mTBI and 
+ongoing complaints of imbalance 
+and 17 healthy controls walking around a marked course 
+containing left and right turns of 45, 90, and 135 degrees (Data 
+Figure 5.  Head rotational velocity of participants with complex mTBI and controls when in structed to rotate their head left and right while standing 
+on a foam surface with eyes closed. Left shows raw data from gyroscope on  the head and right shows means + SD 
+Figure 7.  Angular velocity of the head during left 
+and right turns of various angles. Controls shown 
+with mean ± SD. The individuals with mTBI (green) 
+exhibited consistently less peak angular velocity of 
+the head despite similar overall gait speed 
+compared to controls. Two 90° turns were 
+examined (King et al., pilot data)  
+Figure 6.  Peak rotational velocities of the 
+head during walking with head turns. When 
+symptomatic, concussed athletes had slower 
+angular velocities than controls. Peak 
+rotational velocities increased to normal 
+levels once symptoms resolved. (King et al., 
+presented at Society for Neuroscience, 2016)  
+ Page 9 of 22 Revised: 07.08.2021  obtained from currently funded DOD project # W81XWH- 15-1-0620). While turning, the subjects with mTBI 
+consistently rotated their heads slower than control subjects (Fig. 7) despite similar lumbar rotational velocities 
+and overall speed of walking during a complex walking (navigation) task as quantified by inerti al sensors affixed 
+on the head, sternum, and lumbar area. These preliminary results suggest that mTBI influences the reorientatio n 
+of the head during common ambulatory activities such as turning which could explain c omplaints of altered 
+balance during complex everyday activities. 
+ 
+Combined, these results suggest that symptomatic people with mTBI show abnormal head movements durin g 
+prescribed head turning tasks as well as in everyday mobility tasks such as walking in complex envi ronments. 
+Further, they show an inability to perform head exercises directed at increasing head movement during vari ous 
+activities suggesting insufficient vestibular recovery and poor ability to perform a home exercise p rogram. We 
+propose that recovery may be improved by objectively monitoring the quality of p rescribed balance exercises. In 
+Aim II, we expect that increasing the angular velocity and amplitude of the head move ment through home 
+monitoring of prescribed balance and vestibular rehabilitation exercises will improve fun ctional mobility during 
+complex locomotor tasks such as walking and turning. 
+ 
+Pilot data for Aim III  
+The primary goal of Aim III is to develop a novel sensor-based biofeedback system to provide real-time 
+information to the physical therapist regarding head (amplitude and velocity) and trunk stability during the 
+training phase of rehabilitation. To accomplish this goal, we will work closely with 1) A PDM (a local small 
+company that develops and commercializes inertial sensor systems to quantify human move ment), 2) physical 
+therapists from local practices (OHSU Outpatient Clinic, the Portland VA Rehabilitation Center and community 
+practices) and 3) mTBI patients to develop clinically-useful tools for balance rehabilitation after m TBI.  
+ 
+APDM has experience in adapting wearable sensors for real time feedback on gait (i.e. step length and arm 
+swing). APDM, together with our Balance Disorders Laboratory, has a current grant to support developing a 
+biofeedback system for gait training (Phase I SBIR Grant R43AG056012; NIA). For this project,  patients wear 
+sensors on the feet, wrists and trunk while walking using a non-portable, laptop-based, biofeed back prototype 
+(Fig. 8). APDM has developed and validated various innovative algorithms that use wearable inertial sensors  to 
+provide objective measures of gait and balance in patients with movement 
+disorders. These algorithms have been developed to automatically collect 
+and then analyze data offline. The algorithms use inertial sensors attached 
+to the feet and lumbar segment to identify temporal events of the gait cycle 
+including loading response, mid/terminal stance, pre-swing, and swing 
+phases. In addition to gait events, the algorithm characterizes gait and 
+dynamic balance with more than 20 spatial and temporal metrics. During 
+Aim III of this project, we will develop and validate new algorithms to 
+characterize head and trunk kinematics during movement without a laptop 
+(Fig. 8).  
+ 
+4. Study Design 
+This study is an interventional study on people with mTBI with two nested arms. Arm 1 examines whether 
+initiating interventional physical therapy earlier improves outcomes compared to the stand ard of care. Arm 2 is 
+nested within Arm 1, and examines whether added information about the quality of prescribed exercises 
+performed at home and obtained from inertial sensors further improves outcomes. A third arm of the study is to 
+develop a system capable of delivering real-time feedback on the quality of prescri bed exercises to improve 
+outcomes. 
+ 
+Figure 8.  Current APDM feedback 
+prototype using a laptop with auditory 
+feedback. 
+ Page 10 of 22 Revised: 07.08.2021  5. Study Population 
+The proposed interventional study (Aims I and II) will involve 160 human participants for intervention , all of 
+whom who have sustained a mild traumatic brain injury (mTBI) and have complex, multisensory sy stem 
+impairment and complaints of imbalance and 10 subjects for validation. Aim III will in volve a total of 80 human 
+participants: 25 subjects who have sustained an mTBI with balance and/or vestibular deficits and 50 healthy 
+control subjects and 5 physical therapists. The Oregon Health & Science University (OHSU) Concussion 
+Management Clinic currently sees 1,200 new concussion patients per year and the primary care clinics at OH SU 
+see approximately 3,000 mTBI patients per year. 
+ 
+a. Number of Subjects 
+The proposed interventional study (Aims I and II) will involve 160 human participants for intervention , all of 
+whom who have sustained a mild traumatic brain injury (mTBI) and have complex, multisensory sy stem 
+impairment and complaints of imbalance and 10 mTBI subjects for validation. Aim III will  involve a total of 80 
+human participants: 25 subjects who have sustained an mTBI with balance and/or vestibular deficits and 50 
+healthy control subjects and 5 physical therapists. A subset of (approx. 100 ) healthy adults will be tested to 
+validate and provide normative data with the updated testing protocol.  
+ 
+b. Inclusion and Exclusion Criteria 
+Inclusion criteria for Aims I and II:  Participants may be either Veterans or non-Veterans and must: 1) have a 
+diagnosis of mTBI based upon VA/DoD criteria (Control and Prevention 2014, Defense 2015), 2 ) be between 18-
+60 years-old, 3) be within the acute or post-acute stage (< 12 weeks post-concussio n) according to the VA/DoD 
+clinical practice guidelines (Group 2016) ,  4) be able and willing to come to OHSU for physical therapy and 
+perform home exercise program daily for 6 weeks , 5) have no or minimal cognitive impairment; a score between 
+0 and 9 on the Short Blessed test, and 6) have a SCAT sub score of 1 or higher on balance, dizz iness, nausea, 
+headache, or vision AND a minimum total score of 15. 
+ 
+Inclusion criteria for Aim III:  The physical therapists we will recruit to test and provide feedback on the system will 
+1) have experience in neurologic rehabilitation and 2) be naïve to the APDM mobi lity Lab system. The patients 
+with mTBI may be either Veterans or non-Veterans and must: 1) have a diagnosis of mTBI based upon VA/DoD  
+criteria (Control and Prevention 2014, Defense 2015), 2) have continued complai nts of imbalance, 3) be any time 
+point out since mTBI, 4) be able and willing to test the system and provide structured feedback. Th e control 
+subjects we will include may be either Veterans or non-Veterans and must be between the ages of 18-60  years-
+old.   
+ 
+Exclusion criteria for all categories: Participants must NOT: 1) have had or currently  have any other injury, 
+medical, or neurological illness that could potentially explain balance deficits (e.g., CNS disease, st roke, greater 
+than mild TBI, lower extremity amputation), 2) meet criteria for moderate to severe substance -use disorder 
+within the past month, as defined by DSM-V, 3) display behavior that would significantly interfere with v alidity of 
+data collection or safety during study, 4) be in significant pain during the evaluati on (5/10 by patient subjective 
+report), 5) be a pregnant female (balance considerations), 6) have past history of peripheral vesti bular pathology 
+or ocular motor deficits, 7) be unable to abstain for 24 hours in advance of testing in the use medicatio ns that 
+might impair their balance , and 8) any condition or behavior that would interfere with comprehending the 
+consent form and/or following directions.  
+ 
+c. Vulnerable Populations 
+No vulnerable populations (pregnant women, fetuses, neonates, children, or prisoners) will be inclu ded in this 
+study. 
+ 
+ Page 11 of 22 Revised: 07.08.2021  d. Setting 
+All aims will take place at OHSU and at the VAPORHCS and recruitment may also occur at communi ty clinics 
+around Portland. VA and OHSU activities:  All data collected at the VA will be collected at the National Center for 
+Rehabilitative Auditory Research by a VA investigator including an audiologist and/or a research assistant. OHSU 
+data will be collected at the Balance Disorders Laboratory, School of Nursing and Vestibular cli nic by an OHSU 
+investigator including an audiologist and/or a research assistant.  All OHSU work wil l be done on OHSU time, 
+under the OHSU portion of the approved protocol.  The rehabilitation intervention will be done i n the Balance 
+Disorders Laboratory.  
+ 
+Adaptation during COVID- 19 restrictions: During this time we will implement virtual visits or over the phone 
+visits instead of in-person. This includes recruitment, screening, and all modified testi ng and rehabilitation 
+sessions. No VA participants or VA data will be collected during this time.   
+ 
+e. Recruitment Methods 
+Aim I & II: Participants will be recruited from 3 primary sources; 1) OHSU Family Medicine cli nic, 2) OHSU 
+Concussion Clinics, and 3) community clinics.  Subjects will be screened for Aim I & II throu gh medical records by 
+RA’s and MA’s for upcoming visits to clinics. Subjects interested in participating will receive a phone screening to 
+determine basic eligibility. After passing initial eligibility screening they will be invited to come in for consent and 
+comprehensive medical history screening.  This study will use an Epic BestPractice Advisory (BPA) to recruit 
+potential participants. Researchers will work with ITG to identify potential participants based upon the above  
+eligibility criteria. Researchers will provide the list of inclusion and exclusion crit eria and ITG will build the BPA in 
+Epic based on these criteria. During a clinical interaction in Epic, if a patient meets the criteria bui lt into the BPA, 
+an Epic In Basket message will be sent to the stud y contact containing a link to the patient’s medical record.  
+Study staff will contact identified patients to determine if they are interested in participating i n the study.  Once 
+the BPA has identified a patient, it will not fire again for that same patient. Recruitment methods may include 
+websites such as the OHSU Study Participants Opportunities page; newsletters; advertisements; fl yers and other 
+printed study materials; social media; institutional communication and events; presentations;  and outreach at 
+community events.  
+Prep to Research:  
+Epic records for patients identified through the Epic BPA will be queried for eligibility and will  be contacted by 
+study personnel about the study. ResearchMatch.org will be used as one of the recruitment tools for this 
+research study/protocol. ResearchMatch Volunteers will be contacted through ResearchMatch.org. Inclu ded 
+with this submissions is a study recruitment message that will be sent to potential study voluntee rs."Aim III: 
+Participants (physical therapists, mTBI patients and control subjects) will be recruited from 4 primary sources;  1) 
+OHSU Rehabilitation Center 2) VAPORHCS (Rehabilitation and NCRAR Departments) 3) local outpatient physical  
+therapy clinics in Portland and 4) the community (non-VA clinics) . Physical therapists will be recruited from 
+OHSU, the VA and the community. Once physical therapists from OHSU, the VA and the greater communi ty have 
+been recruited, they will be the ones to identify the potential mTBI patients for this Aim. T o do this they will ask 
+the patient if they are interested in learning more about participating in a 1-hour session t o try the biofeedback 
+sensor system. If the subject is interested, the physical therapist will give the subject the research assistants 
+contact information and the subject will directly contact the research assistants. For all Aims, once poten tial 
+subjects have been identified, research assistants will be responsible for the rest of the recruitment process, 
+including further explanation of study details, screening and obtaining informed consent. The research assistant 
+will ask prescreening questions on the phone to determine if the person is an appropriate cand idate for the 
+study. If the person meets all inclusion and exclusion criteria, the research assistant will schedule the candidate 
+for the initial 1-hour appointment with the physical therapist and this will occur at OHSU in our Balance 
+Disorders Laboratory. This 1-hour session will occur outside of the PTs regular clinical  hours. Healthy controls 
+will be recruited from the community and OHSU, using posted flyers. These flyers will be po sted at community 
+centers, fitness centers, and around the OHSU area.  No flyers will be posted at the VAPORHCS.  
+ 
+ Page 12 of 22 Revised: 07.08.2021  Aim I & II: subjects will be compensated on a graduated scale to encourage retention. The first v isit 
+consisting of vestibular and oculomotor tests will be compensated $40. The second session,  consisting of 
+the baseline mobility and further oculomotor tests, will be compensated $60. The post-therapy mobi lity 
+and oculomotor session will be compensated $80, and the retention mobility and oculom otor session 
+will be compensated $100. Participants will be compensated $10 dollars per visit for each reha bilitation 
+session . There is a maximum of 5 testing sessions, and approximately eight rehabilitation sessi ons. 
+Subjects randomized into the standard of care intervention will be tested for mobility  and oculomotor at 
+both baseline and prior to starting their physical therapy. Therefore, the standard of care group will 
+have an additional session for which they will be compensated $60. If a subject does not com plete all 
+parts of a session they will be compensated a prorated amount for their time based on the 
+compensation for that session. People who complete all sessions for Aim I & II will be c ompensated 
+$275 if they are randomized into the early intervention group, or $335 is they are rando mized into the 
+standard of care group.  
+ 
+Adaptation during COVID- 19 restrictions: Participants will be compensated $10 for rehab , $20 for 
+modified Day 1, and $30 for modified follow up testings. People that complet e all modified sessions will 
+be compensated up to $190.  
+ 
+Home monitoring: Participants will be compensated $10/per day for approx. 7 days= $ 70.  This will take place at 
+two different time points during the study for a maximum compensation of $140.   
+ 
+Aim III: Physical Therapists will be compensated $100 for their time in training as well  as testing. Both 
+people with mTBI and healthy controls will be compensated $25 for the 60-minute long  session  
+ 
+f. Consent Process 
+After a phone screening for inclusion/exclusion criteria by our research assistants, subjects who come i n 
+for testing will be presented with the appropriate consent form (either for Aims I & II, or for Aim III ) that 
+explains the nature of the study and the possible risks and benefits of the experiment, as well as Healt h 
+Insurance Portability and Accountability Act (HIPAA) privacy information. The consent form also inf orms 
+the subjects that they may withdraw from the study at any time without penalty. Subjects will be given 
+privacy and ample opportunity to read, ask questions, and when satisfied document their consent to 
+participate by signing the informed consent form. Consenting will take place at the subjects’ resp ected 
+location depending on their status as a Veteran or civilian. We will obtain a joint OHSU/ VAPORHCS  
+Institution Review Board (IRB) to facilitate the process between sites. 
+ 
+Adaptation during COVID- 19 restrictions: We will provide consents to eligibl e participants through the 
+Docu-Sign System.  A link with the OHSU informed consent form (ICF), OHSU repository consent,  and 
+OHSU HIPAA authorization will be sent to the participant ’s preferred email address.  A study team 
+member will call the participant and discuss study details within the forms just like they would in-
+person.  The study team member obtaining consent will be able to answer any questions t he participant 
+may have during this time.  After the participant has signed all forms the person obtaining consent  will 
+also be sent a Docu-Sign link to sign as well.  Once both parties have signed the documents the s tudy 
+coordinator will receive an email and will save these documents to a secure OHSU server.  The 
+participant will also receive a copy of the signed documents.   
+ 
+Mental Capacity: 
+Subjects suffering from mTBI may have minimal cognitive impairment but must be able to follow 
+instructions and comprehend the consent form. Control subjects will be excluded if they are  cognitively 
+impaired. 
+ 
+ Page 13 of 22 Revised: 07.08.2021  Ongoing Consent: 
+Due to the length of this study, ongoing consent will not be considered for indi viduals participating. 
+ 
+Consent for individuals with Legal Authorized Representative (LAR): 
+Subjects with an LAR must be meet all inclusion criteria to participate in the research study. If all inclusion 
+criteria are met the Legal Representative must complete an IRB approved ‘Application & Certification for 
+Waiver or Alteration of the HIPPA Autho rization requirement’ prior to participation in the study. This 
+study will follow all rules and regulations of Title 10 United States Code Section 980 (10 USC 980).  
+ 
+6. Procedures Involved 
+Aim I & II 
+ 
+We will ask subjects their preferred contact method for appointment reminders (email, text message, o r phone 
+call).  We will send participants IRB approved text/email templates for each appointment dependent on wh ere 
+their testing location is (VA or OHSU). 
+ 
+All testing visits will take approximately 3-4 hours and will take place at either OHSU or at the  Portland VA 
+(NCRAR). During the first two initial testing sessions over two days, participants will complete que stionnaires to 
+help identify how they perceive their problems, as well as undergo clinical tests of vestibu lar function and 
+balance and gait. We will place five small (Apple Watch size) motion sensors on their waist, fe et, trunk and head 
+to measure balance and gait, and then will use a Neurocom platform to measure balance duri ng a variety of 
+sensory conditions. The platform moves and the participant stands as still as they can. They wi ll be secured in a 
+harness to eliminate the chance of falling. We will then have you perform several balance and gait a ssessments 
+such as standing on one leg, tandem stance and feet together as well as walking tests such as con tinuously 
+walking for approximately two minutes. If rehabilitation does not begin immediately, there wil l have one 
+additional balance and gait testing session just prior to beginning rehabilitation. The two fo llow up testing 
+sessions after the conclusion of rehabilitation will include the balance and gait testing but not the vestibular 
+testing. The first follow up session will occur immediately after the 6 weeks of rehabilitation and  the second 
+follow up session will be an additional 6 months later.  
+ 
+Vestibular and cognitive testing session: 
+The vestibular and cognitive testing session will involve a standard clinical battery  of vestibular and oculomotor 
+tests. All vestibular testing will be performed by an audiologist. Vestibular testing is a part  of standard training of 
+audiologists and testing as described here will be performed by a practitioner with a particular speci alization and 
+experience in vestibular testing. These tests will include: 
+ 
+Hearing Tests: 
+Your ears will be examined with an ear light to check for wax, substances or other conditions tha t might 
+interfere with the tests to be conducted. Next a soft ear-tip will be placed in your ear canal op ening and you will 
+sit quietly while small changes in ear canal pressure are made. You will then be asked to li sten very carefully and 
+respond to tones of different pitches and loudness levels. These tests will take approximately 15 mi nutes to 
+complete. 
+ 
+Oculomotor, positional and other vestibular tests:  
+Some vestibular tests require you to wear electrodes on your neck and face and listen to relati vely loud sounds 
+for short amounts of time while contracting your neck or eye muscles. For the other vestibu lar tests you will 
+wear video eye goggles that track your eye movements either while you are seated in an uprig ht chair that 
+rotates from left to right or while being positioned laying down on an exam table. Du ring the laying down 
+positioning tests you will guided to move from sitting to laying down while t he audiologist monitors your eye 
+movements with the video goggles. For testing in the chair, you will be in a lightproof boo th wearing video 
+ Page 14 of 22 Revised: 07.08.2021  goggles and first asked to follow a red dot as it moves in different ways. You will wear a seatbelt and be provided 
+with a headset so you can communicate with the examiner outside the booth. The final cha ir tests involve it 
+moving back and forth at different speeds while the examiner monitors your eye movements. Tog ether these 
+tests will take approximately an hour and a half to complete. 
+  
+Cognitive Testing:  
+Participant will complete the Automated Neuropsychological Assessment Metric test, a compu terized 
+neurocognitive test. This test will take about 40 minutes to complete. 
+ 
+Mobility and Coordination testing session: 
+The following tests and procedures will be performed a maximum of 4 times, depending on w hich physical 
+therapy group participants were randomized into. Throughout this session, participants will wear 5  inertial 
+sensors: 2 at the feet, 1 on the waist, 1 on the trunk, and 1 on the head to record the mov ements of each body 
+segment. The sensors record accelerations, angular velocities, and orientation data and wirelessly transmi t 
+these data to a computer located across the room. No PHI / PII or identifiable data is included in this 
+transmission. 
+ 
+Clinical and dynamic measures of balance, mobility and coordination: Participants wil l perform the Balance Error 
+Scoring System consisting of 30 seconds of standing quietly in various condition s. They will also perform the 
+mini-BEST, a standard clinical test of mobility that measures different elements of balance such  as walking and 
+going from sit to stand . They will also complete a complex turning task that involves motions simi lar to everyday 
+movements around a home, where they will perform several walking turns in order to navigate a marked path 
+multiple times. The time taken to complete the course will be recorded, and inertial sensors w ill record body 
+movement. Eye tracking glasses will be worn and record the motion of the eyes during turning. Additionally, a 2-
+minute walk test will be performed at 1) a comfortable pace, 2) a comfortable pace while performing a 
+secondary cognitive task. Clinical and instrumented assessment will occur simultaneously using a stop watch and 
+the inertial sensors. Participants will also wear eye tracking glasses to monitor the stability of thei r vision with 
+respect to body movements. These tests will take approximately one and a half hours.  
+ 
+Oculomotor function and coordination: The coordination between participant’s  eyes and head will be assessed 
+using a clinical assessment of vestibular and oculomotor function (Vestibular/Ocular-Motor  Screening for 
+Concussion – VOMS). Participants will wear the inertial sensors described above and the eye tracking glasses 
+described above and then be asked to follow the researcher’s finger in various configurations. Your vision will be 
+screened using eye charts to test how clear letters are on a chart while seated and while movin g your head.  The 
+researcher will ask then to report symptoms after each test. These tests will take approximately 15 minu tes to 
+complete.  
+ 
+Central Sensorimotor Integration (CSMI) Testing: Participants will be tested on a modified Res earch NeuroCom 
+platform where they will stand on a force plate to record postural sway. The surface and / or v isual surround will 
+move while the participant is instructed to maintain their balance. Participants will wear a safet y harness 
+attached above to prevent a fall in case a loss of balance occurs. Participants will complete several trials of 
+different perturbations (e.g., visual surround moving, platform moving, both moving). T his test will take 
+approximately 40 minutes to complete.  
+  
+Questionnaires:  These tests help to identify how participants perceive their problems. 
+ 
+Short Blessed Test (SBT): This questionnaire takes approximately 5 minutes and evaluates  basic cognition and 
+memory. 
+ 
+ Page 15 of 22 Revised: 07.08.2021  PROMIS Item Bank v1.0 (Satisfaction with Participation in Social Roles – Short Form 4a): This questionnaire asks 
+four questions related to how satisfied they are with social roles in the past 7 days.  It takes approximatel y 2 
+minutes and will be given at the same time as the SCAT-2.   
+ 
+IPAQ (International Physical Activity Questionnaire- Short Form): This questionnaire takes app roximately 5 
+minutes and asks intensity and type of physical activity performed in the last 7 days.   
+ 
+Dizziness Handicap Inventory (DHI): This questionnaire takes approximately 10 minutes and  asks if   participants 
+become dizzy while performing various tasks. 
+ 
+PTSD Checklist (military or civilian version depending on service): This questionnaire takes approximately 10 
+minutes and is a list of problems and complaints some people have in response to stressful l ife experiences. 
+ 
+Sports Concussion Assessment Tool – 2 (SCAT-2): This questionnaire and balance screen takes approximately 10 
+minutes and asks people to rate 22 different symptoms on a scale between zero and six. This symptom  
+questionnaire will be administered weekly by survey (REDcap) or by telephone, depending  on the participant 
+preference. 
+ 
+Neurobehavioral Symptom Inventory (NSI): This questionnaire takes approximately 10 minu tes and goes 
+through commons symptoms after traumatic brain injury (such as nausea and blurred vision) and asks th em to 
+rate symptoms.  
+ 
+Insomnia Severity Index (ISI): This questionnaire quantifies a participant’s  difficulties sleeping in the last two 
+weeks on a scale of 0-4. It takes approximately five minutes. 
+ 
+Headache Impact Test- 6 (HIT-6): This questionnaire measures one’s  ability to function in everyone life (work, 
+school, home and social situations). This questionnaire takes five minutes. 
+ 
+Quality of Life After Brain Injury (QOLIBRI): This questionnaire takes approximately 10 min utes and will ask them 
+to rate your quality of life before and after concussion. 
+ 
+Concussion Symptom Subtype Inventory (CSSI): This questionnaire takes approximately 10 minutes and asks you 
+to rate if you have had specific symptoms within eight categories at two points in time – before your injury and 
+now.  
+ 
+Patients Global Impression of Change (PGIC): This single questionnaire takes approximately 1 minute and will ask 
+people to rate how they perceive their health has changed over the course of treatment on a scale of 1-7.  
+ 
+Home monitoring: A subset of participants will be given an inertial sensor to wear at home for a peri od of time 
+(i.e. 7 days) to follow their activity recovery at home.  
+ 
+Adaptation during COVID- 19 restrictions: Modified procedures during this time will b e for study team members 
+to ask questionnaires (listed above) over the phone or through a virtual vi sit. Participants will be emailed a PDF 
+of the questionnaires for them to review while the study team member asks them to  subjectively rate their 
+symptoms.  
+ 
+Intervention: After participants are enrolled in the study, they will be randomly assig ned to begin physical 
+therapy immediately (approximately 2 weeks after their physician appointment) or within t he standard of care 
+timeline (approximately 8 weeks after their physician appointment). This randomization  will be found on a pre-
+assigned list that was generated prior to their enrollment. This randomization will be performed in RedCap by  a 
+ Page 16 of 22 Revised: 07.08.2021  statistician using the Randomization Module to ensure half the participants receive the early i ntervention and 
+half receive the standard of care timeline. Rehabilitation will last for 6 weeks with approximatel y one physical 
+therapy session per week. During these sessions, the participant will be evaluated by the physical therapist and 
+will perform exercises around commonly impaired areas such as balance performance, head move ment, and 
+aerobic exercise capability. They will be expected to do a home exercise program that is tail ored to their ability 
+level and you will either do this home portion as it is commonly prescribed or while using a wearable sensor to 
+track head and trunk movements. They will be progressed in their rehabilitation program acco rding to standard 
+practice and by ability level. See appendix for specific details of intervention. 
+ 
+Functional Near Infrared Spectroscopy: 
+Functional Near Infrared Spectroscopy (fNIRS) is a noninvasive, mobile 
+brain imaging modality that allows for reliable measures of cortical 
+activity. Prefrontal cortex activity data will be collected on a subset of 
+participants using a wireless portable, continuous-wave, functional 8-
+channel fNIRS system (OctaMon, Artinis Medical system) on the first and 
+last rehabilitation session when performing aerobic exercise on the 
+treadmill (Figure 9). 
+ 
+Adaptation during COVID- 19 restrictions: A study team member will send 
+or deliver the wearable sensor technology to the subject’s home.  No 
+physical contact will occur with patient. The physical therapist will do all 
+rehabilitation intervention through a virtual visit.  The home exercise 
+program will be tailored to their ability and level.   
+ 
+Post testing: After the conclusion of physical therapy, subjects will be 
+retested two times on the gait and balance testing but not the vestibular testing. The posttest session  will occur 
+after the 6 weeks of physical therapy. The follow-up session will be an additional 6 months lat er and will 
+encompass the same testing protocol as the posttest session. 
+ 
+Home Monitoring: 
+Participants may be sent home with wearable sensors at pre-physical and post-physical therapy time po ints and 
+wear the sensors for approx. 1 week. The wearable sensors will be worn for a minimum of 8 hours ea ch day and 
+collect the participant’s activity and mobility metrics.  
+ 
+Videotaping: Testing session may be videotaped for use in data checking and educational purposes. We wil l not 
+videotape if the participant requests not to be videotaped. It is not a requirement of the study. W e will use the 
+photographs and videos in research publications and educational materials, in these cases we will  use a black 
+box over the participants face to hide their identity.  
+ 
+Aim III   
+ 
+Physical therapists will be trained to use the biofeedback sensor system and will be asked to try t he system and 
+provide feedback to the researchers and company (APDM). They will also be asked to evaluate the sys tem with 5 
+of their patients who have balance deficits and mTBI. Specifically, they will use the device to provi de feedback 
+during 3 specific vestibular exercises: gaze stabilization (head turns), walking with head turns and standing  on 
+foam with eyes closed and turning the head.  Feedback will be either auditory or visual fr om the motion of the 
+head and/or trunk. People with mTBI will be asked to try the biofeedback system and provid e feedback to the 
+researchers and company (APDM).  People without mTBI will be asked to perform specified exercises that 
+require head movements during standard balance and vestibular exercises in order to obtain norm ative values 
+Figure 9.  fNIRS measurements during 
+rehabilitation  
+ Page 17 of 22 Revised: 07.08.2021  to incorporate into the patient report forms. All of these sessions will occur at OHSU in the Bal ance Disorders 
+Laboratory. 
+ 
+Questionnaires: 
+Health Screening Questionnaire: This questionnaire will take approximately 15 minutes t o complete, containing 
+questions about participant age, sex, race/ethnicity, and a comprehensive look at health histo ry and symptoms. 
+ 
+mTBI (concussion) Screening Questionnaire: This questionnaire will take approximately 15  minutes to complete 
+and contains questions about injury, severity, treatment and history to determine eligi bility. 
+ 
+Physical Therapists Questionnaires:  
+System Usability Questionnaire: This questionnaire takes approximately 5 minutes and ask the m to rate the 
+APDM Mobility Lab system for ease of use and user friendliness.  
+ 
+We will ask Physical Therapists about their general practice and experience.  
+ 
+7. Data and Specimens 
+a. Handling of Data and Specimens 
+Data on gait, balance, eye movements, vestibular and oculomotor function, and questionnaires w ill be collected 
+and stored on our secure OHSU database. All data will be entered by research personnel and stored indefinitely. 
+ 
+b. Sharing of Results with Subjects 
+The results generated in this study are experimental in nature and will not be shared with study subjects. 
+ 
+c. Data and Specimen Banking 
+Laboratory Evaluations:  Not applicable. This study does not propose to collect or  store human 
+specimens. 
+Data will be de-identified with a unique subject ID that on the PI and RA will be able to li nk the ID to the person. 
+Subject information and study data will be stored behind a locked office in a locked cabinet at OHSU (i f paper) or 
+behind a secure Oregon Health & Science University (OHSU) firewall on network drives requiring password 
+authentication (if electronic). If being stored at the VA, it will be kept on the secure VAPORHCS network fol der 
+(King17370) or in locked cabinets in locked office P5F-153 bldg 104 (if pap er). Data will be stored at OHSU in our 
+secure database and may be used for future research. We will also ask permission from our subjects to be 
+maintain their data in our Balance Disorders Laboratory repository (eIRB# 7797). 
+As required by the DOD, we will upload de-identified data to Federal Interagency Traumatic Brain Injury Research 
+Informatics System (FITBIR) quarterly. The data will have no PHI uploaded and only quantitative data will be 
+uploaded.  
+ 
+8. Data Analysis 
+ 
+Analysis of oculomotor data: We will use eye tracking along with inertial sensors on the head and tru nk to 
+examine how well the subjects is able to maintain a stable gaze, particularly in the horizontal and vertical VOR 
+conditions, by examining average eye velocity throughout the condition. Se condary measures will be the cross-
+covariance between eye velocity and head angular velocity. 
+ 
+Analysis of postural sway data: Postural sway will be automatically quantified in the ML direction usi ng APDM 
+software during each stance condition by calculating the RMS around the mean acceleration (acc), a metric 
+representing sway dispersion (APDM 2013). Our primary measure for this test will be the averaged ML RMS 
+during the Instrumented Modified BESS using an inertial sensor to measure linear acceleration of the body sin ce 
+ Page 18 of 22 Revised: 07.08.2021  this test could classify mTBI best in our previous study (King et al., under review). Ot her temporal and spatial 
+metrics such as sway velocity, frequency and jerkiness will be simultaneously collected for secondar y analysis. 
+Analysis of head stability during gait: Our primary measure during gait will be the lumbar to head attenu ation of 
+acceleration quantified by the attenuation coefficient (Iosa, Mazzà et al. 2010). The attenuation coeffi cient 
+quantifies the amount of acceleration that is dissipated when moving from inferior to superio r body segments. It 
+is calculated using the ratio of head RMS acceleration to lumbar RMS acceleration, with a larger attenu ation 
+coefficient indicating more acceleration was dissipated from the lumbar to the head. Wireless ey e tracking 
+goggles during each trial will be analyzed to obtain secondary measures including the cr oss-correlation and time 
+lag between eye, head, and trunk rotational velocities. The eye tracking glasses and head sensor will be us ed to 
+quantify change in visual field and the quality (amplitude, symmetry, smoothn ess of head movement) of 
+purposeful head turning, respectively, when participants are asked to walk while performing head turns. 
+ 
+Analysis of complex turning: Head, sternum, and lumbar mounted inertial sensors will quantify the ang ular 
+velocity of reorienting segments, specifically of the head, trunk, and pelvis. The primary outcome will  be the peak 
+axial angular velocities head for each turn. Mobile eye tracking glasses will quantify the reori entation velocity and 
+timing of the eyes with respect to the head. Eye- to-head, head- to-trunk, and head- to-lumbar sequential timing, 
+along with peak axial angular velocities of the trunk and pelvis, will be calculated from the i nertial sensors as 
+secondary outcomes. 
+ 
+Analysis of CSMI data: The primary outcome measures are the parameters derived from a model-based 
+interpretation of CoM sway evoked by pseudorandom stimuli (Table 4). The procedure for calculati ng these 
+parameters is to (1) calculate CoM angular displacement from experimental measures of hip and should er 
+displacement on each test trial, (2) use Fourier methods to calculate a frequency response function, FRF (P intelon 
+and Schoukens 2001), and (3) adjust parameters of a model of the balance control system using a  constrained 
+optimization algorithm until the model-derived FRF optimally matches the experimental FRF (Peterka 2 002, 
+Peterka 2003). 
+ 
+Sample size calculation for Aims I and II: 
+ Page 19 of 22 Revised: 07.08.2021   Sample size estimation for the efficacy of early versus later physical therapy intervention on patient-report ed 
+outcomes (Aim I) was derived from a published study evaluating the effects of early initiation o f balance exercises 
+after acute, peripheral vestibular balance disorders as measured by the Dizziness Handicap Inventory (DHI) 
+(Jacobson and Newman 1990, Bamiou, Davies et al. 2000). Patients who presented for treatment within  six 
+months of the onset of vertigo had lower DHI scores following physical therapy compared t o those who waited 
+longer (22 versus 51, Mann- Whitney, p=0.007, Cohen’s d=0.432). This significant difference in symp tomatic 
+outcome based on the effect of physical therapy latency is expected to be at least as profound in the p roposed 
+cohort given this study investigates the effects of an even earlier initiation of physical therapy,  than the six or 
+more-month latency of the described study. Assuming the effect size 
+between early and late therapy initiation observed in the literature is 
+equivalent in magnitude to the effect size expected in the proposed 
+cohort, a significant effect of time would still be observed at α=0.0 5 with 
+80% power with a sample size of 36 per group, for both the wearable 
+sensor group and standard physical therapy regimens.  
+We demonstrated the resolution of symptoms in very mild mTBI was 
+associated with increased head rotation during walking with head turns 
+(Fig. 6). Power analysis for the secondary outcome (head-turn velocity) 
+was derived from our pilot data assessing improved head velocity over 
+time. In an mTBI cohort, a significant rate of change was observed with 
+increasing head- turn velocity over time (N=26, t=4.07, p<0.001, Cohen’s 
+d=0.798, Fig. 6). With the same sample size of 36 per group, a significant 
+effect of early versus later intervention would still be observable at 
+α=0.05 with 80% power, if there is at least a 56% difference in the effect 
+size (d=0.446) between the two time-course arms for either intervention 
+group. Similarly, this effect size could also be observed to be statistically 
+significant between the feedback-enhanced intervention and standard 
+exercise regime within either the time to rehabilitation cohorts. Assuming 
+a dropout rate of ~20% over the study period, the expected effects sizes 
+would be found to be significant with a final recruitment of 40 subjects 
+for each of the four groups; totaling 160 people with mTBI for aims I and 
+II combined. 
+Primary outcome: DHI    The final sample for Aims I and II will consist of four distinct groups: A) early 
+rehabilitation using wearable sensors at-home, B) early intervention with traditional at home e xercise 
+program, C) late rehabilitation using wearable sensors at-home, and D) late intervention with traditi onal 
+at home exercise program. Linear mixed-effects models will be used in an intention- to-treat design to 
+assess the continuous rate of change in DHI over time in each group. Mixed-effects models will  be used 
+to account for within-subject correlation in the repeated measurements across time while addressing any 
+missing data due to dropouts or absentee visits. An on-treatment comparison will also be lev eraged, 
+using ordinary least squares to model to bulk change in study outcomes from baselin e to study exit for all 
+subjects completing the study.  
+To compare the effect of early versus late intervention, the main effect of time (Aim I, comparing gro ups 
+AB to CD) will be assessed in the mixed-effects model. To compare the effect of rehabilitatio n with home 
+monitoring versus standard- of-care rehabilitation, the main effect of treatment will be assessed in the 
+mixed-effects model (Aim II, comparing groups AC to BD). To compare whether the effect of at-home 
+monitoring is different between early and late rehabilitation, the interaction between time and 
+treatment will be evaluated using the mixed-effects model. Beyond the main effects of ti me, treatment 
+and their interaction, individual contrasts among groups will be considered using an ANOVA framewo rk 
+to compliment mixed-effects regression model.  
+ 
+Study design for Aims I and II 
+ Page 20 of 22 Revised: 07.08.2021  Mixed-effects models will also incorporate covariates found to influence study outcomes , including, but 
+not limited to, age, gender, vestibular function. For the intention- to-treat mixed-effects models, an 
+unstructured error covariance structure will be utilized and parameters will be estimated using restrict ed 
+maximum likelihood procedures. Missing data points in the analytical sample are considered mi ssing at 
+random and the above approach is sufficient under this assumption. Results will be considered signifi cant 
+at α=0.05 with Holm -Bonferroni adjustments to correct for multiple comparisons among the various 
+outcome measures. Model fit and integrity will be examined using a combination of formal fit  criteria and 
+visual inspection of residual plots. 
+Secondary Outcome measures  will be assessed using the mixed-effects models as described above to determine 
+the effect of time and treatment on each outcome. To determine the meaningful change of head stabilit y metrics 
+after rehabilitation, the minimal detectable change of our novel outcome measures presented in Tabl e 2 such as 
+attenuation coefficient, cross-covariance of eye, head, and lumbar movements, peak axial rotational velocities, 
+and sequential timing of reorientation will be calculated. Minimally clinically i mportant difference for these novel 
+measures will also be calculated using an anchor-based approach where clinically meaningful difference is based 
+on PGIC. 
+ 
+9. Privacy, Confidentiality, and Data Security 
+Identifiers: Subjects will be assigned a coded study identification (ID) number generated after written infor med 
+consent has been obtained.  The subjects’ name and unique ID number will be recorded in an electronic file, 
+stored on a password-protected secure drive. Research records will be stored in a confidential manner so a s to 
+protect the confidentiality of subject information. Data collection forms will be labeled using unique study ID 
+numbers and will not have personal identifiers. 
+ 
+Confidentiality:   To ensure and protect the privacy of the study subjects and to maintain confidentiality of the 
+data, the following activities for data and safety monitoring will be in place for the study:  1) A detailed plan will 
+be approved by the Institutional Review Board (IRB) before recruitment begins, 2) Data will be co ded upon 
+collection with the key to the code held separately from the data and accessible only to IRB app roved study 
+personnel who need to know. Subject information and study data will be stored behind a locked office in a 
+locked cabinet at OHSU (if paper) or behind a secure Oregon Health & Science University (OHSU) firewall on 
+network drives requiring password authentication (if electronic). If being stored at the VA, it will be kep t on the  
+secure VAPORHCS network folder (King17370) or in locked cabinets in locked office P5F-153 bldg  104 (if 
+paper). The representatives of the US Army Medical Research and Material Command (USAMRMC) are eligible 
+to review study records. The persons who are authorized to use and disclose the data from this study are  the 
+approved investigators, other research professionals at OHSU who are participating in the conduct of this 
+research protocol, and the OHSU/Veteran Affairs (VA) IRB. All data will be safeguarded in accordance with 
+Health Insurance Portability and Accountability Act (HIPAA). The knowledge of any pending compli ance 
+inspection/visit by the USAMRMC, or other government agency concerning clinical investigati on or research, the 
+issuance of Inspection Reports, warning letters, or actions taken by any Regulatory Agencies, including l egal or 
+medical actions, and any instances of serious or continuing noncompliance with the regulations or requ irements 
+will be reported immediately to OHSU and/or the Portland VA Human Research Protection Offic e, and to the 
+Department of Defense and/or USAMRMC. Representatives from USAMRMC are eligible to review study re cords 
+upon request. Data collected in this study do not include any sensitive information, such as  history of 
+communicable diseases that are required to be reported to state or local authorities. 
+  
+Data capture, verification and disposition: Data will be gathered from questionnaires and instrumented 
+assessments, and entered into the web-based Research Electronic Data Capture system (REDCap) and into th e 
+OHSU Balance Disorders database. REDCap is a secure electronic database administered by OHSU. Hard copies 
+of these records will be stored behind a locked office in a locked cabinet at OHSU or if at  the VA on the  secure 
+VAPORHCS network folder (King17370) or in locked cabinets in locked office P5F- 153 bldg 104 (if paper) . The de-
+identified Mobility Lab data will be collected on a password-protected and data-encrypted laptop comp uter and 
+ Page 21 of 22 Revised: 07.08.2021  uploaded after each test session to an OHSU secure server, where the Balance Disorders database is located. 
+The computer that will store the project database will be protected by current network security behind OH SU 
+firewall. An institutional computer account and password will be required to access the compute r storing the 
+recruitment database and the images. In addition, the REDCap database is password protected, and only project 
+personnel approved by Dr. King will be given access. Any h ard-copy research records and consent forms will be 
+stored in a locked file cabinet within a locked, secure office. Hard-copy and electronic research records wil l be 
+kept for seven years, in compliance with HIPAA, or one year after publication, whichever is longer. VA  record will 
+be keep indefinitely or as directed by the VA standards. All identifiers will be removed at the completio n of the 
+study and it will not be possible to link the data to individuals after that time. 
+ 
+Adaptation during COVID- 19 restrictions: All data collected over t he phone or through virtual visit will be 
+recorded on REDCap and stored on a secure OHSU server, which only study team members have acc ess to.  
+The study team member and participant will do all remote virtual visits over a s ecure Wi-Fi network.  
+10. Provisions to Monitor the Data to Ensure the Safety of Subjects 
+See the Data and Safety Monitoring Plan  form for details.   
+ 
+11. Risks and Benefits 
+ 
+a. Risks to Subjects 
+Information that identifies participants will be used in this study and shared with research staff and non-VA 
+researchers. A breach in confidentiality and a resulting loss of privacy could result in monetary loss due to  
+identity theft. However, the research team will make every effort to protect private health infor mation and 
+guard against any loss of privacy. 
+ 
+Musculoskeletal injury -There is a low risk of joint, tendon, or muscle pain, infla mmation, or swelling during or 
+after a testing session of gait and balance. The risk is reduced by use of well-trained assistants and also by the 
+mild nature of the gait, balance and vestibular testing. 
+ 
+Exacerbation of symptoms - There is a low risk that existing symptoms such as dizziness will becom e worse by 
+performing the tests and performing rehabilitation. 
+ 
+Emotional Distress- Some of the questions asked may be personal or embarrassing. Pe ople may refuse to 
+answer them if they don’t want to. Also, they may learn information about their balance and w alking and that 
+could be upsetting to them. 
+ 
+Falls- The balance and walking tasks may cause them to lose their balance or fall. Howev er, our trained 
+research assistants will walk alongside them at all times for safety.  All safety measures will be taken  to ensure 
+a secure and comfortable environment. People will be allowed to take a break from the balan ce and walking 
+tasks whenever necessary. For balance testing on the force plate, people will be secured in a harness for 
+safety. 
+ 
+Nausea- There is a risk during some of the vestibular testing that some people will experience nausea and or 
+dizziness, in which case we stop the test immediately. 
+ 
+Wearable sensor system- The wearable sensors worn on the body are commonly used in other laborat ory 
+studies assessing balance and gait. There is no identifiable information stored on these sensors. These sensors 
+are non-invasive and may cause minimal discomfort, no greater than wearing a headband, wristwat ch or belt. 
+ 
+ Page 22 of 22 Revised: 07.08.2021  Biofeedback sensor system- These sensors used for biofeedback are the same as the sensors in the wearable 
+sensor system. There is no identifiable information stored on these sensors. These sensors are non-invasi ve 
+and may cause minimal discomfort, no greater than wearing a headband, wristwatch or belt. 
+ 
+Other Risks:   There is a small risk that people may experience some ear discomfort when having your ears 
+examined and with wearing earphones during testing. Possible temporary discomfort may be ex perienced 
+during preparation and placement of the electrodes on their skin. This is rare and lasts only a short perio d of 
+time. Some tests require wearing video goggles over the eyes, these may also cause discomf ort. 
+All sounds will be presented at levels where there is minimal risk of damage or discomfort. Th e vestibular-
+evoked potential tests involve the presentation of brief but loud sounds, if they find the sound s too loud we 
+will stop the tests.  
+ 
+b. Potential Benefits to Subjects 
+Subjects and physical therapist will be compensated for their participation in this study. Subjects who 
+participate in Aim I and Aim II will receive free physical therapy. Subjects may or may not perso nally benefit 
+from being in this study. However, by serving as a subject, they may help us learn how to benefit patients in 
+the future. All rehabilitation will be provided free of charge. 
+ 
+Short-term impact: Anticipated outcomes in the short term are to facilitate eviden ce-based recommendation 
+for timing of physical therapy intervention for mTBI, particularly for those with complaints o f imbalance. 
+Based on results from this project and the expected benefits of early physical therapy, we expect patients 
+with mTBI will have faster and more consistent referrals to physical therapy, thereby facilitating faster 
+recovery. We expect the short-term impact will be immediately addressed within OHSU clinics who see 
+patients with mTBI. Another short term impact will be mTBI-specific protocols implemented into th e 
+commercially available APDM Mobility Lab system. These test protocols will be read ily available for 
+researchers and clinicians.  
+ 
+Long-term impact: Our long term goals for this project are to produce more evidence-b ased rehabilitation and 
+to ultimately improve care after mTBI. We believe that implementation of the findings from thi s research can 
+be readily adopted into military protocols for post-mTBI care and have the potential to pro duce more long-
+term efficacious balance rehabilitation. An important long term impact of this work coul d clarify best practices 
+for the rehabilitation of balance deficits by providing evidence regarding when to initiate rehabilitation and by 
+producing protocols for utilizing wearable sensors in assessing and treating balance deficits after m TBI. We 
+expect the use of wearable, inertial sensors will progressively increase throughout clinical , field-side or in-
+theatre environments as technology becomes less expensive and more widely accepted. This project will 
+result in a portable, wireless, and easy- to-use product for physical therapists to use when training complex 
+balance and vestibular rehabilitation exercises. The use of wearable sensors, as proposed in our pro ject, is 
+gaining momentum in the civilian and military populations as a method to detect mTBI. Yet , the use of inertial 
+sensors in rehabilitation settings for clinical care is still lacking. This project will produce a  system with 
+wearable sensors to augment rehabilitation by providing feedback on the quality of head and trunk 
+movements that are difficult to quantify visually. We anticipate that implementing th is system will significantly 
+improve the efficacy of rehabilitation following mTBI, reduce the chronic effects of mTBI and i mprove quality 
+of life after mTBI.  More effective rehabilitation will also lower the economic burden of m TBI on health care 
+costs. 
+ 

@@ -1,0 +1,936 @@
+Version Date: 07/15/2021 1IRB Protocol STU00072008
+Development of a Portable Synergy Resistant EMG-driven FES Device for Intuitive 
+Control 
+of Grasp And Release During Functional Arm Activities Following Stroke
+Program Director: Jun  Yao, PhD
+Northwestern University Feinberg School of Medicine
+Department of Physical Therapy and Human Movement Sciences
+645 N. Michigan Avenue, Suite 1100
+Chicago, IL 60611
+Co-Investigators: Jane  Sullivan, PT, DHS, MS
+Julius Dewald, PT, PhD
+Northwestern University
+Participating Sites: Northwestern  University Feinberg School of Medicine
+Department of Physical Therapy and Human Movement Sciences
+645 N. Michigan Avenue, Suite 1100
+Chicago, IL 60611
+Funding Agency: National  Institutes of Health
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 2Table of Contents
+A. Importance  of the Problem .......................................................................................................3
+A.1. Target  population and need ..........................................................................................................3
+A.1.1. Target population.......................................................................................................................................3
+A.1.2. The  need.........................................................................................................................................................3
+A.2. Beneficial  impact for stroke survivors.......................................................................................4
+B. Design Of Development  Activities...........................................................................................5
+B.1. Development  Plan ............................................................................................................................. 5
+B.1.1. Background  and Literature Review ...................................................................................................5
+B.1.2. Currently available  devices for hand-function rehabilitation following stroke..............6
+B.1.3. Pros  and cons for mechanical and NMES devices ........................................................................9
+B.1.4. Gap  in the development of the next generation assistive devices ........................................9
+C. Novelty  of the proposed ReIn-HAND platform....................................................................9
+C.1. A  safe, reliable, intuitive detection of the intention of hand movements during 
+functional arm  activities ............................................................................................................................... 9
+C.2. Portable,  subject-dependent configuration, easy-to-setup and low-cost....................10
+D. Specific  Objectives .....................................................................................................................10
+E. Selection  of Subjects..................................................................................................................11
+E.1. Inclusion and  Exclusion criteria ................................................................................................11
+E.2. Pre-training  Clinical assessments .............................................................................................12
+F. Study Design  and Methods ......................................................................................................13
+F.1. Lab-based  testing............................................................................................................................ 13
+Each PT will be trained for the use of ReIn-Hand by watching a 20-min video, and practice the 
+use of ReIn-Hand under the supervision of the research PT, Dr. Carmona, who is experienced in 
+using ReIn-Hand device. ............................................................................................................................... 13
+F.1.1. A.  Pre-training non-EEG Experimental protocols......................................................................13
+B. Pre-training  EEG Experimental protocols.....................................................................................................13
+F.1.2. The  1st and 2nd lab-based training with ReIn-Hand (2 visits)...............................................14
+F.2. Home-based  practice ........................................................................................................................... 15
+F.3. Data  collection and procession ........................................................................................................15
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 3A. Importance  of the Problem
+A.1.Target  population and need 
+A.1.1. Target  population
+The target population  of this development is individuals impaired by moderate to severe stroke. 
+Stroke, which affects approximately 795,000 people annually, is currently the third ranking cause 
+of death and one of the leading causes of disability in adults2.
+Since innovative  scientific research and improved medical techniques have increased the life 
+span of stroke survivors, the incidence and mortality rates of stroke have decreased. However, the 
+number of individuals permanently disabled by stroke continues to increase. Sensorimotor deficits 
+and restricted mobility are among the more common problems following stroke. Studies of stroke 
+survivors six months post-stroke and greater than 65 years of age indicate that 50% experience 
+persistent hemiparesis and 26% were dependent in activities of daily living3. The majority of stroke 
+survivors report that impaired upper extremity (UE) function, especially the hand, is a major 
+problem4.  At 3 months post-stroke only 20% have normal arm function5. The trend toward 
+increasing numbers of stroke survivors living with disability suggests that more attention needs to 
+be directed towards investigating methods to regain the lost function by reducing the residual 
+impairments and secondary complications associated with stroke. 
+Years of  research results suggest that the intensity and functionality of practice appear to be 
+critical elements of successful interventions to improve hand function6-14. Distal arm function 
+seems critical to successful integration of the arm into routine daily activities. Individuals with 
+moderate to severe arm impairment often lack hand function; and despite proximal arm movement 
+they typically do not incorporate the affected arm in function. The evidence for critical 
+rehabilitation parameters of intensive task-based functional practice and the reality of that a large 
+number of stroke survivors lack sufficient arm movement to engage in this type of practice creates 
+a clear gap and unique challenge to rehabilitation professionals. Therefore, hemiparetic stroke 
+survivors who have some shoulder and elbow control but lack of basic hand function, i.e., the 
+paretic hand cannot even perform the most basic function like grasp and release, are the targets of 
+this development proposal (Fugl-Meyer Motor Assessment Scores for UE of 10-40/66). 
+A.1.2. The need
+The need is to  fill the identified gap, and thus creating a chance for our target population 
+regaining their UE function. Unfortunately, for the severely affected UE, the evidence for 
+conventional therapy on regaining meaningful hand function is poor. Furthermore, due to the 
+shortened inpatient rehabilitation stays and reduced funding for outpatient rehabilitation, therapists 
+may be forced to focus less on the use of the UE15. All these requirements and realities point out 
+that we need an assistive device that allows our target population to Reliably and Intuitively use 
+their HAND  (ReIn-HAND) during therapy and at home during daily functional arm activities. 
+However, currently there  is no such an assistive device available, mainly due to the lack of a real 
+time platform that can reliably detect a user’s intention (see the review of current assistive devices 
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 4in section  1.1.2). The development of such a platform combining with a right assistive device 
+would regain basic hand function and be highly beneficial to this population.
+We have  identified four specific requirements (needs) for this real time platform: 1) a non-
+invasive interface providing control for the most basic hand function, i.e., grasp and release; 2) an 
+intuitive control meaning that the control signal comes from intent of the subject for moving the 
+paretic hand; 3) a safe and reliable detection allowing the usage of the paretic hand during 
+functional arm activities; and 4) clinical utility including portability, individualized configuration, 
+easy setup and low-cost. 
+In addition, due to shortened inpatient rehabilitation stays and reduced funding for outpatient 
+rehabilitation, therapists have been forced to focus less on the use of the upper extremity15. It is not 
+uncommon for stroke survivors to find that once they are ready to work on arm recovery, there is no 
+service available or they are no longer eligible16. Barriers like limited resources, transportation, 
+assistance, etc. make a compelling argument for a device that is easy-to-use, low-cost, and thus 
+employable at home.
+Finally, although commonly we believe that recovery plateaus at ~12 months post-stroke, there are 
+cases reporting arm/hand function recovery after intensive task-specific intervention in chronic stroke 
+survivors17,18. It is therefore proposed that a plateau in motor performance should be re-interpreted as a 
+cue to implement new therapy, such as using home-based task-specific device-mediated therapy, rather 
+than cease it19. The proposed device will enable us to test whether such a therapy can improve basic 
+hand and as a consequence upper extremity function in individuals with moderate to severe stroke. If 
+positive, the results can benefit large population of stroke survivors. 
+A.2.Beneficial  impact for stroke survivors
+The majority  of stroke survivors report that impaired UE function, especially the hand, is a 
+major problem that results in significant functional deficits, often leading to total disuse4. Currently 
+there is no effective intervention that can restore basic hand function for individuals with moderate 
+to severe stroke. The current proposal seeks to demonstrate that the combination of an intelligent 
+detection, the ReIn-HAND platform, and an artificial control device, ‘RECLIAM’ electrical 
+stimulator, will allow for possibility of using the paretic hand and arm during activities of daily 
+life for this population. Although many different hand-movement aid devices are available on the 
+market now, none of them meets all the requirements identified previously (see the next chapter 
+for review for the currently available devices). If successful, this proposal will provide a much-
+needed scientifically-based rehabilitation platform, accessible for use in the clinic and home, both 
+for assistive and therapeutic purposes to regain hand/arm function following stroke. Such a 
+platform will have a great impact on current neuro-rehabilitation patient management by providing 
+the ability to deliver effective interventions. 
+Given that  the concepts embedded in the proposed ReIn-HAND real time platform have 
+been shown to be effective to increase arm/hand function, the commercial viability of this 
+development proposal is substantial. Improvement in functional usage of the impaired upper 
+limb in stroke survivors, through the use of an assistive device incorporating ReIn-HAND, 
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 5may have  a direct positive impact on their self-image, life satisfaction, interaction with family 
+and environment, and re-integration into society.
+B. Design  Of Development Activities
+B.1. Development  Plan
+B.1.1.  Background and Literature Review
+The loss of basic hand function control following stroke --- physiological reasons, rehabilitation 
+and
+ possible solutions 
+Hand impairment  is one of the leading causes of major, long-term disability following stroke. 
+A number of factors contribute to the hand impairment, including abnormalities of muscle tone 
+(identified as spastic hypertonia or spasticity), muscle weakness, and disturbances of muscular 
+coordination (abnormal muscle and torque synergies). An individual with moderate to severe 
+stroke usually experiences difficulty in activating hand muscles, especially wrist/finger 
+extensors20-22.  Another commonly observed change in EMG activation following stroke is an 
+increased coactivation between antagonist and agonist muscles23-25. Reflex coupling between 
+proximal and distal muscles of the upper limb has also been well reported26-29. More prominently, 
+studies in both primates30-32 and human subjects22,33 indicate wrist/finger flexors are usually overly 
+activated followed stroke, causing hand release to be even more difficult than grasp. 
+Although the  pathophysiology behind all above features is not fully understood, we believe it 
+is primarily due to the loss of corticospinal tract (CST) innervation of relevant motoneurons, and 
+an increased reliance on brainstem pathways. Among the different brainstem pathways, the 
+reticulospinal tract (RST) is the only tract that has been found to innervate distal muscles. In 
+monkeys, RST has been shown to innervate both proximal and distal muscles30-32 particularly 
+facilitating shoulder abductors and arm flexors and suppressing extensors ipsilaterally34-37. This 
+innervation pattern is equivalent to the aforementioned abnormal flexion synergy, which is 
+expressed as obligatory coupling between shoulder abductors and elbow/wrist/finger flexors in the 
+paretic upper limb following stroke. Because of this, the reticulospinal tract (RST) is NOT able to 
+provide adequate hand control, which makes the CST the main descending pathway that provides 
+reliable and adequate hand control. 
+Following moderate to  severe stroke, the amount of CST innervation is limited. Furthermore, 
+the residual CST may not be available for hand-control due to the increased inhibition from the 
+non-lesioned hemisphere38-40 and possibly also from the adjacent motor areas41 that control other 
+parts of the paretic arm, such as the shoulder and elbow. We believe the intensive functional usage 
+is one of the key issues for a joint to win the competition for the residual CST resources. Therefore, 
+the loss of the access to remaining CST resources from the hand may be further amplified by 
+‘learned non-use,’ a phenomena wherein an individual with stroke virtually learns to function 
+without (not use) the paretic limb. Over time, the individual “learns not to use” the paretic hand, 
+which may further exacerbate the loss of residual resources, such as the CST, for hand function. 
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 6Based on  our understanding of the underlying neuromechanisms, two possible solutions for 
+regaining hand function are: 1), to use a neuroprosthesis if there are not enough CST fibers left to 
+provide distal innervation, and 2) to reallocate/re-enable the remaining CST fibers for controlling 
+hand function such that the neuroprothesis over time becomes not necessary. With the new imaging 
+techniques, like diffusion tensor imaging, we now can quantify the amount of residual CST with 
+reasonable accuracy42,43. However, we still do not know what loss of CST will result in a poor 
+prognosis for regaining hand control. Therefore, in this proposed development, the goal is to 
+optimize the chance of reallocating/re-enabling the remaining CST for the hand control. To make 
+this feasible, two conditions are required: 1) the potential for neural plasticity, and 2) the 
+implementation of an  approach  that effectively  stimulates the use of residual CST resources.
+One of the  most exciting findings during the past 20 years is that neural plasticity remains even 
+in chronic stroke. This opens the possibility for the reallocation of residual brain resources. The 
+remaining question is: what is the right way to trigger the optimal use of remaining neural 
+resources? Currently, there is little evidence that any of the exercise interventions that have been 
+studied is the best for an individual with stroke8,44-47. Instead, numerous studies have identified the 
+intensive practice as the critical element of successful interventions to improve function in the 
+hemiparetic UE6-14. Furthermore, the benefits of training in a functional context (task-specific 
+training) have been demonstrated as well13,48-55. Most of all above results were obtained in mild 
+and moderately impaired stroke individuals, with whom there is assumed to be more preservation 
+of the CST. Currently, the recovery of hand function in more severely impaired individuals is poor. 
+We believe that this is at least partially because the loss of hand function (despite the preservation 
+of some proximal arm movements) makes use of the affected UE non functional, and thus the 
+individual learns not to use the arm. On the other hand, new evidence is keeping emerging. These 
+results demonstrate that even in severely impaired stroke survivors, recovery of proximal arm 
+function can still be obtained if a science-based right intervention is used56,57, and thus suggesting 
+preserved neural plasticity of this population. An effective assistive device would allow for further 
+investigation of improved use and associated recovery of the paretic arm.
+B.1.2. Currently  available devices for hand-function rehabilitation following stroke 
+We can  classify the commercially available devices for enhancing movement of the paretic 
+hand into 2 broad categories: mechanical devices and electrical devices. 
+Mechanical devices
+Mechanical devices  range from “not actuated” to “active robotic 
+devices”. Typical non-actuated devices included theraband (The Hygienic 
+Corporation, Akron, OH), digi-web (cando-web™, HOSPEQ 
+International, Miami, FL), and power web (HandHealth Unlimited). These 
+devices all contain some elastic material, which is used to provide external 
+resistance during exercise. The goal of use of these non-actuated devices 
+is mainly strengthening. In order to utilize these devices, individuals 
+require the ability to actively contract muscles against an external load. More recently, the 
+Figure 1. Saeboflex
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 7Saeboflex™ (Saebo,  Inc, Charlotte, NC, see figure 1) device and Hand Spring Operated Movement 
+Enhancer (the National Rehabilitation Hospital, Washington DC, USA) uses adjustable springs to 
+open the hand of more severely impaired individuals with hemiparetic stroke. Although the 
+Saeboflex™ has been reported to be useful in enabling subjects to participate in intensive 
+functional training 58,59,60, the system is difficult to set up and only overpowers the finger and 
+thumb flexion bias to open the hand and requires an active grasp by the subject.  It therefore 
+necessitates volitional control of grasp, something many individuals with sever stroke no longer 
+have. Given the difficulty to get the paretic hand in, and the lack of required control, the system is 
+unlikely to become a prosthetic device that can be used on a daily basis.
+The second  tier of devices are termed “active robotic devices”61. These devices can impose 
+actuated position-controlled movements of the hand, such as passive motion devices (CPM).  CPM 
+devices utilize an external motor to passively cycle joints through available range of motion 
+(ROM). A review of arm interventions following stroke suggested that CPM combined with 
+elevation may have a beneficial effect on hand edema62; however, there is no evidence that this 
+intervention conveys a positive effect on regaining active movement since movement is not 
+encouraged in this type of a device.
+Other active  robotic devices61, varying from devices that specifically target forearm and hand 
+motion to exoskeletons and gloves for thumb and finger exercise, etc., designed to assist or guide 
+patients in one of the pre-set movements while encouraging the user to actively use his/her UE. 
+Three recent systematic reviews of robotic therapy in the arm following stroke concluded that there 
+are improvements in the proximal arm in both sub acute and chronic stroke63; but no consistent 
+influence on function63,64,65. After an extensive review of characteristics of 15 devices ranging 
+from non-actuated to robotic, Dovat and colleague concluded that current active mechanical 
+devices for hand rehabilitation are often too large to be used at home, have too limited range of 
+force or do not offer the possibility for training fingers individually61. 
+Electrical Stimulation Devices
+Electrical stimulation devices  can be subdivided into 4 categories, (1) simple surface electrical 
+stimulation, (2) surface electrical stimulation coupled with a wrist hand orthosis, (3) 
+electromyographic (EMG) triggered surface electrical stimulation, and (4) invasive electrical 
+stimulation. Since our target population desires a non-invasive device, our review only focuses on 
+the first 3 categories.
+Surface electrical  stimulation was first used to enhance arm function in the hand following 
+stroke in the early 1960’s66. Numerous studies describe positive effects on decreasing impairment 
+and enhancing  arm function post stroke8,67-77. The Veterans Administration/Department of 
+Defense clinical practice guideline recommends electrical stimulation for patients who have 
+impaired “UE muscle contraction, specifically with patients with elbow/wrist motor 
+impairment”78. Many of the subjects for whom electrical stimulation has proven beneficial are 
+those with mild-moderate motor impairment following stroke. The challenges to widespread use 
+of surface stimulation systems include electrode placement, cumbersome equipment, the 
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 8complexity of  achieving consistent distal control, and lack of intuitive control. In addition, many 
+systems are not easy for stroke survivors to apply without assistance, limiting use outside of the 
+clinic. 
+Electrical stimulation  has been coupled with a wrist hand orthosis (WFO). The Ness H200 
+(Bioness, Inc, Valencia, CA, see figure 2) combines a WFO, 5 surface electrodes that can be 
+individually positioned, and an external control system. Studies using either the Ness H200 or an 
+earlier version the “Ness Handmaster” report improved grip strength, 
+motor scores (Fugl-Meyer Assessment) and better arm function79-83. 
+Combined WHO/ES systems are portable and easy for users to manage.  
+Difficulties with reliable precision control, and lack of intuitive control 
+limit their widespread use. 
+Devices have  been developed to allow for triggering electrical 
+stimulation using the user’s EMG signal (EMG-triggered ES). When 
+using these devices, the patient is asked to voluntarily contract the paretic 
+muscles. When EMG activity exceeds a preset level, external electrical stimulation of the muscle 
+takes place, which increases or triggers muscle contractions. Numerous devices for EMG-triggered 
+ES, like Biomove (Israel), Combistim (Galway, Ireland), and etc., are available in the market now. 
+The underlying thought behind intention-dependent, EMG triggered functional electrical 
+stimulation is a positive influence on neuronal 
+plasticity due to proprioceptive and somatosensory 
+feedback from the electrically stimulated, active 
+muscle contraction. Meta-Analyses of Clinical 
+Studies have demonstrated that triggered functional 
+electrical stimulation appears to be superior to non-
+triggered electrical stimulation on motor control of 
+the upper extremities (see figure 3). The total 
+number of hours of stimulation and the stimulation 
+frequency were not found to be significant. The 
+same was true for the various recovery stages after 
+the stroke (acute, subacute, chronic). The literature 
+supports the use of EMG-triggered ES in the treatment of the hemiplegic wrist and forearm (Level 
+1 evidence) 84. Commercially available EMG-triggered ES devices all allow for pre-set movements 
+without intuitive control to switch between these movements. Portability, ease of use, lack of 
+intuitive control, and cost are also barriers of these type devices to widespread use.
+If a simple  EMG-triggered electrical stimulation of fixed muscles with pre-programed 
+amplitudes can achieve superior recovery than a non-triggered ES, we expect that functional 
+practice using the appropriate muscles to implement grasp and release activities during different 
+arm activities will be even more successful. The development of the proposed ReIn-HAND real 
+time platform will allow us to move one step closer to this idea.
+Figure 2. NESS H200
+Figure 3. EMG triggered ES is superior in 
+motor control recovery than non-triggered 
+ES. Meta-analysis involved a total of 588 
+acute, subacute and chronic patients 1.
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 9B.1.3.  Pros and cons for mechanical and NMES devices
+Each of  the mechanical and electrical devices has pros and cons. A mechanical robotic device 
+can provide more complex control to both hand and fingers; however, these usually are big and 
+complex. Furthermore, these devices do not have the benefit of adding electrical stimulation, 
+which directly activates a person’s own neuromuscular system to generate the assistive force.  
+Conversely, ES devices have limited ability in control of fine movements, due to difficulties in 
+controlling for contraction speed of individual muscles, or desired kinematic qualities, such as 
+speed, trajectory, and motion smoothness85. Furthermore, ES devices can cause muscle fatigue, 
+since stimulated contractions are inherently fatiguing due to synchronous muscle firing and 
+motoneuron recruitment reversals 86-89, limiting the duration of use. However, many ES are battery 
+powered, can be programed, are portable and have been demonstrated to be safe.
+B.1.4. Gap  in the development of the next generation assistive devices
+In summary, current commercially available devices cannot meet the need as identified above. The 
+proposed EMG-ES device will fill this significant technical gap. In the long-term, we aim to investigate 
+whether individuals with moderate to severe stroke can regain upper extremity function by participating 
+intensive task-specific paretic hand practice together with the rest of arm. 
+C. Novelty  of the proposed ReIn-HAND platform
+C.1. A safe, reliable, intuitive detection of the intention of hand movements during functional 
+arm activities
+The resulted  ReIn-HAND platform of this proposal will be novel in its detection algorithms 
+that can provide non-invasive, safe, reliable, intuitive and continuous detection of a subject’s 
+intention for hand grasp, release and relaxation during different functional arm activities. This will 
+be achieved by strictly designed robot-mediated experiments, simulating different environments 
+when using the entire UE during various hand activities. These experiments have been designed 
+to reflect special characteristics of individuals with stroke, such as muscle weakness, abnormal co-
+contraction, and abnormal muscle synergies. Furthermore, we have chosen to only implement the 
+detection of grasp, release and relaxation of the paretic hand to optimize the required reliability. 
+The developed platform will be implemented using a portable device, the RECLAIM ES designed 
+by Simple Systems Inc (Simple Systems Inc, Toronto, Canada). The implemented platform will 
+convert a user’s intention to timely assistance of usage of the paretic hand during different 
+functional arm activities. 
+C.2.Portable,  subject-dependent configuration, easy-to-setup and low-cost
+The ReIn-HAND  platform is envisioned to be portable and customized based on subject 
+specific features and desires. The device that incorporates the ReIn-HAND platform will also be 
+easy to setup and low cost. Therefore, we propose to test its performance in an ES device (i.e., the 
+RECLAIM). Although an ES device can cause muscle fatigue more easily than a mechanical 
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 10device, it can  easily provide assistance to hand movements for at least 15 minutes without fatigue. 
+Users can practice in short bouts, multiple times daily.
+The device will allow for position-dependent selection of elements from the electrode-array: 
+Another challenge for an EMG-driven FES device with surface recording and stimulation electrodes is 
+that the relative position of the skin and muscle changes during a functional task. To account for this 
+problem, we innovatively propose to add an inertial measurement unit (IMU) to the forearm orthosis to 
+detect forearm pro/supination. This information will be used to auto-select elements from the electrode-
+array.
+The device will translate the use of ReIn-Hand device outside the laboratory/clinic: Home-based 
+practice can be beneficial to our targeted population90,91. Due to the large variation in movement ability 
+following stroke, the configuration of recording/stimulation electrodes requires it to be subject-specific. 
+We therefore propose to perform a 3D scan of the subject’s forearm/hand followed by a 3D-printing of 
+a subject-specific orthosis with recording and stimulation electrodes embedded to fit individual user’s 
+needs. Together with the ReIn-Hand detecting platform on a smart phone, the proposed device will be 
+portable, individualized, easy-to-use, and low-cost, thus having potential for widespread home-based 
+practice.
+D. Specific  Objectives
+The realization of this novel EMG-driven FES device that can be used both in the clinic and at home 
+will be through the following specific aims:
+Objectives 1: Develop a real-time ReIn-Hand opening platform as a portable device for home use
+We will design a proof of concept FES device that is portable and user-friendly, incorporates graphical 
+user-interfaces, and provides Reliable and Intuitive hand (ReIn-Hand) opening during functional use of 
+the shoulder/elbow. The control algorithms of ReIn-Hand have already been developed on a laptop 
+system for 4 different functional hand tasks. Preliminary results in 8 participants with moderate to severe 
+chronic hand paresis are promising. All subjects learned to use this platform within one 3-hour session, 
+which demonstrates the efficacy of our current algorithms and the intuitiveness of our current control. 
+After a 7-week laboratory-based intervention using the ReIn-Hand, all subjects demonstrated 
+improvements in sensory/motor assessments, and showed changes in related cortical activities and 
+integrity of white matter (see preliminary results). These results provide mechanistic evidence of the 
+efficacy of the current system, and suggest that it is worthy to improve the ease-of-use utilities of ReIn-
+Hand system to make it suitable for a home-based intervention. The necessity of this aim is therefore to 
+transfer the current algorithms to a portable device (i.e., smart phone), to enable automatic parameter 
+adjustment based on user feedback, and to make this platform sufficiently user-friendly, such that ReIn-
+Hand assisted functional intervention can be safely and easily implemented both in the clinic and at 
+home. 
+Objectives 2: Develop a subject-specific forearm/hand orthosis with embedded 
+electromyographic (EMG)-recording and stimulation electrodes
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 11Besides detecting and controlling hand opening in the context of abnormal synergies, several other 
+practical difficulties limit the ease of use of most current EMG-driven FES devices for assisting hand 
+opening. This includes the challenge of identifying recording/stimulation sites and a lengthy setup time. 
+To resolve this problem, we plan to develop a subject-specific 3D-printed forearm-hand-orthosis (FHO) 
+that has EMG recording/ stimulation electrode-array embedded (aim 2A). Furthermore, we will also 
+address the changes in the relative positions between the EMG recording/stimulation electrodes and the 
+corresponding muscles that occur when moving the forearm between a pronation and a supination 
+position. We plan to add an inertial measurement unit (IMU) with a 3D accelerometer and a 3D 
+gyroscope with Kalman sensor fusion algorithm to the system. This IMU will detect the amount of 
+forearm rotation, which will be used to auto-select the recording/stimulation elements in the electrode-
+array (aim 2B). The FHO will allow the device to be user-friendly by providing easy and reproducible 
+electrodes placement.
+E. Selection  of Subjects
+We plan to recruit about 100 moderately to severely impaired stroke subjects who have some 
+shoulder and elbow control, but lack hand function (UE FMA Scores of 10-40/66, CMcM<=4) to 
+participate in the cross-sessional experiments. Individuals
+ with stroke will be selected from the 
+Clinical Research Registry (CRR) housed at the ShirleyRyan AbilityLab which contains more 
+than 700 members, as well as from stroke survivors residing in the Chicagoland area who wish to 
+participate in the study. Recruitment of subjects who are currently enrolled  in the Clinical 
+Research Registry will be done via phone call and email. Recruitment of stroke survivors 
+residing in the Chicagoland will be done via flyer or on-clinical-site survey for willingness of 
+participation. In  addition, in order to facilitate recruitment, we will post this study on the The 
+New Normal (TNN1)  Match matchmaking portal, a National Institutes of Health  (NIH) funded 
+collaborative project to give commun i ties access  to information about healthy research 
+opportunities. These stroke subjects will go through 1 or 2 stages (i.e., the 1st stage as remote 
+prescreening which  is optional and the 2nd one as on-site screening for eligibility test which is 
+required) of eligibility tests. Recruitment for stroke participants will be ended when 20 
+individuals with moderate to  severe impairment post-stroke are enrolled and finished the data 
+collection.
+Once confirmed  their desire and willingness to participante, the potential participant will be 
+asked to sign an online e-Consent form, or a hard copy consent form. For individuals who signed 
+the e-Consent form and passed the remote pre-screen, a hard copy of consent form will still be 
+signed on the first on-campus visit.
+We will  recruit 10 healthy individuals at least 45 years old. These individuals will participate 
+in one session of the EEG experiment, and will provide control data to compare against the  stroke 
+individuals who partake in the home-based practice.
+1 https://www.nucats.northwestern.edu/news/2020/northwestern-new-normal-launch.html.
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 12Also, 10 independent physical therapists (PTs) or senior physical therapy students (SPTs), who 
+have experience working with stroke subjects and using FES, will be recruited for setting up the ReIn-
+Hand device for stroke users, and then teaching stroke users to use the device. Stroke, PT and SPT users 
+will provide feedback from clinicians and stroke users’ angles, respectively.
+After  the eConsent or Consent form is obtained either online or as a hard copy, a qualified team 
+member will call the stroke participant to conduct a phone survey to screen their current medical 
+status and history and willingness to participate in the study. If a stroke participant agrees to have 
+a remote section using video call, like zoom, FaceTime, WhatsApp etc., a video call will be 
+scheduled to assess three short-version clinical assessments (MOCA, FMA and Chedoke).  
+These remote sections will allow the team members to pre-screen the eligibility of a stroke 
+participant without requiring an in-person visit. These two remote sessions (phone survey and 
+video call) may be combined, with a total of about 30 minutes.
+E.1. Inclusion  and Exclusion criteria
+Stroke participants  should have sustained a unilateral lesion at least 6 weeks prior to 
+participation in this project. The following inclusion criteria will be applied to the participants: 1) 
+Paresis confined to one side, with substantial motor impairment of the upper limb; 2) Absence of 
+motor impairment in the unimpaired limb; 3) Absence of a brainstem and/or cerebellar lesion; 4) 
+Absence of severe concurrent medical problems (e.g. cardiorespiratory impairment, changes in 
+management of hypertension); 5) Absence of any acute or chronic painful condition in the upper 
+extremities or spine; 6) Absence of cardiac pacemaker; 7) seizure free; 8) no Botox within the last 
+6 months; 9) Capacity to provide informed consent; 10）Ability to elevate their limb against 
+gravity up to horizontal and to generate some active elbow extension; 11) Ability to achieve 
+functional grasp and release with the assistance of an ES device with the help of an experience 
+professional physical therapist; and 12) Not in pregnant or planning to become pregnant.  
+Overpressure at the end of the range of motion will be used as a medical screening measure to 
+verify the absence of inflammatory condition at the shoulder, elbow, wrist, and fingers. The 
+shoulder passive range of motion of the affected upper extremity will be measured using a 
+goniometer based on adapted methods. Maximum grip and key pinch forces for each participant 
+will also be measured using a hand dynamometer and a pinch gauge. The impairment level of the 
+upper extremity and the wrist/hand will be evaluated by a research physical therapist using Fugl-
+Meyer score. 
+While most inclusion criteria  will not rule out the potential participation of registry members, 
+the greatest impacting criteria are the Fugl-Meyer score and the ability of release with the aid of 
+the RECLAIM ES device. We anticipate that a minimum of 50% of registry members will be 
+moderately to severely impaired and will be appropriate for participation in this study.
+Participating Physical  therapists (PTs) should have a valid Illinois PT license and should have 
+worked with individuals with stroke.  Senior physical therapy students (SPTs) should be currently 
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 13enrolled in the  third year and have successfully completed  all the course work and clinical 
+experiences required for  the first and second year of their program.  Students or employees who 
+directly work with the investigators (for example, students who currently work with the 
+investigator as part of their coursework or research projects,  employees who are listed as part of 
+the research team in this IRB or  are paid by the research grants led by the investigators) will be 
+excluded. No penalties will be applied to students or employees who fail to show up for scheduled 
+research-related appointments. No  extra credit, besides the participation fee listed in this IRB, will 
+be offered. During the recruitment based on an IRB-approved consent form, we will thoroughly  
+explain the potential risks and protection that will be used to reduce these risks. Participation in 
+the research is entirely voluntary, and after that decision is made,  participants have the right to 
+withdraw at any time for any reason.
+E.2. Pre-training  Clinical assessments
+All participants  will undergo a series of impairment-level and functional clinical assessments that 
+will be performed by a research physical therapist. The Impairment-level assessments will include 
+the Upper Extremity Subscale of the Fugl-Meyer Motor Assessment (UE FMA)92, Chedoke-
+McMaster Stroke Assessment hand portion (CMcM), the Nottingham Stereognosis Assessment  
+(NSA)93,94, the Action Research Arm Test (ARAT)95, Box and Blocks test (BBT)96, the Stroke Impact 
+Scale (SIS) 99-101, Cutaneous Sensory Touch Threshold using Semmes-Weinstein 
+Monofilaments (CSTT) 102-103, Montreal Cognitive Assessment (MoCA) 104-105. 
+In addition,  quantitative measure of hand opening area and closing force (QMHOC) will be 
+conducted during the whole course of 12-week home-based practice, using pressure sensors 
+(Pressure Profile Systems, Inc., Los Angeles, CA 90045) in conjuction with portable Moire Phase 
+Tracking cameras (Metria Innovation, Inc., Wauwatosa, WI) (~1 hour).
+ 
+F. Study Design and Methods
+F.1. Lab-based testing
+Each PT will be trained for the use of ReIn-Hand by watching a 20-min video, and practice the use 
+of ReIn-Hand under the supervision of the research PT, Dr. Carmona, who is experienced in using ReIn-
+Hand device.
+F.1.1. A.  Pre-training non-EEG Experimental protocols
+Once confirmed,  a stroke participant will be randomly assigned to one of 11 physical therapists 
+(10 clinical PTs+1 research PT (i.e., Dr. Carmona)) who will participate this study. The assigned 
+PT will determine 1) the electrode positions for recording the muscle activities during performing 
+different arm/hand function, and 2) the stimulation electrode positions and stimulation intensities for 
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 14achieving the best hand opening with the forearm at 0º and 90º positions (~1-1.5 hour). Then, the 
+corresponding electrode positions will be marked, and the forearm/hand with these markers will be 
+scanned (~0.5-1 hour).
+ This visit is expected to last approximately 3 hours. The scanned results will 
+be used to develop a subject-specific forearm-hand orthosis (FHO) that fits to the paretic forearm 
+and hand.
+B. Pre-training EEG Experimental protocols
+Before and  after this 12-week home-based practice, these stroke individuals will participate in 
+an electroencephalography (EEG) experiment. Additionally, 10 control subjects will be recruited 
+to participate in one session of this EEG experiment to provide healthy neuroimaging data for 
+comparison. 
+At the  start of the experiment, we will measure maximum grasping forces (requiring 3 trials 
+within a 10% range of each other). During this experiment, we will use the ACT-3D, a robot 
+developed by Dewald Rehab Tech, LLC, to simulate the situation of performing different hand 
+movements against different loads against gravity. The tested forearm (paretic for stroke, dominant 
+for control) will be attached to an orthosis that is linked to the ACT-3D. The subject’s hand will 
+be placed around a cylinder on the orthosis with a custom pressure sensor mat (Pressure Profile 
+System Inc., CA) to measure grasping forces. A 9x9 mm marker will be placed on the tip of each 
+finger, with another on the back of the hand as reference. The position and angle of the fingers/hand 
+will be captured by 2 portable Moire Phase Tracking cameras and these markers (180 Hz; Metria 
+Innovation Inc. Milwaukee, WI). The subject’s upper limb and forearm lengths will then be 
+measured and entered into the computer. A “home” position will then be defined as the position in 
+which the arm is placed with 85 shoulder abduction, 40  shoulder flexion, and 90 elbow flexion. 
+During the experiment, the subject will be instructed to perform 1 of 2 movements: 1) hand 
+opening while resting on a haptic table, or 2) hand opening while lifting against 50% of their 
+maximum shoulder abduction (SABD) force. A monitor will continuously display the position 
+with a cursor indicating where the subject’s arm is relative to the home position. For each trial, 
+subjects will first move to the home position, then relax for 5-7 seconds, and then initiate the 
+movement. Subjects will perform 60 trials for each movement, broken up into randomized blocks 
+of 20 trials. Subjects will be given 30 seconds of rest between trials, and 10 minute rests between 
+blocks to avoid fatigue. Additionally, a 3-minute resting-state block will be recorded in which 
+subjects are instructed to fixate on a fixation cross on the screen. The whole experiment will last 
+approximately 6 hours.
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 15
+Figure 4. EEG  Experimental setup showing a subject 
+using the ACT3D robot while high-density EEG and 
+surface EMG signals will be simultaneously recorded. 
+Visual feedback will be displayed on a computer screen.Throughout the experiment,  we will 
+measure scalp recordings using a 160-
+channel EEG system using active 
+electrodes (Biosemi, Inc., Active II, 
+Amsterdam, The Netherlands). Surface 
+EEG electrodes will be mounted on a 
+stretchable fabric cap based on the 10/20 
+system. The cap will be fitted on the head 
+of the subject with the Cz electrode 
+aligning with the intersection of the planes 
+defined by the nasion, inion, and pre-
+auricular points. Eye movement detection 
+electrodes will also be placed on the supra- 
+and infra-orbital margins for detection of 
+vertical eye movement. The skin under 
+each electrode site will be prepared by 
+clearing away any hair, and conductive gel 
+will be injected to achieve electrode impedances lower than 5k throughout the experiment. EEG 
+data will be collected at 2048 Hz sampling rate and anti-aliasing filter (100 Hz) will be provided 
+before data acquisition. The Biosemi system is equipped with active electrodes that provide a first 
+amplification stage, allowing detection of EEG signals with a higher SNR and quicker preparation. 
+A Polaris Krios handheld scanner and reflective markers (NDI, Ontario, Canada) will be used to 
+record the EEG electrode positions compared to the coordinate system defined by the nasion, inion, 
+and pre-auricular notches. EMG will be recorded from the extensor carpi radialis, flexor carpi 
+radialis, and deltoid of the arm. The EEG and EMG data will be collected and stored on a computer. 
+These sessions  will allow us to compare the cortical activity related to these movements pre- 
+and post-intervention for the stroke individuals and how these compare to healthy controls to 
+investigate any intervention-induced cortical reorganization. 
+F.1.2. The 1st and 2nd lab-based training with ReIn-Hand (2 visits)
+After the  subject-specific  FHO is ready, the stroke participant and his/her paired PT will be 
+called to participate the 1st and 2nd lab-based training with ReIn-hand device. During these 2 visits, 
+the assigned PT (1st test) or the research PT (2nd test) will train the stroke participant to use his/her 
+FHO and the ReIn-Hand software on a mobile phone, until the stroke participant demonstrates the 
+ability in using the device independently twice in a row. On the 2nd test, the research PT will also re-
+test partial of the clinical assessments, however, this time with the assistance of ReIn-Hand device. Each 
+of these 2 visits is expected to last about 3 hours. During these 2 visits, we will measure the time 
+for a stroke participant to learn the use of ReIn-Hand device. Within 0-3 days after the 1st (for PTs) 
+or the 2nd lab-based training (for individuals with stroke), a 5min user survey to report the level of ease-
+of-use of the ReIn-Hand device will be conducted.  
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 16F.2. Home-based practice
+After the  3 lab-based visits as listed above, 4 out of 20 stroke participants will further 
+participate the home-based practice. They will take the ReIn-Hand device, including his/her FHO, 
+the mobile phone with ReIn-Hand software, and the electronic stimulator (300 PV, Empi, 
+Minnesota, USA, a FDA approved clinical device) back to home. At home, they will perform 20 trials 
+of pre-set tasks, like reaching and grasping, per session (1 hour), 1 session per day, 7 days per week for 
+12 weeks. During these 12 weeks. During these 12 weeks, they will visit the lab once per week to make 
+necessary device changes, update the partial of the clinical assessments, all without ReIn-hand. These 
+clinical tests will also be re-measured at 1 and 3-month after the home-based practice, again without 
+ReIn-hand.
+Both electrodes  and electrical stimulator are commercially available devices (300 PV 
+Complete Electrotherapy System, Empi, Inc., St. Paul, MN). Each subject will be assigned task-
+specific, functional exercises targeted to their individual abilities, deficits, and personal 
+preferences. Stimulation will be provided with the following characteristics:
+Amplitude – at motor threshold with the maximum intensity lower than 100 mA
+Frequency – 50±20% Hz
+Pulse Duration – 300-400 microseconds
+Ramp/Fall Times and Duty Cycle – adjusted to the task
+F.3. Data collection and procession
+Main data collection is listed in table 2.
+Day 1 #1, Demographic data, #2, Clinical assessments as listed above, #3, Time for a) determining 
+the stimulation /recording electrode positions, b) for scanning, 
+Day 2 #1, EEG data, #2, EMG data, #3, finger position during hand-opening and graping force data 
+during closing
+Day 3 #1, Time for the stroke subject to a) to attach the FHO, b) use the software, including 
+connecting all the cables following the instructions, c) set up the detection rule, and d) clean 
+up. #2, The accuracy in detecting grasping and releasing; and #3, EMG data while 
+performing task, sampled at 1K Hz.
+Day 4 Measures #1-3 on Day 2, #4, ARAT and BBT with the assistance of ReIn-Hand.
+Home-
+based testMeasures #1-4 on Day 3 and MAL-14, NSA, and hand opening and closing ability weekly 
+during the 12-week home-based practice, then again at 1 and 3-month after. To the end of 
+the 12-week home-based practice, we will use a GLOC scale (one question survey) to collect 
+user overall satisficaory level of the ReIn-Hand supported home practice.
+Data analysis for evaluating the engineering aspects is listed on Table 3.
+Primary measures Measured by Expectation
+Time for learn-to-use the 
+device#1 on Day 3 and Day 4 <3 hours in each of the 2 
+days, and no difference 
+between 2 days1.
+Time for setup and cleanup #1 a) and d) on Days 3 & 4, and during 
+the home-based test<5 min for each, and 
+significantly less than the 
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 17measure #3 (a) on Day 1
+Successful rate on 
+controlling grasping and 
+releasing during reaching#2 on Days 3, 4, and during the home-
+based testa false ‘transfer’ < 10%
+Time delay caused by the 
+deviceWe will detect the onset of EMG at the 
+extensor measured on days 3 &4, and 
+the onset of stimulation artifact. The 
+latency between them will be 
+calculated.<350 ms
+Difference in Clinical 
+assessments with and 
+without ReIn-HandDifference between measure #4 on Day 
+4 & measure #2 on Day 1ARAT and BBT with 
+ReIn-Hand will 
+outperform that without 
+ReIn-Hand.
+Willingness to use ReIn-
+Hand at home#1-3 during the home-based test Continuous use on daily 
+base.
+Cortical activity related to 
+hand open with and without 
+liftingWe will use EEG data to estimate the 
+cortical activity related to the 2 motor 
+tasks pre- and post-home-practicePost-intervention cortical 
+activity related to these 2 
+motor tasks become 
+‘closer to’ that in healthy 
+control subjects.
+1Ease-of-use feature of the device will be reflected by the <3 hours learning time. We will further 
+study effects of 1) PT’s experience with ReIn-Hand, and 2) the number of experimental sessions on the 
+time to learn to use the device. For PT’s experience, since Dr. Carmona already has 4-year experience 
+in using current ReIn-Hand device in stroke participants, we will compare 1) the learning time on day 
+2 of the group 1 (N=10) working with the 10 PTs versus the time of the group 2 (N=10) working with 
+Dr. Carmona; and 2) the learning time of group 1 on day 2 with the 10 PTs versus the time of the same 
+group on day 3 with Dr. Carmona. A non-significant difference for both comparison will suggest non-
+significance for PT’s experience in using the device. For the number of sessions needed to learn to use 
+the device, we will compare the learning time of both groups on day 2 versus that on day 3. A non-
+significant difference will suggest sufficiency of one session in learning the device.
+Evaluation of the usability of the ReIn-Hand: Within 0-3 days after Day 3, the 10 PTs and the 
+20 stroke participants will finish a 5min user survey to report the level of ease-of-use of the ReIn-Hand 
+device. Items that will be rated (on ordinal scale 0-5, with the easiest use at 5) include: 1) determination 
+of the stimulation/recording electrode positions (PT only), 2) setting up the initial detection rule (PT 
+only), 3) fine adjustment of the detection rule (both), 4) placement of the FHO (both), 5) using the 
+mobile phone software (both), 6) performance of the trained functional task (both). We expect to 
+observe users’ grades 
+4/5, with grades 3/5 will be queried for explanation and compiled for future 
+design modifications. 
+Transportation: Participants  will be given reimbursement for transportation expenses. 
+Participants are encouraged to take public transportation, or to drive and park in Northwestern 
+Medical School parking lots (located at 321 E. Erie St. or 222 E. Huron St.) where a parking sticker 
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 18will be  provided. If a cab or rideshare car (Uber or Lyft) is needed, it is requested that the 
+participant contact lab staff to confirm that the fare can be reimbursed before scheduling pickup. 
+Reimbursement and  payment will be submitted to the NU accounting department on a weekly 
+basis. Alternatively, participants may also be compensated using a pre-stored value card. 
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 19References:
+1 De  Kroon, J., Ljzerman, M., Chae, J., Lankhorst, G. J. & Zilvold, G. Relation between 
+stimulation characteristics and clinical outcome in studies using electrical stimulation to 
+improve motor control of the upper extremity in stroke. J Rehabil Med  37, 65-74 (2005).
+2 Roger, V. L., Go, A. S., Lloyd-Jones, D. M., Benjamin, E. J. & D. Berry, J. Heart Disease 
+and Stroke Statistics--2012 Update : A Report From the American Heart Association. 
+Circulation Journal of the American Heart Association (2011).
+3 Lloyd-Jones, D. et al. Heart disease and stroke statistics--2010 update: a report from the 
+American Heart Association. Circulation 121, e46-e215, 
+doi:CIRCULATIONAHA.109.192667 [pii] 10.1161/CIRCULATIONAHA.109.192667 
+(2010).
+4 Broeks  JG, Lankhorst GJ, Rumping K & Prevo AJ. The long-term outcome of arm 
+function after stroke: results of a follow-up study. Disability and Rehabilitation 21, 357-
+364 (1999).
+5 Parker  VM & Wade DT. Loss of arm function after stroke: measurement, frequency and 
+recovery. International Journal of Rehabilitation Research 8, 69-73 (1986).
+6 van  der Lee, J. H. et al. Forced use of the upper extremity in chronic stroke patients: 
+results from a single-blind randomized clinical trial.[see comment]. Stroke 30, 2369-2375 
+(1999).
+7 van  der Lee, J. H. et al. Exercise therapy for arm function in stroke patients: a systematic 
+review of randomized controlled trials. Clinical Rehabilitation 15, 20-31 (2001).
+8 Teasell R et al. Evidence Based Review of Stroke Interventions. (2005).
+9 Kunkel A et al. Constraint-induced movement therapy for motor recovery in chronic 
+stroke patients.[see comment]. Archives of Physical Medicine and Rehabilitation 80, 624-
+628 (1999).
+10 Miltner,  W. H., Bauder, H., Sommer, M., Dettmers, C. & Taub, E. Effects of constraint-
+induced movement therapy on patients with chronic motor deficits after stroke: a 
+replication. Stroke 30, 586-592 (1999).
+11 Butefisch, C., Hummelsheim, H., Denzler, P. & Mauritz, K. H. Repetitive training of 
+isolated movements improves the outcome of motor rehabilitation of the centrally paretic 
+hand. J Neurol Sci  130, 59-68 (1995).
+12 Wolf  SL, Blanton S, Baer H, Breshears J & Butler AJ. Repetitive task practice: a critical 
+review of constraint-induced movement therapy in stroke. Neurologist 8, 325-338 (2002).
+13 Van  Peppen RP et al.  The impact of physical therapy on functional outcomes after stroke: 
+what's the evidence? Clinical Rehabilitation  18, 833-862 (2004).
+14 Barreca S, Wolf SL, Fasoli S & Bohannon R. Treatment interventions for the paretic 
+upper limb of stroke survivors: a critical review. Neurorehabilitation and Neural Repair  
+17, 220-226 (2003).
+15 Blanton  S & Wolf SL. An application of upper-extremity constraint-induced movement 
+therapy in a patient with subacute stroke.[see comment]. Phys Ther 79, 847-853 (1999).
+16 Barker, R. N. & Brauer, S. G. Upper limb recovery after stroke: the stroke survivors' 
+perspective. Disability and rehabilitation 27, 1213-1223, 
+doi:10.1080/09638280500075717 (2005).
+17 Page,  S. J., Levine, P. G. & Basobas, B. A. "Reps" Aren't Enough: Augmenting 
+Functional Electrical Stimulation With Behavioral Supports Significantly Reduces 
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 20Impairment in Moderately Impaired Stroke. Arch Phys Med Rehabil 97, 747-752, 
+doi:10.1016/j.apmr.2016.01.004 (2016).
+18 Ellis,  M. D., Sukal-Moulton, T. M. & Dewald, J. P. Impairment-Based 3-D Robotic 
+Intervention Improves Upper Extremity Work Area in Chronic Stroke: Targeting 
+Abnormal Joint Torque Coupling With Progressive Shoulder Abduction Loading. IEEE 
+transactions on robotics : a publication of the IEEE Robotics and Automation Society 25, 
+549-555, doi:10.1109/TRO.2009.2017111 (2009).
+19 Page,  S. J., Gater, D. R. & Bach, Y. R. P. Reconsidering the motor recovery plateau in 
+stroke rehabilitation. Arch Phys Med Rehabil  85, 1377-1381, 
+doi:10.1016/j.apmr.2003.12.031 (2004).
+20 Kamper, D. G., Yasukawa, A. M., Barrett, K. M. & Gaebler-Spira, D. J. Effects of 
+neuromuscular electrical stimulation treatment of cerebral palsy on potential impairment 
+mechanisms: a pilot study. Pediatr Phys Ther 18, 31-38, 
+doi:10.1097/01.pep.0000202102.07477.7a (2006).
+21 Kamper, D. G., Cruz, E. G. & Siegel, M. P. Stereotypical fingertip trajectories during 
+grasp. J Neurophysiol 90, 3702-3710, doi:10.1152/jn.00546.2003 (2003).
+22 Kamper, D. G. & Rymer, W. Z. Impairment of voluntary control of finger motion 
+following stroke: role of inappropriate muscle coactivation. Muscle & nerve  24, 673-681 
+(2001).
+23 Gowland, C., deBruin, H., Basmajian, J. V., Plews, N. & Burcea, I. Agonist and 
+antagonist activity during voluntary upper-limb movement in patients with stroke. Phys 
+Ther 72, 624-633 (1992).
+24 Hammond,  M. C. et al. Co-contraction in the hemiparetic forearm: quantitative EMG 
+evaluation. Arch Phys Med Rehabil 69, 348-351 (1988).
+25 Kamper, D. G., Harvey, R. L., Suresh, S. & Rymer, W. Z. Relative contributions of 
+neural mechanisms versus muscle mechanics in promoting finger extension deficits 
+following stroke. Muscle & nerve 28, 309-318, doi:10.1002/mus.10443 (2003).
+26 Alexander,  C. M. & Harrison, P. J. Reflex connections from forearm and hand afferents 
+to shoulder girdle muscles in humans. Exp Brain Res 148, 277-282, doi:10.1007/s00221-
+002-1256-9 (2003).
+27 Cavallari, P. & Katz, R. Pattern of projections of group I afferents from forearm muscles 
+to motoneurones supplying biceps and triceps muscles in man. Exp Brain Res  78, 465-
+478 (1989).
+28 Cavallari, P., Katz, R. & Penicaud, A. Pattern of projections of group I afferents from 
+elbow muscles to motoneurones supplying wrist muscles in man. Exp Brain Res  91, 311-
+319 (1992).
+29 Gracies, J. M., Meunier, S., Pierrot-Deseilligny, E. & Simonetta, M. Pattern of 
+propriospinal-like excitation to different species of human upper limb motoneurones. J 
+Physiol 434, 151-167 (1991).
+30 Baker,  S. N. The primate reticulospinal tract, hand function and functional recovery. J 
+Physiol 589, 5603-5612, doi:10.1113/jphysiol.2011.215160 (2011).
+31 Riddle,  C. N. & Baker, S. N. Convergence of pyramidal and medial brain stem 
+descending pathways onto macaque cervical spinal interneurons. J Neurophysiol 103, 
+2821-2832, doi:10.1152/jn.00491.2009 (2010).
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 2132 Riddle,  C. N., Edgley, S. A. & Baker, S. N. Direct and indirect connections with upper 
+limb motoneurons from the primate reticulospinal tract. J Neurosci  29, 4993-4999, 
+doi:10.1523/JNEUROSCI.3720-08.2009 (2009).
+33 Miller,  L. C. & Dewald, J. P. Involuntary paretic wrist/finger flexion forces and EMG 
+increase with shoulder abduction load in individuals with chronic stroke. Clin 
+Neurophysiol, doi:10.1016/j.clinph.2012.01.009 (2012).
+34 Davidson,  A. G., Schieber, M. H. & Buford, J. A. Bilateral spike-triggered average 
+effects in arm and shoulder muscles from the monkey pontomedullary reticular 
+formation. J Neurosci 27, 8053-8058, doi:10.1523/JNEUROSCI.0040-07.2007 (2007).
+35 Davidson,  A. G. & Buford, J. A. Bilateral actions of the reticulospinal tract on arm and 
+shoulder muscles in the monkey: stimulus triggered averaging. Exp Brain Res  173, 25-39, 
+doi:10.1007/s00221-006-0374-1 (2006).
+36 Buford,  J. A. & Davidson, A. G. Movement-related and preparatory activity in the 
+reticulospinal system of the monkey. Exp Brain Res  159, 284-300, doi:10.1007/s00221-
+004-1956-4 (2004).
+37 Davidson,  A. G. & Buford, J. A. Motor outputs from the primate reticular formation to 
+shoulder muscles as revealed by stimulus-triggered averaging. J Neurophysiol 92, 83-95, 
+doi:10.1152/jn.00083.2003 (2004).
+38 Chen,  R. et al. Intracortical inhibition and facilitation in different representations of the 
+human motor cortex. J Neurophysiol 80, 2870-2881 (1998).
+39 Cohen,  L. G. A window into the role of inhibitory and excitatory mechanisms of 
+perception? J Physiol 529 Pt 2, 283, doi:PHY_1519 [pii] (2000).
+40 Kujirai, T. et al. Corticocortical inhibition in human motor cortex. J Physiol  471, 501-519 
+(1993).
+41 Clarkson,  A. N., Huang, B. S., Macisaac, S. E., Mody, I. & Carmichael, S. T. Reducing 
+excessive GABA-mediated tonic inhibition promotes functional recovery after stroke. 
+Nature 468, 305-309, doi:nature09511 [pii] 10.1038/nature09511 (2010).
+42 Hawe,  R., Sanchez, N. & Dewald, J. in the 16th Annual Meeting of the Oganization for 
+Human Brain Mapping    (Barcelona, Spain, 2010).
+43 Sanchez, N., Hawe, R. & Dewald, J. in Society for Neuroscience    (San Diego, CA, 
+2010).
+44 Stern  PH, McDowell F, Miller JM & Robinson M. Factors influencing stroke 
+rehabilitation. Stroke  2, 213-218 (1971).
+45 Lord  JP & Hall K. Neuromuscular reeducation versus traditional programs for stroke 
+rehabilitation. Archives of Physical Medicine and Rehabilitation 67, 88-91 (1986).
+46 Basmajian  JV et al.  Stroke treatment: comparison of integrated behavioral-physical 
+therapy vs traditional physical therapy programs. Arch. Phys. Med. Rehabil. 68, 267-272 
+(1987).
+47 Wagenaar  RC et al. The functional recovery of stroke: a comparison between neuro-
+developmental treatment and the Brunnstrom method. Scand. J. Rehabil. Med. 22, 1-8 
+(1990).
+48 Sietsema, J. M., Nelson, D. L., Mulder, R. M., Mervau-Scheidel, D. & White, B. E. The 
+use of a game to promote arm reach in persons with traumatic brain injury. Am. J. Occup. 
+Ther. 47, 19-24 (1993).
+49 Hsieh,  C. L., Nelson, D. L., Smith, D. A. & Peterson, C. Q. A comparison of performance 
+in added-purpose occupations and rote exercise for dynamic standing balance in persons 
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 22with hemiplegia. Am J Occup Ther 50, 10-16 (1996).
+50 Nelson,  D. L.  et al. The effects of an occupationally embedded exercise on bilaterally 
+assisted supination in persons with hemiplegia. Am J Occup Ther 50, 639-646 (1996).
+51 Trombly,  C. A. & Wu, C. Y. Effect of rehabilitation tasks on organization of movement 
+after stroke.[see comment]. Am. J. Occup. Ther.  53, 333-344 (1999).
+52 Wu  C, Trombly CA, Lin K & Tickle-Degnen L. A kinematic study of contextual effects 
+on reaching performance in persons with and without stroke: influences of object 
+availability. Arch. Phys. Med. Rehabil. 81, 95-101 (2000).
+53 Conforto  AB, Kaelin-Lang A & Cohen LG. Increase in hand muscle strength of stroke 
+patients after somatosensory stimulation. Ann. Neurol. , 122-125 (2002).
+54 Blennerhassett  J & Dite W. Additional task-related practice improves mobility and upper 
+limb function early after stroke: a randomised controlled trial. Aust J Physiother  50, 219-
+224 (2004).
+55 Brosseau L et al. Clinical practice guidelines for task-oriented training. Topics in Stroke 
+Rehabilitation 13, 21-27 (2006).
+56 Ellis,  M., Sukal-Moulton, T. & Dewald, J. Impairment-Based 3-D Robotic Intervention 
+Improves Upper Extremity Work Area in Chronic Stroke: Targeting Abnormal Joint 
+Torque Coulping With Progressive Shoulder Abduction Loading. IEEE Trans. on 
+Robotics 25 (2009).
+57 Ellis,  M. D., Sukal-Moulton, T. & Dewald, J. P. Progressive shoulder abduction loading 
+is a crucial element of arm rehabilitation in chronic stroke. Neurorehabilitation and 
+neural repair 23, 862-869, doi:10.1177/1545968309332927 (2009).
+58 Farrell,  J. F., Hoffman, H. B., Snyder, J. L., Giuliani, C. A. & Bohannon, R. W. Orthotic 
+aided training of the paretic upper limb in chronic stroke: results of a phase 1 trial. 
+NeuroRehabilitation 22, 99-103 (2007).
+59 Butler  A, Blanton S, Rowe V & Wolf S. Attempting to improve function and quality of 
+life using the FTM Protocol: case report. Journal of Neurologic Physical Therapy 30, 
+148-156 (2006).
+60 Brokaw EB, Black I, Holley RJ & Lum PS. Hand Spring Operated Movement Enhancer 
+(HandSOME): A Portable, Passive Hand Exoskeleton for Stroke Rehabilitation. Neural 
+Systems and Rehabilitation Engineering, IEEE Transactions 19, 391-399 (2011).
+61 Dovat L et al. HandCARE: A Cable-Actuated Rehabilitation System to Train Hand 
+Function After Stroke. IEEE Transactions on Neural  Systems and Rehabilitation 
+Engineering 16, 582-591 (2008).
+62 Geurts AC, Visschers BA, van Limbeek J & GM, R. Systematic review of aetiology and 
+treatment of post-stroke hand oedema and shoulder-hand syndrome. Scand. J. Rehabil. 
+Med. 32, 4-10 (2000).
+63 Prange  GB, Jannink MJA, Groothuis-Oudshoorn CGM, Hermens HJ & IJzerman MJ. 
+Systematic review of the effect of robot-aided therapy on recovery of the hemiparetic arm 
+after stroke. J. Rehabil. Res. Dev. 43, 171-184 (2006).
+64 Kwakkel,  G., Kollen, B. J. & Krebs, H. I. Effects of robot-assisted therapy on upper limb 
+recovery after stroke: a systematic review. Neurorehabil Neural Repair 22, 111-121, 
+doi:1545968307305457 [pii] 10.1177/1545968307305457 (2008).
+65 Mehrholz  J, Platz T, Kugler J & Pohl M. Electromechanical and robot-assisted arm 
+training for improving arm function and activities of daily living after stroke. Cochrane 
+Database Systematic Review 8, CD006876 (2008).
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 2366 Long  C. An electrophysiologic splint for the hand. Arch. Phys. Med. Rehabil.  44, 499–
+503 (1963).
+67 Berner YN, Lif Kimchi O, Spokoiny V & Finkeltov B. The effect of electric stimulation 
+treatment on the functional rehabilitation of acute geriatric patients with stroke-a 
+preliminary study. Arch. Gerontol. Geriatr. 32, 125-132 (2004).
+68 Chae  J et al. Neuromuscular stimulation for upper extremity motor and functional 
+recovery in acute hemiplegia. Stroke 29, 975-979 (1998).
+69 Aoyagi Y & Tsubahara A. Therapeutic orthosis and electrical stimulation for upper 
+extremity hemiplegia after stroke: a review of effectiveness based on evidence. Topics in 
+Stroke Rehabilitation 11, 9-15 (2004).
+70 Gritsenko V & Prochazka A. A functional electric stimulation-assisted exercise therapy 
+system for hemiplegic hand function. Arch. Phys. Med. Rehabil. 85, 881-885 (2004).
+71 Kimberley  TJ et al. Electrical stimulation driving functional improvements and cortical 
+changes in subjects with stroke. Exp. Brain Res.  154, 450-460 (2004).
+72 Popovic  DB, Popovic MB, Sinkjaer T, Stefanovic A & Schwirtlich L. Therapy of paretic 
+arm in hemiplegic subjects augmented with a neural prosthesis: a cross-over study. 
+Canadian Journal of Physiology and Pharmacology 82, 749-756 (2004).
+73 Powell  J, Pandyan AD, Granat M, Cameron M & Stott DJ. Electrical stimulation of wrist 
+extensors in poststroke hemiplegia. Stroke  30, 1384-1389 (1999).
+74 Sullivan  JE & Hedman LD. A Home Program of Sensory and Neuromuscular Electrical 
+Stimulation Integrated With Upper-Limb Task Practice in a Patient Who Is Stable After a 
+Stroke. Phys. Ther.  84, 1045-1054 (2004).
+75 Yozbatiran  N, Donmez B, Kayak N & Bozan O. Electrical stimulation of wrist and 
+fingers for sensory and functional recovery in acute hemiplegia. Clin Rehabil 20, 4-11 
+(2006).
+76 Santos  M, Zahner LH, McKiernan BJ, Mahnken JD & Quaney B. Neuromuscular 
+electrical stimulation improves severe hand dysfunction for individuals with chronic 
+stroke: a pilot study. Journal of Neurologic Physical Therapy 30, 175-183 (2006).
+77 Yozbatiran,  N., Donmez, B., Kayak, N. & Bozan, O. Electrical stimulation of wrist and 
+fingers for sensory and functional recovery in acute hemiplegia. Clinical Rehabilitation 
+20, 4-11 (2006).
+78 Quality,  A. f. H. R. a. VA/DoD clinical practice guideline for management of stroke 
+rehabilitation, 
+<http://www.guidelines.gov/content.aspx?id=25629&search=electrical+stimulation+++ar
+m+++stroke> (2006).
+79 Hendricks,  H. T., MJ, I. J., de Kroon, J. R., in 't Groen, F. A. & Zilvold, G. Functional 
+electrical stimulation by means of the 'Ness Handmaster Orthosis' in chronic stroke 
+patients: an exploratory study. Clin. Rehabil. 15, 217-220 (2001).
+80 Alon,  G., McBride, K. & Ring, H. Improving selected hand functions using a noninvasive 
+neuroprosthesis in persons with chronic stroke. Journal of Stroke and Cerebrovascular 
+Diseases 11, 99-106 (2002).
+81 Berner YN, Lif Kimchi O, Spokoiny V & Finkeltov B. The effect of electric stimulation 
+treatment on the functional rehabilitation of acute geriatric patients with stroke--a 
+preliminary study. Arch. Gerontol. Geriatr. 32, 125-132 (2004).
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.
+Version Date: 07/15/2021 2482 Meijer,  J. W.  et al. Short-term effects and long-term use of a hybrid orthosis for 
+neuromuscular electrical stimulation of the upper extremity in patients after chronic 
+stroke. Journal of Rehabilitation Medicine 41, 157-161 (2009).
+83 Ring, H. & Rosenthal, N. Controlled study of neuroprosthetic functional electrical 
+stimulation in sub-acute post-stroke rehabilitation. J Rehabil Med 37, 32-36, 
+doi:5YYMT4PACJL750NL [pii] 10.1080/16501970410035387 (2005).
+84 Panel,  T. R. o. t. C. Management of the Post Stroke Arm and Hand.  (2001).
+85 Bajd,  T., Kralj, A., Turk, R., Benko, H. & Sega, J. Use of functional electrical stimulation 
+in the rehabilitation of patients with incomplete spinal cord injuries. J Biomed Eng 11, 
+96-102 (1989).
+86 Wawrow, P. T., Jakobi, J. M. & Cavanaugh, J. M. Fatigue response of rat medial 
+longissimus muscles induced with electrical stimulation at various work/rest ratios. J 
+Electromyogr Kinesiol 21, 939-946, doi:10.1016/j.jelekin.2011.08.007 (2011).
+87 Gondin,  J. et al. Effects of stimulation frequency and pulse duration on fatigue and 
+metabolic cost during a single bout of neuromuscular electrical stimulation. Muscle Nerve 
+41, 667-678, doi:10.1002/mus.21572 (2010).
+88 Dreibati,  B., Lavet, C., Pinti, A. & Poumarat, G. Influence of electrical stimulation 
+frequency on skeletal muscle force and fatigue. Ann Phys Rehabil Med  53, 266-271, 271-
+267, doi:10.1016/j.rehab.2010.03.004 (2010).
+89 Gorgey,  A. S., Black, C. D., Elder, C. P. & Dudley, G. A. Effects of electrical stimulation 
+parameters on fatigue in skeletal muscle. J Orthop Sports Phys Ther 39, 684-692, 
+doi:10.2519/jospt.2009.3045 (2009).
+90 Kim,  S. S. et al. The effectiveness of home-based individual tele-care intervention for 
+stroke caregivers in South Korea. International nursing review 59, 369-375, 
+doi:10.1111/j.1466-7657.2011.00967.x (2012).
+91 Cunningham,  P., Turton, A., Van Wijck, F. & Van Vliet, P. Task-specific reach-to-grasp 
+training after stroke: Development and description of a home-based intervention. Clinical 
+rehabilitation, doi:10.1177/0269215515603438 (2015).
+92 Fugl-Meyer  AR. Post-stroke hemiplegia assessment of physical properties. Scand. J. 
+Rehabil. Med. Supplementum, 85-93 (1980).
+93 Lincoln NB, Jackson JM & Adams SA. Inter-rater reliability of the Nottingham method 
+of stereognosis assessment. Clin. Rehabil.  14, 153-159 (2000).
+94 Gaubert CS & Mockett SP. Inter-rater reliability of the Nottingham method of 
+stereognosis assessment. Clinical REhabilitation 14, 153-159 (2000).
+95 Lyle RC. A performance test for assessment of upper limb function in physical 
+rehabilitation treatment and research. Int. J. Rehabil. Res.  4, 483-492 (1981).
+96 Desrosiers  J, Bravo, G., Herbert R, Dutil E & Mercier L. Validation of the Box and Block 
+Test as a measure of dexterity of elderly people: reliability, validity, and norms studies." 
+Arch Phys Med Rehabil 75: 751-755. Arch. Phys. Med. Rehabil. 75, 751-755 (1994).
+97 van  der Lee JH, Beckerman H, Knol DL, de Vet HC & Bouter LM. Clinimetric 
+properties of the motor activity log for the assessment of arm use in hemiparetic patients. 
+Stroke 35, 1410-1414 (2004).
+98 Uswatte  G, Taub E, Morris D, Vignolo M & McCulloch K. Reliability and validity of the 
+upper-extremity Motor Activity Log-14 for measuring real-world arm use. Stroke  36, 
+2493-2496 (2005).
+IRB #: STU00072008-MOD0026 Approved by NU IRB for use on or after 7/27/2021 through 6/1/2022.

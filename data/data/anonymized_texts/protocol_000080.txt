@@ -1,0 +1,85 @@
+ 
+ 
+ 
+Sing For Your Saunter – Dementia Supplement  
+[STUDY_ID_REMOVED]  
+NIH R61 AT010753- 02S1 
+March 15, 2024  
+  
+Study Design  
+This study was a single center, cross -sectional, interventional study.  
+Participants  
+Participants were recruited through the Movement Disorders Clinic (MDC) at 
+Washington University in St. Louis School of Medicine. Inclusion criteria for this study were as  
+follows : a diagnosis of idiopathic, typical Parkinson disease according to the UK Brain Bank 
+Criteria; Hoehn & Yahr stage 2- 3 (mild  to moderate disease severity) ; stable on all PD 
+medications for at least two  months prior to study entry; normal or corrected to normal hearing; 
+score of ≥ 1 on the Movement Disorders Society Unified Parkinson Disease Rating Scale – Part 
+III – Motor Aspects (MDS -UPDRS -III) item #10 indicating observable gait impairment; able to 
+walk for ten continuous minutes independently; a score of one  or less on item #7 on the New 
+Freezing of Gait Questionnaire (nFOG -Q), indicating freezing episodes are not moderately or 
+significantly disturbing to daily walking ; and dementia as defined by a Clinical Dementia Rating 
+(CDR) score of 0.5 -1.0 (very mild to mild dementia) . Seventeen individuals met these inclusion 
+criteria and were enrolled in the study.  
+As this was a within -group cross -over study, there was no control group and no group 
+randomization. This study was approved by the Institutional Review Board (IRB) of Washington 
+University in St. Louis School of Medicine.  
+Protocol  
+This study consisted of  one in- person lab vi sit. All testing was done with participants in 
+their on -state for medication. During the lab visit, participants were first assessed using the 
+MDS -UPDRS -III and nFOG -Q to confirm eligibility for the study. Participants were also asked if 
+they had any previ ous musical training. After eligibility was confirmed, participants were fitted 
+with six APDM Opal sensors  worn on the feet, wrists, lumbar spine, and sternum . These 
+sensors  sample  at a frequency of 128 Hz and were used to collect various gait parameters, with 
+a focus on velocity, cadence, and stride length. For all gait tasks, participants completed three 
+30-second trials of each cueing  type and condition in a 100 -foot hallway. All participants were 
+followed by a trained physical therapist during walking trials to reduce fall risk during the 
+intervention. No falls or adverse events occurred during data collection.  
+All participants first complete d three 30 -second uncued walking trials to determine 
+baseline gait parameters. The average cadence over these uncued trials was  then used to 
+calculate four cueing tempos for each  participant: 90%, 100%, 110%, and 120% of uncued 
+walking cadence. These cues were selected based upon previous work in our group looking at 
+internal vs. external cues in people with PD without dementia.  Cues were  rounded to t he 
+nearest five beats per minute.  While cueing  tempos were being calculated, participants were 
+presented with a list of songs to choose from for the cued walking  tasks. The list included songs 
+selected with the help of a music therapist that have a 4/4 beat, salient tempo, and are likely to 
+be familiar to many individuals . The songs available were as follows: “I’ve Been Working on the 
+Railroad”, “You Are My Sunshi ne”, “This Land is Your Land”, “Skip to My Lou”, “She’ll Be 
+Coming Around the Mountain”, “Don’t Sit Under the Apple Tree”, “When the Saints Go  Marching 
+In”, “You Can’t Hurry Love”, “When Johnny Comes Marching Home Again”, and “Seventy -Six 
+Trombones.”  Participants were provided with the song lyrics prior to starting the cued tasks to 
+ensure they knew the words. After reviewing the lyrics, participants were recorded singing the 
+song out loud without reading the lyrics from the sheet to ensure they remembered the lyrics 
+correctly.  Additionally, they practiced walking and singing out loud to ensure they were able to 
+perform the two tasks simultaneously.   
+After cueing  tempos were determined, participants received t wo different cueing  
+methods at each tempo. The two cueing methods  were  A) M usic and B) M ental .  Music served 
+as the external ly generated cue, while Mental  served as the internal ly generated  cue. For all  
+cued trials, one chorus of the selected song was played at the correct tempo while the 
+participant was standing still  as a reminder  of the tempo. Cues were delivered via speakers and 
+volume was adjusted so participants could hear throughout the entire trial. During the M usic 
+task, the cue kept playing and participants were  instruct ed to walk to the beat, rather than the 
+melody , of the song  as they listened. During the M ental  task, the cue turned off and participants 
+were  instructed to walk to the beat of the song while singing in their heads in silence.  To ensure 
+participants were doing the task, they were asked if they were singing in their heads after each 
+trial. Participants were instructed not to move their mouths during the mental singing task, and 
+this was monitored by the physical therapist who was w alking with the participant for safety. 
+Prior to the start of the cued trials, a member of the research team demonstrated walking on the 
+beat to ensure all participants received the same instruction. To mitigate order effects, t ask 
+order for each participant was randomized first by tempo, then M usic vs M ental  condition order 
+was randomized within each tempo. This meant that both cueing types  at a given tempo 
+occurred  one after the other, but the order of cue type presented at each tempo was  random.  In 
+total, participants completed 27  walking trials  of 30 seconds each.  
+Statistical Analysis  
+All data were  analyzed using R statistical software . Gait parameters including veloci ty 
+and stride length were  averaged across the three trials for a given condition (i.e., Mental  110%) . 
+Mixed -effect models  were  used to predict velocity  and stride length as a function of cue type 
+and tempo (as fixed effects) and to account for the within- subject nature of the design (as 
+random effects)  using the lmer4 package in R . These models tested the main effects of Cue 
+Type (Music v. Mental), Tempo (90, 100, 110, and 120% ), and their interaction as categorical 
+factors. Random effects of participant, the interaction of participant :cue type, and the interaction 
+of participant :tempo  were included to account for the within -subject nature of the manipulation.  
+To determine the statis tical significance of these effects, we used F -tests with Satterthwaite’s 
+approximation for the degrees of freedom.  The Type I error rate for all tests was set at α=.01 7 to 
+account for multiple comparisons .  
+ 

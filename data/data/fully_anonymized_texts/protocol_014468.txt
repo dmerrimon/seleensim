@@ -1,0 +1,114 @@
+Statistical Analysis Plan  
+ 
+TITLE: Cessation in Non -Daily Smokers: A RCT of NRT With E cological Momentary Assessment  
+NCT Protocol #:  [STUDY_ID_REMOVED]  
+Date  Submitted : 01/08/2019  
+ 
+Outcomes  
+ 
+Outcomes are assessed and analyzed in three ways:  
+ 
+The primary outcome is 6 -month continuous abstinence, allowing for a 2 -week 'grace period' following 
+the start of treatment and quit date.1,2  Participants are considered to meet the criterion if they claim 
+abstinence throughout the period, demonstrate CO levels ≤3 ppm each time they are tested, and further 
+demonstrate urinary cotinine levels ≤25 ng/ml when tested at 3 and/or [ADDRESS_494063] for assessing smoking cessation outcomes. However, Hedeker, Mermelstein & Demitras3 have 
+shown that imposing this very strong ass umption is not necessarily conservative.  Following procedures 
+recommended by [CONTACT_393742], sensitivity analyses will consider a range of assumptions about the 
+relationship between loss to follow -up and smoking.  
+ 
+Complementing the assessment of continuous  abstinence, we will also assess 14 -day point -prevalence 
+abstinence at each time -point throughout the study, specifically at 2, 4, 6, 12, and 24 weeks. (Analysis of 
+ad libitum smoking patterns among ITS4 indicates that 7 day periods of abstinence are relat ively common, 
+whereas 14 -day periods are not.)  Subjects will be considered abstinent if they report no smoking for 14 
+days, and demonstrate exhaled CO levels ≤[ADDRESS_494064] 7 consecutive days of abstinence.  A lapse is defined as any occasion of 
+smoking after abstinence is achieved, and a relapse is defined as reaching a rate of cigarette consumption 
+≥50% of the subject's baseline level.   (Previous definitions of relapse6 have been based on consecutive 
+days smoking, but such definitions are unsuitable for ITS, who might not meet such criteria even when 
+smoking ad libitum at baseline.)  
+ 
+Moderators  
+ 
+Three individual difference variables are h ypothesized to potentially moderate the treatment effects: 
+Degree of dependence will be expressed as a dichotomy, distinguishing subjects with an FTND7 score of 
+0 from those with higher scores. Previous research has indicated that this distinction is behav iorally 
+relevant among ITS.8  Self-reported history of previous daily smoking (for at least 6 months) has 
+previously been shown to help predict ITS behavior9 and smoking cessation outcome.[ADDRESS_494065] which to assess the 
+amount of gum use; we instead capture gum use i n strata based on the observed range of gum use in the 
+study (strata: 0 pi[INVESTIGATOR_393741], <0.5/day, 0.5 -1.0/day, >1/day).  
+ 
+Nollen et al.14 are conducting a  trial of nicotine replacement focused exclusively on African -American 
+individuals.   Anticipating the value of comparing outcomes across studies, an exploratory analysis will 
+examine outcomes among African -American participants in the present study, also examining whether 
+race moderates outcomes.  
+ 
+Analysis  
+ 
+Continuous abstinence will be assessed by [CONTACT_51621], with treatment as the primary predictor.  
+Moderation will be tested by [CONTACT_393743]: 
+dependence, history of daily smoking, and gum use.  Sensitivity analyses will test a range of hypothesized 
+relationships between missing data and smoking,[ADDRESS_494066] baseline differences between treatment groups in variables that also correlate with outcomes, these 
+will be included as covariates.   
+ 
+Point -prevalen ce abstinence over multiple time -points will be tested using multi -level generalized mixed 
+models, with random effects (SAS PROC GLIMMIX), which allow for multiple correlated dependent 
+variables per subject.  Abstinence at 2, 4, 6, 12 and 24 weeks will be entered; parameters will include 
+assessment time (with both linear and quadratic expressions) and treatment assignment and their 
+interaction.  The resulting analysis essentially considers the 'area under the curve' for abstinence -by-time.  
+Missing assessme nts will not be imputed; GLIMMIX allows for incomplete data across time and uses full 
+maximum likelihood estimation.  This allows for missing at random (MAR) in which the missingness can 
+be related to model covariates as well as observed values of the depe ndent variable.15  The three pre -
+specified moderators and their interaction with treatment and time will also be considered, and baseline 
+differences will be included as covariates.   
+ 
+Achievement of cessation milestones (abstinence, lapsing, and relapsing)  during the primary treatment 
+period of 6 weeks will be analyzed using event -history ('survival') analyses using Cox proportional 
+hazards models. (If the assumption of proportionality is untenable, other survival analysis models will be 
+applied.)  Time to achieve cessation will be assessed from the first treatment day; time to lapse is assessed 
+from the first day of abstinence, among those who achieve abstinence; time to relapse is assessed from the 
+day of first lapse, among those who lapse.  For subjects w ho are not observed to reach a milestone (e.g., 
+subjects who do not achieve abstinence by [CONTACT_393744]), time will be censored as 
+of the last day of observation.  Moderators and potential group -assignment confounds will be considered 
+as above.  
+ 
+ 
+  
+References  
+ 
+1. Hughes JR, Keely JP, Niaura RS, Ossip -Klein DJ, Richmond RL, Swan GE. Measures of 
+abstinence in clinical trials: issues and recommendations. Nicotine Tob Res. 2003;5(1):[ADDRESS_494067] R, Hajek P, Stead L, Stapleton J. Outcome  criteria in smoking cessation trials: proposal for 
+a common standard. Addiction. 2005;100(3):299 -303. 
+3. Hedeker D, Mermelstein R, Demirtas H. Analysis of binary outcomes with missing data:  
+Missing=smoking, last observation carried forward, and a little multiple imputation. Addiction. 
+2007;102:1564 -1573.  
+4. Shiffman S, Tindle H, Li X, Scholl S, Dunbar M, Mitchell -Miland C. Characteristics and 
+smoking patterns of intermittent smokers.  Exp Clin Psychopharmacol . 2012;20(4):264 -277. 
+5. Shiffman S, Scharf DM, Shadel WG, et al. Analyzing milestones in smoking cessation: 
+Illustration in a nicotine patch trial in adult smokers.  J Consult Clin Psychol . 2006;74(2):276 -285. 
+6. Ossip -Klein DJ, Bigelow G, Parker SR, Curry S, Hall S, Kirkland. Task Force 1: classificati on 
+and assessment of smoking behavior.  Health Psychol . 1986;5:[ADDRESS_494068] for Nicotine 
+Dependence: a revision of the Fagerström Tolerance Questionnaire. Br J Addict. 
+1991;86(9):1119 -1127. 
+8. Shiffman S, Ferguson SG, Dunbar MS, Scholl SM. Tobacco dependence among intermittent 
+smokers. Nicotine Tob Res. 2012;14(11):1372 -1381.  
+9. Schauer G, Malarcher, AM., Berg, CJ. Differences in smoking and cessation characteristics 
+among adult nondaily  smokers in the [LOCATION_002]: findings from the 2009 -2010 National Adult 
+Tobacco Survey.  Nicotine Tob Res.  2014;16(1):58 -68. 
+10. Tindle HA, Shiffman S. Smoking cessation behavior among intermittent smokers versus daily 
+smokers. Am J Public Health. 2011;101(7):e1 -3. 
+11. Shiffman S, Paty J, Rohay J, DiMarino M, Gitchell J. The efficacy of computer -tailored smoking 
+cessation material as a supplement to nicotine polacrilex gum therapy.  Arch Intern Med . 2000;  
+160  (11):1675 -1681.  
+12. Shiffman S, Dresler CM, Hajek P, Gilburt SJ, Targett DA, Strahs KR. Efficacy of a nicotine 
+lozenge for smoking cessation.  Arch Intern Med . 2002;162  (11):1267 -1276.  
+13. Food and Drug Administration. Nicorette Gum Approved Labeling.  1998; Available at 
+https://www.accessdata.fda.gov/drugsatfda_docs/label/2012/018612s061_020066s042lbl.pdf   
+14. Nollen NL. CL, Mayo MS., Ellerbeck EF., Madhusudhana S., Ahluwalia JS. A randomized 
+clinical trial of counseling and nicotine replacement therapy for treatment of African American 
+non-daily smokers: Design, accrual, and baseline characteristics Contemp Clin Trials. 
+2018;70:72 -82. 
+15. Little RJ, D'Agostino, R., Cohen, M.L., Dickersin, K., Em erson, S.S., Farrar, J.T., Frangakis, C., 
+Hogan, J.W., Molenberghs, G., Murphy, S.A., Rotnitsky, A., Scharfstein, D., Neaton, J.D., Shih, 
+W., Siegel, J.P., Stern, H. . Special Report: The Prevention and Treatment of Missing Data in 
+Clinical Trials. . N Eng l J Med . 2012;367(14):1355 -1360.  
+ 
+ 

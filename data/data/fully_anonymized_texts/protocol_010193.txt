@@ -1,0 +1,458 @@
+U1 Technical Plan 9 -25-17 clean   Page 1 of 13 Diabetic Retinopathy Clinical Research Network  
+U1 Manuscript  
+ 
+Continued Ranibizumab With or Without Dexamethasone for Persistent 
+Diabetic Macular Edema (Protocol U):  
+A DRCR.net Phase 2 Randomized Clinical Trial  
+ 
+Technical Plan  
+ 
+VERSION  
+NUMBER  AUTHOR  APPROVER  EFFECTIVE 
+DATE  REVISION DESCRIPTION  
+1.0 Danni Liu  Michele Melia  9-25-2017  Initial version  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+U1 Technical Plan 9 -25-17 clean   Page 2 of 13 OVERVIEW  
+Protocol U is a short -term evaluation of combination intravitreous corticosteroid + anti -VEGF 
+treatment for persistent central -involved diabetic macular edema following anti -VEGF therapy.  
+ 
+All potential study participants were required to participate in a 12 -week run -in phase. In order to 
+enter the run -in phase, all eligibility criteria were assessed and met. During the run -in phase, 
+study eyes received 3 study ranibizumab 0.3mg injections appro ximately 4 weeks apart. At the 
+end of the run -in phase, eligible study eyes that still met eligibility criteria were randomly 
+assigned to one of the two treatment groups: A) sham + intravitreal ranibizumab 0.3mg  
+[ranibizumab group] , or B) dexamethasone int ravitreal implant + intravitreous ranibizumab 
+0.3mg  [combination group] . Study participants may have one or two study eyes. Study 
+participants with two study eyes were randomly assigned to receive continued anti -VEGF 
+therapy (ranibizumab) in one eye and de xamethasone intravitreal implant + ranibizumab in the 
+other eye. Study duration was [ADDRESS_484651] randomization.  
+ 
+The protocol statistical analysis plan can be found at this location : 
+\\Eros\sys\user\aDRCRN \Protocols \Protocol U – Phase II Persistent DME 
+Study \Statistics \SAP\Protocol U SAP 04 -12-17 (8 -29-17) ver 2 clean.docx  
+The purpose of this document is to provide the specific analysis objectives and technical 
+details for the protocol U primary manuscript.    
+ 
+DATA SOURCE  
+Database used to create SAS data sets :  DRCRnet_U_PrimManu_21sep2017  
+Data validation:  \\Eros\sys\user\aDRCRN \Protocols \Protocol U – Phase II Persistent DME 
+Study \Statisti cs\Data Closeout \Documentation  
+SAS master data sets  
+Dataset creation:  \\Eros\sys\user\aDRCRN \Protocol s\Protocol U – Phase II Persistent DME 
+Study \Master Dataset \Documentation  
+Location:  \\Eros\sys\user\aDRCRN \Protocols \Protocol U – Phase II Persistent DME 
+Study \Master Dataset \Datasets \20170921Frz  
+SAS master d atasets  utilized:  
+1. eyes – one record per eye (study eyes and non -study eyes)  
+a. Read in as eyesRand  
+i. Limited to randomized  eyes only ( randEyeFlg ) 
+2. visitEyes  – one record per completed visit per eye (study eyes and non -study eyes)  
+a. Read in as visitEyesRand  
+i. Limited to randomized eyes only ( randEyeFlg ) 
+U1 Technical Plan 9 -25-17 clean   Page 3 of 13 3. advEvents  – one record per adverse event   
+a. Including  study eyes events, non -study eyes events, and syste mic events  
+4. intraInj  – one record per completed visit that included study treatment injection(s) (study 
+eyes only)  
+ 
+VARIABLE CREATED  
+All variable creation procedures were completed  and documented  in the master dataset creation 
+program.  
+ 
+TECHNICAL DETAILS  
+Note : All P-values will be reported using New England Journal of Medicine  standards:  2 
+decimal places if P > 0.01, 3 decimal places for 0.01 > P > 0.001, or if P < 0.001, then show < 
+0.001 . 
+1. Describe r ecruitment and follow -up visit completion  
+a. Create a flow chart for the completion of follow -up during  the entire study, 
+including  run-in phase and randomization phase [ Figure 1 ] 
+b. Tabulate patient status  
+i. Report No. of patients and eyes enrolled into the study  
+ii. Report No. of patients and eyes randomized into the main trial  
+iii. Report No. of patient s dropped during run -in phase by [CONTACT_386805]  (by [CONTACT_386806] -level)  
+c. Use eyesRand  dataset to t abulate  visit completion status on eye level by [CONTACT_386807]  
+i. Tabulate No. of eyes completed  the visit  
+ii. Tabulate No. of eyes dropped  in randomization phase  
+iii. Tabulate v isit completion status at 24 weeks  
+ Note : One patient (U044 -0672) completed an out -of-window 24 -
+week visit (211 days fr om randomization visit) and did not have 
+any other visits within the analysis window. Since it was the last 
+follow -up visit in this study, the patient ’s record was hard -coded as 
+“dropped” for the purpose of analysis.  
+iv. Footnote how visit analysis windows were defined  in the statistical  
+analysis plan  
+ 
+2. Describe b aseline characteristics  among randomized eyes by [CONTACT_1570] [Table 1 ] 
+using eyesRand  dataset  
+a. No. (%)  
+i. Gender  
+U1 Technical Plan 9 -25-17 clean   Page 4 of 13 ii. Race/ethnicity  
+iii. Diabetes type  
+iv. Use of insulin  
+v. Smoking status  
+vi. Participants with two study eyes 
+vii. Prior macular laser treatment for DME  
+viii. Prior anti -VEGF treatment for DME  
+ix. Prior intravitreal corticosteroid for DME  
+x. Prior PRP  
+xi. Lens status  
+xii. Randomization visual acuity letter score  
+xiii. Randomization central subfield thickness  
+xiv. Improvement in visual acuity and OCT during run -in phase  
+xv. Randomization diabetic retinopathy severity category  on clinical exam  
+b. Median [IQR] (and mean ± SD)  
+i. Age 
+ii. Duration of diabetes  
+iii. Hemoglobin A1c  
+iv. Arterial blood pressure  
+v. Body Mass Index  
+vi. Total number of prior anti -VEGF treatment for DME  
+vii. Intraocular p ressure  
+viii. Randomization visual acuity letter score   
+ix. Change in visual acuity letter score from enrollment to randomization  
+x. Randomization central subfield thickness  
+xi. Change in central subfield thickness from enrollment to randomization  
+xii. Randomization retinal volume  
+c. Footnote No. of missing data (if any ) 
+ 
+3. Describe the frequency of post randomization study t reatment  using eyesRand  dataset  
+[Results  – text] 
+a. No. of sham injections by [CONTACT_386808]  
+i. Note : A protocol amendment was implemented which changed  the sham 
+injection procedure from applicators to needleless syringes (effective April 
+1st, 2016)  
+b. Mean No. of ranibizumab injections between randomization and 24 weeks by 
+[CONTACT_1570]  
+c. % of eyes received second combination injections during the study among 
+participants who completed at least one visit between 12 weeks and 20 weeks by 
+[CONTACT_1570]  
+i. Note : injections administered at the 20 -week visit will be included  
+U1 Technical Plan 9 -25-17 clean   Page 5 of 13 d. % of dexamethasone/sh am injections performed on the same day as a 
+ranibizumab injection by [CONTACT_1570]  
+e. Check number of eyes received more than 2 combination injections due to data 
+entry error using intraInj  dataset [ not in text ] 
+f. Check number of eyes completed 24 week visit  but did not receive all required 
+injections or received non -protocol treatment using visitEyesRand  dataset [ not in 
+text] 
+g. No. (%) of eyes received non -protocol treatment for DME  
+ 
+4. Describe v isual acuity  at 24 weeks by [CONTACT_1570]   
+a. Report descriptiv e statistics using observed data in visitE yesRand  dataset [Table 
+2] 
+i. Visual acuity letter score at 24 weeks  [eFigure 1a ] 
+ Mean ± SD  
+ Snellen equivalent (mean)  
+ No. (%) of eyes 20/20 or better (letter score ≥84), 20/40 or better 
+(≥69), 20/200 or worse (≤38)  
+ii. Mean truncated change at 24 weeks from randomization  [eFigure 1b ] 
+ Mean ± SD  
+ Median [IQR]  
+ No. (%) of eyes ≥ 15 letters improvement, ≥ 10 letters 
+improvement, ≥ 10 letters worsening, ≥ 15  letters worsening  
+ Footnote No. of missing values and No. of values truncate d at [ADDRESS_484652] deviation from the mean  (if any)  1 
+ Review lens status for eyes improved or worsened on visual acuity 
+at 24 weeks [ Discussion – text] 
+iii. Area under the curve  (AUC)  between randomization and 24 weeks  using 
+truncated data  [Figure 2 ] 
+ Mean ± SD  
+ Median [IQR]  
+ Note : AUC is computed only for those completing the 24 week 
+follow -up visit.  
+b. Compare change in visual acuity at 24  weeks from randomization between 
+treatment group s 
+i. Perform Markov Chain Monte Carlo multiple imputation2 on missing  data 
+(100 imputations) for change in visual acuity at [ADDRESS_484653] randomization follow -up visits, 
+accounting for treatment group  assignment , randomization visual acuity  
+value , laterality and improvement in visual acui ty during run -in phase. 
+Create flags for binary outcomes specified above based on imputed data.  
+U1 Technical Plan 9 -25-17 clean   Page 6 of 13 ii. Primary analysis : Perform  a linear mixed effects model  for treatment 
+group comparison of mean change in visual acuity at 24 weeks from 
+randomization . (%MIAnaly zeMeanMixed  macro)  
+ Truncated c hange in visual acuity letter scores at 24 weeks will be 
+fitted as the dependent variable, and the treatment group as the 
+independent variable, adjusting for randomization visual acuity 
+value, randomization stratification factors (laterality and 
+improvement in visual acuity during run -in phase as defined in the 
+protocol) by [CONTACT_386809] a fixed effect in the model. A 
+random subject effect will be included to adjust for the correlation 
+between eyes of participants who have two randomized eyes  
+(assuming a compound symmetry covariance structure) . 
+o Run the model on observed data to check model 
+assumption s including residual analysis , goodness of fit and 
+influence d iagnostics  [not in text ] 
+o Run the model on the imputed datasets and report the 
+adjusted mean difference, 95% confidence interval, and P-
+value from treatment group comparison  [Table 2 ] 
+ Assessment of confounding : Impute the outcome accounting for 
+additional pre -specified potential co nfounding factors, including 
+age, duration of diabetes, HbA1c levels, retinal thickening on 
+OCT, and diabetic retinopathy severity on clinical exam. All 
+categorical covariates with more than [ADDRESS_484654] hoc assessment: impute the data with additional 
+factors including lens status (pseudophakic vs. phakic) and 
+number of anti -VEGF injections  (3 vs. more than 3 
+injections)  within 20 weeks prior to run -in. Mimic the pre-
+specified anal ysis above by [CONTACT_386810] a time . [Table 2 Footnote ] 
+ Construct a scatter plot of number of prior anti -
+VEGF (as a continuous outcome) versus change in 
+visual acuity at 24 weeks by [CONTACT_386811]. [ not in text ] 
+ Per-protocol analysis  [eTable 2 ] 
+o As specified in the statistical analysis plan, the per -protocol 
+analysis will mimic the primary analysis limiting the cohort 
+to 24 -week completers who had available data and received  
+all required injections at the completed visits without 
+receiving any non -protocol treatment.  No imputation will 
+be performed.  
+U1 Technical Plan 9 -25-17 clean   Page 7 of 13 o Report mean ± SD and median [IQR] by [CONTACT_1570] , 
+adjusted mean difference , 95% CI and P-value  from the 
+treatment group comparison  
+ Sensitivity analysis  [not in text ] 
+o All sensitivity analyses will mimic the primary analysis 
+model using imputed data .  
+ Pre-specified sensitivity analysis will be performed 
+and stratified by [CONTACT_386812].  
+ Post hoc sensitivity analysis will exclude all 
+patients at Site 194.  
+ Note: this was at recommendation of 
+DSMC, after review of cases of ineligible 
+participants  enrolled at that site discovered 
+at a site visit.  
+ Subgroup analysis  (%subgrpMixed  macro):   
+o Pre-specified subgroup analysis will evaluate the  effects of  
+following baseline factors: lens status  [eFigure 2 ], 
+improvement in visual acuity during run -in phase  [eFigure 
+3], and improvement in OCT during run -in phase  [eFigure 
+4]. [eTable 3 ] 
+o Post hoc subgroup analysis will mimic the pre -specified 
+subgroup analysis to examine the effect of  the following 
+baseline factors: randomization visual acuity ( <64 vs. ≥64 
+letters), and number of prior anti -VEGF injections within 
+20 weeks prior to run -in (3 vs. 4 or more  injections) . 
+[eTable 4] 
+o The subgroup analysis will mimic the primary analysis 
+adding an interaction between subgroup and treatment to 
+the primary mixed model  using observed data only . 
+ Report the P-value for the interaction term. Report 
+mean ± SD and median [IQR] by [CONTACT_386813].  
+ Report adjusted treatment group mean difference  
+and 95% confidence interval from treatment group 
+comparison within each subgroup. Only in the 
+presence of a significant interaction term ( P<0.05) 
+the within -group  P-value will be reported.  
+o The effect of gender and race/ethnicity will be explored  in 
+the same way as the subgroup factors listed above. [ not in 
+text] 
+iii. Secondary outcomes  [Table 2] : 
+ Binary outcomes : Perform binomial regression models with 
+adjustment for same covariates in the  primary analysis and use  
+U1 Technical Plan 9 -25-17 clean   Page 8 of 13 generalized estimating equations to account for correlation 
+between eyes of bilateral participants. All will  be analyzed using 
+imputed data  (%MIAnalyzeBinary  macro) . 
+o When binomial regression model failed to converge, a 
+hierarchy is used to remove the covariates: laterality  
+improvement in visual acuity during run -in phase  
+randomization visual acuity letter score.  
+ This hierarchy was chosen based on judgment 
+regarding theorized existence and strength of 
+association with the outcome (least important  
+most important)  
+o Report the observed No. (%) by [CONTACT_1570], adjusted 
+difference in proportions, 95% confidence interval, and P-
+value  from treatment group comparisons  
+ AUC outcome : Mimic the linear mixed effect model in the primary 
+analysis limit ing the cohort to 24 -week completers.  No imputation 
+will be performed.    
+o Report me an ± SD and median [IQR] by [CONTACT_34689], 
+adjusted mean difference , 95% confidence interval, and P-
+value from treatment group comparison . 
+ 
+5. Describe OCT Central Subfield Thickness  at 24 weeks by [CONTACT_1570]  
+a. Report descriptiv e statistics using observed data in visitE yesRand  dataset [Table 
+2] 
+i. Central subfield thickness at 24 weeks  
+ Mean ± SD  
+ Median [IQR]  
+ No. (%) of eyes below  gender and OCT machine -specific values  
+o Defined as <290 in women and <305 in men in Zeiss 
+Cirrus; <305 in women and <3 20 in men in Heidelberg 
+Spectralis  
+o No imputation will be performed for this outcome. The 
+analysis will include observed data only.  
+ii. Mean truncated  change at 24 weeks from randomization  
+ Mean ± SD  
+ Median [IQR]  
+ No. (%) of eyes ≥ [ADDRESS_484655] step  improvement, ≥  [ADDRESS_484656] steps  
+improvement, ≥ [ADDRESS_484657] step worsening, ≥ [ADDRESS_484658] steps 
+worsening  
+ Footnote No. of missing values and No. of values truncated at [ADDRESS_484659] deviation from the mean  (if any) 1 
+U1 Technical Plan 9 -25-17 clean   Page 9 of 13 iii. Area under the curve (AUC) between randomization and 24 weeks  using 
+truncated data [Figure 3 ] 
+ Mean ± SD  
+ Median [IQR]  
+ Note : AUC is computed only for those completing the 24 week 
+follow -up visit.  
+b. Compare change in central subfield thickness (CST) at 24 weeks from 
+randomization between treatment group s 
+i. Perform Markov Chain Mo nte Carlo multiple imputation2 on missing data  
+(100 imputations)  for change in CST at [ADDRESS_484660]  during run -in phase. Create flags for binary 
+outcomes specified above based on imputed data.  
+ii. Primary analysis : Perform a linear mixed effects model for treatment 
+group comparison of mean change in CST at 24 weeks from 
+randomization  (%MIAnalyzeMeanMixed  macro) . 
+ Truncated changes  in CST at [ADDRESS_484661], randomization 
+stratification factors (laterality and improvement in OCT CST  
+during run -in phase as defined in the protocol) by [CONTACT_386814] a fixed effect in the model. A  random subject effect will be 
+included to adjust for the correlation between eyes of participants 
+who have two randomized eyes (assuming a compound symmetry 
+covariance structure).  
+o Run the model on observed data to check model 
+assumption s including residual  analysi s, goodness of fit and 
+influence diagnostics [ not in text ] 
+o Run the model on the imputed datasets and report the 
+adjusted mean difference, 95% confidence interval, and P-
+value from treatment group comparison  [Table 2 ] 
+ Assessment o f confounding : Impute the outcome accounting for 
+additional pre -specified potential confounding factors, including 
+age, duration of diabetes, HbA1c levels, and diabetic retinopathy 
+severity on clinical exam. All categorical covariates with more 
+than 2 levels are collapsed to a binary covariate for modeling to aid 
+convergence.  Mimic primary analysis and obtain  P-value for 
+treatment group comparison.  [not in the text ] 
+ Per-protocol analysis  [eTable 2 ] 
+o As specified in the statistical analysis plan, the per -protocol 
+analysis will mimic the primary analysis limiting the cohort 
+to 24 -week completers who had available data and received 
+U1 Technical Plan 9 -25-17 clean   Page 10 of 13 all required injections at the completed visits without 
+receiving any non -protocol treatment. No imputation will 
+be performed.  
+o Report mean ± SD and median [IQR] by [CONTACT_1570], 
+adjusted mean difference, 95% CI and P-value from the 
+treatment group comparison  
+ Sensitivity analysis  [not in text ] 
+o All sensitivity analyses will mimic the primary analysis 
+model using imputed data . 
+ Pre-specified sensitivity analysis will be performed 
+and stratified by [CONTACT_386812].  
+ Post hoc sensitivity analysis will exclude all 
+patients at Site 194.  
+ Note: this was at recommendation of 
+DSMC, after review of cases of ineligible 
+participants enr olled at that site discovered 
+at a site visit.  
+ Subgroup analysis  (%subgrpMixed  macro)  [eTable 3 ]: 
+o Pre-specified subgroup analysis will evaluate the effects of 
+following baseline factors: lens status  [eFigure 5 ], 
+improvement in visual acuity during run -in phase  [eFigure 
+6], and improvement in OCT during run -in phase  [eFigure 
+7].  
+o The subgroup analysis will mimic the primary analysis 
+adding an interaction between subgroup and treatment to 
+the primary mixed model  using observed data only . 
+ Report the P-value f or the interaction term. Report 
+mean ± SD and median [IQR] by [CONTACT_386813].  
+ Report adjusted treatment group mean difference 
+and 95% confidence interval from treatment group 
+comparison within each subgroup. Only in the 
+presence of a significant interaction term ( P<0.05) a 
+within -subgroup P-value will be reported.  
+o The effect of gender and race/ethnicity will be explored  in 
+the same way as the subgroup factors listed above. [ not in 
+text] 
+iii. Secondary outcomes  [Table 2] : 
+ Binary outcomes : Perform binomial regression models with 
+adjustment for same covariates in the primary analysis and use 
+generalized estimating equations to account for co rrelation 
+between eyes of bilateral participants. All outcomes will be 
+U1 Technical Plan [ADDRESS_484662] 
+machine -specific outcome  (%MIAnalyzeBinary  macro) . 
+o When binomial regression model failed to converge, a 
+hierarchy is used to remove the covariates: laterality  
+improvement in OCT CST  during run -in phase  
+randomization OCT CST .  
+ This hierarchy was chosen based on judgment 
+regarding theorized existence and  strength of 
+association with the outcome (least important  
+most important)  
+o Barnard’s unconditional exact test will be used when 
+binomial regression model failed to converge without any 
+covariates  (%MIAnalyzeBarnards  macro) .  
+o Report the observed No. (%) by [CONTACT_1570], adjusted 
+difference in proportions, 95% confidence interval, and P-
+value from treatment group comparisons  
+ AUC outcome : Mimic the linear mixed effect model in the primary 
+analysis limiting the cohort to 24 -week completers. No imputation 
+will be performed.  
+o Report mean ± SD and median [IQR] by [CONTACT_34689], 
+adjusted mean difference , 95% confidence interval, and P-
+value from treatment group comparison.  
+ 
+6. Summarize  safety  events  occurred  at any time during randomization phase  
+a. Ocular adverse events [ eTable 5 ] 
+i. Tabulate No. (%) of eyes experienced at least one event by [CONTACT_386815]  
+ At least one ocular adverse events  in the study eye  
+ Increased intraocular pressure (IOP) events (a compos ite outcome, 
+defined as any of the below) . Each component will also be reported 
+separately . 
+o IOP increased ≥10 mmHg from randomization at any visit  
+o IOP ≥30 mmHg at any visit  
+o Received ocular anti -hypertensives  
+ Endophthalmitis  
+ Inflammation  
+ Any retinal detach ment (a composite outcome, defined as any of 
+the below ). Each component will also be reported separately.   
+o Traction retinal detachment  
+o Rhegmatogenous retinal detachment  
+o Unspecified retinal detachment  
+ Retinal tears  
+U1 Technical Plan 9 -25-17 clean   Page 12 of 13  Retinal hemorrhage  
+ Vitreous hemorrhage  
+ Cataract extractions  
+ Glaucoma surgery  
+ Received post -injection treatment to lower IOP  
+ Migration of dexamethasone implant to the anterior chamber and 
+subsequent corneal complications  (combination group only)  
+o Note : There is no specific MedDRA term for this type of 
+adverse event. Instead, perform a manual check by 
+[CONTACT_386816] “migration” and “anterior 
+chamber” in the description field on the AE form, limiting 
+to records in randomized eyes at post randomization.  
+ii. Compare the frequency between treatme nt groups using Fisher’s exact test 
+and report P-value . 
+iii. Footnote No. of patients experienced multiple types of ocular adverse 
+events as listed above  (if any)  
+b. Systemic adverse events  
+i. All systemic adverse events will be reported by [CONTACT_1570]: 
+combinati on group (unilateral participants), ranibizumab group (unilateral 
+participants), and bilateral participants.  
+ii. Reduce eyesRand  dataset to patient -level as a temporary dataset ptRand  
+iii. Tabulate No. (%) of participants experienced at least one event [ eTable 6 ] 
+ At least one systemic adverse event  
+ At least one serious systemic adverse event  
+ At least one hospi[INVESTIGATOR_059]  
+ Death  
+ APTC cardiovascular/cerebrovascular event (a composite 
+outcome)  
+o Non-fatal myocardial infarction  
+o Non-fatal stroke  
+o Death of vascular or unknown cause  
+iv. Compare frequency among unilateral participants between treatment 
+groups using Fisher’s exact test and report P- value . [eTable 6 ] 
+v. Tabulate No. (%) of participants had at least one adverse event in each  
+MedDRA system organ class [ eTable 7 ] 
+ 
+References  
+1. Tukey JW. The Future of Data Analysis. Ann. Math. Statist . 1962;  33(1): 1-67. 
+https://projecteuclid.org/euclid.aoms/[PHONE_8061]#ui -tabs-1. Accessed 21 September 
+2017.  
+U1 Technical Plan 9 -25-17 clean   Page 13 of 13 2. Schafer J. Multiple Imputation: A Pr imer. Statistical Methods in Medical Research . 
+1999(8):3 -15. 

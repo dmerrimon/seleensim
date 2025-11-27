@@ -1,0 +1,1204 @@
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+2 
+ Table of Contents  
+1 Protocol Summary  ...............................................................................................................1  
+2 Introduction  ..........................................................................................................................3  
+ Study Rationale  ............................................................................................................3  
+ Background ...................................................................................................................4  
+ Point -of-Care Platforms ................................................................................................. 5 
+2.3.1  LumiraDX SARS -CoV-2 antibody test  ....................................................................5  
+2.3.2  RightSign COVID- 19 IgG/IgM rapid test  ................................................................. 7 
+3 Methodology  ........................................................................................................................8  
+ Study Design  ................................................................................................................8  
+ Study Objectives  ...........................................................................................................9  
+3.2.1  Field test  ................................................................................................................9  
+3.2.2  Central laboratory  ................................................................................................10  
+ Sample Size and Statistical Considerations  ................................................................10  
+3.3.1  Local versus central POC test result  ....................................................................10  
+3.3.2  Local and central POC test result versus GenScript cPass assay result  ..............11  
+3.3.3  Case -control comparison  .....................................................................................11  
+ Participant Selection for the Field Test  ........................................................................11  
+3.4.1  Inclusion criteria  ...................................................................................................11  
+3.4.2  Exclusion criteria  ..................................................................................................12  
+ Data and Blood Collection Plan  ...................................................................................13  
+4 Data Analysis  .....................................................................................................................13  
+ Field Evaluation of Platforms: Ease of Use, Time for Test Result  ................................13  
+ Local versus Central POC Test Result Comparison  ....................................................13  
+ Local and Central POC Test Result versus GenScript cPass Assay  ...........................14  
+ Association of POC Test Results with TICO Outcomes: A Nested Case- Control Study 
+of Completed TICO Trials  ......................................................................................................14  
+ Analysis of the Quantitative Results from the LumiraDX Assay  ...................................15  
+5 Protection of Human Subjects and Other Ethical Considerations  .......................................15  
+ Anticipated Risks and Benefits  ....................................................................................15  
+ Participating Clinical Sites and Local Review of Protocol and Informed Consent  ........15  
+ Ethical Conduct of the Study  .......................................................................................15  
+ Informed Consent of Study Participants  ......................................................................16  
+ Confidentiality of Study Participants  ............................................................................16  
+ Regulatory Oversight  ..................................................................................................16  
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+3 
+ 6 Storag e and Use of Specimens  ..........................................................................................16  
+7 Supporting Documentation  ................................................................................................. 17 
+APPEND IX A: Sample Informed Consent Form  .....................................................................18  
+APPENDIX B: List of Acronyms  .............................................................................................27  
+APPENDIX C: INSIGHT 017 Protocol Team ..........................................................................29  
+APPENDIX D: References  .....................................................................................................30  
+ 
+ 
+ 
+List of Tables  
+Table 1 : Further information about the 2 POC assays to be investigated under this protocol.  .....4 
+Table 2 : Sensitivity of the LumiraDX assay for various numbers of days from a positive test.  .....6 
+Table 3 : Sensitivity of the RightSign IgM assay for various numbers of days from a positive test.
+ ...................................................................................................................................................7  
+Table 4 : Sensitivity of the RightSign IgG assay for various numbers of days from a positive test.
+ ...................................................................................................................................................7  
+Table 5 : The power of McNemar’s chi -square test for testing the agreement of 2 assays as it 
+depends on the odds ratio and the smaller of the 2 probabilities for test discordance. This 
+assumes the sample size is 375. ...............................................................................................11  
+ 
+ 
+List of Figures  
+Figure 1:  A depiction of the operation of the LumiraDX testing platform. Note that for this 
+protocol only the specimen identifier will be captured by the instrument, not personal identifiers.
+ ...................................................................................................................................................6  
+Figure 2:  A depiction of the operation of the RIghtSign testing platform.  ....................................8  
+ 
+ 
+   
+ 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+1 
+ 1 Protocol Summary  
+DESIGN  EPOC is designed to examine the feasibility of conducting point -of-care 
+(POC) tests for SARS -CoV-2 antibodies and compare the reproducibility of 
+these tests to tests run at a centr al laboratory on specimens obtained from 
+the same study participants at the same time. This will involve recruiting 375 
+individuals at 20- 30 US and international sites who have tested positive for 
+SARS- CoV-2 and consenting them to up to 4 fingersticks, the collection of 9 
+mL of venous blood and responding to a set of standardized questions. All 
+these activities will take place during a single study visit. The whole blood 
+from the fingersticks will be used to test for SARS -CoV-2 antibodies using 2 
+POC tests,  both of which have a CE mark, emergency use authorization  
+(EUA)  from the US Food and Drug Administration (FDA) and are Clinical 
+Laboratory Improvement Amendments of 1988  (CLIA ) waived. Participants 
+and their providers will be instructed that the results of these tests are not to be used for patient management and the results of the tests will not be shared with participants or their providers. The 9 mL of blood will be 
+processed locally and shipped to a central repository in the U S where it will 
+be labeled with a specimen code that can only be matched to the 
+participant’s other data using a participant identifier at the Statistical and Data Coordinating Center at the University o f Minnesota (UMN). UMN will 
+only have the specimen code and the participant identifier: the matching of the participant identifier to a participant can only be done at the sites.  
+In addition to this cross -sectional study (also referred to as the field test  
+below), a nested case- control study utilizing specimens already collected 
+from participants in the Therapeutics for Inpatients with COVID -19 (TICO)  
+trial will be conducted. Participants in the TICO trial have already consented to the use of their specimens for future research on COVID -19. The POC 
+tests will be conducted on these specimens and compared to results that have already been generated using an assay at a central laboratory called the GenScript cPass assay (referred to here as the GenScript assay) . 
+The 2 POC assays that will be investigated under this protocol are the LumiraDx SARS -CoV-2 Antibody  Test and the RightSign
+ COVID -19 IgG/IgM 
+Rapid Test . Both platforms will be used on all specimens.  It is not the goal of 
+this study to impact the indicatio ns for either test.  
+The primary objective of the field test is to test for an association between the outcome of the locally obtained POC test and the centrally obtained result from the GenScript assay on a blood sample obtained at the same time as the sam ple for the POC test s.  
+The primary objective of the nested case- control study  is 
+to test for an 
+association between the POC test result on stored baseline specimens and 
+the primary efficacy outcome in TICO on a subset of specimens from TICO 
+participants for whom the GenScript assay result has already been 
+determined. Since conducting P OC assays on large numbers of stored 
+specimens is time consuming (since each assay takes 10 -20 minutes and 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+2 
+ each individual specimen must be analysed), a case -control design will be 
+utilized. The case definition is death or time to sustained recovery that 
+exceeds 28 days. To maximize the difference between cases and controls, 
+controls are defined as those with a time to sustained recovery of no more 
+than 16 days. With these definitions there are 68 cases and 77 controls for a 
+total sample size of 145. Of the se participants,  104 experienced a sustained 
+recovery (the primary outcome in TICO) and 20 died. 
+DURATION  Participants in the cross -sectional study  will be completed with the study 
+within 24 hours of consent . Actual participation will just involve the consent 
+process, 2 POC tests, and completion of a case report form ( CRF) and a 
+blood draw, thus we expect participation to last no more than a few hours.  
+SAMPLE 
+SIZE  Sample size for th e cross -sectional study  is targeted at 375. With this 
+sample size  the study will have 83% power for detecting a difference in the 
+probability of a positive test between 2 assays when the odds ratio for the 2 
+assays is 2. 6 and the smaller of the 2 probabilities of test discordanc e is 3%.  
+The sample size for the nested case- control study is 145. Analysis of the 
+case -control population using the GenScript assay detected a sub- hazard 
+ratio of 1.91. With a sub-hazard ratio of 1.91, 104 events provide 90% power 
+for rejecting the null hypothesis that the sub-hazard ratio is 1 and this 
+number of events provides 80% power for a sub-hazard ratio of 1.75.  
+POPULATION  The population for the field test was selected to match that of those 
+participating in the TICO trials from which the case- control specimens were 
+selected. This population consisted of adults hospitalized for COVID -19 with 
+symptoms being present no more than 12 days. Participants need ed to have 
+a positive test result within 3 days  or a positive test  more than 3 days prior to 
+randomization and progressive disease suggestive of ongoing SARS -CoV-2 
+infection . Participants must not have received neutralizing monoclonal 
+antibodies ( nMabs ), SARS -CoV-2 hyperimmune intravenous 
+immunoglobulin (hIVIG),  or convalescent plasma. For this protocol 
+participants must not have received these compounds  within 6 months prior 
+to collection of the blood samples for this protocol. Participants with severe 
+disease (as defined by a list of conditions and interventions) are also 
+excluded to be consist ent with the TICO trials from which specimens will be 
+used.  
+ 
+ 
+ 
+ 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+3 
+ 2 Introduction  
+ Study Rationale  
+A platform trial of therapeutics for patients hospitalized for COVID -19 entitled “A Multicenter , 
+Adaptive, Randomized, Blinded Controlled Trial of the Safety and Efficacy of Investigational 
+Therapeutics for Hospitalized Patients with COVID -19”, referred to as Therapeutics for 
+Inpatients with COVID -19 (TICO), has undertaken the investigation of 6 treatments thus far. 
+TICO trials of bamlanivimab, sotrovimab (also known as VIR -7831) , and BRII -196/198, a meta-
+analysis that included these trials , a trial of hIVIG , and the RECOVERY trial have identified the 
+potential for baseline antibody levels to impact safety and efficacy outcomes with administration 
+of nMab therapy1,2,3,4,5,6. The TICO trial  of bamlanivimab found a statistically significant 
+interaction for the primary efficacy outcome,  and the TICO  trial of BRII-196/198 was consistent 
+with such an interaction. These studies have found that while there may be a benefit for patients 
+who have not yet mounted an antibody response, patients with endogenous antibody probably 
+do not benefit from this treatment , and this may res ult in misuse of resources and expose 
+patients to unnecessary toxicity, increased costs, and treatment delays. Moreover, in addition to 
+affecting response to therapy, results from the TICO trials also demonstrate that baseline 
+antibody levels were predicti ve of safety and efficacy outcomes in the placebo group: those with 
+endogenous antibody had better outcomes.  
+In the TICO trials, antibody levels were assessed using a surrogate neutralizing antibody assay 
+that detects the ability of antibodies to block the interaction of the receptor binding domain 
+(RBD) of the spike protein with the host ACE -2 receptor ( the GenScript cPass assay, referred to 
+as the GenScript assay here). While these results point to promising approaches to the 
+provision of care, these res ults are of limited clinical value as the use of this assay for patient 
+management is extremely challenging due to time and laboratory requirements. This is due to 
+the requirement that the assay be run in batches at a central laboratory , and this delays th e 
+determination of the presence of endogenous antibody . Given the urgency of treatment early in 
+the course of disease , this delay could impact patient outcomes.   
+There are a large number of POC antibody tests with an EUA  from the FDA  available for 
+detectio n of antibodies to SARS -CoV-2, thereby presenting an opportunity to rapidly determine 
+if a patient has endogenous antibodies , which can then be used for patient management . Under 
+the current EUAs, these tests only produce a qualitative interpretation of serostatus. This limits 
+their ability to be used for participant management as the cut -offs are generally selected to 
+optimize specificity. Optimization of specificity is sensible for an assay designed for large scale screening , where false positives are the primary concern. In contrast, if there is a safety concern 
+associated with administration of nMabs to those who are seropositive, false negatives are the 
+primary concern. Hence, there is interest in studying POC antibody tests that produce a rapid 
+quantit ative result so that the operating characteristics of different cut -offs can be investigated.  
+This would inform  using other cut -offs for timely patient management.  
+There are 2 aspects of a POC testing platform of interest when designing a trial that may use 
+such a test for patient management: 1) performance of the POC test in a hospi tal setting  where 
+patients would be consented and screened for enrolment ; and 2) the ability of the results from 
+the POC test to re produce the association of baseline antibody levels with clinical outcomes  that 
+has been found with the GenScript assay . While the former will be examined prospectively at 
+clinical sites that enrol l patient s, the latter will use stored specimens from completed TICO trials  
+for expeditious evaluation of the association of POC test results with major  TICO  outcomes  in 
+the context of treatment with nMabs (e.g., a 90-day composite safety outcome and time to 
+sustained recovery , the primary endpoint of TICO trials ). Ideally , one would want to determine if 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+4 
+ there is an interaction between the result of a POC antibody test and outcomes of interest in 
+TICO, as was found using the GenScript assay, but this would require analy sing a larger 
+number of stored specimens than is practical to have acceptable power. As a compromise, here 
+we focus on detecting an association between baseline antibody status  using the POC test 
+results  and safety and efficacy outcomes of interest in TICO  among those in the placebo group 
+from completed TICO trials . The hypothesis to be tested here is that those with endogenous 
+antibody as determined by the POC assay will have better outcomes as was observed using the GenScript assay.  
+This protocol will exa mine  2 POC platforms: the LumiraDX and the RightSign platforms. Both 
+platforms have a US FDA EUA and a CE mark for a CLIA -waiver  when used on fingerstick 
+whole blood . The LumiraDX platform provides a qualitative result in 10- 20 minutes and can also 
+provide a quantitative assessment, but this cannot be provided at the POC at this time.  (A 
+quantitative POC test is currently under development by the manufacturer) . The RightSign 
+platform is exclusively qualitative with a 1 0-20-minute turnaround time.  Table 1 pr ovides further 
+information and links to more detailed information about each assay. Both assays are certified under the CLIA, 42 U.S.C. §263a, that meet requirements to perform medium  complexity tests.  
+Nothing is known at this time about the performance of either assay on emerging variants of concern.  
+Date EUA 
+Issued or 
+Last 
+Updated  Entity  Diagnostic 
+(Most Recent 
+Letter of 
+Authorization) 
+and Date EUA 
+Issued  Attributes3 Authorizatio
+n 
+Documents2 Antigen in 
+the assay used to 
+detect 
+antibodies  Readout  
+08/02/2021  LumiraDx 
+UK Ltd.  LumiraDx 
+SARS- CoV-2 
+Ab Test  
+08/02/2021  Total Antibody  
+(Ab), 
+Fluorescence Immunoassay, 
+Fingerstick 
+Whole Blood HCP, Recipie
+nts, IFU RBD and S -
+protein 
+mixture  A dedicated 
+fluorescence detector reads total Ab 
+(immunoglobulin G 
+[IgG], immunoglobulin 
+M [IgM] and 
+immunoglobulin A [IgA]); qualitative 
+12/21/2020  Hangzhou 
+Biotest 
+Biotech 
+Co., Ltd.  RightSign  
+COVID -19 
+IgG/IgM Rapid 
+Test Cassette  
+06/04/2020  IgM and IgG 
+Lateral Flow, 
+Fingerstick 
+Whole Blood HCP, Recipie
+nts, IFU  RBD One IgG band and one 
+IgM band  
+Table 1: Further information about the 2 POC assays to be investigated under this protocol.  
+ Background  
+TICO is a platform trial designed to efficiently identify treatments for adults who have been 
+hospitalized with COVID- 19. A manuscript providing details on the protocol has been published7 
+so here a brief description of the trial is provided. As a platform  trial, m ultiple agents can be 
+investigated simultaneously which allows for efficiencies due to a shared placebo group.  Each 
+investigational agent is studied in a randomized placebo- controlled trial with an early futility 
+assessment based on two  7-category  ordinal outcomes assessed at day 5 of follow- up to 
+assess efficacy and a composite of grade 3 and 4 adverse events ( AEs) , serious adverse 
+events ( SAEs ), clinical organ failure or serious infection or death through day 5 to assess safety . 
+The primary effic acy outcome is time to sustained recovery, which is the first time after 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+5 
+ randomization at which someone returns to their pre- hospitalization residence and stays there 
+for 14 days prior to day 90.  All-cause mortality through 90 days of follow -up is an impor tant 
+secondary outcome.  
+Thus far, 6 agents have entered the platform trial  with the first 4 being n Mabs or combinations of 
+nMabs . These agents are as follows:  
+1. Bamlanivimab . 
+2. Sotrovimab (also referred to as VIR -7831) . 
+3. BRII- 196/198.  
+4. AZD7442 . 
+5. MP0420 . 
+6. PF-07304814 . 
+The study has been completed and papers have been written describing the outcomes for the 
+first 3 compounds , while the results for the remainder are still blinded. These 3 trials were 
+stopped for futility at the time of the early futility assessment. Baseline antibody results are 
+available for the first 3 compounds using the GenScript assay.  
+Analyses of the qualitative GenScript results from participants in the placebo arm of the first 3 
+trials (n=32 0) found that being seropositive was associated with superior efficacy and safety 
+outcomes. Competing risk regression was used to test for an association between the baseline 
+qualitative result from the GenScript assay and time to sustained recovery. The result was 
+statistically significant with a sub -hazard ratio of 1.4 5 and a 95% confidence interval (CI) of 
+(1.17, 1.81). The estimated hazard ratio for death (positive/negative) was 0.17 with a 95% CI of 
+(0.05, 0.57), hence also statistically significant6. 
+While the semi -quantitative GenScript results do not have any authorization for use in patient 
+management , there is evidence that the use of different thresholds for dichotomizing this semi -
+quantitative result leads to different estimates of the magnitude of the association between the 
+antibody test and time to sustained recovery. By using a lower threshold for antibody levels  and 
+thereby reducing the specificity and increasing the sensitivity  for being seropositive , one detects 
+a stronger association. The threshold used for the qualitative result finds that 46 % of the 32 0 
+participants in the placebo arm are sero positive. If the threshold is lowered so that 58% of the 
+participants are seroposi tive, we find that the sub -hazard ratio increases from 1.4 5 to over 1.6.   
+ Point -of-Care Platforms  
+2.3.1  LumiraDX SARS -CoV-2 antibody test 
+Assay summary: The LumiraDx  SARS -CoV-2 Antibody  Test is a single use fluorescence 
+immunoassay device designed to detect the presence of SARS -CoV-2 total antibody in human 
+serum, plasma (dipotassium EDTA), venous whole blood (dipotassium EDTA), and fingerstick whole blood. The test i s run on a microfluidic test strip which is inserted into a device that will 
+display the qualitative results within 11 minutes of specimen application. Table 2 displays the 
+sensitivity as a function of the number of days since a positive reverse transcript ion polymerase 
+chain reaction ( RT-PCR)  test: averaging over the time since the first known positive test , the 
+sensitivity is 97% . Using 240 specimens known to be negative, all specimens were found to be 
+negative,  giving an estimated specificity of 100% wit h a 95% CI  of 99 %-100%
+8. There are two 
+targets: the Spike RBD and the Spike 1 (S1) and pan Ig antibodies directed against these 
+targets are detected. A qualitative result is displayed on the device and a semi -quantitative 
+measure of the fluorescence can be  accessed as research use only.  The device is portable and 
+can be moved on a cart  between uses . 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+6 
+ Time from positive 
+RT-PCR test to blood 
+collection (days)  Number of samples  Number and percent 
+positive  95% CI 
+0-7  17 15 (88.2)  64%-99% 
+8-14 6 6 (100)  54%-100%  
+15 or more  49 49 (100)  93%-100%  
+Total  72 70 (97.2)  90%-100%  
+Table 2: Sensitivity of the LumiraDX assay for various numbers of days from a positive test.  
+ 
+Figure 1: A depiction of the operation of the LumiraDX testing platform. Note that for this 
+protocol only the specimen identifier will be captured by the instrument, not per sonal identifiers.  
+Principle of the assay: The test works using microfluidics. S erum, plasma, venous whole 
+blood, or fingerstick whole blood are applied  to the sample application area of the t est strip and 
+inserted in the i nstrument . Each test strip contains 4 channels: 2 channels for the RBD, 1 
+channel for S1, and 1 channel for controls. Fluid m oves the specimen up into the cartridge 
+where it is mixed with reagents including magnetic particles coated with the RBD, S1, or control 
+depending on the channel. Antibodies in the serum, plasma, or whole blood specific for RBD or 
+S1 bind to the magnetic b eads. A secondary pan- human Ig antibody conjugated to fluorescence 
+then binds to the antibodies. The magnetic particles are captured in a magnetic field , and any 
+unbound antibodies are removed using air. The fluorescent signal is then measured.  
+
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+7 
+ The analysis is based on the amount of fluorescence the i nstrument detects within the 
+measurement area of the test strip. The qualitative results are displayed on the Instrument 
+touchscreen in approximately 11 minutes from the addition of sample  as “Positi ve +” or 
+“Negative -”. The semi -quantitative measure of the fluorescence can be accessed as research 
+use only.   
+2.3.2  RightSign COVID -19 IgG/IgM r apid test 
+Assay summary:  The RightSign COVID -19 IgG/IgM Rapid Test Cassette is a lateral flow 
+immunochromatographic assay for the detection of SARS -CoV-2 antibodies in venous whole 
+blood, serum , or plasma . The test is run on a disposa ble lateral flow device (test cassette). The 
+test targets IgG or IgM antibodies specific for the Spike RBD. The readout of the assay is 
+qualitative: positive for IgG and/or IgM or negative within 10- 20 minutes of specimen application.  
+Tables 3 and 4 summarize the sensitivity as a function of the number of days since the first 
+positive polymerase chain reaction ( PCR)  test. Averaging over the number of days since first 
+known positive  test the sensitivity of the IgM assay is 93% , while the sensitivity of the IgG assay 
+is 94%. Specificity was estimated using 210 specimens known to be negative and the result was negative for IgM 206 times and negative for IgG 209 times. This gives an estimated specificity of 
+98% with a 95% CI of (95%, 99%) for IgM , and an estimated specificity of 100% with a 95% CI  
+of (97%, 100%) for IgG
+9. For analyses that simply treat the Rig htSign assay as positive or 
+negative, the RightSign test will be considered positive if the test is positive for IgM or IgG.  
+Time from positive 
+PCR test to blood 
+collection (days)  Number of samples  Number and percent 
+positive  95% CI 
+0-7  9 6 (67)  30%-93% 
+8-14 83 77 (93)  85%-97% 
+15 or more  158 150 (95)  90%-98% 
+Total  250 233 (93)  89%-96% 
+Table 3: Sensitivity of the RightSign IgM assay for various numbers of days from a positive test.  
+Time from positive 
+PCR test to blood 
+collection (days)  Number of samples  Number and percent 
+positive  95% CI 
+0-7  9 6 (67)  30%-93% 
+8-14 83 76 (92)  83%-97% 
+15 or more  158 152 (96)  92%-99% 
+Total  250 234 (94)  90%-96% 
+Table 4: Sensitivity of the RightSign IgG assay for various numbers of days from a positive test.  
+Principle of the assay: This test uses anti -human IgM antibody (test line IgM), anti -human IgG 
+(test line IgG) and goat anti -mouse IgG (control line C) immobilized on a nitrocellulose strip. The 
+conjugate pad contains recombinant SARS -CoV-2 antigen ( based on the Spike protein RBD 
+domain) conjugated with colloid gold. During testing, the specimen binds with SARS -CoV-2 
+antigen- conjugated gold colloid coated particles in the test cassette. When a specimen followed 
+by assay buffer is added to the sample well, I gM and/or IgG antibodies if present, will bind to 
+COVID -19 conjugates making an antigen -antibod y complex. This complex migrates through the 
+nitrocellulose membrane by capillary action. When the complex meets the line of the corresponding immobilized antibo dy (anti -human IgM &/or anti -human IgG) , the complex is 
+trapped forming a colored line which confirm s a reactive test result. Absence of a colored line in 
+the test region indicates a non- reactive test result. To serve as a procedural control, a colored 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+8 
+ line should always appear in the control line region, indicating that the proper volume of 
+specimen has been added and membrane wicking has occurred.  
+ 
+Figure 2: A depiction of the operation of the RIghtSign testing platform.  
+3 Methodology  
+ Study Design 
+There are  several related questions that this protocol is designed to answer , and these are 
+reflected in  2 different component s of the design. There will be a cross- sectional  study designed 
+to evaluate how the POC test works in practice and how the results are related to the GenScript 
+assay  measured on a plasma sample collected at the same time as the fingerstick blood 
+samples  for the two POC test s to be evaluated. This will involve recruiting and conse nting 
+individuals presenting to the clinical sites with a positive test for SARS -CoV-2. Consenting  
+participants will have  a fingerstick for each POC test conducted. If a test fails, 1 additional 
+fingerstick may be conducted for each POC test  (so, up to 4 fingersticks may occur ). In addition,  
+a 9mL blood specimen will be collected . Participants and care providers will not be informed of 
+test outcomes. After the fingersticks, blood collection, and responses to a set of standardized 
+questions from a CRF, the participant will have  completed involvement  with the study. The 
+blood specimen will allow for both a comparison with the GenScript assay and the assessment of the impact of processing, freezing,  and shipping on the POC test results. There will also be a 
+nested case- control study to understand how POC test s carried out on stored plasma 
+specimens from completed TICO trials  are related to outcomes measured in the TICO protocol. 
+Consent from TICO participants has already been obtained for the use of their  stored 
+specimens , so the case- control study will not involve a dditional  consent  or the recruitment and 
+follow- up of patients .  
+
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+9 
+ For the field test , POC platforms will be distributed to 20- 30 sites in the US and internationally 
+for completion of the two POC tes ts on 15 participants  at each site. In addition to conducting the 
+POC test on site as per the instruments’ instructions ( using blood from a fingerstick), a blood 
+specimen w ill be obtained for  processing,  freezing , and ship ping to a central lab for central 
+testing using the GenScript assay and repeat POC testing using plasma.  If a POC test is 
+indeterminate  the test will be repeated 1 time and the outcome of the indetermina te test and the 
+second test will be recorded. If the seco nd test is also indeterminate  that will be recorded but 
+the test will not be conducted again on that participant. This procedure applies to POC testing at 
+the sites and at the central laboratory.  
+A nested case- control study will also be conducted to allow for testing of the association 
+between antibody levels at baseline , as assessed by the POC tests and safety and efficacy 
+outcomes  among participants  randomized to  the placebo group in the bamlanivimab, 
+sotrovimab , and B RII-196/198 trials  of TICO . The case definition is death or time to sustained 
+recovery that exceeds 28 days. To maximize the difference between cases and controls, 
+controls are defined as those with a time to sustained recovery of no more than 16 days. With these definitions there are 68 case s and 77 controls for a total sample size of 145 . Among  
+these participants , 104  experienced a sustained recovery and 20 died. 
+Conduct of this nested case- control study will require use of the POC assay on stored 
+specimens. One cannot conduct such tests in a batched fashion which makes this analysis time 
+consuming . This testing w ill be facilitated by procuring multiple POC platforms at a central 
+location. The use of multiple platforms w ill allow for multiple tests to be conducted in parallel 
+which is more e fficient since each specimen must be run one at a time , and each takes 10 -20 
+minutes.  
+ Study Objectives   
+3.2.1  Field test  
+The overall objective of the field test is to determine if a POC test can be used to identify 
+individuals who lack endogenous antibodies . The primary objective  is to test for an association 
+between the outcome of the  locally obtained POC test and the centrally obtained result from the 
+GenScript assay  on a blood sample obtained at the same time as the sample for  the POC test . 
+There are also a  number of secondary objectives that will investigate the feasibility of this 
+approach,  and others that will help interpret the outcome of the primary objective. These are as 
+follows:  
+1. Determine t he frequency with which the POC test fails to give an unambiguous  result.  
+2. Determine the time required to obtain a  POC  result.  
+3. Determine  the magnitude of the association between the locally obtained POC test result  
+by the 20- 30 sites and the same POC assay on the same specimens determined 
+centrally  after processing, freezing, storing,  and shipping.  
+4. Determine the magnitude of the association between the POC test  result  and the 
+GenScript assay  on the same specimens both determined centrally . 
+Secondary objective 3 will provide information on the impact of  processing (centrifugation for 
+plasma),  freezing , storing , and shipping on the test results using the same assay while 
+secondary objective 4 will provide a head- to-head comparison of the assays using the same 
+specimen subjected to the same handling procedures. Specimen handling and the specific 
+assay used both likely contribute to differences we may observe bet ween the local POC test 
+and the results from the GenScript assay.  
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+10 
+ 3.2.2  Central laboratory  
+The overall objective of central testing of stored specimens is to understand the impact of 
+baseline serology, as assessed by the POC tests, on outcomes of relevance for the TICO trial. 
+The primary objective  is to test for an association between the POC test result on stored 
+baseline specimens and the primary efficacy outcome in TICO  on a subset of specimens from 
+TICO  participants for whom the GenScript assay has  result has already been determined . 
+Secondary objectives are as follows : 
+1. Test for an association between each POC test result on stored baseline specimens and 
+efficacy/ safety outcomes in TICO  in a case- control design.  
+2. Compare the POC test results to the GenScript  results  and other antibody test results 
+such as those from Bio- Rad and Quanterix  that have already been obtained  for these 
+stored specimens . 
+3. Select a threshold for the quantitative LumiraDX result to optimize the association between the dichotomized assay  result and safety and efficacy outcomes using the 
+stored specimens.  
+4. Compare the 2 POC platforms to each other and the GenScript result using locally (at 
+each site) and centrally determined POC results.  
+5. Examine associations between these antibody assays an d antigen assays which have 
+already been obtained for the stored specimens.  
+6. Determine the effect of vaccination and other participant characteristics on the antibody test results.  
+ Sample Size and Statistical Considerations  
+3.3.1  Local versus central POC test result  
+The power for comparisons of results from paired qualitative  tests on specimens was assessed 
+using Schlesselman’s formula for the power of McNemar’s chi -square test10. This requires 
+specification of the odds ratio and the probability of 1 test being positive when the other is negative (denoted p
+01 in the table) . Table 1 shows the power as it depends on these 2 
+parameters with a sample size of 375. By taking the odds ratio to be greater than 1 we are 
+assuming that p 01 is the smaller of the 2 probabilities of 1 test being positive while the other is 
+negative. For example, p 01=0.01 and an odds ratio of 2. 2 implies that the 2 probabilities that one 
+test is positive while the other is negative are 0.0 1 and 0.0 22, and the probability that the 2 tes ts 
+agree is 96.8 %. As can be seen in Table 5, with a sample size of 375  the power of the test is 
+low in this scenario  (0.24) , but this is fairly strong agreement across the assays. As can be seen 
+from the same table, t he test will have over 80% power if p 01=0.03 and the odds ratio is at least 
+2.6. This corresponds to the discordance probabilities of 0.0 3 and 0. 078 and the corresponding 
+probability that the 2 tests agree is 89 .2%. With this configuration of probabilities for test 
+agreement the standard error  for the difference in the probability that the 2 tests are positive is 
+0.023. There is currently no data available for this comparison.   
+Odds ratio  p01=0.01 p01=0.03 p01=0.05  
+2.0 0.19 0.49 0.72 
+2.1 0.21 0.56 0.79 
+2.2 0.24 0.62 0.85 
+2.3 0.27 0.68 0.89 
+2.4 0.30 0.74 0.93 
+2.5 0.33 0.79 0.95 
+2.6 0.36 0.83 0.97 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+11 
+ Table 5: The power of McNemar’s  chi-square test for testing the agreement of 2 assays as it 
+depends on the odds ratio and the smaller of the 2 probabilities for test discordance. This 
+assumes the sample size is 375.  
+3.3.2  Local and central POC test result versus GenScript cPass assay result  
+Sample size considerations for these comparisons are similar to those from the previous 
+section, but we do have data from 302 participants  on the relationship between the central POC 
+test using the R ightSign platform and the GenScript assay  using stored specimens  for both 
+assays . The association depends on which isotype is measured with the R ightSign assay: there 
+is evidence that the odds ratio is different from 1 for IgM (odds ratio 7.5 , p<0.001 ) but not for 
+IgG (odds ratio 1.1 , p=0.82 ). These preliminary data indicate that 375 samples obtained as part 
+of the field test will provide more than adequate power for detecting a difference for the 
+GenScript assay and R ightSign IgM assay and very low power for detecting a difference 
+between the GenScript assay and the Right Sign IgG assay due to the high degree of 
+association between the latter pair of assays . 
+3.3.3  Case- control comparison  
+An analysis of the qualitative GenScript result with the 145 patients that will be used for the 
+nested case- control study found a significant difference (p=0.002) in the time to sustained 
+recovery, with a sub- hazard ratio of 1.91 (95% CI: 1.35, 2.7) for baseline serostatus, indicating 
+that seropositive patients had a quicker  time to sustained recovery . (This used the Fine- Gray 
+approach to model ling competing risks). The quantitative result from this assay also 
+demonstrated a statistically significant association with time to sustained recovery and adjustment for study level e ffects did not impact the associations meaningfully. An analysis of 
+case control status also detected an odds ratio that was significantly different from 1 (p=0.015) 
+with an odds ratio of 2.34 (95% CI: 1.18, 4.65).  
+With a sub -hazard ratio of 1.91, 104 even ts provide 90% power for rejecting the null hypothesis 
+that the sub -hazard ratio is 1,  and this number of events provides 80% power for a sub-hazard 
+ratio of 1.75. An analysis of case control status has lower power and would require an odds ratio of 2.72 t o have 80% power for detecting an association between baseline antibody levels and 
+case control status with this sample size (larger than what was observed for the GenScript 
+assay).  
+ Participant Selection  for the Field Test  
+Interested s ites will be selected  based on their ability to recruit patients that meet the eligibility 
+criteria for TICO . Planned enrol lment into TICO is not necessary for participation in the field tes t. 
+All participants will need to consent to participate in the field test component of the protocol , 
+including those co-enrolled  in TICO . The inclusion and exclusion criteria for the field test are as 
+follows:  
+3.4.1  Inclusion criteria  
+1. Age ≥ 18 years . 
+2. Informed consent by the patient or the patient’s legally  authorized representative 
+(LAR) for up to 4 fingersticks for PO C testing and a blood draw for stored blood 
+samples . 
+3. SARS- CoV-2 infection, documented by a nucleic acid test (NAT) or equivalent 
+testing within 3 days prior to consent  OR documented by NAT or equivalent testing 
+more than 3 days prior to consent  AND progressive disease suggestive of ongoing 
+SARS- CoV-2 infection per the responsible investigator . (For non -NAT tests, only 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+12 
+ those deemed with equivalent specificity to NAT by the protocol team will be allowed. 
+A central list of allowed no n-NAT tests is maintained for TICO and that list will also 
+be used for this protocol. ) 
+4. Duration of symptoms attributable to COVID -19 ≤ 12 days per the responsible 
+investigator . 
+5. Requiring admission for inpatient hospital acute medical care for clinical 
+mani festations of COVID -19, per the responsible investigator, and NOT for purely 
+public health or quarantine purposes.  
+3.4.2  Exclusion criteria  
+1. Prior receipt of  SARS- CoV-2 hIVIG, convalescent plasma from a person who 
+recovered from COVID -19, or SARS -CoV-2 nMAb within 6 months of  the blood 
+draws for testing as part of this protocol . 
+2. Disease severity beyond that of stratum 1 in the TICO trial.  
+This includes the following conditions:   
+    a. stroke  
+    b. meningitis  
+    c. encephalitis  
+    d. myelitis  
+    e. myocardial infarction  
+    f. myocarditis  
+    g. pericarditis  
+    h. symptomatic congestive heart failure ( CHF; New York Heart Association  
+ [NYHA ] class III -IV)  
+    i. arterial or deep venous thrombosis or pulmonary embolism  
+Or current requirement f or any of the following:  
+    a. high- flow supplemental oxygen  
+    b. non- invasive ventilation  
+    c. invasive mechanical ventilation  
+    d. extracorporeal membrane oxygenation  
+    e. mechanical circulatory support  
+    f. vasopressor therapy  
+    g. commencement of renal replacement therapy at this admission (i.e. , not    
+         patients on chronic renal replacement therapy) . 
+3. In the opinion of the responsible investigator, any condition for which, participation 
+would not be in the best interest of t he participant or that could limit protocol 
+specified assessments . 
+A blood specimen for storage is required for participation in the study.  
+These eligibility requirements are nearly identical to those used in the TICO trial from which 
+specimens will be use d for the case- control study. One major difference is that TICO 
+participants must agree to not participate in other COVID -19 treatment trials until after Day 5 
+(this is clearly not relevant for this protocol) . The exclusion criteria here are more restrictive than 
+those in the TICO trial. This is so participants in this protocol are comparable to those who 
+enrolled in the TICO trials from whom  specimens will be used for the case- control study. Those 
+trials had more restrictive exclusion criteria than listed in the TICO protocol at the request of the FDA and match the exclusion criteria listed here.  This will facilitate interpretation of analyses 
+that use specimens from the field test and from the previously conducted trials . Eligibility criteria 
+were  also selected to be similar to those in the TICO trial to ensure these results are relevant for 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+13 
+ future trials in hospitalized patients conducted by INSIGHT and aligned networks for which 
+eligibility criteria are likely to be similar to TICO.  
+Participant c haracteristics will be monitored during data collection and adjustments to the 
+characteristics of those recruited for participation may be made.  
+ Data and Blood Collection Plan  
+After providing written informed consent, a CRF  will be completed for each parti cipant  and blood 
+will be collected  by up to 4 fingersticks and by a venous blood draw  of 9 mL (in an EDTA 
+collection tube for aliquoting plasma after centrifugation into 4 2 mL cryovials, each with about 1 
+mL of plasma) . The blood from the fingerstick s will be used to conduct the POC tests and the 
+plasma cryovials will be stored locally in a - 70°/-80° freezer  until they can be shipped to the 
+central biorepository . The CRF will capture the outcome of the POC tests, the length of time 
+from the start of th e assay to recording the test outcome, and selected data collected  on the 
+TICO Screening and Baseline and Randomization form s. This will include  
+1. Participation in other INSIGHT studies .  
+2. Demographics . 
+3. Date of onset of COVID -19 symptoms . 
+4. Severity of COVID -19. 
+5. Oxygen requirements.   
+6. History of chronic comorbidities.  
+7. SARS- CoV-2 vaccination information.   
+8. Targeted concomitant medications .  
+9. Height and weight .  
+Two fingerstick samples of blood will be obtained, one for each POC test. The plasma samples 
+collected will be used for determination of antibody and antigen levels , and central  laboratory  
+determination of the two POC tests.  
+All study procedures will be performed by study personnel. Training materials and the consent 
+document will clearly state th at the results of the POC tests are not to be used for patient 
+management  and so should not be shared with the patient or  care giver . All study procedures 
+must be performed within 24 hours  of completing the written informed consent.  
+Information will be collected from  site staff about  ease of use of each platform.  
+4 Data Analysis 
+ Field Evaluation of Platforms: Ease of Use, Time for Test Result  
+The number and proportion of failed tests and tests not obtained within 20 minutes  will be 
+determined overall and f or each site. The median and interquartile range of the time from the 
+start of the assay  to recording of the test outcome on the CRF will be determined overall and for 
+each site.  
+ Local versus Central POC T est Result Comparison  
+The primary analysis will test if the odds ratio for the association is 1 using McNemar’s chi -
+square test  with a significance level of 0.05.  Samples for which either test result is missing will 
+be excluded from this analysis. This test will be supplemented by a 95% CI for the difference in 
+the probability of testing positive. Site level effects will be estimated by using generalized 
+estimating equations for Bernoulli outcomes using a logistic link with pairs of results modelled as 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+14 
+ being correlated  (the test  outcome is the binary outcome) . This model will include fixed effects 
+for the test type (i.e., local or central) and site. Sites may be grouped based on geography or 
+ICC membership to improve the precision of site level estimates and the interaction betwe en 
+site and test type will be investigated. Subgroups based on age, existence of an 
+immunocompromising condition and vaccination status will be investigated  (provided enough 
+individuals with an immunocompromising condition enrol l). These subgroup analyses will test for 
+an interaction between group membership and test type.  This analysis will be used for both 
+POC tests , and there will not be an adjustment for the conduct of the 2 sets of analyses . 
+In addition to the primary analysis, associations between tes t results and participant 
+characteris tics will be investigated.  These characteristics include age, sex, existence of an 
+immunocompromising condition and vaccination status.  
+ Local and Central POC Test Result versus GenScript cPass 
+Assay  
+The GenScript assay  will also be conducted on the specimens at the central laboratory.  The 
+locally and centrally determined POC results will be compared to the GenScript result  using 
+McNemar’s chi -square test and will be supplemented by 95% CI s for the difference in the 
+probability of testing positive. Investigation of site effects and test performance in subgroups will 
+be pursued as described in Section 4.2.  
+ Association of POC T est Results with TICO Outcomes: A Nested 
+Case-Control Study of Completed TICO Trials  
+TICO s pecimens selected for the case- control study will be shipped from the repository at 
+Advanced Biomedical Labs LLC  to the central laboratory for analysis . The Fine -Grey approach 
+to competing risk regression will be used to test for an association between the POC test result 
+and time to sustained recovery while controlling for the parent sub- study effect. A significance 
+level of 0.05 will be used to test the null hypothesis that the regression coefficient associated with the presence of antibodies at baseline is zero.  The association between baseline POC test 
+results and time to death will be investigated using Cox models stratified by parent sub- study. 
+The association between baseline POC test results and the primary safety composite at days 5, 28 and 90 will be investigated using logistic regression models that control for parent sub- study.  
+Finally, data will be pooled from the field test and the stored specimens for all qualitative assays conducted to test for differences. This would include the local POC, c entral POC, and GenScript 
+results from the field test, the GenScript result for the stored specimens and the POC results for the stored specimens. This analysis w ill use generalized estimating equations for binary 
+outcomes with effects for the type of assay (3 values), if the assay was conducted locally or 
+centrally , and in which protocol/sub- study the participant enrolled. The association due to the 
+specimen coming from the same person w ill be accounted for by including this information as a 
+clustering eff ect in the model. Tests for differences in the assays w ill be based on the Wald test 
+for the regression coefficients for the assays.  No multiplicity adjustment will be made for these 
+tests.  
+Associations between qualitative antibody and continuous antigen assays will be examined 
+using 2 by 2 tables by dichotomizing the antigen assay results at the median level for a given 
+trial, and Fisher’s exact test will be used to test for an association. Logistic regression models 
+will be used to compute adjusted odds ratios where adjustment will be made for parent study and site (where sites may be grouped as described above).  
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+15 
+ 
+ Analysis of the Quantitative Results from the LumiraDX Assay  
+All comparisons that were conducted using the qualitative result from the LumiraDX  assay will 
+be repeated using the quantitative result  using the appropriate modification of the analysis to 
+accommodate a continuous variable . Comparisons to the RightSign and qualitative GenScript 
+result s will use the Wilcoxon rank sum test with the 2 gro ups being determined by the outcomes 
+of the RightSign or GenScript test (i.e., the ranks of the LumiraDX results for positive and 
+negative results for the other assays will be compared) . Adjusted analyses will be pursued using 
+linear regression after trans formation (e.g., logarithmic) , if appropriate. Comparisons of the 
+locally and centrally conducted Lum iraDX assay will be conducted using linear regression with 
+adjustments made by the inclusion of relevant covariates. The quantitative result will also be 
+used in the competing risk regression models as a continuous covariate and as a set of 
+indicator variables that represent the quartiles of the distribution of this assay (to avoid the linearity assumption).  
+Other approaches to dichotomizing the quantitative LumiraDX results will be investigated and 
+assessed . Potential values to use for dichotomizing the results will be based on deciles of the 
+distribution and for each potential threshold the sub -hazard ratio for the impact of baseline 
+serostatus on time to s ustained recovery will be computed. An alternative cut -off may be 
+selected if there are substantial differences in the hazard ratios.  
+5 Protection of Human Subjects and Other Ethical 
+Consi derations  
+ Anticipated Risks and Benefits 
+There is no direct benefit to participants in this study. Risks are no more than minimal, 
+consisting of a single small -volume venous blood draw and potential loss of confidentiality.  
+Normal hospital procedures are considered an adequate safeguard for any potential risk of 
+drawing blood.  Safeguards to protect participants’ identity are described in Section 5.5 below.  
+ Participating Clinical Sites and Local Review of Protocol and 
+Informed Consent  
+This study will be conducted by major medical cent ers participating in INSIGHT and partneri ng 
+networks, including especially NHLBI networks. It is anticipated that potential participants will be 
+recruited by the site investigators (and/or their delegates, as appropriate) and/or that positive 
+SARS- CoV-2 laboratory testing will be used to enquire about potential enrol lment. Information 
+about this study will be disseminated to health care workers at enrolling sites.  
+Prior to the initiation of the study at each clinical research site, the protocol, informed consent form and any participant information materials will be submitted to and approved by a 
+central/national institutional review board ( IRB)/ethics committee ( EC) and/or the site’s local 
+IRB/EC as required. Likewise, any future amendments to the study protocol will be submitted and approved by the same IRB(s) or EC(s). After IRB/EC approval, sites must register for this 
+study before screening potential participant s and must register for any protocol amendments. 
+Protocol registration procedures are described in the protocol instruction manual ( PIM). 
+ Ethical Conduct of the Study  
+The study will be conducted according to the Declaration of Helsinki in its current versi on; the 
+requirements of Good Clinical Practice (GCP) as defined in Guidelines, European Union 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+16 
+ (EU) Clinical Trials Directive (2001/20/EC), and EU GCP Directive (2005/28/EC); 
+International Council for Harmonisation of Technical Requirements for Pharmaceutic als for 
+Human Use Guidelines; Human Subject Protection and Data Protection Acts; the US Office 
+for Human Research Protections (OHRP); or with the local law and regulation, whichever 
+affords greater protection of human subjects.  
+ Informed Consent of Study Pa rticipants  
+Informed consent must be obtained (see sample in Appendix A ) prior to conducting any 
+study -related procedures. For patients who are incapacitated, informed consent may be 
+obtained from a LAR.  Capacity will be assessed according to local standards and policies. 
+Local standards and policies will also determine who is legally authorized to consent for an 
+individual who is incapacitated.  Should the individual regain capacity during the study, their 
+direct consent should be obtained at the ear liest opportunity.  
+Electronic consent may be used when a validated and secure electronic system is in place to 
+do so, if in compliance with national legislation and approved by the local IRB/EC. Other 
+methods of obtaining documentation of consent may be us ed when site staff are unable to be 
+in direct contact with a potential participant or a LAR due to infection- control restrictions.  No 
+matter how the participant’s consent is obtained and documented, it is expected that consent 
+will be preceded by research staff providing an explanation of the research and an 
+opportunity for the participant (or their LAR) to have questions answered. Sites should follow 
+all available local or national guidance on suitable methods for obtaining documentation of 
+participant (or  their LAR) consent.  
+ Confidentiality of Study Participants  
+The confidentiality of all study participants will be protected in accordance with GCP 
+guidelines and national regulations , including the US Health Insurance Portability and 
+Accountability Act of 1 996 (HIPAA) and the EU General Data Protection Regulation (GDPR, 
+EU 2016/679) .  
+ Regulatory Oversight  
+As previously stated, all sites will conduct the trial in accordance with the requirements of GCP as codified in their local law and regulation, under the oversight of their institution and 
+competent regulatory authority.  
+As part of fulfilling GCP requirements for adequate trial monitoring, multiple modalities will be employed.  
+6 Storage and Use of Specimens  
+The plasma obtained from participants will be sent to a central biorepository in the US. In 
+addition to the antibody and antigen tests described in this protocol, these specimens will be 
+available for further study of SARS -CoV-2 and COVID -19. Any future use of these specimens 
+will be reviewed and approved by a scientific steering committee overseeing research 
+conducted by this collaboration. Results of these tests will not be shared with participants or their clinicians. Aggregated results of such tests will be presented. No individual results will be linked to a study participant.  
+ 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+17 
+ 7 Supporting Documentation  
+Detailed study procedures are described in the PIM which is available on the INSIGHT website. 
+The laboratory manual provides detailed descriptions of procedures for  specimen collection, 
+storage, and shipping to the central biorepository.  
+  
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+18 
+ APPENDIX A: Sample  Informed Consent  Form  
+ 
+CONSENT FOR PARTICIPATING IN AN NIH -FUNDED RESEARCH STUDY  
+SITE INVESTIGATOR: ________________________________ PHONE: __________  
+ 
+Evaluation of the Feasibility and Reproducibility of 2 Point -of-Care Tests for  
+SARS -Co-V-2 Antibodies  (INSIGHT 017)  
+ 
+Short Title:  INSIGHT 017: Evaluation of Point -of-Care ( EPOC )  
+Sponsored by:  The University of Minnesota  
+Funded by:  National Institute for Allergy and Infectious Diseases, US National Institutes 
+of Health  
+ 
+A Multicenter Study of the International Network for Strategic Initiatives in Global HIV Trials (INSIGHT)  
+ 
+ 
+ This is a research study to find out if new rapid tests for COVID -19 are easy to use for 
+people with COVID -19 who are in the hospital.  We are asking you to participate 
+because you are in the hospital with symptoms of COVID -19 and have tested positive 
+on a standard test.  It is your choice whether to be in this study or not.  
+ We are doing this study in many countries around the world.  We hope to have about 300-400 people wit h COVID -19 be in this study.   
+ [The following text box is required for sites in the US, in accordance with the 2018 Common Rule.]  OHRP Requirements to be read by the sites: ( remove this text box from your  site-specific consent)  
+ 
+PLEASE NOTE THAT THIS SAMPLE LANGUAGE DOES NOT PREEMPT OR REPLACE LOCAL 
+IRB/EC REVIEW AND APPROVAL.  INVESTIGATORS ARE REQUIRED TO PROVIDE THE LOCAL 
+IRB/EC WITH A COPY OF THIS SAMPLE LANGUAGE ALONG WITH THE LANGUAGE INTENDED 
+FOR LOCAL USE.  LOCAL IRBs/ECs ARE REQUIRED TO WEIGH THE UNIQUE RISKS, 
+CONSTRAINTS, AND POPULATION CONSIDERATIONS AS A CONDITION OF ANY APPROVAL.  
+ANY DELETION OR SUBSTANTIVE CHANGE OF INFORMATION CONCERNING RISKS OR 
+ALTERNATIVE TREATMENT MUST BE JUSTIFIED BY TH E INVESTIGATOR, APPROVED BY 
+THE LOCAL IRB/EC, AND NOTED IN THE IRB/EC MINUTES.  JUSTIFICATION AND IRB/EC APPROVAL OF SUCH CHANGES MUST BE FORWARDED TO THE INTERNATIONAL 
+COORDINATING CENTER.  SPONSOR -APPROVED CHANGES IN THE PROTOCOL MUST BE 
+APPROVED BY THE LOCAL IRB/EC BEFORE USE UNLESS INTENDED FOR THE ELIMINATION OF APPARENT IMMEDIATE HAZARD.  NEW INFORMATION SHALL BE SHARED WITH
+ 
+EXISTING SUBJECTS AT NEXT ENCOUNTER, WITH ALL NEW SUBJECTS PRIOR TO INVOLVEMENT, OR AS THE LOCAL IRB/EC MAY OTHERWISE ADDITIONALLY REQUIRE.  
+ 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+19 
+  
+ 
+What is being studied? 
+The COVID -19 tests that are being used in the hospital are tests that have to be done in 
+special laboratories by trained technicians.  It can be hours or days before you get the 
+result.  Recent studies suggest that some COVID -19 treatments may work differently 
+depending on whether you already have antibodies to COVID -19 in your blood.  It would 
+be helpful to have a COVID -19 antibody test that could give results quickly so your 
+doctor has more information on what treatments might be most effective for you.  
+ There are new tests available that can tell us about your antibodies in a few  minutes.  
+They do not have to be done in a lab.  So far they have only been studied in people who are not in the hospital.  We are doing this study to see if it is easy for these tests to be used right at your bedside in the hospital.  This is called a “p oint-of-care” (POC) test.  
+ 
+We are looking at 2 different POC tests.  One is called LumiraDX and the other is called 
+RightSign.  
+ 
+What do you have to do in the study? 
+If you agree to be in this study, we will ask you about what other medical conditions you have, what symptoms you are having, and what medicines you have gotten to treat your KEY INFORMATION  
+• You can join the study if you are in the hospital with COVID -19 and have 
+already tested COVID -19 positive on a standard test within the last 3 
+days, or if the test was more than 3 days ago and you have gotten sicker 
+from COVID -19. 
+• If you agree to be in the study, you will have two finger sticks to draw 
+blood.  This will be tested on two different point -of-care (rapid) tests.   
+• You will also have a small amount of blood drawn from your arm to be 
+tested in a central laboratory.  
+• Once you have done this, you are done with the study.  
+• There are minor risks to having blood drawn from your arm, but this risk is not di fferent from blood draws that are already being done for your 
+regular care.  
+• There are no direct benefits to you from being in this study.  You will help 
+us learn more about how these rapid tests work in people in the hospital 
+with COVID -19. 
+• This study does  not include any treatments apart from your usual care.  
+You and your doctor will decide how to treat your COVID -19. 
+• You do not have to be in this study.  You can stop being in the study at 
+any time.  This will not change your medical care or other benefit s. 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+20 
+ COVID -19.  We will ask if you have been vaccinated against COVID -19.  Your study 
+team may be able to get this information from your medical record.   
+ 
+We will stick your fi nger with a small sharp tool called a lancet to get a little bit of blood 
+to use for the rapid tests.  We will do this twice, once each for the 2 different tests. If a test fails then we will stick your finger 1 more time, so you could have up to 4 finger sticks.  We will not tell you the results of these tests . This is because  we do not know 
+how to use these test results to choose treatments for you.  That would be investigated in future studies.  The results of these tests will not be used to guide your c are. 
+ We will take about 9 milliliters (a little less than 2 teaspoons) of blood from a vein in your 
+arm using a needle.  We will send these samples to a central laboratory in the United States.  More information is below.  
+ Once you have done these things,  you are done with this study.   
+ This study does not provide any treatment for COVID -19.  You do not have to be in this 
+study if you do not want to be.  If you agree to be in the study, you can stop at any time.  Your decision about whether to be in this study or to stop the study will not change your usual medical care or any benefits to which you are otherwise entitled.   
+ The study will pay for the tests that are part of this study.  
+ [The next paragraph is for US sites only.  Sites in other countries should delete the next 
+paragraph and replace it with the language appropriate for your location.]  
+You, your insurance company, or some other third- party payer must pay for any 
+medicines or other tests for your COVID -19 and for your hospital costs.  
+ 
+What are the risks and benefits of being in this study?  
+The only risks to you to be in this research study are the risk of having blood taken and 
+the possibility that someone could find out you are in the study.  These risks are small and are the same as risks you already have from your hospital care.  Having blood 
+taken may be a little painful. You may have a bruise where the needle goes in.  In rare 
+cases, people have fainted or gotten an infection after having blood taken.   
+ You will not get any direct benefit f rom being in this study, but it may help others in the 
+future if we can get a better understanding of how new tests for COVID -19 work.   
+ 
+What do we do with the samples at the central laboratory?  
+The study will test the blood samples to compare the results of the 2 POC tests to each other and to a standard antibody test.  You and your doctor will not  get the results of 
+these tests.   
+ 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+21 
+ Any blood samples that are left over after these tests will be s tored at the central 
+laboratory for as long as we are able to keep them.  We hope to use these in the future 
+to answer other questions about COVID -19, the virus that causes it, and how people 
+respond to the virus .  You and your doctor will not  get any resu lts from these tests.  
+You can withdraw your consent for us to keep these samples at any time.  Let your study team know if you do not want the study to keep your samples anymore.  We will make every effort to destroy all of your samples that are still at the central laboratory.  
+We will not  test your genes (DNA).  We will not  sell your samples and they will not  be 
+used for research aimed at making money (commercial research).  The laboratory where the samples are stored will not have any information that could identify you.  
+ How do we protect your privacy? 
+We will take  every reasonable step to keep your health information private and to keep 
+anyone from misusing it.  Your information (data) and samples will not be identified by 
+name, or in any other way, in anything published about this study.  You will be identified only by a code.  We will not release information from your records without your written permission.  
+ 
+[The following paragraph is for sites outside the US only]  
+We will do everything we can to keep your personal information private, but we cannot guarantee that nobody will get it.  We may have to release your personal information if required by law.  
+ [The following is for all sites]  
+These people may see your medi cal and research information:  
+ 
+• the [insert the name of the site]  ethics committee (institutional review board, IRB);  
+• the sponsor , the University of Minnesota  (UMN), the group paying for the 
+research ( United States [US ] National Institutes of Health [ NIH]), other study 
+staff, and people they designate as helping with the study;  
+• US and other participating countries’ health and regulatory agencies.  
+ 
+All of these people are committed to protect your privacy.   
+ 
+As the research staff at [insert the name of the site], we must make sure that people not 
+involved with this study cannot see your research and medical information.  We will keep your information in a safe place and will handle your personal information very 
+carefully.   
+ 
+Your study data are sent electronically to the UMN in the US through a secure 
+application.  By signing this consent, you agree to having your data sent to UMN.  No information that could directly identify you is sent to UMN.  In this information, you are 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+22 
+ identified only by a code number, your year of birth, and a 3 -letter code that you or the 
+study staff choose.  This is called “pseudonymized data”.   The UMN limits access to the 
+data through security measures, and no data breach or unauthorized access has ever occurred in this system.  After the study is over, the data will be stored securely for as long as the law requires.  
+ We will share your study data with the US N IH (which is paying for this study), and with 
+regulators that oversee the study.  We are r equired by law to do this.   UMN may share 
+your data and blood sample with other people who study COVID -19.  UMN will remove 
+the code number, year of birth, and 3 -letter code from your data before sharing.  This is 
+called “anonymizing the data” and makes it  impossible for anyone to link the data back 
+to you.  We will not ask you for additional consent for this sharing.  UMN will only share data for research projects that are approved by INSIGHT.  
+ For one of the new tests we are studying, the LumiraDX test, t he test results will be sent 
+through the internet to LumiraDX’s computers.  They are sent in a secure way and the information is encrypted (coded so no one can read it unless they have a special key).  LumiraDX will then send this data to the UMN in a secure way.  LumiraDX uses this test in many countries around the world and must follow the privacy laws of those countries, including the countries where this study is being done.   
+ The test results sent to LumiraDX include the time, date, and hospital where the test 
+was done.  The only information that LumiraDX will have that could be linked to you personally is a number on the kit used to take your blood.  This is a different code 
+number than what is on the data that your site sends to UMN.  These two numbers can be linked together at UMN and at your site, but only the site knows who you are.  These numbers will not be part of any data that is shared as described above.  
+ This study has a Certificate of Confidentiality from the US Federal government.  This means that UMN cannot share any data it has about you with national, state, or local 
+civil, criminal, administrative, legislative, or other authorities unless you specifically allow us to share it.  
+ [Note for US sites: Because each institution typically has  requirements for specific 
+HIPAA language in the consent or in a separate document, none is provided in this template.  Follow your institutions’ requirements for informing potential participants of their rights under HIPAA.]  
+ [The following section (up to “What if you are hurt as part of this research?”) is for countries subject to the GDPR or similar legislation requiring this information.  It should only be included in consents for sites subject to such legislation.  It will vary from place to place whether it must be in this consent document, a separate consent document, or an information sheet that does not require signature.  The amount of information 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+23 
+ provided may be reduced as long as it still meets requirements of the par ticular country 
+(e.g., not all countries/ECs require an enumeration of all of a data subject’s rights).]  
+ 
+What are your rights regarding your data?  
+UMN is a public research university, and this study is funded primarily by the US 
+Federal government.  The S tate of Minnesota and the US Federal government require 
+UMN to follow regulations and policies that are meant to protect your privacy.  UMN is also required to comply with the General Data Protection Regulation (GDPR), because it processes data obtained fr om European residents.  
+ There is no specific independent supervisory authority overseeing the processing of 
+data in the US.  Any complaint you might have about the use of your data would be 
+made to your national data protection authority.  
+ The GDPR gives you additional rights which we would like to inform you about below.  
+ Right to Information  
+You have the right to know what data about you is being processed.  You can also get a free copy of this data.  
+ Right to Correction  
+You have the right to correct any  information about you which is incorrect or had 
+become incorrect.  
+ 
+Right to Erasure/Anonymization  
+The sponsor is required under both EU and US law to retain data from research studies such as this one for many years.  However, you have the right to reques t that your 
+personal data be completely anonymized.  This is done by destroying the information at your study center that links your identity to the pseudonymized data held by UMN.  This means that no one would ever be able to link the data held by UMN to you personally.  
+ 
+Right to Restriction of processing  
+Under certain conditions, you have the right to demand processing restrictions, i.e. , the 
+data may then only be stored, not processed.  You must apply for this.  Please contact 
+your study doctor or the data protection officer of the study center if you want to do so.  This right may be limited if the restriction would affect the reliabilit y of the study results.  
+ 
+Right to Data portability  
+You have the right to receive the personal data that you have provided to the study center.  This will allow you to request that this information be transmitted either to you or, where technically possibl e, to another agency designated by you.  
+ Right to Contradiction  
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+24 
+ You have the right to object at any time to any specific decision or action taken to 
+process your personal data.   This right is limited for data that have already been 
+processed and may be lim ited if your objection would affect the reliability of the study 
+results.  
+ 
+Right to Withdrawal of this consent  
+You may withdraw your consent at any time with effect for future data collection.  This 
+withdrawal may be in an informal or verbal communication to your study doctor.  If you withdraw your consent this will not affect the lawfulness of the data processing that has been or will be done with data collected until you withdraw consent.  Data already collected will be anonymized.  
+ 
+If you would like to use one of these rights , please first contact the person responsible 
+for the data collection at your study center:  
+Person responsible for data collection at the study center:  
+Name:   
+Address:   
+Phone:   
+Email   
+ For concerns about data processing and compliance with data protection requirements  
+you can also contact the data protection officer responsible for the study center:  
+Data protection officer responsible for the study center:  
+Name:   
+Address:   
+Phone:   
+Email   
+ 
+In addition, you have the right to lodge a complaint with the competent authority  if you 
+believe that the processing of personal data concerning you is contrary to the GDPR:  
+Data protection authority  responsible for the study center:  
+Name:   
+Address:   
+Phone:   
+Email   
+ 
+What if you are hurt as part of this research?  
+If you are hurt because of being in this study, [insert the name of the hospital/clinic]  will 
+treat your injury right away.  You or your insurance will have to pay for this treatment.  
+The study cannot pay you or pay for any care for study -related injuries or for your 
+illness.  
+ 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+25 
+ [If the above is not true for your site, i.e., if trial insurance covers such cost, please 
+replace the above with appropriate language.]  
+ 
+What if you have questions?  
+If you have questions about this study, or about the storage or use of your data, or if you 
+are hurt by being in the study, you can contact (site PI and contact information).  If you have questions about your rights as a research participant, you can contact (name and 
+contact information).  
+  
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+26 
+ SIGNATURE PAGE FOR CONSENT TO PARTICIPATE IN THE INSIGHT 017 STUDY 
+(EPOC)  
+ 
+I have read the consent or have had it explained to me.  I am satisfied that I understand 
+the information.  By signing this consent, I am stating that I want to join this study.  I 
+understand that I do not waive any of my legal rights as a study participant by signing 
+this consent.  I understand that I will receive a copy of the signed and dated consent.  
+ 
+ 
+  
+ 
+  
+ 
+________________________________________________________  
+Name of staff member conducting consent process (typed or printed)  
+ 
+____________________________________________________  ______________  
+Staff member’s signature  Date  
+ 
+________________________________________________________  
+*Witness’s name (typed or printed)  
+ ____________________________________________________  ______________ 
+Witness’s signature  Date  
+*A witness to the participant’s signature is strongly encouraged.  
+ 
+NOTE: This consent form, with the original signatures, MUST be retained on file 
+by the Investigator of Record.  A copy of the signed and dated consent must be given to the participant.  A copy should be placed in the participant’s medical record, if applic able.   
+ 
+ 
+_________________________  ______________________________  __________  
+Participant’s name             Participant’s signature                        Date  
+ 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+27 
+ APPENDIX B: List of Acronyms  
+Ab antibody  
+ACE-2 angiotensin converting enzyme- 2 
+AE adverse event  
+CI confidence interval  
+CLIA  Clinical Laboratory Improvement Amendments  of 1988 
+CRF case report form  
+EC ethics committee  
+EDTA  ethylenediamine tetraacetic  acid 
+EU European Union 
+EUA emergency use authorization  
+FDA US Food and Drug Administration  
+GCP  good clinical practice  
+GDPR  General Data Protection Regulation  
+hIVIG  hyperimmune intravenous immunoglobulin  
+ICC International Coordinating Center  
+IgA immunoglobulin A  
+IgG immunoglobulin G  
+IgM immunoglobulin M  
+IRB institutional review board  
+LAR legally authorized representative  
+NAT nucleic acid test  
+nMab neutralizing monoclonal antibody  
+OHRP  US Office for Human Research Protections  
+PCR polymerase chain reaction  
+PIM protocol instruction manual  
+POC  point-of-care 
+RBD receptor binding domain  
+RT-PCR reverse transcription polymerase chain reaction  
+SAE serious adverse event  
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+28 
+ TICO  Therapeutics for Inpatients with COVID -19 
+UMN  University of Minnesota  
+US United States of America  
+ 
+ 
+ 
+  
+ 
+  
+ 
+ 
+ 
+   
+ 
+ 
+   
+ 
+ 
+   
+ 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+29 
+ APPENDIX C: INSIGHT 017 Protocol Team  
+A protocol team will be established to oversee implementation of this  protocol. This team will 
+include:  
+• Protocol co- chairs . 
+• NIAID, Division of Clinical Research representatives . 
+• INSIGHT University of Minnesota representatives . 
+• INSIGHT International Coordinating Center representatives . 
+• PETAL representatives . 
+• CTSN representatives . 
+• US Department of Veterans Affairs representatives . 
+• Collaborating laboratory representatives . 
+• Site investigators . 
+• Study biostatisticians . 
+• Community representative.  
+A core team consisting of representatives from these groups and the INSIGHT Principal 
+Investigator will meet regularly to review study progress and address issues that m ay arise.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+   
+ 
+ 
+INSIGHT 017                                                                                                                 Version 1.0 
+                                                                                                                          26 December 2021   
+30 
+ APPENDIX D: References  
+1 ACTIV -3/TICO Study Group, Lundgren JD, Grund B, Barkauskas CE, Holland TL, Gottlieb RL, 
+et al. A Neutralizing Monoclonal Antibody for Hospitalized Patients with Covid- 19. N Engl J Med. 
+2020. doi: 10.1056/NEJMoa2033130.  
+ 
+2 RECOVERY Collaborative Group, Hor by PW, Mafham M, et al. Casirivimab and imdevimab in 
+patients admitted to hospital with COVID -19 (RECOVERY): a randomised, controlled, open-
+label, platform trial [Internet]. Infectious Diseases (except HIV/AIDS); 2021 [cited 2021 Jul 4]. 
+Available from: http://medrxiv.org/lookup/doi/10.1101/2021.06.15.21258542 . 
+ 
+3 ACTIV -3/TICO Bamlanivimab Study Group, Lundgren JD, Grund B, et al. Clinical and 
+Virological Response to a Neutralizing Monoclonal Antibody for Hospitalized Patients with 
+COVID -19 [Internet]. Infectious Diseases (except HIV/AIDS); 2021. Available from: 
+http://medrxiv.org/lookup/doi/10.1101/2021.07.19.21 260559 . 
+ 
+4 ACTIV -3/TICO Bamlanivimab Study Group.  Clinical and Virological Response to a 
+Neutralizing Monoclonal Antibody for Hospitlaized Patients with COVID -19 (in press Annals 
+Intern Med).  
+ 
+5 ACTIV -3/Therapeutics for Inpatients with COVID -19 (TICO) Stu dy Group.  Neutralizing 
+Monoclonal Antibody Therapies VIR -7831 and BRII -196/198 for Adults Hospitalized with 
+COVID -19: A Randomized Controlled Trial (in press Lancet ID).  
+ 
+6 Babiker A. SARS- Cov-2 Serostatus and Antigen Levels: Prognostic Value and Impact on 
+Clinical Effect of Passive Immunotherapy. ACTIV Passive immunit Biomarker Workshop, 
+September 2021.  
+ 
+7 Murray DD, Babiker AG, Baker JV, et al. Design and implementation of an international, multi -
+arm, multi -stage platform master protocol for trials of novel SARS -CoV-2 antiviral agents: 
+Therapeutics for Inpatients with COVID -19 (TICO/ACTIV -3). Clin Trials 2021 doi: 
+10.1177/17407745211049829.  
+ 
+8 https://www.fda.gov/media/151252/download . Accessed 07 December 2021.  
+ 
+9 https://www.fda.gov/media/138660/download . Accessed 07 December 2021.  
+ 
+10 Schlesselman JJ, Case Control Studies. Oxford University Press, New York, 1982.   
