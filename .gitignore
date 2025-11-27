@@ -76,6 +76,31 @@ htmlcov/
 .AppleDouble
 .LSOverride
 
+# Test files (archived locally, not in GitHub)
+test_*.py
+test_*.js
+*_test.py
+*_test.js
+debug_*.py
+quick_*.py
+
+# Job cache (runtime-generated)
+jobs/
+ilana-backend/jobs/
+
+# Shadow/feedback data (runtime-generated)
+ilana-backend/shadow/
+
+# Backup files
+*.bak
+*.bak2
+*_backup/
+legacy_pipeline_backup/
+
+# Placeholder/temp files
+*placeholder*.html
+golden_model_outputs.txt
+
 # Prevent stale files from being re-created at repo root
 /optimized_real_ai_service.py
 /api_server.py
