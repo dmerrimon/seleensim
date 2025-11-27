@@ -94,8 +94,8 @@ ilana-backend/shadow/
 # Backup files
 *.bak
 *.bak2
-*_backup/
-legacy_pipeline_backup/
+# *_backup/ - Commented out: would block legacy_pipeline_backup
+# legacy_pipeline_backup/ - KEEP THIS: Required for production imports
 
 # Placeholder/temp files
 *placeholder*.html
