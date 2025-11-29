@@ -109,7 +109,7 @@ body {
 .analyze-btn {
     width: 100%;
     padding: var(--spacing-md) var(--spacing-xl);
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: #1e1e1e;
     color: white;
     border: none;
     border-radius: var(--radius-lg);
@@ -119,27 +119,10 @@ body {
     cursor: pointer;
     transition: all var(--transition-base);
     box-shadow: var(--shadow-md);
-    position: relative;
-    overflow: hidden;
-}
-
-.analyze-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, var(--primary-hover) 0%, var(--secondary-hover) 100%);
-    opacity: 0;
-    transition: opacity var(--transition-base);
-}
-
-.analyze-btn:hover::before {
-    opacity: 1;
 }
 
 .analyze-btn:hover {
+    background: #2a2a2a;
     transform: translateY(-1px);
     box-shadow: var(--shadow-lg);
 }
@@ -147,11 +130,6 @@ body {
 .analyze-btn:active {
     transform: translateY(0);
     box-shadow: var(--shadow-md);
-}
-
-.analyze-btn span {
-    position: relative;
-    z-index: 1;
 }
 
 /* ============================================================================
