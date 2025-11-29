@@ -579,8 +579,8 @@ async def analyze_fast(
                 "validation": validation_result["stats"],
                 "validation_warnings": validation_result["warnings"],
                 # Step 8: RAG info
-                "rag_exemplars": len(exemplars),
-                "rag_enabled": len(exemplars) > 0,
+                "rag_exemplars": len(rag_results.get('exemplars', [])),
+                "rag_enabled": len(rag_results.get('exemplars', [])) > 0,
                 # Step 4: Token usage tracking
                 "tokens": {
                     "prompt": actual_tokens.get("prompt_tokens", token_info["total_input"]),
