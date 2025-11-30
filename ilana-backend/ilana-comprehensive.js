@@ -359,6 +359,9 @@ async function displaySelectionSuggestions(analysisResult) {
         // DEBUG: Log suggestion object to see actual field names
         console.log(`🔍 Suggestion ${index}:`, suggestion);
         console.log(`  - Keys: ${Object.keys(suggestion).join(', ')}`);
+        console.log(`  - RAW grouped field:`, suggestion.grouped);
+        console.log(`  - RAW sub_issues field:`, suggestion.sub_issues);
+        console.log(`  - RAW sub_issues length:`, suggestion.sub_issues ? suggestion.sub_issues.length : 'undefined');
 
         const issue = {
             id: suggestion.id || `selection_${index}`,
