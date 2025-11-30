@@ -399,6 +399,9 @@ async function displaySelectionSuggestions(analysisResult) {
     IlanaState.currentIssues = issues;
     IlanaState.currentSuggestions = issues;
 
+    // Highlight all original text instances in orange
+    await highlightOriginalTextInDocument(issues);
+
     // Update dashboard
     await updateDashboard({ issues, suggestions: issues });
 
@@ -702,29 +705,81 @@ function displayGroupedSuggestionCard(issue) {
     `;
 }
 
+// Highlight original text instances in orange in the document
+async function highlightOriginalTextInDocument(issues) {
+    if (!issues || issues.length === 0) {
+        console.log('No issues to highlight');
+        return;
+    }
+
+    try {
+        await Word.run(async (context) => {
+            console.log(`🟠 Highlighting ${issues.length} original text instances in orange...`);
+
+            for (const issue of issues) {
+                if (!issue.text || issue.text.length < 3) {
+                    console.warn(`⚠️ Skipping highlight for issue ${issue.id}: text too short`);
+                    continue;
+                }
+
+                try {
+                    // Search for the original text in the document
+                    const searchResults = context.document.body.search(issue.text, {
+                        ignorePunct: false,
+                        ignoreSpace: false
+                    });
+                    context.load(searchResults, 'items');
+                    await context.sync();
+
+                    // Highlight all matches in orange
+                    if (searchResults.items.length > 0) {
+                        console.log(`🟠 Found ${searchResults.items.length} matches for: "${issue.text.substring(0, 50)}..."`);
+
+                        for (const match of searchResults.items) {
+                            match.font.highlightColor = '#FFA500';  // Orange
+                        }
+
+                        await context.sync();
+                    } else {
+                        console.warn(`⚠️ No matches found for: "${issue.text.substring(0, 50)}..."`);
+                    }
+                } catch (error) {
+                    console.error(`❌ Failed to highlight issue ${issue.id}:`, error);
+                    // Continue with next issue instead of failing completely
+                }
+            }
+
+            console.log(`✅ Orange highlighting complete`);
+        });
+    } catch (error) {
+        console.error('❌ Failed to highlight original text:', error);
+        // Don't show error to user - highlighting is a nice-to-have feature
+    }
+}
+
 // Insert suggestion with orange highlighting
 async function insertSuggestion(issueId) {
     const issue = IlanaState.currentIssues.find(i => i.id === issueId);
     if (!issue) return;
-    
+
     try {
         await Word.run(async (context) => {
             const selection = context.document.getSelection();
-            
+
             // Replace selection with improved text
             selection.insertText(issue.suggestion, Word.InsertLocation.replace);
-            
+
             // Apply orange highlighting
             const insertedRange = context.document.getSelection();
             insertedRange.font.highlightColor = '#FFA500';
-            
+
             await context.sync();
-            
+
             console.log(`✅ Inserted suggestion: ${issue.id}`);
-            
+
             // Dispatch suggestionInserted event
             dispatchSuggestionInsertedEvent(issue);
-            
+
             // Remove suggestion from UI
             const card = document.querySelector(`[data-issue-id="${issueId}"]`);
             if (card) {
@@ -732,7 +787,7 @@ async function insertSuggestion(issueId) {
                 card.style.pointerEvents = 'none';
             }
         });
-        
+
     } catch (error) {
         console.error('Failed to insert suggestion:', error);
         showError('Could not insert suggestion into document');
@@ -765,17 +820,29 @@ async function applySuggestion(issueId) {
 
     try {
         await Word.run(async (context) => {
-            const selection = context.document.getSelection();
-            context.load(selection, 'text');
+            // Search for the original text in the document
+            const searchResults = context.document.body.search(issue.text, {
+                ignorePunct: false,
+                ignoreSpace: false
+            });
+            context.load(searchResults, 'items');
             await context.sync();
 
-            const originalText = selection.text;
+            if (searchResults.items.length === 0) {
+                showError('Could not find the original text in the document');
+                console.warn(`❌ Original text not found: "${issue.text}"`);
+                return;
+            }
 
-            // Replace selection with improved text
-            selection.insertText(issue.suggestion, Word.InsertLocation.replace);
+            // Use the first match
+            const firstMatch = searchResults.items[0];
+            const originalText = issue.text;
 
-            // Apply green highlighting to indicate acceptance
-            const insertedRange = context.document.getSelection();
+            // Replace with improved text
+            firstMatch.insertText(issue.suggestion, Word.InsertLocation.replace);
+
+            // Get the newly inserted range and apply green highlighting
+            const insertedRange = firstMatch.getRange();
             insertedRange.font.highlightColor = '#90EE90';
 
             await context.sync();
@@ -797,7 +864,6 @@ async function applySuggestion(issueId) {
 
             // Store undo information using new multi-item buffer
             addUndoBuffer(issueId, originalText, {
-                // TODO: Store paragraph index, offset for better range tracking
                 suggestionId: issueId,
                 requestId: IlanaState.currentRequestId
             });
@@ -914,18 +980,30 @@ async function insertAsComment(issueId) {
 
     try {
         await Word.run(async (context) => {
-            const selection = context.document.getSelection();
-            context.load(selection, 'text');
+            // Search for the original text in the document
+            const searchResults = context.document.body.search(issue.text, {
+                ignorePunct: false,
+                ignoreSpace: false
+            });
+            context.load(searchResults, 'items');
             await context.sync();
 
-            const originalText = selection.text;
+            if (searchResults.items.length === 0) {
+                showError('Could not find the original text in the document');
+                console.warn(`❌ Original text not found: "${issue.text}"`);
+                return;
+            }
+
+            // Use the first match
+            const firstMatch = searchResults.items[0];
+            const originalText = issue.text;
 
             // Construct comment body with improved text, rationale, and confidence
             const confidencePercent = Math.round((issue.confidence || 1) * 100);
             const commentBody = `${issue.suggestion}\n\n${issue.rationale}\n\nConfidence: ${confidencePercent}%\n\n[View sources]`;
 
             // Insert comment using Office.js Comments API
-            const comment = selection.insertComment(commentBody);
+            const comment = firstMatch.insertComment(commentBody);
 
             // Set comment author (requires API 1.4+)
             try {
