@@ -23,6 +23,7 @@ class ComplianceIssue:
     severity: str
     short_description: str
     detail: str
+    improved_text: str  # Actual rewrite suggestion (copy-paste ready)
     evidence: List[str]
     confidence: float = 1.0  # Rule-based checks are deterministic
 
@@ -121,6 +122,7 @@ def check_conditional_language(text: str) -> ComplianceIssue:
             severity="minor",  # Downgraded from critical to advisory
             short_description="Conditional language in statistical analysis (advisory)",
             detail="Found conditional/ambiguous phrasing that requires pre-specification in Statistical Analysis Plan (SAP). Language like 'may', 'if deemed appropriate', 'as needed' creates risk of post-hoc analysis decisions and alpha inflation.",
+            improved_text="Statistical analyses will be pre-specified in the Statistical Analysis Plan (SAP) as described in Protocol Section 9. All analytic methods, including handling of missing data and sensitivity analyses, will be defined prior to database lock. No post-hoc analyses will be performed without pre-specification in a SAP amendment.",
             evidence=evidence[:3],  # Limit to first 3 matches
             confidence=0.6  # Lowered from 0.95 to allow LLM suggestions to take priority
         )
@@ -142,6 +144,7 @@ def check_reassignment(text: str) -> ComplianceIssue:
             severity="minor",  # Downgraded from major to advisory
             short_description="Post-enrollment reassignment described (advisory)",
             detail="Text implies reassignment of subjects post-enrollment. Must pre-specify: (1) ITT analysis by enrollment group, (2) handling of time-varying severity in SAP, (3) methods to mitigate immortal time bias (e.g., time-varying covariates, marginal structural models).",
+            improved_text="Participants will be analyzed according to their initial enrollment group (intention-to-treat principle). Post-enrollment disease severity changes will be handled as time-varying covariates in statistical models as pre-specified in the Statistical Analysis Plan (Section 9.3). Methods to mitigate immortal time bias (e.g., marginal structural models, landmark analyses) will be detailed in the SAP.",
             evidence=evidence[:3],
             confidence=0.6  # Lowered from 0.90 to allow LLM suggestions to take priority
         )
@@ -167,7 +170,8 @@ def check_safety_reporting(text: str) -> ComplianceIssue:
                 severity="minor",  # Downgraded from major to advisory
                 short_description="SAE reporting timeline missing (advisory)",
                 detail="Safety reporting language found but missing required 24-hour SAE reporting timeline. Regulatory requirement: investigators must report SAEs to sponsor within 24 hours of awareness.",
-                evidence=evidence[:2],
+                improved_text="Serious Adverse Events (SAEs) must be reported to the sponsor Medical Monitor within 24 hours of the investigator becoming aware of the event. All SAEs will be documented using standardized case report forms and followed until resolution or clinical stabilization.",
+            evidence=evidence[:2],
                 confidence=0.6  # Lowered from 0.85 to allow LLM suggestions to take priority
             )
     return None
@@ -192,6 +196,7 @@ def check_terminology(text: str) -> ComplianceIssue:
                 severity="minor",  # Already minor, now advisory
                 short_description="Outdated terminology: 'subjects' or 'patients' (advisory)",
                 detail="ICH-GCP E6(R3) recommends using 'participants' instead of 'subjects' or 'patients' in clinical protocols. Update terminology for regulatory alignment.",
+                improved_text="Participants will be enrolled in this study after providing informed consent.",
                 evidence=evidence[:2],
                 confidence=0.6  # Lowered from 0.75 to allow LLM suggestions to take priority
             )
@@ -213,6 +218,7 @@ def check_vague_endpoints(text: str) -> ComplianceIssue:
             severity="minor",  # Downgraded from major to advisory
             short_description="Vague endpoint language (advisory)",
             detail="Endpoint description lacks specificity. Must include: (1) exact measurement/instrument, (2) timepoint, (3) missing data handling. Example: 'Clinical response defined as ≥50% reduction in XYZ score from baseline at Day 28 using ABC instrument; missing data handled via multiple imputation per SAP Section 9.'",
+            improved_text="The primary endpoint will be measured using [SPECIFY INSTRUMENT/SCALE] at [SPECIFY TIMEPOINT, e.g., Day 28, Week 12]. Missing data will be handled using [SPECIFY METHOD, e.g., multiple imputation, last observation carried forward] as detailed in Statistical Analysis Plan Section 9.",
             evidence=evidence[:2],
             confidence=0.6  # Lowered from 0.80 to allow LLM suggestions to take priority
         )
@@ -234,6 +240,7 @@ def check_visit_schedule(text: str) -> ComplianceIssue:
             severity="minor",  # Downgraded from major to advisory
             short_description="Vague visit schedule (advisory)",
             detail="Visit schedule lacks explicit windows. Specify exact windows: e.g., 'Day 0 ± 2 days, Day 7 ± 3 days, Day 28 ± 4 days' with reference to visit schedule table.",
+            improved_text="Study visits will occur at specified timepoints with allowed windows: Screening (Day -14 to Day -1), Baseline (Day 0), Week 4 (±3 days), Week 8 (±3 days), Week 12 (±7 days), and End of Study (Week 24 ±7 days). Visit windows are detailed in the Schedule of Activities (Protocol Section 2, Table 1).",
             evidence=evidence[:2],
             confidence=0.6  # Lowered from 0.80 to allow LLM suggestions to take priority
         )
@@ -278,8 +285,8 @@ def run_compliance_checks(text: str) -> List[Dict[str, Any]]:
                     "category": issue.category,
                     "severity": issue.severity,
                     "original_text": ', '.join(issue.evidence),  # Actual matched text from protocol
-                    "improved_text": issue.detail,  # Guidance text without brackets
-                    "rationale": issue.detail,
+                    "improved_text": issue.improved_text,  # Copy-paste ready rewrite
+                    "rationale": issue.detail,  # Explanation of why this is an issue
                     "recommendation": f"Review and address {issue.short_description.lower()}",
                     "confidence": issue.confidence,
                     "source": "rule_engine"
