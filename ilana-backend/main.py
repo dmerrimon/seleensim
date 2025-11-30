@@ -1557,7 +1557,8 @@ async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
             for suggestion in suggestions:
                 original_text = suggestion.get("text", "")
 
-                transformed_suggestions.append({
+                # Base transformation
+                transformed = {
                     "id": suggestion.get("id", f"suggestion_{req_id}"),
                     "original_text": original_text,  # Frontend expects "original_text"
                     "improved_text": suggestion.get("suggestion", ""),  # Frontend expects "improved_text"
@@ -1569,7 +1570,14 @@ async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
                     "ta": payload.get("ta"),
                     "phase": payload.get("phase"),
                     "model_path": "fast"
-                })
+                }
+
+                # CRITICAL: Preserve grouped suggestion fields (for sub-issues UI)
+                if suggestion.get("grouped"):
+                    transformed["grouped"] = suggestion.get("grouped")
+                    transformed["sub_issues"] = suggestion.get("sub_issues", [])
+
+                transformed_suggestions.append(transformed)
 
             response = {
                 "status": "fast",
