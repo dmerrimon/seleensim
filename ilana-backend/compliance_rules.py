@@ -107,6 +107,55 @@ def find_matches(text: str, token_list: List[str]) -> List[str]:
     return matches
 
 
+def extract_sentence_with_match(text: str, token_list: List[str]) -> str:
+    """
+    Extract the sentence containing the first matched token.
+
+    Args:
+        text: Protocol text to scan
+        token_list: List of regex patterns
+
+    Returns:
+        Full sentence containing the match, or the first 200 chars if no sentence boundary found
+    """
+    for pattern in token_list:
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            # Find sentence boundaries around the match
+            start_pos = match.start()
+            end_pos = match.end()
+
+            # Look backwards for sentence start (period, exclamation, question mark, or start of text)
+            sentence_start = 0
+            for i in range(start_pos - 1, -1, -1):
+                if text[i] in '.!?\n' and i > 0:
+                    sentence_start = i + 1
+                    break
+
+            # Look forwards for sentence end
+            sentence_end = len(text)
+            for i in range(end_pos, len(text)):
+                if text[i] in '.!?' and i < len(text) - 1:
+                    sentence_end = i + 1
+                    break
+
+            # Extract and clean the sentence
+            sentence = text[sentence_start:sentence_end].strip()
+
+            # If sentence is too long (> 300 chars), truncate around the match
+            if len(sentence) > 300:
+                # Extract 150 chars before and after the match
+                match_in_sentence = start_pos - sentence_start
+                excerpt_start = max(0, match_in_sentence - 150)
+                excerpt_end = min(len(sentence), match_in_sentence + 150)
+                sentence = "..." + sentence[excerpt_start:excerpt_end].strip() + "..."
+
+            return sentence
+
+    # Fallback: return first 200 chars if no match found
+    return text[:200].strip() + "..."
+
+
 def check_conditional_language(text: str) -> ComplianceIssue:
     """
     Rule 1: Detect conditional/ambiguous language requiring pre-specification
@@ -251,6 +300,27 @@ def check_visit_schedule(text: str) -> ComplianceIssue:
 # MAIN ENGINE
 # ============================================================================
 
+def get_token_list_for_check(check_func_name: str) -> List[str]:
+    """
+    Map check function names to their corresponding token lists.
+
+    Args:
+        check_func_name: Name of the check function
+
+    Returns:
+        List of regex patterns for that check
+    """
+    mapping = {
+        "check_conditional_language": CONDITIONAL_TOKENS,
+        "check_reassignment": REASSIGNMENT_TOKENS,
+        "check_safety_reporting": SAFETY_TOKENS,
+        "check_terminology": SUBJECT_TERMINOLOGY,
+        "check_vague_endpoints": VAGUE_ENDPOINT_TOKENS,
+        "check_visit_schedule": VISIT_SCHEDULE_TOKENS
+    }
+    return mapping.get(check_func_name, [])
+
+
 def run_compliance_checks(text: str) -> List[Dict[str, Any]]:
     """
     Run all compliance rules on protocol text
@@ -277,14 +347,17 @@ def run_compliance_checks(text: str) -> List[Dict[str, Any]]:
         try:
             issue = check_func(text)
             if issue:
+                # Extract the full sentence containing the matched keywords
+                # This extracts the actual text from the document that should be replaced
+                token_list = get_token_list_for_check(check_func.__name__)
+                original_text_sentence = extract_sentence_with_match(text, token_list) if token_list else ', '.join(issue.evidence)
+
                 # Convert to frontend format
-                # evidence now contains actual matched text snippets (e.g., "may", "if deemed appropriate")
-                # not regex patterns, thanks to fix in find_matches()
                 issues.append({
                     "id": issue.rule_id,
                     "category": issue.category,
                     "severity": issue.severity,
-                    "original_text": ', '.join(issue.evidence),  # Actual matched text from protocol
+                    "original_text": original_text_sentence,  # Full sentence from document
                     "improved_text": issue.improved_text,  # Copy-paste ready rewrite
                     "rationale": issue.detail,  # Explanation of why this is an issue
                     "recommendation": f"Review and address {issue.short_description.lower()}",
