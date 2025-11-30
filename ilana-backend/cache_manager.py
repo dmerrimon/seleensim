@@ -33,6 +33,10 @@ FAST_CACHE_TTL_HOURS = int(os.getenv("FAST_CACHE_TTL_HOURS", "6"))  # Shorter TT
 DEEP_CACHE_TTL_HOURS = int(os.getenv("DEEP_CACHE_TTL_HOURS", "48"))  # Longer TTL for deep path
 MAX_MEMORY_CACHE_SIZE = int(os.getenv("MAX_MEMORY_CACHE_SIZE", "1000"))  # LRU eviction
 
+# Code version for cache invalidation
+# Increment this whenever deploying bug fixes to invalidate stale cache
+CODE_VERSION = os.getenv("CODE_VERSION", "v1.4.1")  # Bumped from v1.4.0 to invalidate cache after NameError fix
+
 # Cache statistics
 _stats = {
     "hits": 0,
@@ -210,13 +214,14 @@ def generate_cache_key(
     # Normalize text (trim, lowercase, remove extra whitespace)
     normalized_text = " ".join(text.lower().strip().split())
 
-    # Build key components
+    # Build key components (including CODE_VERSION for cache invalidation)
     components = [
         normalized_text,
         model,
         ta or "none",
         phase or "none",
-        analysis_type
+        analysis_type,
+        CODE_VERSION  # Invalidates cache when code changes
     ]
 
     # Hash to fixed-length key
@@ -439,6 +444,7 @@ def reset_cache_stats():
 
 # Log configuration on import
 logger.info("💾 Cache manager loaded (Step 6):")
+logger.info(f"   - Code version: {CODE_VERSION} (for cache invalidation)")
 logger.info(f"   - Redis enabled: {ENABLE_REDIS}")
 logger.info(f"   - Fast TTL: {FAST_CACHE_TTL_HOURS}h, Deep TTL: {DEEP_CACHE_TTL_HOURS}h")
 logger.info(f"   - Max memory cache size: {MAX_MEMORY_CACHE_SIZE} entries")
