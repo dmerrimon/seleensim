@@ -593,75 +593,87 @@ function showJobQueuedMessage(jobId) {
     }
 }
 
-// Display suggestion cards with enhanced UI
+// Display suggestion cards in Grammarly style (collapsed with expand on click)
 function displaySuggestionCard(issue) {
-    // Debug logging to see what we're getting
-    console.log('📊 displaySuggestionCard called with issue:', {
-        id: issue.id,
-        type: issue.type,
-        grouped: issue.grouped,
-        has_sub_issues: !!issue.sub_issues,
-        sub_issues_length: issue.sub_issues ? issue.sub_issues.length : 0,
-        rationale_preview: issue.rationale ? issue.rationale.substring(0, 100) : ''
-    });
+    // Truncate original text for collapsed view (60 chars)
+    const textSnippet = issue.text && issue.text.length > 60
+        ? issue.text.substring(0, 60) + '...'
+        : (issue.text || 'No original text');
 
-    // Check if this is a grouped suggestion
-    if (issue.grouped && issue.sub_issues && issue.sub_issues.length > 0) {
-        console.log('✅ Rendering grouped suggestion card with', issue.sub_issues.length, 'sub-issues');
-        return displayGroupedSuggestionCard(issue);
-    }
+    // Determine if this is Compliance or Clarity issue
+    const issueCategory = (issue.type === 'statistical' || issue.type === 'safety' ||
+                           issue.type === 'analysis_population' || issue.type === 'documentation')
+        ? 'Compliance'
+        : 'Clarity';
 
-    console.log('⚠️ Rendering regular (non-grouped) suggestion card');
-    // Regular single suggestion card
     return `
-        <div class="suggestion-card" data-issue-id="${issue.id}">
-            <div class="suggestion-header">
-                <span class="suggestion-type ${issue.type}">${issue.type.toUpperCase()}</span>
-                <span class="suggestion-severity ${issue.severity}">${issue.severity}</span>
+        <div class="suggestion-card collapsed" data-issue-id="${issue.id}" onclick="toggleCardExpansion('${issue.id}')">
+            <!-- Collapsed Header (always visible) -->
+            <div class="card-header">
+                <span class="issue-category ${issueCategory.toLowerCase()}">${issueCategory}</span>
+                <span class="text-snippet">${textSnippet}</span>
+                <span class="expand-icon">›</span>
             </div>
 
-            <div class="suggestion-content">
-                <div class="suggestion-original">
-                    <label>Original:</label>
-                    <div class="text-preview">${issue.text}</div>
+            <!-- Expanded Content (hidden by default) -->
+            <div class="card-content" style="display: none;">
+                <div class="content-section">
+                    <label>Original Text:</label>
+                    <div class="content-text original">${issue.text || 'No original text provided'}</div>
                 </div>
 
-                <div class="suggestion-improved">
-                    <label>Improved:</label>
-                    <div class="text-preview improved">${issue.suggestion}</div>
+                <div class="content-section">
+                    <label>Recommended Change:</label>
+                    <div class="content-text recommended">${issue.suggestion || 'No suggestion provided'}</div>
                 </div>
 
-                <div class="suggestion-reason">
-                    <label>REASON:</label>
-                    <p>${issue.rationale}</p>
-                </div>
-
-                ${issue.recommendation ? `
-                <div class="suggestion-recommendation">
-                    <label>RECOMMENDATION:</label>
-                    <p>${issue.recommendation}</p>
+                ${issue.rationale ? `
+                <div class="content-section">
+                    <label>${issue.clinical_rationale ? 'Clinical Rationale:' : 'Regulatory Context:'}</label>
+                    <div class="content-text rationale">${issue.rationale}</div>
                 </div>
                 ` : ''}
-            </div>
 
-            <div class="suggestion-actions">
-                <button class="action-btn apply" onclick="applySuggestion('${issue.id}')"
-                        ${(issue.confidence || 1) < 0.5 ? 'disabled title="Confidence too low"' : ''}>
-                    Apply
-                </button>
-                <button class="action-btn insert-comment" onclick="insertAsComment('${issue.id}')"
-                        ${(issue.confidence || 1) < 0.5 ? 'disabled title="Confidence too low"' : ''}>
-                    Insert as Comment
-                </button>
-                <button class="action-btn explain" onclick="explainSuggestion('${issue.id}')">
-                    Explain
-                </button>
-                <button class="action-btn dismiss" onclick="dismissSuggestion('${issue.id}')">
-                    Dismiss
-                </button>
+                <!-- Action Buttons -->
+                <div class="card-actions">
+                    <button class="action-btn apply" onclick="event.stopPropagation(); applySuggestion('${issue.id}')"
+                            ${(issue.confidence || 1) < 0.5 ? 'disabled title="Confidence too low"' : ''}>
+                        Apply
+                    </button>
+                    <button class="action-btn comment" onclick="event.stopPropagation(); insertAsComment('${issue.id}')"
+                            ${(issue.confidence || 1) < 0.5 ? 'disabled title="Confidence too low"' : ''}>
+                        Insert as Comment
+                    </button>
+                    <button class="action-btn dismiss" onclick="event.stopPropagation(); dismissSuggestion('${issue.id}')">
+                        Dismiss
+                    </button>
+                </div>
             </div>
         </div>
     `;
+}
+
+// Toggle card expansion (Grammarly-style)
+function toggleCardExpansion(issueId) {
+    const card = document.querySelector(`.suggestion-card[data-issue-id="${issueId}"]`);
+    if (!card) return;
+
+    const content = card.querySelector('.card-content');
+    const expandIcon = card.querySelector('.expand-icon');
+
+    if (card.classList.contains('collapsed')) {
+        // Expand
+        card.classList.remove('collapsed');
+        card.classList.add('expanded');
+        content.style.display = 'block';
+        expandIcon.textContent = '‹';
+    } else {
+        // Collapse
+        card.classList.remove('expanded');
+        card.classList.add('collapsed');
+        content.style.display = 'none';
+        expandIcon.textContent = '›';
+    }
 }
 
 // Display grouped suggestion card with multiple sub-issues

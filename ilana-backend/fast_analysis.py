@@ -532,8 +532,14 @@ async def analyze_fast(
             "duplicates_removed": len(rule_suggestions) + len(ai_suggestions) - len(suggestions)
         }
 
-        # 5b-2. Group suggestions: Consolidate multiple issues targeting same text
-        suggestions, grouping_stats = _group_suggestions_by_text(suggestions, req_id)
+        # 5b-2. DISABLED: Grouping removed per user request - show individual cards like Grammarly
+        # suggestions, grouping_stats = _group_suggestions_by_text(suggestions, req_id)
+        grouping_stats = {
+            "groups_created": 0,
+            "suggestions_grouped": 0,
+            "total_before_grouping": len(suggestions),
+            "total_after_grouping": len(suggestions)
+        }
 
         # 5c. Validate suggestions (Phase 2A: Backend validator)
         validation_start = time.time()
