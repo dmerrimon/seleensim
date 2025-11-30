@@ -43,7 +43,7 @@ logger = logging.getLogger(__name__)
 # CRITICAL: Azure OpenAI requires deployment name, not model name!
 AZURE_DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT") or os.getenv("ANALYSIS_FAST_MODEL", "gpt-4o-deployment")
 FAST_MODEL = AZURE_DEPLOYMENT  # Use deployment name for Azure OpenAI compatibility
-FAST_TIMEOUT_MS = int(os.getenv("SIMPLE_PROMPT_TIMEOUT_MS", "15000"))  # 15 second timeout for longer sections
+FAST_TIMEOUT_MS = int(os.getenv("SIMPLE_PROMPT_TIMEOUT_MS", "40000"))  # 40 second timeout - Azure OpenAI can be slow
 FAST_MAX_TOKENS = int(os.getenv("FAST_MAX_TOKENS", "2000"))  # Increased for detailed regulatory citations
 FAST_TEMPERATURE = 0.2  # Low temperature for consistent regulatory citations
 SELECTION_CHUNK_THRESHOLD = int(os.getenv("SELECTION_CHUNK_THRESHOLD", "10000"))  # 10000 chars = full protocol sections
