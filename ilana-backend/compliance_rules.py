@@ -278,7 +278,7 @@ def run_compliance_checks(text: str) -> List[Dict[str, Any]]:
                     "category": issue.category,
                     "severity": issue.severity,
                     "original_text": ', '.join(issue.evidence),  # Actual matched text from protocol
-                    "improved_text": f"[{issue.short_description}] {issue.detail}",
+                    "improved_text": issue.detail,  # Guidance text without brackets
                     "rationale": issue.detail,
                     "recommendation": f"Review and address {issue.short_description.lower()}",
                     "confidence": issue.confidence,
