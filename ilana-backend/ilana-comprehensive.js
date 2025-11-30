@@ -998,9 +998,8 @@ async function insertAsComment(issueId) {
             const firstMatch = searchResults.items[0];
             const originalText = issue.text;
 
-            // Construct comment body with improved text, rationale, and confidence
-            const confidencePercent = Math.round((issue.confidence || 1) * 100);
-            const commentBody = `${issue.suggestion}\n\n${issue.rationale}\n\nConfidence: ${confidencePercent}%\n\n[View sources]`;
+            // Construct comment body with improved text and rationale
+            const commentBody = `${issue.suggestion}\n\n${issue.rationale}`;
 
             // Insert comment using Office.js Comments API
             const comment = firstMatch.insertComment(commentBody);

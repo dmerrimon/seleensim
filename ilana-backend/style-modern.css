@@ -292,6 +292,110 @@ body {
     gap: var(--spacing-sm);
 }
 
+/* Sub-issues Container */
+.sub-issues-container {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--gray-200);
+}
+
+.sub-issues-container label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-bottom: var(--spacing-sm);
+}
+
+.sub-issues-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.sub-issue {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    transition: all var(--transition-base);
+}
+
+.sub-issue:hover {
+    background: white;
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.sub-issue-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.sub-issue-type {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.sub-issue-severity {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+}
+
+.sub-issue-severity.critical {
+    background: #FEE2E2;
+    color: var(--critical);
+}
+
+.sub-issue-severity.major {
+    background: #FEF3C7;
+    color: #D97706;
+}
+
+.sub-issue-severity.minor {
+    background: #DBEAFE;
+    color: #2563EB;
+}
+
+.sub-issue-severity.advisory {
+    background: var(--gray-100);
+    color: var(--gray-600);
+}
+
+.sub-issue-content {
+    font-size: 12px;
+    color: var(--gray-700);
+    line-height: 1.5;
+}
+
+.sub-issue-content p {
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.sub-issue-content p:last-child {
+    margin-bottom: 0;
+}
+
+.sub-issue-content strong {
+    color: var(--gray-900);
+    font-weight: 600;
+}
+
 /* ============================================================================
    BUTTONS
    ============================================================================ */
