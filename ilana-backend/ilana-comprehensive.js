@@ -149,17 +149,34 @@ async function fetchWithRetry(url, options, attemptNumber = 1) {
     }
 }
 
-// Get selected text using Office.js
+// Get selected text using Office.js with timeout protection
 async function getSelectedText() {
+    console.log("🔍 getSelectedText() called");
+
     try {
-        return await Word.run(async (context) => {
+        // Add 10 second timeout to prevent hanging
+        const timeoutPromise = new Promise((_, reject) =>
+            setTimeout(() => reject(new Error('Word API timeout after 10s')), 10000)
+        );
+
+        const getTextPromise = Word.run(async (context) => {
+            console.log("📖 Word.run() executing...");
             const selection = context.document.getSelection();
             context.load(selection, 'text');
+            console.log("⏳ Calling context.sync()...");
             await context.sync();
+            console.log("✅ context.sync() completed");
             return selection.text || "";
         });
+
+        const text = await Promise.race([getTextPromise, timeoutPromise]);
+        console.log(`📝 Got text: ${text.length} chars`);
+        return text;
+
     } catch (error) {
-        console.error('Error getting selected text:', error);
+        console.error('❌ Error getting selected text:', error);
+        console.error('Error details:', error.message, error.stack);
+        // Return empty string on error to allow analysis to continue
         return "";
     }
 }
