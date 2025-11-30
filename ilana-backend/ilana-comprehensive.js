@@ -592,11 +592,23 @@ function showJobQueuedMessage(jobId) {
 
 // Display suggestion cards with enhanced UI
 function displaySuggestionCard(issue) {
+    // Debug logging to see what we're getting
+    console.log('📊 displaySuggestionCard called with issue:', {
+        id: issue.id,
+        type: issue.type,
+        grouped: issue.grouped,
+        has_sub_issues: !!issue.sub_issues,
+        sub_issues_length: issue.sub_issues ? issue.sub_issues.length : 0,
+        rationale_preview: issue.rationale ? issue.rationale.substring(0, 100) : ''
+    });
+
     // Check if this is a grouped suggestion
     if (issue.grouped && issue.sub_issues && issue.sub_issues.length > 0) {
+        console.log('✅ Rendering grouped suggestion card with', issue.sub_issues.length, 'sub-issues');
         return displayGroupedSuggestionCard(issue);
     }
 
+    console.log('⚠️ Rendering regular (non-grouped) suggestion card');
     // Regular single suggestion card
     return `
         <div class="suggestion-card" data-issue-id="${issue.id}">
