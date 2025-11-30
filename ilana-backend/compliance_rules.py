@@ -87,19 +87,22 @@ VISIT_SCHEDULE_TOKENS = [
 
 def find_matches(text: str, token_list: List[str]) -> List[str]:
     """
-    Find all regex pattern matches in text
+    Find all regex pattern matches in text and return the actual matched text
 
     Args:
         text: Protocol text to scan
         token_list: List of regex patterns
 
     Returns:
-        List of matched patterns
+        List of actual matched text snippets (not the regex patterns)
     """
     matches = []
     for pattern in token_list:
-        if re.search(pattern, text, re.IGNORECASE):
-            matches.append(pattern)
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            # Extract the actual matched text, not the pattern
+            matched_text = match.group(0)
+            matches.append(matched_text)
     return matches
 
 
@@ -268,11 +271,13 @@ def run_compliance_checks(text: str) -> List[Dict[str, Any]]:
             issue = check_func(text)
             if issue:
                 # Convert to frontend format
+                # evidence now contains actual matched text snippets (e.g., "may", "if deemed appropriate")
+                # not regex patterns, thanks to fix in find_matches()
                 issues.append({
                     "id": issue.rule_id,
                     "category": issue.category,
                     "severity": issue.severity,
-                    "original_text": f"[Rule-based detection: {', '.join(issue.evidence)}]",
+                    "original_text": ', '.join(issue.evidence),  # Actual matched text from protocol
                     "improved_text": f"[{issue.short_description}] {issue.detail}",
                     "rationale": issue.detail,
                     "recommendation": f"Review and address {issue.short_description.lower()}",
