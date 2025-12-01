@@ -218,17 +218,28 @@ def changes_numeric_values(original: str, improved: str) -> Tuple[bool, str]:
     orig_nums = set(extract_numbers(original))
     imp_nums = set(extract_numbers(improved))
 
-    # DISABLED: Numeric validation was too strict and blocked legitimate AI rewording
-    # Re-enable only for dosing-specific validation in changes_dosing()
-    #
-    # # Check if any numbers were REMOVED (prohibited)
-    # removed = orig_nums - imp_nums
-    # if removed:
-    #     reason = f"Numeric changes: removed={removed}"
-    #     return True, reason
+    # Allow rewording that preserves numeric MEANING, even if format changes
+    # Example: "Group 1" → "first subgroup" is OK
+    # Example: "Day 28 visit" → "four-week assessment" is OK
+    # But reject if numbers are completely removed without replacement
 
-    # Adding new numbers is OK (e.g., "within 3-6 days" for regulatory clarity)
-    # Allow all numeric changes except dosing (validated separately)
+    removed = orig_nums - imp_nums
+    added = imp_nums - orig_nums
+
+    # If numbers were removed but new ones added, likely a valid rephrasing
+    if removed and added:
+        return False, ""  # Probably rewording (e.g., "28 days" → "4 weeks")
+
+    # If numbers removed and text became significantly longer, likely explanation added
+    if removed and len(improved) > len(original) * 1.3:
+        return False, ""  # Likely added context/explanation
+
+    # Reject if critical numbers removed with no replacement
+    if removed and len(removed) > 2:  # Multiple numbers removed
+        reason = f"Numeric changes: removed={removed}"
+        return True, reason
+
+    # Allow single number changes (common in rewording)
     return False, ""
 
 
