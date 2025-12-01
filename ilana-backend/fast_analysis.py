@@ -494,8 +494,12 @@ async def analyze_fast(
 
         # 5b. Collect LLM-generated issues
         # New format: {"issues": [...]}
+        logger.info(f"🔍 [{req_id}] Azure response keys: {list(suggestion_data.keys()) if suggestion_data else 'EMPTY'}")
+        logger.info(f"🔍 [{req_id}] Has 'issues' key: {('issues' in suggestion_data) if suggestion_data else False}")
+
         if suggestion_data and "issues" in suggestion_data:
             issues = suggestion_data.get("issues", [])
+            logger.info(f"✅ [{req_id}] Found {len(issues)} AI issues from Azure")
             for idx, issue in enumerate(issues[:10]):  # Limit to 10 issues max
                 # Map new schema to frontend format
                 ai_suggestions.append({
@@ -734,6 +738,9 @@ async def _call_azure_fast(system_prompt: str, user_prompt: str, request_id: str
 
     except Exception as e:
         logger.error(f"❌ Azure call failed: {request_id} - {type(e).__name__}: {e}")
+        logger.error(f"❌ Full error details: {repr(e)}")
+        import traceback
+        logger.error(f"❌ Traceback: {traceback.format_exc()}")
         raise
 
 
