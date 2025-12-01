@@ -8,6 +8,8 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.18
+      - key: SIMPLE_PROMPT_TIMEOUT_MS
+        value: 40000
 
   # PubMedBERT Keep-Alive Worker (prevents cold starts)
   - type: worker
