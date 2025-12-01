@@ -347,6 +347,55 @@ async def health_check():
     }
 
 
+@app.get("/env-diagnostic")
+async def env_diagnostic():
+    """Diagnostic endpoint to verify environment configuration (safe for production)"""
+    return {
+        "azure_openai": {
+            "endpoint_configured": bool(os.getenv("AZURE_OPENAI_ENDPOINT")),
+            "endpoint_value": os.getenv("AZURE_OPENAI_ENDPOINT", "NOT_SET"),
+            "api_key_configured": bool(os.getenv("AZURE_OPENAI_API_KEY")),
+            "api_key_last_4": os.getenv("AZURE_OPENAI_API_KEY", "")[-4:] if os.getenv("AZURE_OPENAI_API_KEY") else "NOT_SET",
+            "deployment_name": os.getenv("AZURE_OPENAI_DEPLOYMENT", "NOT_SET"),
+        },
+        "pubmedbert": {
+            "endpoint_configured": bool(os.getenv("PUBMEDBERT_ENDPOINT_URL")),
+            "endpoint_preview": os.getenv("PUBMEDBERT_ENDPOINT_URL", "NOT_SET")[:40] + "..." if os.getenv("PUBMEDBERT_ENDPOINT_URL") else "NOT_SET",
+            "api_key_configured": bool(os.getenv("HUGGINGFACE_API_KEY")),
+        },
+        "pinecone": {
+            "api_key_configured": bool(os.getenv("PINECONE_API_KEY")),
+            "host_configured": bool(os.getenv("PINECONE_HOST")),
+            "index_name": os.getenv("PINECONE_INDEX_NAME", "NOT_SET"),
+        },
+        "timeouts": {
+            "simple_prompt_timeout_ms": os.getenv("SIMPLE_PROMPT_TIMEOUT_MS", "NOT_SET (default: 10000)"),
+            "circuit_breaker_timeout": os.getenv("CIRCUIT_BREAKER_TIMEOUT", "NOT_SET (default: 60)"),
+        },
+        "feature_flags": {
+            "enable_azure_openai": os.getenv("ENABLE_AZURE_OPENAI", "NOT_SET"),
+            "enable_pubmedbert": os.getenv("ENABLE_PUBMEDBERT", "NOT_SET"),
+            "enable_pinecone": os.getenv("ENABLE_PINECONE_INTEGRATION", "NOT_SET"),
+            "use_simple_azure_prompt": os.getenv("USE_SIMPLE_AZURE_PROMPT", "NOT_SET"),
+            "enable_legacy_pipeline": os.getenv("ENABLE_LEGACY_PIPELINE", "NOT_SET"),
+            "rag_async_mode": os.getenv("RAG_ASYNC_MODE", "NOT_SET"),
+        },
+        "confidence_thresholds": {
+            "min_confidence_accept": os.getenv("MIN_CONFIDENCE_ACCEPT", "NOT_SET (default: 0.4)"),
+            "min_confidence_auto_apply": os.getenv("MIN_CONFIDENCE_AUTO_APPLY", "NOT_SET (default: 0.85)"),
+        },
+        "env_file": {
+            "path": ENV_FILE_PATH,
+            "exists": Path(ENV_FILE_PATH).exists(),
+            "loaded": "attempted" if Path(ENV_FILE_PATH).exists() else "skipped",
+        },
+        "diagnosis": {
+            "critical_missing": [],
+            "warnings": []
+        }
+    }
+
+
 @app.get("/health/services")
 async def health_check_services():
     """Detailed health check for Pinecone, PubMedBERT, and Azure OpenAI"""
