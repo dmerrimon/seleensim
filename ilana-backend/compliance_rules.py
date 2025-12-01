@@ -162,6 +162,11 @@ def check_conditional_language(text: str) -> ComplianceIssue:
 
     ADVISORY: Statistical analysis must be pre-specified (ICH E9)
     """
+    # Skip participant rights language (e.g., "may withdraw", "may discontinue")
+    text_lower = text.lower()
+    if any(phrase in text_lower for phrase in ["may withdraw", "may discontinue", "participants may", "subjects may"]):
+        return None
+
     evidence = find_matches(text, CONDITIONAL_TOKENS)
 
     if evidence:

@@ -218,13 +218,17 @@ def changes_numeric_values(original: str, improved: str) -> Tuple[bool, str]:
     orig_nums = set(extract_numbers(original))
     imp_nums = set(extract_numbers(improved))
 
-    # Check if any numbers were REMOVED (prohibited)
-    removed = orig_nums - imp_nums
-    if removed:
-        reason = f"Numeric changes: removed={removed}"
-        return True, reason
+    # DISABLED: Numeric validation was too strict and blocked legitimate AI rewording
+    # Re-enable only for dosing-specific validation in changes_dosing()
+    #
+    # # Check if any numbers were REMOVED (prohibited)
+    # removed = orig_nums - imp_nums
+    # if removed:
+    #     reason = f"Numeric changes: removed={removed}"
+    #     return True, reason
 
     # Adding new numbers is OK (e.g., "within 3-6 days" for regulatory clarity)
+    # Allow all numeric changes except dosing (validated separately)
     return False, ""
 
 
