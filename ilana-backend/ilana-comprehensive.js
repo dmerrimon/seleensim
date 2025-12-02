@@ -844,6 +844,7 @@ async function applySuggestion(issueId) {
     if (!issue) return;
 
     const startTime = Date.now();
+    const originalText = issue.text; // Capture before Word.run
 
     try {
         await Word.run(async (context) => {
@@ -863,7 +864,6 @@ async function applySuggestion(issueId) {
 
             // Use the first match
             const firstMatch = searchResults.items[0];
-            const originalText = issue.text;
 
             // Replace with improved text
             firstMatch.insertText(issue.suggestion, Word.InsertLocation.replace);
@@ -889,41 +889,45 @@ async function applySuggestion(issueId) {
                 );
             }
 
-            // Store undo information using new multi-item buffer
-            addUndoBuffer(issueId, originalText, {
-                suggestionId: issueId,
-                requestId: IlanaState.currentRequestId
-            });
-
-            // Update UI to show undo button
-            const card = document.querySelector(`[data-issue-id="${issueId}"]`);
-            if (card) {
-                const actionsDiv = card.querySelector('.suggestion-actions');
-                actionsDiv.innerHTML = `
-                    <button class="action-btn undo" onclick="undoSuggestion('${issueId}')">
-                        Undo (10s)
-                    </button>
-                    <span class="applied-badge">✓ Applied</span>
-                `;
-
-                // Start 10-second countdown
-                let countdown = 10;
-                const undoTimer = setInterval(() => {
-                    countdown--;
-                    const undoBtn = actionsDiv.querySelector('.action-btn.undo');
-                    if (undoBtn && countdown > 0) {
-                        undoBtn.textContent = `Undo (${countdown}s)`;
-                    } else {
-                        clearInterval(undoTimer);
-                        if (undoBtn) {
-                            undoBtn.remove();
-                        }
-                        // Clear undo buffer after 10 seconds
-                        clearUndoBuffer(issueId);
-                    }
-                }, 1000);
-            }
         });
+
+        // SUCCESS - Word API operations completed
+        // Now update UI OUTSIDE of Word.run block
+
+        // Store undo information using new multi-item buffer
+        addUndoBuffer(issueId, originalText, {
+            suggestionId: issueId,
+            requestId: IlanaState.currentRequestId
+        });
+
+        // Update UI to show undo button
+        const card = document.querySelector(`[data-issue-id="${issueId}"]`);
+        if (card) {
+            const actionsDiv = card.querySelector('.suggestion-actions');
+            actionsDiv.innerHTML = `
+                <button class="action-btn undo" onclick="undoSuggestion('${issueId}')">
+                    Undo (10s)
+                </button>
+                <span class="applied-badge">✓ Applied</span>
+            `;
+
+            // Start 10-second countdown
+            let countdown = 10;
+            const undoTimer = setInterval(() => {
+                countdown--;
+                const undoBtn = actionsDiv.querySelector('.action-btn.undo');
+                if (undoBtn && countdown > 0) {
+                    undoBtn.textContent = `Undo (${countdown}s)`;
+                } else {
+                    clearInterval(undoTimer);
+                    if (undoBtn) {
+                        undoBtn.remove();
+                    }
+                    // Clear undo buffer after 10 seconds
+                    clearUndoBuffer(issueId);
+                }
+            }, 1000);
+        }
 
     } catch (error) {
         console.error('Failed to apply suggestion:', error);
@@ -1005,8 +1009,11 @@ async function insertAsComment(issueId) {
     const issue = IlanaState.currentIssues.find(i => i.id === issueId);
     if (!issue) return;
 
+    const originalText = issue.text; // Capture before Word.run
+    let commentId = null; // Will be set inside Word.run
+
     try {
-        await Word.run(async (context) => {
+        commentId = await Word.run(async (context) => {
             // Search for the original text in the document
             const searchResults = context.document.body.search(issue.text, {
                 ignorePunct: false,
@@ -1018,12 +1025,11 @@ async function insertAsComment(issueId) {
             if (searchResults.items.length === 0) {
                 showError('Could not find the original text in the document');
                 console.warn(`❌ Original text not found: "${issue.text}"`);
-                return;
+                return null;
             }
 
             // Use the first match
             const firstMatch = searchResults.items[0];
-            const originalText = issue.text;
 
             // Construct comment body with improved text and rationale
             const commentBody = `${issue.suggestion}\n\n${issue.rationale}`;
@@ -1062,32 +1068,27 @@ async function insertAsComment(issueId) {
 
             console.log(`💬 Inserted comment: ${commentId} for suggestion: ${issueId}`);
 
-            // Track telemetry
-            if (typeof IlanaTelemetry !== 'undefined') {
-                IlanaTelemetry.trackSuggestionInsertedAsComment(
-                    IlanaState.currentRequestId,
-                    issue.id,
-                    commentId,
-                    originalText,
-                    issue.suggestion,
-                    issue.confidence || 1
-                );
-            }
+            // Return commentId from Word.run()
+            return commentId;
+        });
 
-            // Update UI to show comment was inserted
-            const card = document.querySelector(`[data-issue-id="${issueId}"]`);
-            if (card) {
-                card.style.opacity = '0.7';
-                const actionsDiv = card.querySelector('.suggestion-actions');
-                actionsDiv.innerHTML = `
-                    <span class="comment-badge">💬 Inserted as Comment</span>
-                    <button class="action-btn dismiss" onclick="dismissSuggestion('${issueId}')">
-                        Dismiss
-                    </button>
-                `;
-            }
+        // SUCCESS - Word API operations completed
+        // Now handle telemetry and UI OUTSIDE of Word.run block
 
-            // Store comment mapping for tracking
+        // Track telemetry
+        if (typeof IlanaTelemetry !== 'undefined' && commentId) {
+            IlanaTelemetry.trackSuggestionInsertedAsComment(
+                IlanaState.currentRequestId,
+                issue.id,
+                commentId,
+                originalText,
+                issue.suggestion,
+                issue.confidence || 1
+            );
+        }
+
+        // Store comment mapping for tracking
+        if (commentId) {
             if (!IlanaState.commentMap) {
                 IlanaState.commentMap = {};
             }
@@ -1096,7 +1097,23 @@ async function insertAsComment(issueId) {
                 requestId: IlanaState.currentRequestId,
                 insertedAt: new Date().toISOString()
             };
-        });
+        }
+
+        // SUCCESS - Word API operations completed
+        // Now update UI OUTSIDE of Word.run block
+
+        // Update UI to show comment was inserted
+        const card = document.querySelector(`[data-issue-id="${issueId}"]`);
+        if (card) {
+            card.style.opacity = '0.7';
+            const actionsDiv = card.querySelector('.suggestion-actions');
+            actionsDiv.innerHTML = `
+                <span class="comment-badge">💬 Inserted as Comment</span>
+                <button class="action-btn dismiss" onclick="dismissSuggestion('${issueId}')">
+                    Dismiss
+                </button>
+            `;
+        }
 
     } catch (error) {
         console.error('Failed to insert comment:', error);
