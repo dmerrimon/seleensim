@@ -20,7 +20,7 @@ from datetime import datetime
 import asyncio
 
 # Step 4: Import prompt optimization utilities
-from prompt_optimizer import build_fast_prompt, track_token_usage
+from prompt_optimizer import build_fast_prompt, track_token_usage, count_tokens_precise
 
 # Step 6: Import enhanced cache manager
 from cache_manager import get_cached, set_cached
@@ -464,6 +464,29 @@ Table-Specific ICH-GCP Rules:
 """
             # Append table instructions to user prompt
             prompt_data["user"] = prompt_data["user"] + table_instructions
+
+            # Recount tokens after adding table instructions
+            user_tokens_with_table = count_tokens_precise(prompt_data["user"], "gpt-4o-mini")
+            total_tokens_with_table = prompt_data["tokens"]["system"] + user_tokens_with_table
+
+            # Update token counts
+            prompt_data["tokens"]["user"] = user_tokens_with_table
+            prompt_data["tokens"]["total_input"] = total_tokens_with_table
+
+            # Check if we exceeded budget after adding table instructions
+            budget = prompt_data["tokens"]["budget"]
+            if total_tokens_with_table > budget:
+                logger.warning(
+                    f"⚠️ [{req_id}] Table instructions pushed prompt over budget: "
+                    f"{total_tokens_with_table} > {budget} tokens (excess: {total_tokens_with_table - budget})"
+                )
+                # Note: We allow exceeding budget for table analysis to preserve quality
+                # Azure OpenAI will handle this gracefully as long as it's within model limits
+            else:
+                logger.info(
+                    f"✅ [{req_id}] Table instructions added successfully. "
+                    f"New token count: {total_tokens_with_table}/{budget}"
+                )
 
         # Log token budget info
         token_info = prompt_data["tokens"]
