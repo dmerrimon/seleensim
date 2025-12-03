@@ -269,11 +269,19 @@ async function handleSelectionAnalysis(selectedText) {
             IlanaState.detectedTA = detectTherapeuticArea(selectedText);
         }
 
+        // Detect if selected text is tabular data (contains tab characters)
+        const isTable = selectedText.includes('\t');
+
         const payload = {
             text: selectedText,
             mode: 'selection',
-            ta: IlanaState.detectedTA || 'general_medicine'
+            ta: IlanaState.detectedTA || 'general_medicine',
+            isTable: isTable  // Add table detection flag
         };
+
+        if (isTable) {
+            console.log('📊 Table data detected (contains tab characters)');
+        }
 
         // Generate request ID for tracking
         const requestId = `req_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;

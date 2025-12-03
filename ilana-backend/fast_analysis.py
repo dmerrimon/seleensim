@@ -307,7 +307,8 @@ async def analyze_fast(
     text: str,
     ta: Optional[str] = None,
     phase: Optional[str] = None,
-    request_id: Optional[str] = None
+    request_id: Optional[str] = None,
+    is_table: bool = False  # New parameter for table detection
 ) -> Dict[str, Any]:
     """
     Fast synchronous analysis for protocol sections
@@ -431,6 +432,38 @@ async def analyze_fast(
 
         # 3. Build optimized prompt with RAG (exemplars + regulatory citations) (Step 4 + Step 8)
         prompt_data = build_fast_prompt(trimmed_text, ta, rag_results)
+
+        # 3a. Enhance prompt for table data if detected
+        if is_table:
+            logger.info(f"📊 [{req_id}] Enhancing prompt for table analysis")
+            table_instructions = """
+
+IMPORTANT: The text you are analyzing is from a protocol TABLE (tab-separated columns).
+
+Additional Table Analysis Tasks:
+1. **Identify Table Type**: Determine if this is an objectives table, endpoints table, study schedule, adverse events table, or other protocol table type.
+2. **Column-by-Column Analysis**: Validate each column for completeness and ICH-GCP compliance.
+3. **Row-by-Row Analysis**: Check each row for missing data, vague language, or compliance issues.
+4. **Structural Validation**:
+   - Identify missing columns (e.g., objectives table missing "Statistical Method" column)
+   - Check for empty cells that should contain data
+   - Verify column headers align with ICH-GCP requirements for this table type
+5. **Location-Specific Suggestions**: Format ALL suggestions with row/column references:
+   - Example: "Row 2, Description column: [original text] → [improved text]"
+   - Example: "Table structure: Missing 'Time Point' column (required per ICH E9)"
+
+For each suggestion, specify:
+- **location**: "Row X, Column Y" or "Table structure" or "Column headers"
+- Your normal fields (text, suggestion, rationale, confidence, type, severity)
+
+Table-Specific ICH-GCP Rules:
+- **Objectives tables** must include: Objective Type, Description, Endpoint, Statistical Method
+- **Endpoints tables** must include: Endpoint, Type (Primary/Secondary), Time Point, Analysis Method
+- All table cells must have operational definitions (ICH E9 Section 2.2)
+- Empty cells in data columns require justification or completion
+"""
+            # Append table instructions to user prompt
+            prompt_data["user"] = prompt_data["user"] + table_instructions
 
         # Log token budget info
         token_info = prompt_data["tokens"]

@@ -1582,11 +1582,17 @@ async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
             # === FAST PATH: Synchronous, < 4s ===
             logger.info(f"⚡ Using FAST path: {req_id} ({text_len} <= {SELECTION_CHUNK_THRESHOLD} chars)")
 
+            # Check if this is table data
+            is_table = payload.get("isTable", False)
+            if is_table:
+                logger.info(f"📊 Table data detected for request: {req_id}")
+
             result = await analyze_fast(
                 text=text,
                 ta=payload.get("ta"),
                 phase=payload.get("phase"),
-                request_id=req_id
+                request_id=req_id,
+                is_table=is_table  # Pass table flag to analysis function
             )
 
             # End telemetry trace
