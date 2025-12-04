@@ -38,11 +38,11 @@ class WholeDocModal {
                 <div class="whole-doc-modal-content">
                     <div class="whole-doc-modal-header">
                         <h3 id="whole-doc-modal-title" class="whole-doc-modal-title">
-                            Document Analysis Options
+                            Text Selection Required
                         </h3>
-                        <button 
-                            type="button" 
-                            class="whole-doc-modal-close" 
+                        <button
+                            type="button"
+                            class="whole-doc-modal-close"
                             aria-label="Close modal"
                             data-action="close"
                         >
@@ -55,62 +55,40 @@ class WholeDocModal {
                     <div class="whole-doc-modal-body">
                         <div class="whole-doc-modal-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                <path d="M3 5h2V3c-1.1 0-2 .9-2 2zm0 8h2v-2H3v2zm4 8h2v-2H7v2zM3 9h2V7H3v2zm10-6h-2v2h2V3zm6 0v2h2c0-1.1-.9-2-2-2zM5 21v-2H3c0 1.1.9 2 2 2zm-2-4h2v-2H3v2zM9 3H7v2h2V3zm2 18h2v-2h-2v2zm8-8h2v-2h-2v2zm0 8c1.1 0 2-.9 2-2h-2v2zm0-12h2V7h-2v2zm0 8h2v-2h-2v2zm-4 4h2v-2h-2v2zm0-16h2V3h-2v2z"/>
                             </svg>
                         </div>
-                        
+
                         <p id="whole-doc-modal-description" class="whole-doc-modal-description">
-                            Whole-document analysis can be slow. Select text for fast results. Proceed anyway?
+                            Please select text in your document to analyze. Ilana analyzes selected text sections for optimal results.
                         </p>
 
                         <div class="whole-doc-modal-info">
                             <div class="info-item">
-                                <span class="info-icon">⚡</span>
-                                <span>Selection analysis: ~2-5 seconds</span>
+                                <span class="info-icon">1.</span>
+                                <span>Highlight text in your Word document</span>
                             </div>
                             <div class="info-item">
-                                <span class="info-icon">📄</span>
-                                <span>Document analysis: ~30-60 seconds</span>
+                                <span class="info-icon">2.</span>
+                                <span>Click "Recommend" to analyze</span>
                             </div>
                             <div class="info-item">
-                                <span class="info-icon">🔍</span>
-                                <span>Deep analysis: 2-5 minutes (background)</span>
+                                <span class="info-icon">15K</span>
+                                <span>Maximum 15,000 characters per selection</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="whole-doc-modal-footer">
-                        <button 
-                            type="button" 
-                            class="whole-doc-modal-btn whole-doc-modal-btn-secondary"
-                            data-action="selection"
-                        >
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                <path d="M2 3h12v2H2V3zm0 4h12v2H2V7zm0 4h8v2H2v-2z"/>
-                            </svg>
-                            Analyze selection
-                        </button>
-                        
-                        <button 
-                            type="button" 
+                        <button
+                            type="button"
                             class="whole-doc-modal-btn whole-doc-modal-btn-primary"
-                            data-action="document-sync"
+                            data-action="close"
                         >
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zM7 12V4l5 4-5 4z"/>
+                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
                             </svg>
-                            Analyze document (fast, truncated)
-                        </button>
-                        
-                        <button 
-                            type="button" 
-                            class="whole-doc-modal-btn whole-doc-modal-btn-accent"
-                            data-action="document-async"
-                        >
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                <path d="M8 0L6.5 1.5 9 4H3C1.3 4 0 5.3 0 7s1.3 3 3 3h1v-2H3c-.6 0-1-.4-1-1s.4-1 1-1h6L6.5 8.5 8 10l4-4L8 0z"/>
-                            </svg>
-                            Run deep optimizer (background)
+                            Got it
                         </button>
                     </div>
                 </div>
@@ -201,247 +179,11 @@ class WholeDocModal {
     }
 
     async handleAction(action, event) {
-        console.log(`🎯 Modal action: ${action}`);
+        console.log(`Modal action: ${action}`);
 
-        try {
-            switch (action) {
-                case 'close':
-                    this.close();
-                    break;
-
-                case 'selection':
-                    this.close();
-                    this.showToast('Please select text first, then click Recommend', 'info');
-                    break;
-
-                case 'document-sync':
-                    await this.handleDocumentSync();
-                    break;
-
-                case 'document-async':
-                    await this.handleDocumentAsync();
-                    break;
-
-                default:
-                    console.warn('Unknown modal action:', action);
-            }
-        } catch (error) {
-            console.error('Modal action failed:', error);
-            this.showToast(`Action failed: ${error.message}`, 'error');
+        if (action === 'close') {
+            this.close();
         }
-    }
-
-    async handleDocumentSync() {
-        this.close();
-        
-        // Show loading state
-        this.showToast('Starting fast document analysis...', 'info');
-        
-        try {
-            // Update global state
-            if (typeof IlanaState !== 'undefined') {
-                IlanaState.isAnalyzing = true;
-            }
-            
-            // Get document text
-            const documentText = await this.getDocumentText();
-            
-            const payload = {
-                text: documentText,
-                mode: 'document_truncated',
-                ta: (typeof IlanaState !== 'undefined' ? IlanaState.detectedTA : null) || 'general_medicine'
-            };
-
-            console.log('🚀 Calling /api/analyze for sync document analysis');
-
-            const response = await fetch('/api/analyze', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
-
-            if (!response.ok) {
-                throw new Error(`Document analysis failed: ${response.status}`);
-            }
-
-            const result = await response.json();
-            console.log('✅ Document analysis result:', result);
-
-            // Process results
-            await this.processAnalysisResult(result);
-            
-            this.showToast('Document analysis complete', 'success');
-
-        } catch (error) {
-            console.error('❌ Document sync analysis failed:', error);
-            this.showToast(`Document analysis failed: ${error.message}`, 'error');
-        } finally {
-            // Reset analyzing state
-            if (typeof IlanaState !== 'undefined') {
-                IlanaState.isAnalyzing = false;
-            }
-        }
-    }
-
-    async handleDocumentAsync() {
-        this.close();
-        
-        try {
-            // Get document text
-            const documentText = await this.getDocumentText();
-            
-            const payload = {
-                text: documentText,
-                mode: 'document_chunked',
-                ta: (typeof IlanaState !== 'undefined' ? IlanaState.detectedTA : null) || 'general_medicine'
-            };
-
-            console.log('🚀 Calling /api/analyze for async document analysis');
-
-            const response = await fetch('/api/analyze', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
-
-            if (!response.ok) {
-                throw new Error(`Deep analysis failed: ${response.status}`);
-            }
-
-            const result = await response.json();
-            console.log('✅ Deep analysis queued:', result);
-
-            // Handle job queuing response
-            if (result.result?.status === 'queued') {
-                const jobId = result.result.job_id;
-                this.showToast(`Deep analysis queued. Job ID: ${jobId}`, 'success');
-                
-                // Optionally set up polling for job completion
-                this.pollJobStatus(jobId);
-            } else {
-                // Immediate results (shouldn't happen for deep analysis)
-                await this.processAnalysisResult(result);
-                this.showToast('Deep analysis complete', 'success');
-            }
-
-        } catch (error) {
-            console.error('❌ Document async analysis failed:', error);
-            this.showToast(`Deep analysis failed: ${error.message}`, 'error');
-        }
-    }
-
-    async getDocumentText() {
-        if (typeof Word !== 'undefined' && Word.run) {
-            return await Word.run(async (context) => {
-                const body = context.document.body;
-                context.load(body, 'text');
-                await context.sync();
-                return body.text;
-            });
-        } else {
-            // Fallback for testing environment
-            return 'Mock document text for testing purposes';
-        }
-    }
-
-    async processAnalysisResult(result) {
-        // Integration with existing analysis result processing
-        if (typeof displaySelectionSuggestions === 'function') {
-            await displaySelectionSuggestions(result);
-        } else if (typeof updateDashboard === 'function' && result.result?.suggestions) {
-            // Transform suggestions to issues format
-            const issues = [];
-            const suggestions = result.result.suggestions;
-            
-            if (Array.isArray(suggestions)) {
-                suggestions.forEach((suggestion, index) => {
-                    issues.push({
-                        id: `doc_${index}`,
-                        type: suggestion.type || 'medical_terminology',
-                        severity: 'medium',
-                        text: suggestion.text || 'Document text',
-                        suggestion: suggestion.suggestion || suggestion.suggestedText,
-                        rationale: suggestion.rationale || 'AI analysis suggests improvement',
-                        range: suggestion.position || { start: 0, end: 20 },
-                        confidence: suggestion.confidence || 0.9
-                    });
-                });
-            }
-            
-            await updateDashboard({ issues, suggestions: issues });
-        }
-    }
-
-    pollJobStatus(jobId) {
-        // Use SSE streaming if connectToJobStream is available
-        if (typeof connectToJobStream === 'function') {
-            console.log('🔄 Using SSE streaming for job updates');
-            
-            const streamOptions = {
-                onProgress: (data) => {
-                    this.showToast(`Progress: ${data.processed}/${data.total} - ${data.message}`, 'info');
-                },
-                onSuggestion: (data) => {
-                    this.showToast('New suggestion found!', 'success');
-                },
-                onComplete: (data) => {
-                    this.showToast('Deep analysis completed!', 'success');
-                    if (data.result) {
-                        this.processAnalysisResult({ result: data.result });
-                    }
-                },
-                onError: (error) => {
-                    this.showToast(`Analysis error: ${error.message}`, 'error');
-                }
-            };
-            
-            connectToJobStream(jobId, streamOptions);
-            return;
-        }
-        
-        // Fallback to simple polling implementation
-        const pollInterval = 5000; // 5 seconds
-        const maxPolls = 60; // 5 minutes max
-        let pollCount = 0;
-
-        const poll = async () => {
-            try {
-                const response = await fetch(`/api/job-status/${jobId}`);
-                if (response.ok) {
-                    const status = await response.json();
-                    
-                    if (status.status === 'completed') {
-                        this.showToast('Deep analysis completed!', 'success');
-                        if (status.result) {
-                            await this.processAnalysisResult({ result: status.result });
-                        }
-                        return; // Stop polling
-                    } else if (status.status === 'failed') {
-                        this.showToast('Deep analysis failed', 'error');
-                        return; // Stop polling
-                    }
-                }
-                
-                pollCount++;
-                if (pollCount < maxPolls) {
-                    setTimeout(poll, pollInterval);
-                } else {
-                    this.showToast('Deep analysis timeout - check back later', 'warning');
-                }
-                
-            } catch (error) {
-                console.error('Job polling error:', error);
-            }
-        };
-
-        // Start polling after a short delay
-        setTimeout(poll, pollInterval);
     }
 
     open() {
