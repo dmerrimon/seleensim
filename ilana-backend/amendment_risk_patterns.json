@@ -1,0 +1,542 @@
+{
+  "metadata": {
+    "generated_from": "/Users/donmerriman/Ilana/data/data/anonymized_texts",
+    "protocols_scanned": 500,
+    "protocols_with_amendments": 154,
+    "total_patterns": 20
+  },
+  "high_risk_patterns": [
+    {
+      "pattern": "\\bdiscontinue\\s+(?:treatment|study\\s+drug)\\s+(?:if|when)\\b",
+      "pattern_readable": "discontinuation criteria",
+      "category": "safety",
+      "occurrences": 1,
+      "in_amended_protocols": 1,
+      "amendment_frequency": 1.0,
+      "risk_level": "high",
+      "typical_change": "Added specific toxicity grades and recovery requirements",
+      "examples": [
+        {
+          "protocol_id": "protocol_000264",
+          "context": "following routine  measures should be considered:  \uf0b7Delay  the next study  drug administration, or discontinue treatment if indicated. Rivaroxaban  has a plasma half-life of approximately  5to9hours, and in some subject s u",
+          "match": "discontinue treatment if"
+        }
+      ]
+    },
+    {
+      "pattern": "\\bacceptable\\s+(?:organ|cardiac|renal|liver)\\s+function\\b",
+      "pattern_readable": "acceptable [organ] function",
+      "category": "eligibility",
+      "occurrences": 1,
+      "in_amended_protocols": 1,
+      "amendment_frequency": 1.0,
+      "risk_level": "high",
+      "typical_change": "Added measurable thresholds",
+      "examples": [
+        {
+          "protocol_id": "protocol_000342",
+          "context": "ormed consent prior to beginning study and undergoing procedures 6.No prior solid organ allograft 7.Acceptable liver function: a.Bilirubin \u2264 2 times upper limit of normal (ULN) (\u2264 3 times ULN in patients with Gilbert Syndrome",
+          "match": "Acceptable liver function"
+        }
+      ]
+    },
+    {
+      "pattern": "\\bendpoint\\s+will\\s+be\\s+(?:measured|assessed|evaluated)\\b",
+      "pattern_readable": "endpoint will be measured",
+      "category": "endpoints",
+      "occurrences": 10,
+      "in_amended_protocols": 9,
+      "amendment_frequency": 0.9,
+      "risk_level": "high",
+      "typical_change": "Specified exact measurement method and timepoint",
+      "examples": [
+        {
+          "protocol_id": "protocol_000008",
+          "context": "ded to the exploratory objectives, to assess  biomarkers that may be predictive of re sponse.  This endpoint will be assessed at  Day 0, Week 15 and Week 48.   Sections 6.2, 6.9 and 8.9 have been updated to  reflect this addi",
+          "match": "endpoint will be assessed"
+        },
+        {
+          "protocol_id": "protocol_000060",
+          "context": "s repeatedly been  used as the primary  endpoint for other lipid lowering treatments .  The primary endpoint will be  assessed at week 16 because that treatment duration  will allow all patients in both Group A  (SC treatment",
+          "match": "endpoint will be \nassessed"
+        },
+        {
+          "protocol_id": "protocol_000158",
+          "context": "g of missing data, and statistical methods will be provided in the SAP.  The  following exploratory endpoint will be assessed:  \u2022 Change from Baseline to Week 24 in the European Quality of Life Five-Dimension Five-Level scale",
+          "match": "endpoint will be assessed"
+        }
+      ]
+    },
+    {
+      "pattern": "\\bassessments?\\s+(?:at|on)\\s+(?:day|week)\\s+\\d+\\b",
+      "pattern_readable": "assessment timing",
+      "category": "schedule",
+      "occurrences": 24,
+      "in_amended_protocols": 19,
+      "amendment_frequency": 0.792,
+      "risk_level": "high",
+      "typical_change": "Added visit windows and rescheduling procedures",
+      "examples": [
+        {
+          "protocol_id": "protocol_000008",
+          "context": "icient evidence  to confirm disease regression. Disease regression will be based on histopathologic assessment at  Week 48, 74, and 96. Subjects will be monitored during t he course of the study by vulvoscopy. Lesion(s),",
+          "match": "assessment at \nWeek 48"
+        },
+        {
+          "protocol_id": "protocol_000042",
+          "context": "Clinic Confinement Eligible subjects will be confined beginnin g on Day  -2 until the completion of assessments on  Day 5. Subjects will be required to return for a Follow- up visit 10- 14 day s after study  drug  dosing.",
+          "match": "assessments on \nDay 5"
+        },
+        {
+          "protocol_id": "protocol_000044",
+          "context": "\uf0b7 To characterize the effect iveness  of the acne treatment in Investigator\u2019s Global  Improvement Assessment at week 1, week 2, week 6, week 12, and week 24  as  compared to baseline and compare between treatments   \uf0b7",
+          "match": "Assessment at week 1"
+        }
+      ]
+    },
+    {
+      "pattern": "\\bresponse\\s+(?:will\\s+be|to\\s+be)\\s+(?:assessed|evaluated|determined)\\b",
+      "pattern_readable": "response will be assessed",
+      "category": "endpoints",
+      "occurrences": 23,
+      "in_amended_protocols": 17,
+      "amendment_frequency": 0.739,
+      "risk_level": "high",
+      "typical_change": "Added RECIST criteria version and measurement timing",
+      "examples": [
+        {
+          "protocol_id": "protocol_000001",
+          "context": "s (i.e., at the primary  site, visceral or nodal [in ly mph nodes \u22651,5 cm]  lesions), the objective response will be assessed b y CT / MRI  scan at the EOT visit a nd  documented according to the revised RECIST guideline, Ver",
+          "match": "response will be assessed"
+        },
+        {
+          "protocol_id": "protocol_000026",
+          "context": "on \uf0b7Death 7.2 Assessment ty pes 7.2.1 Efficacy  assessments 7.2.1.1 Imaging tumor assessments Tumor response will be assessed locall y and centrally  according to the Novartis guideline  version 3.1 (Appendix 2) based on RECI",
+          "match": "response will be assessed"
+        },
+        {
+          "protocol_id": "protocol_000053",
+          "context": "LTFU every 28  days  \u00b1 4 days , until PD and/or administration of  subsequent antimyeloma therapy.  Response will be evaluated using the International  Myeloma Working Group- Uniform  Response Criteria (IMWG -URC).   Following",
+          "match": "Response will be evaluated"
+        }
+      ]
+    },
+    {
+      "pattern": "\\blife\\s+expectancy\\s*(?:of)?\\s*(?:at\\s+least|>|\u2265)?\\s*\\d+\\s*(?:weeks?|months?)\\b",
+      "pattern_readable": "life expectancy requirement",
+      "category": "eligibility",
+      "occurrences": 18,
+      "in_amended_protocols": 13,
+      "amendment_frequency": 0.722,
+      "risk_level": "high",
+      "typical_change": "Adjusted duration or clarified assessment method",
+      "examples": [
+        {
+          "protocol_id": "protocol_000001",
+          "context": "ts \u2265 18 y ears of age \uf0b7Eastern Cooperative Oncology  Group (ECOG)  Performance Status of 0, 1 or 2 \uf0b7Life expectancy  of at least 3 months \uf0b7Existence of archival or fresh tumor biopsy   specimen for FGFR expression / FGFR mutation  testin",
+          "match": "Life expectancy  of at least 3 months"
+        },
+        {
+          "protocol_id": "protocol_000028",
+          "context": "ng radiation  oncologist   \u2022 Karnofsky performance status > 70 (ECOG 0 -1)  \u2022 Age > 18  \u2022 Estimated life expectancy > 12 weeks   \u2022 Patient must have adeq uate renal function as defined by serum creatinine< -2.5 mg/dl obtained",
+          "match": "life expectancy > 12 weeks"
+        },
+        {
+          "protocol_id": "protocol_000076",
+          "context": "have an Eastern Cooperative Oncology Group (ECOG) performance status  of 0 or 1, and an estimated  life expectancy  of \u2265 3 months  in  the opinion of the Sponsor Investigator.   10. Patients  of childbearing  potential (or female",
+          "match": "life expectancy  of \u2265 3 months"
+        }
+      ]
+    },
+    {
+      "pattern": "\\bstarting\\s+dose\\s+(?:of)?\\s*\\d+\\s*(?:mg|mcg|g)\\b",
+      "pattern_readable": "starting dose specification",
+      "category": "dosing",
+      "occurrences": 14,
+      "in_amended_protocols": 10,
+      "amendment_frequency": 0.714,
+      "risk_level": "high",
+      "typical_change": "Modified starting dose or added weight-based dosing",
+      "examples": [
+        {
+          "protocol_id": "protocol_000001",
+          "context": "of safe starting dose Study  Part 1 / dose escalation (all comer) The first cohort is treated at a starting dose of 100 mg / day  of BAY 1163877 (50 mg  b.i.d.) which i s considered to be safe based on extrapolation from a",
+          "match": "starting dose of 100 mg"
+        },
+        {
+          "protocol_id": "protocol_000026",
+          "context": "k off schedule) Fulvestrant  DoseNumber of capsules & strength DoseNumber of injections &  strength Starting dose 600 mg 3 x 200 mg capsules 500 mg 2 x 250mg (5 mL) injection s First dose reduction 400 mg 2 x 200 mg caps",
+          "match": "Starting dose 600 mg"
+        },
+        {
+          "protocol_id": "protocol_000112",
+          "context": "nts not to have received taxane-based chemotherapy or abiraterone. Test product(s): BI 836845 dose: Starting dose 750 mg (dose reduction to 500 mg and dose escalation to 1000 mg) administered weekly mode of admin.: Intra",
+          "match": "Starting dose 750 mg"
+        }
+      ]
+    }
+  ],
+  "medium_risk_patterns": [
+    {
+      "pattern": "\\bdose\\s+(?:may|can|might)\\s+be\\s+(?:adjusted|modified|reduced)\\b",
+      "pattern_readable": "dose may be adjusted",
+      "category": "dosing",
+      "occurrences": 9,
+      "in_amended_protocols": 6,
+      "amendment_frequency": 0.667,
+      "risk_level": "medium",
+      "typical_change": "Pre-specified dose modification rules",
+      "examples": [
+        {
+          "protocol_id": "protocol_000001",
+          "context": "TCAE v 4.03 (see  Section 16.5).  No intra -subject dose escalation will be permitted. However, the dose can be reduced or  delay ed for an individual subject based on toxicities that are related to study  drug. If a su",
+          "match": "dose can be reduced"
+        },
+        {
+          "protocol_id": "protocol_000112",
+          "context": "ents to 500 mg and 1000 mg) total  dose by one hour i.v. infusion  Additional information: Starting dose may be adjusted during phase Ib tolerability/safety  and dose finding phase Substance: Enzalutamide (Xtandi\u00ae) Pharm",
+          "match": "dose may be adjusted"
+        },
+        {
+          "protocol_id": "protocol_000164",
+          "context": "adjusted to target dose level of 5 to 15 ng/mL. Taper starting at Day +100).   The GvHD prophylaxis dose may be reduced based on clinical judg ment associated with toxicity.   All chemotherapy administered to subjects w",
+          "match": "dose may be reduced"
+        }
+      ]
+    },
+    {
+      "pattern": "\\bsae\\s+(?:will\\s+be|should\\s+be|must\\s+be)\\s+reported\\b",
+      "pattern_readable": "SAE reporting language",
+      "category": "safety",
+      "occurrences": 35,
+      "in_amended_protocols": 21,
+      "amendment_frequency": 0.6,
+      "risk_level": "medium",
+      "typical_change": "Added 24-hour timeline and specific reporting procedures",
+      "examples": [
+        {
+          "protocol_id": "protocol_000026",
+          "context": "tionship to the study  treatment. Recurrent episodes,  complications, or progression of the initial SAE must be reported as follow -up to the origin al  episode within 24 hours of the investigator receiving the follow -u",
+          "match": "SAE must be reported"
+        },
+        {
+          "protocol_id": "protocol_000035",
+          "context": "st 2019   CONFIDENTIAL   46 product) t hat occurs within 30 days after stopping the study drug, the SAE must be reported in  accordance with procedures specified in this protocol.   All deaths of subjects, regardless of",
+          "match": "SAE must be reported"
+        },
+        {
+          "protocol_id": "protocol_000036",
+          "context": "D Office.     All events occurring during the conduct of a protocol and meeting the definition of a SAE must be reported to the IRB in accordance with the timeframes and procedures outlined in \u201cUniversit y of Texas M. D.",
+          "match": "SAE must be reported"
+        }
+      ]
+    },
+    {
+      "pattern": "\\bif\\s+(?:deemed\\s+)?appropriate\\b",
+      "pattern_readable": "if [deemed] appropriate",
+      "category": "statistics",
+      "occurrences": 108,
+      "in_amended_protocols": 59,
+      "amendment_frequency": 0.546,
+      "risk_level": "medium",
+      "typical_change": "Removed conditional language, pre-specified approach",
+      "examples": [
+        {
+          "protocol_id": "protocol_000001",
+          "context": "ry   endpoint. For each subject, the investigator will designate at least 1 and up to 5 measurable (if  appropriate) or non -measurable lesions for response assessment. The most appropriate  Integrated Clinical Stud",
+          "match": "if \nappropriate"
+        },
+        {
+          "protocol_id": "protocol_000004",
+          "context": "g of SAEs) from Alexion will review and then file it along with the IB and will notify the IRB/IEC, if appropriate  according to local requirements.   8.3.5. Adverse Events of Special Interest   There are no advers",
+          "match": "if appropriate"
+        },
+        {
+          "protocol_id": "protocol_000010",
+          "context": "ate or  severe traumatic brain injury  (TBI), current unstable medical conditions, current (or past if appropriate)  significant neurological disorder,  or lifetime history of a) seizure disorder b) primary or seco",
+          "match": "if appropriate"
+        }
+      ]
+    },
+    {
+      "pattern": "\\bas\\s+(?:needed|required|appropriate)\\s+(?:for|based\\s+on)\\b",
+      "pattern_readable": "as needed/required dosing",
+      "category": "dosing",
+      "occurrences": 66,
+      "in_amended_protocols": 36,
+      "amendment_frequency": 0.545,
+      "risk_level": "medium",
+      "typical_change": "Added specific criteria for dose changes",
+      "examples": [
+        {
+          "protocol_id": "protocol_000004",
+          "context": "if IgG positive), and anti - HCV with confirmation by HCV RNA   Serum or urine hCG  pregnancy test (as needed for women of childbearing potential)    FSH (postmenopausal females only)   Note: All events of ALT \u2265",
+          "match": "as needed for"
+        },
+        {
+          "protocol_id": "protocol_000014",
+          "context": "lood glucose levels will be repeated in 15 minutes and dextrose administration will be  490repeated as needed for values < 70 mg/dl.   491 492Subject Compliance 493Aim 1.  Inpatient (hospital) trial.  We will use",
+          "match": "as needed for"
+        },
+        {
+          "protocol_id": "protocol_000020",
+          "context": "mbers that used psychological distress  outcomes.  We will also make urgent and emergency referrals as needed based on information learned by any  site PI on a site-by-site basis (see contact information above).  It is",
+          "match": "as needed based on"
+        }
+      ]
+    },
+    {
+      "pattern": "\\bmonitoring\\s+(?:will|may|should)\\s+(?:be|include)\\b",
+      "pattern_readable": "monitoring language",
+      "category": "safety",
+      "occurrences": 97,
+      "in_amended_protocols": 50,
+      "amendment_frequency": 0.515,
+      "risk_level": "medium",
+      "typical_change": "Specified monitoring frequency and parameters",
+      "examples": [
+        {
+          "protocol_id": "protocol_000001",
+          "context": "evels,  especiall y calcium, phosphate, vitamin D, parath yroid hormone (parathormone). Therapeutic monitoring should be performed consistent with the local clinical standard of  care following dose modification of the i",
+          "match": "monitoring should be"
+        },
+        {
+          "protocol_id": "protocol_000008",
+          "context": "received non-study related  medication for treatment of VIN lesions   3.3 SAFETY ASSESSMENT  Safety monitoring will include:  1) Local and systemic events for 7 days following each dose as noted in the  Participant Diary",
+          "match": "monitoring will include"
+        },
+        {
+          "protocol_id": "protocol_000022",
+          "context": "ss, enrolling appropriate subjects, and IRB/EC submissions, approvals, and continuing  reviews.     Monitoring will be perform ed on  original medical records of all enrolled su bjects .  Sites will be  monitored accor",
+          "match": "Monitoring will be"
+        }
+      ]
+    },
+    {
+      "pattern": "\\banalysis\\s+(?:may|will|can)\\s+(?:include|be\\s+performed|use)\\b",
+      "pattern_readable": "analysis method language",
+      "category": "statistics",
+      "occurrences": 111,
+      "in_amended_protocols": 57,
+      "amendment_frequency": 0.514,
+      "risk_level": "medium",
+      "typical_change": "Pre-specified all statistical methods in SAP",
+      "examples": [
+        {
+          "protocol_id": "protocol_000005",
+          "context": "d 95% CIs for the ORR will be calculated  on the basis of the bino mial distribut ion. The primary  analysis will be performed on ORR  assessed by  the IRC. Best target l esion response will be displayed using a \u201cwaterfall\u201d pl",
+          "match": "analysis will be performed"
+        },
+        {
+          "protocol_id": "protocol_000008",
+          "context": "ression in the VGX-3100 group is unacceptably low compared to the pla cebo group. No formal interim analysis will  be performed. The DSMB Chair, upon consultation with the other voting members of the DSMB, has the authority to",
+          "match": "analysis will \nbe performed"
+        },
+        {
+          "protocol_id": "protocol_000016",
+          "context": "ey Medical .   To account for the variation in contrast savings by procedure t ype, a supplementary analysis will be  performed using a model to adjust for procedure type (PCI vs di agnostic). An additional analysis  adjusting",
+          "match": "analysis will be \nperformed"
+        }
+      ]
+    },
+    {
+      "pattern": "\\badequate\\s+(?:renal|liver|hepatic|cardiac|bone\\s+marrow)\\s+function\\b",
+      "pattern_readable": "adequate [organ] function",
+      "category": "eligibility",
+      "occurrences": 14,
+      "in_amended_protocols": 7,
+      "amendment_frequency": 0.5,
+      "risk_level": "medium",
+      "typical_change": "Added specific numeric thresholds (e.g., eGFR \u226560, AST/ALT \u22642.5\u00d7 ULN)",
+      "examples": [
+        {
+          "protocol_id": "protocol_000001",
+          "context": "ning (within 7 day s prior to first study  drug administration) to ensure that only   subjects with adequate cardiac function (LVEF \u2265 50%) participate in this study . New text: An echocardiograph y or MUGA (multiple gated acq",
+          "match": "adequate cardiac function"
+        },
+        {
+          "protocol_id": "protocol_000028",
+          "context": "y serum creatinine< -2.5 mg/dl obtained  within 28 days prior to registration   \u2022 Patient must have adequate hepatic function as defined by total bilirubin < 2.5  xIULN(institutional upper limit of normal) and either SGOT or",
+          "match": "adequate hepatic function"
+        },
+        {
+          "protocol_id": "protocol_000077",
+          "context": "l. Patients must have Zubrod Performance Status \u2264 1 (see Section 10.4 ).    m. Patients must have adequate bone marrow function as evidenced by all of the following:  ANC \u2265 1,2 00/ul; platelets \u2265 100,000/ ul; and hemoglobin \u2265 9",
+          "match": "adequate bone marrow function"
+        }
+      ]
+    },
+    {
+      "pattern": "\\bnormal\\s+(?:renal|liver|hepatic|cardiac|laboratory|lab)\\s+(?:function|values?)\\b",
+      "pattern_readable": "normal [organ] function/values",
+      "category": "eligibility",
+      "occurrences": 15,
+      "in_amended_protocols": 7,
+      "amendment_frequency": 0.467,
+      "risk_level": "medium",
+      "typical_change": "Replaced with specific reference ranges",
+      "examples": [
+        {
+          "protocol_id": "protocol_000001",
+          "context": "stimulating hormone (thy rotropin) TTP time to progression ULN upper limit of norm (upper limit of normal laboratory  values) USA United States of America V apparent volume of distribution vs. versus Vss/F apparent volume of",
+          "match": "normal laboratory  values"
+        },
+        {
+          "protocol_id": "protocol_000042",
+          "context": "070 PK Parameters Following  a Single Dose of GS -9674 30 mg in Subjects with Hepatic Impairment or Normal  Hepatic Function ................................................................ ..................................",
+          "match": "Normal \nHepatic Function"
+        },
+        {
+          "protocol_id": "protocol_000112",
+          "context": "injury is defined by the following alterations of hepatic laboratory parameters: For patients with normal liver function at baseline: \u2200an elevation of AST and/or ALT \u22653 fold ULN combined with an elevation of  total bilir",
+          "match": "normal liver function"
+        }
+      ]
+    },
+    {
+      "pattern": "\\bsample\\s+size\\s+(?:of)?\\s*(?:approximately)?\\s*\\d+\\b",
+      "pattern_readable": "sample size specification",
+      "category": "statistics",
+      "occurrences": 161,
+      "in_amended_protocols": 73,
+      "amendment_frequency": 0.453,
+      "risk_level": "medium",
+      "typical_change": "Updated power calculation or added interim analysis",
+      "examples": [
+        {
+          "protocol_id": "protocol_000001",
+          "context": "Subjects participating in \u201cfood effect assessment\u201d in study  Part 2 may  be included in  the total sample size of 12 if all protocol requirements are met. All subjects participating i n either of the 3MTD expansion c",
+          "match": "sample size of 12"
+        },
+        {
+          "protocol_id": "protocol_000003",
+          "context": "is approximately 8 participants for each group with a total of 24 CAI patients.  Thus, the proposed sample size of 20 for each group with a total of 60 CAI patients  will be more than adequate and should also allow fo",
+          "match": "sample size of 20"
+        },
+        {
+          "protocol_id": "protocol_000004",
+          "context": "C \u221e]) and the intra -participant coefficient of variation (CV) is  0.30 ( Dennison, 2018) , a total sample size of 32 participants can achieve 90% power with two  1-sided test s, each with a type I error rate of 5% (t",
+          "match": "sample size of 32"
+        }
+      ]
+    },
+    {
+      "pattern": "\\bvisit\\s+(?:windows?|timing)\\s+(?:of|:)?\\s*(?:approximately|about)?\\s*\\d+",
+      "pattern_readable": "visit window specification",
+      "category": "schedule",
+      "occurrences": 5,
+      "in_amended_protocols": 2,
+      "amendment_frequency": 0.4,
+      "risk_level": "medium",
+      "typical_change": "Added explicit \u00b1 day tolerances",
+      "examples": [
+        {
+          "protocol_id": "protocol_000022",
+          "context": "edure   Post- Procedure   1 Month1  6 Month   12 Month   24 Month  36 Month1  48 Month1  60 Month1  Visit Window  30  days 30  days \u00b12   weeks  \u00b11   month  \u00b11   month  \u00b12   month  \u00b12   month  \u00b12   mont h \u00b12   month",
+          "match": "Visit Window  30"
+        },
+        {
+          "protocol_id": "protocol_000026",
+          "context": "rmation   \uf0b7Section 4 and Figure 4 -1 have been updated to incorporate men population and screening  visit window of 28 day s into the study  design \uf0b7Section 4.1 Advanced/ metastatic terms have been included to add clar",
+          "match": "visit window of 28"
+        },
+        {
+          "protocol_id": "protocol_000149",
+          "context": "lete all study visits, will  still be included in the Intent-t o-Treat (ITT) and safety analyses.   Visit Windows  6.5.7 The screening visit has a window of 28 days between signing of the informed consent  document a",
+          "match": "Visit Windows \n6"
+        }
+      ]
+    }
+  ],
+  "low_risk_patterns": [
+    {
+      "pattern": "\\bprimary\\s+(?:endpoint|outcome)\\s*(?:is|:)?\\s*(?:the)?\\s*\\w+\\b",
+      "pattern_readable": "primary endpoint definition",
+      "category": "endpoints",
+      "occurrences": 301,
+      "in_amended_protocols": 114,
+      "amendment_frequency": 0.379,
+      "risk_level": "low",
+      "typical_change": "Clarified operational definition and analysis method",
+      "examples": [
+        {
+          "protocol_id": "protocol_000001",
+          "context": "subject (L PLV) for all centers in  the respective country  has occurred.  As for this study , the primary outcome will be analy zed at 6 months from last patient first  visit (L PFV) or after LPLV, whatever comes first",
+          "match": "primary outcome will"
+        },
+        {
+          "protocol_id": "protocol_000005",
+          "context": "before the first dose of brigatinib may be enrolled. Main Criteria for Evaluation and Analyses: The primary endpoint for this study is confirmed ORR, as assessed by the independent review committee , per  RECIST version",
+          "match": "primary endpoint for"
+        },
+        {
+          "protocol_id": "protocol_000008",
+          "context": "histopathologic regression of vulvar HSIL and virologic clearance  of HPV-16/18 in vulvar tissue   Primary Endpoint Proportion of subjects with no histologic evidence of vulvar HSIL3  and no evidence of HPV-16/18 at Week 48 in",
+          "match": "Primary Endpoint Proportion"
+        }
+      ]
+    },
+    {
+      "pattern": "(?:ecog|who)\\s+(?:performance\\s+status|ps)\\s*[\u2264<]\\s*\\d",
+      "pattern_readable": "ECOG/WHO performance status criteria",
+      "category": "eligibility",
+      "occurrences": 5,
+      "in_amended_protocols": 1,
+      "amendment_frequency": 0.2,
+      "risk_level": "low",
+      "typical_change": "Modified threshold or added exceptions",
+      "examples": [
+        {
+          "protocol_id": "protocol_000152",
+          "context": "lved breast, including diffuse  erythema, heat, ridging, and peau d\u2019orange).  4.1.3 \uf0b3 Age 18  4.1.4 ECOG performance status \u2264 1   4.1.5 Adequate hematologic function  \uf0b7 Absolute neutrophil count (ANC) \u2265 1.5 x 109/L  \uf0b7 Platelet",
+          "match": "ECOG performance status \u2264 1"
+        },
+        {
+          "protocol_id": "protocol_000304",
+          "context": "t nab paclitaxel,  paclitaxel,   or docetaxel  for at least 12 weeks  \uf0b7 Signed informed consent   \uf0b7 ECOG performance status \u22642 ( Karnofsky  \u226560%, see Appendix  A)    6.2 Exclusion Criteria  \uf0b7 Prior treatment with taxane or pla",
+          "match": "ECOG performance status \u22642"
+        },
+        {
+          "protocol_id": "protocol_000337",
+          "context": "ri teria for m easurabilit y. 8Must have a life expectancy  of at least 12 weeks at enrolment. 9WHO/ECOG PS \u22642. 10Adequate organ and marrow funct ion at enrolment as defined below. These parameters  shoul d be",
+          "match": "ECOG PS \u22642"
+        }
+      ]
+    },
+    {
+      "pattern": "\\bappropriate\\s+(?:for|to)\\s+(?:study|treatment|enrollment)\\b",
+      "pattern_readable": "appropriate for [study/treatment]",
+      "category": "eligibility",
+      "occurrences": 4,
+      "in_amended_protocols": 0,
+      "amendment_frequency": 0.0,
+      "risk_level": "low",
+      "typical_change": "Specified objective criteria for appropriateness",
+      "examples": [
+        {
+          "protocol_id": "protocol_000135",
+          "context": "building, interviewing  techniques, trial -specific protocols, and problem -solving techniques as  appropriate to study roles  x x x  Maintain atmosphere that allows participants to feel comfortable and valued,  and is",
+          "match": "appropriate to study"
+        },
+        {
+          "protocol_id": "protocol_000190",
+          "context": "treatment duration of 4 weeks of 14N sodium nitrite 20-40 mg three  times daily. This is considered appropriate to study benefits of oral nitrite therapy to improve  physical function in patients with HFrEF and HFpEF and",
+          "match": "appropriate to study"
+        },
+        {
+          "protocol_id": "protocol_000262",
+          "context": "ject with individual patients/guardians that might be  eligible and interested, making referrals as appropriate for study screening.  The P.I. or Collaborators discuss ed  the study, including the risks and benefits of pa",
+          "match": "appropriate for study"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    "eligibility",
+    "dosing",
+    "endpoints",
+    "safety",
+    "statistics",
+    "schedule"
+  ]
+}

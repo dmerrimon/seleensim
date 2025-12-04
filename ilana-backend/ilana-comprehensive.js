@@ -87,6 +87,175 @@ const API_CONFIG = {
     retryOn502: true   // Auto-retry on cold start errors
 };
 
+// Inject amendment risk styles (Layer 3: Risk Prediction UI)
+function injectAmendmentRiskStyles() {
+    const styleId = 'amendment-risk-styles';
+    if (document.getElementById(styleId)) return; // Already injected
+
+    const styles = document.createElement('style');
+    styles.id = styleId;
+    styles.textContent = `
+        /* Amendment Risk Card Styles (Layer 3) */
+        .suggestion-card.amendment-risk-card {
+            border-left: 4px solid #f59e0b;
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        }
+
+        .issue-category.amendment-risk {
+            background: #f59e0b;
+            color: white;
+            font-weight: 600;
+        }
+
+        .issue-category.amendment-risk.risk-high {
+            background: #dc2626;
+        }
+
+        .issue-category.amendment-risk.risk-medium {
+            background: #f59e0b;
+        }
+
+        .issue-category.amendment-risk.risk-low {
+            background: #6b7280;
+        }
+
+        .risk-probability {
+            background: rgba(245, 158, 11, 0.15);
+            color: #b45309;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+
+        .amendment-risk-card .risk-probability {
+            background: rgba(220, 38, 38, 0.15);
+            color: #b91c1c;
+        }
+
+        .amendment-risk-banner {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            font-size: 0.875rem;
+            color: #92400e;
+        }
+
+        .amendment-risk-banner strong {
+            color: #78350f;
+        }
+
+        .amendment-risk-banner small {
+            display: block;
+            margin-top: 4px;
+            color: #a16207;
+        }
+
+        /* Risk level indicators */
+        .risk-high .amendment-risk-banner {
+            background: #fee2e2;
+            border-color: #dc2626;
+            color: #991b1b;
+        }
+
+        .risk-high .amendment-risk-banner strong {
+            color: #7f1d1d;
+        }
+    `;
+    document.head.appendChild(styles);
+    console.log('📊 Amendment risk styles injected (Layer 3)');
+}
+
+// Setup live character counter for selection
+function setupSelectionCounter() {
+    try {
+        // Add selection change listener
+        Office.context.document.addHandlerAsync(
+            Office.EventType.DocumentSelectionChanged,
+            onSelectionChanged,
+            (result) => {
+                if (result.status === Office.AsyncResultStatus.Succeeded) {
+                    console.log('📏 Selection counter initialized');
+                } else {
+                    console.warn('⚠️ Could not add selection change handler:', result.error);
+                }
+            }
+        );
+
+        // Inject counter styles
+        injectSelectionCounterStyles();
+    } catch (e) {
+        console.warn('⚠️ Selection counter setup failed:', e);
+    }
+}
+
+// Handle selection change event
+async function onSelectionChanged() {
+    try {
+        const selectedText = await getSelectedText();
+        updateCharacterCounter(selectedText.length);
+    } catch (e) {
+        // Silent fail - don't spam console on every selection change
+    }
+}
+
+// Update the character counter display
+function updateCharacterCounter(charCount) {
+    const counter = document.getElementById('selection-counter');
+    const countSpan = document.getElementById('char-count');
+
+    if (!counter || !countSpan) return;
+
+    countSpan.textContent = charCount.toLocaleString();
+
+    // Visual feedback based on 15,000 char limit
+    counter.classList.remove('counter-warning', 'counter-over-limit');
+    if (charCount > 15000) {
+        counter.classList.add('counter-over-limit');
+    } else if (charCount > 12000) {
+        counter.classList.add('counter-warning');
+    }
+}
+
+// Inject styles for selection counter
+function injectSelectionCounterStyles() {
+    if (document.getElementById('selection-counter-styles')) return;
+
+    const style = document.createElement('style');
+    style.id = 'selection-counter-styles';
+    style.textContent = `
+        .selection-counter {
+            font-size: 12px;
+            color: #666;
+            margin-top: 8px;
+            text-align: center;
+            padding: 4px 8px;
+            transition: color 0.2s ease;
+        }
+        .selection-counter #char-count {
+            font-weight: 600;
+            font-family: 'Segoe UI', monospace;
+        }
+        .selection-counter.counter-warning {
+            color: #fbc02d;
+        }
+        .selection-counter.counter-warning #char-count {
+            color: #f9a825;
+        }
+        .selection-counter.counter-over-limit {
+            color: #d32f2f;
+            font-weight: 600;
+        }
+        .selection-counter.counter-over-limit #char-count {
+            color: #b71c1c;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
 // Office.js initialization
 Office.onReady((info) => {
     console.log("📦 Office.onReady called, host:", info.host);
@@ -109,6 +278,8 @@ Office.onReady((info) => {
 
         initializeUI();
         setupEventListeners();
+        injectAmendmentRiskStyles();  // Layer 3: Amendment Risk UI styles
+        setupSelectionCounter();  // Live character counter
         updateStatus('Ready', 'ready');
 
         // Set initial UI state
@@ -258,6 +429,19 @@ async function handleRecommendButton() {
     }
 }
 
+// Detect protocol section from selected text for section-aware validation
+function detectProtocolSection(text) {
+    const t = text.toLowerCase();
+    if (/inclusion|exclusion|eligib|criteria/.test(t)) return 'eligibility';
+    if (/endpoint|outcome|measure|efficacy/.test(t)) return 'endpoints';
+    if (/objective|aim|purpose|goal/.test(t)) return 'objectives';
+    if (/statistic|analysis|itt|per-protocol|sample size/.test(t)) return 'statistics';
+    if (/adverse|sae|safety|toxicity/.test(t)) return 'safety';
+    if (/visit|schedule|week|day|procedure/.test(t)) return 'schedule';
+    if (/demographic|baseline|characteristic/.test(t)) return 'demographics';
+    return 'general';
+}
+
 // Handle selection analysis with fast_analysis.py /api/analyze
 async function handleSelectionAnalysis(selectedText) {
     try {
@@ -272,10 +456,15 @@ async function handleSelectionAnalysis(selectedText) {
         // Detect if selected text is tabular data (contains tab characters)
         const isTable = selectedText.includes('\t');
 
+        // Detect protocol section for section-aware validation
+        const detectedSection = detectProtocolSection(selectedText);
+        console.log(`📍 Detected protocol section: ${detectedSection}`);
+
         const payload = {
             text: selectedText,
             mode: 'selection',
             ta: IlanaState.detectedTA || 'general_medicine',
+            section: detectedSection,  // Section-aware validation (Layer 2)
             isTable: isTable  // Add table detection flag
         };
 
@@ -346,6 +535,20 @@ async function handleSelectionAnalysis(selectedText) {
 async function displaySelectionSuggestions(analysisResult) {
     const suggestions = extractSuggestionsFromLegacyResponse(analysisResult);
     const issues = [];
+
+    // Check for oversized selection (hybrid mode response)
+    const selectionTooLarge = analysisResult.selection_too_large || false;
+    if (selectionTooLarge) {
+        console.log('⚠️ Large selection detected - showing quick analysis results');
+        showSelectionLimitBanner(
+            analysisResult.message || 'Selection exceeds limit. Showing quick analysis only.',
+            analysisResult.char_count || 0,
+            analysisResult.char_limit || 15000
+        );
+    } else {
+        // Hide banner if it was showing from a previous analysis
+        hideSelectionLimitBanner();
+    }
 
     // Track telemetry: suggestions_returned
     if (typeof IlanaTelemetry !== 'undefined') {
@@ -608,23 +811,50 @@ function displaySuggestionCard(issue) {
         ? issue.text.substring(0, 60) + '...'
         : (issue.text || 'No original text');
 
-    // Determine if this is Compliance or Clarity issue
-    const issueCategory = (issue.type === 'statistical' || issue.type === 'safety' ||
-                           issue.type === 'analysis_population' || issue.type === 'documentation')
-        ? 'Compliance'
-        : 'Clarity';
+    // Check if this is an amendment risk prediction (Layer 3)
+    const isAmendmentRisk = issue.source === 'amendment_risk' || issue.amendment_risk;
+    const amendmentRiskData = issue.amendment_risk || {};
+
+    // Determine issue category
+    let issueCategory;
+    let categoryClass;
+    if (isAmendmentRisk) {
+        const riskLevel = amendmentRiskData.risk_level || 'medium';
+        issueCategory = `Amendment Risk`;
+        categoryClass = `amendment-risk risk-${riskLevel}`;
+    } else if (issue.type === 'statistical' || issue.type === 'safety' ||
+               issue.type === 'analysis_population' || issue.type === 'documentation') {
+        issueCategory = 'Compliance';
+        categoryClass = 'compliance';
+    } else {
+        issueCategory = 'Clarity';
+        categoryClass = 'clarity';
+    }
+
+    // Amendment risk probability badge
+    const riskBadge = isAmendmentRisk && amendmentRiskData.probability
+        ? `<span class="risk-probability">${Math.round(amendmentRiskData.probability * 100)}% amended</span>`
+        : '';
 
     return `
-        <div class="suggestion-card collapsed" data-issue-id="${issue.id}" onclick="toggleCardExpansion('${issue.id}')">
+        <div class="suggestion-card collapsed ${isAmendmentRisk ? 'amendment-risk-card' : ''}" data-issue-id="${issue.id}" onclick="toggleCardExpansion('${issue.id}')">
             <!-- Collapsed Header (always visible) -->
             <div class="card-header">
-                <span class="issue-category ${issueCategory.toLowerCase()}">${issueCategory}</span>
+                <span class="issue-category ${categoryClass}">${issueCategory}</span>
+                ${riskBadge}
                 <span class="text-snippet">${textSnippet}</span>
                 <span class="expand-icon">›</span>
             </div>
 
             <!-- Expanded Content (hidden by default) -->
             <div class="card-content" style="display: none;">
+                ${isAmendmentRisk ? `
+                <div class="amendment-risk-banner">
+                    <strong>Historical Pattern:</strong> "${amendmentRiskData.pattern || 'Similar language'}"
+                    <br><small>${Math.round((amendmentRiskData.probability || 0) * 100)}% of protocols with this pattern required amendments</small>
+                </div>
+                ` : ''}
+
                 <div class="content-section">
                     <label>Original Text:</label>
                     <div class="content-text original">${issue.text || 'No original text provided'}</div>
@@ -637,7 +867,7 @@ function displaySuggestionCard(issue) {
 
                 ${issue.rationale ? `
                 <div class="content-section">
-                    <label>${issue.clinical_rationale ? 'Clinical Rationale:' : 'Regulatory Context:'}</label>
+                    <label>${issue.clinical_rationale ? 'Clinical Rationale:' : isAmendmentRisk ? 'Risk Analysis:' : 'Regulatory Context:'}</label>
                     <div class="content-text rationale">${issue.rationale}</div>
                 </div>
                 ` : ''}
@@ -1829,6 +2059,102 @@ function hideError() {
     if (errorToast) {
         errorToast.style.display = 'none';
     }
+}
+
+// Show selection size limit info banner
+function showSelectionLimitBanner(message, charCount, charLimit) {
+    const issuesList = document.getElementById('issues-list');
+    if (!issuesList) return;
+
+    // Remove existing banner if present
+    const existingBanner = document.getElementById('selection-limit-banner');
+    if (existingBanner) {
+        existingBanner.remove();
+    }
+
+    // Create info banner
+    const banner = document.createElement('div');
+    banner.id = 'selection-limit-banner';
+    banner.className = 'selection-limit-banner';
+    banner.innerHTML = `
+        <div class="limit-banner-icon">ℹ️</div>
+        <div class="limit-banner-content">
+            <div class="limit-banner-title">Large Selection - Quick Analysis Mode</div>
+            <div class="limit-banner-message">${message}</div>
+            <div class="limit-banner-stats">${charCount.toLocaleString()} / ${charLimit.toLocaleString()} characters</div>
+        </div>
+        <button class="limit-banner-close" onclick="hideSelectionLimitBanner()">×</button>
+    `;
+
+    // Insert banner at the top of issues list
+    issuesList.insertBefore(banner, issuesList.firstChild);
+
+    // Inject styles if not already present
+    injectSelectionLimitStyles();
+}
+
+function hideSelectionLimitBanner() {
+    const banner = document.getElementById('selection-limit-banner');
+    if (banner) {
+        banner.remove();
+    }
+}
+
+function injectSelectionLimitStyles() {
+    if (document.getElementById('selection-limit-styles')) return;
+
+    const style = document.createElement('style');
+    style.id = 'selection-limit-styles';
+    style.textContent = `
+        .selection-limit-banner {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 16px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 1px solid #64b5f6;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .limit-banner-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        .limit-banner-content {
+            flex: 1;
+        }
+        .limit-banner-title {
+            font-weight: 600;
+            color: #1565c0;
+            margin-bottom: 4px;
+        }
+        .limit-banner-message {
+            font-size: 13px;
+            color: #1976d2;
+            line-height: 1.4;
+        }
+        .limit-banner-stats {
+            font-size: 12px;
+            color: #42a5f5;
+            margin-top: 6px;
+            font-family: monospace;
+        }
+        .limit-banner-close {
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #1976d2;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+            opacity: 0.7;
+        }
+        .limit-banner-close:hover {
+            opacity: 1;
+        }
+    `;
+    document.head.appendChild(style);
 }
 
 // Placeholder functions for compatibility

@@ -81,6 +81,19 @@ VISIT_SCHEDULE_TOKENS = [
     r"approximately.*visit"
 ]
 
+# Rule 7: Subjective Eligibility Criteria (Layer 2: Section-Aware) (MAJOR in eligibility section)
+SUBJECTIVE_CRITERIA_TOKENS = [
+    r"\badequate\b",
+    r"\bappropriate\b",
+    r"\bnormal\b",
+    r"\bacceptable\b",
+    r"\bsufficient\b",
+    r"\bsatisfactory\b",
+    r"\bsuitable\b",
+    r"\breasonable\b",
+    r"\bclinically significant\b"
+]
+
 
 # ============================================================================
 # RULE ENGINE FUNCTIONS
@@ -301,6 +314,29 @@ def check_visit_schedule(text: str) -> ComplianceIssue:
     return None
 
 
+def check_subjective_criteria(text: str) -> ComplianceIssue:
+    """
+    Rule 7: Detect subjective terms in eligibility criteria (Layer 2: Section-Aware)
+
+    MAJOR (in eligibility section): Eligibility must use objective, measurable thresholds
+    MINOR (in other sections): General advisory for precision
+    """
+    evidence = find_matches(text, SUBJECTIVE_CRITERIA_TOKENS)
+
+    if evidence:
+        return ComplianceIssue(
+            rule_id="SUBJ_001",
+            category="documentation",
+            severity="minor",  # Default severity; upgraded to major in eligibility section by section_rules.py
+            short_description="Subjective criteria detected",
+            detail="Found subjective terms that lack measurable thresholds. In eligibility criteria, terms like 'adequate', 'normal', 'appropriate' create inconsistent patient selection. Replace with specific, quantifiable criteria.",
+            improved_text="Replace subjective terms with specific measurable values. Examples: 'adequate renal function' → 'eGFR ≥60 mL/min/1.73m²'; 'normal liver function' → 'AST/ALT ≤2.5× ULN'; 'clinically significant' → 'Grade ≥2 per CTCAE v5.0'.",
+            evidence=evidence[:3],
+            confidence=0.7  # Moderate confidence; section_rules.py may adjust based on section
+        )
+    return None
+
+
 # ============================================================================
 # MAIN ENGINE
 # ============================================================================
@@ -321,17 +357,20 @@ def get_token_list_for_check(check_func_name: str) -> List[str]:
         "check_safety_reporting": SAFETY_TOKENS,
         "check_terminology": SUBJECT_TERMINOLOGY,
         "check_vague_endpoints": VAGUE_ENDPOINT_TOKENS,
-        "check_visit_schedule": VISIT_SCHEDULE_TOKENS
+        "check_visit_schedule": VISIT_SCHEDULE_TOKENS,
+        "check_subjective_criteria": SUBJECTIVE_CRITERIA_TOKENS  # Layer 2
     }
     return mapping.get(check_func_name, [])
 
 
-def run_compliance_checks(text: str) -> List[Dict[str, Any]]:
+def run_compliance_checks(text: str, section: str = None) -> List[Dict[str, Any]]:
     """
-    Run all compliance rules on protocol text
+    Run all compliance rules on protocol text with section-aware overrides (Layer 2)
 
     Args:
         text: Protocol text to analyze
+        section: Optional protocol section (eligibility, endpoints, statistics, etc.)
+                 for section-aware severity/confidence adjustments
 
     Returns:
         List of issues found (formatted for frontend)
@@ -345,7 +384,8 @@ def run_compliance_checks(text: str) -> List[Dict[str, Any]]:
         check_safety_reporting,
         check_terminology,
         check_vague_endpoints,
-        check_visit_schedule
+        check_visit_schedule,
+        check_subjective_criteria  # Layer 2: Section-aware eligibility check
     ]
 
     for check_func in checks:
@@ -372,24 +412,34 @@ def run_compliance_checks(text: str) -> List[Dict[str, Any]]:
         except Exception as e:
             logger.error(f"❌ Compliance check {check_func.__name__} failed: {e}")
 
+    # Apply section-specific overrides (Layer 2: Semantic Understanding)
+    if section and section != "general":
+        try:
+            from section_rules import apply_section_overrides
+            issues = apply_section_overrides(issues, section)
+        except ImportError:
+            logger.warning("section_rules module not available, skipping section overrides")
+
     return issues
 
 
 def get_rule_stats() -> Dict[str, Any]:
     """Get statistics about rule engine"""
     return {
-        "total_rules": 6,
+        "total_rules": 7,  # Including Layer 2 subjective criteria check
         "critical_rules": 1,
         "major_rules": 4,
-        "minor_rules": 1,
+        "minor_rules": 2,  # Updated for check_subjective_criteria
+        "section_aware_rules": 1,  # Layer 2: section-aware rules
         "categories": ["statistical", "analysis_population", "safety", "terminology", "documentation"]
     }
 
 
 # Log configuration on import
-logger.info("✅ Compliance rule engine loaded")
+logger.info("✅ Compliance rule engine loaded (with Layer 2: Section-Aware)")
 logger.info(f"   - Total rules: {get_rule_stats()['total_rules']}")
 logger.info(f"   - Critical: {get_rule_stats()['critical_rules']}, Major: {get_rule_stats()['major_rules']}, Minor: {get_rule_stats()['minor_rules']}")
+logger.info(f"   - Section-aware rules: {get_rule_stats()['section_aware_rules']}")
 
 
 __all__ = [

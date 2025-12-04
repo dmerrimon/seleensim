@@ -333,7 +333,12 @@ JSON RESPONSE:""",
 )
 
 
-def build_fast_prompt(text: str, ta: Optional[str] = None, rag_results: Optional[Dict[str, List[Dict[str, Any]]]] = None) -> Dict[str, Any]:
+def build_fast_prompt(
+    text: str,
+    ta: Optional[str] = None,
+    rag_results: Optional[Dict[str, List[Dict[str, Any]]]] = None,
+    section: Optional[str] = None  # Layer 2: Section-aware validation
+) -> Dict[str, Any]:
     """
     Build optimized prompt for fast analysis with RAG (protocol exemplars + regulatory citations) + feedback learning
 
@@ -341,12 +346,25 @@ def build_fast_prompt(text: str, ta: Optional[str] = None, rag_results: Optional
         text: Protocol text to analyze
         ta: Optional therapeutic area hint
         rag_results: Optional Dict with 'exemplars' and 'regulatory' lists from get_fast_exemplars()
+        section: Optional protocol section (eligibility, endpoints, statistics, etc.) for section-aware prompts
 
     Returns:
         Dict with system and user messages, token counts
     """
     # Build TA context (only if provided)
     ta_context = f" in {ta.replace('_', ' ')}" if ta else ""
+
+    # Build section-specific instructions (Layer 2: Semantic Understanding)
+    section_instructions = ""
+    if section and section != "general":
+        try:
+            from section_rules import get_section_validation_focus
+            section_focus = get_section_validation_focus(section)
+            if section_focus:
+                section_instructions = f"\n{section_focus}\n"
+                logger.info(f"Injecting section-specific instructions for: {section}")
+        except ImportError:
+            logger.warning("section_rules module not available, skipping section-specific instructions")
 
     # Build regulatory + exemplar context using centralized formatter
     rag_context = ""
@@ -356,6 +374,10 @@ def build_fast_prompt(text: str, ta: Optional[str] = None, rag_results: Optional
         # Prepend RAG context to text if present
         if rag_context.strip():
             text = f"{rag_context}\n\nSELECTED TEXT TO ANALYZE:\n{text}"
+
+    # Inject section-specific instructions (Layer 2) before the text
+    if section_instructions:
+        text = f"{section_instructions}\n{text}"
 
     # Load feedback-based examples (Phase 2B - Adaptive Learning)
     feedback_examples = load_feedback_examples()

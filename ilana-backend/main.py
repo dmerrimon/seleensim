@@ -1587,10 +1587,16 @@ async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
             if is_table:
                 logger.info(f"📊 Table data detected for request: {req_id}")
 
+            # Extract protocol section for section-aware validation (Layer 2)
+            section = payload.get("section", "general")
+            if section != "general":
+                logger.info(f"📍 Protocol section detected: {section} for request: {req_id}")
+
             result = await analyze_fast(
                 text=text,
                 ta=payload.get("ta"),
                 phase=payload.get("phase"),
+                section=section,  # Section-aware validation (Layer 2)
                 request_id=req_id,
                 is_table=is_table  # Pass table flag to analysis function
             )

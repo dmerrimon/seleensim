@@ -3,7 +3,7 @@
 Fast Analysis Module - Optimized for Sub-15s Response Times
 
 Provides lightweight protocol analysis for interactive selections using:
-- Up to 10000 chars (full protocol sections)
+- Up to 15000 chars (full protocol sections)
 - Fast Azure model (gpt-4o-mini by default)
 - Lightweight RAG: Pinecone + PubMedBERT (top 3 exemplars, 2s timeout)
 - Domain-expert ICH-GCP prompts with regulatory guidance
@@ -46,7 +46,7 @@ FAST_MODEL = AZURE_DEPLOYMENT  # Use deployment name for Azure OpenAI compatibil
 FAST_TIMEOUT_MS = int(os.getenv("SIMPLE_PROMPT_TIMEOUT_MS", "40000"))  # 40 second timeout - Azure OpenAI can be slow
 FAST_MAX_TOKENS = int(os.getenv("FAST_MAX_TOKENS", "2000"))  # Increased for detailed regulatory citations
 FAST_TEMPERATURE = 0.2  # Low temperature for consistent regulatory citations
-SELECTION_CHUNK_THRESHOLD = int(os.getenv("SELECTION_CHUNK_THRESHOLD", "10000"))  # 10000 chars = full protocol sections
+SELECTION_CHUNK_THRESHOLD = int(os.getenv("SELECTION_CHUNK_THRESHOLD", "15000"))  # 15000 chars = full protocol sections
 
 
 # Old cache functions removed in Step 6 - now using cache_manager
@@ -303,10 +303,128 @@ def _group_suggestions_by_text(
     return grouped_suggestions, stats
 
 
+async def _analyze_oversized_selection(
+    text: str,
+    section: Optional[str] = None,
+    ta: Optional[str] = None,
+    phase: Optional[str] = None,
+    request_id: Optional[str] = None
+) -> Dict[str, Any]:
+    """
+    Quick analysis for oversized selections (>15000 chars).
+
+    Runs only fast layers (Layer 1 + Layer 3) without RAG/LLM to avoid timeouts.
+    Returns immediately with available results and guidance message.
+
+    Args:
+        text: Full selected text (any size)
+        section: Optional protocol section
+        ta: Optional therapeutic area
+        phase: Optional study phase
+        request_id: Request tracking ID
+
+    Returns:
+        Response with selection_too_large flag and quick analysis results
+    """
+    start_time = time.time()
+    req_id = request_id or f"oversized_{int(time.time() * 1000)}"
+
+    logger.warning(
+        f"⚠️ [{req_id}] Oversized selection: {len(text)} chars > {SELECTION_CHUNK_THRESHOLD} limit. "
+        f"Running quick analysis only (Layer 1 + 3)."
+    )
+
+    suggestions = []
+
+    # Layer 1: Run rule-based compliance checks (fast, <10ms)
+    rule_start = time.time()
+    try:
+        rule_issues = run_compliance_checks(text, section=section)
+        for rule_issue in rule_issues:
+            suggestions.append({
+                "id": rule_issue.get("id"),
+                "text": rule_issue.get("original_text"),
+                "suggestion": rule_issue.get("improved_text"),
+                "rationale": rule_issue.get("rationale"),
+                "confidence": rule_issue.get("confidence"),
+                "type": rule_issue.get("category"),
+                "severity": rule_issue.get("severity"),
+                "recommendation": rule_issue.get("recommendation"),
+                "source": "rule_engine"
+            })
+        logger.info(f"✅ [{req_id}] Layer 1 (rules): {len(rule_issues)} issues found")
+    except Exception as e:
+        logger.warning(f"⚠️ [{req_id}] Rule engine failed: {e}")
+    rule_ms = int((time.time() - rule_start) * 1000)
+
+    # Layer 3: Run amendment risk prediction (fast, <50ms)
+    amendment_start = time.time()
+    try:
+        from amendment_risk import predict_amendment_risk, format_risk_for_suggestion
+        risk_predictions = predict_amendment_risk(text, section=section, min_risk_level="medium", max_results=5)
+        for pred in risk_predictions:
+            risk = format_risk_for_suggestion(pred)
+            suggestions.append({
+                "id": risk.get("id"),
+                "text": risk.get("original_text"),
+                "suggestion": risk.get("improved_text"),
+                "rationale": risk.get("rationale"),
+                "confidence": risk.get("confidence"),
+                "type": risk.get("category"),
+                "severity": risk.get("severity"),
+                "recommendation": risk.get("recommendation"),
+                "source": "amendment_risk",
+                "amendment_risk": risk.get("amendment_risk")
+            })
+        logger.info(f"✅ [{req_id}] Layer 3 (amendment risk): {len(risk_predictions)} patterns found")
+    except ImportError:
+        logger.debug("Amendment risk module not available")
+    except Exception as e:
+        logger.warning(f"⚠️ [{req_id}] Amendment risk failed: {e}")
+    amendment_ms = int((time.time() - amendment_start) * 1000)
+
+    total_ms = int((time.time() - start_time) * 1000)
+
+    logger.info(
+        f"✅ [{req_id}] Quick analysis complete: {total_ms}ms "
+        f"({len(suggestions)} suggestions from Layer 1 + 3)"
+    )
+
+    return {
+        "status": "fast",
+        "request_id": req_id,
+        "suggestions": suggestions,
+        "selection_too_large": True,
+        "char_count": len(text),
+        "char_limit": SELECTION_CHUNK_THRESHOLD,
+        "message": (
+            f"Selection exceeds {SELECTION_CHUNK_THRESHOLD:,} characters ({len(text):,} selected). "
+            f"Showing quick analysis only. For deeper AI-powered analysis, select a smaller section."
+        ),
+        "metadata": {
+            "rule_engine_ms": rule_ms,
+            "amendment_risk_ms": amendment_ms,
+            "total_ms": total_ms,
+            "model": None,  # No LLM used
+            "cache_hit": False,
+            "text_length": len(text),
+            "trimmed": False,
+            "timestamp": datetime.utcnow().isoformat(),
+            "rule_issues_count": len([s for s in suggestions if s.get("source") == "rule_engine"]),
+            "amendment_risk_count": len([s for s in suggestions if s.get("source") == "amendment_risk"]),
+            "llm_issues_count": 0,
+            "rag_exemplars": 0,
+            "rag_enabled": False,
+            "deep_analysis_available": False
+        }
+    }
+
+
 async def analyze_fast(
     text: str,
     ta: Optional[str] = None,
     phase: Optional[str] = None,
+    section: Optional[str] = None,  # Section-aware validation (Layer 2)
     request_id: Optional[str] = None,
     is_table: bool = False  # New parameter for table detection
 ) -> Dict[str, Any]:
@@ -316,9 +434,10 @@ async def analyze_fast(
     Target: < 15 seconds total (typically 3-8s for uncached)
 
     Args:
-        text: Selected protocol text (up to 10000 chars = full sections)
+        text: Selected protocol text (up to 15000 chars = full sections)
         ta: Optional therapeutic area
         phase: Optional study phase
+        section: Optional protocol section (eligibility, endpoints, statistics, etc.)
         request_id: Request tracking ID
 
     Returns:
@@ -346,28 +465,53 @@ async def analyze_fast(
     }
 
     try:
-        # 1. Preprocess: Trim text if needed
+        # 1. Preprocess: Check text size and handle oversized selections
         preprocess_start = time.time()
 
         if len(text) > SELECTION_CHUNK_THRESHOLD:
+            # Hybrid strategy: Return quick analysis (Layer 1 + 3 only) for oversized selections
             logger.warning(f"⚠️ Text exceeds fast threshold ({len(text)} > {SELECTION_CHUNK_THRESHOLD})")
-            # Take first SELECTION_CHUNK_THRESHOLD chars
-            trimmed_text = text[:SELECTION_CHUNK_THRESHOLD]
-        else:
-            trimmed_text = text
+            return await _analyze_oversized_selection(
+                text=text,
+                section=section,
+                ta=ta,
+                phase=phase,
+                request_id=req_id
+            )
+
+        # Text is within limits - proceed with full analysis
+        trimmed_text = text
 
         # 1a. Run rule-based compliance checks (< 1ms, deterministic)
         rule_engine_start = time.time()
         rule_issues = []
 
         try:
-            rule_issues = run_compliance_checks(trimmed_text)
+            # Pass section for section-aware severity/confidence overrides (Layer 2)
+            rule_issues = run_compliance_checks(trimmed_text, section=section)
             if rule_issues:
-                logger.info(f"🔍 [{req_id}] Rule engine found {len(rule_issues)} issues")
+                logger.info(f"🔍 [{req_id}] Rule engine found {len(rule_issues)} issues (section={section or 'general'})")
         except Exception as e:
             logger.warning(f"⚠️ [{req_id}] Rule engine failed: {e}")
 
         timings["rule_engine_ms"] = int((time.time() - rule_engine_start) * 1000)
+
+        # 1b. Run amendment risk prediction (Layer 3: Risk Prediction)
+        amendment_risk_start = time.time()
+        amendment_risks = []
+
+        try:
+            from amendment_risk import predict_amendment_risk, format_risk_for_suggestion
+            risk_predictions = predict_amendment_risk(trimmed_text, section=section, min_risk_level="medium", max_results=3)
+            if risk_predictions:
+                amendment_risks = [format_risk_for_suggestion(pred) for pred in risk_predictions]
+                logger.info(f"⚠️ [{req_id}] Amendment risk: {len(amendment_risks)} patterns detected (section={section or 'general'})")
+        except ImportError:
+            logger.debug("Amendment risk module not available, skipping Layer 3")
+        except Exception as e:
+            logger.warning(f"⚠️ [{req_id}] Amendment risk prediction failed: {e}")
+
+        timings["amendment_risk_ms"] = int((time.time() - amendment_risk_start) * 1000)
 
         # Check cache (Step 6: Enhanced cache manager)
         cached_result = get_cached(
@@ -431,7 +575,8 @@ async def analyze_fast(
         timings["rag_ms"] = int((time.time() - rag_start) * 1000)
 
         # 3. Build optimized prompt with RAG (exemplars + regulatory citations) (Step 4 + Step 8)
-        prompt_data = build_fast_prompt(trimmed_text, ta, rag_results)
+        # Pass section for section-aware prompts (Layer 2)
+        prompt_data = build_fast_prompt(trimmed_text, ta, rag_results, section=section)
 
         # 3a. Enhance prompt for table data if detected
         if is_table:
@@ -546,6 +691,21 @@ Table-Specific ICH-GCP Rules:
                 "severity": rule_issue.get("severity"),
                 "recommendation": rule_issue.get("recommendation"),
                 "source": "rule_engine"
+            })
+
+        # 5a-1. Add amendment risk predictions (Layer 3: Risk Prediction)
+        for risk in amendment_risks:
+            rule_suggestions.append({
+                "id": risk.get("id"),
+                "text": risk.get("original_text"),
+                "suggestion": risk.get("improved_text"),
+                "rationale": risk.get("rationale"),
+                "confidence": risk.get("confidence"),
+                "type": risk.get("category"),
+                "severity": risk.get("severity"),
+                "recommendation": risk.get("recommendation"),
+                "source": "amendment_risk",
+                "amendment_risk": risk.get("amendment_risk")  # Include risk metadata
             })
 
         # 5b. Collect LLM-generated issues
