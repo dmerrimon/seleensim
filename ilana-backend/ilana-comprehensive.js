@@ -414,8 +414,8 @@ async function handleRecommendButton() {
             console.log('🎯 Selection detected, using fast analysis with RAG');
             await handleSelectionAnalysis(selectedText);
         } else {
-            // No selection: open Whole-Document confirm modal
-            console.log('📄 No selection, showing whole-document modal');
+            // No selection: show instruction modal
+            console.log('📄 No selection, showing text selection required modal');
             showWholeDocumentModal();
         }
 
@@ -665,48 +665,42 @@ function extractSuggestionsFromLegacyResponse(response) {
     return [];
 }
 
-// Show Whole-Document confirm modal (Prompt C)
+// Show "No Selection" modal - inform user they must select text
 function showWholeDocumentModal() {
-    // Use the new WholeDocModal component if available
-    if (typeof showWholeDocModal === 'function') {
-        showWholeDocModal();
-        return;
-    }
-    
-    // Fallback to original modal implementation
     const modal = document.getElementById('modal-overlay') || createWholeDocumentModal();
     const title = document.getElementById('modal-title');
     const body = document.getElementById('modal-body');
-    
+
     if (modal && title && body) {
-        title.textContent = 'Whole Document Analysis';
-        
+        title.textContent = 'Text Selection Required';
+
         body.innerHTML = `
             <div class="modal-section">
-                <h4>Analyze Entire Document</h4>
-                <p class="modal-text">No text selection detected. Would you like to analyze the entire document for protocol optimization recommendations?</p>
+                <h4>Please Select Text to Analyze</h4>
+                <p class="modal-text">No text selection detected. Ilana analyzes selected protocol text to provide targeted recommendations.</p>
             </div>
-            
+
             <div class="modal-section">
-                <h4>What this includes:</h4>
+                <h4>How to use Ilana:</h4>
                 <ul class="modal-list">
-                    <li>Comprehensive protocol review</li>
-                    <li>Regulatory compliance analysis</li>
-                    <li>Medical terminology optimization</li>
-                    <li>Site operational improvements</li>
+                    <li><strong>Select text</strong> in your protocol document (highlight a paragraph, section, or table)</li>
+                    <li>Click <strong>"Analyze Text"</strong> to get AI-powered suggestions</li>
+                    <li>Selection limit: <strong>up to 15,000 characters</strong></li>
+                    <li>For best results, select one section at a time (e.g., Eligibility Criteria, Endpoints)</li>
                 </ul>
             </div>
-            
+
+            <div class="modal-section tips">
+                <p class="modal-tip">💡 <strong>Tip:</strong> The character counter below the Analyze button shows your current selection size.</p>
+            </div>
+
             <div class="modal-actions">
-                <button class="modal-btn primary" onclick="confirmWholeDocumentAnalysis()">
-                    Yes, Analyze Document
-                </button>
-                <button class="modal-btn secondary" onclick="closeModal()">
-                    Cancel
+                <button class="modal-btn primary" onclick="closeModal()">
+                    Got It
                 </button>
             </div>
         `;
-        
+
         modal.style.display = 'flex';
     }
 }
@@ -735,59 +729,8 @@ function createWholeDocumentModal() {
     return modal;
 }
 
-// Confirm whole document analysis
-async function confirmWholeDocumentAnalysis() {
-    closeModal();
-    IlanaState.isAnalyzing = true;
-    
-    try {
-        updateStatus('Analyzing entire document...', 'analyzing');
-        showProcessingOverlay(true);
-        
-        const documentText = await extractDocumentText();
-        const payload = {
-            text: documentText,
-            mode: 'document',
-            ta: IlanaState.detectedTA || 'general_medicine'
-        };
-        
-        const response = await fetch(`${API_CONFIG.baseUrl}/api/analyze`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        });
-        
-        if (!response.ok) {
-            throw new Error(`Document analysis failed: ${response.status}`);
-        }
-        
-        const result = await response.json();
-        console.log('✅ Document analysis result:', result);
-        
-        // Store request ID
-        IlanaState.currentRequestId = result.request_id;
-        
-        // Handle queued job or immediate results
-        if (result.result?.status === 'queued') {
-            showJobQueuedMessage(result.result.job_id);
-        } else {
-            await displaySelectionSuggestions(result);
-        }
-        
-        updateStatus('Document analysis complete', 'ready');
-        
-    } catch (error) {
-        console.error('❌ Document analysis failed:', error);
-        showError(`Document analysis failed: ${error.message}`);
-        updateStatus('Document analysis failed', 'error');
-    } finally {
-        IlanaState.isAnalyzing = false;
-        showProcessingOverlay(false);
-    }
-}
+// Note: Whole document analysis is not supported.
+// Users must select text (up to 15,000 characters) for analysis.
 
 // Show job queued message
 function showJobQueuedMessage(jobId) {
