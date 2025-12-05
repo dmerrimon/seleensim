@@ -460,7 +460,7 @@ function updateDocumentStatusIndicator(status) {
         case 'ready':
             indicator.textContent = '✓';
             indicator.className = 'doc-indicator ready';
-            text.textContent = 'Document Analyzed';
+            text.textContent = 'Protocol Text Interpreted';
             if (IlanaState.documentIntelligence.conflictsDetected > 0) {
                 text.textContent += ` (${IlanaState.documentIntelligence.conflictsDetected} issues)`;
             }
@@ -468,7 +468,7 @@ function updateDocumentStatusIndicator(status) {
         case 'analyzing':
             indicator.textContent = '○';
             indicator.className = 'doc-indicator analyzing';
-            text.textContent = 'Analyzing document...';
+            text.textContent = 'Learning context. One moment please...';
             break;
         case 'error':
             indicator.textContent = '!';
