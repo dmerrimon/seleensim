@@ -1598,7 +1598,8 @@ async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
                 phase=payload.get("phase"),
                 section=section,  # Section-aware validation (Layer 2)
                 request_id=req_id,
-                is_table=is_table  # Pass table flag to analysis function
+                is_table=is_table,  # Pass table flag to analysis function
+                document_namespace=payload.get("document_namespace")  # Document Intelligence
             )
 
             # End telemetry trace
@@ -2825,6 +2826,196 @@ async def optimize_document_async(request: Request):
     except Exception as e:
         logger.error(f"Optimize document async error: {e}")
         raise HTTPException(status_code=500, detail=f"Failed to process async document request: {str(e)}")
+
+# =============================================================================
+# Document Intelligence Endpoints
+# =============================================================================
+
+@app.get("/api/document-context/status")
+async def get_document_context_status(fingerprint: str = Query(..., description="Document fingerprint")):
+    """
+    Check if a document has been processed for document intelligence
+
+    Returns processing status, namespace, and conflict count
+    """
+    from document_cache import get_document_status
+
+    status = get_document_status(fingerprint)
+
+    if status is None:
+        return {
+            "processed": False,
+            "status": "not_found",
+            "namespace": None,
+            "sections_indexed": 0,
+            "conflicts_detected": 0,
+        }
+
+    return status
+
+
+@app.post("/api/document-context/process")
+async def process_document_context(request: Request, background_tasks: BackgroundTasks):
+    """
+    Submit a document for background processing
+
+    Extracts sections, generates embeddings, indexes to Pinecone,
+    and runs cross-section consistency checks.
+
+    Payload: {"text": str, "fingerprint": str, "metadata": dict}
+    Returns: {"job_id": str, "status": "processing"}
+    """
+    from document_processor import process_document, calculate_fingerprint
+    from document_cache import (
+        get_document_status,
+        set_document_processing,
+        set_document_processed,
+        set_document_failed,
+        is_document_processing,
+    )
+
+    payload = await request.json()
+    text = payload.get("text", "")
+    fingerprint = payload.get("fingerprint") or calculate_fingerprint(text)
+    metadata = payload.get("metadata", {})
+
+    req_id = f"doc_{fingerprint[:12]}_{int(time.time())}"
+
+    # Check if already processed or processing
+    existing_status = get_document_status(fingerprint)
+    if existing_status and existing_status.get("processed"):
+        logger.info(f"[{req_id}] Document already processed, returning cached status")
+        return {
+            "job_id": req_id,
+            "status": "already_processed",
+            "namespace": existing_status.get("namespace"),
+            "conflicts_detected": existing_status.get("conflicts_detected", 0),
+        }
+
+    if is_document_processing(fingerprint):
+        logger.info(f"[{req_id}] Document already processing")
+        return {
+            "job_id": req_id,
+            "status": "already_processing",
+        }
+
+    # Mark as processing
+    set_document_processing(fingerprint)
+
+    async def process_in_background():
+        """Background task for document processing"""
+        try:
+            logger.info(f"[{req_id}] Starting background document processing ({len(text):,} chars)")
+
+            # Process document
+            result = await process_document(
+                text=text,
+                fingerprint=fingerprint,
+                request_id=req_id,
+            )
+
+            # Run cross-section analysis
+            conflicts = []
+            try:
+                from cross_section_engine import analyze_cross_section_consistency
+                conflicts = await analyze_cross_section_consistency(
+                    sections=result.sections,
+                    section_summaries=result.section_summaries,
+                    request_id=req_id,
+                )
+            except ImportError:
+                logger.warning(f"[{req_id}] Cross-section engine not available")
+            except Exception as e:
+                logger.error(f"[{req_id}] Cross-section analysis failed: {e}")
+
+            # Cache results
+            set_document_processed(
+                fingerprint=fingerprint,
+                namespace=result.namespace,
+                sections_indexed=result.total_chunks,
+                conflicts_detected=len(conflicts),
+                section_summaries=result.section_summaries,
+                processing_time_ms=result.processing_time_ms,
+                conflicts=conflicts,
+            )
+
+            logger.info(
+                f"[{req_id}] Document processing complete: "
+                f"{result.total_chunks} chunks, {len(conflicts)} conflicts"
+            )
+
+        except Exception as e:
+            logger.error(f"[{req_id}] Document processing failed: {e}")
+            set_document_failed(fingerprint, str(e))
+
+    # Add background task
+    background_tasks.add_task(process_in_background)
+
+    return {
+        "job_id": req_id,
+        "status": "processing",
+        "fingerprint": fingerprint,
+    }
+
+
+@app.get("/api/document-context/conflicts")
+async def get_document_conflicts(namespace: str = Query(..., description="Document namespace")):
+    """
+    Get cross-section conflicts for a processed document
+
+    Returns list of conflicts formatted as suggestion cards
+    """
+    from document_cache import get_document_conflicts, get_document_cache
+
+    # Extract fingerprint from namespace
+    fingerprint = namespace.replace("doc_", "")
+
+    conflicts = get_document_conflicts(fingerprint)
+
+    return {
+        "conflicts": conflicts,
+        "count": len(conflicts),
+    }
+
+
+@app.get("/api/document-context/sections")
+async def get_document_sections(
+    namespace: str = Query(..., description="Document namespace"),
+    section_types: str = Query(None, description="Comma-separated section types to retrieve"),
+):
+    """
+    Get section summaries for a processed document
+
+    Used for document navigation and context display
+    """
+    from document_cache import get_document_cache
+
+    # Extract fingerprint from namespace
+    fingerprint = namespace.replace("doc_", "")
+
+    cache = get_document_cache()
+    status = cache.get_status(fingerprint)
+
+    if not status or not status.get("processed"):
+        raise HTTPException(status_code=404, detail="Document not found or not processed")
+
+    # Get section summaries from cache entry
+    if fingerprint in cache._cache:
+        section_summaries = cache._cache[fingerprint].section_summaries
+    else:
+        section_summaries = {}
+
+    # Filter by requested section types if provided
+    if section_types:
+        requested = [s.strip() for s in section_types.split(",")]
+        section_summaries = {k: v for k, v in section_summaries.items() if k in requested}
+
+    return {
+        "namespace": namespace,
+        "sections": section_summaries,
+        "section_types": list(section_summaries.keys()),
+    }
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))

@@ -33,6 +33,18 @@ const IlanaState = {
         tenant_id: 'default_tenant',
         user_id: null,
         enabled: true
+    },
+
+    // Document Intelligence State
+    documentIntelligence: {
+        fingerprint: null,
+        namespace: null,
+        contextReady: false,
+        processing: false,
+        sectionsIndexed: 0,
+        conflictsDetected: 0,
+        lastProcessedAt: null,
+        error: null
     }
 };
 
@@ -256,6 +268,329 @@ function injectSelectionCounterStyles() {
     document.head.appendChild(style);
 }
 
+// ============================================================================
+// DOCUMENT INTELLIGENCE MODULE
+// Background processing for full document context and cross-section analysis
+// ============================================================================
+
+/**
+ * Calculate SHA256 fingerprint for document text
+ * Uses Web Crypto API for consistent hashing
+ */
+async function calculateDocumentFingerprint(text) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(text);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    return hashHex;
+}
+
+/**
+ * Extract full document text using Office.js
+ * This runs in the background on add-in load
+ */
+async function extractFullDocumentText() {
+    return await Word.run(async (context) => {
+        const body = context.document.body;
+        context.load(body, 'text');
+        await context.sync();
+        return body.text || '';
+    });
+}
+
+/**
+ * Initialize document intelligence on add-in load
+ * Runs in background - non-blocking
+ */
+async function initializeDocumentIntelligence() {
+    console.log('📄 Starting document intelligence initialization...');
+    updateDocumentStatusIndicator('analyzing');
+
+    try {
+        // Step 1: Extract full document text
+        const documentText = await extractFullDocumentText();
+        if (!documentText || documentText.length < 500) {
+            console.log('📄 Document too short for intelligence processing');
+            IlanaState.documentIntelligence.error = 'Document too short';
+            updateDocumentStatusIndicator('not-ready');
+            return;
+        }
+
+        console.log(`📄 Extracted document: ${documentText.length} characters`);
+
+        // Step 2: Calculate fingerprint
+        const fingerprint = await calculateDocumentFingerprint(documentText);
+        IlanaState.documentIntelligence.fingerprint = fingerprint;
+        console.log(`🔑 Document fingerprint: ${fingerprint.substring(0, 12)}...`);
+
+        // Step 3: Check if already processed
+        const statusResponse = await fetch(
+            `${API_CONFIG.baseUrl}/api/document-context/status?fingerprint=${fingerprint}`
+        );
+        const statusData = await statusResponse.json();
+
+        if (statusData.processed) {
+            // Already processed - use cached context
+            console.log('✅ Document already processed, using cached context');
+            IlanaState.documentIntelligence.namespace = statusData.namespace;
+            IlanaState.documentIntelligence.sectionsIndexed = statusData.sections_indexed;
+            IlanaState.documentIntelligence.conflictsDetected = statusData.conflicts_detected;
+            IlanaState.documentIntelligence.contextReady = true;
+            IlanaState.documentIntelligence.lastProcessedAt = statusData.last_processed;
+            updateDocumentStatusIndicator('ready');
+            return;
+        }
+
+        if (statusData.status === 'processing') {
+            // Already processing - poll for completion
+            console.log('⏳ Document already processing, polling for completion...');
+            IlanaState.documentIntelligence.processing = true;
+            updateDocumentStatusIndicator('analyzing');
+            pollDocumentProcessingStatus(fingerprint);
+            return;
+        }
+
+        // Step 4: Submit for background processing
+        console.log('📤 Submitting document for background processing...');
+        IlanaState.documentIntelligence.processing = true;
+        updateDocumentStatusIndicator('analyzing');
+
+        const processResponse = await fetch(
+            `${API_CONFIG.baseUrl}/api/document-context/process`,
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    text: documentText,
+                    fingerprint: fingerprint,
+                    metadata: {
+                        source: 'word_addin',
+                        timestamp: new Date().toISOString()
+                    }
+                })
+            }
+        );
+
+        const processData = await processResponse.json();
+
+        if (processData.status === 'processing') {
+            // Poll for completion
+            pollDocumentProcessingStatus(fingerprint);
+        } else if (processData.status === 'processed') {
+            // Immediate completion (small document or cache hit)
+            handleDocumentProcessingComplete(processData);
+        }
+
+    } catch (error) {
+        console.warn('⚠️ Document intelligence initialization failed:', error);
+        IlanaState.documentIntelligence.error = error.message;
+        IlanaState.documentIntelligence.processing = false;
+        updateDocumentStatusIndicator('error');
+    }
+}
+
+/**
+ * Poll for document processing completion
+ * Checks every 5 seconds, max 12 attempts (1 minute)
+ */
+async function pollDocumentProcessingStatus(fingerprint, attempt = 1) {
+    const maxAttempts = 12;
+    const pollInterval = 5000;
+
+    if (attempt > maxAttempts) {
+        console.warn('⚠️ Document processing polling timeout');
+        IlanaState.documentIntelligence.processing = false;
+        IlanaState.documentIntelligence.error = 'Processing timeout';
+        updateDocumentStatusIndicator('error');
+        return;
+    }
+
+    try {
+        const response = await fetch(
+            `${API_CONFIG.baseUrl}/api/document-context/status?fingerprint=${fingerprint}`
+        );
+        const data = await response.json();
+
+        if (data.processed) {
+            handleDocumentProcessingComplete(data);
+        } else if (data.status === 'failed') {
+            console.error('❌ Document processing failed:', data.error);
+            IlanaState.documentIntelligence.processing = false;
+            IlanaState.documentIntelligence.error = data.error;
+            updateDocumentStatusIndicator('error');
+        } else {
+            // Still processing - poll again
+            console.log(`⏳ Document still processing (attempt ${attempt}/${maxAttempts})...`);
+            setTimeout(() => pollDocumentProcessingStatus(fingerprint, attempt + 1), pollInterval);
+        }
+    } catch (error) {
+        console.warn('⚠️ Polling error:', error);
+        setTimeout(() => pollDocumentProcessingStatus(fingerprint, attempt + 1), pollInterval);
+    }
+}
+
+/**
+ * Handle document processing completion
+ */
+function handleDocumentProcessingComplete(data) {
+    console.log('✅ Document intelligence ready!', data);
+    IlanaState.documentIntelligence.namespace = data.namespace;
+    IlanaState.documentIntelligence.sectionsIndexed = data.sections_indexed;
+    IlanaState.documentIntelligence.conflictsDetected = data.conflicts_detected;
+    IlanaState.documentIntelligence.contextReady = true;
+    IlanaState.documentIntelligence.processing = false;
+    IlanaState.documentIntelligence.lastProcessedAt = data.last_processed || new Date().toISOString();
+    updateDocumentStatusIndicator('ready');
+}
+
+/**
+ * Update the document status indicator in the UI
+ */
+function updateDocumentStatusIndicator(status) {
+    const indicator = document.getElementById('doc-indicator');
+    const text = document.getElementById('doc-text');
+    const container = document.getElementById('doc-status');
+
+    if (!container) return; // Status element not present in HTML yet
+
+    container.style.display = 'flex';
+
+    switch (status) {
+        case 'ready':
+            indicator.textContent = '✓';
+            indicator.className = 'doc-indicator ready';
+            text.textContent = 'Document Analyzed';
+            if (IlanaState.documentIntelligence.conflictsDetected > 0) {
+                text.textContent += ` (${IlanaState.documentIntelligence.conflictsDetected} issues)`;
+            }
+            break;
+        case 'analyzing':
+            indicator.textContent = '○';
+            indicator.className = 'doc-indicator analyzing';
+            text.textContent = 'Analyzing document...';
+            break;
+        case 'error':
+            indicator.textContent = '!';
+            indicator.className = 'doc-indicator error';
+            text.textContent = 'Document analysis unavailable';
+            break;
+        case 'not-ready':
+            indicator.textContent = '–';
+            indicator.className = 'doc-indicator not-ready';
+            text.textContent = 'Document too short';
+            break;
+        default:
+            container.style.display = 'none';
+    }
+}
+
+/**
+ * Inject styles for cross-section conflict cards
+ * Purple color scheme to distinguish from other suggestion types
+ */
+function injectCrossSectionStyles() {
+    const styleId = 'cross-section-styles';
+    if (document.getElementById(styleId)) return;
+
+    const styles = document.createElement('style');
+    styles.id = styleId;
+    styles.textContent = `
+        /* Cross-Section Conflict Card Styles */
+        .suggestion-card.cross-section-card {
+            border-left: 4px solid #8b5cf6;
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+        }
+
+        .issue-category.cross-section {
+            background: #8b5cf6;
+            color: white;
+            font-weight: 600;
+        }
+
+        .cross-section-badge {
+            background: #8b5cf6;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            margin-left: 6px;
+        }
+
+        .cross-section-sections {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+
+        .section-tag {
+            background: rgba(139, 92, 246, 0.1);
+            color: #7c3aed;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Document Status Indicator */
+        .document-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            color: #6b7280;
+            background: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .doc-indicator {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .doc-indicator.ready {
+            background: #10b981;
+            color: white;
+        }
+
+        .doc-indicator.analyzing {
+            background: #f59e0b;
+            color: white;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .doc-indicator.error {
+            background: #ef4444;
+            color: white;
+        }
+
+        .doc-indicator.not-ready {
+            background: #9ca3af;
+            color: white;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    `;
+    document.head.appendChild(styles);
+    console.log('🔀 Cross-section styles injected');
+}
+
+// ============================================================================
+// END DOCUMENT INTELLIGENCE MODULE
+// ============================================================================
+
 // Office.js initialization
 Office.onReady((info) => {
     console.log("📦 Office.onReady called, host:", info.host);
@@ -279,11 +614,17 @@ Office.onReady((info) => {
         initializeUI();
         setupEventListeners();
         injectAmendmentRiskStyles();  // Layer 3: Amendment Risk UI styles
+        injectCrossSectionStyles();   // Document Intelligence: Cross-section card styles
         setupSelectionCounter();  // Live character counter
         updateStatus('Ready', 'ready');
 
         // Set initial UI state
         IlanaState.uiState = 'idle';
+
+        // Initialize Document Intelligence (background, non-blocking)
+        initializeDocumentIntelligence().catch(err => {
+            console.warn('⚠️ Document intelligence failed to initialize:', err);
+        });
 
         // Diagnostic: Verify button is wired
         console.log("🔍 Diagnostic - window.startAnalysis available:", typeof window.startAnalysis === 'function');
@@ -468,6 +809,12 @@ async function handleSelectionAnalysis(selectedText) {
             isTable: isTable  // Add table detection flag
         };
 
+        // Add document namespace if document intelligence is ready (Document Intelligence)
+        if (IlanaState.documentIntelligence.contextReady && IlanaState.documentIntelligence.namespace) {
+            payload.document_namespace = IlanaState.documentIntelligence.namespace;
+            console.log(`📄 Including document context: ${payload.document_namespace}`);
+        }
+
         if (isTable) {
             console.log('📊 Table data detected (contains tab characters)');
         }
@@ -589,7 +936,12 @@ async function displaySelectionSuggestions(analysisResult) {
             request_id: IlanaState.currentRequestId,
             // IMPORTANT: Preserve grouped suggestion fields
             grouped: suggestion.grouped || false,
-            sub_issues: suggestion.sub_issues || []
+            sub_issues: suggestion.sub_issues || [],
+            // Document Intelligence: Preserve cross-section conflict fields
+            source: suggestion.source || null,
+            cross_section_metadata: suggestion.cross_section_metadata || null,
+            // Amendment risk fields (Layer 3)
+            amendment_risk: suggestion.amendment_risk || null
         };
         console.log(`  - Mapped issue:`, { text: issue.text, suggestion: issue.suggestion, rationale: issue.rationale });
         issues.push(issue);
@@ -758,10 +1110,17 @@ function displaySuggestionCard(issue) {
     const isAmendmentRisk = issue.source === 'amendment_risk' || issue.amendment_risk;
     const amendmentRiskData = issue.amendment_risk || {};
 
+    // Check if this is a cross-section conflict (Document Intelligence)
+    const isCrossSection = issue.type === 'cross_section_conflict' || issue.source === 'cross_section_engine';
+    const crossSectionData = issue.cross_section_metadata || {};
+
     // Determine issue category
     let issueCategory;
     let categoryClass;
-    if (isAmendmentRisk) {
+    if (isCrossSection) {
+        issueCategory = 'Cross-Section';
+        categoryClass = 'cross-section';
+    } else if (isAmendmentRisk) {
         const riskLevel = amendmentRiskData.risk_level || 'medium';
         issueCategory = `Amendment Risk`;
         categoryClass = `amendment-risk risk-${riskLevel}`;
@@ -779,12 +1138,20 @@ function displaySuggestionCard(issue) {
         ? `<span class="risk-probability">${Math.round(amendmentRiskData.probability * 100)}% amended</span>`
         : '';
 
+    // Cross-section sections badge
+    const crossSectionBadge = isCrossSection && crossSectionData.sections_involved
+        ? `<span class="cross-section-badge">${crossSectionData.sections_involved.join(' ↔ ')}</span>`
+        : '';
+
+    // Determine card extra class
+    const cardExtraClass = isCrossSection ? 'cross-section-card' : (isAmendmentRisk ? 'amendment-risk-card' : '');
+
     return `
-        <div class="suggestion-card collapsed ${isAmendmentRisk ? 'amendment-risk-card' : ''}" data-issue-id="${issue.id}" onclick="toggleCardExpansion('${issue.id}')">
+        <div class="suggestion-card collapsed ${cardExtraClass}" data-issue-id="${issue.id}" onclick="toggleCardExpansion('${issue.id}')">
             <!-- Collapsed Header (always visible) -->
             <div class="card-header">
                 <span class="issue-category ${categoryClass}">${issueCategory}</span>
-                ${riskBadge}
+                ${riskBadge}${crossSectionBadge}
                 <span class="text-snippet">${textSnippet}</span>
                 <span class="expand-icon">›</span>
             </div>
@@ -795,6 +1162,14 @@ function displaySuggestionCard(issue) {
                 <div class="amendment-risk-banner">
                     <strong>Historical Pattern:</strong> "${amendmentRiskData.pattern || 'Similar language'}"
                     <br><small>${Math.round((amendmentRiskData.probability || 0) * 100)}% of protocols with this pattern required amendments</small>
+                </div>
+                ` : ''}
+                ${isCrossSection ? `
+                <div class="cross-section-banner" style="background: #f5f3ff; border: 1px solid #8b5cf6; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px; font-size: 0.875rem; color: #5b21b6;">
+                    <strong>Cross-Section Issue:</strong> ${crossSectionData.description || 'Inconsistency detected between protocol sections'}
+                    <div class="cross-section-sections" style="margin-top: 8px;">
+                        ${(crossSectionData.sections_involved || []).map(s => `<span class="section-tag">${s}</span>`).join('')}
+                    </div>
                 </div>
                 ` : ''}
 
@@ -810,7 +1185,7 @@ function displaySuggestionCard(issue) {
 
                 ${issue.rationale ? `
                 <div class="content-section">
-                    <label>${issue.clinical_rationale ? 'Clinical Rationale:' : isAmendmentRisk ? 'Risk Analysis:' : 'Regulatory Context:'}</label>
+                    <label>${issue.clinical_rationale ? 'Clinical Rationale:' : isCrossSection ? 'Consistency Analysis:' : isAmendmentRisk ? 'Risk Analysis:' : 'Regulatory Context:'}</label>
                     <div class="content-text rationale">${issue.rationale}</div>
                 </div>
                 ` : ''}

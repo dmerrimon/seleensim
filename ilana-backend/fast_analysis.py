@@ -426,7 +426,8 @@ async def analyze_fast(
     phase: Optional[str] = None,
     section: Optional[str] = None,  # Section-aware validation (Layer 2)
     request_id: Optional[str] = None,
-    is_table: bool = False  # New parameter for table detection
+    is_table: bool = False,  # New parameter for table detection
+    document_namespace: Optional[str] = None  # Document intelligence namespace
 ) -> Dict[str, Any]:
     """
     Fast synchronous analysis for protocol sections
@@ -439,6 +440,8 @@ async def analyze_fast(
         phase: Optional study phase
         section: Optional protocol section (eligibility, endpoints, statistics, etc.)
         request_id: Request tracking ID
+        is_table: Whether the selection is table data
+        document_namespace: Optional Pinecone namespace for document context
 
     Returns:
         {
@@ -513,6 +516,45 @@ async def analyze_fast(
 
         timings["amendment_risk_ms"] = int((time.time() - amendment_risk_start) * 1000)
 
+        # 1c. Retrieve document context and cross-section conflicts (Document Intelligence)
+        document_context_start = time.time()
+        document_context = None
+        cross_section_conflicts = []
+
+        if document_namespace:
+            try:
+                from document_cache import get_document_conflicts, get_document_cache
+                from cross_section_engine import get_relevant_conflicts
+
+                # Get document cache
+                cache = get_document_cache()
+                fingerprint = document_namespace.replace("doc_", "")
+
+                # Get section summaries for context
+                if fingerprint in cache._cache:
+                    section_summaries = cache._cache[fingerprint].section_summaries
+                    # Build related section context for prompt injection
+                    from document_processor import SECTION_RELATIONSHIPS
+                    related_sections = SECTION_RELATIONSHIPS.get(section, [])
+                    document_context = {
+                        "section_summaries": {k: v for k, v in section_summaries.items() if k in related_sections},
+                        "current_section": section,
+                    }
+                    logger.info(f"📄 [{req_id}] Retrieved document context: {list(document_context['section_summaries'].keys())}")
+
+                # Get relevant cross-section conflicts for this section
+                all_conflicts = get_document_conflicts(fingerprint)
+                if all_conflicts:
+                    cross_section_conflicts = get_relevant_conflicts(section or "general", all_conflicts)
+                    logger.info(f"🔀 [{req_id}] Retrieved {len(cross_section_conflicts)} relevant cross-section conflicts")
+
+            except ImportError as e:
+                logger.debug(f"Document intelligence modules not available: {e}")
+            except Exception as e:
+                logger.warning(f"⚠️ [{req_id}] Document context retrieval failed: {e}")
+
+        timings["document_context_ms"] = int((time.time() - document_context_start) * 1000)
+
         # Check cache (Step 6: Enhanced cache manager)
         cached_result = get_cached(
             text=trimmed_text,
@@ -576,7 +618,14 @@ async def analyze_fast(
 
         # 3. Build optimized prompt with RAG (exemplars + regulatory citations) (Step 4 + Step 8)
         # Pass section for section-aware prompts (Layer 2)
-        prompt_data = build_fast_prompt(trimmed_text, ta, rag_results, section=section)
+        # Pass document_context for document intelligence (Layer 5)
+        prompt_data = build_fast_prompt(
+            trimmed_text,
+            ta,
+            rag_results,
+            section=section,
+            document_context=document_context
+        )
 
         # 3a. Enhance prompt for table data if detected
         if is_table:
@@ -781,6 +830,14 @@ Table-Specific ICH-GCP Rules:
             )
 
         timings["validation_ms"] = int((time.time() - validation_start) * 1000)
+
+        # 5d. Add cross-section conflicts (Document Intelligence)
+        # These are already validated by the cross_section_engine, so add them directly
+        if cross_section_conflicts:
+            logger.info(f"🔀 [{req_id}] Adding {len(cross_section_conflicts)} cross-section conflicts to suggestions")
+            # Prepend cross-section conflicts so they appear first (most important)
+            validated_suggestions = cross_section_conflicts + validated_suggestions
+
         timings["postprocess_ms"] = int((time.time() - postprocess_start) * 1000)
         timings["total_ms"] = int((time.time() - start_time) * 1000)
 
@@ -809,6 +866,9 @@ Table-Specific ICH-GCP Rules:
                 # Step 8: RAG info
                 "rag_exemplars": len(rag_results.get('exemplars', [])),
                 "rag_enabled": len(rag_results.get('exemplars', [])) > 0,
+                # Document Intelligence info
+                "document_context_enabled": document_context is not None,
+                "cross_section_conflicts_count": len(cross_section_conflicts),
                 # Step 4: Token usage tracking
                 "tokens": {
                     "prompt": actual_tokens.get("prompt_tokens", token_info["total_input"]),

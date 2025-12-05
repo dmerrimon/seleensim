@@ -19,6 +19,12 @@
 <body>
     <div class="ilana-container">
 
+        <!-- Document Intelligence Status Indicator -->
+        <div class="document-status" id="doc-status" style="display: none;">
+            <span class="doc-indicator" id="doc-indicator">○</span>
+            <span id="doc-text">Analyzing document...</span>
+        </div>
+
         <!-- Header with Analyze Button -->
         <div class="ilana-header">
             <button class="analyze-btn" onclick="handleRecommendButton()">

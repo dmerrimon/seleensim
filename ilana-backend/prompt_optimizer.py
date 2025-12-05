@@ -337,7 +337,8 @@ def build_fast_prompt(
     text: str,
     ta: Optional[str] = None,
     rag_results: Optional[Dict[str, List[Dict[str, Any]]]] = None,
-    section: Optional[str] = None  # Layer 2: Section-aware validation
+    section: Optional[str] = None,  # Layer 2: Section-aware validation
+    document_context: Optional[Dict[str, Any]] = None  # Document Intelligence context
 ) -> Dict[str, Any]:
     """
     Build optimized prompt for fast analysis with RAG (protocol exemplars + regulatory citations) + feedback learning
@@ -347,6 +348,7 @@ def build_fast_prompt(
         ta: Optional therapeutic area hint
         rag_results: Optional Dict with 'exemplars' and 'regulatory' lists from get_fast_exemplars()
         section: Optional protocol section (eligibility, endpoints, statistics, etc.) for section-aware prompts
+        document_context: Optional document context with section summaries for cross-section awareness
 
     Returns:
         Dict with system and user messages, token counts
@@ -378,6 +380,26 @@ def build_fast_prompt(
     # Inject section-specific instructions (Layer 2) before the text
     if section_instructions:
         text = f"{section_instructions}\n{text}"
+
+    # Build document context section (Document Intelligence)
+    document_context_section = ""
+    if document_context and document_context.get("section_summaries"):
+        summaries = document_context["section_summaries"]
+        current_section = document_context.get("current_section", "general")
+
+        if summaries:
+            document_context_section = "\nDOCUMENT CONTEXT (From other protocol sections):\n"
+            for section_type, summary in summaries.items():
+                # Truncate summaries to ~300 chars each
+                truncated = summary[:300] + "..." if len(summary) > 300 else summary
+                document_context_section += f"\n[{section_type.upper()} section excerpt]:\n{truncated}\n"
+
+            document_context_section += f"\nYou are currently analyzing the {current_section.upper()} section. "
+            document_context_section += "Ensure your suggestions are consistent with the other protocol sections above.\n"
+
+            # Prepend document context before the selected text
+            text = f"{document_context_section}\nSELECTED TEXT TO ANALYZE:\n{text}"
+            logger.info(f"Injected document context for sections: {list(summaries.keys())}")
 
     # Load feedback-based examples (Phase 2B - Adaptive Learning)
     feedback_examples = load_feedback_examples()
