@@ -83,3 +83,25 @@ services:
       - key: ENABLE_PUBMEDBERT
         value: true  # Enable PubMedBERT medical inference
                      # Set to false for Option 1 (disable PubMedBERT)
+
+      # ==========================================
+      # SEAT MANAGEMENT (AppSource Freemium)
+      # ==========================================
+      # PostgreSQL database for user/seat tracking
+      - key: DATABASE_URL
+        sync: false  # Set in dashboard - Render provides this with PostgreSQL add-on
+
+      # Azure AD for Microsoft SSO authentication
+      - key: AZURE_CLIENT_ID
+        sync: false  # Azure Portal > App registrations > Application (client) ID
+
+      - key: AZURE_TENANT_ID
+        value: common  # 'common' for multi-tenant
+
+      # Seat enforcement (set to 'true' when ready to enforce)
+      - key: ENFORCE_SEATS
+        value: false
+
+      # AppSource webhook secret for license updates
+      - key: APPSOURCE_WEBHOOK_SECRET
+        sync: false  # Generate random string, configure in Partner Center

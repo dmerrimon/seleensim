@@ -45,6 +45,16 @@ const IlanaState = {
         conflictsDetected: 0,
         lastProcessedAt: null,
         error: null
+    },
+
+    // Seat Management State
+    seatManagement: {
+        hasSeat: null,       // null = unknown, true = has seat, false = no seat
+        status: null,        // 'ok', 'no_seats', 'revoked', 'new_seat'
+        isAdmin: false,
+        seatsUsed: 0,
+        seatsTotal: 0,
+        validated: false     // Has seat validation been attempted?
     }
 };
 
@@ -591,6 +601,224 @@ function injectCrossSectionStyles() {
 // END DOCUMENT INTELLIGENCE MODULE
 // ============================================================================
 
+// ============================================================================
+// SEAT MANAGEMENT MODULE
+// ============================================================================
+
+/**
+ * Validate user seat via backend API
+ * Uses Office.js SSO to get Azure AD token
+ * @returns {Promise<boolean>} True if user has seat, false otherwise
+ */
+async function validateUserSeat() {
+    console.log('🔐 Validating user seat...');
+
+    try {
+        // Try to get Azure AD token from Office.js SSO
+        let token = null;
+        try {
+            token = await Office.auth.getAccessToken({
+                allowSignInPrompt: true,
+                allowConsentPrompt: true
+            });
+            console.log('✅ Got Azure AD token from Office SSO');
+        } catch (ssoError) {
+            console.warn('⚠️ Office SSO not available:', ssoError.message);
+            // In development or when SSO fails, allow bypass
+            // Production will require proper SSO setup
+            IlanaState.seatManagement.validated = true;
+            IlanaState.seatManagement.hasSeat = true;
+            IlanaState.seatManagement.status = 'bypass';
+            console.log('🔓 Seat validation bypassed (SSO not available)');
+            return true;
+        }
+
+        // Validate with backend
+        const response = await fetch(`${API_CONFIG.baseUrl}/api/auth/validate`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            if (response.status === 401) {
+                console.error('❌ Authentication failed');
+                showAuthError('Authentication failed. Please sign in again.');
+                return false;
+            }
+            throw new Error(`Seat validation failed: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('📋 Seat validation response:', data);
+
+        // Update state
+        IlanaState.seatManagement.validated = true;
+        IlanaState.seatManagement.status = data.status;
+        IlanaState.seatManagement.hasSeat = data.status === 'ok' || data.status === 'new_seat';
+
+        if (data.user) {
+            IlanaState.seatManagement.isAdmin = data.user.is_admin;
+            // Update telemetry with user info
+            IlanaState.telemetry.user_id = data.user.id;
+        }
+
+        if (data.tenant) {
+            IlanaState.seatManagement.seatsUsed = data.tenant.seats_used;
+            IlanaState.seatManagement.seatsTotal = data.tenant.seats_total;
+        }
+
+        if (data.status === 'no_seats' || data.status === 'revoked') {
+            console.warn('⚠️ User does not have a seat:', data.message);
+            showNoSeatsMessage(data);
+            return false;
+        }
+
+        console.log('✅ User has valid seat');
+        return true;
+
+    } catch (error) {
+        console.error('❌ Seat validation error:', error);
+        // On error, allow access but log the issue
+        // This prevents lockout during development/testing
+        IlanaState.seatManagement.validated = true;
+        IlanaState.seatManagement.hasSeat = true;
+        IlanaState.seatManagement.status = 'error_bypass';
+        console.log('🔓 Seat validation error bypass (allowing access)');
+        return true;
+    }
+}
+
+/**
+ * Show "No Seats Available" UI
+ * Disables the main functionality and shows a message
+ */
+function showNoSeatsMessage(data) {
+    const issuesList = document.getElementById('issues-list');
+    if (!issuesList) return;
+
+    const seatsTotal = data.tenant?.seats_total || 20;
+    const message = data.status === 'revoked'
+        ? 'Your seat has been revoked by an admin.'
+        : `All ${seatsTotal} seats in your organization are occupied.`;
+
+    issuesList.innerHTML = `
+        <div class="no-seats-container">
+            <div class="no-seats-icon">&#9888;</div>
+            <div class="no-seats-title">No Seats Available</div>
+            <div class="no-seats-message">${message}</div>
+            <div class="no-seats-help">
+                Contact your admin to:
+                <ul>
+                    <li>Free up a seat</li>
+                    <li>Purchase more seats</li>
+                </ul>
+            </div>
+        </div>
+    `;
+
+    // Disable the analyze button
+    const analyzeBtn = document.querySelector('.analyze-btn');
+    if (analyzeBtn) {
+        analyzeBtn.disabled = true;
+        analyzeBtn.style.opacity = '0.5';
+        analyzeBtn.style.cursor = 'not-allowed';
+    }
+
+    // Hide the selection counter
+    const selectionCounter = document.getElementById('selection-counter');
+    if (selectionCounter) {
+        selectionCounter.style.display = 'none';
+    }
+}
+
+/**
+ * Show authentication error message
+ */
+function showAuthError(message) {
+    const issuesList = document.getElementById('issues-list');
+    if (!issuesList) return;
+
+    issuesList.innerHTML = `
+        <div class="no-seats-container">
+            <div class="no-seats-icon">&#128274;</div>
+            <div class="no-seats-title">Authentication Required</div>
+            <div class="no-seats-message">${message || 'Please sign in to continue.'}</div>
+        </div>
+    `;
+
+    // Disable the analyze button
+    const analyzeBtn = document.querySelector('.analyze-btn');
+    if (analyzeBtn) {
+        analyzeBtn.disabled = true;
+        analyzeBtn.style.opacity = '0.5';
+    }
+}
+
+/**
+ * Inject CSS styles for no-seats UI
+ */
+function injectNoSeatsStyles() {
+    const styleId = 'ilana-no-seats-styles';
+    if (document.getElementById(styleId)) return;
+
+    const styles = document.createElement('style');
+    styles.id = styleId;
+    styles.textContent = `
+        .no-seats-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+            color: #666;
+        }
+
+        .no-seats-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: #f59e0b;
+        }
+
+        .no-seats-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .no-seats-message {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+            max-width: 280px;
+        }
+
+        .no-seats-help {
+            font-size: 13px;
+            color: #888;
+            text-align: left;
+        }
+
+        .no-seats-help ul {
+            margin: 8px 0 0 0;
+            padding-left: 20px;
+        }
+
+        .no-seats-help li {
+            margin: 4px 0;
+        }
+    `;
+    document.head.appendChild(styles);
+}
+
+// ============================================================================
+// END SEAT MANAGEMENT MODULE
+// ============================================================================
+
 // Office.js initialization
 Office.onReady((info) => {
     console.log("📦 Office.onReady called, host:", info.host);
@@ -601,6 +829,9 @@ Office.onReady((info) => {
         // Reset state on load (defensive fix for stuck flag)
         IlanaState.isAnalyzing = false;
         console.log("🔄 State reset: isAnalyzing = false");
+
+        // Inject no-seats styles early
+        injectNoSeatsStyles();
 
         // Initialize telemetry
         if (typeof IlanaTelemetry !== 'undefined') {
@@ -620,6 +851,18 @@ Office.onReady((info) => {
 
         // Set initial UI state
         IlanaState.uiState = 'idle';
+
+        // Validate user seat (background, non-blocking)
+        // Note: Currently allows bypass for development - enable enforcement when ready
+        validateUserSeat().then(hasSeat => {
+            if (hasSeat) {
+                console.log('✅ Seat validation passed, full functionality enabled');
+            } else {
+                console.warn('⚠️ Seat validation failed, functionality limited');
+            }
+        }).catch(err => {
+            console.warn('⚠️ Seat validation error:', err);
+        });
 
         // Initialize Document Intelligence (background, non-blocking)
         initializeDocumentIntelligence().catch(err => {

@@ -76,6 +76,25 @@ from rl_feedback import (
     store_reinforcement_event
 )
 
+# Import seat management and auth modules
+try:
+    from database import init_database
+    from api.auth_routes import router as auth_router
+    from api.admin import router as admin_router
+    from api.webhooks import router as webhooks_router
+    from auth import verify_seat_access, ENFORCE_SEATS
+    SEAT_MANAGEMENT_AVAILABLE = True
+    logger_temp = logging.getLogger(__name__)
+    logger_temp.info("Seat management modules loaded successfully")
+    logger_temp.info(f"Seat enforcement: {'ENABLED' if ENFORCE_SEATS else 'DISABLED'}")
+except ImportError as e:
+    SEAT_MANAGEMENT_AVAILABLE = False
+    ENFORCE_SEATS = False
+    verify_seat_access = None
+    webhooks_router = None
+    logger_temp = logging.getLogger(__name__)
+    logger_temp.warning(f"Seat management not available: {e}")
+
 # Fallback InlineSuggestion
 from dataclasses import dataclass
 @dataclass
@@ -210,6 +229,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Include seat management routers if available
+if SEAT_MANAGEMENT_AVAILABLE:
+    app.include_router(auth_router)
+    app.include_router(admin_router)
+    if webhooks_router:
+        app.include_router(webhooks_router)
+    logger.info("✅ Seat management API routes registered")
+
 # Global error handlers for structured error responses
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request: Request, exc: HTTPException):
@@ -264,8 +291,19 @@ async def add_request_id_middleware(request: Request, call_next):
 async def startup_event():
     """Initialize enterprise AI service on startup"""
     global enterprise_ai_service
-    
+
     logger.info("🚀 Starting Enterprise Ilana AI Service")
+
+    # Initialize seat management database
+    if SEAT_MANAGEMENT_AVAILABLE:
+        try:
+            db_initialized = init_database()
+            if db_initialized:
+                logger.info("✅ Seat management database initialized")
+            else:
+                logger.warning("⚠️ Seat management database not configured (DATABASE_URL not set)")
+        except Exception as e:
+            logger.warning(f"⚠️ Seat management database initialization failed: {e}")
     
     if ENTERPRISE_AVAILABLE:
         try:
@@ -1539,10 +1577,28 @@ async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
 
     Payload: {"text": str, "mode": "selection", "request_id": str}
     Returns: {"status": "fast"|"queued", "request_id": str, "suggestions": [...]}
+
+    Seat enforcement: When ENFORCE_SEATS=true, requires valid Azure AD token
+    and active seat assignment.
     """
     import time
     import hashlib
     start_time = time.time()
+
+    # Seat enforcement check (when enabled)
+    if SEAT_MANAGEMENT_AVAILABLE and ENFORCE_SEATS and verify_seat_access:
+        from fastapi.security import HTTPAuthorizationCredentials
+        auth_header = request.headers.get("Authorization", "")
+        if auth_header.startswith("Bearer "):
+            token = auth_header[7:]
+            credentials = HTTPAuthorizationCredentials(scheme="Bearer", credentials=token)
+            await verify_seat_access(request, credentials)
+        else:
+            # No auth header when enforcement is enabled
+            raise HTTPException(
+                status_code=401,
+                detail="Authorization required. Please sign in."
+            )
 
     payload = await request.json()
     req_id = payload.get("request_id") or _generate_request_id()

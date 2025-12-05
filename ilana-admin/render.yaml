@@ -1,0 +1,17 @@
+# Render Blueprint for Ilana Admin Portal
+# Deploy with: render blueprint apply
+
+services:
+  - type: web
+    name: ilana-admin
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NEXT_PUBLIC_AZURE_CLIENT_ID
+        sync: false  # Set manually in dashboard
+      - key: NEXT_PUBLIC_AZURE_TENANT_ID
+        value: common
+      - key: NEXT_PUBLIC_API_URL
+        value: https://ilanalabs-add-in.onrender.com
