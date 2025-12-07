@@ -135,19 +135,30 @@ class Subscription(Base):
     """
     AppSource subscription for a tenant
 
-    Tracks seat count and plan type. Updated via AppSource webhook
+    Tracks seat count, plan type, and trial status. Updated via AppSource webhook
     when licenses change.
+
+    Trial Model:
+    - New tenants start with 14-day trial (10 seats, full features)
+    - After trial: 7-day read-only grace period
+    - After grace: blocked until subscription
+    - AppSource purchase sets converted_at and updates plan_type to "active"
     """
     __tablename__ = "subscriptions"
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     tenant_id = Column(UUID(as_uuid=True), ForeignKey("tenants.id"), nullable=False)
-    seat_count = Column(Integer, nullable=False, default=20)  # Free tier default
-    plan_type = Column(String(50), default="free")  # free, pro, enterprise
+    seat_count = Column(Integer, nullable=False, default=10)  # Trial: 10 seats
+    plan_type = Column(String(50), default="trial")  # trial, active, expired, cancelled
     status = Column(String(50), default="active")  # active, cancelled, expired
     appsource_subscription_id = Column(String(255))
     created_at = Column(DateTime, default=datetime.utcnow)
     expires_at = Column(DateTime)
+
+    # Trial tracking
+    trial_started_at = Column(DateTime)  # Set on first user login
+    trial_ends_at = Column(DateTime)     # trial_started_at + 14 days
+    converted_at = Column(DateTime)      # When they subscribed (null = trial/expired)
 
     # Relationships
     tenant = relationship("Tenant", back_populates="subscriptions")

@@ -167,6 +167,68 @@ export default function Dashboard() {
 
       {/* Main Content */}
       <main className="container" style={{ paddingTop: 32, paddingBottom: 64 }}>
+        {/* Trial Status Banner */}
+        {data.trial && data.trial.is_trial && (
+          <div className={`trial-banner trial-banner-${data.trial.status}`}>
+            {data.trial.status === 'trial' && (
+              <>
+                <span className="trial-badge">TRIAL</span>
+                <span className="trial-text">
+                  {data.trial.days_remaining} day{data.trial.days_remaining !== 1 ? 's' : ''} remaining
+                </span>
+                <a
+                  href="https://appsource.microsoft.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="trial-link"
+                >
+                  Subscribe Now &rarr;
+                </a>
+              </>
+            )}
+            {data.trial.status === 'expired' && (
+              <>
+                <span className="trial-badge trial-badge-expired">EXPIRED</span>
+                <span className="trial-text">
+                  Trial ended &mdash; {data.trial.grace_days_remaining ?? 0} day{(data.trial.grace_days_remaining ?? 0) !== 1 ? 's' : ''} to subscribe
+                </span>
+                <a
+                  href="https://appsource.microsoft.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="trial-link trial-link-urgent"
+                >
+                  Subscribe to Continue &rarr;
+                </a>
+              </>
+            )}
+            {data.trial.status === 'blocked' && (
+              <>
+                <span className="trial-badge trial-badge-blocked">BLOCKED</span>
+                <span className="trial-text">
+                  Trial expired &mdash; Subscribe to restore access
+                </span>
+                <a
+                  href="https://appsource.microsoft.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="trial-link trial-link-urgent"
+                >
+                  Subscribe Now &rarr;
+                </a>
+              </>
+            )}
+          </div>
+        )}
+
+        {/* Active Subscription Banner */}
+        {data.trial && !data.trial.is_trial && (
+          <div className="trial-banner trial-banner-active">
+            <span className="trial-badge trial-badge-active">SUBSCRIBED</span>
+            <span className="trial-text">Active subscription</span>
+          </div>
+        )}
+
         {/* Seat Usage */}
         <div className="card seat-usage">
           <div className="seat-usage-header">

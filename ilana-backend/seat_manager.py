@@ -29,11 +29,17 @@ from database import (
     get_users_with_seats,
 )
 from auth import TokenClaims
+from trial_manager import (
+    TRIAL_DURATION_DAYS,
+    TRIAL_SEAT_COUNT,
+    calculate_trial_end_date,
+    get_trial_status,
+)
 
 logger = logging.getLogger(__name__)
 
-# Default seat count for free tier
-DEFAULT_FREE_SEATS = 20
+# Default seat count for trial
+DEFAULT_TRIAL_SEATS = TRIAL_SEAT_COUNT  # 10 seats during trial
 
 # Days of inactivity to flag user
 INACTIVE_DAYS_THRESHOLD = 30
@@ -206,19 +212,27 @@ def get_or_create_tenant(db: Session, azure_tenant_id: str) -> Tenant:
 
 
 def get_or_create_subscription(db: Session, tenant_id: uuid.UUID) -> Subscription:
-    """Get existing subscription or create free tier"""
+    """Get existing subscription or create 14-day trial"""
     subscription = get_active_subscription(db, tenant_id)
 
     if not subscription:
+        now = datetime.utcnow()
+        trial_end = calculate_trial_end_date(now)
+
         subscription = Subscription(
             tenant_id=tenant_id,
-            seat_count=DEFAULT_FREE_SEATS,
-            plan_type="free",
+            seat_count=DEFAULT_TRIAL_SEATS,
+            plan_type="trial",
             status="active",
+            trial_started_at=now,
+            trial_ends_at=trial_end,
         )
         db.add(subscription)
         db.flush()
-        logger.info(f"Created free subscription for tenant {tenant_id}")
+        logger.info(
+            f"Started {TRIAL_DURATION_DAYS}-day trial for tenant {tenant_id} "
+            f"(ends {trial_end.strftime('%Y-%m-%d')})"
+        )
 
     return subscription
 
@@ -444,6 +458,9 @@ def get_admin_dashboard_data(
         and datetime.fromisoformat(u["last_active_at"]) < inactive_threshold
     ]
 
+    # Get trial status for admin dashboard
+    trial_status = get_trial_status(subscription)
+
     return {
         "tenant": {
             "id": str(tenant.id),
@@ -461,6 +478,14 @@ def get_admin_dashboard_data(
             "users_with_seats": len([u for u in users if u["has_seat"]]),
             "inactive_users": len(inactive_users),
             "inactive_threshold_days": INACTIVE_DAYS_THRESHOLD,
+        },
+        "trial": {
+            "status": trial_status["status"],
+            "is_trial": trial_status["is_trial"],
+            "days_remaining": trial_status["days_remaining"],
+            "grace_days_remaining": trial_status.get("grace_days_remaining"),
+            "ends_at": trial_status.get("trial_ends_at"),
+            "message": trial_status["message"],
         },
     }
 
@@ -518,6 +543,6 @@ __all__ = [
     "restore_user_seat",
     "get_admin_dashboard_data",
     "update_seat_count",
-    "DEFAULT_FREE_SEATS",
+    "DEFAULT_TRIAL_SEATS",
     "INACTIVE_DAYS_THRESHOLD",
 ]

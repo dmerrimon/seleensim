@@ -7,7 +7,7 @@
 
 By installing, accessing, or using the Ilana AI Microsoft Word add-in ("Service"), you ("User," "you," or "your") agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the Service.
 
-These Terms constitute a legally binding agreement between you and Ilana AI ("we," "us," or "our").
+These Terms constitute a legally binding agreement between you and Ilana Immersive, LLC ("we," "us," or "our").
 
 ## 2. Description of Service
 
@@ -100,7 +100,7 @@ We strive to maintain high availability but do not guarantee uninterrupted acces
 - Force majeure events
 
 ### 9.2 Support
-We provide email support at support@ilanai.com with:
+We provide email support at support@ilanaimmersive.com with:
 - Response time: 1-2 business days for standard inquiries
 - Priority support may be available for enterprise customers
 
@@ -141,7 +141,7 @@ You agree to indemnify, defend, and hold harmless Ilana AI and its officers, emp
 ### 12.1 By You
 You may terminate your account at any time by:
 - Uninstalling the add-in
-- Emailing support@ilanai.com to request account deletion
+- Emailing support@ilanaimmersive.com to request account deletion
 
 ### 12.2 By Us
 We may suspend or terminate your access immediately if:
@@ -168,16 +168,16 @@ We may update these Terms at any time. When we do:
 ## 14. Governing Law and Disputes
 
 ### 14.1 Governing Law
-These Terms are governed by the laws of [Your State/Country], without regard to conflict of law principles.
+These Terms are governed by the laws of the State of Tennessee, United States, without regard to conflict of law principles.
 
 ### 14.2 Dispute Resolution
-**Informal Resolution:** Before filing a claim, you agree to contact us at legal@ilanai.com to attempt informal resolution.
+**Informal Resolution:** Before filing a claim, you agree to contact us at legal@ilanaimmersive.com to attempt informal resolution.
 
 **Arbitration (Optional):**
 [If you want to include arbitration, add details here. Many startups omit this initially.]
 
 ### 14.3 Venue
-Any legal action must be brought in the state or federal courts located in [Your County/State].
+Any legal action must be brought in the state or federal courts located in Davidson County, Tennessee.
 
 ## 15. Miscellaneous
 
@@ -209,10 +209,11 @@ We are not liable for delays or failures due to events beyond our reasonable con
 
 For questions about these Terms:
 
-**Email:** legal@ilanai.com
-**Support:** support@ilanai.com
-**Address:** [Your Business Address]
-**Website:** [Your Website URL]
+**Ilana Immersive, LLC**
+**Address:** 41 Peabody St., Nashville, Tennessee 37210
+**Email:** legal@ilanaimmersive.com
+**Support:** support@ilanaimmersive.com
+**Website:** https://ilanaimmersive.com
 
 ## 17. Acknowledgments
 

@@ -42,6 +42,9 @@ import uvicorn
 from fastapi import FastAPI, HTTPException, Request, Query, Header, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse, FileResponse
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 import uuid
@@ -78,11 +81,12 @@ from rl_feedback import (
 
 # Import seat management and auth modules
 try:
-    from database import init_database
+    from database import init_database, get_tenant_by_azure_id, get_active_subscription
     from api.auth_routes import router as auth_router
     from api.admin import router as admin_router
     from api.webhooks import router as webhooks_router
     from auth import verify_seat_access, ENFORCE_SEATS
+    from trial_manager import get_trial_status
     SEAT_MANAGEMENT_AVAILABLE = True
     logger_temp = logging.getLogger(__name__)
     logger_temp.info("Seat management modules loaded successfully")
@@ -92,6 +96,9 @@ except ImportError as e:
     ENFORCE_SEATS = False
     verify_seat_access = None
     webhooks_router = None
+    get_trial_status = None
+    get_tenant_by_azure_id = None
+    get_active_subscription = None
     logger_temp = logging.getLogger(__name__)
     logger_temp.warning(f"Seat management not available: {e}")
 
@@ -204,6 +211,9 @@ class ExplainSuggestionRequest(BaseModel):
     ta: Optional[str] = Field(None, description="Therapeutic area")
     analysis_mode: Optional[str] = Field("legacy", description="Analysis mode used")
 
+# Rate limiter configuration
+limiter = Limiter(key_func=get_remote_address)
+
 # FastAPI app
 app = FastAPI(
     title="Ilana Protocol Intelligence API",
@@ -213,21 +223,77 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
-# Configure CORS for development and Office Add-ins
+# Register rate limiter
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+# Configure CORS for Office Add-ins and production
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "*",  # Allow all origins for dev
-        "https://*.office.com",
-        "https://*.microsoft.com", 
-        "https://*.sharepoint.com",
-        "https://localhost:*",
-        "http://localhost:*"
+        # Production: Ilana backend/frontend
+        "https://ilanalabs-add-in.onrender.com",
+        # Microsoft Office Online domains
+        "https://word.officeapps.live.com",
+        "https://excel.officeapps.live.com",
+        "https://www.office.com",
+        "https://outlook.office.com",
+        "https://outlook.office365.com",
+        # SharePoint Online
+        "https://www.sharepoint.com",
+        # Development
+        "http://localhost:3000",
+        "http://localhost:8000",
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:8000",
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
+
+# Security Headers Middleware for SOC 2 compliance
+from starlette.middleware.base import BaseHTTPMiddleware
+
+class SecurityHeadersMiddleware(BaseHTTPMiddleware):
+    """Add security headers to all responses for SOC 2 compliance"""
+
+    async def dispatch(self, request: Request, call_next):
+        response = await call_next(request)
+
+        # HSTS - Force HTTPS
+        response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+
+        # Prevent MIME type sniffing
+        response.headers["X-Content-Type-Options"] = "nosniff"
+
+        # Clickjacking protection
+        response.headers["X-Frame-Options"] = "DENY"
+
+        # XSS protection (legacy browsers)
+        response.headers["X-XSS-Protection"] = "1; mode=block"
+
+        # Referrer policy
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+
+        # Permissions policy (restrict browser features)
+        response.headers["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
+
+        # Content Security Policy (relaxed for Office Add-in compatibility)
+        # Office Add-ins need to load from various Microsoft domains
+        response.headers["Content-Security-Policy"] = (
+            "default-src 'self'; "
+            "script-src 'self' 'unsafe-inline' https://*.office.com https://*.office365.com; "
+            "style-src 'self' 'unsafe-inline'; "
+            "img-src 'self' data: https:; "
+            "connect-src 'self' https://*.office.com https://*.office365.com https://*.microsoft.com; "
+            "frame-ancestors https://*.office.com https://*.office365.com"
+        )
+
+        return response
+
+app.add_middleware(SecurityHeadersMiddleware)
+logger.info("✅ Security headers middleware enabled")
 
 # Include seat management routers if available
 if SEAT_MANAGEMENT_AVAILABLE:
@@ -1568,6 +1634,7 @@ async def debug_handler_types():
     return info
 
 @app.post("/api/analyze")
+@limiter.limit("10/minute")
 async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
     """
     Protocol analysis with automatic fast/deep path selection
@@ -1586,19 +1653,67 @@ async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
     start_time = time.time()
 
     # Seat enforcement check (when enabled)
+    user_context = None
     if SEAT_MANAGEMENT_AVAILABLE and ENFORCE_SEATS and verify_seat_access:
         from fastapi.security import HTTPAuthorizationCredentials
         auth_header = request.headers.get("Authorization", "")
         if auth_header.startswith("Bearer "):
             token = auth_header[7:]
             credentials = HTTPAuthorizationCredentials(scheme="Bearer", credentials=token)
-            await verify_seat_access(request, credentials)
+            user_context = await verify_seat_access(request, credentials)
         else:
             # No auth header when enforcement is enabled
             raise HTTPException(
                 status_code=401,
                 detail="Authorization required. Please sign in."
             )
+
+    # Trial status check (14-day trial model)
+    trial_status = None
+    if SEAT_MANAGEMENT_AVAILABLE and ENFORCE_SEATS and get_trial_status and user_context:
+        # Get subscription to check trial status
+        try:
+            from database import get_db_session
+            with get_db_session() as db:
+                tenant = get_tenant_by_azure_id(db, user_context.get("tenant_id", ""))
+                if tenant:
+                    subscription = get_active_subscription(db, tenant.id)
+                    if subscription:
+                        trial_status = get_trial_status(subscription)
+
+                        # Block if trial fully expired (past grace period)
+                        if not trial_status["can_access"]:
+                            logger.warning(f"🚫 Trial expired and blocked for tenant {tenant.id}")
+                            return JSONResponse(
+                                status_code=403,
+                                content={
+                                    "status": "error",
+                                    "error": "trial_expired",
+                                    "message": trial_status["message"],
+                                    "trial_status": trial_status["status"],
+                                    "subscribe_url": "https://appsource.microsoft.com/",
+                                }
+                            )
+
+                        # Block analysis if in read-only grace period
+                        if trial_status["read_only"]:
+                            logger.warning(f"⚠️ Trial in grace period for tenant {tenant.id}")
+                            return JSONResponse(
+                                status_code=403,
+                                content={
+                                    "status": "error",
+                                    "error": "trial_grace_period",
+                                    "message": trial_status["message"],
+                                    "trial_status": trial_status["status"],
+                                    "grace_days_remaining": trial_status.get("grace_days_remaining"),
+                                    "subscribe_url": "https://appsource.microsoft.com/",
+                                }
+                            )
+
+                        logger.info(f"✅ Trial check passed: {trial_status['status']} ({trial_status.get('days_remaining')} days left)")
+        except Exception as e:
+            logger.error(f"Trial status check failed: {e}")
+            # Allow access on error to prevent lockouts
 
     payload = await request.json()
     req_id = payload.get("request_id") or _generate_request_id()
@@ -1655,7 +1770,7 @@ async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
                 section=section,  # Section-aware validation (Layer 2)
                 request_id=req_id,
                 is_table=is_table,  # Pass table flag to analysis function
-                document_namespace=payload.get("document_namespace")  # Document Intelligence
+                document_namespace=payload.get("document_namespace"),  # Document Intelligence
             )
 
             # End telemetry trace

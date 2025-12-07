@@ -23,6 +23,11 @@ from typing import Optional
 from fastapi import APIRouter, Request, HTTPException, Header
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
+from slowapi import Limiter
+from slowapi.util import get_remote_address
+
+# Rate limiter for webhook endpoints
+limiter = Limiter(key_func=get_remote_address)
 
 from database import get_db_session, get_tenant_by_azure_id
 from seat_manager import update_seat_count
@@ -101,6 +106,7 @@ def validate_webhook_signature(
 # =============================================================================
 
 @router.post("/appsource", response_model=WebhookResponse)
+@limiter.limit("100/minute")
 async def appsource_webhook(
     request: Request,
     x_ms_signature: Optional[str] = Header(None, alias="x-ms-signature"),

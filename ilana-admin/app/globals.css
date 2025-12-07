@@ -343,3 +343,78 @@ tr:hover {
 .gap-2 {
   gap: 8px;
 }
+
+/* Trial Status Banner */
+.trial-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.trial-banner-trial {
+  background: linear-gradient(90deg, #dbeafe, #bfdbfe);
+  border: 1px solid #3b82f6;
+}
+
+.trial-banner-expired {
+  background: linear-gradient(90deg, #fef3c7, #fde68a);
+  border: 1px solid #f59e0b;
+}
+
+.trial-banner-blocked {
+  background: linear-gradient(90deg, #fee2e2, #fecaca);
+  border: 1px solid #ef4444;
+}
+
+.trial-banner-active {
+  background: linear-gradient(90deg, #d1fae5, #a7f3d0);
+  border: 1px solid #10b981;
+}
+
+.trial-badge {
+  background: #3b82f6;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.trial-badge-expired {
+  background: #f59e0b;
+}
+
+.trial-badge-blocked {
+  background: #ef4444;
+}
+
+.trial-badge-active {
+  background: #10b981;
+}
+
+.trial-text {
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-800);
+}
+
+.trial-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.trial-link:hover {
+  text-decoration: underline;
+}
+
+.trial-link-urgent {
+  color: #dc2626;
+}

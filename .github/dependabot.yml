@@ -1,0 +1,79 @@
+# Dependabot Configuration for Ilana Protocol Intelligence
+# Automated security and dependency updates for SOC 2 compliance
+#
+# Documentation: https://docs.github.com/en/code-security/dependabot
+
+version: 2
+updates:
+  # Python dependencies (ilana-backend)
+  - package-ecosystem: "pip"
+    directory: "/ilana-backend"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Chicago"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "python"
+      - "security"
+    commit-message:
+      prefix: "deps(python)"
+    reviewers:
+      - "donmerriman"
+    # Group minor and patch updates to reduce PR noise
+    groups:
+      python-minor-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # npm dependencies (ilana-frontend)
+  - package-ecosystem: "npm"
+    directory: "/ilana-frontend"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Chicago"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "javascript"
+      - "security"
+    commit-message:
+      prefix: "deps(npm)"
+    reviewers:
+      - "donmerriman"
+    # Ignore major React version bumps (manual upgrade)
+    ignore:
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+    groups:
+      npm-minor-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Chicago"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci"
+    reviewers:
+      - "donmerriman"

@@ -3,13 +3,16 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
            xsi:type="TaskPaneApp">
 
-  <Id>12345678-1234-1234-1234-123456789012</Id>
+  <Id>ddbeac4e-4d7e-4ff8-b787-d20ae24807cd</Id>
   <Version>1.0.0</Version>
-  <ProviderName>Ilana Labs</ProviderName>
+  <ProviderName>Ilana Immersive</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Ilana" />
-  <Description DefaultValue="AI-Enhanced Protocol Analysis" />
-  
+  <Description DefaultValue="Analysis for clinical trial protocols. Get real-time suggestions for regulatory compliance, clarity, and precision." />
+
+  <IconUrl DefaultValue="https://ilanalabs-add-in.onrender.com/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://ilanalabs-add-in.onrender.com/icon-80.png"/>
+
   <Hosts>
     <Host Name="Document" />
   </Hosts>

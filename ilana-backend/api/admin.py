@@ -58,12 +58,23 @@ class StatsResponse(BaseModel):
     inactive_threshold_days: int
 
 
+class TrialResponse(BaseModel):
+    """Trial status for admin dashboard"""
+    status: str  # trial, expired, blocked, active
+    is_trial: bool
+    days_remaining: Optional[int]
+    grace_days_remaining: Optional[int] = None
+    ends_at: Optional[str] = None
+    message: str
+
+
 class DashboardResponse(BaseModel):
     """Full dashboard data"""
     tenant: dict
     subscription: SubscriptionResponse
     users: List[AdminUserResponse]
     stats: StatsResponse
+    trial: Optional[TrialResponse] = None
 
 
 class SeatActionResponse(BaseModel):
@@ -129,6 +140,7 @@ async def list_users(
         subscription=SubscriptionResponse(**data["subscription"]),
         users=[AdminUserResponse(**u) for u in data["users"]],
         stats=StatsResponse(**data["stats"]),
+        trial=TrialResponse(**data["trial"]) if data.get("trial") else None,
     )
 
 

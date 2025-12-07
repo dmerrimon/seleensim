@@ -34,6 +34,15 @@ interface Stats {
   inactive_threshold_days: number;
 }
 
+interface Trial {
+  status: 'trial' | 'expired' | 'blocked' | 'active';
+  is_trial: boolean;
+  days_remaining: number | null;
+  grace_days_remaining?: number | null;
+  ends_at?: string | null;
+  message: string;
+}
+
 export interface DashboardData {
   tenant: {
     id: string;
@@ -42,6 +51,7 @@ export interface DashboardData {
   subscription: Subscription;
   users: User[];
   stats: Stats;
+  trial?: Trial;
 }
 
 export interface SeatActionResult {
