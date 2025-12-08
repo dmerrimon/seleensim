@@ -427,12 +427,15 @@ async def analyze_fast(
     section: Optional[str] = None,  # Section-aware validation (Layer 2)
     request_id: Optional[str] = None,
     is_table: bool = False,  # New parameter for table detection
-    document_namespace: Optional[str] = None  # Document intelligence namespace
+    document_namespace: Optional[str] = None,  # Document intelligence namespace
 ) -> Dict[str, Any]:
     """
     Fast synchronous analysis for protocol sections
 
     Target: < 15 seconds total (typically 3-8s for uncached)
+
+    Note: Trial model (14-day trial) provides full features for all users.
+    Feature gating removed - all analysis capabilities are enabled.
 
     Args:
         text: Selected protocol text (up to 15000 chars = full sections)
@@ -453,6 +456,13 @@ async def analyze_fast(
     """
     start_time = time.time()
     req_id = request_id or f"fast_{int(time.time() * 1000)}"
+
+    # Full features enabled for all users (14-day trial model)
+    # No tier-based feature gating - all capabilities active during trial
+    enable_rag = True
+    enable_amendment_risk = True
+    enable_table_analysis = True
+    enable_document_intelligence = True
 
     logger.info(f"⚡ Fast analysis start: {req_id} (text_len={len(text)})")
 
@@ -499,29 +509,31 @@ async def analyze_fast(
 
         timings["rule_engine_ms"] = int((time.time() - rule_engine_start) * 1000)
 
-        # 1b. Run amendment risk prediction (Layer 3: Risk Prediction)
+        # 1b. Run amendment risk prediction (Layer 3: Risk Prediction) - TIER GATED
         amendment_risk_start = time.time()
         amendment_risks = []
 
-        try:
-            from amendment_risk import predict_amendment_risk, format_risk_for_suggestion
-            risk_predictions = predict_amendment_risk(trimmed_text, section=section, min_risk_level="medium", max_results=3)
-            if risk_predictions:
-                amendment_risks = [format_risk_for_suggestion(pred) for pred in risk_predictions]
-                logger.info(f"⚠️ [{req_id}] Amendment risk: {len(amendment_risks)} patterns detected (section={section or 'general'})")
-        except ImportError:
-            logger.debug("Amendment risk module not available, skipping Layer 3")
-        except Exception as e:
-            logger.warning(f"⚠️ [{req_id}] Amendment risk prediction failed: {e}")
+        if enable_amendment_risk:
+            try:
+                from amendment_risk import predict_amendment_risk, format_risk_for_suggestion
+                risk_predictions = predict_amendment_risk(trimmed_text, section=section, min_risk_level="medium", max_results=3)
+                if risk_predictions:
+                    amendment_risks = [format_risk_for_suggestion(pred) for pred in risk_predictions]
+                    logger.info(f"⚠️ [{req_id}] Amendment risk: {len(amendment_risks)} patterns detected (section={section or 'general'})")
+            except ImportError:
+                logger.debug("Amendment risk module not available, skipping Layer 3")
+            except Exception as e:
+                logger.warning(f"⚠️ [{req_id}] Amendment risk prediction failed: {e}")
+        # Amendment risk is always enabled during trial
 
         timings["amendment_risk_ms"] = int((time.time() - amendment_risk_start) * 1000)
 
-        # 1c. Retrieve document context and cross-section conflicts (Document Intelligence)
+        # 1c. Retrieve document context and cross-section conflicts (Document Intelligence) - TIER GATED
         document_context_start = time.time()
         document_context = None
         cross_section_conflicts = []
 
-        if document_namespace:
+        if document_namespace and enable_document_intelligence:
             try:
                 from document_cache import get_document_conflicts, get_document_cache
                 from cross_section_engine import get_relevant_conflicts
@@ -594,10 +606,10 @@ async def analyze_fast(
         rag_results = {'exemplars': [], 'regulatory': []}
 
         try:
-            # Only fetch RAG if Pinecone/PubMedBERT are enabled
-            enable_rag = os.getenv("ENABLE_PINECONE_INTEGRATION", "true").lower() == "true"
+            # Only fetch RAG if Pinecone/PubMedBERT are enabled (full features during trial)
+            rag_enabled = os.getenv("ENABLE_PINECONE_INTEGRATION", "true").lower() == "true" and enable_rag
 
-            if enable_rag:
+            if rag_enabled:
                 logger.info(f"🔍 [{req_id}] Fetching RAG exemplars + regulatory citations...")
                 rag_results = await get_fast_exemplars(trimmed_text, req_id)
 
@@ -627,8 +639,8 @@ async def analyze_fast(
             document_context=document_context
         )
 
-        # 3a. Enhance prompt for table data if detected
-        if is_table:
+        # 3a. Enhance prompt for table data if detected (full features during trial)
+        if is_table and enable_table_analysis:
             logger.info(f"📊 [{req_id}] Enhancing prompt for table analysis")
             table_instructions = """
 
@@ -681,6 +693,7 @@ Table-Specific ICH-GCP Rules:
                     f"✅ [{req_id}] Table instructions added successfully. "
                     f"New token count: {total_tokens_with_table}/{budget}"
                 )
+        # Table analysis is always enabled during trial
 
         # Log token budget info
         token_info = prompt_data["tokens"]

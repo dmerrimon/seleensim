@@ -54,7 +54,9 @@ const IlanaState = {
         isAdmin: false,
         seatsUsed: 0,
         seatsTotal: 0,
-        validated: false     // Has seat validation been attempted?
+        validated: false,    // Has seat validation been attempted?
+        planType: 'free',    // 'free', 'pro', 'enterprise'
+        features: null       // Tier-based feature config from backend
     }
 };
 
@@ -668,6 +670,13 @@ async function validateUserSeat() {
         if (data.tenant) {
             IlanaState.seatManagement.seatsUsed = data.tenant.seats_used;
             IlanaState.seatManagement.seatsTotal = data.tenant.seats_total;
+            IlanaState.seatManagement.planType = data.tenant.plan_type || 'trial';
+        }
+
+        // Store trial info if provided (14-day trial model)
+        if (data.trial) {
+            IlanaState.seatManagement.trial = data.trial;
+            console.log('📋 Trial info:', data.trial);
         }
 
         if (data.status === 'no_seats' || data.status === 'revoked') {
@@ -676,7 +685,12 @@ async function validateUserSeat() {
             return false;
         }
 
-        console.log('✅ User has valid seat');
+        // Show trial banner for trial users (14-day trial model)
+        if (data.trial && data.trial.is_trial) {
+            showTrialBanner(data.trial);
+        }
+
+        console.log('✅ User has valid seat (plan: ' + IlanaState.seatManagement.planType + ')');
         return true;
 
     } catch (error) {
@@ -758,6 +772,138 @@ function showAuthError(message) {
 }
 
 /**
+ * Show trial banner (14-day trial model)
+ * Displays trial countdown or expiration warning
+ * @param {Object} trialInfo - Trial status from backend
+ */
+function showTrialBanner(trialInfo) {
+    // Remove existing banner if any
+    const existingBanner = document.getElementById('trial-banner');
+    if (existingBanner) {
+        existingBanner.remove();
+    }
+
+    // Find the header area to append banner
+    const header = document.querySelector('.ilana-header') || document.querySelector('header') || document.body;
+
+    const banner = document.createElement('div');
+    banner.id = 'trial-banner';
+    banner.className = 'trial-banner';
+
+    if (trialInfo.status === 'trial') {
+        // Active trial - show days remaining
+        const daysText = trialInfo.days_remaining === 1 ? 'day' : 'days';
+        banner.innerHTML = `
+            <span class="trial-badge">TRIAL</span>
+            <span class="trial-text">${trialInfo.days_remaining} ${daysText} remaining</span>
+            <a href="#" class="trial-subscribe" onclick="showSubscribeInfo(); return false;">Subscribe Now</a>
+        `;
+        banner.classList.add('trial-active');
+    } else if (trialInfo.status === 'expired') {
+        // Grace period - read only warning
+        const graceDaysText = trialInfo.grace_days_remaining === 1 ? 'day' : 'days';
+        banner.innerHTML = `
+            <span class="trial-badge expired">EXPIRED</span>
+            <span class="trial-text">Trial ended - ${trialInfo.grace_days_remaining} ${graceDaysText} to subscribe</span>
+            <a href="#" class="trial-subscribe urgent" onclick="showSubscribeInfo(); return false;">Subscribe to Continue</a>
+        `;
+        banner.classList.add('trial-expired');
+    }
+
+    // Insert at top of body or after header
+    if (header === document.body) {
+        document.body.insertBefore(banner, document.body.firstChild);
+    } else {
+        header.parentNode.insertBefore(banner, header.nextSibling);
+    }
+
+    console.log('📋 Trial banner displayed:', trialInfo.status);
+}
+
+/**
+ * Show subscription information modal/message
+ */
+function showSubscribeInfo() {
+    const trial = IlanaState.seatManagement.trial || {};
+    const daysLeft = trial.days_remaining || 0;
+
+    let message = 'Subscribe to Ilana Protocol Intelligence\n\n';
+
+    if (trial.status === 'trial' && daysLeft > 0) {
+        message += `Your trial ends in ${daysLeft} days.\n\n`;
+    } else if (trial.status === 'expired') {
+        message += `Your trial has ended.\n`;
+        message += `You have ${trial.grace_days_remaining || 0} days left before access is blocked.\n\n`;
+    }
+
+    message += 'Full access includes:\n';
+    message += '✓ FDA/EMA regulatory citations (RAG)\n';
+    message += '✓ Amendment risk prediction\n';
+    message += '✓ Table structure analysis\n';
+    message += '✓ Cross-section conflict detection\n';
+    message += '✓ Document intelligence\n\n';
+    message += 'Subscribe via Microsoft AppSource or contact your admin.';
+
+    alert(message);
+}
+
+/**
+ * Show trial expired error when analysis is blocked
+ * @param {Object} errorData - Error response from backend
+ */
+function showTrialExpiredError(errorData) {
+    console.error('🚫 Trial expired:', errorData);
+
+    const issuesList = document.getElementById('issues-list');
+    if (!issuesList) return;
+
+    issuesList.innerHTML = `
+        <div class="trial-error-container">
+            <div class="trial-error-icon">&#9888;</div>
+            <div class="trial-error-title">Trial Expired</div>
+            <div class="trial-error-message">${errorData.message || 'Your trial has ended.'}</div>
+            <div class="trial-error-help">
+                Subscribe to continue using Ilana Protocol Intelligence.
+            </div>
+            <button class="trial-subscribe-btn" onclick="showSubscribeInfo()">
+                Subscribe Now
+            </button>
+        </div>
+    `;
+}
+
+/**
+ * Show grace period error when analysis is disabled
+ * @param {Object} errorData - Error response from backend
+ */
+function showTrialGracePeriodError(errorData) {
+    console.warn('⚠️ Trial in grace period:', errorData);
+
+    const issuesList = document.getElementById('issues-list');
+    if (!issuesList) return;
+
+    const graceDays = errorData.grace_days_remaining || 0;
+    const daysText = graceDays === 1 ? 'day' : 'days';
+
+    issuesList.innerHTML = `
+        <div class="trial-error-container grace-period">
+            <div class="trial-error-icon">&#9888;</div>
+            <div class="trial-error-title">Trial Ended</div>
+            <div class="trial-error-message">
+                Analysis is disabled during the grace period.<br>
+                You have ${graceDays} ${daysText} to subscribe before access is blocked.
+            </div>
+            <div class="trial-error-help">
+                Subscribe now to restore full functionality.
+            </div>
+            <button class="trial-subscribe-btn urgent" onclick="showSubscribeInfo()">
+                Subscribe to Continue
+            </button>
+        </div>
+    `;
+}
+
+/**
  * Inject CSS styles for no-seats UI
  */
 function injectNoSeatsStyles() {
@@ -810,6 +956,138 @@ function injectNoSeatsStyles() {
 
         .no-seats-help li {
             margin: 4px 0;
+        }
+
+        /* Trial Banner Styles (14-day trial model) */
+        .trial-banner {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: linear-gradient(90deg, #dbeafe, #bfdbfe);
+            border-bottom: 1px solid #3b82f6;
+            font-size: 12px;
+        }
+
+        .trial-banner.trial-active {
+            background: linear-gradient(90deg, #dbeafe, #bfdbfe);
+            border-bottom-color: #3b82f6;
+        }
+
+        .trial-banner.trial-expired {
+            background: linear-gradient(90deg, #fef3c7, #fde68a);
+            border-bottom-color: #f59e0b;
+        }
+
+        .trial-badge {
+            background: #3b82f6;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 10px;
+        }
+
+        .trial-badge.expired {
+            background: #f59e0b;
+        }
+
+        .trial-text {
+            color: #1e40af;
+            flex-grow: 1;
+        }
+
+        .trial-expired .trial-text {
+            color: #92400e;
+        }
+
+        .trial-subscribe {
+            color: #2563eb;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 11px;
+        }
+
+        .trial-subscribe:hover {
+            color: #1d4ed8;
+        }
+
+        .trial-subscribe.urgent {
+            color: #dc2626;
+            font-weight: 600;
+        }
+
+        .trial-subscribe.urgent:hover {
+            color: #b91c1c;
+        }
+
+        /* Trial Error Container Styles */
+        .trial-error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+            color: #666;
+        }
+
+        .trial-error-container.grace-period {
+            background: #fffbeb;
+        }
+
+        .trial-error-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            color: #dc2626;
+        }
+
+        .trial-error-container.grace-period .trial-error-icon {
+            color: #f59e0b;
+        }
+
+        .trial-error-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .trial-error-message {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .trial-error-help {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .trial-subscribe-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .trial-subscribe-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .trial-subscribe-btn.urgent {
+            background: #dc2626;
+        }
+
+        .trial-subscribe-btn.urgent:hover {
+            background: #b91c1c;
         }
     `;
     document.head.appendChild(styles);
@@ -1087,7 +1365,21 @@ async function handleSelectionAnalysis(selectedText) {
         });
 
         if (!response.ok) {
-            throw new Error(`Selection analysis failed: ${response.status}`);
+            // Try to parse error response for trial-related errors
+            try {
+                const errorData = await response.json();
+                if (errorData.error === 'trial_expired') {
+                    showTrialExpiredError(errorData);
+                    throw new Error('Trial expired - please subscribe to continue');
+                } else if (errorData.error === 'trial_grace_period') {
+                    showTrialGracePeriodError(errorData);
+                    throw new Error('Trial ended - analysis disabled during grace period');
+                }
+                throw new Error(errorData.message || `Selection analysis failed: ${response.status}`);
+            } catch (parseError) {
+                if (parseError.message.includes('Trial')) throw parseError;
+                throw new Error(`Selection analysis failed: ${response.status}`);
+            }
         }
         
         const result = await response.json();

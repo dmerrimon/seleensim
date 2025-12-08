@@ -5,6 +5,7 @@ import { useMsal, useIsAuthenticated } from '@azure/msal-react';
 import { useRouter } from 'next/navigation';
 import { apiRequest } from '@/lib/msal-config';
 import { fetchDashboard, revokeUserSeat, restoreUserSeat, DashboardData } from '@/lib/api';
+import { mockDashboardData, isDevMode } from '@/lib/mock-data';
 
 export default function Dashboard() {
   const { instance, accounts } = useMsal();
@@ -15,6 +16,15 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [actionLoading, setActionLoading] = useState<string | null>(null);
+  const [isDevSession, setIsDevSession] = useState(false);
+
+  // Check for dev mode session
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const devSession = sessionStorage.getItem('ilana_dev_mode') === 'true';
+      setIsDevSession(devSession);
+    }
+  }, []);
 
   // Get access token
   const getToken = useCallback(async () => {
@@ -39,6 +49,15 @@ export default function Dashboard() {
       setLoading(true);
       setError(null);
 
+      // Use mock data in dev mode
+      if (isDevSession || isDevMode()) {
+        // Simulate network delay
+        await new Promise(resolve => setTimeout(resolve, 500));
+        setData(mockDashboardData);
+        setLoading(false);
+        return;
+      }
+
       const token = await getToken();
       if (!token) {
         router.push('/');
@@ -52,15 +71,21 @@ export default function Dashboard() {
     } finally {
       setLoading(false);
     }
-  }, [getToken, router]);
+  }, [getToken, router, isDevSession]);
 
   useEffect(() => {
+    // Allow access in dev mode without authentication
+    if (isDevSession || isDevMode()) {
+      loadData();
+      return;
+    }
+
     if (!isAuthenticated) {
       router.push('/');
       return;
     }
     loadData();
-  }, [isAuthenticated, router, loadData]);
+  }, [isAuthenticated, router, loadData, isDevSession]);
 
   // Handle seat revocation
   const handleRevoke = async (userId: string, userName: string) => {

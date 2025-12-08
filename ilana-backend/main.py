@@ -67,6 +67,9 @@ try:
     logger.info("✅ Enterprise AI components loaded successfully")
 except ImportError as e:
     ENTERPRISE_AVAILABLE = False
+    OptimizedRealAIService = None
+    create_optimized_real_ai_service = None
+    InlineSuggestion = None
     logger = logging.getLogger(__name__)
     logger.warning(f"⚠️ Enterprise AI components not available: {e}")
 
@@ -85,6 +88,7 @@ try:
     from api.auth_routes import router as auth_router
     from api.admin import router as admin_router
     from api.webhooks import router as webhooks_router
+    from api.dev_routes import router as dev_router
     from auth import verify_seat_access, ENFORCE_SEATS
     from trial_manager import get_trial_status
     SEAT_MANAGEMENT_AVAILABLE = True
@@ -96,6 +100,7 @@ except ImportError as e:
     ENFORCE_SEATS = False
     verify_seat_access = None
     webhooks_router = None
+    dev_router = None
     get_trial_status = None
     get_tenant_by_azure_id = None
     get_active_subscription = None
@@ -301,6 +306,9 @@ if SEAT_MANAGEMENT_AVAILABLE:
     app.include_router(admin_router)
     if webhooks_router:
         app.include_router(webhooks_router)
+    if dev_router:
+        app.include_router(dev_router)
+        logger.info("✅ Dev/test routes registered (DEV_MODE required)")
     logger.info("✅ Seat management API routes registered")
 
 # Global error handlers for structured error responses

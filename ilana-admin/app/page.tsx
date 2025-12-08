@@ -4,11 +4,13 @@ import { useEffect } from 'react';
 import { useMsal, useIsAuthenticated } from '@azure/msal-react';
 import { useRouter } from 'next/navigation';
 import { loginRequest } from '@/lib/msal-config';
+import { isDevMode } from '@/lib/mock-data';
 
 export default function Home() {
   const { instance } = useMsal();
   const isAuthenticated = useIsAuthenticated();
   const router = useRouter();
+  const devMode = isDevMode();
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -18,6 +20,12 @@ export default function Home() {
 
   const handleLogin = () => {
     instance.loginRedirect(loginRequest);
+  };
+
+  const handleDevLogin = () => {
+    // Store dev mode flag in sessionStorage
+    sessionStorage.setItem('ilana_dev_mode', 'true');
+    router.push('/dashboard');
   };
 
   if (isAuthenticated) {
@@ -44,6 +52,32 @@ export default function Home() {
         <button className="btn btn-primary" onClick={handleLogin} style={{ width: '100%' }}>
           Sign in with Microsoft
         </button>
+
+        {devMode && (
+          <>
+            <div style={{ margin: '16px 0', textAlign: 'center', color: '#666' }}>
+              — or —
+            </div>
+            <button
+              className="btn"
+              onClick={handleDevLogin}
+              style={{
+                width: '100%',
+                background: '#ff9800',
+                color: 'white',
+                border: 'none',
+                padding: '12px',
+                borderRadius: '6px',
+                cursor: 'pointer'
+              }}
+            >
+              🔧 Dev Login (Mock Data)
+            </button>
+            <p className="text-small text-muted mt-2" style={{ color: '#ff9800' }}>
+              Dev mode enabled - using mock data
+            </p>
+          </>
+        )}
 
         <p className="text-small text-muted mt-4">
           Only organization admins can access this portal.
