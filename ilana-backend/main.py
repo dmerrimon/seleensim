@@ -238,6 +238,9 @@ app.add_middleware(
     allow_origins=[
         # Production: Ilana backend/frontend
         "https://ilanalabs-add-in.onrender.com",
+        # Admin Portal
+        "https://admin.ilanaimmersive.com",
+        "https://ilana-admin.onrender.com",
         # Microsoft Office Online domains
         "https://word.officeapps.live.com",
         "https://excel.officeapps.live.com",
@@ -291,8 +294,8 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
             "script-src 'self' 'unsafe-inline' https://*.office.com https://*.office365.com; "
             "style-src 'self' 'unsafe-inline'; "
             "img-src 'self' data: https:; "
-            "connect-src 'self' https://*.office.com https://*.office365.com https://*.microsoft.com; "
-            "frame-ancestors https://*.office.com https://*.office365.com"
+            "connect-src 'self' https://*.office.com https://*.office365.com https://*.microsoft.com https://admin.ilanaimmersive.com https://ilana-admin.onrender.com; "
+            "frame-ancestors https://*.office.com https://*.office365.com https://admin.ilanaimmersive.com https://ilana-admin.onrender.com"
         )
 
         return response
