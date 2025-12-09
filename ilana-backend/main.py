@@ -446,6 +446,11 @@ async def serve_modern_css():
     """Serve the modern taskpane CSS"""
     return FileResponse("style-modern.css", media_type="text/css")
 
+@app.get("/manifest.xml")
+async def serve_manifest():
+    """Serve the Office add-in manifest"""
+    return FileResponse("manifest.xml", media_type="application/xml")
+
 @app.get("/health")
 async def health_check():
     """Basic health check endpoint - lightweight for load balancers"""
