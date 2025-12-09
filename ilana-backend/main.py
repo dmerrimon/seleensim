@@ -244,6 +244,7 @@ app.add_middleware(
         # Microsoft Office Online domains
         "https://word.officeapps.live.com",
         "https://excel.officeapps.live.com",
+        "https://word-edit.officeapps.live.com",
         "https://www.office.com",
         "https://outlook.office.com",
         "https://outlook.office365.com",
@@ -291,11 +292,11 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         # Office Add-ins need to load from various Microsoft domains
         response.headers["Content-Security-Policy"] = (
             "default-src 'self'; "
-            "script-src 'self' 'unsafe-inline' https://*.office.com https://*.office365.com; "
+            "script-src 'self' 'unsafe-inline' https://*.office.com https://*.office365.com https://*.officeapps.live.com; "
             "style-src 'self' 'unsafe-inline'; "
             "img-src 'self' data: https:; "
-            "connect-src 'self' https://*.office.com https://*.office365.com https://*.microsoft.com https://admin.ilanaimmersive.com https://ilana-admin.onrender.com; "
-            "frame-ancestors https://*.office.com https://*.office365.com https://admin.ilanaimmersive.com https://ilana-admin.onrender.com"
+            "connect-src 'self' https://*.office.com https://*.office365.com https://*.microsoft.com https://*.officeapps.live.com https://admin.ilanaimmersive.com https://ilana-admin.onrender.com; "
+            "frame-ancestors https://*.office.com https://*.office365.com https://*.officeapps.live.com https://admin.ilanaimmersive.com https://ilana-admin.onrender.com"
         )
 
         return response
