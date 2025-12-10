@@ -2198,12 +2198,14 @@ async function insertAsComment(issueId) {
         if (card) {
             card.style.opacity = '0.7';
             const actionsDiv = card.querySelector('.suggestion-actions');
-            actionsDiv.innerHTML = `
-                <span class="comment-badge">💬 Inserted as Comment</span>
-                <button class="action-btn dismiss" onclick="dismissSuggestion('${issueId}')">
-                    Dismiss
-                </button>
-            `;
+            if (actionsDiv) {
+                actionsDiv.innerHTML = `
+                    <span class="comment-badge">💬 Inserted as Comment</span>
+                    <button class="action-btn dismiss" onclick="dismissSuggestion('${issueId}')">
+                        Dismiss
+                    </button>
+                `;
+            }
         }
 
     } catch (error) {
