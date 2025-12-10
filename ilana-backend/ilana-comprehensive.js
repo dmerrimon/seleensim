@@ -1995,29 +1995,31 @@ async function applySuggestion(issueId) {
         const card = document.querySelector(`[data-issue-id="${issueId}"]`);
         if (card) {
             const actionsDiv = card.querySelector('.suggestion-actions');
-            actionsDiv.innerHTML = `
-                <button class="action-btn undo" onclick="undoSuggestion('${issueId}')">
-                    Undo (10s)
-                </button>
-                <span class="applied-badge">✓ Applied</span>
-            `;
+            if (actionsDiv) {
+                actionsDiv.innerHTML = `
+                    <button class="action-btn undo" onclick="undoSuggestion('${issueId}')">
+                        Undo (10s)
+                    </button>
+                    <span class="applied-badge">✓ Applied</span>
+                `;
 
-            // Start 10-second countdown
-            let countdown = 10;
-            const undoTimer = setInterval(() => {
-                countdown--;
-                const undoBtn = actionsDiv.querySelector('.action-btn.undo');
-                if (undoBtn && countdown > 0) {
-                    undoBtn.textContent = `Undo (${countdown}s)`;
-                } else {
-                    clearInterval(undoTimer);
-                    if (undoBtn) {
-                        undoBtn.remove();
+                // Start 10-second countdown
+                let countdown = 10;
+                const undoTimer = setInterval(() => {
+                    countdown--;
+                    const undoBtn = actionsDiv.querySelector('.action-btn.undo');
+                    if (undoBtn && countdown > 0) {
+                        undoBtn.textContent = `Undo (${countdown}s)`;
+                    } else {
+                        clearInterval(undoTimer);
+                        if (undoBtn) {
+                            undoBtn.remove();
+                        }
+                        // Clear undo buffer after 10 seconds
+                        clearUndoBuffer(issueId);
                     }
-                    // Clear undo buffer after 10 seconds
-                    clearUndoBuffer(issueId);
-                }
-            }, 1000);
+                }, 1000);
+            }
         }
 
     } catch (error) {
