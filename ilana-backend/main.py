@@ -238,6 +238,8 @@ app.add_middleware(
     allow_origins=[
         # Production: Ilana backend/frontend
         "https://ilanalabs-add-in.onrender.com",
+        # Azure Static Web Apps (Add-in Taskpane)
+        "https://agreeable-tree-06737810f.3.azurestaticapps.net",
         # Admin Portal
         "https://admin.ilanaimmersive.com",
         "https://ilana-admin.onrender.com",
