@@ -10,20 +10,21 @@
   <DisplayName DefaultValue="Ilana" />
   <Description DefaultValue="Analysis for clinical trial protocols. Get real-time suggestions for regulatory compliance, clarity, and precision." />
 
-  <IconUrl DefaultValue="https://ilanalabs-add-in.onrender.com/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://ilanalabs-add-in.onrender.com/icon-80.png"/>
+  <IconUrl DefaultValue="https://agreeable-tree-06737810f.3.azurestaticapps.net/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://agreeable-tree-06737810f.3.azurestaticapps.net/icon-80.png"/>
 
   <Hosts>
     <Host Name="Document" />
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://ilanalabs-add-in.onrender.com/taskpane.html" />
+    <SourceLocation DefaultValue="https://agreeable-tree-06737810f.3.azurestaticapps.net/taskpane.html" />
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
-  
+
   <AppDomains>
+    <AppDomain>https://agreeable-tree-06737810f.3.azurestaticapps.net</AppDomain>
     <AppDomain>https://ilanalabs-add-in.onrender.com</AppDomain>
   </AppDomains>
 
