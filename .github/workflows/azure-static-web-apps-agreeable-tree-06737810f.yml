@@ -40,7 +40,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "./ilana-frontend" # Word add-in taskpane (static files)
+          app_location: "./ilana-backend" # Word add-in taskpane with Grammarly-style UI
           api_location: "" # Api source code path - optional
           output_location: "" # No build step needed - static files served directly
           github_id_token: ${{ steps.idtoken.outputs.result }}
