@@ -21,6 +21,7 @@ from sqlalchemy import (
     Integer,
     Boolean,
     DateTime,
+    Float,
     ForeignKey,
     Index,
     text,
@@ -233,6 +234,72 @@ class SeatAssignment(Base):
         return f"<SeatAssignment {self.status} for user {self.user_id}>"
 
 
+class AuditEvent(Base):
+    """
+    21 CFR Part 11 compliant audit trail
+
+    Stores ALL user actions with full attribution for regulatory compliance.
+    Records are NEVER deleted (Part 11 requirement).
+
+    Event types:
+    - analysis_requested: User initiated protocol analysis
+    - suggestions_returned: Backend returned AI suggestions
+    - suggestion_shown: User viewed a specific suggestion
+    - suggestion_inserted_as_comment: Inserted as Word comment
+    - suggestion_accepted: User applied suggestion (replaced text)
+    - suggestion_undone: User undid an applied suggestion
+    - suggestion_dismissed: User dismissed a suggestion
+    - comment_resolved: User resolved a Word comment
+    """
+    __tablename__ = "audit_events"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    tenant_id = Column(UUID(as_uuid=True), ForeignKey("tenants.id"), nullable=True)
+    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=True)
+
+    # User attribution (stored in plain text for Part 11 compliance)
+    user_email = Column(String(255))
+    user_display_name = Column(String(255))
+
+    # Event details
+    event_type = Column(String(100), nullable=False)
+    action = Column(String(100))  # apply, dismiss, insert_comment, undo, resolve_comment
+
+    # Content hashes (not actual content - privacy protection)
+    original_text_hash = Column(String(64))
+    improved_text_hash = Column(String(64))
+
+    # Metadata
+    request_id = Column(String(100))
+    suggestion_id = Column(String(100))
+    confidence = Column(Float)
+    therapeutic_area = Column(String(100))
+    suggestion_type = Column(String(100))
+    comment_id = Column(String(100))
+
+    # Timestamps
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    # Client info for attribution
+    ip_address = Column(String(50))
+    user_agent = Column(String(500))
+
+    # Relationships (optional - for joins)
+    tenant = relationship("Tenant", foreign_keys=[tenant_id])
+    user = relationship("User", foreign_keys=[user_id])
+
+    # Indexes for query performance
+    __table_args__ = (
+        Index("idx_audit_tenant_created", "tenant_id", "created_at"),
+        Index("idx_audit_user_created", "user_id", "created_at"),
+        Index("idx_audit_event_type", "event_type"),
+        Index("idx_audit_request_id", "request_id"),
+    )
+
+    def __repr__(self):
+        return f"<AuditEvent {self.event_type} by {self.user_email or 'anonymous'}>"
+
+
 # =============================================================================
 # Query Helpers
 # =============================================================================
@@ -320,6 +387,7 @@ __all__ = [
     "Subscription",
     "User",
     "SeatAssignment",
+    "AuditEvent",
     "get_tenant_by_azure_id",
     "get_user_by_azure_id",
     "get_active_subscription",

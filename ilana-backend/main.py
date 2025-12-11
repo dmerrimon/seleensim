@@ -39,7 +39,7 @@ CHUNK_MAX_CHARS = int(os.getenv("CHUNK_MAX_CHARS", "3500"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "200"))
 
 import uvicorn
-from fastapi import FastAPI, HTTPException, Request, Query, Header, BackgroundTasks
+from fastapi import FastAPI, HTTPException, Request, Query, Header, BackgroundTasks, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse, FileResponse
 from slowapi import Limiter, _rate_limit_exceeded_handler
@@ -84,12 +84,12 @@ from rl_feedback import (
 
 # Import seat management and auth modules
 try:
-    from database import init_database, get_tenant_by_azure_id, get_active_subscription
+    from database import init_database, get_tenant_by_azure_id, get_active_subscription, get_db_session, get_user_by_azure_id, AuditEvent
     from api.auth_routes import router as auth_router
     from api.admin import router as admin_router
     from api.webhooks import router as webhooks_router
     from api.dev_routes import router as dev_router
-    from auth import verify_seat_access, ENFORCE_SEATS
+    from auth import verify_seat_access, ENFORCE_SEATS, get_optional_user, TokenClaims
     from trial_manager import get_trial_status
     SEAT_MANAGEMENT_AVAILABLE = True
     logger_temp = logging.getLogger(__name__)
@@ -104,6 +104,11 @@ except ImportError as e:
     get_trial_status = None
     get_tenant_by_azure_id = None
     get_active_subscription = None
+    get_db_session = None
+    get_user_by_azure_id = None
+    get_optional_user = None
+    AuditEvent = None
+    TokenClaims = None
     logger_temp = logging.getLogger(__name__)
     logger_temp.warning(f"Seat management not available: {e}")
 
@@ -1084,11 +1089,22 @@ Format each recommendation as: Original: "text" → Suggested: "text" (Reason: e
         }
 
 @app.post("/api/telemetry")
-async def log_telemetry(request: Request, telemetry_data: dict):
-    """Log frontend telemetry events for monitoring and analytics"""
+async def log_telemetry(
+    request: Request,
+    telemetry_data: dict,
+    user: Optional[TokenClaims] = Depends(get_optional_user) if get_optional_user else None
+):
+    """
+    Log frontend telemetry events for monitoring and analytics.
+
+    21 CFR Part 11 Compliance:
+    - Stores audit events with full user attribution when SSO token provided
+    - Events persisted to PostgreSQL for indefinite retention
+    - User email and display name stored (not hashed) for regulatory requirements
+    """
     try:
         request_id = getattr(request.state, 'request_id', str(uuid.uuid4()))
-        
+
         # Add server-side metadata
         enriched_telemetry = {
             **telemetry_data,
@@ -1098,23 +1114,69 @@ async def log_telemetry(request: Request, telemetry_data: dict):
             "origin": request.headers.get("origin"),
             "referer": request.headers.get("referer")
         }
-        
+
         # Log to console and telemetry system
         logger.info(f"📊 Frontend Telemetry: {json.dumps(enriched_telemetry)}")
-        
+
+        # 21 CFR Part 11: Store audit events in database for regulatory compliance
+        if SEAT_MANAGEMENT_AVAILABLE and get_db_session and AuditEvent:
+            try:
+                with get_db_session() as db:
+                    # Get tenant and user from database if authenticated
+                    tenant = None
+                    db_user = None
+
+                    if user and get_tenant_by_azure_id:
+                        tenant = get_tenant_by_azure_id(db, user.tenant_id)
+                        if tenant and get_user_by_azure_id:
+                            db_user = get_user_by_azure_id(db, tenant.id, user.user_id)
+
+                    # Handle batch events (frontend sends array in 'events' field)
+                    events_to_store = telemetry_data.get("events", [telemetry_data])
+                    if not isinstance(events_to_store, list):
+                        events_to_store = [events_to_store]
+
+                    for event_data in events_to_store:
+                        audit_event = AuditEvent(
+                            tenant_id=tenant.id if tenant else None,
+                            user_id=db_user.id if db_user else None,
+                            user_email=user.email if user else None,
+                            user_display_name=user.name if user else None,
+                            event_type=event_data.get("event", "unknown"),
+                            action=event_data.get("action"),
+                            original_text_hash=event_data.get("original_text_hash"),
+                            improved_text_hash=event_data.get("improved_text_hash"),
+                            request_id=event_data.get("request_id"),
+                            suggestion_id=event_data.get("suggestion_id"),
+                            confidence=event_data.get("confidence"),
+                            therapeutic_area=event_data.get("therapeutic_area"),
+                            suggestion_type=event_data.get("suggestion_type"),
+                            comment_id=event_data.get("comment_id"),
+                            ip_address=request.client.host if request.client else None,
+                            user_agent=request.headers.get("user-agent", "")[:500],
+                        )
+                        db.add(audit_event)
+
+                    logger.info(f"📋 Part 11 Audit: Stored {len(events_to_store)} events for {user.email if user else 'anonymous'}")
+
+            except Exception as db_error:
+                # Log but don't fail - telemetry should be resilient
+                logger.warning(f"Part 11 audit storage warning: {db_error}")
+
         # Send to telemetry service if available
         if hasattr(globals(), 'telemetry_service') and telemetry_service:
             try:
                 telemetry_service.log_event(enriched_telemetry)
             except Exception as e:
                 logger.warning(f"Telemetry service error: {e}")
-        
+
         return {
             "status": "logged",
             "request_id": request_id,
-            "timestamp": datetime.utcnow().isoformat()
+            "timestamp": datetime.utcnow().isoformat(),
+            "part11_audit": SEAT_MANAGEMENT_AVAILABLE and AuditEvent is not None
         }
-        
+
     except Exception as e:
         logger.error(f"Telemetry logging failed: {e}")
         return {

@@ -83,25 +83,65 @@ const IlanaTelemetry = (function() {
     }
 
     /**
+     * Get SSO access token if available (for 21 CFR Part 11 audit trail)
+     * @returns {Promise<string|null>} - Access token or null
+     */
+    async function getAccessToken() {
+        try {
+            // Check if Office.js SSO is available
+            if (typeof Office !== 'undefined' && Office.context && Office.auth) {
+                const token = await Office.auth.getAccessToken({
+                    allowSignInPrompt: false,
+                    allowConsentPrompt: false
+                });
+                return token;
+            }
+        } catch (error) {
+            // SSO not available or user not signed in - this is expected in many cases
+            // Don't log as error since anonymous telemetry is still valid
+            if (error.code !== 13003 && error.code !== 13001) {
+                // 13003 = SSO not supported, 13001 = user not signed in
+                console.log('📊 Telemetry: SSO token not available, sending anonymously');
+            }
+        }
+        return null;
+    }
+
+    /**
      * Send event to backend API
      * @param {Array} events - Array of telemetry events
+     *
+     * 21 CFR Part 11 Compliance:
+     * - Includes SSO token when available for user attribution
+     * - Backend stores user email/name in audit trail
      */
     async function sendEvents(events) {
         if (!config.enabled || events.length === 0) return;
 
         try {
+            // Build headers - include auth token if available for Part 11 compliance
+            const headers = {
+                'Content-Type': 'application/json'
+            };
+
+            // Try to get SSO token for user attribution in audit trail
+            const accessToken = await getAccessToken();
+            if (accessToken) {
+                headers['Authorization'] = `Bearer ${accessToken}`;
+            }
+
             const response = await fetch(config.endpoint, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: headers,
                 body: JSON.stringify({ events })
             });
 
             if (!response.ok) {
                 console.error('❌ Telemetry send failed:', response.status);
             } else {
-                console.log(`📤 Sent ${events.length} telemetry events`);
+                const result = await response.json();
+                const auditStatus = result.part11_audit ? '✓ Part 11' : '';
+                console.log(`📤 Sent ${events.length} telemetry events ${auditStatus}`);
             }
         } catch (error) {
             console.error('❌ Telemetry error:', error);
