@@ -1891,6 +1891,10 @@ async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
                     transformed["grouped"] = suggestion.get("grouped")
                     transformed["sub_issues"] = suggestion.get("sub_issues", [])
 
+                # Preserve V2.0 layer source attribution (amendment_risk, gpt, etc.)
+                if suggestion.get("source"):
+                    transformed["source"] = suggestion.get("source")
+
                 transformed_suggestions.append(transformed)
 
             response = {
@@ -1905,6 +1909,7 @@ async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
                         "preprocess_ms": metadata.get("preprocess_ms", 0),
                         "azure_ms": metadata.get("azure_ms", 0),
                         "postprocess_ms": metadata.get("postprocess_ms", 0),
+                        "amendment_risk_ms": metadata.get("amendment_risk_ms", 0),
                         "total_ms": metadata.get("total_ms", 0)
                     }
                 }
