@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD (Admin Portal)
+name: Azure Static Web Apps CI/CD (Word Add-in)
 
 on:
   push:
@@ -13,7 +13,10 @@ jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
-    name: Build and Deploy Admin Portal
+    name: Build and Deploy Word Add-in
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v3
         with:
@@ -26,9 +29,10 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_RED_SEA_0CD7F820F }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "./ilana-admin"
+          app_location: "./ilana-backend"  # Word add-in taskpane
           api_location: ""
-          output_location: "out"  # Next.js static export outputs to 'out'
+          output_location: ""  # Static files, no build needed
+          skip_app_build: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
