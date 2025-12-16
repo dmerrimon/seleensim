@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Output standalone for containerized deployments
-  output: 'standalone',
+  // Static export for Azure Static Web Apps
+  output: 'export',
+  // Disable image optimization for static export
+  images: {
+    unoptimized: true,
+  },
 }
 
 module.exports = nextConfig
