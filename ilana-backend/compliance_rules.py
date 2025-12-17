@@ -402,7 +402,8 @@ def run_compliance_checks(text: str, section: str = None) -> List[Dict[str, Any]
                     "id": issue.rule_id,
                     "category": issue.category,
                     "severity": issue.severity,
-                    "original_text": original_text_sentence,  # Full sentence from document
+                    "original_text": original_text_sentence,  # Full sentence from document (for locate/highlight)
+                    "problematic_text": issue.evidence[0] if issue.evidence else None,  # Exact matched phrase (for card display)
                     "improved_text": issue.improved_text,  # Copy-paste ready rewrite
                     "rationale": issue.detail,  # Explanation of why this is an issue
                     "recommendation": f"Review and address {issue.short_description.lower()}",

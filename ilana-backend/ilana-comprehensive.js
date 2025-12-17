@@ -60,6 +60,21 @@ const IlanaState = {
     }
 };
 
+/**
+ * Get document highlight color based on issue severity
+ * @param {string} severity - 'critical', 'major', 'minor', or 'advisory'
+ * @returns {string} Hex color code for Word document highlighting
+ */
+function getSeverityHighlightColor(severity) {
+    const colorMap = {
+        'critical': '#FECACA',  // Light red
+        'major': '#FED7AA',     // Light orange
+        'minor': '#FEF08A',     // Light yellow
+        'advisory': '#E0E7FF'   // Light indigo
+    };
+    return colorMap[severity] || '#FEF08A';
+}
+
 // Undo buffer store (in-memory) - supports multiple concurrent undos
 const _undoBuffers = {}; // request_id -> {originalText, rangeInfo, expiryTimestamp}
 
@@ -1460,8 +1475,9 @@ async function displaySelectionSuggestions(analysisResult) {
             id: suggestion.id || `selection_${index}`,
             type: suggestion.type || 'medical_terminology',
             severity: suggestion.severity || 'medium',  // Read from API (critical|major|minor|advisory)
-            // API returns: improved_text, original_text, rationale, recommendation
+            // API returns: improved_text, original_text, problematic_text, rationale, recommendation
             text: suggestion.original_text || suggestion.originalText || suggestion.text || suggestion.original || 'No original text provided',
+            problematic_text: suggestion.problematic_text || null,  // Exact matched phrase (for card display)
             suggestion: suggestion.improved_text || suggestion.suggestedText || suggestion.improved || suggestion.suggestion || suggestion.rewrite || 'No suggestion available',
             rationale: suggestion.rationale || suggestion.reason || suggestion.explanation || 'No rationale provided',
             recommendation: suggestion.recommendation || '',  // NEW: actionable recommendation field
@@ -1642,7 +1658,7 @@ function truncateText(text, maxLength) {
 
 // Locate and highlight text in document for a specific issue
 async function locateAndHighlight(issueId) {
-    const issue = currentSuggestions.find(s => s.id === issueId);
+    const issue = IlanaState.currentSuggestions.find(s => s.id === issueId);
     if (!issue || !issue.text) {
         console.log('Issue not found or no text to locate');
         return;
@@ -1691,10 +1707,12 @@ function getIssueTitle(issue) {
 
 // Display suggestion cards in React style (collapsed with expand on click)
 function displaySuggestionCard(issue) {
-    // Truncate original text for collapsed view (60 chars)
-    const textSnippet = issue.text && issue.text.length > 60
-        ? issue.text.substring(0, 60) + '...'
-        : (issue.text || 'No original text');
+    // Use problematic_text if available (exact matched phrase), fallback to full text
+    const displayText = issue.problematic_text || issue.text;
+    // Truncate for collapsed view (60 chars)
+    const textSnippet = displayText && displayText.length > 60
+        ? displayText.substring(0, 60) + '...'
+        : (displayText || 'No original text');
 
     // Check if this is an amendment risk prediction (Layer 3)
     const isAmendmentRisk = issue.source === 'amendment_risk' || issue.amendment_risk;
@@ -1775,7 +1793,7 @@ function displaySuggestionCard(issue) {
 
                 <div class="expanded-section">
                     <label>Original</label>
-                    <div class="section-content original-text">${issue.text || 'No original text provided'}</div>
+                    <div class="section-content original-text">${issue.problematic_text || issue.text || 'No original text provided'}</div>
                 </div>
 
                 <div class="expanded-section">
@@ -1917,12 +1935,13 @@ async function highlightOriginalTextInDocument(issues) {
                     context.load(searchResults, 'items');
                     await context.sync();
 
-                    // Highlight all matches in orange
+                    // Highlight all matches with severity-based color
                     if (searchResults.items.length > 0) {
-                        console.log(`🟠 Found ${searchResults.items.length} matches for: "${issue.text.substring(0, 50)}..."`);
+                        const highlightColor = getSeverityHighlightColor(issue.severity);
+                        console.log(`🎨 Found ${searchResults.items.length} matches for: "${issue.text.substring(0, 50)}..." (severity: ${issue.severity || 'minor'}, color: ${highlightColor})`);
 
                         for (const match of searchResults.items) {
-                            match.font.highlightColor = '#FFA500';  // Orange
+                            match.font.highlightColor = highlightColor;
                         }
 
                         await context.sync();
@@ -1935,7 +1954,7 @@ async function highlightOriginalTextInDocument(issues) {
                 }
             }
 
-            console.log(`✅ Orange highlighting complete`);
+            console.log(`✅ Severity-based highlighting complete`);
         });
     } catch (error) {
         console.error('❌ Failed to highlight original text:', error);
