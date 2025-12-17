@@ -252,8 +252,10 @@ RESPONSE FORMAT:
       "id": "1",
       "category": "statistical",
       "severity": "critical",
-      "original_text": "exact excerpt",
-      "improved_text": "copy-paste ready rewrite",
+      "original_text": "exact excerpt (full sentence for context)",
+      "problematic_text": "specific word or phrase that needs changing (e.g., 'may', 'if deemed appropriate')",
+      "minimal_fix": "word-level replacement (e.g., \"'may' → 'will'\" or \"'if deemed appropriate' → 'as pre-specified in SAP Section [X]'\")",
+      "improved_text": "copy-paste ready rewrite of full sentence",
       "rationale": "brief explanation referencing guidance or statistical risk",
       "recommendation": "actionable step to fix (where to insert; SAP reference)",
       "confidence": 0.95
@@ -265,35 +267,47 @@ FEW-SHOT EXAMPLES (Note the SPECIFIC regulatory section citations):
 
 Example 1 - Conditional SAP (Critical):
 Original: "The statistical analyses may reflect the clinical status/symptoms at the time samples were collected if deemed appropriate."
+Problematic: "if deemed appropriate"
+Minimal Fix: "'if deemed appropriate' → 'as pre-specified in SAP Section [X]'"
 Improved: "Statistical analyses will be pre-specified in the Statistical Analysis Plan (SAP). Analyses reflecting clinical status at sample collection must be defined in SAP Section [X] with analytic methods and handling of time-varying covariates."
 Rationale: Conditional language ("if deemed appropriate") violates pre-specification requirements. ICH E9 Section 5.7 requires all analyses to be pre-specified in the SAP before database lock. Time-varying covariates must be handled using established methods (e.g., marginal structural models per FDA Statistical Guidance Section 3.4.2).
 Recommendation: Add to SAP Section [X]: specific methods for time-varying severity covariates.
 
 Example 2 - Post-randomization Reassignment (Critical):
 Original: "Patients may be reassigned to the highest severity group they achieve during follow-up."
+Problematic: "may be reassigned"
+Minimal Fix: "'may be reassigned' → 'will be analyzed per enrollment group (ITT); post-enrollment changes handled per SAP Section [X]'"
 Improved: "Analysis populations will follow intention-to-treat principles (enrollment group). Post-enrollment severity-based analyses will be pre-specified in SAP Section [X] using time-varying covariate methods to mitigate immortal time bias and guarantee time bias."
 Rationale: Post-randomization reassignment violates randomization integrity per ICH E9 Section 5.2.1. Must maintain ITT as primary analysis. If secondary analyses by achieved severity are needed, ICH E9 Section 5.7 and FDA Statistical Guidance Section 3.4.2 require pre-specification of time-varying covariate handling.
 Recommendation: Define primary ITT analysis population. Pre-specify secondary time-varying analyses in SAP Section [X] with explicit methods to avoid immortal time bias.
 
 Example 3 - Terminology (Minor):
 Original: "Subjects will be enrolled..."
+Problematic: "Subjects"
+Minimal Fix: "'Subjects' → 'Participants'"
 Improved: "Participants will be enrolled..."
 Rationale: ICH E6(R3) Section 1.58 requires use of 'participant' instead of 'subject' to respect person-first language and align with modern regulatory standards.
 
 Example 4 - Primary Endpoint Specification (Critical):
 Original: "The primary endpoint is change in disease severity score."
+Problematic: "change in disease severity score"
+Minimal Fix: "'change in disease severity score' → 'change from baseline in [score] at Week [X], analyzed using [method]'"
 Improved: "The primary endpoint is change from baseline in disease severity score at Week 12, analyzed using ANCOVA with baseline score as covariate. Non-inferiority margin: -3 points (FDA Guidance: Non-Inferiority Clinical Trials, Section 4.2)."
 Rationale: ICH E9 Section 2.2.2 requires primary endpoints to specify: (1) measurement timing, (2) direction of benefit, (3) analysis method, and (4) clinically meaningful difference. FDA Non-Inferiority Guidance Section 4.2 requires pre-specification of NI margins with clinical justification.
 Recommendation: Define in Protocol Section [X]: precise timing (Week 12), analysis method (ANCOVA), and NI/superiority margin with clinical justification.
 
 Example 5 - Safety Monitoring Specificity (Major):
 Original: "Adverse events will be monitored throughout the study."
+Problematic: "monitored throughout the study"
+Minimal Fix: "'monitored throughout the study' → 'monitored at each study visit (Weeks [X]) using [method]'"
 Improved: "Adverse events will be actively monitored at each study visit (Weeks 0, 4, 8, 12, 16) using standardized questionnaires and targeted physical examination. Grade 3+ AEs must be reported to the Medical Monitor within 24 hours per ICH E6(R3) Section 5.17. All AEs will be coded using MedDRA v25.0."
 Rationale: ICH E6(R3) Section 5.17 requires specification of: (1) AE assessment methods, (2) reporting timelines for serious/severe events, (3) standardized coding dictionaries. FDA Safety Monitoring Guidance Section 6.3 requires active surveillance with defined procedures.
 Recommendation: Add to Protocol Section [X]: specific AE collection procedures, grading criteria (CTCAE v5.0), expedited reporting timelines, and MedDRA coding version.
 
 Example 6 - Inclusion Criteria Precision (Major):
 Original: "Patients with adequate organ function."
+Problematic: "adequate organ function"
+Minimal Fix: "'adequate organ function' → 'organ function defined as: [specific thresholds]'"
 Improved: "Participants with adequate organ function defined as: (1) Hepatic: AST/ALT ≤2.5× ULN, total bilirubin ≤1.5× ULN; (2) Renal: eGFR ≥60 mL/min/1.73m² (CKD-EPI equation); (3) Hematologic: ANC ≥1,500/μL, platelets ≥100,000/μL, hemoglobin ≥9.0 g/dL. Laboratory values must be obtained within 14 days prior to enrollment."
 Rationale: ICH E8 Section 3.1.3 requires eligibility criteria to be objective, measurable, and clinically justified. Ambiguous criteria ("adequate") violate reproducibility standards per ICH E6(R3) Section 8.3.3. FDA Eligibility Guidance Section 2.4 requires specific laboratory thresholds with timing.
 Recommendation: Replace all subjective criteria with measurable thresholds. Specify: (1) exact laboratory values with units, (2) reference ranges source (local vs central lab), (3) timing window for assessments.

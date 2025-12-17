@@ -1490,9 +1490,10 @@ async function displaySelectionSuggestions(analysisResult) {
             id: suggestion.id || `selection_${index}`,
             type: suggestion.type || 'medical_terminology',
             severity: suggestion.severity || 'medium',  // Read from API (critical|major|minor|advisory)
-            // API returns: improved_text, original_text, problematic_text, rationale, recommendation
+            // API returns: improved_text, original_text, problematic_text, minimal_fix, rationale, recommendation
             text: suggestion.original_text || suggestion.originalText || suggestion.text || suggestion.original || 'No original text provided',
-            problematic_text: suggestion.problematic_text || null,  // Exact matched phrase (for card display)
+            problematic_text: suggestion.problematic_text || null,  // Exact matched phrase (for word-level highlighting)
+            minimal_fix: suggestion.minimal_fix || null,  // Word-level replacement (e.g., "'may' → 'will'")
             suggestion: suggestion.improved_text || suggestion.suggestedText || suggestion.improved || suggestion.suggestion || suggestion.rewrite || 'No suggestion available',
             rationale: suggestion.rationale || suggestion.reason || suggestion.explanation || 'No rationale provided',
             recommendation: suggestion.recommendation || '',  // NEW: actionable recommendation field
@@ -1773,15 +1774,28 @@ function displaySuggestionCard(issue) {
     const severityClass = issue.severity || 'minor';
     const severityLabel = (issue.severity || 'minor').toUpperCase();
 
+    // Word-level display: show problematic_text and minimal_fix when available
+    // If minimal_fix is like "'may' → 'will'", extract just the replacement part
+    let originalDisplay = issue.problematic_text || truncateText(issue.text, 30);
+    let suggestedDisplay = truncateText(issue.suggestion, 30);
+
+    if (issue.minimal_fix) {
+        // Extract the replacement from minimal_fix (e.g., "'may' → 'will'" -> "will")
+        const parts = issue.minimal_fix.split('→');
+        if (parts.length === 2) {
+            suggestedDisplay = parts[1].trim().replace(/^['"]|['"]$/g, '');
+        }
+    }
+
     return `
         <div class="suggestion-card collapsed ${cardExtraClass}" data-issue-id="${issue.id}" onclick="toggleCardExpansion('${issue.id}')">
             <!-- Collapsed Header (React-style with severity dot and text diff) -->
             <div class="card-header card-header-new">
                 <div class="severity-dot ${severityClass}"></div>
                 <div class="text-diff-preview">
-                    <span class="text-original">${truncateText(issue.text, 30)}</span>
+                    <span class="text-original">${originalDisplay}</span>
                     <span class="text-arrow">→</span>
-                    <span class="text-suggested">${truncateText(issue.suggestion, 30)}</span>
+                    <span class="text-suggested">${suggestedDisplay}</span>
                 </div>
                 <span class="expand-icon">›</span>
             </div>
@@ -1924,7 +1938,7 @@ function displayGroupedSuggestionCard(issue) {
     `;
 }
 
-// Highlight original text instances in orange in the document
+// Highlight original text instances in the document (word-level when possible)
 async function highlightOriginalTextInDocument(issues) {
     if (!issues || issues.length === 0) {
         console.log('No issues to highlight');
@@ -1933,17 +1947,20 @@ async function highlightOriginalTextInDocument(issues) {
 
     try {
         await Word.run(async (context) => {
-            console.log(`🟠 Highlighting ${issues.length} original text instances in orange...`);
+            console.log(`🟠 Highlighting ${issues.length} issues with word-level precision...`);
 
             for (const issue of issues) {
-                if (!issue.text || issue.text.length < 3) {
+                // Use problematic_text for word-level highlighting, fallback to full text
+                const textToHighlight = issue.problematic_text || issue.text;
+
+                if (!textToHighlight || textToHighlight.length < 2) {
                     console.warn(`⚠️ Skipping highlight for issue ${issue.id}: text too short`);
                     continue;
                 }
 
                 try {
-                    // Search for the original text in the document
-                    const searchResults = context.document.body.search(issue.text, {
+                    // Search for the problematic text in the document
+                    const searchResults = context.document.body.search(textToHighlight, {
                         ignorePunct: false,
                         ignoreSpace: false
                     });
@@ -1953,7 +1970,7 @@ async function highlightOriginalTextInDocument(issues) {
                     // Highlight all matches with severity-based color
                     if (searchResults.items.length > 0) {
                         const highlightColor = getSeverityHighlightColor(issue.severity);
-                        console.log(`🎨 Found ${searchResults.items.length} matches for: "${issue.text.substring(0, 50)}..." (severity: ${issue.severity || 'minor'}, color: ${highlightColor})`);
+                        console.log(`🎨 Found ${searchResults.items.length} matches for: "${textToHighlight.substring(0, 50)}${textToHighlight.length > 50 ? '...' : ''}" (severity: ${issue.severity || 'minor'}, color: ${highlightColor})`);
 
                         for (const match of searchResults.items) {
                             match.font.highlightColor = highlightColor;
@@ -1961,7 +1978,7 @@ async function highlightOriginalTextInDocument(issues) {
 
                         await context.sync();
                     } else {
-                        console.warn(`⚠️ No matches found for: "${issue.text.substring(0, 50)}..."`);
+                        console.warn(`⚠️ No matches found for: "${textToHighlight.substring(0, 50)}${textToHighlight.length > 50 ? '...' : ''}"`);
                     }
                 } catch (error) {
                     console.error(`❌ Failed to highlight issue ${issue.id}:`, error);

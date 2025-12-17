@@ -26,6 +26,7 @@ class ComplianceIssue:
     improved_text: str  # Actual rewrite suggestion (copy-paste ready)
     evidence: List[str]
     confidence: float = 1.0  # Rule-based checks are deterministic
+    minimal_fix: str = None  # Word-level replacement (e.g., "'may' → 'will'")
 
 
 # ============================================================================
@@ -183,6 +184,19 @@ def check_conditional_language(text: str) -> ComplianceIssue:
     evidence = find_matches(text, CONDITIONAL_TOKENS)
 
     if evidence:
+        # Generate minimal fix based on matched conditional token
+        first_match = evidence[0].lower()
+        minimal_fix_map = {
+            "may": "'may' → 'will'",
+            "if deemed appropriate": "'if deemed appropriate' → 'as pre-specified in SAP Section [X]'",
+            "as appropriate": "'as appropriate' → 'as pre-specified in SAP Section [X]'",
+            "as needed": "'as needed' → 'per protocol Section [X]'",
+            "as required": "'as required' → 'per protocol Section [X]'",
+            "if appropriate": "'if appropriate' → 'as pre-specified in SAP Section [X]'",
+            "if necessary": "'if necessary' → 'per protocol Section [X]'"
+        }
+        minimal_fix = minimal_fix_map.get(first_match, f"'{first_match}' → [pre-specify]")
+
         return ComplianceIssue(
             rule_id="COND_001",
             category="statistical",
@@ -191,7 +205,8 @@ def check_conditional_language(text: str) -> ComplianceIssue:
             detail="Found conditional/ambiguous phrasing that requires pre-specification in Statistical Analysis Plan (SAP). Language like 'may', 'if deemed appropriate', 'as needed' creates risk of post-hoc analysis decisions and alpha inflation.",
             improved_text="Consider revising to pre-specify statistical methods in the SAP. Example: 'All analytic methods, including handling of missing data and sensitivity analyses, will be pre-specified in the Statistical Analysis Plan prior to database lock.'",
             evidence=evidence[:3],  # Limit to first 3 matches
-            confidence=0.5  # Lowered to make this truly advisory
+            confidence=0.5,  # Lowered to make this truly advisory
+            minimal_fix=minimal_fix
         )
     return None
 
@@ -404,6 +419,7 @@ def run_compliance_checks(text: str, section: str = None) -> List[Dict[str, Any]
                     "severity": issue.severity,
                     "original_text": original_text_sentence,  # Full sentence from document (for locate/highlight)
                     "problematic_text": issue.evidence[0] if issue.evidence else None,  # Exact matched phrase (for card display)
+                    "minimal_fix": issue.minimal_fix,  # Word-level replacement (e.g., "'may' → 'will'")
                     "improved_text": issue.improved_text,  # Copy-paste ready rewrite
                     "rationale": issue.detail,  # Explanation of why this is an issue
                     "recommendation": f"Review and address {issue.short_description.lower()}",

@@ -1947,7 +1947,8 @@ async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
                 transformed = {
                     "id": suggestion.get("id", f"suggestion_{req_id}"),
                     "original_text": original_text,  # Frontend expects "original_text" (full sentence for locate/highlight)
-                    "problematic_text": suggestion.get("problematic_text"),  # Exact matched phrase (for card display)
+                    "problematic_text": suggestion.get("problematic_text"),  # Exact matched phrase (for word-level highlighting)
+                    "minimal_fix": suggestion.get("minimal_fix"),  # Word-level replacement (e.g., "'may' → 'will'")
                     "improved_text": suggestion.get("suggestion", ""),  # Frontend expects "improved_text"
                     "rationale": suggestion.get("rationale", ""),
                     "confidence": suggestion.get("confidence", 0.9),
