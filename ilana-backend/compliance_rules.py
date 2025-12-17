@@ -211,7 +211,7 @@ def check_reassignment(text: str) -> ComplianceIssue:
             severity="minor",  # Downgraded from major to advisory
             short_description="Post-enrollment reassignment described (advisory)",
             detail="Text implies reassignment of subjects post-enrollment. Must pre-specify: (1) ITT analysis by enrollment group, (2) handling of time-varying severity in SAP, (3) methods to mitigate immortal time bias (e.g., time-varying covariates, marginal structural models).",
-            improved_text="Consider pre-specifying how post-enrollment reassignments will be analyzed. Example: 'Participants will be analyzed according to their initial enrollment group (intention-to-treat principle). Post-enrollment disease severity changes will be handled as time-varying covariates in statistical models as detailed in the SAP (Section 9.3).'",
+            improved_text="Consider pre-specifying how post-enrollment reassignments will be analyzed. Example: 'Participants will be analyzed according to their initial enrollment group (intention-to-treat principle). Post-enrollment disease severity changes will be handled as time-varying covariates in statistical models as detailed in the SAP (Section [X]).'",
             evidence=evidence[:3],
             confidence=0.6  # Lowered from 0.90 to allow LLM suggestions to take priority
         )
@@ -284,7 +284,7 @@ def check_vague_endpoints(text: str) -> ComplianceIssue:
             category="documentation",
             severity="minor",  # Downgraded from major to advisory
             short_description="Vague endpoint language (advisory)",
-            detail="Endpoint description lacks specificity. Must include: (1) exact measurement/instrument, (2) timepoint, (3) missing data handling. Example: 'Clinical response defined as ≥50% reduction in XYZ score from baseline at Day 28 using ABC instrument; missing data handled via multiple imputation per SAP Section 9.'",
+            detail="Endpoint description lacks specificity. Must include: (1) exact measurement/instrument, (2) timepoint, (3) missing data handling. Example: 'Clinical response defined as ≥50% reduction in XYZ score from baseline at Day 28 using ABC instrument; missing data handled via multiple imputation per SAP Section [X].'",
             improved_text="Consider specifying endpoint details more precisely. Include: (1) exact measurement instrument/scale, (2) specific timepoint (e.g., Day 28, Week 12), and (3) missing data handling method (e.g., multiple imputation, LOCF) with reference to SAP section.",
             evidence=evidence[:2],
             confidence=0.6  # Lowered from 0.80 to allow LLM suggestions to take priority
@@ -307,7 +307,7 @@ def check_visit_schedule(text: str) -> ComplianceIssue:
             severity="minor",  # Downgraded from major to advisory
             short_description="Vague visit schedule (advisory)",
             detail="Visit schedule lacks explicit windows. Specify exact windows: e.g., 'Day 0 ± 2 days, Day 7 ± 3 days, Day 28 ± 4 days' with reference to visit schedule table.",
-            improved_text="Consider defining explicit visit windows with allowed deviation ranges. Example: 'Study visits will occur at Screening (Day -14 to Day -1), Baseline (Day 0), Week 4 (±3 days), Week 8 (±3 days), Week 12 (±7 days), and End of Study (Week 24 ±7 days). See Schedule of Activities in Protocol Section 2, Table 1.'",
+            improved_text="Consider defining explicit visit windows with allowed deviation ranges. Example: 'Study visits will occur at Screening (Day -14 to Day -1), Baseline (Day 0), Week 4 (±3 days), Week 8 (±3 days), Week 12 (±7 days), and End of Study (Week 24 ±7 days). See Schedule of Activities in Protocol Section [X], Table [X].'",
             evidence=evidence[:2],
             confidence=0.6  # Lowered from 0.80 to allow LLM suggestions to take priority
         )

@@ -234,7 +234,9 @@ FAST_ANALYSIS_TEMPLATE = PromptTemplate(
 6) For statistical or population issues, always indicate preferred analytic approach (e.g., ITT with sensitivity analyses, time-varying covariates, marginal structural models) and recommend SAP text. If language is conditional ("may", "if deemed appropriate", "as appropriate"), mark as CRITICAL.
 7) Return ALL issues (array) ordered by severity (critical → major → minor → advisory). Limit to 10 issues. If none, return issues: [].
 
-REGULATORY CITATION REQUIREMENT: Your rationale MUST include specific section numbers from regulatory guidance (e.g., "ICH E9 Section 5.7" NOT just "ICH E9"). If regulatory context is provided, cite it. If not, use general regulatory principles with specific sections.""",
+REGULATORY CITATION REQUIREMENT: Your rationale MUST include specific section numbers from regulatory guidance (e.g., "ICH E9 Section 5.7" NOT just "ICH E9"). If regulatory context is provided, cite it. If not, use general regulatory principles with specific sections.
+
+IMPORTANT: When referencing SAP sections or Protocol sections in improved_text or recommendations, use "[X]" as a placeholder (e.g., "SAP Section [X]", "Protocol Section [X]"). Do NOT invent specific section numbers for the user's document. Only cite actual regulatory guidance section numbers (ICH, FDA, etc.).""",
     user_template="""Analyze the following SELECTED PROTOCOL TEXT{ta_context}. Return strict JSON only (no extra prose) with "issues" array.
 
 TEXT:
@@ -263,15 +265,15 @@ FEW-SHOT EXAMPLES (Note the SPECIFIC regulatory section citations):
 
 Example 1 - Conditional SAP (Critical):
 Original: "The statistical analyses may reflect the clinical status/symptoms at the time samples were collected if deemed appropriate."
-Improved: "Statistical analyses will be pre-specified in the Statistical Analysis Plan (SAP). Analyses reflecting clinical status at sample collection must be defined in SAP Section 7 with analytic methods and handling of time-varying covariates."
+Improved: "Statistical analyses will be pre-specified in the Statistical Analysis Plan (SAP). Analyses reflecting clinical status at sample collection must be defined in SAP Section [X] with analytic methods and handling of time-varying covariates."
 Rationale: Conditional language ("if deemed appropriate") violates pre-specification requirements. ICH E9 Section 5.7 requires all analyses to be pre-specified in the SAP before database lock. Time-varying covariates must be handled using established methods (e.g., marginal structural models per FDA Statistical Guidance Section 3.4.2).
-Recommendation: Add to SAP Section 7: specific methods for time-varying severity covariates.
+Recommendation: Add to SAP Section [X]: specific methods for time-varying severity covariates.
 
 Example 2 - Post-randomization Reassignment (Critical):
 Original: "Patients may be reassigned to the highest severity group they achieve during follow-up."
-Improved: "Analysis populations will follow intention-to-treat principles (enrollment group). Post-enrollment severity-based analyses will be pre-specified in SAP Section 8 using time-varying covariate methods to mitigate immortal time bias and guarantee time bias."
+Improved: "Analysis populations will follow intention-to-treat principles (enrollment group). Post-enrollment severity-based analyses will be pre-specified in SAP Section [X] using time-varying covariate methods to mitigate immortal time bias and guarantee time bias."
 Rationale: Post-randomization reassignment violates randomization integrity per ICH E9 Section 5.2.1. Must maintain ITT as primary analysis. If secondary analyses by achieved severity are needed, ICH E9 Section 5.7 and FDA Statistical Guidance Section 3.4.2 require pre-specification of time-varying covariate handling.
-Recommendation: Define primary ITT analysis population. Pre-specify secondary time-varying analyses in SAP Section 8 with explicit methods to avoid immortal time bias.
+Recommendation: Define primary ITT analysis population. Pre-specify secondary time-varying analyses in SAP Section [X] with explicit methods to avoid immortal time bias.
 
 Example 3 - Terminology (Minor):
 Original: "Subjects will be enrolled..."
@@ -282,13 +284,13 @@ Example 4 - Primary Endpoint Specification (Critical):
 Original: "The primary endpoint is change in disease severity score."
 Improved: "The primary endpoint is change from baseline in disease severity score at Week 12, analyzed using ANCOVA with baseline score as covariate. Non-inferiority margin: -3 points (FDA Guidance: Non-Inferiority Clinical Trials, Section 4.2)."
 Rationale: ICH E9 Section 2.2.2 requires primary endpoints to specify: (1) measurement timing, (2) direction of benefit, (3) analysis method, and (4) clinically meaningful difference. FDA Non-Inferiority Guidance Section 4.2 requires pre-specification of NI margins with clinical justification.
-Recommendation: Define in Protocol Section 4.1: precise timing (Week 12), analysis method (ANCOVA), and NI/superiority margin with clinical justification.
+Recommendation: Define in Protocol Section [X]: precise timing (Week 12), analysis method (ANCOVA), and NI/superiority margin with clinical justification.
 
 Example 5 - Safety Monitoring Specificity (Major):
 Original: "Adverse events will be monitored throughout the study."
 Improved: "Adverse events will be actively monitored at each study visit (Weeks 0, 4, 8, 12, 16) using standardized questionnaires and targeted physical examination. Grade 3+ AEs must be reported to the Medical Monitor within 24 hours per ICH E6(R3) Section 5.17. All AEs will be coded using MedDRA v25.0."
 Rationale: ICH E6(R3) Section 5.17 requires specification of: (1) AE assessment methods, (2) reporting timelines for serious/severe events, (3) standardized coding dictionaries. FDA Safety Monitoring Guidance Section 6.3 requires active surveillance with defined procedures.
-Recommendation: Add to Protocol Section 6.2: specific AE collection procedures, grading criteria (CTCAE v5.0), expedited reporting timelines, and MedDRA coding version.
+Recommendation: Add to Protocol Section [X]: specific AE collection procedures, grading criteria (CTCAE v5.0), expedited reporting timelines, and MedDRA coding version.
 
 Example 6 - Inclusion Criteria Precision (Major):
 Original: "Patients with adequate organ function."

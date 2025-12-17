@@ -191,16 +191,16 @@ def _generate_recommendation(pattern_readable: str, typical_change: str, example
         "dose may be adjusted": (
             "Pre-specify dose modification rules in protocol. Example: "
             "'Dose will be reduced by 25% for Grade 2 toxicity, held for Grade 3, "
-            "discontinued for Grade 4 per protocol Section 6.5'"
+            "discontinued for Grade 4 per protocol Section [X]'"
         ),
         "as needed/required dosing": (
             "Replace with specific criteria. Example: "
-            "'Supportive medications per institutional guidelines (see Section 6.4)' "
+            "'Supportive medications per institutional guidelines (see Section [X])' "
             "instead of 'as needed'"
         ),
         "if [deemed] appropriate": (
             "Remove conditional language and pre-specify approach. Example: "
-            "'Sensitivity analyses will be performed as detailed in SAP Section 9.3' "
+            "'Sensitivity analyses will be performed as detailed in SAP Section [X]' "
             "instead of 'if deemed appropriate'"
         ),
         "SAE reporting language": (
@@ -238,7 +238,7 @@ def _generate_recommendation(pattern_readable: str, typical_change: str, example
         ),
         "analysis method language": (
             "Pre-specify all methods in SAP reference. Example: "
-            "'Analysis methods are pre-specified in SAP Section 9 and will not be "
+            "'Analysis methods are pre-specified in SAP Section [X] and will not be "
             "modified after database lock'"
         ),
         "visit window specification": (
