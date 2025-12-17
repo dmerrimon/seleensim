@@ -244,7 +244,7 @@ app.add_middleware(
         # Production: Ilana backend/frontend
         "https://ilanalabs-add-in.onrender.com",
         # Azure Static Web Apps (Add-in Taskpane)
-        "https://agreeable-tree-06737810f.3.azurestaticapps.net",
+        "https://red-sea-0cd7f820f.3.azurestaticapps.net",
         # Admin Portal
         "https://admin.ilanaimmersive.com",
         "https://ilana-admin.onrender.com",
