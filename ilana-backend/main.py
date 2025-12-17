@@ -484,10 +484,12 @@ async def layer_status():
 
     # Layer 1: Rule Engine (compliance_rules.py)
     try:
-        from compliance_rules import COMPLIANCE_RULES
+        from compliance_rules import get_rule_stats
+        stats = get_rule_stats()
         layers["rule_engine"] = {
             "status": "ok",
-            "rules_count": len(COMPLIANCE_RULES) if COMPLIANCE_RULES else 0
+            "rules_count": stats.get("total_rules", 0),
+            "categories": stats.get("categories", [])
         }
     except Exception as e:
         layers["rule_engine"] = {"status": "error", "error": str(e)}
