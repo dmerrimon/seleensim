@@ -1043,3 +1043,155 @@ body {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+/* ============================================================================
+   REACT-STYLE CARD DESIGN
+   ============================================================================ */
+
+/* Severity dot */
+.severity-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.severity-dot.critical { background: #FECACA; }
+.severity-dot.major { background: #FED7AA; }
+.severity-dot.minor { background: #FEF08A; }
+.severity-dot.advisory { background: #E0E7FF; }
+
+/* Text diff preview (collapsed) */
+.text-diff-preview {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+.text-original {
+    color: #DC2626;
+    text-decoration: line-through;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 45%;
+}
+.text-arrow {
+    color: #9CA3AF;
+    flex-shrink: 0;
+}
+.text-suggested {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    background: #DCFCE7;
+    color: #15803D;
+    border-radius: 9999px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 45%;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.text-suggested:hover {
+    background: #BBF7D0;
+}
+
+/* Expanded content sections */
+.expanded-section {
+    margin-bottom: 12px;
+}
+.expanded-section label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6B7280;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.expanded-section .section-content {
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    line-height: 1.5;
+}
+.expanded-section .section-content.original-text {
+    background: #FEF2F2;
+    color: #B91C1C;
+    text-decoration: line-through;
+}
+.expanded-section .section-content.suggested-text {
+    background: #F0FDF4;
+    color: #15803D;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.expanded-section .section-content.suggested-text:hover {
+    background: #DCFCE7;
+}
+.expanded-section .section-content.explanation {
+    color: #374151;
+}
+.expanded-section .section-content.clinical-impact {
+    background: #F9FAFB;
+    color: #374151;
+}
+
+/* Severity title in expanded view */
+.severity-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.severity-title.critical { color: #DC2626; }
+.severity-title.major { color: #D97706; }
+.severity-title.minor { color: #CA8A04; }
+.severity-title.advisory { color: #6B7280; }
+
+.issue-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+/* Reference link */
+.reference-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #2563EB;
+    margin-top: 12px;
+    cursor: pointer;
+}
+.reference-link:hover {
+    text-decoration: underline;
+}
+
+/* Click to locate hint */
+.locate-hint {
+    font-size: 11px;
+    color: #16A34A;
+    margin-left: 8px;
+}
+
+/* Updated card header for new layout */
+.card-header-new {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.card-header-new .expand-icon {
+    margin-left: auto;
+    flex-shrink: 0;
+}

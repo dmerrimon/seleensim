@@ -1634,7 +1634,62 @@ function showJobQueuedMessage(jobId) {
     }
 }
 
-// Display suggestion cards in Grammarly style (collapsed with expand on click)
+// Helper function to truncate text
+function truncateText(text, maxLength) {
+    if (!text) return '...';
+    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+}
+
+// Locate and highlight text in document for a specific issue
+async function locateAndHighlight(issueId) {
+    const issue = currentSuggestions.find(s => s.id === issueId);
+    if (!issue || !issue.text) {
+        console.log('Issue not found or no text to locate');
+        return;
+    }
+
+    try {
+        await Word.run(async (context) => {
+            const body = context.document.body;
+            const searchResults = body.search(issue.text, { matchCase: false, matchWholeWord: false });
+            searchResults.load('items');
+            await context.sync();
+
+            if (searchResults.items.length > 0) {
+                // Select the first match and scroll to it
+                searchResults.items[0].select();
+                await context.sync();
+            }
+        });
+    } catch (error) {
+        console.error('Error locating text:', error);
+    }
+}
+
+// Map issue types to readable titles
+function getIssueTitle(issue) {
+    const typeMap = {
+        'statistical': 'Statistical Issue',
+        'safety': 'Safety Concern',
+        'analysis_population': 'Analysis Population Issue',
+        'documentation': 'Documentation Gap',
+        'clarity': 'Clarity Issue',
+        'compliance': 'Compliance Issue',
+        'cross_section_conflict': 'Cross-Section Conflict',
+        'amendment_risk': 'Amendment Risk'
+    };
+
+    if (issue.source === 'amendment_risk' || issue.amendment_risk) {
+        return 'Amendment Risk';
+    }
+    if (issue.type === 'cross_section_conflict') {
+        return 'Cross-Section Conflict';
+    }
+
+    return typeMap[issue.type] || 'Protocol Issue';
+}
+
+// Display suggestion cards in React style (collapsed with expand on click)
 function displaySuggestionCard(issue) {
     // Truncate original text for collapsed view (60 chars)
     const textSnippet = issue.text && issue.text.length > 60
@@ -1681,18 +1736,28 @@ function displaySuggestionCard(issue) {
     // Determine card extra class
     const cardExtraClass = isCrossSection ? 'cross-section-card' : (isAmendmentRisk ? 'amendment-risk-card' : '');
 
+    // Get severity class (default to minor)
+    const severityClass = issue.severity || 'minor';
+    const severityLabel = (issue.severity || 'minor').toUpperCase();
+
     return `
         <div class="suggestion-card collapsed ${cardExtraClass}" data-issue-id="${issue.id}" onclick="toggleCardExpansion('${issue.id}')">
-            <!-- Collapsed Header (always visible) -->
-            <div class="card-header">
-                <span class="issue-category ${categoryClass}">${issueCategory}</span>
-                ${riskBadge}${crossSectionBadge}
-                <span class="text-snippet">${textSnippet}</span>
+            <!-- Collapsed Header (React-style with severity dot and text diff) -->
+            <div class="card-header card-header-new">
+                <div class="severity-dot ${severityClass}"></div>
+                <div class="text-diff-preview">
+                    <span class="text-original">${truncateText(issue.text, 30)}</span>
+                    <span class="text-arrow">→</span>
+                    <span class="text-suggested">${truncateText(issue.suggestion, 30)}</span>
+                </div>
                 <span class="expand-icon">›</span>
             </div>
 
             <!-- Expanded Content (hidden by default) -->
             <div class="card-content" style="display: none;">
+                <div class="severity-title ${severityClass}">${severityLabel}</div>
+                <div class="issue-title">${getIssueTitle(issue)}</div>
+
                 ${isAmendmentRisk ? `
                 <div class="amendment-risk-banner">
                     <strong>Historical Pattern:</strong> "${amendmentRiskData.pattern || 'Similar language'}"
@@ -1708,20 +1773,23 @@ function displaySuggestionCard(issue) {
                 </div>
                 ` : ''}
 
-                <div class="content-section">
-                    <label>Original Text:</label>
-                    <div class="content-text original">${issue.text || 'No original text provided'}</div>
+                <div class="expanded-section">
+                    <label>Original</label>
+                    <div class="section-content original-text">${issue.text || 'No original text provided'}</div>
                 </div>
 
-                <div class="content-section">
-                    <label>Recommended Change:</label>
-                    <div class="content-text recommended">${issue.suggestion || 'No suggestion provided'}</div>
+                <div class="expanded-section">
+                    <label>Suggested</label>
+                    <button class="section-content suggested-text" onclick="event.stopPropagation(); locateAndHighlight('${issue.id}')">
+                        ${issue.suggestion || 'No suggestion provided'}
+                        <span class="locate-hint">(click to locate)</span>
+                    </button>
                 </div>
 
                 ${issue.rationale ? `
-                <div class="content-section">
-                    <label>${issue.clinical_rationale ? 'Clinical Rationale:' : isCrossSection ? 'Consistency Analysis:' : isAmendmentRisk ? 'Risk Analysis:' : 'Regulatory Context:'}</label>
-                    <div class="content-text rationale">${issue.rationale}</div>
+                <div class="expanded-section">
+                    <label>Explanation</label>
+                    <div class="section-content explanation">${issue.rationale}</div>
                 </div>
                 ` : ''}
 
@@ -1733,7 +1801,7 @@ function displaySuggestionCard(issue) {
                     </button>
                     <button class="action-btn comment" onclick="event.stopPropagation(); insertAsComment('${issue.id}')"
                             ${(issue.confidence || 1) < 0.5 ? 'disabled title="Confidence too low"' : ''}>
-                        Insert as Comment
+                        Comment
                     </button>
                     <button class="action-btn dismiss" onclick="event.stopPropagation(); dismissSuggestion('${issue.id}')">
                         Dismiss
