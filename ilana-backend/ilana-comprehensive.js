@@ -301,16 +301,31 @@ function injectSelectionCounterStyles() {
 // ============================================================================
 
 /**
- * Calculate SHA256 fingerprint for document text
- * Uses Web Crypto API for consistent hashing
+ * Calculate fingerprint for document text
+ * Uses Web Crypto API when available, falls back to simple hash
  */
 async function calculateDocumentFingerprint(text) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(text);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-    return hashHex;
+    // Try Web Crypto API first (modern browsers)
+    if (window.crypto && window.crypto.subtle) {
+        try {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(text);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            return hashHex;
+        } catch (e) {
+            console.warn('⚠️ Web Crypto failed, using fallback hash:', e.message);
+        }
+    }
+
+    // Fallback: simple djb2 hash (works in all contexts)
+    let hash = 5381;
+    for (let i = 0; i < text.length; i++) {
+        hash = ((hash << 5) + hash) + text.charCodeAt(i);
+        hash = hash & hash; // Convert to 32bit integer
+    }
+    return 'djb2_' + Math.abs(hash).toString(16).padStart(8, '0') + '_' + text.length.toString(16);
 }
 
 /**
@@ -369,7 +384,7 @@ async function initializeDocumentIntelligence() {
             return;
         }
 
-        if (statusData.status === 'processing') {
+        if (statusData.status === 'processing' || statusData.status === 'already_processing') {
             // Already processing - poll for completion
             console.log('⏳ Document already processing, polling for completion...');
             IlanaState.documentIntelligence.processing = true;
@@ -401,10 +416,10 @@ async function initializeDocumentIntelligence() {
 
         const processData = await processResponse.json();
 
-        if (processData.status === 'processing') {
+        if (processData.status === 'processing' || processData.status === 'already_processing') {
             // Poll for completion
             pollDocumentProcessingStatus(fingerprint);
-        } else if (processData.status === 'processed') {
+        } else if (processData.status === 'processed' || processData.status === 'already_processed') {
             // Immediate completion (small document or cache hit)
             handleDocumentProcessingComplete(processData);
         }
