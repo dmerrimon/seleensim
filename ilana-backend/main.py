@@ -475,6 +475,76 @@ async def health_check():
     }
 
 
+@app.get("/api/layer-status")
+async def layer_status():
+    """Diagnostic endpoint to verify all AI stack layers are functional"""
+    from pathlib import Path
+
+    layers = {}
+
+    # Layer 1: Rule Engine (compliance_rules.py)
+    try:
+        from compliance_rules import COMPLIANCE_RULES
+        layers["rule_engine"] = {
+            "status": "ok",
+            "rules_count": len(COMPLIANCE_RULES) if COMPLIANCE_RULES else 0
+        }
+    except Exception as e:
+        layers["rule_engine"] = {"status": "error", "error": str(e)}
+
+    # Layer 3: Amendment Risk Prediction
+    try:
+        from amendment_risk import get_risk_statistics
+        stats = get_risk_statistics()
+        layers["amendment_risk"] = {
+            "status": "ok" if stats.get("patterns_loaded") else "error",
+            "patterns_count": stats.get("high_risk_count", 0) + stats.get("medium_risk_count", 0) + stats.get("low_risk_count", 0),
+            "high_risk": stats.get("high_risk_count", 0),
+            "medium_risk": stats.get("medium_risk_count", 0),
+            "low_risk": stats.get("low_risk_count", 0),
+            "patterns_file_exists": Path("amendment_risk_patterns.json").exists()
+        }
+    except ImportError as e:
+        layers["amendment_risk"] = {"status": "import_error", "error": str(e)}
+    except Exception as e:
+        layers["amendment_risk"] = {"status": "error", "error": str(e)}
+
+    # Layer 4: RAG (Pinecone + PubMedBERT)
+    try:
+        pinecone_enabled = os.getenv("ENABLE_PINECONE_INTEGRATION", "true").lower() == "true"
+        pinecone_key = os.getenv("PINECONE_API_KEY", "")
+        layers["rag"] = {
+            "status": "ok" if pinecone_enabled and pinecone_key else "disabled",
+            "pinecone_enabled": pinecone_enabled,
+            "pinecone_configured": bool(pinecone_key)
+        }
+    except Exception as e:
+        layers["rag"] = {"status": "error", "error": str(e)}
+
+    # Layer 5: LLM (Azure OpenAI)
+    try:
+        azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT", "")
+        azure_key = os.getenv("AZURE_OPENAI_API_KEY", "")
+        azure_deployment = os.getenv("AZURE_OPENAI_DEPLOYMENT", "gpt-4o-deployment")
+        layers["llm"] = {
+            "status": "ok" if azure_endpoint and azure_key else "error",
+            "model": azure_deployment,
+            "endpoint_configured": bool(azure_endpoint),
+            "key_configured": bool(azure_key)
+        }
+    except Exception as e:
+        layers["llm"] = {"status": "error", "error": str(e)}
+
+    # Overall status
+    all_ok = all(layer.get("status") == "ok" for layer in layers.values())
+
+    return {
+        "status": "healthy" if all_ok else "degraded",
+        "timestamp": datetime.utcnow().isoformat(),
+        "layers": layers
+    }
+
+
 @app.get("/env-diagnostic")
 async def env_diagnostic():
     """Diagnostic endpoint to verify environment configuration (safe for production)"""

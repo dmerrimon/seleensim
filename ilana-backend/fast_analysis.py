@@ -470,6 +470,7 @@ async def analyze_fast(
     timings = {
         "preprocess_ms": 0,
         "rule_engine_ms": 0,
+        "amendment_risk_ms": 0,  # Layer 3: Risk Prediction
         "rag_ms": 0,
         "azure_ms": 0,
         "validation_ms": 0,  # Phase 2A
@@ -520,8 +521,8 @@ async def analyze_fast(
                 if risk_predictions:
                     amendment_risks = [format_risk_for_suggestion(pred) for pred in risk_predictions]
                     logger.info(f"⚠️ [{req_id}] Amendment risk: {len(amendment_risks)} patterns detected (section={section or 'general'})")
-            except ImportError:
-                logger.debug("Amendment risk module not available, skipping Layer 3")
+            except ImportError as e:
+                logger.warning(f"⚠️ [{req_id}] Amendment risk import failed: {e}")
             except Exception as e:
                 logger.warning(f"⚠️ [{req_id}] Amendment risk prediction failed: {e}")
         # Amendment risk is always enabled during trial
