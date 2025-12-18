@@ -253,8 +253,8 @@ RESPONSE FORMAT:
       "category": "statistical",
       "severity": "critical",
       "original_text": "exact excerpt (full sentence for context)",
-      "problematic_text": "REQUIRED: the specific word(s) to highlight (e.g., 'may', 'if deemed appropriate', 'Subjects')",
-      "minimal_fix": "REQUIRED: word-level replacement showing 'old' → 'new' (e.g., \"'may' → 'will'\")",
+      "problematic_text": "REQUIRED: Extract ONLY the 1-5 word phrase that needs changing (e.g., 'may', 'may be reassigned', 'if deemed appropriate'). NOT the full sentence. Must appear VERBATIM in the original document.",
+      "minimal_fix": "REQUIRED: word-level replacement showing 'old' → 'new' (e.g., \"'may' → 'will'\", \"'may be reassigned' → 'will be analyzed per enrollment group'\")",
       "improved_text": "copy-paste ready rewrite of full sentence",
       "rationale": "brief explanation referencing guidance or statistical risk",
       "recommendation": "actionable step to fix (where to insert; SAP reference)",
@@ -263,7 +263,11 @@ RESPONSE FORMAT:
   ]
 }}
 
-CRITICAL: Always include "problematic_text" (the exact word/phrase causing the issue) and "minimal_fix" (the word-level replacement). These enable word-level highlighting in the document.
+CRITICAL RULES:
+1. "problematic_text" MUST be only 1-5 words (e.g., "may", "may be reassigned", "if deemed appropriate"). NEVER the full sentence.
+2. "problematic_text" MUST appear VERBATIM in the document - copy it exactly as written.
+3. "minimal_fix" shows the word-level replacement (e.g., "'may' → 'will'").
+These fields enable word-level highlighting in the document.
 
 FEW-SHOT EXAMPLES (Note the SPECIFIC regulatory section citations):
 

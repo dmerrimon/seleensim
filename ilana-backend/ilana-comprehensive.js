@@ -1959,13 +1959,26 @@ async function highlightOriginalTextInDocument(issues) {
                 }
 
                 try {
-                    // Search for the problematic text in the document
-                    const searchResults = context.document.body.search(textToHighlight, {
-                        ignorePunct: false,
-                        ignoreSpace: false
+                    // Search for the problematic text in the document with fuzzy matching
+                    // Use ignorePunct and ignoreSpace to handle LLM paraphrasing (hyphens, parentheses, etc.)
+                    let searchResults = context.document.body.search(textToHighlight, {
+                        ignorePunct: true,
+                        ignoreSpace: true
                     });
                     context.load(searchResults, 'items');
                     await context.sync();
+
+                    // Fallback: If no matches and text is long, try searching for first few words
+                    if (searchResults.items.length === 0 && textToHighlight.length > 40) {
+                        const words = textToHighlight.split(/\s+/).slice(0, 6).join(' ');
+                        console.log(`🔄 Trying fallback search with: "${words}"`);
+                        searchResults = context.document.body.search(words, {
+                            ignorePunct: true,
+                            ignoreSpace: true
+                        });
+                        context.load(searchResults, 'items');
+                        await context.sync();
+                    }
 
                     // Highlight all matches with severity-based color
                     if (searchResults.items.length > 0) {
