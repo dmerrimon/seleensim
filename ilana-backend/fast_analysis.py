@@ -248,7 +248,7 @@ def _deduplicate_suggestions(
     return deduplicated
 
 
-def _match_llm_text_to_original(llm_text: str, original_text: str, threshold: float = 0.6) -> str:
+def _match_llm_text_to_original(llm_text: str, original_text: str, threshold: float = 0.8) -> str:
     """
     Find the best matching substring in original_text for the LLM's paraphrased text.
     Returns the verbatim substring from original_text if found, otherwise returns llm_text unchanged.
@@ -256,13 +256,13 @@ def _match_llm_text_to_original(llm_text: str, original_text: str, threshold: fl
     This fixes the issue where LLM paraphrases text (changes punctuation, omits parentheticals,
     etc.) and the frontend can't find the exact text in the document.
 
-    Uses sliding window approach with fuzzy matching, preferring matches that extend to
-    sentence boundaries when possible.
+    Uses sentence-level matching first, then sliding window with validation to avoid
+    returning truncated fragments (e.g., unbalanced parentheses).
 
     Args:
         llm_text: The text returned by the LLM (may be paraphrased)
         original_text: The original selected text from the document
-        threshold: Minimum similarity ratio to consider a match (default 0.6)
+        threshold: Minimum similarity ratio to consider a match (default 0.8)
 
     Returns:
         The best matching substring from original_text, or llm_text if no good match found
@@ -273,42 +273,48 @@ def _match_llm_text_to_original(llm_text: str, original_text: str, threshold: fl
     llm_text_clean = llm_text.strip()
     original_clean = original_text.strip()
 
-    # Exact match - return immediately
+    # 1. Exact match - return immediately
     if llm_text_clean in original_clean:
-        # Find the exact position and return with original casing/punctuation
         start = original_clean.find(llm_text_clean)
         return original_clean[start:start + len(llm_text_clean)]
 
-    # First, try to match complete sentences from the original
-    # Split by sentence-ending punctuation
+    # 2. Sentence-level matching (preferred - always returns complete sentences)
     sentences = re.split(r'(?<=[.!?])\s+', original_clean)
-
     for sentence in sentences:
         sentence = sentence.strip()
         if not sentence:
             continue
         ratio = SequenceMatcher(None, llm_text_clean.lower(), sentence.lower()).ratio()
-        if ratio > 0.7:  # Higher threshold for sentence-level match
+        if ratio > 0.75:  # Higher threshold for sentence-level match
             return sentence
 
-    # Fallback: Fuzzy match using sliding window over words
-    best_match = llm_text_clean
+    # 3. Sliding window fallback with validation
+    # Only accept matches that have balanced parentheses/quotes
+    best_match = None
     best_ratio = threshold
 
     words = original_clean.split()
     llm_word_count = len(llm_text_clean.split())
 
-    # Try window sizes around the LLM text word count (+/- 8 words to handle parentheticals)
     for window_words in range(max(1, llm_word_count - 5), min(len(words) + 1, llm_word_count + 10)):
         for i in range(max(0, len(words) - window_words + 1)):
             candidate = ' '.join(words[i:i + window_words])
-            ratio = SequenceMatcher(None, llm_text_clean.lower(), candidate.lower()).ratio()
 
+            # VALIDATION: Skip if unbalanced parentheses (prevents truncated fragments)
+            if candidate.count('(') != candidate.count(')'):
+                continue
+
+            # VALIDATION: Skip if unbalanced quotes
+            if candidate.count('"') % 2 != 0:
+                continue
+
+            ratio = SequenceMatcher(None, llm_text_clean.lower(), candidate.lower()).ratio()
             if ratio > best_ratio:
                 best_ratio = ratio
                 best_match = candidate
 
-    return best_match
+    # 4. Return best valid match, or fall back to LLM text (unchanged)
+    return best_match if best_match else llm_text
 
 
 def _group_suggestions_by_text(

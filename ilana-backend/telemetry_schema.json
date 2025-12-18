@@ -21,7 +21,7 @@
     },
     "analyze_mode": {
       "type": "string",
-      "enum": ["selection", "document_truncated", "document_chunked", "ta_enhanced", "optimize_selection", "selection_only", "legacy_pipeline"],
+      "enum": ["selection", "document_truncated", "document_chunked", "ta_enhanced", "optimize_selection", "selection_only", "legacy_pipeline", "smart_routing"],
       "description": "Type of analysis performed"
     },
     "model_path": {
