@@ -475,6 +475,42 @@ async def health_check():
     }
 
 
+@app.get("/warm-pubmedbert")
+async def warm_pubmedbert():
+    """
+    Keep PubMedBERT endpoint warm to prevent cold starts.
+    Called by external cron service every 5 minutes.
+    """
+    import httpx
+
+    endpoint = os.getenv("PUBMEDBERT_ENDPOINT_URL")
+    api_key = os.getenv("HUGGINGFACE_API_KEY")
+
+    if not endpoint or not api_key:
+        return {"status": "skipped", "reason": "PubMedBERT not configured"}
+
+    try:
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.post(
+                endpoint,
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json"
+                },
+                json={"inputs": "clinical trial protocol"}
+            )
+
+            if response.status_code == 200:
+                return {"status": "warm", "response_time_ms": response.elapsed.total_seconds() * 1000}
+            elif response.status_code == 503:
+                return {"status": "warming", "message": "Endpoint was cold, now warming up"}
+            else:
+                return {"status": "error", "code": response.status_code}
+
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+
 @app.get("/api/layer-status")
 async def layer_status():
     """Diagnostic endpoint to verify all AI stack layers are functional"""

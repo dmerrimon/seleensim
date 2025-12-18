@@ -96,6 +96,75 @@ def _calculate_text_overlap(text1: str, text2: str) -> float:
     return jaccard
 
 
+def _deduplicate_ai_suggestions(
+    ai_suggestions: List[Dict[str, Any]],
+    request_id: str
+) -> List[Dict[str, Any]]:
+    """
+    Deduplicate AI suggestions that have identical or highly similar original text.
+
+    When the LLM returns multiple issues pointing to the same text (but with different
+    categories/severities), merge them into a single suggestion with the highest severity.
+
+    Args:
+        ai_suggestions: List of AI-generated issue dicts
+        request_id: Request tracking ID
+
+    Returns:
+        Deduplicated list with one suggestion per unique text
+    """
+    if not ai_suggestions:
+        return []
+
+    # Group by normalized text
+    text_groups: Dict[str, List[Dict[str, Any]]] = {}
+
+    for sugg in ai_suggestions:
+        text = sugg.get("text", "").strip().lower()
+        if not text:
+            continue
+
+        # Normalize whitespace for comparison
+        normalized = " ".join(text.split())
+
+        if normalized not in text_groups:
+            text_groups[normalized] = []
+        text_groups[normalized].append(sugg)
+
+    # For each group, keep only the highest severity suggestion
+    severity_order = {"critical": 0, "major": 1, "minor": 2, "advisory": 3}
+    deduplicated = []
+    duplicates_removed = 0
+
+    for normalized_text, group in text_groups.items():
+        if len(group) == 1:
+            deduplicated.append(group[0])
+        else:
+            # Multiple suggestions for same text - keep highest severity
+            sorted_group = sorted(
+                group,
+                key=lambda s: severity_order.get(s.get("severity", "minor"), 2)
+            )
+            best = sorted_group[0]
+            duplicates_removed += len(group) - 1
+
+            # Log the merge
+            logger.info(
+                f"🔄 [{request_id}] Merged {len(group)} duplicate AI suggestions "
+                f"for text: '{best.get('text', '')[:50]}...' → keeping {best.get('severity')} severity"
+            )
+
+            deduplicated.append(best)
+
+    if duplicates_removed > 0:
+        logger.info(
+            f"🔍 [{request_id}] AI deduplication: Removed {duplicates_removed} duplicate AI issues "
+            f"(same text, different severity/category)"
+        )
+
+    return deduplicated
+
+
 def _deduplicate_suggestions(
     rule_suggestions: List[Dict[str, Any]],
     ai_suggestions: List[Dict[str, Any]],
@@ -869,7 +938,10 @@ Table-Specific ICH-GCP Rules:
                 "source": "llm"
             })
 
-        # 5b-1. Deduplicate: Remove rule-based issues that overlap with AI suggestions
+        # 5b-0. FIRST: Deduplicate within AI suggestions (same text, different severity/category)
+        ai_suggestions = _deduplicate_ai_suggestions(ai_suggestions, req_id)
+
+        # 5b-1. THEN: Deduplicate rule-based issues that overlap with AI suggestions
         suggestions = _deduplicate_suggestions(rule_suggestions, ai_suggestions, req_id)
 
         # Track deduplication stats
