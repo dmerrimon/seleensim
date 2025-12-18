@@ -253,8 +253,8 @@ RESPONSE FORMAT:
       "category": "statistical",
       "severity": "critical",
       "original_text": "exact excerpt (full sentence for context)",
-      "problematic_text": "specific word or phrase that needs changing (e.g., 'may', 'if deemed appropriate')",
-      "minimal_fix": "word-level replacement (e.g., \"'may' → 'will'\" or \"'if deemed appropriate' → 'as pre-specified in SAP Section [X]'\")",
+      "problematic_text": "REQUIRED: the specific word(s) to highlight (e.g., 'may', 'if deemed appropriate', 'Subjects')",
+      "minimal_fix": "REQUIRED: word-level replacement showing 'old' → 'new' (e.g., \"'may' → 'will'\")",
       "improved_text": "copy-paste ready rewrite of full sentence",
       "rationale": "brief explanation referencing guidance or statistical risk",
       "recommendation": "actionable step to fix (where to insert; SAP reference)",
@@ -262,6 +262,8 @@ RESPONSE FORMAT:
     }}
   ]
 }}
+
+CRITICAL: Always include "problematic_text" (the exact word/phrase causing the issue) and "minimal_fix" (the word-level replacement). These enable word-level highlighting in the document.
 
 FEW-SHOT EXAMPLES (Note the SPECIFIC regulatory section citations):
 
