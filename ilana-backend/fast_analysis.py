@@ -13,10 +13,12 @@ For deep analysis with full RAG stack + citations, use background job queue.
 """
 
 import os
+import re
 import time
 import logging
 from typing import Dict, Any, List, Optional, Tuple
 from datetime import datetime
+from difflib import SequenceMatcher
 import asyncio
 
 # Step 4: Import prompt optimization utilities
@@ -175,6 +177,69 @@ def _deduplicate_suggestions(
         )
 
     return deduplicated
+
+
+def _match_llm_text_to_original(llm_text: str, original_text: str, threshold: float = 0.6) -> str:
+    """
+    Find the best matching substring in original_text for the LLM's paraphrased text.
+    Returns the verbatim substring from original_text if found, otherwise returns llm_text unchanged.
+
+    This fixes the issue where LLM paraphrases text (changes punctuation, omits parentheticals,
+    etc.) and the frontend can't find the exact text in the document.
+
+    Uses sliding window approach with fuzzy matching, preferring matches that extend to
+    sentence boundaries when possible.
+
+    Args:
+        llm_text: The text returned by the LLM (may be paraphrased)
+        original_text: The original selected text from the document
+        threshold: Minimum similarity ratio to consider a match (default 0.6)
+
+    Returns:
+        The best matching substring from original_text, or llm_text if no good match found
+    """
+    if not llm_text or not original_text:
+        return llm_text
+
+    llm_text_clean = llm_text.strip()
+    original_clean = original_text.strip()
+
+    # Exact match - return immediately
+    if llm_text_clean in original_clean:
+        # Find the exact position and return with original casing/punctuation
+        start = original_clean.find(llm_text_clean)
+        return original_clean[start:start + len(llm_text_clean)]
+
+    # First, try to match complete sentences from the original
+    # Split by sentence-ending punctuation
+    sentences = re.split(r'(?<=[.!?])\s+', original_clean)
+
+    for sentence in sentences:
+        sentence = sentence.strip()
+        if not sentence:
+            continue
+        ratio = SequenceMatcher(None, llm_text_clean.lower(), sentence.lower()).ratio()
+        if ratio > 0.7:  # Higher threshold for sentence-level match
+            return sentence
+
+    # Fallback: Fuzzy match using sliding window over words
+    best_match = llm_text_clean
+    best_ratio = threshold
+
+    words = original_clean.split()
+    llm_word_count = len(llm_text_clean.split())
+
+    # Try window sizes around the LLM text word count (+/- 8 words to handle parentheticals)
+    for window_words in range(max(1, llm_word_count - 5), min(len(words) + 1, llm_word_count + 10)):
+        for i in range(max(0, len(words) - window_words + 1)):
+            candidate = ' '.join(words[i:i + window_words])
+            ratio = SequenceMatcher(None, llm_text_clean.lower(), candidate.lower()).ratio()
+
+            if ratio > best_ratio:
+                best_ratio = ratio
+                best_match = candidate
+
+    return best_match
 
 
 def _group_suggestions_by_text(
@@ -815,7 +880,27 @@ Table-Specific ICH-GCP Rules:
             "duplicates_removed": len(rule_suggestions) + len(ai_suggestions) - len(suggestions)
         }
 
-        # 5b-2. DISABLED: Grouping removed per user request - show individual cards like Grammarly
+        # 5b-2. TEXT MATCHING: Correct LLM paraphrased text against original selection
+        # This ensures original_text contains verbatim document text for highlighting/replacing
+        text_corrections = 0
+        for suggestion in suggestions:
+            if suggestion.get("source") == "llm" and suggestion.get("text"):
+                corrected_text = _match_llm_text_to_original(
+                    suggestion["text"],
+                    trimmed_text  # original selected text from API payload
+                )
+                if corrected_text != suggestion["text"]:
+                    logger.debug(
+                        f"📝 [{req_id}] Corrected LLM text: "
+                        f"'{suggestion['text'][:50]}...' -> '{corrected_text[:50]}...'"
+                    )
+                    suggestion["text"] = corrected_text
+                    text_corrections += 1
+
+        if text_corrections > 0:
+            logger.info(f"📝 [{req_id}] Text matching: Corrected {text_corrections} LLM suggestions against original text")
+
+        # 5b-3. DISABLED: Grouping removed per user request - show individual cards like Grammarly
         # suggestions, grouping_stats = _group_suggestions_by_text(suggestions, req_id)
         grouping_stats = {
             "groups_created": 0,
