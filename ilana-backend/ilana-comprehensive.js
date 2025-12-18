@@ -2071,13 +2071,25 @@ async function applySuggestion(issueId) {
 
     try {
         await Word.run(async (context) => {
-            // Search for the original text in the document
-            const searchResults = context.document.body.search(issue.text, {
-                ignorePunct: false,
-                ignoreSpace: false
+            // Search for the original text in the document with fuzzy matching
+            let searchResults = context.document.body.search(issue.text, {
+                ignorePunct: true,
+                ignoreSpace: true
             });
             context.load(searchResults, 'items');
             await context.sync();
+
+            // Fallback: If no matches and text is long, try first few words
+            if (searchResults.items.length === 0 && issue.text.length > 40) {
+                const words = issue.text.split(/\s+/).slice(0, 6).join(' ');
+                console.log(`🔄 Trying fallback search with: "${words}"`);
+                searchResults = context.document.body.search(words, {
+                    ignorePunct: true,
+                    ignoreSpace: true
+                });
+                context.load(searchResults, 'items');
+                await context.sync();
+            }
 
             if (searchResults.items.length === 0) {
                 showError('Could not find the original text in the document');
@@ -2239,13 +2251,25 @@ async function insertAsComment(issueId) {
 
     try {
         commentId = await Word.run(async (context) => {
-            // Search for the original text in the document
-            const searchResults = context.document.body.search(issue.text, {
-                ignorePunct: false,
-                ignoreSpace: false
+            // Search for the original text in the document with fuzzy matching
+            let searchResults = context.document.body.search(issue.text, {
+                ignorePunct: true,
+                ignoreSpace: true
             });
             context.load(searchResults, 'items');
             await context.sync();
+
+            // Fallback: If no matches and text is long, try first few words
+            if (searchResults.items.length === 0 && issue.text.length > 40) {
+                const words = issue.text.split(/\s+/).slice(0, 6).join(' ');
+                console.log(`🔄 Trying fallback search with: "${words}"`);
+                searchResults = context.document.body.search(words, {
+                    ignorePunct: true,
+                    ignoreSpace: true
+                });
+                context.load(searchResults, 'items');
+                await context.sync();
+            }
 
             if (searchResults.items.length === 0) {
                 showError('Could not find the original text in the document');
