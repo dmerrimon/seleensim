@@ -5,9 +5,11 @@
  */
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://ilanalabs-add-in.onrender.com';
+const DEFAULT_TIMEOUT_MS = 30000; // 30 seconds
 
 interface ApiOptions {
   token: string;
+  signal?: AbortSignal;
 }
 
 interface User {
@@ -62,24 +64,58 @@ export interface SeatActionResult {
   error?: string;
 }
 
+interface ApiError {
+  detail?: string;
+  message?: string;
+}
+
+/**
+ * Create an AbortController with timeout
+ */
+function createTimeoutController(timeoutMs: number = DEFAULT_TIMEOUT_MS): AbortController {
+  const controller = new AbortController();
+  setTimeout(() => controller.abort(), timeoutMs);
+  return controller;
+}
+
+/**
+ * Extract error message from various error types
+ */
+function getErrorMessage(error: unknown): string {
+  if (error instanceof Error) {
+    if (error.name === 'AbortError') {
+      return 'Request timed out. Please try again.';
+    }
+    return error.message;
+  }
+  return 'An unexpected error occurred';
+}
+
 /**
  * Fetch dashboard data (user list + stats)
  */
 export async function fetchDashboard(options: ApiOptions): Promise<DashboardData> {
-  const response = await fetch(`${API_BASE_URL}/api/admin/users`, {
-    method: 'GET',
-    headers: {
-      'Authorization': `Bearer ${options.token}`,
-      'Content-Type': 'application/json',
-    },
-  });
+  const controller = createTimeoutController();
 
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({ detail: 'Unknown error' }));
-    throw new Error(error.detail || `HTTP ${response.status}`);
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/admin/users`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${options.token}`,
+        'Content-Type': 'application/json',
+      },
+      signal: options.signal || controller.signal,
+    });
+
+    if (!response.ok) {
+      const error: ApiError = await response.json().catch(() => ({ detail: 'Unknown error' }));
+      throw new Error(error.detail || error.message || `HTTP ${response.status}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    throw new Error(getErrorMessage(error));
   }
-
-  return response.json();
 }
 
 /**
@@ -89,20 +125,27 @@ export async function revokeUserSeat(
   userId: string,
   options: ApiOptions
 ): Promise<SeatActionResult> {
-  const response = await fetch(`${API_BASE_URL}/api/admin/users/${userId}/revoke`, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${options.token}`,
-      'Content-Type': 'application/json',
-    },
-  });
+  const controller = createTimeoutController();
 
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({ detail: 'Unknown error' }));
-    throw new Error(error.detail || `HTTP ${response.status}`);
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/admin/users/${userId}/revoke`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${options.token}`,
+        'Content-Type': 'application/json',
+      },
+      signal: options.signal || controller.signal,
+    });
+
+    if (!response.ok) {
+      const error: ApiError = await response.json().catch(() => ({ detail: 'Unknown error' }));
+      throw new Error(error.detail || error.message || `HTTP ${response.status}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    throw new Error(getErrorMessage(error));
   }
-
-  return response.json();
 }
 
 /**
@@ -112,20 +155,27 @@ export async function restoreUserSeat(
   userId: string,
   options: ApiOptions
 ): Promise<SeatActionResult> {
-  const response = await fetch(`${API_BASE_URL}/api/admin/users/${userId}/restore`, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${options.token}`,
-      'Content-Type': 'application/json',
-    },
-  });
+  const controller = createTimeoutController();
 
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({ detail: 'Unknown error' }));
-    throw new Error(error.detail || `HTTP ${response.status}`);
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/admin/users/${userId}/restore`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${options.token}`,
+        'Content-Type': 'application/json',
+      },
+      signal: options.signal || controller.signal,
+    });
+
+    if (!response.ok) {
+      const error: ApiError = await response.json().catch(() => ({ detail: 'Unknown error' }));
+      throw new Error(error.detail || error.message || `HTTP ${response.status}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    throw new Error(getErrorMessage(error));
   }
-
-  return response.json();
 }
 
 /**
@@ -135,18 +185,25 @@ export async function validateSession(options: ApiOptions): Promise<{
   status: string;
   user: { id: string; email: string; name: string; is_admin: boolean } | null;
 }> {
-  const response = await fetch(`${API_BASE_URL}/api/auth/validate`, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${options.token}`,
-      'Content-Type': 'application/json',
-    },
-  });
+  const controller = createTimeoutController();
 
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({ detail: 'Unknown error' }));
-    throw new Error(error.detail || `HTTP ${response.status}`);
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/auth/validate`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${options.token}`,
+        'Content-Type': 'application/json',
+      },
+      signal: options.signal || controller.signal,
+    });
+
+    if (!response.ok) {
+      const error: ApiError = await response.json().catch(() => ({ detail: 'Unknown error' }));
+      throw new Error(error.detail || error.message || `HTTP ${response.status}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    throw new Error(getErrorMessage(error));
   }
-
-  return response.json();
 }
