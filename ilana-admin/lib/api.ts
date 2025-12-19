@@ -71,11 +71,18 @@ interface ApiError {
 
 /**
  * Create an AbortController with timeout
+ * Returns the controller and a cleanup function to clear the timeout
  */
-function createTimeoutController(timeoutMs: number = DEFAULT_TIMEOUT_MS): AbortController {
+function createTimeoutController(timeoutMs: number = DEFAULT_TIMEOUT_MS): {
+  controller: AbortController;
+  cleanup: () => void;
+} {
   const controller = new AbortController();
-  setTimeout(() => controller.abort(), timeoutMs);
-  return controller;
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+  return {
+    controller,
+    cleanup: () => clearTimeout(timeoutId),
+  };
 }
 
 /**
@@ -95,7 +102,7 @@ function getErrorMessage(error: unknown): string {
  * Fetch dashboard data (user list + stats)
  */
 export async function fetchDashboard(options: ApiOptions): Promise<DashboardData> {
-  const controller = createTimeoutController();
+  const { controller, cleanup } = createTimeoutController();
 
   try {
     const response = await fetch(`${API_BASE_URL}/api/admin/users`, {
@@ -115,6 +122,8 @@ export async function fetchDashboard(options: ApiOptions): Promise<DashboardData
     return response.json();
   } catch (error) {
     throw new Error(getErrorMessage(error));
+  } finally {
+    cleanup();
   }
 }
 
@@ -125,7 +134,7 @@ export async function revokeUserSeat(
   userId: string,
   options: ApiOptions
 ): Promise<SeatActionResult> {
-  const controller = createTimeoutController();
+  const { controller, cleanup } = createTimeoutController();
 
   try {
     const response = await fetch(`${API_BASE_URL}/api/admin/users/${userId}/revoke`, {
@@ -145,6 +154,8 @@ export async function revokeUserSeat(
     return response.json();
   } catch (error) {
     throw new Error(getErrorMessage(error));
+  } finally {
+    cleanup();
   }
 }
 
@@ -155,7 +166,7 @@ export async function restoreUserSeat(
   userId: string,
   options: ApiOptions
 ): Promise<SeatActionResult> {
-  const controller = createTimeoutController();
+  const { controller, cleanup } = createTimeoutController();
 
   try {
     const response = await fetch(`${API_BASE_URL}/api/admin/users/${userId}/restore`, {
@@ -175,6 +186,8 @@ export async function restoreUserSeat(
     return response.json();
   } catch (error) {
     throw new Error(getErrorMessage(error));
+  } finally {
+    cleanup();
   }
 }
 
@@ -185,7 +198,7 @@ export async function validateSession(options: ApiOptions): Promise<{
   status: string;
   user: { id: string; email: string; name: string; is_admin: boolean } | null;
 }> {
-  const controller = createTimeoutController();
+  const { controller, cleanup } = createTimeoutController();
 
   try {
     const response = await fetch(`${API_BASE_URL}/api/auth/validate`, {
@@ -205,5 +218,7 @@ export async function validateSession(options: ApiOptions): Promise<{
     return response.json();
   } catch (error) {
     throw new Error(getErrorMessage(error));
+  } finally {
+    cleanup();
   }
 }
