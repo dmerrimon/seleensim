@@ -317,6 +317,65 @@ def _match_llm_text_to_original(llm_text: str, original_text: str, threshold: fl
     return best_match if best_match else llm_text
 
 
+def _extract_problematic_text_from_minimal_fix(minimal_fix: str, original_text: str) -> Optional[str]:
+    """
+    Extract the problematic text from a minimal_fix field.
+
+    Parses patterns like:
+    - "'may' → 'will'"
+    - "'may be reassigned' → 'will be analyzed'"
+    - "may → will"
+
+    Returns the left side if it exists in original_text, else None.
+    """
+    if not minimal_fix:
+        return None
+
+    # Try to match quoted pattern: 'old' → 'new' or "old" → "new"
+    match = re.match(r"['\"](.+?)['\"].*→", minimal_fix)
+    if match:
+        extracted = match.group(1).strip()
+        if extracted.lower() in original_text.lower():
+            return extracted
+
+    # Try unquoted pattern: old → new
+    if '→' in minimal_fix:
+        left_side = minimal_fix.split('→')[0].strip().strip("'\"")
+        if left_side and left_side.lower() in original_text.lower():
+            return left_side
+
+    return None
+
+
+def _ensure_problematic_text(suggestions: List[Dict[str, Any]], original_selection: str) -> List[Dict[str, Any]]:
+    """
+    Ensure all suggestions have problematic_text populated for word-level highlighting.
+
+    Fallback chain:
+    1. Use existing problematic_text if valid (exists in document)
+    2. Extract from minimal_fix if available
+    3. Leave as-is (frontend will highlight full text field)
+    """
+    for suggestion in suggestions:
+        problematic = suggestion.get('problematic_text')
+
+        # Skip if already populated and exists in document
+        if problematic and problematic.lower() in original_selection.lower():
+            continue
+
+        # Try to extract from minimal_fix
+        minimal_fix = suggestion.get('minimal_fix')
+        if minimal_fix:
+            extracted = _extract_problematic_text_from_minimal_fix(minimal_fix, original_selection)
+            if extracted:
+                suggestion['problematic_text'] = extracted
+
+        # Fallback: leave problematic_text as-is or null
+        # Frontend will use full text field for highlighting
+
+    return suggestions
+
+
 def _group_suggestions_by_text(
     suggestions: List[Dict[str, Any]],
     request_id: str
@@ -977,6 +1036,10 @@ Table-Specific ICH-GCP Rules:
 
         if text_corrections > 0:
             logger.info(f"📝 [{req_id}] Text matching: Corrected {text_corrections} LLM suggestions against original text")
+
+        # 5b-2.5. PROBLEMATIC TEXT EXTRACTION: Ensure problematic_text is populated for word-level highlighting
+        # Extracts from minimal_fix field when LLM doesn't provide it
+        suggestions = _ensure_problematic_text(suggestions, trimmed_text)
 
         # 5b-3. DISABLED: Grouping removed per user request - show individual cards like Grammarly
         # suggestions, grouping_stats = _group_suggestions_by_text(suggestions, req_id)
