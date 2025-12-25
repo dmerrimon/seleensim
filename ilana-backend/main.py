@@ -89,6 +89,8 @@ try:
     from api.admin import router as admin_router
     from api.webhooks import router as webhooks_router
     from api.dev_routes import router as dev_router
+    from api.stripe_webhooks import router as stripe_router
+    from api.billing_routes import router as billing_router
     from auth import verify_seat_access, ENFORCE_SEATS, get_optional_user, TokenClaims
     from trial_manager import get_trial_status
     SEAT_MANAGEMENT_AVAILABLE = True
@@ -101,6 +103,8 @@ except ImportError as e:
     verify_seat_access = None
     webhooks_router = None
     dev_router = None
+    stripe_router = None
+    billing_router = None
     get_trial_status = None
     get_tenant_by_azure_id = None
     get_active_subscription = None
@@ -248,6 +252,9 @@ app.add_middleware(
         # Admin Portal
         "https://admin.ilanaimmersive.com",
         "https://ilana-admin.onrender.com",
+        # Marketing Website (for Stripe Checkout)
+        "https://ilanaimmersive.com",
+        "https://www.ilanaimmersive.com",
         # Microsoft Office Online domains
         "https://word.officeapps.live.com",
         "https://excel.officeapps.live.com",
@@ -317,6 +324,12 @@ if SEAT_MANAGEMENT_AVAILABLE:
     app.include_router(admin_router)
     if webhooks_router:
         app.include_router(webhooks_router)
+    if stripe_router:
+        app.include_router(stripe_router)
+        logger.info("✅ Stripe webhook routes registered")
+    if billing_router:
+        app.include_router(billing_router)
+        logger.info("✅ Billing API routes registered")
     if dev_router:
         app.include_router(dev_router)
         logger.info("✅ Dev/test routes registered (DEV_MODE required)")
