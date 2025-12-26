@@ -290,8 +290,8 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         # Prevent MIME type sniffing
         response.headers["X-Content-Type-Options"] = "nosniff"
 
-        # Clickjacking protection
-        response.headers["X-Frame-Options"] = "DENY"
+        # Clickjacking protection - using CSP frame-ancestors instead of X-Frame-Options
+        # X-Frame-Options removed to allow Office Add-in embedding (CSP handles this)
 
         # XSS protection (legacy browsers)
         response.headers["X-XSS-Protection"] = "1; mode=block"
