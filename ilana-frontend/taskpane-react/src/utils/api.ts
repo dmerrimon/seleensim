@@ -1,5 +1,13 @@
 import type { Issue, AnalysisResponse } from '../types';
 
+// Trial status response from API
+export interface TrialStatus {
+  is_trial: boolean;
+  days_remaining: number | null;
+  status: 'active' | 'expired' | 'grace';
+  is_blocked: boolean;
+}
+
 // API Base URL - can be overridden via window config
 const getApiBaseUrl = (): string => {
   // Check for runtime config
@@ -113,5 +121,56 @@ export async function sendFeedback(
   } catch (error) {
     console.error('Feedback API error:', error);
     // Don't throw - feedback is non-critical
+  }
+}
+
+// Fetch trial status from API
+// Note: This requires authentication token from Azure AD
+export async function fetchTrialStatus(token?: string): Promise<TrialStatus> {
+  const apiUrl = getApiBaseUrl();
+
+  try {
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+    };
+
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+
+    const response = await fetch(`${apiUrl}/api/subscription/status`, {
+      method: 'GET',
+      headers,
+    });
+
+    if (!response.ok) {
+      // If unauthorized or error, assume trial expired
+      if (response.status === 401 || response.status === 403) {
+        return {
+          is_trial: false,
+          days_remaining: null,
+          status: 'expired',
+          is_blocked: true,
+        };
+      }
+      throw new Error(`API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return {
+      is_trial: data.is_trial ?? true,
+      days_remaining: data.days_remaining ?? null,
+      status: data.status ?? 'active',
+      is_blocked: data.is_blocked ?? false,
+    };
+  } catch (error) {
+    console.error('Trial status API error:', error);
+    // Default to active trial to avoid blocking users on API failure
+    return {
+      is_trial: true,
+      days_remaining: 14,
+      status: 'active',
+      is_blocked: false,
+    };
   }
 }

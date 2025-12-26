@@ -4,8 +4,10 @@ import type { Issue, FilterState, IssueCategory, IssueSeverity } from '../types'
 import { Header } from './Header';
 import { IssueCard } from './IssueCard';
 import { IssueFilter } from './IssueFilter';
+import { TrialBanner } from './TrialBanner';
+import { PaywallModal } from './PaywallModal';
 import { useOffice } from '../hooks/useOffice';
-import { analyzeText, sendFeedback } from '../utils/api';
+import { analyzeText, sendFeedback, fetchTrialStatus, TrialStatus } from '../utils/api';
 
 export function Taskpane() {
   // Office integration
@@ -21,6 +23,28 @@ export function Taskpane() {
   const [filter, setFilter] = useState<FilterState>({ category: 'all', severity: 'all' });
   const [selectedCharCount, setSelectedCharCount] = useState(0);
   const [useDocumentContext, setUseDocumentContext] = useState(false);
+
+  // Trial state
+  const [trialStatus, setTrialStatus] = useState<TrialStatus | null>(null);
+  const [showPaywall, setShowPaywall] = useState(false);
+
+  // Fetch trial status on mount
+  useEffect(() => {
+    const loadTrialStatus = async () => {
+      try {
+        const status = await fetchTrialStatus();
+        setTrialStatus(status);
+        // Show paywall if blocked
+        if (status.is_blocked) {
+          setShowPaywall(true);
+        }
+      } catch (error) {
+        console.error('Failed to fetch trial status:', error);
+      }
+    };
+
+    loadTrialStatus();
+  }, []);
 
   // Poll for selection changes to update character count
   useEffect(() => {
@@ -179,8 +203,27 @@ export function Taskpane() {
     );
   }
 
+  // Determine if trial-related UI should show
+  const isTrialActive = trialStatus?.is_trial && trialStatus?.status === 'active';
+  const isTrialExpired = trialStatus?.status === 'expired' || trialStatus?.is_blocked;
+  const daysRemaining = trialStatus?.days_remaining ?? 14;
+
   return (
     <div className="h-full flex flex-col bg-gray-50">
+      {/* Paywall Modal - blocks access when trial expired */}
+      <PaywallModal
+        isOpen={showPaywall}
+        onClose={isTrialExpired ? undefined : () => setShowPaywall(false)}
+      />
+
+      {/* Trial Banner - shows for trial users */}
+      {isTrialActive && (
+        <TrialBanner
+          daysRemaining={daysRemaining}
+          isExpired={false}
+        />
+      )}
+
       {/* Header with Analyze button */}
       <Header
         issueCount={filteredIssues.length}

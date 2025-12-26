@@ -153,6 +153,8 @@ class Subscription(Base):
     plan_type = Column(String(50), default="trial")  # trial, active, expired, cancelled
     status = Column(String(50), default="active")  # active, cancelled, expired
     appsource_subscription_id = Column(String(255))
+    stripe_customer_id = Column(String(255))  # Stripe customer ID (cus_xxx)
+    stripe_subscription_id = Column(String(255))  # Stripe subscription ID (sub_xxx)
     created_at = Column(DateTime, default=datetime.utcnow)
     expires_at = Column(DateTime)
 
@@ -232,6 +234,56 @@ class SeatAssignment(Base):
 
     def __repr__(self):
         return f"<SeatAssignment {self.status} for user {self.user_id}>"
+
+
+class PendingSubscription(Base):
+    """
+    Stores Stripe subscriptions before Azure AD tenant is known.
+
+    When someone pays via Stripe on ilanaimmersive.com, we may not yet have
+    their Azure AD tenant (they haven't signed in to Word Add-in yet).
+
+    This table stores the Stripe purchase info. When they sign in via Azure AD,
+    we match by email domain and migrate to an active Subscription.
+
+    Flow:
+    1. User pays via Stripe with user@acme.com
+    2. Webhook creates PendingSubscription (email_domain: "acme.com")
+    3. User signs in to Word Add-in with Microsoft
+    4. seat_manager checks for PendingSubscription matching "acme.com"
+    5. Found → Migrates to active Subscription with Stripe IDs
+    """
+    __tablename__ = "pending_subscriptions"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+
+    # Stripe identifiers
+    stripe_customer_id = Column(String(255), unique=True, index=True)
+    stripe_subscription_id = Column(String(255), unique=True, index=True)
+
+    # Customer info from Stripe
+    customer_email = Column(String(255), index=True)
+    customer_email_domain = Column(String(255), index=True)  # "acme.com"
+
+    # Subscription details
+    seat_count = Column(Integer, default=1)
+    plan_type = Column(String(50), default="active")  # individual/team/team+
+
+    # Status tracking
+    status = Column(String(50), default="pending")  # pending, linked, expired
+    linked_tenant_id = Column(UUID(as_uuid=True), nullable=True)
+    linked_at = Column(DateTime, nullable=True)
+
+    # Timestamps
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    __table_args__ = (
+        Index("idx_pending_domain_status", "customer_email_domain", "status"),
+    )
+
+    def __repr__(self):
+        return f"<PendingSubscription {self.customer_email} ({self.status})>"
 
 
 class AuditEvent(Base):
@@ -387,6 +439,7 @@ __all__ = [
     "Subscription",
     "User",
     "SeatAssignment",
+    "PendingSubscription",
     "AuditEvent",
     "get_tenant_by_azure_id",
     "get_user_by_azure_id",

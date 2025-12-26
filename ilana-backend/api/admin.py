@@ -25,6 +25,7 @@ from seat_manager import (
     revoke_user_seat,
     restore_user_seat,
     get_admin_dashboard_data,
+    transfer_admin,
 )
 
 logger = logging.getLogger(__name__)
@@ -88,6 +89,14 @@ class SeatActionResponse(BaseModel):
     seats_used: Optional[int] = None
     seats_total: Optional[int] = None
     user_email: Optional[str] = None
+    error: Optional[str] = None
+
+
+class TransferAdminResponse(BaseModel):
+    """Response from admin transfer action"""
+    success: bool
+    previous_admin: Optional[dict] = None
+    new_admin: Optional[dict] = None
     error: Optional[str] = None
 
 
@@ -210,6 +219,38 @@ async def restore_seat(
         seats_used=result["seats_used"],
         seats_total=result["seats_total"],
         user_email=result.get("user_email"),
+    )
+
+
+@router.post("/users/{user_id}/make-admin", response_model=TransferAdminResponse)
+async def transfer_admin_role(
+    user_id: str,
+    claims: TokenClaims = Depends(verify_admin),
+    db: Session = Depends(get_db),
+):
+    """
+    Transfer admin role to another user (admin only)
+
+    The current admin loses admin access after transfer.
+    This is useful when the admin is leaving the organization.
+    """
+    result = transfer_admin(
+        db=db,
+        admin_tenant_id=claims.tenant_id,
+        admin_user_id=claims.user_id,
+        target_user_id=user_id,
+    )
+
+    if not result["success"]:
+        return TransferAdminResponse(
+            success=False,
+            error=result.get("error", "Unknown error"),
+        )
+
+    return TransferAdminResponse(
+        success=True,
+        previous_admin=result.get("previous_admin"),
+        new_admin=result.get("new_admin"),
     )
 
 

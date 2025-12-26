@@ -64,6 +64,13 @@ export interface SeatActionResult {
   error?: string;
 }
 
+export interface TransferAdminResult {
+  success: boolean;
+  previous_admin?: { id: string; email: string };
+  new_admin?: { id: string; email: string };
+  error?: string;
+}
+
 interface ApiError {
   detail?: string;
   message?: string;
@@ -171,6 +178,86 @@ export async function restoreUserSeat(
   try {
     const response = await fetch(`${API_BASE_URL}/api/admin/users/${userId}/restore`, {
       method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${options.token}`,
+        'Content-Type': 'application/json',
+      },
+      signal: options.signal || controller.signal,
+    });
+
+    if (!response.ok) {
+      const error: ApiError = await response.json().catch(() => ({ detail: 'Unknown error' }));
+      throw new Error(error.detail || error.message || `HTTP ${response.status}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    throw new Error(getErrorMessage(error));
+  } finally {
+    cleanup();
+  }
+}
+
+/**
+ * Transfer admin role to another user
+ * The current admin will lose their admin privileges
+ */
+export async function transferAdmin(
+  userId: string,
+  options: ApiOptions
+): Promise<TransferAdminResult> {
+  const { controller, cleanup } = createTimeoutController();
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/admin/users/${userId}/make-admin`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${options.token}`,
+        'Content-Type': 'application/json',
+      },
+      signal: options.signal || controller.signal,
+    });
+
+    if (!response.ok) {
+      const error: ApiError = await response.json().catch(() => ({ detail: 'Unknown error' }));
+      throw new Error(error.detail || error.message || `HTTP ${response.status}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    throw new Error(getErrorMessage(error));
+  } finally {
+    cleanup();
+  }
+}
+
+/**
+ * Billing status from the backend
+ */
+export interface BillingStatus {
+  status: 'trial' | 'active' | 'past_due' | 'cancelled' | 'expired';
+  plan_type: string;
+  seats_used: number;
+  seats_total: number;
+  is_trial: boolean;
+  trial_days_remaining: number | null;
+  trial_ends_at: string | null;
+  has_stripe_subscription: boolean;
+  next_billing_date: string | null;
+  billing_interval: 'month' | 'year' | null;
+  contact_email: string;
+  message: string | null;
+}
+
+/**
+ * Fetch billing status for the tenant
+ */
+export async function fetchBillingStatus(options: ApiOptions): Promise<BillingStatus> {
+  const { controller, cleanup } = createTimeoutController();
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/billing/status`, {
+      method: 'GET',
       headers: {
         'Authorization': `Bearer ${options.token}`,
         'Content-Type': 'application/json',

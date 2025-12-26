@@ -21,6 +21,7 @@ from database import (
     Subscription,
     User,
     SeatAssignment,
+    PendingSubscription,
     get_tenant_by_azure_id,
     get_user_by_azure_id,
     get_active_subscription,
@@ -108,7 +109,8 @@ def validate_and_assign_seat(
     logger.debug(f"Tenant: {tenant.id} ({tenant.name or 'unnamed'})")
 
     # Step 2: Get or create subscription
-    subscription = get_or_create_subscription(db, tenant.id)
+    # Pass user email to check for pending Stripe subscriptions
+    subscription = get_or_create_subscription(db, tenant.id, user_email=claims.email)
     logger.debug(f"Subscription: {subscription.seat_count} seats, {subscription.plan_type}")
 
     # Step 3: Get or create user
@@ -211,28 +213,75 @@ def get_or_create_tenant(db: Session, azure_tenant_id: str) -> Tenant:
     return tenant
 
 
-def get_or_create_subscription(db: Session, tenant_id: uuid.UUID) -> Subscription:
-    """Get existing subscription or create 14-day trial"""
+def get_or_create_subscription(
+    db: Session,
+    tenant_id: uuid.UUID,
+    user_email: Optional[str] = None
+) -> Subscription:
+    """
+    Get existing subscription or create one.
+
+    First checks for pending Stripe subscriptions by email domain.
+    If found, migrates the pending subscription to an active one.
+    Otherwise, creates a 14-day trial.
+    """
     subscription = get_active_subscription(db, tenant_id)
 
-    if not subscription:
-        now = datetime.utcnow()
-        trial_end = calculate_trial_end_date(now)
+    if subscription:
+        return subscription
 
-        subscription = Subscription(
-            tenant_id=tenant_id,
-            seat_count=DEFAULT_TRIAL_SEATS,
-            plan_type="trial",
-            status="active",
-            trial_started_at=now,
-            trial_ends_at=trial_end,
-        )
-        db.add(subscription)
-        db.flush()
-        logger.info(
-            f"Started {TRIAL_DURATION_DAYS}-day trial for tenant {tenant_id} "
-            f"(ends {trial_end.strftime('%Y-%m-%d')})"
-        )
+    # Check for pending Stripe subscription by email domain
+    if user_email and "@" in user_email:
+        email_domain = user_email.split("@")[1]
+        pending = db.query(PendingSubscription).filter(
+            PendingSubscription.customer_email_domain == email_domain,
+            PendingSubscription.status == "pending"
+        ).first()
+
+        if pending:
+            # Migrate pending to active subscription
+            now = datetime.utcnow()
+            subscription = Subscription(
+                tenant_id=tenant_id,
+                seat_count=pending.seat_count,
+                plan_type="active",
+                status="active",
+                stripe_customer_id=pending.stripe_customer_id,
+                stripe_subscription_id=pending.stripe_subscription_id,
+                converted_at=now,
+            )
+            db.add(subscription)
+
+            # Mark pending as linked
+            pending.status = "linked"
+            pending.linked_tenant_id = tenant_id
+            pending.linked_at = now
+
+            db.flush()
+            logger.info(
+                f"Migrated pending subscription {pending.id} to tenant {tenant_id}: "
+                f"{pending.seat_count} seats from {pending.customer_email}"
+            )
+            return subscription
+
+    # Fall back to creating trial subscription
+    now = datetime.utcnow()
+    trial_end = calculate_trial_end_date(now)
+
+    subscription = Subscription(
+        tenant_id=tenant_id,
+        seat_count=DEFAULT_TRIAL_SEATS,
+        plan_type="trial",
+        status="active",
+        trial_started_at=now,
+        trial_ends_at=trial_end,
+    )
+    db.add(subscription)
+    db.flush()
+    logger.info(
+        f"Started {TRIAL_DURATION_DAYS}-day trial for tenant {tenant_id} "
+        f"(ends {trial_end.strftime('%Y-%m-%d')})"
+    )
 
     return subscription
 
@@ -533,6 +582,69 @@ def update_seat_count(
     }
 
 
+def transfer_admin(
+    db: Session,
+    admin_tenant_id: str,
+    admin_user_id: str,
+    target_user_id: str,
+) -> Dict[str, Any]:
+    """
+    Transfer admin role to another user.
+
+    Only the current admin can transfer admin rights.
+    The current admin loses admin access after transfer.
+
+    Args:
+        db: Database session
+        admin_tenant_id: Azure tenant ID of current admin
+        admin_user_id: User ID of current admin
+        target_user_id: ID of user to become new admin
+
+    Returns:
+        Result dict with success status and new admin info
+    """
+    # Get tenant
+    tenant = get_tenant_by_azure_id(db, admin_tenant_id)
+    if not tenant:
+        return {"success": False, "error": "Tenant not found"}
+
+    # Verify current user is admin
+    current_admin = get_user_by_azure_id(db, tenant.id, admin_user_id)
+    if not current_admin or not current_admin.is_admin:
+        return {"success": False, "error": "Admin access required"}
+
+    # Get target user
+    target_user = db.query(User).filter(User.id == target_user_id).first()
+    if not target_user or target_user.tenant_id != tenant.id:
+        return {"success": False, "error": "User not found in your organization"}
+
+    # Prevent transferring to self
+    if str(target_user.id) == str(current_admin.id):
+        return {"success": False, "error": "Cannot transfer admin to yourself"}
+
+    # Transfer admin role
+    current_admin.is_admin = False
+    target_user.is_admin = True
+    db.commit()
+
+    logger.info(
+        f"Admin transferred from {current_admin.email} to {target_user.email} "
+        f"in tenant {admin_tenant_id[:8]}"
+    )
+
+    return {
+        "success": True,
+        "previous_admin": {
+            "id": str(current_admin.id),
+            "email": current_admin.email,
+        },
+        "new_admin": {
+            "id": str(target_user.id),
+            "email": target_user.email,
+        },
+    }
+
+
 # Export
 __all__ = [
     "SeatValidationResult",
@@ -543,6 +655,7 @@ __all__ = [
     "restore_user_seat",
     "get_admin_dashboard_data",
     "update_seat_count",
+    "transfer_admin",
     "DEFAULT_TRIAL_SEATS",
     "INACTIVE_DAYS_THRESHOLD",
 ]

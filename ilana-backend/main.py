@@ -310,7 +310,7 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
             "style-src 'self' 'unsafe-inline'; "
             "img-src 'self' data: https:; "
             "connect-src 'self' https://*.office.com https://*.office365.com https://*.microsoft.com https://*.officeapps.live.com https://admin.ilanaimmersive.com https://ilana-admin.onrender.com; "
-            "frame-ancestors https://*.office.com https://*.office365.com https://*.officeapps.live.com https://admin.ilanaimmersive.com https://ilana-admin.onrender.com"
+            "frame-ancestors https://*.office.com https://*.office365.com https://*.officeapps.live.com https://*.microsoftpersonalcontent.com https://*.sharepoint.com https://admin.ilanaimmersive.com https://ilana-admin.onrender.com"
         )
 
         return response

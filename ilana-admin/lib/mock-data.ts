@@ -3,7 +3,7 @@
  * Allows testing the admin portal UI without Microsoft SSO
  */
 
-import { DashboardData } from './api';
+import { DashboardData, BillingStatus } from './api';
 
 export const mockDashboardData: DashboardData = {
   tenant: {
@@ -110,4 +110,35 @@ export const mockActiveSubscription: DashboardData = {
 
 export const isDevMode = (): boolean => {
   return process.env.NEXT_PUBLIC_DEV_MODE === 'true';
+};
+
+// Mock billing status data
+export const mockBillingStatus: BillingStatus = {
+  status: 'trial',
+  plan_type: 'trial',
+  seats_used: 4,
+  seats_total: 10,
+  is_trial: true,
+  trial_days_remaining: 10,
+  trial_ends_at: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000).toISOString(),
+  has_stripe_subscription: false,
+  next_billing_date: null,
+  billing_interval: null,
+  contact_email: 'sales@ilanaimmersive.com',
+  message: 'Trial: 10 days remaining',
+};
+
+export const mockActiveBillingStatus: BillingStatus = {
+  status: 'active',
+  plan_type: 'active',
+  seats_used: 12,
+  seats_total: 25,
+  is_trial: false,
+  trial_days_remaining: null,
+  trial_ends_at: null,
+  has_stripe_subscription: true,
+  next_billing_date: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+  billing_interval: 'month',
+  contact_email: 'sales@ilanaimmersive.com',
+  message: null,
 };

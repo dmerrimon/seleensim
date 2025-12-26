@@ -4,8 +4,9 @@ import { useEffect, useState, useCallback, useRef } from 'react';
 import { useMsal, useIsAuthenticated } from '@azure/msal-react';
 import { useRouter } from 'next/navigation';
 import { apiRequest } from '@/lib/msal-config';
-import { fetchDashboard, revokeUserSeat, restoreUserSeat, DashboardData } from '@/lib/api';
+import { fetchDashboard, revokeUserSeat, restoreUserSeat, transferAdmin, DashboardData } from '@/lib/api';
 import { mockDashboardData, isDevMode } from '@/lib/mock-data';
+import Header from '@/components/Header';
 
 // Toast notification types
 type ToastType = 'success' | 'error' | 'warning' | 'info';
@@ -214,6 +215,36 @@ export default function Dashboard() {
     }
   };
 
+  // Handle admin transfer with confirmation
+  const handleMakeAdmin = async (userId: string, userName: string) => {
+    showConfirm(
+      'Transfer Admin Role',
+      `Are you sure you want to transfer admin access to ${userName}? You will lose your admin privileges and be redirected to the home page.`,
+      async () => {
+        closeConfirm();
+        try {
+          setActionLoading(userId);
+          const token = await getToken();
+          if (!token) {
+            showToast('error', 'Authentication required');
+            return;
+          }
+
+          await transferAdmin(userId, { token });
+          showToast('success', `Admin role transferred to ${userName}. Redirecting...`);
+          // Redirect to home since current user is no longer admin
+          setTimeout(() => router.push('/'), 2000);
+        } catch (err: unknown) {
+          const errorMessage = err instanceof Error ? err.message : 'Failed to transfer admin';
+          showToast('error', errorMessage);
+        } finally {
+          setActionLoading(null);
+        }
+      },
+      { confirmText: 'Transfer Admin', confirmVariant: 'danger' }
+    );
+  };
+
   // Handle logout
   const handleLogout = () => {
     instance.logoutRedirect();
@@ -335,20 +366,7 @@ export default function Dashboard() {
       )}
 
       {/* Header */}
-      <header className="header" role="banner">
-        <div className="container header-content">
-          <div className="logo" aria-label="Ilana Admin Portal">
-            ILANA <span>Admin</span>
-          </div>
-          <button
-            className="btn btn-outline"
-            onClick={handleLogout}
-            aria-label="Log out of admin portal"
-          >
-            Logout
-          </button>
-        </div>
-      </header>
+      <Header onLogout={handleLogout} />
 
       {/* Main Content */}
       <main className="container main-content" role="main">
@@ -503,20 +521,36 @@ export default function Dashboard() {
                       {user.is_admin ? (
                         <span className="text-muted text-small">—</span>
                       ) : user.has_seat ? (
-                        <button
-                          className="btn btn-danger btn-small"
-                          onClick={() => handleRevoke(user.id, user.display_name || user.email || 'this user')}
-                          disabled={actionLoading === user.id}
-                          aria-label={`Revoke seat access for ${user.display_name || user.email}`}
-                          aria-busy={actionLoading === user.id}
-                        >
-                          {actionLoading === user.id ? (
-                            <span className="btn-loading">
-                              <span className="spinner-small" aria-hidden="true"></span>
-                              <span className="sr-only">Revoking...</span>
-                            </span>
-                          ) : 'Revoke'}
-                        </button>
+                        <div style={{ display: 'flex', gap: '0.5rem' }}>
+                          <button
+                            className="btn btn-outline btn-small"
+                            onClick={() => handleMakeAdmin(user.id, user.display_name || user.email || 'this user')}
+                            disabled={actionLoading === user.id}
+                            aria-label={`Make ${user.display_name || user.email} admin`}
+                            aria-busy={actionLoading === user.id}
+                          >
+                            {actionLoading === user.id ? (
+                              <span className="btn-loading">
+                                <span className="spinner-small" aria-hidden="true"></span>
+                                <span className="sr-only">Transferring...</span>
+                              </span>
+                            ) : 'Make Admin'}
+                          </button>
+                          <button
+                            className="btn btn-danger btn-small"
+                            onClick={() => handleRevoke(user.id, user.display_name || user.email || 'this user')}
+                            disabled={actionLoading === user.id}
+                            aria-label={`Revoke seat access for ${user.display_name || user.email}`}
+                            aria-busy={actionLoading === user.id}
+                          >
+                            {actionLoading === user.id ? (
+                              <span className="btn-loading">
+                                <span className="spinner-small" aria-hidden="true"></span>
+                                <span className="sr-only">Revoking...</span>
+                              </span>
+                            ) : 'Revoke'}
+                          </button>
+                        </div>
                       ) : (
                         <button
                           className="btn btn-outline btn-small"

@@ -60,6 +60,7 @@ from database import (
     get_tenant_by_azure_id,
     Tenant,
     Subscription,
+    PendingSubscription,
 )
 
 logger = logging.getLogger(__name__)
@@ -137,6 +138,64 @@ def get_seat_count_from_subscription(subscription: dict) -> int:
 
     # Default
     return 10
+
+
+def create_or_update_pending_subscription(
+    db,
+    stripe_customer_id: str,
+    stripe_subscription_id: str,
+    customer_email: str,
+    customer_email_domain: str,
+    seat_count: int,
+    plan_type: str = "active",
+) -> PendingSubscription:
+    """
+    Create or update a pending subscription for later linking to Azure AD tenant.
+
+    Called when Stripe checkout completes but no matching tenant exists yet.
+    The subscription will be linked when the user signs in via Azure AD.
+    """
+    # Check for existing pending subscription by customer or subscription ID
+    existing = db.query(PendingSubscription).filter(
+        (PendingSubscription.stripe_customer_id == stripe_customer_id) |
+        (PendingSubscription.stripe_subscription_id == stripe_subscription_id)
+    ).first()
+
+    if existing:
+        # Update existing pending subscription
+        existing.stripe_customer_id = stripe_customer_id
+        existing.stripe_subscription_id = stripe_subscription_id
+        existing.customer_email = customer_email
+        existing.customer_email_domain = customer_email_domain
+        existing.seat_count = seat_count
+        existing.plan_type = plan_type
+        existing.updated_at = datetime.utcnow()
+        db.commit()
+
+        logger.info(
+            f"Updated pending subscription for {customer_email}: "
+            f"{seat_count} seats, domain={customer_email_domain}"
+        )
+        return existing
+
+    # Create new pending subscription
+    pending = PendingSubscription(
+        stripe_customer_id=stripe_customer_id,
+        stripe_subscription_id=stripe_subscription_id,
+        customer_email=customer_email,
+        customer_email_domain=customer_email_domain,
+        seat_count=seat_count,
+        plan_type=plan_type,
+        status="pending",
+    )
+    db.add(pending)
+    db.commit()
+
+    logger.info(
+        f"Created pending subscription for {customer_email}: "
+        f"{seat_count} seats, domain={customer_email_domain}"
+    )
+    return pending
 
 
 def find_tenant_by_domain(db, domain: str) -> Optional[Tenant]:
@@ -420,14 +479,24 @@ async def handle_checkout_completed(session: dict) -> WebhookResponse:
         tenant = find_tenant_by_domain(db, domain)
 
         if not tenant:
-            # No tenant yet - user will be matched when they log in to Word Add-in
+            # No tenant yet - create pending subscription for later linking
+            create_or_update_pending_subscription(
+                db,
+                stripe_customer_id=customer_id,
+                stripe_subscription_id=subscription_id,
+                customer_email=customer_email,
+                customer_email_domain=domain,
+                seat_count=seat_count,
+                plan_type="active",
+            )
+
             logger.info(
                 f"No tenant found for domain {domain}. "
-                f"Subscription {subscription_id} will match on first login."
+                f"Created pending subscription for later linking."
             )
             return WebhookResponse(
                 success=True,
-                message=f"Checkout completed for {domain} (will match on login)"
+                message=f"Pending subscription created for {domain} ({seat_count} seats)"
             )
 
         # Update subscription with checkout details
@@ -484,10 +553,24 @@ async def handle_subscription_created(subscription: dict) -> WebhookResponse:
         tenant = find_tenant_by_domain(db, domain)
 
         if not tenant:
-            logger.info(f"No tenant found for domain {domain} - will match on first login")
+            # Create pending subscription for later linking
+            seat_count = get_seat_count_from_subscription(subscription)
+            customer_email = customer.get("email", "")
+
+            create_or_update_pending_subscription(
+                db,
+                stripe_customer_id=customer_id,
+                stripe_subscription_id=subscription.get("id"),
+                customer_email=customer_email,
+                customer_email_domain=domain,
+                seat_count=seat_count,
+                plan_type="active",
+            )
+
+            logger.info(f"No tenant found for domain {domain} - created pending subscription")
             return WebhookResponse(
                 success=True,
-                message=f"Subscription created (tenant will match on login for {domain})"
+                message=f"Pending subscription created for {domain} ({seat_count} seats)"
             )
 
         result = update_subscription_from_stripe(
