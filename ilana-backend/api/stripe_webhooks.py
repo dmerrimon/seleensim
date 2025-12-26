@@ -71,8 +71,10 @@ router = APIRouter(prefix="/api/stripe", tags=["stripe"])
 STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET", "")
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY", "")
 
-if STRIPE_SECRET_KEY:
+if STRIPE_AVAILABLE and STRIPE_SECRET_KEY:
     stripe.api_key = STRIPE_SECRET_KEY
+elif not STRIPE_SECRET_KEY:
+    logger.warning("STRIPE_SECRET_KEY not configured - Stripe features disabled")
 
 
 # =============================================================================
