@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ilana-ops
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NEXT_PUBLIC_AZURE_CLIENT_ID
+        sync: false
+      - key: NEXT_PUBLIC_AZURE_TENANT_ID
+        value: common
+      - key: NEXT_PUBLIC_API_URL
+        value: https://ilanalabs-add-in.onrender.com
+      - key: NEXT_PUBLIC_DEV_MODE
+        value: "false"
