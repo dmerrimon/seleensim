@@ -247,7 +247,6 @@ export function Taskpane() {
 
   // Determine if trial-related UI should show
   const isTrialActive = trialStatus?.is_trial && trialStatus?.status === 'active';
-  const isTrialExpired = trialStatus?.status === 'expired' || trialStatus?.is_blocked;
   const daysRemaining = trialStatus?.days_remaining ?? 14;
 
   return (
