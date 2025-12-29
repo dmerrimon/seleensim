@@ -1,17 +1,26 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
-import { AlertTriangle, FileText } from 'lucide-react';
+import { AlertTriangle, FileText, CreditCard } from 'lucide-react';
 import type { Issue, FilterState, IssueCategory, IssueSeverity } from '../types';
 import { Header } from './Header';
 import { IssueCard } from './IssueCard';
 import { IssueFilter } from './IssueFilter';
 import { TrialBanner } from './TrialBanner';
-import { PaywallModal } from './PaywallModal';
+import { TrialExpiredPaywall } from './TrialExpiredPaywall';
 import { useOffice } from '../hooks/useOffice';
-import { analyzeText, sendFeedback, fetchTrialStatus, TrialStatus } from '../utils/api';
+import { useAuth } from '../hooks/useAuth';
+import { analyzeText, sendFeedback, fetchTrialStatus, fetchSubscriptionInfo, openBillingPortal } from '../utils/api';
+import type { TrialStatus, SubscriptionInfo } from '../utils/api';
 
 export function Taskpane() {
   // Office integration
   const { isReady, isLoading: officeLoading, getSelectedText, getFullDocumentText, searchAndHighlight, replaceText } = useOffice();
+
+  // Authentication
+  const { token } = useAuth();
+
+  // Subscription state
+  const [subscriptionInfo, setSubscriptionInfo] = useState<SubscriptionInfo | null>(null);
+  const [isOpeningBillingPortal, setIsOpeningBillingPortal] = useState(false);
 
   // State
   const [issues, setIssues] = useState<Issue[]>([]);
@@ -45,6 +54,39 @@ export function Taskpane() {
 
     loadTrialStatus();
   }, []);
+
+  // Fetch subscription info when token is available
+  useEffect(() => {
+    const loadSubscriptionInfo = async () => {
+      if (!token) return;
+
+      try {
+        const info = await fetchSubscriptionInfo(token);
+        setSubscriptionInfo(info);
+      } catch (error) {
+        console.error('Failed to fetch subscription info:', error);
+      }
+    };
+
+    loadSubscriptionInfo();
+  }, [token]);
+
+  // Handler for opening billing portal
+  const handleManageSubscription = useCallback(async () => {
+    if (!token) return;
+
+    setIsOpeningBillingPortal(true);
+    try {
+      const success = await openBillingPortal(token);
+      if (!success) {
+        console.error('Failed to open billing portal');
+      }
+    } catch (error) {
+      console.error('Error opening billing portal:', error);
+    } finally {
+      setIsOpeningBillingPortal(false);
+    }
+  }, [token]);
 
   // Poll for selection changes to update character count
   useEffect(() => {
@@ -211,9 +253,17 @@ export function Taskpane() {
   return (
     <div className="h-full flex flex-col bg-gray-50">
       {/* Paywall Modal - blocks access when trial expired */}
-      <PaywallModal
+      <TrialExpiredPaywall
         isOpen={showPaywall}
-        onClose={isTrialExpired ? undefined : () => setShowPaywall(false)}
+        usageStats={{
+          protocolsAnalyzed: issues.length > 0 ? Math.max(1, Math.floor(issues.length / 3)) : 0,
+          issuesCaught: issues.length,
+        }}
+        pricingInfo={{
+          detectedPlan: subscriptionInfo?.plan_type === 'corporate' ? 'corporate' : 'enterprise',
+          orgType: undefined,
+        }}
+        subscribeUrl="https://admin.ilanaimmersive.com/subscribe"
       />
 
       {/* Trial Banner - shows for trial users */}
@@ -299,6 +349,20 @@ export function Taskpane() {
           </div>
         )}
       </div>
+
+      {/* Manage Subscription footer - only for Individual plan users */}
+      {subscriptionInfo?.plan_tier === 'individual' && (
+        <div className="border-t border-gray-200 p-3 bg-white">
+          <button
+            onClick={handleManageSubscription}
+            disabled={isOpeningBillingPortal}
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <CreditCard className="h-4 w-4" />
+            {isOpeningBillingPortal ? 'Opening...' : 'Manage Subscription'}
+          </button>
+        </div>
+      )}
     </div>
   );
 }

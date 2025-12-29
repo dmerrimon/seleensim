@@ -24,6 +24,7 @@ from sqlalchemy import (
     Float,
     ForeignKey,
     Index,
+    Text,
     text,
 )
 from sqlalchemy.dialects.postgresql import UUID
@@ -134,23 +135,27 @@ class Tenant(Base):
 
 class Subscription(Base):
     """
-    AppSource subscription for a tenant
+    B2B subscription for a tenant
 
-    Tracks seat count, plan type, and trial status. Updated via AppSource webhook
-    when licenses change.
+    Tracks seat count, plan type, and trial status.
+
+    Plan Types:
+    - trial: 14-day free trial
+    - corporate: Universities, Non-Profits ($75/user/mo, $750/user/yr)
+    - enterprise: Pharma, CRO, Biotech ($149/user/mo, $1,490/user/yr)
+    - expired: Trial or subscription ended
 
     Trial Model:
-    - New tenants start with 14-day trial (10 seats, full features)
-    - After trial: 7-day read-only grace period
-    - After grace: blocked until subscription
-    - AppSource purchase sets converted_at and updates plan_type to "active"
+    - All signups get 14-day free trial (min 5 users)
+    - After trial: show conversion page with card/invoice/demo options
+    - After conversion: seats active immediately (card) or after payment (invoice)
     """
     __tablename__ = "subscriptions"
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     tenant_id = Column(UUID(as_uuid=True), ForeignKey("tenants.id"), nullable=False)
-    seat_count = Column(Integer, nullable=False, default=10)  # Trial: 10 seats
-    plan_type = Column(String(50), default="trial")  # trial, active, expired, cancelled
+    seat_count = Column(Integer, nullable=False, default=5)  # Minimum 5 users for B2B
+    plan_type = Column(String(50), default="trial")  # trial, corporate, enterprise, expired
     status = Column(String(50), default="active")  # active, cancelled, expired
     appsource_subscription_id = Column(String(255))
     stripe_customer_id = Column(String(255))  # Stripe customer ID (cus_xxx)
@@ -158,10 +163,22 @@ class Subscription(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
     expires_at = Column(DateTime)
 
+    # Organization type for pricing
+    org_type = Column(String(50))  # pharmaceutical, cro, biotech, university, nonprofit
+    email_domain = Column(String(255))  # Primary email domain (e.g., pfizer.com)
+    detected_plan = Column(String(50))  # corporate or enterprise (auto-detected from email)
+    is_verified = Column(Boolean, default=False)  # Admin verified org type
+    needs_review = Column(Boolean, default=False)  # Flagged for manual review (mismatch)
+
     # Trial tracking
     trial_started_at = Column(DateTime)  # Set on first user login
     trial_ends_at = Column(DateTime)     # trial_started_at + 14 days
     converted_at = Column(DateTime)      # When they subscribed (null = trial/expired)
+
+    # Enterprise billing fields
+    collection_method = Column(String(50), default="charge_automatically")  # charge_automatically, send_invoice
+    billing_interval = Column(String(20), default="month")  # month, year
+    payment_status = Column(String(50), default="paid")  # paid, pending_payment, overdue
 
     # Relationships
     tenant = relationship("Tenant", back_populates="subscriptions")
@@ -185,6 +202,7 @@ class User(Base):
     email = Column(String(255))
     display_name = Column(String(255))
     is_admin = Column(Boolean, default=False)
+    is_super_admin = Column(Boolean, default=False)  # Cross-tenant admin access
     created_at = Column(DateTime, default=datetime.utcnow)
     last_active_at = Column(DateTime, default=datetime.utcnow)
 
@@ -352,6 +370,157 @@ class AuditEvent(Base):
         return f"<AuditEvent {self.event_type} by {self.user_email or 'anonymous'}>"
 
 
+class PendingTrial(Base):
+    """
+    Trial signup from ilanaimmersive.com/trial before Azure AD login.
+
+    When someone fills out the trial signup form on the marketing site,
+    we create a PendingTrial with their org details. When they sign in
+    via Azure AD for the first time, we match by email domain and convert
+    to an active Subscription.
+
+    Flow:
+    1. User fills out trial form on ilanaimmersive.com/trial
+    2. PendingTrial created with org details, auto-detected plan
+    3. Welcome email sent with instructions to sign in via Word Add-in
+    4. User signs into Word Add-in via Azure AD SSO
+    5. seat_manager matches email domain to PendingTrial
+    6. Creates Tenant + Subscription (trial), links PendingTrial
+    7. After 14 days, user sees conversion page with payment options
+    """
+    __tablename__ = "pending_trials"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+
+    # Organization details
+    org_name = Column(String(255), nullable=False)
+    org_type = Column(String(50), nullable=False)  # pharmaceutical, cro, biotech, university, nonprofit
+
+    # Contact info
+    contact_name = Column(String(255), nullable=False)
+    contact_email = Column(String(255), nullable=False, index=True)
+    contact_title = Column(String(255))
+    contact_phone = Column(String(50))
+    email_domain = Column(String(255), index=True)  # extracted from email for matching
+
+    # Plan determination (auto-detected from email domain)
+    # .edu or .org → corporate ($75/user), otherwise → enterprise ($149/user)
+    detected_plan = Column(String(50))  # corporate or enterprise
+    requested_seats = Column(Integer, default=5)  # minimum 5 users
+
+    # Status tracking
+    status = Column(String(50), default="pending")  # pending, activated, expired, converted
+
+    # Linking to tenant when user signs in
+    linked_tenant_id = Column(UUID(as_uuid=True), ForeignKey("tenants.id"), nullable=True)
+    linked_at = Column(DateTime, nullable=True)
+
+    # Timestamps
+    created_at = Column(DateTime, default=datetime.utcnow)
+    expires_at = Column(DateTime)  # created_at + 14 days
+    converted_at = Column(DateTime)  # when they paid
+
+    # Referral tracking (for AppSource and other traffic sources)
+    referral_source = Column(String(50))  # 'appsource', 'google', 'direct', etc.
+    team_size_selection = Column(String(50))  # 'individual', 'team', 'department' (qualification step)
+    utm_source = Column(String(255))
+    utm_medium = Column(String(255))
+    utm_campaign = Column(String(255))
+
+    # Relationships
+    linked_tenant = relationship("Tenant", foreign_keys=[linked_tenant_id])
+
+    # Indexes
+    __table_args__ = (
+        Index("idx_pending_trials_domain_status", "email_domain", "status"),
+        Index("idx_pending_trials_email", "contact_email"),
+    )
+
+    def __repr__(self):
+        return f"<PendingTrial {self.org_name} ({self.status})>"
+
+
+class InvoiceRequest(Base):
+    """
+    Invoice request from customers who can't pay with credit card.
+
+    When a user requests an invoice instead of paying via Stripe Checkout,
+    we create this record and notify the ops team. The ops team then
+    creates an invoice in Stripe and sends it to the customer.
+
+    Status flow:
+    1. pending → Created, waiting for ops to review
+    2. invoice_sent → Stripe invoice created and sent
+    3. paid → Invoice paid, subscription activated
+    4. cancelled → Request cancelled
+    """
+    __tablename__ = "invoice_requests"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+
+    # Tenant info
+    tenant_id = Column(UUID(as_uuid=True), ForeignKey("tenants.id"), nullable=False)
+    subscription_id = Column(UUID(as_uuid=True), ForeignKey("subscriptions.id"), nullable=True)
+    requested_by_user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=False)
+
+    # Plan details
+    plan_type = Column(String(50), nullable=False)  # corporate or enterprise
+    billing_interval = Column(String(20), nullable=False)  # month or year
+    seat_count = Column(Integer, nullable=False)
+    amount_cents = Column(Integer, nullable=False)  # total amount in cents
+
+    # Billing contact
+    billing_contact_name = Column(String(255), nullable=False)
+    billing_contact_email = Column(String(255), nullable=False)
+    po_number = Column(String(100))  # optional purchase order number
+
+    # Billing address
+    billing_address = Column(Text, nullable=False)  # street address (multi-line)
+    billing_city = Column(String(100), nullable=False)
+    billing_state = Column(String(100), nullable=False)
+    billing_zip = Column(String(20), nullable=False)
+    billing_country = Column(String(100), nullable=False, default="United States")
+
+    # Payment terms
+    payment_terms = Column(String(20), nullable=False, default="net_30")  # net_30, net_60
+
+    # Additional notes
+    notes = Column(Text)
+
+    # Status tracking
+    status = Column(String(50), nullable=False, default="pending")
+    # pending, invoice_sent, paid, cancelled
+
+    # Stripe references (filled when invoice is created)
+    stripe_invoice_id = Column(String(255))
+    stripe_invoice_url = Column(String(500))
+
+    # Processing notes (from ops team)
+    ops_notes = Column(Text)
+    processed_by = Column(String(255))  # email of ops team member
+
+    # Timestamps
+    created_at = Column(DateTime, default=datetime.utcnow)
+    invoice_sent_at = Column(DateTime)
+    paid_at = Column(DateTime)
+    cancelled_at = Column(DateTime)
+
+    # Relationships
+    tenant = relationship("Tenant", foreign_keys=[tenant_id])
+    subscription = relationship("Subscription", foreign_keys=[subscription_id])
+    requested_by = relationship("User", foreign_keys=[requested_by_user_id])
+
+    # Indexes
+    __table_args__ = (
+        Index("idx_invoice_requests_tenant", "tenant_id"),
+        Index("idx_invoice_requests_status", "status"),
+        Index("idx_invoice_requests_created", "created_at"),
+    )
+
+    def __repr__(self):
+        return f"<InvoiceRequest {self.id} ({self.status})>"
+
+
 # =============================================================================
 # Query Helpers
 # =============================================================================
@@ -440,6 +609,7 @@ __all__ = [
     "User",
     "SeatAssignment",
     "PendingSubscription",
+    "PendingTrial",
     "AuditEvent",
     "get_tenant_by_azure_id",
     "get_user_by_azure_id",

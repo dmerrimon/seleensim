@@ -22,6 +22,7 @@ from database import (
     User,
     SeatAssignment,
     PendingSubscription,
+    PendingTrial,
     get_tenant_by_azure_id,
     get_user_by_azure_id,
     get_active_subscription,
@@ -56,6 +57,7 @@ class SeatValidationResult:
     seats_used: int
     seats_total: int
     is_admin: bool
+    is_super_admin: bool = False
     message: Optional[str] = None
 
 
@@ -135,6 +137,7 @@ def validate_and_assign_seat(
             seats_used=seats_used,
             seats_total=subscription.seat_count,
             is_admin=user.is_admin,
+            is_super_admin=user.is_super_admin,
         )
 
     # Check if user's seat was revoked
@@ -155,6 +158,7 @@ def validate_and_assign_seat(
             seats_used=seats_used,
             seats_total=subscription.seat_count,
             is_admin=user.is_admin,
+            is_super_admin=user.is_super_admin,
             message="Your seat has been revoked. Contact your admin.",
         )
 
@@ -179,6 +183,7 @@ def validate_and_assign_seat(
             seats_used=seats_used + 1,
             seats_total=subscription.seat_count,
             is_admin=user.is_admin,
+            is_super_admin=user.is_super_admin,
             message="Welcome! A seat has been assigned to you.",
         )
 
@@ -194,6 +199,7 @@ def validate_and_assign_seat(
         seats_used=seats_used,
         seats_total=subscription.seat_count,
         is_admin=user.is_admin,
+        is_super_admin=user.is_super_admin,
         message=f"No seats available. All {subscription.seat_count} seats are occupied.",
     )
 
@@ -221,58 +227,110 @@ def get_or_create_subscription(
     """
     Get existing subscription or create one.
 
-    First checks for pending Stripe subscriptions by email domain.
-    If found, migrates the pending subscription to an active one.
-    Otherwise, creates a 14-day trial.
+    Priority order:
+    1. Existing active subscription
+    2. PendingSubscription (Stripe payments before Azure AD login)
+    3. PendingTrial (website trial signup before Azure AD login)
+    4. Default trial (direct Azure AD login, no prior signup)
     """
     subscription = get_active_subscription(db, tenant_id)
 
     if subscription:
         return subscription
 
-    # Check for pending Stripe subscription by email domain
+    email_domain = None
     if user_email and "@" in user_email:
-        email_domain = user_email.split("@")[1]
-        pending = db.query(PendingSubscription).filter(
+        email_domain = user_email.split("@")[1].lower()
+
+    # Priority 1: Check for pending Stripe subscription by email domain
+    if email_domain:
+        pending_sub = db.query(PendingSubscription).filter(
             PendingSubscription.customer_email_domain == email_domain,
             PendingSubscription.status == "pending"
         ).first()
 
-        if pending:
-            # Migrate pending to active subscription
+        if pending_sub:
+            # Migrate pending Stripe subscription to active subscription
             now = datetime.utcnow()
             subscription = Subscription(
                 tenant_id=tenant_id,
-                seat_count=pending.seat_count,
+                seat_count=pending_sub.seat_count,
                 plan_type="active",
                 status="active",
-                stripe_customer_id=pending.stripe_customer_id,
-                stripe_subscription_id=pending.stripe_subscription_id,
+                stripe_customer_id=pending_sub.stripe_customer_id,
+                stripe_subscription_id=pending_sub.stripe_subscription_id,
                 converted_at=now,
             )
             db.add(subscription)
 
             # Mark pending as linked
-            pending.status = "linked"
-            pending.linked_tenant_id = tenant_id
-            pending.linked_at = now
+            pending_sub.status = "linked"
+            pending_sub.linked_tenant_id = tenant_id
+            pending_sub.linked_at = now
 
             db.flush()
             logger.info(
-                f"Migrated pending subscription {pending.id} to tenant {tenant_id}: "
-                f"{pending.seat_count} seats from {pending.customer_email}"
+                f"Migrated pending subscription {pending_sub.id} to tenant {tenant_id}: "
+                f"{pending_sub.seat_count} seats from {pending_sub.customer_email}"
             )
             return subscription
 
-    # Fall back to creating trial subscription
+    # Priority 2: Check for pending trial signup by email domain
+    if email_domain:
+        pending_trial = db.query(PendingTrial).filter(
+            PendingTrial.email_domain == email_domain,
+            PendingTrial.status == "pending"
+        ).first()
+
+        if pending_trial:
+            # Link pending trial to this tenant
+            now = datetime.utcnow()
+
+            # Create subscription from trial signup details
+            subscription = Subscription(
+                tenant_id=tenant_id,
+                seat_count=pending_trial.requested_seats,
+                plan_type="trial",
+                status="active",
+                org_type=pending_trial.org_type,
+                trial_started_at=now,
+                trial_ends_at=pending_trial.expires_at,
+            )
+            db.add(subscription)
+
+            # Mark pending trial as activated
+            pending_trial.status = "activated"
+            pending_trial.linked_tenant_id = tenant_id
+            pending_trial.linked_at = now
+
+            db.flush()
+            logger.info(
+                f"Linked pending trial {pending_trial.id} to tenant {tenant_id}: "
+                f"{pending_trial.requested_seats} seats for {pending_trial.org_name} "
+                f"({pending_trial.detected_plan} plan, org_type={pending_trial.org_type})"
+            )
+            return subscription
+
+    # Priority 3: Fall back to creating default trial subscription
+    # This happens when user signs in directly via Azure AD without prior signup
     now = datetime.utcnow()
     trial_end = calculate_trial_end_date(now)
+
+    # Auto-detect org type from email domain for new trials
+    detected_org_type = None
+    if email_domain:
+        if email_domain.endswith(".edu"):
+            detected_org_type = "university"
+        elif email_domain.endswith(".org"):
+            detected_org_type = "nonprofit"
+        # Commercial orgs default to None - will be set during conversion
 
     subscription = Subscription(
         tenant_id=tenant_id,
         seat_count=DEFAULT_TRIAL_SEATS,
         plan_type="trial",
         status="active",
+        org_type=detected_org_type,
         trial_started_at=now,
         trial_ends_at=trial_end,
     )
@@ -280,7 +338,7 @@ def get_or_create_subscription(
     db.flush()
     logger.info(
         f"Started {TRIAL_DURATION_DAYS}-day trial for tenant {tenant_id} "
-        f"(ends {trial_end.strftime('%Y-%m-%d')})"
+        f"(ends {trial_end.strftime('%Y-%m-%d')}, org_type={detected_org_type})"
     )
 
     return subscription

@@ -87,10 +87,13 @@ try:
     from database import init_database, get_tenant_by_azure_id, get_active_subscription, get_db_session, get_user_by_azure_id, AuditEvent
     from api.auth_routes import router as auth_router
     from api.admin import router as admin_router
+    from api.super_admin import router as super_admin_router
     from api.webhooks import router as webhooks_router
     from api.dev_routes import router as dev_router
     from api.stripe_webhooks import router as stripe_router
     from api.billing_routes import router as billing_router
+    from api.trial_routes import router as trial_router
+    from api.subscription_routes import router as subscription_router
     from auth import verify_seat_access, ENFORCE_SEATS, get_optional_user, TokenClaims
     from trial_manager import get_trial_status
     SEAT_MANAGEMENT_AVAILABLE = True
@@ -105,6 +108,9 @@ except ImportError as e:
     dev_router = None
     stripe_router = None
     billing_router = None
+    trial_router = None
+    subscription_router = None
+    super_admin_router = None
     get_trial_status = None
     get_tenant_by_azure_id = None
     get_active_subscription = None
@@ -322,6 +328,9 @@ logger.info("✅ Security headers middleware enabled")
 if SEAT_MANAGEMENT_AVAILABLE:
     app.include_router(auth_router)
     app.include_router(admin_router)
+    if super_admin_router:
+        app.include_router(super_admin_router)
+        logger.info("✅ Super admin API routes registered")
     if webhooks_router:
         app.include_router(webhooks_router)
     if stripe_router:
@@ -330,6 +339,12 @@ if SEAT_MANAGEMENT_AVAILABLE:
     if billing_router:
         app.include_router(billing_router)
         logger.info("✅ Billing API routes registered")
+    if trial_router:
+        app.include_router(trial_router)
+        logger.info("✅ Trial signup API routes registered")
+    if subscription_router:
+        app.include_router(subscription_router)
+        logger.info("✅ Subscription status API routes registered")
     if dev_router:
         app.include_router(dev_router)
         logger.info("✅ Dev/test routes registered (DEV_MODE required)")

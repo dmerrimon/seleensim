@@ -8,6 +8,14 @@ export interface TrialStatus {
   is_blocked: boolean;
 }
 
+// Subscription info including plan tier
+export interface SubscriptionInfo {
+  plan_type: string;  // trial, active, expired
+  plan_tier: 'individual' | 'team' | 'team_plus';
+  seats_used: number;
+  seats_total: number;
+}
+
 // API Base URL - can be overridden via window config
 const getApiBaseUrl = (): string => {
   // Check for runtime config
@@ -172,5 +180,75 @@ export async function fetchTrialStatus(token?: string): Promise<TrialStatus> {
       status: 'active',
       is_blocked: false,
     };
+  }
+}
+
+// Fetch subscription info including plan tier
+export async function fetchSubscriptionInfo(token: string): Promise<SubscriptionInfo | null> {
+  const apiUrl = getApiBaseUrl();
+
+  try {
+    const response = await fetch(`${apiUrl}/api/auth/me`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      console.error('Failed to fetch subscription info:', response.status);
+      return null;
+    }
+
+    const data = await response.json();
+
+    if (data.tenant) {
+      return {
+        plan_type: data.tenant.plan_type || 'trial',
+        plan_tier: data.tenant.plan_tier || 'individual',
+        seats_used: data.tenant.seats_used || 0,
+        seats_total: data.tenant.seats_total || 1,
+      };
+    }
+
+    return null;
+  } catch (error) {
+    console.error('Subscription info API error:', error);
+    return null;
+  }
+}
+
+// Open Stripe Customer Portal (for Individual plan users only)
+export async function openBillingPortal(token: string): Promise<boolean> {
+  const apiUrl = getApiBaseUrl();
+
+  try {
+    const response = await fetch(`${apiUrl}/api/billing/portal`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({}));
+      console.error('Billing portal error:', error.detail || response.status);
+      return false;
+    }
+
+    const data = await response.json();
+
+    if (data.url) {
+      // Open in new tab
+      window.open(data.url, '_blank');
+      return true;
+    }
+
+    return false;
+  } catch (error) {
+    console.error('Billing portal API error:', error);
+    return false;
   }
 }
