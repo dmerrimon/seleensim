@@ -3,6 +3,7 @@ services:
     name: ilana-ops
     env: node
     plan: free
+    rootDir: ./ilana-ops
     buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:

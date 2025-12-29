@@ -6,6 +6,7 @@ services:
     name: ilana-admin
     env: node
     plan: free
+    rootDir: ./ilana-admin
     buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
