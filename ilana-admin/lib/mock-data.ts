@@ -3,7 +3,7 @@
  * Allows testing the admin portal UI without Microsoft SSO
  */
 
-import { DashboardData, BillingStatus } from './api';
+import { DashboardData, BillingStatus, ConversionInfo } from './api';
 
 export const mockDashboardData: DashboardData = {
   tenant: {
@@ -112,6 +112,9 @@ export const isDevMode = (): boolean => {
   return process.env.NEXT_PUBLIC_DEV_MODE === 'true';
 };
 
+// Mock super admin status (set to true to test super admin features)
+export const mockIsSuperAdmin = true;
+
 // Mock billing status data
 export const mockBillingStatus: BillingStatus = {
   status: 'trial',
@@ -141,4 +144,84 @@ export const mockActiveBillingStatus: BillingStatus = {
   billing_interval: 'month',
   contact_email: 'sales@ilanaimmersive.com',
   message: null,
+};
+
+// Mock conversion info for B2B trial-to-paid conversion (Enterprise - no discount)
+export const mockConversionInfo: ConversionInfo = {
+  plan: 'enterprise',
+  plan_label: 'Enterprise',
+  seats: 10,
+  pricing: {
+    monthly_per_seat: 149,
+    annual_per_seat: 1490,
+    monthly_total: 1490,
+    annual_total: 14900,
+    annual_savings: 2980,  // 2 months free on annual
+  },
+  trial_status: {
+    is_trial: true,
+    days_remaining: 3,
+    trial_ends_at: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString(),
+    is_expired: false,
+  },
+  // No discount - commercial org
+  email_domain: 'pfizer.com',
+  org_type: 'pharmaceutical',
+  is_discount_applied: false,
+  is_verified: false,
+  needs_review: false,
+};
+
+// Mock for expired trial scenario (Corporate with .edu discount)
+export const mockExpiredConversionInfo: ConversionInfo = {
+  plan: 'corporate',
+  plan_label: 'Corporate',
+  seats: 5,
+  pricing: {
+    monthly_per_seat: 75,
+    annual_per_seat: 750,
+    monthly_total: 375,
+    annual_total: 3750,
+    annual_savings: 750,
+  },
+  trial_status: {
+    is_trial: true,
+    days_remaining: 0,
+    trial_ends_at: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
+    is_expired: true,
+  },
+  // .edu discount applied
+  email_domain: 'hms.harvard.edu',
+  org_type: 'university',
+  is_discount_applied: true,
+  is_verified: true,
+  needs_review: false,
+  discount_reason: 'Educational institution (.edu domain)',
+};
+
+// Mock for university with discount (for testing discount banner)
+export const mockUniversityConversionInfo: ConversionInfo = {
+  plan: 'corporate',
+  plan_label: 'Corporate',
+  seats: 10,
+  pricing: {
+    monthly_per_seat: 75,
+    annual_per_seat: 750,
+    monthly_total: 750,
+    annual_total: 7500,
+    annual_savings: 1500,
+  },
+  trial_status: {
+    is_trial: true,
+    days_remaining: 10,
+    trial_ends_at: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000).toISOString(),
+    is_expired: false,
+  },
+  // .edu discount applied
+  email_domain: 'stanford.edu',
+  org_type: 'university',
+  is_discount_applied: true,
+  is_verified: false,
+  needs_review: false,
+  discount_reason: 'Educational institution (.edu domain)',
 };
