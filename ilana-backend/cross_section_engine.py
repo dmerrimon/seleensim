@@ -370,6 +370,164 @@ async def check_primary_endpoint_consistency(
     return conflicts
 
 
+async def check_objective_endpoint_alignment(
+    sections: Dict[str, List[str]],
+    section_summaries: Dict[str, str],
+) -> List[CrossSectionConflict]:
+    """
+    CS008: Check if each objective has a corresponding endpoint defined
+
+    Example conflict:
+    - Objective: "To evaluate patient-reported outcomes"
+    - Missing: No PRO endpoint specified in endpoints section
+    """
+    conflicts = []
+
+    objectives_text = " ".join(sections.get("objectives", []))
+    endpoints_text = " ".join(sections.get("endpoints", []))
+
+    if not objectives_text or not endpoints_text:
+        return conflicts
+
+    objectives_lower = objectives_text.lower()
+    endpoints_lower = endpoints_text.lower()
+
+    # Check for common objective-endpoint misalignments
+    objective_endpoint_pairs = [
+        ("quality of life", ["qol", "quality of life", "eortc", "fact-", "sf-36", "eq-5d"]),
+        ("patient satisfaction", ["satisfaction", "tsqm", "patient satisfaction"]),
+        ("patient-reported outcome", ["pro", "patient-reported", "proms"]),
+        ("safety", ["adverse event", "ae", "sae", "toxicity", "safety"]),
+        ("tolerability", ["tolerability", "discontinuation", "tolerability"]),
+        ("pharmacokinetic", ["pk", "pharmacokinetic", "cmax", "auc", "half-life"]),
+        ("biomarker", ["biomarker", "ctdna", "circulating tumor"]),
+        ("survival", ["survival", "os", "pfs", "dfs"]),
+        ("response", ["response", "orr", "cr", "pr", "recist"]),
+        ("duration of response", ["dor", "duration of response"]),
+    ]
+
+    for objective_term, endpoint_terms in objective_endpoint_pairs:
+        if objective_term in objectives_lower:
+            # Check if any corresponding endpoint term exists
+            has_endpoint = any(term in endpoints_lower for term in endpoint_terms)
+            if not has_endpoint:
+                conflicts.append(CrossSectionConflict(
+                    id=f"cs008_{objective_term.replace(' ', '_')}_001",
+                    check_id="CS008",
+                    type="objective_endpoint_gap",
+                    severity="major",
+                    sections_involved=["objectives", "endpoints"],
+                    description=f"Objective mentions '{objective_term}' but no corresponding endpoint is defined in the endpoints section",
+                    original_text=f"Objective: '{objective_term}' assessment mentioned",
+                    improved_text=f"Add endpoint for '{objective_term}'. Example: 'The [primary/secondary] endpoint for {objective_term} assessment is [specific instrument/measure] at [timepoint], analyzed using [method].'",
+                    rationale=f"ICH E9 Section 2.2.1 requires each objective to have a measurable endpoint. '{objective_term.title()}' objective needs a linked endpoint with instrument, timepoint, and analysis method.",
+                    confidence=0.85,
+                ))
+
+    # Check for primary objective without primary endpoint
+    if "primary objective" in objectives_lower:
+        if "primary endpoint" not in endpoints_lower:
+            conflicts.append(CrossSectionConflict(
+                id="cs008_primary_001",
+                check_id="CS008",
+                type="objective_endpoint_gap",
+                severity="critical",
+                sections_involved=["objectives", "endpoints"],
+                description="Primary objective stated but 'primary endpoint' is not explicitly labeled in endpoints section",
+                original_text="Primary objective exists but primary endpoint label missing",
+                improved_text="Clearly label the primary endpoint. Example: 'The PRIMARY ENDPOINT is [endpoint name], defined as [definition] at [timepoint].'",
+                rationale="FDA requires clear identification of the primary endpoint that directly addresses the primary objective. Missing or ambiguous primary endpoint labeling is a common regulatory issue.",
+                confidence=0.9,
+            ))
+
+    return conflicts
+
+
+async def check_endpoint_sample_size_alignment(
+    sections: Dict[str, List[str]],
+    section_summaries: Dict[str, str],
+) -> List[CrossSectionConflict]:
+    """
+    CS009: Verify sample size calculation references the primary endpoint
+
+    Example conflict:
+    - Primary endpoint: "Overall Survival"
+    - Sample size: "Based on response rate" (mismatch!)
+    """
+    conflicts = []
+
+    endpoints_text = " ".join(sections.get("endpoints", []))
+    statistics_text = " ".join(sections.get("statistics", []))
+
+    if not endpoints_text or not statistics_text:
+        return conflicts
+
+    endpoints_lower = endpoints_text.lower()
+    statistics_lower = statistics_text.lower()
+
+    # Extract primary endpoint type
+    primary_endpoint_types = {
+        "survival": ["overall survival", "os", "progression-free survival", "pfs", "disease-free survival", "dfs"],
+        "response": ["response rate", "orr", "objective response", "complete response", "cr rate"],
+        "continuous": ["change from baseline", "mmrm", "continuous"],
+        "time_to_event": ["time to", "kaplan-meier", "cox", "log-rank"],
+        "binary": ["proportion", "responder rate", "binary"],
+    }
+
+    detected_primary_type = None
+    for endpoint_type, keywords in primary_endpoint_types.items():
+        if any(kw in endpoints_lower for kw in keywords):
+            if "primary" in endpoints_lower:
+                detected_primary_type = endpoint_type
+                break
+
+    # Check if sample size calculation mentions compatible endpoint type
+    if detected_primary_type:
+        sample_size_compatible = {
+            "survival": ["survival", "kaplan", "log-rank", "cox", "hazard", "median", "event rate"],
+            "response": ["response", "proportion", "rate", "binary"],
+            "continuous": ["mean", "change", "difference", "standard deviation", "effect size"],
+            "time_to_event": ["event", "hazard", "median", "kaplan", "survival"],
+            "binary": ["proportion", "rate", "odds", "risk"],
+        }
+
+        compatible_terms = sample_size_compatible.get(detected_primary_type, [])
+
+        if "sample size" in statistics_lower:
+            has_compatible = any(term in statistics_lower for term in compatible_terms)
+            if not has_compatible:
+                conflicts.append(CrossSectionConflict(
+                    id="cs009_sample_size_001",
+                    check_id="CS009",
+                    type="endpoint_sample_size_mismatch",
+                    severity="critical",
+                    sections_involved=["endpoints", "statistics"],
+                    description=f"Primary endpoint appears to be {detected_primary_type}-type but sample size calculation may not reference compatible parameters",
+                    original_text=f"Primary endpoint type: {detected_primary_type}",
+                    improved_text=f"Ensure sample size calculation explicitly references the primary endpoint. For {detected_primary_type} endpoints, include: {', '.join(compatible_terms[:3])} parameters.",
+                    rationale="ICH E9 Section 3.5 requires sample size calculation to be based on the primary endpoint. Misalignment between endpoint type and sample size assumptions is a critical regulatory finding.",
+                    confidence=0.8,
+                ))
+
+    # Check for explicit primary endpoint reference in sample size
+    if "sample size" in statistics_lower and "primary endpoint" not in statistics_lower:
+        if "primary" not in statistics_lower:
+            conflicts.append(CrossSectionConflict(
+                id="cs009_sample_size_002",
+                check_id="CS009",
+                type="endpoint_sample_size_mismatch",
+                severity="major",
+                sections_involved=["endpoints", "statistics"],
+                description="Sample size calculation does not explicitly reference the primary endpoint",
+                original_text="Sample size section lacks 'primary endpoint' reference",
+                improved_text="Add explicit reference: 'Sample size is based on the primary endpoint ([endpoint name]). Assuming [parameters], a sample size of N provides X% power to detect [effect] at alpha=0.05.'",
+                rationale="FDA Statistical Guidance requires clear linkage between sample size calculation and the primary endpoint. This ensures the study is adequately powered for its primary objective.",
+                confidence=0.85,
+            ))
+
+    return conflicts
+
+
 async def check_population_consistency(
     sections: Dict[str, List[str]],
     section_summaries: Dict[str, str],
@@ -434,6 +592,8 @@ async def analyze_cross_section_consistency(
         ("CS003", check_safety_schedule_coverage),
         ("CS005", check_primary_endpoint_consistency),
         ("CS007", check_population_consistency),
+        ("CS008", check_objective_endpoint_alignment),  # New: Each objective needs an endpoint
+        ("CS009", check_endpoint_sample_size_alignment),  # New: Sample size must reference primary endpoint
     ]
 
     for check_id, check_func in checks:

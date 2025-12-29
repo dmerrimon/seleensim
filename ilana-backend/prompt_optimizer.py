@@ -26,8 +26,9 @@ from fast_rag import format_exemplars_for_prompt
 logger = logging.getLogger(__name__)
 
 # Configuration
-FAST_TOKEN_BUDGET = int(os.getenv("FAST_TOKEN_BUDGET", "1000"))  # Input tokens for fast path (increased for domain-expert prompt)
-DEEP_TOKEN_BUDGET = int(os.getenv("DEEP_TOKEN_BUDGET", "2500"))  # Input tokens for deep path (increased for citations)
+# Token budgets increased to accommodate TA guidance, section rules, and rewrite instructions
+FAST_TOKEN_BUDGET = int(os.getenv("FAST_TOKEN_BUDGET", "5000"))  # Input tokens for fast path (increased for section/TA injections)
+DEEP_TOKEN_BUDGET = int(os.getenv("DEEP_TOKEN_BUDGET", "6000"))  # Input tokens for deep path (increased for citations)
 ENABLE_TOKEN_TRACKING = os.getenv("ENABLE_TOKEN_TRACKING", "true").lower() == "true"
 
 # Token tracking statistics
@@ -318,6 +319,30 @@ Improved: "Participants with adequate organ function defined as: (1) Hepatic: AS
 Rationale: ICH E8 Section 3.1.3 requires eligibility criteria to be objective, measurable, and clinically justified. Ambiguous criteria ("adequate") violate reproducibility standards per ICH E6(R3) Section 8.3.3. FDA Eligibility Guidance Section 2.4 requires specific laboratory thresholds with timing.
 Recommendation: Replace all subjective criteria with measurable thresholds. Specify: (1) exact laboratory values with units, (2) reference ranges source (local vs central lab), (3) timing window for assessments.
 
+Example 7 - Incomplete Primary Endpoint (Critical):
+Original: "The primary endpoint is overall survival."
+Problematic: "overall survival"
+Minimal Fix: "'overall survival' → 'overall survival (OS), defined as time from randomization to death from any cause'"
+Improved: "The primary endpoint is overall survival (OS), defined as time from randomization to death from any cause, censored at last known alive date for participants without documented death. OS will be analyzed using Kaplan-Meier methods with the log-rank test stratified by [stratification factors]. Hazard ratio and 95% CI will be estimated using Cox proportional hazards regression."
+Rationale: ICH E9 Section 2.2.2 requires primary endpoints to include: (1) precise definition, (2) censoring rules for time-to-event endpoints, (3) analysis method. FDA Oncology Guidance Section 3.1 requires specification of stratification factors and treatment effect estimation method.
+Recommendation: Add to Protocol Section [X]: (1) Operational definition with censoring rules, (2) Analysis method (log-rank, Cox), (3) Stratification factors, (4) Handling of informative censoring.
+
+Example 8 - Vague Secondary Endpoint (Major):
+Original: "Secondary endpoints include quality of life assessments."
+Problematic: "quality of life assessments"
+Minimal Fix: "'quality of life assessments' → 'EORTC QLQ-C30 global health status score at Week 12'"
+Improved: "Secondary endpoints include: (1) Change from baseline in EORTC QLQ-C30 global health status/QoL score at Week 12, analyzed using MMRM with treatment, visit, baseline score, and treatment-by-visit interaction as covariates; (2) Time to deterioration in FACT-G total score (defined as ≥7-point decrease maintained for ≥2 consecutive visits), analyzed using Kaplan-Meier methods."
+Rationale: ICH E9 Section 2.2.2 requires secondary endpoints to specify: (1) exact instrument/scale, (2) assessment timepoint, (3) responder/deterioration definition if applicable, (4) analysis method. PRO endpoints require FDA PRO Guidance Section 4.1 compliance with validated instruments.
+Recommendation: For each QoL endpoint, specify: (1) Validated instrument name, (2) Domain/subscale, (3) Timepoint, (4) Clinically meaningful difference threshold, (5) Analysis method.
+
+Example 9 - Objective Without Endpoint (Major):
+Original: "A secondary objective is to evaluate patient satisfaction with treatment."
+Problematic: "evaluate patient satisfaction"
+Minimal Fix: "'evaluate patient satisfaction' → 'evaluate patient satisfaction measured by [instrument] at Week [X]'"
+Improved: "A secondary objective is to evaluate patient satisfaction with treatment, measured by the Treatment Satisfaction Questionnaire for Medication (TSQM-9) Global Satisfaction domain score at Weeks 4, 12, and 24. The corresponding endpoint is change from baseline in TSQM-9 Global Satisfaction score at Week 24, analyzed using MMRM."
+Rationale: ICH E9 Section 2.2.1 requires each objective to have a measurable endpoint. Objectives without endpoints create regulatory risk and cannot be statistically analyzed. FDA PRO Guidance Section 3.2 requires linkage between objectives and validated PRO instruments.
+Recommendation: For each objective, define: (1) The linked endpoint with instrument, (2) Assessment timepoint(s), (3) Analysis method. Ensure objective-endpoint traceability throughout the protocol.
+
 JSON RESPONSE:""",
     max_input_tokens=FAST_TOKEN_BUDGET,
     expected_output_tokens=600
@@ -390,6 +415,28 @@ def build_fast_prompt(
         except ImportError:
             logger.warning("section_rules module not available, skipping section-specific instructions")
 
+    # Inject TA-specific endpoint guidance for endpoints/objectives sections
+    ta_endpoint_instructions = ""
+    if ta and section in ["endpoints", "objectives"]:
+        try:
+            from ta_endpoints import get_ta_endpoint_guidance
+            ta_guidance = get_ta_endpoint_guidance(ta)
+            if ta_guidance:
+                ta_endpoint_instructions = f"\nTHERAPEUTIC AREA CONTEXT ({ta.upper()}):\n{ta_guidance}\n"
+                logger.info(f"Injecting TA-specific endpoint guidance for: {ta}")
+        except ImportError:
+            logger.warning("ta_endpoints module not available, skipping TA-specific guidance")
+
+    # Inject rewrite instructions for endpoints/objectives sections
+    rewrite_instructions = ""
+    if section in ["endpoints", "objectives"]:
+        try:
+            from rewrite_templates import get_rewrite_instructions
+            rewrite_instructions = get_rewrite_instructions()
+            logger.info(f"Injecting rewrite instructions for: {section}")
+        except ImportError:
+            logger.warning("rewrite_templates module not available, skipping rewrite instructions")
+
     # Build regulatory + exemplar context using centralized formatter
     rag_context = ""
     if rag_results:
@@ -402,6 +449,14 @@ def build_fast_prompt(
     # Inject section-specific instructions (Layer 2) before the text
     if section_instructions:
         text = f"{section_instructions}\n{text}"
+
+    # Inject TA-specific endpoint guidance after section instructions
+    if ta_endpoint_instructions:
+        text = f"{ta_endpoint_instructions}\n{text}"
+
+    # Inject rewrite instructions for endpoints/objectives sections
+    if rewrite_instructions:
+        text = f"{rewrite_instructions}\n{text}"
 
     # Build document context section (Document Intelligence)
     document_context_section = ""

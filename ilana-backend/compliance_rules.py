@@ -67,15 +67,51 @@ SUBJECT_TERMINOLOGY = [
     r"\bpatient(s)?\b"  # In some contexts, should be "participants"
 ]
 
-# Rule 5: Vague Endpoint Language (MAJOR)
+# Rule 5: Vague Endpoint Language (MAJOR → CRITICAL in endpoints section)
 VAGUE_ENDPOINT_TOKENS = [
+    # Generic vague measurement language
     r"endpoint will be measured",
     r"response will be assessed",
     r"outcome will be evaluated",
-    r"as needed"
+    r"efficacy will be determined",
+    r"will be assessed",
+    r"will be evaluated",
+    r"will be analyzed",
+    # Missing timepoint indicators
+    r"change in .+ score(?! at)",  # "change in XYZ score" without "at Week X"
+    r"change from baseline(?! at)",  # "change from baseline" without timepoint
+    # Missing measurement method
+    r"improvement in(?! [A-Z])",  # "improvement in" not followed by instrument name
+    r"reduction in(?! [A-Z])",  # "reduction in" not followed by measurement
+    # Ambiguous endpoint references
+    r"as needed",
+    r"as appropriate",
+    r"when indicated",
+    r"if clinically indicated",
 ]
 
-# Rule 6: Missing Visit Windows (MAJOR)
+# Rule 6: Incomplete Endpoint Definition (CRITICAL for primary, MAJOR for secondary)
+INCOMPLETE_ENDPOINT_PATTERNS = {
+    "missing_timepoint": [
+        r"primary endpoint is (?:the )?(?:change|improvement|reduction)(?! .+ at (?:Week|Day|Month))",
+        r"secondary endpoint is (?:the )?(?:change|improvement|reduction)(?! .+ at (?:Week|Day|Month))",
+        r"endpoint is (?:the )?(?:change|improvement|reduction) (?:from baseline )?in .{5,50}(?! at (?:Week|Day|Month))",
+    ],
+    "missing_analysis_method": [
+        r"primary endpoint .{5,100}(?! using | analyzed | analysis )",
+        r"endpoint is .{10,80}\.(?<! ANCOVA| MMRM| Cox| Kaplan| log-rank| regression| t-test)",
+    ],
+    "missing_responder_definition": [
+        r"responder(?! defined| is defined| ≥| >=| >)",
+        r"clinical response(?! defined| is defined| ≥| >=| >| per )",
+    ],
+    "non_inferiority_missing_margin": [
+        r"non-?inferiority(?! margin| with a margin| \(margin)",
+        r"non-?inferior(?! margin| with margin| \(margin)",
+    ],
+}
+
+# Rule 7: Missing Visit Windows (MAJOR)
 VISIT_SCHEDULE_TOKENS = [
     r"visit.*as needed",
     r"week-of visits",
@@ -289,22 +325,102 @@ def check_vague_endpoints(text: str) -> ComplianceIssue:
     """
     Rule 5: Detect vague endpoint language
 
-    MAJOR: Endpoints must specify measurement, timepoint, and missing data handling
+    MAJOR (CRITICAL in endpoints section): Endpoints must specify measurement,
+    timepoint, analysis method, and missing data handling per ICH E9 Section 2.2
     """
     evidence = find_matches(text, VAGUE_ENDPOINT_TOKENS)
 
     if evidence:
+        # Generate minimal fix based on matched token
+        first_match = evidence[0].lower()
+        if "change" in first_match or "improvement" in first_match or "reduction" in first_match:
+            minimal_fix = f"Add timepoint: '{first_match}' → '{first_match} at Week [X]'"
+        elif "will be" in first_match:
+            minimal_fix = f"Specify method: '{first_match}' → '{first_match} using [instrument/method]'"
+        else:
+            minimal_fix = f"'{first_match}' → [pre-specify in SAP]"
+
         return ComplianceIssue(
             rule_id="ENDPT_001",
-            category="documentation",
-            severity="minor",  # Downgraded from major to advisory
-            short_description="Vague endpoint language (advisory)",
-            detail="Endpoint description lacks specificity. Must include: (1) exact measurement/instrument, (2) timepoint, (3) missing data handling. Example: 'Clinical response defined as ≥50% reduction in XYZ score from baseline at Day 28 using ABC instrument; missing data handled via multiple imputation per SAP Section [X].'",
-            improved_text="Consider specifying endpoint details more precisely. Include: (1) exact measurement instrument/scale, (2) specific timepoint (e.g., Day 28, Week 12), and (3) missing data handling method (e.g., multiple imputation, LOCF) with reference to SAP section.",
-            evidence=evidence[:2],
-            confidence=0.6  # Lowered from 0.80 to allow LLM suggestions to take priority
+            category="endpoints",
+            severity="major",  # Upgraded from minor; section_rules will make CRITICAL in endpoints section
+            short_description="Incomplete endpoint specification",
+            detail="Endpoint lacks required operational details per ICH E9 Section 2.2. Primary and secondary endpoints MUST specify: (1) exact measurement instrument/scale, (2) assessment timepoint, (3) responder definition if applicable, (4) analysis method, (5) analysis population. Vague endpoints create regulatory risk and statistical analysis ambiguity.",
+            improved_text="Specify the complete endpoint definition. Example: 'The primary endpoint is change from baseline in [Instrument Name] total score at Week 12. Response is defined as ≥[X]% improvement. Analysis will use MMRM with baseline score, treatment, visit, and treatment-by-visit interaction as covariates in the ITT population. Missing data will be handled using multiple imputation as detailed in SAP Section [X].'",
+            evidence=evidence[:3],
+            confidence=0.9,  # High confidence - vague endpoints are a real issue
+            minimal_fix=minimal_fix
         )
     return None
+
+
+def check_endpoint_completeness(text: str) -> ComplianceIssue:
+    """
+    Rule 6: Detect incomplete endpoint definitions
+
+    CRITICAL for primary endpoints, MAJOR for secondary endpoints.
+    Checks for missing: timepoint, analysis method, responder definition, NI margin.
+    """
+    issues_found = []
+    is_primary = bool(re.search(r"primary endpoint", text, re.IGNORECASE))
+
+    # Check each category of incompleteness
+    for issue_type, patterns in INCOMPLETE_ENDPOINT_PATTERNS.items():
+        for pattern in patterns:
+            match = re.search(pattern, text, re.IGNORECASE)
+            if match:
+                issues_found.append((issue_type, match.group(0)))
+                break  # Only one match per category
+
+    if not issues_found:
+        return None
+
+    # Generate specific feedback based on what's missing
+    issue_type, matched_text = issues_found[0]
+
+    issue_details = {
+        "missing_timepoint": {
+            "short": "Endpoint missing timepoint",
+            "detail": "Endpoint definition lacks a specific assessment timepoint. ICH E9 requires endpoints to specify WHEN they are measured (e.g., 'at Week 12', 'at Day 28'). Without a timepoint, the endpoint is not operationally defined.",
+            "fix": "Add timepoint: e.g., 'at Week 12' or 'at Day 28 ± 3 days'",
+            "rewrite": "Add the assessment timepoint. Example: 'The primary endpoint is change from baseline in [Score] at Week 12.'",
+        },
+        "missing_analysis_method": {
+            "short": "Endpoint missing analysis method",
+            "detail": "Endpoint definition lacks the statistical analysis method. ICH E9 requires pre-specification of HOW endpoints will be analyzed (e.g., MMRM, ANCOVA, Cox regression, Kaplan-Meier).",
+            "fix": "Add analysis method: e.g., 'analyzed using MMRM'",
+            "rewrite": "Specify the analysis method. Example: 'Change from baseline will be analyzed using MMRM with treatment, visit, baseline score, and treatment-by-visit interaction as covariates.'",
+        },
+        "missing_responder_definition": {
+            "short": "Responder endpoint lacks definition",
+            "detail": "Clinical response or responder endpoint lacks a quantitative definition. What constitutes a 'responder'? Must specify threshold (e.g., '≥50% improvement', '≥2-point decrease').",
+            "fix": "Define responder: e.g., 'responder defined as ≥50% reduction'",
+            "rewrite": "Define the response threshold. Example: 'Clinical response is defined as ≥50% reduction in [Score] from baseline. Responder rate will be compared using Cochran-Mantel-Haenszel test stratified by [factors].'",
+        },
+        "non_inferiority_missing_margin": {
+            "short": "Non-inferiority margin not specified",
+            "detail": "Non-inferiority design mentioned but the margin is not specified. Regulatory requirement: must pre-specify the non-inferiority margin and justify its clinical relevance.",
+            "fix": "Specify margin: e.g., 'non-inferiority margin of 10%'",
+            "rewrite": "Specify the non-inferiority margin. Example: 'Non-inferiority will be concluded if the lower bound of the 95% CI for the treatment difference excludes -10% (non-inferiority margin). The margin of 10% is justified based on [historical data/clinical relevance].'",
+        },
+    }
+
+    details = issue_details.get(issue_type, issue_details["missing_timepoint"])
+
+    # Severity: CRITICAL for primary, MAJOR for secondary
+    severity = "critical" if is_primary else "major"
+
+    return ComplianceIssue(
+        rule_id="ENDPT_002",
+        category="endpoints",
+        severity=severity,
+        short_description=details["short"],
+        detail=details["detail"],
+        improved_text=details["rewrite"],
+        evidence=[matched_text[:100]],  # Truncate long matches
+        confidence=0.95,
+        minimal_fix=details["fix"]
+    )
 
 
 def check_visit_schedule(text: str) -> ComplianceIssue:
@@ -399,6 +515,7 @@ def run_compliance_checks(text: str, section: str = None) -> List[Dict[str, Any]
         check_safety_reporting,
         check_terminology,
         check_vague_endpoints,
+        check_endpoint_completeness,  # New: checks for missing timepoint, analysis method, etc.
         check_visit_schedule,
         check_subjective_criteria  # Layer 2: Section-aware eligibility check
     ]
@@ -443,12 +560,12 @@ def run_compliance_checks(text: str, section: str = None) -> List[Dict[str, Any]
 def get_rule_stats() -> Dict[str, Any]:
     """Get statistics about rule engine"""
     return {
-        "total_rules": 7,  # Including Layer 2 subjective criteria check
-        "critical_rules": 1,
+        "total_rules": 8,  # Including new endpoint completeness check
+        "critical_rules": 2,  # ENDPT_001 (major->critical in section), ENDPT_002 (critical for primary)
         "major_rules": 4,
-        "minor_rules": 2,  # Updated for check_subjective_criteria
-        "section_aware_rules": 1,  # Layer 2: section-aware rules
-        "categories": ["statistical", "analysis_population", "safety", "terminology", "documentation"]
+        "minor_rules": 2,
+        "section_aware_rules": 2,  # Subjective criteria + endpoint checks
+        "categories": ["statistical", "analysis_population", "safety", "terminology", "documentation", "endpoints"]
     }
 
 

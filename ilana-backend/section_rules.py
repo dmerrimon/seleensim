@@ -19,73 +19,95 @@ logger = logging.getLogger(__name__)
 SECTION_RULE_OVERRIDES: Dict[str, Dict[str, Dict[str, Any]]] = {
     "statistics": {
         # Statistics section: No conditional language allowed
-        "check_conditional_language": {
+        "COND_001": {  # Conditional language
             "severity": "critical",
             "confidence": 1.0,
             "rationale_suffix": " This is critical in the statistics section where all methods must be pre-specified per ICH E9."
         },
-        "check_vague_endpoints": {
+        "ENDPT_001": {  # Vague endpoints
             "severity": "critical",
             "confidence": 0.95,
             "rationale_suffix": " Statistical methods require precisely defined endpoints."
         },
+        "ENDPT_002": {  # Incomplete endpoint definition
+            "severity": "critical",
+            "confidence": 0.95,
+            "rationale_suffix": " Statistical analysis requires complete endpoint definitions with timepoints and methods."
+        },
     },
     "safety": {
         # Safety section: SAE reporting and monitoring are critical
-        "check_safety_reporting": {
+        "SAFETY_001": {  # SAE reporting timeline
             "severity": "critical",
             "confidence": 0.95,
             "rationale_suffix": " Safety reporting requirements are critical per ICH E6(R2) Section 4.11."
         },
-        "check_conditional_language": {
+        "COND_001": {  # Conditional language
             "severity": "major",
             "confidence": 0.9,
             "rationale_suffix": " Safety monitoring procedures should be clearly specified."
         },
     },
     "endpoints": {
-        # Endpoints section: Precise definitions required
-        "check_vague_endpoints": {
+        # Endpoints section: Precise definitions required (ICH E9 Section 2.2)
+        "ENDPT_001": {  # Vague endpoint language
             "severity": "critical",
             "confidence": 1.0,
             "rationale_suffix": " Endpoint definitions must include measurement method, timepoint, and analysis approach per ICH E9 Section 2.2."
         },
-        "check_conditional_language": {
+        "ENDPT_002": {  # Incomplete endpoint definition
+            "severity": "critical",
+            "confidence": 0.98,
+            "rationale_suffix": " Primary endpoints are the basis for regulatory decisions and MUST be completely specified."
+        },
+        "COND_001": {  # Conditional language
             "severity": "major",
             "confidence": 0.9,
+            "rationale_suffix": " Endpoint descriptions should use definitive language, not conditional terms."
         },
     },
     "eligibility": {
         # Eligibility section: No subjective terms
-        "check_subjective_criteria": {
+        "SUBJ_001": {  # Subjective criteria
             "severity": "major",
             "confidence": 0.9,
             "rationale_suffix": " Eligibility criteria must use objective, measurable thresholds to ensure consistent patient selection."
         },
-        "check_conditional_language": {
+        "COND_001": {  # Conditional language
             "severity": "major",
             "confidence": 0.85,
+            "rationale_suffix": " Eligibility criteria should not use conditional language."
         },
     },
     "objectives": {
-        # Objectives section: Primary/secondary labeling required
-        "check_conditional_language": {
+        # Objectives section: Primary/secondary labeling and endpoint linkage
+        "COND_001": {  # Conditional language
             "severity": "minor",
             "confidence": 0.7,
             "rationale_suffix": " Consider using more definitive language for clarity."
         },
+        "ENDPT_001": {  # Vague endpoint language in objectives
+            "severity": "major",
+            "confidence": 0.85,
+            "rationale_suffix": " Each objective should have a clearly linked, measurable endpoint."
+        },
     },
     "schedule": {
         # Visit schedule: Tolerances and windows required
-        "check_conditional_language": {
+        "COND_001": {  # Conditional language
             "severity": "major",
             "confidence": 0.85,
             "rationale_suffix": " Visit windows should include explicit tolerances (e.g., +/- 3 days)."
         },
+        "VISIT_001": {  # Vague visit schedule
+            "severity": "major",
+            "confidence": 0.9,
+            "rationale_suffix": " Visit schedules require explicit windows and tolerances for operational clarity."
+        },
     },
     "demographics": {
         # Demographics section: Lower priority
-        "check_conditional_language": {
+        "COND_001": {  # Conditional language
             "severity": "minor",
             "confidence": 0.6,
         },
@@ -99,20 +121,49 @@ SECTION_RULE_OVERRIDES: Dict[str, Dict[str, Dict[str, Any]]] = {
 SECTION_VALIDATION_FOCUS: Dict[str, str] = {
     "objectives": """
 PROTOCOL SECTION: OBJECTIVES
-Focus your analysis on:
-- Ensure primary objective is explicitly labeled as such
-- Each objective should have an associated endpoint
-- Secondary objectives should support the primary objective
-- Avoid vague goals without measurable outcomes
+Focus your analysis on OBJECTIVE-ENDPOINT ALIGNMENT:
+
+CRITICAL CHECKS:
+1. PRIMARY OBJECTIVE must be explicitly labeled ("The primary objective is...")
+2. Each objective MUST have an associated, measurable endpoint
+3. Secondary objectives should support the primary objective logically
+
+COMMON ISSUES TO FLAG:
+- "A secondary objective is to evaluate patient satisfaction" → ISSUE: No endpoint specified
+  - FIX: Link to endpoint, e.g., "measured by TSQM-9 Global Satisfaction score at Week 24"
+- "To assess safety and tolerability" → ISSUE: Vague, no measurable outcome
+  - FIX: Specify what's measured, e.g., "assessed by incidence of treatment-emergent AEs"
+- Objective without endpoint = MAJOR issue (severity: major)
+- Primary objective without explicit label = MAJOR issue
+
+GOOD EXAMPLES:
+- "The primary objective is to compare the efficacy of [Drug A] versus [Drug B] as measured by ORR per RECIST 1.1 at Week 12."
+- "A secondary objective is to evaluate the duration of response (DOR), defined as time from first response to progression or death."
 """,
     "endpoints": """
 PROTOCOL SECTION: ENDPOINTS
-Focus your analysis on:
-- Each endpoint must specify the measurement method
-- Timepoints for assessment must be clearly defined
-- Statistical analysis method should be pre-specified
-- Distinguish between primary, secondary, and exploratory endpoints
-- ICH E9 Section 2.2 requires operational definitions
+CRITICAL REQUIREMENTS per ICH E9 Section 2.2:
+
+For EACH endpoint, you MUST verify these 5 components are present:
+1. MEASUREMENT: What instrument/scale/assessment is used? (e.g., "EORTC QLQ-C30", "6MWT", "RECIST 1.1")
+2. TIMEPOINT: When is it measured? (e.g., "at Week 12", "at end of treatment")
+3. DEFINITION: What constitutes success? (e.g., "≥50% reduction", "CR or PR per RECIST")
+4. ANALYSIS: How will it be analyzed? (e.g., "using ANCOVA", "Kaplan-Meier with log-rank test")
+5. POPULATION: Which analysis population? (ITT, mITT, Per-Protocol)
+
+For PRIMARY endpoints, ALSO verify:
+6. MARGIN: Non-inferiority/superiority margin if applicable (e.g., "margin of -10%")
+7. MULTIPLICITY: Adjustment for multiple primary endpoints (e.g., Hochberg, Holm, hierarchical testing)
+
+SEVERITY GUIDE:
+- CRITICAL: Missing any of 1-4 for PRIMARY endpoints
+- MAJOR: Missing any of 1-4 for SECONDARY endpoints
+- MAJOR: Primary endpoint without multiplicity control when multiple primaries exist
+
+Common issues to flag:
+- "The primary endpoint is overall survival." → Missing definition (time from what to what?), analysis method
+- "Secondary endpoints include quality of life." → Missing instrument, timepoint, analysis
+- "Response will be assessed." → Vague - missing responder definition, criteria, timepoint
 """,
     "statistics": """
 PROTOCOL SECTION: STATISTICAL METHODS
