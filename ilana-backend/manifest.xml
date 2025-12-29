@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:type="TaskPaneApp">
 
   <Id>ddbeac4e-4d7e-4ff8-b787-d20ae24807cd</Id>
@@ -9,9 +9,7 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Ilana" />
   <Description DefaultValue="Analysis for clinical trial protocols. Get real-time suggestions for regulatory compliance, clarity, and precision." />
-
-  <IconUrl DefaultValue="https://red-sea-0cd7f820f.3.azurestaticapps.net/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://red-sea-0cd7f820f.3.azurestaticapps.net/icon-80.png"/>
+  <SupportUrl DefaultValue="https://ilanaimmersive.com/contact" />
 
   <Hosts>
     <Host Name="Document" />
@@ -27,5 +25,8 @@
     <AppDomain>https://red-sea-0cd7f820f.3.azurestaticapps.net</AppDomain>
     <AppDomain>https://ilanalabs-add-in.onrender.com</AppDomain>
   </AppDomains>
+
+  <IconUrl DefaultValue="https://red-sea-0cd7f820f.3.azurestaticapps.net/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://red-sea-0cd7f820f.3.azurestaticapps.net/icon-80.png"/>
 
 </OfficeApp>
