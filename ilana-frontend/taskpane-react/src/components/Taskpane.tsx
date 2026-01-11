@@ -233,6 +233,16 @@ export function Taskpane() {
     }
   }, [expandedIssueId]);
 
+  const handleRemove = useCallback((issue: Issue) => {
+    // Remove card from UI without sending feedback
+    setIssues((prev) => prev.filter((i) => i.id !== issue.id));
+
+    // Collapse the card if it was expanded
+    if (expandedIssueId === issue.id) {
+      setExpandedIssueId(null);
+    }
+  }, [expandedIssueId]);
+
   // Loading state
   if (officeLoading) {
     return (
@@ -333,6 +343,7 @@ export function Taskpane() {
                   onLocate={() => handleLocate(issue)}
                   onAccept={() => handleAccept(issue)}
                   onDismiss={() => handleDismiss(issue)}
+                  onRemove={() => handleRemove(issue)}
                   isAccepting={acceptingIssueId === issue.id}
                 />
               ))}

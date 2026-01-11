@@ -10,6 +10,7 @@ interface IssueCardProps {
   onLocate: () => void;
   onAccept: () => void;
   onDismiss: () => void;
+  onRemove: () => void;
   isAccepting?: boolean;
 }
 
@@ -21,6 +22,7 @@ export function IssueCard({
   onLocate,
   onAccept,
   onDismiss,
+  onRemove,
   isAccepting = false,
 }: IssueCardProps) {
   const severityConfig = SEVERITY_CONFIG[issue.severity];
@@ -44,15 +46,16 @@ export function IssueCard({
       }`}
     >
       {/* Clickable Header - Always visible */}
-      <button
-        onClick={onToggle}
-        className="w-full text-left p-3 focus:outline-none"
-      >
+      <div className="p-3">
         <div className="flex items-start gap-2">
           {/* Severity Dot */}
           <div className={`mt-1 h-2.5 w-2.5 rounded-full flex-shrink-0 ${severityConfig.dotColor}`} />
 
-          <div className="flex-1 min-w-0">
+          {/* Main content - clickable for expand/collapse */}
+          <button
+            onClick={onToggle}
+            className="flex-1 min-w-0 text-left focus:outline-none"
+          >
             {/* Top row: expand icon */}
             <div className="flex items-center justify-end mb-1.5">
               {isExpanded ? (
@@ -78,9 +81,22 @@ export function IssueCard({
                 {truncate(suggestedText, isExpanded ? 80 : 25)}
               </span>
             </div>
-          </div>
+          </button>
+
+          {/* Close button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onRemove();
+            }}
+            className="p-1 hover:bg-gray-100 rounded-md transition-colors flex-shrink-0 self-start"
+            aria-label="Remove suggestion"
+            title="Remove this suggestion"
+          >
+            <X className="w-4 h-4 text-gray-500 hover:text-gray-700" />
+          </button>
         </div>
-      </button>
+      </div>
 
       {/* Expanded Content */}
       {isExpanded && (
