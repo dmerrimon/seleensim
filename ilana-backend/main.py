@@ -38,6 +38,11 @@ ENABLE_DOCUMENT_ANALYSIS = os.getenv("ENABLE_DOCUMENT_ANALYSIS", "false").lower(
 CHUNK_MAX_CHARS = int(os.getenv("CHUNK_MAX_CHARS", "3500"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "200"))
 
+# Timeline Intelligence Feature Flags (Phase 1 rollout)
+ENABLE_TIMELINE_INTELLIGENCE = os.getenv("ENABLE_TIMELINE_INTELLIGENCE", "true").lower() == "true"
+ENABLE_ENHANCED_CS003 = os.getenv("ENABLE_ENHANCED_CS003", "true").lower() == "true"
+ENABLE_CS010_CONDITIONAL_LOGIC = os.getenv("ENABLE_CS010_CONDITIONAL_LOGIC", "true").lower() == "true"
+
 import uvicorn
 from fastapi import FastAPI, HTTPException, Request, Query, Header, BackgroundTasks, Depends
 from fastapi.middleware.cors import CORSMiddleware
@@ -1936,15 +1941,26 @@ async def analyze_entry(request: Request, background_tasks: BackgroundTasks):
     req_id = payload.get("request_id") or _generate_request_id()
     text = payload.get("text", "")
     text_len = len(text)
-
-    # Enforce selection mode only
     mode = payload.get("mode", "selection")
-    if mode != "selection":
-        logger.warning(f"⚠️ Rejecting non-selection mode: {mode}")
+
+    # Accept selection and full_document modes
+    allowed_modes = ["selection", "full_document"]
+    if mode not in allowed_modes:
+        logger.warning(f"⚠️ Rejecting unsupported mode: {mode}")
         raise HTTPException(
             status_code=400,
-            detail=f"Only 'selection' mode is supported. Received mode: {mode}"
+            detail=f"Mode must be 'selection' or 'full_document'. Received: {mode}"
         )
+
+    # Full-document mode requires document_namespace, not text
+    if mode == "full_document":
+        document_namespace = payload.get("document_namespace")
+        if not document_namespace:
+            raise HTTPException(
+                status_code=400,
+                detail="full_document mode requires 'document_namespace' parameter"
+            )
+        logger.info(f"📄 Full-document analysis requested with namespace: {document_namespace}")
 
     payload.setdefault("request_id", req_id)
 
@@ -3317,6 +3333,7 @@ async def process_document_context(request: Request, background_tasks: Backgroun
                     sections=result.sections,
                     section_summaries=result.section_summaries,
                     request_id=req_id,
+                    timeline=result.timeline if ENABLE_TIMELINE_INTELLIGENCE else None,  # NEW: Pass timeline if enabled
                 )
             except ImportError:
                 logger.warning(f"[{req_id}] Cross-section engine not available")

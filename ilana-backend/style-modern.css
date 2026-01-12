@@ -104,6 +104,9 @@ body {
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-sm);
     border-bottom: 1px solid var(--gray-200);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .analyze-btn {
@@ -130,6 +133,30 @@ body {
 .analyze-btn:active {
     transform: translateY(0);
     box-shadow: var(--shadow-md);
+}
+
+/* Dual-button layout styles */
+.analyze-btn.primary {
+    background: #0078d4;
+    color: white;
+}
+
+.analyze-btn.primary:hover {
+    background: #106ebe;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+}
+
+.analyze-btn.secondary {
+    background: #f3f2f1;
+    color: #323130;
+    border: 1px solid #8a8886;
+}
+
+.analyze-btn.secondary:hover {
+    background: #e1dfdd;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
 }
 
 /* ============================================================================

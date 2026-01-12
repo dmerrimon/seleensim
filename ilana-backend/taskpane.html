@@ -25,11 +25,18 @@
             <span id="doc-text">Learning context. One moment please...</span>
         </div>
 
-        <!-- Header with Analyze Button -->
+        <!-- Header with Analyze Buttons -->
         <div class="ilana-header">
-            <button class="analyze-btn" onclick="handleRecommendButton()">
-                Analyze Text
+            <!-- Selection analysis button -->
+            <button class="analyze-btn primary" onclick="handleSelectionAnalysis()">
+                Analyze Selection
             </button>
+
+            <!-- Full-document analysis button -->
+            <button class="analyze-btn secondary" onclick="handleFullDocumentAnalysis()">
+                Analyze Whole Protocol
+            </button>
+
             <div class="selection-counter" id="selection-counter">
                 <span id="char-count">0</span> / 15,000 characters selected
             </div>

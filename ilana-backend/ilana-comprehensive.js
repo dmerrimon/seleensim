@@ -1283,8 +1283,9 @@ function setupEventListeners() {
 }
 
 // Enhanced Recommend button handler with selection-first behavior
-async function handleRecommendButton() {
-    console.log("🔘 handleRecommendButton called - startAnalysis button clicked!");
+// Handle "Analyze Selection" button click
+async function handleSelectionAnalysis() {
+    console.log("🔘 Selection analysis button clicked");
 
     // Prevent multiple simultaneous analyses
     if (IlanaState.isAnalyzing) {
@@ -1302,9 +1303,9 @@ async function handleRecommendButton() {
         console.log(`📝 Selected text length: ${selectedText.length}`);
 
         if (selectedText.length > 5) {
-            // Selection-first behavior: call fast_analysis.py with RAG
-            console.log('🎯 Selection detected, using fast analysis with RAG');
-            await handleSelectionAnalysis(selectedText);
+            // Selection detected: perform analysis
+            console.log('🎯 Selection detected, performing fast analysis with RAG');
+            await performSelectionAnalysis(selectedText);
         } else {
             // No selection: show instruction modal
             console.log('📄 No selection, showing text selection required modal');
@@ -1312,12 +1313,112 @@ async function handleRecommendButton() {
         }
 
     } catch (error) {
-        console.error('❌ Recommend button failed:', error);
-        showError(`Analysis failed: ${error.message}`);
+        console.error('❌ Selection analysis failed:', error);
+        showError(`Selection analysis failed: ${error.message}`);
         updateStatus('Analysis failed', 'error');
     } finally {
         IlanaState.isAnalyzing = false;
         console.log("✅ Analysis complete, isAnalyzing set to false");
+    }
+}
+
+// Handle "Analyze Whole Protocol" button click
+async function handleFullDocumentAnalysis() {
+    console.log("📄 Full-document analysis button clicked");
+
+    // Prevent multiple simultaneous analyses
+    if (IlanaState.isAnalyzing) {
+        console.warn('🚦 Analysis already in progress - blocking concurrent request');
+        showError("Analysis in progress. Please wait for current analysis to complete.");
+        return;
+    }
+
+    // Check if document intelligence is ready
+    if (!IlanaState.documentIntelligence.contextReady || !IlanaState.documentIntelligence.namespace) {
+        console.warn("⚠️ Document intelligence not ready:", IlanaState.documentIntelligence);
+        showError("Document context not ready yet. Please wait a moment and try again.");
+        return;
+    }
+
+    try {
+        IlanaState.isAnalyzing = true;
+        console.log("✅ isAnalyzing set to true, starting full-document analysis...");
+
+        updateStatus('Analyzing entire protocol...', 'analyzing');
+        showProcessingOverlay(true);
+
+        // Generate request ID for tracking
+        const requestId = `req_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        IlanaState.currentRequestId = requestId;
+
+        // Call /api/analyze WITHOUT text parameter (full-document mode)
+        const payload = {
+            mode: 'full_document',
+            document_namespace: IlanaState.documentIntelligence.namespace,
+            ta: IlanaState.detectedTA || 'general_medicine',
+            section: 'general',
+            request_id: requestId
+        };
+
+        console.log("📡 Sending full-document analysis request:", payload);
+
+        const response = await fetchWithRetry(`${API_CONFIG.baseUrl}/api/analyze`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            // Try to parse error response for trial-related errors
+            try {
+                const errorData = await response.json();
+                if (errorData.error === 'trial_expired') {
+                    showTrialExpiredError(errorData);
+                    throw new Error('Trial expired - please subscribe to continue');
+                } else if (errorData.error === 'trial_grace_period') {
+                    showTrialGracePeriodError(errorData);
+                    throw new Error('Trial ended - analysis disabled during grace period');
+                }
+                throw new Error(errorData.message || `Full-document analysis failed: ${response.status}`);
+            } catch (parseError) {
+                if (parseError.message.includes('Trial')) throw parseError;
+                throw new Error(`Full-document analysis failed: ${response.status}`);
+            }
+        }
+
+        const result = await response.json();
+        console.log("✅ Full-document analysis result:", result);
+        console.log("  - Suggestions array:", result.suggestions || result.result?.suggestions);
+
+        // Store request ID for tracking
+        IlanaState.currentRequestId = result.request_id;
+
+        // Handle both immediate and queued responses
+        if (result.status === 'queued' && result.job_id) {
+            // Large document queued for background processing
+            console.log(`📋 Job queued: ${result.job_id}`);
+            await handleQueuedJob(result);
+        } else if (result.result && result.result.status === 'queued' && result.result.job_id) {
+            // Legacy format support
+            await handleQueuedJob(result.result);
+        } else {
+            // Display immediate suggestions (fast path or legacy)
+            await displayFullDocumentSuggestions(result);
+        }
+
+        updateStatus('Full-document analysis complete', 'ready');
+
+    } catch (error) {
+        console.error('❌ Full-document analysis failed:', error);
+        showError(`Full-document analysis failed: ${error.message}`);
+        updateStatus('Full-document analysis failed', 'error');
+    } finally {
+        IlanaState.isAnalyzing = false;
+        showProcessingOverlay(false);
+        console.log("✅ Full-document analysis complete, isAnalyzing set to false");
     }
 }
 
@@ -1334,8 +1435,8 @@ function detectProtocolSection(text) {
     return 'general';
 }
 
-// Handle selection analysis with fast_analysis.py /api/analyze
-async function handleSelectionAnalysis(selectedText) {
+// Perform selection analysis with fast_analysis.py /api/analyze
+async function performSelectionAnalysis(selectedText) {
     try {
         updateStatus('Analyzing selection...', 'analyzing');
         showProcessingOverlay(true);
@@ -1539,6 +1640,92 @@ async function displaySelectionSuggestions(analysisResult) {
     await updateDashboard({ issues, suggestions: issues });
 
     console.log(`📋 Displayed ${issues.length} selection suggestions`);
+}
+
+// Display full-document analysis suggestions
+async function displayFullDocumentSuggestions(analysisResult) {
+    const suggestions = extractSuggestionsFromLegacyResponse(analysisResult);
+    const issues = [];
+
+    console.log(`📄 Processing ${suggestions.length} full-document suggestions`);
+
+    // Track telemetry: suggestions_returned
+    if (typeof IlanaTelemetry !== 'undefined') {
+        const latencyMs = analysisResult.latency_ms || analysisResult.result?.latency_ms || 0;
+        const therapeuticArea = analysisResult.ta_info?.therapeutic_area ||
+                               analysisResult.result?.ta_info?.therapeutic_area ||
+                               IlanaState.detectedTA ||
+                               'unknown';
+
+        IlanaTelemetry.trackSuggestionsReturned(
+            IlanaState.currentRequestId,
+            suggestions.length,
+            latencyMs,
+            therapeuticArea
+        );
+    }
+
+    // Map suggestions to issue format
+    suggestions.forEach((suggestion, index) => {
+        console.log(`🔍 Full-document suggestion ${index}:`, suggestion);
+        console.log(`  - Keys: ${Object.keys(suggestion).join(', ')}`);
+
+        const issue = {
+            id: suggestion.id || `full_doc_${index}`,
+            type: suggestion.type || 'medical_terminology',
+            severity: suggestion.severity || 'medium',
+            text: suggestion.original_text || suggestion.originalText || suggestion.text || suggestion.original || 'No original text provided',
+            problematic_text: suggestion.problematic_text || null,
+            minimal_fix: suggestion.minimal_fix || null,
+            suggestion: suggestion.improved_text || suggestion.suggestedText || suggestion.improved || suggestion.suggestion || suggestion.rewrite || 'No suggestion available',
+            rationale: suggestion.rationale || suggestion.reason || suggestion.explanation || 'No rationale provided',
+            recommendation: suggestion.recommendation || '',
+            range: suggestion.position || { start: 0, end: 20 },
+            confidence: suggestion.confidence || 0.9,
+            fullDocumentAnalysis: true,  // Flag to indicate this is from full-document analysis
+            request_id: IlanaState.currentRequestId,
+            grouped: suggestion.grouped || false,
+            sub_issues: suggestion.sub_issues || [],
+            source: suggestion.source || null,
+            cross_section_metadata: suggestion.cross_section_metadata || null,
+            amendment_risk: suggestion.amendment_risk || null
+        };
+
+        console.log(`  - Mapped issue:`, { text: issue.text, suggestion: issue.suggestion, rationale: issue.rationale });
+        issues.push(issue);
+
+        // Track telemetry: suggestion_shown
+        IlanaState.suggestionShownTime[issue.id] = Date.now();
+
+        if (typeof IlanaTelemetry !== 'undefined') {
+            IlanaTelemetry.trackSuggestionShown(
+                IlanaState.currentRequestId,
+                issue.id,
+                issue.text,
+                issue.suggestion,
+                issue.confidence,
+                issue.type
+            );
+        }
+    });
+
+    if (issues.length === 0) {
+        console.log('✅ No issues found in full-document analysis');
+        showNoIssuesMessage();
+        return;
+    }
+
+    // Store in global state
+    IlanaState.currentIssues = issues;
+    IlanaState.currentSuggestions = issues;
+
+    // Highlight all original text instances in document
+    await highlightOriginalTextInDocument(issues);
+
+    // Update dashboard
+    await updateDashboard({ issues, suggestions: issues });
+
+    console.log(`📋 Displayed ${issues.length} full-document suggestions`);
 }
 
 // Extract suggestions from fast_analysis.py API response
