@@ -35,7 +35,7 @@ MAX_MEMORY_CACHE_SIZE = int(os.getenv("MAX_MEMORY_CACHE_SIZE", "1000"))  # LRU e
 
 # Code version for cache invalidation
 # Increment this whenever deploying bug fixes to invalidate stale cache
-CODE_VERSION = os.getenv("CODE_VERSION", "v1.4.5")  # Bumped: all 6 rule-based checks now use advisory language ("Consider...") instead of misleading directive templates
+CODE_VERSION = os.getenv("CODE_VERSION", "v1.4.6")  # Bumped: Fixed LLM prompt to be more assertive on terminology compliance (always flag "subjects"/"patients")
 
 # Cache statistics
 _stats = {
