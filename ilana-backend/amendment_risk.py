@@ -11,6 +11,14 @@ Usage:
         text="Patients with adequate liver function are eligible",
         section="eligibility"
     )
+
+TODO: Context-aware filtering needed for risk patterns
+Many patterns in amendment_risk_patterns.json fire on acceptable protocol-defined contexts:
+- "adequate organ function" when specific thresholds follow
+- "dose may be adjusted" for protocol-specified dose modifications
+- "if deemed appropriate" when referencing protocol sections
+Consider adding exclusion logic similar to compliance_rules.py COND_001 to avoid
+flagging appropriate protocol language as amendment risks.
 """
 
 import re
@@ -245,6 +253,31 @@ def _generate_recommendation(pattern_readable: str, typical_change: str, example
             "Add explicit tolerance ranges. Example: "
             "'Visit windows: Screening (Day -28 to -1), Baseline (Day 0), "
             "Week 4 (±3 days), Week 8 (±5 days)'"
+        ),
+        "as clinically indicated": (
+            "Replace with objective criteria. Example: "
+            "'ECG will be performed if: (1) Grade 2+ cardiac AE, (2) QTc >480ms on prior ECG, "
+            "or (3) new cardiac symptoms per CTCAE v5.0 criteria'"
+        ),
+        "at discretion of investigator": (
+            "Pre-specify decision criteria. Example: "
+            "'Dose interruption at investigator discretion based on: (1) Grade 3+ toxicity, "
+            "(2) laboratory values per Table [X], or (3) participant request'"
+        ),
+        "unless safety concern": (
+            "Define safety concern with specific criteria. Example: "
+            "'Safety concern defined as: (1) Grade 3+ treatment-related AE, (2) laboratory abnormality "
+            "requiring monitoring per Table [X], or (3) new clinical symptom requiring evaluation'"
+        ),
+        "participant may opt/choose": (
+            "Add to informed consent and specify impact. Example: "
+            "'Optional PK sub-study (described in ICF Section [X]). Participants may decline without "
+            "affecting primary study participation. Optional visits: Day 2, Day 8 (±1 day)'"
+        ),
+        "unscheduled visit": (
+            "Specify triggers. Example: "
+            "'Unscheduled visits required for: (1) Grade 3+ AE, (2) suspected pregnancy, "
+            "(3) dose-limiting toxicity, (4) participant withdrawal request. Assessments: see Table [X]'"
         ),
     }
 

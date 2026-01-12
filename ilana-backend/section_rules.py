@@ -42,11 +42,7 @@ SECTION_RULE_OVERRIDES: Dict[str, Dict[str, Dict[str, Any]]] = {
             "confidence": 0.95,
             "rationale_suffix": " Safety reporting requirements are critical per ICH E6(R2) Section 4.11."
         },
-        "COND_001": {  # Conditional language
-            "severity": "major",
-            "confidence": 0.9,
-            "rationale_suffix": " Safety monitoring procedures should be clearly specified."
-        },
+        # COND_001 removed: context-aware filtering in compliance_rules.py now handles safety monitoring contexts
     },
     "endpoints": {
         # Endpoints section: Precise definitions required (ICH E9 Section 2.2)

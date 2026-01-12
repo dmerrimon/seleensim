@@ -212,9 +212,32 @@ def check_conditional_language(text: str) -> ComplianceIssue:
 
     ADVISORY: Statistical analysis must be pre-specified (ICH E9)
     """
-    # Skip participant rights language (e.g., "may withdraw", "may discontinue")
+    # Define contexts where "may" is NOT a pre-specification issue
     text_lower = text.lower()
-    if any(phrase in text_lower for phrase in ["may withdraw", "may discontinue", "participants may", "subjects may"]):
+
+    OPERATIONAL_CONTEXTS = [
+        # Participant rights (existing)
+        "may withdraw", "may discontinue", "participants may", "subjects may",
+
+        # Safety monitoring options
+        "assessments may be done", "may be conducted", "may be performed",
+        "monitoring may be done", "may be obtained", "visits may occur",
+
+        # Procedural flexibility
+        "may be shipped", "may be stored", "may be collected",
+        "samples may be", "specimens may be",
+
+        # Protocol compliance statements (informational "may")
+        "protocol may be", "this may require", "may be necessary",
+        "additional may be", "further may be",
+
+        # Logistical options
+        "may be extended", "may be shortened", "window may be",
+        "timepoint may be", "visit may be"
+    ]
+
+    # Skip if text matches any operational context
+    if any(phrase in text_lower for phrase in OPERATIONAL_CONTEXTS):
         return None
 
     evidence = find_matches(text, CONDITIONAL_TOKENS)
@@ -253,6 +276,20 @@ def check_reassignment(text: str) -> ComplianceIssue:
 
     ADVISORY: Risk of immortal time bias and selection bias
     """
+    text_lower = text.lower()
+
+    # Skip protocol-defined group assignments
+    PROTOCOL_DEFINED_CONTEXTS = [
+        "assigned to", "randomized to", "allocated to",  # Initial assignment
+        "stratified by", "grouped by", "categorized by",  # Protocol stratification
+        "according to protocol", "per protocol", "as defined in",  # Protocol reference
+        "baseline", "screening", "enrollment"  # Initial timepoints
+    ]
+
+    # Skip if text indicates protocol-defined assignment
+    if any(phrase in text_lower for phrase in PROTOCOL_DEFINED_CONTEXTS):
+        return None
+
     evidence = find_matches(text, REASSIGNMENT_TOKENS)
 
     if evidence:
@@ -275,6 +312,19 @@ def check_safety_reporting(text: str) -> ComplianceIssue:
 
     MAJOR: Regulatory requirement for SAE reporting timelines
     """
+    text_lower = text.lower()
+
+    # Skip if this is just mentioning safety, not defining reporting procedures
+    NON_PROCEDURAL_CONTEXTS = [
+        "safety endpoint", "safety objective", "safety outcome",  # Objectives section
+        "safety data will be", "safety information will be",  # Future tense (not procedures)
+        "safety committee", "safety monitoring board", "dsmb"  # Committee mentions
+    ]
+
+    # Skip if text is about safety objectives, not reporting procedures
+    if any(phrase in text_lower for phrase in NON_PROCEDURAL_CONTEXTS):
+        return None
+
     evidence = find_matches(text, SAFETY_TOKENS)
 
     if evidence:
