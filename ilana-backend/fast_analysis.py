@@ -736,7 +736,10 @@ async def analyze_fast(
         timeline = None  # Phase 4: Timeline for schedule-aware prompts
         cross_section_conflicts = []
 
-        if document_namespace and enable_document_intelligence:
+        # FIX (Option 2): Only use document context for full-document analysis, not selections
+        # When user selects text (text parameter provided), analyze ONLY that selection without document context
+        # This prevents LLM from generating suggestions based on context instead of the selected text
+        if document_namespace and enable_document_intelligence and not text:
             try:
                 from document_cache import get_document_conflicts, get_document_cache
                 from cross_section_engine import get_relevant_conflicts
