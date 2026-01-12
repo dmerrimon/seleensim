@@ -239,7 +239,7 @@ def check_conditional_language(text: str) -> ComplianceIssue:
             severity="minor",  # Downgraded from critical to advisory
             short_description="Conditional language detected (advisory)",
             detail="Found conditional/ambiguous phrasing that requires pre-specification in Statistical Analysis Plan (SAP). Language like 'may', 'if deemed appropriate', 'as needed' creates risk of post-hoc analysis decisions and alpha inflation.",
-            improved_text="Consider revising to pre-specify statistical methods in the SAP. Example: 'All analytic methods, including handling of missing data and sensitivity analyses, will be pre-specified in the Statistical Analysis Plan prior to database lock.'",
+            improved_text="All analytic methods, including handling of missing data and sensitivity analyses, will be pre-specified in the Statistical Analysis Plan prior to database lock.",
             evidence=evidence[:3],  # Limit to first 3 matches
             confidence=0.5,  # Lowered to make this truly advisory
             minimal_fix=minimal_fix
@@ -262,7 +262,7 @@ def check_reassignment(text: str) -> ComplianceIssue:
             severity="minor",  # Downgraded from major to advisory
             short_description="Post-enrollment reassignment described (advisory)",
             detail="Text implies reassignment of subjects post-enrollment. Must pre-specify: (1) ITT analysis by enrollment group, (2) handling of time-varying severity in SAP, (3) methods to mitigate immortal time bias (e.g., time-varying covariates, marginal structural models).",
-            improved_text="Consider pre-specifying how post-enrollment reassignments will be analyzed. Example: 'Participants will be analyzed according to their initial enrollment group (intention-to-treat principle). Post-enrollment disease severity changes will be handled as time-varying covariates in statistical models as detailed in the SAP (Section [X]).'",
+            improved_text="Participants will be analyzed according to their initial enrollment group (intention-to-treat principle). Post-enrollment disease severity changes will be handled as time-varying covariates in statistical models as detailed in the SAP (Section [X]).",
             evidence=evidence[:3],
             confidence=0.6  # Lowered from 0.90 to allow LLM suggestions to take priority
         )
@@ -288,7 +288,7 @@ def check_safety_reporting(text: str) -> ComplianceIssue:
                 severity="minor",  # Downgraded from major to advisory
                 short_description="SAE reporting timeline missing (advisory)",
                 detail="Safety reporting language found but missing required 24-hour SAE reporting timeline. Regulatory requirement: investigators must report SAEs to sponsor within 24 hours of awareness.",
-                improved_text="Consider adding the required 24-hour SAE reporting timeline. Example: 'Serious Adverse Events (SAEs) must be reported to the sponsor Medical Monitor within 24 hours of the investigator becoming aware of the event. All SAEs will be documented using standardized case report forms and followed until resolution.'",
+                improved_text="Serious Adverse Events (SAEs) must be reported to the sponsor Medical Monitor within 24 hours of the investigator becoming aware of the event. All SAEs will be documented using standardized case report forms and followed until resolution.",
             evidence=evidence[:2],
                 confidence=0.6  # Lowered from 0.85 to allow LLM suggestions to take priority
             )
@@ -308,13 +308,31 @@ def check_terminology(text: str) -> ComplianceIssue:
         has_participants = bool(re.search(r"\bparticipant(s)?\b", text, re.IGNORECASE))
 
         if not has_participants:
+            # Extract the sentence containing the terminology issue
+            original_sentence = extract_sentence_with_match(text, SUBJECT_TERMINOLOGY)
+
+            # Replace terminology preserving capitalization
+            improved_sentence = original_sentence
+            improved_sentence = re.sub(r'\bsubjects\b', 'participants', improved_sentence)
+            improved_sentence = re.sub(r'\bSubjects\b', 'Participants', improved_sentence)
+            improved_sentence = re.sub(r'\bSUBJECTS\b', 'PARTICIPANTS', improved_sentence)
+            improved_sentence = re.sub(r'\bpatients\b', 'participants', improved_sentence)
+            improved_sentence = re.sub(r'\bPatients\b', 'Participants', improved_sentence)
+            improved_sentence = re.sub(r'\bPATIENTS\b', 'PARTICIPANTS', improved_sentence)
+            improved_sentence = re.sub(r'\bsubject\b', 'participant', improved_sentence)
+            improved_sentence = re.sub(r'\bSubject\b', 'Participant', improved_sentence)
+            improved_sentence = re.sub(r'\bSUBJECT\b', 'PARTICIPANT', improved_sentence)
+            improved_sentence = re.sub(r'\bpatient\b', 'participant', improved_sentence)
+            improved_sentence = re.sub(r'\bPatient\b', 'Participant', improved_sentence)
+            improved_sentence = re.sub(r'\bPATIENT\b', 'PARTICIPANT', improved_sentence)
+
             return ComplianceIssue(
                 rule_id="TERM_001",
                 category="terminology",
                 severity="minor",  # Already minor, now advisory
                 short_description="Outdated terminology: 'subjects' or 'patients' (advisory)",
                 detail="ICH-GCP E6(R3) recommends using 'participants' instead of 'subjects' or 'patients' in clinical protocols. Update terminology for regulatory alignment.",
-                improved_text="Consider updating terminology to align with ICH-GCP E6(R3). Replace 'subjects' or 'patients' with 'participants' throughout the protocol for modern regulatory standards.",
+                improved_text=improved_sentence,
                 evidence=evidence[:2],
                 confidence=0.6  # Lowered from 0.75 to allow LLM suggestions to take priority
             )
@@ -346,7 +364,7 @@ def check_vague_endpoints(text: str) -> ComplianceIssue:
             severity="major",  # Upgraded from minor; section_rules will make CRITICAL in endpoints section
             short_description="Incomplete endpoint specification",
             detail="Endpoint lacks required operational details per ICH E9 Section 2.2. Primary and secondary endpoints MUST specify: (1) exact measurement instrument/scale, (2) assessment timepoint, (3) responder definition if applicable, (4) analysis method, (5) analysis population. Vague endpoints create regulatory risk and statistical analysis ambiguity.",
-            improved_text="Specify the complete endpoint definition. Example: 'The primary endpoint is change from baseline in [Instrument Name] total score at Week 12. Response is defined as ≥[X]% improvement. Analysis will use MMRM with baseline score, treatment, visit, and treatment-by-visit interaction as covariates in the ITT population. Missing data will be handled using multiple imputation as detailed in SAP Section [X].'",
+            improved_text="The primary endpoint is change from baseline in [Instrument Name] total score at Week 12. Response is defined as ≥[X]% improvement. Analysis will use MMRM with baseline score, treatment, visit, and treatment-by-visit interaction as covariates in the ITT population. Missing data will be handled using multiple imputation as detailed in SAP Section [X].",
             evidence=evidence[:3],
             confidence=0.9,  # High confidence - vague endpoints are a real issue
             minimal_fix=minimal_fix
@@ -438,7 +456,7 @@ def check_visit_schedule(text: str) -> ComplianceIssue:
             severity="minor",  # Downgraded from major to advisory
             short_description="Vague visit schedule (advisory)",
             detail="Visit schedule lacks explicit windows. Specify exact windows: e.g., 'Day 0 ± 2 days, Day 7 ± 3 days, Day 28 ± 4 days' with reference to visit schedule table.",
-            improved_text="Consider defining explicit visit windows with allowed deviation ranges. Example: 'Study visits will occur at Screening (Day -14 to Day -1), Baseline (Day 0), Week 4 (±3 days), Week 8 (±3 days), Week 12 (±7 days), and End of Study (Week 24 ±7 days). See Schedule of Activities in Protocol Section [X], Table [X].'",
+            improved_text="Study visits will occur at Screening (Day -14 to Day -1), Baseline (Day 0), Week 4 (±3 days), Week 8 (±3 days), Week 12 (±7 days), and End of Study (Week 24 ±7 days). See Schedule of Activities in Protocol Section [X], Table [X].",
             evidence=evidence[:2],
             confidence=0.6  # Lowered from 0.80 to allow LLM suggestions to take priority
         )
@@ -461,7 +479,7 @@ def check_subjective_criteria(text: str) -> ComplianceIssue:
             severity="minor",  # Default severity; upgraded to major in eligibility section by section_rules.py
             short_description="Subjective criteria detected",
             detail="Found subjective terms that lack measurable thresholds. In eligibility criteria, terms like 'adequate', 'normal', 'appropriate' create inconsistent patient selection. Replace with specific, quantifiable criteria.",
-            improved_text="Replace subjective terms with specific measurable values. Examples: 'adequate renal function' → 'eGFR ≥60 mL/min/1.73m²'; 'normal liver function' → 'AST/ALT ≤2.5× ULN'; 'clinically significant' → 'Grade ≥2 per CTCAE v5.0'.",
+            improved_text="Participants must have eGFR ≥60 mL/min/1.73m² (for renal function criteria), AST/ALT ≤2.5× ULN (for liver function criteria), or adverse events Grade ≥2 per CTCAE v5.0 (for clinical significance thresholds).",
             evidence=evidence[:3],
             confidence=0.7  # Moderate confidence; section_rules.py may adjust based on section
         )

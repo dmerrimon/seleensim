@@ -973,6 +973,7 @@ Table-Specific ICH-GCP Rules:
                 "type": rule_issue.get("category"),
                 "severity": rule_issue.get("severity"),
                 "recommendation": rule_issue.get("recommendation"),
+                "problematic_text": rule_issue.get("problematic_text"),  # NEW: Pass through for highlighting
                 "source": "rule_engine"
             })
 
@@ -987,6 +988,7 @@ Table-Specific ICH-GCP Rules:
                 "type": risk.get("category"),
                 "severity": risk.get("severity"),
                 "recommendation": risk.get("recommendation"),
+                "problematic_text": risk.get("problematic_text"),  # NEW: Pass through for highlighting
                 "source": "amendment_risk",
                 "amendment_risk": risk.get("amendment_risk")  # Include risk metadata
             })
@@ -1010,6 +1012,7 @@ Table-Specific ICH-GCP Rules:
                     "type": issue.get("category", "clarity"),  # category -> type mapping
                     "severity": issue.get("severity", "minor"),
                     "recommendation": issue.get("recommendation", ""),
+                    "problematic_text": issue.get("problematic_text"),  # NEW: Pass through for highlighting
                     "source": "llm"
                 })
         # Legacy format fallback: single issue object
@@ -1021,6 +1024,7 @@ Table-Specific ICH-GCP Rules:
                 "rationale": suggestion_data.get("rationale", ""),
                 "confidence": suggestion_data.get("confidence", 0.8),
                 "type": suggestion_data.get("type", "clarity"),
+                "problematic_text": suggestion_data.get("problematic_text"),  # NEW: Pass through for highlighting
                 "source": "llm"
             })
 
