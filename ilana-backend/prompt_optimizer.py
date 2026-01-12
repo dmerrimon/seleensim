@@ -264,9 +264,9 @@ RESPONSE FORMAT:
       "original_text": "CRITICAL: Copy the EXACT sentence from the text VERBATIM. Do NOT paraphrase, shorten, or rephrase. Copy it character-for-character including all punctuation. Example: If the text says 'Subjects will be initially enrolled into the appropriate Group 1 subgroup based on their disease symptoms/status at enrollment.', you MUST copy that EXACT string, not 'Subjects will be enrolled in the study....'",
       "problematic_text": "REQUIRED: Extract ONLY the 1-5 word phrase that needs changing (e.g., 'may', 'may be reassigned', 'if deemed appropriate'). NOT the full sentence. Must appear VERBATIM in the original document.",
       "minimal_fix": "REQUIRED: word-level replacement showing 'old' → 'new' (e.g., \"'may' → 'will'\", \"'may be reassigned' → 'will be analyzed per enrollment group'\")",
-      "improved_text": "copy-paste ready rewrite of full sentence",
+      "improved_text": "CRITICAL: This is the EXACT TEXT that will replace the original_text in the Word document when the user clicks 'Apply'. It must be COPY-PASTE READY protocol text with NO preamble, NO 'Consider...', NO 'Example:', NO meta-commentary. Just the direct replacement sentence. Example CORRECT: 'Participants will be analyzed according to enrollment group.' Example WRONG: 'Consider pre-specifying... Example: Participants will be analyzed...'",
       "rationale": "brief explanation referencing guidance or statistical risk",
-      "recommendation": "actionable step to fix (where to insert; SAP reference)",
+      "recommendation": "IMPORTANT: This field is for GUIDANCE and ACTION STEPS, NOT the replacement text. Use this for meta-level recommendations like 'Define in Protocol Section [X]' or 'Add to SAP Section [X]'. Do NOT put protocol text here.",
       "confidence": 0.95
     }}
   ]
