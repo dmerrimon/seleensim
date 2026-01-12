@@ -343,6 +343,42 @@ Improved: "A secondary objective is to evaluate patient satisfaction with treatm
 Rationale: ICH E9 Section 2.2.1 requires each objective to have a measurable endpoint. Objectives without endpoints create regulatory risk and cannot be statistically analyzed. FDA PRO Guidance Section 3.2 requires linkage between objectives and validated PRO instruments.
 Recommendation: For each objective, define: (1) The linked endpoint with instrument, (2) Assessment timepoint(s), (3) Analysis method. Ensure objective-endpoint traceability throughout the protocol.
 
+Example 10 - Missing Safety Monitoring During Long Visit Gap (Major):
+TIMELINE CONTEXT: 12-week gap between Week 12 and Week 24 visits during active treatment
+Original: "Safety assessments at each study visit."
+Problematic: "at each study visit"
+Minimal Fix: "'at each study visit' → 'at Weeks 4, 8, 12, 16, 20, 24 (±3 days)'"
+Improved: "Safety assessments (vital signs, clinical laboratory tests, AE assessment) will be performed at Weeks 4, 8, 12, 16, 20, and 24 (±3 days). Given the 12-week gap between Week 12 and Week 24, an additional safety visit is scheduled at Week 16 and Week 20 to monitor for late-onset toxicities during active dosing."
+Rationale: ICH E6(R3) Section 5.18.3 requires safety monitoring frequency to match the treatment schedule and known toxicity profile. A 12-week gap during active treatment creates safety risk. FDA Safety Monitoring Guidance Section 4.1 recommends assessments at least monthly during initial treatment phases.
+Recommendation: Add interim safety visits during long gaps (>8 weeks) during treatment period. Specify assessments per Schedule of Assessments table.
+
+Example 11 - Undefined Conditional Visit Trigger (Major):
+TIMELINE CONTEXT: Conditional visit "Day 8 unless safety concern" but "safety concern" not defined
+Original: "Additional visit on Day 8 unless safety concern identified."
+Problematic: "unless safety concern identified"
+Minimal Fix: "'unless safety concern identified' → 'if safety concern occurs (defined in Section [X])'"
+Improved: "Additional safety visit will be conducted on Day 8 (±1 day) if any of the following safety concerns occur: (1) Grade 3+ treatment-related AE, (2) laboratory abnormality per Section [X] Table 4 criteria, or (3) new clinical symptom requiring medical evaluation per investigator assessment. Safety concern criteria are defined in Protocol Section [X]."
+Rationale: ICH E6(R3) Section 8.3.3 requires objective, reproducible visit criteria. Conditional visits with undefined triggers lead to protocol deviations and inconsistent implementation across sites. This pattern has 78% amendment rate per historical data.
+Recommendation: Define objective criteria for all conditional visit triggers. Include: (1) AE grade thresholds, (2) laboratory value thresholds, (3) clinical symptom criteria. Reference Protocol section.
+
+Example 12 - Incomplete Visit Schedule Specification (Major):
+TIMELINE CONTEXT: 8 scheduled visits from Baseline to Week 48, no visit windows specified
+Original: "Study visits at Baseline, Week 4, Week 8, Week 12, Week 24, Week 36, Week 48."
+Problematic: "Study visits at [timepoints]"
+Minimal Fix: "'Study visits at [timepoints]' → 'Study visits with windows: Baseline (Day 0), Week 4 (Day 28±3)...'"
+Improved: "Study visits: Baseline (Day 0), Week 4 (Day 28 ±3 days), Week 8 (Day 56 ±5 days), Week 12 (Day 84 ±7 days), Week 24 (Day 168 ±7 days), Week 36 (Day 252 ±7 days), Week 48 (Day 336 ±7 days), Follow-up (30 ±3 days after last dose). Visit windows define acceptable timing for protocol compliance; visits outside windows constitute protocol deviations."
+Improved: "Study visits: Baseline (Day 0), Week 4 (Day 28 ±3 days), Week 8 (Day 56 ±5 days), Week 12 (Day 84 ±7 days), Week 24 (Day 168 ±7 days), Week 36 (Day 252 ±7 days), Week 48 (Day 336 ±7 days), Follow-up (30 ±3 days after last dose). Visit windows define acceptable timing for protocol compliance; visits outside windows constitute protocol deviations."
+Rationale: ICH E6(R3) Section 8.3.4 requires visit windows to be pre-specified for protocol compliance assessment. Visit windows inform site coordinators of acceptable scheduling flexibility and define protocol deviations. Statistical analysis validity depends on known visit timing variance.
+Recommendation: Specify visit windows with ±day tolerances for all scheduled visits. Windows should reflect: (1) logistical constraints, (2) assessment half-life/pharmacology, (3) operational feasibility. Include in Schedule of Assessments table.
+
+Example 13 - Protocol-Specific Discontinuation Procedures (Major):
+Original: "Those participants who received at least one dose but chose not to receive subsequent doses will be asked to remain for follow-up safety and immunogenicity assessments."
+Problematic: "follow-up safety and immunogenicity assessments"
+Minimal Fix: "'follow-up safety and immunogenicity assessments' → 'follow-up safety (safety labs as clinically indicated) and immunogenicity assessments unless participant safety precludes continued participation. Visits on Day 2 and 8 after missed vaccination(s) will not be conducted unless there is a safety concern. Procedures described in the MOP.'"
+Improved: "Discontinuation from receipt of study product does not mean withdrawal from participation in the trial. Those participants who received at least one dose of study product and have chosen not to receive another dose of study product or are not qualified to receive second and/or third doses, will be asked to remain in this trial for follow-up safety (safety labs as clinically indicated) and immunogenicity assessments unless participant safety precludes continued participation. If the participant agrees to remain in the study, visits on Day 2 and 8 after the missed vaccination(s) (i.e., the second and/or third vaccination) will not be conducted unless there is a safety concern or a need for a visit. However, other trial procedures should be completed as indicated by the trial protocol and described in the MOP."
+Rationale: ICH E6(R3) Section 6.3.3 requires specific procedures for participant discontinuation with clearly defined visit schedules and safety monitoring criteria. The improved version adds: (1) specific safety assessment criteria ("safety labs as clinically indicated") referencing protocol-defined thresholds, (2) explicit visit schedule modifications (Day 2 and Day 8 visits skipped after missed vaccinations) with objective exception criteria ("safety concern"), and (3) procedural documentation reference (MOP) per ICH E6 Section 5.5.3 requirement for documented procedures.
+Recommendation: Create Table in Safety section defining "clinically indicated" laboratory criteria (Grade 3+ AE per CTCAE, ALT/AST >2.5x ULN, other protocol-specific thresholds). Add Section 6.2.4 defining "safety concern" with objective criteria. Reference MOP Chapter 3 for detailed discontinuation procedures. Update Schedule of Assessments to show which visits are skipped after missed vaccination and exception criteria.
+
 JSON RESPONSE:""",
     max_input_tokens=FAST_TOKEN_BUDGET,
     expected_output_tokens=600
@@ -380,12 +416,73 @@ JSON RESPONSE:""",
 )
 
 
+def format_entity_context(entities: Dict[str, List[str]]) -> str:
+    """
+    Format extracted entities for prompt injection
+
+    Args:
+        entities: Dictionary with entity types as keys, lists of entities as values
+
+    Returns:
+        Formatted string for prompt injection (200-300 tokens)
+
+    Example output:
+        PROTOCOL ENTITIES (Use these in your specific suggestions):
+        - Visit Names: Baseline, Week 4, Week 12, Follow-up
+        - Assessment Types: safety labs, vital signs, immunogenicity
+        - Timepoints: Day 2, Day 8, Week 12
+        - Safety Thresholds: Grade 3+ AE, ALT >2.5x ULN
+        - Document References: SAP Section 3.2, MOP
+
+        IMPORTANT: When making suggestions, reference SPECIFIC entities above
+        (e.g., "specify which safety labs", "add visit schedule for Day 2 and Day 8")
+    """
+    if not entities or not any(entities.values()):
+        return ""
+
+    lines = ["PROTOCOL ENTITIES (Use these in your specific suggestions):"]
+
+    # Add each entity type if present
+    if entities.get("visit_names"):
+        visits = ", ".join(entities["visit_names"][:5])  # Top 5
+        lines.append(f"- Visit Names: {visits}")
+
+    if entities.get("assessment_types"):
+        assessments = ", ".join(entities["assessment_types"][:5])
+        lines.append(f"- Assessment Types: {assessments}")
+
+    if entities.get("timepoints"):
+        timepoints = ", ".join(entities["timepoints"][:8])
+        lines.append(f"- Timepoints: {timepoints}")
+
+    if entities.get("safety_thresholds"):
+        thresholds = ", ".join(entities["safety_thresholds"][:5])
+        lines.append(f"- Safety Thresholds: {thresholds}")
+
+    if entities.get("document_refs"):
+        refs = ", ".join(entities["document_refs"][:5])
+        lines.append(f"- Document References: {refs}")
+
+    if entities.get("conditional_triggers"):
+        triggers = ", ".join(entities["conditional_triggers"][:5])
+        lines.append(f"- Conditional Triggers: {triggers}")
+
+    # Add instruction for LLM
+    lines.append("")
+    lines.append("IMPORTANT: When making suggestions, reference SPECIFIC entities above")
+    lines.append('(e.g., "specify which safety labs", "add visit schedule for Day 2 and Day 8")')
+
+    return "\n".join(lines)
+
+
 def build_fast_prompt(
     text: str,
     ta: Optional[str] = None,
     rag_results: Optional[Dict[str, List[Dict[str, Any]]]] = None,
     section: Optional[str] = None,  # Layer 2: Section-aware validation
-    document_context: Optional[Dict[str, Any]] = None  # Document Intelligence context
+    document_context: Optional[Dict[str, Any]] = None,  # Document Intelligence context
+    timeline: Optional[Any] = None,  # Phase 4: Timeline context for schedule-aware prompts
+    use_templates: bool = True  # Week 5: A/B testing flag for template injection
 ) -> Dict[str, Any]:
     """
     Build optimized prompt for fast analysis with RAG (protocol exemplars + regulatory citations) + feedback learning
@@ -396,6 +493,8 @@ def build_fast_prompt(
         rag_results: Optional Dict with 'exemplars' and 'regulatory' lists from get_fast_exemplars()
         section: Optional protocol section (eligibility, endpoints, statistics, etc.) for section-aware prompts
         document_context: Optional document context with section summaries for cross-section awareness
+        timeline: Optional Timeline object from timeline_parser for schedule-aware suggestions (Phase 4)
+        use_templates: Whether to inject suggestion templates into prompt (default: True). Set to False for A/B testing.
 
     Returns:
         Dict with system and user messages, token counts
@@ -446,6 +545,67 @@ def build_fast_prompt(
         if rag_context.strip():
             text = f"{rag_context}\n\nSELECTED TEXT TO ANALYZE:\n{text}"
 
+    # Extract and inject protocol entities (Phase 1: Contextual Intelligence)
+    entity_context = ""
+    extracted_entities = None  # Store entities to return later
+    if text:  # Extract entities from text even without document_context
+        try:
+            from protocol_entity_extractor import extract_protocol_entities
+
+            # Extract entities from text, pass timeline if available from document_context
+            # Note: timeline will be None for standalone text analysis (acceptable)
+            entities = extract_protocol_entities(text, timeline)
+            extracted_entities = entities  # Store for return value
+
+            # Format entity context for prompt injection
+            if entities and sum(len(v) for v in entities.values()) > 0:
+                entity_context = format_entity_context(entities)
+                if entity_context.strip():
+                    text = f"{entity_context}\n\n{text}"
+                    logger.info(f"Injected protocol entity context with {sum(len(v) for v in entities.values())} entities")
+            else:
+                logger.debug("No protocol entities found in text (text may be too short or non-protocol)")
+        except ImportError:
+            logger.warning("protocol_entity_extractor module not available, skipping entity extraction")
+        except Exception as e:
+            logger.error(f"Error extracting protocol entities: {e}")
+
+    # Apply suggestion templates (Phase 1 Week 4: Template System)
+    # Templates guide LLM toward specific, protocol-aware suggestions
+    # Week 5: use_templates flag enables A/B testing
+    if text and extracted_entities and use_templates:
+        try:
+            from suggestion_templates import (
+                find_applicable_templates,
+                format_template_context
+            )
+
+            # Find templates that match patterns in text
+            applicable_templates = find_applicable_templates(text, extracted_entities)
+
+            if applicable_templates:
+                template_context = format_template_context(
+                    applicable_templates,
+                    max_templates=2  # Limit to top 2 templates to manage token budget
+                )
+                if template_context.strip():
+                    text = f"{template_context}\n\n{text}"
+                    # Build amendment rates string separately to avoid nested f-string issues
+                    amendment_rates = ', '.join(
+                        f"{t['amendment_rate']*100:.0f}%"
+                        for t in applicable_templates[:2]
+                    )
+                    logger.info(
+                        f"Injected {len(applicable_templates[:2])} template(s) "
+                        f"into prompt context (amendment rates: {amendment_rates})"
+                    )
+            else:
+                logger.debug("No applicable templates found for this text")
+        except ImportError:
+            logger.warning("suggestion_templates module not available, skipping template injection")
+        except Exception as e:
+            logger.error(f"Error applying suggestion templates: {e}")
+
     # Inject section-specific instructions (Layer 2) before the text
     if section_instructions:
         text = f"{section_instructions}\n{text}"
@@ -478,6 +638,50 @@ def build_fast_prompt(
             text = f"{document_context_section}\nSELECTED TEXT TO ANALYZE:\n{text}"
             logger.info(f"Injected document context for sections: {list(summaries.keys())}")
 
+    # Build timeline context section (Phase 4: Timeline-aware prompts)
+    timeline_context_section = ""
+    if timeline and section in ["schedule", "procedures", "safety", "general"]:
+        try:
+            from timeline_context_formatter import format_timeline_for_prompt
+
+            # Calculate available token budget
+            current_tokens = count_tokens_precise(text, "gpt-4o-mini")
+            available_budget = FAST_ANALYSIS_TEMPLATE.max_input_tokens - current_tokens - 500  # Reserve 500
+
+            if available_budget > 150:  # Minimum for conditional warnings only
+                # Determine what to include based on budget (per user preference)
+                if available_budget < 400:
+                    # Tight budget: conditional warnings only (~200 tokens)
+                    timeline_tokens = min(available_budget, 200)
+                    include_gaps = False
+                elif available_budget < 600:
+                    # Medium budget: gaps + conditionals (~400 tokens)
+                    timeline_tokens = min(available_budget, 400)
+                    include_gaps = True
+                else:
+                    # Full budget: all context (~600 tokens)
+                    timeline_tokens = min(available_budget, 600)
+                    include_gaps = True
+
+                timeline_context_section = format_timeline_for_prompt(
+                    timeline,
+                    max_tokens=timeline_tokens,
+                    include_assessment_gaps=include_gaps,
+                    include_conditional_warnings=True  # Always include if budget allows
+                )
+
+                if timeline_context_section:
+                    # Prepend timeline context before selected text
+                    text = f"{timeline_context_section}\n\nSELECTED TEXT TO ANALYZE:\n{text}"
+                    logger.info(f"Injected timeline context (~{len(timeline_context_section)//4} tokens)")
+            else:
+                logger.warning(f"Insufficient token budget for timeline context (available: {available_budget})")
+
+        except ImportError:
+            logger.warning("timeline_context_formatter module not available")
+        except Exception as e:
+            logger.error(f"Error injecting timeline context: {e}")
+
     # Load feedback-based examples (Phase 2B - Adaptive Learning)
     feedback_examples = load_feedback_examples()
     feedback_section = ""
@@ -498,6 +702,15 @@ def build_fast_prompt(
         ta_context=ta_context,
         text=text
     )
+
+    # Week 5 A/B Testing: Add cache-busting to ensure variants use different cache keys
+    # This prevents Azure OpenAI cache from returning identical responses for both variants
+    import time
+    cache_buster = f"\n\n[Analysis timestamp: {time.time():.6f}]"
+    if not use_templates:
+        user_content += cache_buster + " Mode: baseline (no template guidance)"
+    else:
+        user_content += cache_buster + " Mode: template-enhanced"
 
     # Count tokens
     system_tokens = count_tokens_precise(FAST_ANALYSIS_TEMPLATE.system, "gpt-4o-mini")
@@ -533,7 +746,8 @@ def build_fast_prompt(
             "total_input": total_input_tokens,
             "expected_output": FAST_ANALYSIS_TEMPLATE.expected_output_tokens,
             "budget": FAST_ANALYSIS_TEMPLATE.max_input_tokens
-        }
+        },
+        "entities": extracted_entities  # Return extracted entities for specificity scoring
     }
 
 

@@ -196,7 +196,8 @@ def generate_cache_key(
     model: str,
     ta: Optional[str] = None,
     phase: Optional[str] = None,
-    analysis_type: str = "fast"
+    analysis_type: str = "fast",
+    variant: Optional[str] = None  # Week 5: A/B testing variant ("with_templates" or "no_templates")
 ) -> str:
     """
     Generate deterministic cache key
@@ -207,6 +208,7 @@ def generate_cache_key(
         ta: Optional therapeutic area
         phase: Optional study phase
         analysis_type: "fast" or "deep"
+        variant: Optional A/B testing variant identifier
 
     Returns:
         Cache key (SHA256 hash)
@@ -221,6 +223,7 @@ def generate_cache_key(
         ta or "none",
         phase or "none",
         analysis_type,
+        variant or "default",  # Week 5: Separate cache for A/B testing variants
         CODE_VERSION  # Invalidates cache when code changes
     ]
 
@@ -258,7 +261,8 @@ def get_cached(
     model: str,
     ta: Optional[str] = None,
     phase: Optional[str] = None,
-    analysis_type: str = "fast"
+    analysis_type: str = "fast",
+    variant: Optional[str] = None  # Week 5: A/B testing variant
 ) -> Optional[Dict[str, Any]]:
     """
     Get cached analysis result
@@ -269,11 +273,12 @@ def get_cached(
         ta: Optional therapeutic area
         phase: Optional study phase
         analysis_type: "fast" or "deep"
+        variant: Optional A/B testing variant
 
     Returns:
         Cached result or None
     """
-    cache_key = generate_cache_key(text, model, ta, phase, analysis_type)
+    cache_key = generate_cache_key(text, model, ta, phase, analysis_type, variant)
 
     # Try Redis first (if enabled)
     redis_client = _get_redis_client()
@@ -308,7 +313,8 @@ def set_cached(
     result: Dict[str, Any],
     ta: Optional[str] = None,
     phase: Optional[str] = None,
-    analysis_type: str = "fast"
+    analysis_type: str = "fast",
+    variant: Optional[str] = None  # Week 5: A/B testing variant
 ):
     """
     Cache analysis result
@@ -320,8 +326,9 @@ def set_cached(
         ta: Optional therapeutic area
         phase: Optional study phase
         analysis_type: "fast" or "deep"
+        variant: Optional A/B testing variant
     """
-    cache_key = generate_cache_key(text, model, ta, phase, analysis_type)
+    cache_key = generate_cache_key(text, model, ta, phase, analysis_type, variant)
     ttl_hours = get_ttl_for_type(analysis_type, len(text))
 
     # Try Redis first (if enabled)

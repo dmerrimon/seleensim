@@ -627,6 +627,7 @@ async def analyze_fast(
     request_id: Optional[str] = None,
     is_table: bool = False,  # New parameter for table detection
     document_namespace: Optional[str] = None,  # Document intelligence namespace
+    use_templates: bool = True  # Week 5: A/B testing flag for template injection
 ) -> Dict[str, Any]:
     """
     Fast synchronous analysis for protocol sections
@@ -644,6 +645,7 @@ async def analyze_fast(
         request_id: Request tracking ID
         is_table: Whether the selection is table data
         document_namespace: Optional Pinecone namespace for document context
+        use_templates: Whether to inject suggestion templates into prompt (default: True). Set to False for A/B testing.
 
     Returns:
         {
@@ -731,6 +733,7 @@ async def analyze_fast(
         # 1c. Retrieve document context and cross-section conflicts (Document Intelligence) - TIER GATED
         document_context_start = time.time()
         document_context = None
+        timeline = None  # Phase 4: Timeline for schedule-aware prompts
         cross_section_conflicts = []
 
         if document_namespace and enable_document_intelligence:
@@ -754,6 +757,11 @@ async def analyze_fast(
                     }
                     logger.info(f"📄 [{req_id}] Retrieved document context: {list(document_context['section_summaries'].keys())}")
 
+                # Get timeline for this document (Phase 4: Timeline-aware prompts)
+                timeline = cache.get_timeline(fingerprint) if hasattr(cache, 'get_timeline') else None
+                if timeline:
+                    logger.info(f"📅 [{req_id}] Retrieved timeline: {len(timeline.visits) if hasattr(timeline, 'visits') else 0} visits")
+
                 # Get relevant cross-section conflicts for this section
                 all_conflicts = get_document_conflicts(fingerprint)
                 if all_conflicts:
@@ -768,12 +776,15 @@ async def analyze_fast(
         timings["document_context_ms"] = int((time.time() - document_context_start) * 1000)
 
         # Check cache (Step 6: Enhanced cache manager)
+        # Week 5: Add variant to cache key for A/B testing
+        cache_variant = "no_templates" if not use_templates else None
         cached_result = get_cached(
             text=trimmed_text,
             model=FAST_MODEL,
             ta=ta,
             phase=phase,
-            analysis_type="fast"
+            analysis_type="fast",
+            variant=cache_variant
         )
 
         if cached_result:
@@ -836,7 +847,9 @@ async def analyze_fast(
             ta,
             rag_results,
             section=section,
-            document_context=document_context
+            document_context=document_context,
+            timeline=timeline,  # Phase 4: Timeline-aware prompts
+            use_templates=use_templates  # Week 5: A/B testing
         )
 
         # 3a. Enhance prompt for table data if detected (full features during trial)
@@ -1071,6 +1084,76 @@ Table-Specific ICH-GCP Rules:
 
         timings["validation_ms"] = int((time.time() - validation_start) * 1000)
 
+        # 5c-2. Score suggestion specificity (Week 3: Contextual Intelligence)
+        scoring_start = time.time()
+        entities = prompt_data.get("entities")  # Entities extracted in build_fast_prompt()
+        enhancement_stats = None  # Week 7: Track enhancement results
+
+        if entities:
+            try:
+                from suggestion_specificity_scorer import (
+                    score_suggestion_specificity,
+                    classify_specificity,
+                    detect_generic_phrases
+                )
+
+                # Score each validated suggestion
+                for suggestion in validated_suggestions:
+                    score = score_suggestion_specificity(suggestion, entities)
+                    suggestion["specificity_score"] = score
+                    suggestion["specificity_level"] = classify_specificity(score)
+                    suggestion["generic_phrases"] = detect_generic_phrases(
+                        suggestion.get("improved_text", "")
+                    )
+
+                logger.info(f"✨ [{req_id}] Scored {len(validated_suggestions)} suggestions for specificity")
+
+                # Week 7 Phase 1: Enhance generic suggestions with protocol entities
+                # DISABLED 2026-01-11: Testing showed 0% enhancement rate on real protocols
+                # Patterns don't match actual LLM output. Keeping code for potential future use.
+                # See: /tmp/test_5_protocols.py results
+                #
+                # try:
+                #     from suggestion_enhancer import enhance_suggestions_batch, get_enhancement_summary
+                #
+                #     # Enhance suggestions below specificity threshold
+                #     enhancement_result = enhance_suggestions_batch(
+                #         validated_suggestions,
+                #         entities,
+                #         threshold=0.4  # Only enhance generic/partially specific suggestions
+                #     )
+                #
+                #     # Replace with enhanced suggestions
+                #     validated_suggestions = enhancement_result["suggestions"]
+                #     enhancement_stats = enhancement_result["stats"]
+                #
+                #     # Log enhancement results
+                #     if enhancement_stats["enhanced_count"] > 0:
+                #         logger.info(
+                #             f"🔧 [{req_id}] Enhanced {enhancement_stats['enhanced_count']} "
+                #             f"suggestions (avg improvement: +{enhancement_stats['avg_improvement']:.3f})"
+                #         )
+                #     else:
+                #         logger.info(f"🔧 [{req_id}] No suggestions enhanced (all specific or no matching patterns)")
+                #
+                # except ImportError:
+                #     logger.warning("suggestion_enhancer module not available, skipping enhancement")
+                # except Exception as e:
+                #     logger.error(f"Error enhancing suggestions: {e}")
+
+            except ImportError:
+                logger.warning("suggestion_specificity_scorer module not available, skipping specificity scoring")
+            except Exception as e:
+                logger.error(f"Error scoring suggestion specificity: {e}")
+        else:
+            # No entities extracted - mark all as generic (score 0.0)
+            for suggestion in validated_suggestions:
+                suggestion["specificity_score"] = 0.0
+                suggestion["specificity_level"] = "generic"
+                suggestion["generic_phrases"] = []
+
+        timings["scoring_ms"] = int((time.time() - scoring_start) * 1000)
+
         # 5d. Add cross-section conflicts (Document Intelligence)
         # These are already validated by the cross_section_engine, so add them directly
         if cross_section_conflicts:
@@ -1080,6 +1163,30 @@ Table-Specific ICH-GCP Rules:
 
         timings["postprocess_ms"] = int((time.time() - postprocess_start) * 1000)
         timings["total_ms"] = int((time.time() - start_time) * 1000)
+
+        # Calculate specificity metrics for metadata
+        specificity_metrics = {}
+        if validated_suggestions:
+            total_suggestions = len(validated_suggestions)
+            scores = [s.get("specificity_score", 0.0) for s in validated_suggestions]
+            avg_score = sum(scores) / total_suggestions if total_suggestions > 0 else 0.0
+
+            specificity_metrics = {
+                "avg_score": round(avg_score, 3),
+                "highly_specific_count": sum(
+                    1 for s in validated_suggestions
+                    if s.get("specificity_level") == "highly_specific"
+                ),
+                "partially_specific_count": sum(
+                    1 for s in validated_suggestions
+                    if s.get("specificity_level") == "partially_specific"
+                ),
+                "generic_count": sum(
+                    1 for s in validated_suggestions
+                    if s.get("specificity_level") == "generic"
+                ),
+                "entities_extracted": sum(len(v) for v in entities.values()) if entities else 0
+            }
 
         # Build result
         result = {
@@ -1109,6 +1216,9 @@ Table-Specific ICH-GCP Rules:
                 # Document Intelligence info
                 "document_context_enabled": document_context is not None,
                 "cross_section_conflicts_count": len(cross_section_conflicts),
+                # Week 3: Specificity metrics
+                "specificity": specificity_metrics if specificity_metrics else None,
+                "enhancement": enhancement_stats if enhancement_stats else None,  # Week 7: Enhancement stats
                 # Step 4: Token usage tracking
                 "tokens": {
                     "prompt": actual_tokens.get("prompt_tokens", token_info["total_input"]),
@@ -1120,23 +1230,34 @@ Table-Specific ICH-GCP Rules:
         }
 
         # Cache successful result (Step 6: Enhanced cache manager)
+        # Week 5: Add variant to cache key for A/B testing
         set_cached(
             text=trimmed_text,
             model=FAST_MODEL,
             result=result,
             ta=ta,
             phase=phase,
-            analysis_type="fast"
+            analysis_type="fast",
+            variant=cache_variant
         )
 
         # Emit performance warning if slow
         if timings["total_ms"] > 12000:
             logger.warning(f"⚠️ Slow fast analysis: {timings['total_ms']}ms (target: <15000ms)")
 
+        # Log specificity metrics
+        specificity_log = ""
+        if specificity_metrics:
+            specificity_log = (
+                f", specificity: avg={specificity_metrics['avg_score']:.3f} "
+                f"(highly_specific={specificity_metrics['highly_specific_count']}, "
+                f"generic={specificity_metrics['generic_count']})"
+            )
+
         logger.info(
             f"✅ Fast analysis complete: {req_id} ({timings['total_ms']}ms, "
             f"{len(validated_suggestions)}/{len(suggestions)} validated, "
-            f"{dedup_stats['duplicates_removed']} duplicates removed)"
+            f"{dedup_stats['duplicates_removed']} duplicates removed{specificity_log})"
         )
 
         # Step 7: Record metrics
