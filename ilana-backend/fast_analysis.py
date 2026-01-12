@@ -55,6 +55,12 @@ SELECTION_CHUNK_THRESHOLD = int(os.getenv("SELECTION_CHUNK_THRESHOLD", "15000"))
 # Post-process validation ensures suggestions reference text within selection
 ENABLE_CONTEXT_FOR_SELECTIONS = os.getenv("ENABLE_CONTEXT_FOR_SELECTIONS", "false").lower() == "true"
 
+# Feature gate for rule engine (Option C: LLM-Only Mode)
+# When disabled, skips all rule-based compliance checks and amendment risk prediction
+# Relies entirely on LLM + RAG for context-aware suggestions
+# Set to "false" for pure neural inference without hardcoded rules
+ENABLE_RULE_ENGINE = os.getenv("ENABLE_RULE_ENGINE", "true").lower() == "true"
+
 
 # Old cache functions removed in Step 6 - now using cache_manager
 
@@ -670,7 +676,9 @@ async def analyze_fast(
     enable_table_analysis = True
     enable_document_intelligence = True
 
-    logger.info(f"⚡ Fast analysis start: {req_id} (text_len={len(text)})")
+    # Log analysis mode
+    mode_indicator = "LLM-only" if not ENABLE_RULE_ENGINE else "Rules+LLM"
+    logger.info(f"⚡ Fast analysis start: {req_id} (text_len={len(text)}, mode={mode_indicator})")
 
     # Timing breakdown
     timings = {
@@ -703,24 +711,29 @@ async def analyze_fast(
         trimmed_text = text
 
         # 1a. Run rule-based compliance checks (< 1ms, deterministic)
+        # FEATURE GATE: Skip if ENABLE_RULE_ENGINE=false (LLM-only mode)
         rule_engine_start = time.time()
         rule_issues = []
 
-        try:
-            # Pass section for section-aware severity/confidence overrides (Layer 2)
-            rule_issues = run_compliance_checks(trimmed_text, section=section)
-            if rule_issues:
-                logger.info(f"🔍 [{req_id}] Rule engine found {len(rule_issues)} issues (section={section or 'general'})")
-        except Exception as e:
-            logger.warning(f"⚠️ [{req_id}] Rule engine failed: {e}")
+        if ENABLE_RULE_ENGINE:
+            try:
+                # Pass section for section-aware severity/confidence overrides (Layer 2)
+                rule_issues = run_compliance_checks(trimmed_text, section=section)
+                if rule_issues:
+                    logger.info(f"🔍 [{req_id}] Rule engine found {len(rule_issues)} issues (section={section or 'general'})")
+            except Exception as e:
+                logger.warning(f"⚠️ [{req_id}] Rule engine failed: {e}")
+        else:
+            logger.info(f"🤖 [{req_id}] LLM-only mode: Rule engine disabled (ENABLE_RULE_ENGINE=false)")
 
         timings["rule_engine_ms"] = int((time.time() - rule_engine_start) * 1000)
 
         # 1b. Run amendment risk prediction (Layer 3: Risk Prediction) - TIER GATED
+        # FEATURE GATE: Skip if ENABLE_RULE_ENGINE=false (LLM-only mode)
         amendment_risk_start = time.time()
         amendment_risks = []
 
-        if enable_amendment_risk:
+        if ENABLE_RULE_ENGINE and enable_amendment_risk:
             try:
                 from amendment_risk import predict_amendment_risk, format_risk_for_suggestion
                 risk_predictions = predict_amendment_risk(trimmed_text, section=section, min_risk_level="medium", max_results=3)
@@ -731,7 +744,8 @@ async def analyze_fast(
                 logger.warning(f"⚠️ [{req_id}] Amendment risk import failed: {e}")
             except Exception as e:
                 logger.warning(f"⚠️ [{req_id}] Amendment risk prediction failed: {e}")
-        # Amendment risk is always enabled during trial
+        elif not ENABLE_RULE_ENGINE:
+            logger.info(f"🤖 [{req_id}] LLM-only mode: Amendment risk disabled (ENABLE_RULE_ENGINE=false)")
 
         timings["amendment_risk_ms"] = int((time.time() - amendment_risk_start) * 1000)
 
