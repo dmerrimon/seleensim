@@ -625,18 +625,33 @@ def build_fast_prompt(
         current_section = document_context.get("current_section", "general")
 
         if summaries:
-            document_context_section = "\nDOCUMENT CONTEXT (From other protocol sections):\n"
+            # FIX: Add explicit instructions that document context is REFERENCE ONLY
+            document_context_section = """
+DOCUMENT CONTEXT (REFERENCE ONLY - DO NOT ANALYZE):
+The following excerpts from other protocol sections are provided for context.
+Use these ONLY to inform your suggestions for the SELECTED TEXT below.
+DO NOT generate suggestions for text in this context section.
+"""
             for section_type, summary in summaries.items():
                 # Truncate summaries to ~300 chars each
                 truncated = summary[:300] + "..." if len(summary) > 300 else summary
-                document_context_section += f"\n[{section_type.upper()} section excerpt]:\n{truncated}\n"
+                document_context_section += f"\n[{section_type.upper()} section excerpt - REFERENCE ONLY]:\n{truncated}\n"
 
-            document_context_section += f"\nYou are currently analyzing the {current_section.upper()} section. "
-            document_context_section += "Ensure your suggestions are consistent with the other protocol sections above.\n"
+            # Add clear separator and instructions for the selected text
+            document_context_section += f"""
+---
+SELECTED TEXT TO ANALYZE (YOUR FOCUS):
+You are currently analyzing the {current_section.upper()} section.
+The text below is what the user selected for analysis.
+Generate suggestions ONLY for issues found in this selected text.
+Your 'original_text' field MUST contain text that exists in this selected section.
+Ensure your suggestions are consistent with the protocol context above.
+---
+"""
 
             # Prepend document context before the selected text
-            text = f"{document_context_section}\nSELECTED TEXT TO ANALYZE:\n{text}"
-            logger.info(f"Injected document context for sections: {list(summaries.keys())}")
+            text = f"{document_context_section}\n{text}"
+            logger.info(f"Injected document context (REFERENCE ONLY) for sections: {list(summaries.keys())}")
 
     # Build timeline context section (Phase 4: Timeline-aware prompts)
     timeline_context_section = ""

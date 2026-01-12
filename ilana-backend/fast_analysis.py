@@ -1054,6 +1054,34 @@ Table-Specific ICH-GCP Rules:
         # Extracts from minimal_fix field when LLM doesn't provide it
         suggestions = _ensure_problematic_text(suggestions, trimmed_text)
 
+        # 5b-2.75. POST-PROCESS VALIDATION: Filter suggestions that don't match selected text
+        # FIX: Prevents LLM from generating suggestions based on document context instead of selection
+        validated_suggestions = []
+        discarded_count = 0
+        for suggestion in suggestions:
+            original_text = suggestion.get("text", "")
+            # Only validate LLM suggestions (rule-based are guaranteed to match)
+            if suggestion.get("source") == "llm" and original_text:
+                if original_text in trimmed_text:
+                    validated_suggestions.append(suggestion)
+                else:
+                    discarded_count += 1
+                    logger.warning(
+                        f"⚠️ [{req_id}] Discarding suggestion - original_text not in selection: "
+                        f"'{original_text[:100]}...'"
+                    )
+            else:
+                # Keep rule-based suggestions and LLM suggestions without text
+                validated_suggestions.append(suggestion)
+
+        if discarded_count > 0:
+            logger.info(
+                f"🔍 [{req_id}] Post-validation: Discarded {discarded_count} suggestions "
+                f"that referenced text outside selection (likely from document context)"
+            )
+
+        suggestions = validated_suggestions
+
         # 5b-3. DISABLED: Grouping removed per user request - show individual cards like Grammarly
         # suggestions, grouping_stats = _group_suggestions_by_text(suggestions, req_id)
         grouping_stats = {
