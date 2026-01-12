@@ -261,7 +261,7 @@ RESPONSE FORMAT:
       "id": "1",
       "category": "statistical",
       "severity": "critical",
-      "original_text": "exact excerpt (full sentence for context)",
+      "original_text": "CRITICAL: Copy the EXACT sentence from the text VERBATIM. Do NOT paraphrase, shorten, or rephrase. Copy it character-for-character including all punctuation. Example: If the text says 'Subjects will be initially enrolled into the appropriate Group 1 subgroup based on their disease symptoms/status at enrollment.', you MUST copy that EXACT string, not 'Subjects will be enrolled in the study....'",
       "problematic_text": "REQUIRED: Extract ONLY the 1-5 word phrase that needs changing (e.g., 'may', 'may be reassigned', 'if deemed appropriate'). NOT the full sentence. Must appear VERBATIM in the original document.",
       "minimal_fix": "REQUIRED: word-level replacement showing 'old' → 'new' (e.g., \"'may' → 'will'\", \"'may be reassigned' → 'will be analyzed per enrollment group'\")",
       "improved_text": "copy-paste ready rewrite of full sentence",
@@ -273,9 +273,10 @@ RESPONSE FORMAT:
 }}
 
 CRITICAL RULES:
-1. "problematic_text" MUST be only 1-5 words (e.g., "may", "may be reassigned", "if deemed appropriate"). NEVER the full sentence.
-2. "problematic_text" MUST appear VERBATIM in the document - copy it exactly as written.
-3. "minimal_fix" shows the word-level replacement (e.g., "'may' → 'will'").
+1. "original_text" MUST be copied VERBATIM from the selected text - character-for-character, including all punctuation and spacing. Do NOT paraphrase, shorten, summarize, or add "....". If you paraphrase, your suggestion will be discarded.
+2. "problematic_text" MUST be only 1-5 words (e.g., "may", "may be reassigned", "if deemed appropriate"). NEVER the full sentence.
+3. "problematic_text" MUST appear VERBATIM in the document - copy it exactly as written.
+4. "minimal_fix" shows the word-level replacement (e.g., "'may' → 'will'").
 These fields enable word-level highlighting in the document.
 
 FEW-SHOT EXAMPLES (Note the SPECIFIC regulatory section citations):
