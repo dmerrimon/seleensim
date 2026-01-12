@@ -70,6 +70,7 @@ class DocumentContext:
     total_chunks: int
     processing_time_ms: int
     conflicts: List[Dict] = field(default_factory=list)
+    timeline: Optional[Any] = None  # Timeline object from timeline_parser.py
 
 
 # Section detection patterns (order matters - more specific patterns first)
@@ -443,6 +444,23 @@ async def process_document(
     # 5. Extract section summaries
     section_summaries = extract_section_summaries(sections)
 
+    # 6. Parse timeline from schedule section (if available)
+    timeline_graph = None
+    if "schedule" in sections_dict:
+        try:
+            from timeline_parser import parse_timeline
+            schedule_text = " ".join(sections_dict["schedule"])
+            timeline_graph = parse_timeline(schedule_text, request_id)
+            if timeline_graph:
+                logger.info(f"[{request_id}] Parsed timeline: {len(timeline_graph.visits)} visits, "
+                           f"{len(timeline_graph.conditional_visits)} conditional, "
+                           f"confidence={timeline_graph.parse_confidence:.2f}")
+                if timeline_graph.warnings:
+                    logger.warning(f"[{request_id}] Timeline parse warnings: {timeline_graph.warnings}")
+        except Exception as e:
+            logger.warning(f"[{request_id}] Timeline parsing failed: {e}")
+            timeline_graph = None  # Graceful degradation
+
     processing_time_ms = int((time.time() - start_time) * 1000)
     logger.info(f"[{request_id}] Document processing complete in {processing_time_ms}ms")
 
@@ -453,7 +471,8 @@ async def process_document(
         section_summaries=section_summaries,
         total_chunks=indexed_count,
         processing_time_ms=processing_time_ms,
-        conflicts=[]  # Will be populated by cross_section_engine
+        conflicts=[],  # Will be populated by cross_section_engine
+        timeline=timeline_graph  # NEW: Add timeline graph
     )
 
 

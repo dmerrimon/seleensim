@@ -56,6 +56,7 @@ class DocumentContextCache:
         self.max_size = max_size
         self._cache: OrderedDict[str, DocumentCacheEntry] = OrderedDict()
         self._conflicts: Dict[str, List[Dict]] = {}  # Separate store for conflicts
+        self._timelines: Dict[str, Any] = {}  # Separate store for timeline graphs
 
         # Statistics
         self._stats = {
@@ -126,6 +127,7 @@ class DocumentContextCache:
         section_summaries: Dict[str, str],
         processing_time_ms: int,
         conflicts: Optional[List[Dict]] = None,
+        timeline: Optional[Any] = None,
     ) -> None:
         """
         Mark document as successfully processed
@@ -138,6 +140,7 @@ class DocumentContextCache:
             section_summaries: Brief summaries per section
             processing_time_ms: Total processing time
             conflicts: List of detected conflicts
+            timeline: Timeline graph object (from timeline_parser.py)
         """
         now = datetime.now()
         entry = DocumentCacheEntry(
@@ -157,10 +160,15 @@ class DocumentContextCache:
         if conflicts:
             self._conflicts[fingerprint] = conflicts
 
+        # Store timeline separately
+        if timeline:
+            self._timelines[fingerprint] = timeline
+
         self._stats["sets"] += 1
+        timeline_str = f", timeline: {len(timeline.visits)} visits" if timeline else ""
         logger.info(
             f"Cached document context: {fingerprint[:12]}... "
-            f"({sections_indexed} chunks, {conflicts_detected} conflicts)"
+            f"({sections_indexed} chunks, {conflicts_detected} conflicts{timeline_str})"
         )
 
     def set_failed(self, fingerprint: str, error_message: str) -> None:
@@ -191,6 +199,8 @@ class DocumentContextCache:
             evicted_fp, _ = self._cache.popitem(last=False)
             if evicted_fp in self._conflicts:
                 del self._conflicts[evicted_fp]
+            if evicted_fp in self._timelines:
+                del self._timelines[evicted_fp]
             self._stats["evictions"] += 1
             logger.debug(f"Evicted LRU document cache entry: {evicted_fp[:12]}...")
 
@@ -199,6 +209,10 @@ class DocumentContextCache:
     def get_conflicts(self, fingerprint: str) -> List[Dict]:
         """Get cross-section conflicts for a document"""
         return self._conflicts.get(fingerprint, [])
+
+    def get_timeline(self, fingerprint: str) -> Optional[Any]:
+        """Get timeline graph for a document"""
+        return self._timelines.get(fingerprint, None)
 
     def get_section_summaries(self, fingerprint: str) -> Dict[str, str]:
         """Get section summaries for a document"""
@@ -216,6 +230,7 @@ class DocumentContextCache:
         """Clear all cached entries"""
         self._cache.clear()
         self._conflicts.clear()
+        self._timelines.clear()
 
     def get_stats(self) -> Dict[str, Any]:
         """Get cache statistics"""
@@ -231,6 +246,7 @@ class DocumentContextCache:
             "sets": self._stats["sets"],
             "evictions": self._stats["evictions"],
             "conflicts_stored": len(self._conflicts),
+            "timelines_stored": len(self._timelines),
         }
 
 
@@ -266,6 +282,7 @@ def set_document_processed(
     section_summaries: Dict[str, str],
     processing_time_ms: int,
     conflicts: Optional[List[Dict]] = None,
+    timeline: Optional[Any] = None,
 ) -> None:
     """Mark document as processed and cache results"""
     get_document_cache().set_processed(
@@ -276,6 +293,7 @@ def set_document_processed(
         section_summaries=section_summaries,
         processing_time_ms=processing_time_ms,
         conflicts=conflicts,
+        timeline=timeline,
     )
 
 
@@ -287,6 +305,11 @@ def set_document_failed(fingerprint: str, error_message: str) -> None:
 def get_document_conflicts(fingerprint: str) -> List[Dict]:
     """Get cross-section conflicts for a document"""
     return get_document_cache().get_conflicts(fingerprint)
+
+
+def get_document_timeline(fingerprint: str) -> Optional[Any]:
+    """Get timeline graph for a document"""
+    return get_document_cache().get_timeline(fingerprint)
 
 
 def is_document_processing(fingerprint: str) -> bool:
@@ -302,6 +325,7 @@ __all__ = [
     "set_document_processed",
     "set_document_failed",
     "get_document_conflicts",
+    "get_document_timeline",
     "is_document_processing",
     "DocumentContextCache",
     "STATUS_PENDING",

@@ -263,9 +263,15 @@ async def check_objectives_statistics_consistency(
 async def check_safety_schedule_coverage(
     sections: Dict[str, List[str]],
     section_summaries: Dict[str, str],
+    timeline: Optional[Any] = None,  # NEW: Timeline object
 ) -> List[CrossSectionConflict]:
     """
     CS003: Check if safety monitoring has adequate visit schedule coverage
+
+    ENHANCED with timeline intelligence:
+    - Validates safety labs scheduled at appropriate visits
+    - Checks inter-visit gaps vs SAE reporting requirements
+    - Validates conditional safety visits have defined triggers
     """
     conflicts = []
 
@@ -278,7 +284,7 @@ async def check_safety_schedule_coverage(
     safety_lower = safety_text.lower()
     schedule_lower = schedule_text.lower()
 
-    # Check for 24-hour SAE reporting requirement
+    # EXISTING CHECK 1: 24-hour SAE reporting requirement
     if "24 hour" in safety_lower or "24-hour" in safety_lower:
         if "24 hour" not in schedule_lower and "24-hour" not in schedule_lower:
             if "contact" not in schedule_lower and "phone" not in schedule_lower:
@@ -295,7 +301,7 @@ async def check_safety_schedule_coverage(
                     confidence=0.8,
                 ))
 
-    # Check for DSMB/interim analysis in safety vs statistics/schedule
+    # EXISTING CHECK 2: DSMB/interim analysis
     if "dsmb" in safety_lower or "data safety monitoring" in safety_lower:
         statistics_text = " ".join(sections.get("statistics", []))
         if "dsmb" not in statistics_text.lower() and "interim" not in statistics_text.lower():
@@ -311,6 +317,78 @@ async def check_safety_schedule_coverage(
                 rationale="FDA requires pre-specification of interim analysis timing and stopping rules when DSMB is employed.",
                 confidence=0.75,
             ))
+
+    # ========================================================================
+    # NEW TIMELINE-AWARE CHECKS (only if timeline is available)
+    # ========================================================================
+
+    if timeline and hasattr(timeline, 'visits') and hasattr(timeline, 'assessment_schedule'):
+
+        # NEW CHECK 3: Inter-visit gap vs SAE reporting
+        if ("24 hour" in safety_lower or "24-hour" in safety_lower) and len(timeline.visits) > 1:
+            # Calculate maximum inter-visit gap
+            sorted_visits = sorted([v for v in timeline.visits if not v.is_conditional],
+                                   key=lambda v: v.window.nominal_days)
+            max_gap_days = 0
+            gap_visits = None
+
+            for i in range(len(sorted_visits) - 1):
+                v1, v2 = sorted_visits[i], sorted_visits[i + 1]
+                gap = v2.window.nominal_days - v1.window.nominal_days
+                if gap > max_gap_days:
+                    max_gap_days = gap
+                    gap_visits = (v1.visit_id, v2.visit_id)
+
+            # Flag if gap > 7 days and no contact mechanism
+            if max_gap_days > 7:
+                if "contact" not in schedule_lower and "phone" not in schedule_lower and "hotline" not in schedule_lower:
+                    conflicts.append(CrossSectionConflict(
+                        id="cs003_inter_visit_gap_001",
+                        check_id="CS003",
+                        type="safety_schedule_gap",
+                        severity="major",
+                        sections_involved=["safety", "schedule"],
+                        description=f"Longest inter-visit interval is {max_gap_days} days ({gap_visits[0]} to {gap_visits[1]}), but no mechanism specified for 24-hour SAE reporting between visits",
+                        original_text=f"Visit gap: {gap_visits[0]} to {gap_visits[1]} ({max_gap_days} days)",
+                        improved_text=f"Add inter-visit contact mechanism (24-hour hotline or weekly phone calls) to enable SAE reporting during {max_gap_days}-day interval between {gap_visits[0]} and {gap_visits[1]}",
+                        rationale="ICH E2A requires immediate reporting of SAEs. With visit intervals >7 days, protocol must specify inter-visit contact procedures.",
+                        confidence=0.85,
+                    ))
+
+        # NEW CHECK 4: Safety assessment coverage ("CBC at each visit" vs actual schedule)
+        safety_assessment_patterns = {
+            "CBC": r"(?i)\bCBC\b.*(?:each|every)\s+visit",
+            "Chemistry": r"(?i)(?:chemistry|CMP|metabolic\s+panel).*(?:each|every)\s+visit",
+            "Vital Signs": r"(?i)vital\s+signs?.*(?:each|every)\s+visit",
+            "ECG": r"(?i)(?:ECG|EKG).*(?:each|every)\s+visit",
+        }
+
+        for assessment_name, pattern in safety_assessment_patterns.items():
+            if re.search(pattern, safety_text):
+                # Safety says this assessment should be at each visit
+                # Check if it's actually scheduled at each visit in the timeline
+                scheduled_visits = timeline.assessment_schedule.get(assessment_name, [])
+                all_regular_visits = [v.visit_id for v in timeline.visits if not v.is_conditional and v.window.nominal_days >= 0]
+
+                missing_visits = set(all_regular_visits) - set(scheduled_visits)
+
+                if missing_visits and len(missing_visits) / len(all_regular_visits) > 0.2:  # >20% missing
+                    missing_list = ", ".join(sorted(list(missing_visits))[:5])
+                    if len(missing_visits) > 5:
+                        missing_list += f" ... and {len(missing_visits) - 5} more"
+
+                    conflicts.append(CrossSectionConflict(
+                        id=f"cs003_missing_{assessment_name.lower().replace(' ', '_')}_001",
+                        check_id="CS003",
+                        type="safety_schedule_mismatch",
+                        severity="major",
+                        sections_involved=["safety", "schedule"],
+                        description=f"Safety section requires {assessment_name} at each visit, but Schedule of Activities is missing {assessment_name} at {len(missing_visits)} visits: {missing_list}",
+                        original_text=f"{assessment_name} required at each visit (Safety section)",
+                        improved_text=f"Add {assessment_name} to Schedule of Activities for visits: {missing_list}",
+                        rationale=f"Safety monitoring plan requires {assessment_name} at each visit for participant safety. Schedule must reflect this requirement.",
+                        confidence=0.80,
+                    ))
 
     return conflicts
 
@@ -565,10 +643,169 @@ async def check_population_consistency(
     return conflicts
 
 
+async def check_conditional_visit_logic(
+    sections: Dict[str, List[str]],
+    section_summaries: Dict[str, str],
+    timeline: Optional[Any] = None,
+) -> List[CrossSectionConflict]:
+    """
+    CS010: Validate conditional visit logic and triggers
+
+    NEW CHECK - Validates:
+    - Conditional visit triggers are defined in protocol
+    - "Unless safety concern" has clear criteria
+    - "After missed vaccination" procedures are specified
+    - Conditional visits don't conflict with main schedule
+    """
+    conflicts = []
+
+    # Get schedule text (needed for high-risk language check even if no timeline)
+    schedule_text = " ".join(sections.get("schedule", []))
+    safety_text = " ".join(sections.get("safety", []))
+    procedures_text = " ".join(sections.get("procedures", []))
+
+    # Check each conditional visit (only if timeline has conditional visits)
+    if timeline and hasattr(timeline, 'conditional_visits') and timeline.conditional_visits:
+        # Combine all text for trigger definition search
+        all_text = schedule_text + " " + safety_text + " " + procedures_text
+
+        for cond_visit in timeline.conditional_visits:
+            if not cond_visit.condition:
+                continue
+
+            condition_lower = cond_visit.condition.lower()
+
+            # Pattern 1: "safety concern" trigger - should be defined
+            if "safety" in condition_lower and ("concern" in condition_lower or "issue" in condition_lower):
+                # Look for safety concern definition
+                safety_criteria_found = any([
+                    "safety concern" in safety_text.lower() and ("defined as" in safety_text.lower() or "criteria" in safety_text.lower()),
+                    "unacceptable toxicity" in safety_text.lower(),
+                    "dlt" in safety_text.lower(),  # Dose-limiting toxicity
+                ])
+
+                if not safety_criteria_found:
+                    conflicts.append(CrossSectionConflict(
+                        id="cs010_undefined_safety_trigger_001",
+                        check_id="CS010",
+                        type="undefined_conditional_trigger",
+                        severity="major",
+                        sections_involved=["schedule", "safety"],
+                        description=f"Conditional visit trigger 'safety concern' is mentioned but not clearly defined in Safety section",
+                        original_text=f"Conditional: {cond_visit.condition}",
+                        improved_text="Define specific criteria for 'safety concern' in Safety Monitoring section (e.g., Grade 3+ AE, specific lab abnormalities, or clinical symptoms requiring evaluation)",
+                        rationale="Conditional visit triggers must have objective criteria to ensure consistent protocol implementation across sites.",
+                        confidence=0.80,
+                    ))
+
+            # Pattern 2: "missed vaccination" or "missed dose" - procedures should be specified
+            if "missed" in condition_lower and ("vaccination" in condition_lower or "dose" in condition_lower):
+                # Look for missed dose procedures
+                missed_dose_procedures_found = any([
+                    "missed dose" in all_text.lower() and ("procedure" in all_text.lower() or "will" in all_text.lower()),
+                    "catch-up" in all_text.lower(),
+                    "make-up" in all_text.lower(),
+                ])
+
+                if not missed_dose_procedures_found:
+                    conflicts.append(CrossSectionConflict(
+                        id="cs010_undefined_missed_dose_001",
+                        check_id="CS010",
+                        type="undefined_conditional_trigger",
+                        severity="major",
+                        sections_involved=["schedule", "procedures"],
+                        description=f"Conditional visit after 'missed vaccination' is mentioned but procedures for missed doses are not specified",
+                        original_text=f"Conditional: {cond_visit.condition}",
+                        improved_text="Add section describing procedures for missed vaccinations: visit timing windows, safety assessments required, and criteria for resuming dosing schedule",
+                        rationale="Missed dose procedures must be pre-specified to maintain protocol integrity and participant safety.",
+                        confidence=0.85,
+                    ))
+
+            # Pattern 3: "participant agrees" or "participant choice" - informed consent implications
+            if "participant" in condition_lower and ("agree" in condition_lower or "choice" in condition_lower or "opt" in condition_lower):
+                # Check if informed consent mentions this optional visit
+                consent_text = " ".join(sections.get("informed_consent", []))
+                optional_mentioned = "optional" in consent_text.lower() or "may choose" in consent_text.lower()
+
+                if not optional_mentioned:
+                    conflicts.append(CrossSectionConflict(
+                        id="cs010_optional_visit_consent_001",
+                        check_id="CS010",
+                        type="conditional_visit_consent",
+                        severity="minor",
+                        sections_involved=["schedule", "informed_consent"],
+                        description=f"Optional/conditional visit based on participant choice should be mentioned in informed consent",
+                        original_text=f"Conditional: {cond_visit.condition}",
+                        improved_text="Add language to informed consent describing optional visit procedures and participant's right to decline",
+                        rationale="Informed consent must describe all optional procedures to ensure participants understand their choices.",
+                        confidence=0.70,
+                    ))
+
+    # Check for high-risk conditional language patterns in schedule
+    # Phase 3 Enhancement: Query amendment risk for historical amendment frequencies
+    from amendment_risk import predict_amendment_risk
+
+    high_risk_patterns = [
+        (r"(?i)will\s+not\s+be\s+conducted\s+unless", "visits will not be conducted unless"),
+        (r"(?i)as\s+clinically\s+indicated", "as clinically indicated"),
+        (r"(?i)at\s+(?:the\s+)?discretion\s+of", "at discretion of investigator"),
+    ]
+
+    for pattern, pattern_name in high_risk_patterns:
+        if re.search(pattern, schedule_text):
+            # Query amendment risk for amendment frequency (Phase 3 integration)
+            amendment_prob = 0.0
+            try:
+                risk_predictions = predict_amendment_risk(schedule_text, section="schedule", max_results=10)
+                for pred in risk_predictions:
+                    if pattern_name.lower() in pred.pattern_readable.lower():
+                        amendment_prob = pred.amendment_probability
+                        break
+            except Exception as e:
+                # If amendment_risk fails, continue with default severity
+                pass
+
+            # Upgrade severity to major if high amendment risk (≥70%)
+            severity = "major" if amendment_prob >= 0.7 else "minor"
+
+            # Build description with amendment frequency if available
+            description = f"Schedule contains high-risk conditional language: '{pattern_name}'"
+            if amendment_prob > 0:
+                description += f" - {amendment_prob*100:.0f}% historical amendment rate"
+            else:
+                description += " - this pattern frequently requires protocol amendments for clarification"
+
+            # Build rationale with amendment data
+            rationale = (
+                f"Conditional visit language with undefined triggers creates protocol ambiguity "
+                f"and leads to inconsistent implementation across sites."
+            )
+            if amendment_prob > 0:
+                rationale += f" Historical data shows {amendment_prob*100:.0f}% of protocols with this pattern require amendments."
+            else:
+                rationale += " Pre-specifying criteria reduces site confusion and protocol deviations."
+
+            conflicts.append(CrossSectionConflict(
+                id=f"cs010_high_risk_language_{pattern_name.replace(' ', '_').replace('/', '_')}",
+                check_id="CS010",
+                type="high_risk_conditional_language",
+                severity=severity,
+                sections_involved=["schedule"],
+                description=description,
+                original_text=f"Pattern detected: '{pattern_name}'",
+                improved_text=f"Replace '{pattern_name}' with objective, pre-specified criteria per Protocol Section [X]",
+                rationale=rationale,
+                confidence=0.85 if amendment_prob >= 0.7 else 0.75,
+            ))
+
+    return conflicts
+
+
 async def analyze_cross_section_consistency(
     sections: Dict[str, List[str]],
     section_summaries: Dict[str, str],
     request_id: str = "unknown",
+    timeline: Optional[Any] = None,  # NEW: Timeline object from timeline_parser
 ) -> List[Dict[str, Any]]:
     """
     Run all cross-section consistency checks
@@ -577,28 +814,34 @@ async def analyze_cross_section_consistency(
         sections: Dict mapping section_type to list of text chunks
         section_summaries: Dict mapping section_type to summary text
         request_id: Request tracking ID
+        timeline: Optional Timeline object with visit/assessment schedule
 
     Returns:
         List of conflicts formatted as suggestion card dicts
     """
-    logger.info(f"[{request_id}] Running cross-section consistency analysis")
+    logger.info(f"[{request_id}] Running cross-section consistency analysis (timeline={'available' if timeline else 'N/A'})")
 
     all_conflicts: List[CrossSectionConflict] = []
 
     # Run all checks
     checks = [
-        ("CS001", check_eligibility_endpoints_alignment),
-        ("CS002", check_objectives_statistics_consistency),
-        ("CS003", check_safety_schedule_coverage),
-        ("CS005", check_primary_endpoint_consistency),
-        ("CS007", check_population_consistency),
-        ("CS008", check_objective_endpoint_alignment),  # New: Each objective needs an endpoint
-        ("CS009", check_endpoint_sample_size_alignment),  # New: Sample size must reference primary endpoint
+        ("CS001", check_eligibility_endpoints_alignment, False),  # No timeline needed
+        ("CS002", check_objectives_statistics_consistency, False),
+        ("CS003", check_safety_schedule_coverage, True),  # ENHANCED: Timeline-aware
+        ("CS005", check_primary_endpoint_consistency, False),
+        ("CS007", check_population_consistency, False),
+        ("CS008", check_objective_endpoint_alignment, False),
+        ("CS009", check_endpoint_sample_size_alignment, False),
+        ("CS010", check_conditional_visit_logic, True),  # NEW: Timeline-aware
     ]
 
-    for check_id, check_func in checks:
+    for check_id, check_func, needs_timeline in checks:
         try:
-            conflicts = await check_func(sections, section_summaries)
+            # Pass timeline to checks that need it
+            if needs_timeline:
+                conflicts = await check_func(sections, section_summaries, timeline)
+            else:
+                conflicts = await check_func(sections, section_summaries)
             all_conflicts.extend(conflicts)
             if conflicts:
                 logger.info(f"[{request_id}] {check_id}: Found {len(conflicts)} conflicts")
