@@ -1266,8 +1266,9 @@ function setupEventListeners() {
     });
     
     // Make functions globally available
-    window.startAnalysis = handleRecommendButton;
-    window.handleRecommendButton = handleRecommendButton;
+    window.startAnalysis = handleSelectionAnalysis;
+    window.handleSelectionAnalysis = handleSelectionAnalysis;
+    window.handleFullDocumentAnalysis = handleFullDocumentAnalysis;
     window.selectIssue = selectIssue;
     window.jumpToNextIssue = jumpToNextIssue;
     window.acceptAllLow = acceptAllLow;
