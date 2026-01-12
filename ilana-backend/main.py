@@ -3349,6 +3349,7 @@ async def process_document_context(request: Request, background_tasks: Backgroun
                 section_summaries=result.section_summaries,
                 processing_time_ms=result.processing_time_ms,
                 conflicts=conflicts,
+                timeline=result.timeline,  # NEW: Cache timeline for later use
             )
 
             logger.info(
