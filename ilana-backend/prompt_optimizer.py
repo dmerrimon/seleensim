@@ -245,7 +245,16 @@ CRITICAL: Your goal is to be COMPREHENSIVE, not conservative. A typical 500-word
 
 REGULATORY CITATION REQUIREMENT: Your rationale MUST include specific section numbers from regulatory guidance (e.g., "ICH E9 Section 5.7" NOT just "ICH E9"). If regulatory context is provided, cite it. If not, use general regulatory principles with specific sections.
 
-IMPORTANT: When referencing SAP sections or Protocol sections in improved_text or recommendations, use "[X]" as a placeholder (e.g., "SAP Section [X]", "Protocol Section [X]"). Do NOT invent specific section numbers for the user's document. Only cite actual regulatory guidance section numbers (ICH, FDA, etc.).""",
+IMPORTANT: When referencing SAP sections or Protocol sections in improved_text or recommendations, use "[X]" as a placeholder (e.g., "SAP Section [X]", "Protocol Section [X]"). Do NOT invent specific section numbers for the user's document. Only cite actual regulatory guidance section numbers (ICH, FDA, etc.).
+
+8) DOCUMENT_CONTEXT_CONSTRAINT (if provided): When analyzing text selections with cross-section context:
+   - Context sections show other parts of the protocol for reference ONLY
+   - Your 'original_text' MUST be a VERBATIM substring from the SELECTED TEXT section below
+   - Do NOT suggest changes to text that appears only in the CONTEXT sections
+   - Every suggestion will be validated: if 'original_text' is not in the selected section, it will be REJECTED and not shown to the user
+   - If uncertain whether text is in the selection, omit the suggestion
+   - Cross-section insights are valuable (e.g., "conflicts with endpoints section"), but original_text must always be from the selected section
+   - Your job is to analyze the SELECTED TEXT using context for understanding, not to analyze the context itself.""",
     user_template="""Analyze the following SELECTED PROTOCOL TEXT{ta_context}. Return strict JSON only (no extra prose) with "issues" array.
 
 TEXT:
@@ -634,22 +643,51 @@ def build_fast_prompt(
         current_section = document_context.get("current_section", "general")
 
         if summaries:
-            # FIX: Add explicit instructions that document context is REFERENCE ONLY
+            # Option A (v1.0): Strong prompt guards for contextual intelligence with selections
             document_context_section = """
-DOCUMENT CONTEXT (REFERENCE ONLY - DO NOT ANALYZE):
-The following excerpts from other protocol sections are provided for context.
-Use these ONLY to inform your suggestions for the SELECTED TEXT below.
-DO NOT generate suggestions for text in this context section.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DOCUMENT CONTEXT (REFERENCE ONLY - STRICT SELECTION BOUNDARY)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The sections below show other parts of this protocol for cross-section awareness.
+Use these excerpts to:
+✓ Understand protocol-wide context
+✓ Identify cross-section conflicts affecting the SELECTED TEXT
+✓ Inform your rationale about why selected text has issues
+
+**CRITICAL CONSTRAINT**: You may ONLY analyze the SELECTED TEXT below.
+Every 'original_text' you return will be validated as a substring of the
+selected text. If it's not found, your suggestion will be REJECTED.
+
+❌ INVALID: Suggesting changes to text from these context sections
+✅ VALID: Suggesting changes to selected text informed by context understanding
 """
             for section_type, summary in summaries.items():
                 # Truncate summaries to ~300 chars each
                 truncated = summary[:300] + "..." if len(summary) > 300 else summary
                 document_context_section += f"\n[{section_type.upper()} section excerpt - REFERENCE ONLY]:\n{truncated}\n"
 
+            # Add pre-analysis checklist to encourage LLM self-validation
+            document_context_section += """
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BEFORE RETURNING YOUR RESPONSE - VERIFY EACH SUGGESTION:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For each suggestion, confirm:
+□ 'original_text' is copied VERBATIM from the SELECTED TEXT section below
+□ 'original_text' can be found with exact substring matching
+□ You have NOT suggested changes to text from CONTEXT sections above
+□ If suggestion mentions cross-section conflict, the original_text is still from selection
+
+If any check fails, REMOVE that suggestion from your response.
+"""
+
             # Add clear separator and instructions for the selected text
             document_context_section += f"""
----
-SELECTED TEXT TO ANALYZE (YOUR FOCUS):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SELECTED TEXT TO ANALYZE (YOUR EXCLUSIVE FOCUS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 You are currently analyzing the {current_section.upper()} section.
 The text below is what the user selected for analysis.
 Generate suggestions ONLY for issues found in this selected text.

@@ -50,6 +50,11 @@ FAST_MAX_TOKENS = int(os.getenv("FAST_MAX_TOKENS", "3000"))  # Allow more output
 FAST_TEMPERATURE = 0.3  # Slightly higher for better issue detection (increased from 0.2 for comprehensiveness)
 SELECTION_CHUNK_THRESHOLD = int(os.getenv("SELECTION_CHUNK_THRESHOLD", "15000"))  # 15000 chars = full protocol sections
 
+# Feature gate for contextual intelligence with selections (v1.0 Option A)
+# When enabled, text selections get document context with strong prompt guards
+# Post-process validation ensures suggestions reference text within selection
+ENABLE_CONTEXT_FOR_SELECTIONS = os.getenv("ENABLE_CONTEXT_FOR_SELECTIONS", "false").lower() == "true"
+
 
 # Old cache functions removed in Step 6 - now using cache_manager
 
@@ -736,10 +741,10 @@ async def analyze_fast(
         timeline = None  # Phase 4: Timeline for schedule-aware prompts
         cross_section_conflicts = []
 
-        # FIX (Option 2): Only use document context for full-document analysis, not selections
-        # When user selects text (text parameter provided), analyze ONLY that selection without document context
-        # This prevents LLM from generating suggestions based on context instead of the selected text
-        if document_namespace and enable_document_intelligence and not text:
+        # Option A (v1.0): Enable document context for selections with strong prompt guards
+        # Context provides cross-section awareness while post-process validation ensures
+        # suggestions reference text within the selection. Feature-gated for safe rollout.
+        if document_namespace and enable_document_intelligence and (not text or ENABLE_CONTEXT_FOR_SELECTIONS):
             try:
                 from document_cache import get_document_conflicts, get_document_cache
                 from cross_section_engine import get_relevant_conflicts
@@ -1058,29 +1063,42 @@ Table-Specific ICH-GCP Rules:
         suggestions = _ensure_problematic_text(suggestions, trimmed_text)
 
         # 5b-2.75. POST-PROCESS VALIDATION: Filter suggestions that don't match selected text
-        # FIX: Prevents LLM from generating suggestions based on document context instead of selection
+        # Option A (v1.0): Validation works as safety net with contextual intelligence enabled
+        # Ensures suggestions reference text within selection even when context is provided
         validated_suggestions = []
         discarded_count = 0
         for suggestion in suggestions:
             original_text = suggestion.get("text", "")
             # Only validate LLM suggestions (rule-based are guaranteed to match)
             if suggestion.get("source") == "llm" and original_text:
+                # Try exact substring match
                 if original_text in trimmed_text:
                     validated_suggestions.append(suggestion)
+                    suggestion["_validation_type"] = "exact_match"
+                # Accept if already fuzzy matched by _match_llm_text_to_original()
+                elif suggestion.get("_text_matched", False):
+                    validated_suggestions.append(suggestion)
+                    suggestion["_validation_type"] = "fuzzy_match"
+                    logger.info(f"✅ [{req_id}] Fuzzy match accepted: '{original_text[:60]}...'")
+                # Reject if neither exact nor fuzzy match
                 else:
                     discarded_count += 1
+                    # Enhanced logging for debugging context-related rejections
+                    context_info = "with_context" if document_context else "no_context"
                     logger.warning(
-                        f"⚠️ [{req_id}] Discarding suggestion - original_text not in selection: "
-                        f"'{original_text[:100]}...'"
+                        f"⚠️ [{req_id}] Rejecting suggestion ({context_info}): "
+                        f"original_text='{original_text[:80]}...' not found in selection"
                     )
+                    suggestion["_rejection_reason"] = "original_text_not_in_selection"
             else:
                 # Keep rule-based suggestions and LLM suggestions without text
                 validated_suggestions.append(suggestion)
 
         if discarded_count > 0:
+            context_status = "with document context" if document_context else "without context"
             logger.info(
                 f"🔍 [{req_id}] Post-validation: Discarded {discarded_count} suggestions "
-                f"that referenced text outside selection (likely from document context)"
+                f"that referenced text outside selection ({context_status})"
             )
 
         suggestions = validated_suggestions
@@ -1246,6 +1264,7 @@ Table-Specific ICH-GCP Rules:
                 "rag_enabled": len(rag_results.get('exemplars', [])) > 0,
                 # Document Intelligence info
                 "document_context_enabled": document_context is not None,
+                "document_context_for_selection": document_context is not None and text is not None and len(text) > 0,  # NEW: Track when context is used for selections
                 "cross_section_conflicts_count": len(cross_section_conflicts),
                 # Week 3: Specificity metrics
                 "specificity": specificity_metrics if specificity_metrics else None,
