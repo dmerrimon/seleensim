@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 # Configuration
 # Token budgets increased to accommodate TA guidance, section rules, and rewrite instructions
-FAST_TOKEN_BUDGET = int(os.getenv("FAST_TOKEN_BUDGET", "5000"))  # Input tokens for fast path (increased for section/TA injections)
+FAST_TOKEN_BUDGET = int(os.getenv("FAST_TOKEN_BUDGET", "8000"))  # Input tokens for fast path (increased for RAG + section/TA context)
 DEEP_TOKEN_BUDGET = int(os.getenv("DEEP_TOKEN_BUDGET", "6000"))  # Input tokens for deep path (increased for citations)
 ENABLE_TOKEN_TRACKING = os.getenv("ENABLE_TOKEN_TRACKING", "true").lower() == "true"
 
