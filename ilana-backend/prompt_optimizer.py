@@ -321,8 +321,8 @@ Rationale: ICH E6(R3) Section 1.58 requires use of 'participant' instead of 'sub
 Example 4 - Primary Endpoint Specification (Critical):
 Original: "The primary endpoint is change in disease severity score."
 Problematic: "change in disease severity score"
-Minimal Fix: "'change in disease severity score' → 'change from baseline in [score] at Week [X], analyzed using [method]'"
-Improved: "The primary endpoint is change from baseline in disease severity score at Week 12, analyzed using ANCOVA with baseline score as covariate. Non-inferiority margin: -3 points (FDA Guidance: Non-Inferiority Clinical Trials, Section 4.2)."
+Minimal Fix: "'change in disease severity score' → 'change from baseline in disease severity score at Week 12'"
+Improved: "change from baseline in disease severity score at Week 12"
 Rationale: ICH E9 Section 2.2.2 requires primary endpoints to specify: (1) measurement timing, (2) direction of benefit, (3) analysis method, and (4) clinically meaningful difference. FDA Non-Inferiority Guidance Section 4.2 requires pre-specification of NI margins with clinical justification.
 Recommendation: Define in Protocol Section [X]: precise timing (Week 12), analysis method (ANCOVA), and NI/superiority margin with clinical justification.
 
@@ -330,77 +330,76 @@ Example 5 - Safety Monitoring Specificity (Major):
 Original: "Adverse events will be monitored throughout the study."
 Problematic: "monitored throughout the study"
 Minimal Fix: "'monitored throughout the study' → 'monitored at each study visit (Weeks [X]) using [method]'"
-Improved: "Adverse events will be actively monitored at each study visit (Weeks 0, 4, 8, 12, 16) using standardized questionnaires and targeted physical examination. Grade 3+ AEs must be reported to the Medical Monitor within 24 hours per ICH E6(R3) Section 5.17. All AEs will be coded using MedDRA v25.0."
+Improved: "actively monitored at each study visit (Weeks 0, 4, 8, 12, 16) using standardized questionnaires and targeted physical examination"
 Rationale: ICH E6(R3) Section 5.17 requires specification of: (1) AE assessment methods, (2) reporting timelines for serious/severe events, (3) standardized coding dictionaries. FDA Safety Monitoring Guidance Section 6.3 requires active surveillance with defined procedures.
-Recommendation: Add to Protocol Section [X]: specific AE collection procedures, grading criteria (CTCAE v5.0), expedited reporting timelines, and MedDRA coding version.
+Recommendation: Add to Protocol Section [X]: specific AE collection procedures, grading criteria (CTCAE v5.0), expedited reporting timelines (Grade 3+ AEs reported to Medical Monitor within 24 hours), and MedDRA coding version (v25.0).
 
 Example 6 - Inclusion Criteria Precision (Major):
 Original: "Patients with adequate organ function."
 Problematic: "adequate organ function"
 Minimal Fix: "'adequate organ function' → 'organ function defined as: [specific thresholds]'"
-Improved: "Participants with adequate organ function defined as: (1) Hepatic: AST/ALT ≤2.5× ULN, total bilirubin ≤1.5× ULN; (2) Renal: eGFR ≥60 mL/min/1.73m² (CKD-EPI equation); (3) Hematologic: ANC ≥1,500/μL, platelets ≥100,000/μL, hemoglobin ≥9.0 g/dL. Laboratory values must be obtained within 14 days prior to enrollment."
+Improved: "organ function defined as: (1) Hepatic: AST/ALT ≤2.5× ULN, total bilirubin ≤1.5× ULN; (2) Renal: eGFR ≥60 mL/min/1.73m² (CKD-EPI equation); (3) Hematologic: ANC ≥1,500/μL, platelets ≥100,000/μL, hemoglobin ≥9.0 g/dL"
 Rationale: ICH E8 Section 3.1.3 requires eligibility criteria to be objective, measurable, and clinically justified. Ambiguous criteria ("adequate") violate reproducibility standards per ICH E6(R3) Section 8.3.3. FDA Eligibility Guidance Section 2.4 requires specific laboratory thresholds with timing.
-Recommendation: Replace all subjective criteria with measurable thresholds. Specify: (1) exact laboratory values with units, (2) reference ranges source (local vs central lab), (3) timing window for assessments.
+Recommendation: Replace all subjective criteria with measurable thresholds. Specify: (1) exact laboratory values with units, (2) reference ranges source (local vs central lab), (3) timing window for assessments (e.g., within 14 days prior to enrollment).
 
 Example 7 - Incomplete Primary Endpoint (Critical):
 Original: "The primary endpoint is overall survival."
 Problematic: "overall survival"
 Minimal Fix: "'overall survival' → 'overall survival (OS), defined as time from randomization to death from any cause'"
-Improved: "The primary endpoint is overall survival (OS), defined as time from randomization to death from any cause, censored at last known alive date for participants without documented death. OS will be analyzed using Kaplan-Meier methods with the log-rank test stratified by [stratification factors]. Hazard ratio and 95% CI will be estimated using Cox proportional hazards regression."
+Improved: "overall survival (OS), defined as time from randomization to death from any cause, censored at last known alive date for participants without documented death"
 Rationale: ICH E9 Section 2.2.2 requires primary endpoints to include: (1) precise definition, (2) censoring rules for time-to-event endpoints, (3) analysis method. FDA Oncology Guidance Section 3.1 requires specification of stratification factors and treatment effect estimation method.
-Recommendation: Add to Protocol Section [X]: (1) Operational definition with censoring rules, (2) Analysis method (log-rank, Cox), (3) Stratification factors, (4) Handling of informative censoring.
+Recommendation: Add to Protocol Section [X]: (1) Operational definition with censoring rules, (2) Analysis method (Kaplan-Meier with log-rank test stratified by [factors]), (3) Treatment effect estimation (Cox proportional hazards for HR and 95% CI), (4) Handling of informative censoring.
 
 Example 8 - Vague Secondary Endpoint (Major):
 Original: "Secondary endpoints include quality of life assessments."
 Problematic: "quality of life assessments"
 Minimal Fix: "'quality of life assessments' → 'EORTC QLQ-C30 global health status score at Week 12'"
-Improved: "Secondary endpoints include: (1) Change from baseline in EORTC QLQ-C30 global health status/QoL score at Week 12, analyzed using MMRM with treatment, visit, baseline score, and treatment-by-visit interaction as covariates; (2) Time to deterioration in FACT-G total score (defined as ≥7-point decrease maintained for ≥2 consecutive visits), analyzed using Kaplan-Meier methods."
+Improved: "change from baseline in EORTC QLQ-C30 global health status/QoL score at Week 12"
 Rationale: ICH E9 Section 2.2.2 requires secondary endpoints to specify: (1) exact instrument/scale, (2) assessment timepoint, (3) responder/deterioration definition if applicable, (4) analysis method. PRO endpoints require FDA PRO Guidance Section 4.1 compliance with validated instruments.
-Recommendation: For each QoL endpoint, specify: (1) Validated instrument name, (2) Domain/subscale, (3) Timepoint, (4) Clinically meaningful difference threshold, (5) Analysis method.
+Recommendation: For each QoL endpoint, specify: (1) Validated instrument name (e.g., EORTC QLQ-C30), (2) Domain/subscale (global health status), (3) Timepoint (Week 12), (4) Clinically meaningful difference threshold, (5) Analysis method (MMRM with treatment, visit, baseline score, treatment-by-visit interaction).
 
 Example 9 - Objective Without Endpoint (Major):
 Original: "A secondary objective is to evaluate patient satisfaction with treatment."
 Problematic: "evaluate patient satisfaction"
 Minimal Fix: "'evaluate patient satisfaction' → 'evaluate patient satisfaction measured by [instrument] at Week [X]'"
-Improved: "A secondary objective is to evaluate patient satisfaction with treatment, measured by the Treatment Satisfaction Questionnaire for Medication (TSQM-9) Global Satisfaction domain score at Weeks 4, 12, and 24. The corresponding endpoint is change from baseline in TSQM-9 Global Satisfaction score at Week 24, analyzed using MMRM."
+Improved: "evaluate patient satisfaction with treatment, measured by the Treatment Satisfaction Questionnaire for Medication (TSQM-9) Global Satisfaction domain score at Weeks 4, 12, and 24"
 Rationale: ICH E9 Section 2.2.1 requires each objective to have a measurable endpoint. Objectives without endpoints create regulatory risk and cannot be statistically analyzed. FDA PRO Guidance Section 3.2 requires linkage between objectives and validated PRO instruments.
-Recommendation: For each objective, define: (1) The linked endpoint with instrument, (2) Assessment timepoint(s), (3) Analysis method. Ensure objective-endpoint traceability throughout the protocol.
+Recommendation: For each objective, define: (1) The linked endpoint with instrument (TSQM-9), (2) Assessment timepoint(s) (Weeks 4, 12, 24), (3) Analysis method (e.g., change from baseline at Week 24 using MMRM). Ensure objective-endpoint traceability throughout the protocol.
 
 Example 10 - Missing Safety Monitoring During Long Visit Gap (Major):
 TIMELINE CONTEXT: 12-week gap between Week 12 and Week 24 visits during active treatment
 Original: "Safety assessments at each study visit."
 Problematic: "at each study visit"
 Minimal Fix: "'at each study visit' → 'at Weeks 4, 8, 12, 16, 20, 24 (±3 days)'"
-Improved: "Safety assessments (vital signs, clinical laboratory tests, AE assessment) will be performed at Weeks 4, 8, 12, 16, 20, and 24 (±3 days). Given the 12-week gap between Week 12 and Week 24, an additional safety visit is scheduled at Week 16 and Week 20 to monitor for late-onset toxicities during active dosing."
+Improved: "at Weeks 4, 8, 12, 16, 20, and 24 (±3 days)"
 Rationale: ICH E6(R3) Section 5.18.3 requires safety monitoring frequency to match the treatment schedule and known toxicity profile. A 12-week gap during active treatment creates safety risk. FDA Safety Monitoring Guidance Section 4.1 recommends assessments at least monthly during initial treatment phases.
-Recommendation: Add interim safety visits during long gaps (>8 weeks) during treatment period. Specify assessments per Schedule of Assessments table.
+Recommendation: Add interim safety visits during long gaps (>8 weeks) during treatment period. Specify assessments (vital signs, clinical laboratory tests, AE assessment) per Schedule of Assessments table. Add Week 16 and Week 20 visits to monitor for late-onset toxicities during active dosing.
 
 Example 11 - Undefined Conditional Visit Trigger (Major):
 TIMELINE CONTEXT: Conditional visit "Day 8 unless safety concern" but "safety concern" not defined
 Original: "Additional visit on Day 8 unless safety concern identified."
 Problematic: "unless safety concern identified"
 Minimal Fix: "'unless safety concern identified' → 'if safety concern occurs (defined in Section [X])'"
-Improved: "Additional safety visit will be conducted on Day 8 (±1 day) if any of the following safety concerns occur: (1) Grade 3+ treatment-related AE, (2) laboratory abnormality per Section [X] Table 4 criteria, or (3) new clinical symptom requiring medical evaluation per investigator assessment. Safety concern criteria are defined in Protocol Section [X]."
+Improved: "if any of the following safety concerns occur: (1) Grade 3+ treatment-related AE, (2) laboratory abnormality per Section [X] Table 4 criteria, or (3) new clinical symptom requiring medical evaluation per investigator assessment"
 Rationale: ICH E6(R3) Section 8.3.3 requires objective, reproducible visit criteria. Conditional visits with undefined triggers lead to protocol deviations and inconsistent implementation across sites. This pattern has 78% amendment rate per historical data.
-Recommendation: Define objective criteria for all conditional visit triggers. Include: (1) AE grade thresholds, (2) laboratory value thresholds, (3) clinical symptom criteria. Reference Protocol section.
+Recommendation: Define objective criteria for all conditional visit triggers. Include: (1) AE grade thresholds (Grade 3+), (2) laboratory value thresholds (reference Protocol Section [X] Table 4), (3) clinical symptom criteria. Ensure criteria are defined in Protocol section for site reference.
 
 Example 12 - Incomplete Visit Schedule Specification (Major):
 TIMELINE CONTEXT: 8 scheduled visits from Baseline to Week 48, no visit windows specified
 Original: "Study visits at Baseline, Week 4, Week 8, Week 12, Week 24, Week 36, Week 48."
 Problematic: "Study visits at [timepoints]"
 Minimal Fix: "'Study visits at [timepoints]' → 'Study visits with windows: Baseline (Day 0), Week 4 (Day 28±3)...'"
-Improved: "Study visits: Baseline (Day 0), Week 4 (Day 28 ±3 days), Week 8 (Day 56 ±5 days), Week 12 (Day 84 ±7 days), Week 24 (Day 168 ±7 days), Week 36 (Day 252 ±7 days), Week 48 (Day 336 ±7 days), Follow-up (30 ±3 days after last dose). Visit windows define acceptable timing for protocol compliance; visits outside windows constitute protocol deviations."
-Improved: "Study visits: Baseline (Day 0), Week 4 (Day 28 ±3 days), Week 8 (Day 56 ±5 days), Week 12 (Day 84 ±7 days), Week 24 (Day 168 ±7 days), Week 36 (Day 252 ±7 days), Week 48 (Day 336 ±7 days), Follow-up (30 ±3 days after last dose). Visit windows define acceptable timing for protocol compliance; visits outside windows constitute protocol deviations."
+Improved: "Baseline (Day 0), Week 4 (Day 28 ±3 days), Week 8 (Day 56 ±5 days), Week 12 (Day 84 ±7 days), Week 24 (Day 168 ±7 days), Week 36 (Day 252 ±7 days), Week 48 (Day 336 ±7 days), Follow-up (30 ±3 days after last dose)"
 Rationale: ICH E6(R3) Section 8.3.4 requires visit windows to be pre-specified for protocol compliance assessment. Visit windows inform site coordinators of acceptable scheduling flexibility and define protocol deviations. Statistical analysis validity depends on known visit timing variance.
-Recommendation: Specify visit windows with ±day tolerances for all scheduled visits. Windows should reflect: (1) logistical constraints, (2) assessment half-life/pharmacology, (3) operational feasibility. Include in Schedule of Assessments table.
+Recommendation: Specify visit windows with ±day tolerances for all scheduled visits. Windows should reflect: (1) logistical constraints, (2) assessment half-life/pharmacology, (3) operational feasibility. Include in Schedule of Assessments table. Note that visits outside windows constitute protocol deviations.
 
 Example 13 - Protocol-Specific Discontinuation Procedures (Major):
 Original: "Those participants who received at least one dose but chose not to receive subsequent doses will be asked to remain for follow-up safety and immunogenicity assessments."
 Problematic: "follow-up safety and immunogenicity assessments"
-Minimal Fix: "'follow-up safety and immunogenicity assessments' → 'follow-up safety (safety labs as clinically indicated) and immunogenicity assessments unless participant safety precludes continued participation. Visits on Day 2 and 8 after missed vaccination(s) will not be conducted unless there is a safety concern. Procedures described in the MOP.'"
-Improved: "Discontinuation from receipt of study product does not mean withdrawal from participation in the trial. Those participants who received at least one dose of study product and have chosen not to receive another dose of study product or are not qualified to receive second and/or third doses, will be asked to remain in this trial for follow-up safety (safety labs as clinically indicated) and immunogenicity assessments unless participant safety precludes continued participation. If the participant agrees to remain in the study, visits on Day 2 and 8 after the missed vaccination(s) (i.e., the second and/or third vaccination) will not be conducted unless there is a safety concern or a need for a visit. However, other trial procedures should be completed as indicated by the trial protocol and described in the MOP."
+Minimal Fix: "'follow-up safety and immunogenicity assessments' → 'follow-up safety (safety labs as clinically indicated) and immunogenicity assessments unless participant safety precludes continued participation'"
+Improved: "follow-up safety (safety labs as clinically indicated) and immunogenicity assessments unless participant safety precludes continued participation"
 Rationale: ICH E6(R3) Section 6.3.3 requires specific procedures for participant discontinuation with clearly defined visit schedules and safety monitoring criteria. The improved version adds: (1) specific safety assessment criteria ("safety labs as clinically indicated") referencing protocol-defined thresholds, (2) explicit visit schedule modifications (Day 2 and Day 8 visits skipped after missed vaccinations) with objective exception criteria ("safety concern"), and (3) procedural documentation reference (MOP) per ICH E6 Section 5.5.3 requirement for documented procedures.
-Recommendation: Create Table in Safety section defining "clinically indicated" laboratory criteria (Grade 3+ AE per CTCAE, ALT/AST >2.5x ULN, other protocol-specific thresholds). Add Section 6.2.4 defining "safety concern" with objective criteria. Reference MOP Chapter 3 for detailed discontinuation procedures. Update Schedule of Assessments to show which visits are skipped after missed vaccination and exception criteria.
+Recommendation: Create Table in Safety section defining "clinically indicated" laboratory criteria (Grade 3+ AE per CTCAE, ALT/AST >2.5x ULN, other protocol-specific thresholds). Add Section 6.2.4 defining "safety concern" with objective criteria. Reference MOP Chapter 3 for detailed discontinuation procedures. Update Schedule of Assessments to show which visits are skipped after missed vaccination (Day 2 and Day 8 after missed vaccinations) and exception criteria.
 
 JSON RESPONSE:""",
     max_input_tokens=FAST_TOKEN_BUDGET,
