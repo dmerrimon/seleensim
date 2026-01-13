@@ -157,6 +157,37 @@ def find_matches(text: str, token_list: List[str]) -> List[str]:
     return matches
 
 
+def extract_minimal_match(text: str, pattern) -> tuple:
+    """
+    Extract ONLY the matching phrase with minimal context.
+
+    This returns just the matched text (e.g., "subjects") instead of
+    the full sentence, enabling surgical minimal fixes.
+
+    Args:
+        text: Protocol text to scan
+        pattern: Regex pattern (either compiled or string)
+
+    Returns:
+        Tuple of (problematic_phrase, start_pos, end_pos)
+        Returns (None, 0, 0) if no match found
+    """
+    # Handle both regex pattern objects and pattern lists
+    if isinstance(pattern, list):
+        # If it's a list of patterns, try each one
+        for p in pattern:
+            match = re.search(p, text, re.IGNORECASE)
+            if match:
+                return match.group(0), match.start(), match.end()
+        return None, 0, 0
+    else:
+        # Single pattern (compiled or string)
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            return match.group(0), match.start(), match.end()
+        return None, 0, 0
+
+
 def extract_sentence_with_match(text: str, token_list: List[str]) -> str:
     """
     Extract the sentence containing the first matched token.
@@ -240,21 +271,29 @@ def check_conditional_language(text: str) -> ComplianceIssue:
     if any(phrase in text_lower for phrase in OPERATIONAL_CONTEXTS):
         return None
 
-    evidence = find_matches(text, CONDITIONAL_TOKENS)
+    # Extract ONLY the problematic phrase, not the full sentence
+    problematic_phrase, start_pos, end_pos = extract_minimal_match(text, CONDITIONAL_TOKENS)
 
-    if evidence:
+    if problematic_phrase:
         # Generate minimal fix based on matched conditional token
-        first_match = evidence[0].lower()
-        minimal_fix_map = {
-            "may": "'may' → 'will'",
-            "if deemed appropriate": "'if deemed appropriate' → 'as pre-specified in SAP Section [X]'",
-            "as appropriate": "'as appropriate' → 'as pre-specified in SAP Section [X]'",
-            "as needed": "'as needed' → 'per protocol Section [X]'",
-            "as required": "'as required' → 'per protocol Section [X]'",
-            "if appropriate": "'if appropriate' → 'as pre-specified in SAP Section [X]'",
-            "if necessary": "'if necessary' → 'per protocol Section [X]'"
+        phrase_lower = problematic_phrase.lower()
+
+        # Map problematic phrases to their minimal replacements
+        improved_phrase_map = {
+            "may": "will",
+            "if deemed appropriate": "as pre-specified in SAP Section [X]",
+            "as appropriate": "as pre-specified in SAP Section [X]",
+            "as needed": "per protocol Section [X]",
+            "as required": "per protocol Section [X]",
+            "if appropriate": "as pre-specified in SAP Section [X]",
+            "if necessary": "per protocol Section [X]",
+            "unless participant safety": "if participant safety concerns (defined in Protocol Section [X]) preclude",
+            "unless participant safety is a concern": "if participant safety concerns (defined in Protocol Section [X]) preclude"
         }
-        minimal_fix = minimal_fix_map.get(first_match, f"'{first_match}' → [pre-specify]")
+
+        # Get the minimal replacement or use a generic one
+        improved_phrase = improved_phrase_map.get(phrase_lower, "[pre-specify in SAP]")
+        minimal_fix = f"'{problematic_phrase}' → '{improved_phrase}'"
 
         return ComplianceIssue(
             rule_id="COND_001",
@@ -262,8 +301,8 @@ def check_conditional_language(text: str) -> ComplianceIssue:
             severity="minor",  # Downgraded from critical to advisory
             short_description="Conditional language detected (advisory)",
             detail="Found conditional/ambiguous phrasing that requires pre-specification in Statistical Analysis Plan (SAP). Language like 'may', 'if deemed appropriate', 'as needed' creates risk of post-hoc analysis decisions and alpha inflation.",
-            improved_text="All analytic methods, including handling of missing data and sensitivity analyses, will be pre-specified in the Statistical Analysis Plan prior to database lock.",
-            evidence=evidence[:3],  # Limit to first 3 matches
+            improved_text=improved_phrase,  # ✓ Minimal fix, not full paragraph
+            evidence=[problematic_phrase],  # ✓ Just the matched phrase
             confidence=0.5,  # Lowered to make this truly advisory
             minimal_fix=minimal_fix
         )
@@ -351,41 +390,45 @@ def check_terminology(text: str) -> ComplianceIssue:
 
     MINOR: ICH-GCP E6(R3) recommends 'participants' instead of 'subjects'
     """
-    evidence = find_matches(text, SUBJECT_TERMINOLOGY)
+    # Extract ONLY the problematic phrase (e.g., "subjects") not the full sentence
+    problematic_phrase, start_pos, end_pos = extract_minimal_match(text, SUBJECT_TERMINOLOGY)
 
-    if evidence:
-        # Check if text is specifically about "participants" already
-        has_participants = bool(re.search(r"\bparticipant(s)?\b", text, re.IGNORECASE))
+    if not problematic_phrase:
+        return None
 
-        if not has_participants:
-            # Extract the sentence containing the terminology issue
-            original_sentence = extract_sentence_with_match(text, SUBJECT_TERMINOLOGY)
+    # Check if text is specifically about "participants" already
+    has_participants = bool(re.search(r"\bparticipant(s)?\b", text, re.IGNORECASE))
 
-            # Replace terminology preserving capitalization
-            improved_sentence = original_sentence
-            improved_sentence = re.sub(r'\bsubjects\b', 'participants', improved_sentence)
-            improved_sentence = re.sub(r'\bSubjects\b', 'Participants', improved_sentence)
-            improved_sentence = re.sub(r'\bSUBJECTS\b', 'PARTICIPANTS', improved_sentence)
-            improved_sentence = re.sub(r'\bpatients\b', 'participants', improved_sentence)
-            improved_sentence = re.sub(r'\bPatients\b', 'Participants', improved_sentence)
-            improved_sentence = re.sub(r'\bPATIENTS\b', 'PARTICIPANTS', improved_sentence)
-            improved_sentence = re.sub(r'\bsubject\b', 'participant', improved_sentence)
-            improved_sentence = re.sub(r'\bSubject\b', 'Participant', improved_sentence)
-            improved_sentence = re.sub(r'\bSUBJECT\b', 'PARTICIPANT', improved_sentence)
-            improved_sentence = re.sub(r'\bpatient\b', 'participant', improved_sentence)
-            improved_sentence = re.sub(r'\bPatient\b', 'Participant', improved_sentence)
-            improved_sentence = re.sub(r'\bPATIENT\b', 'PARTICIPANT', improved_sentence)
+    if not has_participants:
+        # Replace terminology in just the matched phrase, preserving capitalization
+        improved_phrase = problematic_phrase
+        improved_phrase = re.sub(r'\bsubjects\b', 'participants', improved_phrase)
+        improved_phrase = re.sub(r'\bSubjects\b', 'Participants', improved_phrase)
+        improved_phrase = re.sub(r'\bSUBJECTS\b', 'PARTICIPANTS', improved_phrase)
+        improved_phrase = re.sub(r'\bpatients\b', 'participants', improved_phrase)
+        improved_phrase = re.sub(r'\bPatients\b', 'Participants', improved_phrase)
+        improved_phrase = re.sub(r'\bPATIENTS\b', 'PARTICIPANTS', improved_phrase)
+        improved_phrase = re.sub(r'\bsubject\b', 'participant', improved_phrase)
+        improved_phrase = re.sub(r'\bSubject\b', 'Participant', improved_phrase)
+        improved_phrase = re.sub(r'\bSUBJECT\b', 'PARTICIPANT', improved_phrase)
+        improved_phrase = re.sub(r'\bpatient\b', 'participant', improved_phrase)
+        improved_phrase = re.sub(r'\bPatient\b', 'Participant', improved_phrase)
+        improved_phrase = re.sub(r'\bPATIENT\b', 'PARTICIPANT', improved_phrase)
 
-            return ComplianceIssue(
-                rule_id="TERM_001",
-                category="terminology",
-                severity="minor",  # Already minor, now advisory
-                short_description="Outdated terminology: 'subjects' or 'patients' (advisory)",
-                detail="ICH-GCP E6(R3) recommends using 'participants' instead of 'subjects' or 'patients' in clinical protocols. Update terminology for regulatory alignment.",
-                improved_text=improved_sentence,
-                evidence=evidence[:2],
-                confidence=0.6  # Lowered from 0.75 to allow LLM suggestions to take priority
-            )
+        # Create minimal fix description
+        minimal_fix = f"'{problematic_phrase}' → '{improved_phrase}'"
+
+        return ComplianceIssue(
+            rule_id="TERM_001",
+            category="terminology",
+            severity="minor",  # Already minor, now advisory
+            short_description="Outdated terminology: 'subjects' or 'patients' (advisory)",
+            detail="ICH-GCP E6(R3) recommends using 'participants' instead of 'subjects' or 'patients' in clinical protocols. Update terminology for regulatory alignment.",
+            improved_text=improved_phrase,  # ✓ Minimal fix, not full sentence
+            evidence=[problematic_phrase],  # ✓ Just the matched phrase
+            confidence=0.6,  # Lowered from 0.75 to allow LLM suggestions to take priority
+            minimal_fix=minimal_fix
+        )
     return None
 
 
@@ -396,17 +439,26 @@ def check_vague_endpoints(text: str) -> ComplianceIssue:
     MAJOR (CRITICAL in endpoints section): Endpoints must specify measurement,
     timepoint, analysis method, and missing data handling per ICH E9 Section 2.2
     """
-    evidence = find_matches(text, VAGUE_ENDPOINT_TOKENS)
+    # Extract ONLY the problematic phrase, not the full sentence
+    problematic_phrase, start_pos, end_pos = extract_minimal_match(text, VAGUE_ENDPOINT_TOKENS)
 
-    if evidence:
+    if problematic_phrase:
         # Generate minimal fix based on matched token
-        first_match = evidence[0].lower()
-        if "change" in first_match or "improvement" in first_match or "reduction" in first_match:
-            minimal_fix = f"Add timepoint: '{first_match}' → '{first_match} at Week [X]'"
-        elif "will be" in first_match:
-            minimal_fix = f"Specify method: '{first_match}' → '{first_match} using [instrument/method]'"
+        phrase_lower = problematic_phrase.lower()
+
+        # Create the minimal replacement
+        if "change" in phrase_lower or "improvement" in phrase_lower or "reduction" in phrase_lower:
+            improved_phrase = f"{problematic_phrase} at Week [X]"
+            minimal_fix = f"Add timepoint: '{problematic_phrase}' → '{improved_phrase}'"
+        elif "will be" in phrase_lower:
+            improved_phrase = f"{problematic_phrase} using [instrument/method]"
+            minimal_fix = f"Specify method: '{problematic_phrase}' → '{improved_phrase}'"
+        elif "follow-up" in phrase_lower or "safety" in phrase_lower:
+            improved_phrase = f"{problematic_phrase} (as specified in Protocol Section [X])"
+            minimal_fix = f"Specify details: '{problematic_phrase}' → '{improved_phrase}'"
         else:
-            minimal_fix = f"'{first_match}' → [pre-specify in SAP]"
+            improved_phrase = "[pre-specify in SAP]"
+            minimal_fix = f"'{problematic_phrase}' → {improved_phrase}"
 
         return ComplianceIssue(
             rule_id="ENDPT_001",
@@ -414,8 +466,8 @@ def check_vague_endpoints(text: str) -> ComplianceIssue:
             severity="major",  # Upgraded from minor; section_rules will make CRITICAL in endpoints section
             short_description="Incomplete endpoint specification",
             detail="Endpoint lacks required operational details per ICH E9 Section 2.2. Primary and secondary endpoints MUST specify: (1) exact measurement instrument/scale, (2) assessment timepoint, (3) responder definition if applicable, (4) analysis method, (5) analysis population. Vague endpoints create regulatory risk and statistical analysis ambiguity.",
-            improved_text="The primary endpoint is change from baseline in [Instrument Name] total score at Week 12. Response is defined as ≥[X]% improvement. Analysis will use MMRM with baseline score, treatment, visit, and treatment-by-visit interaction as covariates in the ITT population. Missing data will be handled using multiple imputation as detailed in SAP Section [X].",
-            evidence=evidence[:3],
+            improved_text=improved_phrase,  # ✓ Minimal fix, not full paragraph
+            evidence=[problematic_phrase],  # ✓ Just the matched phrase
             confidence=0.9,  # High confidence - vague endpoints are a real issue
             minimal_fix=minimal_fix
         )
