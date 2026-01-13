@@ -893,6 +893,56 @@ async def get_cache_stats_endpoint():
             "error": str(e)
         }
 
+@app.post("/health/cache/clear")
+async def clear_cache_endpoint():
+    """
+    Clear all cached analysis results (Step 6: Cache Management)
+
+    Force-clears both in-memory LRU cache and Redis cache.
+    Use this when:
+    - Deploying code changes that should invalidate cache
+    - Testing new analysis logic
+    - Cache entries are stale despite CODE_VERSION bump
+
+    Returns:
+        JSON with clearance confirmation and pre/post cache stats
+    """
+    from cache_manager import clear_cache, get_cache_stats
+
+    try:
+        # Get stats before clearing
+        stats_before = get_cache_stats()
+
+        # Clear all caches
+        clear_cache()
+
+        # Get stats after clearing
+        stats_after = get_cache_stats()
+
+        logger.info("🗑️ Cache manually cleared via /health/cache/clear endpoint")
+
+        return {
+            "status": "ok",
+            "message": "Cache cleared successfully",
+            "timestamp": datetime.utcnow().isoformat(),
+            "stats_before": {
+                "memory_entries": stats_before["memory_cache"]["entries"],
+                "redis_connected": stats_before["redis"]["connected"],
+                "global_hits": stats_before["global"]["hits"],
+                "global_misses": stats_before["global"]["misses"]
+            },
+            "stats_after": {
+                "memory_entries": stats_after["memory_cache"]["entries"],
+                "redis_connected": stats_after["redis"]["connected"]
+            }
+        }
+    except Exception as e:
+        logger.error(f"❌ Failed to clear cache: {e}")
+        return {
+            "status": "error",
+            "error": str(e)
+        }, 500
+
 @app.get("/health/metrics")
 async def get_metrics_endpoint():
     """
