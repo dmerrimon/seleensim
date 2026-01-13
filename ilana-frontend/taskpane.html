@@ -2137,8 +2137,14 @@
 
                         <div class="issue-header">
                             <div class="report-list">
-                                ${getOriginalText(issue) ? `<span class="item-original">${getOriginalText(issue).substring(0, 100)}${getOriginalText(issue).length > 100 ? '...' : ''}</span>` : ''}
-                                <span class="item-insert" onclick="highlightAndScrollToIssue('${issue.id}', event)">${getSuggestionText(issue).substring(0, 100)}${getSuggestionText(issue).length > 100 ? '...' : ''}</span>
+                                ${(() => {
+                                    const origText = getOriginalText(issue);
+                                    return origText ? `<span class="item-original">${origText.substring(0, 100)}${origText.length > 100 ? '...' : ''}</span>` : '';
+                                })()}
+                                ${(() => {
+                                    const suggText = getSuggestionText(issue);
+                                    return suggText ? `<span class="item-insert" onclick="highlightAndScrollToIssue('${issue.id}', event)">${suggText.substring(0, 100)}${suggText.length > 100 ? '...' : ''}</span>` : '';
+                                })()}
                             </div>
                         </div>
 
@@ -3431,12 +3437,14 @@
         
         // Get original text from different suggestion formats
         function getOriginalText(issue) {
-            return issue.text || issue.original || issue.originalText || '';
+            if (!issue) return '';
+            return issue.text || issue.original || issue.originalText || issue.original_text || '';
         }
 
         // Get suggestion text from different formats
         function getSuggestionText(issue) {
-            return issue.suggestion || issue.improved || issue.suggestedText || 'No suggestion available';
+            if (!issue) return '';
+            return issue.suggestion || issue.improved || issue.suggestedText || issue.improved_text || '';
         }
 
         // Get rationale text from different formats
