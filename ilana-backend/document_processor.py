@@ -500,7 +500,9 @@ async def get_document_sections(
     Returns:
         Dict mapping section_type to list of chunk metadata
     """
-    if not _init_pinecone():
+    # Get Pinecone index (fixes module-level import bug)
+    index = get_pinecone_index()
+    if index is None:
         logger.warning(f"[{request_id}] Pinecone not available")
         return {}
 
@@ -511,7 +513,7 @@ async def get_document_sections(
             # Query by section type filter
             # Note: Pinecone doesn't support direct metadata filtering in query
             # We'll fetch and filter client-side
-            query_result = _pinecone_index.query(
+            query_result = index.query(
                 vector=[0.0] * 768,  # Dummy vector
                 top_k=50,
                 namespace=namespace,
