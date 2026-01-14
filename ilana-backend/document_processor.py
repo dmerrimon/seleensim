@@ -26,7 +26,7 @@ from dataclasses import dataclass, field
 logger = logging.getLogger(__name__)
 
 # Import existing infrastructure
-from fast_rag import get_pubmedbert_embedding, _init_pinecone, _pinecone_index
+from fast_rag import get_pubmedbert_embedding, _init_pinecone, get_pinecone_index
 
 # Configuration
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY", "")
@@ -356,10 +356,16 @@ async def index_document_chunks(
     batch_size = 100
     indexed_count = 0
 
+    # Get Pinecone index (fixes module-level import bug)
+    index = get_pinecone_index()
+    if index is None:
+        logger.error(f"[{request_id}] Pinecone index not available - cannot index document")
+        raise RuntimeError("Pinecone connection required for document indexing")
+
     for i in range(0, len(vectors), batch_size):
         batch = vectors[i:i + batch_size]
         try:
-            _pinecone_index.upsert(vectors=batch, namespace=namespace)
+            index.upsert(vectors=batch, namespace=namespace)
             indexed_count += len(batch)
             logger.info(f"[{request_id}] Indexed batch {i//batch_size + 1}: {len(batch)} vectors")
         except Exception as e:

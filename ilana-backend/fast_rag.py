@@ -67,6 +67,18 @@ def _init_pinecone():
         return False
 
 
+def get_pinecone_index():
+    """
+    Get current Pinecone index (initializes if needed)
+
+    Returns:
+        Pinecone index object, or None if unavailable
+    """
+    if not _init_pinecone():
+        return None
+    return _pinecone_index
+
+
 async def get_pubmedbert_embedding(text: str, request_id: str = "unknown") -> Optional[List[float]]:
     """
     Get PubMedBERT embedding with exponential backoff retry
