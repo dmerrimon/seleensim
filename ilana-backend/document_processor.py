@@ -288,7 +288,7 @@ async def embed_chunks(chunks: List[DocumentChunk], request_id: str) -> List[Doc
     Processes in batches to avoid rate limits
     """
     embedded_chunks = []
-    batch_size = 10
+    batch_size = 3  # Reduced from 10 to avoid HuggingFace rate limits
 
     for i in range(0, len(chunks), batch_size):
         batch = chunks[i:i + batch_size]
@@ -309,7 +309,7 @@ async def embed_chunks(chunks: List[DocumentChunk], request_id: str) -> List[Doc
 
         # Small delay between batches to avoid rate limits
         if i + batch_size < len(chunks):
-            await asyncio.sleep(0.1)
+            await asyncio.sleep(0.5)  # Increased from 0.1s to give rate limiter time to reset
 
     return embedded_chunks
 
