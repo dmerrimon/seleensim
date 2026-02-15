@@ -1,134 +1,23 @@
-# Dependencies
-node_modules/
+# Virtual environment
+venv/
+env/
+
+# Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
-pip-log.txt
-pip-delete-this-directory.txt
 
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-*.env
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Operating System
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Cache directories
-.cache/
-.tmp/
-.temp/
-
-# Build outputs
-dist/
-build/
-*.tgz
-*.tar.gz
-
-# ML Model cache
-ml-models/cache/
-data/embeddings/cache/
-*.pkl
-*.joblib
-
-# Virtual environments
-venv/
-env/
-ENV/
-
-# Azure
-.azure/
-
-# Local development
+# Testing
 .pytest_cache/
 .coverage
 htmlcov/
 
-# Jupyter Notebooks
-.ipynb_checkpoints
+# IDE
+.vscode/
+.idea/
+*.swp
 
-# MacOS
-.AppleDouble
-.LSOverride
-
-# Test files (archived locally, not in GitHub)
-test_*.py
-test_*.js
-*_test.py
-*_test.js
-debug_*.py
-quick_*.py
-
-# Job cache (runtime-generated)
-jobs/
-ilana-backend/jobs/
-
-# Shadow/feedback data (runtime-generated)
-ilana-backend/shadow/
-
-# Backup files
-*.bak
-*.bak2
-# *_backup/ - Commented out: would block legacy_pipeline_backup
-# legacy_pipeline_backup/ - KEEP THIS: Required for production imports
-
-# Placeholder/temp files
-*placeholder*.html
-golden_model_outputs.txt
-
-# Prevent stale files from being re-created at repo root
-/optimized_real_ai_service.py
-/api_server.py
-/config_loader.py
-/continuous_learning.py
-/explainability_api.py
-/main_simple.py
-/main.py
-/multi_modal_analyzer.py
-/optimization_api.py
-/optimization_rule_engine.py
-/pricing_calculator.py
-/protocol_parser.py
-/pubmedbert_service.py
-/quick_large_test.py
-/real_ai_service.py
-/real_reinforcement_learning.py
-/reinforcement_learning.py
-/setup_dependencies.py
-/start-dashboard-server.py
-/ta_aware_retrieval.py
-/test_large_protocol.py
-/test_optimize_document_async.py
-/therapeutic_area_classifier.py
-# Protocol data files (stored in Pinecone, not Git)
-data/data/anonymized_texts/
-data/data/fully_anonymized_texts/
-data/data/Regulatory and Compliance.txt
-data/data/fda_clinical_trial_guidance.txt
-data/data/fda_guidance_metadata.json
-data/data/ichRules.ts
+# OS
+.DS_Store

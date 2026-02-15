@@ -1,0 +1,121 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    name: Test Suite
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest
+        pip install -e .
+
+    - name: Run full test suite
+      run: |
+        pytest tests/ -v --tb=short
+
+    - name: Test summary
+      if: always()
+      run: |
+        echo "Test suite completed for Python ${{ matrix.python-version }}"
+
+  guardrails:
+    name: Architectural Guardrails
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest
+        pip install -e .
+
+    - name: Run calibration readiness tests
+      run: |
+        pytest tests/test_calibration_readiness.py -v --tb=short
+
+    - name: Run anti-behavior tests
+      run: |
+        pytest tests/test_anti_behavior.py -v --tb=short
+
+    - name: Guardrail enforcement summary
+      if: always()
+      run: |
+        echo "=========================================="
+        echo "GUARDRAIL ENFORCEMENT"
+        echo "=========================================="
+        echo ""
+        echo "These tests enforce The Ilana Law:"
+        echo "  'Could this number be different for a different organization?'"
+        echo "  YES → assumption → must be parameterized"
+        echo "  NO → structural → OK to hardcode"
+        echo ""
+        echo "Guardrail test failures are ARCHITECTURE REGRESSIONS."
+        echo "They indicate hidden assumptions have crept into constraint logic."
+        echo ""
+        echo "If guardrails fail:"
+        echo "  1. Review the failing test"
+        echo "  2. Check if magic numbers were introduced"
+        echo "  3. Extract assumption into parameter/response curve"
+        echo "  4. Update tests with new API"
+        echo ""
+        echo "Guardrails protect calibration readiness."
+        echo "=========================================="
+
+  # This job ensures both test suite AND guardrails pass
+  # GitHub branch protection should require this job
+  all-checks:
+    name: All Checks Passed
+    runs-on: ubuntu-latest
+    needs: [test, guardrails]
+    if: always()
+
+    steps:
+    - name: Check test results
+      run: |
+        if [ "${{ needs.test.result }}" != "success" ]; then
+          echo "❌ Test suite failed"
+          exit 1
+        fi
+        if [ "${{ needs.guardrails.result }}" != "success" ]; then
+          echo "❌ Guardrail tests failed - ARCHITECTURE REGRESSION DETECTED"
+          echo ""
+          echo "Guardrail failures indicate:"
+          echo "  - Hidden assumptions introduced in constraint logic"
+          echo "  - Magic numbers hardcoded where parameters required"
+          echo "  - Violation of The Ilana Law"
+          echo ""
+          echo "This blocks calibration readiness. Review architectural principles."
+          exit 1
+        fi
+        echo "✅ All checks passed"
+        echo "  - Test suite: ${{ needs.test.result }}"
+        echo "  - Guardrails: ${{ needs.guardrails.result }}"
