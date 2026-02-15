@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seleensim"
+version = "0.0.0"
+description = "Calibration-ready probabilistic simulation engine"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+packages = ["seleensim"]
