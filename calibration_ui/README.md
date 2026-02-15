@@ -17,8 +17,9 @@ calibration_ui/
 ├── README.md              # This file
 ├── requirements.txt       # Dependencies
 ├── notebook/              # Jupyter notebooks (live manipulation)
-│   ├── 01_baseline_calibration.ipynb
-│   └── 02_sensitivity_analysis.ipynb
+│   ├── 01_baseline_calibration.ipynb    # Baseline + exercises
+│   ├── 02_sensitivity_analysis.ipynb    # Parameter sweeps
+│   └── 03_live_calibration_session.ipynb # Fast iteration (recommended)
 └── control_panel/         # (Future: Streamlit/Gradio if needed)
 ```
 
@@ -128,6 +129,20 @@ min_speed_ratio = 0.2  # 👈 CHANGE AGAIN
 
 **Usage**: Run all cells, review plots with SCRI, validate directionality
 
+### Notebook 3: Live Calibration Session (`03_live_calibration_session.ipynb`)
+**Purpose**: Fast iteration during live SCRI session
+
+**Structure** (per requirements):
+- Cell 1: Load assumption parameters (JSON/dict)
+- Cell 2: Modify 4 key parameters (change → re-run)
+- Cell 3: Run simulation (5-10 seconds)
+- Cell 4: Visualize outputs (histogram + box plot)
+- Save: Export calibrated parameters to JSON
+
+**Workflow**: Load → Modify → Run → Visualize → Repeat
+
+**Usage**: Start here for live SCRI session, iterate until convergence
+
 ---
 
 ## Quick Start
@@ -140,8 +155,13 @@ pip install -r requirements.txt
 # Launch Jupyter
 jupyter notebook
 
-# Open: notebook/01_baseline_calibration.ipynb
-# Follow instructions in notebook
+# For live SCRI session (recommended):
+# → Open: notebook/03_live_calibration_session.ipynb
+# → Fast iteration: Load → Modify → Run → Visualize → Repeat
+
+# For exploration:
+# → 01_baseline_calibration.ipynb (exercises)
+# → 02_sensitivity_analysis.ipynb (parameter sweeps)
 ```
 
 ---
