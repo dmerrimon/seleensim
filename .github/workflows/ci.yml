@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest
+        pip install pytest numpy scipy
         pip install -e .
 
     - name: Run full test suite
@@ -55,7 +55,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest
+        pip install pytest numpy scipy
         pip install -e .
 
     - name: Run calibration readiness tests
