@@ -1,0 +1,22 @@
+# Calibration UI Requirements
+# This is a throwaway interface for SCRI calibration sessions
+
+# Core simulation (from parent directory)
+-e ..
+
+# Notebook interface
+jupyter>=1.0.0
+ipywidgets>=8.0.0
+notebook>=7.0.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.12.0
+
+# Data manipulation
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Optional: Control panel (choose one if needed)
+# streamlit>=1.28.0
+# gradio>=4.0.0
